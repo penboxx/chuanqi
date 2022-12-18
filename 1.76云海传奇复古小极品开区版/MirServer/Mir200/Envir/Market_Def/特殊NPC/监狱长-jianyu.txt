@@ -1,0 +1,16 @@
+[@main]
+<COLOR=clLime 打击外挂、绝不手软、绿色游戏、打造长久！>\
+<COLOR=clRed 既然你来到这里，就说明你开挂了，别狡辩说冤枉的！>\
+<COLOR=clRed 警告：多次开挂，将删号处理，不信你试试！>\ \
+
+<我下次不在开了，我花费10万元宝出去！/@chuqu>\
+
+[@chuqu]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 100000
+MAPMOVE 3 333 333
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有10万元宝！

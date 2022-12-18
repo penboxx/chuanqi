@@ -1,0 +1,106 @@
+[@main]
+<COLOR=clRed 21:00-22:00>我可以把你直接送到沙巴克皇宫中！\
+不过你必须满足我的要求，而我的要求嘛……\
+你给我1元宝，不算多吧？(防止家族空降等级限制46以上)\ \
+　　　　　　　　　　　<皇宫上方/@hgsf>\ \
+　　　　　<皇宫左方/@hgzf>　　<皇宫中间/@hgzj>　　<皇宫右方/@hgyf>\ \
+　　　　　　　　　　　<皇宫下方/@hgxf>\
+
+[@hgzj]
+#IF
+HOUR 21 22
+#ACT
+GOTO @zj
+#elsesay
+21:00-22:00才可以进！
+
+[@zj]
+#IF
+checklevelex > 45
+CHECKGAMEGOLD > 0
+#ACT
+GAMEGOLD - 1
+MAPMOVE 0150 12 15
+#elsesay
+你没有46级或者1元宝！
+<离开/@exit>
+
+[@hgsf]
+#IF
+HOUR 21 22
+#ACT
+GOTO @sf
+#elsesay
+21:00-22:00才可以进！
+
+[@sf]
+#IF
+checklevelex > 45
+CHECKGAMEGOLD > 0
+#ACT
+GAMEGOLD - 1
+MAPMOVE 0150 12 10
+BREAK
+#elsesay
+你没有46级或者1元宝！
+<离开/@exit>
+
+[@hgxf]
+#IF
+HOUR 21 22
+#ACT
+GOTO @xf
+#elsesay
+21:00-22:00才可以进！
+
+[@xf]
+#IF
+checklevelex > 45
+CHECKGAMEGOLD > 0
+#ACT
+GAMEGOLD - 1
+MAPMOVE 0150 11 20
+BREAK
+#elsesay
+你没有46级或者1元宝！
+<离开/@exit>
+
+[@hgzf]
+#IF
+HOUR 21 22
+#ACT
+GOTO @zf
+#elsesay
+21:00-22:00才可以进！
+
+[@zf]
+#IF
+checklevelex > 45
+CHECKGAMEGOLD > 0
+#ACT
+GAMEGOLD - 1
+MAPMOVE 0150 4 18
+BREAK
+#elsesay
+你没有46级或者1元宝！
+<离开/@exit>
+
+[@hgyf]
+#IF
+HOUR 21 22
+#ACT
+GOTO @yf
+#elsesay
+21:00-22:00才可以进！
+
+[@yf]
+#IF
+checklevelex > 45
+CHECKGAMEGOLD > 0
+#ACT
+GAMEGOLD - 1
+MAPMOVE 0150 18 12
+BREAK
+#elsesay
+你没有46级或者1元宝！
+<离开/@exit>

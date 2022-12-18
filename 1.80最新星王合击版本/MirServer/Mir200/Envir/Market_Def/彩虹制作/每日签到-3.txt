@@ -1,0 +1,38 @@
+[@main]
+#IF
+#say
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【每日签到】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 卓越合击独家制作签到功能.每日签到可以领取大量的聚灵珠>\
+<COLOR=clLime 凡是等级达到50级的玩家均可以签到.签到的玩家可以领取5>\
+<COLOR=clFuchsia 个金币聚灵珠.使用金币释放.一定要记得每日签到哦>\ \
+<今日签到/@今日签到>                                     <领取奖励/@领取奖励>\
+
+[@今日签到]
+#IF
+checknamelist ..\QuestDiary\签到功能\每日签到.txt
+#ACT
+MESSAGEBOX 您今日已经签到过了无法重复签到
+BREAK
+
+#IF
+checklevelex > 49
+#ACT
+addnamelist ..\QuestDiary\签到功能\每日签到.txt
+addnamelist ..\QuestDiary\签到功能\签到奖励.txt
+SENDMSG 0 玩家[%s]在土城成功进行了每日签到！！！
+break
+#ELSEACT
+MESSAGEBOX 你的等级不足50级无法签到
+
+[@领取奖励]
+#if
+checknamelist ..\QuestDiary\签到功能\签到奖励.txt
+#ACT
+GIVE 超级聚灵珠(赠品) 5
+DELnamelist ..\QuestDiary\签到功能\签到奖励.txt
+SENDMSG 0 玩家[%s]在土城成功领取了签到奖励:5个超级聚灵珠
+BREAK
+#ELSEACT
+MESSAGEBOX 你还没签到或者你已经领取过签到奖励了

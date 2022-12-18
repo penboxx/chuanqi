@@ -1,0 +1,84 @@
+[@登陆设置]
+{
+#IF
+checknamelist \特色功能\禁止登陆人物.txt
+#ACT
+kick
+SENDMSG 5 %s你现在的人物已被封，请更换人物登陆！
+#IF
+CHECKACCOUNTLIST \特色功能\禁止登陆帐号.txt
+#ACT
+kick
+SENDMSG 5 %s你现在的帐号已被封，请更换帐号登陆！
+#IF
+CHECKIPLIST \特色功能\禁止登陆IP.txt
+#ACT
+kick
+SENDMSG 5 %s你现在登陆IP已被封，请更换IP登陆！
+#IF
+checklevelex > 45
+#ACT
+SENDMSG 0 热烈欢迎玩家[%s]进入精锐数据宝宝１７６复古传奇！！！ 251 249
+
+#IF
+ISCASTLEMASTER
+#ACT
+ChangeNameColor 250
+SENDMSG 0 【提示】本世纪最伟大的沙巴克城主『<$USERNAME>』出宫巡游了。！抓紧机会，快去行刺他吧。。！
+
+
+#IF
+CHECKLEVELEX > 0
+checknamelist ..\QuestDiary\封号系统\黄金赞助名单.txt
+#ACT
+ChangeNameColor 243
+SETRANKLEVELNAME %s\☆黄金\赞☆助☆大☆使
+SENDMSG 0 欢迎：<$SERVERNAME>黄金赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 0 欢迎：<$SERVERNAME>黄金赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 1 欢迎：<$SERVERNAME>黄金赞助大使〖%s〗进入游戏中！！ 254 0
+SENDMSG 1 欢迎：<$SERVERNAME>黄金赞助大使〖%s〗进入游戏中！！ 254 0
+
+#IF
+CHECKLEVELEX > 0
+checknamelist ..\QuestDiary\封号系统\白金赞助名单.txt
+#ACT
+ChangeNameColor 254
+SETRANKLEVELNAME %s\☆白金\赞☆助☆大☆使
+SENDMSG 0 欢迎：<$SERVERNAME>白金赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 0 欢迎：<$SERVERNAME>白金赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 1 欢迎：<$SERVERNAME>白金赞助大使〖%s〗进入游戏中！！ 254 0
+SENDMSG 1 欢迎：<$SERVERNAME>白金赞助大使〖%s〗进入游戏中！！ 254 0
+
+#IF
+CHECKLEVELEX > 0
+checknamelist ..\QuestDiary\封号系统\翡翠赞助名单.txt
+#ACT
+ChangeNameColor 253
+SETRANKLEVELNAME %s\☆翡翠\赞★助★大★使
+SENDMSG 0 欢迎：<$SERVERNAME>翡翠赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 0 欢迎：<$SERVERNAME>翡翠赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 1 欢迎：<$SERVERNAME>翡翠赞助大使〖%s〗进入游戏中！！ 254 0
+SENDMSG 1 欢迎：<$SERVERNAME>翡翠赞助大使〖%s〗进入游戏中！！ 254 0
+
+
+
+
+
+#IF
+ISADMIN
+#ACT
+CHANGEMODE 1 1
+CHANGEMODE 2 1
+CHANGEMODE 3 1
+#IF
+#ACT
+SENDMSG 0 欢迎[%s]登陆[<$SERVERNAME>]!进入精锐数据宝宝１７６原始复古传奇！！！  251 249
+SENDMSG 7  本服无任何待遇，无任何拖，精锐数据网络为你打造一个公平公正，长期稳定，绿色环保的176复古服，希望大家支持！每天三次免费拉镖活动等你来哦！！！  251 249
+
+
+
+#IF
+EQUAL G0 0
+#ACT
+SENDMSG 7 服务器目前正式开放 ，请玩家放心充值  252 255 30
+}

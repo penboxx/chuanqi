@@ -1,0 +1,21 @@
+()
+%100
+[@main]
+
+<COLOR=clAqua ═════════════秦始皇陵墓═════════════>\  \
+<COLOR=clLime          免费进入秦始皇陵墓        免费进入秦始皇陵墓> \  \
+<COLOR=clFuchsia              ╔═════════════╗>\
+<COLOR=clFuchsia              ║>         <确定进入/@我要进入>         <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia              ╚═════════════╝>\  \
+
+
+<COLOR=clAqua ═════════════秦始皇陵墓═════════════>\  \
+
+                         
+[@我要进入]
+#if
+#act
+GIVE 回城卷 1
+mapmove qing2
+SENDMSG 0 ★玩家[%s],进入秦始皇陵墓
+

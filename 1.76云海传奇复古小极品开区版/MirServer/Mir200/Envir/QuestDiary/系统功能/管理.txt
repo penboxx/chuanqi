@@ -1,0 +1,66 @@
+[@管理]
+{
+您好管理员，您现在需要做些什么？\ \
+<冲级开启/@冲级开启>            <冲级关闭/@冲级关闭>\
+<[开区模式设置]/@开区模式设置>\
+
+
+[@开区模式设置]
+#IF
+equal G1 0
+#SAY
+当前服务器处于：[正式]开区模式！\ \
+<设置为测试开区模式/@设置为测试>\ \
+<返回/@管理>\
+#ELSESAY
+当前服务器处于：[测试]开区模式！\ \
+<设置为正式开区模式/@设置为正式>\ \
+<返回/@管理>\
+
+[@设置为测试]
+#ACT
+MOV G1 1
+SENDMSG 7 设置为测试开区模式生效！
+GOTO @管理
+BREAK
+
+[@设置为正式]
+#ACT
+MOV G1 0
+SENDMSG 7 设置为正式开区模式生效！
+GOTO @管理
+BREAK
+
+
+[@冲级关闭]
+#IF
+ISADMIN
+#ACT
+MOV G80 0
+MOV G79 0
+MOV G78 0
+MOV G77 0
+MOV G76 0
+MOV G75 0
+MOV G74 0
+SENDMSG 7 冲级活动已关闭
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+BREAK
+
+[@冲级开启]
+#IF
+ISADMIN
+#ACT
+MOV G80 1
+MOV G79 5
+MOV G78 10
+MOV G77 20
+MOV G76 30
+MOV G75 40
+MOV G74 50
+SENDMSG 7 冲级活动已开启
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+BREAK
+}

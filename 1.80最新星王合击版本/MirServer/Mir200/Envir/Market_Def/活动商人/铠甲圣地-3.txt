@@ -1,0 +1,69 @@
+[@main]
+#IF
+#SAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【祝福圣地】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+铠甲之地.散人必争.完全仿制盛大六大重装地图.爆星王以上衣服!\
+玩家可以从我这里直接传送过去.不过我可是要收取500元宝路费哦\
+没有元宝的玩家可以自己跑过去和盛大模式一样.BOSS60分钟刷新\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<【钳虫※巢穴】/@1>        <【死亡※神殿】/@2>        <【地狱※烈焰】/@3>\ 
+
+<【深渊※魔域】/@4>        <【堕落※坟场】/@5>        <【困惑※殿堂】/@6>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+[@1]
+#IF
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+MAPMOVE T232
+#ELSEACT
+MESSAGEBOX 对不起你的元宝不足500
+
+[@2]
+#IF
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+MAPMOVE T218
+#ELSEACT
+MESSAGEBOX 对不起你的元宝不足500
+
+[@3]
+#IF
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+MAPMOVE T339
+#ELSEACT
+MESSAGEBOX 对不起你的元宝不足500
+
+[@4]
+#IF
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+MAPMOVE T219
+#ELSEACT
+MESSAGEBOX 对不起你的元宝不足500
+
+[@5]
+#IF
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+MAPMOVE T315
+#ELSEACT
+MESSAGEBOX 对不起你的元宝不足500
+
+[@6]
+#IF
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+MAPMOVE T118
+#ELSEACT
+MESSAGEBOX 对不起你的元宝不足500
+
+

@@ -1,0 +1,38 @@
+[@MAIN]
+这里是天关六层\
+你必须将本地图内所有怪物杀光，才可以领取奖励进入下一关！\
+<COLOR=clRed 注:请不要将聚灵珠放在包袱内,否则会被收取掉!>\
+　\
+<领取奖励进入下一关/@LCJLLQ>\
+
+[@LCJLLQ]
+#IF
+CheckRangeMonCount TG6 16 12 15 = 0
+#ACT
+GOTO @LCJLLQ1
+#ELSESAY
+地图内的怪物还没杀光呢！
+
+[@LCJLLQ1]
+#IF
+CHECKMAPHUMANCOUNT TG7 = 0
+CHECKGAMEGOLD > 209
+#ACT
+GAMEGOLD - 210
+CLEARMAPMON TG7
+take 聚灵珠 50
+CHANGEEXP + 600000
+Param1 TG7         
+MonGen 骷髅弓箭手 1 1
+MonGen 骷髅刀斧手 1 1
+MonGen 骷髅长枪兵 1 1
+MonGen 恶灵僵尸 1 1
+MonGen 半兽统领 1 1
+MonGen 白野猪 1 1
+MonGen 黑色恶蛆 1 1
+MonGen 楔蛾 1 1
+MAPMOVE TG7
+SENDMSG 0 %s闯过了天关六层，获得600000经验奖励！
+BREAK
+#ELSEACT
+MESSAGEBOX 里面有人了，或者你的元宝不足210！

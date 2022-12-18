@@ -1,0 +1,40 @@
+[@main]
+#IF
+#SAY
+你要去哪个商店？这个是免费服务！ \ \
+<铁匠铺/@Gwe>    <布料店/@Gpo> \
+<首饰店/@Gza>    <客　栈/@Gwh> \
+<书　店/@Gbo>    <婚姻殿堂/@JH> \ \
+<返回/@main>
+[@Gwe]
+#IF
+#ACT
+map 0159
+[@Gpo]
+#IF
+#ACT
+map 0149
+[@Gza]
+#IF
+#ACT
+map 0158
+[@Gwh]
+#IF
+#ACT
+map 0145
+[@Gbo]
+#IF
+#ACT
+map 0161
+[@JH]
+#IF
+#ACT
+map M101
+BREAK
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+[@黄金检测]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\黄金大使名单.txt
+#ACT
+setranklevelname %s\≮黄金大使≯\<$STR(S11)>
+changenamecolor 168
+sendmsg 0 尊敬的黄金大使【%s】进入游戏，永久享受1.2倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊敬的黄金大使【%s】进入游戏，永久享受1.2倍经验，大家膜拜吧！ 31 241
+BREAK
+
+
+#IF
+CHECK [201] 1
+#ACT
+setranklevelname %s\≮黄金大使≯\<$STR(S11)>
+changenamecolor 168
+sendmsg 0 尊敬的黄金大使【%s】进入游戏，永久享受1.2倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊敬的黄金大使【%s】进入游戏，永久享受1.2倍经验，大家膜拜吧！ 31 241
+BREAK
+}

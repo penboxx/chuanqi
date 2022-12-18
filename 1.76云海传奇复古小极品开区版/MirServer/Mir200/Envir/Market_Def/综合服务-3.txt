@@ -1,0 +1,278 @@
+[@main]
+<COLOR=clFuchsia ╔══════════════════════════╗>\
+<COLOR=clFuchsia ║>                    『综合服务』      　　　    　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║----------------------------------------------------║>\
+<COLOR=clFuchsia ║>                                                    <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>   <变性服务/@zzbx>    <幸运使者/@xysz>    <特殊封号/@tsfh>    <防止骗子/@fzpz>    <COLOR=clFuchsia  ║>\
+<COLOR=clFuchsia ║>                                                    <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚══════════════════════════╝>\
+　                        <关  闭/@exit>\
+[@zzbx]
+如何你想换一换职业还是换一换性别，这里提供转职变性服务！\ \
+             <我要转换性别/@renyao>\ \
+                           <关闭/@exit>\
+
+[@renyao]
+#IF
+gender man
+#SAY
+是不是做猛男没什么意思呀，想不想尝尝做淑女的滋味呀！！！\ \
+引进泰国先进变性技术，每次需要收取20000元宝作为费用。\ \
+『<尝尝/@towoman>』\ \
+〖<返回/@main>〗 〖<关闭/@exit>〗
+#ELSESAY
+是不是做淑女挺累的，想不想尝尝做猛男的滋味呀！！！\ \
+引进泰国先进变性技术，每次需要收取20000元宝作为费用。\ \
+『<尝尝/@toman>』\ \
+〖<返回/@main>〗 〖<关闭/@exit>〗
+
+
+[@toman]
+#IF
+CHECKGAMEGOLD > 19999
+#ACT
+GAMEGOLD - 20000
+CHANGEGENDER 0
+messagebox 恭喜你变性手术成功，小退上线看看吧！
+Kick
+#SAY
+呵呵，你已经变成一位猛男了。小退上线看看吧！\ \
+<返回/@main>
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足20000个。
+
+[@towoman]
+#IF
+CHECKGAMEGOLD > 19999
+#ACT
+GAMEGOLD - 20000
+CHANGEGENDER 1
+messagebox 恭喜你变性手术成功，小退上线看看吧！
+Kick
+#SAY
+呵呵，你已经变成一位淑女了。小退上线看看吧\ \
+〖<返回/@main>〗 〖<关闭/@exit>〗
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足20000个。
+
+
+
+[@Chang]
+#IF
+checkjob warrior
+#SAY
+是不是做武士不好玩呀，换换别的试试吧！\
+转换职业需要收取50000元宝费用。\ \
+<玩玩法师/@法师>\ \
+<玩玩道士/@道士>\ \
+<返回/@changjob>　<关闭/@exit>
+#ACT
+break
+#IF
+checkjob wizard
+#SAY
+是不是做魔法师不好玩呀，换换别的试试吧！\
+转换职业需要收取50000元宝费用。\ \
+<玩玩武士/@战士>\ \
+<玩玩道士/@道士>\ \
+<返回/@chang>　<关闭/@exit>
+#ACT
+break
+#IF
+checkjob taoist
+#SAY
+是不是做道士不好玩呀，换换别的试试吧！\
+转换职业需要收取50000元宝费用。\ \
+<玩玩武士/@战士>\ \
+<玩玩法师/@法师>\ \
+<返回/@chang>　<关闭/@exit>
+#ACT
+break
+
+[@战士]
+#IF
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+CLEARSKILL
+CHANGEJOB warrior
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 烈火剑法 3
+#SAY
+呵呵，你已经变成一位战士了。
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足50000个。
+BREAK
+
+[@法师]
+#IF
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+CLEARSKILL
+CHANGEJOB WIZARD
+ADDSKILL 火球术 3
+ADDSKILL 大火球 3
+ADDSKILL 抗拒火环 3
+ADDSKILL 地狱火 3
+ADDSKILL 雷电术 3
+ADDSKILL 疾光电影 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 火墙 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+#SAY
+呵呵，你已经变成一位法师了。
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足50000个。
+BREAK
+
+[@道士]
+#IF
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+CLEARSKILL
+CHANGEJOB taoist
+GIVE 护身符(大) 1
+GIVE 黄色药粉(大量) 1
+GIVE 灰色药粉(大量) 1
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 困魔咒 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 心灵启示 3
+ADDSKILL 群体治疗术 3
+ADDSKILL 召唤神兽 3
+#SAY
+呵呵，你已经变成一位道士了。
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足50000个。
+BREAK
+
+[@xysz]
+<COLOR=clFuchsia 注意:只有记忆、灯笼、虎齿、不带(幸)字的项链可以升级幸运!>\
+<COLOR=#254 注意:带(幸)字的幸运项链在猪8猪9爆出,带幸和不带幸效果是一样的!>\
+<COLOR=#254 提示:项链升级幸运不会破碎,成功率为随机!>\ \
+<COLOR=clSkyBlue -----幸运9发挥最大威力，幸运10发挥神秘属性(自行体验)----->\
+<COLOR=clLime 项链>幸运升级至+1   <COLOR=clRed 需要2000元宝→成功率:100%>    <确定升级/@幸运1>\
+<COLOR=clLime 项链>幸运升级至+2   <COLOR=clRed 需要4000元宝→成功率:25%>     <确定升级/@幸运2>\
+<COLOR=clLime 项链>幸运升级至+3   <COLOR=clRed 需要6000元宝→成功率:15%>     <确定升级/@幸运3>\
+
+[@幸运1]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 1999
+#ACT
+#CALL [\幸运项链\灯笼项链1.txt] @灯笼项链1
+BREAK
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 1999
+#ACT
+#CALL [\幸运项链\虎齿项链1.txt] @白色虎齿项链1
+BREAK
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 1999
+#ACT
+#CALL [\幸运项链\记忆项链1.txt] @记忆项链1
+BREAK
+#ELSEACT
+MESSAGEBOX 友情提示:\1.您没有佩带项链\2.或者您没有2000元宝,无法升级!
+CLOSE
+BREAK
+
+[@幸运2]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 3999
+#ACT
+#CALL [\幸运项链\灯笼项链2.txt] @灯笼项链2
+BREAK
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 3999
+#ACT
+#CALL [\幸运项链\虎齿项链2.txt] @白色虎齿项链2
+BREAK
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 3999
+#ACT
+#CALL [\幸运项链\记忆项链2.txt] @记忆项链2
+BREAK
+#ELSEACT
+MESSAGEBOX 友情提示:\1.您没有佩带项链\2.您的项链不是幸运+1的\3.或者您没有4000元宝,无法升级!
+CLOSE
+BREAK
+
+[@幸运3]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 5999
+#ACT
+#CALL [\幸运项链\灯笼项链3.txt] @灯笼项链3
+BREAK
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 5999
+#ACT
+#CALL [\幸运项链\虎齿项链3.txt] @白色虎齿项链3
+BREAK
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 5999
+#ACT
+#CALL [\幸运项链\记忆项链3.txt] @记忆项链3
+BREAK
+#ELSEACT
+MESSAGEBOX 友情提示:\1.您没有佩带项链\2.您的项链不是幸运+2的\3.或者您没有6000元宝,无法升级!
+CLOSE
+BREAK
+
+[@tsfh]
+<COLOR=clSkyBlue 牛刀小试> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+1点攻.魔.道属性>  →  <COLOR=clYellow 49级自动赠送>\
+<COLOR=clSkyBlue 崭露头角> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+2点攻.魔.道属性>  →  <COLOR=clYellow 50级自动赠送>\
+<COLOR=clSkyBlue 小有名气> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+3点攻.魔.道属性>  →  <COLOR=clYellow 51级自动赠送>\
+<COLOR=clSkyBlue 声名鹤起> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+4点攻.魔.道属性>  →  <COLOR=clYellow 52级自动赠送>\
+<COLOR=clSkyBlue 名动四方> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+5点攻.魔.道属性>  →  <COLOR=clYellow 53级自动赠送>\
+<COLOR=clSkyBlue 如日中天> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+6点攻.魔.道属性>  →  <COLOR=clYellow 54级自动赠送>\
+<COLOR=clSkyBlue 技冠群雄> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+7点攻.魔.道属性>  →  <COLOR=clYellow 55级自动赠送>\
+<COLOR=clSkyBlue 威震八方> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+8点攻.魔.道属性>  →  <COLOR=clYellow 56级自动赠送>\
+<COLOR=clSkyBlue 独步天下> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+10点攻.魔.道属性> →  <COLOR=clYellow 57级自动赠送>\
+<COLOR=clSkyBlue 云海无上> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+13点攻.魔.道属性> →  <COLOR=clYellow 60级自动赠送>\
+<COLOR=clRed 注:以上封号以及属性,玩家达到相应等级后,小退上线即可查看!>\
+
+
+[@fzpz]
+<COLOR=clLime 维护游戏环境，打击骗子，抵制内服，从你我做起！-Www.kuyoux.com>\
+　\
+<COLOR=clFuchsia 1：请不要相信游戏内的低价出售元宝，然后卖家拉的“假担保”>\
+　\
+<COLOR=clLime 2：本服为了正规交易,请所有的玩家认真查看客户技术QQ:332217226其他的均为骗子！>\
+　 <COLOR=clRed 为本服专业的银商。所有玩家可以和带有封号的银商进行交易!>\
+　\
+<COLOR=clLime 3：私下购买元宝或者装备，如果经核实:元宝或者装备是非法获得>\
+　 <COLOR=clFuchsia 请所有的玩家认真查看客户技术QQ:332217226其他的均为骗子！>\

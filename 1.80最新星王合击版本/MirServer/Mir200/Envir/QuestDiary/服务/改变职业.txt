@@ -1,0 +1,439 @@
+[@职业]
+{
+#if
+checkjob warrior
+#say
+<作为战士您是否已经厌倦了虎骨和半月呢？/SCOLOR=227>\ 
+<为了您自由发挥，先看清楚以下说明/SCOLOR=227>\ 
+<一：/SCOLOR=254>转职需要<1W元宝/SCOLOR=250>\
+<二：/SCOLOR=254>转成其他职业<辅助技能需要重学/SCOLOR=250>，基本技能自动修炼！\
+<三：/SCOLOR=254>由于高级技能比较昂贵，所以转换任何职业<都会保留/SCOLOR=250>\
+<注：/SCOLOR=253>目前转职后保留的技能 <护体神盾/SCOLOR=250> \
+<———————————————————————————/SCOLOR=227>\
+<转职成法师/@法师>   <转职成道士/@道士> 
+#if
+checkjob wizard
+#say
+<作为战士您是否已经厌倦了火墙和冰咆哮呢？/SCOLOR=227>\ 
+<为了您自由发挥，先看清楚以下说明/SCOLOR=227>\ 
+<一：/SCOLOR=254>转职需要<1W元宝/SCOLOR=250>\
+<二：/SCOLOR=254>转成其他职业<辅助技能需要重学/SCOLOR=250>，基本技能自动修炼！\
+<三：/SCOLOR=254>由于高级技能比较昂贵，所以转换任何职业<都会保留/SCOLOR=250>\
+<注：/SCOLOR=253>目前转职后保留的技能 <护体神盾/SCOLOR=250> \
+<———————————————————————————/SCOLOR=227>\
+<转职成战士/@战士>   <转职成道士/@道士> 
+#if
+checkjob taoist
+#say
+<作为战士您是否已经厌倦了毒药和火符呢？/SCOLOR=227>\ 
+<为了您自由发挥，先看清楚以下说明/SCOLOR=227>\ 
+<一：/SCOLOR=254>转职需要<1W元宝/SCOLOR=250>\
+<二：/SCOLOR=254>转成其他职业<辅助技能需要重学/SCOLOR=250>，基本技能自动修炼！\
+<三：/SCOLOR=254>由于高级技能比较昂贵，所以转换任何职业<都会保留/SCOLOR=250>\
+<注：/SCOLOR=253>目前转职后保留的技能 <护体神盾/SCOLOR=250> \
+<———————————————————————————/SCOLOR=227>\
+<转职成战士/@战士>   <转职成法师/@法师>  
+
+[@战士]
+#if
+check [257] 1
+check [258] 1
+CHECKGAMEGOLD > 9999
+#act
+GAMEGOLD - 10000
+CLEARSKILL
+CHANGEJOB Warrior
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 烈火剑法 3
+ADDSKILL 龙影剑法 3
+ADDSKILL 狮子吼 3
+ADDSKILL 护体神盾 3
+SENDMSG 7 转职成功，现在您是一位战士了，保留了您的护体神盾技能！
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　管理员为了避免你在游戏中出现数据错误!!　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　所以请你小退一下再重新登陆!!　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+KICK
+CLOSE
+#elseact
+goto @战士倚天辟地
+
+[@战士倚天辟地]
+#if
+check [258] 1
+CHECKGAMEGOLD > 9999
+#act
+GAMEGOLD - 10000
+CLEARSKILL
+CHANGEJOB Warrior
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 龙影剑法 3
+ADDSKILL 狮子吼 3
+ADDSKILL 烈火剑法 3
+SENDMSG 7 转职成功，现在您是一位战士了！
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　管理员为了避免你在游戏中出现数据错误!!　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　所以请你小退一下再重新登陆!!　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+KICK
+CLOSE
+#elseact
+goto @战士护体神盾
+
+[@战士护体神盾]
+#if
+check [257] 1
+CHECKGAMEGOLD > 9999
+#act
+GAMEGOLD - 10000
+CLEARSKILL
+CHANGEJOB Warrior
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 龙影剑法 3
+ADDSKILL 狮子吼 3
+ADDSKILL 烈火剑法 3
+ADDSKILL 护体神盾 3
+SENDMSG 7 转职成功，现在您是一位战士了，保留了您的护体神盾技能！
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　管理员为了避免你在游戏中出现数据错误!!　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　所以请你小退一下再重新登陆!!　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+KICK
+CLOSE
+#elseact
+goto @战士普通
+
+[@战士普通]
+#if
+CHECKGAMEGOLD > 9999
+#act
+GAMEGOLD - 10000
+CLEARSKILL
+CHANGEJOB Warrior
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 烈火剑法 3
+ADDSKILL 龙影剑法 3
+ADDSKILL 狮子吼 3
+SENDMSG 7 转职成功，现在您是一位战士了！
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　管理员为了避免你在游戏中出现数据错误!!　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　所以请你小退一下再重新登陆!!　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+KICK
+CLOSE
+#elseact
+messagebox 对不起，你的元宝不足！
+
+
+
+[@法师]
+#if
+check [257] 1
+check [258] 1
+CHECKGAMEGOLD > 9999
+#act
+GAMEGOLD - 10000
+CLEARSKILL
+CHANGEJOB Wizard
+ADDSKILL 地狱火 3
+ADDSKILL 抗拒火环 3
+ADDSKILL 疾光电影 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 火墙 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+ADDSKILL 火龙气焰 3
+ADDSKILL 护体神盾 3
+SENDMSG 7 转职成功，现在您是一位法师了，保留了您的护体神盾技能！
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　管理员为了避免你在游戏中出现数据错误!!　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　所以请你小退一下再重新登陆!!　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+KICK
+CLOSE
+#elseact
+goto @法师倚天辟地
+
+[@法师倚天辟地]
+#if
+check [258] 1
+CHECKGAMEGOLD > 9999
+#act
+GAMEGOLD - 10000
+CLEARSKILL
+CHANGEJOB Wizard
+ADDSKILL 抗拒火环 3
+ADDSKILL 疾光电影 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 火墙 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+ADDSKILL 火龙气焰 3
+SENDMSG 7 转职成功，现在您是一位法师了！
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　管理员为了避免你在游戏中出现数据错误!!　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　所以请你小退一下再重新登陆!!　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+KICK
+CLOSE
+#elseact
+goto @法师护体神盾
+
+[@法师护体神盾]
+#if
+check [257] 1
+CHECKGAMEGOLD > 9999
+#act
+GAMEGOLD - 10000
+CLEARSKILL
+CHANGEJOB Wizard
+ADDSKILL 抗拒火环 3
+ADDSKILL 疾光电影 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 火墙 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+ADDSKILL 火龙气焰 3
+ADDSKILL 护体神盾 3
+SENDMSG 7 转职成功，现在您是一位法师了，保留了您的护体神盾技能！
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　管理员为了避免你在游戏中出现数据错误!!　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　所以请你小退一下再重新登陆!!　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+KICK
+CLOSE
+#elseact
+goto @法师普通
+
+[@法师普通]
+#if
+CHECKGAMEGOLD > 9999
+#act
+GAMEGOLD - 10000
+CLEARSKILL
+CHANGEJOB Wizard
+ADDSKILL 抗拒火环 3
+ADDSKILL 疾光电影 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 火墙 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+ADDSKILL 火龙气焰 3
+SENDMSG 7 转职成功，现在您是一位法师了！
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　管理员为了避免你在游戏中出现数据错误!!　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　所以请你小退一下再重新登陆!!　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+KICK
+CLOSE
+#elseact
+messagebox 对不起，你的元宝不足！
+
+
+[@道士]
+#if
+check [257] 1
+check [258] 1
+CHECKGAMEGOLD > 9999
+#act
+GAMEGOLD - 10000
+CLEARSKILL
+CHANGEJOB Taoist
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 心灵启示 3
+ADDSKILL 困魔咒 3
+ADDSKILL 群体治疗术 3
+ADDSKILL 召唤神兽 3
+ADDSKILL 气功波 3
+ADDSKILL 噬血术 3
+ADDSKILL 护体神盾 3
+SENDMSG 7 转职成功，现在您是一位道士了，保留了您的护体神盾技能！
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　管理员为了避免你在游戏中出现数据错误!!　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　所以请你小退一下再重新登陆!!　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+KICK
+CLOSE
+#elseact
+goto @道士倚天辟地
+
+[@道士倚天辟地]
+#if
+check [258] 1
+CHECKGAMEGOLD > 9999
+#act
+GAMEGOLD - 10000
+CLEARSKILL
+CHANGEJOB Taoist
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 心灵启示 3
+ADDSKILL 困魔咒 3
+ADDSKILL 气功波 3
+ADDSKILL 噬血术 3
+ADDSKILL 群体治疗术 3
+ADDSKILL 召唤神兽 3
+SENDMSG 7 转职成功，现在您是一位道士了！
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　管理员为了避免你在游戏中出现数据错误!!　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　所以请你小退一下再重新登陆!!　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+KICK
+CLOSE
+#elseact
+goto @道士护体神盾
+
+[@道士护体神盾]
+#if
+check [257] 1
+CHECKGAMEGOLD > 9999
+#act
+GAMEGOLD - 10000
+CLEARSKILL
+CHANGEJOB Taoist
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 心灵启示 3
+ADDSKILL 困魔咒 3
+ADDSKILL 气功波 3
+ADDSKILL 噬血术 3
+ADDSKILL 群体治疗术 3
+ADDSKILL 召唤神兽 3
+ADDSKILL 护体神盾 3
+SENDMSG 7 转职成功，现在您是一位道士了，保留了您的护体神盾技能！
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　管理员为了避免你在游戏中出现数据错误!!　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　所以请你小退一下再重新登陆!!　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+KICK
+CLOSE
+#elseact
+goto @道士普通
+
+[@道士普通]
+#if
+CHECKGAMEGOLD > 9999
+#act
+GAMEGOLD - 10000
+CLEARSKILL
+CHANGEJOB Taoist
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 心灵启示 3
+ADDSKILL 困魔咒 3
+ADDSKILL 气功波 3
+ADDSKILL 噬血术 3
+ADDSKILL 群体治疗术 3
+ADDSKILL 召唤神兽 3
+SENDMSG 7 转职成功，现在您是一位道士了！
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　管理员为了避免你在游戏中出现数据错误!!　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　所以请你小退一下再重新登陆!!　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+SENDMSG 5 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+KICK
+CLOSE
+#elseact
+messagebox 对不起，你的元宝不足！
+
+}

@@ -1,0 +1,23 @@
+[@白金检测]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\白金大使名单.txt
+#ACT
+setranklevelname %s\≮白金大使≯\<$STR(S11)>
+changenamecolor 250
+sendmsg 0 尊敬的白金大使【%s】进入游戏，永久享受1.3倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊敬的白金大使【%s】进入游戏，永久享受1.3倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊敬的白金大使【%s】进入游戏，永久享受1.3倍经验，大家膜拜吧！ 31 241
+BREAK
+
+
+#IF
+CHECK [202] 1
+#ACT
+setranklevelname %s\≮白金大使≯\<$STR(S11)>
+changenamecolor 250
+sendmsg 0 尊敬的白金大使【%s】进入游戏，永久享受1.3倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊敬的白金大使【%s】进入游戏，永久享受1.3倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊敬的白金大使【%s】进入游戏，永久享受1.3倍经验，大家膜拜吧！ 31 241
+BREAK
+}

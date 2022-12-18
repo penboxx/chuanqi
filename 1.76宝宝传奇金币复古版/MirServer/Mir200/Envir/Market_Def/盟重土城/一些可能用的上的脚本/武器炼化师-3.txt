@@ -1,0 +1,157 @@
+
+()
+%100
+[@main]
+大家都说练武器难我说不难，运气不能决定一切!我的强化理念是.\
+厚积博发,要想成为一个成功的炼化师，首先要懂得一个好的方法.\
+你帮我找些<COLOR=clRed 炼化火云石>来，我就有方法炼化升级你的武器，<COLOR=clRed 最高+7>.\
+<COLOR=clAqua 不成功武器也不会破碎!>每次炼化,都需要<COLOR=clRed 500元宝>+<COLOR=clRed 炼化火云石>一颗.\
+┏━━━━━━━━━━━━━━━━━━━━━━┓\
+┃ <升级武器攻击/@升级z> ┃ <升级武器道术/@升级d> ┃<升级武器魔法/@升级f>┃\
+┗━━━━━━━━━━━━━━━━━━━━━━┛\
+
+[@升级z]
+#IF
+CHECKUSEITEM 1 
+#ACT
+goto @升级za
+#ELSEACT 
+messagebox [失败]:你当前手上没有任何武器。 
+[@升级za]
+#IF
+CheckItemAddValue 1 0 < 7
+CheckItemAddValue 1 1 < 7
+CheckItemAddValue 1 2 < 7
+#ACT
+goto @升级z1
+#ELSEACT 
+messagebox 您的武器已经是+7的了，不可以再练了！
+[@升级z1]
+#IF
+checkitem 炼化火云石 1
+#ACT
+goto @升级z2
+#ELSEACT 
+messagebox 您的包里没有<炼化火云石>，缺少炼化材料！
+[@升级z2]
+#IF
+CheckGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+take 炼化火云石 1
+goto @炼化z
+#ELSEACT 
+messagebox 您炼化武器所需的<元宝>不够,请凑足500元宝再来！
+[@炼化z]
+#IF
+random 3
+#ACT
+UPGRADEITEMEX 1 0 0 1 0
+SENDMSG 0 恭喜玩家【%s】在炼化师把武器提升了1点攻击！
+SENDMSG 5 恭喜您！升级成功，武器攻击增加+1点！
+goto @gongji
+break
+close
+#IF
+random 1
+#ACT
+SENDMSG 7 不好意思，炼化失败！祝你下次好运！
+break
+close
+[@升级f]
+#IF
+CHECKUSEITEM 1 
+#ACT
+goto @升级fa
+#ELSEACT 
+messagebox [失败]:你当前手上没有任何武器。 
+[@升级fa]
+#IF
+CheckItemAddValue 1 0 < 7
+CheckItemAddValue 1 1 < 7
+CheckItemAddValue 1 2 < 7
+#ACT
+goto @升级f1
+#ELSEACT 
+messagebox 您的武器已经是+7的了，不可以再练了！
+[@升级f1]
+#IF
+checkitem 炼化火云石 1
+#ACT
+goto @升级f2
+#ELSEACT 
+messagebox 您的包里没有<炼化火云石>，缺少炼化材料！
+[@升级f2]
+#IF
+CheckGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+take 炼化火云石 1
+goto @炼化f
+#ELSEACT 
+messagebox 您炼化武器所需的<元宝>不够,请凑足500元宝再来！
+[@炼化f]
+#IF
+random 3
+#ACT
+UPGRADEITEMEX 1 1 0 1 0
+SENDMSG 0 恭喜玩家【%s】在炼化师把武器提升级了1点魔法！
+SENDMSG 5 恭喜您！升级成功，武器魔法增加+1点！
+goto @mofa
+break
+close
+#IF
+random 1
+#ACT
+SENDMSG 7 不好意思，炼化失败！祝你下次好运！
+break
+close
+[@升级d]
+#IF
+CHECKUSEITEM 1 
+#ACT
+goto @升级da
+#ELSEACT 
+messagebox [失败]:你当前手上没有任何武器。 
+[@升级da]
+#IF
+CheckItemAddValue 1 0 < 7
+CheckItemAddValue 1 1 < 7
+CheckItemAddValue 1 2 < 7
+#ACT
+goto @升级d1
+#ELSEACT 
+messagebox 您的武器已经是+7的了，不可以再练了！
+[@升级d1]
+#IF
+checkitem 炼化火云石 1
+#ACT
+goto @升级d2
+#ELSEACT 
+messagebox 您的包里没有<炼化火云石>，缺少炼化材料！
+[@升级d2]
+#IF
+CheckGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+take 炼化火云石 1
+goto @炼化d
+#ELSEACT 
+messagebox 您炼化武器所需的<元宝>不够,请凑足500元宝再来！
+[@炼化d]
+#IF
+random 3
+#ACT
+UPGRADEITEMEX 1 2 0 1 0
+SENDMSG 0 恭喜玩家【%s】在炼化师把武器提升级了1点道术！
+SENDMSG 5 恭喜您！升级成功，武器道术增加+1点！
+goto @daoshu
+break
+close
+#IF
+random 1
+#ACT
+SENDMSG 7 不好意思，炼化失败！祝你下次好运！
+break
+close
+

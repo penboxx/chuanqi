@@ -1,0 +1,174 @@
+[@main]
+我曾经也是一位辉煌玛法大陆的英雄，拥有稀释宝物<COLOR=clRed "残碎虚空">\
+<COLOR=clFuchsia "残碎虚空"一共为10页>，后来由于玛法大陆被大量怪物侵占...\
+10页"残碎书页"被抢走，你能夺回<COLOR=clLime 残碎书页>，我将给你丰厚经验！\
+如果你有<COLOR=clRed "残碎虚空">，我将给超大量的经验！\ \
+
+
+<我有残碎书页/@wycssy>　　　<我有残碎虚空/@wycsxk>\ \
+<合成残碎虚空/@hccsxk>　　　<如何获得残碎书页？/@rhhdcssy>
+
+[@rhhdcssy]
+全服各大BOSS以及中型怪物都可以爆出1号至10号<COLOR=clRed "残碎书页">\ \
+<返 回/@main>\
+<离 开/@exit>
+
+[@wycsxk]
+<COLOR=clFuchsia "残碎虚空"可以换5000万经验哦！>\ \
+<我有残碎虚空/@huancshk>\ \
+<返 回/@main>
+
+[@huancshk]
+#IF
+checkitem 残碎虚空 1
+#ACT
+take 残碎虚空 1
+CHANGEEXP + 50000000
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有残碎虚空！
+
+[@hccsxk]
+<COLOR=clFuchsia 合成"残碎虚空"，必须要有1号至10号"残碎书页"。>\ \
+<我要合成残碎虚空/@qdhccsxk>\ \
+<返 回/@main>
+
+[@qdhccsxk]
+#IF
+checkitem 残碎书页1号 1
+checkitem 残碎书页2号 1
+checkitem 残碎书页3号 1
+checkitem 残碎书页4号 1
+checkitem 残碎书页5号 1
+checkitem 残碎书页6号 1
+checkitem 残碎书页7号 1
+checkitem 残碎书页8号 1
+checkitem 残碎书页9号 1
+checkitem 残碎书页10号 1
+#ACT
+take 残碎书页1号 1
+take 残碎书页2号 1
+take 残碎书页3号 1
+take 残碎书页4号 1
+take 残碎书页5号 1
+take 残碎书页6号 1
+take 残碎书页7号 1
+take 残碎书页8号 1
+take 残碎书页9号 1
+take 残碎书页10号 1
+give 残碎虚空 1
+#SAY
+已经为你合成"残碎虚空"\ \
+<返 回/@main>
+#ELSESAY
+你没有1号至10号"残碎书页"，无法合成"残碎虚空"\
+<返 回/@main>
+
+[@wycssy]
+<COLOR=clFuchsia 不同的残碎书页可以获得不同的经验！>\ \
+<我有残碎书页1号/@csyh>　　<我有残碎书页6号/@cslh>\
+<我有残碎书页2号/@cseh>　　<我有残碎书页7号/@csqh>\
+<我有残碎书页3号/@cssh>　　<我有残碎书页8号/@csbh>\
+<我有残碎书页4号/@cssih>　　<我有残碎书页9号/@csjh>\
+<我有残碎书页5号/@cswh>　　<我有残碎书页10号/@csshih>\ \
+<返 回/@main>
+
+[@csshih]
+#IF
+checkitem 残碎书页10号 1
+#ACT
+take 残碎书页10号 1
+CHANGEEXP + 5500000
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有残碎书页10号！
+
+[@csjh]
+#IF
+checkitem 残碎书页9号 1
+#ACT
+take 残碎书页9号 1
+CHANGEEXP + 5000000
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有残碎书页9号！
+
+[@csbh]
+#IF
+checkitem 残碎书页8号 1
+#ACT
+take 残碎书页8号 1
+CHANGEEXP + 4500000
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有残碎书页8号！
+
+[@csqh]
+#IF
+checkitem 残碎书页7号 1
+#ACT
+take 残碎书页7号 1
+CHANGEEXP + 4000000
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有残碎书页7号！
+
+[@cslh]
+#IF
+checkitem 残碎书页6号 1
+#ACT
+take 残碎书页6号 1
+CHANGEEXP + 3500000
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有残碎书页6号！
+
+[@cswh]
+#IF
+checkitem 残碎书页5号 1
+#ACT
+take 残碎书页5号 1
+CHANGEEXP + 3000000
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有残碎书页5号！
+
+[@cssih]
+#IF
+checkitem 残碎书页4号 1
+#ACT
+take 残碎书页4号 1
+CHANGEEXP + 2500000
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有残碎书页4号！
+
+[@cssh]
+#IF
+checkitem 残碎书页3号 1
+#ACT
+take 残碎书页3号 1
+CHANGEEXP + 2000000
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有残碎书页3号！
+
+[@cseh]
+#IF
+checkitem 残碎书页2号 1
+#ACT
+take 残碎书页2号 1
+CHANGEEXP + 1500000
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有残碎书页2号！
+
+[@csyh]
+#IF
+checkitem 残碎书页1号 1
+#ACT
+take 残碎书页1号 1
+CHANGEEXP + 1000000
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有残碎书页1号！

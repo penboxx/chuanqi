@@ -1,0 +1,29 @@
+[@main]
+<COLOR=clAqua 如果您参与过传奇测试阶段>\
+<COLOR=clRED 并且在测试阶段等级达到49级.50级！>\
+<COLOR=clLime 正式开区后在我这领取49级5000元宝,50级10000元宝的奖励！>\
+<COLOR=clFuchsia 例如：测试阶段您申请的游戏帐号为:1234567>\
+<COLOR=clRED 并且在测试阶段您的等级到达了49级或者50级>\
+<COLOR=clLime 那么正式开区后，您只要是申请游戏帐号:1234567>\
+<COLOR=clLime 请用测试阶段帐号一样,即可在我这里领取相应奖励！>\
+<COLOR=clSkyBlue 有问题请联系系客户QQ:332217226>\
+                     <领取测试奖励/@领取测试奖励>\
+
+[@领取测试奖励]
+#IF
+equal G1 0
+CHECKACCOUNTLIST ..\QuestDiary\数据文件\测试49帐号.txt
+#ACT
+DELACCOUNTLIST ..\QuestDiary\数据文件\测试49帐号.txt
+GAMEGOLD + 5000
+BREAK
+#IF
+equal G1 0
+CHECKACCOUNTLIST ..\QuestDiary\数据文件\测试50帐号.txt
+#ACT
+DELACCOUNTLIST ..\QuestDiary\数据文件\测试50帐号.txt
+GAMEGOLD + 10000
+;GIVE 金钻服务 1
+BREAK
+#ELSESAY
+对不起！领取奖励条件不足！\

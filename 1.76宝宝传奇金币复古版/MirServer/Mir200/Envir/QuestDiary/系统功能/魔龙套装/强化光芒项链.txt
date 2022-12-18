@@ -1,0 +1,60 @@
+[@开始强化光芒项链]
+{
+强化光芒项链所需物品：\
+金刚石:388颗\
+光芒项链三件\
+光芒绒丝、魔龙颚骨、魔龙骨、魔龙牙各两颗\
+<强化后属性/@1> 防御0-1 准确+3 道术4-8 需要道术力:28点\
+<进行强化/@进行强化光芒项链>\
+<返回/@升级魔龙戒指>\
+<退出/@EXIT>\
+
+[@进行强化光芒项链]
+#IF
+CHECKGAMEDIAMOND ? 388
+CHECKITEM 光芒项链 3
+CHECKITEM 魔龙颚骨 2
+CHECKITEM 光芒绒丝 2
+CHECKITEM 魔龙骨 2
+CHECKITEM 魔龙牙 2
+#ACT
+MOVR d7 2
+DELAYGOTO 1 @光芒项链开始强化
+#ELSESAY
+对不起：<$USERNAME>强化光芒项链所需物品：\
+金刚石:388颗\
+光芒项链三件\
+光芒绒丝、魔龙颚骨、魔龙骨、魔龙牙各两颗\
+<返回/@升级魔龙戒指>\
+<退出/@EXIT>\
+
+[@光芒项链开始强化]
+#IF
+CHECKGAMEDIAMOND ? 388
+CHECKITEM 光芒项链 3
+CHECKITEM 魔龙颚骨 2
+CHECKITEM 光芒绒丝 2
+CHECKITEM 魔龙骨 2
+CHECKITEM 魔龙牙 2
+EQUAL d7 1
+#ACT
+MOV d7 0
+GAMEDIAMOND - 388
+TAKE 光芒绒丝 2
+TAKE 光芒项链 3
+TAKE 魔龙牙 2
+TAKE 魔龙骨 2
+TAKE 魔龙颚骨 2
+GIVE 强化光芒项链 1
+SENDMSG 0 恭喜:<$USERNAME>升级强化光芒项链成功！
+CLOSE
+#ELSEACT
+MOV d7 0
+GAMEDIAMOND - 388
+TAKE 魔龙颚骨 2
+TAKE 光芒绒丝 2
+TAKE 魔龙骨  2
+TAKE 魔龙牙 2
+messagebox  可惜了：\<$USERNAME>你合成失败，魔龙材料和金刚石在合成过程中被熔化！
+CLOSE
+}

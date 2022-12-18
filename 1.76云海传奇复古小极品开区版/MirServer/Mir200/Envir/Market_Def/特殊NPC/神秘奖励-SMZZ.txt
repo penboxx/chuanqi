@@ -1,0 +1,22 @@
+[@MAIN]
+19:40-20:00，地图内只有一人的情况下，即可领取<COLOR=clRed 神秘奖励>！\
+<COLOR=clLime 神秘奖励为：3000元宝+200万经验>\ \
+<领取神秘奖励/@神秘奖励>\
+
+[@神秘奖励]
+#IF
+hour 19 19
+min 40 59
+CheckMapHumanCount  SMZZ  < 2
+#ACT
+GAMEGOLD + 3000
+CHANGEEXP + 2000000
+MAP 0159
+SENDMSG 1 <$USERNAME>在神秘之战活动中胜者为王，领取了神秘奖励。
+SENDMSG 1 <$USERNAME>在神秘之战活动中胜者为王，领取了神秘奖励。
+SENDMSG 1 <$USERNAME>在神秘之战活动中胜者为王，领取了神秘奖励。
+SENDMSG 1 <$USERNAME>在神秘之战活动中胜者为王，领取了神秘奖励。
+SENDMSG 1 <$USERNAME>在神秘之战活动中胜者为王，领取了神秘奖励。
+#elseact
+messageboX 19:40-20:00，并且地图内只有一人的情况下才可领取奖励！
+BREAK

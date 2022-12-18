@@ -1,0 +1,247 @@
+[@传送员]
+{
+╔┄╗╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗╔┄╗\
+┆终┆┆<比奇大城/@比奇大城>    <银杏山谷/@银杏山谷>   <苍月海岛/@苍月小岛>   <白日天门/@白日天门>┆┆精┆\
+┆极┆┆<盟重土城/@盟重土城>    <封魔神谷/@封魔神谷>   <毒蛇山谷/@毒蛇山谷>   <沙城区域/@沙城区域>┆┆锐┆\
+┆图┆╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╣┆数┆\
+┆进┆┆<矿区洞口/@矿区洞口>    <蜈蚣洞口/@蜈蚣洞口>   <沃玛洞口/@沃玛洞口>   <石墓洞口/@石墓洞口>┆┆据┆\
+┆★┆┆<祖玛洞口/@祖玛洞口>    <牛魔洞口/@牛魔洞口>   <尸魔洞口/@尸魔洞口>   <骨魔洞口/@骨魔洞口>┆┆★┆\
+┆30┆┆<赤月洞口/@赤月洞口>    <幻境洞口/@神秘幻境>   <封魔洞口/@封魔洞口>   <地狱之城/@地狱之城>┆┆宝┆\
+┆万┆┆<　华山　/@华山山山>    <命运之殿/@命运之殿>   <天涯阁　/@天涯阁阁>   <终极地宫/@终极地宫>┆┆宝┆\
+╚┄╝╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝╚┄╝ \  \
+
+
+[@沙城区域]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove 3 706 407
+break
+
+[@终极地宫]
+#IF
+checkgold 300000
+#act
+take 金币 300000
+mapmove wybg
+SENDMSG 0 玩家[<$USERNAME>]进入地宫，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+#ELSESAY
+你想偷度？门都没有\ \ \ \ \
+　　　　　　　　　　　　　　　　　　　　　
+
+[@命运之殿]
+#if
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove myzd 118 12
+SENDMSG 0 玩家[<$USERNAME>]进入命运之殿，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+#elsesay
+你没有30w金币来支付我们的服务费用!\
+
+
+[@天涯阁阁]
+#if
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove tyg
+SENDMSG 0 玩家[<$USERNAME>]进入天涯阁，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+#elsesay
+你没有30w金币来支付我们的服务费用!\
+
+[@华山山山]
+#if
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove hs1
+SENDMSG 0 玩家[<$USERNAME>]进入华山，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+#elsesay
+你没有30w金币来支付我们的服务费用!\
+
+
+
+
+[@地狱之城]
+#if
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove dyzc
+SENDMSG 0 玩家[<$USERNAME>]进入地狱之城，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+#elsesay
+你没有30w金币来支付我们的服务费用!\
+
+
+
+[@神秘幻境]
+#if
+;checkgold 100000
+#ACT
+;take 金币 100000
+mapmove H001
+#elsesay
+你没有10w金币来支付我们的服务费用!\
+
+
+                                             
+<神秘幻境/@进入>\ \
+
+[@进入]
+#IF
+checkgold 100000
+#act
+take 金币 100000
+mapmove H001
+SENDMSG 0 玩家[<$USERNAME>]进入神秘幻境！！！ 254 200
+#ELSESAY
+你想偷度？门都没有\ \ \ \ \
+　　　　　　　　　　　　　　　　　　　　　<返回/@main>
+
+[@比奇大城]
+#if
+#ACT
+mapmove 0 333 268
+break
+
+[@银杏山谷]
+#if
+#ACT
+mapmove 0 650 624
+break
+
+[@比奇村庄]
+#if
+#ACT
+mapmove 0 290 615
+break
+
+[@毒蛇山谷]
+#if
+#ACT
+mapmove 2 503 483
+break
+
+[@盟重土城]
+#if
+#ACT
+mapmove 3 333 333
+break
+
+[@白日天门]
+#if
+#ACT
+mapmove 11 177 324
+break
+
+[@封魔神谷]
+#if
+#ACT
+mapmove 4 241 203
+break
+
+[@苍月小岛]
+#if
+#ACT
+mapmove 5 140 338
+break
+
+[@矿区洞口]
+#IF
+#ACT
+mapmove 0 659 218
+break
+
+[@蜈蚣洞口]
+#IF
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 3 142 92
+break
+#ELSESAY
+需要1000金币用来支付我们的服务费用!\
+
+[@沃玛洞口]
+#IF
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove D021 71 69
+break
+#ELSESAY
+需要1000金币用来支付我们的服务费用!\
+
+[@石墓洞口]
+#IF
+checkgold 1000
+#act
+take 金币 1000
+mapmove D710 27 20
+#ELSESAY
+你没有1000金币用来支付我们的服务费用!\
+
+[@赤月洞口]
+#IF
+checkgold 1000
+#act
+take 金币 1000
+mapmove 12 89 13
+#ELSESAY
+你没有3000金币用来支付我们的服务费用!\
+
+[@祖玛洞口]
+#IF
+checkgold 1000
+#act
+take 金币 1000
+mapmove 0157 17 17
+#ELSESAY
+你没有1000金币用来支付我们的服务费用!\
+
+[@牛魔洞口]
+#IF
+checkgold 1000
+#act
+take 金币 1000
+mapmove 5 658 463
+#ELSESAY
+你没有1000金币用来支付我们的服务费用!\
+
+[@尸魔洞口]
+#IF 
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 5 522 615
+break 
+#ELSESAY 
+你没有1000金币用来支付我们的服务费用!\
+
+[@骨魔洞口]
+#IF 
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 5 545 131
+break 
+#ELSESAY 
+你没有1000金币用来支付我们的服务费用!\
+
+[@封魔洞口]
+#IF 
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 4 60 71
+break 
+#ELSESAY 
+你没有1000金币用来支付我们的服务费用!\
+
+[@沙巴克]
+#if
+#act
+mapmove 3 706 407
+}

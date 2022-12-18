@@ -1,0 +1,152 @@
+[@买东西了]
+{
+尊敬的会员，我可以为你提供以下物品在线购买！\.\
+ <回城卷/@回城卷>   <逃脱卷/@逃脱卷>    <随机卷/@随机卷> 　 <行会回城/@行会回城>\ \
+ <护身符/@护身符>   <黄色药粉/@黄色药粉>  <灰色药粉/@灰色药粉>   <护身符捆/@护身符捆>\ \
+ <超级金创药/@超级金创药>   <超级魔法药/@超级魔法药>   <300元宝购买1高级疗伤药[捆]/@1高级疗伤药>\ \
+ <返回首页/@加入会员> 　\
+
+[@行会回城]
+#IF
+checkgold 100
+#ACT
+take 金币 100
+give 行会回城卷 1
+break
+goto @买东西了
+#ELSEACT
+MESSAGEBOX 你没有100金币用来支付我们的服务费用!
+goto @买东西了
+break
+
+[@护身符捆]
+#IF
+checkgold 7000
+#ACT
+take 金币 7000
+give 打捆护身符 1
+break
+goto @买东西了
+#ELSEACT
+MESSAGEBOX 你没有7000金币用来支付我们的服务费用!
+goto @买东西了
+break
+
+[@灰色药粉]
+#IF
+checkgold 4500
+#ACT
+take 金币 4500
+give 灰色药粉(大量) 1
+break
+goto @买东西了
+#ELSEACT
+MESSAGEBOX 你没有4500金币用来支付我们的服务费用!
+goto @买东西了
+break
+
+[@黄色药粉]
+#IF
+checkgold 4500
+#ACT
+take 金币 4500
+give 黄色药粉(大量) 1
+break
+goto @买东西了
+#ELSEACT
+MESSAGEBOX 你没有4500金币用来支付我们的服务费用!
+goto @买东西了
+break
+
+[@随机卷]
+#IF
+checkgold 100
+#ACT
+take 金币 100
+give 随机传送卷 1
+break
+goto @买东西了
+#ELSEACT
+MESSAGEBOX 你没有100金币用来支付我们的服务费用!
+goto @买东西了
+break
+
+[@逃脱卷]
+#IF
+checkgold 100
+#ACT
+take 金币 100
+give 地牢逃脱卷 1
+break
+goto @买东西了
+#ELSEACT
+MESSAGEBOX 你没有100金币用来支付我们的服务费用!
+goto @买东西了
+break
+
+[@护身符]
+#IF
+checkgold 500
+#ACT
+take 金币 500
+give 护身符(大) 1
+break
+goto @买东西了
+#ELSEACT
+MESSAGEBOX 你没有500金币用来支付我们的服务费用!
+goto @买东西了
+break
+
+[@回城卷]
+#IF
+checkgold 500
+#ACT
+take 金币 500
+give 回城卷 1
+break
+goto @买东西了
+#ELSEACT
+MESSAGEBOX 你没有500金币用来支付我们的服务费用!
+goto @买东西了
+break
+
+[@1高级疗伤药]
+#IF
+CHECKGAMEGOLD > 199
+#ACT
+GAMEGOLD - 200
+give 高级疗伤药[捆] 1
+break
+goto @买东西了
+#ELSEACT
+MESSAGEBOX 你没有300元宝用来支付我们的服务费用!
+goto @买东西了
+break
+
+
+[@超级魔法药]
+#IF
+checkgold 3500
+#ACT
+take 金币 3500
+give 超级魔法药 1
+break
+goto @买东西了
+#ELSEACT
+MESSAGEBOX 你没有3500金币用来支付我们的服务费用!
+goto @买东西了
+break
+
+[@超级金创药]
+#IF
+checkgold 3500
+#ACT
+take 金币 3500
+give 超级金创药 1
+break
+goto @买东西了
+#ELSEACT
+MESSAGEBOX 你没有3500金币用来支付我们的服务费用!
+goto @买东西了
+break
+}

@@ -1,0 +1,50 @@
+[@开始合烈焰魔靴]
+{
+合成烈焰魔靴所需物品：\
+金刚石:38\
+藏宝图113、藏宝图114、藏宝图115、藏宝图116\
+进行<锻造/@进行合成烈焰魔靴>\ \
+<返回查看配方/@锻造魔龙>\
+<退出/@EXIT>\
+
+[@进行合成烈焰魔靴]
+#IF
+CHECKGAMEDIAMOND ? 38
+CHECKITEM 藏宝图113 1
+CHECKITEM 藏宝图114 1
+CHECKITEM 藏宝图115 1
+CHECKITEM 藏宝图116 1
+#ACT
+MOVR d7 2
+DELAYGOTO 1 @烈焰魔靴开始合成
+#ELSESAY
+很可惜，您没有锻造所需的足够原料。\
+
+[@烈焰魔靴开始合成]
+#IF
+CHECKGAMEDIAMOND ? 38
+CHECKITEM 藏宝图113 1
+CHECKITEM 藏宝图114 1
+CHECKITEM 藏宝图115 1
+CHECKITEM 藏宝图116 1
+EQUAL d7 1
+#ACT
+MOV d7 0
+GAMEDIAMOND - 38
+TAKE 藏宝图113 1
+TAKE 藏宝图114 1
+TAKE 藏宝图115 1
+TAKE 藏宝图116 1
+GIVE 烈焰魔靴 1
+SENDMSG 0 恭喜:<$USERNAME>升级烈焰魔靴成功！
+CLOSE
+#ELSEACT
+MOV d7 0
+GAMEDIAMOND - 38
+TAKE 藏宝图113 1
+TAKE 藏宝图114 1
+TAKE 藏宝图115 1
+TAKE 藏宝图116 1
+messagebox  可惜了：\<$USERNAME>你合成失败，藏宝图和金刚石在合成过程中被熔化！
+CLOSE
+}

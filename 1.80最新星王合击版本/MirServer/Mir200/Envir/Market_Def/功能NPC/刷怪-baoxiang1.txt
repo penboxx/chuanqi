@@ -1,0 +1,13 @@
+[@MAIN]
+#IF
+checkgamegold > 999
+#ACT
+gamegold - 1000
+Param1 baoxiang1
+Param2 10
+Param3 10
+MonGen 半兽人0 10 5
+BREAK
+#ELSEACT
+SENDMSG 7 刷怪一次需要1000元宝。你没有元宝。
+BREAK

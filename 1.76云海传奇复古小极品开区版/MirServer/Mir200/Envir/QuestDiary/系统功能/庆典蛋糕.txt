@@ -1,0 +1,92 @@
+[@«Ïµ‰µ∞∏‚]
+{
+#IF
+  small M3 7
+#Act
+  INC M3 1
+  Gmexecute showeffect 78
+  Gmexecute showeffect 79
+  Gmexecute showeffect 80
+  SENDMSG 0 [%s]‘⁄:%m%x:%y¥¶∑≈«Ïµ‰µ∞∏‚°¢¥Ûº“øÏ»•–¿…Õ≈∂°£
+  DelayCall 1000 @«Ïµ‰µ∞∏‚1
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+
+[@«Ïµ‰µ∞∏‚1]
+#IF
+  small M3 7
+#Act
+  INC M3 1
+  Gmexecute showeffect 79
+  Gmexecute showeffect 80
+  Gmexecute showeffect 81
+  DelayCall 2000 @«Ïµ‰µ∞∏‚2
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+
+[@«Ïµ‰µ∞∏‚2]
+#IF
+  small M3 7
+#Act
+  INC M3 1
+  Gmexecute showeffect 80
+  Gmexecute showeffect 81
+  Gmexecute showeffect 82
+  DelayCall 2000 @«Ïµ‰µ∞∏‚3
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+
+[@«Ïµ‰µ∞∏‚3]
+#IF
+  small M3 7
+#Act
+  INC M3 1
+  Gmexecute showeffect 81
+  Gmexecute showeffect 82
+  Gmexecute showeffect 83
+  DelayCall 2000 @«Ïµ‰µ∞∏‚4
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+
+[@«Ïµ‰µ∞∏‚4]
+#IF
+  small M3 7
+#Act
+  INC M3 1
+  Gmexecute showeffect 82
+  Gmexecute showeffect 83
+  Gmexecute showeffect 84
+  DelayCall 2000 @«Ïµ‰µ∞∏‚5
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+
+[@«Ïµ‰µ∞∏‚5]
+#IF
+  small M3 7
+#Act
+  INC M3 1
+  Gmexecute showeffect 78
+  Gmexecute showeffect 83
+  Gmexecute showeffect 84
+  DelayCall 2000 @«Ïµ‰µ∞∏‚6
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+
+[@«Ïµ‰µ∞∏‚6]
+#IF
+  small M3 7
+#Act
+  INC M3 1
+  Gmexecute showeffect 78
+  Gmexecute showeffect 79
+  Gmexecute showeffect 84
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+}

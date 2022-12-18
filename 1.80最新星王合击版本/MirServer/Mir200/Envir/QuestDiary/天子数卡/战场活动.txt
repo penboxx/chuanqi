@@ -1,0 +1,22 @@
+[@战场排名]
+{
+#IF
+EQUAL A85 <$USERNAME>
+#ACT
+MOV G85 <$HUMAN(杀人)>
+SENDMSG 6 目前你已经击杀[<$HUMAN(杀人)>]人,顺利成为午夜屠夫~继续保持哦!
+SENDMSG 0 目前的午夜屠夫为《<$STR(A85)>》已经击杀[<$STR(G85)>]人! 151 249 5
+SENDMSG 0 目前的午夜屠夫为《<$STR(A85)>》已经击杀[<$STR(G85)>]人! 151 249 5
+SENDMSG 0 目前的午夜屠夫为《<$STR(A85)>》已经击杀[<$STR(G85)>]人! 151 249 5
+BREAK
+#IF
+SMALL G85 <$HUMAN(杀人)>
+#ACT
+MOV G85 <$HUMAN(杀人)>
+MOV A85 <$USERNAME>
+SENDMSG 7 目前你已经击杀[<$HUMAN(杀人)>]人,顺利成为午夜屠夫~继续保持哦!
+#ELSEACT
+SENDMSG 7 目前你已经击杀[<$HUMAN(杀人)>].努力吧.获得午夜屠夫可获得20000元宝奖励哦!
+SENDMSG 5 目前的午夜屠夫为《<$STR(A85)>》已经击杀[<$STR(G85)>]人.赶快努力超过他吧!
+SENDMSG 5 目前的午夜屠夫为《<$STR(A85)>》已经击杀[<$STR(G85)>]人.赶快努力超过他吧!
+}

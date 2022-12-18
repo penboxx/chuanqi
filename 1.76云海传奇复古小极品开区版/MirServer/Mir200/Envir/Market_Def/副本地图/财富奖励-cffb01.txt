@@ -1,0 +1,28 @@
+()
+%100
+[@main]
+<COLOR=clYellow ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+<COLOR=clAqua 如果你已经获得了《财富宝石》你可以获得国王的赏赐>\
+<COLOR=clYellow ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+<COLOR=clAqua ♀.奖励10000元宝>\
+<COLOR=clLime ♀.如果你人品特别差，也有可能得不到任何物品> \
+<COLOR=clRED ♀.大量的财富奖励你做好准备了吗！ >\
+<COLOR=clYellow ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+\ \
+<我要获取奖励/@caifu01>                         <只是看看/@exit> 
+[@caifu01]
+#if
+checkitem 财富宝石 1
+#act
+take 财富宝石 1
+GAMEGOLD + 10000
+ReadRandomLine .\QuestDiary\副本奖励\财富奖励.txt S13
+give <$STR(S13)> 1
+MessageBox 恭喜您获得：<$STR(S13)>一个！！！！
+sendmsg 0 恭喜玩家:<$USERNAME>完成了【财】【富】【副】【本】活动获得:10000元宝+《<$STR(S13)>》奖励！ 251 0
+SENDMSG 0 恭喜玩家:<$USERNAME>完成了【财】【富】【副】【本】活动获得:10000元宝+《<$STR(S13)>》奖励！ 253 0 30
+#ELSEACT
+MessageBox  你没有集齐物品别来欺骗我了！
+break
+
+;----此b--b 来 自  -W-w-w-g-m-0-0-5 -c-o-m - -

@@ -1,0 +1,177 @@
+[@MAIN]
+#IF
+EQUAL G80 1
+#SAY
+<COLOR=CLAQUA 〓〓〓〓〓〓〓〓〓〓〓> <COLOR=CLFUCHSIA 开区冲级奖励> <COLOR=CLAQUA 〓〓〓〓〓〓〓〓〓〓〓>\ \
+<COLOR=CLLIME 40级> 随机<领取奖励/@领取奖励1>物品: <COLOR=CLRED 道具自己添加一下>       剩余名额:<$STR(G74)>\
+<COLOR=CLLIME 42级> 随机<领取奖励/@领取奖励2>物品: <COLOR=CLRED 道具自己添加一下>       剩余名额:<$STR(G75)>\
+<COLOR=CLLIME 44级> 随机<领取奖励/@领取奖励3>物品: <COLOR=CLRED 道具自己添加一下>       剩余名额:<$STR(G76)>\
+<COLOR=CLLIME 46级> 随机<领取奖励/@领取奖励4>物品: <COLOR=CLRED 道具自己添加一下>       剩余名额:<$STR(G77)>\
+<COLOR=CLLIME 48级> 随机<领取奖励/@领取奖励5>物品: <COLOR=CLRED 道具自己添加一下>       剩余名额:<$STR(G78)>\
+<COLOR=CLLIME 50级> 随机<领取奖励/@领取奖励6>物品: <COLOR=CLRED 道具自己添加一下>       剩余名额:<$STR(G79)>\
+#ELSESAY
+活动尚未开启请留意官方公告！\
+
+
+[@领取奖励6]
+#IF
+CHECKLEVELEX < 50
+#SAY
+对不起！您的等级还没达到领取奖励的要求！\ \
+<返回/@MAIN>
+#ACT
+BREAK
+#IF
+Check [206] 1
+#SAY
+对不起！您已经领取过了50级冲级奖励！\ \
+<返回/@MAIN>
+#ACT
+BREAK
+#IF
+LARGE G79 0
+#ACT
+SET [206] 1
+DEC G79 1
+READRANDOMSTR .\QuestDiary\抽取数据\冲级奖励\50级.txt S7
+GIVE <$STR(S7)> 1
+SENDMSG 0 恭喜玩家[%s]成功领取50级冲级奖励：<$STR(S7)>
+#ELSESAY
+对不起！本服务器50级奖励名额已满！\ \
+<返回/@MAIN>
+
+[@领取奖励5]
+#IF
+CHECKLEVELEX < 48
+#SAY
+对不起！您的等级还没达到领取奖励的要求！\ \
+<返回/@MAIN>
+#ACT
+BREAK
+#IF
+Check [205] 1
+#SAY
+对不起！您已经领取过了48级冲级奖励！\ \
+<返回/@MAIN>
+#ACT
+BREAK
+#IF
+LARGE G78 0
+#ACT
+SET [205] 1
+DEC G78 1
+READRANDOMSTR .\QuestDiary\抽取数据\冲级奖励\48级.txt S7
+GIVE <$STR(S7)> 1
+SENDMSG 0 恭喜玩家[%s]成功领取48级冲级奖励：<$STR(S7)>
+#ELSESAY
+对不起！本服务器48级奖励名额已满！\ \
+<返回/@MAIN>
+
+[@领取奖励4]
+#IF
+CHECKLEVELEX < 46
+#SAY
+对不起！您的等级还没达到领取奖励的要求！\ \
+<返回/@MAIN>
+#ACT
+BREAK
+#IF
+Check [204] 1
+#SAY
+对不起！您已经领取过了46级冲级奖励！\ \
+<返回/@MAIN>
+#ACT
+BREAK
+#IF
+LARGE G77 0
+#ACT
+SET [204] 1
+DEC G77 1
+READRANDOMSTR .\QuestDiary\抽取数据\冲级奖励\46级.txt S7
+GIVE <$STR(S7)> 1
+SENDMSG 0 恭喜玩家[%s]成功领取46级冲级奖励：<$STR(S7)>
+#ELSESAY
+对不起！本服务器46级奖励名额已满！\ \
+<返回/@MAIN>
+
+[@领取奖励3]
+#IF
+CHECKLEVELEX < 44
+#SAY
+对不起！您的等级还没达到领取奖励的要求！\ \
+<返回/@MAIN>
+#ACT
+BREAK
+#IF
+Check [203] 1
+#SAY
+对不起！您已经领取过了44级冲级奖励！\ \
+<返回/@MAIN>
+#ACT
+BREAK
+#IF
+LARGE G76 0
+#ACT
+SET [203] 1
+DEC G76 1
+READRANDOMSTR .\QuestDiary\抽取数据\冲级奖励\44级.txt S7
+GIVE <$STR(S7)> 1
+SENDMSG 0 恭喜玩家[%s]成功领取44级冲级奖励：<$STR(S7)>
+#ELSESAY
+对不起！本服务器44级奖励名额已满！\ \
+<返回/@MAIN>
+
+[@领取奖励2]
+#IF
+CHECKLEVELEX < 42
+#SAY
+对不起！您的等级还没达到领取奖励的要求！\ \
+<返回/@MAIN>
+#ACT
+BREAK
+#IF
+Check [202] 1
+#SAY
+对不起！您已经领取过了42级冲级奖励！\ \
+<返回/@MAIN>
+#ACT
+BREAK
+#IF
+LARGE G75 0
+#ACT
+SET [202] 1
+DEC G75 1
+READRANDOMSTR .\QuestDiary\抽取数据\冲级奖励\42级.txt S7
+GIVE <$STR(S7)> 1
+SENDMSG 0 恭喜玩家[%s]成功领取42级冲级奖励：<$STR(S7)>
+#ELSESAY
+对不起！本服务器42级奖励名额已满！\ \
+<返回/@MAIN>
+
+
+[@领取奖励1]
+#IF
+CHECKLEVELEX < 40
+#SAY
+对不起！您的等级还没达到领取奖励的要求！\ \
+<返回/@MAIN>
+#ACT
+BREAK
+#IF
+Check [201] 1
+#SAY
+对不起！您已经领取过了40级冲级奖励！\ \
+<返回/@MAIN>
+#ACT
+BREAK
+#IF
+LARGE G74 0
+#ACT
+SET [201] 1
+DEC G74 1
+READRANDOMSTR .\QuestDiary\抽取数据\冲级奖励\40级.txt S7
+GIVE <$STR(S7)> 1
+SENDMSG 0 恭喜玩家[%s]成功领取40级冲级奖励：<$STR(S7)>
+#ELSESAY
+对不起！本服务器40级奖励名额已满！\ \
+<返回/@MAIN>

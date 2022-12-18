@@ -1,0 +1,21 @@
+()
+%100
+[@main]
+
+<COLOR=clAqua ═════════════新手二层═════════════>\  \
+<COLOR=clLime        免费进入新手打宝二层        免费进入新手打宝二层> \  \
+<COLOR=clFuchsia              ╔═════════════╗>\
+<COLOR=clFuchsia              ║>         <确定进入/@我要进入>         <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia              ╚═════════════╝>\  \
+
+
+<COLOR=clAqua ═════════════新手二层═════════════>\  \
+
+                         
+[@我要进入]
+#if
+#act
+GIVE 回城卷 1
+mapmove xsdb2 10 12
+SENDMSG 0 ★玩家[%s],进入新手打宝二层
+

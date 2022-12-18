@@ -1,0 +1,458 @@
+[@main]
+<COLOR=clFuchsia ╔══════════════════════════╗>\
+<COLOR=clFuchsia ║>                    『任务地图』      　　　    　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║----------------------------------------------------║>\
+<COLOR=clFuchsia ║>                                                    <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>    <诅咒禁地/@zzjd>    <死亡之谷/@swzg>    <悬赏使者/@xssz>    <面见圣上/@mjss>    <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>                                                    <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚══════════════════════════╝>\
+　                        <关  闭/@exit>\
+
+[@zzjd]
+传说此禁地被玛法人诅咒，汇聚三行五界之邪气，因此没人敢进入...\
+<COLOR=clLime 据说云海教主与手下五大ＢＯＳＳ都携带很多宝藏常在此出没...>\
+<COLOR=clFuchsia 注:此地图极其危险，但是装备爆率比其他地图都要高！>\ \
+勇士，你敢进入寻宝吗？\
+进入需要<COLOR=clRed 诅咒灵符>一张！\ \
+
+<进入诅咒禁地/@jrzzjd>　　<合成诅咒灵符/@hczzlf>　　<如何获得诅咒灵符？/@rhhdzzlf>
+
+
+[@hczzlf]
+#IF
+checkitem 力量神符 1
+checkitem 智慧神符 1
+checkitem 信仰神符 1
+checkitem 权利神符 1
+checkitem 胜利神符 1
+CHECKGAMEGOLD > 999
+#ACT
+take 力量神符 1
+take 智慧神符 1
+take 信仰神符 1
+take 权利神符 1
+take 胜利神符 1
+GAMEGOLD - 1000
+give 诅咒灵符 1
+CHANGEEXP + 20000000
+#SAY
+已经为你合成诅咒灵符，并且获得2000万经验！\ \
+<返 回/@main>
+#ELSESAY
+合成诅咒灵符需要：\
+<COLOR=clLime 力量神符、智慧神符、信仰神符、权利神符、胜利神符和1000元宝>\
+合成的同时可以获得<COLOR=clFuchsia 2000万经验>！\ \
+<返 回/@main>
+
+[@jrzzjd]
+#IF
+checkitem 诅咒灵符 1
+#ACT
+take 诅咒灵符 1
+MAPMOVE zzjd
+SENDMSG 0 勇士%s进入了诅咒禁地，我们一起为他祈福吧！
+GIVE 回城卷 1
+BREAK
+#ELSEACT
+MESSAGEBOX 进入需要诅咒灵符一张。
+
+[@rhhdzzlf]
+BOSS：<COLOR=clRed 幽冥教主、镜像冥王、牛魔王、祖玛教主、虹魔教主、黄泉教主>\
+爆五大神符：<COLOR=clLime 力量神符、智慧神符、信仰神符、权利神符、胜利神符>\
+然后集齐这五大神符，花费1000元宝即可合成<COLOR=clRed 诅咒灵符>\
+合成的同时可以获得<COLOR=clFuchsia 2000万经验>！\ \
+<返 回/@main>\
+<离 开/@exit>
+
+
+[@swzg]
+<COLOR=clLime 地图介绍：>每天晚上19:00地图自动开放，19:00-19:10为进入时间\
+　　　　　19:11地图自动关闭。此地图内刷出BOSS"<COLOR=clRed 死亡神鹰>"！\
+<COLOR=clLime 所爆物品：><COLOR=clFuchsia 死亡之心、死亡之牙、死亡之眼、死亡之水、死亡之丹>\
+　　　　　<COLOR=clFuchsia 死亡之骨>\
+<COLOR=clLime 物品用处：>一件死亡物品兑换一件<COLOR=clRed 40级新衣服>，或者兑换<COLOR=clRed 3000元宝>！\
+　　　　　你也可以集齐六件死亡物品兑换一件<COLOR=clRed 云海衣服>！\ \
+<进入死亡之谷/@jrswzg>　　　　<兑换40级新衣服或元宝/@dhssjyf>　　　　<兑换云海衣服/@dhzzyf>\
+
+[@dhzzyf]
+<COLOR=clFuchsia 请选择需要兑换的云海衣服！>\
+<COLOR=clLime 注意:兑换的时候需要一个死亡灵魂(在云海教主身上爆出)>\ \
+<六件死亡兑换云海长袍/@dhzzcpq>　　<六件死亡兑换云海道袍/@dhzzdpq>\
+<六件死亡兑换云海羽衣/@dhzzyyq>　　<六件死亡兑换云海披风/@dhzzpfq>\
+<六件死亡兑换云海宝甲/@dhzzbjq>　　<六件死亡兑换云海神甲/@dhzzsjq>\ \
+<返 回/@main>
+
+[@dhzzsjq]
+#IF
+checkitem 死亡之心 1
+checkitem 死亡之牙 1
+checkitem 死亡之眼 1
+checkitem 死亡之水 1
+checkitem 死亡之丹 1
+checkitem 死亡之骨 1
+checkitem 死亡灵魂 1
+#ACT
+take 死亡之心 1
+take 死亡之牙 1
+take 死亡之眼 1
+take 死亡之水 1
+take 死亡之丹 1
+take 死亡之骨 1
+take 死亡灵魂 1
+give 云海神甲 1
+#SAY
+请拿好【云海神甲】\ \
+<离 开/@exit>
+#ELSESAY
+你没有六件死亡物品，或者没有一个死亡灵魂，无法兑换云海神甲！\ \
+<离 开/@exit>
+
+[@dhzzbjq]
+#IF
+checkitem 死亡之心 1
+checkitem 死亡之牙 1
+checkitem 死亡之眼 1
+checkitem 死亡之水 1
+checkitem 死亡之丹 1
+checkitem 死亡之骨 1
+checkitem 死亡灵魂 1
+#ACT
+take 死亡之心 1
+take 死亡之牙 1
+take 死亡之眼 1
+take 死亡之水 1
+take 死亡之丹 1
+take 死亡之骨 1
+take 死亡灵魂 1
+give 云海宝甲 1
+#SAY
+请拿好【云海宝甲】\ \
+<离 开/@exit>
+#ELSESAY
+你没有六件死亡物品，或者没有一个死亡灵魂，无法兑换云海宝甲！\ \
+<离 开/@exit>
+
+[@dhzzpfq]
+#IF
+checkitem 死亡之心 1
+checkitem 死亡之牙 1
+checkitem 死亡之眼 1
+checkitem 死亡之水 1
+checkitem 死亡之丹 1
+checkitem 死亡之骨 1
+checkitem 死亡灵魂 1
+#ACT
+take 死亡之心 1
+take 死亡之牙 1
+take 死亡之眼 1
+take 死亡之水 1
+take 死亡之丹 1
+take 死亡之骨 1
+take 死亡灵魂 1
+give 云海披风 1
+#SAY
+请拿好【云海披风】\ \
+<离 开/@exit>
+#ELSESAY
+你没有六件死亡物品，或者没有一个死亡灵魂，无法兑换云海披风！\ \
+<离 开/@exit>
+
+[@dhzzyyq]
+#IF
+checkitem 死亡之心 1
+checkitem 死亡之牙 1
+checkitem 死亡之眼 1
+checkitem 死亡之水 1
+checkitem 死亡之丹 1
+checkitem 死亡之骨 1
+checkitem 死亡灵魂 1
+#ACT
+take 死亡之心 1
+take 死亡之牙 1
+take 死亡之眼 1
+take 死亡之水 1
+take 死亡之丹 1
+take 死亡之骨 1
+take 死亡灵魂 1
+give 云海羽衣 1
+#SAY
+请拿好【云海羽衣】\ \
+<离 开/@exit>
+#ELSESAY
+你没有六件死亡物品，或者没有一个死亡灵魂，无法兑换云海羽衣！\ \
+<离 开/@exit>
+
+[@dhzzdpq]
+#IF
+checkitem 死亡之心 1
+checkitem 死亡之牙 1
+checkitem 死亡之眼 1
+checkitem 死亡之水 1
+checkitem 死亡之丹 1
+checkitem 死亡之骨 1
+checkitem 死亡灵魂 1
+#ACT
+take 死亡之心 1
+take 死亡之牙 1
+take 死亡之眼 1
+take 死亡之水 1
+take 死亡之丹 1
+take 死亡之骨 1
+take 死亡灵魂 1
+give 云海道袍 1
+#SAY
+请拿好【云海道袍】\ \
+<离 开/@exit>
+#ELSESAY
+你没有六件死亡物品，或者没有一个死亡灵魂，无法兑换云海道袍！\ \
+<离 开/@exit>
+
+[@dhzzcpq]
+#IF
+checkitem 死亡之心 1
+checkitem 死亡之牙 1
+checkitem 死亡之眼 1
+checkitem 死亡之水 1
+checkitem 死亡之丹 1
+checkitem 死亡之骨 1
+checkitem 死亡灵魂 1
+#ACT
+take 死亡之心 1
+take 死亡之牙 1
+take 死亡之眼 1
+take 死亡之水 1
+take 死亡之丹 1
+take 死亡之骨 1
+take 死亡灵魂 1
+give 云海长袍 1
+#SAY
+请拿好【云海长袍】\ \
+<离 开/@exit>
+#ELSESAY
+你没有六件死亡物品，或者没有一个死亡灵魂，无法兑换云海长袍！\ \
+<离 开/@exit>
+
+[@jrswzg]
+#IF
+HOUR 19 19
+MIN 00 10
+#ACT
+MAPMOVE SWZG
+GIVE 回城卷
+#ELSEACT
+MESSAGEBOX 不是地图开放时间段，无法进入！
+BREAK
+
+[@dhssjyf]
+<COLOR=clFuchsia 请选择需要兑换的40级衣服！>\
+<死亡之心兑换天师长袍/@dhtscp>　　<死亡之牙兑换天尊道袍/@dhtzdp>\
+<死亡之眼兑换霓裳羽衣/@dhnsyy>　　<死亡之水兑换法神披风/@dhfspf>\
+<死亡之丹兑换圣战宝甲/@dhszbj>　　<死亡之骨兑换天魔神甲/@dhtmsj>\
+--------------------------------------------\
+<死亡之心兑换3000元宝/@dhsqyb1>　　<死亡之牙兑换3000元宝/@dhsqyb2>\
+<死亡之眼兑换3000元宝/@dhsqyb3>　　<死亡之水兑换3000元宝/@dhsqyb4>\
+<死亡之丹兑换3000元宝/@dhsqyb5>　　<死亡之骨兑换3000元宝/@dhsqyb6>　　　　<返 回/@main>
+
+[@dhsqyb6]
+#IF
+checkitem 死亡之骨 1
+#ACT
+take 死亡之骨 1
+GAMEGOLD + 3000
+#SAY
+请拿好【3000元宝】\ \
+<离 开/@exit>
+#ELSESAY
+你没有死亡之骨，无法兑换3000元宝！\ \
+<离 开/@exit>
+
+[@dhsqyb5]
+#IF
+checkitem 死亡之丹 1
+#ACT
+take 死亡之丹 1
+GAMEGOLD + 3000
+#SAY
+请拿好【3000元宝】\ \
+<离 开/@exit>
+#ELSESAY
+你没有死亡之丹，无法兑换3000元宝！\ \
+<离 开/@exit>
+
+[@dhsqyb4]
+#IF
+checkitem 死亡之水 1
+#ACT
+take 死亡之水 1
+GAMEGOLD + 3000
+#SAY
+请拿好【3000元宝】\ \
+<离 开/@exit>
+#ELSESAY
+你没有死亡之水，无法兑换3000元宝！\ \
+<离 开/@exit>
+
+[@dhsqyb3]
+#IF
+checkitem 死亡之眼 1
+#ACT
+take 死亡之眼 1
+GAMEGOLD + 3000
+#SAY
+请拿好【3000元宝】\ \
+<离 开/@exit>
+#ELSESAY
+你没有死亡之眼，无法兑换3000元宝！\ \
+<离 开/@exit>
+
+[@dhsqyb2]
+#IF
+checkitem 死亡之牙 1
+#ACT
+take 死亡之牙 1
+GAMEGOLD + 3000
+#SAY
+请拿好【3000元宝】\ \
+<离 开/@exit>
+#ELSESAY
+你没有死亡之牙，无法兑换3000元宝！\ \
+<离 开/@exit>
+
+[@dhsqyb1]
+#IF
+checkitem 死亡之心 1
+#ACT
+take 死亡之心 1
+GAMEGOLD + 3000
+#SAY
+请拿好【3000元宝】\ \
+<离 开/@exit>
+#ELSESAY
+你没有死亡之心，无法兑换3000元宝！\ \
+<离 开/@exit>
+
+[@dhtmsj]
+#IF
+checkitem 死亡之骨 1
+#ACT
+take 死亡之骨 1
+give 天魔神甲 1
+#SAY
+请拿好【天魔神甲】\ \
+<离 开/@exit>
+#ELSESAY
+你没有死亡之骨，无法兑换天魔神甲！\ \
+<离 开/@exit>
+
+[@dhszbj]
+#IF
+checkitem 死亡之丹 1
+#ACT
+take 死亡之丹 1
+give 圣战宝甲 1
+#SAY
+请拿好【圣战宝甲】\ \
+<离 开/@exit>
+#ELSESAY
+你没有死亡之丹，无法兑换圣战宝甲！\ \
+<离 开/@exit>
+
+[@dhfspf]
+#IF
+checkitem 死亡之水 1
+#ACT
+take 死亡之水 1
+give 法神披风 1
+#SAY
+请拿好【法神披风】\ \
+<离 开/@exit>
+#ELSESAY
+你没有死亡之水，无法兑换法神披风！\ \
+<离 开/@exit>
+
+[@dhnsyy]
+#IF
+checkitem 死亡之眼 1
+#ACT
+take 死亡之眼 1
+give 霓裳羽衣 1
+#SAY
+请拿好【霓裳羽衣】\ \
+<离 开/@exit>
+#ELSESAY
+你没有死亡之眼，无法兑换霓裳羽衣！\ \
+<离 开/@exit>
+
+[@dhtzdp]
+#IF
+checkitem 死亡之牙 1
+#ACT
+take 死亡之牙 1
+give 天尊道袍 1
+#SAY
+请拿好【天尊道袍】\ \
+<离 开/@exit>
+#ELSESAY
+你没有死亡之牙，无法兑换天尊道袍！\ \
+<离 开/@exit>
+
+[@dhtscp]
+#IF
+checkitem 死亡之心 1
+#ACT
+take 死亡之心 1
+give 天师长袍 1
+#SAY
+请拿好【天师长袍】\ \
+<离 开/@exit>
+#ELSESAY
+你没有死亡之心，无法兑换天师长袍！\ \
+<离 开/@exit>
+
+[@xssz]
+勇士你好，比奇国王的手谕被不明的盗宝贼给偷走了。\
+<COLOR=clLime 盗宝贼每1个小时会出现在土城书店门口（407 327）处>\
+一旦手谕落入不法人之手，我们的国家将会灭亡。\
+所以我受比奇国王的号召，在此发布悬赏。\
+<COLOR=clRed 集齐 5个国王手谕我可以赏给你2000元宝。>\
+<COLOR=clRed 集齐10个国王手谕我可以赏给你5000元宝。>\
+　\
+<我有5个国王手谕/@wg>　　　　　<我有10个国王手谕/@sg>\
+
+[@wg]
+#IF
+checkitem 国王手谕 5
+#ACT
+take 国王手谕 5
+GAMEGOLD + 2000
+#SAY
+请拿好赏金2000元宝！\ \
+<离 开/@exit>
+#ELSESAY
+你没有5个国王手谕，可不能欺骗比奇国王！\
+<离 开/@exit>
+
+[@sg]
+#IF
+checkitem 国王手谕 10
+#ACT
+take 国王手谕 10
+GAMEGOLD + 5000
+#SAY
+请拿好赏金5000元宝！\ \
+<离 开/@exit>
+#ELSESAY
+你没有10个国王手谕，可不能欺骗比奇国王！\
+<离 开/@exit>
+
+[@mjss]
+这是一次非常艰巨的任务，你愿意前往苍月岛了解详情吗？\
+完成艰巨的任务可以获得<COLOR=clRed 大量元宝>哦~\
+　\
+<我去了解详情/@LJXQ>　　<我没有那个实力/@exit>\
+
+[@LJXQ]
+#IF
+#ACT
+MAPMOVE 5 136 328
+BREAK

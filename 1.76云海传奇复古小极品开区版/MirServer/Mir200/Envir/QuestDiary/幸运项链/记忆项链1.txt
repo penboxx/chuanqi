@@ -1,0 +1,9 @@
+[@记忆项链1]
+{
+#IF
+#act
+GAMEGOLD - 2000
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 1 恭喜[%s]将记忆项链升级幸运成功！
+BREAK
+}

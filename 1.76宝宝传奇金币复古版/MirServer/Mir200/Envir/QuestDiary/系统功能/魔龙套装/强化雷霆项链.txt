@@ -1,0 +1,60 @@
+[@开始强化雷霆项链]
+{
+强化雷霆项链所需物品：\
+金刚石:388颗\
+雷霆项链三件\
+雷霆绒丝、魔龙颚骨、魔龙骨、魔龙牙各两颗\
+<强化后属性/@1>  攻击3-8 需要攻击力:45点\
+<进行强化/@进行强化雷霆项链>\
+<返回/@升级魔龙戒指>\
+<退出/@EXIT>\
+
+[@进行强化雷霆项链]
+#IF
+CHECKGAMEDIAMOND ? 388
+CHECKITEM 雷霆项链 3
+CHECKITEM 魔龙颚骨 2
+CHECKITEM 雷霆绒丝 2
+CHECKITEM 魔龙骨 2
+CHECKITEM 魔龙牙 2
+#ACT
+MOVR d7 2
+DELAYGOTO 1 @雷霆项链开始强化
+#ELSESAY
+对不起：<$USERNAME>强化雷霆项链所需物品：\
+金刚石:388颗\
+雷霆项链三件\
+雷霆绒丝、魔龙颚骨、魔龙骨、魔龙牙各两颗\
+<返回/@升级魔龙戒指>\
+<退出/@EXIT>\
+
+[@雷霆项链开始强化]
+#IF
+CHECKGAMEDIAMOND ? 388
+CHECKITEM 雷霆项链 3
+CHECKITEM 魔龙颚骨 2
+CHECKITEM 雷霆绒丝 2
+CHECKITEM 魔龙骨 2
+CHECKITEM 魔龙牙 2
+EQUAL d7 1
+#ACT
+MOV d7 0
+GAMEDIAMOND - 388
+TAKE 雷霆绒丝 2
+TAKE 雷霆项链 3
+TAKE 魔龙牙 2
+TAKE 魔龙骨 2
+TAKE 魔龙颚骨 2
+GIVE 强化雷霆项链 1
+SENDMSG 0 恭喜:<$USERNAME>升级强化雷霆项链成功！
+CLOSE
+#ELSEACT
+MOV d7 0
+GAMEDIAMOND - 388
+TAKE 魔龙颚骨 2
+TAKE 雷霆绒丝 2
+TAKE 魔龙骨  2
+TAKE 魔龙牙 2
+messagebox  可惜了：\<$USERNAME>你合成失败，魔龙材料和金刚石在合成过程中被熔化！
+CLOSE
+}

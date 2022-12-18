@@ -1,0 +1,407 @@
+[@开放赌博]
+#IF
+EQUAL G10 0
+#ACT
+MOV G10 1
+SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100
+SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100
+SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100
+SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100
+SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100
+SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100
+BREAK
+
+[@关闭赌博]
+#IF
+EQUAL G10 1
+#ACT
+MOV G10 0
+SENDMSG 0 赌场已经关闭，赌场开放时间为每天的12点17点22点... 253 255 100
+SENDMSG 0 赌场已经关闭，赌场开放时间为每天的12点17点22点... 253 255 100
+SENDMSG 0 赌场已经关闭，赌场开放时间为每天的12点17点22点... 253 255 100
+SENDMSG 0 赌场已经关闭，赌场开放时间为每天的12点17点22点... 253 255 100
+SENDMSG 0 赌场已经关闭，赌场开放时间为每天的12点17点22点... 253 255 100
+SENDMSG 0 赌场已经关闭，赌场开放时间为每天的12点17点22点... 253 255 100
+BREAK
+
+[@行会争夺战]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，15分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，15分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，15分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，15分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，15分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+
+[@行会争夺战1]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，5分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，5分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，5分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，5分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，5分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+
+[@行会争夺战2]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，1分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，1分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，1分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，1分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，1分钟后入口自动关闭！获胜的行会可以获得5000元宝奖励！
+
+
+[@行会争霸入口关闭]
+#IF
+#ACT
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得5000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得5000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得5000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得5000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得5000元宝奖励！
+
+[@坐庄游戏A]
+#IF
+EQUAL A36 
+#ACT
+MOV A36 空空空空空空空空空空空空空空空空空空空空
+
+#IF
+EQUAL A35 无
+#ACT
+BREAK
+#IF
+EQUAL A35 
+#ACT
+BREAK
+#IF
+EQUAL I12 0
+#ACT
+MOV I10 59
+GMEXECUTE 开始提问 @抢庄开始
+INC I12 1
+BREAK
+#IF
+EQUAL I12 60
+#ACT
+MOV I10 57
+GMEXECUTE 开始提问 @抢庄结束
+INC I12 1
+BREAK
+#IF
+EQUAL I12 61
+#ACT
+MOV I10 56
+GMEXECUTE 开始提问 @下注开始
+INC I12 1
+BREAK
+#IF
+EQUAL I12 117
+#ACT
+MOV I10 12
+GMEXECUTE 开始提问 @下注结束
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 118
+LARGE I64 0
+LARGE I65 0
+LARGE I66 0
+#ACT
+MOV I10 11
+MOV I42 <$STR(I64)>
+MOV I43 <$STR(I65)>
+MOV I44 <$STR(I66)>
+MOV I45 <$STR(I42)>
+INC I45 <$STR(I43)>
+INC I45 <$STR(I44)>
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 118
+#ACT
+MOV I10 11
+MOVR I42 6
+inc I42 1
+MOVR I43 6
+inc I43 1
+MOVR I44 6
+inc I44 1
+MOV I45 <$STR(I42)>
+INC I45 <$STR(I43)>
+INC I45 <$STR(I44)>
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 120
+#ACT
+MOV I10 10
+GMEXECUTE 开始提问 @猜点开始
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 126
+#ACT
+MOV I10 4
+GMEXECUTE 开始提问 @赌博结帐
+INC I12 1
+BREAK
+#IF
+EQUAL I12 128
+#ACT
+MOV I10 2
+GMEXECUTE 开始提问 @赌博清零
+MOV I64 0
+MOV I65 0
+MOV I66 0
+MOV A34 无
+MOV I16 0
+MOV I17 0
+MOV I11 0
+MOV I13 0
+MOV I14 0
+MOV I31 0
+MOV I42 0
+MOV I43 0
+MOV I44 0
+MOV I45 0
+INC I12 1
+BREAK
+#IF
+EQUAL I12 130
+#ACT
+MOV I10 0
+MOV A35 无
+MOV I12 0
+BREAK
+#IF
+#ACT
+DEC I10 1
+INC I12 1
+BREAK
+
+[@坐庄游戏B]
+#IF
+EQUAL A35 无
+#ACT
+BREAK
+#IF
+EQUAL A35 
+#ACT
+BREAK
+
+#IF
+#ACT
+MOV I18 0
+MOV I19 0
+MOV I15 130
+DEC I15 <$STR(I12)>
+MOV I11 <$STR(I13)>
+INC I11 <$STR(I14)>
+MOV I16 <$STR(I31)>
+INC I16 <$STR(I14)>
+DEC I16 <$STR(I13)>
+MOV I17 <$STR(I31)>
+INC I17 <$STR(I13)>
+DEC I17 <$STR(I14)>
+BREAK
+
+[@坐庄游戏C]
+#IF
+EQUAL A35 无
+#ACT
+BREAK
+#IF
+EQUAL A35 
+#ACT
+BREAK
+#IF
+EQUAL I12 122
+EQUAL I42 <$STR(I43)>
+EQUAL I42 <$STR(I44)>
+#ACT
+MOV A34 豹子
+BREAK
+#IF
+EQUAL I12 122
+SMALL I45 11
+#ACT
+MOV A34 小
+BREAK
+#IF
+EQUAL I12 122
+LARGE I45 10
+#ACT
+MOV A34 大
+BREAK
+
+
+
+
+
+
+[@提示公告]
+#IF
+#ACT
+SendScrollMsg 温馨提示:请设置好二级密码，装备被盗将无法找回。升级奖励请到土城[综合服务生]查看。新区开区后第三天攻沙，奖励40000元宝，老区天天攻沙，奖励10000元宝!!!天黑路滑，社会复杂，请玩家谨慎私下交易! 251 249
+BREAK
+
+
+[@清数据]
+#IF
+#act
+ClearNameList ..\QuestDiary\数据文件\领取元宝.txt
+
+
+[@邪剑刷怪]
+#IF
+#ACT
+Param1 xiejian
+Param2 13
+Param3 16
+MonGen 邪剑仙
+SENDMSG 0 邪剑神殿的邪剑仙已出现，杀死它可获得顶级装备哦！！
+SENDMSG 0 邪剑神殿的邪剑仙已出现，杀死它可获得顶级装备哦！！
+SENDMSG 0 邪剑神殿的邪剑仙已出现，杀死它可获得顶级装备哦！！
+SENDMSG 0 邪剑神殿的邪剑仙已出现，杀死它可获得顶级装备哦！！
+SENDMSG 0 邪剑神殿的邪剑仙已出现，杀死它可获得顶级装备哦！！
+break
+
+[@清怪]
+#IF
+#act
+ClearNameList ..\QuestDiary\数据文件\DWGSave.txt
+ClearMapMon xiejian
+
+[@活动刷怪]
+#IF
+#ACT
+Param1 D5071p
+Param2 20
+Param3 23
+MonGen 白虎之王
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+break
+
+[@活动刷怪1]
+#IF
+#ACT
+Param1 D5071p
+Param2 20
+Param3 23
+MonGen 活动金龙
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+break
+
+[@活动刷怪2]
+#IF
+#ACT
+Param1 D5071p
+Param2 20
+Param3 23
+MonGen 皇陵魔王
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+break
+
+[@活动刷怪3]
+#IF
+#ACT
+Param1 D5071p
+Param2 20
+Param3 23
+MonGen 元宝教主
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+break
+
+[@活动刷怪4]
+#IF
+#ACT
+Param1 D5071p
+Param2 20
+Param3 23
+MonGen 暗之祖玛教主
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+break
+
+[@活动刷怪5]
+#IF
+#ACT
+Param1 D5071p
+Param2 20
+Param3 23
+MonGen 通天教主
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+break
+
+[@活动刷怪6]
+#IF
+#ACT
+Param1 D5071p
+Param2 20
+Param3 23
+MonGen 远古神龙
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+break
+
+[@活动刷怪7]
+#IF
+#ACT
+Param1 D5071p
+Param2 20
+Param3 23
+MonGen 元宝教主
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+break
+
+[@活动刷怪5]
+#IF
+#ACT
+Param1 D5071p
+Param2 20
+Param3 23
+MonGen 活动金龙
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+SENDMSG 0 活动地图的BOSS已复活,勇士们拿起你们的武器去征服它吧！！！
+break
+
+
+
+[@沙巴克检测]
+#IF
+#ACT
+GMEXECUTE 开始提问 @沙巴克传回
+BREAK
+
+
+

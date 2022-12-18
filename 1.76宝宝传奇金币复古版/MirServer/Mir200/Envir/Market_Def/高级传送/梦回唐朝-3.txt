@@ -1,0 +1,20 @@
+[@MAIN] 
+╔─┬─────────────────────────╗\
+┊<COLOR=clRed 梦>┊<COLOR=clLime 这里每道轮回都着不同的恶魔>                        ┊\
+┊<COLOR=clRed 回>┊<COLOR=clFuchsia 这里有传说中的唐朝幻境！>                          ┊\
+┊<COLOR=clRed 唐>├─────────────────────────┤\
+┊<COLOR=clRed 朝>┊<COLOR=clSKYBLUE 最近恶魔占领了整个唐朝，勇士们快去解救我们的唐朝吧>┊\
+├─┴─────────────────────────┤\
+┊<COLOR=clYELLOW 怪物暴率:><COLOR=clAqua 看你到底能不能活着穿越回来.>                  ┊\
+┊<COLOR=clYELLOW 进入条件:><COLOR=clRed  50万金币>    【<现在就去/@现在就去>】                    ┊\
+╚───────────────────────────╝\
+[@现在就去]
+#if
+CHECKGOLD 500000
+#act
+take 金币 500000
+mapmove yuangu1
+SENDMSG 0 【%s】花费50万金币进入了【梦回唐朝】 249  216
+#elseact
+MESSAGEBOX 【提示】:对不起，你没有50万金币
+

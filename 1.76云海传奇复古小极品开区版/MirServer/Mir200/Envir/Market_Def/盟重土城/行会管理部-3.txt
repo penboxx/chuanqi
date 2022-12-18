@@ -1,0 +1,226 @@
+[@main]
+#IF
+EQUAL H2 0
+#ACT
+MOV H2 500
+
+#IF
+EQUAL H4 0
+#ACT
+MOV H4 300
+
+#IF
+EQUAL H6 0
+#ACT
+MOV H6 100
+
+#IF
+#SAY
+我受三大掌门人所托，在此招贤纳士(<查看细则/@详情>)\
+<COLOR=clRed 加入行会前需要打命令:@加入门派>\ \
+<COLOR=clFuchsia 第①行会:><$STR(A61)>　<COLOR=clFuchsia 加入需要:><$STR(H1)><COLOR=clFuchsia 级>　<COLOR=clFuchsia 行会掌门人:><$STR(A62)>\
+<加入第①行会/@入会1>         　　<我要委托收人/@位置1>(需<$STR(H2)>元宝)\
+<COLOR=clFuchsia 第②行会:><$STR(A63)>　<COLOR=clFuchsia 加入需要:><$STR(H3)><COLOR=clFuchsia 级>　<COLOR=clFuchsia 行会掌门人:><$STR(A64)>\
+<加入第②行会/@入会2>         　　<我要委托收人/@位置2>(需<$STR(H4)>元宝)\
+<COLOR=clFuchsia 第③行会:><$STR(A65)>　<COLOR=clFuchsia 加入需要:><$STR(H5)><COLOR=clFuchsia 级>　<COLOR=clFuchsia 行会掌门人:><$STR(A66)>\
+<加入第③行会/@入会3>         　　<我要委托收人/@位置3>(需<$STR(H6)>元宝)\
+  
+
+
+[@详情]
+各掌门可以委托我收人。只需要设置入会的最低等级要求。\
+因能力有限，我只接受三个门派的委托。这里有三个位置\
+请各掌门根据自已的实力选择位置，注意如果有人加价，\
+你的收人广告位置就被抢了。。。之前的委托金不退还。\
+你若不同意此声明，请不要申请位置。
+
+
+[@入会1]
+#IF
+HaveGuild
+#ACT
+MESSAGEBOX 你有行会就别来趁热闹了！
+BREAK
+#IF
+EQUAL A61
+#ACT
+MESSAGEBOX 目前没有第①行会！
+BREAK
+#IF
+CHECKLEVELEX ? <$STR(H1)>
+#ACT
+AFFILIATEGUILD <$STR(A61)>
+BREAK
+
+[@入会2]
+#IF
+HaveGuild
+#ACT
+MESSAGEBOX 你有行会就别来趁热闹了！
+BREAK
+#IF
+EQUAL A63
+#ACT
+MESSAGEBOX 目前没有第②行会！
+BREAK
+#IF
+CHECKLEVELEX ? <$STR(H3)>
+#ACT
+AFFILIATEGUILD <$STR(A63)>
+BREAK
+
+[@入会3]
+#IF
+HaveGuild
+#ACT
+MESSAGEBOX 你有行会就别来趁热闹了！
+BREAK
+#IF
+EQUAL A65
+#ACT
+MESSAGEBOX 目前没有第③行会！
+BREAK
+#IF
+CHECKLEVELEX ? <$STR(H5)>
+#ACT
+AFFILIATEGUILD <$STR(A65)>
+BREAK
+
+
+[@位置1]
+#IF
+IsGuildMaster
+#SAY
+抢夺位置，每次至少加价1元宝。\
+①号位置的当前竞价是:<$STR(H2)>元宝\
+请输入你的<出价/@出位置1>\
+#ELSEACT
+MESSAGEBOX 你不是掌门，不能委托收人
+
+
+[@出位置1]
+#IF 
+#ACT
+QUERYVALUE 61 1 10 @价位置1 请输入你竞价1号位的元宝数量 NPC
+
+[@价位置1]
+#IF
+CHECKGAMEGOLD ? <$STR(M61)>
+LARGE M61 <$STR(H2)>
+#ACT
+MOV H2 <$STR(M61)>
+GAMEGOLD - <$STR(H2)>
+MOV A61 <$GUILDNAME>
+MOV A62 <$USERNAME>
+INC A62 ；
+INC A62 <$LEVEL>
+INC A62 级；
+SENDMSG 2 <$GUILDNAME>掌门：<$USERNAME>，委托我收人，想入会的来。。。
+#SAY
+<设置最低等级要求/@等级要1>
+#ELSESAY 
+抱歉,你的元宝不足<$STR(M61)>.
+
+[@等级要1]
+#IF 
+#ACT
+QUERYVALUE 62 1 10 @等级求1 请输入加入行会最低等级限制 NPC
+
+[@等级求1]
+#ACT
+MOV H1 <$STR(M62)>
+MESSAGEBOX 设置成功！
+BREAK
+
+;----------------------------------
+
+[@位置2]
+#IF
+IsGuildMaster
+#SAY
+抢夺位置，每次至少加价1元宝。\
+①号位置的当前竞价是:<$STR(H4)>元宝\
+请输入你的<出价/@出位置2>
+#ELSEACT
+MESSAGEBOX 你不是掌门，不能委托收人
+
+[@出位置2]
+#IF 
+#ACT
+QUERYVALUE 63 1 10 @价位置2 请输入你竞价2号位的元宝数量 NPC
+
+[@价位置2]
+#IF
+CHECKGAMEGOLD ? <$STR(M63)>
+LARGE M63 <$STR(H4)>
+#ACT
+MOV H4 <$STR(M63)>
+GAMEGOLD - <$STR(H4)>
+MOV A63 <$GUILDNAME>
+MOV A64 <$USERNAME>
+INC A64 ；
+INC A64 <$LEVEL>
+INC A64 级；
+SENDMSG 2 <$GUILDNAME>掌门：<$USERNAME>，委托我收人，想入会的来。。。
+#SAY
+<设置最低等级要求/@等级要2>
+#ELSESAY 
+抱歉,你的元宝不足<$STR(M63)>.
+
+[@等级要2]
+#IF 
+#ACT
+QUERYVALUE 64 1 10 @等级求2 请输入加入行会最低等级限制 NPC
+
+[@等级求2]
+#ACT
+MOV H3 <$STR(M64)>
+MESSAGEBOX 设置成功！
+BREAK
+
+;----------------------------------
+
+[@位置3]
+#IF
+IsGuildMaster
+#SAY
+抢夺位置，每次至少加价1元宝。\
+①号位置的当前竞价是:<$STR(H6)>元宝\
+请输入你的<出价/@出位置3>
+#ELSEACT
+MESSAGEBOX 你不是掌门，不能委托收人
+
+[@出位置3]
+#IF 
+#ACT
+QUERYVALUE 65 1 10 @价位置3 请输入你竞价3号位的元宝数量 NPC
+
+[@价位置3]
+#IF
+CHECKGAMEGOLD ? <$STR(M65)>
+LARGE M65 <$STR(H6)>
+#ACT
+MOV H6 <$STR(M65)>
+GAMEGOLD - <$STR(H6)>
+MOV A65 <$GUILDNAME>
+MOV A66 <$USERNAME>
+INC A66 ；
+INC A66 <$LEVEL>
+INC A66 级；
+SENDMSG 2 <$GUILDNAME>掌门：<$USERNAME>，委托我收人，想入会的来。。。
+#SAY
+<设置最低等级要求/@等级要3>
+#ELSESAY 
+抱歉,你的元宝不足<$STR(M65)>.
+
+
+[@等级要3]
+#IF 
+#ACT
+QUERYVALUE 66 1 10 @等级求3 请输入加入行会最低等级限制 NPC
+
+[@等级求3]
+#ACT
+MOV H5 <$STR(M66)>
+MESSAGEBOX 设置成功！
+BREAK

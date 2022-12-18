@@ -1,0 +1,238 @@
+(@@BuHero)
+[@main]
+#IF
+#act
+MESSAGEBOX 删号警告：建立空白名字.带空白符号的人物和英雄一律会封号处理\删号警告：建立空白名字.带空白符号的人物和英雄一律会封号处理\删号警告：建立空白名字.带空白符号的人物和英雄一律会封号处理\删号警告：建立空白名字.带空白符号的人物和英雄一律会封号处理\删号警告：建立空白名字.带空白符号的人物和英雄一律会封号处理\删号警告：建立空白名字.带空白符号的人物和英雄一律会封号处理
+#SAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【英雄管理】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+【<建立英雄/@@buHero>】       【<领取英雄合击技能/@领取1>】       【<删除英雄/@qding>】 \
+【<建立英雄/@@buHero>】       【<领取英雄其他技能/@领取2>】       【<删除英雄/@qding>】 \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clLime Ctrl+W 为英雄锁定攻击目标        Ctrl+S 为怒气满时释放合击>\
+<COLOR=clLime Ctrl+E 为改变英雄攻击模式        Ctrl+Q 为英雄守护指定坐标>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+[@领取1]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【英雄管理】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+为了让玩家能够快速起步.本服免费赠送英雄合击技能.只能领一次哦~\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+战士和战士合击:<破 魂 斩/@hj1>           道士和道士合击:<噬魂沼泽/@hj2>\
+法师和法师合击:<火龙气焰/@hj3>           战士和法师合击:<雷霆一击/@hj4>\
+道士和法师合击:<末日审判/@hj5>           战士和道士合击:<劈 星 斩/@hj6>\ 
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+[@@buHero]
+#ACT
+DELAYCALL 10 ~$CREATEHERO
+[~$CREATEHERO]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【英雄管理】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+请您仔细选择，英雄可以转职业性别哦！您想带领哪位英雄呢！\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<英雄（男战士）/@CREATEHERO_WARR_MAN>        <英雄（男法师）/@CREATEHERO_WIZA_MAN>        <英雄（男道士）/@CREATEHERO_TAOS_MAN>\ \
+<英雄（女战士）/@CREATEHERO_WARR_WOM>        <英雄（女法师）/@CREATEHERO_WIZA_WOM>        <英雄（女道士）/@CREATEHERO_TAOS_WOM>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+[@CREATEHERO_WARR_MAN]
+#ACT
+CREATEHERO 0 0
+[@CREATEHERO_WARR_WOM]
+#ACT
+CREATEHERO 0 1
+[@CREATEHERO_WIZA_MAN]
+#ACT
+CREATEHERO 1 0
+[@CREATEHERO_WIZA_WOM]
+#ACT
+CREATEHERO 1 1
+[@CREATEHERO_TAOS_MAN]
+#ACT
+CREATEHERO 2 0
+[@CREATEHERO_TAOS_WOM]
+#ACT
+CREATEHERO 2 1
+[@@buHeroEx]
+#ACT
+DELAYCALL 10 ~$CREATEHEROEX
+[~$CREATEHEROEX]
+选择英雄职业：\ \
+<男战士/@CREATEHERO_WARR_MAN1>   <女战士/@CREATEHERO_WARR_WOM1>\
+<男法师/@CREATEHERO_WIZA_MAN1>   <女法师/@CREATEHERO_WIZA_WOM1>\
+<男道士/@CREATEHERO_TAOS_MAN1>   <女道士/@CREATEHERO_TAOS_WOM1>\ \
+<关闭/@exit>
+[@CREATEHERO_WARR_MAN1]
+#ACT
+CREATEHEROEX 0 0
+[@CREATEHERO_WARR_WOM1]
+#ACT
+CREATEHEROEX 0 1
+[@CREATEHERO_WIZA_MAN1]
+#ACT
+CREATEHEROEX 1 0
+[@CREATEHERO_WIZA_WOM1]
+#ACT
+CREATEHEROEX 1 1
+[@CREATEHERO_TAOS_MAN1]
+#ACT
+CREATEHEROEX 2 0
+[@CREATEHERO_TAOS_WOM1]
+#ACT
+CREATEHEROEX 2 1
+//返回消息
+[@CreateingHero]
+系统正在接受申请，请稍候……\ \
+<关闭/@exit>
+[@HaveHero]
+您已经有英雄了。\ \
+<关闭/@exit>
+[@SetHeroName]
+请先给您的英雄取名字。\ \
+<关闭/@exit>
+[@qding]
+请确定一下是否真要删英雄,注意:删除以后不可以恢复！
+\ \
+<确定删除英雄/@DelMyHero> 
+[@DelMyHero]
+#ACT
+DELETEHERO
+//返回消息
+[@NotHaveHero]
+你没有英雄。\ \
+<关闭/@exit>
+[@LogOutHeroFirst]
+请将英雄设置下线！\ \
+<关闭/@exit>
+[@DeleteHeroOK]
+删除英雄成功。\ \
+<关闭/@exit>
+
+[@hj1]
+#if
+check [540] 0
+#ACT
+SET [540] 1
+SENDMSG 6 恭喜您领取战士+战士英雄合击[破魂斩]成功！！
+give 破魂斩
+give 火龙之心
+#ELSEACT
+MESSAGEBOX 你已经领取过了!!!\
+close
+
+[@hj2]
+#if
+check [541] 0
+#ACT
+SET [541] 1
+SENDMSG 6 恭喜您领取道士+道士英雄合击[噬魂沼泽]成功！！
+give 噬魂沼泽
+give 火龙之心
+#ELSEACT
+MESSAGEBOX 你已经领取过了!!!\
+close
+
+[@hj3]
+#if
+check [542] 0
+#ACT
+SET [542] 1
+SENDMSG 6 恭喜您领取法师+法师英雄合击[火龙气焰]成功！！
+give 火龙气焰
+give 火龙之心
+#ELSEACT
+MESSAGEBOX 你已经领取过了!!!\
+close
+
+[@hj4]
+#if
+check [543] 0
+#ACT
+SET [543] 1
+SENDMSG 6 恭喜您领取战士+法师英雄合击[雷霆一击]成功！！
+give 雷霆一击
+give 火龙之心
+#ELSEACT
+MESSAGEBOX 你已经领取过了!!!\
+close
+
+[@hj5]
+#if
+check [544] 0
+#ACT
+SET [544] 1
+SENDMSG 6 恭喜您领取道士+法师英雄合击[末日审判]成功！！
+give 末日审判
+give 火龙之心
+#ELSEACT
+MESSAGEBOX 你已经领取过了!!!\
+close
+
+[@hj6]
+#if
+check [545] 0
+#ACT
+SET [545] 1
+SENDMSG 6 恭喜您领取战士+道士英雄合击[劈星斩]成功！！
+give 劈星斩
+give 火龙之心
+#ELSEACT
+MESSAGEBOX 你已经领取过了!!!\
+close
+
+[@领取2]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 对不起您的英雄没有招出来我无法为您服务......
+BREAK
+
+#IF
+H.checkjob warrior
+#ACT
+H.ADDSKILL 英雄基本剑术 3
+H.ADDSKILL 英雄攻杀剑术 3
+H.ADDSKILL 英雄刺杀剑术 3
+H.ADDSKILL 英雄半月弯刀 3
+H.ADDSKILL 英雄野蛮冲撞 3
+H.ADDSKILL 英雄烈火剑法 3
+break
+
+#IF
+H.checkjob taoist
+#ACT
+H.ADDSKILL 英雄治愈术 3
+H.ADDSKILL 英雄精神战法 3
+H.ADDSKILL 英雄施毒术 3
+H.ADDSKILL 英雄灵魂火符 3
+H.ADDSKILL 英雄隐身术 3
+H.ADDSKILL 英雄集体隐身 3
+H.ADDSKILL 英雄幽灵盾 3
+H.ADDSKILL 英雄神圣战术 3
+H.ADDSKILL 英雄心灵启示 3
+H.ADDSKILL 英雄困魔咒 3
+H.ADDSKILL 英雄群疗术 3
+H.ADDSKILL 英雄召唤神兽 3
+H.ADDSKILL 英雄气功波 3
+break
+
+#IF
+H.checkjob wizard
+#ACT
+H.ADDSKILL 英雄火球术 3
+H.ADDSKILL 英雄抗拒火环 3
+H.ADDSKILL 英雄诱惑之光 3
+H.ADDSKILL 英雄地狱火 3
+H.ADDSKILL 英雄雷电术 3
+H.ADDSKILL 英雄瞬息移动 3
+H.ADDSKILL 英雄大火球 3
+H.ADDSKILL 英雄爆裂火焰 3
+H.ADDSKILL 英雄火墙 3
+H.ADDSKILL 英雄疾光电影 3
+H.ADDSKILL 英雄地狱雷光 3
+H.ADDSKILL 英雄魔法盾 3
+H.ADDSKILL 英雄圣言术 3
+H.ADDSKILL 英雄冰咆哮 3
+H.ADDSKILL 英雄灭天火 3
+break

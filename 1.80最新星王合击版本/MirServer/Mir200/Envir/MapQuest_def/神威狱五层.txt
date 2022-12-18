@@ -1,0 +1,10 @@
+[@MAIN]
+#if
+#ACT
+SENDMSG 5 请等待%t秒后传送到下一层... 151 0 60 @MAIN1
+
+
+[@main1]
+#if
+#act
+mapmove shenwei6

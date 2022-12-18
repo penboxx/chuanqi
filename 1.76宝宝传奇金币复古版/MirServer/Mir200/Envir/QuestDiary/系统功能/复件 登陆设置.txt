@@ -1,0 +1,146 @@
+[@登陆脚本]
+{
+#IF
+ISADMIN
+#ACT
+CHANGEMODE 1 1
+CHANGEMODE 2 1
+CHANGEMODE 3 1
+SENDMSG 7 当前在线人数:<$USERCOUNT>人
+
+#IF
+#ACT
+AddGuildMember 新人频道
+#SAY
+你加入了新人频道!
+ 
+#IF
+ISNEWHUMAN
+#ACT
+AddGuildMember 新人频道 <$USERNAME>
+
+
+#IF
+Check [001] 0
+CHECKNAMELIST ..\QuestDiary\数据文件\神力护身.txt
+#ACT
+SETRANKLEVELNAME %s\*<神力护身>*
+ReNewLevel 1 0 0
+SET [001] 1
+
+#IF
+Check [002] 0
+CHECKNAMELIST ..\QuestDiary\数据文件\赞助大使.txt
+#ACT
+SETRANKLEVELNAME %s\（我的她）
+ReNewLevel 1 0 0
+SET [002] 1
+
+#IF
+Check [003] 0
+CHECKNAMELIST ..\QuestDiary\数据文件\第一行会盟主.txt
+#ACT
+SETRANKLEVELNAME %s\*<第一行会盟主>*
+ReNewLevel 1 0 0
+SET [003] 1
+
+#IF
+Check [003] 0
+CHECKNAMELIST ..\QuestDiary\数据文件\VIP超级使者.txt
+#ACT
+SETRANKLEVELNAME %s\*<神力护身>*
+ReNewLevel 1 0 0
+SET [003] 1
+
+#IF
+Check [003] 0
+CHECKNAMELIST ..\QuestDiary\数据文件\≮呲鉎硪只疼鉨≯.txt
+#ACT
+SETRANKLEVELNAME %s\*≮呲鉎硪只疼鉨≯*
+ReNewLevel 1 0 0
+SET [003] 1
+
+#IF
+Check [001] 1
+CHECKNAMELIST ..\QuestDiary\数据文件\神力护身.txt
+#ACT
+SETRANKLEVELNAME %s\*<神力护身>*
+
+#IF
+Check [002] 1
+CHECKNAMELIST ..\QuestDiary\数据文件\赞助大使.txt
+#ACT
+SETRANKLEVELNAME %s\╔════════╗\┆【★赞助大使★】┆\╚════════╝\★★★★★★★★★★\
+
+#IF
+Check [003] 1
+CHECKNAMELIST ..\QuestDiary\数据文件\第一行会盟主.txt
+#ACT
+SETRANKLEVELNAME %s\*<第一行会盟主>*
+
+#IF
+Check [003] 1
+CHECKNAMELIST ..\QuestDiary\数据文件\VIP超级使者.txt
+#ACT
+SETRANKLEVELNAME %s\*<神力护身>*
+
+#IF
+Check [003] 1
+CHECKNAMELIST ..\QuestDiary\数据文件\≮呲鉎硪只疼鉨≯.txt
+#ACT
+SETRANKLEVELNAME %s\*≮呲鉎硪只疼鉨≯*
+
+#IF
+large G8 0
+large G9 0
+HOUR 19 22
+#ACT
+KILLMONEXPRATE 200 10800
+SENDMSG 7 “双倍经验”活动已开启！活动截止时间：今晚22:00…… 252 253 10
+
+#IF
+EQUAL G0 1
+#ACT
+SENDMSG 7 当前服务器属于((测试开区模式))！测试数据不保留！测试期间升级到40.45.48级的玩家正式开区后有不同奖励！猛Ｃ传奇有您更精彩 252 255 30
+
+#IF
+EQUAL G0 0
+#ACT
+SENDMSG 7 当前服务器属于((正式开区模))式！版本为2011最新1.80战神金币合击版。欢迎广大玩家激情进入，猛Ｃ传奇有您更精彩 252 255 30
+
+#IF
+CheckLevelex < 8
+#ACT
+Gmexecute 禁言 Self 600
+
+#IF
+ISNEWHUMAN
+#ACT
+give 双倍卷轴(赠送) 1
+give 魔血石(赠送) 2
+SETMISSION + 1 1
+SETMISSION + 2 1
+SETMISSION + 3 1
+SETMISSION + 4 1
+SETMISSION + 5 1
+SETMISSION + 6 1
+SETMISSION + 7 1
+SETMISSION + 8 1
+SETMISSION + 9 1
+SETMISSION + 10 1
+SETMISSION + 11 1
+SENDMSG 5 提示:服务器没有传送员，所有地图都靠跑，无挂机泡点功能，在线的全部为活人，活人是在打怪打装备升级的，不可能没事站安全区看风景，所以看到安全区没人请不要惊呀，其它F上安全区站满人都是泡点的.
+SENDMSG 7 看不到NPC或摆摊请在登陆器右侧下载修复补丁【F12内挂设置,开启:物品提示,自动捡物,关闭:显示过滤,捡取过滤】
+MESSAGEBOX 欢迎进入原始1.80复古合击传奇平台\本服无高级传送,地图基本靠跑\长期版本,一切靠打,只为追忆曾经的热血,曾经的传奇所设\本服彻底封死脱机，加速。等一系列问题\如您已经了解以上几条,请点确定!
+SENDMSG 5 为防止恶意捣乱,新人9级之前不能说话,到达9级，自动解除禁言！快去升级吧！
+SENDMSG 0 ★天下英雄辈出，玩家<$USERNAME>,来到了<$SERVERNAME>.回味2004年的传奇经典！ 251 249
+SENDMSG 0 ★天下英雄辈出，玩家<$USERNAME>,来到了<$SERVERNAME>.回味2004年的传奇经典！ 251 249
+BREAK
+#IF
+CHECKLEVELEX < 15
+#ACT
+SENDMSG 5 提示:服务器没有传送员，所有地图都靠跑，无挂机泡点功能，在线的全部为活人，活人是在打怪打装备升级的，不可能没事站安全区看风景，所以看到安全区没人请不要惊呀，其它F上安全区站满人都是泡点的.
+SENDMSG 7 看不到NPC或摆摊请在登陆器右侧下载修复补丁【F12内挂设置,开启:物品提示,自动捡物,关闭:显示过滤,捡取过滤】
+SENDMSG 0 ★天下英雄辈出，玩家<$USERNAME>,来到了<$SERVERNAME>,顿时电闪雷鸣.风云再起！ 251 249
+SENDMSG 0 ★天下英雄辈出，玩家<$USERNAME>,来到了<$SERVERNAME>,顿时电闪雷鸣.风云再起！ 251 249
+}

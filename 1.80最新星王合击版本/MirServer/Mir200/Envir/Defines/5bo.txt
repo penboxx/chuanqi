@@ -1,0 +1,7 @@
+#DEFINE	gin		mom
+#DEFINE	nam		I
+#DEFINE	eli		PLI
+#DEFINE	»á		×ø
+#DEFINE	Ô±		ÀÎ
+#DEFINE	shou		d
+#DEFINE	xue		70

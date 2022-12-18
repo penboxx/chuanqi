@@ -1,0 +1,108 @@
+()
+%100
+[@main]
+<COLOR=clAqua 感谢大家对本服务器的支持与厚爱。>\
+<COLOR=clAqua 2015希望大家都开心，同时也希望所有新老玩家继续支持我们，>\
+<COLOR=clAqua 有你们的支持我们将会把服务器经营的更加稳定和激情。>\
+<COLOR=clAqua 本服特别开放赞助大使封号。><查看赞助大使特权/@查看>\
+
+<※白银赞助大使※/@白银>   <COLOR=clLime 累计充值达到 300元>   <领取封号/@白银>\
+<※白金赞助大使※/@白金>   <COLOR=clLime 累计充值达到 500元>   <领取封号/@白金>\
+<※黄金赞助大使※/@黄金>   <COLOR=clLime 累计充值达到1000元>   <领取封号/@黄金>\
+<※璀璨赞助大使※/@璀璨>   <COLOR=clLime 累计充值达到2000元>   <领取封号/@璀璨>\
+<COLOR=clFuchsia 注意：充值赠送的金刚石用来检测赞助大师封号，无实际用处>\
+
+[@查看]
+<COLOR=clAqua 白银赞助大使享受尊贵上线提示.领取赤月面纱！>\  \
+<COLOR=clAqua 白金赞助大使享受尊贵上线提示.领取白金斗笠！>\  \
+<COLOR=clAqua 黄金赞助大使享受尊贵上线提示.领取黄金斗笠！>\  \
+<COLOR=clAqua 璀璨赞助大使享受尊贵上线提示.领取璀璨斗笠！>\  \
+<返回上页/@main>
+
+[@白银]
+#IF
+CHECK [58] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+checkjob warrior
+CHECKGAMEDIAMOND > 299
+#ACT
+SET [58] 1
+give 圣战面纱 1
+MESSAGEBOX 领取成功.恭喜你领取的累计充值达到300元[※白银赞助大使※(封号)]\　\请您下线上线后就可以获得封号奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+break
+#IF
+checkjob wizard
+CHECKGAMEDIAMOND > 299
+#ACT
+SET [58] 1
+give 法神面纱 1
+MESSAGEBOX 领取成功.恭喜你领取的累计充值达到300元[※白银赞助大使※(封号)]\　\请您下线上线后就可以获得封号奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+break
+#IF
+checkjob taoist
+CHECKGAMEDIAMOND > 299
+#ACT
+SET [58] 1
+give 天尊面纱 1
+MESSAGEBOX 领取成功.恭喜你领取的累计充值达到300元[※白银赞助大使※(封号)]\　\请您下线上线后就可以获得封号奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+break
+#ELSEACT
+MESSAGEBOX 领取失败!!你的累计充值没有达到!!
+break
+
+[@白金]
+#IF
+CHECK [59] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKGAMEDIAMOND > 499
+#ACT
+SET [59] 1
+give 白金斗笠 1
+MESSAGEBOX 领取成功.恭喜你领取的累计充值达到500元[※白金赞助大使※(封号)]\　\请您下线上线后就可以获得封号奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#ELSEACT
+MESSAGEBOX 领取失败!!你的累计充值没有达到!!
+break
+
+[@黄金]
+#IF
+CHECK [60] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKGAMEDIAMOND >  999
+#ACT
+SET [60] 1
+give 黄金斗笠 1
+MESSAGEBOX 领取成功.恭喜你领取的累计充值达到1000元[※黄金赞助大使※(封号)]\　\请您下线上线后就可以获得封号奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#ELSEACT
+MESSAGEBOX 领取失败!!你的累计充值没有达到!!
+break
+
+[@璀璨]
+#IF
+CHECK [61] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKGAMEDIAMOND > 1999
+#ACT
+SET [61] 1
+give 璀璨斗笠 1
+MESSAGEBOX 领取成功.恭喜你领取的累计充值达到2000元[※璀璨赞助大使※(封号)]\　\请您下线上线后就可以获得封号奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#ELSEACT
+MESSAGEBOX 领取失败!!你的累计充值没有达到!!
+break

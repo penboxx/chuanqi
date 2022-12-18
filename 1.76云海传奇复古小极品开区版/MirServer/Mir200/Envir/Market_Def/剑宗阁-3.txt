@@ -1,0 +1,170 @@
+[@MAIN]
+#IF
+CHECKLEVELEX > 53
+#ACT
+GOTO @wsql1
+#ELSEACT
+MESSAGEBOX 你现在的级别没有54还不够资格和我交谈！
+break
+
+[@wsql1]
+剑宗阁<COLOR=clLime 乃天下剑仙比斗之地，高手云集，胜负往往就是因为装备上的>\
+<COLOR=clFuchsia 一丝差距><COLOR=clLime 而决定。自从一位炼器高手的到来的到来后……>\ \
+　　　<炼制云海武器/@zzwuqi>                    <炼制云海衣服/@zzyifu>\ \
+<COLOR=clRed 炼制 云海武器 需要 屠龙｜嗜魂法杖｜太极逍遥扇 + 元宝 20万>\ \
+<COLOR=clRed 炼制 云海衣服 需要条件 凑齐 6件 40级新 衣服 + 元宝 20万>\ 
+
+[@zzwuqi]
+剑宗阁<COLOR=clLime 乃天下剑仙比斗之地，高手云集，胜负往往就是因为装备上的>\
+<COLOR=clFuchsia 一丝差距><COLOR=clLime 而决定。自从一位炼器高手的到来的到来后……>\ \
+　　　<云海屠龙/@zzzw>        <云海法杖/@zzfw>        <云海玉剑/@zzdw>\ \
+<COLOR=clRed 炼制 云海屠龙 需要条件 3件 屠龙 + 元宝 30万>\
+<COLOR=clRed 炼制 云海法杖 需要条件 3件 嗜魂法杖 + 元宝 30万>\
+<COLOR=clRed 炼制 云海玉剑 需要条件 3件 太极逍遥扇 + 元宝 30万>\
+
+
+[@zzyifu]
+剑宗阁<COLOR=clLime 乃天下剑仙比斗之地，高手云集，胜负往往就是因为装备上的>\
+<COLOR=clFuchsia 一丝差距><COLOR=clLime 而决定。自从一位炼器高手的到来的到来后……>\ \
+　　　<云海男战/@zz1z>        <云海男法/@zz1f>        <云海男道/@zz1d>\ \
+　　　<云海女战/@zz2z>        <云海女法/@zz1f>        <云海女道/@zz2d>\ \
+<COLOR=clRed 炼制 云海衣服 需要条件 凑齐 6件 40级新 衣服 + 元宝 20万>\
+
+[@zz1z]
+#IF
+checkitem 天魔神甲 6
+CHECKGAMEGOLD > 199999
+#ACT
+GAMEGOLD - 200000
+take 天魔神甲 6
+give 云海神甲 1
+#SAY
+高手炼器往往就是这么神速，一眨眼的工夫您要的东西已经弄好了！\ \
+<返 回/@main>
+#ELSESAY
+你没有6件：天魔神甲或者没有20万元宝，无法炼制！\
+<返 回/@main>
+
+[@zz1f]
+#IF
+checkitem 法神披风 6
+CHECKGAMEGOLD > 199999
+#ACT
+GAMEGOLD - 200000
+take 法神披风 6
+give 云海披风 1
+#SAY
+高手炼器往往就是这么神速，一眨眼的工夫您要的东西已经弄好了！\ \
+<返 回/@main>
+#ELSESAY
+你没有6件：法神披风或者没有20万元宝，无法炼制！\
+<返 回/@main>
+
+[@zz1d]
+#IF
+checkitem 天尊道袍 6
+CHECKGAMEGOLD > 199999
+#ACT
+GAMEGOLD - 200000
+take 天尊道袍 6
+give 云海道袍 1
+#SAY
+高手炼器往往就是这么神速，一眨眼的工夫您要的东西已经弄好了！\ \
+<返 回/@main>
+#ELSESAY
+你没有6件：天尊道袍或者没有20万元宝，无法炼制！\
+<返 回/@main>
+
+
+
+[@zz2z]
+#IF
+checkitem 圣战宝甲 6
+CHECKGAMEGOLD > 199999
+#ACT
+GAMEGOLD - 200000
+take 圣战宝甲 6
+give 云海宝甲 1
+#SAY
+高手炼器往往就是这么神速，一眨眼的工夫您要的东西已经弄好了！\ \
+<返 回/@main>
+#ELSESAY
+你没有6件：圣战宝甲或者没有20万元宝，无法炼制！\
+<返 回/@main>
+
+[@zz2f]
+#IF
+checkitem 霓裳羽衣 6
+CHECKGAMEGOLD > 199999
+#ACT
+GAMEGOLD - 200000
+take 霓裳羽衣 6
+give 云海羽衣 1
+#SAY
+高手炼器往往就是这么神速，一眨眼的工夫您要的东西已经弄好了！\ \
+<返 回/@main>
+#ELSESAY
+你没有6件：霓裳羽衣或者没有20万元宝，无法炼制！\
+<返 回/@main>
+
+[@zz2d]
+#IF
+checkitem 天师长袍 6
+CHECKGAMEGOLD > 199999
+#ACT
+GAMEGOLD - 200000
+take 天师长袍 6
+give 云海长袍 1
+#SAY
+高手炼器往往就是这么神速，一眨眼的工夫您要的东西已经弄好了！\ \
+<返 回/@main>
+#ELSESAY
+你没有6件：天师长袍或者没有20万元宝，无法炼制！\
+<返 回/@main>
+
+[@zzzw]
+#IF
+checkitem 屠龙 3
+CHECKGAMEGOLD > 299999
+#ACT
+GAMEGOLD - 300000
+take 屠龙 3
+give 云海屠龙 1
+#SAY
+高手炼器往往就是这么神速，一眨眼的工夫您要的东西已经弄好了！\ \
+<返 回/@main>
+#ELSESAY
+你没有3件：屠龙或者没有30万元宝，无法炼制！\
+<返 回/@main>
+
+
+[@zzfw]
+#IF
+checkitem 嗜魂法杖 3
+CHECKGAMEGOLD > 299999
+#ACT
+GAMEGOLD - 300000
+take 嗜魂法杖 3
+give 云海法杖 1
+#SAY
+高手炼器往往就是这么神速，一眨眼的工夫您要的东西已经弄好了！\ \
+<返 回/@main>
+#ELSESAY
+你没有3件：嗜魂法杖或者没有30万元宝，无法炼制！\
+<返 回/@main>
+
+
+[@zzdw]
+#IF
+checkitem 太极逍遥扇 3
+CHECKGAMEGOLD > 299999
+#ACT
+GAMEGOLD - 300000
+take 太极逍遥扇 3
+give 云海玉剑 1
+#SAY
+高手炼器往往就是这么神速，一眨眼的工夫您要的东西已经弄好了！\ \
+<返 回/@main>
+#ELSESAY
+你没有1件：太极逍遥扇或者没有30万元宝，无法炼制！\
+<返 回/@main>

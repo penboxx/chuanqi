@@ -1,0 +1,17 @@
+[@星王战链2]
+{
+#IF
+random 4
+#act
+GAMEGOLD - 3000
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将星王战链升级成功。
+BREAK
+
+#IF
+#act
+GAMEGOLD - 3000
+MESSAGEBOX 非常抱歉您的星王战链升级失败
+BREAK
+
+}

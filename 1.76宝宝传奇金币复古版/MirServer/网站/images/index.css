@@ -1,0 +1,15 @@
+@charset "gb2312";
+/* CSS Document */
+
+body,td,th { font-size: 12px; }
+body { font-size: 12px; font: 75%/150% verdana,ËÎÌו; color:#FFFFFF; background:url("30ps_com_bg.jpg"/*tpa=http://www.sf907.com/baobao/images/30ps_com_bg.jpg*/) top center no-repeat #040309; margin:0px;}
+img{border:0px;}
+a { font-size: 12px; color:#0099FF; }
+a:link { text-decoration: none;}
+a:visited { text-decoration: none; color:#0099FF; }
+a:hover { text-decoration: none; color: #FF0000; text-decoration:underline;}
+a:active { text-decoration: none; color: #FF0000;}
+ul {  margin:0 0 0 0; padding: 0; list-style: none; }
+
+.main { margin:0 auto; width:900px; overflow:hidden;}
+.main_1 { width:900px; overflow:hidden;}

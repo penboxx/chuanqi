@@ -1,0 +1,230 @@
+[@main]
+那个充满神秘和危险的地方.....最近可是大家谈论的焦点了。\
+身为锻造大师,不少勇士都将他们的装备送给我研究,\
+希望能挖掘出暗藏在深处的潜力,如今我终于找到了令这些.\
+装备力量更上一层楼的方法.年轻人,你也想试试？\ \
+
+<进入装备锻造系统/@指定锻造>
+
+
+[@指定锻造]
+请选择需要锻造的装备职业:\
+<男战士盔甲打造/@战士1>  天魔神甲*2+1000万金币=光辉战甲，成功率30%\
+<女战士盔甲打造/@战士2>  圣战宝甲*2+1000万金币=光辉战袍，成功率30%\
+<男法师盔甲打造/@法师1>  法神披风*2+1000万金币=赤血魔炮，成功率30%\
+<女法师盔甲打造/@法师2>  霓裳羽衣*2+1000万金币=赤血魔衣，成功率30%\
+<男道士盔甲打造/@道士1>  天尊道袍*2+1000万金币=暖玉道袍，成功率30%\
+<女道士盔甲打造/@道士2>  天师长袍*2+1000万金币=暖玉道甲，成功率30%\
+<通用--黄金斗笠/@通用>  圣战，法神，天尊面纱*1+500万金币=黄金斗笠，成功率30%\
+
+<返回/@天下锻造>                           <关闭/@exit>\
+
+
+
+
+[@通用]
+#if
+checkitem 圣战面纱 1
+checkitem 法神面纱 1
+checkitem 天尊面纱 1
+checkgold 5000000
+#act
+goto @检测完成7
+#ELSESAY 
+材料都没有，滚一边去!\
+
+[@检测完成7]
+#if
+random 3
+#act
+take 圣战面纱 1
+take 法神面纱 1
+take 天尊面纱 1
+take 金币 5000000
+give 黄金斗笠 1
+messagebox 恭喜你成功合成【黄金斗笠】
+SENDMSG 0 〖武林至尊〗玩家%s合成黄金斗笠，新一代武林至尊会是他吗？！
+break
+
+#IF
+random 1
+#act
+take 圣战面纱 1
+take 法神面纱 1
+take 天尊面纱 1
+take 金币 5000000
+messagebox 合成失败，过一会再来试试吧！！
+goto @main
+
+[@道士2]
+#if
+checkitem 天师长袍 2
+checkgold 10000000
+#act
+goto @检测完成6
+#ELSESAY 
+材料都没有，滚一边去!\
+
+[@检测完成6]
+#if
+random 3
+#act
+take 天师长袍 2
+take 金币 10000000
+give 暖玉道甲 1
+messagebox 恭喜你成功合成【暖玉道甲】
+SENDMSG 0 〖武林至尊〗玩家%s合成暖玉道甲，新一代武林至尊会是她吗？！
+break
+
+#IF
+random 1
+#act
+take 天师长袍 2
+take 金币 10000000
+messagebox 合成失败，过一会再来试试吧！！
+goto @main
+
+[@道士1]
+#if
+checkitem 天尊道袍 2
+checkgold 10000000
+#act
+goto @检测完成5
+#ELSESAY 
+材料都没有，滚一边去!\
+
+[@检测完成5]
+#if
+random 3
+#act
+take 天尊道袍 2
+take 金币 10000000
+give 暖玉道袍 1
+messagebox 恭喜你成功合成【暖玉道袍】
+SENDMSG 0 〖武林至尊〗玩家%s合成暖玉道袍，新一代武林至尊会是他吗？！
+break
+
+#IF
+random 1
+#act
+take 天尊道袍 2
+take 金币 10000000
+messagebox 合成失败，过一会再来试试吧！！
+goto @main
+
+
+[@法师2]
+#if
+checkitem 霓裳羽衣 2
+checkgold 10000000
+#act
+goto @检测完成4
+#ELSESAY 
+材料都没有，滚一边去!\
+
+[@检测完成4]
+#if
+random 3
+#act
+take 霓裳羽衣 2
+take 金币 10000000
+give 赤血魔衣 1
+messagebox 恭喜你成功合成【赤血魔衣】
+SENDMSG 0 〖武林至尊〗玩家%s合成赤血魔衣，新一代武林至尊会是她吗？！
+break
+
+#IF
+random 1
+#act
+take 霓裳羽衣 2
+take 金币 10000000
+messagebox 合成失败，过一会再来试试吧！！
+goto @main
+
+
+[@法师1]
+#if
+checkitem 法神披风 2
+checkgold 10000000
+#act
+goto @检测完成3
+#ELSESAY 
+材料都没有，滚一边去!\
+
+[@检测完成3]
+#if
+random 3
+#act
+take 法神披风 2
+take 金币 10000000
+give 赤血魔炮 1
+messagebox 恭喜你成功合成【赤血魔炮】
+SENDMSG 0 〖武林至尊〗玩家%s合成赤血魔炮，新一代武林至尊会是他吗？！
+break
+
+#IF
+random 1
+#act
+take 法神披风 2
+take 金币 10000000
+messagebox 合成失败，过一会再来试试吧！！
+goto @main
+
+
+[@战士2]
+#if
+checkitem 圣战宝甲 2
+checkgold 10000000
+#act
+goto @检测完成2
+#ELSESAY 
+材料都没有，滚一边去!\
+
+[@检测完成2]
+#if
+random 3
+#act
+take 圣战宝甲 2
+take 金币 10000000
+give 光辉战袍 1
+messagebox 恭喜你成功合成【光辉战袍】
+SENDMSG 0 〖武林至尊〗玩家%s合成光辉战袍，新一代武林至尊会是她吗？！
+break
+
+#IF
+random 1
+#act
+take 圣战宝甲 2
+take 金币 10000000
+messagebox 合成失败，过一会再来试试吧！！
+goto @main
+
+[@战士1]
+#if
+checkitem 天魔神甲 2
+checkgold 10000000
+#act
+goto @检测完成1
+#ELSESAY 
+材料都没有，滚一边去!\
+
+[@检测完成1]
+#if
+random 3
+#act
+take 天魔神甲 2
+take 金币 10000000
+give 光辉战甲 1
+messagebox 恭喜你成功合成【光辉战甲】
+SENDMSG 0 〖武林至尊〗玩家%s合成光辉战甲，新一代武林至尊会是他吗？！
+break
+
+#IF
+random 1
+#act
+take 天魔神甲 2
+take 金币 10000000
+messagebox 合成失败，过一会再来试试吧！！
+goto @main
+
+

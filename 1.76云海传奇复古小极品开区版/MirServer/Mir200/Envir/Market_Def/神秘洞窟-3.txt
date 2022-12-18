@@ -1,0 +1,23 @@
+[@MAIN]
+<COLOR=clFuchsia ╔═══════════════════════════╗>\
+<COLOR=clFuchsia ║>主要BOSS：<COLOR=clSkyBlue 邪恶钳虫、邪恶教主、等各大BOSS...>　　　　　 <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>刷新时间：<COLOR=clSkyBlue 邪恶教主60分钟，邪恶钳虫15分钟...>　　　　　 <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>可爆物品：<COLOR=clSkyBlue 蓝灵腰带、蓝灵神靴、蓝灵宝石、赤月、屠龙..>　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>危险指数：<COLOR=clLime ★★★☆☆>　　　　　　　　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>进入条件：<COLOR=clRed 需要等级42级和200元宝！>　　　　　　　　　　 <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>地图介绍：<COLOR=clRed 此地图BOSS非常强悍，建议组队进入。>　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║><进入邪恶洞窟/@JRSMDK>　　　　　　　　　　　　　　　　　　　<返回/@EXIT><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚═══════════════════════════╝>\
+
+[@JRSMDK]
+#IF
+checklevelex > 41
+CHECKGAMEGOLD > 199
+#ACT
+GAMEGOLD - 200
+MAPMOVE SMDK
+SENDMSG 0 勇士%s进入了神秘洞窟，此地图专爆腰带、靴子、宝石！
+GIVE 回城卷 1
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有42级或者元宝不足200颗！

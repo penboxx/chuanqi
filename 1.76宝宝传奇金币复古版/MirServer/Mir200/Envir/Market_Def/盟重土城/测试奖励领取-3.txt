@@ -1,0 +1,31 @@
+[@MAIN]
+如果你参与过宝宝传奇1.76版测试阶段\
+在测试阶段等级达到35级赠送50W金币\
+在测试阶段等级达到40级赠送100W金币\
+领取奖励必须与测试阶段帐号一样\ \ \
+
+
+
+<领取35级测试奖励/@领取35级测试奖励>\
+\
+<领取40级测试奖励/@领取40级测试奖励>\
+
+[@领取35级测试奖励]
+#if
+CHECKACCOUNTLIST 	..\QuestDiary\数据文件\35级测试奖励.txt
+#act
+DELACCOUNTLIST 	..\QuestDiary\数据文件\35级测试奖励.txt
+GAMEGOLD + 500000
+SENDMSG 5 提示:35级测试奖励领取成功！
+#elsesay
+你没有参与测试你没有领取资格！
+
+[@领取40级测试奖励]
+#if
+CHECKACCOUNTLIST 	..\QuestDiary\数据文件\40级测试奖励.txt
+#act
+DELACCOUNTLIST 	..\QuestDiary\数据文件\40级测试奖励.txt
+GAMEGOLD + 1000000
+SENDMSG 5 提示:40级测试奖励领取成功！
+#elsesay
+你没有参与测试你没有领取资格！

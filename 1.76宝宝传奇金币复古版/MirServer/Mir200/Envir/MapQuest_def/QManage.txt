@@ -1,0 +1,649 @@
+
+[@Resume]
+#IF
+CheckLevelEx > 0
+#ACT
+SENDMSG 5 ╔──────────────────────────────╗ 255 0
+SENDMSG 5 │　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　│ 255 0
+SENDMSG 5 │　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　│ 255 0
+SENDMSG 5 │　　　　　　管理员为避免您在游戏中出现数据错误　　　　　　　│ 255 0
+SENDMSG 5 │　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　│ 255 0
+SENDMSG 5 │　　　　　　　所以请你小退一下再重新登陆即可　　　　　　　　│ 255 0
+SENDMSG 5 │　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　│ 255 0
+SENDMSG 5 │　　　　　　　　给您带来的不便我们深表歉意　　　　　　　　　│ 255 0
+SENDMSG 5 ╚──────────────────────────────╝ 255 0
+KICK
+SETOFFLINEPLAY OFF
+
+[@Login]
+#IF
+CHECKLEVELEX > 0
+#ACT
+SETOFFLINEPLAY  ON
+VAR Integer HUMAN ZZAB
+VAR Integer HUMAN ZZAC
+VAR Integer HUMAN 新手
+VAR Integer HUMAN 牛魔
+VAR Integer HUMAN BOSS
+VAR Integer HUMAN 日常
+VAR Integer HUMAN 押镖
+LOADVAR HUMAN 新手 ..\QuestDiary\数据文件\新手.txt
+LOADVAR HUMAN 牛魔 ..\QuestDiary\数据文件\牛魔.txt
+LOADVAR HUMAN BOSS ..\QuestDiary\数据文件\BOSS.txt
+LOADVAR HUMAN 日常 ..\QuestDiary\数据文件\日常.txt
+LOADVAR HUMAN 押镖 ..\QuestDiary\数据文件\押镖.txt
+LOADVAR HUMAN ZZAB ..\QuestDiary\数据文件\ZZAB.txt
+LOADVAR HUMAN ZZAC ..\QuestDiary\数据文件\ZZAC.txt
+#CALL [\登陆\登陆脚本.txt] @登陆设置
+;#CALL [\登陆\登陆封号.txt] @封号123
+#CALL [\登陆\新手登陆.txt] @新手登陆
+#CALL [\登陆\封号脚本.txt] @封号设置
+#CALL [\二级密码\密码登陆.txt] @密码登陆
+;#CALL [\封号系统\封号系统.txt] @封号分类
+#CALL [\\登陆\封号.txt] @FH
+goto @赞助大使
+goto @送宝宝
+
+[@赞助大使]
+#IF
+CHECK [61] 1
+#ACT
+SENDMSG 0 欢迎：<$SERVERNAME>翡翠赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 0 欢迎：<$SERVERNAME>翡翠赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 1 欢迎：<$SERVERNAME>翡翠赞助大使〖%s〗进入游戏中！！ 254 0
+SENDMSG 1 欢迎：<$SERVERNAME>翡翠赞助大使〖%s〗进入游戏中！！ 254 0
+BREAK
+
+#IF
+CHECK [60] 1
+#ACT
+SENDMSG 0 欢迎：<$SERVERNAME>黄金赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 0 欢迎：<$SERVERNAME>黄金赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 1 欢迎：<$SERVERNAME>黄金赞助大使〖%s〗进入游戏中！！ 254 0
+SENDMSG 1 欢迎：<$SERVERNAME>黄金赞助大使〖%s〗进入游戏中！！ 254 0
+BREAK
+
+#IF
+CHECK [59] 1
+#ACT
+SENDMSG 0 欢迎：<$SERVERNAME>白金赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 0 欢迎：<$SERVERNAME>白金赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 1 欢迎：<$SERVERNAME>白金赞助大使〖%s〗进入游戏中！！ 254 0
+SENDMSG 1 欢迎：<$SERVERNAME>白金赞助大使〖%s〗进入游戏中！！ 254 0
+BREAK
+
+[@送宝宝]
+#IF
+checklevelex < 26
+#ACT
+RecallMob 新手宝宝 0 1  10000 0 -1
+SENDMSG 7 恭喜你召唤新手宝宝成功！(新手26级以下免费赠送新手宝宝)
+CLOSE
+BREAK
+
+
+
+[@刺杀元宝树]
+#IF
+CheckLevelEx > 0
+#SAY
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━┑\
+┊　　　　　　<COLOR=clLime 《刺杀元宝树》活动正式举行>              ┊\
+┊                                                    ┊\
+┊<COLOR=clYellow 活动简介：><COLOR=clRED 每1个小时一次，超多元宝哦，值得参与>       ┊\
+┊                                                    ┊\
+┊<COLOR=clYellow 友情提示：><COLOR=clAqua 本活动 必 爆 二个 聚灵珠  >                ┊\
+┊                                                    ┊\
+┊　　　　　　　　　　　　　　　　     <我要立刻前往/@爆涨>   ┊\
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━┙\
+[@爆涨]
+#IF
+#ACT
+mapmove 3 356 340
+sendmsg 1 ≮刺杀元宝树≯已正式开始.大家速度到从土城药店进行活动... 
+BREAK
+
+
+
+
+
+[@刺杀送宝使者]
+#IF
+CheckLevelEx > 0
+#SAY
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━┑\
+┊　　　　　　<COLOR=clLime 《送宝活动》活动正式举行>                ┊\
+┊                                                    ┊\
+┊<COLOR=clYellow 活动简介：><COLOR=clRED 必爆超级祝福油!超高几率爆赤月装备!>        ┊\
+┊                                                    ┊\
+┊<COLOR=clYellow 友情提示：><COLOR=clAqua 本区唯一获得超级祝福油方式  >              ┊\
+┊                                                    ┊\
+┊每天举行三次,15点,19点30分,22点。　　　　 <我赶紧去/@爆涨1>  ┊\
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━┙\
+[@爆涨1]
+#IF
+#ACT
+mapmove D5071p 20 22
+sendmsg 1 ≮送宝活动≯已正式开始.大家速度到从土城右上角进行活动... 
+BREAK
+
+
+[@风雷召唤]
+#IF
+;CHECKCASTLEWAR 沙巴克 
+#ACT
+;SENDMSG 0 〖<$STR(A34)>〗[暂时不能使用穿云箭]:现在正在进行攻城战中...!
+;#ELSEACT
+goto @风雷
+
+[@风雷]
+#IF
+HaveGuild
+CheckOfGuild <$STR(A35)>
+#SAY
+同门师兄弟〖<$STR(A34)>〗需要帮助！\
+你是否愿意前往？\ \
+<前往帮助/@风雷召唤_1>　　<不前往帮助/@EXIT>\
+#ACT
+BREAK
+#ELSEACT
+BREAK
+
+[@风雷召唤_1]
+#IF
+HaveGuild
+CheckOfGuild <$STR(A35)>
+#ACT
+Gmexecute 跟踪 <$STR(A34)>
+BREAK
+#ELSEACT
+BREAK
+
+
+
+
+
+
+;〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓赌博
+
+[@抢庄开始]
+#IF
+LARGE M47 0
+#ACT
+SENDMSG 6 [美女赌庄]：现在开始抢庄了，庄家本钱必须超过1000元宝。
+BREAK
+
+[@移动庄家]
+#IF
+EQUAL A35 <$USERNAME>
+EQUAL I12 29
+#ACT
+MAPMOVE b012 8 10
+BREAK
+#IF
+EQUAL A35 <$USERNAME>
+#ACT
+MAPMOVE b012 5 11
+BREAK
+
+[@抢庄结束]
+#IF
+EQUAL A35 <$USERNAME>
+LARGE M47 0
+#ACT
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 [赌庄胖妞]：抢庄已结束。现在是下注时间，押定离手了。
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 庄家姓名：【<$STR(A35)>】　庄家本钱数：【<$STR(I31)>】
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+BREAK
+#IF
+ISONMAP TXDGA
+LARGE M47 0
+#ACT
+MAPMOVE TXDGA 5 11
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 [赌庄胖妞]：抢庄已结束。现在是下注时间，押定离手了。
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 庄家姓名：【<$STR(A35)>】　庄家本钱数：【<$STR(I31)>】
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+BREAK
+#IF
+ISONMAP TXDGA
+#ACT
+MAPMOVE TXDGA
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 [赌庄胖妞]：抢庄已结束。现在是下注时间，押定离手了。
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 庄家姓名：【<$STR(A35)>】　庄家本钱数：【<$STR(I31)>】
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+BREAK
+
+[@下注开始]
+#IF
+LARGE M47 0
+#ACT
+SENDMSG 6 [美女赌庄]：现在开始下注了，庄家本钱共有<$STR(I31)>个元宝。 255 253
+BREAK
+
+[@下注结束]
+#IF
+EQUAL A35 <$USERNAME>
+#ACT
+BREAK
+#IF
+LARGE M47 0
+LARGE M43 0
+#ACT
+SENDMSG 7 [提示]：本局你下注【<$STR(M43)>】元宝押【<$STR(S23)>】
+BREAK
+
+[@猜点开始]
+#IF
+LARGE M47 0
+LARGE M43 0
+#ACT
+MOV D0 <$STR(I42)>
+MOV D1 <$STR(I43)>
+MOV D2 <$STR(I44)>
+PLAYDICE 3 @ZZNEW
+#SAY
+　\
+╔═══════════════╗你所拥有的元宝数：【<$GAMEGOLD>】\
+║┏━━━┓┏━━━┓┏━━━┓║\
+║┃●　●┃┃●　●┃┃●　●┃║庄家姓名：【<$STR(A35)>】\
+║┃●　●┃┃●　●┃┃●　●┃║\
+║┃●　●┃┃●　●┃┃●　●┃║庄家本钱数：【<$STR(I31)>】\
+║┗━━━┛┗━━━┛┗━━━┛║\
+╚═══════════════╝你下注【<$STR(M43)>】元宝押【<$STR(S23)>】\
+
+[@ZZNEW]
+#IF
+LARGE I42 0
+EQUAL I42 <$STR(I43)>
+EQUAL I42 <$STR(I44)>
+#ACT
+SENDMSG 7 [美女赌庄]：骰子掷出了【<$STR(I42)>】【<$STR(I43)>】【<$STR(I44)>】点【豹子】
+BREAK
+#IF
+LARGE I45 0
+SMALL I45 11
+#ACT
+SENDMSG 7 [美女赌庄]：骰子掷出了【<$STR(I42)>】【<$STR(I43)>】【<$STR(I44)>】点【小】
+BREAK
+#IF
+LARGE I45 10
+#ACT
+SENDMSG 7 [赌庄胖妞]：骰子掷出了【<$STR(I42)>】【<$STR(I43)>】【<$STR(I44)>】点【大】
+BREAK
+
+[@赌博结帐]
+#IF
+LARGE M47 0
+EQUAL A35 <$USERNAME>
+EQUAL I13 0
+EQUAL I14 0
+#ACT
+GAMEGOLD + <$STR(I31)>
+SENDMSG 0 [赌庄胖妞]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+#IF
+LARGE M47 0
+EQUAL A34 豹子
+EQUAL A35 <$USERNAME>
+EQUAL I13 0
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I14 <$STR(M46)>
+DIV I14 100
+INC I31 <$STR(I14)>
+GAMEGOLD + <$STR(I31)>
+INC A36 豹子
+DEC A36 1 4
+SENDMSG 0 [赌庄胖妞]：庄家【<$USERNAME>】赢得了【<$STR(I14)>】个元宝。 255 253
+BREAK
+#IF
+LARGE M47 0
+EQUAL A34 豹子
+EQUAL A35 <$USERNAME>
+EQUAL I14 0
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I13 <$STR(M46)>
+DIV I13 100
+INC I31 <$STR(I13)>
+GAMEGOLD + <$STR(I31)>
+INC A36 豹
+DEC A36 1 4
+SENDMSG 0 [赌庄胖妞]：庄家【<$USERNAME>】赢得了【<$STR(I13)>】个元宝。 255 253
+BREAK
+#IF
+LARGE M47 0
+EQUAL A34 豹子
+EQUAL A35 <$USERNAME>
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+PERCENT I11 10000
+MUL I11 <$STR(M46)>
+INC I31 <$STR(I11)>
+GAMEGOLD + <$STR(I31)>
+INC A36 豹
+DEC A36 1 4
+SENDMSG 0 [赌庄胖妞]：庄家【<$USERNAME>】赢得了【<$STR(I11)>】个元宝。 255 253
+BREAK
+;----------------------------------------
+
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+EQUAL I13 0
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I14 <$STR(M46)>
+DIV I14 100
+INC I31 <$STR(I14)>
+GAMEGOLD + <$STR(I31)>
+INC A36 大
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】赢得了【<$STR(I14)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+EQUAL I14 0
+#ACT
+DEC I31 <$STR(I13)>
+GAMEGOLD + <$STR(I31)>
+INC A36 大
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+EQUAL I13 <$STR(I14)>
+#ACT
+GAMEGOLD + <$STR(I31)>
+INC A36 大
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+large I14 <$STR(I13)>
+#ACT
+DEC I14 <$STR(I13)>
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I14 <$STR(M46)>
+DIV I14 100
+INC I31 <$STR(I14)>
+GAMEGOLD + <$STR(I31)>
+INC A36 大
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】赚取了【<$STR(I14)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+large I13 <$STR(I14)>
+#ACT
+DEC I13 <$STR(I14)>
+DEC I31 <$STR(I13)>
+GAMEGOLD + <$STR(I31)>
+INC A36 大
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】输了【<$STR(I13)>】个元宝。 255 253
+BREAK
+
+;--------------------------------------------------------------------------
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+EQUAL I14 0
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I13 <$STR(M46)>
+DIV I13 100
+INC I31 <$STR(I13)>
+GAMEGOLD + <$STR(I31)>
+INC A36 小
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】赢得了【<$STR(I13)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+EQUAL I13 0
+#ACT
+DEC I31 <$STR(I14)>
+GAMEGOLD + <$STR(I31)>
+INC A36 小
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+EQUAL I13 <$STR(I14)>
+#ACT
+GAMEGOLD + <$STR(I31)>
+INC A36 小
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+LARGE I14 <$STR(I13)>
+#ACT
+DEC I14 <$STR(I13)>
+DEC I31 <$STR(I14)>
+GAMEGOLD + <$STR(I31)>
+INC A36 小
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】输了【<$STR(I14)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+LARGE I13 <$STR(I14)>
+#ACT
+DEC I13 <$STR(I14)>
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I13 <$STR(M46)>
+DIV I13 100
+INC I31 <$STR(I13)>
+GAMEGOLD + <$STR(I31)>
+INC A36 小
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】赚取了【<$STR(I13)>】个元宝。 255 253
+BREAK
+;---------------------
+#IF
+LARGE M47 0
+EQUAL A34 豹子
+LARGE M43 0
+#ACT
+SENDMSG 6 庄家【<$STR(A35)>】掷出了【<$STR(A34)>】，你损失了【<$STR(M43)>】个元宝注金。
+MOV M43 0
+MOV S23 无
+BREAK
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL S23 大
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MOV M44 <$STR(M43)>
+MUL M44 <$STR(M46)>
+DIV M44 100
+INC M43 <$STR(M44)>
+GAMEGOLD + <$STR(M43)>
+SENDMSG 6 庄家【<$STR(A35)>】掷出了【<$STR(A34)>】，你赢得了【<$STR(M44)>】个元宝注金。
+MOV M43 0
+MOV S23 无
+BREAK
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL S23 小
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MOV M44 <$STR(M43)>
+MUL M44 <$STR(M46)>
+DIV M44 100
+INC M43 <$STR(M44)>
+GAMEGOLD + <$STR(M43)>
+SENDMSG 6 庄家【<$STR(A35)>】掷出了【<$STR(A34)>】，你赢得了【<$STR(M44)>】个元宝注金。
+MOV M43 0
+MOV S23 无
+BREAK
+#IF
+LARGE M47 0
+LARGE M43 0
+#ACT
+SENDMSG 6 庄家【<$STR(A35)>】掷出了【<$STR(A34)>】，你损失了【<$STR(M43)>】个元宝注金。
+MOV M43 0
+MOV S23 无
+BREAK
+
+[@赌博清零]
+#IF
+LARGE M47 0
+#ACT
+MOV M40 0
+MOV M41 0
+MOV M42 0
+MOV M43 0
+MOV M44 0
+MOV M45 0
+MOV M46 0
+MOV M47 0
+MOV S23 无
+BREAK
+
+[@沙巴克传回]
+#IF
+ISONMAP xhg
+CheckLevelEx < 38
+#ACT
+MAPMOVE 3 334 334
+MESSAGEBOX 小新兵蛋子！38级都没有！人家攻沙你凑什么热闹？老老实实呆着吧！
+BREAK
+
+
+[@OnTimer0]
+#IF
+ISONMAP MYDG
+#ELSEACT
+calcvar HUMAN 命运定时器 = 0
+KillScTimer 0
+BREAK
+
+#IF
+CHECKVAR HUMAN 命运定时器 > 0
+#ACT
+CALCVAR HUMAN 命运定时器 - 1
+break
+#ELSEACT
+MAPMOVE 3 330 330
+calcvar HUMAN 命运定时器 = 0
+KillScTimer 0
+BREAK
+
+
+[@开挂加冕1]
+#IF
+ISONMAP jianyuditu
+#ACT
+set [137] 1
+break
+
+[@逃跑检测1]
+#IF
+Check [137] 1
+#ACT
+Delaycall 200 @逃跑2
+break
+
+[@逃跑2]
+#IF
+Check [137] 1
+ISONMAP jianyuditu
+#ACT
+GAMEGOLD + 0
+break
+#elseact
+mapmove jianyuditu
+SENDMSG 7 小子，想跑？？拿5000元宝保释金才可以出去,不然就永远呆在这！
+
+[@密码表示1]
+#IF
+ISONMAP mima
+#act
+set [188] 1
+
+[@输入密码1]
+#IF
+Check [188] 1
+#ACT
+Delaycall 200 @未输入
+break
+
+[@未输入]
+#if
+Check [188] 1
+ISONMAP mima
+#ACT
+GAMEGOLD + 0
+break
+#elseact
+mapmove mima
+SENDMSG 7 请使用输入二级密码的方式离开本房间！其他方法一概无效！
+
+
+[@清理任务]
+#if
+Check [200] 1
+Check [201] 1
+Check [202] 1
+Check [203] 1
+#ACT
+set [200] 0
+set [201] 0
+set [202] 0
+set [203] 0
+reset [200] 4
+SENDMSG 7 清理！
+break
+
+

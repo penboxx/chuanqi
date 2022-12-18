@@ -1,0 +1,30 @@
+[@MAIN]
+这位勇士，你确定你要勇闯天关吗？\
+天关总共为18层，每10秒扣10元宝，通关累计可以获得<COLOR=clLime 大量经验！>\
+进入每一关都会扣取一定的元宝，进入天关不能少于6000元宝！\
+<COLOR=clRed 注:请不要将聚灵珠放在包袱内,否则会被收取掉!>\
+　\
+<我要勇闯天关/@WYYCTG>　　　　　　<我没那个实力/@exit>\
+
+[@WYYCTG]
+#IF
+CHECKMAPHUMANCOUNT TG1 = 0
+CHECKGAMEGOLD > 5999
+#ACT
+GAMEGOLD - 30
+CLEARMAPMON TG1
+take 聚灵珠 50
+Param1 TG1
+MonGen 楔蛾 1 1
+MonGen 楔蛾 1 1
+MonGen 楔蛾 1 1
+MonGen 楔蛾 1 1
+MonGen 洞蛆 1 1
+MonGen 洞蛆 1 1
+MonGen 洞蛆 1 1
+MAPMOVE TG1
+SENDMSG 0 %s闯入了天关，每过一关可获得丰厚的经验奖励！
+give 回城卷 1
+BREAK
+#ELSEACT
+MESSAGEBOX 里面有人了，或者你的元宝不足6000！

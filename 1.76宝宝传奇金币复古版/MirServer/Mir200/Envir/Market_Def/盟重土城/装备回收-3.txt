@@ -1,0 +1,2372 @@
+[@main]
+<COLOR=#254 本服开放装备一件回收,分别为金币和经验回收,屠龙霸者不设回收!>\
+<COLOR=#254 回收前请仔细检查包裹内是否有极品,以免造成损失!> \
+=========<COLOR=#254 ↓金币回收↓>=================<COLOR=#254 ↓经验回收↓>=========\
+<COLOR=clFuchsia 沃玛首饰  1W金币一个> <1键回收/@衣服金币>    <COLOR=clLime 沃玛首饰  5W经验一个> <1键回收/@衣服经验>\
+<COLOR=clFuchsia 祖玛首饰  5W金币一个> <1键回收/@祖玛金币>    <COLOR=clLime 祖玛首饰 10W经验一个> <1键回收/@祖玛经验>\
+<COLOR=clFuchsia 祖玛武器 10W金币一个> <1键回收/@裁决金币>    <COLOR=clLime 祖玛武器 30W经验一个> <1键回收/@裁决经验>\
+<COLOR=clFuchsia 赤月首饰 50W金币一个> <1键回收/@赤月金币>    <COLOR=clLime 赤月首饰 100W经验1个> <1键回收/@赤月经验>\
+<COLOR=clFuchsia 怒斩龙牙 100W金币1个> <1键回收/@新武器金币>    <COLOR=clLime 怒斩龙牙 300W经验1个> <1键回收/@新武器经验>\  \
+注意:祖码首饰回收不包括<COLOR=#254 "黑铁头盔">,玩家回收时请注意极品装备!\
+
+
+
+[@新武器金币]
+#if
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+MOV P9 0
+
+#if
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+INC P8 1
+INC P9 1000000
+
+#if
+LARGE P8 0
+#ACT
+give 金币  <$STR(P9)>
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了新武器(<$STR(P8)>)件,获得金币+(<$STR(P9)>)
+MOV P8 0
+MOV P9 0
+GOTO @MAIN
+#ELSEACT
+sendmsg 6 你背包中无新武器。
+break
+
+
+[@衣服金币]
+#if
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+MOV P9 0
+
+#if
+checkitem 幽灵项链 1
+#ACT
+take 幽灵项链 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 幽灵手套 1
+#ACT
+take 幽灵手套 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 龙之戒指 1
+#ACT
+take 龙之戒指 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 井中月 1
+#ACT
+take 井中月 1
+INC P8 1
+INC P9 20000
+
+#if
+checkitem 天珠项链 1
+#ACT
+take 天珠项链 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 心灵手镯 1
+#ACT
+take 心灵手镯 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 铂金戒指 1
+#ACT
+take 铂金戒指 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 无极棍 1
+#ACT
+take 无极棍 1
+INC P8 1
+INC P9 20000
+
+#if
+checkitem 生命项链 1
+#ACT
+take 生命项链 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem  思贝儿手镯 1
+#ACT
+take  思贝儿手镯 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 红宝石戒指 1
+#ACT
+take 红宝石戒指 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 魔杖 1
+#ACT
+take 魔杖 1
+INC P8 1
+INC P9 20000
+
+#if
+checkitem 幽灵项链 1
+#ACT
+take 幽灵项链 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 幽灵手套 1
+#ACT
+take 幽灵手套 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 龙之戒指 1
+#ACT
+take 龙之戒指 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 井中月 1
+#ACT
+take 井中月 1
+INC P8 1
+INC P9 20000
+
+#if
+checkitem 天珠项链 1
+#ACT
+take 天珠项链 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 心灵手镯 1
+#ACT
+take 心灵手镯 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 铂金戒指 1
+#ACT
+take 铂金戒指 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 无极棍 1
+#ACT
+take 无极棍 1
+INC P8 1
+INC P9 20000
+
+#if
+checkitem 生命项链 1
+#ACT
+take 生命项链 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem  思贝儿手镯 1
+#ACT
+take  思贝儿手镯 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 红宝石戒指 1
+#ACT
+take 红宝石戒指 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 魔杖 1
+#ACT
+take 魔杖 1
+INC P8 1
+INC P9 20000
+
+
+#if
+checkitem 幽灵项链 1
+#ACT
+take 幽灵项链 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 幽灵手套 1
+#ACT
+take 幽灵手套 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 龙之戒指 1
+#ACT
+take 龙之戒指 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 井中月 1
+#ACT
+take 井中月 1
+INC P8 1
+INC P9 20000
+
+#if
+checkitem 天珠项链 1
+#ACT
+take 天珠项链 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 心灵手镯 1
+#ACT
+take 心灵手镯 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 铂金戒指 1
+#ACT
+take 铂金戒指 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 无极棍 1
+#ACT
+take 无极棍 1
+INC P8 1
+INC P9 20000
+
+#if
+checkitem 生命项链 1
+#ACT
+take 生命项链 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem  思贝儿手镯 1
+#ACT
+take  思贝儿手镯 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 红宝石戒指 1
+#ACT
+take 红宝石戒指 1
+INC P8 1
+INC P9 10000
+
+#if
+checkitem 魔杖 1
+#ACT
+take 魔杖 1
+INC P8 1
+INC P9 20000
+
+
+
+
+
+#if
+LARGE P8 0
+#ACT
+give 金币  <$STR(P9)>
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了沃玛装备(<$STR(P8)>)件,获得金币+(<$STR(P9)>)
+MOV P8 0
+MOV P9 0
+GOTO @MAIN
+#ELSEACT
+sendmsg 6 你背包中无沃玛装备。
+break
+
+[@赤月金币]
+#if
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+MOV P9 0
+
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+INC P8 1
+INC P9 500000
+
+
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+INC P8 1
+INC P9 500000
+
+
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+INC P8 1
+INC P9 500000
+
+
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+INC P8 1
+INC P9 500000
+
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+INC P8 1
+INC P9 500000
+
+#if
+LARGE P8 0
+#ACT
+give 金币  <$STR(P9)>
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了赤月首饰(<$STR(P8)>)件,获得金币+(<$STR(P9)>)
+MOV P8 0
+MOV P9 0
+GOTO @MAIN
+#ELSEACT
+sendmsg 6 你背包中无赤月首饰。
+break
+
+[@裁决金币]
+#if
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+MOV P9 0
+
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+INC P8 1
+INC P9 100000
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+INC P8 1
+INC P9 100000
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+INC P8 1
+INC P9 100000
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+INC P8 1
+INC P9 100000
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+INC P8 1
+INC P9 100000
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+INC P8 1
+INC P9 100000
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+INC P8 1
+INC P9 100000
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+INC P8 1
+INC P9 100000
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+INC P8 1
+INC P9 100000
+#if
+LARGE P8 0
+#ACT
+give 金币  <$STR(P9)>
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了祖玛武器(<$STR(P8)>)件,获得金币+(<$STR(P9)>)
+MOV P8 0
+MOV P9 0
+GOTO @MAIN
+#ELSEACT
+sendmsg 6 你背包中无祖玛武器。
+break
+
+
+[@祖玛金币]
+#if
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+MOV P9 0
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC P8 1
+INC P9 50000
+
+#if
+LARGE P8 0
+#ACT
+give 金币  <$STR(P9)>
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了祖玛装备(<$STR(P8)>)件,获得金币+(<$STR(P9)>)
+MOV P8 0
+MOV P9 0
+GOTO @MAIN
+#ELSEACT
+sendmsg 6 你背包中无祖玛装备。
+break
+
+
+
+
+
+
+
+
+
+
+
+[@新武器经验]
+#if
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+MOV P9 0
+
+#if
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+INC P8 1
+INC P9 3000000
+
+#if
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+INC P8 1
+INC P9 3000000
+
+#if
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+INC P8 1
+INC P9 3000000
+
+#if
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+INC P8 1
+INC P9 3000000
+
+#if
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+INC P8 1
+INC P9 3000000
+#if
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+INC P8 1
+INC P9 3000000
+
+#if
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+INC P8 1
+INC P9 3000000
+
+#if
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+INC P8 1
+INC P9 3000000
+
+#if
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+INC P8 1
+INC P9 3000000
+
+#if
+LARGE P8 0
+#ACT
+CHANGEEXP + <$STR(P9)>
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了新武器(<$STR(P8)>)件,获得经验+(<$STR(P9)>)
+MOV P8 0
+MOV P9 0
+GOTO @MAIN
+#ELSEACT
+sendmsg 6 你背包中无新武器。
+break
+
+
+[@衣服经验]
+#if
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+MOV P9 0
+
+#if
+checkitem 幽灵项链 1
+#ACT
+take 幽灵项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 幽灵手套 1
+#ACT
+take 幽灵手套 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 龙之戒指 1
+#ACT
+take 龙之戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 井中月 1
+#ACT
+take 井中月 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 天珠项链 1
+#ACT
+take 天珠项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 心灵手镯 1
+#ACT
+take 心灵手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 铂金戒指 1
+#ACT
+take 铂金戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 无极棍 1
+#ACT
+take 无极棍 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 生命项链 1
+#ACT
+take 生命项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 思贝儿手镯 1
+#ACT
+take 思贝儿手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 红宝石戒指 1
+#ACT
+take 红宝石戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 魔杖 1
+#ACT
+take 魔杖 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 幽灵项链 1
+#ACT
+take 幽灵项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 幽灵手套 1
+#ACT
+take 幽灵手套 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 龙之戒指 1
+#ACT
+take 龙之戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 井中月 1
+#ACT
+take 井中月 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 天珠项链 1
+#ACT
+take 天珠项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 心灵手镯 1
+#ACT
+take 心灵手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 铂金戒指 1
+#ACT
+take 铂金戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 无极棍 1
+#ACT
+take 无极棍 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 生命项链 1
+#ACT
+take 生命项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 思贝儿手镯 1
+#ACT
+take 思贝儿手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 红宝石戒指 1
+#ACT
+take 红宝石戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 魔杖 1
+#ACT
+take 魔杖 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 幽灵项链 1
+#ACT
+take 幽灵项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 幽灵手套 1
+#ACT
+take 幽灵手套 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 龙之戒指 1
+#ACT
+take 龙之戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 井中月 1
+#ACT
+take 井中月 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 天珠项链 1
+#ACT
+take 天珠项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 心灵手镯 1
+#ACT
+take 心灵手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 铂金戒指 1
+#ACT
+take 铂金戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 无极棍 1
+#ACT
+take 无极棍 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 生命项链 1
+#ACT
+take 生命项链 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 思贝儿手镯 1
+#ACT
+take 思贝儿手镯 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 红宝石戒指 1
+#ACT
+take 红宝石戒指 1
+INC P8 1
+INC P9 50000
+
+#if
+checkitem 魔杖 1
+#ACT
+take 魔杖 1
+INC P8 1
+INC P9 100000
+
+
+#if
+LARGE P8 0
+#ACT
+CHANGEEXP + <$STR(P9)>
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了沃玛装备(<$STR(P8)>)件,获得经验+(<$STR(P9)>)
+MOV P8 0
+MOV P9 0
+GOTO @MAIN
+#ELSEACT
+sendmsg 6 你背包中无沃玛装备。
+break
+
+[@赤月经验]
+#if
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+MOV P9 0
+
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+INC P8 1
+INC P9 1000000
+
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+INC P8 1
+INC P9 1000000
+
+#if
+LARGE P8 0
+#ACT
+CHANGEEXP + <$STR(P9)>
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了赤月首饰(<$STR(P8)>)件,获得经验+(<$STR(P9)>)
+MOV P8 0
+MOV P9 0
+GOTO @MAIN
+#ELSEACT
+sendmsg 6 你背包中无赤月首饰。
+break
+
+[@裁决经验]
+#if
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+MOV P9 0
+
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+INC P8 1
+INC P9 300000
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+INC P8 1
+INC P9 300000
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+INC P8 1
+INC P9 300000
+
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+INC P8 1
+INC P9 300000
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+INC P8 1
+INC P9 300000
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+INC P8 1
+INC P9 300000
+
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+INC P8 1
+INC P9 300000
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+INC P8 1
+INC P9 300000
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+INC P8 1
+INC P9 300000
+
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+INC P8 1
+INC P9 300000
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+INC P8 1
+INC P9 300000
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+INC P8 1
+INC P9 300000
+
+#if
+LARGE P8 0
+#ACT
+CHANGEEXP + <$STR(P9)>
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了祖玛武器(<$STR(P8)>)件,获得经验+(<$STR(P9)>)
+MOV P8 0
+MOV P9 0
+GOTO @MAIN
+#ELSEACT
+sendmsg 6 你背包中无祖玛武器。
+break
+
+
+[@祖玛经验]
+#if
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+MOV P9 0
+
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC P8 1
+INC P9 100000
+
+
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC P8 1
+INC P9 100000
+
+
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC P8 1
+INC P9 100000
+
+
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC P8 1
+INC P9 100000
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC P8 1
+INC P9 100000
+
+#if
+LARGE P8 0
+#ACT
+CHANGEEXP + <$STR(P9)>
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了祖玛装备(<$STR(P8)>)件,获得经验+(<$STR(P9)>)
+MOV P8 0
+MOV P9 0
+GOTO @MAIN
+#ELSEACT
+sendmsg 6 你背包中无祖玛装备。
+break

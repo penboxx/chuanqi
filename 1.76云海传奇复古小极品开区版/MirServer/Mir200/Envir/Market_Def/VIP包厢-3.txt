@@ -1,0 +1,277 @@
+[@MAIN]
+天牢的怪物爆：屠龙、嗜魂法杖、太极逍遥扇、极品赤月爆率高\
+进入条件：<COLOR=clSkyBlue 等级40级以上>，请携带足够的元宝进入！\
+【<COLOR=clFuchsia 单>人天牢】→<【天牢①】/@VIP01>※<【天牢②】/@VIP02>※<【天牢③】/@VIP03>\
+【<COLOR=clFuchsia 单>人天牢】→<【天牢④】/@VIP04>※<【天牢⑤】/@VIP05>※<【天牢⑥】/@VIP06>\
+【<COLOR=clFuchsia 单>人天牢】→<【天牢⑦】/@VIP07>※<【天牢⑧】/@VIP08>※<【天牢⑨】/@VIP09>\
+【<COLOR=clFuchsia 单>人天牢】→<【天牢⑩】/@VIP10>※<【天牢⑾】/@VIP11>※<【天牢⑿】/@VIP12>\
+【<COLOR=clFuchsia 单>人天牢】→<【天牢⒀】/@VIP13>※<【天牢⒁】/@VIP14>※<【天牢⒂】/@VIP15>\
+【<COLOR=clLime 双>人天牢】→<【天牢⒃】/@VIP16>※<【天牢⒄】/@VIP17>※<【天牢⒅】/@VIP18>\
+
+
+[@VIP18]
+#IF
+CHECKMAPHUMANCOUNT VIP18 < 2
+checklevelex > 39
+CHECKGAMEGOLD > 0
+#ACT
+GAMEGOLD - 1
+MAPMOVE VIP18
+GIVE 回城卷 1
+SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有2人了.
+
+[@VIP17]
+#IF
+CHECKMAPHUMANCOUNT VIP17 < 2
+checklevelex > 39
+CHECKGAMEGOLD > 0
+#ACT
+GAMEGOLD - 1
+MAPMOVE VIP17
+GIVE 回城卷 1
+SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有2人了.
+
+[@VIP16]
+#IF
+CHECKMAPHUMANCOUNT VIP16 < 2
+checklevelex > 39
+CHECKGAMEGOLD > 0
+#ACT
+GAMEGOLD - 1
+MAPMOVE VIP16
+GIVE 回城卷 1
+SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有2人了.
+
+[@VIP15]
+#IF
+CHECKMAPHUMANCOUNT VIP15 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP15
+ MAPMOVE VIP15
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.
+
+[@VIP14]
+#IF
+CHECKMAPHUMANCOUNT VIP14 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP14
+ MAPMOVE VIP14
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.
+
+[@VIP13]
+#IF
+CHECKMAPHUMANCOUNT VIP13 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP13
+ MAPMOVE VIP13
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.
+
+[@VIP12]
+#IF
+CHECKMAPHUMANCOUNT VIP12 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP12
+ MAPMOVE VIP12
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.
+
+[@VIP11]
+#IF
+CHECKMAPHUMANCOUNT VIP11 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP11
+ MAPMOVE VIP11
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.
+
+[@VIP10]
+#IF
+CHECKMAPHUMANCOUNT VIP10 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP10
+ MAPMOVE VIP10
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.
+
+[@VIP09]
+#IF
+CHECKMAPHUMANCOUNT VIP09 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP09
+ MAPMOVE VIP09
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.
+
+[@VIP08]
+#IF
+CHECKMAPHUMANCOUNT VIP08 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP08
+ MAPMOVE VIP08
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.
+
+[@VIP07]
+#IF
+CHECKMAPHUMANCOUNT VIP07 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP07
+ MAPMOVE VIP07
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.
+
+[@VIP06]
+#IF
+CHECKMAPHUMANCOUNT VIP06 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP06
+ MAPMOVE VIP06
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.
+
+[@VIP05]
+#IF
+CHECKMAPHUMANCOUNT VIP05 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP05
+ MAPMOVE VIP05
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.
+
+[@VIP04]
+#IF
+CHECKMAPHUMANCOUNT VIP04 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP04
+ MAPMOVE VIP04
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.
+
+[@VIP03]
+#IF
+CHECKMAPHUMANCOUNT VIP03 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP03
+ MAPMOVE VIP03
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.
+
+[@VIP02]
+#IF
+CHECKMAPHUMANCOUNT VIP02 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP02
+ MAPMOVE VIP02
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.
+
+[@VIP01]
+#IF
+CHECKMAPHUMANCOUNT VIP01 = 0
+ checklevelex > 39
+ CHECKGAMEGOLD > 0
+#ACT
+ GAMEGOLD - 1
+ CLEARMAPMON VIP01
+ MAPMOVE VIP01
+ GIVE 回城卷 1
+ SENDMSG 0 勇士%s进入了天牢神地，屠龙和极品赤月不在是梦想！
+BREAK
+#ELSESAY
+进入需要足够的元宝和等级40级,或者里面已经有人了.

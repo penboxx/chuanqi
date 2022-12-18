@@ -1,0 +1,34 @@
+
+[@main]
+在这里我将为你提供一些免费商店传送！ \  \
+<≮铁匠铺≯/@Gwe>   <≮客  栈≯/@Gwh>\
+<≮首饰店≯/@Gza>   <≮布料店≯/@Gpo>\
+<≮书  店≯/@Gbo>\  \
+<≮关  闭≯/@exit>
+
+
+[@Gwe]
+#IF
+#ACT
+map 0159
+
+[@Gpo]
+#IF
+#ACT
+map 0149
+
+[@Gza]
+#IF
+#ACT
+map 0158
+
+[@Gwh]
+#IF
+#ACT
+map 0145
+
+[@Gbo]
+#IF
+#ACT
+map 0161
+

@@ -1,0 +1,8 @@
+#INCLUDE 3dr.txt
+[@main]
+#IF
+CHECK [89] 1
+#ACT
+mapmove 3
+SendMsg 7 您是会员玩家，进入会员打宝！
+Break

@@ -1,0 +1,9 @@
+[@极品战链1]
+{
+#IF
+#act
+GAMEGOLD - 3000
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将极品星王战链升级成功。
+BREAK
+}

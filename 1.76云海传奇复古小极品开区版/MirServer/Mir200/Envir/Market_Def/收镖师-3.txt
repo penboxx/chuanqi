@@ -1,0 +1,49 @@
+[@main]
+咦...怎么这么久才到？\
+是从天下镖局送过来的吧？\
+一路辛苦了，我来点点看东西少了没？\
+稍等我会给你丰厚的经验报酬哦！嘿嘿！\ \
+
+<提交镖车/@endtask>
+
+[@endtask]
+#ACT
+FINISHESCORT
+
+[@FinishEscort_Fail_1]
+你没有镖车啊，提交什么？\
+<关闭/@exit>
+
+[@FinishEscort_Fail_2]
+我都看不到镖车，叫我如何核查货物呢？\
+<关闭/@exit>
+
+[@FinishEscort_巨型镖车]
+#ACT
+set [090] 0
+GAMEGOLD + 1000
+CHANGEEXP + 20000000
+GIVEUPESCORT
+SENDMSG 0 恭喜玩家%s成功提交【巨型镖车】获得【2000万经验奖励】 249 246 30
+SENDMSG 0 恭喜玩家%s成功提交【巨型镖车】获得【2000万经验奖励】 249 246 30
+SENDMSG 0 恭喜玩家%s成功提交【巨型镖车】获得【2000万经验奖励】 249 246 30
+
+[@FinishEscort_大型镖车]
+#ACT
+set [090] 0
+GAMEGOLD + 1000
+CHANGEEXP + 10000000
+GIVEUPESCORT
+SENDMSG 0 恭喜玩家%s成功提交【大型镖车】获得【1000万经验奖励】 249 246 30
+SENDMSG 0 恭喜玩家%s成功提交【大型镖车】获得【1000万经验奖励】 249 246 30
+SENDMSG 0 恭喜玩家%s成功提交【大型镖车】获得【1000万经验奖励】 249 246 30
+
+[@FinishEscort_小型镖车]
+#ACT
+set [090] 0
+GAMEGOLD + 1000
+CHANGEEXP + 5000000
+GIVEUPESCORT
+SENDMSG 0 恭喜玩家%s成功提交【小型镖车】获得【500万经验奖励】 249 246 30
+SENDMSG 0 恭喜玩家%s成功提交【小型镖车】获得【500万经验奖励】 249 246 30
+SENDMSG 0 恭喜玩家%s成功提交【小型镖车】获得【500万经验奖励】 249 246 30

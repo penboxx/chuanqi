@@ -1,0 +1,100 @@
+[@main]
+镖车分<高级镖车.中级镖车.普通镖车>。\
+你能不能帮我把一个镖车保护到幽冥回廊总镖头处\
+会有丰厚的经验奖励哦，如果你想压这躺镖的话需要\
+点击.<接镖>.记住，镖车如果因为被破坏，或被你\
+遗失，你的定金我们都要没收哦，由于这是加急镖你\
+需要在规定时间内完成.限制时间为<45分钟>.超时后\
+压镖任务失败.你的定金也就没了哦.接之前考虑清楚\
+<接镖/@Escor>    <回到上次护镖失败地点-10000金币/@flyto>   <注销此次任务/@注销>\  \
+
+
+[@注销]
+#IF
+#SAY
+任务注销成功.可以再次接任务拉车！
+#ACT
+GIVEUPESCORT
+break
+
+
+
+[@flyto]
+#IF
+checkgold 10000
+#ACT
+take 金币 100000
+MoveToEscort
+break
+#elseact
+messagebox 你没有【10000】个金币.无法传送
+break
+
+
+[@Escor]
+#IF
+CHECKVAR HUMAN 押镖 = 3
+#ACT
+MESSAGEBOX 你今天已完成过3次押镖！
+#ELSEact
+GOTO @通过
+
+[@通过]
+#IF
+ISESCORTING
+#SAY
+#SAY
+你的托运任务正在执行中，不能再接此任务\
+<寻找镖车/@flyto>   <关闭/@exit>
+#ACT
+break
+
+
+#IF
+RANDOM 4
+#ACT
+CALCVAR HUMAN 押镖 + 1
+SAVEVAR HUMAN 押镖 ..\QuestDiary\数据文件\押镖.txt
+STARTESCORT 高级经验镖车
+messagebox 恭喜你接到了【高级经验镖车】\请抓紧时间送到幽冥回廊总镖头老板处
+SENDMSG 0 〖喜讯〗玩家%s接到了超级镖车.这个车可以抢快去抢哦！
+break
+
+#IF
+RANDOM 2
+#ACT
+CALCVAR HUMAN 押镖 + 1
+SAVEVAR HUMAN 押镖 ..\QuestDiary\数据文件\押镖.txt
+STARTESCORT 中级经验镖车
+messagebox 恭喜你接到了【中级经验镖车】\请抓紧时间送到幽冥回廊总镖头老板处
+SENDMSG 0 〖喜讯〗玩家%s接到了中级镖车.这个车可以抢快去抢哦！
+break
+
+#IF
+#ACT
+CALCVAR HUMAN 押镖 + 1
+SAVEVAR HUMAN 押镖 ..\QuestDiary\数据文件\押镖.txt
+STARTESCORT 普通经验镖车
+messagebox 恭喜你接到了【普通经验镖车】\请抓紧时间送到幽冥回廊总镖头老板处
+SENDMSG 0 〖喜讯〗玩家%s接到了普通镖车.这个车可以抢快去抢哦！
+break
+
+[@isEscorting]
+#SAY
+你的托运任务正在执行中，不能再接此任务\
+<寻找镖车/@flyto>   <关闭/@exit>
+
+[@EscortFail]
+#SAY
+接镖车任务失败，数据中不存在镖车！\
+<关闭/@exit>
+
+[@MoveToEscort_Fail_1]
+#SAY
+你目前没有正在托运的镖车！\
+<关闭/@exit>
+
+[@MoveToEscort_Fail_2]
+#SAY
+移动到目标失败！\
+<关闭/@exit>

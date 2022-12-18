@@ -1,0 +1,13 @@
+[@·âºÅ123]
+{
+#IF
+IsCastleMaster 
+#ACT
+SetIcon 0 65534
+
+#IF
+CHECKLEVELEX > 39
+IsCastleGuild 0
+#ACT
+SetIcon 0 65535
+}

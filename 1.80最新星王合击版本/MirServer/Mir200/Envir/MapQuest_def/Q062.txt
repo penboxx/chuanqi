@@ -1,0 +1,8 @@
+#INCLUDE 4du.txt
+[@main]
+#IF
+checknamelist ..\QuestDiary\会员\会员名单.txt
+#ACT
+set [88] 1
+SendMsg 6 您是会员玩家，进入会员打宝！
+Break

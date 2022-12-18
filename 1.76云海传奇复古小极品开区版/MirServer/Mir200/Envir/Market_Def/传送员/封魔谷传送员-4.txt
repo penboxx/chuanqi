@@ -1,0 +1,55 @@
+[@MAIN]
+官方网站: <$WEBSITE>\
+建议将网址写入QQ资料，方便随时游戏。\
+如果您觉得本游戏不错，邀上朋友，一起征战吧！\ \ 
+ ※ <比奇大城/@比奇大城> ※ <银杏山谷/@银杏山谷> ※ <新手小村/@新手小村> ※ <白 日 门/@白日门> ※\ \
+ ※ <盟重土城/@盟重土城> ※ <封 魔 谷/@封魔谷> ※ <毒蛇山谷/@毒蛇山谷> ※ <苍 月 岛/@苍月岛> ※\
+
+;======普通传送======
+[@盟重土城]
+#ACT
+MAPMOVE 3 333 333
+CLOSE
+BREAK
+
+[@毒蛇山谷]
+#ACT
+MAPMOVE 2 501 484
+CLOSE
+BREAK
+
+[@比奇大城]
+#ACT
+MAPMOVE 0 333 268
+CLOSE
+BREAK
+
+[@苍月岛]
+#ACT
+MAPMOVE 5 140 338
+CLOSE
+BREAK
+
+[@封魔谷]
+#ACT
+MAPMOVE 4 241 202
+CLOSE
+BREAK
+  
+[@白日门]
+#ACT
+MAPMOVE 11 177 324
+CLOSE
+BREAK
+
+[@新手小村]
+#ACT
+MAPMOVE 0 288 615
+CLOSE
+BREAK
+  
+[@银杏山谷]
+#ACT
+MAPMOVE 0 634 612
+CLOSE
+BREAK

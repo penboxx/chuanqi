@@ -1,0 +1,144 @@
+[@main]
+<COLOR=clRed 以下地图收取30万金币的费用才可进入！>\  \ 
+
+<梦回唐朝/@梦回唐朝>     <复古之路/@复古之路>     <沙藏宝阁/@沙藏宝阁>      <红尘客栈/@红尘客栈>\  \
+<地狱之城/@地狱之城>     <世外古道/@世外古道>     <命运之殿/@命运之殿>      <慌村野桥/@慌村野桥>\  \ 
+<终极地宫/@终极地宫>     <猪洞八层/@猪洞八层>     <谁领风骚/@谁领风骚>      <玛雅神殿/@玛雅神殿>\  \ 
+<COLOR=clAqua 精锐宝宝感谢大家的支持！客服QQ911560366.！>\
+
+[@猪洞八层]
+#if
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove D718  28  73
+SENDMSG 0 玩家[<$USERNAME>]进入猪洞八层，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+#elsesay
+你没有30w金币来支付我们的服务费用!\
+
+[@谁领风骚]
+#if
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove zsd    
+SENDMSG 0 玩家[<$USERNAME>]进入谁领风骚，此地图是幸运，练级，打宝为一体的地图！！！ 249  216
+#elsesay
+你没有30w金币来支付我们的服务费用!\
+
+[@玛雅神殿]
+#if
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove Fama1  82  83
+SENDMSG 0 玩家[<$USERNAME>]进入玛雅神殿，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+#elsesay
+你没有30w金币来支付我们的服务费用!\
+
+[@终极地宫]
+#IF
+checkgold 300000
+#act
+take 金币 300000
+mapmove wybg  12  17
+SENDMSG 0 玩家[<$USERNAME>]进入地宫，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+#ELSESAY
+你想偷度？门都没有\ \ \ \ \
+　　　　　　　　　　　　　　　　　　　　　
+
+[@命运之殿]
+#if
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove myzd 118 12
+SENDMSG 0 玩家[<$USERNAME>]进入命运之殿，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+#elsesay
+你没有30w金币来支付我们的服务费用!\
+
+
+[@慌村野桥]
+#if
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove tyg
+SENDMSG 0 玩家[<$USERNAME>]进入慌村一层，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+#elsesay
+你没有30w金币来支付我们的服务费用!\
+
+[@世外古道]
+#if
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove hs1  8  52
+SENDMSG 0 玩家[<$USERNAME>]进入世外古道，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+#elsesay
+你没有30w金币来支付我们的服务费用!\
+
+
+
+
+[@地狱之城]
+#if
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove dyzc
+SENDMSG 0 玩家[<$USERNAME>]进入地狱之城，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+#elsesay
+你没有30w金币来支付我们的服务费用!\
+
+
+
+
+
+
+[@梦回唐朝]
+#if
+checkgold 300000
+#act
+take 金币 300000
+mapmove yuangu1 28 23
+SENDMSG 0 玩家[<$USERNAME>]进入梦回唐朝，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+break
+#ELSESAY 
+你没有30w金币用来支付我们的服务费用!\\
+
+
+[@复古之路]
+#if
+checkgold 300000
+#act
+take 金币 300000
+mapmove fugu1 91  166
+SENDMSG 0 玩家[<$USERNAME>]进入复古之路，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+break 
+#ELSESAY 
+你没有30w金币用来支付我们的服务费用!\\
+
+[@沙藏宝阁]
+#if
+checkgold 300000
+#act
+take 金币 300000
+mapmove H201 95 21
+SENDMSG 0 玩家[<$USERNAME>]进入沙藏宝阁，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+break
+#ELSESAY 
+你没有30w金币用来支付我们的服务费用!\\
+
+[@红尘客栈]
+#if
+checkgold 300000
+#act
+take 金币 300000
+mapmove sm1  33   37    
+SENDMSG 0 玩家[<$USERNAME>]进入红尘一层，此地图是终极地图,顶层有超级boss等着你！！！ 249  216
+break
+#ELSESAY
+你没有30w金币用来支付我们的服务费用!\\
+
+

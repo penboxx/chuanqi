@@ -1,0 +1,22 @@
+[@main]
+<COLOR=clFuchsia ╔═══════════════════════════╗>\
+<COLOR=clFuchsia ║>主要BOSS：<COLOR=clSkyBlue 六大暗之教主、赤月恶魔、双头金刚..>　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>刷新时间：<COLOR=clSkyBlue BOSS为30分钟刷新..>　　　　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>可爆物品：<COLOR=clSkyBlue 六大40级新衣服、祖玛、赤月、屠龙等装备...>　 <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>危险指数：<COLOR=clLime ★★★☆☆>　　　　　 　　 　　 　　　　　　 <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>进入条件：<COLOR=clRed 需要><COLOR=clYellow 九珠连环炮><COLOR=clRed 一个>　　　　　 　　 　　 　　 <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>地图介绍：<COLOR=clRed 此地图怪物非常凶猛，建议组队前往！>　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║><进入烟花之地/@JRYHZD>　　　　　　　　　　　　　　　　　　　<返回/@EXIT><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚═══════════════════════════╝>\
+
+[@JRYHZD]
+#IF
+checkitem 九珠连环炮 1
+#ACT
+take 九珠连环炮 1 
+give 回城卷 1
+mapmove yhzd
+SENDMSG 1 玩家%s进入了烟花之地，里面什么BOSS都有哦~
+#ELSEACT
+MessageBox 包袱内没有1个九珠连环炮，怎么进得去呢？？？
+

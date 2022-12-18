@@ -1,0 +1,9 @@
+[@代理检测]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\元宝代理名单.txt
+#ACT
+setranklevelname %s\小二信誉元宝商人
+changenamecolor 253
+BREAK
+}

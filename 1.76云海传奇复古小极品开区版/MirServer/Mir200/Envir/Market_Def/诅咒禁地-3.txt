@@ -1,0 +1,55 @@
+[@main]
+传说此禁地被玛法人诅咒，汇聚三行五界之邪气，因此没人敢进入...\
+<COLOR=clLime 据说云海教主与手下五大ＢＯＳＳ都携带很多宝藏常在此出没...>\
+<COLOR=clFuchsia 注:此地图极其危险，但是装备爆率比其他地图都要高！>\ \
+勇士，你敢进入寻宝吗？\
+进入需要<COLOR=clRed 诅咒灵符>一张！\ \
+
+<进入诅咒禁地/@jrzzjd>　　<合成诅咒灵符/@hczzlf>　　<如何获得诅咒灵符？/@rhhdzzlf>
+
+
+[@hczzlf]
+#IF
+checkitem 力量神符 1
+checkitem 智慧神符 1
+checkitem 信仰神符 1
+checkitem 权利神符 1
+checkitem 胜利神符 1
+CHECKGAMEGOLD > 999
+#ACT
+take 力量神符 1
+take 智慧神符 1
+take 信仰神符 1
+take 权利神符 1
+take 胜利神符 1
+GAMEGOLD - 1000
+give 诅咒灵符 1
+CHANGEEXP + 20000000
+#SAY
+已经为你合成诅咒灵符，并且获得2000万经验！\ \
+<返 回/@main>
+#ELSESAY
+合成诅咒灵符需要：\
+<COLOR=clLime 力量神符、智慧神符、信仰神符、权利神符、胜利神符和1000元宝>\
+合成的同时可以获得<COLOR=clFuchsia 2000万经验>！\ \
+<返 回/@main>
+
+[@jrzzjd]
+#IF
+checkitem 诅咒灵符 1
+#ACT
+take 诅咒灵符 1
+MAPMOVE zzjd
+SENDMSG 0 勇士%s进入了诅咒禁地，我们一起为他祈福吧！
+GIVE 回城卷 1
+BREAK
+#ELSEACT
+MESSAGEBOX 进入需要诅咒灵符一张。
+
+[@rhhdzzlf]
+BOSS：<COLOR=clRed 幽冥教主、镜像冥王、牛魔王、祖玛教主、虹魔教主、黄泉教主>\
+爆五大神符：<COLOR=clLime 力量神符、智慧神符、信仰神符、权利神符、胜利神符>\
+然后集齐这五大神符，花费1000元宝即可合成<COLOR=clRed 诅咒灵符>\
+合成的同时可以获得<COLOR=clFuchsia 2000万经验>！\ \
+<返 回/@main>\
+<离 开/@exit>

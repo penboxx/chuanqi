@@ -1,0 +1,111 @@
+[@main]
+#IF
+equal A96 <$USERNAME>
+#SAY
+天下第一男道士:  <$STR(A96)>\
+　　　所属行会:  <$STR(A97)>\
+　　　保持时间:  <$STR(G98)>天\
+<═════════════════════════════>\
+<$STR(A96)>在群雄逐鹿的<$SERVERNAME>中成为了天下第一男道士。\
+从<$STR(A98)>至今无人超越他！\
+资料:  <$STR(A96)> 申请时的等级为<$STR(G96)>级  经验值为:<$STR(G97)>\ \
+　　　　　<领取今日奖励/@天一今奖>　　　　　　<领取七日奖励/@天七今奖>\
+#ELSESAY
+天下第一男道士:  <$STR(A96)>\
+　　　所属行会:  <$STR(A97)>\
+　　　保持时间:  <$STR(G98)>\
+<═════════════════════════════>\
+<$STR(A96)>在群雄逐鹿的<$SERVERNAME>中成为了天下第一男道士。\
+从<$STR(A98)>至今无人超越他！\
+资料:  <$STR(A96)> 申请时的等级为<$STR(G96)>级  经验值为:<$STR(G97)>\ \
+　　<我要成为天下第一/@申请第一>　　<天下第一奖励/@奖励查询>\
+
+[@申请第一]
+#IF
+CHECKLEVELEX < 50
+#ACT
+MESSAGEBOX 请50级以后再来找我吧！？
+BREAK
+#IF
+GENDER WOMAN
+#ACT
+MESSAGEBOX 喂喂喂...你一个小MM跑来想冒充帅哥啊！？
+BREAK
+#IF
+CheckJob Warrior
+#ACT
+MESSAGEBOX 职业不对，你想欺骗我这双真诚的眼睛吗？
+BREAK
+#IF
+CheckJob Wizard
+#ACT
+MESSAGEBOX 职业不对，你想欺骗我这双真诚的眼睛吗？
+BREAK
+
+#IF
+CHECKLEVELEX > <$STR(G96)>
+GENDER MAN
+CheckJob Taoist
+#ACT
+CLOSE
+GMEXECUTE 开始提问 @男道删除乾坤
+MOV A96 <$USERNAME>
+MOV G96 <$LEVEL>
+MOV G97 <$EXP>
+MOV A97 <$GUILDNAME>
+MOV A98 <$DATETIME>
+MOV G98 0
+MOV S10 
+#CALL [\系统功能\封号系统.txt] @封号检测
+SENDMSG 0 天下第一雕像：恭喜<$USERNAME>在<$SERVERNAME>中成为天下第一男道士，奖励天天有！
+BREAK
+#IF
+CHECKLEVELEX = <$STR(G96)>
+CHECKEXP > <$STR(G97)>
+GENDER MAN
+CheckJob Taoist
+#ACT
+CLOSE
+GMEXECUTE 开始提问 @男道删除乾坤
+MOV A96 <$USERNAME>
+MOV G96 <$LEVEL>
+MOV G97 <$EXP>
+MOV A97 <$GUILDNAME>
+MOV A98 <$DATETIME>
+MOV G98 0
+MOV S10 
+#CALL [\系统功能\封号系统.txt] @封号检测
+SENDMSG 0 天下第一雕像：恭喜<$USERNAME>在<$SERVERNAME>中成为天下第一男道士，奖励天天有！
+#ELSEACT
+MESSAGEBOX 对不起，申请失败。原因可能如下：\1.您的等级未超越当前天下第一男道士的等级\2.您的等级和天下第一男道士相同，但你的经验\　未超过目前天下第一男道士的<$STR(G97)>经验值！
+
+[@天一今奖]
+#IF
+equal A96 <$USERNAME>
+#ELSEACT
+BREAK
+#IF
+CHECKNAMELIST ..\QuestDiary\数据文件\天下第一奖励.txt
+#ACT
+MESSAGEBOX 您已经领取过今天的奖励了，堂堂天下第一男道士居然贪图这点小便宜？
+#ELSEACT
+ADDNAMELIST ..\QuestDiary\数据文件\天下第一奖励.txt
+GAMEGOLD + 1000
+MESSAGEBOX 恭喜您获得了元宝奖励。
+BREAK
+
+[@天七今奖]
+#IF
+equal A96 <$USERNAME>
+large G98 6
+#ACT
+GAMEGOLD + 10000
+MOV G98 0
+SENDMSG 0 天下第一雕像：恭喜<$USERNAME>领取了天下第一七日大奖：10000元宝
+BREAK
+#ELSESAY
+对不起，您的天下第一记录未持续7天无法领取7天大奖。
+
+[@奖励查询]
+天下第一每日可得奖励：1000元宝\ \
+天下第一保持七日可得奖励：10000元宝

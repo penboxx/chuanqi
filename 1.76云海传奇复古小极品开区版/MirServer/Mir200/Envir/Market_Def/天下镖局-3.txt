@@ -1,0 +1,140 @@
+[@main]
+<COLOR=clLime ①：押镖需抵押><COLOR=clRed 1000元宝+1张押镖卷><COLOR=clLime 每人每天只能押镖><COLOR=clRed 3><COLOR=clLime 次！>\
+<COLOR=clLime ②：押镖中途被杀，下线。镖车原地一段时间，可以找我追踪！>\
+<COLOR=clLime ③：押镖开始后记时，15分钟之内未交镖，将视为押镖失败喔！>\
+<COLOR=clLime ④：押镖中途镖车被它人损坏，将被视为押镖任务直接失败喔！>\
+<COLOR=clLime ⑤：押到镖车之后，把镖车押到（土城书店坐标410:327)完成！>\
+<COLOR=clLime ⑥：押镖成功之后><COLOR=clRed 退还1000元宝><COLOR=clLime ，给予><COLOR=clRed 500万-2000万经验><COLOR=clLime 奖励！>\
+<COLOR=clFuchsia ╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗>\
+<COLOR=clFuchsia ┆>天下镖局:您今天已押镖次数:<$HUMAN(经验次数)>次<COLOR=clSkyBlue (00:00小退查看)><我要押镖/@kaishs1><COLOR=clFuchsia ┆>\
+<COLOR=clFuchsia ╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝>\
+
+[@kaishs1]
+#if
+CHECKLEVELEX > 44
+CHECKGAMEGOLD > 999
+checkitem 押镖卷 1
+#act
+GOTO @Escor
+#elsesay
+你等级不够45级，或者没有1000元宝+1张押镖卷！\
+<COLOR=clRed 提示：押镖卷在尸王身上爆出！>\ \
+<返回/@MAIN>\
+
+[@Escor]
+#IF
+ISESCORTING
+#SAY
+你还没有完成上一次押镖，请先放弃上一次未完成的押镖！\ \
+注意：放弃押镖视为押镖失败，押金将没收！\ \
+<放弃押镖/@放弃任务>    <送我到镖车丢失的地点/@flyto>\ \
+<返回/@main>\
+
+#ACT
+break
+#IF
+#SAY
+<COLOR=clLime 押镖需要人物等级45级以上，并且需要1000元宝+1张押镖卷>\
+<COLOR=clLime 完成押镖之后将会有丰厚的奖励，并且抵押的元宝退还！>\
+<COLOR=clRed 押镖说明：镖车会跟着你移动，但不要走太快，不然会丢失！>\
+<COLOR=clFuchsia 押镖到目的地>：<COLOR=clRed 天下收镖师><COLOR=clSkyBlue （土城书店坐标410:327）>\
+<COLOR=clFuchsia 押镖经验奖励>：500万-2000万经验\ \
+
+<接受押镖/@接受三级运镖>　　　　　　<返回/@MAIN>\
+
+[@接受三级运镖]
+#if
+checkitem 押镖卷 1
+CHECKGAMEGOLD > 999
+CHECKVAR HUMAN 经验次数 < 3
+#act
+GOTO @KAISYBB
+break
+#elseact
+messagebox 你没有1000元宝+1张押镖卷，或者你今天押镖次数已达到3次！
+break
+
+[@KAISYBB]
+#IF
+RANDOM 8
+#ACT
+set [090] 1
+STARTESCORT 巨型镖车
+GAMEGOLD - 1000
+take 押镖卷 1
+CALCVAR HUMAN 经验次数 + 1
+SAVEVAR HUMAN 经验次数 ..\QuestDiary\数据文件\经验次数Save.txt
+messagebox 恭喜你接到了【巨型镖车】\请抓紧时间送到（土城书店坐标410:327）收镖师手中！
+SENDMSG 0 玩家【%s】开始押镖送往（盟重土城→226:286）押镖成功会给予500万-2000万经验奖励哦！ 249 246 30
+SENDMSG 0 玩家【%s】开始押镖送往（盟重土城→226:286）押镖成功会给予500万-2000万经验奖励哦！ 249 246 30
+SENDMSG 0 玩家【%s】开始押镖送往（盟重土城→226:286）押镖成功会给予500万-2000万经验奖励哦！ 249 246 30
+break
+
+#IF
+RANDOM 5
+#ACT
+set [090] 1
+STARTESCORT 大型镖车
+GAMEGOLD - 1000
+take 押镖卷 1
+CALCVAR HUMAN 经验次数 + 1
+SAVEVAR HUMAN 经验次数 ..\QuestDiary\数据文件\经验次数Save.txt
+messagebox 恭喜你接到了【大型镖车】\请抓紧时间送到（土城书店坐标410:327）收镖师手中！
+SENDMSG 0 玩家【%s】开始押镖送往（盟重土城→226:286）押镖成功会给予500万-2000万经验奖励哦！ 249 246 30
+SENDMSG 0 玩家【%s】开始押镖送往（盟重土城→226:286）押镖成功会给予500万-2000万经验奖励哦！ 249 246 30
+SENDMSG 0 玩家【%s】开始押镖送往（盟重土城→226:286）押镖成功会给予500万-2000万经验奖励哦！ 249 246 30
+break
+
+#IF
+#ACT
+set [090] 1
+STARTESCORT 小型镖车
+GAMEGOLD - 1000
+take 押镖卷 1
+CALCVAR HUMAN 经验次数 + 1
+SAVEVAR HUMAN 经验次数 ..\QuestDiary\数据文件\经验次数Save.txt
+messagebox 恭喜你接到了【小型镖车】\请抓紧时间送到（土城书店坐标410:327）收镖师手中！
+SENDMSG 0 玩家【%s】开始押镖送往（盟重土城→226:286）押镖成功会给予500万-2000万经验奖励哦！ 249 246 30
+SENDMSG 0 玩家【%s】开始押镖送往（盟重土城→226:286）押镖成功会给予500万-2000万经验奖励哦！ 249 246 30
+SENDMSG 0 玩家【%s】开始押镖送往（盟重土城→226:286）押镖成功会给予500万-2000万经验奖励哦！ 249 246 30
+break
+
+[@放弃任务]
+#IF
+#SAY
+押镖放弃成功，你可以再次押镖！
+#ACT
+set [090] 0
+GIVEUPESCORT
+break
+
+[@flyto]
+#IF
+CHECKGAMEGOLD > 44
+#ACT
+GAMEGOLD - 1000
+MoveToEscort
+break
+#elseact
+messagebox 你没有1000个元宝，不能送你过去！
+break
+
+[@isEscorting]
+#SAY
+你的押镖正在执行中，不能再押镖！\
+<寻找镖车/@flyto>   <关闭/@exit>
+
+[@EscortFail]
+#SAY
+接押镖失败，数据中不存在镖车！\
+<关闭/@exit>
+
+[@MoveToEscort_Fail_1]
+#SAY
+你目前没有正在押运的镖车！\
+<关闭/@exit>
+
+[@MoveToEscort_Fail_2]
+#SAY
+移动到目标失败！\
+<关闭/@exit>

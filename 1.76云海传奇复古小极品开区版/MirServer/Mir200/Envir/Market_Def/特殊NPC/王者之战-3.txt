@@ -1,0 +1,19 @@
+[@MAIN]
+<COLOR=clLime 开放时间：>每天晚上18:15开启\
+<COLOR=clLime 进入时间：>18:15-18:20为进入战场时间<COLOR=clSkyBlue (只有5分钟的进入时间)>\
+<COLOR=clLime 详细规则：>1.在第一战场内坚持10分钟后,全体自动传送至第二战场\
+　　　　　2.在第二战场内坚持10分钟后,全体自动传送至决战场\
+　　　　　3.在决战场内可以领取鼓励奖离开,或者清理完所有对手\
+　　　　　当决战场内只有你一人时即可领取王者奖励!\ 
+<COLOR=clLime 获胜奖励：><COLOR=clRed 鼓励奖为300元宝>　　<COLOR=clRed 王者奖为3000元宝+200万经验>\
+;<COLOR=clLime 获胜奖励：><COLOR=clRed 每月15号，举行王者巅峰之战!><COLOR=clRed 活动冠军奖励人民币500元!>\
+　　　　　　　　　　　　　　　<进入战场/@进入>\
+
+[@进入]
+#IF
+hour 18 18
+min 15 20
+#ACT
+MAP wangzhe1
+#elseact
+messageboX 现在不是开放时间，无法进入战场！

@@ -1,0 +1,31 @@
+[@MAIN]
+　\
+你觉得你有能力坚持到最后,那么请战斗到最后,然后领取<COLOR=clRed 王者奖励>\
+　\
+你觉得没有能力坚持到最后,那么请领取<COLOR=clRed 鼓励奖>,然后自动返回土城.\
+　\
+　\
+<领取王者奖励/@王者奖励>　　　　<领取鼓励奖回土城/@鼓励奖励>\
+
+[@鼓励奖励]
+#IF
+#ACT
+GAMEGOLD + 300
+MAP 0159
+BREAK
+
+[@王者奖励]
+#IF
+CheckMapHumanCount  wangzhe3  < 2
+#ACT
+GAMEGOLD + 3000
+CHANGEEXP + 2000000
+MAP 0159
+SENDMSG 1 <$USERNAME>在王者之战活动中傲视群雄，领取了最终奖励。
+SENDMSG 1 <$USERNAME>在王者之战活动中傲视群雄，领取了最终奖励。
+SENDMSG 1 <$USERNAME>在王者之战活动中傲视群雄，领取了最终奖励。
+SENDMSG 1 <$USERNAME>在王者之战活动中傲视群雄，领取了最终奖励。
+SENDMSG 1 <$USERNAME>在王者之战活动中傲视群雄，领取了最终奖励。
+#elseact
+messageboX 地图内还有其他玩家无法领取奖励！
+BREAK

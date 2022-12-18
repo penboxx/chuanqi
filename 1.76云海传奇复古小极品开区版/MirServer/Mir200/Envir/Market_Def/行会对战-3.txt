@@ -1,0 +1,38 @@
+[@MAIN]
+以下三个地图供各个行会之间对战，请自行选择地图对战...\
+<COLOR=clRed (进入地图必须:48级以上和加入行会)>\
+　\
+<进入行会对战一/@对战1>　　<进入行会对战二/@对战2>　　<进入行会对战三/@对战3>\
+
+[@对战1]
+#IF
+HAVEGUILD
+CHECKLEVELEX > 47
+#ACT
+MAPMOVE HHDZY
+GIVE 回城卷
+#ELSEACT
+MESSAGEBOX 你没有48级和加入行会！
+BREAK
+
+[@对战2]
+#IF
+HAVEGUILD
+CHECKLEVELEX > 47
+#ACT
+MAPMOVE HHDZE
+GIVE 回城卷
+#ELSEACT
+MESSAGEBOX 你没有48级和加入行会！
+BREAK
+
+[@对战3]
+#IF
+HAVEGUILD
+CHECKLEVELEX > 47
+#ACT
+MAPMOVE HHDZS
+GIVE 回城卷
+#ELSEACT
+MESSAGEBOX 你没有48级和加入行会！
+BREAK

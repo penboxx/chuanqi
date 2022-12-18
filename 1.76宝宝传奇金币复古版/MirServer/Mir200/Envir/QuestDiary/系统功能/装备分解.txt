@@ -1,0 +1,558 @@
+[@装备分解]
+{
+即日起，为了响应比齐国王的命令。。特开通一下装备分解的功能！！！\
+只要你把要分解的装备放在对话框内在交给我<COLOR=CLYELLOW 1元宝>，\
+我就可以给你拆解成<COLOR=clLime 超级祝福油>,<COLOR=clLime 大量金刚石>,<COLOR=clLime 元宝>,<COLOR=clLime 技能神石>,书页等。\ 
+<COLOR=CLSKYBLUE 注意1：><COLOR=clLime 只有高级装备才能拆解。。低级装备请到庄园>\
+<COLOR=CLSKYBLUE 注意2：><COLOR=clLime 圣战类→雷霆类→强化雷霆类→战神类>\
+<COLOR=CLSKYBLUE 注意3：><COLOR=clLime 装备越好。拆解出来的东西越好。赶快来试试>\
+#ACT
+QUERYITEMDLG 放入要拆解的装备 @备分解 0
+
+[@备分解]
+#IF
+CHECKGAMEGOLD > 0
+#ELSEACT
+DELAYCALL 10 @装备分解
+MESSAGEBOX 每次拆解需要1个元宝！你的元宝好象不够呀！！在看看吧！！
+BREAK
+#IF
+CHECKDLGITEMNAME 圣战项链
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<圣战项链>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(圣战).txt S66
+GIVE <$STR(S66)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 法神项链
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<法神项链>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(圣战).txt S66
+GIVE <$STR(S66)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 天尊项链
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<天尊项链>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(圣战).txt S66
+GIVE <$STR(S66)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 雷霆项链
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<雷霆项链>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 光芒项链
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<光芒项链>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 烈焰项链
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<烈焰项链>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化雷霆项链
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化雷霆项链>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化光芒项链
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化光芒项链>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化烈焰项链
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化烈焰项链>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 战神项链
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<战神项链>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(战神).txt S69
+GIVE <$STR(S69)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 真魂项链
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<真魂项链>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(战神).txt S69
+GIVE <$STR(S69)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 圣魔项链
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<圣魔项链>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(战神).txt S69
+GIVE <$STR(S69)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 圣战手镯
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<圣战手镯>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(圣战).txt S66
+GIVE <$STR(S66)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 法神手镯
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<法神手镯>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(圣战).txt S66
+GIVE <$STR(S66)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 天尊手镯
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<天尊手镯>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(圣战).txt S66
+GIVE <$STR(S66)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 雷霆护腕
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<雷霆护腕>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 光芒护腕
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<光芒护腕>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 烈焰护腕
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<烈焰护腕>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化雷霆护腕
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化雷霆护腕>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化光芒护腕
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化光芒护腕>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化烈焰护腕
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化烈焰护腕>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 战神手镯
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<战神手镯>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(战神).txt S69
+GIVE <$STR(S69)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 真魂手镯
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<真魂手镯>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(战神).txt S69
+GIVE <$STR(S69)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 圣魔手镯
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<圣魔手镯>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(战神).txt S69
+GIVE <$STR(S69)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 圣战戒指
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<圣战戒指>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(圣战).txt S66
+GIVE <$STR(S66)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 法神戒指
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<法神戒指>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(圣战).txt S66
+GIVE <$STR(S66)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 天尊戒指
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<天尊戒指>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(圣战).txt S66
+GIVE <$STR(S66)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 雷霆战戒
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<雷霆战戒>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 光芒道戒
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<光芒道戒>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 烈焰魔戒
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<烈焰魔戒>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化雷霆战戒
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化雷霆战戒>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化光芒道戒
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化光芒道戒>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化烈焰魔戒
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化烈焰魔戒>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 战神戒指
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<战神戒指>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(战神).txt S69
+GIVE <$STR(S69)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 真魂戒指
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<真魂戒指>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(战神).txt S69
+GIVE <$STR(S69)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 圣魔戒指
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<圣魔戒指>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(战神).txt S69
+GIVE <$STR(S69)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 烈焰魔靴
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<烈焰魔靴>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 光芒道靴
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<光芒道靴>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 雷霆战靴
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<雷霆战靴>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 雷霆腰带
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<雷霆腰带>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 光芒腰带
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<光芒腰带>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 烈焰腰带
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<烈焰腰带>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(雷霆).txt S67
+GIVE <$STR(S67)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化雷霆腰带
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化雷霆腰带>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化光芒腰带
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化光芒腰带>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化烈焰腰带
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化烈焰腰带>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化烈焰魔靴
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化烈焰魔靴>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化光芒道靴
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化光芒道靴>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 强化雷霆战靴
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<强化雷霆战靴>成功拆解成超级物品！ 254 73
+SENDMSG 0 如果你也想把多余装备进行拆解！请到比齐找((拆解大师)) 254 73
+TAKEDLGITEM
+GAMEGOLD - 1
+ReadRandomStr .\QuestDiary\抽取数据\装备分解\分解兑换(强化).txt S68
+GIVE <$STR(S68)> 1
+MOV P0 1
+
+#IF
+EQUAL P0 1
+#ACT
+MOV P0 0
+DELAYCALL 10 @装备分解
+BREAK
+#ELSEACT
+SENDMSG 7 你给我的是什么东西啊？请放入圣战类→雷霆类→强化雷霆类→战神类！
+DELAYCALL 10 @装备分解
+BREAK
+
+}

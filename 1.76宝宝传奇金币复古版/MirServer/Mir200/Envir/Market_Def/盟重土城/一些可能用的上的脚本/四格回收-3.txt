@@ -1,0 +1,398 @@
+
+
+
+()
+%100
+[@MAIN]
+ \
+<COLOR=clRed 本服开放装备一健回收模式.回收分两种方式.分别为元宝和经验回收.！>\
+=========↓元宝回收↓==============↓经验回收↓=========\ 
+<COLOR=clAqua 勋章11--15号><COLOR=clFuchsia 1元宝一个 ><1键回收/@沃玛首饰1>‖<COLOR=clAqua 勋章11--15号><COLOR=clFuchsia +1w经验一个 > <1键回收/@沃玛首饰>\
+<COLOR=clAqua 勋章21--25号><COLOR=clFuchsia 5元宝一个 ><1键回收/@祖玛首饰1>‖<COLOR=clAqua 勋章21--25号><COLOR=clFuchsia +5w经验一个 > <1键回收/@祖玛首饰>\
+<COLOR=clAqua 勋章31--35号><COLOR=clFuchsia 10元宝一个><1键回收/@祖玛武器1>‖<COLOR=clAqua 勋章31--35号><COLOR=clFuchsia +10w经验一个> <1键回收/@祖玛武器>\
+<COLOR=clAqua 勋章41--45号><COLOR=clFuchsia 40元宝一个><1键回收/@赤月首饰1>‖<COLOR=clAqua 勋章41--45号><COLOR=clFuchsia +20W经验一个> <1键回收/@赤月首饰>\ 
+<COLOR=clAqua 铁腰带鹿皮靴><COLOR=clFuchsia 5元宝一个 ><1键回收/@腰带皮靴1>‖<COLOR=clAqua 铁腰带鹿皮靴><COLOR=clFuchsia +5W经验一个 > <1键回收/@腰带皮靴>\ 
+                                            <关闭退出/@exit> \
+[@腰带皮靴1]
+#if
+checkitem 鹿皮靴 1
+#act
+take 鹿皮靴 1
+gamegold + 5
+delaygoto 1 @腰带皮靴1
+break
+#if
+checkitem 铁腰带 1
+#act
+take 铁腰带 1
+gamegold + 5
+delaygoto 1 @腰带皮靴1
+break
+#elseact
+SENDMSG 7  对不起！您没有腰带皮靴可回收!
+break
+[@沃玛首饰1]
+#if
+checkitem 荣誉勋章11号 1
+#act
+take 荣誉勋章11号 1
+gamegold + 1
+delaygoto 1 @沃玛首饰1
+break
+#if
+checkitem 荣誉勋章12号 1
+#act
+take 荣誉勋章12号 1
+gamegold + 1
+delaygoto 1 @沃玛首饰1
+break
+#if
+checkitem 荣誉勋章13号 1
+#act
+take 荣誉勋章13号 1
+gamegold + 1
+delaygoto 1 @沃玛首饰1
+break
+#if
+checkitem 荣誉勋章14号 1
+#act
+take 荣誉勋章14号 1
+gamegold + 1
+delaygoto 1 @沃玛首饰1
+break
+#if
+checkitem 荣誉勋章15号 1
+#act
+take 荣誉勋章15号 1
+gamegold + 1
+delaygoto 1 @沃玛首饰1
+break
+#elseact
+SENDMSG 7  对不起！您没有勋章可回收!
+break
+[@祖玛首饰1]
+#if
+checkitem 荣誉勋章21号 1
+#act
+take 荣誉勋章21号 1
+gamegold + 5
+sendmsg 3 回收了[荣誉勋章21号]获得[5个元宝]。
+delaygoto 1 @祖玛首饰1
+break
+#if
+checkitem 荣誉勋章22号 1
+#act
+take 荣誉勋章22号 1
+gamegold + 5
+sendmsg 3 回收了[荣誉勋章22号]获得[5个元宝]
+delaygoto 1 @祖玛首饰1
+break
+#if
+checkitem 荣誉勋章23号 1
+#act
+take 荣誉勋章23号 1
+gamegold + 5
+sendmsg 3 回收了[荣誉勋章23号]获得[5个元宝]
+delaygoto 1 @祖玛首饰1
+break
+#if
+checkitem 荣誉勋章24号 1
+#act
+take 荣誉勋章24号 1
+gamegold + 5
+sendmsg 3 回收了[荣誉勋章24号]获得[5个元宝]
+delaygoto 1 @祖玛首饰1
+break
+#if
+checkitem 荣誉勋章25号 1
+#act
+take 荣誉勋章25号 1
+gamegold + 5
+sendmsg 3 回收了[荣誉勋章25号]获得[5个元宝]
+delaygoto 1 @祖玛首饰1
+break
+#elseact
+SENDMSG 7  对不起！您没有勋章可回收!
+break
+[@祖玛武器1]
+#if
+checkitem 荣誉勋章31号 1
+#act
+take 荣誉勋章31号 1
+gamegold + 10
+sendmsg 3 回收了[荣誉勋章31号]获得[10个元宝]
+delaygoto 1 @祖玛武器1
+break
+#if
+checkitem 荣誉勋章32号 1
+#act
+take 荣誉勋章32号 1
+gamegold + 10
+sendmsg 3 回收了[荣誉勋章32号]获得[10个元宝]
+delaygoto 1 @祖玛武器1
+break
+#if
+checkitem 荣誉勋章33号 1
+#act
+take 荣誉勋章33号 1
+gamegold + 10
+sendmsg 3 回收了[荣誉勋章33号]获得[10个元宝]
+delaygoto 1 @祖玛武器1
+break
+#if
+checkitem 荣誉勋章34号 1
+#act
+take 荣誉勋章34号 1
+gamegold + 10
+sendmsg 3 回收了[荣誉勋章34号]获得[10个元宝]
+delaygoto 1 @祖玛武器1
+break
+#if
+checkitem 荣誉勋章35号 1
+#act
+take 荣誉勋章35号 1
+gamegold + 10
+sendmsg 3 回收了[荣誉勋章35号]获得[10个元宝]
+delaygoto 1 @祖玛武器1
+break
+#elseact
+SENDMSG 7  对不起！您没有勋章可回收!
+break
+[@赤月首饰1]
+#if
+checkitem 荣誉勋章41号 1
+#act
+take 荣誉勋章41号 1
+gamegold + 40
+sendmsg 3 回收了[荣誉勋章41号]获得[40个元宝]。
+delaygoto 1 @赤月首饰1
+break
+#if
+checkitem 荣誉勋章42号 1
+#act
+take 荣誉勋章42号 1
+gamegold + 40
+sendmsg 3 回收了[荣誉勋章42号]获得[40个元宝]。
+delaygoto 1 @赤月首饰1
+break
+#if
+checkitem 荣誉勋章43号 1
+#act
+take 荣誉勋章43号 1
+gamegold + 40
+sendmsg 3 回收了[荣誉勋章43号]获得[40个元宝]。
+delaygoto 1 @赤月首饰1
+break
+#if
+checkitem 荣誉勋章44号 1
+#act
+take 荣誉勋章44号 1
+gamegold + 40
+sendmsg 3 回收了[荣誉勋章44号]获得[40个元宝]。
+delaygoto 1 @赤月首饰1
+break
+#if
+checkitem 荣誉勋章45号 1
+#act
+take 荣誉勋章45号 1
+gamegold + 40
+sendmsg 3 回收了[荣誉勋章45号]获得[40个元宝]。
+delaygoto 1 @赤月首饰1
+break
+#elseact
+SENDMSG 7  对不起！您没有勋章可回收!
+break
+[@沃玛首饰]
+#if
+checkitem 荣誉勋章11号 1
+#act
+take 荣誉勋章11号 1
+changeexp + 10000
+delaygoto 1 @沃玛首饰
+break
+#if
+checkitem 荣誉勋章12号 1
+#act
+take 荣誉勋章12号 1
+changeexp + 10000
+delaygoto 1 @沃玛首饰
+break
+#if
+checkitem 荣誉勋章13号 1
+#act
+take 荣誉勋章13号 1
+changeexp + 10000
+delaygoto 1 @沃玛首饰
+break
+#if
+checkitem 荣誉勋章14号 1
+#act
+take 荣誉勋章14号 1
+changeexp + 10000
+delaygoto 1 @沃玛首饰
+break
+#if
+checkitem 荣誉勋章15号 1
+#act
+take 荣誉勋章15号 1
+changeexp + 10000
+delaygoto 1 @沃玛首饰
+break
+#elseact
+SENDMSG 7  对不起！您没有勋章可回收!
+break
+[@腰带皮靴]
+#if
+checkitem 铁腰带 1
+#act
+take 铁腰带 1
+changeexp + 50000
+sendmsg 3 回收了[铁腰带]获得[50000经验]。
+delaygoto 1 @腰带皮靴
+break
+#if
+checkitem 鹿皮靴 1
+#act
+take 鹿皮靴 1
+changeexp + 50000
+sendmsg 3 回收了[鹿皮靴]获得[50000经验]
+delaygoto 1 @腰带皮靴
+break
+#elseact
+SENDMSG 7  对不起！您没有腰带皮靴可回收!
+break
+[@祖玛首饰]
+#if
+checkitem 荣誉勋章21号 1
+#act
+take 荣誉勋章21号 1
+changeexp + 50000
+sendmsg 3 回收了[荣誉勋章21号]获得[50000经验]。
+delaygoto 1 @祖玛首饰
+break
+#if
+checkitem 荣誉勋章22号 1
+#act
+take 荣誉勋章22号 1
+changeexp + 50000
+sendmsg 3 回收了[荣誉勋章22号]获得[50000经验]
+delaygoto 1 @祖玛首饰
+break
+#if
+checkitem 荣誉勋章23号 1
+#act
+take 荣誉勋章23号 1
+changeexp + 50000
+sendmsg 3 回收了[荣誉勋章23号]获得[50000经验]
+delaygoto 1 @祖玛首饰
+break
+#if
+checkitem 荣誉勋章24号 1
+#act
+take 荣誉勋章24号 1
+changeexp + 50000
+sendmsg 3 回收了[荣誉勋章24号]获得[50000经验]
+delaygoto 1 @祖玛首饰
+break
+#if
+checkitem 荣誉勋章25号 1
+#act
+take 荣誉勋章25号 1
+changeexp + 50000
+sendmsg 3 回收了[荣誉勋章25号]获得[50000经验]
+delaygoto 1 @祖玛首饰
+break
+#elseact
+SENDMSG 7  对不起！您没有勋章可回收!
+break
+[@祖玛武器]
+#if
+checkitem 荣誉勋章31号 1
+#act
+take 荣誉勋章31号 1
+changeexp + 100000
+sendmsg 3 回收了[荣誉勋章31号]获得[100000经验]
+delaygoto 1 @祖玛武器
+break
+#if
+checkitem 荣誉勋章32号 1
+#act
+take 荣誉勋章32号 1
+changeexp + 100000
+sendmsg 3 回收了[荣誉勋章32号]获得[100000经验]
+delaygoto 1 @祖玛武器
+break
+#if
+checkitem 荣誉勋章33号 1
+#act
+take 荣誉勋章33号 1
+changeexp + 100000
+sendmsg 3 回收了[荣誉勋章33号]获得[100000经验]
+delaygoto 1 @祖玛武器
+break
+#if
+checkitem 荣誉勋章34号 1
+#act
+take 荣誉勋章34号 1
+changeexp + 100000
+sendmsg 3 回收了[荣誉勋章34号]获得[100000经验]
+delaygoto 1 @祖玛武器
+break
+#if
+checkitem 荣誉勋章35号 1
+#act
+take 荣誉勋章35号 1
+changeexp + 100000
+sendmsg 3 回收了[荣誉勋章35号]获得[100000经验]
+delaygoto 1 @祖玛武器
+break
+#elseact
+SENDMSG 7  对不起！您没有勋章可回收!
+break
+[@赤月首饰]
+#if
+checkitem 荣誉勋章41号 1
+#act
+take 荣誉勋章41号 1
+changeexp + 200000
+sendmsg 3 回收了[荣誉勋章41号]获得[+200000经验]。
+delaygoto 1 @赤月首饰
+break
+#if
+checkitem 荣誉勋章42号 1
+#act
+take 荣誉勋章42号 1
+changeexp + 200000
+sendmsg 3 回收了[荣誉勋章42号]获得[+200000经验]。
+delaygoto 1 @赤月首饰
+break
+#if
+checkitem 荣誉勋章43号 1
+#act
+take 荣誉勋章43号 1
+changeexp + 200000
+sendmsg 3 回收了[荣誉勋章43号]获得[+200000经验]。
+delaygoto 1 @赤月首饰
+break
+#if
+checkitem 荣誉勋章44号 1
+#act
+take 荣誉勋章44号 1
+changeexp + 200000
+sendmsg 3 回收了[荣誉勋章44号]获得[+200000经验]。
+delaygoto 1 @赤月首饰
+break
+#if
+checkitem 荣誉勋章45号 1
+#act
+take 荣誉勋章45号 1
+changeexp + 200000
+sendmsg 3 回收了[荣誉勋章45号]获得[+200000经验]。
+delaygoto 1 @赤月首饰
+break
+#elseact
+SENDMSG 7  对不起！您没有勋章可回收!
+break
+
+
+

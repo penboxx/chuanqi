@@ -1,0 +1,19 @@
+[@main]
+尊敬的勇士[<$USERNAME>]您好\
+<COLOR=clAqua 地宫二层传送者，>\
+
+
+
+                                             
+
+<进入地宫二层/@进入>\ \
+
+[@进入]
+#IF
+
+#act
+mapmove wyxy  59   70  
+#ELSESAY
+你想偷度？门都没有\ \ \ \ \
+　　　　　　　　　　　　　　　　　　　　　<返回/@main>
+

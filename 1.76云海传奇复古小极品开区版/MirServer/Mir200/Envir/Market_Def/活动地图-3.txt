@@ -1,0 +1,11 @@
+[@MAIN]
+此地图各时间段会出现各种<COLOR=clLime 全服BOSS>!\ \
+<进入活动地图/@17ut>　　<算了下次再说/@EXIT>
+
+[@17ut]
+#IF
+#ACT
+setsctimer 1 1
+MAPMOVE HHZDT
+GIVE 回城卷 1
+BREAK

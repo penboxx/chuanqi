@@ -1,0 +1,16 @@
+
+
+
+(@buy )
+%100
++0
++42
+#INCLUDE 1me.txt
+[@main]
+#ACT
+#CALL	[\Market\Market4.txt]		@Markets
+#CALL	[\Market\¶¾Ò©.txt]		@9
+
+
+
+

@@ -1,0 +1,104 @@
+[@main]
+<COLOR=clFuchsia ╔══════════════════════════╗>\
+<COLOR=clFuchsia ║>                    『中级地图』      　　　    　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║----------------------------------------------------║>\
+<COLOR=clFuchsia ║>                                                    <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>    <BOSS之家/@bszj>    <邪恶洞窟/@xedk>    <烟花之地/@yhzd>    <赤月之地/@cyzd>    <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>                                                    <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚══════════════════════════╝>\
+　                        <关  闭/@exit>\
+
+[@bszj]
+<COLOR=clFuchsia ╔═══════════════════════════╗>\
+<COLOR=clFuchsia ║>主要BOSS：<COLOR=clSkyBlue 暗之白野猪、狂暴野猪王、送葬者等全服BOSS...> <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>刷新时间：<COLOR=clSkyBlue 超级BOSS为60分钟刷新，其他BOSS为30分钟...>   <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>可爆物品：<COLOR=clSkyBlue 幸运项链、腰带靴子、屠龙等全服所有装备....>  <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>危险指数：<COLOR=clLime ★★★★★>　　　　　　　　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>进入条件：<COLOR=clRed 需要等级44级和200元宝！>　　　　　 　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>地图介绍：<COLOR=clRed 此地图BOSS强悍！请组队进入.2小时后自动回城。><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║><进入BOSS之家/@JRBOSS>　　　　　　　　　　　　　　　　　　　<返回/@main><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚═══════════════════════════╝>\
+
+
+[@JRBOSS]
+#IF
+checklevelex > 43
+CHECKGAMEGOLD > 199
+#ACT
+GAMEGOLD - 200
+GIVE 回城卷 1
+MAPMOVE BOSS
+SENDMSG 0 勇士%s进入了BOSS之家，此地图可爆全服装备！
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有44级或者元宝不足200颗！
+
+[@xedk]
+<COLOR=clFuchsia ╔═══════════════════════════╗>\
+<COLOR=clFuchsia ║>主要BOSS：<COLOR=clSkyBlue 邪恶钳虫、邪恶教主、等各大BOSS...>　　　　　 <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>刷新时间：<COLOR=clSkyBlue 邪恶教主60分钟，邪恶钳虫15分钟...>　　　　　 <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>可爆物品：<COLOR=clSkyBlue 蓝灵腰带、蓝灵神靴、蓝灵宝石、赤月、屠龙..>　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>危险指数：<COLOR=clLime ★★★☆☆>　　　　　　　　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>进入条件：<COLOR=clRed 需要等级42级和200元宝！>　　　　　　　　　　 <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>地图介绍：<COLOR=clRed 此地图BOSS非常强悍，建议组队进入。>　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║><进入邪恶洞窟/@JRSMDK>　　　　　　　　　　　　　　　　　　　<返回/@main><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚═══════════════════════════╝>\
+
+[@JRSMDK]
+#IF
+checklevelex > 41
+CHECKGAMEGOLD > 199
+#ACT
+GAMEGOLD - 200
+MAPMOVE SMDK
+SENDMSG 0 勇士%s进入了神秘洞窟，此地图专爆腰带、靴子、宝石！
+GIVE 回城卷 1
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有42级或者元宝不足200颗！
+
+[@yhzd]
+<COLOR=clFuchsia ╔═══════════════════════════╗>\
+<COLOR=clFuchsia ║>主要BOSS：<COLOR=clSkyBlue 六大暗之教主、赤月恶魔、双头金刚..>　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>刷新时间：<COLOR=clSkyBlue BOSS为30分钟刷新..>　　　　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>可爆物品：<COLOR=clSkyBlue 六大40级新衣服、祖玛、赤月、屠龙等装备...>　 <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>危险指数：<COLOR=clLime ★★★☆☆>　　　　　 　　 　　 　　　　　　 <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>进入条件：<COLOR=clRed 需要><COLOR=clYellow 九珠连环炮><COLOR=clRed 一个>　　　　　 　　 　　 　　 <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>地图介绍：<COLOR=clRed 此地图怪物非常凶猛，建议组队前往！>　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║><进入烟花之地/@JRYHZD>　　　　　　　　　　　　　　　　　　　<返回/@main><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚═══════════════════════════╝>\
+
+[@JRYHZD]
+#IF
+checkitem 九珠连环炮 1
+#ACT
+take 九珠连环炮 1 
+give 回城卷 1
+mapmove yhzd
+SENDMSG 1 玩家%s进入了烟花之地，里面什么BOSS都有哦~
+#ELSEACT
+MessageBox 包袱内没有1个九珠连环炮，怎么进得去呢？？？
+
+[@cyzd]
+<COLOR=clFuchsia ╔═══════════════════════════╗>\
+<COLOR=clFuchsia ║>主要BOSS：<COLOR=clSkyBlue 送葬者、六大暗之教主、赤月恶魔等各大BOSS...> <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>刷新时间：<COLOR=clSkyBlue 小怪10分钟，暗之教主30分钟，赤月恶魔30分钟..><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>可爆物品：<COLOR=clSkyBlue 屠龙、40级衣服、赤月、极品装备...>       　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>危险指数：<COLOR=clLime ★★★★☆>                                  <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>进入条件：<COLOR=clRed 需要45级和200元宝！>  　　　　　　　　　　   <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>地图介绍：<COLOR=clRed 此地图怪物非常强悍。建议组队进入。>          <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║><进入赤月之地/@JRCYZD>　　　　　　　　　　　　　            <返回/@main><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚═══════════════════════════╝>\
+
+[@JRCYZD]
+#IF
+checklevelex > 44
+CHECKGAMEGOLD > 199
+#ACT
+GAMEGOLD - 200
+MAPMOVE gg003
+SENDMSG 0 勇士%s进入了赤月之地，遭大批BOSS围攻！
+GIVE 回城卷 1
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有45级或者元宝不足200颗！

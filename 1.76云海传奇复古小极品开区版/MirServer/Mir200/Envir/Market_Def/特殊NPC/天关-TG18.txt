@@ -1,0 +1,23 @@
+[@MAIN]
+这里是天关十八层(顶层)\
+你必须将本地图内所有怪物杀光，才可以领取奖励进入下一关！\
+<COLOR=clRed 注:请不要将聚灵珠放在包袱内,否则会被收取掉!>\
+　\
+<领取奖励回土城/@SHIBACJLLQ>\
+
+[@SHIBACJLLQ]
+#IF
+CheckRangeMonCount TG18 16 12 15 = 0
+#ACT
+GOTO @SHIBACJLLQ1
+#ELSESAY
+地图内的怪物还没杀光呢！
+
+[@SHIBACJLLQ1]
+#IF
+#ACT
+take 聚灵珠 50
+CHANGEEXP + 2600000
+MAPMOVE 3 333 333
+SENDMSG 0 %s闯过了天关十八层，获得2600000经验奖励！
+BREAK

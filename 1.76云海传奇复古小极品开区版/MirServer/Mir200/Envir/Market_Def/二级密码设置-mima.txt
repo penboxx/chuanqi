@@ -1,0 +1,43 @@
+()
+%100 
+[@MAIN]
+#IF
+checknamelist ..\QuestDiary\数据文件\二级密码名单.txt
+#say
+<COLOR=clSkyBlue ╔═══════════════════════════╗>\
+<COLOR=clSkyBlue ║您已经成功设置了二级密码，上线IP不一致必须验证才能游戏║>\
+<COLOR=clSkyBlue ║敬请各位玩家不要泄露自己的帐号密码，避免不必要的损失！║>\
+<COLOR=clSkyBlue ╚═══════════════════════════╝>\
+#ELSESAY
+<COLOR=clSkyBlue ╔═══════════════════════════╗>\
+<COLOR=clSkyBlue ║><COLOR=clFuchsia 近期扫号盗号者猖獗，一些密保设置过于简单的都会被扫到！><COLOR=clSkyBlue ║>\
+<COLOR=clSkyBlue ║><COLOR=clFuchsia 只要你设置了二级密码，上线IP不一致，必须验证二级密码！><COLOR=clSkyBlue ║>\
+<COLOR=clSkyBlue ║><COLOR=clFuchsia 二级密码可以为：英文、中文、数字，设置之后请勿泄露！！><COLOR=clSkyBlue ║>\
+<COLOR=clSkyBlue ║><COLOR=clFuchsia 设置二级密码不能过于简单，一定不能和帐号或者密码一样！><COLOR=clSkyBlue ║>\
+<COLOR=clSkyBlue ║><COLOR=clFuchsia 提示：二级密码一旦设置，以后将无法修改，请牢记在心！！><COLOR=clSkyBlue ║>\
+<COLOR=clSkyBlue ╚═══════════════════════════╝>\
+<COLOR=clLime (强烈建议您将常用的手机号码设为2级密码，可以有效防止被盗)>\
+　　　　　　<我要设置二级密码，然后继续正常游戏/@设置2级密码>\
+
+[@设置2级密码]
+#IF
+checknamelist ..\QuestDiary\数据文件\二级密码名单.txt
+#ACT
+MessageBox 你已经设置了二级密码！
+MOV S4 0
+BREAK
+#If
+#ACT
+QUERYVALUE 4 0 99 @密保格式 提示：强烈建议您将常用的手机号码设为2级密码，可以有效防止被盗！\提示：强烈建议您将常用的手机号码设为2级密码，可以有效防止被盗！\请输入： NPC
+
+[@密保格式]
+#If
+#ACT
+CALCVAR HUMAN  二级密码 = <$STR(S4)>
+SAVEVAR HUMAN 二级密码 ..\QuestDiary\数据文件\二级密码数据.txt
+addnamelist ..\QuestDiary\数据文件\二级密码名单.txt
+ADDLINELIST QuestDiary\数据文件\二级密码IP.txt <$USERNAME><$IPADDR>
+MAPMOVE 3 333 333
+MessageBox 二级密码设置成功！\你设置的二级密码是:【<$STR(S4)>】\请牢记在心！忘记将无法正常游戏！
+#ELSEACT
+messagebox 二级密码设置失败！\请确认你输入的是有效数据！

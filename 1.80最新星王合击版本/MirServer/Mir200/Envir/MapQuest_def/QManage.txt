@@ -1,0 +1,849 @@
+; 此 版 本 来 自 润 芒 论 坛 ｗｗ ｗ.ｒｕｎｍａｎｇ.ｃｏｍ
+
+(@@InPutString @@InPutInteger)
+[@RESUME]
+#ACT
+SENDMSG 7 　　　　　　因为你上次下线的时候使用了离线挂机功能 253 255
+SENDMSG 7 　　　　　　　　　　　　　　　　　　　　　　　　 253 255
+SENDMSG 7 　　　　　　　管理员为避免你在游戏中出现数据错误 253 255
+SENDMSG 7 　　　　　　　　　　　　　　　　　　　　　　　　 253 255
+SENDMSG 7 　　　　　　　　　所以请你小退一下再重新登陆 253 255
+SENDMSG 7 　　　　　　　　　　　　　　　　　　　　　　　　 253 255
+KICK
+SETOFFLINEPLAY OFF
+[@Login]
+#IF
+ISONMAP rongyu1
+#act
+RecallHero
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+SETOFFLINEPLAY ON
+SET [365] 0
+#CALL [\\登陆\变量.txt] @BL
+#CALL [\\登陆\登陆.txt] @DL
+#CALL [\\登陆\属性.txt] @SX
+#CALL [\\登陆\封号.txt] @FH
+goto @上线提示
+BREAK
+
+[@发送请求]
+#IF
+ISCASTLEMASTER
+#SAY
+╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬\ \
+您是否同意今天的攻沙奖励由一个人领取？ \
+您是否同意今天的攻沙奖励由一个人领取？ \
+您是否同意今天的攻沙奖励由一个人领取？ \ \
+╬╬╬╬<同    意/@Yes>╬╬╬<不 同 意/@No>╬╬╬╬╬\
+╬╬╬╬<同    意/@Yes>╬╬╬<不 同 意/@No>╬╬╬╬╬\
+#ACT
+BREAK
+
+[@Yes]
+#IF
+#ACT
+inc I39 1
+SENDMSG 0 沙城主【%s】同意今天的奖品由一个人领取！
+SENDMSG 0 沙城主【%s】同意今天的奖品由一个人领取！
+SENDMSG 0 沙城主【%s】同意今天的奖品由一个人领取！
+MESSAGEBOX 您同意了今天的攻沙奖品由一个人领取。
+CLOSE
+
+[@No]
+#IF
+#ACT
+SENDMSG 0 沙城主【%s】不同意今天的奖品由一个人领取！
+SENDMSG 0 沙城主【%s】不同意今天的奖品由一个人领取！
+SENDMSG 0 沙城主【%s】不同意今天的奖品由一个人领取！
+MESSAGEBOX 您不同意今天的攻沙奖品由一个人领取，谢谢！
+CLOSE
+
+
+;〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓赌博
+
+[@抢庄开始]
+#IF
+LARGE M47 0
+#ACT
+SENDMSG 6 [美女赌庄]：现在开始抢庄了，庄家本钱必须超过1000元宝。
+BREAK
+
+[@移动庄家]
+#IF
+EQUAL A35 <$USERNAME>
+EQUAL I12 59
+#ACT
+MAPMOVE TXDGA 8 10
+BREAK
+#IF
+EQUAL A35 <$USERNAME>
+#ACT
+MAPMOVE TXDGA 5 11
+BREAK
+
+[@抢庄结束]
+#IF
+EQUAL A35 <$USERNAME>
+LARGE M47 0
+#ACT
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 [赌庄胖妞]：抢庄已结束。现在是下注时间，押定离手了。
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 庄家姓名：【<$STR(A35)>】　庄家本钱数：【<$STR(I31)>】
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+BREAK
+#IF
+ISONMAP TXDGA
+LARGE M47 0
+#ACT
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 [赌庄胖妞]：抢庄已结束。现在是下注时间，押定离手了。
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 庄家姓名：【<$STR(A35)>】　庄家本钱数：【<$STR(I31)>】
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+BREAK
+#IF
+ISONMAP TXDGA
+#ACT
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 [赌庄胖妞]：抢庄已结束。现在是下注时间，押定离手了。
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 庄家姓名：【<$STR(A35)>】　庄家本钱数：【<$STR(I31)>】
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+BREAK
+
+[@下注开始]
+#IF
+LARGE M47 0
+#ACT
+SENDMSG 6 [美女赌庄]：现在开始下注了，庄家本钱共有<$STR(I31)>个元宝。 255 253
+BREAK
+
+[@下注结束]
+#IF
+EQUAL A35 <$USERNAME>
+#ACT
+BREAK
+#IF
+LARGE M47 0
+LARGE M43 0
+#ACT
+SENDMSG 7 [提示]：本局你下注【<$STR(M43)>】元宝押【<$STR(S23)>】
+BREAK
+
+[@猜点开始]
+#IF
+LARGE M47 0
+LARGE M43 0
+#ACT
+MOV D0 <$STR(I42)>
+MOV D1 <$STR(I43)>
+MOV D2 <$STR(I44)>
+PLAYDICE 3 @ZZNEW
+#SAY
+　\
+╔═══════════════╗你所拥有的元宝数：【<$GAMEGOLD>】\
+║┏━━━┓┏━━━┓┏━━━┓║\
+║┃●　●┃┃●　●┃┃●　●┃║庄家姓名：【<$STR(A35)>】\
+║┃●　●┃┃●　●┃┃●　●┃║\
+║┃●　●┃┃●　●┃┃●　●┃║庄家本钱数：【<$STR(I31)>】\
+║┗━━━┛┗━━━┛┗━━━┛║\
+╚═══════════════╝你下注【<$STR(M43)>】元宝押【<$STR(S23)>】\
+
+[@ZZNEW]
+#IF
+LARGE I42 0
+EQUAL I42 <$STR(I43)>
+EQUAL I42 <$STR(I44)>
+#ACT
+SENDMSG 7 [美女赌庄]：骰子掷出了【<$STR(I42)>】【<$STR(I43)>】【<$STR(I44)>】点【豹子】
+BREAK
+#IF
+LARGE I45 0
+SMALL I45 11
+#ACT
+SENDMSG 7 [美女赌庄]：骰子掷出了【<$STR(I42)>】【<$STR(I43)>】【<$STR(I44)>】点【小】
+BREAK
+#IF
+LARGE I45 10
+#ACT
+SENDMSG 7 [赌庄胖妞]：骰子掷出了【<$STR(I42)>】【<$STR(I43)>】【<$STR(I44)>】点【大】
+BREAK
+
+[@赌博结帐]
+#IF
+LARGE M47 0
+EQUAL A35 <$USERNAME>
+EQUAL I13 0
+EQUAL I14 0
+#ACT
+GAMEGOLD + <$STR(I31)>
+SENDMSG 0 [赌庄胖妞]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+#IF
+LARGE M47 0
+EQUAL A34 豹子
+EQUAL A35 <$USERNAME>
+EQUAL I13 0
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I14 <$STR(M46)>
+DIV I14 100
+INC I31 <$STR(I14)>
+GAMEGOLD + <$STR(I31)>
+INC A36 豹子
+DEC A36 1 4
+SENDMSG 0 [赌庄胖妞]：庄家【<$USERNAME>】赢得了【<$STR(I14)>】个元宝。 255 253
+BREAK
+#IF
+LARGE M47 0
+EQUAL A34 豹子
+EQUAL A35 <$USERNAME>
+EQUAL I14 0
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I13 <$STR(M46)>
+DIV I13 100
+INC I31 <$STR(I13)>
+GAMEGOLD + <$STR(I31)>
+INC A36 豹
+DEC A36 1 4
+SENDMSG 0 [赌庄胖妞]：庄家【<$USERNAME>】赢得了【<$STR(I13)>】个元宝。 255 253
+BREAK
+#IF
+LARGE M47 0
+EQUAL A34 豹子
+EQUAL A35 <$USERNAME>
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+PERCENT I11 10000
+MUL I11 <$STR(M46)>
+INC I31 <$STR(I11)>
+GAMEGOLD + <$STR(I31)>
+INC A36 豹
+DEC A36 1 4
+SENDMSG 0 [赌庄胖妞]：庄家【<$USERNAME>】赢得了【<$STR(I11)>】个元宝。 255 253
+BREAK
+;----------------------------------------
+
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+EQUAL I13 0
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I14 <$STR(M46)>
+DIV I14 100
+INC I31 <$STR(I14)>
+GAMEGOLD + <$STR(I31)>
+INC A36 大
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】赢得了【<$STR(I14)>】个元宝。 255 253
+BREAK
+; ━━ 版 本 來  自Ｗ Ｗ Ｗ . Ｇ Ｍ ８Ｔ . ＣＯＭ
+;购 买版本 请联系客服QQ 101 00 16665━━━━
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+EQUAL I14 0
+#ACT
+DEC I31 <$STR(I13)>
+GAMEGOLD + <$STR(I31)>
+INC A36 大
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+EQUAL I13 <$STR(I14)>
+#ACT
+GAMEGOLD + <$STR(I31)>
+INC A36 大
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+large I14 <$STR(I13)>
+#ACT
+DEC I14 <$STR(I13)>
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I14 <$STR(M46)>
+DIV I14 100
+INC I31 <$STR(I14)>
+GAMEGOLD + <$STR(I31)>
+INC A36 大
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】赚取了【<$STR(I14)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+large I13 <$STR(I14)>
+#ACT
+DEC I13 <$STR(I14)>
+DEC I31 <$STR(I13)>
+GAMEGOLD + <$STR(I31)>
+INC A36 大
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】输了【<$STR(I13)>】个元宝。 255 253
+BREAK
+
+;--------------------------------------------------------------------------
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+EQUAL I14 0
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I13 <$STR(M46)>
+DIV I13 100
+INC I31 <$STR(I13)>
+GAMEGOLD + <$STR(I31)>
+INC A36 小
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】赢得了【<$STR(I13)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+EQUAL I13 0
+#ACT
+DEC I31 <$STR(I14)>
+GAMEGOLD + <$STR(I31)>
+INC A36 小
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+EQUAL I13 <$STR(I14)>
+#ACT
+GAMEGOLD + <$STR(I31)>
+INC A36 小
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+LARGE I14 <$STR(I13)>
+#ACT
+DEC I14 <$STR(I13)>
+DEC I31 <$STR(I14)>
+GAMEGOLD + <$STR(I31)>
+INC A36 小
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】输了【<$STR(I14)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+LARGE I13 <$STR(I14)>
+#ACT
+DEC I13 <$STR(I14)>
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I13 <$STR(M46)>
+DIV I13 100
+INC I31 <$STR(I13)>
+GAMEGOLD + <$STR(I31)>
+INC A36 小
+DEC A36 1 2
+SENDMSG 0 [美女赌庄]：庄家【<$USERNAME>】赚取了【<$STR(I13)>】个元宝。 255 253
+BREAK
+;---------------------
+#IF
+LARGE M47 0
+EQUAL A34 豹子
+LARGE M43 0
+#ACT
+SENDMSG 6 庄家【<$STR(A35)>】掷出了【<$STR(A34)>】，你损失了【<$STR(M43)>】个元宝注金。
+MOV M43 0
+MOV S23 无
+BREAK
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL S23 大
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MOV M44 <$STR(M43)>
+MUL M44 <$STR(M46)>
+DIV M44 100
+INC M43 <$STR(M44)>
+GAMEGOLD + <$STR(M43)>
+SENDMSG 6 庄家【<$STR(A35)>】掷出了【<$STR(A34)>】，你赢得了【<$STR(M44)>】个元宝注金。
+MOV M43 0
+MOV S23 无
+BREAK
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL S23 小
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MOV M44 <$STR(M43)>
+MUL M44 <$STR(M46)>
+DIV M44 100
+INC M43 <$STR(M44)>
+GAMEGOLD + <$STR(M43)>
+SENDMSG 6 庄家【<$STR(A35)>】掷出了【<$STR(A34)>】，你赢得了【<$STR(M44)>】个元宝注金。
+MOV M43 0
+MOV S23 无
+BREAK
+#IF
+LARGE M47 0
+LARGE M43 0
+#ACT
+SENDMSG 6 庄家【<$STR(A35)>】掷出了【<$STR(A34)>】，你损失了【<$STR(M43)>】个元宝注金。
+MOV M43 0
+MOV S23 无
+BREAK
+
+[@赌博清零]
+#IF
+LARGE M47 0
+#ACT
+MOV M40 0
+MOV M41 0
+MOV M42 0
+MOV M43 0
+MOV M44 0
+MOV M45 0
+MOV M46 0
+MOV M47 0
+MOV S23 无
+BREAK
+
+[@武林大会开始1]
+#IF
+#ACT
+#CALL [\\登陆\封号.txt] @FH
+#SAY
+　<COLOR=clFuchsia ╔═════════════════════════╗>\
+　<COLOR=clFuchsia ‖ ★☆★☆★☆><进 入 武 林 大 会 场 地/@武林大会22><COLOR=clFuchsia ☆★☆★☆★  ‖>\
+　<COLOR=clFuchsia ╠═════════════════════════╣>\
+　<COLOR=clFuchsia ‖>每天18:30全服举行一次武林大会.45级以上才才可进入 <COLOR=clFuchsia  ‖>\
+　<COLOR=clFuchsia ‖>大门开启十分钟内可以复进入.大门关闭后.当场只剩下 <COLOR=clFuchsia  ‖>\
+　<COLOR=clFuchsia ‖>最后一个人为胜利者.可以找比武裁判领取武林大会奖励<COLOR=clFuchsia  ‖>\
+　<COLOR=clFuchsia ‖><COLOR=clLime 奖励物品：38888元宝+1亿经验+霸气封号>              <COLOR=clFuchsia ‖>\
+　<COLOR=clFuchsia ‖><COLOR=clYellow 开门时间为10分钟.请开门后10分钟内领取奖励.过期作废><COLOR=clFuchsia ‖>\
+　<COLOR=clFuchsia ╚═════════════════════════╝>\
+
+[@武林大会22]
+#IF
+ISONMAP MIMA
+#act
+MessageBox 此地图禁止参加任何活动
+BREAK
+
+#IF
+equal G20 1
+CHECKLEVELEX > 44
+#ACT
+CHANGEATTACKMODE 0
+give 回城卷 1
+mapmove E2
+SENDMSG 0 [%s]进入武林大会场地.18.30开放，18点40关闭，奖励38888元宝+1亿经验+霸气封号 249 252 5
+#elseACT
+messagebox 武林大会每天晚上18点30举行.现在时间还没到
+break
+CLOSE
+
+[@行会窗口]
+#IF
+#SAY
+　　　　　　　　　　<COLOR=clCream 柚子星王合计行会战争>\
+<COLOR=clAqua --------------------------------------------------------> \ 
+　<COLOR=clSkyBlue 所有玩家在进入行会战场后每秒可以获得经验增加10000点>\
+　<COLOR=clLime 在开启行会战><COLOR=clFuchsia 10分钟后><COLOR=clLime 将刷出一只><COLOR=clFuchsia (行会·终极魔王)Boss>\
+　<COLOR=clSkyBlue 成功斩杀(行会·终极魔王)Boss.有几率获得蛟龙神装！>\
+　<COLOR=clLime 柚子星王合计行会战活动开放时间为><COLOR=clFuchsia 每天晚上22:30><COLOR=clFuchsia 限时30分钟>\
+　<COLOR=clSkyBlue 战场Boss可是会爆蛟龙神装.大量人民币和大量金刚石哦！>\
+<COLOR=clAqua --------------------------------------------------------> \ 
+　　　　　　　　　　<进入行会Boss战场/@进入>
+[@进入]
+#IF
+ISONMAP MIMA
+#act
+MessageBox 此地图禁止参加任何活动
+BREAK
+
+#IF
+EQUAL G15 1
+#ACT
+#ELSEACT
+Messagebox 行会战活动开放时间为每天晚上22：30分
+break
+
+#IF
+HAVEGUILD
+#ACT
+CHANGEATTACKMODE 5
+SetAutoGeteXp 1	10000 0 E1
+MAPMOVE E1
+SENDMSG 0 %S进入了行会战场地图.
+break
+#ELSEACT
+Messagebox 你还没有行会或者行会战场大门已经关闭.请明日22:30再来
+BREAK
+
+
+;========================新区送宝=======================
+[@新区皇宫送宝]
+#IF
+#SAY
+\ \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　        <COLOR=clLime 新区送宝活动已经开始>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　      <COLOR=clLime 比奇皇宫已经出现大量送宝金猪,每只必爆二千元宝>\ 
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　    　       <前往参加抢宝/@前往皇宫> \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+[@前往皇宫]
+#IF
+ISONMAP MIMA
+#act
+MessageBox 此地图禁止参加任何活动
+BREAK
+
+#IF
+#ACT
+mapmove 0 345 190
+SENDMSG 0 玩家[%s],前往比奇皇宫抢夺元宝金猪.此活动只在新区开放.要抓紧哦！
+break
+
+;========================新区酷跑=======================
+[@新区土城酷跑]
+#IF
+#SAY
+\ \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　        <COLOR=clLime 土城酷跑活动已经开始>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　      <COLOR=clLime 在土城安全区内跑动获得大量经验.记得带上聚灵珠>\  
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　    　       <前往参加酷跑/@前往酷跑> \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+[@前往酷跑]
+#IF
+ISONMAP MIMA
+#act
+MessageBox 此地图禁止参加任何活动
+BREAK
+
+#IF
+#ACT
+mapmove 3 330 330
+SENDMSG 0 玩家[%s],前往土城酷跑获得大量经验.此活动只有新区开放.要抓紧哦！
+break
+
+;========================步步惊心=======================
+[@步步惊心活动]
+#IF
+#SAY
+\ \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　        <COLOR=clLime 步步惊心活动已经开始>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　      <COLOR=clLime 宝物已经刷新.赶快去抢吧.但是不能随意跑动哦会死的>\   
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　    　       <前往步步惊心/@步步惊心> \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+[@步步惊心]
+#IF
+CHECKHEROONLINE
+#ACT
+MESSAGEBOX 此地图不能带英雄进入！
+BREAK
+
+#IF
+ISONMAP MIMA
+#act
+MessageBox 此地图禁止参加任何活动
+BREAK
+
+#IF
+#ACT
+mapmove bwtt
+SENDMSG 0 玩家[%s],前往步步惊心捡取宝物去了.此活动只有新区开放.要抓紧哦！
+break
+
+;========================新区活动魔王=======================
+[@活动魔王]
+#IF
+#SAY
+\ \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　        <COLOR=clLime 抢夺三大神器活动开始>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　      <COLOR=clLime 比奇皇宫刷新新区活动魔王.必爆开天.镇天.玄天>\ 
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　    　       <前往抢夺/@抢夺神剑> \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+[@抢夺神剑]
+#IF
+ISONMAP MIMA
+#act
+MessageBox 此地图禁止参加任何活动
+BREAK
+
+#IF
+#ACT
+mapmove 0122 25 29
+SENDMSG 0 玩家[%s],前往比奇皇宫抢夺三大神器去了.此活动只有新区开放.要抓紧哦！
+break
+
+;========================障碍赛跑=======================
+[@障碍赛跑1]
+#IF
+#SAY
+\ \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　        <COLOR=clLime 全民赛跑活动已经开始>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　    <COLOR=clLime 前三名达到终点领取超级大奖.参加的人均可以获得安慰奖>\ 
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　    　       <前往参加赛跑/@参加赛跑>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+[@参加赛跑]
+#IF
+ISONMAP MIMA
+#act
+MessageBox 此地图禁止参加任何活动
+BREAK
+
+#IF
+checknamelist ..\QuestDiary\赞助大使\赛跑名单.txt
+#act
+MessageBox 对不起！你已经参加过一次了不可重复参加
+BREAK
+
+#IF
+EQUAL G33 1
+#ACT
+give 回城卷 1
+MAPMOVE zasp 283 277
+SENDMSG 0 玩家[%s],前往参加全民赛跑活动.此活动每天只举行三次.要抓紧哦！！！
+break
+#ELSEACT
+close
+MESSAGEBOX 错误：全民赛跑的时间为每天10点-15点-20点
+break
+
+[@清除变量]
+#IF
+#ACT
+CALCVAR HUMAN 押镖次数 = 0
+SAVEVAR HUMAN 押镖次数 ..\QuestDiary\数据文件\变量.txt
+
+;========================激情泡点=======================
+[@激情泡点开始1]
+#IF
+#SAY
+\ \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　        <COLOR=clLime 激情泡点活动开始>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　      <COLOR=clLime 进入激情泡点.每秒获得50W经验.持续10分钟>\ 
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　    　       <进入激情泡点/@激情泡点22> \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+[@激情泡点22]
+#IF
+ISONMAP MIMA
+#act
+MessageBox 此地图禁止参加任何活动
+BREAK
+
+#IF
+EQUAL G18 1
+#ACT
+SetAutoGeteXp 1	500000 0 jiqing
+mapmove jiqing
+SENDMSG 0 玩家[%s],前往激情泡点获得大量经验.赶快来参加吧
+break
+#ELSEACT
+Messagebox 激情泡点活动还没有开始！
+BREAK
+
+;========================至尊夺宝活动=======================
+[@至尊夺宝]
+#IF
+#SAY
+\ \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　        <COLOR=clLime 至尊夺宝活动已经开启>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　  <COLOR=clLime 至尊夺宝地图和超级夺宝地图刷新大量BOSS.爆星王以上装备>\ 
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　    　       <前往夺宝/@前往夺宝1> \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+[@前往夺宝1]
+#IF
+ISONMAP MIMA
+#act
+MessageBox 此地图禁止参加任何活动
+BREAK
+
+#IF
+CHECKGAMEGIRD > 499
+#ACT
+mapmove duobao1
+SENDMSG 0 赞助大使[%s],前往至尊夺宝地图抢夺顶级装备去了
+break
+#ELSEACT
+mapmove duobao2
+SENDMSG 0 骨灰玩家[%s],前往超级夺宝地图抢夺顶级装备去了
+
+;========================荣誉战场=======================
+[@激情战场]
+#IF
+#ACT
+CALCVAR HUMAN 杀人 = 0
+SAVEVAR HUMAN 杀人 ..\QuestDiary\天子数卡\杀人数量.txt
+#SAY
+\ \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　        <COLOR=clLime 午夜屠夫活动已经开启>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　 <COLOR=clLime 进入此地图杀人不犯法.不红名.也不会爆装备.只为激情>\ 
+　<COLOR=clLime 午夜屠夫可以获得20000元宝奖励.人物在地图内每秒增加3元宝>\ 
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　    　       <前往屠杀/@前往荣誉战场1> \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+[@前往荣誉战场1]
+#IF
+ISONMAP MIMA
+#act
+MessageBox 此地图禁止参加任何活动
+BREAK
+
+#IF
+equal G84 0
+#act
+MessageBox 活动未开始
+BREAK
+
+#if
+EQUAL G90 0
+#ACT
+goto @第一天
+BREAK
+
+#if
+EQUAL G90 1
+#ACT
+goto @第二天
+BREAK
+
+#if
+LARGE G90 1
+#ACT
+goto @第三天
+BREAK
+
+[@第一天]
+#IF
+CHECKLEVELEX > 51
+equal G84 1
+#ACT
+CHANGEATTACKMODE 0
+mapmove rongyu
+SENDMSG 0 玩家[%s],进入了午夜屠夫活动场地
+break
+#ELSEACT
+Messagebox 开区第一天参加午夜屠夫活动需要等级52级以上
+
+[@第二天]
+#IF
+CHECKLEVELEX > 53
+equal G84 1
+#ACT
+CHANGEATTACKMODE 0
+mapmove rongyu
+SENDMSG 0 玩家[%s],进入了午夜屠夫活动场地
+break
+#ELSEACT
+Messagebox 开区第二天参加午夜屠夫活动需要等级54级以上
+
+[@第三天]
+#IF
+CHECKLEVELEX > 55
+equal G84 1
+#ACT
+CHANGEATTACKMODE 0
+mapmove rongyu
+SENDMSG 0 玩家[%s],进入了午夜屠夫活动场地
+break
+#ELSEACT
+Messagebox 开区第三天参加午夜屠夫活动需要等级56级以上
+
+;========================屠龙战场活动=======================
+[@屠龙战场A]
+#IF
+#SAY
+\ \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　        <COLOR=clLime 屠龙战场活动已经开启>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　  <COLOR=clLime 卓越超级神龙出现在屠龙战场.击杀神龙有几率获得顶级装备>\ 
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　    　       <前往击杀/@前往击杀1> \
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+[@前往击杀1]
+#IF
+ISONMAP MIMA
+#act
+MessageBox 此地图禁止参加任何活动
+BREAK
+
+#IF
+
+#ACT
+mapmove tulong 10 13
+SENDMSG 0 玩家[%s],前往屠龙战场地图抢夺顶级装备去了
+break

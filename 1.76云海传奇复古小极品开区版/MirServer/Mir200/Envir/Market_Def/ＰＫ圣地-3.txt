@@ -1,0 +1,13 @@
+[@MAIN]
+<COLOR=clLime 谁是英雄？谁是狗熊？比比就知道！>\ \
+<COLOR=clFuchsia 地图内每天13点、17点、23点刷出富贵教主，狂爆元宝卷！>\
+<COLOR=clFuchsia 还有几率爆出：[沃玛面巾] [祖玛面巾] [赤月面巾] 喔~>\ \
+<COLOR=clRed 地图内杀人不增加PK值！>\ \
+<进入ＰＫ圣地/@jrzjybdt>　　　　　　<我不敢进去/@exit>\
+
+[@jrzjybdt]
+#IF
+#ACT
+MAPMOVE ZJYBDT
+GIVE 回城卷
+BREAK

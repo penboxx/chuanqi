@@ -1,0 +1,85 @@
+[@main] 
+#IF
+CHECKNAMELIST ..\QuestDiary\赞助大使\赛跑名单.txt
+#ACT
+MESSAGEBOX [领取失败]!好像你以经领取过了吧！···
+break
+
+#IF
+EQUAL G34 1
+#SAY
+<COLOR=clLime 《〈〈〈〈〈〈〈〈〈〈赛跑领奖台〉〉〉〉〉〉〉〉〉》>\ 
+<COLOR=clLime 《〈〈〈〈〈〈〈〈〈〈赛跑领奖台〉〉〉〉〉〉〉〉〉》>\ \
+<color=clred 哇噻超人来了!跑得真他妈的跟超人一样!!!>\ \
+<color=clred 恭喜：你获得了第〖1〗名！请速度领取！>\ \
+<COLOR=clFuchsia 点击此处领奖★============→→→!>  <领取奖励/@开始领奖1>\ 
+
+#IF
+EQUAL G34 2
+#SAY
+<COLOR=clLime 《〈〈〈〈〈〈〈〈〈〈赛跑领奖台〉〉〉〉〉〉〉〉〉》>\ 
+<COLOR=clLime 《〈〈〈〈〈〈〈〈〈〈赛跑领奖台〉〉〉〉〉〉〉〉〉》>\ \
+<color=clred 哇噻超人来了!跑得真他妈的跟超人一样!!!>\ \
+<color=clred 恭喜：你获得了第〖2〗名！请速度领取！>\ \
+<COLOR=clFuchsia 点击此处领奖★============→→→!>  <领取奖励/@开始领奖2>\ 
+
+
+#IF
+EQUAL G34 3
+#SAY
+<COLOR=clLime 《〈〈〈〈〈〈〈〈〈〈赛跑领奖台〉〉〉〉〉〉〉〉〉》>\ 
+<COLOR=clLime 《〈〈〈〈〈〈〈〈〈〈赛跑领奖台〉〉〉〉〉〉〉〉〉》>\ \
+<color=clred 哇噻超人来了!跑得真他妈的跟超人一样!!!>\ \
+<color=clred 恭喜：你获得了第〖3〗名！请速度领取！>\ \
+<COLOR=clFuchsia 点击此处领奖★============→→→!>  <领取奖励/@开始领奖3>\ 
+
+
+#IF
+EQUAL G34 4
+#SAY
+<COLOR=clLime 《〈〈〈〈〈〈〈〈〈〈赛跑领奖台〉〉〉〉〉〉〉〉〉》>\ 
+<COLOR=clLime 《〈〈〈〈〈〈〈〈〈〈赛跑领奖台〉〉〉〉〉〉〉〉〉》>\ \
+<color=clred 哇噻超人来了!跑得真他妈的跟超人一样!!!>\ \
+<color=clred 恭喜：你获得了第〖N〗名！请速度领取安慰奖>\ \
+<COLOR=clFuchsia 点击此处领奖★============→→→!>  <领取奖励/@开始领奖4>\ 
+
+
+[@开始领奖1]
+#IF
+#ACT
+ADDNAMELIST ..\QuestDiary\赞助大使\赛跑名单.txt
+mov G34 2
+GAMEGOLD + 10000
+SENDMSG 0 恭喜：玩家[%s]获得了全民赛跑:第〖1〗名!奖金〖10000〗元宝 249 0
+MAPMOVE  3 333 333
+break
+
+[@开始领奖2]
+#IF
+#ACT
+ADDNAMELIST ..\QuestDiary\赞助大使\赛跑名单.txt
+mov G34 3
+GAMEGOLD + 8000
+SENDMSG 0 恭喜：玩家[%s]获得了全民赛跑:第〖2〗名!奖金〖8000〗元宝 249 0
+MAPMOVE  3 333 333
+break
+
+
+[@开始领奖3]
+#IF
+#ACT
+ADDNAMELIST ..\QuestDiary\赞助大使\赛跑名单.txt
+mov G34 4
+GAMEGOLD + 5000
+SENDMSG 0 恭喜：玩家[%s]获得了全民赛跑:第〖3〗名!奖金〖5000〗元宝 249 0
+MAPMOVE  3 333 333
+break
+
+[@开始领奖4]
+#IF
+#ACT
+ADDNAMELIST ..\QuestDiary\赞助大使\赛跑名单.txt
+GAMEGOLD + 1000
+SENDMSG 0 恭喜：玩家[%s]获得了全民赛跑安慰奖!奖金〖1000〗元宝 249 0
+MAPMOVE  3 333 333
+break

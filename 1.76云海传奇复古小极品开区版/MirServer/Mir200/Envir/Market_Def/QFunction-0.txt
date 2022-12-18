@@ -1,0 +1,1094 @@
+(@@sendmsg @storage @PlayOffline @getback @buy @sell @repair @s_repair @@offlinemsg @storage @getback @getnextpage @getPreviouspage @@InPutString)
+
+[@StdModeFunc240]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 5000
+SENDMSG 7 提示:元宝增加5000个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc241]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 2000
+SENDMSG 7 提示:元宝增加2000个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc242]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 1000
+SENDMSG 7 提示:元宝增加1000个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc243]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 500
+SENDMSG 7 提示:元宝增加500个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc244]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 200
+SENDMSG 7 提示:元宝增加200个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc245]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 100
+SENDMSG 7 提示:元宝增加100个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc246]
+#IF
+#ACT
+GIVE 祝福油 6
+
+[@StdModeFunc247]
+#IF
+#ACT
+give 游戏攻略(必看) 1
+#CALL [\系统功能\帮助命令.txt] @帮助
+
+[@MagSelfFunc248]
+#IF
+#ACT
+QUERYBAGITEMS 0
+BREAK
+
+[@StdModeFunc248]
+#IF
+#ACT
+ADDSKILL 刷新背包 3
+break
+
+[@StdModeFunc249]
+#IF
+#ACT
+ADDSKILL 心灵召唤 3
+break
+
+[@PlayDie]
+#if
+CheckLevelEx > 0 
+#Act
+Gmexecute TestStatus 11 0 0
+
+#IF
+KillByHum
+#act
+CALCVAR HUMAN SW + 1
+SAVEVAR HUMAN SW ..\QuestDiary\数据文件\死亡次数SAVE.txt
+SENDMSG 0 【<$KILLER>】在[%m]把【%s】干掉了! 
+#ELSEACT
+SENDMSG 0 【%s】在[%m]被强悍的怪物给分尸了! 
+
+[@PlayLevelUp]
+;-------7-5w--w .c --o--m-═提--供-------战士-------------------------
+#IF
+CHECKLEVELEX = 35
+#ACT
+GMEXECUTE 解除禁言 SELF 555
+SENDMSG [提示]：恭喜你升到35级，你现在可以说话了。
+BREAK
+
+
+#if
+checkjob warrior
+gender Woman
+checklevelex = 15
+#act
+give 八荒 1
+give 金币 100000
+TAKEON 八荒 1
+take 乌木剑 1
+give 轻型盔甲(女) 1
+TAKEON 轻型盔甲(女) 0
+take 布衣(女) 1
+break
+
+#if
+checkjob warrior
+gender man
+checklevelex = 15
+#act
+give 八荒 1
+give 金币 100000
+TAKEON 八荒 1
+take 乌木剑 1
+give 轻型盔甲(男) 1
+TAKEON 轻型盔甲(男) 0
+take 布衣(男) 1
+break
+
+#IF
+checkjob warrior
+gender Woman
+checklevelex = 26
+#ACT
+give 蓝翡翠项链 1
+give 死神手套 2
+give 骷髅头盔 1
+give 炼狱 1
+give 珊瑚戒指 2
+give 重盔甲(女) 1
+TAKEON 重盔甲(女) 0
+TAKEON 炼狱 1
+TAKEON 蓝翡翠项链 3
+TAKEON 骷髅头盔 4
+TAKEON 死神手套 5
+TAKEON 死神手套 6
+TAKEON 珊瑚戒指 7
+TAKEON 珊瑚戒指 8
+take 轻型盔甲(女)
+take 八荒
+MAPMOVE 0 333 267
+QUERYBAGITEMS
+BREAK
+
+#IF
+gender man
+checkjob warrior
+checklevelex = 26
+#ACT
+give 蓝翡翠项链 1
+give 死神手套 2
+give 骷髅头盔 1
+give 炼狱 1
+give 珊瑚戒指 2
+give 重盔甲(男) 1
+TAKEON 重盔甲(男) 0
+TAKEON 炼狱 1
+TAKEON 蓝翡翠项链 3
+TAKEON 骷髅头盔 4
+TAKEON 死神手套 5
+TAKEON 死神手套 6
+TAKEON 珊瑚戒指 7
+TAKEON 珊瑚戒指 8
+take 轻型盔甲(男)
+take 八荒
+MAPMOVE 0 333 267
+QUERYBAGITEMS
+BREAK
+
+#IF
+checkjob warrior
+checklevelex = 40
+#act
+MAPMOVE mimasz 16 23
+MESSAGEBOX 为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！\为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！\为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！\为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！\为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！
+break
+
+#IF
+checkjob warrior
+checklevelex = 50
+#act
+give 怒斩 1
+SENDMSG 0 恭喜：玩家[%s]冲到50级。获得了怒斩
+SENDMSG 0 恭喜：玩家[%s]冲到50级。获得了怒斩
+SENDMSG 0 提醒：下个等级奖励是51级，奖励：蓝灵腰带1根！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob warrior
+checklevelex = 51
+#act
+give 蓝灵腰带 1
+SENDMSG 0 恭喜：玩家[%s]冲到51级。获得了蓝灵腰带
+SENDMSG 0 恭喜：玩家[%s]冲到51级。获得了蓝灵腰带
+SENDMSG 0 提醒：下个等级奖励是53级，奖励：蓝灵神靴1双！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob warrior
+checklevelex = 53
+Check [388] 0
+#act
+give 蓝灵神靴 1
+SENDMSG 0 恭喜：玩家[%s]冲到53级。获得了蓝灵神靴
+SENDMSG 0 恭喜：玩家[%s]冲到53级。获得了蓝灵神靴
+SENDMSG 0 提醒：下个等级奖励是55级，奖励：蓝灵宝石1个！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob warrior
+checklevelex = 55
+Check [388] 0
+#act
+give 蓝灵宝石 1
+SENDMSG 0 恭喜：玩家[%s]冲到55级。获得了蓝灵宝石
+SENDMSG 0 恭喜：玩家[%s]冲到55级。获得了蓝灵宝石
+SENDMSG 0 恭喜：玩家[%s]冲到55级。获得了蓝灵宝石
+break
+
+;---7-5w--w.c--o --m-═提--供--方士-------------------------
+#if
+checkjob taoist
+gender Woman
+checklevelex = 15
+#act
+give 半月 1
+give 金币 100000
+give 护身符(大) 1
+TAKEON 半月 1
+take 乌木剑 1
+give 轻型盔甲(女) 1
+TAKEON 轻型盔甲(女) 0
+take 布衣(女) 1
+break
+
+#if
+checkjob taoist
+gender man
+checklevelex = 15
+#act
+give 半月 1
+give 金币 100000
+give 护身符(大) 1
+TAKEON 半月 1
+take 乌木剑 1
+give 轻型盔甲(男) 1
+TAKEON 轻型盔甲(男) 0
+take 布衣(男) 1
+break
+
+#IF
+checkjob taoist
+gender Woman
+checklevelex = 26
+#ACT
+give 竹笛 1
+give 道士手镯 2
+give 道士头盔 1
+give 银蛇 1
+give 降妖除魔戒指 2
+give 灵魂战衣(女) 1
+give 灰色药粉(大量) 1
+give 黄色药粉(大量) 1
+TAKEON 灵魂战衣(女) 0
+TAKEON 银蛇 1
+TAKEON 竹笛 3
+TAKEON 道士头盔 4
+TAKEON 道士手镯 5
+TAKEON 道士手镯 6
+TAKEON 降妖除魔戒指 7
+TAKEON 降妖除魔戒指 8
+take 轻型盔甲(女)
+take 半月
+MAPMOVE 0 333 267
+QUERYBAGITEMS
+BREAK
+
+#IF
+checkjob taoist
+gender man
+checklevelex = 26
+#ACT
+give 竹笛 1
+give 道士手镯 2
+give 道士头盔 1
+give 银蛇 1
+give 降妖除魔戒指 2
+give 灵魂战衣(男) 1
+give 灰色药粉(大量) 1
+give 黄色药粉(大量) 1
+TAKEON 灵魂战衣(男) 0
+TAKEON 银蛇 1
+TAKEON 竹笛 3
+TAKEON 道士头盔 4
+TAKEON 道士手镯 5
+TAKEON 道士手镯 6
+TAKEON 降妖除魔戒指 7
+TAKEON 降妖除魔戒指 8
+take 轻型盔甲(男)
+take 半月
+MAPMOVE 0 333 267
+QUERYBAGITEMS
+BREAK
+
+#IF
+checkjob taoist
+checklevelex = 40
+#act
+MAPMOVE mimasz 16 23
+MESSAGEBOX 为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！\为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！\为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！\为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！\为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！
+break
+
+#IF
+checkjob taoist
+checklevelex = 50
+#act
+give 逍遥扇 1
+SENDMSG 0 恭喜：玩家[%s]冲到50级。获得了逍遥扇
+SENDMSG 0 恭喜：玩家[%s]冲到50级。获得了逍遥扇
+SENDMSG 0 提醒：下个等级奖励是51级，奖励：蓝灵腰带1根！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob taoist
+checklevelex = 51
+#act
+give 蓝灵腰带 1
+SENDMSG 0 恭喜：玩家[%s]冲到51级。获得了蓝灵腰带
+SENDMSG 0 恭喜：玩家[%s]冲到51级。获得了蓝灵腰带
+SENDMSG 0 提醒：下个等级奖励是52级，奖励：蓝灵神靴1双！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob taoist
+checklevelex = 52
+Check [388] 0
+#act
+give 蓝灵神靴 1
+SENDMSG 0 恭喜：玩家[%s]冲到52级。获得了蓝灵神靴
+SENDMSG 0 恭喜：玩家[%s]冲到52级。获得了蓝灵神靴
+SENDMSG 0 提醒：下个等级奖励是53级，奖励：云海宝石1个！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob taoist
+checklevelex = 53
+Check [388] 0
+#act
+give 云海宝石(道) 1
+SENDMSG 0 恭喜：玩家[%s]冲到53级。获得了云海宝石
+SENDMSG 0 恭喜：玩家[%s]冲到53级。获得了云海宝石
+SENDMSG 0 提醒：下个等级奖励是54级，奖励：云海勋章1个！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob taoist
+checklevelex = 54
+Check [388] 0
+#act
+give 云海勋章(道) 1
+SENDMSG 0 恭喜：玩家[%s]冲到54级。获得了云海勋章
+SENDMSG 0 恭喜：玩家[%s]冲到54级。获得了云海勋章
+SENDMSG 0 提醒：下个等级奖励是55级，奖励：云海幸运项链+5万元宝，人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob taoist
+checklevelex = 55
+Check [388] 0
+#act
+GAMEGOLD + 50000
+give 云海虎齿项链 1
+SENDMSG 0 恭喜：玩家[%s]冲到55级。获得了云海虎齿项链+5万元宝
+SENDMSG 0 恭喜：玩家[%s]冲到55级。获得了云海虎齿项链+5万元宝
+SENDMSG 0 提醒：下个等级奖励是56级，奖励：云海衣服+10万元宝，人人都有，加油哦！ 200 200 10
+break
+
+#IF
+gender man
+checkjob taoist
+checklevelex = 56
+Check [388] 0
+#act
+GAMEGOLD + 100000
+give 云海道袍 1
+SENDMSG 0 恭喜：玩家[%s]冲到56级。获得了云海道袍+10万元宝
+SENDMSG 0 恭喜：玩家[%s]冲到56级。获得了云海道袍+10万元宝
+SENDMSG 0 提醒：下个等级奖励是57级，奖励：云海玉剑+15万元宝，人人都有，加油哦！ 200 200 10
+break
+
+#IF
+gender woman
+checkjob taoist
+checklevelex = 56
+Check [388] 0
+#act
+GAMEGOLD + 100000
+give 云海长袍 1
+SENDMSG 0 恭喜：玩家[%s]冲到56级。获得了云海长袍+10万元宝
+SENDMSG 0 恭喜：玩家[%s]冲到56级。获得了云海长袍+10万元宝
+SENDMSG 0 提醒：下个等级奖励是57级，奖励：云海玉剑+15万元宝，人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob taoist
+checklevelex = 57
+Check [388] 0
+#act
+GAMEGOLD + 150000
+give 云海玉剑 1
+SENDMSG 0 恭喜：玩家[%s]冲到57级。获得了云海玉剑+15万元宝
+SENDMSG 0 恭喜：玩家[%s]冲到57级。获得了云海玉剑+15万元宝
+SENDMSG 0 提醒：下个等级奖励是59级，奖励：云海衣服(圣)1件！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+gender man
+checkjob taoist
+checklevelex = 59
+Check [388] 0
+#act
+give 云海道袍(圣) 1
+SENDMSG 0 恭喜：玩家[%s]冲到59级。获得了云海道袍(圣)
+SENDMSG 0 恭喜：玩家[%s]冲到59级。获得了云海道袍(圣)
+SENDMSG 0 提醒：下个等级奖励是60级，奖励：云海玉剑(圣)1把！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+gender woman
+checkjob taoist
+checklevelex = 59
+Check [388] 0
+#act
+give 云海长袍(圣) 1
+SENDMSG 0 恭喜：玩家[%s]冲到59级。获得了云海长袍(圣)
+SENDMSG 0 恭喜：玩家[%s]冲到59级。获得了云海长袍(圣)
+SENDMSG 0 提醒：下个等级奖励是60级，奖励：云海玉剑(圣)1把！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob taoist
+checklevelex = 60
+Check [388] 0
+#act
+give 云海玉剑(圣) 1
+SENDMSG 0 恭喜：玩家[%s]冲到60级。获得了云海玉剑(圣)
+SENDMSG 0 恭喜：玩家[%s]冲到60级。获得了云海玉剑(圣)
+break
+;----7-5w--w.c--o- -m-═提--供---法师-------------------------
+#if
+checkjob wizard
+gender Woman
+checklevelex = 15
+#act
+give 海魂 1
+give 金币 100000
+TAKEON 海魂 1
+take 乌木剑 1
+give 轻型盔甲(女) 1
+TAKEON 轻型盔甲(女) 0
+take 布衣(女) 1
+break
+
+#if
+checkjob wizard
+gender man
+checklevelex = 15
+#act
+give 海魂 1
+give 金币 100000
+TAKEON 海魂 1
+take 乌木剑 1
+give 轻型盔甲(男) 1
+TAKEON 轻型盔甲(男) 0
+take 布衣(男) 1
+break
+
+#IF
+checkjob wizard
+gender Woman
+checklevelex = 26
+#ACT
+give 放大镜 1
+give 黑檀手镯 2
+give 道士头盔 1
+give 魔杖 1
+give 降妖除魔戒指 2
+give 魔法长袍(女) 1
+TAKEON 魔法长袍(女) 0
+TAKEON 魔杖 1
+TAKEON 放大镜 3
+TAKEON 道士头盔 4
+TAKEON 黑檀手镯 5
+TAKEON 黑檀手镯 6
+TAKEON 降妖除魔戒指 7
+TAKEON 降妖除魔戒指 8
+take 轻型盔甲(女)
+take 海魂
+MAPMOVE 0 333 267
+QUERYBAGITEMS
+BREAK
+
+#IF
+checkjob wizard
+gender man
+checklevelex = 26
+#ACT
+give 放大镜 1
+give 黑檀手镯 2
+give 道士头盔 1
+give 魔杖 1
+give 降妖除魔戒指 2
+give 魔法长袍(男) 1
+TAKEON 魔法长袍(男) 0
+TAKEON 魔杖 1
+TAKEON 放大镜 3
+TAKEON 道士头盔 4
+TAKEON 黑檀手镯 5
+TAKEON 黑檀手镯 6
+TAKEON 降妖除魔戒指 7
+TAKEON 降妖除魔戒指 8
+take 轻型盔甲(男)
+take 海魂
+MAPMOVE 0 333 267
+QUERYBAGITEMS
+BREAK
+
+#IF
+checkjob wizard
+checklevelex = 40
+#act
+MAPMOVE mimasz 16 23
+MESSAGEBOX 为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！\为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！\为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！\为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！\为了保障您的利益，请务必【设置二级密码】否则将无法继续正常游戏！
+break
+
+#IF
+checkjob wizard
+checklevelex = 50
+#act
+give 龙牙 1
+SENDMSG 0 恭喜：玩家[%s]冲到50级。获得了龙牙
+SENDMSG 0 恭喜：玩家[%s]冲到50级。获得了龙牙
+SENDMSG 0 提醒：下个等级奖励是51级，奖励：蓝灵腰带1根！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob wizard
+checklevelex = 51
+#act
+give 蓝灵腰带 1
+SENDMSG 0 恭喜：玩家[%s]冲到51级。获得了蓝灵腰带
+SENDMSG 0 恭喜：玩家[%s]冲到51级。获得了蓝灵腰带
+SENDMSG 0 提醒：下个等级奖励是52级，奖励：蓝灵神靴1双！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob wizard
+checklevelex = 52
+Check [388] 0
+#act
+give 蓝灵神靴 1
+SENDMSG 0 恭喜：玩家[%s]冲到52级。获得了蓝灵神靴
+SENDMSG 0 恭喜：玩家[%s]冲到52级。获得了蓝灵神靴
+SENDMSG 0 提醒：下个等级奖励是53级，奖励：云海宝石1个！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob wizard
+checklevelex = 53
+Check [388] 0
+#act
+give 云海宝石(法) 1
+SENDMSG 0 恭喜：玩家[%s]冲到53级。获得了云海宝石
+SENDMSG 0 恭喜：玩家[%s]冲到53级。获得了云海宝石
+SENDMSG 0 提醒：下个等级奖励是54级，奖励：云海勋章1个！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob wizard
+checklevelex = 54
+Check [388] 0
+#act
+give 云海勋章(法) 1
+SENDMSG 0 恭喜：玩家[%s]冲到54级。获得了云海勋章
+SENDMSG 0 恭喜：玩家[%s]冲到54级。获得了云海勋章
+SENDMSG 0 提醒：下个等级奖励是55级，奖励：云海幸运项链+5万元宝，人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob wizard
+checklevelex = 55
+Check [388] 0
+#act
+GAMEGOLD + 50000
+give 云海灯笼项链 1
+SENDMSG 0 恭喜：玩家[%s]冲到55级。获得了云海灯笼项链+5万元宝
+SENDMSG 0 恭喜：玩家[%s]冲到55级。获得了云海灯笼项链+5万元宝
+SENDMSG 0 提醒：下个等级奖励是56级，奖励：云海衣服+10万元宝，人人都有，加油哦！ 200 200 10
+break
+
+#IF
+gender man
+checkjob wizard
+checklevelex = 56
+Check [388] 0
+#act
+GAMEGOLD + 100000
+give 云海披风 1
+SENDMSG 0 恭喜：玩家[%s]冲到56级。获得了云海披风+10万元宝
+SENDMSG 0 恭喜：玩家[%s]冲到56级。获得了云海披风+10万元宝
+SENDMSG 0 提醒：下个等级奖励是57级，奖励：云海法杖+15万元宝，人人都有，加油哦！ 200 200 10
+break
+
+#IF
+gender woman
+checkjob wizard
+checklevelex = 56
+Check [388] 0
+#act
+GAMEGOLD + 100000
+give 云海羽衣 1
+SENDMSG 0 恭喜：玩家[%s]冲到56级。获得了云海羽衣+10万元宝
+SENDMSG 0 恭喜：玩家[%s]冲到56级。获得了云海羽衣+10万元宝
+SENDMSG 0 提醒：下个等级奖励是57级，奖励：云海法杖+15万元宝，人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob wizard
+checklevelex = 57
+Check [388] 0
+#act
+GAMEGOLD + 150000
+give 云海法杖 1
+SENDMSG 0 恭喜：玩家[%s]冲到57级。获得了云海法杖+15万元宝
+SENDMSG 0 恭喜：玩家[%s]冲到57级。获得了云海法杖+15万元宝
+SENDMSG 0 提醒：下个等级奖励是59级，奖励：云海衣服(魔)1件！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+gender man
+checkjob wizard
+checklevelex = 59
+Check [388] 0
+#act
+give 云海披风(魔) 1
+SENDMSG 0 恭喜：玩家[%s]冲到59级。获得了云海披风(魔)
+SENDMSG 0 恭喜：玩家[%s]冲到59级。获得了云海披风(魔)
+SENDMSG 0 提醒：下个等级奖励是60级，奖励：云海法杖(魔)1把！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+gender woman
+checkjob wizard
+checklevelex = 59
+Check [388] 0
+#act
+give 云海羽衣(魔) 1
+SENDMSG 0 恭喜：玩家[%s]冲到59级。获得了云海羽衣(魔)
+SENDMSG 0 恭喜：玩家[%s]冲到59级。获得了云海羽衣(魔)
+SENDMSG 0 提醒：下个等级奖励是60级，奖励：云海法杖(魔)1把！人人都有，加油哦！ 200 200 10
+break
+
+#IF
+checkjob wizard
+checklevelex = 60
+Check [388] 0
+#act
+give 云海法杖(魔) 1
+SENDMSG 0 恭喜：玩家[%s]冲到60级。获得了云海法杖(魔)
+SENDMSG 0 恭喜：玩家[%s]冲到60级。获得了云海法杖(魔)
+break
+
+
+;----------------------------------------
+[@StdModeFunc10]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CHANGEPKPOINT = 0
+SENDMSG 7 你的PK点数已经清除
+BREAK
+
+[@StdModeFunc13]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE 3 330 330
+BREAK
+
+[@StdModeFunc14]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE 0 333 268
+BREAK
+
+[@StdModeFunc15]
+#IF
+CHECKLEVELEX > 0
+#ACT
+HAIRSTYLE 0
+SENDMSG 6 %s，你的发型已经改变了...
+BREAK
+
+[@StdModeFunc16]
+#IF
+CHECKLEVELEX > 0
+#ACT
+HAIRSTYLE 1
+SENDMSG 6 %s，你的发型已经恢复了...
+BREAK
+
+[@StdModeFunc17]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 1
+SENDMSG 7 提示:元宝增加1个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc18]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 5
+SENDMSG 7 提示:元宝增加5个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc19]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 10
+SENDMSG 7 提示:元宝增加10个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc20]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 50
+SENDMSG 7 提示:元宝增加50个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc21]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 100
+SENDMSG 7 提示:元宝增加100个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc22]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 500
+SENDMSG 7 提示:元宝增加500个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc23]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 1000
+SENDMSG 7 提示:元宝增加1000个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc24]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 5000
+SENDMSG 7 提示:元宝增加5000个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc25]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 10000
+SENDMSG 7 提示:元宝增加10000个.您当前的元宝为：<$GAMEGOLD>个
+BREAK
+
+[@StdModeFunc26]
+移动仓库为您提供以下服务功能:\ \ \
+<存放物品/@storage>\ \
+<取回物品/@getback>\
+[@storage]
+你需要保管什么物品？\ \
+<取回物品/@getback>\
+[@getback]
+您需要找回什么物品？\ \
+<存放物品/@storage>\
+
+[@StdModeFunc27]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 78
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯
+BREAK
+
+[@StdModeFunc28]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 79
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯
+BREAK
+
+[@StdModeFunc29]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 80
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯
+BREAK
+
+[@StdModeFunc30]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 81
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯
+BREAK
+
+[@StdModeFunc31]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 82
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯
+BREAK
+
+[@StdModeFunc32]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 83
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯
+BREAK
+
+[@StdModeFunc33]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 84
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯
+BREAK
+
+[@StdModeFunc35]
+#IF
+CHECK [300] 1
+#ACT
+GIVE 金钻服务 1
+BREAK
+#ELSEACT
+SET [300] 1
+messagebox 恭喜您加入金钻会员，随时随地输入命令：@服务，就可以享受金钻功能！
+MOV S10 
+#CALL [\系统功能\封号系统.txt] @封号检测
+BREAK
+
+[@StdModeFunc36]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CHANGEEXP + 2000000
+SENDMSG 7 提示:经验增加2000000
+BREAK
+
+[@StdModeFunc37]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CHANGEEXP + 5000000
+SENDMSG 7 提示:经验增加5000000
+BREAK
+
+[@StdModeFunc38]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CHANGEEXP + 10000000
+SENDMSG 7 提示:经验增加10000000
+BREAK
+
+[@StdModeFunc39]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GIVE 金币 1000000
+SENDMSG 7 恭喜：你获得了：金币:1000000
+BREAK
+
+[@StdModeFunc40]
+#IF
+CHECKLEVELEX > 0
+#ACT
+KILLMONEXPRATE 200 3600
+GMEXECUTE SHOWEFFECT 75
+SENDMSG 7 您获得了1小时双倍经验时间
+BREAK
+
+[@StdModeFunc41]
+#IF
+CHECKLEVELEX > 0
+#ACT
+KILLMONEXPRATE 300 3600
+GMEXECUTE SHOWEFFECT 75
+SENDMSG 7 您获得了1小时三倍经验时间
+BREAK
+
+[@StdModeFunc62]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE ZD8
+SENDMSG 0 玩家<$USERNAME>使用猪八传送卡进入了猪洞八层，专爆幸运项链哦~
+BREAK
+
+[@StdModeFunc63]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE ZD9
+SENDMSG 0 玩家<$USERNAME>使用猪九传送卡进入了猪洞九层，专爆幸运项链哦~
+BREAK
+
+[@StdModeFunc70]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE MHD
+SENDMSG 0 玩家<$USERNAME>使用梦幻殿凭证进入了梦幻殿！
+BREAK
+
+[@StdModeFunc106]
+#If 
+CheckItemAddValue 1 3 > 6 
+#Act 
+GIVE 超级祝福油 1 
+SendMsg 5 [提示]:你的武器已经幸运值+7点了，系统无法给你增加了！
+BREAK 
+#IF 
+CHECKUSEITEM 1 
+#ACT 
+UPGRADEITEMEX 1 3 0 1 0 
+SendMsg 5 [提示]:恭喜您你的武器幸运值增加了1点。 
+break 
+#ELSEACT 
+GIVE 超级祝福油 1 
+messagebox [失败]:你当前手上没有任何武器。 
+break
+
+[@StdModeFunc64]
+#CALL [..\QuestDiary\系统功能\庆典蛋糕.txt] @庆典蛋糕
+
+[@STDMODEFUNC65]
+#CALL [系统功能\首充礼包.txt] @首充礼包
+
+
+
+
+
+
+[@UserCmd1]
+#ACT
+#CALL [\系统功能\帮助命令.txt] @帮助
+
+[@UserCmd2]
+#if
+ISONMAP mima
+#ACT
+SENDMSG 5 此地图禁止使用此命令！
+BREAK
+
+#if
+ISONMAP PK1
+#ACT
+SENDMSG 5 此地图禁止使用此命令！
+BREAK
+
+#if
+ISONMAP PK2
+#ACT
+SENDMSG 5 此地图禁止使用此命令！
+BREAK
+
+#if
+iSONMAP jianyu
+#ACT
+SENDMSG 5 此地图禁止使用此命令！
+BREAK
+
+#if
+ISONMAP mimasz
+#ACT
+SENDMSG 5 此地图禁止使用此命令！
+BREAK
+
+#if
+ISONMAP bangongshi
+#ACT
+SENDMSG 5 此地图禁止使用此命令！
+BREAK
+
+#IF
+CHECK [300] 1
+#ACT
+#call [\系统功能\金钻服务.txt] @金钻
+#ELSESAY
+您并非本游戏金钻服务对象！\
+
+[@UserCmd3]
+#IF
+ISADMIN
+#ACT
+#CALL [\系统功能\管理.txt] @管理
+#ELSEACT
+SendMsg 5 您不是管理员不能使用这个权限,强行中断
+KICK
+BREAK
+
+[@usercmd4]
+#IF
+ISONMAP mima
+#ACT
+SENDMSG 7 对不起，本地图无法允许夫妻传送！
+BREAK
+
+#IF
+ISONMAP jianyu
+#ACT
+SENDMSG 7 对不起，本地图无法允许夫妻传送！
+BREAK
+
+#ELSEACT
+GMEXECUTE 允许夫妻传送95SF
+
+[@usercmd5]
+#IF
+ISONMAP mima
+#ACT
+SENDMSG 7 对不起，本地图无法允许天地合一！
+BREAK
+
+#IF
+ISONMAP jianyu
+#ACT
+SENDMSG 7 对不起，本地图无法允许天地合一！
+BREAK
+
+#ELSEACT
+GMEXECUTE 允许天地合一95SF
+
+[@usercmd6]
+#IF
+ISONMAP mima
+#ACT
+SENDMSG 7 对不起，本地图无法允许师徒传送！
+BREAK
+
+#IF
+ISONMAP jianyu
+#ACT
+SENDMSG 7 对不起，本地图无法允许师徒传送！
+BREAK
+
+#ELSEACT
+GMEXECUTE 允许师徒传送95SF
+
+[@IsInFilterList]
+#If
+CheckLevelEx > 0 
+#Act
+MessageBox 输入数据中包含了非法字符.请重新编辑
+Break
+
+

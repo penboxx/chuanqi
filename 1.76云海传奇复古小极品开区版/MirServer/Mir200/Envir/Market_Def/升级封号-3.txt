@@ -1,0 +1,12 @@
+[@MAIN]
+<COLOR=clSkyBlue 牛刀小试> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+1点攻.魔.道属性>  →  <COLOR=clYellow 49级自动赠送>\
+<COLOR=clSkyBlue 崭露头角> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+2点攻.魔.道属性>  →  <COLOR=clYellow 50级自动赠送>\
+<COLOR=clSkyBlue 小有名气> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+3点攻.魔.道属性>  →  <COLOR=clYellow 51级自动赠送>\
+<COLOR=clSkyBlue 声名鹤起> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+4点攻.魔.道属性>  →  <COLOR=clYellow 52级自动赠送>\
+<COLOR=clSkyBlue 名动四方> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+5点攻.魔.道属性>  →  <COLOR=clYellow 53级自动赠送>\
+<COLOR=clSkyBlue 如日中天> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+6点攻.魔.道属性>  →  <COLOR=clYellow 54级自动赠送>\
+<COLOR=clSkyBlue 技冠群雄> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+7点攻.魔.道属性>  →  <COLOR=clYellow 55级自动赠送>\
+<COLOR=clSkyBlue 威震八方> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+8点攻.魔.道属性>  →  <COLOR=clYellow 56级自动赠送>\
+<COLOR=clSkyBlue 独步天下> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+10点攻.魔.道属性> →  <COLOR=clYellow 57级自动赠送>\
+<COLOR=clSkyBlue 云海无上> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+13点攻.魔.道属性> →  <COLOR=clYellow 60级自动赠送>\
+<COLOR=clRed 注:以上封号以及属性,玩家达到相应等级后,小退上线即可查看!>\

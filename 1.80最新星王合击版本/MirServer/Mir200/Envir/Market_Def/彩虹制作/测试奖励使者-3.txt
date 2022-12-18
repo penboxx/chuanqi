@@ -1,0 +1,61 @@
+()
+%100
+[@main]
+<COLOR=clLime 如果你在测试区升到以下等级可以领取相应的奖励>\
+<COLOR=clAqua 当您测试期间满53级,开区后可获10000元宝>\
+<COLOR=clAqua 当您测试期间满54级,开区后可获20000元宝>\
+<COLOR=clAqua 当您测试期间满56级,开区后可获30000元宝>\
+<COLOR=clAqua 当您测试期间满58级,开区后可获40000元宝>\
+<COLOR=clAqua 当您测试期间满60级,开区后可获50000元宝>\
+<COLOR=clLime 当您测试期间满58级,开区后可获永久在线回收>\
+<领取测试奖励/@领取测试奖励>
+
+[@领取测试奖励]
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\53级测试奖励.txt
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\53级测试奖励.txt
+GAMEGOLD + 10000
+SENDMSG 5 提示:53级测试奖励领取成功！
+SENDMSG 0 %s领取了53级测试奖励,如果你也想领取,就期待下个新区... 252 255
+SENDMSG 0 %s领取了53级测试奖励,如果你也想领取,就期待下个新区... 252 255
+BREAK
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\54级测试奖励.txt
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\54级测试奖励.txt
+GAMEGOLD + 20000
+SENDMSG 5 提示:54级测试奖励领取成功！
+SENDMSG 0 %s领取了54级测试奖励,如果你也想领取,就期待下个新区... 252 255
+SENDMSG 0 %s领取了54级测试奖励,如果你也想领取,就期待下个新区... 252 255
+BREAK
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\56级测试奖励.txt
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\56级测试奖励.txt
+GAMEGOLD + 30000
+SENDMSG 5 提示:56级测试奖励领取成功！
+SENDMSG 0 %s领取了56级测试奖励,如果你也想领取,就期待下个新区... 252 255
+SENDMSG 0 %s领取了56级测试奖励,如果你也想领取,就期待下个新区... 252 255
+BREAK
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\58级测试奖励.txt
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\58级测试奖励.txt
+GAMEGOLD + 40000
+GIVE 在线回收[永久] 1
+SENDMSG 5 提示:58级测试奖励领取成功！
+SENDMSG 0 %s领取了58级测试奖励,如果你也想领取,就期待下个新区... 252 255
+SENDMSG 0 %s领取了58级测试奖励,如果你也想领取,就期待下个新区... 252 255
+BREAK
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\60级测试奖励.txt
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\60级测试奖励.txt
+GAMEGOLD + 50000
+SENDMSG 5 提示:60级测试奖励领取成功！
+SENDMSG 0 %s领取了60级测试奖励,如果你也想领取,就期待下个新区... 252 255
+SENDMSG 0 %s领取了60级测试奖励,如果你也想领取,就期待下个新区... 252 255
+BREAK
+#ELSESAY
+对不起！领取条件不足\

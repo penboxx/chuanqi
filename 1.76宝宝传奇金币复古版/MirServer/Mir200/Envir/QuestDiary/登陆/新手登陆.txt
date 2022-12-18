@@ -1,0 +1,11 @@
+[@新手登陆]
+{
+#IF
+ISNEWHUMAN
+checkjob warrior
+#ACT
+;SENDMSG 0 全国上下，热烈欢迎新的玛法勇士[<$USERNAME>]进入精锐数据宝宝１７６原始复古传奇 ！！！   251 249
+
+}
+
+

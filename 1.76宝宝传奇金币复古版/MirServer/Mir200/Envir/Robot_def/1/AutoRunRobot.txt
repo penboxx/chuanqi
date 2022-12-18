@@ -1,0 +1,68 @@
+#AutoRun NPC RUNONDAY 22:30 @行会争夺战
+#AutoRun NPC RUNONDAY 22:40 @行会争夺战1
+#AutoRun NPC RUNONDAY 22:44 @行会争夺战2
+#AutoRun NPC RUNONDAY 22:45 @行会争霸入口关闭
+#AutoRun NPC RUNONDAY 22:46 @转移玩家
+#AutoRun NPC RUNONDAY 23:15 @转移玩家1
+
+#AutoRun NPC SEC 1 @坐庄游戏A
+#AutoRun NPC SEC 1 @坐庄游戏B
+#AutoRun NPC SEC 1 @坐庄游戏C
+
+#AUTORUN NPC MIN 5 @游戏说明
+
+
+#AutoRun NPC RUNONDAY 12:00 @开放赌博
+#AutoRun NPC RUNONDAY 14:00 @关闭赌博
+
+
+#AutoRun NPC RUNONDAY 17:00 @开放赌博
+#AutoRun NPC RUNONDAY 19:00 @关闭赌博
+
+#AutoRun NPC RUNONDAY 22:00 @开放赌博
+#AutoRun NPC RUNONDAY 24:00 @关闭赌博
+
+
+#AutoRun NPC MIN 10 @提示公告
+
+
+#AutoRun NPC RUNONDAY 20:00 @清数据
+
+
+#AutoRun NPC RUNONDAY 0:30 @邪剑刷怪
+#AutoRun NPC RUNONDAY 2:30 @邪剑刷怪
+#AutoRun NPC RUNONDAY 4:30 @邪剑刷怪
+#AutoRun NPC RUNONDAY 6:30 @邪剑刷怪
+#AutoRun NPC RUNONDAY 8:30 @邪剑刷怪
+#AutoRun NPC RUNONDAY 10:30 @邪剑刷怪
+#AutoRun NPC RUNONDAY 12:30 @邪剑刷怪
+#AutoRun NPC RUNONDAY 14:30 @邪剑刷怪
+#AutoRun NPC RUNONDAY 16:30 @邪剑刷怪
+#AutoRun NPC RUNONDAY 18:30 @邪剑刷怪
+#AutoRun NPC RUNONDAY 20:30 @邪剑刷怪
+#AutoRun NPC RUNONDAY 22:30 @邪剑刷怪
+#AutoRun NPC RUNONDAY 1:59 @清怪
+#AutoRun NPC RUNONDAY 3:59 @清怪
+#AutoRun NPC RUNONDAY 5:59 @清怪
+#AutoRun NPC RUNONDAY 7:59 @清怪
+#AutoRun NPC RUNONDAY 9:59 @清怪
+#AutoRun NPC RUNONDAY 11:59 @清怪
+#AutoRun NPC RUNONDAY 13:59 @清怪
+#AutoRun NPC RUNONDAY 15:59 @清怪
+#AutoRun NPC RUNONDAY 17:59 @清怪
+#AutoRun NPC RUNONDAY 19:59 @清怪
+#AutoRun NPC RUNONDAY 21:59 @清怪
+#AutoRun NPC RUNONDAY 23:59 @清怪
+
+#AutoRun NPC RUNONDAY 1:01 @活动刷怪
+#AutoRun NPC RUNONDAY 9:01 @活动刷怪1
+#AutoRun NPC RUNONDAY 11:01 @活动刷怪2
+#AutoRun NPC RUNONDAY 13:01 @活动刷怪3
+#AutoRun NPC RUNONDAY 15:01 @活动刷怪4
+#AutoRun NPC RUNONDAY 17:01 @活动刷怪5
+#AutoRun NPC RUNONDAY 19:01 @活动刷怪6
+#AutoRun NPC RUNONDAY 21:01 @活动刷怪7
+#AutoRun NPC RUNONDAY 23:01 @活动刷怪8
+
+
+#AutoRun NPC SEC 1 @沙巴克检测

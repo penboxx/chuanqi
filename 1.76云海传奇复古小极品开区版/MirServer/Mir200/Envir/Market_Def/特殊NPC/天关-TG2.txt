@@ -1,0 +1,37 @@
+[@MAIN]
+这里是天关二层\
+你必须将本地图内所有怪物杀光，才可以领取奖励进入下一关！\
+<COLOR=clRed 注:请不要将聚灵珠放在包袱内,否则会被收取掉!>\
+　\
+<领取奖励进入下一关/@ECJLLQ>\
+
+[@ECJLLQ]
+#IF
+CheckRangeMonCount TG2 16 12 15 = 0
+#ACT
+GOTO @ECJLLQ1
+#ELSESAY
+地图内的怪物还没杀光呢！
+
+[@ECJLLQ1]
+#IF
+CHECKMAPHUMANCOUNT TG3 = 0
+CHECKGAMEGOLD > 89
+#ACT
+GAMEGOLD - 90
+CLEARMAPMON TG3
+take 聚灵珠 50
+CHANGEEXP + 200000
+Param1 TG3
+MonGen 蝎蛇 1 1
+MonGen 暗黑战士 1 1
+MonGen 火焰沃玛 1 1
+MonGen 沃玛战士 1 1
+MonGen 火焰战将 1 1
+MonGen 楔蛾 1 1
+MonGen 沃玛勇士 1 1
+MAPMOVE TG3
+SENDMSG 0 %s闯过了天关二层，获得200000经验奖励！
+BREAK
+#ELSEACT
+MESSAGEBOX 里面有人了，或者你的元宝不足90！

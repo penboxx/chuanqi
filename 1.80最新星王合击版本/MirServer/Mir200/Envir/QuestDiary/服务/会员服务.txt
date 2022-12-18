@@ -1,0 +1,591 @@
+(@storage @getback )
+[@加入会员]
+{
+#IF
+check [125] 1
+#ACT
+#SAY
+<╔━━━━━━━━━━━━━━━━━━━━━━━━━━╗/SCOLOR=224>\
+<║/SCOLOR=224>尊贵的金牌会员：您好！在这里你可以享受到以下尊贵服务<║/SCOLOR=224>\
+<╚━━━━━━━━━━━━━━━━━━━━━━━━━━╝/SCOLOR=224>\
+<╔━━━━━╗╔━━━━━╗╔━━━━━╗╔━━━━━╗/SCOLOR=254>\
+<║/SCOLOR=254> <每日神力/@每日神力> <║║/SCOLOR=254> <每日补给/@每日补给> <║║/SCOLOR=254> <每日工资/@每日工资> <║║/SCOLOR=254> <会员转职/@金牌转职> <║/SCOLOR=254>\
+<╠━━━━━╣╠━━━━━╣╠━━━━━╣╠━━━━━╣/SCOLOR=254>\
+<║/SCOLOR=254> <会员购物/@半价购物> <║║/SCOLOR=254> <会员仓库/@金牌仓库> <║║/SCOLOR=254> <会员洗红/@金牌洗红> <║║/SCOLOR=254> <会员变性/@金牌变性> <║/SCOLOR=254>\
+<╚━━━━━╝╚━━━━━╝╚━━━━━╝╚━━━━━╝/SCOLOR=254>\
+#ELSESAY
+<╔━━━━━━━━━━━━━━━━━━━━━━━━━━╗/SCOLOR=224>\
+<║/SCOLOR=224>对不起，您没有升级为“会员账号”，会员上线1.1倍攻击 <║/SCOLOR=224>\
+<╚━━━━━━━━━━━━━━━━━━━━━━━━━━╝/SCOLOR=224>\
+<╔━━━━━╗╔━━━━━╗╔━━━━━╗╔━━━━━╗/SCOLOR=254>\
+<║/SCOLOR=254> <每日神力> <║║/SCOLOR=254> <每日补给> <║║/SCOLOR=254> <每日工资> <║║/SCOLOR=254> <会员转职> <║/SCOLOR=254>\
+<╠━━━━━╣╠━━━━━╣╠━━━━━╣╠━━━━━╣/SCOLOR=254>\
+<║/SCOLOR=254> <会员购物> <║║/SCOLOR=254> <会员仓库> <║║/SCOLOR=254> <会员洗红> <║║/SCOLOR=254> <会员变性> <║/SCOLOR=254>\
+<╚━━━━━╝╚━━━━━╝╚━━━━━╝╚━━━━━╝/SCOLOR=254>\
+
+
+
+[@金牌全修]
+#IF
+RepairAll
+#ACT
+SendMsg 7 [会员服务]:你的全身装备修理完毕....
+Break
+;--------
+
+
+[@金牌仓库]
+<金牌仓库为您提供以下服务功能:/SCOLOR=254>\ \ \
+　　<存放物品/@storage>　　<取回物品/@getback>　　\ \
+
+[@storage]
+需要保管什么东西?\ \
+<≮/SCOLOR=155><返回上页/@金牌仓库><≯/SCOLOR=155>
+[@getback]
+请看目录决定找什么东西.\ \
+<≮/SCOLOR=155><返回上页/@金牌仓库><≯/SCOLOR=155>
+
+
+
+[@金牌转职]
+#CALL [\\服务\改变职业.txt] @职业
+[@金牌变性]
+#CALL [\\服务\改变性别.txt] @性别
+
+
+[@金牌寻宝]
+#IF
+#ACT
+CloseBigDialogBox
+#SAY
+<▁/AUTOCOLOR=249,95,70,133,146,241,238><▂/AUTOCOLOR=95,70,133,146,241,238,249><▃/AUTOCOLOR=70,133,146,241,238,249,95><▄/AUTOCOLOR=133,146,241,238,249,95,70><▅/AUTOCOLOR=146,241,238,249,95,70,133><▇/AUTOCOLOR=241,238,249,95,70,133,146><█/AUTOCOLOR=238,249,95,70,133,146,241>　<◆2013新独家微变弑魂の传奇◆/SCOLOR=151>　<█/AUTOCOLOR=238,249,95,70,133,146,241><▇/AUTOCOLOR=241,238,249,95,70,133,146><▅/AUTOCOLOR=146,241,238,249,95,70,133><▄/AUTOCOLOR=133,146,241,238,249,95,70><▃/AUTOCOLOR=70,133,146,241,238,249,95><▂/AUTOCOLOR=95,70,133,146,241,238,249><▁/AUTOCOLOR=249,95,70,133,146,241,238>\
+<╭━━━━━━━━━━━━━━━━━━━━━━━━━━━╮/SCOLOR=168>\
+<┃/SCOLOR=168>　　金牌世家：适合初期闯入，最高可暴出90级<仙征〓>套装　　<┃/SCOLOR=168>\
+<┣━━━━━━━━━━━━━━━━━━━━━━━━━━━┫/SCOLOR=168>\
+<┃/SCOLOR=168>　　<闯入条件：/SCOLOR=253><金牌专用打宝/SCOLOR=70>　<金牌免费/SCOLOR=254>　　　　　　　　　<┃/SCOLOR=168>\
+<┃/SCOLOR=168>　　<详细说明：/SCOLOR=253><元宝好打，级别好升，装备好搞！/SCOLOR=250>　　　　　<┃/SCOLOR=168>\
+<┃/SCOLOR=168>　　<推荐星级：/SCOLOR=249><Img:96:0:2:-2><Img:96:0:2:-2><Img:96:0:2:-2><Img:96:0:2:-2><Img:96:0:2:-2><Img:96:0:2:-2><Img:96:0:2:-2><Img:96:0:2:-2><Img:96:0:2:-2><Img:96:0:2:-2>　　　　　　<┃/SCOLOR=168>\
+<┃/SCOLOR=168>　　<金牌世家①>　<金牌世家②>　<金牌世家③>　<金牌世家④>　　<┃/SCOLOR=168>\
+<╰━━━━━━━━━━━━━━━━━━━━━━━━━━━╯/SCOLOR=168>\
+
+[@1]
+#IF
+check [2] 1
+#act
+mapmove jp01
+give 回城卷 1
+GuildNoticeMsg 0 168 [系统]：恭喜玩家『%S』闯入【金牌世家①】，初级装备遍地捡啊！
+#ELSEACT
+MESSAGEBOX 失败提示：您不是金牌贵族！
+
+
+[@2]
+#IF
+check [2] 1
+#act
+mapmove jp02
+give 回城卷 1
+GuildNoticeMsg 0 168 [系统]：恭喜玩家『%S』闯入【金牌世家②】，初级装备遍地捡啊！
+#ELSEACT
+MESSAGEBOX 失败提示：您不是金牌贵族！
+
+
+[@3]
+#IF
+check [2] 1
+#act
+mapmove jp03
+give 回城卷 1
+GuildNoticeMsg 0 168 [系统]：恭喜玩家『%S』闯入【金牌世家③】，初级装备遍地捡啊！
+#ELSEACT
+MESSAGEBOX 失败提示：您不是金牌贵族！
+
+
+
+[@4]
+#IF
+check [2] 1
+#act
+mapmove jp04
+give 回城卷 1
+GuildNoticeMsg 0 168 [系统]：恭喜玩家『%S』闯入【金牌世家④】，初级装备遍地捡啊！
+#ELSEACT
+MESSAGEBOX 失败提示：您不是金牌贵族！
+
+
+[@每日补给]
+#IF
+    dayofweek sun
+    check [41] 0
+#ACT
+    set [41] 1
+    set [42] 0
+    set [43] 0
+    set [44] 0
+    set [45] 0
+    set [46] 0
+    set [47] 0
+    goto @GiveOK3
+    break
+#IF
+    dayofweek mon
+    check [42] 0
+#ACT
+    set [41] 0
+    set [42] 1
+    set [43] 0
+    set [44] 0
+    set [45] 0
+    set [46] 0
+    set [47] 0
+    goto @GiveOK3
+    break
+#IF
+    dayofweek tue
+    check [43] 0
+#ACT
+    set [41] 0
+    set [42] 0
+    set [43] 1
+    set [44] 0
+    set [45] 0
+    set [46] 0
+    set [47] 0
+    goto @GiveOK3
+    break
+#IF
+    dayofweek wed
+    check [44] 0
+#ACT
+    set [41] 0
+    set [42] 0
+    set [43] 0
+    set [44] 1
+    set [45] 0
+    set [46] 0
+    set [47] 0
+    goto @GiveOK3
+    break
+#IF
+    dayofweek thu
+    check [45] 0
+#ACT
+    set [41] 0
+    set [42] 0
+    set [43] 0
+    set [44] 0
+    set [45] 1
+    set [46] 0
+    set [47] 0
+    goto @GiveOK3
+    break
+#IF
+    dayofweek fri
+    check [46] 0
+#ACT
+    set [41] 0
+    set [42] 0
+    set [43] 0
+    set [44] 0
+    set [45] 0
+    set [46] 1
+    set [47] 0
+    goto @GiveOK3
+    break
+#IF
+    dayofweek sat
+    check [47] 0
+#ACT
+    set [41] 0
+    set [42] 0
+    set [43] 0
+    set [44] 0
+    set [45] 0
+    set [46] 0
+    set [47] 1
+    goto @GiveOK3
+    break
+#IF
+#ACT
+  messagebox 对不起，每天只能领取10个苹果！
+[@GiveOK3]
+#ACT
+  give 苹果 10
+  messagebox 恭喜你成功领取10个苹果。
+  break
+
+[@每日神力]
+#IF
+    dayofweek sun
+    check [31] 0
+#ACT
+    set [31] 1
+    set [32] 0
+    set [33] 0
+    set [34] 0
+    set [35] 0
+    set [36] 0
+    set [37] 0
+    SETRANKLEVELNAME %s\[半个小时1.3倍攻击]
+    POWERRATE 130 1800
+    goto @GiveOK2
+    break
+#IF
+    dayofweek mon
+    check [32] 0
+#ACT
+    set [31] 0
+    set [32] 1
+    set [33] 0
+    set [34] 0
+    set [35] 0
+    set [36] 0
+    set [37] 0
+    SETRANKLEVELNAME %s\[半个小时1.3倍攻击]
+    POWERRATE 130 1800
+    goto @GiveOK2
+    break
+#IF
+    dayofweek tue
+    check [33] 0
+#ACT
+    set [31] 0
+    set [32] 0
+    set [33] 1
+    set [34] 0
+    set [35] 0
+    set [36] 0
+    set [37] 0
+    SETRANKLEVELNAME %s\[半个小时1.3倍攻击]
+    POWERRATE 130 1800
+    goto @GiveOK2
+    break
+#IF
+    dayofweek wed
+    check [34] 0
+#ACT
+    set [31] 0
+    set [32] 0
+    set [33] 0
+    set [34] 1
+    set [35] 0
+    set [36] 0
+    set [37] 0
+    SETRANKLEVELNAME %s\[半个小时1.3倍攻击]
+    POWERRATE 130 1800
+    goto @GiveOK2
+    break
+#IF
+    dayofweek thu
+    check [35] 0
+#ACT
+    set [31] 0
+    set [32] 0
+    set [33] 0
+    set [34] 0
+    set [35] 1
+    set [36] 0
+    set [37] 0
+    SETRANKLEVELNAME %s\[半个小时1.3倍攻击]
+    POWERRATE 130 1800
+    goto @GiveOK2
+    break
+#IF
+    dayofweek fri
+    check [36] 0
+#ACT
+    set [31] 0
+    set [32] 0
+    set [33] 0
+    set [34] 0
+    set [35] 0
+    set [36] 1
+    set [37] 0
+    SETRANKLEVELNAME %s\[半个小时1.3倍攻击]
+    POWERRATE 130 1800
+    goto @GiveOK2
+    break
+#IF
+    dayofweek sat
+    check [37] 0
+#ACT
+    set [31] 0
+    set [32] 0
+    set [33] 0
+    set [34] 0
+    set [35] 0
+    set [36] 0
+    set [37] 1
+    SETRANKLEVELNAME %s\[半个小时1.3倍攻击]
+    POWERRATE 130 1800
+    goto @GiveOK2
+    break
+#IF
+#ACT
+  messagebox 对不起，每天只能领取一次1.2倍攻击！
+[@GiveOK2]
+#IF
+#ACT
+  messagebox 半个小时的1.3倍攻击，好好把握哦。^_* 
+
+
+[@每日工资]
+#IF
+    dayofweek sun
+    check [11] 0
+#ACT
+    set [11] 1
+    set [12] 0
+    set [13] 0
+    set [14] 0
+    set [15] 0
+    set [16] 0
+    set [17] 0
+    goto @GiveOK
+    break
+#IF
+    dayofweek mon
+    check [12] 0
+#ACT
+    set [11] 0
+    set [12] 1
+    set [13] 0
+    set [14] 0
+    set [15] 0
+    set [16] 0
+    set [17] 0
+    goto @GiveOK
+    break
+#IF
+    dayofweek tue
+    check [13] 0
+#ACT
+    set [11] 0
+    set [12] 0
+    set [13] 1
+    set [14] 0
+    set [15] 0
+    set [16] 0
+    set [17] 0
+    goto @GiveOK
+    break
+#IF
+    dayofweek wed
+    check [14] 0
+#ACT
+    set [11] 0
+    set [12] 0
+    set [13] 0
+    set [14] 1
+    set [15] 0
+    set [16] 0
+    set [17] 0
+    goto @GiveOK
+    break
+#IF
+    dayofweek thu
+    check [15] 0
+#ACT
+    set [11] 0
+    set [12] 0
+    set [13] 0
+    set [14] 0
+    set [15] 1
+    set [16] 0
+    set [17] 0
+    goto @GiveOK
+    break
+#IF
+    dayofweek fri
+    check [16] 0
+#ACT
+    set [11] 0
+    set [12] 0
+    set [13] 0
+    set [14] 0
+    set [15] 0
+    set [16] 1
+    set [17] 0
+    goto @GiveOK
+    break
+#IF
+    dayofweek sat
+    check [17] 0
+#ACT
+    set [11] 0
+    set [12] 0
+    set [13] 0
+    set [14] 0
+    set [15] 0
+    set [16] 0
+    set [17] 1
+    goto @GiveOK
+    break
+#IF
+#ACT
+  messagebox 对不起，每天只能领取一次元宝！
+
+[@GiveOK]
+#ACT
+  gamegold + 5000
+  messagebox 恭喜你成功领取今日的工资5000元宝！
+  break
+
+[@金牌洗红]
+#IF
+    dayofweek sun
+    check [21] 0
+#ACT
+    set [21] 1
+    set [22] 0
+    set [23] 0
+    set [24] 0
+    set [25] 0
+    set [26] 0
+    set [27] 0
+    goto @mrqh001
+    break
+#IF
+    dayofweek mon
+    check [22] 0
+#ACT
+    set [21] 0
+    set [22] 1
+    set [23] 0
+    set [24] 0
+    set [25] 0
+    set [26] 0
+    set [27] 0
+    goto @mrqh001
+    break
+#IF
+    dayofweek tue
+    check [23] 0
+#ACT
+    set [21] 0
+    set [22] 0
+    set [23] 1
+    set [24] 0
+    set [25] 0
+    set [26] 0
+    set [27] 0
+    goto @mrqh001
+    break
+#IF
+    dayofweek wed
+    check [24] 0
+#ACT
+    set [21] 0
+    set [22] 0
+    set [23] 0
+    set [24] 1
+    set [25] 0
+    set [26] 0
+    set [27] 0
+    goto @mrqh001
+    break
+#IF
+    dayofweek thu
+    check [25] 0
+#ACT
+    set [21] 0
+    set [22] 0
+    set [23] 0
+    set [24] 0
+    set [25] 1
+    set [26] 0
+    set [27] 0
+    goto @mrqh001
+    break
+#IF
+    dayofweek fri
+    check [26] 0
+#ACT
+    set [21] 0
+    set [22] 0
+    set [23] 0
+    set [24] 0
+    set [25] 0
+    set [26] 1
+    set [27] 0
+    goto @mrqh001
+    break
+#IF
+    dayofweek sat
+    check [27] 0
+#ACT
+    set [21] 0
+    set [22] 0
+    set [23] 0
+    set [24] 0
+    set [25] 0
+    set [26] 0
+    set [27] 1
+    goto @mrqh001
+    break
+#IF
+#ACT
+  messagebox 对不起，每天只能金牌洗红一次！
+[@mrqh001]
+#ACT
+CHANGEPKPOINT = 0
+  messagebox 罪过罪过，老衲已经帮施主洗清了全部罪孽！
+  break
+
+
+[@半价购物]
+<Img:88><会员便利药店/AUTOCOLOR=254> <Hot~ >   \
+<--------------------------------------------------/SCOLOR=150>\
+< 【 700元宝〓 5捆大还丹】/SCOLOR=246>    【<先来.5捆/@11>】\
+< 【1400元宝〓10捆大还丹】/SCOLOR=246>    【<我来10捆/@12>】\ \ 
+< 【1400元宝〓 5捆大补鸡】/SCOLOR=250>    【<我要.5捆/@13>】\
+< 【2800元宝〓10捆大补鸡】/SCOLOR=250>    【<我要10捆/@14>】\
+<--------------------------------------------------/SCOLOR=150>\
+<Img:78><愿意此游戏能够给您带来无限的欢乐与激情/SCOLOR=70> \
+
+
+[@11]
+#IF
+CHECKBAGSIZE  5
+CHECKGAMEGOLD  > 699
+#ACT
+GAMEGOLD - 700
+give 大还丹[捆] 5
+#ELSEACT
+MESSAGEBOX 对不起你身上元宝货币不够！或者，你的包裹已经不可以再装了！
+break
+
+[@12]
+#IF
+CHECKBAGSIZE  10
+CHECKGAMEGOLD  > 1399
+#ACT
+GAMEGOLD - 1400
+give 大还丹[捆] 10
+#ELSEACT
+MESSAGEBOX 对不起你身上元宝货币不够！或者，你的包裹已经不可以再装了！
+break
+
+[@13]
+#IF
+CHECKBAGSIZE  5
+CHECKGAMEGOLD  > 1399
+#ACT
+GAMEGOLD - 1400
+give 大补鸡[捆] 5
+#ELSEACT
+MESSAGEBOX 对不起你身上元宝货币不够！或者，你的包裹已经不可以再装了！
+break
+
+[@14]
+#IF
+CHECKBAGSIZE  10
+CHECKGAMEGOLD  > 2799
+#ACT
+GAMEGOLD - 2800
+give 大补鸡[捆] 10
+#ELSEACT
+MESSAGEBOX 对不起你身上元宝货币不够！或者，你的包裹已经不可以再装了！
+break
+
+}

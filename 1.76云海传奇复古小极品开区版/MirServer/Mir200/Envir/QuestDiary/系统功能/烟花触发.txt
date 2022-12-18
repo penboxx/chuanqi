@@ -1,0 +1,25 @@
+[@烟花]
+{
+#IF
+CHECKLEVELEX > 0
+#ACT
+mov P9 0
+ReadRandomStr .\QuestDiary\抽取数据\烟花.txt S90
+Gmexecute showeffect <$STR(S90)>
+DELAYGOTO 2000 @烟花开始
+BREAK
+
+[@烟花开始]
+#IF
+equal P9 7
+#ACT
+mov P9 0
+SENDMSG 0 [<$USERNAME>]在%M:%x:%y燃放<九珠连环炮>!可惜某些人没看到啊!
+BREAK
+#ELSEACT
+INC P9 1
+ReadRandomStr .\QuestDiary\抽取数据\烟花.txt S90
+Gmexecute showeffect <$STR(S90)>
+DELAYGOTO 2000 @烟花开始
+BREAK
+}

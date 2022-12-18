@@ -1,0 +1,38 @@
+[@MAIN]
+这里是天关八层\
+你必须将本地图内所有怪物杀光，才可以领取奖励进入下一关！\
+<COLOR=clRed 注:请不要将聚灵珠放在包袱内,否则会被收取掉!>\
+　\
+<领取奖励进入下一关/@BCJLLQ>\
+
+[@BCJLLQ]
+#IF
+CheckRangeMonCount TG8 16 12 15 = 0
+#ACT
+GOTO @BCJLLQ1
+#ELSESAY
+地图内的怪物还没杀光呢！
+
+[@BCJLLQ1]
+#IF
+CHECKMAPHUMANCOUNT TG9 = 0
+CHECKGAMEGOLD > 269
+#ACT
+GAMEGOLD - 270
+CLEARMAPMON TG9
+take 聚灵珠 50
+CHANGEEXP + 800000
+Param1 TG9        
+MonGen 祖玛弓箭手 1 1
+MonGen 祖玛雕像 1 1
+MonGen 祖玛卫士 1 1
+MonGen 祖玛弓箭手 1 1
+MonGen 祖玛雕像 1 1
+MonGen 祖玛卫士 1 1
+MonGen 黑色恶蛆 1 1
+MonGen 楔蛾 1 1
+MAPMOVE TG9
+SENDMSG 0 %s闯过了天关八层，获得800000经验奖励！
+BREAK
+#ELSEACT
+MESSAGEBOX 里面有人了，或者你的元宝不足270！

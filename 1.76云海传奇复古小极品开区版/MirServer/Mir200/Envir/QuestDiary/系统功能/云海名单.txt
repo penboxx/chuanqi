@@ -1,0 +1,81 @@
+[@云海检测]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\云海大使名单.txt
+#ACT
+setranklevelname %s\≮云海大使≯\<$STR(S11)>
+Delaycall 1000 @变色1
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+BREAK
+
+#IF
+CHECK [204] 1
+#ACT
+setranklevelname %s\≮云海大使≯\<$STR(S11)>
+Delaycall 1000 @变色1
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+BREAK
+
+
+Delaycall 1000 @变色1
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+sendmsg 0 尊贵的云海大使【%s】进入游戏，永久享受1.5倍经验，大家膜拜吧！ 31 241
+BREAK
+[@变色1]
+#IF
+#ACT
+CHANGENAMECOLOR 254
+Delaycall 1000 @变色2
+
+[@变色2]
+#IF
+#ACT
+CHANGENAMECOLOR 70
+Delaycall 1000 @变色3
+
+[@变色3]
+#IF
+#ACT
+CHANGENAMECOLOR 191
+Delaycall 1000 @变色4
+
+[@变色4]
+#IF
+#ACT
+CHANGENAMECOLOR 251
+Delaycall 1000 @变色5
+
+[@变色5]
+#IF
+#ACT
+CHANGENAMECOLOR 250
+Delaycall 1000 @变色6
+
+[@变色6]
+#IF
+#ACT
+CHANGENAMECOLOR 253
+Delaycall 1000 @变色7
+break
+
+[@变色7]
+#IF
+#ACT
+CHANGENAMECOLOR 180
+Delaycall 1000 @变色1
+break
+}

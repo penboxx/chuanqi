@@ -1,0 +1,149 @@
+[@天尊链]
+{
+#IF
+CHECKITEM 天尊项链(封印) 1
+#ACT
+MOVR d0 4
+SET [100] 1
+DELAYGOTO 1 @天尊链一
+#ELSESAY
+你没有需要解封的天尊项链(封印)\
+
+[@天尊链一]
+#IF
+CHECK [100] 0
+#ACT
+MAPMOVE 0147
+BREAK
+#IF
+CHECKITEM 天尊项链(封印) 1
+EQUAL d0 0
+#ACT
+MOV d0 0
+SET [100] 0
+TAKE 天尊项链(封印) 1
+GIVE 天之天尊项链 1
+MAPMOVE 3 325 333
+SENDMSG 0 恭喜:<$USERNAME>解封天尊项链(封印)成功，获得了：天之天尊项链
+CLOSE
+BREAK
+#IF
+CHECKITEM 天尊项链(封印) 1
+EQUAL d0 1
+#ACT
+MOV d0 0
+SET [100] 0
+TAKE 天尊项链(封印) 1
+GIVE 天尊项链 1
+MAPMOVE 3 325 333
+SENDMSG 0 恭喜:<$USERNAME>解封天尊项链(封印)成功，获得了：天尊项链
+CLOSE
+BREAK
+#ELSEACT
+MOV d0 0
+SET [100] 0
+MAPMOVE 3 325 333
+SENDMSG 7 解封天尊项链(封印)失败
+CLOSE
+BREAK
+}
+
+[@天尊手]
+{
+#IF
+CHECKITEM 天尊手镯(封印) 1
+#ACT
+MOVR d0 4
+SET [100] 1
+DELAYGOTO 1 @天尊手一
+#ELSESAY
+你没有需要解封的天尊手镯(封印)\
+
+[@天尊手一]
+#IF
+CHECK [100] 0
+#ACT
+MAPMOVE 0147
+BREAK
+#IF
+CHECKITEM 天尊手镯(封印) 1
+EQUAL d0 0
+#ACT
+MOV d0 0
+SET [100] 0
+TAKE 天尊手镯(封印) 1
+GIVE 天之天尊手镯 1
+MAPMOVE 3 325 333
+SENDMSG 0 恭喜:<$USERNAME>解封天尊手镯(封印)成功，获得了：天之天尊手镯
+CLOSE
+BREAK
+#IF
+CHECKITEM 天尊手镯(封印) 1
+EQUAL d0 1
+#ACT
+MOV d0 0
+SET [100] 0
+TAKE 天尊手镯(封印) 1
+GIVE 天尊手镯 1
+MAPMOVE 3 325 333
+SENDMSG 0 恭喜:<$USERNAME>解封天尊手镯(封印)成功，获得了：天尊手镯
+CLOSE
+BREAK
+#ELSEACT
+MOV d0 0
+SET [100] 0
+MAPMOVE 3 325 333
+SENDMSG 7 解封天尊手镯(封印)失败
+CLOSE
+BREAK
+}
+
+[@天尊戒]
+{
+#IF
+CHECKITEM 天尊戒指(封印) 1
+#ACT
+MOVR d0 4
+SET [100] 1
+DELAYGOTO 1 @天尊戒一
+#ELSESAY
+你没有需要解封的天尊戒指(封印)\
+
+[@天尊戒一]
+#IF
+CHECK [100] 0
+#ACT
+MAPMOVE 0147
+BREAK
+#IF
+CHECKITEM 天尊戒指(封印) 1
+EQUAL d0 0
+#ACT
+MOV d0 0
+SET [100] 0
+TAKE 天尊戒指(封印) 1
+GIVE 天之天尊戒指 1
+MAPMOVE 3 325 333
+SENDMSG 0 恭喜:<$USERNAME>解封天尊戒指(封印)成功，获得了：天之天尊戒指
+CLOSE
+BREAK
+#IF
+CHECKITEM 天尊戒指(封印) 1
+EQUAL d0 1
+#ACT
+MOV d0 0
+SET [100] 0
+TAKE 天尊戒指(封印) 1
+GIVE 天尊戒指 1
+MAPMOVE 3 325 333
+SENDMSG 0 恭喜:<$USERNAME>解封天尊戒指(封印)成功，获得了：天尊戒指
+CLOSE
+BREAK
+#ELSEACT
+MOV d0 0
+SET [100] 0
+MAPMOVE 3 325 333
+SENDMSG 7 解封天尊戒指(封印)失败
+CLOSE
+BREAK
+}

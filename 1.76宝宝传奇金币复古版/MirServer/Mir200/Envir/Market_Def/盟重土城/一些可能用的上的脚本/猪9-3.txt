@@ -1,0 +1,20 @@
+
+
+[@main]
+
+<COLOR=clRed 欢迎来到１７６猛Ｃ复古传奇  官方网站:www.kuyoux.com复古小极品版！> \ 
+欢迎光临 <COLOR=#254 提示:所有装备可爆出>\ 
+进入猪9需要100元宝 \ 
+<我要进入/@进>   <关闭/@exit>
+
+[@进]
+#if
+CHECKGAMEGOLD > 99
+checklevelex > 0
+#act
+GAMEGOLD - 100
+GIVE 回城卷 1
+mapmove D719 26 74
+sendmsg 0 玩家[%s]进入了猪九！ 254 200
+break
+

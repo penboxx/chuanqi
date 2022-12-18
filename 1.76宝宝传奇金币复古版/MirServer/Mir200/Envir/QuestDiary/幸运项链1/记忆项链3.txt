@@ -1,0 +1,46 @@
+[@记忆项链3]
+{
+#IF
+random 4
+#act
+GAMEGOLD - 2000
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将记忆项链升级成功。项链被赋予了随机爆击点数。   254 0
+BREAK
+
+#IF
+random 3
+#act
+GAMEGOLD - 2000
+MESSAGEBOX 非常抱歉您的记忆项链升级失败
+BREAK
+
+#IF
+random 3
+#act
+GAMEGOLD - 2000
+MESSAGEBOX 非常抱歉您的记忆项链升级失败
+BREAK
+
+#IF
+random 2
+#act
+GAMEGOLD - 2000
+MESSAGEBOX 非常抱歉您的记忆项链升级失败
+BREAK
+
+#IF
+random 1
+#act
+GAMEGOLD - 2000
+MESSAGEBOX 非常抱歉您的记忆项链升级失败
+BREAK
+
+#IF
+random
+#act
+GAMEGOLD - 2000
+MESSAGEBOX 非常抱歉您的记忆项链升级失败
+BREAK
+}

@@ -1,0 +1,35 @@
+
+
+
+[@main]
+#IF
+equal d4 1
+#SAY
+你现在可以出去了，出去后可要好好做人哦！\ \
+<返回盟城/@chuqu>
+#ELSESAY
+<$USERNAME>，由于你使用非法程序，你将被\
+送往<牢房>关押30分钟,30分钟后再次回到我这里，\
+我就会把你送回盟城，否则你将永远<无法出去>。\
+别想逃跑，在关押中若<断线>，时间将<重新计算>！\ \
+<去牢房/@jidu>\
+<我喜欢呆在这/@exit>
+
+[@chuqu]
+#IF 
+equal d4 1
+#ACT
+mov d4 0
+mapmove 3 330 330
+
+[@jidu]
+#IF
+#ACT
+mov d4 1
+TimeRecall 30
+mapmove B312
+
+
+
+
+

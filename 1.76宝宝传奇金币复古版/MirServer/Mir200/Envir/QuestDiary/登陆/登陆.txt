@@ -1,0 +1,32 @@
+#IF
+CHECKLEVELEX > 0
+checknamelist ..\QuestDiary\封号系统\黄金赞助名单.txt
+#ACT
+ChangeNameColor 243
+SETRANKLEVELNAME %s\☆黄金\赞☆助☆大☆使
+SENDMSG 0 欢迎：<$SERVERNAME>黄金赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 0 欢迎：<$SERVERNAME>黄金赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 1 欢迎：<$SERVERNAME>黄金赞助大使〖%s〗进入游戏中！！ 254 0
+SENDMSG 1 欢迎：<$SERVERNAME>黄金赞助大使〖%s〗进入游戏中！！ 254 0
+
+#IF
+CHECKLEVELEX > 0
+checknamelist ..\QuestDiary\封号系统\白金赞助名单.txt
+#ACT
+ChangeNameColor 254
+SETRANKLEVELNAME %s\☆白金\赞☆助☆大☆使
+SENDMSG 0 欢迎：<$SERVERNAME>白金赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 0 欢迎：<$SERVERNAME>白金赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 1 欢迎：<$SERVERNAME>白金赞助大使〖%s〗进入游戏中！！ 254 0
+SENDMSG 1 欢迎：<$SERVERNAME>白金赞助大使〖%s〗进入游戏中！！ 254 0
+
+#IF
+CHECKLEVELEX > 0
+checknamelist ..\QuestDiary\封号系统\翡翠赞助名单.txt
+#ACT
+ChangeNameColor 253
+SETRANKLEVELNAME %s\☆翡翠\赞★助★大★使
+SENDMSG 0 欢迎：<$SERVERNAME>翡翠赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 0 欢迎：<$SERVERNAME>翡翠赞助大使〖%s〗进入游戏中！！！ 249 246 20
+SENDMSG 1 欢迎：<$SERVERNAME>翡翠赞助大使〖%s〗进入游戏中！！ 254 0
+SENDMSG 1 欢迎：<$SERVERNAME>翡翠赞助大使〖%s〗进入游戏中！！ 254 0

@@ -1,0 +1,27 @@
+[@MAIN]
+生死ＰＫ房内<COLOR=clRed 不允许吃药、不允许随机、不允许回城。>\
+是玩家展现ＰＫ技术和一决高下的最佳地图！\
+<COLOR=clLime (此地图只允许同时进入2人)>\
+　\
+生死ＰＫ房①难度为：<COLOR=clRed ★★★★>\
+生死ＰＫ房②难度为：<COLOR=clRed ★★★★★★>\
+　\
+<进入生死ＰＫ房①/@生死1>　　　　　<进入生死ＰＫ房②/@生死2>\
+
+[@生死1]
+#IF
+CHECKMAPHUMANCOUNT PK1 < 2
+#ACT
+MAPMOVE PK1
+BREAK
+#ELSEACT
+MESSAGEBOX 里面已经有2人了.
+
+[@生死2]
+#IF
+CHECKMAPHUMANCOUNT PK2 < 2
+#ACT
+MAPMOVE PK2
+BREAK
+#ELSEACT
+MESSAGEBOX 里面已经有2人了.

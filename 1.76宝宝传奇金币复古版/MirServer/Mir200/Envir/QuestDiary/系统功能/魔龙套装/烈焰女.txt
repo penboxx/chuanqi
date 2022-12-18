@@ -1,0 +1,76 @@
+[@开始合烈焰女]
+{
+合成烈焰魔衣(女)所需物品：\
+金刚石:388颗，\
+藏宝图311、藏宝图312、藏宝图313、藏宝图314，\
+藏宝图315、藏宝图316、藏宝图319、藏宝图320，\
+法神头盔、法神项链、法神手镯、法神戒指中的任意1-10件。\
+<返回查看配方/@合成衣服>\
+<进行合成/@进行合成烈焰女>\
+<退出/@EXIT>\
+
+[@进行合成烈焰女]
+#IF
+CHECKGAMEDIAMOND > 387
+CHECKITEM 藏宝图311 1
+CHECKITEM 藏宝图312 1
+CHECKITEM 藏宝图313 1
+CHECKITEM 藏宝图314 1
+CHECKITEM 藏宝图315 1
+CHECKITEM 藏宝图316 1
+CHECKITEM 藏宝图319 1
+CHECKITEM 藏宝图320 1
+#ACT
+MOVR d7 2
+DELAYGOTO 1 @烈焰女开始合成
+#ELSESAY
+您没有升级需要的足够原料，我也无能为力了。\
+
+[@烈焰女开始合成]
+#IF
+CHECKGAMEDIAMOND > 387
+CHECKITEM 藏宝图311 1
+CHECKITEM 藏宝图312 1
+CHECKITEM 藏宝图313 1
+CHECKITEM 藏宝图314 1
+CHECKITEM 藏宝图315 1
+CHECKITEM 藏宝图316 1
+CHECKITEM 藏宝图319 1
+CHECKITEM 藏宝图320 1
+EQUAL d7 1
+#ACT
+MOV d7 0
+GAMEDIAMOND - 388
+TAKE 藏宝图311 1
+TAKE 藏宝图312 1
+TAKE 藏宝图313 1
+TAKE 藏宝图314 1
+TAKE 藏宝图315 1
+TAKE 藏宝图316 1
+TAKE 藏宝图319 1
+TAKE 藏宝图320 1
+TAKE 法神头盔 10
+TAKE 法神项链 10
+TAKE 法神手镯 10
+TAKE 法神戒指 10
+GIVE 烈焰魔衣(女) 1
+SENDMSG 0 恭喜:<$USERNAME>升级烈焰魔衣(女)成功！
+CLOSE
+#ELSEACT
+MOV d7 0
+GAMEDIAMOND - 388
+TAKE 藏宝图311 1
+TAKE 藏宝图312 1
+TAKE 藏宝图313 1
+TAKE 藏宝图314 1
+TAKE 藏宝图315 1
+TAKE 藏宝图316 1
+TAKE 藏宝图319 1
+TAKE 藏宝图320 1
+TAKE 法神头盔 10
+TAKE 法神项链 10
+TAKE 法神手镯 10
+TAKE 法神戒指 10
+messagebox  可惜了：\<$USERNAME>你合成失败，藏宝图和金刚石在合成过程中被熔化！
+CLOSE
+}

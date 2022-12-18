@@ -1,0 +1,159 @@
+
+
+()
+%100
+[@main]
+<COLOR=clLime 请选择你要互换的武器类型！> \
+╔════════════════════════════╗　\
+║<屠龙换嗜魂法杖/@法杖1>     <屠龙换霸者之刃/@霸者1>     <嗜魂法杖换屠龙/@屠龙1>    ║\
+║<嗜魂法杖换霸者之刃/@霸者2> <霸者之刃换屠龙/@屠龙2>     <霸者之刃换嗜魂法杖/@法杖2>║\
+║<黄金屠龙换黄金嗜魂/@黄金1> <黄金屠龙换黄金扇子/@黄金2> <黄金嗜魂换黄金屠龙/@黄金3>║\
+║<黄金嗜魂换黄金扇子/@黄金4> <黄金扇子换黄金屠龙/@黄金5> <黄金扇子换黄金嗜魂/@黄金6>║\ 
+╠════════════════════════════╣　\
+║<COLOR=clRed 注意:> 屠龙类互换需要1000元宝，黄金类需要2000元宝！      ║\
+╚════════════════════════════╝  \
+[@法杖1]
+#if
+checkitem 屠龙 1
+CHECKGAMEGOLD > 999
+#act
+take 屠龙 1
+give 嗜魂法杖 1
+GAMEGOLD - 1000
+sendmsg 3 互换武器成功，获得嗜魂法杖一把！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您没有对应的武器或元宝数量不够！
+break
+[@霸者1]
+#if
+checkitem 屠龙 1
+CHECKGAMEGOLD > 999
+#act
+take 屠龙 1
+give 霸者之刃 1
+GAMEGOLD - 1000
+sendmsg 3 互换武器成功，获得霸者之刃一把！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您没有对应的武器或元宝数量不够！
+break
+[@屠龙1]
+#if
+checkitem 嗜魂法杖 1
+CHECKGAMEGOLD > 999
+#act
+take 嗜魂法杖 1
+give 屠龙 1
+GAMEGOLD - 1000
+sendmsg 3 互换武器成功，获得屠龙一把！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您没有对应的武器或元宝数量不够！
+break
+[@霸者2]
+#if
+checkitem 嗜魂法杖 1
+CHECKGAMEGOLD > 999
+#act
+take 嗜魂法杖 1
+give 霸者之刃 1
+GAMEGOLD - 1000
+sendmsg 3 互换武器成功，获得霸者之刃一把！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您没有对应的武器或元宝数量不够！
+break
+[@屠龙2]
+#if
+checkitem 霸者之刃 1
+CHECKGAMEGOLD > 999
+#act
+take 霸者之刃 1
+give 屠龙 1
+GAMEGOLD - 1000
+sendmsg 3 互换武器成功，获得屠龙一把！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您没有对应的武器或元宝数量不够！
+break
+[@法杖2]
+#if
+checkitem 霸者之刃 1
+CHECKGAMEGOLD > 999
+#act
+take 霸者之刃 1
+give 嗜魂法杖 1
+GAMEGOLD - 1000
+sendmsg 3 互换武器成功，获得嗜魂法杖一把！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您没有对应的武器或元宝数量不够！
+break
+[@黄金1]
+#if
+checkitem 黄金屠龙 1
+CHECKGAMEGOLD > 1999
+#act
+take 黄金屠龙 1
+give 黄金嗜魂法杖 1
+GAMEGOLD - 2000
+sendmsg 3 互换武器成功，获得黄金嗜魂法杖一把！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您没有对应的武器或元宝数量不够！
+break
+[@黄金2]
+#if
+checkitem 黄金屠龙 1
+CHECKGAMEGOLD > 1999
+#act
+take 黄金屠龙 1
+give 黄金逍遥扇 1
+GAMEGOLD - 2000
+sendmsg 3 互换武器成功，获得黄金逍遥扇一把！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您没有对应的武器或元宝数量不够！
+break
+[@黄金3]
+#if
+checkitem 黄金嗜魂法杖 1
+CHECKGAMEGOLD > 1999
+#act
+take 黄金嗜魂法杖 1
+give 黄金屠龙 1
+GAMEGOLD - 2000
+sendmsg 3 互换武器成功，获得黄金屠龙一把！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您没有对应的武器或元宝数量不够！
+break
+[@黄金4]
+#if
+checkitem 黄金嗜魂法杖 1
+CHECKGAMEGOLD > 1999
+#act
+take 黄金嗜魂法杖 1
+give 黄金逍遥扇 1
+GAMEGOLD - 2000
+sendmsg 3 互换武器成功，获得黄金逍遥扇一把！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您没有对应的武器或元宝数量不够！
+break
+[@黄金5]
+#if
+checkitem 黄金逍遥扇 1
+CHECKGAMEGOLD > 1999
+#act
+take 黄金逍遥扇 1
+give 黄金屠龙 1
+GAMEGOLD - 2000
+sendmsg 3 互换武器成功，获得黄金屠龙一把！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您没有对应的武器或元宝数量不够！
+break
+[@黄金6]
+#if
+checkitem 黄金逍遥扇 1
+CHECKGAMEGOLD > 1999
+#act
+take 黄金逍遥扇 1
+give 黄金嗜魂法杖 1
+GAMEGOLD - 2000
+sendmsg 3 互换武器成功，获得黄金嗜魂法杖一把！！！
+#elseact
+MESSAGEBOX 【提示】:对不起、您没有对应的武器或元宝数量不够！
+break
+

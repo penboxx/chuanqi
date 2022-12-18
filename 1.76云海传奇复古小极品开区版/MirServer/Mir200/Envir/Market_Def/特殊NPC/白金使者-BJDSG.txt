@@ -1,0 +1,17 @@
+[@MAIN]
+尊敬的白金大使，您好！非常感谢您对天地传奇的赞助！\
+我们会将你赞助的资金合理的投入天地传奇，将天地传奇做的更好！\
+<COLOR=clFuchsia 注意:请将黄金斗笠放在包袱内!>\
+　\
+<领取白金斗笠/@lqbjdl>\
+
+[@lqbjdl]
+#IF
+checkitem 黄金斗笠 1
+#ACT
+take 黄金斗笠 1
+give 白金斗笠 1
+MAPMOVE 3 329 331
+#elseact
+messageboX 请将黄金斗笠放在包袱内！
+BREAK

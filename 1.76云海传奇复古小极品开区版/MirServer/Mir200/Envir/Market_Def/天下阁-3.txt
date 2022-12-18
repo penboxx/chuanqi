@@ -1,0 +1,106 @@
+[@MAIN]
+#IF
+CHECKLEVELEX > 53
+#ACT
+GOTO @wsql
+#ELSEACT
+MESSAGEBOX 你现在的级别没有54还不够资格和我交谈！
+break
+
+[@wsql]
+<COLOR=clFuchsia 云海装备死亡爆出之后可以启动神奇的力量找回！>\
+<COLOR=clRed 云海神剑:捐献120万元宝,可获得《云海神剑》一把.RMB回收1000元！>\
+<COLOR=clLime 云海衣服:捐献80万元宝,可获得《云海衣服》一件.RMB回收700元！>\
+<COLOR=clFuchsia 云海神链:捐献40万元宝,可获得《云海神链》一根.RMB回收300元！>\ \
+<COLOR=clLime 云海装备爆出之后请联系管理找回.全部费用奖励给捡到装备的玩家。>\
+<COLOR=clFuchsia 找回云海武器衣服每件RMB300元！项链200RMB联系管理QQ:332217226>\ \ 　　　
+　　　<查看装备属性/@ckzbsx>　　　　　　<获取云海装备/@axzb>\
+
+
+[@ckzbsx]
+<COLOR=clFuchsia 衣服和武器带上很好看喔~>\ \
+<COLOR=clRed 云海神剑:准确+6 攻击速度+1 幸运+2 攻7-45 魔3-16 道7-20 (攻击力+8%)>\
+<COLOR=clLime 云海蟒袍:防7-18 魔6-15 攻3-10 魔4-13 道4-13 (HP+15%)(攻击力+3%)>\
+<COLOR=clFuchsia 云海彩衣:防7-18 魔6-15 攻3-10 魔4-13 道4-13 (HP+15%)(攻击力+3%)>\
+<COLOR=clRed 云海神链:准确+5 敏捷+5 攻1-10 魔1-10 道2-10>\ \
+<COLOR=clLime 以上装备，三职业通用！>　　　　　　　<返回/@main>\
+
+
+
+
+[@axzb]
+<COLOR=clFuchsia 传说上古神器的。云海神剑,云海衣服！惊现在玛法大陆！>\
+<COLOR=clRed 很多勇士都很难获得这把神器！>\ \
+<COLOR=clLime 听说云海神殿的云海魔王身上携带了这把武器和衣服。>\
+<COLOR=clFuchsia 你有勇气去获取吗？>\
+<COLOR=clFuchsia 如果你没有能力获得，那就通过捐献来获得，绝对是一模一样的！>\ \
+<云海神剑/@axsj>　　<云海蟒袍(男)/@axyfn>　<云海彩衣(女)/@axyfv>　　<云海神链/@axsl>\
+　　　　　　　　　　　　　　　　　　　　　　　　<返 回/@main>
+
+[@axsj]
+#IF
+CHECKGAMEGOLD > 1199999
+#ACT
+GAMEGOLD - 1200000
+give 云海神剑 1
+SENDMSG 3 %d：恭喜【$USERNAME】捐献获得了上古神器《云海神剑》！
+SENDMSG 3 %d：恭喜【$USERNAME】捐献获得了上古神器《云海神剑》！
+#SAY
+已经为你锻造好了，赶紧去试试威力吧！\ \
+<离 开/@exit>
+#ELSESAY
+缺少元宝怎么获得呢？云海神剑，需要捐献元宝120万\ \
+<返 回/@MAIN>\
+<离 开/@exit>
+
+
+[@axyfn]
+#IF
+CHECKGAMEGOLD > 799999
+#ACT
+GAMEGOLD - 800000
+give 云海蟒袍 1
+SENDMSG 3 %d：恭喜【$USERNAME】捐献获得了上古神器《云海蟒袍》！
+SENDMSG 3 %d：恭喜【$USERNAME】捐献获得了上古神器《云海蟒袍》！
+#SAY
+#SAY
+已经为你锻造好了，赶紧去试试威力吧！\ \
+<离 开/@exit>
+#ELSESAY
+缺少元宝怎么获得呢？云海蟒袍，需要捐献元宝80万\ \
+<返 回/@MAIN>\
+<离 开/@exit>
+
+
+[@axyfv]
+#IF
+CHECKGAMEGOLD > 799999
+#ACT
+GAMEGOLD - 700000
+give 云海彩衣 1
+SENDMSG 3 %d：恭喜【$USERNAME】捐献获得了上古神器《云海蟒衣》！
+SENDMSG 3 %d：恭喜【$USERNAME】捐献获得了上古神器《云海蟒衣》！
+#SAY
+已经为你锻造好了，赶紧去试试威力吧！\ \
+<离 开/@exit>
+#ELSESAY
+缺少元宝怎么获得呢？云海彩衣，需要捐献元宝70万\ \
+<返 回/@MAIN>\
+<离 开/@exit>
+
+
+[@axsl]
+#IF
+CHECKGAMEGOLD > 399999
+#ACT
+GAMEGOLD - 400000
+give 云海神链 1
+SENDMSG 3 %d：恭喜【$USERNAME】捐献获得了上古神器《云海神链》！
+SENDMSG 3 %d：恭喜【$USERNAME】捐献获得了上古神器《云海神链》！
+#SAY
+已经为你锻造好了，赶紧去试试威力吧！\ \
+<离 开/@exit>
+#ELSESAY
+缺少元宝怎么获得呢？云海神链，需要捐献元宝40万\ \
+<返 回/@MAIN>\
+<离 开/@exit>

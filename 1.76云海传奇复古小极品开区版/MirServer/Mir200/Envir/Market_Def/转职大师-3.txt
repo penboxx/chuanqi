@@ -1,0 +1,154 @@
+[@main]
+如何你想换一换职业还是换一换性别，这里提供转职变性服务！\ \
+<我要转换职业/@Chang>              <我要转换性别/@renyao>\ \
+<关闭/@exit>\
+
+[@renyao]
+#IF
+gender man
+#SAY
+是不是做猛男没什么意思呀，想不想尝尝做淑女的滋味呀！！！\ \
+引进泰国先进变性技术，每次需要收取20000元宝作为费用。\ \
+『<尝尝/@towoman>』\ \
+〖<返回/@main>〗 〖<关闭/@exit>〗
+#ELSESAY
+是不是做淑女挺累的，想不想尝尝做猛男的滋味呀！！！\ \
+引进泰国先进变性技术，每次需要收取20000元宝作为费用。\ \
+『<尝尝/@toman>』\ \
+〖<返回/@main>〗 〖<关闭/@exit>〗
+
+
+[@toman]
+#IF
+CHECKGAMEGOLD > 19999
+#ACT
+GAMEGOLD - 20000
+CHANGEGENDER 0
+messagebox 恭喜你变性手术成功，小退上线看看吧！
+Kick
+#SAY
+呵呵，你已经变成一位猛男了。小退上线看看吧！\ \
+<返回/@main>
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足20000个。
+
+[@towoman]
+#IF
+CHECKGAMEGOLD > 19999
+#ACT
+GAMEGOLD - 20000
+CHANGEGENDER 1
+messagebox 恭喜你变性手术成功，小退上线看看吧！
+Kick
+#SAY
+呵呵，你已经变成一位淑女了。小退上线看看吧\ \
+〖<返回/@main>〗 〖<关闭/@exit>〗
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足20000个。
+
+
+
+[@Chang]
+#IF
+checkjob warrior
+#SAY
+是不是做武士不好玩呀，换换别的试试吧！\
+转换职业需要收取50000元宝费用。\ \
+<玩玩法师/@法师>\ \
+<玩玩道士/@道士>\ \
+<返回/@changjob>　<关闭/@exit>
+#ACT
+break
+#IF
+checkjob wizard
+#SAY
+是不是做魔法师不好玩呀，换换别的试试吧！\
+转换职业需要收取50000元宝费用。\ \
+<玩玩武士/@战士>\ \
+<玩玩道士/@道士>\ \
+<返回/@chang>　<关闭/@exit>
+#ACT
+break
+#IF
+checkjob taoist
+#SAY
+是不是做道士不好玩呀，换换别的试试吧！\
+转换职业需要收取50000元宝费用。\ \
+<玩玩武士/@战士>\ \
+<玩玩法师/@法师>\ \
+<返回/@chang>　<关闭/@exit>
+#ACT
+break
+
+[@战士]
+#IF
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+CLEARSKILL
+CHANGEJOB warrior
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 烈火剑法 3
+#SAY
+呵呵，你已经变成一位战士了。
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足50000个。
+BREAK
+
+[@法师]
+#IF
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+CLEARSKILL
+CHANGEJOB WIZARD
+ADDSKILL 火球术 3
+ADDSKILL 大火球 3
+ADDSKILL 抗拒火环 3
+ADDSKILL 地狱火 3
+ADDSKILL 雷电术 3
+ADDSKILL 疾光电影 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 火墙 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+#SAY
+呵呵，你已经变成一位法师了。
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足50000个。
+BREAK
+
+[@道士]
+#IF
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+CLEARSKILL
+CHANGEJOB taoist
+GIVE 护身符(大) 1
+GIVE 黄色药粉(大量) 1
+GIVE 灰色药粉(大量) 1
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 困魔咒 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 心灵启示 3
+ADDSKILL 群体治疗术 3
+ADDSKILL 召唤神兽 3
+#SAY
+呵呵，你已经变成一位道士了。
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足50000个。
+BREAK

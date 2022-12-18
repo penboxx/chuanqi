@@ -1,0 +1,9 @@
+[@圣魔项链1]
+{
+#IF
+#act
+GAMEGOLD - 1000
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将圣魔项链升级成功。
+BREAK
+}

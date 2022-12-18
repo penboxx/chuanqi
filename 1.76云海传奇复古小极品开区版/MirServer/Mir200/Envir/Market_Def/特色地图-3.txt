@@ -1,0 +1,31 @@
+()
+%100
+[@main]
+<COLOR=clYellow ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+<COLOR=clAqua 【天外飞仙】> <COLOR=clRED Hot~ > <COLOR=clLime ★★﹌﹌ ★2014年火爆复古小极品★﹌﹌★★>\
+<COLOR=clYellow ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+<COLOR=clRED ♀.本地图分1层.> <COLOR=clFuchsia 是3D地图，需要下载补丁，是本服终极地图之一 >\
+<COLOR=clAqua ♀.怪物刷新:云海黄金龙，君意龙 君意冰龙  云海主宰者>\
+<COLOR=clLime ♀.爆率介绍:赤月,赤月·佛，云海装备系列> \
+<COLOR=clFuchsia ♀进入条件:3000元宝 >    <需要等级50> 每秒扣1个元宝\
+<黄金龙，火龙，冰龙90分钟刷新，主宰者180分钟刷新，爆率超高>\
+<点击补丁下载/@lianxi><COLOR=clFuchsia （此地图必须下载补丁）>    <我要进入/@shenyuan01>      <关闭对话/@exit>
+[@shenyuan01]
+#IF
+CHECKLEVELEX >  49
+CHECKGAMEGOLD > 2999
+#ACT
+GAMEGOLD - 3000
+GIVE 回城卷 1
+mapmove twfx01  
+SENDMSG 0 恭喜勇敢的玩家『%s』花费3000元宝进入了神秘的【天外飞仙】去寻找遗失的宝藏！ 245 0
+BREAK
+#ELSEACT
+MessageBox  尊敬的玩家你身上不够3000元宝或者等级不够50,请不要耍我哦!
+break
+
+[@lianxi]
+#IF
+#ACT
+WebBrowser http://www.kuyoux.com/1.76云海地图装备补丁.rar
+break

@@ -1,0 +1,10 @@
+
+
+
+[@main]
+<COLOR=clYellow 尊敬的各位玩家，您好！>\ 　\
+<COLOR=clYellow 为了保证游戏的公平公正，保证游戏的良好环境>\ 　\
+<COLOR=clYellow 我特奉管理员之命在此24小时检测使用外挂的不良分子>\ 　\
+<COLOR=clYellow 一但检测到开挂的人员，将直接打入监狱>\ 　\
+<COLOR=clYellow 里面的监狱长会告诉你将受到怎样的惩罚>\ 　\
+

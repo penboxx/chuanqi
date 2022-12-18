@@ -1,0 +1,21 @@
+()
+%100
+[@main]
+
+<COLOR=clAqua ═════════════卓越极品圣地═════════════>\  \
+<COLOR=clLime          下一层刷新更强大的BOSS.爆率全服最高.免费进入> \  \
+<COLOR=clFuchsia              ╔═════════════╗>\
+<COLOR=clFuchsia              ║>         <确定进入/@我要进入>         <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia              ╚═════════════╝>\  \
+
+
+<COLOR=clAqua ═════════════卓越极品圣地═════════════>\  \
+
+                         
+[@我要进入]
+#if
+#act
+GIVE 回城卷 1
+mapmove zhuoyue2
+SENDMSG 0 ★玩家[%s],进入卓越极品圣地
+

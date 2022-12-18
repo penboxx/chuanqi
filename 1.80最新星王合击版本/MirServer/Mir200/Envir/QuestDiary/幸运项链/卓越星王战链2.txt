@@ -1,0 +1,16 @@
+[@卓越战链2]
+{
+#IF
+random 6
+#act
+GAMEGOLD - 6000
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将卓越星王战链升级成功。
+BREAK
+
+#IF
+#act
+GAMEGOLD - 6000
+MESSAGEBOX 非常抱歉您的卓越星王战链升级失败
+BREAK
+}

@@ -1,0 +1,87 @@
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【沙城传送】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 温馨提示：等级需要达到50级每传送一次到沙巴克需要100元宝路费>\
+<COLOR=clLime 特别服务：等级需要达到50级花费1000元宝让主号和英雄瞬间满血>\
+<COLOR=clFuchsia ------------------------------------------------------------>\ 
+<COLOR=clFuchsia ╔┈┈┈┈┈┬┈┈┈┈┈┬┈┈┈┈┈┬┈┈┈┈┈┬┈┈┈┈╗>\
+<COLOR=clFuchsia ┊><沙城武器店/@YF01><COLOR=clFuchsia ┊><沙城首饰店/@YF02><COLOR=clFuchsia ┊><沙城正大门/@YF03><COLOR=clFuchsia ┊><沙城复活点/@YF04><COLOR=clFuchsia ┊><瞬间满血/@YF05><COLOR=clFuchsia ┊>\
+<COLOR=clFuchsia ╚┈┈┈┈┈┴┈┈┈┈┈┴─────┴┈┈┈┈┈┴┈┈┈┈╝>\   
+
+[@YF01]
+#IF
+CheckLevelEx > 49
+CHECKGAMEGOLD > 99
+#ACT
+MAPMOVE 3 638 309
+GAMEGOLD - 100
+BREAK
+#ELSEACT
+MESSAGEBOX 您的元宝不足100或者等级不足50级，无法进入！
+BREAK
+
+[@YF02]
+#IF
+CheckLevelEx > 49
+CHECKGAMEGOLD > 99
+#ACT
+MAPMOVE 3 663 286
+GAMEGOLD - 100
+BREAK
+#ELSEACT
+MESSAGEBOX 您的元宝不足100或者等级不足50级，无法进入！
+BREAK
+
+[@YF03]
+#IF
+CheckLevelEx > 49
+CHECKGAMEGOLD > 99
+#ACT
+MAPMOVE 3 674 332
+GAMEGOLD - 100
+BREAK
+#ELSEACT
+MESSAGEBOX 您的元宝不足100或者等级不足50级，无法进入！
+BREAK
+
+[@YF04]
+#IF
+CheckLevelEx > 49
+CHECKGAMEGOLD > 99
+#ACT
+MAPMOVE 3 649 293
+GAMEGOLD - 100
+BREAK
+#ELSEACT
+MESSAGEBOX 您的元宝不足100或者等级不足50级，无法进入！
+BREAK
+
+[@YF05]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 对不起您的英雄没有招出来我无法为您服务......
+BREAK
+
+#IF
+CHECKGAMEGOLD < 1000
+#ACT
+MESSAGEBOX 给主号和英雄加满血需要1000元宝......
+BREAK
+
+#IF
+CheckLevelEx < 50
+#ACT
+MESSAGEBOX 您的等级没有50级
+BREAK
+
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+HumanHP = 65535
+HumanMP = 65535
+H.HumanHP = 65535
+H.HumanMP = 65535
+SENDMSG 0 玩家[%s],在[冲向沙城]处.使用1000元宝把主号和英雄的血加满了

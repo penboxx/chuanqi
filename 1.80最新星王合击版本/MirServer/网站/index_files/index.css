@@ -1,0 +1,39 @@
+body {
+	font-size: 12px;
+}
+td {
+	font-size: 12px;
+}
+th {
+	font-size: 12px;
+}
+body {
+	background: url("666ps_com_bg.jpg") no-repeat top rgb(14, 14, 16); font: 75%/150% verdana, ËÎÌו; margin: 0px; color: rgb(255, 255, 255); font-size-adjust: none; font-stretch: normal;
+}
+img {
+	border: 0px currentColor;
+}
+a {
+	color: rgb(0, 102, 255); font-size: 12px;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	color: rgb(0, 102, 255); text-decoration: none;
+}
+a:hover {
+	color: rgb(255, 0, 0); text-decoration: underline;
+}
+a:active {
+	color: rgb(255, 0, 0); text-decoration: none;
+}
+ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+.main {
+	margin: 0px auto; width: 1008px; overflow: hidden;
+}
+.main_1 {
+	width: 1008px; overflow: hidden;
+}

@@ -1,0 +1,17 @@
+[@极品道链2]
+{
+#IF
+random 5
+#act
+GAMEGOLD - 4000
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将极品星王道链升级成功。
+BREAK
+
+#IF
+#act
+GAMEGOLD - 4000
+MESSAGEBOX 非常抱歉您的极品星王道链升级失败
+BREAK
+
+}

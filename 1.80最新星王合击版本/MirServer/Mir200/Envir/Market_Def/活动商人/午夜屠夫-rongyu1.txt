@@ -1,0 +1,14 @@
+[@main]
+你在午夜屠夫战场被人杀了吧!\ \ \
+
+<点我瞬间满血进入午夜屠夫战场/@屠夫战场>
+
+
+[@屠夫战场]
+#IF
+#act
+HumanHP = 65535
+HumanMP = 65535
+H.HumanHP = 65535
+H.HumanMP = 65535
+mapmove rongyu

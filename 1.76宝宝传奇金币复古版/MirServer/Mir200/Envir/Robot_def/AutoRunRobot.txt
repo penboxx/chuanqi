@@ -1,0 +1,31 @@
+;#AutoRun NPC RunOnWeek 2:19:50 @自动攻城1
+;#AutoRun NPC RunOnWeek 4:19:50 @自动攻城1
+;#AutoRun NPC RunOnWeek 6:19:50 @自动攻城1
+;#AutoRun NPC RunOnWeek 7:19:50 @自动攻城1
+
+;#AutoRun NPC RUNONDAY 20:00 @自动攻城1
+
+#AutoRun NPC RUNONDAY 22:15 @行会争夺战
+#AutoRun NPC RUNONDAY 22:25 @行会争夺战1
+#AutoRun NPC RUNONDAY 22:29 @行会争夺战2
+#AutoRun NPC RUNONDAY 22:45 @行会争霸入口关闭
+#AutoRun NPC RUNONDAY 22:46 @转移玩家
+#AutoRun NPC RUNONDAY 23:15 @转移玩家1
+#AutoRun NPC SEC 1 @刷怪
+#AutoRun NPC SEC 2 @开挂加冕
+#AutoRun NPC SEC 1 @逃跑检测
+#AUTORUN NPC MIN 5 @游戏说明
+
+
+#AutoRun NPC RUNONDAY 00:01 @清理
+
+
+
+#AutoRun NPC MIN 10 @提示公告
+
+
+#AutoRun NPC RUNONDAY 20:00 @清数据
+
+
+
+#AutoRun NPC SEC 1 @沙巴克检测

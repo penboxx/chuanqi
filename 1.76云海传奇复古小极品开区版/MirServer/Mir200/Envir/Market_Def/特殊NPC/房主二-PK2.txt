@@ -1,0 +1,14 @@
+[@MAIN]
+这里是生死ＰＫ房②\
+你可以回城，但此房间内只有你一人才可以！\
+　\
+<我要回城/@WYHCE>\
+
+[@WYHCE]
+#IF
+CHECKMAPHUMANCOUNT PK2 = 1
+#ACT
+MAPMOVE 3 329 331
+#ELSEACT
+MESSAGEBOX 当前房间内只有你一人才可以回城！
+BREAK

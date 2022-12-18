@@ -1,0 +1,111 @@
+[@main]
+<COLOR=clFuchsia ╔════════════════════════════╗>\
+<COLOR=clFuchsia ║><COLOR=clSkyBlue 云海三大宝藏之地，危险区域，进入谨慎，生死由命！>　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║><COLOR=clSkyBlue 云海三大宝藏之地里面的怪物非常强悍，攻击力也不菲，但是>　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║><COLOR=clSkyBlue 里面的怪物可以爆出稀释的><COLOR=clRed 云海装备><COLOR=clSkyBlue ！你有勇气去寻找宝藏吗？><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╠════════════════════════════╣>\
+<COLOR=clFuchsia ║>　　　<云海宝阁/@zzbaoge>　　　　　<云海洞穴/@zzdongxue>　　　　　<云海末路/@zzmolu>　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚════════════════════════════╝>\
+
+[@zzmolu]
+<COLOR=clFuchsia ╔════════════════════════════╗>\
+<COLOR=clFuchsia ║>主要BOSS：<COLOR=clSkyBlue 云海小型怪物＋云海大型BOSS>　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>刷新时间：<COLOR=clSkyBlue 小型怪物为15分钟刷新,云海BOSS为60分钟..>　　 　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>可爆物品：<COLOR=clSkyBlue 赤月、屠龙、云海装备[爆率中]>　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>危险指数：<COLOR=clLime ★★★★★★★★>　　　　　　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>进入条件：<COLOR=clRed 50级＋3000元宝>　　　　　　　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>地图介绍：<COLOR=clRed 地图怪物强悍,建议组队前往!>　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║><进入云海末路/@jrzzmolu>　　　　　　　<查看怪物爆率/@ckgwbls>　　　　　　　<返回/@EXIT><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚════════════════════════════╝>\
+
+[@jrzzmolu]
+#IF
+CHECKLEVELEX > 49
+CHECKGAMEGOLD > 2999
+#ACT
+GAMEGOLD - 3000
+MAPMOVE ZZML 255 266
+SENDMSG 0 勇士%s进入了云海末路，此地图BOSS爆云海装备！
+GIVE 回城卷 1
+BREAK
+#ELSEACT
+MESSAGEBOX 进入需要等级50级和3000元宝。
+
+[@ckgwbls]
+<COLOR=clFuchsia 服务器向每位玩家承诺：所有云海装备都可以在云海BOSS身上爆出！>\
+云海教主(死亡掉落)：赤月、屠龙、云海首饰、云海衣服、云海武器\
+云海恶魔(死亡掉落)：赤月、屠龙、云海首饰、云海衣服、云海武器\
+云海血魔(死亡掉落)：赤月、屠龙、云海首饰、云海幸运项链系列\
+云海金刚(死亡掉落)：赤月、屠龙、云海首饰、云海勋章系列\
+云海牛王(死亡掉落)：赤月、屠龙、云海首饰、云海宝石系列\
+云海猪王(死亡掉落)：赤月、屠龙、云海首饰、云海腰带靴子系列\
+<返回/@main>\
+
+[@zzdongxue]
+<COLOR=clFuchsia ╔════════════════════════════╗>\
+<COLOR=clFuchsia ║>主要BOSS：<COLOR=clSkyBlue 云海小型怪物＋云海大型BOSS>　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>刷新时间：<COLOR=clSkyBlue 小型怪物为15分钟刷新,云海BOSS为60分钟..>　　 　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>可爆物品：<COLOR=clSkyBlue 赤月、屠龙、云海装备[爆率中]>　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>危险指数：<COLOR=clLime ★★★★★★★★>　　　　　　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>进入条件：<COLOR=clRed 50级＋3000元宝>　　　　　　　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>地图介绍：<COLOR=clRed 地图怪物强悍,建议组队前往!>　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║><进入云海洞穴/@jrzzdongxue>　　　　　　　<查看怪物爆率/@ckgwble>　　　　　　　<返回/@EXIT><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚════════════════════════════╝>\
+
+[@jrzzdongxue]
+#IF
+CHECKLEVELEX > 49
+CHECKGAMEGOLD > 2999
+#ACT
+GAMEGOLD - 3000
+MAPMOVE ZZD1 91 166
+SENDMSG 0 勇士%s进入了云海洞穴，此地图BOSS爆云海装备！
+GIVE 回城卷 1
+BREAK
+#ELSEACT
+MESSAGEBOX 进入需要等级50级和3000元宝。
+
+[@ckgwble]
+<COLOR=clFuchsia 服务器向每位玩家承诺：所有云海装备都可以在云海BOSS身上爆出！>\
+云海教主(死亡掉落)：赤月、屠龙、云海首饰、云海衣服、云海武器\
+云海恶魔(死亡掉落)：赤月、屠龙、云海首饰、云海衣服、云海武器\
+云海血魔(死亡掉落)：赤月、屠龙、云海首饰、云海幸运项链系列\
+云海金刚(死亡掉落)：赤月、屠龙、云海首饰、云海勋章系列\
+云海牛王(死亡掉落)：赤月、屠龙、云海首饰、云海宝石系列\
+云海猪王(死亡掉落)：赤月、屠龙、云海首饰、云海腰带靴子系列\
+<返回/@main>\
+
+
+[@zzbaoge]
+<COLOR=clFuchsia ╔════════════════════════════╗>\
+<COLOR=clFuchsia ║>主要BOSS：<COLOR=clSkyBlue 云海小型怪物＋云海大型BOSS>　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>刷新时间：<COLOR=clSkyBlue 小型怪物为15分钟刷新,云海BOSS为60分钟..>　　 　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>可爆物品：<COLOR=clSkyBlue 赤月、屠龙、云海装备[爆率中]>　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>危险指数：<COLOR=clLime ★★★★★★★★>　　　　　　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>进入条件：<COLOR=clRed 50级＋3000元宝>　　　　　　　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>地图介绍：<COLOR=clRed 地图怪物强悍,建议组队前往!>　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║><进入云海宝阁/@jrzzbaoge>　　　　　　　<查看怪物爆率/@ckgwbl>　　　　　　　<返回/@EXIT><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚════════════════════════════╝>\
+
+[@jrzzbaoge]
+#IF
+CHECKLEVELEX > 49
+CHECKGAMEGOLD > 2999
+#ACT
+GAMEGOLD - 3000
+MAPMOVE ZZBG1
+SENDMSG 0 勇士%s进入了云海宝阁，此地图BOSS爆云海装备！
+GIVE 回城卷 1
+BREAK
+#ELSEACT
+MESSAGEBOX 进入需要等级50级和3000元宝。
+
+[@ckgwbl]
+<COLOR=clFuchsia 服务器向每位玩家承诺：所有云海装备都可以在云海BOSS身上爆出！>\
+云海教主(死亡掉落)：赤月、屠龙、云海首饰、云海衣服、云海武器\
+云海恶魔(死亡掉落)：赤月、屠龙、云海首饰、云海衣服、云海武器\
+云海血魔(死亡掉落)：赤月、屠龙、云海首饰、云海幸运项链系列\
+云海金刚(死亡掉落)：赤月、屠龙、云海首饰、云海勋章系列\
+云海牛王(死亡掉落)：赤月、屠龙、云海首饰、云海宝石系列\
+云海猪王(死亡掉落)：赤月、屠龙、云海首饰、云海腰带靴子系列\
+<返回/@main>\

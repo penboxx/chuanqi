@@ -1,0 +1,31 @@
+[@MAIN]
+这里是天关十七层\
+你必须将本地图内所有怪物杀光，才可以领取奖励进入下一关！\
+<COLOR=clRed 注:请不要将聚灵珠放在包袱内,否则会被收取掉!>\
+　\
+<领取奖励进入下一关/@SHIQICJLLQ>\
+
+[@SHIQICJLLQ]
+#IF
+CheckRangeMonCount TG17 16 12 15 = 0
+#ACT
+GOTO @SHIQICJLLQ1
+#ELSESAY
+地图内的怪物还没杀光呢！
+
+[@SHIQICJLLQ1]
+#IF
+CHECKMAPHUMANCOUNT TG18 = 0
+CHECKGAMEGOLD > 799
+#ACT
+GAMEGOLD - 800
+CLEARMAPMON TG18
+take 聚灵珠 50
+CHANGEEXP + 2300000
+Param1 TG18  
+MonGen 烟花恶魔 1 1
+MAPMOVE TG18
+SENDMSG 0 %s闯过了天关十七层，获得2300000经验奖励！
+BREAK
+#ELSEACT
+MESSAGEBOX 里面有人了，或者你的元宝不足800！

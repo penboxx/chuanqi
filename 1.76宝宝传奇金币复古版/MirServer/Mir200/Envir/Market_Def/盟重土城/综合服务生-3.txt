@@ -1,0 +1,1023 @@
+(@storage @getback @upgradenow @getbackupgnow )
+%100
+[@main]
+<COLOR=clRed 欢迎来到精锐数据宝宝176复古传奇，官网www.aabbg.com！> \ \
+<COLOR=clAqua 我能为您提供以下服务.客服QQ297522007-拒绝谈比例谢谢合作>\ \ 
+╔═══════════════════════╗\
+║ <《幸运项链》/@幸运项链>  <《装备升级》/@装备升级> <《我存东西》/@storage>      ║\
+╠═══════════════════════╣\
+║ <《赤血魔剑合成》/@赤血魔剑合成>  <《霸者合成》/@霸者合成> <《我取东西》/@getback>  ║\
+╚═══════════════════════╝\
+
+                                            
+
+[@幸运项链]
+¤╭⌒╮╭⌒╮          欢迎光临\
+ ╱◥██◣ ╭⌒╮                    <$SERVERNAME>\
+︱田︱田田|╰-------------幸运项链游戏均可爆出\
+╬╬╬╬╬╬╬╬╬╬╬╬<COLOR=clFuchsia 运3项链附加10%的几率暴击 伤害翻倍>\
+------------------------------------------------------------\
+<升级灯笼项链/@灯笼项链>         <升级虎齿项链/@虎齿项链>         <升级记忆项链/@记忆项链>\
+------------------------------------------------------------ \
+[@灯笼项链]
+　\
+升级幸运+1    <需要100万金币   成功率必成>         <确定升级/@灯笼1>   　\
+ \                                  \ 
+升级幸运+2    <需要200万金币   成功率一般>         <确定升级/@灯笼2> 　\
+　\
+升级幸运+3    <需要300万金币   运3暴击加1>         <确定升级/@灯笼3> 　\
+[@灯笼1]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGOLD 1000000
+#ACT
+#CALL [\幸运项链\灯笼项链1.txt] @灯笼项链1
+#ELSEACT
+MESSAGEBOX 您没有佩带灯笼项链\不是幸运加0的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@灯笼2]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGOLD 2000000
+#ACT
+#CALL [\幸运项链\灯笼项链2.txt] @灯笼项链2
+#ELSEACT
+MESSAGEBOX 您没有佩带灯笼项链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@灯笼3]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGOLD 3000000
+#ACT
+#CALL [\幸运项链\灯笼项链3.txt] @灯笼项链3
+#ELSEACT
+MESSAGEBOX 您没有佩带灯笼项链\不是幸运加2的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@虎齿项链]
+　\
+升级幸运+1    <需要100万金币   成功率必成>          <确定升级/@虎齿1> 　\
+　\
+升级幸运+2    <需要200万金币   成功率一般>          <确定升级/@虎齿2> 　\
+　\
+升级幸运+3    <需要300万金币   运3暴击加1>          <确定升级/@虎齿3> 　\
+[@虎齿1]
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGOLD 1000000
+#ACT
+#CALL [\幸运项链\虎齿项链1.txt] @白色虎齿项链1
+#ELSEACT
+MESSAGEBOX 您没有佩带白色虎齿项链\不是幸运加0的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@虎齿2]
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGOLD 2000000
+#ACT
+#CALL [\幸运项链\虎齿项链2.txt] @白色虎齿项链2
+#ELSEACT
+MESSAGEBOX 您没有佩带白色虎齿项链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@虎齿3]
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGOLD 3000000
+#ACT
+#CALL [\幸运项链\虎齿项链3.txt] @白色虎齿项链3
+#ELSEACT
+MESSAGEBOX 您没有佩带白色虎齿项链\不是幸运加2的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@记忆项链]
+　\
+升级幸运+1    <需要100万金币   成功率必成>          <确定升级/@记忆1> 　\
+　\
+升级幸运+2    <需要200万金币   成功率一般>          <确定升级/@记忆2> 　\
+　\
+升级幸运+3    <需要300万金币   运3暴击加1>          <确定升级/@记忆3> 　\ 
+[@记忆1]
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGOLD 1000000
+#ACT
+#CALL [\幸运项链\记忆项链1.txt] @记忆项链1
+#ELSEACT
+MESSAGEBOX 您没有佩带记忆项链\不是幸运加0的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@记忆2]
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGOLD 2000000
+#ACT
+#CALL [\幸运项链\记忆项链2.txt] @记忆项链2
+#ELSEACT
+MESSAGEBOX 您没有佩带记忆项链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@记忆3]
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGOLD 3000000
+#ACT
+#CALL [\幸运项链\记忆项链3.txt] @记忆项链3
+#ELSEACT
+MESSAGEBOX 您没有佩带记忆项链\不是幸运加2的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+
+
+
+
+[@装备升级]
+╔───────────────────────────╗\
+┊ <普通武器升级/@普通武器升级>   <提示：有机率失败武器破碎最升级至高7点> ┊\
+├───────────────────────────┤\
+┊ [<升级武器/@武器>] ┊ [<升级项链/@项链>] ┊ [<升级头盔/@头盔>] ┊[<升级勋章/@勋章>] ┊\
+┊ [<升级手镯/@手镯>] ┊ [<升级戒指/@戒指>] ┊ [<升级盔甲/@盔甲>] ┊                   ┊ \
+├──────┴──────┴──────┴──────┤\
+┊　　　<COLOR=clAqua 升级装备的几率70%成功.30%失败.失败不会破碎!>  　 ┊\
+╚───────────────────────────╝\ \
+[@武器]
+       <COLOR=clLime 超过升级上限导致失败，升级费用不退还.成功率70%>　\
+ 1.武器准确:<点击升级/@武器准> 『升级上限:<COLOR=clFuchsia 5>点 升级价格:<COLOR=clAqua 100万>金币每点』　\
+ 2.武器幸运:<点击升级/@武器幸> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 100万>金币每点』　\
+ 3.武器攻击:<点击升级/@武器攻> 『升级上限:<COLOR=clFuchsia 10>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+ 4.武器魔法:<点击升级/@武器魔> 『升级上限:<COLOR=clFuchsia 10>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+ 5.武器道术:<点击升级/@武器道> 『升级上限:<COLOR=clFuchsia 10>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+╔───┬───┬───┬───┬───┬───┬───╗　\
+┊<武器类/@武器>┊<头盔类/@头盔>┊<项链类/@项链>┊<手镯类/@手镯>┊<戒指类/@戒指>┊<勋章类/@勋章>┊<盔甲类/@盔甲>┊　\
+╚───┴───┴───┴───┴───┴───┴───╝\
+[@盔甲]
+       <COLOR=clLime 超过升级上限导致失败，升级费用不退还.成功率70%>　\
+ 1.盔甲防御:<点击升级/@盔甲防> 『升级上限:<7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+ 2.盔甲魔御:<点击升级/@盔甲御> 『升级上限:<7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+ 3.盔甲攻击:<点击升级/@盔甲攻> 『升级上限:<7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+ 4.盔甲魔法:<点击升级/@盔甲魔> 『升级上限:<7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+ 5.盔甲道术:<点击升级/@盔甲道> 『升级上限:<7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+╔───┬───┬───┬───┬───┬───┬───╗　\
+┊<武器类/@武器>┊<头盔类/@头盔>┊<项链类/@项链>┊<手镯类/@手镯>┊<戒指类/@戒指>┊<勋章类/@勋章>┊<盔甲类/@盔甲>┊　\
+╚───┴───┴───┴───┴───┴───┴───╝\
+[@勋章]
+<COLOR=clLime 超过上限导致失败，费用不退还.成功率70%.极品属性不包含上限内>\　\
+ 3.勋章攻击:<点击升级/@勋章攻> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+ 4.勋章魔法:<点击升级/@勋章魔> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+ 5.勋章道术:<点击升级/@勋章道> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\ \
+╔───┬───┬───┬───┬───┬───┬───╗　\
+┊<武器类/@武器>┊<头盔类/@头盔>┊<项链类/@项链>┊<手镯类/@手镯>┊<戒指类/@戒指>┊<勋章类/@勋章>┊<盔甲类/@盔甲>┊　\
+╚───┴───┴───┴───┴───┴───┴───╝\
+[@头盔]
+<COLOR=clLime 超过上限导致失败，费用不退还.成功率70%.极品属性不包含上限内>\
+ 1.头盔防御:<点击升级/@头盔防> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+ 2.头盔魔御:<点击升级/@头盔御> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+ 3.头盔攻击:<点击升级/@头盔攻> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+ 4.头盔魔法:<点击升级/@头盔魔> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+ 5.头盔道术:<点击升级/@头盔道> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+╔───┬───┬───┬───┬───┬───┬───╗　\
+┊<武器类/@武器>┊<头盔类/@头盔>┊<项链类/@项链>┊<手镯类/@手镯>┊<戒指类/@戒指>┊<勋章类/@勋章>┊<盔甲类/@盔甲>┊　\
+╚───┴───┴───┴───┴───┴───┴───╝\
+[@项链]
+<COLOR=clLime 超过上限导致失败，费用不退还.成功率70%.极品属性不包含上限内>\　\
+ 3.项链攻击:<点击升级/@项链攻> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+ 4.项链魔法:<点击升级/@项链魔> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　\
+ 5.项链道术:<点击升级/@项链道> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』\　\
+╔───┬───┬───┬───┬───┬───┬───╗　\
+┊<武器类/@武器>┊<头盔类/@头盔>┊<项链类/@项链>┊<手镯类/@手镯>┊<戒指类/@戒指>┊<勋章类/@勋章>┊<盔甲类/@盔甲>┊　\
+╚───┴───┴───┴───┴───┴───┴───╝\
+[@手镯]
+<COLOR=clAqua 请将手镯佩带至装备框左边.><COLOR=clLime 超过上限导致失败，费用不退还.成功率70%>　　\
+ 1.手镯防御:<点击升级/@手镯防> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　　\
+ 2.手镯魔御:<点击升级/@手镯御> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　　\
+ 3.手镯攻击:<点击升级/@手镯攻> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　　\
+ 4.手镯魔法:<点击升级/@手镯魔> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　　\
+ 5.手镯道术:<点击升级/@手镯道> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　　\
+╔───┬───┬───┬───┬───┬───┬───╗　\
+┊<武器类/@武器>┊<头盔类/@头盔>┊<项链类/@项链>┊<手镯类/@手镯>┊<戒指类/@戒指>┊<勋章类/@勋章>┊<盔甲类/@盔甲>┊　\
+╚───┴───┴───┴───┴───┴───┴───╝\
+[@戒指]
+<COLOR=clAqua 请将戒指佩带至装备框左边.> <COLOR=clLime 超过上限导致失败，费用不退还.成功率70%>　　\
+ 1.戒指防御:<点击升级/@戒指防> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　　\
+ 2.戒指魔御:<点击升级/@戒指御> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　　\
+ 3.戒指攻击:<点击升级/@戒指攻> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　　\
+ 4.戒指魔法:<点击升级/@戒指魔> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　　\
+ 5.戒指道术:<点击升级/@戒指道> 『升级上限:<COLOR=clFuchsia 7>点 升级价格:<COLOR=clAqua 50万>金币每点』　　\
+╔───┬───┬───┬───┬───┬───┬───╗　\
+┊<武器类/@武器>┊<头盔类/@头盔>┊<项链类/@项链>┊<手镯类/@手镯>┊<戒指类/@戒指>┊<勋章类/@勋章>┊<盔甲类/@盔甲>┊　\
+╚───┴───┴───┴───┴───┴───┴───╝\
+[@说明]
+ 元宝升级说明：　\
+ 1.部分装备可能因同一位置属性有<差别>，所以不同的一类首饰可　\
+   能会升级出<两种>属性，例如手镯的防御与魔御属性可能变成准　\
+   确和敏捷，戒指的防御与魔御属性可能变成毒物躲避等！　\
+ 2.每种装备都有升级属性的<限制>，请玩家不要无限度的<恶意>升级　\
+ 3.如果打到的装备为<极品>装备，则极品属性<不>包括已升级的属性　\
+ 4.有部分特殊属性<未>提供升级的，请联系<管理员>进行升级！　\
+╔───┬───┬───┬───┬───┬───┬───╗　\
+┊<武器类/@武器>┊<头盔类/@头盔>┊<项链类/@项链>┊<手镯类/@手镯>┊<戒指类/@戒指>┊<勋章类/@勋章>┊<盔甲类/@盔甲>┊　\
+╚───┴───┴───┴───┴───┴───┴───╝\
+
+[@攻速]
+攻速说明：武器如果没有攻速使用本服务，前十次升级是升级一点为负1点攻速\
+升级10点为负10攻速~升级11点为1个攻速~14点为4点攻速~\
+有攻速的直接升~上限为4点~无10次负效果影响\
+<点击升级/@攻速1> 『升级上限:<2>点 升级价格:<50万>金币每点』　\
+[@戒指道]
+#IF
+random 4
+CheckItemAddvalue 8 4 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 8 4 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @戒指
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+\
+\
+〖<返     回/@戒指>〗
+#ELSEACT
+take 金币  500000
+[@戒指魔]
+#IF
+random 4
+CheckItemAddvalue 8 3 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 8 3 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @戒指
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+\
+〖<返     回/@戒指>〗
+#ELSEACT
+take 金币  500000
+[@戒指攻]
+#IF
+random 4
+CheckItemAddvalue 8 2 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 8 2 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @戒指
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+〖<返     回/@戒指>〗
+#ELSEACT
+take 金币  500000
+[@戒指御]
+#IF
+random 4
+CheckItemAddvalue 8 1 < 7
+CHECKGAMEGOLD > 799
+#ACT
+take 金币  500000
+UPGRADEITEMEX 8 1 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @戒指
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+〖<返     回/@戒指>〗
+#ELSEACT
+take 金币  500000
+[@戒指防]
+#IF
+random 4
+CheckItemAddvalue 8 0 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 8 0 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @戒指
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+〖<返     回/@戒指>〗
+#ELSEACT
+take 金币  500000
+[@手镯道]
+#IF
+random 4
+CheckItemAddvalue 6 4 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 6 4 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @手镯
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+\
+\
+〖<返     回/@手镯>〗
+#ELSEACT
+take 金币  500000
+[@手镯魔]
+#IF
+random 4
+CheckItemAddvalue 6 3 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 6 3 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @手镯
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+\
+〖<返     回/@手镯>〗
+#ELSEACT
+take 金币  500000
+[@手镯攻]
+#IF
+random 4
+CheckItemAddvalue 6 2 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 6 2 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @手镯
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+〖<返     回/@手镯>〗
+#ELSEACT
+take 金币  500000
+[@手镯御]
+#IF
+random 4
+CheckItemAddvalue 6 1 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 6 1 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @手镯
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+〖<返     回/@手镯>〗
+#ELSEACT
+take 金币  500000
+[@手镯防]
+#IF
+random 4
+CheckItemAddvalue 6 0 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 6 0 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @手镯
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+〖<返     回/@手镯>〗
+#ELSEACT
+take 金币  500000
+[@项链道]
+#IF
+random 4
+CheckItemAddvalue 3 4 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 3 4 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @项链
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+\
+\
+〖<返     回/@项链>〗
+#ELSEACT
+take 金币  500000
+[@项链魔]
+#IF
+random 4
+CheckItemAddvalue 3 3 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 3 3 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @项链
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+\
+〖<返     回/@项链>〗
+#ELSEACT
+take 金币  500000
+[@项链攻]
+#IF
+random 4
+CheckItemAddvalue 3 2 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 3 2 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @项链
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+〖<返     回/@项链>〗
+#ELSEACT
+take 金币  500000
+[@项链敏]
+#IF
+random 4
+CheckItemAddvalue 3 1 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @项链
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+〖<返     回/@项链>〗
+#ELSEACT
+take 金币  500000
+[@项链准]
+#IF
+random 4
+CheckItemAddvalue 3 0 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 3 0 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @项链
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+〖<返     回/@项链>〗
+#ELSEACT
+take 金币  500000
+[@头盔道]
+#IF
+random 4
+CheckItemAddvalue 4 4 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 4 4 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @头盔
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+\
+\
+〖<返     回/@头盔>〗
+#ELSEACT
+take 金币  500000
+[@头盔魔]
+#IF
+random 4
+CheckItemAddvalue 4 3 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 4 3 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @头盔
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+\
+〖<返     回/@头盔>〗
+#ELSEACT
+take 金币  500000
+[@头盔攻]
+#IF
+random 4
+CheckItemAddvalue 4 2 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 4 2 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @头盔
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+〖<返     回/@头盔>〗
+#ELSEACT
+take 金币  500000
+[@头盔御]
+#IF
+random 4
+CheckItemAddvalue 4 1 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 4 1 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @头盔
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+〖<返     回/@头盔>〗
+#ELSEACT
+take 金币  500000
+[@头盔防]
+#IF
+random 4
+CheckItemAddvalue 4 0 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 4 0 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @头盔
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+〖<返     回/@头盔>〗
+#ELSEACT
+take 金币  500000
+[@盔甲攻]
+#IF
+random 4
+  CHECKITEMADDVALUE 0 2 < 7
+  CHECKGOLD  500000
+#ACT
+  take 金币  500000
+  UPGRADEITEMEX 0 2 1 1 0
+  goto @盔甲
+  BREAK
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+〖<返     回/@盔甲>〗
+#ELSEACT
+take 金币  500000
+GOTO @盔甲
+[@盔甲道]
+#IF
+random 4
+  CHECKITEMADDVALUE 0 4 < 7
+  CHECKGOLD  500000
+#ACT
+  take 金币  500000
+  UPGRADEITEMEX 0 4 1 1 0
+  goto @盔甲
+  BREAK
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+\
+\
+〖<返     回/@盔甲>〗
+#ELSEACT
+take 金币  500000
+GOTO @盔甲
+[@盔甲魔]
+#IF
+random 4
+  CHECKITEMADDVALUE 0 3 < 7
+  CHECKGOLD  500000
+#ACT
+  take 金币  500000
+  UPGRADEITEMEX 0 3 1 1 0
+  goto @盔甲
+  BREAK
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+\
+〖<返     回/@盔甲>〗
+#ELSEACT
+take 金币  500000
+GOTO @盔甲
+[@盔甲御]
+#IF
+random 4
+  CHECKITEMADDVALUE 0 1 < 7
+  CHECKGOLD  500000
+#ACT
+  take 金币  500000
+  UPGRADEITEMEX 0 1 1 1 0
+  goto @盔甲
+  BREAK
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+〖<返     回/@盔甲>〗
+#ELSEACT
+take 金币  500000
+GOTO @盔甲
+[@盔甲防]
+#IF
+random 4
+  CHECKITEMADDVALUE 0 0 < 7
+  CHECKGOLD  500000
+#ACT
+  take 金币  500000
+  UPGRADEITEMEX 0 0 1 1 0
+  goto @盔甲
+  BREAK
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+〖<返     回/@盔甲>〗
+#ELSEACT
+take 金币  500000
+GOTO @盔甲
+[@武器道]
+#IF
+random 4
+CheckItemAddvalue 1 2 < 10
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 1 2 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @武器
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+\
+\
+〖<返     回/@武器>〗
+#ELSEACT
+take 金币  500000
+[@武器魔]
+#IF
+random 4
+CheckItemAddvalue 1 1 < 10
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 1 1 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @武器
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+\
+〖<返     回/@武器>〗
+#ELSEACT
+take 金币  500000
+[@武器攻]
+#IF
+random 4
+CheckItemAddvalue 1 0 < 10
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 1 0 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @武器
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+〖<返     回/@武器>〗
+#ELSEACT
+take 金币  500000
+[@武器幸]
+#IF
+random 4
+CheckItemAddvalue 1 3 < 7
+CHECKGOLD  1000000
+#ACT
+take 金币 1000000
+UPGRADEITEMEX 1 3 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @武器
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+〖<返     回/@武器>〗
+#ELSEACT
+take 金币 1000000
+[@武器准]
+#IF
+random 4
+CheckItemAddvalue 1 5 < 5
+CHECKGOLD  1000000
+#ACT
+take 金币 1000000
+UPGRADEITEMEX 1 5 0 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @武器
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+〖<返     回/@武器>〗
+#ELSEACT
+take 金币 1000000
+[@nomake]
+#ACT
+messagebox 你所佩带的武器不允许升级！！
+[@攻速1]
+#IF
+random 4
+  CHECKITEMADDVALUE 1 6 < +5
+  CHECKGOLD  1000000
+#ACT
+  take 金币 1000000
+  UPGRADEITEMEX 1 6 1 1 0
+  goto @攻速
+  BREAK
+#ELSEsay
+升级失败!!
+#ELSEACT
+take 金币 1000000
+GOTO @攻速
+[@法道]
+#IF
+random 4
+CheckItemAddvalue 1 3 < 5
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+UPGRADEITEMEX 1 3 0 1 0
+SENDMSG 6 装备属性升级成功！！
+MessAgeBox 操作成功：装备属性升级成功！
+#ELSEsay
+升级失败!!
+#ELSEACT
+take 金币  500000
+ 
+
+[@勋章攻]
+#IF
+random 4
+  CHECKITEMADDVALUE 2 2 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+  UPGRADEITEMEX 2 2 1 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @勋章
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+〖<返     回/@勋章>〗
+#ELSEACT
+take 金币  500000
+[@勋章道]
+#IF
+random 4
+  CHECKITEMADDVALUE 2 4 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+  UPGRADEITEMEX 2 4 1 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @勋章
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+\
+\
+〖<返     回/@勋章>〗
+#ELSEACT
+take 金币  500000
+[@勋章魔]
+#IF
+random 4
+  CHECKITEMADDVALUE 2 3 < 7
+CHECKGOLD  500000
+#ACT
+take 金币  500000
+  UPGRADEITEMEX 2 3 1 1 0
+SENDMSG 6 装备属性升级成功！！
+goto @勋章
+#ELSEsay
+升级失败!!加油下次会成功的!!!呵呵!!!
+\
+\
+\
+\
+\
+〖<返     回/@勋章>〗
+#ELSEACT
+take 金币  500000
+[@普通武器升级]
+#if
+#act
+mapmove 0151
+break
+
+
+
+
+
+
+
+[@霸者合成]
+传说中的<COLOR=clRed 霸者之刃>惊现在玛法大陆,很多勇士都很难获得这把神器\
+听说王者禁地的地藏魔王身上携带了这把武器,你有勇气去获得吗?\
+如果你没有能力获得,我也能给你锻造出来,绝对是一模一样的!\ \
+
+<锻造霸者之刃/@锻造>                 <锻造需要材料/@材料>\
+
+[@锻造]
+#if
+checkgold 60000000
+checkitem 裁决之杖 8
+checkitem 骨玉权杖 8
+checkitem 龙纹剑 8
+checkitem 黑铁矿石 2
+checkitem 伏魔令 10
+checkitem 僵尸精魂 10
+#act
+take 金币 60000000
+take 裁决之杖 8
+take 骨玉权杖 8
+take 龙纹剑 8
+take 黑铁矿石 2
+take 伏魔令 10
+take 僵尸精魂 10
+give 霸者之刃 1
+sendmsg 3 锻造武器成功，获得霸者之刃一把！！！
+sendmsg 3 锻造武器成功，获得霸者之刃一把！！！
+sendmsg 3 锻造武器成功，获得霸者之刃一把！！！
+SENDMSG 0 恭喜[%s]强势合成了霸者之刃，从此江湖将掀起一片血雨腥风!  249 246 20
+SENDMSG 0 恭喜[%s]强势合成了霸者之刃，从此江湖将掀起一片血雨腥风!  251 249
+SENDMSG 0 恭喜[%s]强势合成了霸者之刃，从此江湖将掀起一片血雨腥风!  251 249
+SENDMSG 0 恭喜[%s]强势合成了霸者之刃，从此江湖将掀起一片血雨腥风!  251 249
+SENDMSG 0 恭喜[%s]强势合成了霸者之刃，从此江湖将掀起一片血雨腥风!  251 249
+SENDMSG 0 恭喜[%s]强势合成了霸者之刃，从此江湖将掀起一片血雨腥风!  251 249
+#elseact
+MESSAGEBOX 材料不够!请准备好充足的材料再来找我吧...
+break
+
+[@材料]
+\
+<COLOR=clLime 裁决之杖8把>\
+<COLOR=clLime 骨玉权杖8把>\ 
+<COLOR=clLime 龙纹剑8把>\
+<COLOR=clLime 黑铁矿石2块>\
+<COLOR=clLime  伏魔令10个>\
+<COLOR=clLime 僵尸精魂10个>\
+<COLOR=clLime 金币6000万>\
+以上材料准备好了我随时为你锻造，缺少材料不能锻造。\ \
+
+                                                <返回/@main>
+
+
+
+
+[@赤血魔剑合成]
+\
+\
+<合成魔剑合成/@laitcn>\
+\
+<如何合成/@price>物品\
+\
+<关闭/@exit>\
+
+[@laitcn]
+#IF
+checkgold 20000000
+checkitem 攻击神水 1
+checkitem 魔力神水 1
+checkitem 精神神水 1
+checkitem 疾风药水 1
+checkitem 罗刹 1
+checkitem 金砖 1
+#ACT
+take 金币 20000000
+take 攻击神水 1
+take 魔力神水 1
+take 精神神水 1
+take 疾风药水 1
+take 罗刹     1
+take 金砖 1
+give 赤血魔剑 1
+SENDMSG 0 恭喜[%s]历经千辛万苦凑齐了合成材料打造出了赤血魔剑!  249 246 20
+SENDMSG 0 恭喜[%s]历经千辛万苦凑齐了合成材料打造出了赤血魔剑!  251 249
+SENDMSG 0 恭喜[%s]历经千辛万苦凑齐了合成材料打造出了赤血魔剑!  251 249
+SENDMSG 0 恭喜[%s]历经千辛万苦凑齐了合成材料打造出了赤血魔剑!  251 249
+SENDMSG 0 恭喜[%s]历经千辛万苦凑齐了合成材料打造出了赤血魔剑!  251 249
+SENDMSG 0 恭喜[%s]历经千辛万苦凑齐了合成材料打造出了赤血魔剑!  251 249
+#SAY
+已经为你合成好了,试试我的手艺如何?\ \
+<离 开/@exit>
+#ELSESAY
+合成物品, 必须持有我说的那些材料. \
+把材料准备好了，才能制作合成, \
+缺少材料怎么合成呢? \ \
+<离 开/@exit>
+[@price]
+攻击神水一瓶 \
+魔力神水一瓶 \
+精神神水一瓶 \
+疾风药水一瓶 \
+罗刹一把 \
+金砖一个 \
+金币2000万。\
+<返 回/@赤血魔剑合成>\
+<离 开/@exit>

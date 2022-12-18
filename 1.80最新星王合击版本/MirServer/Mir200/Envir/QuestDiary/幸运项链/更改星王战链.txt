@@ -1,0 +1,33 @@
+[@更改星王战链1]
+{
+#IF
+random 60
+#act
+GAMEGOLD - 10000
+Gmexecute 改属性 3 8 5
+SENDMSG 1 恭喜[%s]在幸运之家将<星王战链>暴击属性更换到5。
+BREAK
+
+#IF
+random 20
+#act
+GAMEGOLD - 10000
+Gmexecute 改属性 3 8 4
+SENDMSG 1 恭喜[%s]在幸运之家将<星王战链>暴击属性更换到4。
+BREAK
+
+#IF
+random 5
+#act
+GAMEGOLD - 10000
+Gmexecute 改属性 3 8 3
+SENDMSG 1 恭喜[%s]在幸运之家将<星王战链>暴击属性更换到3。
+BREAK
+
+#IF
+#act
+GAMEGOLD - 10000
+Gmexecute 改属性 3 8 2
+SENDMSG 1 恭喜[%s]在幸运之家将<星王战链>暴击属性更换到2。
+BREAK
+}

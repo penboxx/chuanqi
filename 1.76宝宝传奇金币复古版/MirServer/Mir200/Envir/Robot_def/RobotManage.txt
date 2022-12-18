@@ -1,0 +1,144 @@
+[@老区领奖1]
+#IF
+#act
+MOV G58 1
+
+[@老区领奖2]
+#IF
+#act
+MOV G58 0
+
+
+[@开挂加冕]
+#IF
+#ACT
+GMEXECUTE 开始提问 @开挂加冕1
+
+[@逃跑检测]
+#IF
+#ACT
+GMEXECUTE 开始提问 @逃跑检测1
+
+[@密码表示]
+#IF
+#ACT
+GMEXECUTE 开始提问 @密码表示1
+
+[@输入密码]
+#IF
+#ACT
+GMEXECUTE 开始提问 @输入密码1
+
+[@自动攻城1]
+#IF
+#ACT
+Gmexecute AddToCastleWarList 0 *
+SENDMSG 0 今天晚上20点整，所有行会将进行统一攻城！
+SENDMSG 0 今天晚上20点整，所有行会将进行统一攻城！
+SENDMSG 0 今天晚上20点整，所有行会将进行统一攻城！
+SENDMSG 0 今天晚上20点整，所有行会将进行统一攻城！
+SENDMSG 0 今天晚上20点整，所有行会将进行统一攻城！
+
+[@刷怪]
+#IF
+CHECKRANGEMONCOUNT 0 329 267 12 < 30
+#ACT
+PARAM1 0
+PARAM2 329
+PARAM3 267
+MONGEN 鹿  30 12
+MONGEN 羊  30 12
+MONGEN 鸡  30 12
+
+
+
+
+;[@行会争夺战]
+;#IF
+;#ACT
+;SENDMSG 0 [行会争霸]请参赛行会进入场地准备，15分钟后入口自动关闭！获胜的行会可以获得500万金币奖励！
+;SENDMSG 0 [行会争霸]请参赛行会进入场地准备，15分钟后入口自动关闭！获胜的行会可以获得500万金币奖励！
+;SENDMSG 0 [行会争霸]请参赛行会进入场地准备，15分钟后入口自动关闭！获胜的行会可以获得500万金币奖励！
+
+
+;[@行会争夺战1]
+;#IF
+;#ACT
+;SENDMSG 0 [行会争霸]请参赛行会进入场地准备，5分钟后入口自动关闭！获胜的行会可以获得500万金币奖励！
+;SENDMSG 0 [行会争霸]请参赛行会进入场地准备，5分钟后入口自动关闭！获胜的行会可以获得500万金币奖励！
+;SENDMSG 0 [行会争霸]请参赛行会进入场地准备，5分钟后入口自动关闭！获胜的行会可以获得500万金币奖励！
+
+
+;[@行会争夺战2]
+;#IF
+;#ACT
+;SENDMSG 0 [行会争霸]请参赛行会进入场地准备，1分钟后入口自动关闭！获胜的行会可以获得500万金币奖励！
+;SENDMSG 0 [行会争霸]请参赛行会进入场地准备，1分钟后入口自动关闭！获胜的行会可以获得500万金币奖励！
+;SENDMSG 0 [行会争霸]请参赛行会进入场地准备，1分钟后入口自动关闭！获胜的行会可以获得500万金币奖励！
+
+
+;[@行会争霸入口关闭]
+;#IF
+;#ACT
+;SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得500万金币奖励！
+;SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得500万金币奖励！
+;SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得500万金币奖励！
+
+[@转移玩家]
+#IF
+#ACT
+GMEXECUTE 集体传送 T1180 T218AA
+
+[@转移玩家1]
+#IF
+#ACT
+GMEXECUTE 集体传送 T218AA 3 334 331
+
+
+
+
+
+
+
+
+
+[@提示公告]
+#IF
+#ACT
+SendScrollMsg 温馨提示:请保护好自己的密码，装备被盗将无法找回。26级之前只要你小退上线新手宝宝就会自动送，要开服的玩家请联系客服，精锐数据网络为您量身打造完美游戏世界. 251 249
+BREAK
+
+
+[@清数据]
+#IF
+#act
+ClearNameList ..\QuestDiary\数据文件\领取元宝.txt
+
+
+
+
+[@清怪]
+#IF
+#act
+ClearNameList ..\QuestDiary\数据文件\DWGSave.txt
+ClearMapMon xiejian
+
+
+
+[@沙巴克检测]
+#IF
+#ACT
+GMEXECUTE 开始提问 @沙巴克传回
+BREAK
+
+
+[@清理]
+#if
+#ACT
+ClearNameList ..\QuestDiary\数据文件\押镖.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\新手.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\牛魔.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\BOSS.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\日常.txt
+SENDMSG 0 每日任务已清理!
+break

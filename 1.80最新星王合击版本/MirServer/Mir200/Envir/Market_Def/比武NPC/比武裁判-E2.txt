@@ -1,0 +1,27 @@
+[@main]
+#IF
+hour 18 18
+min  40 59
+#act
+goto @领奖
+break
+#elseact
+SendMSG 4 比武正在进行中.赶快干光所有的敌人吧
+MESSAGEBOX 领奖时间还没到哦.领奖时间为：18:40-19:00\
+
+[@领奖]
+#if
+checkhum E2 2
+#ACT
+SendMSG 4 此地图人数超过1人或者没到领奖时间18:40-19:00,干光掉敌人再来领取吧
+break
+
+#if
+#ACT
+addnamelist ..\QuestDiary\比武大会\颠峰战神.txt
+GAMEGOLD + 38888
+ChangeExp + 100000000
+mapmove 3 333 333
+#CALL [\\登陆\封号.txt] @FH
+SENDMSG 0 [%s]在比武大会中胜出.获得奖励38888元宝+1亿经验+霸气封号 249 252 5
+break

@@ -1,0 +1,139 @@
+[@封号设置]
+{
+#if
+checklevelex < 49
+#act
+inc S2 \
+
+#if
+checklevelex = 42
+#act
+inc S2 \[九品知县]
+AbilityAdd 4 1 65535
+AbilityAdd 5 1 65535
+AbilityAdd 6 1 65535
+sendmsg 6 您现在的官爵是：九品知县，获得功魔道属性各1点提升！
+
+#if
+checklevelex = 43
+#act
+inc S2 \[八品知府]
+AbilityAdd 4 2 65535
+AbilityAdd 5 2 65535
+AbilityAdd 6 2 65535
+sendmsg 6 您现在的官爵是：八品知府，获得功魔道属性各2点提升！
+
+#if
+checklevelex = 44
+#act
+inc S2 \[七品太守]
+AbilityAdd 4 3 65535
+AbilityAdd 5 3 65535
+AbilityAdd 6 3 65535
+sendmsg 6 您现在的官爵是：七品太守，获得功魔道属性各3点提升！
+
+#if
+checklevelex = 45
+#act
+inc S2 \[六品巡抚]
+AbilityAdd 4 4 65535
+AbilityAdd 5 4 65535
+AbilityAdd 6 4 65535
+sendmsg 6 您现在的官爵是：六品巡抚，获得功魔道属性各4点提升！
+
+#if
+checklevelex = 46
+#act
+inc S2 \[五品提督]
+AbilityAdd 4 5 65535
+AbilityAdd 5 5 65535
+AbilityAdd 6 5 65535
+sendmsg 6 您现在的官爵是：五品提督，获得功魔道属性各5点提升！
+
+#if
+checklevelex = 47
+#act
+inc S2 \[四品总督]
+AbilityAdd 4 6 65535
+AbilityAdd 5 6 65535
+AbilityAdd 6 6 65535
+sendmsg 6 您现在的官爵是：四品总督，获得功魔道属性各6点提升！
+
+#if
+checklevelex = 48
+#act
+inc S2 \[三品尚书]
+AbilityAdd 4 7 65535
+AbilityAdd 5 7 65535
+AbilityAdd 6 7 65535
+sendmsg 6 您现在的官爵是：三品尚书，获得功魔道属性各7点提升！
+
+#if
+checklevelex = 49
+#act
+inc S2 \[二品太傅]
+AbilityAdd 4 8 65535
+AbilityAdd 5 8 65535
+AbilityAdd 6 8 65535
+sendmsg 6 您现在的官爵是：二品太傅，获得功魔道属性各8点提升！
+
+#if
+checklevelex > 50
+#act
+inc S2 \[一统天下]
+AbilityAdd 4 10 65535
+AbilityAdd 5 10 65535
+AbilityAdd 6 10 65535
+sendmsg 6 您现在的官爵是：一统天下，获得功魔道属性各10点提升！
+
+
+#IF
+CHECKNAMELIST ..\QuestDiary\天下第一\金牌名单.txt
+#ACT
+RENEWLEVEL 1 0 0
+mov s1 ≮金牌赞助大使≯
+;Mov S1 <$USERNAME>\
+;SETRANKLEVELNAME %s≮金牌赞助大使≯
+SENDMSG 0 金牌赞助大使【<$USERNAME>】上线了!  251 200
+
+#IF
+CHECKNAMELIST ..\QuestDiary\天下第一\代理名单.txt
+#ACT
+RENEWLEVEL 1 0 0
+mov s1 ◥■■■官■■■◤\◥■■方■■◤\◥■指■◤\◥定◤\<元宝代理商>
+;Mov S1 <$USERNAME>\
+;SETRANKLEVELNAME %s≮元宝销售代理≯
+;SETRANKLEVELNAME %s\◥■■■元■■■◤\◥■■宝■■◤\◥■代■◤\◥理◤\≮【<指定元宝代理商>】≯
+SENDMSG 0 元宝销售代理【<$USERNAME>】上线了
+
+#IF
+CHECKNAMELIST ..\QuestDiary\天下第一\银牌名单.txt
+#ACT
+ChangeNameColor 253
+mov s1 ≮银牌赞助大使≯
+;Mov S1 <$USERNAME>\
+;SETRANKLEVELNAME %s≮银牌赞助大使≯
+SENDMSG 0 银牌赞助大使【<$USERNAME>】上线了!  251 200
+
+#IF
+CHECKNAMELIST ..\QuestDiary\天下第一\铜牌名单.txt
+#ACT
+ChangeNameColor 254
+mov s1 ≮铜牌赞助大使≯
+;Mov S1 <$USERNAME>\
+;SETRANKLEVELNAME %s≮铜牌赞助大使≯
+SENDMSG 0 铜牌赞助大使【<$USERNAME>】上线了!  251 200
+
+
+
+
+#if
+CHECKNAMELIST ..\QuestDiary\天下第一\代理名单.txt
+checklevelex > 0
+#act
+;SETRANKLEVELNAME %s\<$STR(S7)>\<$STR(S1)>\<$STR(S2)>\
+SETRANKLEVELNAME %s\<$STR(S1)>\
+#ELSEACT
+SETRANKLEVELNAME %s\<$STR(S1)>\<$STR(S2)>\
+BREAK
+}

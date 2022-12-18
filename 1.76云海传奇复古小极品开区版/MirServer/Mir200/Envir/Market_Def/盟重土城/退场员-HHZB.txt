@@ -1,0 +1,32 @@
+[@main]
+现在行会争霸地图已经关闭了\
+只要你的行会打败了其他行会\
+行会掌门人就可以获得<COLOR=clFuchsia 10000元宝>奖励\
+现在这个地图里面是否只剩下你们行会的成员了呢？\
+如果是话，恭喜你，可以领取奖励了！\ \
+<COLOR=clRed 如果23：30分还未分出胜负，那么将无法领奖励！>\ \
+
+<领取奖励/@LINGQU>\
+
+[@LINGQU]
+#IF
+IsSameGuildOnMap HHZB
+#ACT
+GOTO @LINGQU2
+#ELSEACT
+MESSAGEBOX 地图内还有其他行会的人！
+break
+
+[@LINGQU2]
+#IF
+ISGUILDMASTER
+#ACT
+GAMEGOLD + 10000
+Gmexecute 集体传送 HHZB 0159
+map 0159
+SENDMSG 0 <$GUILDNAME>行会的%s领取了行会争霸赛奖励：10000元宝！
+SENDMSG 0 <$GUILDNAME>行会的%s领取了行会争霸赛奖励：10000元宝！
+SENDMSG 0 <$GUILDNAME>行会的%s领取了行会争霸赛奖励：10000元宝！
+#ELSEACT
+MESSAGEBOX 你不是掌门无法领取！
+break

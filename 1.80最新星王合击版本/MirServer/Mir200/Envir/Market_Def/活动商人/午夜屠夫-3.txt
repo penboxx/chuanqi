@@ -1,0 +1,86 @@
+[@main]
+<COLOR=CLMONEYGREEN ------------------------------------------------------------>\
+<COLOR=CLAQUA 【午夜屠夫】> <COLOR=CLRED Hot~> 　 <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=CLMONEYGREEN ------------------------------------------------------------>\
+<COLOR=CLFUCHSIA 活动介绍:><COLOR=CLLIME 每天21:00-21:20 死亡不爆装备 地图内全部显示神秘人>\
+<COLOR=CLFUCHSIA 活动介绍:><COLOR=CLAQUA 进入活动场地之后.每秒增加3元宝.20分钟就是3600元宝>\
+<COLOR=CLLIME 午夜屠夫奖励:><COLOR=CLRED 元宝20000个.>　   <COLOR=CLLIME 目前午夜屠夫为:>[<$STR(A85)>]\
+<COLOR=CLLIME 午夜屠夫奖励:><COLOR=CLRED 元宝20000个.>　   <COLOR=CLLIME 目前午夜屠夫为:>[<$STR(A85)>]\
+<COLOR=CLMONEYGREEN ------------------------------------------------------------>\
+<我要进入活动/@进入活动>　　　　　　<领取午夜屠夫奖励/@领奖励>　　　　　<关闭对话/@EXIT>\
+
+[@进入活动]
+#if
+EQUAL G90 0
+#ACT
+goto @第一天
+BREAK
+
+#if
+EQUAL G90 1
+#ACT
+goto @第二天
+BREAK
+
+#if
+LARGE G90 1
+#ACT
+goto @第三天
+BREAK
+
+[@第一天]
+#if
+CHECKLEVELEX > 51
+equal G84 1
+#act
+CHANGEATTACKMODE 0
+Mapmove rongyu
+SENDMSG 0 “%s”进入午夜屠夫活动，开始拼命的杀敌了...... 0 250 20
+SENDMSG 0 “%s”进入午夜屠夫活动，开始拼命的杀敌了...... 0 250 20
+SENDMSG 0 “%s”进入午夜屠夫活动，开始拼命的杀敌了...... 0 250 20
+#elseact
+MessageBox 1.开区第一天需要等级52级方可参加活动\　\2.午夜屠夫活动尚未开放.活动时间为每天21:00-21:20
+
+[@第二天]
+#if
+CHECKLEVELEX > 53
+equal G84 1
+#act
+CHANGEATTACKMODE 0
+Mapmove rongyu
+SENDMSG 0 “%s”进入午夜屠夫活动，开始拼命的杀敌了...... 0 250 20
+SENDMSG 0 “%s”进入午夜屠夫活动，开始拼命的杀敌了...... 0 250 20
+SENDMSG 0 “%s”进入午夜屠夫活动，开始拼命的杀敌了...... 0 250 20
+#elseact
+MessageBox 1.开区第二天需要等级54级方可参加活动\　\2.午夜屠夫活动尚未开放.活动时间为每天21:00-21:20
+
+[@第三天]
+#if
+CHECKLEVELEX > 55
+equal G84 1
+#act
+CHANGEATTACKMODE 0
+Mapmove rongyu
+SENDMSG 0 “%s”进入午夜屠夫活动，开始拼命的杀敌了...... 0 250 20
+SENDMSG 0 “%s”进入午夜屠夫活动，开始拼命的杀敌了...... 0 250 20
+SENDMSG 0 “%s”进入午夜屠夫活动，开始拼命的杀敌了...... 0 250 20
+#elseact
+MessageBox 1.开区第三天需要等级56级方可参加活动\　\2.午夜屠夫活动尚未开放.活动时间为每天21:00-21:20
+
+[@领奖励] 
+#IF
+CHECKNAMELIST ..\QuestDiary\天子数卡\战场奖励名单.txt
+#ACT
+MESSAGEBOX 你已经领取过奖励了!
+BREAK
+#if
+equal G84 0
+equal A85 <$USERNAME>
+#act
+GAMEGOLD + 20000
+ADDNAMELIST ..\QuestDiary\天子数卡\战场奖励名单.txt
+SENDMSG 0 玩家『<$USERNAME>』已经领取了午夜屠夫奖励20000元宝!!!
+SENDMSG 0 玩家『<$USERNAME>』已经领取了午夜屠夫奖励20000元宝!!!
+SENDMSG 0 玩家『<$USERNAME>』已经领取了午夜屠夫奖励20000元宝!!!
+#elseact
+MessageBox  活动还没结束,或者你不是午夜屠夫!

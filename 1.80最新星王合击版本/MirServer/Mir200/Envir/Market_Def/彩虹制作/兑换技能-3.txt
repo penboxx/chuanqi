@@ -1,0 +1,344 @@
+()
+%100
+[@MAIN]
+请选择您需要兑换的技能：\
+<英雄开天斩/@1>   <COLOR=clLime 战士英雄技能> <COLOR=clFuchsia 需要书页 10张>+<COLOR=clAqua 圣战戒指>+500元宝\
+<英雄灭天火/@2>   <COLOR=clLime 法师英雄技能> <COLOR=clFuchsia 需要书页 10张>+<COLOR=clAqua 法神戒指>+500元宝\
+<英雄分身术/@3>   <COLOR=clLime 法师英雄技能> <COLOR=clFuchsia 需要书页 10张>+<COLOR=clAqua 法神戒指>+500元宝\
+<英雄召唤月灵/@4> <COLOR=clLime 道士英雄技能> <COLOR=clFuchsia 需要书页 10张>+<COLOR=clAqua 天尊戒指>+500元宝\
+<英雄无极真气/@5> <COLOR=clLime 道士英雄技能> <COLOR=clFuchsia 需要书页 10张>+<COLOR=clAqua 天尊戒指>+500元宝\ 
+<英雄气功波/@13>   <COLOR=clLime 道士英雄技能> <COLOR=clFuchsia 需要书页 10张>+<COLOR=clAqua 天尊戒指>+500元宝\ 
+<英雄护体神盾/@11> <COLOR=clFuchsia 需要书页 10张>+<COLOR=clAqua 雷霆战戒+烈焰魔戒+光芒道戒>+2000元宝\
+<下一页/@MAIN-1>     <离开/@EXIT>
+[@MAIN-1]
+请选择您需要兑换的技能：\
+<主体开天斩/@6>   <COLOR=clLime 战士主体技能> <COLOR=clFuchsia 需要书页 10张>+<COLOR=clAqua 圣战戒指>+500元宝\
+<主体灭天火/@7>   <COLOR=clLime 法师主体技能> <COLOR=clFuchsia 需要书页 10张>+<COLOR=clAqua 法神戒指>+500元宝\
+<主体四级盾/@8>   <COLOR=clLime 法师主体技能> <COLOR=clFuchsia 需要书页 10张>+<COLOR=clAqua 法神戒指>+500元宝\
+<主体召唤月灵/@9> <COLOR=clLime 道士主体技能> <COLOR=clFuchsia 需要书页 10张>+<COLOR=clAqua 天尊戒指>+500元宝\
+<主体无极真气/@10> <COLOR=clLime 道士本体技能> <COLOR=clFuchsia 需要书页 10张>+<COLOR=clAqua 天尊戒指>+500元宝\ 
+<主体气功波/@14>   <COLOR=clLime 道士主体技能> <COLOR=clFuchsia 需要书页 10张>+<COLOR=clAqua 天尊戒指>+500元宝\ 
+<主体护体神盾/@12> <COLOR=clFuchsia 需要书页 10张>+<COLOR=clAqua 雷霆战戒+烈焰魔戒+光芒道戒>+2000元宝\
+<上一页/@MAIN>     <下一页/@MAIN-2>
+[@MAIN-2]
+请选择您需要兑换的技能：\ \
+<主体逐日剑法/@bs2>   <COLOR=clLime 战士主体技能> <COLOR=clFuchsia 需要10书页>+<COLOR=clAqua 战神戒指>+<COLOR=clRed 5000元宝>\
+<主体流星火雨/@bs3>   <COLOR=clLime 法师主体技能> <COLOR=clFuchsia 需要10书页>+<COLOR=clAqua 圣魔戒指>+<COLOR=clRed 5000元宝>\
+<主体噬血术/@bs4>     <COLOR=clLime 道士主体技能> <COLOR=clFuchsia 需要10书页>+<COLOR=clAqua 真魂戒指>+<COLOR=clRed 5000元宝>\
+<英雄逐日剑法/@bs5>   <COLOR=clLime 战士英雄技能> <COLOR=clFuchsia 需要10书页>+<COLOR=clAqua 战神戒指>+<COLOR=clRed 5000元宝>\
+<英雄流星火雨/@bs6>   <COLOR=clLime 法师英雄技能> <COLOR=clFuchsia 需要10书页>+<COLOR=clAqua 圣魔戒指>+<COLOR=clRed 5000元宝>\
+<英雄噬血术/@bs7>     <COLOR=clLime 道士英雄技能> <COLOR=clFuchsia 需要10书页>+<COLOR=clAqua 真魂戒指>+<COLOR=clRed 5000元宝>\\
+<上一页/@MAIN-1>     <离开/@EXIT>
+[@12]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 雷霆战戒
+CHECKITEM 烈焰魔戒
+CHECKITEM 光芒道戒
+CHECKGAMEGOLD > 1999
+#ACT
+GAMEGOLD - 2000
+TAKE 书页 10
+TAKE 雷霆战戒
+TAKE 烈焰魔戒
+TAKE 光芒道戒
+GIVE 护体神盾
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了护体神盾！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@11]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 雷霆战戒
+CHECKITEM 烈焰魔戒
+CHECKITEM 光芒道戒
+CHECKGAMEGOLD > 1999
+#ACT
+GAMEGOLD - 2000
+TAKE 书页 10
+TAKE 雷霆战戒
+TAKE 烈焰魔戒
+TAKE 光芒道戒
+GIVE 英雄护体神盾
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄护体神盾！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@1]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 圣战戒指
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 200
+TAKE 书页 10
+TAKE 圣战戒指
+GIVE 英雄开天斩
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄开天斩！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@2]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 法神戒指
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 200
+TAKE 书页 10
+TAKE 法神戒指
+GIVE 英雄灭天火
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄灭天火！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@3]
+#IF
+CHECKITEM 书页  10
+CHECKITEM 法神戒指
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 200
+TAKE 书页 10
+TAKE 法神戒指
+GIVE 英雄分身术
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄分身术！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@4]
+#IF
+CHECKITEM 书页  10
+CHECKITEM 天尊戒指
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 200
+TAKE 书页 10
+TAKE 天尊戒指
+GIVE 英雄召唤月灵
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄召唤月灵！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@5]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 天尊戒指
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 200
+TAKE 书页 10
+TAKE 天尊戒指
+GIVE 英雄无极真气
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄无极真气！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@6]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 圣战戒指
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 200
+TAKE 书页 10
+TAKE 圣战戒指
+GIVE 开天斩
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了主体开天斩！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@7]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 法神戒指
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 200
+TAKE 书页 10
+TAKE 法神戒指
+GIVE 灭天火
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了灭天火！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@8]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 法神戒指
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 200
+TAKE 书页 10
+TAKE 法神戒指
+GIVE 四级魔法盾
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了四级魔法盾！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@9]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 天尊戒指
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 200
+TAKE 书页 10
+TAKE 天尊戒指
+GIVE 召唤月灵
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了召唤月灵！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@10]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 天尊戒指
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 200
+TAKE 书页 10
+TAKE 天尊戒指
+GIVE 无极真气
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了无极真气！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+
+[@13]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 天尊戒指
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 200
+TAKE 书页 10
+TAKE 天尊戒指
+GIVE 英雄气功波
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄气功波！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+
+
+[@14]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 天尊戒指
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 200
+TAKE 书页 10
+TAKE 天尊戒指
+GIVE 气功波
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了主体气功波！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+
+
+[@bs7]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 真魂戒指
+CHECKGAMEGOLD > 4999
+#ACT
+GAMEGOLD - 5000
+TAKE 书页 10
+TAKE 真魂戒指
+GIVE 英雄噬血术
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄噬血术！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@bs4]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 真魂戒指
+CHECKGAMEGOLD > 4999
+#ACT
+GAMEGOLD - 5000
+TAKE 书页 10
+TAKE 真魂戒指
+GIVE 噬血术
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了噬血术！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@bs6]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 圣魔戒指
+CHECKGAMEGOLD > 4999
+#ACT
+GAMEGOLD - 5000
+TAKE 书页 10
+TAKE 圣魔戒指
+GIVE 英雄流星火雨
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄流星火雨！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@bs3]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 圣魔戒指
+CHECKGAMEGOLD > 4999
+#ACT
+GAMEGOLD - 5000
+TAKE 书页 10
+TAKE 圣魔戒指
+GIVE 流星火雨
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了流星火雨！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@bs5]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 战神戒指
+CHECKGAMEGOLD > 4999
+#ACT
+GAMEGOLD - 5000
+TAKE 书页 10
+TAKE 战神戒指
+GIVE 英雄逐日剑法
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄逐日剑法！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+[@bs2]
+#IF
+CHECKITEM 书页 10
+CHECKITEM 战神戒指
+CHECKGAMEGOLD > 4999
+#ACT
+GAMEGOLD - 5000
+TAKE 书页 10
+TAKE 战神戒指
+GIVE 逐日剑法
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了逐日剑法！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你材料不足，请检查背包！
+BREAK
+BREAK

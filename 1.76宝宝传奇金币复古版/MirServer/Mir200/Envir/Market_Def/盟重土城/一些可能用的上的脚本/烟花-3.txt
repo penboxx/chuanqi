@@ -1,0 +1,22 @@
+
+[@main]
+
+<COLOR=clRed 欢迎来到１７６猛Ｃ复古传奇  官方网站:www.kuyoux.com复古小极品版！> \ 
+欢迎光临 <COLOR=#254 提示:所有装备可爆出>\ 
+烟花之地  进入需要漂亮烟花1个 商铺可购买 \ 
+<我要进入/@进>   <关闭/@exit>
+
+[@进]
+#if
+checkitem  漂亮烟花
+checklevelex > 0
+#act
+take 漂亮烟花
+GIVE 回城卷 1
+mapmove F007A
+SENDMSG 7 恭喜你燃放烟花进入烟花地图！！
+SENDMSG 0 <$USERNAME>使用<漂亮烟花>进入烟花地图打宝！ 254 200
+#ELSEsay
+你没有漂亮烟花，不能进入!
+break
+

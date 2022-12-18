@@ -1,0 +1,2952 @@
+[@KSCGSJ]
+{
+#IF
+  CHECKITEMW 荣誉勋章11号
+#ACT
+  GOTO @RYXZSJFY1
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章12号
+#ACT
+  GOTO @RYXZSJMY1
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章13号
+#ACT
+  GOTO @RYXZSJGJ1
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章14号
+#ACT
+  GOTO @RYXZSJMF1
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章15号
+#ACT
+  GOTO @RYXZSJDS1
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章21号
+#ACT
+  GOTO @RYXZSJFY2
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章22号
+#ACT
+  GOTO @RYXZSJMY2
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章23号
+#ACT
+  GOTO @RYXZSJGJ2
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章24号
+#ACT
+  GOTO @RYXZSJMF2
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章25号
+#ACT
+  GOTO @RYXZSJDS2
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章31号
+#ACT
+  GOTO @RYXZSJFY3
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章32号
+#ACT
+  GOTO @RYXZSJMY3
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章33号
+#ACT
+  GOTO @RYXZSJGJ3
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章34号
+#ACT
+  GOTO @RYXZSJMF3
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章35号
+#ACT
+  GOTO @RYXZSJDS3
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章41号
+#ACT
+  GOTO @RYXZSJFY4
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章42号
+#ACT
+  GOTO @RYXZSJMY4
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章43号
+#ACT
+  GOTO @RYXZSJGJ4
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章44号
+#ACT
+  GOTO @RYXZSJMF4
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章45号
+#ACT
+  GOTO @RYXZSJDS4
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章51号
+#ACT
+  GOTO @RYXZSJFY5
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章52号
+#ACT
+  GOTO @RYXZSJMY5
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章53号
+#ACT
+  GOTO @RYXZSJGJ5
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章54号
+#ACT
+  GOTO @RYXZSJMF5
+  BREAK
+#IF
+  CHECKITEMW 荣誉勋章55号
+#ACT
+  GOTO @RYXZSJDS5
+  BREAK
+#IF
+  CHECKITEMW 云海勋章(战)
+#ACT
+  GOTO @SJZZGJ
+  BREAK
+#IF
+  CHECKITEMW 云海勋章(法)
+#ACT
+  GOTO @SJZZMF
+  BREAK
+#IF
+  CHECKITEMW 云海勋章(道)
+#ACT
+  GOTO @SJZZDS
+  BREAK
+#IF
+#ACT
+  BREAK
+#SAY
+升级失败，指定位置没有佩带勋章！\
+;-------------------------------------------------
+[@RYXZSJFY1]
+#IF
+  CheckItemAddValue 2 0 = 0
+#ACT
+  GOTO @RYXZSJFY1_1
+  BREAK
+#IF
+  CheckItemAddValue 2 0 = 1
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJFY1_1]
+#IF
+  CHECKITEM 力量戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 力量戒指 46
+  TAKE 泰坦戒指 46
+  TAKE 紫碧螺 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 紫碧螺 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 力量戒指 46
+  TAKE 泰坦戒指 46
+  TAKE 紫碧螺 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 泰坦戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 力量戒指 46
+  TAKE 泰坦戒指 46
+  TAKE 紫碧螺 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+#ACT
+BREAK
+#SAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJMY1]
+#IF
+  CheckItemAddValue 2 1 = 0
+#ACT
+  GOTO @RYXZSJMY1_1
+  BREAK
+#IF
+  CheckItemAddValue 2 1 = 1
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJMY1_1]
+#IF
+  CHECKITEM 力量戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 力量戒指 46
+  TAKE 泰坦戒指 46
+  TAKE 紫碧螺 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 紫碧螺 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 力量戒指 46
+  TAKE 泰坦戒指 46
+  TAKE 紫碧螺 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 泰坦戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 力量戒指 46
+  TAKE 泰坦戒指 46
+  TAKE 紫碧螺 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+#ACT
+BREAK
+#SAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJGJ1]
+#IF
+  CheckItemAddValue 2 2 = 0
+#ACT
+  GOTO @RYXZSJGJ1_1
+  BREAK
+#IF
+  CheckItemAddValue 2 2 = 1
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJGJ1_1]
+#IF
+  CHECKITEM 力量戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 力量戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB13
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJMF1]
+#IF
+  CheckItemAddValue 2 3 = 0
+#ACT
+  GOTO @RYXZSJMF1_1
+  BREAK
+#IF
+  CheckItemAddValue 2 3 = 1
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJMF1_1]
+#IF
+  CHECKITEM 紫碧螺 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 紫碧螺 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB14
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJDS1]
+#IF
+  CheckItemAddValue 2 4 = 0
+#ACT
+  GOTO @RYXZSJDS1_1
+  BREAK
+#IF
+  CheckItemAddValue 2 4 = 1
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJDS1_1]
+#IF
+  CHECKITEM 泰坦戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 泰坦戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB15
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJFY2]
+#IF
+  CheckItemAddValue 2 0 = 0
+#ACT
+  GOTO @RYXZSJFY2_1
+  BREAK
+#IF
+  CheckItemAddValue 2 0 = 1
+#ACT
+  GOTO @RYXZSJFY2_2
+  BREAK
+#IF
+  CheckItemAddValue 2 0 = 2
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJFY2_1]
+#IF
+  CHECKITEM 力量戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 力量戒指 46
+  TAKE 泰坦戒指 46
+  TAKE 紫碧螺 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 紫碧螺 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 力量戒指 46
+  TAKE 泰坦戒指 46
+  TAKE 紫碧螺 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 泰坦戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 力量戒指 46
+  TAKE 泰坦戒指 46
+  TAKE 紫碧螺 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJFY2_2]
+#IF
+  CHECKITEM 骑士手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 骑士手镯 46
+  TAKE 三眼手镯 46
+  TAKE 龙之手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 龙之手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 骑士手镯 46
+  TAKE 三眼手镯 46
+  TAKE 龙之手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 三眼手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 骑士手镯 46
+  TAKE 三眼手镯 46
+  TAKE 龙之手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJMY2]
+#IF
+  CheckItemAddValue 2 1 = 0
+#ACT
+  GOTO @RYXZSJMY2_1
+  BREAK
+#IF
+  CheckItemAddValue 2 1 = 1
+#ACT
+  GOTO @RYXZSJMY2_2
+  BREAK
+#IF
+  CheckItemAddValue 2 1 = 2
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJMY2_1]
+#IF
+  CHECKITEM 力量戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 力量戒指 46
+  TAKE 泰坦戒指 46
+  TAKE 紫碧螺 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 紫碧螺 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 力量戒指 46
+  TAKE 泰坦戒指 46
+  TAKE 紫碧螺 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 泰坦戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 力量戒指 46
+  TAKE 泰坦戒指 46
+  TAKE 紫碧螺 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJMY2_2]
+#IF
+  CHECKITEM 骑士手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 骑士手镯 46
+  TAKE 三眼手镯 46
+  TAKE 龙之手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 龙之手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 骑士手镯 46
+  TAKE 三眼手镯 46
+  TAKE 龙之手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 三眼手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 骑士手镯 46
+  TAKE 三眼手镯 46
+  TAKE 龙之手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJGJ2]
+#IF
+  CheckItemAddValue 2 2 = 0
+#ACT
+  GOTO @RYXZSJGJ2_1
+  BREAK
+#IF
+  CheckItemAddValue 2 2 = 1
+#ACT
+  GOTO @RYXZSJGJ2_2
+  BREAK
+#IF
+  CheckItemAddValue 2 2 = 2
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJGJ2_1]
+#IF
+  CHECKITEM 力量戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 力量戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB13
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJGJ2_2]
+#IF
+  CHECKITEM 骑士手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 骑士手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB13
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJMF2]
+#IF
+  CheckItemAddValue 2 3 = 0
+#ACT
+  GOTO @RYXZSJMF2_1
+  BREAK
+#IF
+  CheckItemAddValue 2 3 = 1
+#ACT
+  GOTO @RYXZSJMF2_2
+  BREAK
+#IF
+  CheckItemAddValue 2 3 = 2
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJMF2_1]
+#IF
+  CHECKITEM 紫碧螺 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 紫碧螺 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB14
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJMF2_2]
+#IF
+  CHECKITEM 龙之手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 龙之手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB14
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJDS2]
+#IF
+  CheckItemAddValue 2 4 = 0
+#ACT
+  GOTO @RYXZSJDS2_1
+  BREAK
+#IF
+  CheckItemAddValue 2 4 = 1
+#ACT
+  GOTO @RYXZSJDS2_2
+  BREAK
+#IF
+  CheckItemAddValue 2 4 = 2
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJDS2_1]
+#IF
+  CHECKITEM 泰坦戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 泰坦戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB15
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJDS2_2]
+#IF
+  CHECKITEM 三眼手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 三眼手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB15
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJFY3]
+#IF
+  CheckItemAddValue 2 0 = 0
+#ACT
+  GOTO @RYXZSJFY3_1
+  BREAK
+#IF
+  CheckItemAddValue 2 0 = 1
+#ACT
+  GOTO @RYXZSJFY3_2
+  BREAK
+#IF
+  CheckItemAddValue 2 0 = 2
+#ACT
+  GOTO @RYXZSJFY3_3
+  BREAK
+#IF
+  CheckItemAddValue 2 0 = 3
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJFY3_1]
+#IF
+  CHECKITEM 圣战戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 法神戒指 46
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 法神戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 法神戒指 46
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 天尊戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 法神戒指 46
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJFY3_2]
+#IF
+  CHECKITEM 圣战手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战手镯 46
+  TAKE 法神手镯 46
+  TAKE 天尊手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 法神手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战手镯 46
+  TAKE 法神手镯 46
+  TAKE 天尊手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 天尊手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战手镯 46
+  TAKE 法神手镯 46
+  TAKE 天尊手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJFY3_3]
+#IF
+  CHECKITEM 圣战项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战项链 46
+  TAKE 法神项链 46
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 法神项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战项链 46
+  TAKE 法神项链 46
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 天尊项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战项链 46
+  TAKE 法神项链 46
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJMY3]
+#IF
+  CheckItemAddValue 2 1 = 0
+#ACT
+  GOTO @RYXZSJMY3_1
+  BREAK
+#IF
+  CheckItemAddValue 2 1 = 1
+#ACT
+  GOTO @RYXZSJMY3_2
+  BREAK
+#IF
+  CheckItemAddValue 2 1 = 2
+#ACT
+  GOTO @RYXZSJMY3_3
+  BREAK
+#IF
+  CheckItemAddValue 2 1 = 3
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJMY3_1]
+#IF
+  CHECKITEM 圣战戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 法神戒指 46
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 法神戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 法神戒指 46
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 天尊戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 法神戒指 46
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJMY3_2]
+#IF
+  CHECKITEM 圣战手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战手镯 46
+  TAKE 法神手镯 46
+  TAKE 天尊手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 法神手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战手镯 46
+  TAKE 法神手镯 46
+  TAKE 天尊手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 天尊手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战手镯 46
+  TAKE 法神手镯 46
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJMY3_3]
+#IF
+  CHECKITEM 圣战项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战项链 46
+  TAKE 法神项链 46
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 法神项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战项链 46
+  TAKE 法神项链 46
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 天尊项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战项链 46
+  TAKE 法神项链 46
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJGJ3]
+#IF
+  CheckItemAddValue 2 2 = 0
+#ACT
+  GOTO @RYXZSJGJ3_1
+  BREAK
+#IF
+  CheckItemAddValue 2 2 = 1
+#ACT
+  GOTO @RYXZSJGJ3_2
+  BREAK
+#IF
+  CheckItemAddValue 2 2 = 2
+#ACT
+  GOTO @RYXZSJGJ3_3
+  BREAK
+#IF
+  CheckItemAddValue 2 2 = 3
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJGJ3_1]
+#IF
+  CHECKITEM 圣战戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB13
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJGJ3_2]
+#IF
+  CHECKITEM 圣战手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB13
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJGJ3_3]
+#IF
+  CHECKITEM 圣战项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB13
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJMF3]
+#IF
+  CheckItemAddValue 2 3 = 0
+#ACT
+  GOTO @RYXZSJMF3_1
+  BREAK
+#IF
+  CheckItemAddValue 2 3 = 1
+#ACT
+  GOTO @RYXZSJMF3_2
+  BREAK
+#IF
+  CheckItemAddValue 2 3 = 2
+#ACT
+  GOTO @RYXZSJMF3_3
+  BREAK
+#IF
+  CheckItemAddValue 2 3 = 3
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJMF3_1]
+#IF
+  CHECKITEM 法神戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 法神戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB14
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJMF3_2]
+#IF
+  CHECKITEM 法神手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 法神手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB14
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJMF3_3]
+#IF
+  CHECKITEM 法神项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 法神项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB14
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJDS3]
+#IF
+  CheckItemAddValue 2 4 = 0
+#ACT
+  GOTO @RYXZSJDS3_1
+  BREAK
+#IF
+  CheckItemAddValue 2 4 = 1
+#ACT
+  GOTO @RYXZSJDS3_2
+  BREAK
+#IF
+  CheckItemAddValue 2 4 = 2
+#ACT
+  GOTO @RYXZSJDS3_3
+  BREAK
+#IF
+  CheckItemAddValue 2 4 = 3
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJDS3_1]
+#IF
+  CHECKITEM 天尊戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB15
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJDS3_2]
+#IF
+  CHECKITEM 天尊手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 天尊手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB15
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJDS3_3]
+#IF
+  CHECKITEM 天尊项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB15
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJFY4]
+#IF
+  CheckItemAddValue 2 0 = 0
+#ACT
+  GOTO @RYXZSJFY4_1
+  BREAK
+#IF
+  CheckItemAddValue 2 0 = 1
+#ACT
+  GOTO @RYXZSJFY4_2
+  BREAK
+#IF
+  CheckItemAddValue 2 0 = 2
+#ACT
+  GOTO @RYXZSJFY4_3
+  BREAK
+#IF
+  CheckItemAddValue 2 0 = 3
+#ACT
+  GOTO @RYXZSJFY4_4
+  BREAK
+#IF
+  CheckItemAddValue 2 0 = 4
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了\
+[@RYXZSJFY4_1]
+#IF
+  CHECKITEM 圣战戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 法神戒指 46
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 法神戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 法神戒指 46
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 天尊戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 法神戒指 46
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJFY4_2]
+#IF
+  CHECKITEM 圣战手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战手镯 46
+  TAKE 法神手镯 46
+  TAKE 天尊手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 法神手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战手镯 46
+  TAKE 法神手镯 46
+  TAKE 天尊手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 天尊手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战手镯 46
+  TAKE 法神手镯 46
+  TAKE 天尊手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJFY4_3]
+#IF
+  CHECKITEM 圣战项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战项链 46
+  TAKE 法神项链 46
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 法神项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战项链 46
+  TAKE 法神项链 46
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 天尊项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战项链 46
+  TAKE 法神项链 46
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJFY4_4]
+#IF
+  CHECKITEM 圣战头盔 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战头盔 46
+  TAKE 法神头盔 46
+  TAKE 天尊头盔 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 法神头盔 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战头盔 46
+  TAKE 法神头盔 46
+  TAKE 天尊头盔 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+
+#IF
+  CHECKITEM 天尊头盔 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战头盔 46
+  TAKE 法神头盔 46
+  TAKE 天尊头盔 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB11
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJMY4]
+#IF
+  CheckItemAddValue 2 1 = 0
+#ACT
+  GOTO @RYXZSJMY4_1
+  BREAK
+#IF
+  CheckItemAddValue 2 1 = 1
+#ACT
+  GOTO @RYXZSJMY4_2
+  BREAK
+#IF
+  CheckItemAddValue 2 1 = 2
+#ACT
+  GOTO @RYXZSJMY4_3
+  BREAK
+#IF
+  CheckItemAddValue 2 1 = 3
+#ACT
+  GOTO @RYXZSJMY4_4
+  BREAK
+#IF
+  CheckItemAddValue 2 1 = 4
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJMY4_1]
+#IF
+  CHECKITEM 圣战戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 法神戒指 46
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 法神戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 法神戒指 46
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 天尊戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 法神戒指 46
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJMY4_2]
+#IF
+  CHECKITEM 圣战手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战手镯 46
+  TAKE 法神手镯 46
+  TAKE 天尊手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 法神手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战手镯 46
+  TAKE 法神手镯 46
+  TAKE 天尊手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 天尊手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战手镯 46
+  TAKE 法神手镯 46
+  TAKE 天尊手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJMY4_3]
+#IF
+  CHECKITEM 圣战项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战项链 46
+  TAKE 法神项链 46
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 法神项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战项链 46
+  TAKE 法神项链 46
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 天尊项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战项链 46
+  TAKE 法神项链 46
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJMY4_4]
+#IF
+  CHECKITEM 圣战头盔 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战头盔 46
+  TAKE 法神头盔 46
+  TAKE 天尊头盔 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 法神头盔 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战头盔 46
+  TAKE 法神头盔 46
+  TAKE 天尊头盔 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+
+#IF
+  CHECKITEM 天尊头盔 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战头盔 46
+  TAKE 法神头盔 46
+  TAKE 天尊头盔 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB12
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@SJZZGJ]
+#IF
+  CheckItemAddValue 2 2 = 0
+#ACT
+  GOTO @SJZZGJ1
+  BREAK
+#IF
+  CheckItemAddValue 2 2 = 1
+#ACT
+  GOTO @SJZZGJ2
+  BREAK
+#IF
+  CheckItemAddValue 2 2 = 2
+#ACT
+  GOTO @SJZZGJ3
+  BREAK
+#IF
+  CheckItemAddValue 2 2 = 3
+#ACT
+  GOTO @SJZZGJ4
+  BREAK
+#IF
+  CheckItemAddValue 2 2 = 4
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@SJZZGJ1]
+#IF
+  CHECKGAMEGOLD > 999
+  CHECKITEM 圣战戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+  GAMEGOLD - 1000
+  TAKE 圣战戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB13
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@SJZZGJ2]
+#IF
+  CHECKGAMEGOLD > 1999
+  CHECKITEM 圣战手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+  GAMEGOLD - 2000
+  TAKE 圣战手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB13
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@SJZZGJ3]
+#IF
+  CHECKGAMEGOLD > 2999
+  CHECKITEM 圣战项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+  GAMEGOLD - 3000
+  TAKE 圣战项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB13
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@SJZZGJ4]
+#IF
+  CHECKGAMEGOLD > 4999
+  CHECKITEM 圣战头盔 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+  GAMEGOLD - 5000
+  TAKE 圣战头盔 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 4
+  GOTO @JDCGSB13
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@SJZZMF]
+#IF
+  CheckItemAddValue 2 3 = 0
+#ACT
+  GOTO @SJZZMF1
+  BREAK
+#IF
+  CheckItemAddValue 2 3 = 1
+#ACT
+  GOTO @SJZZMF2
+  BREAK
+#IF
+  CheckItemAddValue 2 3 = 2
+#ACT
+  GOTO @SJZZMF3
+  BREAK
+#IF
+  CheckItemAddValue 2 3 = 3
+#ACT
+  GOTO @SJZZMF4
+  BREAK
+#IF
+  CheckItemAddValue 2 3 = 4
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@SJZZMF1]
+#IF
+  CHECKGAMEGOLD > 999
+  CHECKITEM 法神戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+  GAMEGOLD - 1000
+  TAKE 法神戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB14
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@SJZZMF2]
+#IF
+  CHECKGAMEGOLD > 1999
+  CHECKITEM 法神手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+  GAMEGOLD - 2000
+  TAKE 法神手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB14
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@SJZZMF3]
+#IF
+  CHECKGAMEGOLD > 2999
+  CHECKITEM 法神项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+  GAMEGOLD - 3000
+  TAKE 法神项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB14
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@SJZZMF4]
+#IF
+  CHECKGAMEGOLD > 4999
+  CHECKITEM 法神头盔 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+  GAMEGOLD - 5000
+  TAKE 法神头盔 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 4
+  GOTO @JDCGSB14
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@SJZZDS]
+#IF
+  CheckItemAddValue 2 4 = 0
+#ACT
+  GOTO @SJZZDS1
+  BREAK
+#IF
+  CheckItemAddValue 2 4 = 1
+#ACT
+  GOTO @SJZZDS2
+  BREAK
+#IF
+  CheckItemAddValue 2 4 = 2
+#ACT
+  GOTO @SJZZDS3
+  BREAK
+#IF
+  CheckItemAddValue 2 4 = 3
+#ACT
+  GOTO @SJZZDS4
+  BREAK
+#IF
+  CheckItemAddValue 2 4 = 4
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@SJZZDS1]
+#IF
+  CHECKGAMEGOLD > 999
+  CHECKITEM 天尊戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+  GAMEGOLD - 1000
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB15
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@SJZZDS2]
+#IF
+  CHECKGAMEGOLD > 1999
+  CHECKITEM 天尊手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+  GAMEGOLD - 2000
+  TAKE 天尊手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB15
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@SJZZDS3]
+#IF
+  CHECKGAMEGOLD > 2999
+  CHECKITEM 天尊项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+  GAMEGOLD - 3000
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB15
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@SJZZDS4]
+#IF
+  CHECKGAMEGOLD > 4999
+  CHECKITEM 天尊头盔 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+  GAMEGOLD - 5000
+  TAKE 天尊头盔 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 4
+  GOTO @JDCGSB15
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+
+;-------------------------------------------------
+[@RYXZSJGJ4]
+#IF
+  CheckItemAddValue 2 2 = 0
+#ACT
+  GOTO @RYXZSJGJ4_1
+  BREAK
+#IF
+  CheckItemAddValue 2 2 = 1
+#ACT
+  GOTO @RYXZSJGJ4_2
+  BREAK
+#IF
+  CheckItemAddValue 2 2 = 2
+#ACT
+  GOTO @RYXZSJGJ4_3
+  BREAK
+#IF
+  CheckItemAddValue 2 2 = 3
+#ACT
+  GOTO @RYXZSJGJ4_4
+  BREAK
+#IF
+  CheckItemAddValue 2 2 = 4
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJGJ4_1]
+#IF
+  CHECKITEM 圣战戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB13
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJGJ4_2]
+#IF
+  CHECKITEM 圣战手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB13
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJGJ4_3]
+#IF
+  CHECKITEM 圣战项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB13
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJGJ4_4]
+#IF
+  CHECKITEM 圣战头盔 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 圣战头盔 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 4
+  GOTO @JDCGSB13
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJMF4]
+#IF
+  CheckItemAddValue 2 3 = 0
+#ACT
+  GOTO @RYXZSJMF4_1
+  BREAK
+#IF
+  CheckItemAddValue 2 3 = 1
+#ACT
+  GOTO @RYXZSJMF4_2
+  BREAK
+#IF
+  CheckItemAddValue 2 3 = 2
+#ACT
+  GOTO @RYXZSJMF4_3
+  BREAK
+#IF
+  CheckItemAddValue 2 3 = 3
+#ACT
+  GOTO @RYXZSJMF4_4
+  BREAK
+#IF
+  CheckItemAddValue 2 3 = 4
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJMF4_1]
+#IF
+  CHECKITEM 法神戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 法神戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB14
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJMF4_2]
+#IF
+  CHECKITEM 法神手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 法神手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB14
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJMF4_3]
+#IF
+  CHECKITEM 法神项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 法神项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB14
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJMF4_4]
+#IF
+  CHECKITEM 法神头盔 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 法神头盔 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 4
+  GOTO @JDCGSB14
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+;-------------------------------------------------
+[@RYXZSJDS4]
+#IF
+  CheckItemAddValue 2 4 = 0
+#ACT
+  GOTO @RYXZSJDS4_1
+  BREAK
+#IF
+  CheckItemAddValue 2 4 = 1
+#ACT
+  GOTO @RYXZSJDS4_2
+  BREAK
+#IF
+  CheckItemAddValue 2 4 = 2
+#ACT
+  GOTO @RYXZSJDS4_3
+  BREAK
+#IF
+  CheckItemAddValue 2 4 = 3
+#ACT
+  GOTO @RYXZSJDS4_4
+  BREAK
+#IF
+  CheckItemAddValue 2 4 = 4
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+#IF
+#ACT
+  BREAK
+#SAY
+您的∶「<$RIGHTHAND>」．\
+当前已达到升级等级最高点了。\
+[@RYXZSJDS4_1]
+#IF
+  CHECKITEM 天尊戒指 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 天尊戒指 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB15
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJDS4_2]
+#IF
+  CHECKITEM 天尊手镯 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 天尊手镯 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB15
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJDS4_3]
+#IF
+  CHECKITEM 天尊项链 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 天尊项链 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 3
+  GOTO @JDCGSB15
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+[@RYXZSJDS4_4]
+#IF
+  CHECKITEM 天尊头盔 1
+  CHECKITEM 勋章之心 1
+  CHECKITEM 绿宝石矿 1
+  CHECKITEM 祈福项链 1
+  CHECKITEM 紫水晶矿 1
+#ACT
+
+  TAKE 天尊头盔 46
+  TAKE 勋章之心 46
+  TAKE 绿宝石矿 46
+  TAKE 祈福项链 46
+  TAKE 紫水晶矿 46
+  MOVR D0 4
+  GOTO @JDCGSB15
+BREAK
+#ELSESAY
+升级∶「<$RIGHTHAND>」失败。物品不足！
+
+[@JDCGSB11]
+#IF
+  equal D0 0
+#ACT
+  UPGRADEITEMEX 2 0 1 1 0
+  MOV D0 0
+BREAK
+#SAY
+恭喜:你的「<$RIGHTHAND>」升级成功。
+
+#IF
+#ACT
+  SENDMSG 6 装备升级失败
+  MOV D0 0
+  GOTO @SBDCJ
+BREAK
+#SAY
+很遗憾，你的「<$RIGHTHAND>」升级失败。
+
+[@JDCGSB12]
+#IF
+  equal D0 0
+#ACT
+  UPGRADEITEMEX 2 1 1 1 0
+  MOV D0 0
+BREAK
+#SAY
+恭喜:你的「<$RIGHTHAND>」升级成功。
+
+#IF
+#ACT
+  SENDMSG 6 装备升级失败
+  MOV D0 0
+  GOTO @SBDCJ
+BREAK
+#SAY
+很遗憾，你的「<$RIGHTHAND>」升级失败。
+
+[@JDCGSB13]
+#IF
+  equal D0 0
+#ACT
+  UPGRADEITEMEX 2 2 1 1 0
+  MOV D0 0
+BREAK
+#SAY
+恭喜:你的「<$RIGHTHAND>」升级成功。
+
+#IF
+#ACT
+  SENDMSG 6 装备升级失败
+  MOV D0 0
+  GOTO @SBDCJ
+BREAK
+#SAY
+很遗憾，你的「<$RIGHTHAND>」升级失败。
+
+[@JDCGSB14]
+#IF
+  equal D0 0
+#ACT
+  UPGRADEITEMEX 2 3 1 1 0
+  MOV D0 0
+BREAK
+#SAY
+恭喜:你的「<$RIGHTHAND>」升级成功。
+
+#IF
+#ACT
+  SENDMSG 6 装备升级失败
+  MOV D0 0
+  GOTO @SBDCJ
+BREAK
+#SAY
+很遗憾，你的「<$RIGHTHAND>」升级失败。
+
+[@JDCGSB15]
+#IF
+  equal D0 0
+#ACT
+  UPGRADEITEMEX 2 4 1 1 0
+  MOV D0 0
+BREAK
+#SAY
+恭喜:你的「<$RIGHTHAND>」升级成功。
+
+#IF
+#ACT
+  SENDMSG 6 装备升级失败
+  MOV D0 0
+  GOTO @SBDCJ
+BREAK
+#SAY
+很遗憾，你的「<$RIGHTHAND>」升级失败。
+
+[@SBDCJ]
+#if
+  CHECKITEMADDVALUE 2 14 = 50000
+#ACT
+  GMEXECUTE supermake 2 15 45
+BREAK
+
+#if
+  CHECKITEMADDVALUE 2 14 = 45000
+#ACT
+  GMEXECUTE supermake 2 15 40
+BREAK
+
+#if
+  CHECKITEMADDVALUE 2 14 = 40000
+#ACT
+  GMEXECUTE supermake 2 15 35
+BREAK
+
+#if
+  CHECKITEMADDVALUE 2 14 = 35000
+#ACT
+  GMEXECUTE supermake 2 15 30
+BREAK
+
+#if
+  CHECKITEMADDVALUE 2 14 = 30000
+#ACT
+  GMEXECUTE supermake 2 15 25
+BREAK
+
+#if
+  CHECKITEMADDVALUE 2 14 = 25000
+#ACT
+  GMEXECUTE supermake 2 15 20
+BREAK
+
+#if
+  CHECKITEMADDVALUE 2 14 = 20000
+#ACT
+  GMEXECUTE supermake 2 15 15
+BREAK
+
+#if
+  CHECKITEMADDVALUE 2 14 = 15000
+#ACT
+  GMEXECUTE supermake 2 15 10
+BREAK
+
+#if
+  CHECKITEMADDVALUE 2 14 = 10000
+#ACT
+  GMEXECUTE supermake 2 15 5
+BREAK
+}

@@ -1,0 +1,69 @@
+[@main]
+恩,是郑镖头叫你来的吧？\
+好的我收下了报酬嘛嘿嘿，很丰富的！\   \
+<完成任务/@endtask>
+
+
+[@endtask]
+#ACT
+FINISHESCORT
+
+[@FinishEscort_Fail_1]
+你没有镖车啊，提交什么任务！？\
+<关闭/@exit>
+
+[@FinishEscort_Fail_2]
+镖车距离我太远了，叫我如何核查货物呢？\
+<关闭/@exit>
+
+[@FinishEscort_高级经验镖车]
+#ACT
+CHANGEEXP + 300000
+CHANGEEXP + 300000
+CHANGEEXP + 300000
+CHANGEEXP + 300000
+CHANGEEXP + 300000
+CHANGEEXP + 300000
+CHANGEEXP + 300000
+CHANGEEXP + 300000
+CHANGEEXP + 300000
+CHANGEEXP + 300000
+give 金币 100000
+mapmove 3 333 333
+GIVEUPESCORT
+SENDMSG 0 〖喜讯〗玩家%s成功将【高级经验镖车】拉到.完成任务获得【300万经验奖励】！ 251 249
+
+[@FinishEscort_中级经验镖车]
+#ACT
+CHANGEEXP + 200000
+CHANGEEXP + 200000
+CHANGEEXP + 200000
+CHANGEEXP + 200000
+CHANGEEXP + 200000
+CHANGEEXP + 200000
+CHANGEEXP + 200000
+CHANGEEXP + 200000
+CHANGEEXP + 200000
+CHANGEEXP + 200000
+give 金币 100000
+mapmove 3 333 333
+GIVEUPESCORT
+SENDMSG 0 〖喜讯〗玩家%s成功将【中级经验镖车】拉到.完成任务获得【200万经验奖励】！ 251 249
+
+[@FinishEscort_普通经验镖车]
+#ACT
+CHANGEEXP + 100000
+CHANGEEXP + 100000
+CHANGEEXP + 100000
+CHANGEEXP + 100000
+CHANGEEXP + 100000
+CHANGEEXP + 100000
+CHANGEEXP + 100000
+CHANGEEXP + 100000
+CHANGEEXP + 100000
+CHANGEEXP + 100000
+give 金币 100000
+mapmove 3 333 333
+GIVEUPESCORT
+SENDMSG 0 〖喜讯〗玩家%s成功将【普通经验镖车】拉到.完成任务获得【100万经验奖励】！ 251 249
+

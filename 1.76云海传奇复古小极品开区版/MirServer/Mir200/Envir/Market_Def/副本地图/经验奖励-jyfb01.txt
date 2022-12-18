@@ -1,0 +1,30 @@
+()
+%100
+
+[@main]
+<COLOR=clYellow ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+<COLOR=clAqua 如果你已经获得了《经验宝石》你可以获得国王的赏赐>\
+<COLOR=clYellow ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+<COLOR=clAqua ♀.奖励经验2000万经验>\
+\ \
+<COLOR=clRED ♀.大量的经验奖励你做好准备了吗！ >\
+<COLOR=clYellow ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+\ \
+<我要获取奖励/@jingyan1>                         <只是看看/@exit> 
+
+
+
+[@jingyan1]
+#if
+checkitem 经验宝石 1
+#act
+take 经验宝石 1
+CHANGEEXP + 20000000
+MessageBox 恭喜您获得：2000万经验！！！！
+sendmsg 0 恭喜玩家:<$USERNAME>完成了【经】【验】【副】【本】活动获得:2000万经验！ 251 0
+SENDMSG 0 恭喜玩家:<$USERNAME>完成了【经】【验】【副】【本】活动获得:2000万经验！ 253 0 30
+#ELSEACT
+MessageBox  你没有集齐物品别来欺骗我了！
+break
+
+;----此b--b 来 自  -W-w-w-g-m-0-0-5 -c-o-m - -

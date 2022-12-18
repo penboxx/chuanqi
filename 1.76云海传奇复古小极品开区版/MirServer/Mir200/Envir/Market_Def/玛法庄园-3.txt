@@ -1,0 +1,12 @@
+[@main]
+这是一个非常神秘的庄园，里面具有<COLOR=clLime 丰富的宝藏>，你想进去探索吗？\
+<COLOR=clRed 六大云海衣服>、<COLOR=clRed 隐身戒指>、<COLOR=clRed 记忆戒指>就藏在庄园宫殿内的BOSS身上！\
+　\
+<我去探索/@TSZY>　　<我没兴趣/@exit>\
+
+[@TSZY]
+#IF
+#ACT
+MAPMOVE GA0 104 107
+GIVE 回城卷 1
+BREAK

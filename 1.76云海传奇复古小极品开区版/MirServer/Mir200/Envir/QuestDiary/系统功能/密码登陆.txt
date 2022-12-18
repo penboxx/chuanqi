@@ -1,0 +1,21 @@
+[@密码登陆]
+{
+#IF
+checknamelist ..\QuestDiary\数据文件\二级密码名单.txt
+#ACT
+GOTO @检测IP
+#ELSEACT
+SENDMSG 6 [提示:]您还没有设置二级密码保护，请尽快前往土城二级密码处设置。
+SENDMSG 6 [提示:]您还没有设置二级密码保护，请尽快前往土城二级密码处设置。
+SENDMSG 6 [提示:]您还没有设置二级密码保护，请尽快前往土城二级密码处设置。
+SENDMSG 6 [提示:]您还没有设置二级密码保护，请尽快前往土城二级密码处设置。
+
+[@检测IP]
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\二级密码IP.txt <$USERNAME><$IPADDR>
+#ACT
+SENDMSG 6 [提示:]当前IP为安全IP!祝你游戏愉快!
+#ELSEACT
+mapmove mima
+BREAK
+}

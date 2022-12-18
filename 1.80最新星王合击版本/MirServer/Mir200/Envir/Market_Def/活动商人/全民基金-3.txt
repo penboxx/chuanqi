@@ -1,0 +1,195 @@
+()
+%100
+[@main]
+#IF
+check [100] 0
+#SAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+　<COLOR=CLLIME 柚子合计全民基金正式发行啦.广大玩家的福音来啦!开区半小>\
+　<COLOR=CLAQUA 时之后开始出售柚子基金(全服红字提示).机不可失.失不再来>\
+　<COLOR=CLFUCHSIA 开区一小时后停止出售基金.届时基金开始升值.每隔一个小时>\
+　<COLOR=CLLIME 升值10%..最高升值100%.中途任意时间均可以取回本金和红利>\
+　<COLOR=CLAQUA 由于基金升值空间过大.每个新区只提供五个名额.请预购从速>\
+　<COLOR=CLFUCHSIA 每份基金出售价格为10万元宝.开区1小时之后将停止基金出售>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+　<我要购买基金/@购买基金>                            <COLOR=CLFUCHSIA 当前已售出><$STR(G50)><COLOR=CLFUCHSIA 份>
+
+#IF
+check [100] 1
+#SAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+　<COLOR=CLLIME 亲爱的玩家你好:>\
+　<COLOR=CLAQUA 您的基金本金为:>10万元宝\
+　<COLOR=CLFUCHSIA 您的升值幅度为:><$STR(G61)>0%\
+　<COLOR=CLLIME 您获得的红利为:>10万元宝*<$STR(G61)>0%\
+　<COLOR=CLAQUA 您可以选择现在取回本金和红利也可以让它继续升值>\
+　<COLOR=CLLIME 注意：每个玩家只有一次机会取回本金和红利.越晚取回赚的越多>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+　<我要取回基金/@取回基金>                            　<让它继续升值/@EXIT>
+
+[@购买基金]
+#if
+EQUAL G63 0
+#ACT
+MESSAGEBOX [提示]：对不起，柚子基金在开区半小时后开始出售.现在时间还没到
+BREAK
+
+#if
+EQUAL G63 2
+#ACT
+MESSAGEBOX [提示]：对不起，柚子基金已经停止出售.请等待下个新区购买
+BREAK
+
+#IF
+check [100] 1
+#ACT
+MESSAGEBOX [提示]：对不起，你已经购买过柚子基金了.无法重复购买
+BREAK
+
+#if
+small G50 5
+#elseact
+messagebox [提示]：对不起，本区柚子基金限量5份，已经全部卖完了！
+break
+
+#IF
+check [100] 0
+CHECKGAMEGOLD > 99999
+#ACT
+SET [100] 1
+INC G50 1
+GAMEGOLD - 100000
+goto @main
+SENDMSG 1 系统：恭喜玩家%s成功购买了一份柚子基金.10小时之内升值百分之百 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成功购买了一份柚子基金.10小时之内升值百分之百 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成功购买了一份柚子基金.10小时之内升值百分之百 151 249 10
+#ELSEACT
+MESSAGEBOX [提示]：对不起，你的元宝不够
+
+[@取回基金]
+#if
+EQUAL G63 1
+#ACT
+MESSAGEBOX [提示]：现在是基金出售期间无法取回本金
+BREAK
+
+#if
+check [101] 1
+#ACT
+MESSAGEBOX [提示]：你的基金已经被取回.还想讹我吗！！
+BREAK
+
+#if
+check [100] 1
+EQUAL G61 1
+#ACT
+SET [101] 1
+GAMEGOLD + 110000
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得1万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得1万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得1万元宝红利 151 249 10
+BREAK
+
+#if
+check [100] 1
+EQUAL G61 2
+#ACT
+SET [101] 1
+GAMEGOLD + 120000
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得2万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得2万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得2万元宝红利 151 249 10
+BREAK
+
+
+#if
+check [100] 1
+EQUAL G61 3
+#ACT
+SET [101] 1
+GAMEGOLD + 130000
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得3万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得3万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得3万元宝红利 151 249 10
+BREAK
+
+#if
+check [100] 1
+EQUAL G61 4
+#ACT
+SET [101] 1
+GAMEGOLD + 140000
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得4万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得4万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得4万元宝红利 151 249 10
+BREAK
+
+#if
+check [100] 1
+EQUAL G61 5
+#ACT
+SET [101] 1
+GAMEGOLD + 150000
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得5万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得5万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得5万元宝红利 151 249 10
+BREAK
+
+#if
+check [100] 1
+EQUAL G61 6
+#ACT
+SET [101] 1
+GAMEGOLD + 160000
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得6万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得6万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得6万元宝红利 151 249 10
+BREAK
+
+
+#if
+check [100] 1
+EQUAL G61 7
+#ACT
+SET [101] 1
+GAMEGOLD + 170000
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得7万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得7万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得7万元宝红利 151 249 10
+BREAK
+
+#if
+check [100] 1
+EQUAL G61 8
+#ACT
+SET [101] 1
+GAMEGOLD + 180000
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得8万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得8万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得8万元宝红利 151 249 10
+BREAK
+
+#if
+check [100] 1
+EQUAL G61 9
+#ACT
+SET [101] 1
+GAMEGOLD + 190000
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得9万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得9万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得9万元宝红利 151 249 10
+BREAK
+
+#if
+check [100] 1
+EQUAL G61 10
+#ACT
+SET [101] 1
+GAMEGOLD + 200000
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得10万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得10万元宝红利 151 249 10
+SENDMSG 1 系统：恭喜玩家%s取回柚子基金并且获得10万元宝红利 151 249 10
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你好象还没有购买柚子基金吧

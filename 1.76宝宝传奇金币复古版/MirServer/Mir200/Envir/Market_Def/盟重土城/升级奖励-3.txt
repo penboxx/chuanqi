@@ -1,0 +1,8 @@
+[@main]
+<COLOR=clAqua 达到16级系统奖励===1W金币>\
+<COLOR=clAqua 达到26级系统奖励===5W金币>\
+<COLOR=clAqua 达到30级系统奖励===8W金币>\
+<COLOR=clAqua 达到35级系统奖励==10W金币>\
+<COLOR=clAqua 达到40级系统奖励==20W金币>\
+<COLOR=clAqua 达到42级系统奖励==50W金币>\
+<COLOR=clAqua 达到45级系统奖励=100W金币>\

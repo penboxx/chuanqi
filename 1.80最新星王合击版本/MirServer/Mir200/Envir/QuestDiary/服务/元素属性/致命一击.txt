@@ -1,0 +1,481 @@
+ [@增加致命一击]
+ {
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+ <项  链/@3J>{: <$NECKLACE>/SCOLOR=253}          <衣  服/@0J>{: <$DRESS>/SCOLOR=253}\
+ <左手镯/@6J>{: <$ARMRING_R>/SCOLOR=253}          <武  器/@1J>{: <$WEAPON>/SCOLOR=253}\
+ <右手镯/@5J>{: <$ARMRING_L>/SCOLOR=253}          <头  盔/@4J>{: <$HELMET>/SCOLOR=253}\
+ <左戒指/@8J>{: <$RING_R>/SCOLOR=253}          <勋  章/@2J>{: <$RIGHTHAND>/SCOLOR=253}\
+ <右戒指/@7J>{: <$RING_L>/SCOLOR=253}          <宝  石/@12J>{: <$CHARM>/SCOLOR=253}\
+ <腰  带/@10J>{: <$BELT>/SCOLOR=253}          <鞋  子/@11J>{: <$BOOTS>/SCOLOR=253}\
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+ {成功机率：４０％(配合普通幸运石可达到１００％)/SCOLOR=250}
+
+[@11J]
+#IF
+checkitem 幸运石 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 11 0 < 3
+#ACT
+take 幸运石 1
+take 蓝灵·石[致命] 1
+SetNewItemValue 11 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的靴子已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$BOOTS>)增加了1%的致命一击！
+break
+
+#IF
+Random 3
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 11 0 < 3
+#ACT
+take 幸运石 1
+take 蓝灵·石[致命] 1
+SetNewItemValue 11 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的靴子已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$BOOTS>)增加了1%的致命一击！
+break
+
+#IF
+Random 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 11 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+GuildNoticeMsg 0 250 玩家『%s』提升致命一击失败,建议配合幸运石加元素一次性成功！
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的靴子已经有了3%的致命一击或者您的材料不足。
+break
+
+[@12J]
+#IF
+checkitem 幸运石 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 12 0 < 3
+#ACT
+take 幸运石 1
+take 蓝灵·石[致命] 1
+SetNewItemValue 12 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的宝石已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$CHARM>)增加了1%的致命一击！
+break
+
+#IF
+Random 3
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 12 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+SetNewItemValue 12 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的宝石已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$CHARM>)增加了1%的致命一击！
+break
+
+#IF
+Random 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 12 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+GuildNoticeMsg 0 250 玩家『%s』提升致命一击失败,建议配合幸运石加元素一次性成功！ 1
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的宝石已经有了3%的致命一击或者您的材料不足。
+break
+
+[@2J]
+#IF
+checkitem 幸运石 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 2 0 < 3
+#ACT
+take 幸运石 1
+take 蓝灵·石[致命] 1
+SetNewItemValue 2 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的勋章已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$RIGHTHAND>)增加了1%的致命一击！
+break
+
+#IF
+Random 3
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 2 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+SetNewItemValue 2 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的勋章已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$RIGHTHAND>)增加了1%的致命一击！
+break
+
+#IF
+Random 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 2 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+GuildNoticeMsg 0 250 玩家『%s』提升致命一击失败,建议配合幸运石加元素一次性成功！ 1
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的勋章已经有了3%的致命一击或者您的材料不足。
+break
+
+[@4J]
+#IF
+checkitem 幸运石 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 4 0 < 3
+#ACT
+take 幸运石 1
+take 蓝灵·石[致命] 1
+SetNewItemValue 4 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的头盔已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$HELMET>)增加了1%的致命一击！
+break
+
+#IF
+Random 3
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 4 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+SetNewItemValue 4 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的头盔已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$HELMET>)增加了1%的致命一击！
+break
+
+#IF
+Random 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 4 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+GuildNoticeMsg 0 250 玩家『%s』提升致命一击失败,建议配合幸运石加元素一次性成功！ 1
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的头盔已经有了3%的致命一击或者您的材料不足。
+break
+
+[@1J]
+#IF
+checkitem 幸运石 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 1 0 < 3
+#ACT
+take 幸运石 1
+take 蓝灵·石[致命] 1
+SetNewItemValue 1 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的武器已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$WEAPON>)增加了1%的致命一击！
+break
+
+#IF
+Random 3
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 1 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+SetNewItemValue 1 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的武器已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$WEAPON>)增加了1%的致命一击！
+break
+
+#IF
+Random 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 1 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+GuildNoticeMsg 0 250 玩家『%s』提升致命一击失败,建议配合幸运石加元素一次性成功！ 1
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的武器已经有了3%的致命一击或者您的材料不足。
+break
+
+[@0J]
+#IF
+checkitem 幸运石 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 0 0 < 3
+#ACT
+take 幸运石 1
+take 蓝灵·石[致命] 1
+SetNewItemValue 0 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的衣服已经成功增加了5%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$DRESS>)增加了1%的致命一击！
+break
+
+#IF
+Random 3
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 0 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+SetNewItemValue 0 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的衣服已经成功增加了5%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$DRESS>)增加了1%的致命一击！
+break
+
+#IF
+Random 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 0 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+GuildNoticeMsg 0 250 玩家『%s』提升致命一击失败,建议配合幸运石加元素一次性成功！ 1
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的衣服已经有了3%的致命一击或者您的材料不足。
+break
+
+[@10J]
+#IF
+checkitem 幸运石 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 10 0 < 3
+#ACT
+take 幸运石 1
+take 蓝灵·石[致命] 1
+SetNewItemValue 10 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的腰带已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$BELT>)增加了1%的致命一击！
+break
+
+#IF
+Random 3
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 10 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+SetNewItemValue 10 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的腰带已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$BELT>)增加了1%的致命一击！
+break
+
+#IF
+Random 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 10 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+GuildNoticeMsg 0 250 玩家『%s』提升致命一击失败,建议配合幸运石加元素一次性成功！ 1
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的腰带已经有了3%的致命一击或者您的材料不足。
+break
+
+[@7J]
+#IF
+checkitem 幸运石 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 7 0 < 3
+#ACT
+take 幸运石 1
+take 蓝灵·石[致命] 1
+SetNewItemValue 7 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的右戒指已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$RING_L>)增加了1%的致命一击！
+break
+
+#IF
+Random 3
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 7 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+SetNewItemValue 7 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的右戒指已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$RING_L>)增加了1%的致命一击！
+break
+
+#IF
+Random 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 7 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+GuildNoticeMsg 0 250 玩家『%s』提升致命一击失败,建议配合幸运石加元素一次性成功！ 1
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的右戒指已经有了3%的致命一击或者您的材料不足。
+break
+
+[@8J]
+#IF
+checkitem 幸运石 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 8 0 < 3
+#ACT
+take 幸运石 1
+take 蓝灵·石[致命] 1
+SetNewItemValue 8 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的左戒指已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$RING_R>)增加了1%的致命一击！
+break
+
+#IF
+Random 3
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 8 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+SetNewItemValue 8 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的左戒指已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$RING_R>)增加了1%的致命一击！
+break
+
+#IF
+Random 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 8 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+GuildNoticeMsg 0 250 玩家『%s』提升致命一击失败,建议配合幸运石加元素一次性成功！ 1
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的左戒指已经有了3%的致命一击或者您的材料不足。
+break
+
+[@5J]
+#IF
+checkitem 幸运石 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 5 0 < 3
+#ACT
+take 幸运石 1
+take 蓝灵·石[致命] 1
+SetNewItemValue 5 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的右手镯已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$ARMRING_L>)增加了1%的致命一击！
+break
+
+#IF
+Random 3
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 5 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+SetNewItemValue 5 0 + 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的右手镯已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$ARMRING_L>)增加了1%的致命一击！
+break
+
+#IF
+Random 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 5 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+GuildNoticeMsg 0 250 玩家『%s』提升致命一击失败,建议配合幸运石加元素一次性成功！ 1
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的右手镯已经有了3%的致命一击或者您的材料不足。
+break
+
+[@6J]
+#IF
+checkitem 幸运石 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 6 0 < 3
+#ACT
+SetNewItemValue 6 0 + 1
+take 幸运石 1
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的左手镯已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$ARMRING_R>)增加了1%的致命一击！
+break
+
+#IF
+Random 3
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 6 0 < 3
+#ACT
+SetNewItemValue 6 0 + 1
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的左手镯已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$ARMRING_R>)增加了1%的致命一击！
+break
+
+#IF
+Random 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 6 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+GuildNoticeMsg 0 250 玩家『%s』提升致命一击失败,建议配合幸运石加元素一次性成功！ 1
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的左手镯已经有了3%的致命一击或者您的材料不足。
+break
+
+[@3J]
+#IF
+checkitem 幸运石 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 3 0 < 3
+#ACT
+SetNewItemValue 3 0 + 1
+take 幸运石 1
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的项链已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$NECKLACE>)增加了1%的致命一击！
+break
+
+#IF
+Random 3
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 3 0 < 3
+#ACT
+SetNewItemValue 3 0 + 1
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+SENDMSG 6 〖提示〗您的项链已经成功增加了1%的致命一击。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$NECKLACE>)增加了1%的致命一击！
+break
+
+#IF
+Random 1
+checkitem 蓝灵·石[致命] 1
+checkNewItemValue 3 0 < 3
+#ACT
+take 蓝灵·石[致命] 1
+goto @增加致命一击
+GuildNoticeMsg 0 250 玩家『%s』提升致命一击失败,建议配合幸运石加元素一次性成功！ 1
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的项链已经有了3%的致命一击或者您的材料不足。
+break
+ }

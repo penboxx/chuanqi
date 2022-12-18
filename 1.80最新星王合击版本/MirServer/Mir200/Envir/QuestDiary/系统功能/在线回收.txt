@@ -1,0 +1,1346 @@
+[@盟重回收]
+{
+<COLOR=clLime ———————><装备回收><COLOR=clLime ———————><高级武器回收/@高级武器><COLOR=clLime ——————>\
+<COLOR=clLime ①级回收进入：><祖玛首饰系列> → <COLOR=clAqua  2万经验>  + <COLOR=clRed 10元宝>   <一键全收/@祖玛>\
+<COLOR=clLime ②级回收进入：><赤月首饰系列> → <COLOR=clAqua  5万经验>  + <COLOR=clRed 20元宝>   <一键全收/@赤月>\
+<COLOR=clLime ③级回收进入：><雷霆首饰系列> → <COLOR=clAqua 10万经验>  + <COLOR=clRed 30元宝>   <一键全收/@雷霆>\
+<COLOR=clLime ④级回收进入：><天魔怒斩系列> → <COLOR=clAqua 15万经验>  + <COLOR=clRed 100元宝>  <一键全收/@天魔>\
+<COLOR=clLime ⑤级回收进入：><战神首饰系列> → <COLOR=clAqua 20万经验>  + <COLOR=clRed 300元宝>  <一键全收/@战神>\
+<COLOR=clLime ⑥级回收进入：><42级衣服系列> → <COLOR=clAqua 30万经验>  + <COLOR=clRed 500元宝>  <一键全收/@42级>\
+<COLOR=clLime ⑦级回收进入：><星王首饰系列> → <COLOR=clAqua 100万经验> + <COLOR=clRed 1000元宝> <一键全收/@星王>\
+<COLOR=clLime ⑧级回收进入：><极品星王首饰> → <COLOR=clAqua 500万经验> + <COLOR=clRed 9999元宝> <一键全收/@狂雷>\
+
+[@祖玛]
+#IF
+checkitem 黑铁头盔 1
+#ACT
+take 黑铁头盔 1
+CHANGEEXP + 20000
+give 金币 10000
+GAMEGOLD + 10
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @祖玛
+break
+#IF
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+CHANGEEXP + 20000
+give 金币 10000
+GAMEGOLD + 10
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @祖玛
+break
+#IF
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+CHANGEEXP + 20000
+give 金币 10000
+GAMEGOLD + 10
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @祖玛
+break
+#IF
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+CHANGEEXP + 20000
+give 金币 10000
+GAMEGOLD + 10
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @祖玛
+break
+#IF
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+CHANGEEXP + 20000
+give 金币 10000
+GAMEGOLD + 10
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @祖玛
+break
+#IF
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+CHANGEEXP + 20000
+give 金币 10000
+GAMEGOLD + 10
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @祖玛
+break
+#IF
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+CHANGEEXP + 20000
+give 金币 10000
+GAMEGOLD + 10
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @祖玛
+break
+#IF
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+CHANGEEXP + 20000
+give 金币 10000
+GAMEGOLD + 10
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @祖玛
+break
+#IF
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+CHANGEEXP + 20000
+give 金币 10000
+GAMEGOLD + 10
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @祖玛
+break
+#IF
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+CHANGEEXP + 20000
+give 金币 10000
+GAMEGOLD + 10
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @祖玛
+break
+#IF
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+CHANGEEXP + 20000
+give 金币 10000
+GAMEGOLD + 10
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @祖玛
+break
+#IF
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+CHANGEEXP + 20000
+give 金币 10000
+GAMEGOLD + 10
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @祖玛
+break
+#IF
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+CHANGEEXP + 20000
+give 金币 10000
+GAMEGOLD + 10
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @祖玛
+break
+#ELSEACT 
+SENDMSG 7 〖提示〗你身上没有祖玛系列装备，无法回收！ 
+
+[@赤月]
+#IF
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+CHANGEEXP + 50000
+give 金币 100000
+GAMEGOLD + 20
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @赤月
+break
+#IF
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+CHANGEEXP + 50000
+give 金币 100000
+GAMEGOLD + 20
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @赤月
+break
+#IF
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+CHANGEEXP + 50000
+give 金币 100000
+GAMEGOLD + 20
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @赤月
+break
+#IF
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+CHANGEEXP + 50000
+give 金币 100000
+GAMEGOLD + 20
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @赤月
+break
+#IF
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+CHANGEEXP + 50000
+give 金币 100000
+GAMEGOLD + 20
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @赤月
+break
+#IF
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+CHANGEEXP + 50000
+give 金币 100000
+GAMEGOLD + 20
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @赤月
+break
+#IF
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+CHANGEEXP + 50000
+give 金币 100000
+GAMEGOLD + 20
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @赤月
+break
+#IF
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+CHANGEEXP + 50000
+give 金币 100000
+GAMEGOLD + 20
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @赤月
+break 
+#IF
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+CHANGEEXP + 50000
+give 金币 100000
+GAMEGOLD + 20
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @赤月
+break 
+#IF
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+CHANGEEXP + 50000
+give 金币 100000
+GAMEGOLD + 20
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @赤月
+break 
+#IF
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+CHANGEEXP + 50000
+give 金币 100000
+GAMEGOLD + 20
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @赤月
+break 
+#IF
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+CHANGEEXP + 50000
+give 金币 100000
+GAMEGOLD + 20
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @赤月
+break 
+#ELSEACT 
+SENDMSG 7 〖提示〗你身上没有赤月系列装备，无法回收！ 
+
+[@雷霆]
+#IF
+checkitem 烈焰魔戒 1
+#ACT
+take 烈焰魔戒 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 烈焰护腕 1
+#ACT
+take 烈焰护腕 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 烈焰项链 1
+#ACT
+take 烈焰项链 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 烈焰魔靴 1
+#ACT
+take 烈焰魔靴 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 烈焰腰带 1
+#ACT
+take 烈焰腰带 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 光芒腰带 1
+#ACT
+take 光芒腰带 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 光芒道靴 1
+#ACT
+take 光芒道靴 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 光芒项链 1
+#ACT
+take 光芒项链 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 光芒护腕 1
+#ACT
+take 光芒护腕 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 光芒道戒 1
+#ACT
+take 光芒道戒 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 雷霆战靴 1
+#ACT
+take 雷霆战靴 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 雷霆腰带 1
+#ACT
+take 雷霆腰带 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 雷霆项链 1
+#ACT
+take 雷霆项链 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 雷霆护腕 1
+#ACT
+take 雷霆护腕 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 雷霆战戒 1
+#ACT
+take 雷霆战戒 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 天龙盔 1
+#ACT
+take 天龙盔 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 魔龙盔 1
+#ACT
+take 魔龙盔 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#IF
+checkitem 圣龙盔 1
+#ACT
+take 圣龙盔 1
+CHANGEEXP + 100000
+give 金币 100000
+GAMEGOLD + 30
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @雷霆
+break
+#ELSEACT 
+SENDMSG 7 〖提示〗你身上没有魔龙系列装备，无法回收！ 
+
+[@天魔]
+#IF
+checkitem 天师长袍 1
+#ACT
+take 天师长袍 1
+CHANGEEXP + 150000
+give 金币 100000
+GAMEGOLD + 100
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @天魔
+break
+#IF
+checkitem 天尊道袍 1
+#ACT
+take 天尊道袍 1
+CHANGEEXP + 150000
+give 金币 100000
+GAMEGOLD + 100
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @天魔
+break
+#IF
+checkitem 霓裳羽衣 1
+#ACT
+take 霓裳羽衣 1
+CHANGEEXP + 150000
+give 金币 100000
+GAMEGOLD + 100
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @天魔
+break
+#IF
+checkitem 法神披风 1
+#ACT
+take 法神披风 1
+CHANGEEXP + 150000
+give 金币 100000
+GAMEGOLD + 100
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @天魔
+break
+#IF
+checkitem 圣战宝甲 1
+#ACT
+take 圣战宝甲 1
+CHANGEEXP + 150000
+give 金币 100000
+GAMEGOLD + 100
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @天魔
+break
+#IF
+checkitem 天魔神甲 1
+#ACT
+take 天魔神甲 1
+CHANGEEXP + 150000
+give 金币 100000
+GAMEGOLD + 100
+SENDMSG 6  〖提示〗：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @天魔
+break
+#IF
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+CHANGEEXP + 150000
+give 金币 100000
+GAMEGOLD + 100
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @天魔
+break
+#IF
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+CHANGEEXP + 150000
+give 金币 100000
+GAMEGOLD + 100
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @天魔
+break
+#IF
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+CHANGEEXP + 150000
+give 金币 100000
+GAMEGOLD + 100
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @天魔
+break
+#ELSEACT 
+SENDMSG 7 〖提示〗你身上没有天魔系列装备，无法回收！ 
+
+[@战神]
+#IF
+checkitem 圣魔戒指 1
+#ACT
+take 圣魔戒指 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 圣魔手镯 1
+#ACT
+take 圣魔手镯 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 圣魔项链 1
+#ACT
+take 圣魔项链 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 圣魔法靴 1
+#ACT
+take 圣魔法靴 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 圣魔腰带 1
+#ACT
+take 圣魔腰带 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 真魂腰带 1
+#ACT
+take 真魂腰带 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 真魂道靴 1
+#ACT
+take 真魂道靴 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 真魂项链 1
+#ACT
+take 真魂项链 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 真魂手镯 1
+#ACT
+take 真魂手镯 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 真魂戒指 1
+#ACT
+take 真魂戒指 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 战神腰带 1
+#ACT
+take 战神腰带 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 战神圣靴 1
+#ACT
+take 战神圣靴 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 战神项链 1
+#ACT
+take 战神项链 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 战神手镯 1
+#ACT
+take 战神手镯 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 战神戒指 1
+#ACT
+take 战神戒指 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 真魂头盔 1
+#ACT
+take 真魂头盔 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 圣魔头盔 1
+#ACT
+take 圣魔头盔 1
+CHANGEEXP + 200000
+give 金币 100000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#IF
+checkitem 战神头盔 1
+#ACT
+take 战神头盔 1
+CHANGEEXP + 200000
+GAMEGOLD + 300
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战神
+break
+#ELSEACT 
+SENDMSG 7 〖提示〗你身上没有战神系列装备，无法回收！ 
+
+[@42级]
+#IF
+checkitem 雷霆战甲(男) 1
+#ACT
+take 雷霆战甲(男) 1
+CHANGEEXP + 300000
+give 金币 100000
+GAMEGOLD + 500
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @42级
+break
+#IF
+checkitem 雷霆战甲(女) 1
+#ACT
+take 雷霆战甲(女) 1
+CHANGEEXP + 300000
+give 金币 100000
+GAMEGOLD + 500
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @42级
+break
+#IF
+checkitem 烈焰魔衣(男) 1
+#ACT
+take 烈焰魔衣(男) 1
+CHANGEEXP + 300000
+give 金币 100000
+GAMEGOLD + 500
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @42级
+break
+#IF
+checkitem 烈焰魔衣(女) 1
+#ACT
+take 烈焰魔衣(女) 1
+CHANGEEXP + 300000
+give 金币 100000
+GAMEGOLD + 500
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @42级
+break
+#IF
+checkitem 光芒道袍(男) 1
+#ACT
+take 光芒道袍(男) 1
+CHANGEEXP + 300000
+give 金币 100000
+GAMEGOLD + 500
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @42级
+break
+#IF
+checkitem 光芒道袍(女) 1
+#ACT
+take 光芒道袍(女) 1
+CHANGEEXP + 300000
+give 金币 100000
+GAMEGOLD + 500
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @42级
+break
+#IF
+checkitem 屠龙 1
+#ACT
+take 屠龙 1
+CHANGEEXP + 300000
+give 金币 100000
+GAMEGOLD + 500
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @42级
+break
+#IF
+checkitem 霸者之刃 1
+#ACT
+take 霸者之刃 1
+CHANGEEXP + 300000
+give 金币 100000
+GAMEGOLD + 500
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @42级
+break
+#IF
+checkitem 嗜魂法杖 1
+#ACT
+take 嗜魂法杖 1
+CHANGEEXP + 300000
+give 金币 100000
+GAMEGOLD + 500
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @42级
+break
+#ELSEACT 
+SENDMSG 7 〖提示〗你身上没有42级系列装备，无法回收！ 
+
+[@星王]
+#IF
+checkitem 星王法戒 1
+#ACT
+take 星王法戒 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王法镯 1
+#ACT
+take 星王法镯 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王法链 1
+#ACT
+take 星王法链 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王法靴 1
+#ACT
+take 星王法靴 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王法带 1
+#ACT
+take 星王法带 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王道带 1
+#ACT
+take 星王道带 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王道靴 1
+#ACT
+take 星王道靴 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王道链 1
+#ACT
+take 星王道链 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王道镯 1
+#ACT
+take 星王道镯 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王道戒 1
+#ACT
+take 星王道戒 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王战靴 1
+#ACT
+take 星王战靴 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王战带 1
+#ACT
+take 星王战带 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王战链 1
+#ACT
+take 星王战链 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王战镯 1
+#ACT
+take 星王战镯 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王战戒 1
+#ACT
+take 星王战戒 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王道盔 1
+#ACT
+take 星王道盔 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王法盔 1
+#ACT
+take 星王法盔 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#IF
+checkitem 星王战盔 1
+#ACT
+take 星王战盔 1
+CHANGEEXP + 1000000
+give 金币 100000
+GAMEGOLD + 1000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @星王
+break
+#ELSEACT 
+SENDMSG 7 〖提示〗你身上没有星王系列装备，无法回收！ 
+
+[@狂雷]
+#IF
+checkitem 极品星王法戒 1
+#ACT
+take 极品星王法戒 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王法镯 1
+#ACT
+take 极品星王法镯 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王法链 1
+#ACT
+take 极品星王法链 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王法靴 1
+#ACT
+take 极品星王法靴 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王法带 1
+#ACT
+take 极品星王法带 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王法盔 1
+#ACT
+take 极品星王法盔 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王战戒 1
+#ACT
+take 极品星王战戒 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王战镯 1
+#ACT
+take 极品星王战镯 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王战链 1
+#ACT
+take 极品星王战链 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王战靴 1
+#ACT
+take 极品星王战靴 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王战带 1
+#ACT
+take 极品星王战带 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王战盔 1
+#ACT
+take 极品星王战盔 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王道戒 1
+#ACT
+take 极品星王道戒 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王道镯 1
+#ACT
+take 极品星王道镯 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王道链 1
+#ACT
+take 极品星王道链 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王道靴 1
+#ACT
+take 极品星王道靴 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王道带 1
+#ACT
+take 极品星王道带 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#IF
+checkitem 极品星王道盔 1
+#ACT
+take 极品星王道盔 1
+CHANGEEXP + 5000000
+give 金币 100000
+GAMEGOLD + 9999
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @狂雷
+break
+#ELSEACT 
+SENDMSG 7 〖提示〗你身上没有狂雷系列装备，无法回收！ 
+
+[@高级武器]
+<COLOR=clLime ———————><装备回收/@盟重回收><COLOR=clLime ———————><高级武器回收><COLOR=clLime ——————>\
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆ <COLOR=clFuchsia 3000 元宝>┆『<开    天/@回开天>』┆『<镇    天/@回镇天>』┆『<玄    天/@回玄天>』┆\
+╠┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆ <COLOR=clFuchsia 3000 元宝>┆『<凤天魔甲/@风甲>』┆『<凰天魔衣/@凰甲>』┆『<凤天魔甲/@风甲>』┆\
+╠┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆ <COLOR=clFuchsia 10000元宝>┆『<星王战甲/@战甲>』┆『<星王魔袍/@魔袍>』┆『<星王道袍/@道袍>』┆\
+╠┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆ <COLOR=clFuchsia 30000元宝>┆『<星王战刃/@星王战>』┆『<星王法刃/@星王法>』┆『<星王道刃/@星王道>』┆\
+╚┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\
+
+[@凰甲]
+#IF
+checkitem 凰天魔衣 1
+#ACT
+take 凰天魔衣 1 
+GAMEGOLD + 3000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+#ELSEACT
+SENDMSG 5 〖提示〗你没有凰天魔衣！
+
+[@风甲]
+#IF
+checkitem 凤天魔甲 1
+#ACT
+take 凤天魔甲 1 
+GAMEGOLD + 3000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+#ELSEACT
+SENDMSG 5 〖提示〗你没有凤天魔甲！
+
+
+[@回开天]
+#IF
+checkitem 开天 1
+#ACT
+take 开天 1 
+GAMEGOLD + 3000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+#ELSEACT
+SENDMSG 5 〖提示〗你没有开天！
+
+[@回玄天]
+#IF
+checkitem 玄天 1
+#ACT
+take 玄天  1 
+GAMEGOLD + 3000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+#ELSEACT
+SENDMSG 5 〖提示〗你没有玄天！
+
+[@回镇天]
+#IF
+checkitem 镇天 1
+#ACT
+take 镇天  1 
+GAMEGOLD + 3000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+#ELSEACT
+SENDMSG 5 〖提示〗你没有镇天！
+
+[@星王战]
+#IF
+checkitem 星王战刃 1
+#ACT
+take 星王战刃 1
+GAMEGOLD + 30000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+#ELSEACT
+SENDMSG 5 〖提示〗你没有星王战刃！
+
+[@星王法]
+#IF
+checkitem 星王法剑 1
+#ACT
+take 星王法剑 1
+GAMEGOLD + 30000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+#ELSEACT
+SENDMSG 5 〖提示〗你没有星王之刃(法)！
+
+[@星王道]
+#IF
+checkitem 星王道剑 1
+#ACT
+take 星王道剑 1
+GAMEGOLD + 30000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+#ELSEACT
+SENDMSG 5 〖提示〗你没有星王之刃(道)！
+
+[@战甲]
+#IF
+checkitem 星王战甲 1
+#ACT
+take 星王战甲 1
+GAMEGOLD + 10000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战甲
+break
+#IF
+checkitem 星王战衣 1
+#ACT
+take 星王战衣 1
+GAMEGOLD + 10000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @战甲
+break
+#ELSEACT 
+SENDMSG 7 〖提示〗你身上没有星王战甲系列装备，无法回收！ 
+
+[@魔袍]
+#IF
+checkitem 星王魔袍 1
+#ACT
+take 星王魔袍 1
+GAMEGOLD + 10000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @魔袍
+break
+#IF
+checkitem 星王魔衣 1
+#ACT
+take 星王魔衣 1
+GAMEGOLD + 10000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @魔袍
+break
+#ELSEACT 
+SENDMSG 7 〖提示〗你身上没有星王魔袍系列装备，无法回收！ 
+
+[@道袍]
+#IF
+checkitem 星王道袍 1
+#ACT
+take 星王道袍 1
+GAMEGOLD + 10000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @道袍
+break
+#IF
+checkitem 星王道衣 1
+#ACT
+take 星王道衣 1
+GAMEGOLD + 10000
+SENDMSG 6  〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+DELAYGOTO 1 @道袍
+break
+#ELSEACT 
+SENDMSG 7 〖提示〗你身上没有星王道袍系列装备，无法回收！ 
+}

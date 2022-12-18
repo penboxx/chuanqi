@@ -1,0 +1,502 @@
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【转职变性】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+你是否对自己的职业已经厌烦？    是的，我想<变更人物职业/@职业变更>\
+你是否对英雄的职业已经厌烦？    是的，我想<变更英雄职业/@变更英雄职业>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+你是否对自己的性别的不满意？    是的，我想<变更人物性别/@性别变更>\
+你是否对英雄的性别的不满意？    是的，我想<变更英雄性别/@英雄性别变更>\ 
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+[@英雄性别变更]
+#IF
+H.gender man
+#SAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【英雄变性】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+你的英雄是不是做猛男没什么意思呀\
+想不想尝尝做淑女的滋味呀需要交纳5000颗元宝！！！\  
+<COLOR=clFuchsia ------------------------------------------------------------>\
+『<尝尝/@towoman11>』\ 
+〖<返回/@main>〗 〖<关闭/@exit>〗\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+#ELSESAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【英雄变性】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+你的英雄是不是做淑女挺累的\
+想不想尝尝做猛男的滋味呀需要交纳5000颗元宝！！！\ 
+『<尝尝/@toman11>』\ 
+〖<返回/@main>〗 〖<关闭/@exit>〗\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+[@toman11]
+#IF
+CHECKGAMEGOLD > 19999
+#ACT
+GAMEGOLD - 5000
+H.CHANGEGENDER 0
+#SAY
+呵呵，你的英雄已经变成一位猛男了。\ \
+<返回/@main>
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足5000个。
+[@towoman11]
+#IF
+CHECKGAMEGOLD > 19999
+#ACT
+GAMEGOLD - 5000
+H.CHANGEGENDER 1
+#SAY
+呵呵，你的英雄已经变成一位淑女了。\ \
+〖<返回/@main>〗 〖<关闭/@exit>〗
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足5000个。
+[@性别变更]
+#IF
+gender man
+#SAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【人物变性】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+是不是做猛男没什么意思呀\
+想不想尝尝做淑女的滋味呀需要交纳！！！\  
+<COLOR=clFuchsia ------------------------------------------------------------>\
+『<尝尝/@towoman>』\ 
+〖<返回/@main>〗 〖<关闭/@exit>〗\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+#ELSESAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【人物变性】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+是不是做淑女挺累的\ 
+想不想尝尝做猛男的滋味呀需要交纳5000颗元宝！！！\ 
+<COLOR=clFuchsia ------------------------------------------------------------>\
+『<尝尝/@toman>』\ 
+〖<返回/@main>〗 〖<关闭/@exit>〗\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+[@toman]
+#IF
+CHECKGAMEGOLD > 4999
+#ACT
+GAMEGOLD - 5000
+CHANGEGENDER 0
+#SAY
+呵呵，你已经变成一位猛男了。\ \
+<返回/@main>
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足5000个。
+[@towoman]
+#IF
+CHECKGAMEGOLD > 4999
+#ACT
+GAMEGOLD - 5000
+CHANGEGENDER 1
+#SAY
+呵呵，你已经变成一位淑女了。\ \
+〖<返回/@main>〗 〖<关闭/@exit>〗
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足5000个。
+[@职业变更]
+#IF
+CHECKJOB warrior
+#SAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【人物转职】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+是不是战士不好玩呀，换换别的职业试试吧！需要50000颗元宝\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+『<玩玩法师/@法师>』\
+『<玩玩道士/@道士>』\ \
+〖<返回/@main>〗〖<关闭/@exit>〗
+#ACT
+break
+#IF
+CHECKJOB wizard
+#SAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【人物转职】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+是不是法师不好玩呀，换换别的职业试试吧！需要50000颗元宝\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+『<玩玩战士/@战士>』\
+『<玩玩道士/@道士>』\ \
+〖<返回/@main>〗〖<关闭/@exit>〗
+#ACT
+break
+#IF
+CHECKJOB taoist
+#SAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【人物转职】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+是不是道士不好玩呀，换换别的职业试试吧！需要50000颗元宝\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+『<玩玩战士/@战士>』\
+『<玩玩法师/@法师>』\ \
+〖<返回/@main>〗〖<关闭/@exit>〗
+#ACT
+break
+[@战士]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 由于转职涉及到合击技能，\　\所以请先召唤出你的英雄，再选择转职。
+BREAK
+#IF
+Checkjob Warrior
+#ACT
+MESSAGEBOX 你就是战士职业，不需要再转成战士。
+BREAK
+#IF
+CHECKGAMEGOLD < 50000
+#ACT
+MESSAGEBOX 你的元宝不足50000颗，无法转职。
+BREAK
+#IF
+CheckLevelEx > 0
+#ACT
+GAMEGOLD - 50000
+CHANGEJOB Warrior
+DelNoJobSkill
+CLEARSKILL
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 烈火剑法 3
+ADDSKILL 野蛮冲撞 3
+SENDMSG 0 恭喜[%S]转职成功，成功转职为一名战士，学会战士全部技能。 255 180
+MOV D99 1
+DELAYCALL 1 ~TS5AndTS6
+BREAK
+[@法师]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 由于转职涉及到合击技能，\　\所以请先召唤出你的英雄，再选择转职。
+BREAK
+#IF
+Checkjob Wizard
+#ACT
+MESSAGEBOX 你就是法师职业，不需要再转成法师。
+BREAK
+#IF
+CHECKGAMEGOLD < 50000
+#ACT
+MESSAGEBOX 你的元宝不足50000颗，无法转职。
+BREAK
+#IF
+CheckLevelEx > 0
+#ACT
+GAMEGOLD - 50000
+CHANGEJOB Wizard
+DelNoJobSkill
+CLEARSKILL
+ADDSKILL 雷电术 3
+ADDSKILL 抗拒火环 3
+ADDSKILL 疾光电影 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 爆裂火焰 3
+ADDSKILL 火墙 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+SENDMSG 0 恭喜[%S]转职成功，成功转职为一名法师，学会法师全部技能。 255 180
+MOV D99 1
+DELAYCALL 1 ~TS5AndTS6
+BREAK
+[@道士]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 由于转职涉及到合击技能，\　\所以请先召唤出你的英雄，再选择转职。
+BREAK
+#IF
+Checkjob Taoist
+#ACT
+MESSAGEBOX 你就是道士职业，不需要再转成道士。
+BREAK
+#IF
+CHECKGAMEGOLD < 50000
+#ACT
+MESSAGEBOX 你的元宝不足50000颗，无法转职。
+BREAK
+#IF
+CheckLevelEx > 0
+#ACT
+GAMEGOLD - 50000
+CHANGEJOB Taoist
+DelNoJobSkill
+CLEARSKILL
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 隐身术 3
+ADDSKILL 群体治愈术 3
+ADDSKILL 召唤神兽 3
+SENDMSG 0 恭喜[%S]转职成功，成功转职为一名道士，学会道士全部技能。 255 180
+MOV D99 1
+DELAYCALL 1 ~TS5AndTS6
+BREAK
+[~TS5AndTS6]
+#IF
+EQUAL D99 0
+#ACT
+BREAK
+#IF
+CHECKJOB Warrior
+H.Checkjob Warrior
+#ACT
+MOV D99 0
+H.DelSkill 破魂斩
+H.DelSkill 噬魂沼泽
+H.DelSkill 火龙气焰
+H.DelSkill 雷霆一击
+H.DelSkill 劈星斩
+H.DelSkill 末日审判
+H.ADDSKILL 破魂斩
+MESSAGEBOX 转职成功！
+BREAK
+#IF
+CHECKJOB Taoist
+H.CHECKJOB Taoist
+#ACT
+MOV D99 0
+H.DelSkill 破魂斩
+H.DelSkill 噬魂沼泽
+H.DelSkill 火龙气焰
+H.DelSkill 雷霆一击
+H.DelSkill 劈星斩
+H.DelSkill 末日审判
+H.ADDSKILL 噬魂沼泽
+MESSAGEBOX 转职成功！
+BREAK
+#IF
+CHECKJOB Wizard
+H.CHECKJOB Wizard
+#ACT
+MOV D99 0
+H.DelSkill 破魂斩
+H.DelSkill 噬魂沼泽
+H.DelSkill 火龙气焰
+H.DelSkill 雷霆一击
+H.DelSkill 劈星斩
+H.DelSkill 末日审判
+H.ADDSKILL 火龙气焰
+MESSAGEBOX 转职成功！
+BREAK
+#IF
+CHECKJOB Warrior
+H.CHECKJOB Wizard
+#ACT
+MOV D99 0
+H.DelSkill 破魂斩
+H.DelSkill 噬魂沼泽
+H.DelSkill 火龙气焰
+H.DelSkill 雷霆一击
+H.DelSkill 劈星斩
+H.DelSkill 末日审判
+H.ADDSKILL 雷霆一击
+MESSAGEBOX 转职成功！
+BREAK
+#IF
+CHECKJOB Wizard
+H.CHECKJOB Warrior
+#ACT
+MOV D99 0
+H.DelSkill 破魂斩
+H.DelSkill 噬魂沼泽
+H.DelSkill 火龙气焰
+H.DelSkill 雷霆一击
+H.DelSkill 劈星斩
+H.DelSkill 末日审判
+H.ADDSKILL 雷霆一击
+MESSAGEBOX 转职成功！
+BREAK
+#IF
+CHECKJOB Warrior
+H.CHECKJOB Taoist
+#ACT
+MOV D99 0
+H.DelSkill 破魂斩
+H.DelSkill 噬魂沼泽
+H.DelSkill 火龙气焰
+H.DelSkill 雷霆一击
+H.DelSkill 劈星斩
+H.DelSkill 末日审判
+H.ADDSKILL 劈星斩
+MESSAGEBOX 转职成功！
+BREAK
+#IF
+CHECKJOB Taoist
+H.CHECKJOB Warrior
+#ACT
+MOV D99 0
+H.DelSkill 破魂斩
+H.DelSkill 噬魂沼泽
+H.DelSkill 火龙气焰
+H.DelSkill 雷霆一击
+H.DelSkill 劈星斩
+H.DelSkill 末日审判
+H.ADDSKILL 劈星斩
+MESSAGEBOX 转职成功！
+BREAK
+#IF
+CHECKJOB Taoist
+H.CHECKJOB Wizard
+#ACT
+MOV D99 0
+H.DelSkill 破魂斩
+H.DelSkill 噬魂沼泽
+H.DelSkill 火龙气焰
+H.DelSkill 雷霆一击
+H.DelSkill 劈星斩
+H.DelSkill 末日审判
+H.ADDSKILL 末日审判
+MESSAGEBOX 转职成功！
+BREAK
+#IF
+CHECKJOB Wizard
+H.CHECKJOB Taoist
+#ACT
+MOV D99 0
+H.DelSkill 破魂斩
+H.DelSkill 噬魂沼泽
+H.DelSkill 火龙气焰
+H.DelSkill 雷霆一击
+H.DelSkill 劈星斩
+H.DelSkill 末日审判
+H.ADDSKILL 末日审判
+MESSAGEBOX 转职成功！
+BREAK
+#ELSEACT
+MESSAGEBOX 请先召唤出你的英雄，再选择英雄转职。
+BREAK
+[@变更英雄职业]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【英雄转职】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+想把你的英雄变更为其它职业的英雄？<转职英雄不会等级>\
+并且转职完后勿必小退。只要你交纳50000颗元宝，\
+我即可将你的英雄成功转职。但是合击技能将会被删除，\
+只给予新职业的部分技能、是否同意将英雄转职呢？\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<英雄转成战士/@同意英雄转职1>        <英雄转成法师/@同意英雄转职2>         <英雄转成道士/@同意英雄转职3>\
+
+[@同意英雄转职1]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 请先召唤出你的英雄，再选择英雄转职。
+BREAK
+#IF
+H.Checkjob Warrior
+#ACT
+MESSAGEBOX 你的英雄就是战士职业，不需要再转成战士。
+BREAK
+#IF
+CHECKGAMEGOLD < 50000
+#ACT
+MESSAGEBOX 你的元宝不足50000颗，无法转职。
+BREAK
+#IF
+CHECKHEROONLINE
+#ACT
+GAMEGOLD - 50000
+H.CHANGEJOB Warrior
+H.DelNoJobSkill
+H.ADDSKILL 英雄护体神盾 3
+H.ADDSKILL 英雄基本剑术 3
+H.ADDSKILL 英雄攻杀剑术 3
+H.ADDSKILL 英雄刺杀剑术 3
+H.ADDSKILL 英雄半月弯刀 3
+H.ADDSKILL 英雄野蛮冲撞 3
+H.ADDSKILL 英雄烈火剑法 3
+H.SENDMSG 0 恭喜[%S]转职成功，你的英雄成功转职为一名战士，学会战士全部技能。 255 180
+MOV D99 1
+DELAYCALL 1 ~TS5AndTS6
+BREAK
+[@同意英雄转职2]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 请先召唤出你的英雄，再选择英雄转职。
+BREAK
+#IF
+H.Checkjob Wizard
+#ACT
+MESSAGEBOX 你的英雄就是法师职业，不需要再转成法师。
+BREAK
+#IF
+CHECKGAMEGOLD < 50000
+#ACT
+MESSAGEBOX 你的元宝不足50000颗，无法转职。
+BREAK
+#IF
+CHECKHEROONLINE
+#ACT
+GAMEGOLD - 50000
+H.CHANGEJOB Wizard
+H.DelNoJobSkill
+H.ADDSKILL 英雄护体神盾 3
+H.ADDSKILL 英雄火球术 3
+H.ADDSKILL 英雄抗拒火环 3
+H.ADDSKILL 英雄地狱火 3
+H.ADDSKILL 英雄雷电术 3
+H.ADDSKILL 英雄疾光电影 3
+H.ADDSKILL 英雄火墙 3
+H.ADDSKILL 英雄爆裂火焰 3
+H.ADDSKILL 英雄地狱雷光 3
+H.ADDSKILL 英雄魔法盾 3
+H.ADDSKILL 英雄圣言术 3
+H.ADDSKILL 英雄冰咆哮 3
+H.SENDMSG 0 恭喜[%S]转职成功，你的英雄成功转职为一名法师，学会法师全部技能。 255 180
+MOV D99 1
+DELAYCALL 1 ~TS5AndTS6
+BREAK
+[@同意英雄转职3]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 请先召唤出你的英雄，再选择英雄转职。
+BREAK
+#IF
+H.Checkjob Taoist
+#ACT
+MESSAGEBOX 你的英雄就是道士职业，不需要再转成道士。
+BREAK
+#IF
+CHECKGAMEGOLD < 50000
+#ACT
+MESSAGEBOX 你的元宝不足50000颗，无法转职。
+BREAK
+#IF
+CHECKHEROONLINE
+#ACT
+GAMEGOLD - 50000
+H.CHANGEJOB Taoist
+H.DelNoJobSkill
+H.ADDSKILL 英雄护体神盾 3
+H.ADDSKILL 英雄治愈术 3
+H.ADDSKILL 英雄精神战法 3
+H.ADDSKILL 英雄施毒术 3
+H.ADDSKILL 英雄灵魂火符 3
+H.ADDSKILL 英雄幽灵盾 3
+H.ADDSKILL 英雄神圣战术 3
+H.ADDSKILL 英雄召唤骷髅 3
+H.ADDSKILL 英雄隐身术 3
+H.ADDSKILL 英雄集体隐身 3
+H.ADDSKILL 英雄群疗术 3
+H.ADDSKILL 英雄召唤神兽 3
+H.SENDMSG 0 恭喜[%S]转职成功，你的英雄成功转职为一名道士，学会道士全部技能。 255 180
+MOV D99 1
+DELAYCALL 1 ~TS5AndTS6
+BREAK

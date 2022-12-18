@@ -1,0 +1,524 @@
+()
+%100
+[@main]
+<COLOR=clLime 您已经累计充值:><$GAMEGIRD>元              <赞助大使点击领取每日奖励/@领取每日奖励>\\
+<普通赞助大使/@普通赞助大使> <COLOR=clLime 累计充值达到50元>   <领取封号/@普通赞助大使> <COLOR=clAqua 5.0倍经验+1.01倍攻击>\\
+<高级赞助大使/@高级赞助大使> <COLOR=clLime 累计充值达到100元>  <领取封号/@高级赞助大使> <COLOR=clAqua 5.2倍经验+1.02倍攻击>\\
+<超级赞助大使/@超级赞助大使> <COLOR=clLime 累计充值达到200元>  <领取封号/@超级赞助大使> <COLOR=clAqua 5.4倍经验+1.03倍攻击>\\
+<钻石赞助大使/@钻石赞助大使> <COLOR=clLime 累计充值达到300元>  <领取封号/@钻石赞助大使> <COLOR=clAqua 5.6倍经验+1.04倍攻击>\\
+<至尊赞助大使/@至尊赞助大使> <COLOR=clLime 累计充值达到500元>  <领取封号/@至尊赞助大使> <COLOR=clAqua 5.8倍经验+1.06倍攻击>\\
+<皇冠赞助大使/@皇冠赞助大使> <COLOR=clLime 累计充值达到1000元> <领取封号/@皇冠赞助大使> <COLOR=clAqua 6.0倍经验+1.08倍攻击>\\
+<总统赞助大使/@总统赞助大使> <COLOR=clLime 累计充值达到2000元> <领取封号/@总统赞助大使> <COLOR=clAqua 6.5倍经验+1.10倍攻击>\\
+<领取赞助血石/@领取赞助血石>　　　　   <修理赞助血石/@修理赞助血石>　　　    <清理多余血石/@清理>    \\
+<领取赞助血石/@领取赞助血石>　　　　   <修理赞助血石/@修理赞助血石>　　　    <清理多余血石/@清理>    \\
+
+[@领取每日奖励]
+　　<COLOR=clAqua 普通赞助大使上线5.0倍经验+每日领取满聚灵珠*5>\
+　　<COLOR=clYellow 高级赞助大使上线5.2倍经验+每日领取满聚灵珠*10>\
+　　<COLOR=clLime 超级赞助大使上线5.4倍经验+每日领取满聚灵珠*15>\
+　　<COLOR=clFuchsia 钻石赞助大使上线5.6倍经验+每日领取满聚灵珠*20>\
+　　<COLOR=clAqua 至尊赞助大使上线5.8倍经验+每日领取满聚灵珠*25>\
+　　<COLOR=clYellow 皇冠赞助大使上线6.0倍经验+每日领取满聚灵珠*30>\ 
+　　<COLOR=clLime 总统赞助大使上线6.5倍经验+每日领取满聚灵珠*40>\ \ 
+　  <领取今日奖励/@领取今日奖励>                         <返回上页/@main>
+
+
+[@领取今日奖励]
+#IF
+checknamelist ..\QuestDiary\赞助大使\普通赞助大使.txt
+#ACT
+MESSAGEBOX 您今天已经领取过了请明天再来吧
+BREAK
+#IF
+checknamelist ..\QuestDiary\赞助大使\高级赞助大使.txt
+#ACT
+MESSAGEBOX 您今天已经领取过了请明天再来吧
+BREAK
+#IF
+checknamelist ..\QuestDiary\赞助大使\超级赞助大使.txt
+#ACT
+MESSAGEBOX 您今天已经领取过了请明天再来吧
+BREAK
+#IF
+checknamelist ..\QuestDiary\赞助大使\钻石赞助大使.txt
+#ACT
+MESSAGEBOX 您今天已经领取过了请明天再来吧
+BREAK
+#IF
+checknamelist ..\QuestDiary\赞助大使\至尊赞助大使.txt
+#ACT
+MESSAGEBOX 您今天已经领取过了请明天再来吧
+BREAK
+#IF
+checknamelist ..\QuestDiary\赞助大使\皇冠赞助大使.txt
+#ACT
+MESSAGEBOX 您今天已经领取过了请明天再来吧
+BREAK
+#IF
+checknamelist ..\QuestDiary\赞助大使\总统赞助大使.txt
+#ACT
+MESSAGEBOX 您今天已经领取过了请明天再来吧
+BREAK
+
+#IF
+CHECKBAGSIZE  10
+#ACT
+goto @领取今日奖励1
+#ELSEACT
+MESSAGEBOX 请保证您的背包有10个空格
+[@领取今日奖励1]
+#IF
+check [200] 1
+#ACT
+addnamelist ..\QuestDiary\赞助大使\普通赞助大使.txt
+give 超级聚灵珠(满)*5 1
+MESSAGEBOX 成功领取[超级聚灵珠(满)*5]
+BREAK
+#IF
+check [201] 1
+#ACT
+addnamelist ..\QuestDiary\赞助大使\高级赞助大使.txt
+give 超级聚灵珠(满)*5 2
+MESSAGEBOX 成功领取[超级聚灵珠(满)*10]
+BREAK
+#IF
+check [202] 1
+#ACT
+addnamelist ..\QuestDiary\赞助大使\超级赞助大使.txt
+give 超级聚灵珠(满)*5 3
+MESSAGEBOX 成功领取[超级聚灵珠(满)*15]
+BREAK
+#IF
+check [203] 1
+#ACT
+addnamelist ..\QuestDiary\赞助大使\钻石赞助大使.txt
+give 超级聚灵珠(满)*5 4
+MESSAGEBOX 成功领取[超级聚灵珠(满)*20]
+BREAK
+#IF
+check [204] 1
+#ACT
+addnamelist ..\QuestDiary\赞助大使\至尊赞助大使.txt
+give 超级聚灵珠(满)*5 5
+MESSAGEBOX 成功领取[超级聚灵珠(满)*25]
+#IF
+check [205] 1
+#ACT
+addnamelist ..\QuestDiary\赞助大使\皇冠赞助大使.txt
+give 超级聚灵珠(满)*5 6
+MESSAGEBOX 成功领取[超级聚灵珠(满)*30]
+BREAK
+#IF
+check [206] 1
+#ACT
+addnamelist ..\QuestDiary\赞助大使\总统赞助大使.txt
+give 超级聚灵珠(满)*5 8
+MESSAGEBOX 成功领取[超级聚灵珠(满)*40]
+BREAK
+#ELSEACT
+MESSAGEBOX 您不是我们的赞助大使无法享受该服务
+
+[@修理赞助血石]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 对不起您的英雄没有招出来我无法为您服务......
+BREAK
+#IF
+#ACT
+RepairAll
+H.RepairAll
+SENDMSG 6 您主号和英雄的赞助血石已经全部修复完毕
+
+[@清理]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 对不起您的英雄没有招出来我无法为您服务......
+BREAK
+#IF
+#ACT
+TAKE 钻石赞助血石 46
+TAKE 至尊赞助血石 46
+TAKE 皇冠赞助血石 46
+TAKE 总统赞助血石 46
+H.TAKE 钻石赞助血石 46
+H.TAKE 至尊赞助血石 46
+H.TAKE 皇冠赞助血石 46
+H.TAKE 总统赞助血石 46
+SENDMSG 6 您和英雄背包里面的赞助血石全部清理完毕！
+
+
+[@领取赞助血石]
+#IF
+CHECKBAGSIZE  5
+CHECKGAMEGIRD > 299
+#ACT
+goto @领取赞助血石1
+#ELSEACT
+MESSAGEBOX 只有冲值满300元以上的玩家方可领取或者你的背包没有5个空格
+BREAK
+
+[@领取赞助血石1]
+#IF
+CHECKGAMEGIRD > 299
+CHECKGAMEGIRD < 500
+#ACT
+GIVE 钻石赞助血石 1
+SENDMSG 1 系统：恭喜钻石赞助大使%s成功领取钻石赞助血石 151 249 5
+SENDMSG 1 系统：恭喜钻石赞助大使%s成功领取钻石赞助血石 151 249 5
+SENDMSG 1 系统：恭喜钻石赞助大使%s成功领取钻石赞助血石 151 249 5
+BREAK
+#IF
+CHECKGAMEGIRD > 499
+CHECKGAMEGIRD < 1000
+#ACT
+GIVE 至尊赞助血石 1
+SENDMSG 1 系统：恭喜至尊赞助大使%s成功领取至尊赞助血石 151 249 5
+SENDMSG 1 系统：恭喜至尊赞助大使%s成功领取至尊赞助血石 151 249 5
+SENDMSG 1 系统：恭喜至尊赞助大使%s成功领取至尊赞助血石 151 249 5
+BREAK
+#IF
+CHECKGAMEGIRD > 999
+CHECKGAMEGIRD < 2000
+#ACT
+GIVE 皇冠赞助血石 1
+SENDMSG 1 系统：恭喜皇冠赞助大使%s成功领取皇冠赞助血石 151 249 5
+SENDMSG 1 系统：恭喜皇冠赞助大使%s成功领取皇冠赞助血石 151 249 5
+SENDMSG 1 系统：恭喜皇冠赞助大使%s成功领取皇冠赞助血石 151 249 5
+BREAK
+#IF
+CHECKGAMEGIRD > 1999
+#ACT
+GIVE 总统赞助血石 1
+SENDMSG 1 系统：恭喜总统赞助大使%s成功领取总统赞助血石 151 249 5
+SENDMSG 1 系统：恭喜总统赞助大使%s成功领取总统赞助血石 151 249 5
+SENDMSG 1 系统：恭喜总统赞助大使%s成功领取总统赞助血石 151 249 5
+BREAK
+
+
+[@普通赞助大使]
+#IF
+check [200] 0
+#ACT
+goto @普通赞助大使1
+#ELSEACT
+MESSAGEBOX 您已经是本服的普通赞助大使了不可重复申请
+[@普通赞助大使1]
+#IF
+check [201] 0
+#ACT
+goto @普通赞助大使2
+#ELSEACT
+MESSAGEBOX 您已经是本服的高级赞助大使了不可重复申请
+[@普通赞助大使2]
+#IF
+check [202] 0
+#ACT
+goto @普通赞助大使3
+#ELSEACT
+MESSAGEBOX 您已经是本服的超级赞助大使了不可重复申请
+[@普通赞助大使3]
+#IF
+check [203] 0
+#ACT
+goto @普通赞助大使4
+#ELSEACT
+MESSAGEBOX 您已经是本服的钻石赞助大使了不可重复申请
+[@普通赞助大使4]
+#IF
+check [204] 0
+#ACT
+goto @普通赞助大使5
+#ELSEACT
+MESSAGEBOX 您已经是本服的至尊赞助大使了不可重复申请
+[@普通赞助大使5]
+#IF
+check [205] 0
+#ACT
+goto @普通赞助大使6
+#ELSEACT
+MESSAGEBOX 您已经是本服的皇冠赞助大使了不可重复申请
+[@普通赞助大使6]
+#IF
+check [206] 0
+#ACT
+goto @普通赞助大使7
+#ELSEACT
+MESSAGEBOX 您已经是本服的总统赞助大使了不可重复申请
+[@普通赞助大使7]
+#IF
+CHECKGAMEGIRD > 49
+#ACT
+set [200] 1
+#CALL [\\登陆\封号.txt] @FH
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『普通赞助大使』，从此以后他可以享受5.0倍打怪经验+1.01倍攻击！ 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『普通赞助大使』，从此以后他可以享受5.0倍打怪经验+1.01倍攻击！ 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『普通赞助大使』，从此以后他可以享受5.0倍打怪经验+1.01倍攻击！ 151 249 10
+MESSAGEBOX 恭喜您成为本服的『普通赞助大使』请小退后登陆方可获得封号奖励
+#ELSEACT
+MESSAGEBOX 消费满50元的玩家才可以领取『普通赞助大使』封号
+
+[@高级赞助大使]
+#IF
+check [201] 0
+#ACT
+goto @高级赞助大使1
+#ELSEACT
+MESSAGEBOX 您已经是本服的高级赞助大使了不可重复申请
+[@高级赞助大使1]
+#IF
+check [202] 0
+#ACT
+goto @高级赞助大使2
+#ELSEACT
+MESSAGEBOX 您已经是本服的超级赞助大使了不可重复申请
+[@高级赞助大使2]
+#IF
+check [203] 0
+#ACT
+goto @高级赞助大使3
+#ELSEACT
+MESSAGEBOX 您已经是本服的钻石赞助大使了不可重复申请
+[@高级赞助大使3]
+#IF
+check [204] 0
+#ACT
+goto @高级赞助大使4
+#ELSEACT
+MESSAGEBOX 您已经是本服的至尊赞助大使了不可重复申请
+[@高级赞助大使4]
+#IF
+check [205] 0
+#ACT
+goto @高级赞助大使5
+#ELSEACT
+MESSAGEBOX 您已经是本服的皇冠赞助大使了不可重复申请
+[@高级赞助大使5]
+#IF
+check [206] 0
+#ACT
+goto @高级赞助大使6
+#ELSEACT
+MESSAGEBOX 您已经是本服的总统赞助大使了不可重复申请
+[@高级赞助大使6]
+#IF
+CHECKGAMEGIRD > 99
+#ACT
+set [200] 0
+set [201] 1
+#CALL [\\登陆\封号.txt] @FH
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『高级赞助大使』，从此以后他可以享受5.2倍打怪经验+1.02倍攻击！ 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『高级赞助大使』，从此以后他可以享受5.2倍打怪经验+1.02倍攻击！ 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『高级赞助大使』，从此以后他可以享受5.2倍打怪经验+1.02倍攻击！ 151 249 10
+MESSAGEBOX 恭喜您成为本服的『高级赞助大使』请小退后登陆方可获得封号奖励
+#ELSEACT
+MESSAGEBOX 消费满100元的玩家才可以领取『高级赞助大使』封号
+
+[@超级赞助大使]
+#IF
+check [202] 0
+#ACT
+goto @超级赞助大使1
+#ELSEACT
+MESSAGEBOX 您已经是本服的超级赞助大使了不可重复申请
+[@超级赞助大使1]
+#IF
+check [203] 0
+#ACT
+goto @超级赞助大使2
+#ELSEACT
+MESSAGEBOX 您已经是本服的钻石赞助大使了不可重复申请
+[@超级赞助大使2]
+#IF
+check [204] 0
+#ACT
+goto @超级赞助大使3
+#ELSEACT
+MESSAGEBOX 您已经是本服的至尊赞助大使了不可重复申请
+[@超级赞助大使3]
+#IF
+check [205] 0
+#ACT
+goto @超级赞助大使4
+#ELSEACT
+MESSAGEBOX 您已经是本服的皇冠赞助大使了不可重复申请
+[@超级赞助大使4]
+#IF
+check [206] 0
+#ACT
+goto @超级赞助大使5
+#ELSEACT
+MESSAGEBOX 您已经是本服的总统赞助大使了不可重复申请
+[@超级赞助大使5]
+#IF
+CHECKGAMEGIRD > 199
+#ACT
+set [200] 0
+set [201] 0
+set [202] 1
+#CALL [\\登陆\封号.txt] @FH
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『超级赞助大使』，从此以后他可以享受5.4倍打怪经验+1.03倍攻击！ 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『超级赞助大使』，从此以后他可以享受5.4倍打怪经验+1.03倍攻击！ 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『超级赞助大使』，从此以后他可以享受5.4倍打怪经验+1.03倍攻击！ 151 249 10
+MESSAGEBOX 恭喜您成为本服的『超级赞助大使』请小退后登陆方可获得封号奖励
+#ELSEACT
+MESSAGEBOX 消费满200元的玩家才可以领取『超级赞助大使』封号
+
+[@钻石赞助大使]
+#IF
+check [203] 0
+#ACT
+goto @钻石赞助大使1
+#ELSEACT
+MESSAGEBOX 您已经是本服的钻石赞助大使了不可重复申请
+[@钻石赞助大使1]
+#IF
+check [204] 0
+#ACT
+goto @钻石赞助大使2
+#ELSEACT
+MESSAGEBOX 您已经是本服的至尊赞助大使了不可重复申请
+[@钻石赞助大使2]
+#IF
+check [205] 0
+#ACT
+goto @钻石赞助大使3
+#ELSEACT
+MESSAGEBOX 您已经是本服的皇冠赞助大使了不可重复申请
+[@钻石赞助大使3]
+#IF
+check [206] 0
+#ACT
+goto @钻石赞助大使4
+#ELSEACT
+MESSAGEBOX 您已经是本服的总统赞助大使了不可重复申请
+[@钻石赞助大使4]
+#IF
+CHECKGAMEGIRD > 299
+#ACT
+set [200] 0
+set [201] 0
+set [202] 0
+set [203] 1
+#CALL [\\登陆\封号.txt] @FH
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『钻石赞助大使』，从此以后他可以享受5.6倍打怪经验+1.04倍攻击！ 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『钻石赞助大使』，从此以后他可以享受5.6倍打怪经验+1.04倍攻击！ 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『钻石赞助大使』，从此以后他可以享受5.6倍打怪经验+1.04倍攻击！ 151 249 10
+MESSAGEBOX 恭喜您成为本服的『钻石赞助大使』请小退后登陆方可获得封号奖励
+#ELSEACT
+MESSAGEBOX 消费满300元的玩家才可以领取『钻石赞助大使』封号
+
+[@至尊赞助大使]
+#IF
+check [204] 0
+#ACT
+goto @至尊赞助大使1
+#ELSEACT
+MESSAGEBOX 您已经是本服的至尊赞助大使了不可重复申请
+
+[@至尊赞助大使1]
+#IF
+check [205] 0
+#ACT
+goto @至尊赞助大使2
+#ELSEACT
+MESSAGEBOX 您已经是本服的皇冠赞助大使了不可重复申请
+[@至尊赞助大使2]
+#IF
+check [206] 0
+#ACT
+inc G70 1
+goto @至尊赞助大使3
+#ELSEACT
+MESSAGEBOX 您已经是本服的总统赞助大使了不可重复申请
+[@至尊赞助大使3]
+#IF
+CHECKGAMEGIRD > 499
+#ACT
+set [200] 0
+set [201] 0
+set [202] 0
+set [203] 0
+set [204] 1
+#CALL [\\登陆\封号.txt] @FH
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『至尊赞助大使』，从此以后他可以享受5.8倍打怪经验+1.06倍攻击！ 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『至尊赞助大使』，从此以后他可以享受5.8倍打怪经验+1.06倍攻击！ 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『至尊赞助大使』，从此以后他可以享受5.8倍打怪经验+1.06倍攻击！ 151 249 10
+MESSAGEBOX 恭喜您成为本服的『至尊赞助大使』请小退后登陆方可获得封号奖励
+#ELSEACT
+MESSAGEBOX 消费满500元的玩家才可以领取『至尊赞助大使』封号
+
+[@皇冠赞助大使]
+#IF
+check [205] 0
+#ACT
+goto @皇冠赞助大使1
+#ELSEACT
+MESSAGEBOX 您已经是本服的皇冠赞助大使了不可重复申请
+
+[@皇冠赞助大使1]
+#IF
+check [206] 0
+#ACT
+goto @皇冠赞助大使2
+#ELSEACT
+MESSAGEBOX 您已经是本服的皇冠赞助大使了不可重复申请
+[@皇冠赞助大使2]
+#IF
+CHECKGAMEGIRD > 999
+#ACT
+set [200] 0
+set [201] 0
+set [202] 0
+set [203] 0
+set [204] 0
+set [205] 1
+#CALL [\\登陆\封号.txt] @FH
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『皇冠赞助大使』，从此以后他可以享受6.0倍打怪经验+1.08倍攻击！ 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『皇冠赞助大使』，从此以后他可以享受6.0倍打怪经验+1.08倍攻击！ 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『皇冠赞助大使』，从此以后他可以享受6.0倍打怪经验+1.08倍攻击！ 151 249 10
+MESSAGEBOX 恭喜您成为本服的『皇冠赞助大使』请小退后登陆方可获得封号奖励
+#ELSEACT
+MESSAGEBOX 消费满1000元的玩家才可以领取『皇冠赞助大使』封号
+
+
+[@总统赞助大使]
+#IF
+check [206] 0
+#ACT
+goto @总统赞助大使1
+#ELSEACT
+MESSAGEBOX 您已经是本服的总统赞助大使了不可重复申请
+
+[@总统赞助大使1]
+#IF
+CHECKGAMEGIRD > 1999
+#ACT
+set [200] 0
+set [201] 0
+set [202] 0
+set [203] 0
+set [204] 0
+set [205] 0
+set [206] 1
+#CALL [\\登陆\封号.txt] @FH
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『总统赞助大使』，从此以后他可以享受6.5倍打怪经验+1.10倍攻击！ 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『总统赞助大使』，从此以后他可以享受6.5倍打怪经验+1.10倍攻击！ 151 249 10
+SENDMSG 1 系统：恭喜玩家%s成为本Ｆ尊贵的『总统赞助大使』，从此以后他可以享受6.5倍打怪经验+1.10倍攻击！ 151 249 10
+MESSAGEBOX 恭喜您成为本服的『总统赞助大使』请小退后登陆方可获得封号奖励
+#ELSEACT
+MESSAGEBOX 消费满2000元的玩家才可以领取『总统赞助大使』封号
+
+
+[@清理封号]
+#IF
+#ACT
+set [200] 0
+set [201] 0
+set [202] 0
+set [203] 0
+set [204] 0
+set [205] 0
+set [206] 0
+set [205] 0

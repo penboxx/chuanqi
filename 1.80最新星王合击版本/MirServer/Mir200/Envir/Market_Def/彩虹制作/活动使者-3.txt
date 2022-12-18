@@ -1,0 +1,340 @@
+()
+%100
+[@main]
+#IF
+#SAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【活动使者】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+卓越合击每日多种活动.以下第一排为新区活动.第二排为全天活动\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<土城跑酷/@土城跑酷A>        <送宝金猪/@送宝金猪A>        <步步惊心/@步步惊心A>        <神器争夺/@神器争夺A>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<激情泡点/@激情泡点A>        <全民赛跑/@全民赛跑A>        <押镖任务/@押镖任务A>        <屠龙战场/@屠龙战场A>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+[@土城跑酷A]
+#IF
+EQUAL G58 0
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动介绍：在土城安全区内跑动获得大量经验.记得带上聚灵珠哦！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动奖励：只要土城安全区范围内不停的跑动就可以获得大量经验>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：新区10分钟后全服提示.持续5分钟.只此一次要抓紧了！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　　<COLOR=clRed 时间未到>　　　　　　　　　<返回主页/@main>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+#IF
+EQUAL G58 1
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动介绍：在土城安全区内跑动获得大量经验.记得带上聚灵珠哦！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动奖励：只要土城安全区范围内不停的跑动就可以获得大量经验>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：新区10分钟后全服提示.持续5分钟.只此一次要抓紧了！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　          <前往跑酷/@前往跑酷>               <返回主页/@main> \ 
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+#IF
+EQUAL G58 2
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动介绍：在土城安全区内跑动获得大量经验.记得带上聚灵珠哦！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动奖励：只要土城安全区范围内不停的跑动就可以获得大量经验>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：新区10分钟后全服提示.持续5分钟.只此一次要抓紧了！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　　<COLOR=clRed 已经结束>　　　　　　　　　<返回主页/@main>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+[@前往跑酷]
+#IF
+EQUAL G58 1
+#ACT
+mapmove 3 333 333
+SENDMSG 0 玩家[%s],前往土城跑酷去了.此活动只在新区开放.要抓紧哦！
+#ELSEACT
+MESSAGEBOX 活动还没有开始
+
+[@送宝金猪A]
+#IF
+EQUAL G25 0
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动介绍：比奇皇宫出现大量送宝金猪.不限制等级均可以参加！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动奖励：每只送宝金猪必爆2000元宝.每次刷新50只送宝金猪！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：新区开放20分钟后全服提示.只此一次要抓紧了哦！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　　<COLOR=clRed 时间未到>　　　　　　　　　<返回主页/@main>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>
+
+#IF
+EQUAL G25 1
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动介绍：比奇皇宫出现大量送宝金猪.不限制等级均可以参加！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动奖励：每只送宝金猪必爆2000元宝.每次刷新50只送宝金猪！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：新区开放20分钟后全服提示.只此一次要抓紧了哦！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　          <前去掠夺/@进入元宝掠夺>               <返回主页/@main> \ 
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+#IF
+EQUAL G25 2
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动介绍：比奇皇宫出现大量送宝金猪.不限制等级均可以参加！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动奖励：每只送宝金猪必爆2000元宝.每次刷新50只送宝金猪！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：新区开放20分钟后全服提示.只此一次要抓紧了哦！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　　<COLOR=clRed 已经结束>　　　　　　　　　<返回主页/@main>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>
+
+[@进入元宝掠夺]
+#IF
+EQUAL G25 1
+#ACT
+mapmove 0122
+SENDMSG 0 玩家[%s],前往比奇皇宫抢夺元宝金猪.此活动只在新区开放.要抓紧哦！
+#ELSEACT
+MESSAGEBOX 活动还没有开始
+
+[@步步惊心A]
+#IF
+EQUAL G40 0
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 这里面是天神散宝的地方,宝物不计其数.但是切记千万不能乱走动>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 走一步或跑一步都会死亡,但不会爆装备.只能用随机石飞着捡宝物>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：新区开放30分钟后全服提示.只此一次要抓紧了哦！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　　<COLOR=clRed 时间未到>　　　　　　　　　<返回主页/@main>\ 
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+#IF
+EQUAL G40 1
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 这里面是天神散宝的地方,宝物不计其数.但是切记千万不能乱走动>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 走一步或跑一步都会死亡,但不会爆装备.只能用随机石飞着捡宝物>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：新区开放30分钟后全服提示.只此一次要抓紧了哦！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　　<前去捡宝/@进入天降宝物>　　　　　　　　　<返回主页/@main>\ 
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+#IF
+EQUAL G40 2
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 这里面是天神散宝的地方,宝物不计其数.但是切记千万不能乱走动>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 走一步或跑一步都会死亡,但不会爆装备.只能用随机石飞着捡宝物>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：新区开放30分钟后全服提示.只此一次要抓紧了哦！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　　<COLOR=clRed 已经结束>　　　　　　　　　<返回主页/@main>\ 
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+[@进入天降宝物]
+#IF
+CHECKHEROONLINE
+#ACT
+MESSAGEBOX 此地图不能带英雄进入！
+BREAK
+
+#IF
+EQUAL G40 1
+#ACT
+mapmove bwtt
+SENDMSG 0 玩家[%s],前往步步惊心捡取宝物去了.此活动只有新区开放.要抓紧哦！
+#ELSEACT
+MESSAGEBOX 活动还没有开始
+
+
+[@神器争夺A]
+#IF
+small G80 4
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动介绍：比奇皇宫刷新一只(新区活动魔王)必爆开天.镇天.玄天>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动奖励：比奇皇宫刷新一只(新区活动魔王)必爆开天.镇天.玄天>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：新区开放后.全服有三名玩家升级到60级,自动开启>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　　<COLOR=clRed 还未开启>　　　　　　　　　<返回主页/@main>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>
+
+#IF
+EQUAL G80 4
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动介绍：比奇皇宫刷新一只(新区活动魔王)必爆开天.镇天.玄天>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动奖励：比奇皇宫刷新一只(新区活动魔王)必爆开天.镇天.玄天>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：新区开放后.全服有三名玩家升级到60级,自动开启>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　          <前去抢夺/@进入轩辕神剑>               <返回主页/@main> \ 
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+#IF
+EQUAL G81 1
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动介绍：比奇皇宫刷新一只(新区活动魔王)必爆开天.镇天.玄天>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动奖励：比奇皇宫刷新一只(新区活动魔王)必爆开天.镇天.玄天>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：新区开放后.全服有三名玩家升级到60级,自动开启>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　　<COLOR=clRed 已经结束>　　　　　　　　　<返回主页/@main>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>
+
+[@进入轩辕神剑]
+#IF
+EQUAL G80 4
+#ACT
+mapmove 0122 25 29
+SENDMSG 0 玩家[%s],前往比奇皇宫抢夺三大神器.此活动只在新区开放.要抓紧哦！
+#ELSEACT
+MESSAGEBOX 活动还没有开始
+
+[@押镖任务A]
+<COLOR=clSkyblue ╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗>\
+<COLOR=clSkyblue ┆><COLOR=clLime ☆震威镖局☆>        <[进入押镖之路]/@GOLB>        <COLOR=clLime ☆震威镖局☆><COLOR=clSkyblue ┆>\
+<COLOR=clSkyblue ╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝>\
+<COLOR=clRed ①：本服押镖时间为18点-21点，每人一天可接三次任务>\
+<COLOR=clFuchsia ②：随机分配普通、高级、超级、无敌等镖车，奖励不一样>\
+<COLOR=clRed ③：押镖途中下线或者任务超过15分钟视为失败，没收押金>\
+<COLOR=clFuchsia ④：接受押镖任务需要1000元宝做押金，完成后退回全部押金>\
+<COLOR=clRed ⑤：押镖途中镖车被仇人损坏视为失败，仇人将获得1000元宝>\
+　  <COLOR=clAqua ((请把镖车拉运到：押镖之路(二)的镖务总管处换取酬劳))>\
+
+[@GOLB]
+#IF
+EQUAL G28 1
+CHECKLEVELEX > 39
+#ACT
+give 回城卷 1
+MAPMOVE YB01 80 81
+break
+#ELSEACT
+MESSAGEBOX 押镖时间为18点-21点或者你的等级不足40级
+break
+
+[@全民赛跑A]
+#IF
+EQUAL G33 0
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动介绍：每天举行三次全民赛跑活动.每次可以获得大量元宝奖励！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动奖励：第1名奖10000元宝.第2名奖励8000元宝.第3名奖5000元宝>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：每天10点-15点-20点举行.参加者可获得安慰奖1000元宝>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　　<COLOR=clRed 时间未到>　　　　　　　　　<返回主页/@main>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+#IF
+EQUAL G33 1
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动介绍：每天举行三次全民赛跑活动.每次可以获得大量元宝奖励！>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动奖励：第1名奖10000元宝.第2名奖励8000元宝.第3名奖5000元宝>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：每天10点-15点-20点举行.参加者可获得安慰奖1000元宝>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　　<前往赛跑/@参加赛跑>　　　　　　　　　<返回主页/@main>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+[@参加赛跑]
+#IF
+CHECKNAMELIST ..\QuestDiary\赞助大使\赛跑名单.txt
+#ACT
+MESSAGEBOX 对不起！你已经参加过一次全民赛跑了不能重复参加！
+close
+BREAK
+
+#IF
+EQUAL G33 1
+#ACT
+give 回城卷 1
+MAPMOVE zasp 283 277
+SENDMSG 0 玩家[%s],前往参加全民赛跑活动.此活动每天只举行三次.要抓紧哦！！！
+#ELSEACT
+MESSAGEBOX 活动还没有开始
+
+[@激情泡点A]
+#IF
+EQUAL G18 0
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动介绍：每天举行三次激情泡点活动.进入地图每秒获得50W经验>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动奖励：泡点地图允许PK.死亡掉落装备.泡点的同时要注意安全>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：每天11点-14点-19点举行.每次活动开放时间为10分钟>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　　<COLOR=clRed 时间未到>　　　　　　　　　<返回主页/@main>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+#IF
+EQUAL G18 1
+#SAY
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动介绍：每天举行三次激情泡点活动.进入地图每秒获得50W经验>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动奖励：泡点地图允许PK.死亡掉落装备.泡点的同时要注意安全>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clLime 活动时间：每天11点-14点-19点举行.每次活动开放时间为10分钟>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　　　　　　<进入激情泡点/@激情泡点B>　　　　　　　　　<返回主页/@main>\
+<COLOR=clMoneyGreen ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+
+[@激情泡点B]
+#IF
+EQUAL G18 1
+#ACT
+SetAutoGeteXp 1	500000 0 jiqing
+MAPMOVE jiqing
+SENDMSG 0 %S进入了激情泡点地图获得大量经验.赶快来参加吧
+#ELSEACT
+MESSAGEBOX 活动还没有开始
+
+
+[@屠龙战场A]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【屠龙战场】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 每四小时.屠龙战场刷新一只卓越超级神龙.爆本服所有装备>\
+<COLOR=clAqua 每四小时.屠龙战场刷新一只卓越超级神龙.爆本服所有装备>\
+<COLOR=clAqua 每四小时.屠龙战场刷新一只卓越超级神龙.爆本服所有装备>\
+<COLOR=clAqua 每四小时.屠龙战场刷新一只卓越超级神龙.爆本服所有装备>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+　　　　　　　　　　　<进入屠龙战场/@屠龙战场B>
+
+[@屠龙战场B]
+#IF
+#ACT
+MAPMOVE tulong
+SENDMSG 0 玩家[%s],前往屠龙战场地图抢夺顶级装备去了！
+break

@@ -1,0 +1,13 @@
+[@MAIN]
+神秘而可怕的<COLOR=clRed 云海神殿>，你确定要去吗？\
+进入前，请做好准备！\
+　\
+<进入云海神殿/@SDCS>\
+<我不敢进/@EXIT>\
+
+[@SDCS]
+#IF
+#ACT
+MAPMOVE ZZSD
+GIVE 回城卷 1
+BREAK

@@ -1,0 +1,205 @@
+[@金刚石]
+{
+<COLOR=CLRED 金刚石>最神奇之处，就是在你修炼武器的时候，\
+同时用<COLOR=CLRED 聚灵珠>可以兑换。。。<COLOR=CLRED 金刚石>\
+只要把你的聚灵珠交给我并且给我<COLOR=CLYELLOW 10元宝>，\
+我便可以给你<COLOR=CLRED 等值的金刚石>。\ 
+<COLOR=clLime ███████><提取金刚石/@提取金刚石><COLOR=clLime ███████>\
+<COLOR=CLSKYBLUE 注意1： ><COLOR=clLime 聚灵珠小=30金刚石。中=40金刚石。大=50金刚石。>\
+<COLOR=CLSKYBLUE 注意2：><COLOR=clLime 聚灵珠小。中。大。英雄聚灵珠小。中。大==空的满的都一样兑换>\
+<COLOR=CLSKYBLUE 注意3：><COLOR=clLime 而英雄聚灵珠。也可以在我这里兑换。比本体的多给2个金刚石>\
+#ACT
+QUERYITEMDLG 放入要升级的珠子 @金刚石2 0
+
+[@金刚石2]
+#IF
+CHECKGAMEGOLD > 10
+#ELSEACT
+DELAYCALL 10 @金刚石
+MESSAGEBOX 每次兑换需要10个元宝！你的元宝好象不够呀！！在看看吧！！
+BREAK
+#IF
+CHECKDLGITEMNAME 聚灵珠(小)
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<$DLGITEMNAME>成功兑换成30颗金刚石！！ 254 73
+SENDMSG 0 恭喜玩家：%s，如果你也想获得金刚石请查看盟重的((金刚石大师))！ 254 73
+TAKEDLGITEM
+GAMEGOLD - 10
+GIVE 金刚石：10 3
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 聚灵珠(中)
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<$DLGITEMNAME>成功兑换成40颗金刚石！！ 254 73
+SENDMSG 0 恭喜玩家：%s，如果你也想获得金刚石请查看盟重的((金刚石大师))！ 254 73
+TAKEDLGITEM
+GAMEGOLD - 10
+GIVE 金刚石：10 4
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 聚灵珠(大)
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<$DLGITEMNAME>成功兑换成50颗金刚石！！ 254 73
+SENDMSG 0 恭喜玩家：%s，如果你也想获得金刚石请查看盟重的((金刚石大师))！ 254 73
+TAKEDLGITEM
+GAMEGOLD - 10
+GIVE 金刚石：50 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 英雄聚灵珠(小)
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<$DLGITEMNAME>成功兑换成22颗金刚石！！ 254 73
+SENDMSG 0 恭喜玩家：%s，如果你也想获得金刚石请查看盟重的((金刚石大师))！ 254 73
+TAKEDLGITEM
+GAMEGOLD - 10
+GIVE 金刚石：10 2
+GIVE 金刚石：1  2
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 英雄聚灵珠(中)
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<$DLGITEMNAME>成功兑换成42颗金刚石！！ 254 73
+SENDMSG 0 恭喜玩家：%s，如果你也想获得金刚石请查看盟重的((金刚石大师))！ 254 73
+TAKEDLGITEM
+GAMEGOLD - 10
+GIVE 金刚石：10 4
+GIVE 金刚石：1  2
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 英雄聚灵珠(大)
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<$DLGITEMNAME>成功兑换成52颗金刚石！！ 254 73
+SENDMSG 0 恭喜玩家：%s，如果你也想获得金刚石请查看盟重的((金刚石大师))！ 254 73
+TAKEDLGITEM
+GAMEGOLD - 10
+GIVE 金刚石：50 1
+GIVE 金刚石：1  2
+MOV P0 1
+#IF
+EQUAL P0 1
+#ACT
+MOV P0 0
+DELAYCALL 10 @金刚石
+BREAK
+#ELSEACT
+SENDMSG 7 你给我的是什么东西啊？请放入要兑换的金刚石！
+DELAYCALL 10 @金刚石
+BREAK
+
+[@提取金刚石]
+请选择需要提取的金刚石数量：\ \
+<1:金刚石/@1金刚石>           <5:金刚石/@5金刚石>           <10:金刚石/@10金刚石>\ \
+<50:金刚石/@50金刚石>          <100:金刚石/@100金刚石>         <500:金刚石/@500金刚石>\ \
+<1000:金刚石/@1000金刚石>        <5000:金刚石/@5000金刚石>\ \
+<返回/@MAIN>
+
+[@1金刚石]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 1
+GIVE 金刚石：1 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@5金刚石]
+#IF
+CHECKGAMEDIAMOND > 4
+#ACT
+GAMEDIAMOND - 5
+GIVE 金刚石：5 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@10金刚石]
+#IF
+CHECKGAMEDIAMOND > 9
+#ACT
+GAMEDIAMOND - 10
+GIVE 金刚石：10 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@50金刚石]
+#IF
+CHECKGAMEDIAMOND > 49
+#ACT
+GAMEDIAMOND - 50
+GIVE 金刚石：50 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@100金刚石]
+#IF
+CHECKGAMEDIAMOND > 99
+#ACT
+GAMEDIAMOND - 100
+GIVE 金刚石：100 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@500金刚石]
+#IF
+CHECKGAMEDIAMOND > 499
+#ACT
+GAMEDIAMOND - 500
+GIVE 金刚石：500 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@1000金刚石]
+#IF
+CHECKGAMEDIAMOND > 999
+#ACT
+GAMEDIAMOND - 1000
+GIVE 金刚石：1000 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@5000金刚石]
+#IF
+CHECKGAMEDIAMOND > 4999
+#ACT
+GAMEDIAMOND - 5000
+GIVE 金刚石：5000 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+}

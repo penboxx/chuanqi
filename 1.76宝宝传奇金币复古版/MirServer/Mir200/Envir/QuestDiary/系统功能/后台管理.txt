@@ -1,0 +1,1621 @@
+[@管理]
+{
+#IF
+ISADMIN
+#SAY
+<[属性修改设置]/@属性修改设置> ┆\
+<[测试阶段设置]/@测试阶段设置> ┆\
+<[地图开放设置]/@地图开放设置> ┆\
+<[等待添加设置]/@等待添加设置1> ┆\
+<[等待添加设置]/@等待添加设置2> ┆此版本由Legend专业制作小组成员<COLOR=CLRED 心蓝>制作\
+<[周末双倍设置]/@周末双倍设置> ┆版本定做: QQ：\
+<[怪物攻城设置]/@怪物攻城设置> ┆授权信息: Legend仿盛大1.80金币合击版\
+<[等待添加设置]/@等待添加设置3> ┆制作官方: <www.kuyoux.com/@Bluem2>\
+#ELSEACT
+SENDMSG 7 系统提示:非法进入后台管理....
+BREAK
+
+[@Bluem2]
+#ACT
+WebBrowser http://www.kuyoux.com
+
+;〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
+
+[@属性修改设置]
+<COLOR=clAqua [属性修改设置]>-┆       <项链+属性/@sx1>       <武器+属性/@sx4>\
+<[测试阶段设置]/@测试阶段设置> ┆       <手镯+属性/@sx2>       <衣服+属性/@sx5>\
+<[地图开放设置]/@地图开放设置> ┆　　　 <戒指+属性/@sx3>       <头盔+属性/@sx6>\
+<[等待添加设置]/@等待添加设置1> ┆　　　 <改变性别/@改变性别>\
+<[等待添加设置]/@等待添加设置2> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[怪物攻城设置]/@怪物攻城设置> ┆\
+<[等待添加设置]/@等待添加设置3> ┆\
+
+[@改变性别]
+#IF
+gender man
+#ACT
+GOTO @towoman
+#ELSEACT
+GOTO @toman
+[@toman]
+#IF
+#ACT
+CHANGEGENDER 0
+GOTO @属性修改设置
+BREAK
+[@towoman]
+#IF
+#ACT
+CHANGEGENDER 1
+GOTO @属性修改设置
+BREAK
+
+;衣服加属性
+
+[@sx5]
+<[属性修改设置]/@属性修改设置>-┆     <衣服+攻击/@yfsx1>  <衣服+魔法/@yfsx2>  <衣服+道术/@yfsx3>\
+<[测试阶段设置]/@测试阶段设置> ┆     <衣服+防御/@yfsx4>  <衣服+魔御/@yfsx5>  <衣服+持久/@yfsx6>\
+<[地图开放设置]/@地图开放设置> ┆\
+<[等待添加设置]/@等待添加设置1> ┆\
+<[等待添加设置]/@等待添加设置2> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[怪物攻城设置]/@怪物攻城设置> ┆\
+<[等待添加设置]/@等待添加设置3> ┆\
+
+;衣服攻击
+[@yfsx1]
+#ACT
+UPGRADEITEMEX 0 2 0 1 0
+GOTO @sx5
+BREAK
+;衣服魔法
+[@yfsx2]
+#ACT
+UPGRADEITEMEX 0 3 0 1 0
+GOTO @sx5
+BREAK
+;衣服道术
+[@yfsx3]
+#ACT
+UPGRADEITEMEX 0 4 0 1 0
+GOTO @sx5
+BREAK
+;衣服防御
+[@yfsx4]
+#ACT
+UPGRADEITEMEX 0 0 0 1 0
+GOTO @sx5
+BREAK
+;衣服魔御
+[@yfsx5]
+#ACT
+UPGRADEITEMEX 0 1 0 1 0
+GOTO @sx5
+BREAK
+;衣服持久
+[@yfsx6]
+#ACT
+UPGRADEITEMEX 0 14 0 1 0
+GOTO @sx5
+BREAK
+
+;武器加属性
+
+[@sx4]
+<[属性修改设置]/@属性修改设置>-┆     <武器+攻击/@wq1111>  <武器+魔法/@wq1222>  <武器+道术/@wq1333>\
+<[测试阶段设置]/@测试阶段设置> ┆     <武器+幸运/@wq1555>  <武器+准确/@wq1444>  <武器+持久/@wq1777>\
+<[地图开放设置]/@地图开放设置> ┆     <武器+速度/@wq1666>\
+<[等待添加设置]/@等待添加设置1> ┆　　 注意:攻击速度+1必须要点10次武器\
+<[等待添加设置]/@等待添加设置2> ┆　　 速度后才能正常增加!否则是减速度!\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[怪物攻城设置]/@怪物攻城设置> ┆\
+<[等待添加设置]/@等待添加设置3> ┆\
+
+;武器攻击
+[@wq1111]
+#ACT
+UPGRADEITEMEX 1 0 0 1 0
+GOTO @sx4
+BREAK
+;武器魔法
+[@wq1222]
+#ACT
+UPGRADEITEMEX 1 1 0 1 0
+GOTO @sx4
+BREAK
+;武器道术
+[@wq1333]
+#ACT
+UPGRADEITEMEX 1 2 0 1 0
+GOTO @sx4
+BREAK
+;武器幸运
+[@wq1555]
+#ACT
+UPGRADEITEMEX 1 3 0 1 0
+GOTO @sx4
+BREAK
+;武器持久
+[@wq1777]
+#ACT
+UPGRADEITEMEX 1 14 0 1 0
+GOTO @sx4
+BREAK
+;武器准确
+[@wq1444]
+#ACT
+UPGRADEITEMEX 1 5 0 1 0
+GOTO @sx4
+BREAK
+;武器速度
+[@wq1666]
+#ACT
+UPGRADEITEMEX 1 6 0 1 0
+GOTO @sx4
+BREAK
+
+;加项链属性
+
+[@sx1]
+<[属性修改设置]/@属性修改设置>-┆     <项链+攻击/@xl13>  <项链+魔法/@xl14>  <项链+道术/@xl15>\
+<[测试阶段设置]/@测试阶段设置> ┆     <项链+幸运/@xl12>  <项链+准确/@xl11>  <项链+持久/@xl16>\
+<[地图开放设置]/@地图开放设置> ┆     注意:准确或魔法躲避，根据项链不同而不同\
+<[等待添加设置]/@等待添加设置1> ┆     加幸运或加敏捷，根据项链不同而不同\
+<[等待添加设置]/@等待添加设置2> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[怪物攻城设置]/@怪物攻城设置> ┆\
+<[等待添加设置]/@等待添加设置3> ┆\
+
+;准确或魔法躲避，根据项链不同而不同
+[@xl11]
+#ACT
+UPGRADEITEMEX 3 0 0 1 0
+GOTO @sx1
+BREAK
+;幸运或敏捷，根据项链不同而不同
+[@xl12]
+#ACT
+UPGRADEITEMEX 3 1 0 1 0
+GOTO @sx1
+BREAK
+;项链攻击
+[@xl13]
+#ACT
+UPGRADEITEMEX 3 2 0 1 0
+GOTO @sx1
+BREAK
+;项链魔法
+[@xl14]
+#ACT
+UPGRADEITEMEX 3 3 0 1 0
+GOTO @sx1
+BREAK
+;项链道术
+[@xl15]
+#ACT
+UPGRADEITEMEX 3 4 0 1 0
+GOTO @sx1
+BREAK
+;项链持久
+[@xl16]
+#ACT
+UPGRADEITEMEX 3 14 0 1 0
+GOTO @sx1
+BREAK
+
+;头盔加属性
+
+[@sx6]
+<[属性修改设置]/@属性修改设置>-┆     <头盔+攻击/@tk11>  <头盔+魔法/@tk12>  <头盔+道术/@tk13>\
+<[测试阶段设置]/@测试阶段设置> ┆     <头盔+防御/@tk14>  <头盔+魔御/@tk15>  <头盔+持久/@tk16>\
+<[地图开放设置]/@地图开放设置> ┆\
+<[等待添加设置]/@等待添加设置1> ┆\
+<[等待添加设置]/@等待添加设置2> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[怪物攻城设置]/@怪物攻城设置> ┆\
+<[等待添加设置]/@等待添加设置3> ┆\
+
+;头盔攻击
+[@tk11]
+#ACT
+UPGRADEITEMEX 4 2 0 1 0
+GOTO @sx6
+BREAK
+;头盔魔法
+[@tk12]
+#ACT
+UPGRADEITEMEX 4 3 0 1 0
+GOTO @sx6
+BREAK
+;头盔道术
+[@tk13]
+#ACT
+UPGRADEITEMEX 4 4 0 1 0
+GOTO @sx6
+BREAK
+;头盔防御
+[@tk14]
+#ACT
+UPGRADEITEMEX 4 0 0 1 0
+GOTO @sx6
+BREAK
+;头盔魔御
+[@tk15]
+#ACT
+UPGRADEITEMEX 4 1 0 1 0
+GOTO @sx6
+BREAK
+;头盔持久
+[@tk16]
+#ACT
+UPGRADEITEMEX 4 14 0 1 0
+GOTO @sx6
+BREAK
+
+;戒指加属性
+
+[@sx3]
+<[属性修改设置]/@属性修改设置>-┆     <左戒攻击/@jza11>     <右戒攻击/@jzb11>\
+<[测试阶段设置]/@测试阶段设置> ┆     <左戒魔法/@jza12>     <右戒魔法/@jzb12>\
+<[地图开放设置]/@地图开放设置> ┆     <左戒道术/@jza13>     <右戒道术/@jzb13>\
+<[等待添加设置]/@等待添加设置1> ┆　　 <左戒防御/@jza14>     <右戒防御/@jzb14>\
+<[等待添加设置]/@等待添加设置2> ┆　　 <左戒魔御/@jza15>     <右戒魔御/@jzb15>\
+<[周末双倍设置]/@周末双倍设置> ┆　　 <左戒持久/@jza16>     <右戒持久/@jzb16>\
+<[怪物攻城设置]/@怪物攻城设置> ┆\
+<[等待添加设置]/@等待添加设置3> ┆\
+
+;左戒攻击
+[@jza11]
+#ACT
+UPGRADEITEMEX 8 2 0 1 0
+GOTO @sx3
+BREAK
+;左戒魔法
+[@jza12]
+#ACT
+UPGRADEITEMEX 8 3 0 1 0
+GOTO @sx3
+BREAK
+;左戒道术
+[@jza13]
+#ACT
+UPGRADEITEMEX 8 4 0 1 0
+GOTO @sx3
+BREAK
+;左戒防御
+[@jza14]
+#ACT
+UPGRADEITEMEX 8 0 0 1 0
+GOTO @sx3
+BREAK
+;左戒魔御
+[@jza15]
+#ACT
+UPGRADEITEMEX 8 1 0 1 0
+GOTO @sx3
+BREAK
+;左戒持久
+[@jza16]
+#ACT
+UPGRADEITEMEX 8 14 0 1 0
+GOTO @sx3
+BREAK
+;右戒攻击
+[@jzb11]
+#ACT
+UPGRADEITEMEX 7 2 0 1 0
+GOTO @sx3
+BREAK
+;右戒魔法
+[@jzb12]
+#ACT
+UPGRADEITEMEX 7 3 0 1 0
+GOTO @sx3
+BREAK
+;右戒道术
+[@jzb13]
+#ACT
+UPGRADEITEMEX 7 3 0 1 0
+GOTO @sx3
+BREAK
+;右戒防御
+[@jzb14]
+#ACT
+UPGRADEITEMEX 7 0 0 1 0
+GOTO @sx3
+BREAK
+;右戒魔御
+[@jzb15]
+#ACT
+UPGRADEITEMEX 7 1 0 1 0
+GOTO @sx3
+BREAK
+;右戒持久
+[@jzb16]
+#ACT
+UPGRADEITEMEX 7 14 0 1 0
+GOTO @sx3
+BREAK
+
+
+;手镯加属性
+
+[@sx2]
+<[属性修改设置]/@属性修改设置>-┆     <左手攻击/@sza11>     <右手攻击/@szb11>\
+<[测试阶段设置]/@测试阶段设置> ┆     <左手魔法/@sza12>     <右手魔法/@szb12>\
+<[地图开放设置]/@地图开放设置> ┆     <左手道术/@sza13>     <右手道术/@szb13>\
+<[等待添加设置]/@等待添加设置1> ┆　　 <左手防御/@sza14>     <右手防御/@szb14>\
+<[等待添加设置]/@等待添加设置2> ┆　　 <左手魔御/@sza15>     <右手魔御/@szb15>\
+<[周末双倍设置]/@周末双倍设置> ┆　　 <左手持久/@sza16>     <右手持久/@szb16>\
+<[怪物攻城设置]/@怪物攻城设置> ┆\
+<[等待添加设置]/@等待添加设置3> ┆\
+
+;左手攻击
+[@sza11]
+#ACT
+UPGRADEITEMEX 6 2 0 1 0
+GOTO @sx2
+BREAK
+;左手魔法
+[@sza12]
+#ACT
+UPGRADEITEMEX 6 3 0 1 0
+GOTO @sx2
+BREAK
+;左手道术
+[@sza13]
+#ACT
+UPGRADEITEMEX 6 4 0 1 0
+GOTO @sx2
+BREAK
+;左手防御
+[@sza14]
+#ACT
+UPGRADEITEMEX 6 0 0 1 0
+GOTO @sx2
+BREAK
+;左手魔御
+[@sza15]
+#ACT
+UPGRADEITEMEX 6 1 0 1 0
+GOTO @sx2
+BREAK
+;左手持久
+[@sza16]
+#ACT
+UPGRADEITEMEX 6 14 0 1 0
+GOTO @sx2
+BREAK
+;右手攻击
+[@szb11]
+#ACT
+UPGRADEITEMEX 5 2 0 1 0
+GOTO @sx2
+BREAK
+;右手魔法
+[@szb12]
+#ACT
+UPGRADEITEMEX 5 3 0 1 0
+GOTO @sx2
+BREAK
+;右手道术
+[@szb13]
+#ACT
+UPGRADEITEMEX 5 4 0 1 0
+GOTO @sx2
+BREAK
+;右手防御
+[@szb14]
+#ACT
+UPGRADEITEMEX 5 0 0 1 0
+GOTO @sx2
+BREAK
+;右手魔御
+[@szb15]
+#ACT
+UPGRADEITEMEX 5 1 0 1 0
+GOTO @sx2
+BREAK
+;右手持久
+[@szb16]
+#ACT
+UPGRADEITEMEX 5 14 0 1 0
+GOTO @sx2
+BREAK
+
+
+;〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
+
+
+[@怪物攻城设置]
+<[属性修改设置]/@属性修改设置> ┆   <比奇省/@G比奇省>  <盟重省/@G盟重省>  <封魔谷/@G封魔谷>  <苍月岛/@G苍月岛>  <白日门/@G白日门>\
+<[测试阶段设置]/@测试阶段设置> ┆\
+<[地图开放设置]/@地图开放设置> ┆\
+<[等待添加设置]/@等待添加设置1> ┆\
+<[等待添加设置]/@等待添加设置2> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<COLOR=clAqua [怪物攻城设置]>-┆\
+<[等待添加设置]/@等待添加设置3> ┆\
+
+[@虹魔教主]
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 虹魔教主
+GOTO @G封魔谷
+BREAK
+
+[@虹魔猪卫]
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 虹魔猪卫
+GOTO @G封魔谷
+BREAK
+
+[@虹魔蝎卫]
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 虹魔蝎卫
+GOTO @G封魔谷
+BREAK
+
+[@邪恶毒蛇]
+#IF
+EQUAL S7 3
+#ACT
+MOV S8 邪恶毒蛇
+GOTO @G盟重省
+BREAK
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 邪恶毒蛇
+GOTO @G封魔谷
+BREAK
+
+[@白野猪]
+#IF
+EQUAL S7 3
+#ACT
+MOV S8 白野猪
+GOTO @G盟重省
+BREAK
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 白野猪
+GOTO @G封魔谷
+BREAK
+
+[@邪恶钳虫]
+#IF
+EQUAL S7 3
+#ACT
+MOV S8 邪恶钳虫
+GOTO @G盟重省
+BREAK
+
+[@祖玛弓箭手]
+#IF
+EQUAL S7 3
+#ACT
+MOV S8 祖玛弓箭手
+GOTO @G盟重省
+BREAK
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 祖玛弓箭手
+GOTO @G封魔谷
+BREAK
+
+[@大老鼠]
+#IF
+EQUAL S7 3
+#ACT
+MOV S8 大老鼠
+GOTO @G盟重省
+BREAK
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 大老鼠
+GOTO @G封魔谷
+BREAK
+
+[@蝎蛇]
+#IF
+EQUAL S7 3
+#ACT
+MOV S8 蝎蛇
+GOTO @G盟重省
+BREAK
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 蝎蛇
+GOTO @G封魔谷
+BREAK
+
+[@楔蛾]
+#IF
+EQUAL S7 3
+#ACT
+MOV S8 楔蛾
+GOTO @G盟重省
+BREAK
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 楔蛾
+GOTO @G封魔谷
+BREAK
+
+[@黑野猪]
+#IF
+EQUAL S7 3
+#ACT
+MOV S8 黑野猪
+GOTO @G盟重省
+BREAK
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 黑野猪
+GOTO @G封魔谷
+BREAK
+
+[@红野猪]
+#IF
+EQUAL S7 3
+#ACT
+MOV S8 红野猪
+GOTO @G盟重省
+BREAK
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 红野猪
+GOTO @G封魔谷
+BREAK
+
+[@钳虫]
+#IF
+EQUAL S7 3
+#ACT
+MOV S8 钳虫
+GOTO @G盟重省
+BREAK
+
+[@蜈蚣]
+#IF
+EQUAL S7 3
+#ACT
+MOV S8 蜈蚣
+GOTO @G盟重省
+BREAK
+
+[@巨型蠕虫]
+#IF
+EQUAL S7 3
+#ACT
+MOV S8 巨型蠕虫
+GOTO @G盟重省
+BREAK
+
+[@跳跳蜂]
+#IF
+EQUAL S7 3
+#ACT
+MOV S8 跳跳蜂
+GOTO @G盟重省
+BREAK
+
+[@黑色恶蛆]
+#IF
+EQUAL S7 3
+#ACT
+MOV S8 黑色恶蛆
+GOTO @G盟重省
+BREAK
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 黑色恶蛆
+GOTO @G封魔谷
+BREAK
+
+[@骷髅精灵]
+#IF
+EQUAL S7 0
+#ACT
+MOV S8 骷髅精灵
+GOTO @G比奇省
+BREAK
+
+[@沃玛教主]
+#IF
+EQUAL S7 0
+#ACT
+MOV S8 沃玛教主
+GOTO @G比奇省
+BREAK
+
+[@沃玛卫士]
+#IF
+EQUAL S7 0
+#ACT
+MOV S8 沃玛卫士
+GOTO @G比奇省
+BREAK
+
+[@尸王]
+#IF
+EQUAL S7 0
+#ACT
+MOV S8 尸王
+GOTO @G比奇省
+BREAK
+
+[@火焰沃玛]
+#IF
+EQUAL S7 0
+#ACT
+MOV S8 火焰沃玛
+GOTO @G比奇省
+BREAK
+
+[@沃玛战将]
+#IF
+EQUAL S7 0
+#ACT
+MOV S8 沃玛战将
+GOTO @G比奇省
+BREAK
+
+[@沃玛勇士]
+#IF
+EQUAL S7 0
+#ACT
+MOV S8 沃玛勇士
+GOTO @G比奇省
+BREAK
+
+[@沃玛战士]
+#IF
+EQUAL S7 0
+#ACT
+MOV S8 沃玛战士
+GOTO @G比奇省
+BREAK
+
+[@僵尸5]
+#IF
+EQUAL S7 0
+#ACT
+MOV S8 僵尸5
+GOTO @G比奇省
+BREAK
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 僵尸5
+GOTO @G封魔谷
+BREAK
+
+[@僵尸4]
+#IF
+EQUAL S7 0
+#ACT
+MOV S8 僵尸4
+GOTO @G比奇省
+BREAK
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 僵尸4
+GOTO @G封魔谷
+BREAK
+
+[@僵尸3]
+#IF
+EQUAL S7 0
+#ACT
+MOV S8 僵尸3
+GOTO @G比奇省
+BREAK
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 僵尸3
+GOTO @G封魔谷
+BREAK
+
+[@僵尸1]
+#IF
+EQUAL S7 0
+#ACT
+MOV S8 僵尸1
+GOTO @G比奇省
+BREAK
+#IF
+EQUAL S7 4
+#ACT
+MOV S8 僵尸1
+GOTO @G封魔谷
+BREAK
+
+[@虎蛇]
+#IF
+EQUAL S7 0
+#ACT
+MOV S8 虎蛇
+GOTO @G比奇省
+BREAK
+
+[@红蛇]
+#IF
+EQUAL S7 0
+#ACT
+MOV S8 红蛇
+GOTO @G比奇省
+BREAK
+
+[@恶灵僵尸]
+#IF
+EQUAL S7 5
+#ACT
+MOV S8 恶灵僵尸
+GOTO @G苍月岛
+BREAK
+
+[@恶灵尸王]
+#IF
+EQUAL S7 5
+#ACT
+MOV S8 恶灵尸王
+GOTO @G苍月岛
+BREAK
+
+[@恶灵尸王]
+#IF
+EQUAL S7 5
+#ACT
+MOV S8 恶灵尸王
+GOTO @G苍月岛
+BREAK
+
+[@骷髅弓箭手]
+#IF
+EQUAL S7 5
+#ACT
+MOV S8 骷髅弓箭手
+GOTO @G苍月岛
+BREAK
+
+[@骷髅刀斧手]
+#IF
+EQUAL S7 5
+#ACT
+MOV S8 骷髅刀斧手
+GOTO @G苍月岛
+BREAK
+
+[@骷髅长枪兵]
+#IF
+EQUAL S7 5
+#ACT
+MOV S8 骷髅长枪兵
+GOTO @G苍月岛
+BREAK
+
+[@骷髅锤兵]
+#IF
+EQUAL S7 5
+#ACT
+MOV S8 骷髅锤兵
+GOTO @G苍月岛
+BREAK
+
+[@牛魔侍卫]
+#IF
+EQUAL S7 5
+#ACT
+MOV S8 牛魔侍卫
+GOTO @G苍月岛
+BREAK
+
+[@牛魔法师]
+#IF
+EQUAL S7 5
+#ACT
+MOV S8 牛魔法师
+GOTO @G苍月岛
+BREAK
+
+[@牛魔祭祀]
+#IF
+EQUAL S7 5
+#ACT
+MOV S8 牛魔祭祀
+GOTO @G苍月岛
+BREAK
+
+[@牛魔将军]
+#IF
+EQUAL S7 5
+#ACT
+MOV S8 牛魔将军
+GOTO @G苍月岛
+BREAK
+
+[@牛魔王]
+#IF
+EQUAL S7 5
+#ACT
+MOV S8 牛魔王
+GOTO @G苍月岛
+BREAK
+
+[@暗之牛魔王]
+#IF
+EQUAL S7 5
+#ACT
+MOV S8 暗之牛魔王
+GOTO @G苍月岛
+BREAK
+
+[@天狼蜘蛛]
+#IF
+EQUAL S7 11
+#ACT
+MOV S8 天狼蜘蛛
+GOTO @G白日门
+BREAK
+
+[@花吻蜘蛛]
+#IF
+EQUAL S7 11
+#ACT
+MOV S8 花吻蜘蛛
+GOTO @G白日门
+BREAK
+
+[@剧毒蜘蛛]
+#IF
+EQUAL S7 11
+#ACT
+MOV S8 剧毒蜘蛛
+GOTO @G白日门
+BREAK
+
+[@暴牙蜘蛛]
+#IF
+EQUAL S7 11
+#ACT
+MOV S8 暴牙蜘蛛
+GOTO @G白日门
+BREAK
+
+[@钢牙蜘蛛]
+#IF
+EQUAL S7 11
+#ACT
+MOV S8 钢牙蜘蛛
+GOTO @G白日门
+BREAK
+
+[@月魔蜘蛛]
+#IF
+EQUAL S7 11
+#ACT
+MOV S8 月魔蜘蛛
+GOTO @G白日门
+BREAK
+
+[@黑锷蜘蛛]
+#IF
+EQUAL S7 11
+#ACT
+MOV S8 黑锷蜘蛛
+GOTO @G白日门
+BREAK
+
+[@血巨人]
+#IF
+EQUAL S7 11
+#ACT
+MOV S8 血巨人
+GOTO @G白日门
+BREAK
+
+[@血僵尸]
+#IF
+EQUAL S7 11
+#ACT
+MOV S8 血僵尸
+GOTO @G白日门
+BREAK
+
+[@双头金刚]
+#IF
+EQUAL S7 11
+#ACT
+MOV S8 双头金刚
+GOTO @G白日门
+BREAK
+
+[@双头血魔]
+#IF
+EQUAL S7 11
+#ACT
+MOV S8 双头血魔
+GOTO @G白日门
+BREAK
+
+[@G白日门]
+<[属性修改设置]/@属性修改设置> ┆   <比奇省/@G比奇省>  <盟重省/@G盟重省>  <封魔谷/@G封魔谷>  <苍月岛/@G苍月岛>  <COLOR=CLRED 白日门>       <COLOR=clRED 当前刷怪名称:> <$STR(S8)>\
+<[测试阶段设置]/@测试阶段设置> ┆       <自定义怪名/@@InPutString8>      <自定义怪数/@@InPutInteger5>               <COLOR=clRED 当前刷怪数值:> <$STR(M5)>\
+<[地图开放设置]/@地图开放设置> ┆刷怪起点: <南门/@SR南门> <虎卫堂/@SR虎卫堂>                           <COLOR=clRED 当前刷怪起点:> <$STR(S9)>\
+<[等待添加设置]/@等待添加设置1> ┆怪进攻点: <南门/@ZR南门> <虎卫堂/@ZR虎卫堂> <安全区/@ZR安全区>                    <COLOR=clRED 当前怪进攻点:> <$STR(S10)>\
+<[等待添加设置]/@等待添加设置2> ┆怪物选择: <天狼蜘蛛/@天狼蜘蛛> <花吻蜘蛛/@花吻蜘蛛> <剧毒蜘蛛/@剧毒蜘蛛>\
+<[周末双倍设置]/@周末双倍设置> ┆<暴牙蜘蛛/@暴牙蜘蛛> <钢牙蜘蛛/@钢牙蜘蛛> <月魔蜘蛛/@月魔蜘蛛> <黑锷蜘蛛/@黑锷蜘蛛>\
+<COLOR=clAqua [怪物攻城设置]>-┆<血巨人/@血巨人> <血僵尸/@血僵尸>\
+<[等待添加设置]/@等待添加设置3> ┆<双头金刚/@双头金刚> <双头血魔/@双头血魔>                 <确定攻城/@确定G攻城>\
+#ACT
+MOV S7 11
+BREAK
+
+[@SR虎卫堂]
+#ACT
+MOV M3 223
+MOV M4 274
+MOV S9 白日门虎卫堂
+GOTO @G白日门
+BREAK
+
+[@SR南门]
+#ACT
+MOV M3 157
+MOV M4 344
+MOV S9 白日门南门
+GOTO @G白日门
+BREAK
+
+[@ZR虎卫堂]
+#ACT
+MOV M1 223
+MOV M2 274
+MOV S10 白日门虎卫堂
+GOTO @G白日门
+BREAK
+
+[@ZR南门]
+#ACT
+MOV M1 157
+MOV M2 344
+MOV S10 白日门南门
+GOTO @G白日门
+BREAK
+
+[@ZR安全区]
+#ACT
+MOV M1 180
+MOV M2 325
+MOV S10 白日门安全区
+GOTO @G白日门
+BREAK
+
+[@G苍月岛]
+<[属性修改设置]/@属性修改设置> ┆   <比奇省/@G比奇省>  <盟重省/@G盟重省>  <封魔谷/@G封魔谷>  <COLOR=CLRED 苍月岛>  <白日门/@G白日门>       <COLOR=clRED 当前刷怪名称:> <$STR(S8)>\
+<[测试阶段设置]/@测试阶段设置> ┆       <自定义怪名/@@InPutString8>      <自定义怪数/@@InPutInteger5>               <COLOR=clRED 当前刷怪数值:> <$STR(M5)>\
+<[地图开放设置]/@地图开放设置> ┆刷怪起点: <东门/@SC东门> <西门/@SC西门> <北门/@SC北门>                        <COLOR=clRED 当前刷怪起点:> <$STR(S9)>\
+<[等待添加设置]/@等待添加设置1> ┆怪进攻点: <东门/@ZC东门> <西门/@ZC西门> <北门/@ZC北门> <安全区/@ZC安全区>                 <COLOR=clRED 当前怪进攻点:> <$STR(S10)>\
+<[等待添加设置]/@等待添加设置2> ┆怪物选择: <恶灵僵尸/@恶灵僵尸> <恶灵尸王/@恶灵尸王>\
+<[周末双倍设置]/@周末双倍设置> ┆<骷髅弓箭手/@骷髅弓箭手> <骷髅刀斧手/@骷髅刀斧手> <骷髅长枪兵/@骷髅长枪兵> <骷髅锤兵/@骷髅锤兵>\
+<COLOR=clAqua [怪物攻城设置]>-┆<牛魔侍卫/@牛魔侍卫> <牛魔法师/@牛魔法师> <牛魔祭祀/@牛魔祭祀> <牛魔将军/@牛魔将军>\
+<[等待添加设置]/@等待添加设置3> ┆<牛魔王/@牛魔王> <暗之牛魔王/@暗之牛魔王>                 <确定攻城/@确定G攻城>\
+#ACT
+MOV S7 5
+BREAK
+
+[@SC东门]
+#ACT
+MOV M3 160
+MOV M4 350
+MOV S9 苍月岛东门
+GOTO @G苍月岛
+BREAK
+
+[@SC西门]
+#ACT
+MOV M3 110
+MOV M4 300
+MOV S9 苍月岛西门
+GOTO @G苍月岛
+BREAK
+
+[@SC北门]
+#ACT
+MOV M3 165
+MOV M4 295
+MOV S9 苍月岛北门
+GOTO @G苍月岛
+BREAK
+
+[@ZC东门]
+#ACT
+MOV M1 160
+MOV M2 350
+MOV S10 苍月岛东门
+GOTO @G苍月岛
+BREAK
+
+[@ZC西门]
+#ACT
+MOV M1 110
+MOV M2 300
+MOV S10 苍月岛西门
+GOTO @G苍月岛
+BREAK
+
+[@ZC北门]
+#ACT
+MOV M1 165
+MOV M2 295
+MOV S10 苍月岛北门
+GOTO @G苍月岛
+BREAK
+
+[@ZC安全区]
+#ACT
+MOV M1 140
+MOV M2 330
+MOV S10 苍月岛安全区
+GOTO @G苍月岛
+BREAK
+
+
+[@G封魔谷]
+<[属性修改设置]/@属性修改设置> ┆   <比奇省/@G比奇省>  <盟重省/@G盟重省>  <COLOR=CLRED 封魔谷>  <苍月岛/@G苍月岛>  <白日门/@G白日门>       <COLOR=clRED 当前刷怪名称:> <$STR(S8)>\
+<[测试阶段设置]/@测试阶段设置> ┆       <自定义怪名/@@InPutString8>      <自定义怪数/@@InPutInteger5>               <COLOR=clRED 当前刷怪数值:> <$STR(M5)>\
+<[地图开放设置]/@地图开放设置> ┆刷怪起点: <东门/@SF东门> <南门/@SF南门> <北门/@SF北门>                        <COLOR=clRED 当前刷怪起点:> <$STR(S9)>\
+<[等待添加设置]/@等待添加设置1> ┆怪进攻点: <东门/@ZF东门> <南门/@ZF南门> <北门/@ZF北门> <安全区/@ZF安全区>                 <COLOR=clRED 当前怪进攻点:> <$STR(S10)>\
+<[等待添加设置]/@等待添加设置2> ┆怪物选择: <僵尸1/@僵尸1> <僵尸3/@僵尸3> <僵尸4/@僵尸4> <僵尸5/@僵尸5> <黑色恶蛆/@黑色恶蛆>\
+<[周末双倍设置]/@周末双倍设置> ┆<红野猪/@红野猪> <黑野猪/@黑野猪> <楔蛾/@楔蛾> <蝎蛇/@蝎蛇> <大老鼠/@大老鼠> <祖玛弓箭手/@祖玛弓箭手>\
+<COLOR=clAqua [怪物攻城设置]>-┆<白野猪/@白野猪> <邪恶毒蛇/@邪恶毒蛇> <虹魔猪卫/@虹魔猪卫> <虹魔蝎卫/@虹魔蝎卫>\
+<[等待添加设置]/@等待添加设置3> ┆<虹魔教主/@虹魔教主>                          <确定攻城/@确定G攻城>\
+#ACT
+MOV S7 4
+BREAK
+
+[@SF东门]
+#ACT
+MOV M3 248
+MOV M4 228
+MOV S9 封魔谷东门
+GOTO @G封魔谷
+BREAK
+
+[@SF南门]
+#ACT
+MOV M3 200
+MOV M4 230
+MOV S9 封魔谷南门
+GOTO @G封魔谷
+BREAK
+
+[@SF北门]
+#ACT
+MOV M3 270
+MOV M4 165
+MOV S9 封魔谷北门
+GOTO @G封魔谷
+BREAK
+
+[@ZF东门]
+#ACT
+MOV M1 248
+MOV M2 228
+MOV S10 封魔谷东门
+GOTO @G封魔谷
+BREAK
+
+[@ZF南门]
+#ACT
+MOV M1 200
+MOV M2 230
+MOV S10 封魔谷南门
+GOTO @G封魔谷
+BREAK
+
+[@ZF北门]
+#ACT
+MOV M1 270
+MOV M2 165
+MOV S10 封魔谷北门
+GOTO @G封魔谷
+BREAK
+
+[@ZF安全区]
+#ACT
+MOV M1 240
+MOV M2 200
+MOV S10 封魔谷安全区
+GOTO @G封魔谷
+BREAK
+
+[@G盟重省]
+<[属性修改设置]/@属性修改设置> ┆   <比奇省/@G比奇省>  <COLOR=CLRED 盟重省>  <封魔谷/@G封魔谷>  <苍月岛/@G苍月岛>  <白日门/@G白日门>       <COLOR=clRED 当前刷怪名称:> <$STR(S8)>\
+<[测试阶段设置]/@测试阶段设置> ┆       <自定义怪名/@@InPutString8>      <自定义怪数/@@InPutInteger5>               <COLOR=clRED 当前刷怪数值:> <$STR(M5)>\
+<[地图开放设置]/@地图开放设置> ┆刷怪起点: <左门/@SM左门> <右门/@SM右门>                             <COLOR=clRED 当前刷怪起点:> <$STR(S9)>\
+<[等待添加设置]/@等待添加设置1> ┆怪进攻点: <左门/@ZM左门> <右门/@ZM右门> <书店/@ZM书店> <安全区/@ZM安全区>                 <COLOR=clRED 当前怪进攻点:> <$STR(S10)>\
+<[等待添加设置]/@等待添加设置2> ┆怪物选择: <黑色恶蛆/@黑色恶蛆> <跳跳蜂/@跳跳蜂> <巨型蠕虫/@巨型蠕虫> <蜈蚣/@蜈蚣> <钳虫/@钳虫>\
+<[周末双倍设置]/@周末双倍设置> ┆<红野猪/@红野猪> <黑野猪/@黑野猪> <楔蛾/@楔蛾> <蝎蛇/@蝎蛇> <大老鼠/@大老鼠> <祖玛弓箭手/@祖玛弓箭手>\
+<COLOR=clAqua [怪物攻城设置]>-┆<邪恶钳虫/@邪恶钳虫> <白野猪/@白野猪> <邪恶毒蛇/@邪恶毒蛇>\
+<[等待添加设置]/@等待添加设置3> ┆                                  <确定攻城/@确定G攻城>\
+#ACT
+MOV S7 3
+BREAK
+
+[@SM左门]
+#ACT
+MOV M3 258
+MOV M4 319
+MOV S9 盟重省左门
+GOTO @G盟重省
+BREAK
+
+[@SM右门]
+#ACT
+MOV M3 380
+MOV M4 360
+MOV S9 盟重省右门
+GOTO @G盟重省
+BREAK
+
+[@ZM左门]
+#ACT
+MOV M1 258
+MOV M2 319
+MOV S10 盟重省左门
+GOTO @G盟重省
+BREAK
+
+[@ZM右门]
+#ACT
+MOV M1 380
+MOV M2 360
+MOV S10 盟重省右门
+GOTO @G盟重省
+BREAK
+
+[@ZM书店]
+#ACT
+MOV M1 404
+MOV M2 329
+MOV S10 盟重省书店
+GOTO @G盟重省
+BREAK
+
+[@ZM安全区]
+#ACT
+MOV M1 330
+MOV M2 330
+MOV S10 盟重省安全区
+GOTO @G盟重省
+BREAK
+
+[@G比奇省]
+<[属性修改设置]/@属性修改设置> ┆   <COLOR=CLRED 比奇省>  <盟重省/@G盟重省>  <封魔谷/@G封魔谷>  <苍月岛/@G苍月岛>  <白日门/@G白日门>       <COLOR=clRED 当前刷怪名称:> <$STR(S8)>\
+<[测试阶段设置]/@测试阶段设置> ┆       <自定义怪名/@@InPutString8>      <自定义怪数/@@InPutInteger5>               <COLOR=clRED 当前刷怪数值:> <$STR(M5)>\
+<[地图开放设置]/@地图开放设置> ┆刷怪起点: <东门/@SB东门> <南门/@SB南门> <西门/@SB西门> <北门/@SB北门>                   <COLOR=clRED 当前刷怪起点:> <$STR(S9)>\
+<[等待添加设置]/@等待添加设置1> ┆怪进攻点: <东门/@ZB东门> <南门/@ZB南门> <西门/@ZB西门> <北门/@ZB北门> <皇宫/@ZB皇宫> <安全区/@ZB安全区>       <COLOR=clRED 当前怪进攻点:> <$STR(S10)>\
+<[等待添加设置]/@等待添加设置2> ┆怪物选择: <红蛇/@红蛇> <虎蛇/@虎蛇> <僵尸1/@僵尸1> <僵尸3/@僵尸3> <僵尸4/@僵尸4> <僵尸5/@僵尸5>\
+<[周末双倍设置]/@周末双倍设置> ┆<沃玛战士/@沃玛战士> <沃玛勇士/@沃玛勇士> <沃玛战将/@沃玛战将> <火焰沃玛/@火焰沃玛>\
+<COLOR=clAqua [怪物攻城设置]>-┆<骷髅精灵/@骷髅精灵> <尸王/@尸王> <沃玛卫士/@沃玛卫士>\
+<[等待添加设置]/@等待添加设置3> ┆<沃玛教主/@沃玛教主>                          <确定攻城/@确定G攻城>\
+#ACT
+MOV S7 0
+BREAK
+
+[@SB东门]
+#ACT
+MOV M3 377
+MOV M4 309
+MOV S9 比奇省东门
+GOTO @G比奇省
+BREAK
+
+[@SB南门]
+#ACT
+MOV M3 290
+MOV M4 300
+MOV S9 比奇省南门
+GOTO @G比奇省
+BREAK
+
+[@SB西门]
+#ACT
+MOV M3 290
+MOV M4 220
+MOV S9 比奇省西门
+GOTO @G比奇省
+BREAK
+
+[@SB北门]
+#ACT
+MOV M3 388
+MOV M4 205
+MOV S9 比奇省北门
+GOTO @G比奇省
+BREAK
+
+[@ZB东门]
+#ACT
+MOV M1 377
+MOV M2 309
+MOV S10 比奇省东门
+GOTO @G比奇省
+BREAK
+
+[@ZB南门]
+#ACT
+MOV M1 290
+MOV M2 300
+MOV S10 比奇省南门
+GOTO @G比奇省
+BREAK
+
+[@ZB西门]
+#ACT
+MOV M1 290
+MOV M2 220
+MOV S10 比奇省西门
+GOTO @G比奇省
+BREAK
+
+[@ZB北门]
+#ACT
+MOV M1 388
+MOV M2 205
+MOV S10 比奇省北门
+GOTO @G比奇省
+BREAK
+
+[@ZB皇宫]
+#ACT
+MOV M1 340
+MOV M2 195
+MOV S10 比奇省皇宫
+GOTO @G比奇省
+BREAK
+
+[@ZB安全区]
+#ACT
+MOV M1 330
+MOV M2 269
+MOV S10 比奇省安全区
+GOTO @G比奇省
+BREAK
+
+;----------------------------
+
+[@@InPutInteger5]
+#IF
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutInteger5
+
+[~InPutInteger5]
+#If
+CheckLevelEX > 0
+EQUAL S7 0
+#Act
+GOTO @G比奇省
+BREAK
+#If
+CheckLevelEX > 0
+EQUAL S7 3
+#Act
+GOTO @G盟重省
+BREAK
+#If
+CheckLevelEX > 0
+EQUAL S7 4
+#Act
+GOTO @G封魔谷
+BREAK
+#If
+CheckLevelEX > 0
+EQUAL S7 5
+#Act
+GOTO @G苍月岛
+BREAK
+#If
+CheckLevelEX > 0
+EQUAL S7 11
+#Act
+GOTO @G白日门
+BREAK
+
+[@@InPutString8]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString8
+[~InPutString8]
+#If
+CheckLevelEX > 0
+EQUAL S7 0
+#Act
+GOTO @G比奇省
+BREAK
+#If
+CheckLevelEX > 0
+EQUAL S7 3
+#Act
+GOTO @G盟重省
+BREAK
+#If
+CheckLevelEX > 0
+EQUAL S7 4
+#Act
+GOTO @G封魔谷
+BREAK
+#If
+CheckLevelEX > 0
+EQUAL S7 5
+#Act
+GOTO @G苍月岛
+BREAK
+#If
+CheckLevelEX > 0
+EQUAL S7 11
+#Act
+GOTO @G白日门
+BREAK
+
+
+
+[@确定G攻城]
+#IF
+CheckLevelEX > 0
+EQUAL S7 0
+#ACT
+Mission <$STR(S7)> <$STR(M1)> <$STR(M2)>
+Param1 <$STR(M3)>
+Param2 <$STR(M4)>
+Param3 <$STR(M5)>
+Param4 5
+MobPlace <$STR(S8)>
+GOTO @G比奇省
+BREAK
+#IF
+CheckLevelEX > 0
+EQUAL S7 3
+#ACT
+Mission <$STR(S7)> <$STR(M1)> <$STR(M2)>
+Param1 <$STR(M3)>
+Param2 <$STR(M4)>
+Param3 <$STR(M5)>
+Param4 5
+MobPlace <$STR(S8)>
+GOTO @G盟重省
+BREAK
+#IF
+CheckLevelEX > 0
+EQUAL S7 4
+#ACT
+Mission <$STR(S7)> <$STR(M1)> <$STR(M2)>
+Param1 <$STR(M3)>
+Param2 <$STR(M4)>
+Param3 <$STR(M5)>
+Param4 5
+MobPlace <$STR(S8)>
+GOTO @G封魔谷
+BREAK
+#IF
+CheckLevelEX > 0
+EQUAL S7 5
+#ACT
+Mission <$STR(S7)> <$STR(M1)> <$STR(M2)>
+Param1 <$STR(M3)>
+Param2 <$STR(M4)>
+Param3 <$STR(M5)>
+Param4 5
+MobPlace <$STR(S8)>
+GOTO @G苍月岛
+BREAK
+#IF
+CheckLevelEX > 0
+EQUAL S7 11
+#ACT
+Mission <$STR(S7)> <$STR(M1)> <$STR(M2)>
+Param1 <$STR(M3)>
+Param2 <$STR(M4)>
+Param3 <$STR(M5)>
+Param4 5
+MobPlace <$STR(S8)>
+GOTO @G白日门
+BREAK
+
+;〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
+
+[@周末双倍设置]
+#IF
+large G8 0
+#SAY
+<[属性修改设置]/@属性修改设置> ┆\
+<[测试阶段设置]/@测试阶段设置> ┆           本区已经开到第 <$STR(G8)> 周\
+<[地图开放设置]/@地图开放设置> ┆\
+<[等待添加设置]/@等待添加设置1> ┆              <开区周数清零/@开区周数清零>\
+<[等待添加设置]/@等待添加设置2> ┆\
+<COLOR=clAqua [周末双倍设置]>-┆  提示：<COLOR=CLAQUA 本>周六、周日19:00-22:00打怪双倍经验\
+<[怪物攻城设置]/@怪物攻城设置> ┆\
+<[等待添加设置]/@等待添加设置3> ┆\
+#ELSESAY
+<[属性修改设置]/@属性修改设置> ┆\
+<[测试阶段设置]/@测试阶段设置> ┆           本区已经开到第 <$STR(G8)> 周\
+<[地图开放设置]/@地图开放设置> ┆\
+<[等待添加设置]/@等待添加设置1> ┆              <开区周数清零/@开区周数清零>\
+<[等待添加设置]/@等待添加设置2> ┆\
+<COLOR=clAqua [周末双倍设置]>-┆  提示：<COLOR=CLAQUA 下>周六19:00-22:00打怪双倍经验\
+<[怪物攻城设置]/@怪物攻城设置> ┆\
+<[等待添加设置]/@等待添加设置3> ┆\
+
+[@开区周数清零]
+#IF
+ISADMIN
+#ACT
+MOV G8 0
+SENDMSG 7 设置成功！
+GOTO @周末双倍设置
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+;〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
+
+[@地图开放设置]
+#IF
+#SAY
+BS之家地图 状态：<$STR(G4)>    <开放/@开放BS之家>  <设置开放时间/@关闭BS之家>   <$STR(A4)>\
+魔龙城地图 状态：<$STR(G5)>    <开放/@开放魔龙城>  <设置开放时间/@关闭魔龙城>   <$STR(A5)>\
+烟　火地图 状态：<$STR(G6)>    <开放/@开放烟　火>  <设置开放时间/@关闭烟　火>   <$STR(A6)>\
+地下殿地图 状态：<$STR(G7)>    <开放/@开放地下殿>  <设置开放时间/@关闭地下殿>   <$STR(A7)>\
+
+　                说明：<0=此地图为关闭状态，1=此地图为开启状态！>\
+　                      <点击[开放]，则会马上开放此地图！>\
+　                      <[设置开放时间]，只是NPC上会显示此地图的开放时间介绍>\
+
+[@开放地下殿]
+#ACT
+MOV G7 1
+SENDMSG 7 地下宫殿地图成功开放！
+SENDMSG 5 神秘的地下宫殿地图成功开放！…… 252 253 20
+GOTO @地图开放设置
+BREAK
+[@关闭地下殿]
+#ACT
+QUERYVALUE 6 0 80 @关闭地下殿1 请在下面输入开区时间:\注意：不要有空格！\例：地下宫殿-8月8日开放 QF
+BREAK
+[@关闭地下殿1]
+#ACT
+MOV G7 0
+MOV A7 <COLOR=CLYERROW
+INC A7 
+INC A7 <$STR(S6)>
+INC A7 >
+SENDMSG 7 地下宫殿地图成功关闭！
+GOTO @地图开放设置
+BREAK
+
+
+[@开放烟　火]
+#ACT
+MOV G6 1
+SENDMSG 7 烟火屠魔地图成功开放！
+SENDMSG 5 神秘的烟火屠魔地图成功开放！…… 252 253 20
+GOTO @地图开放设置
+BREAK
+[@关闭烟　火]
+#ACT
+QUERYVALUE 6 0 80 @关闭烟　火1 请在下面输入开区时间:\注意：不要有空格！\例：烟火屠魔-8月8日开放 QF
+BREAK
+[@关闭烟　火1]
+#ACT
+MOV G6 0
+MOV A6 <COLOR=CLYERROW
+INC A6 
+INC A6 <$STR(S6)>
+INC A6 >
+SENDMSG 7 烟火屠魔地图成功关闭！
+GOTO @地图开放设置
+BREAK
+
+[@开放魔龙城]
+#ACT
+MOV G5 1
+SENDMSG 7 魔龙城地图成功开放！
+SENDMSG 5 神秘的魔龙城地图成功开放！…… 252 253 20
+GOTO @地图开放设置
+BREAK
+[@关闭魔龙城]
+#ACT
+QUERYVALUE 6 0 80 @关闭魔龙城1 请在下面输入开区时间:\注意：不要有空格！\例：魔龙城-8月8日开放 QF
+BREAK
+[@关闭魔龙城1]
+#ACT
+MOV G5 0
+MOV A5 <COLOR=CLYERROW
+INC A5 
+INC A5 <$STR(S6)>
+INC A5 >
+SENDMSG 7 魔龙城地图成功关闭！
+GOTO @地图开放设置
+BREAK
+
+[@开放BS之家]
+#ACT
+MOV G4 1
+SENDMSG 7 BOSS之家地图成功开放！
+SENDMSG 5 神秘的BOSS之家地图成功开放！…… 252 253 20
+GOTO @地图开放设置
+BREAK
+[@关闭BS之家]
+#ACT
+QUERYVALUE 6 0 80 @关闭BS之家1 请在下面输入开区时间:\注意：不要有空格！\例：BOSS之家-8月8日开放 QF
+BREAK
+[@关闭BS之家1]
+#ACT
+MOV G4 0
+MOV A4 <COLOR=CLYERROW
+INC A4 
+INC A4 <$STR(S6)>
+INC A4 >
+SENDMSG 7 BOSS之家地图成功关闭！
+GOTO @地图开放设置
+BREAK
+
+;〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
+
+
+[@测试阶段设置]
+#IF
+equal G0 0
+#SAY
+<[属性修改设置]/@属性修改设置> ┆\
+<COLOR=clAqua [测试阶段设置]>-┆   当前服务器处于：[正式]开区模式！\
+<[地图开放设置]/@地图开放设置> ┆       <设置为测试开区模式/@设置为测试>\
+<[等待添加设置]/@等待添加设置1> ┆\
+<[等待添加设置]/@等待添加设置2> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[怪物攻城设置]/@怪物攻城设置> ┆\
+<[等待添加设置]/@等待添加设置3> ┆\
+#ELSESAY
+<[属性修改设置]/@属性修改设置> ┆\
+<COLOR=clAqua [测试阶段设置]>-┆   当前服务器处于：[测试]开区模式！\
+<[地图开放设置]/@地图开放设置> ┆       <设置为正式开区模式/@设置为正式>\
+<[等待添加设置]/@等待添加设置1> ┆\
+<[等待添加设置]/@等待添加设置2> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[怪物攻城设置]/@怪物攻城设置> ┆\
+<[等待添加设置]/@等待添加设置3> ┆\
+
+[@设置为测试]
+#ACT
+MOV G0 1
+SENDMSG 7 设置为测试开区模式生效！
+GOTO @测试阶段设置
+BREAK
+
+[@设置为正式]
+#ACT
+MOV G0 0
+SENDMSG 7 设置为正式开区模式生效！
+GOTO @测试阶段设置
+BREAK
+}

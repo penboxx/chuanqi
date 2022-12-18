@@ -1,0 +1,31 @@
+[@MAIN]
+这里是天关十四层\
+你必须将本地图内所有怪物杀光，才可以领取奖励进入下一关！\
+<COLOR=clRed 注:请不要将聚灵珠放在包袱内,否则会被收取掉!>\
+　\
+<领取奖励进入下一关/@SHISICJLLQ>\
+
+[@SHISICJLLQ]
+#IF
+CheckRangeMonCount TG14 16 12 15 = 0
+#ACT
+GOTO @SHISICJLLQ1
+#ELSESAY
+地图内的怪物还没杀光呢！
+
+[@SHISICJLLQ1]
+#IF
+CHECKMAPHUMANCOUNT TG15 = 0
+CHECKGAMEGOLD > 569
+#ACT
+GAMEGOLD - 570
+CLEARMAPMON TG15
+take 聚灵珠 50
+CHANGEEXP + 1700000
+Param1 TG15
+MonGen 暗之赤月恶魔 1 1
+MAPMOVE TG15
+SENDMSG 0 %s闯过了天关十四层，获得1700000经验奖励！
+BREAK
+#ELSEACT
+MESSAGEBOX 里面有人了，或者你的元宝不足570！

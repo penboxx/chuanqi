@@ -1,0 +1,55 @@
+()
+%100
+[@main]
+\
+●█〓██▄▄▄▄▄▄ ●●●●●● 兄弟们，往皇宫冲啊！\
+▄▅██████▅▄▃▂      <COLOR=clRed 纪律+速度+团结！>\
+██████████████     <COLOR=clRed 玛珐勇士们加油！>\
+◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲◤       <COLOR=clRed 人多人少气势不倒！>\
+╔══════════════════════════╗\
+║<COLOR=clLime  沙大门1万金币传送，垃圾口2万，复活点5万，楼梯10万>              ║\
+╠══════════════════════════╣\
+║<沙城大门口/@沙城大门口>║║<沙城垃圾口/@沙城垃圾口>║║<沙城复活点/@沙城复活点>║║<皇宫楼梯口/@皇宫楼梯口>║\
+╚═════╝╚═════╝╚═════╝╚═════╝\
+[@沙城大门口]
+#if
+checkgold 10000
+#act
+take 金币 10000
+mapmove 3 678 337
+break
+#elsesay
+对不起，需要1万金币。\
+<返回/@main>
+
+[@沙城垃圾口]
+#if
+checkgold 20000
+#act
+take 金币 20000
+mapmove 3 577 295
+break
+#elsesay
+对不起，需要2万金币。\
+<返回/@main>
+
+[@沙城复活点]
+#if
+checkgold 50000
+#act
+take 金币 50000
+mapmove 3 653 308
+break
+#elsesay
+对不起，需要5万金币。\
+<返回/@main>
+[@皇宫楼梯口]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove 3 636 282
+break
+#elsesay
+对不起，需要10万金币。\
+<返回/@main>

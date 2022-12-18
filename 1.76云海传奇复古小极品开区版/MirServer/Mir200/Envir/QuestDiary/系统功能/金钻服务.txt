@@ -1,0 +1,531 @@
+[@金钻]
+{
+　　<COLOR=clFuchsia 想对各种玩法更加了解,请查看土城右下角[必看游戏攻略]>\
+　 　尊金的“金钻”玩家，我们为您提供最快捷方便的服务\
+　　╔┄┄-<每日领取工资/@工资>-┄┄┄┄┄-<每日免费洗红/@洗红>-┄┄╗\
+　　┆ <尸 王 殿/@传送05>    <未知暗殿/@传送06>    <沃玛三层/@传送07>    <石 墓 阵/@传送08> ┆\
+　　┆ <祖玛七层/@传送09>    <牛魔五层/@传送10>    <霸者大厅/@传送11>    <沙藏宝阁/@传送12> ┆\
+　　┆ <幻境七层/@传送14>    <王者禁地/@传送15>    <圣域之门/@圣域之门>    <六新衣服/@传送16> ┆\
+　　┆ <恶魔祭坛/@csemjt>    <赤月老巢/@cscylc>    <镜像殿堂/@csjxdt>    <幽冥领地/@csymld> ┆\
+　　╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝\
+[@工资]
+#IF
+dayofweek sun
+check [11] 0
+#ACT
+SET [11] 1
+SET [12] 0
+SET [13] 0
+SET [14] 0
+SET [15] 0
+SET [16] 0
+SET [17] 0
+GIVE 金币 1000000
+GIVE 金条 1
+GOTO @GIVEOK1
+BREAK
+#IF
+dayofweek mon
+check [12] 0
+#ACT
+SET [11] 0
+SET [12] 1
+SET [13] 0
+SET [14] 0
+SET [15] 0
+SET [16] 0
+SET [17] 0
+GIVE 金币 1000000
+GIVE 三倍经验书 1
+GOTO @GIVEOK1
+BREAK
+#IF
+dayofweek tue
+check [13] 0
+#ACT
+SET [11] 0
+SET [12] 0
+SET [13] 1
+SET [14] 0
+SET [15] 0
+SET [16] 0
+SET [17] 0
+GIVE 金币 1000000
+GIVE 九珠连环炮 2
+GOTO @GIVEOK1
+BREAK
+#IF
+dayofweek wed
+check [14] 0
+#ACT
+SET [11] 0
+SET [12] 0
+SET [13] 0
+SET [14] 1
+SET [15] 0
+SET [16] 0
+SET [17] 0
+GIVE 金币 1000000
+GIVE 修复神水 1
+BREAK
+#IF
+dayofweek thu
+check [15] 0
+#ACT
+SET [11] 0
+SET [12] 0
+SET [13] 0
+SET [14] 0
+SET [15] 1
+SET [16] 0
+SET [17] 0
+GIVE 金币 1000000
+GIVE 移动仓库卷 1
+GOTO @GIVEOK1
+BREAK
+#IF
+dayofweek fri
+check [16] 0
+#ACT
+SET [11] 0
+SET [12] 0
+SET [13] 0
+SET [14] 0
+SET [15] 0
+SET [16] 1
+SET [17] 0
+GIVE 金币 1000000
+GIVE 个性发型 1
+GOTO @GIVEOK1
+BREAK
+#IF
+dayofweek sat
+check [17] 0
+#ACT
+SET [11] 0
+SET [12] 0
+SET [13] 0
+SET [14] 0
+SET [15] 0
+SET [16] 0
+SET [17] 1
+GIVE 金币 1000000
+GIVE 红名清洗卡 1
+GOTO @GIVEOK1
+BREAK
+#IF
+#ACT
+messagebox 您今天已经领取过了
+BREAK
+
+[@GIVEOK1]
+#ACT
+messagebox 东西可拿好了，掉了可没的补哟。^_^ 
+BREAK
+
+[@洗红]
+#IF
+checkpkpoint 2
+#ELSEACT
+MESSAGEBOX 您还没红呢！！
+BREAK
+#IF
+dayofweek sun
+check [20] 0
+#ACT
+SET [20] 1
+SET [21] 0
+SET [22] 0
+SET [23] 0
+SET [24] 0
+SET [25] 0
+SET [26] 0
+CHANGEPKPOINT = 0
+GOTO @GIVEOK2
+BREAK
+#IF
+dayofweek mon
+check [21] 0
+#ACT
+SET [20] 0
+SET [21] 1
+SET [22] 0
+SET [23] 0
+SET [24] 0
+SET [25] 0
+SET [26] 0
+CHANGEPKPOINT = 0
+GOTO @GIVEOK2
+BREAK
+#IF
+dayofweek tue
+check [22] 0
+#ACT
+SET [20] 0
+SET [21] 0
+SET [22] 1
+SET [23] 0
+SET [24] 0
+SET [25] 0
+SET [26] 0
+CHANGEPKPOINT = 0
+GOTO @GIVEOK2
+BREAK
+#IF
+dayofweek wed
+check [23] 0
+#ACT
+SET [20] 0
+SET [21] 0
+SET [22] 0
+SET [23] 1
+SET [24] 0
+SET [25] 0
+SET [26] 0
+CHANGEPKPOINT = 0
+BREAK
+#IF
+dayofweek thu
+check [24] 0
+#ACT
+SET [20] 0
+SET [21] 0
+SET [22] 0
+SET [23] 0
+SET [24] 1
+SET [25] 0
+SET [26] 0
+CHANGEPKPOINT = 0
+GOTO @GIVEOK2
+BREAK
+#IF
+dayofweek fri
+check [25] 0
+#ACT
+SET [20] 0
+SET [21] 0
+SET [22] 0
+SET [23] 0
+SET [24] 0
+SET [25] 1
+SET [26] 0
+CHANGEPKPOINT = 0
+GOTO @GIVEOK2
+BREAK
+#IF
+dayofweek sat
+check [26] 0
+#ACT
+SET [20] 0
+SET [21] 0
+SET [22] 0
+SET [23] 0
+SET [24] 0
+SET [25] 0
+SET [26] 1
+CHANGEPKPOINT = 0
+GOTO @GIVEOK2
+BREAK
+#IF
+#ACT
+messagebox 您今天已经洗过了
+BREAK
+
+[@GIVEOK2]
+#ACT
+messagebox 已经洗白。^_^ 
+BREAK
+
+[@csemjt]
+#IF
+checkgold 200000
+#ACT
+TAKE 金币 200000
+GIVE 回城卷 1
+mapmove D10051 180 55
+BREAK
+#ELSEACT
+MESSAGEBOX 需要20万金币用来支付我们的服务费用!
+
+[@cscylc]
+#IF
+checkgold 200000
+#ACT
+TAKE 金币 200000
+GIVE 回城卷 1
+mapmove D10052 139 25
+BREAK
+#ELSEACT
+MESSAGEBOX 需要20万金币用来支付我们的服务费用!
+
+[@csjxdt]
+#IF
+checkgold 200000
+#ACT
+TAKE 金币 200000
+GIVE 回城卷 1
+mapmove jxdt
+BREAK
+#ELSEACT
+MESSAGEBOX 需要20万金币用来支付我们的服务费用!
+
+[@csymld]
+#IF
+checkgold 200000
+#ACT
+TAKE 金币 200000
+GIVE 回城卷 1
+mapmove F004 17 23
+BREAK
+#ELSEACT
+MESSAGEBOX 需要20万金币用来支付我们的服务费用!
+
+[@传送01]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove 0 659 218
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送02]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove 3 333 333
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送03]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove 5 140 338
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送04]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove 11 177 324
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送05]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove Q004 15 13
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送06]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove M001 201 10
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送07]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove D023 52 366
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送08]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove D715 83 81
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送09]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove D5071 8 10
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送10]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove D2076 94 130
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送11]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove D2008 84 85
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送12]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove h201 13 102
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送13]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove D1004 171 88
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送14]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove H007 161 172
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送15]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+mapmove h105 135 184
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@圣域之门]
+#IF
+checkgold 100000
+#ACT
+TAKE 金币 100000
+GIVE 回城卷 1
+MAPMOVE B101
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+
+[@传送16]
+　╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+　┆ <死亡神殿/@衣服01>    <地狱烈焰/@衣服02>    <钳虫巢穴/@衣服03> ┆\
+　╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╣\
+　┆ <堕落坟场/@衣服04>    <困惑殿堂/@衣服05>    <深渊魔域/@衣服06> ┆\
+　╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝
+
+[@衣服01]
+#IF
+checkgold 200000
+#ACT
+TAKE 金币 200000
+GIVE 回城卷 1
+mapmove 4 205 218
+BREAK
+#ELSEACT
+MESSAGEBOX 需要20万金币用来支付我们的服务费用!
+
+[@衣服02]
+#IF
+checkgold 200000
+#ACT
+TAKE 金币 200000
+GIVE 回城卷 1
+mapmove 0 428 474
+BREAK
+#ELSEACT
+MESSAGEBOX 需要20万金币用来支付我们的服务费用!
+
+[@衣服03]
+#IF
+checkgold 200000
+#ACT
+TAKE 金币 200000
+GIVE 回城卷 1
+mapmove 11 343 325
+BREAK
+#ELSEACT
+MESSAGEBOX 需要20万金币用来支付我们的服务费用!
+
+[@衣服04]
+#IF
+checkgold 200000
+#ACT
+TAKE 金币 200000
+GIVE 回城卷 1
+mapmove 1 320 56
+BREAK
+#ELSEACT
+MESSAGEBOX 需要20万金币用来支付我们的服务费用!
+
+[@衣服05]
+#IF
+checkgold 200000
+#ACT
+TAKE 金币 200000
+GIVE 回城卷 1
+mapmove R001 55 94
+BREAK
+#ELSEACT
+MESSAGEBOX 需要20万金币用来支付我们的服务费用!
+
+[@衣服06]
+#IF
+checkgold 200000
+#ACT
+TAKE 金币 200000
+GIVE 回城卷 1
+mapmove 1 215 312
+BREAK
+#ELSEACT
+MESSAGEBOX 需要20万金币用来支付我们的服务费用!
+}

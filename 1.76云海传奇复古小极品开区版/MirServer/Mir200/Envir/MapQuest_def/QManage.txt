@@ -1,0 +1,821 @@
+(@@InPutInteger @@InPutString)
+[@RESUME]
+#ACT
+SENDMSG 7 　　　　　　╔═════════════════╗　　　　　　　 255 56
+SENDMSG 7 　　　　　　║因为你上次下线的时候使用了离线挂机║　　　　　　　 255 56
+SENDMSG 7 　　　　　　║　为了避免你在游戏中出现数据错误　║　　　　　　　 255 56
+SENDMSG 7 　　　　　　║　　所以请你小退一下再重新登陆　　║　　　　　　　 255 56
+SENDMSG 7 　　　　　　╚═════════════════╝　　　　　　　 255 56
+SETOFFLINEPLAY OFF
+KICK
+
+[@LOGIN]
+#if
+checklevelex > 0
+#ACT
+SETOFFLINEPLAY ON
+VAR INTEGER HUMAN SD
+LOADVAR HUMAN SD ..\QUESTDIARY\数据文件\杀人次数Save.txt
+VAR INTEGER HUMAN SW
+LOADVAR HUMAN SW ..\QUESTDIARY\数据文件\死亡次数Save.txt
+VAR String HUMAN 二级密码
+LOADVAR HUMAN 二级密码 ..\QuestDiary\数据文件\二级密码数据.txt
+VAR INTEGER HUMAN 经验次数
+LOADVAR HUMAN 经验次数 ..\QUESTDIARY\数据文件\经验次数Save.txt
+READRANDOMSTR .\QuestDiary\抽取数据\小提示.txt S6
+SENDMSG 5 提示：<$STR(S6)> 251 0 8
+#CALL [\系统功能\封号系统.txt] @封号检测
+#CALL [\系统功能\新手送礼.txt] @新手送礼
+#CALL [\系统功能\登录脚本.txt] @登录设置
+#CALL [\系统功能\密码登陆.txt] @密码登陆
+#CALL [\系统功能\代理名单.txt] @代理检测
+#CALL [\系统功能\青铜名单.txt] @青铜检测
+#CALL [\系统功能\白银名单.txt] @白银检测
+#CALL [\系统功能\黄金名单.txt] @黄金检测
+#CALL [\系统功能\白金名单.txt] @白金检测
+#CALL [\系统功能\钻石名单.txt] @钻石检测
+#CALL [\系统功能\云海名单.txt] @云海检测
+
+
+#IF
+CHECKLEVELEX < 35
+#ACT
+GMEXECUTE 禁言 SELF 555
+SENDMSG 5 [提示]：你的等级低于35级，所以被禁言了，快去升级吧。
+
+
+#IF
+CHECKLEVELEX > 34
+#ACT
+GMEXECUTE 解除禁言 SELF 555
+SENDMSG [提示]：恭喜你升到35级，你现在可以说话了。
+BREAK
+
+
+[@女战删除乾坤]
+#IF
+equal A81 <$USERNAME>
+#ACT
+MOV S10 
+#CALL [\系统功能\封号系统.txt] @封号检测
+BREAK
+
+[@男战删除乾坤]
+#IF
+equal A84 <$USERNAME>
+#ACT
+MOV S10 
+#CALL [\系统功能\封号系统.txt] @封号检测
+BREAK
+
+[@女法删除乾坤]
+#IF
+equal A87 <$USERNAME>
+#ACT
+MOV S10 
+#CALL [\系统功能\封号系统.txt] @封号检测
+BREAK
+
+[@男法删除乾坤]
+#IF
+equal A90 <$USERNAME>
+#ACT
+MOV S10 
+#CALL [\系统功能\封号系统.txt] @封号检测
+BREAK
+
+[@女道删除乾坤]
+#IF
+equal A93 <$USERNAME>
+#ACT
+MOV S10 
+#CALL [\系统功能\封号系统.txt] @封号检测
+BREAK
+
+[@男道删除乾坤]
+#IF
+equal A96 <$USERNAME>
+#ACT
+MOV S10 
+#CALL [\系统功能\封号系统.txt] @封号检测
+BREAK
+
+;--------------------------------------------------------------------------------------------赌博
+[@抢庄开始]
+#IF
+LARGE M47 0
+#ACT
+SENDMSG 6 [赌场马仔]：现在开始抢庄了，庄家本钱必须超过1000元宝。
+BREAK
+
+;[@移动庄家]
+;#IF
+;EQUAL A35 <$USERNAME>
+;EQUAL I12 59
+;#ACT
+;〓〓MAPMOVE TXDGA 8 10
+;BREAK
+
+;#IF
+;EQUAL A35 <$USERNAME>
+;#ACT
+;〓〓MAPMOVE TXDGA 5 11
+;BREAK
+
+[@抢庄结束]
+#IF
+LARGE M47 0
+#ACT
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 [赌场马仔]：抢庄已结束。现在是下注时间，押定离手了。
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+SENDMSG 6 庄家姓名：【<$STR(A35)>】　庄家本钱数：【<$STR(I31)>】
+SENDMSG 6 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+BREAK
+[@下注开始]
+#IF
+LARGE M47 0
+#ACT
+SENDMSG 6 [赌场马仔]：现在开始下注了，庄家本钱共有<$STR(I31)>个元宝。 255 253
+BREAK
+[@下注结束]
+#IF
+EQUAL A35 <$USERNAME>
+#ACT
+BREAK
+#IF
+LARGE M47 0
+LARGE M43 0
+#ACT
+SENDMSG 7 [提示]：本局你下注【<$STR(M43)>】元宝押【<$STR(S23)>】
+BREAK
+[@猜点开始]
+#IF
+LARGE M47 0
+LARGE M43 0
+#ACT
+MOV D0 <$STR(I42)>
+MOV D1 <$STR(I43)>
+MOV D2 <$STR(I44)>
+PLAYDICE 3 @ZZNEW
+#SAY
+　\
+你所拥有的元宝数：【<$GAMEGOLD>】\
+
+庄家姓名：【<$STR(A35)>】\
+
+庄家本钱数：【<$STR(I31)>】\
+
+你下注【<$STR(M43)>】元宝押【<$STR(S23)>】\
+　\
+[@ZZNEW]
+#IF
+EQUAL I42 <$STR(I43)>
+EQUAL I42 <$STR(I44)>
+#ACT
+SENDMSG 7 [赌场马仔]：骰子掷出了【<$STR(I42)>】【<$STR(I43)>】【<$STR(I44)>】点【豹子】
+BREAK
+#IF
+SMALL I45 11
+#ACT
+SENDMSG 7 [赌场马仔]：骰子掷出了【<$STR(I42)>】【<$STR(I43)>】【<$STR(I44)>】点【小】
+BREAK
+#IF
+LARGE I45 10
+#ACT
+SENDMSG 7 [赌场马仔]：骰子掷出了【<$STR(I42)>】【<$STR(I43)>】【<$STR(I44)>】点【大】
+BREAK
+
+[@赌博结帐]
+#IF
+LARGE M47 0
+EQUAL A35 <$USERNAME>
+EQUAL I13 0
+EQUAL I14 0
+#ACT
+GAMEGOLD + <$STR(I31)>
+SENDMSG 0 [赌场马仔]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+
+#IF
+LARGE M47 0
+EQUAL A34 豹子
+EQUAL A35 <$USERNAME>
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I11 <$STR(M46)>
+DIV I11 100
+INC I31 <$STR(I11)>
+GAMEGOLD + <$STR(I31)>
+SENDMSG 0 [赌场马仔]：庄家【<$USERNAME>】赢得了【<$STR(I11)>】个元宝。 255 253
+BREAK
+;----------------------------------------
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+EQUAL I13 0
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I14 <$STR(M46)>
+DIV I14 100
+INC I31 <$STR(I14)>
+GAMEGOLD + <$STR(I31)>
+SENDMSG 0 [赌场马仔]：庄家【<$USERNAME>】赢得了【<$STR(I14)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+EQUAL I14 0
+#ACT
+DEC I31 <$STR(I13)>
+GAMEGOLD + <$STR(I31)>
+SENDMSG 0 [赌场马仔]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+EQUAL I13 <$STR(I14)>
+#ACT
+GAMEGOLD + <$STR(I31)>
+SENDMSG 0 [赌场马仔]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+large I14 <$STR(I13)>
+#ACT
+DEC I14 <$STR(I13)>
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I14 <$STR(M46)>
+DIV I14 100
+INC I31 <$STR(I14)>
+GAMEGOLD + <$STR(I31)>
+SENDMSG 0 [赌场马仔]：庄家【<$USERNAME>】赚取了【<$STR(I14)>】个元宝。 255 253
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL A35 <$USERNAME>
+large I13 <$STR(I14)>
+#ACT
+DEC I13 <$STR(I14)>
+DEC I31 <$STR(I13)>
+GAMEGOLD + <$STR(I31)>
+SENDMSG 0 [赌场马仔]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+
+
+
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+EQUAL I14 0
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I13 <$STR(M46)>
+DIV I13 100
+INC I31 <$STR(I13)>
+GAMEGOLD + <$STR(I31)>
+SENDMSG 0 [赌场马仔]：庄家【<$USERNAME>】赢得了【<$STR(I13)>】个元宝。 255 253
+BREAK
+
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+EQUAL I13 0
+#ACT
+DEC I31 <$STR(I14)>
+GAMEGOLD + <$STR(I31)>
+SENDMSG 0 [赌场马仔]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+EQUAL I14 <$STR(I13)>
+#ACT
+GAMEGOLD + <$STR(I31)>
+SENDMSG 0 [赌场马仔]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+
+
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+LARGE I14 <$STR(I13)>
+#ACT
+INC I31 <$STR(I13)>
+DEC I31 <$STR(I14)>
+GAMEGOLD + <$STR(I31)>
+SENDMSG 0 [赌场马仔]：庄家【<$USERNAME>】收回了【<$STR(I31)>】个元宝。 255 253
+BREAK
+
+
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL A35 <$USERNAME>
+LARGE I13 <$STR(I14)>
+#ACT
+DEC I13 <$STR(I14)>
+MOV M46 100
+DEC M46 <$STR(H30)>
+MUL I13 <$STR(M46)>
+DIV I13 100
+INC I31 <$STR(I13)>
+GAMEGOLD + <$STR(I31)>
+SENDMSG 0 [赌场马仔]：庄家【<$USERNAME>】收回了【<$STR(I13)>】个元宝。 255 253
+BREAK
+;---------------------
+#IF
+LARGE M47 0
+EQUAL A34 豹子
+LARGE M43 0
+#ACT
+SENDMSG 6 庄家【<$STR(A35)>】掷出了【<$STR(A34)>】，你损失了【<$STR(M43)>】个元宝注金。
+MOV M43 0
+MOV S23 无
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 大
+EQUAL S23 大
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MOV M44 <$STR(M43)>
+MUL M44 <$STR(M46)>
+DIV M44 100
+INC M43 <$STR(M44)>
+GAMEGOLD + <$STR(M43)>
+SENDMSG 6 庄家【<$STR(A35)>】掷出了【<$STR(A34)>】，你赢得了【<$STR(M44)>】个元宝注金。
+MOV M43 0
+MOV S23 无
+BREAK
+
+#IF
+LARGE M47 0
+EQUAL A34 小
+EQUAL S23 小
+#ACT
+MOV M46 100
+DEC M46 <$STR(H30)>
+MOV M44 <$STR(M43)>
+MUL M44 <$STR(M46)>
+DIV M44 100
+INC M43 <$STR(M44)>
+GAMEGOLD + <$STR(M43)>
+SENDMSG 6 庄家【<$STR(A35)>】掷出了【<$STR(A34)>】，你赢得了【<$STR(M44)>】个元宝注金。
+MOV M43 0
+MOV S23 无
+BREAK
+
+#IF
+LARGE M47 0
+LARGE M43 0
+#ACT
+SENDMSG 6 庄家【<$STR(A35)>】掷出了【<$STR(A34)>】，你损失了【<$STR(M43)>】个元宝注金。
+MOV M43 0
+MOV S23 无
+BREAK
+
+[@赌博清零]
+#IF
+LARGE M47 0
+#ACT
+MOV M40 0
+MOV M41 0
+MOV M42 0
+MOV M43 0
+MOV M44 0
+MOV M45 0
+MOV M46 0
+MOV M47 0
+MOV S23 无
+BREAK
+
+[@苍月岛飞]
+#IF
+iSONMAP MIMA
+#ACT
+BREAK
+
+#IF
+iSONMAP jianyu
+#ACT
+BREAK
+
+#IF
+iSONMAP mimasz
+#ACT
+BREAK
+
+#IF
+iSONMAP bangongshi
+#ACT
+BREAK
+
+#If
+#SAY
+<COLOR=clLime 苍月岛怪物攻城>即将开始！\
+有几率获得<COLOR=clRed 高级装备>哦~\
+你愿意参加吗？\ \
+<我参加怪物攻城/@cjgwgc>\ \
+<我可没那个勇气/@EXIT>\
+
+[@cjgwgc]
+#IF
+#ACT
+MAPMOVE 5 140 330
+BREAK
+
+[@提示飞1]
+#IF
+iSONMAP MIMA
+#ACT
+BREAK
+
+#IF
+iSONMAP jianyu
+#ACT
+BREAK
+
+#IF
+iSONMAP mimasz
+#ACT
+BREAK
+
+#IF
+iSONMAP bangongshi
+#ACT
+BREAK
+
+#If
+#SAY
+<COLOR=clLime 经验树妖>已经出现在大陆！\
+可以爆出大量<COLOR=clRed 经验卷>哦~\ \
+
+<我去杀掉树妖/@tsf1>\ \
+<我没那个勇气/@EXIT>\
+
+[@tsf1]
+#IF
+#ACT
+MAPMOVE 3 405 331
+BREAK
+
+[@提示飞2]
+#IF
+iSONMAP MIMA
+#ACT
+BREAK
+
+#IF
+iSONMAP jianyu
+#ACT
+BREAK
+
+#IF
+iSONMAP mimasz
+#ACT
+BREAK
+
+#IF
+iSONMAP bangongshi
+#ACT
+BREAK
+
+#If
+#SAY
+<COLOR=clLime 经验树妖>已经出现在大陆！\
+可以爆出大量<COLOR=clRed 经验卷>哦~\ \
+
+<我去杀掉树妖/@tsf2>\ \
+<我没那个勇气/@EXIT>\
+
+[@tsf2]
+#IF
+#ACT
+MAPMOVE 4 220 216
+BREAK
+
+[@提示飞3]
+#IF
+iSONMAP MIMA
+#ACT
+BREAK
+
+#IF
+iSONMAP jianyu
+#ACT
+BREAK
+
+#IF
+iSONMAP mimasz
+#ACT
+BREAK
+
+#IF
+iSONMAP bangongshi
+#ACT
+BREAK
+
+#If
+#SAY
+<COLOR=clLime 经验树妖>已经出现在大陆！\
+可以爆出大量<COLOR=clRed 经验卷>哦~\ \
+
+<我去杀掉树妖/@tsf3>\ \
+<我没那个勇气/@EXIT>\
+
+[@tsf3]
+#IF
+#ACT
+MAPMOVE 5 107 325
+BREAK
+
+[@提示飞4]
+#IF
+iSONMAP MIMA
+#ACT
+BREAK
+
+#IF
+iSONMAP jianyu
+#ACT
+BREAK
+
+#IF
+iSONMAP mimasz
+#ACT
+BREAK
+
+#IF
+iSONMAP bangongshi
+#ACT
+BREAK
+
+#If
+#SAY
+<COLOR=clLime 经验树妖>已经出现在大陆！\
+可以爆出大量<COLOR=clRed 经验卷>哦~\ \
+
+<我去杀掉树妖/@tsf4>\ \
+<我没那个勇气/@EXIT>\
+
+[@tsf4]
+#IF
+#ACT
+MAPMOVE 3 297 343
+BREAK
+
+[@神鹰飞]
+#IF
+iSONMAP MIMA
+#ACT
+BREAK
+
+#IF
+iSONMAP jianyu
+#ACT
+BREAK
+
+#IF
+iSONMAP mimasz
+#ACT
+BREAK
+
+#IF
+iSONMAP bangongshi
+#ACT
+BREAK
+
+#If
+#SAY
+<COLOR=clRed 死亡之谷>地图已经开放！\
+<COLOR=clLime BOSS→死亡神鹰>\
+随机爆出六件死亡物品，可以兑换珍贵衣服！\ \
+
+<我去斩杀它/@shenyingfei>　　　<我没那个勇气/@EXIT>\
+
+[@shenyingfei]
+#IF
+#ACT
+MAPMOVE SWZG
+BREAK
+
+[@富贵教主飞]
+#IF
+iSONMAP MIMA
+#ACT
+BREAK
+
+#IF
+iSONMAP jianyu
+#ACT
+BREAK
+
+#IF
+iSONMAP mimasz
+#ACT
+BREAK
+
+#IF
+iSONMAP bangongshi
+#ACT
+BREAK
+
+#If
+#SAY
+<COLOR=clLime 富贵教主>出现在<COLOR=clRed ＰＫ圣地>！\
+<COLOR=clLime 富贵教主>狂爆<COLOR=clFuchsia 元宝卷>！\
+<COLOR=clLime 还有几率>爆出<COLOR=clFuchsia [沃玛面巾] [祖玛面巾] [赤月面巾]>\
+<COLOR=clRed 地图内杀人不增加PK值！>\ \
+
+<我去斩杀它/@zhanshafgjz>　　　<我不敢去.../@EXIT>\
+
+[@zhanshafgjz]
+#IF
+#ACT
+MAPMOVE ZJYBDT
+BREAK
+
+[@富贵教主飞1]
+#IF
+iSONMAP MIMA
+#ACT
+BREAK
+
+#IF
+iSONMAP jianyu
+#ACT
+BREAK
+
+#IF
+iSONMAP mimasz
+#ACT
+BREAK
+
+#IF
+iSONMAP bangongshi
+#ACT
+BREAK
+
+#If
+#SAY
+<COLOR=clLime 富贵教主>出现在<COLOR=clRed ＰＫ圣地>！\
+<COLOR=clLime 富贵教主>狂爆<COLOR=clFuchsia 元宝卷>！\
+<COLOR=clLime 还有几率>爆出<COLOR=clFuchsia [沃玛面巾] [祖玛面巾] [赤月面巾]>\
+<COLOR=clRed 地图内杀人不增加PK值！>\ \
+
+<我去斩杀它/@zhanshafgjz1>　　　<我不敢去.../@EXIT>\
+
+[@zhanshafgjz1]
+#IF
+#ACT
+MAPMOVE ZJYBDT
+BREAK
+
+[@富贵教主飞2]
+#IF
+iSONMAP MIMA
+#ACT
+BREAK
+
+#IF
+iSONMAP jianyu
+#ACT
+BREAK
+
+#IF
+iSONMAP mimasz
+#ACT
+BREAK
+
+#IF
+iSONMAP bangongshi
+#ACT
+BREAK
+
+#If
+#SAY
+<COLOR=clLime 富贵教主>出现在<COLOR=clRed ＰＫ圣地>！\
+<COLOR=clLime 富贵教主>狂爆<COLOR=clFuchsia 元宝卷>！\
+<COLOR=clLime 还有几率>爆出<COLOR=clFuchsia [沃玛面巾] [祖玛面巾] [赤月面巾]>\
+<COLOR=clRed 地图内杀人不增加PK值！>\ \
+
+<我去斩杀它/@zhanshafgjz2>　　　<我不敢去.../@EXIT>\
+
+[@zhanshafgjz2]
+#IF
+#ACT
+MAPMOVE ZJYBDT
+BREAK
+
+[@天地虎卫飞]
+#If
+#SAY
+　\
+<COLOR=clFuchsia 天地虎卫>出现在<COLOR=clFuchsia 白日门馆长屋>！\
+<COLOR=clRed 高防御、高魔御、高攻击> 法师闯天下必不可少！\
+每天<COLOR=clLime 15点、21点>出现，机不可失，<COLOR=clRed 45级>以上的法师赶快诱惑去吧！\
+
+[@天地虎卫飞1]
+#If
+#SAY
+　\
+<COLOR=clFuchsia 天地虎卫>出现在<COLOR=clFuchsia 白日门馆长屋>！\
+<COLOR=clRed 高防御、高魔御、高攻击> 法师闯天下必不可少！\
+每天<COLOR=clLime 15点、21点>出现，机不可失，<COLOR=clRed 45级>以上的法师赶快诱惑去吧！\
+
+[@神秘之战飞]
+#IF
+iSONMAP MIMA
+#ACT
+BREAK
+
+#IF
+iSONMAP jianyu
+#ACT
+BREAK
+
+#IF
+iSONMAP mimasz
+#ACT
+BREAK
+
+#IF
+iSONMAP bangongshi
+#ACT
+BREAK
+
+#If
+#SAY
+<COLOR=clFuchsia 神秘之战开启了...>\
+<COLOR=clLime 神秘之战奖励：><COLOR=clRed 3000元宝+200万经验>\ \
+<我过去看看/@我过去看看神秘>　　　<我不感兴趣.../@EXIT>\
+
+[@我过去看看神秘]
+#IF
+#ACT
+MAPMOVE 3 329 345
+BREAK
+
+[@王者之战飞]
+#IF
+iSONMAP MIMA
+#ACT
+BREAK
+
+#IF
+iSONMAP jianyu
+#ACT
+BREAK
+
+#IF
+iSONMAP mimasz
+#ACT
+BREAK
+
+#IF
+iSONMAP bangongshi
+#ACT
+BREAK
+
+#If
+#SAY
+<COLOR=clFuchsia 王者之战开启了...>\
+<COLOR=clLime 王者之战奖励：><COLOR=clRed 3000元宝+200万经验>\ \
+<我过去看看/@我过去看看王者>　　　<我不感兴趣.../@EXIT>\
+
+[@我过去看看王者]
+#IF
+#ACT
+MAPMOVE 3 344 320
+BREAK

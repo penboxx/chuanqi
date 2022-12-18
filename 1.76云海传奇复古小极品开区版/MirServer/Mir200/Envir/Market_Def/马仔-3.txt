@@ -1,0 +1,473 @@
+(@@InPutInteger)
+
+[@MAIN]
+;#IF
+;HOUR 2 3
+;#ACT
+;GOTO @ok
+;break
+
+;#IF
+;HOUR 12 13
+;#ACT
+;GOTO @ok
+;break
+
+;#IF
+;HOUR 18 19
+;#ACT
+;GOTO @ok
+;break
+
+;#IF
+;HOUR 22 23
+;#ACT
+;GOTO @ok
+;#ELSEACT
+;MESSAGEBOX 赌博的开放时间为以下几个段，其他时间一律关闭！\（2:00-4:00）（12:00-14:00）（18:00-20:00）（22:00-24:00）\★★★如果您在赌博时间段是庄家或者已经下注，那么请勿小退★★★
+;break
+
+;[@OK]
+#IF
+ISADMIN
+#SAY
+欢迎光临，这里是抢庄猜点赌场，你所拥有的元宝：【<$GAMEGOLD>】\
+庄家姓名：【<$STR(A35)>】　庄家本钱数：【<$STR(I31)>】\
+╔┈┈┈┈╗╔┈┈┈┈╗╔┈┈┈┈╗╔┈┈┈┈╗<COLOR=clLime ╔┈┈┈┈╗>\
+┊<查看说明/@Help>┊┊<开始抢庄/@@InPutInteger40>┊┊<下注押大/@@InPutInteger41>┊┊<下注押小/@@InPutInteger42>┊<COLOR=clLime ┊><健康忠告/@duboxuzhi><COLOR=clLime ┊>\
+╚┈┈┈┈╝╚┈┈┈┈╝╚┈┈┈┈╝╚┈┈┈┈╝<COLOR=clLime ╚┈┈┈┈╝>\
+押大总金额：【<$STR(I13)>】　　　　　　剩余时间：<$STR(I15)>　<刷新/@MAIN>\
+押小总金额：【<$STR(I14)>】\
+你的下注情况：你下注【<$STR(M43)>】元宝押【<$STR(S23)>】　<设置税率/@设置税率>\
+<设置骰子1的点数/@A>：<$STR(I64)>，<骰子2的点数/@B>：<$STR(I65)>，<骰子3的点数/@C>：<$STR(I66)>\ \
+#ACT
+MOV M47 2
+BREAK
+
+#IF
+CheckLevelEx > 0
+#Act
+MOV M47 2
+#SAY
+欢迎光临，这里是抢庄猜点赌场，你所拥有的元宝：【<$GAMEGOLD>】\
+庄家姓名：【<$STR(A35)>】　庄家本钱数：【<$STR(I31)>】\
+╔┈┈┈┈╗╔┈┈┈┈╗╔┈┈┈┈╗╔┈┈┈┈╗<COLOR=clLime ╔┈┈┈┈╗>\
+┊<查看说明/@Help>┊┊<开始抢庄/@@InPutInteger40>┊┊<下注押大/@@InPutInteger41>┊┊<下注押小/@@InPutInteger42>┊<COLOR=clLime ┊><健康忠告/@duboxuzhi><COLOR=clLime ┊>\
+╚┈┈┈┈╝╚┈┈┈┈╝╚┈┈┈┈╝╚┈┈┈┈╝<COLOR=clLime ╚┈┈┈┈╝>\
+押大总金额：【<$STR(I13)>】　　　　　　剩余时间：<$STR(I15)>　<刷新/@MAIN>\
+押小总金额：【<$STR(I14)>】\
+你的下注情况：你下注【<$STR(M43)>】元宝押【<$STR(S23)>】\
+<COLOR=clFuchsia 特别提示:赌博期间不可以小退,也不能大退,不能掉线,玩家赌博自由.>\
+ 　　 <COLOR=clFuchsia 出现以上情况!概不负责,请玩家慎重赌博!>\
+
+[@duboxuzhi]
+　　　　　　　　　　　《健康忠告》\ \
+<COLOR=clLime 为了保持好每位玩家的心理氛围，营造一个绿色的游戏环境。>\
+<COLOR=clFuchsia 服务器决定：小战区、大战区、统战区才开放赌博娱乐系统！>\
+<COLOR=clRed 温馨提示：请勿沉迷赌博，赌博系统只是作为娱乐消遣的一种方式！>\
+<COLOR=clRed 现实生活中也一样，十赌九输，悬崖勒马走正道，勤劳致富不愁贫！>\
+　\
+<返回/@MAIN>　　　　　　　　　　　　　　<COLOR=clSkyBlue ---致：每位衷心的传奇玩家>\
+
+[@设置税率]
+#IF
+ISADMIN
+#ACT
+QUERYVALUE 99 1 2 ~设置税率2 请输入具体点数： NPC
+BREAK
+
+[~设置税率2]
+#IF
+Small M99 1
+#ACT
+MOV M99 0
+MESSAGEBOX 请输入1-99，否者打你屁股！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+Large M99 99
+#ACT
+MOV M99 0
+MESSAGEBOX 请输入1-99，否者打你屁股！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+ISADMIN
+#ACT
+MOV H30 <$STR(M99)>
+DELAYCALL 1 @MAIN
+BREAK
+
+
+[@HTCL]
+#ACT
+MAPMOVE 3 330 330
+
+[@A]
+#IF
+ISADMIN
+#ACT
+QUERYVALUE 99 1 1 ~A 请输入骰子1的具体点数(1-6)： NPC
+BREAK
+
+[~A]
+#IF
+Small M99 1
+#ACT
+MOV M99 0
+MESSAGEBOX 请输入1-6，这6个数字，否者打你屁股！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+Large M99 6
+#ACT
+MOV M99 0
+MESSAGEBOX 请输入1-6，这6个数字，否者打你屁股！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+ISADMIN
+#ACT
+MOV I64 <$STR(M99)>
+DELAYCALL 1 @MAIN
+BREAK
+
+[@B]
+#IF
+ISADMIN
+#ACT
+QUERYVALUE 99 1 1 ~B 请输入骰子1的具体点数(1-6)： NPC
+BREAK
+
+[~B]
+#IF
+Small M99 1
+#ACT
+MOV M99 0
+MESSAGEBOX 请输入1-6，这6个数字，否者打你屁股！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+Large M99 6
+#ACT
+MOV M99 0
+MESSAGEBOX 请输入1-6，这6个数字，否者打你屁股！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+ISADMIN
+#ACT
+MOV I65 <$STR(M99)>
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+ISADMIN
+#ACT
+MOV I65 <$STR(M99)>
+DELAYCALL 1 @MAIN
+BREAK
+
+[@C]
+#IF
+ISADMIN
+#ACT
+QUERYVALUE 99 1 1 ~C 请输入骰子1的具体点数(1-6)： NPC
+BREAK
+
+[~C]
+#IF
+Small M99 1
+#ACT
+MOV M99 0
+MESSAGEBOX 请输入1-6，这6个数字，否者打你屁股！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+Large M99 6
+#ACT
+MOV M99 0
+MESSAGEBOX 请输入1-6，这6个数字，否者打你屁股！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+ISADMIN
+#ACT
+MOV I66 <$STR(M99)>
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+ISADMIN
+#ACT
+MOV I66 <$STR(M99)>
+DELAYCALL 1 @MAIN
+BREAK
+
+[@@InPutInteger40]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutInteger40
+[~InPutInteger40]
+#IF
+LARGE I12 30
+#ACT
+MESSAGEBOX [提示]：抢庄时间已经结束。请等待开局！
+MOV M40 0
+GOTO @MAIN
+BREAK
+#IF
+SMALL M40 100
+#ACT
+MESSAGEBOX [提示]：请输入99以上的数值！
+MOV M40 0
+GOTO @MAIN
+BREAK
+#IF
+LARGE M40 100000
+#ACT
+MESSAGEBOX [提示]：请输入100001以下的数值！
+MOV M40 0
+GOTO @MAIN
+BREAK
+#IF
+EQUAL A35 <$USERNAME>
+#ACT
+MOV M40 0
+MESSAGEBOX [提示]：你目前已经是庄家，无法重复坐庄。
+GOTO @MAIN
+BREAK
+#IF
+EQUAL M45 2
+#ACT
+MOV M40 0
+MESSAGEBOX [提示]：你已经下注押了大，无法坐庄！
+GOTO @MAIN
+BREAK
+#IF
+EQUAL M45 3
+#ACT
+MOV M40 0
+MESSAGEBOX [提示]：你已经下注押了小，无法坐庄！
+GOTO @MAIN
+BREAK
+#IF
+CHECKGAMEGOLD < <$STR(M40)>
+#ACT
+MESSAGEBOX [提示]：你身上的元宝不足。
+MOV M40 0
+GOTO @MAIN
+BREAK
+
+#IF
+LARGE M40 <$STR(I31)>
+#ACT
+$STR(A35).MOV S23 无
+$STR(A35).MOV M43 0
+$STR(A35).GAMEGOLD + <$STR(I31)>
+GAMEGOLD - <$STR(M40)>
+MOV I31 <$STR(M40)>
+SendMSG 0 [赌场马仔]：玩家【%s】使用【<$STR(M40)>】个元宝坐庄。
+MOV A35 <$USERNAME>
+MOV M43 <$STR(M40)>
+MOV S23 庄
+GOTO @MAIN
+MESSAGEBOX [提示]：使用【<$STR(M40)>】个元宝坐庄。
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你必须出多于【<$STR(I31)>】个元宝才能抢庄。
+MOV M40 0
+GOTO @MAIN
+BREAK
+
+[@@InPutInteger41]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutInteger41
+[~InPutInteger41]
+#IF
+LARGE I12 90
+#ACT
+MESSAGEBOX [提示]：下注时间已经结束。请等待开局！
+MOV M41 0
+GOTO @MAIN
+BREAK
+#IF
+SMALL I12 31
+#ACT
+MESSAGEBOX [提示]：下注时间还没到，现在是抢庄时间。
+MOV M41 0
+GOTO @MAIN
+BREAK
+#IF
+SMALL M41 1
+#ACT
+MESSAGEBOX [提示]：请输入1以上的数值！
+MOV M41 0
+GOTO @MAIN
+BREAK
+#IF
+EQUAL A35 <$USERNAME>
+#ACT
+MOV M40 0
+MESSAGEBOX [提示]：你目前已经是庄家，无法下注。
+GOTO @MAIN
+BREAK
+#IF
+EQUAL M45 2
+#ACT
+MOV M41 0
+MESSAGEBOX [提示]：你已经下注押了大，无法重复下注！
+GOTO @MAIN
+BREAK
+#IF
+EQUAL M45 3
+#ACT
+MOV M41 0
+MESSAGEBOX [提示]：你已经下注押了小，无法重复下注！
+GOTO @MAIN
+BREAK
+#IF
+LARGE M41 <$STR(I16)>
+#ACT
+MOV M41 0
+MESSAGEBOX [提示]：对不起，庄家的本钱已达到上线不够赔了。\　　　　\目前你只可以下注【<$STR(I16)>】以下的元宝！
+GOTO @MAIN
+BREAK
+#IF
+EQUAL I18 1
+#ACT
+MOV M40 0
+MESSAGEBOX [提示]：请重新输入。
+GOTO @MAIN
+BREAK
+#IF
+CHECKGAMEGOLD ? <$STR(M41)>
+#ACT
+MOV I18 1
+MOV M45 2
+MOV S23 大
+GAMEGOLD - <$STR(M41)>
+MOV M43 <$STR(M41)>
+INC I13 <$STR(M43)>
+MESSAGEBOX [提示]：你使用<$STR(M41)>个元宝下注押大。
+SendMSG 4 %s使用<$STR(M41)>个元宝下注押大。
+GOTO @MAIN
+MOV M41 0
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你身上的元宝不足。
+MOV M41 0
+GOTO @MAIN
+BREAK
+
+[@@InPutInteger42]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutInteger42
+[~InPutInteger42]
+#IF
+LARGE I12 90
+#ACT
+MESSAGEBOX [提示]：下注时间已经结束。请等待开局！
+MOV M42 0
+GOTO @MAIN
+BREAK
+#IF
+SMALL I12 31
+#ACT
+MESSAGEBOX [提示]：下注时间还没到，现在是抢庄时间。
+MOV M42 0
+GOTO @MAIN
+BREAK
+#IF
+SMALL M42 1
+#ACT
+MESSAGEBOX [提示]：请输入1以上的数值！
+MOV M42 0
+GOTO @MAIN
+BREAK
+#IF
+EQUAL A35 <$USERNAME>
+#ACT
+MOV M40 0
+MESSAGEBOX [提示]：你目前已经是庄家，无法重复坐庄。
+GOTO @MAIN
+BREAK
+#IF
+EQUAL M45 2
+#ACT
+MOV M42 0
+MESSAGEBOX [提示]：你已经下注押了大，无法重复下注！
+GOTO @MAIN
+BREAK
+#IF
+EQUAL M45 3
+#ACT
+MOV M42 0
+MESSAGEBOX [提示]：你已经下注押了小，无法重复下注！
+GOTO @MAIN
+BREAK
+#IF
+LARGE M42 <$STR(I17)>
+#ACT
+MOV M42 0
+MESSAGEBOX [提示]：对不起，庄家的本钱已达到上线不够赔了。\　　　　\目前你只可以下注【<$STR(I17)>】以下的元宝！
+GOTO @MAIN
+BREAK
+#IF
+EQUAL I19 1
+#ACT
+MOV M40 0
+MESSAGEBOX [提示]：请重新输入。
+GOTO @MAIN
+BREAK
+#IF
+CHECKGAMEGOLD ? <$STR(M42)>
+#ACT
+MOV I19 1
+MOV M45 3
+MOV S23 小
+GAMEGOLD - <$STR(M42)>
+MOV M43 <$STR(M42)>
+INC I14 <$STR(M43)>
+MESSAGEBOX [提示]：你使用<$STR(M42)>个元宝下注押小。
+SendMSG 4 %s使用<$STR(M42)>个元宝下注押小。
+GOTO @MAIN
+MOV M42 0
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：你身上的元宝不足。
+MOV M42 0
+GOTO @MAIN
+BREAK
+
+[@Over]
+#IF
+#ACT
+MapMove 3 330 330
+BREAK
+
+[@Help]
+猜点游戏规则：\
+(1)庄家坐庄后，其他玩家可下注，两分钟后三个骰子由庄家掷出，\
+骰子点数随机出现点数总和小于11代表小，点数总和大于10代表\
+大，三个点数相同代表豹子。\
+(2)押大赢大，押小赢小，豹子通吃！\
+(3)正在坐庄或已下注的玩家如下线将被视做弃权，损失下注元宝。\
+(4)玩家下注数不能超过庄家坐庄的元宝总和。\
+<返回/@MAIN>　　<离开/@EXIT>\
+[@IsInFilterList]
+#ACT
+MESSAGEBOX [错误]：输入数据中包含了非法字符，请重新编辑！

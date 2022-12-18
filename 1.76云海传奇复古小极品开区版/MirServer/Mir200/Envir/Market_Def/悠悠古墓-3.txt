@@ -1,0 +1,137 @@
+[@MAIN]
+这是一条悠远又险恶的古墓，一路上有12只大型BOSS，和他们的手下\
+消灭他们能获得贵重的<COLOR=clSkyBlue 悠悠币>喔~悠悠币可以在我这里兑换元宝或者\
+你可以<COLOR=clFuchsia 联系业务QQ:770117766>兑换人民币，是真实的人民币喔！\
+<COLOR=clSkyBlue BOSS可爆出:一个悠悠币、二个悠悠币、五个悠悠币、十个悠悠币>\
+<COLOR=clSkyBlue 二十个悠悠币、五十个悠悠币、一百个悠悠币、五百个悠悠币>\
+<COLOR=clRed 注:一个悠悠币兑换四百元宝，或者，一个悠悠币兑换一人民币>\ \
+
+<进入悠悠之路/@jrjzzl>　　　<我要兑换元宝/@dhyb>　　　<我要兑换人民币/@dhrmb>
+
+[@jrjzzl]
+#IF
+CHECKLEVELEX > 47
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+MAPMOVE jzzl
+SENDMSG 0 勇士%s进入了悠悠古墓，此地图BOSS爆悠悠币！
+GIVE 回城卷 1
+BREAK
+#ELSEACT
+MESSAGEBOX 进入需要48级和1000元宝。
+
+[@dhrmb]
+<COLOR=clLime 悠悠币兑换人民币：一个悠悠币兑换一人民币>\
+<COLOR=clFuchsia 请联系业务QQ:770117766进行兑换！>
+
+[@dhyb]
+<COLOR=clLime 悠悠币兑换元宝：一个悠悠币兑换四百元宝>\ \
+<我有一个悠悠币/@ygjzb>　　<我有二十个悠悠币/@esgjzb>\
+<我有二个悠悠币/@egjzb>　　<我有五十个悠悠币/@wsgjzb>\
+<我有五个悠悠币/@wgjzb>　　<我有一百个悠悠币/@ybgjzb>\
+<我有十个悠悠币/@sgjzb>　　<我有五百个悠悠币/@wbgjzb>\
+
+[@ygjzb]
+#IF
+checkitem 一个悠悠币 1
+#ACT
+take 一个悠悠币 1
+GAMEGOLD + 400
+#SAY
+已经给你兑换了400元宝，请查看元宝数量！\ \
+<返 回/@MAIN>
+#ELSESAY
+你没有一个悠悠币，无法兑换！\
+<返 回/@MAIN>
+
+[@egjzb]
+#IF
+checkitem 二个悠悠币 1
+#ACT
+take 二个悠悠币 1
+GAMEGOLD + 800
+#SAY
+已经给你兑换了800元宝，请查看元宝数量！\ \
+<返 回/@MAIN>
+#ELSESAY
+你没有二个悠悠币，无法兑换！\
+<返 回/@MAIN>
+
+[@wgjzb]
+#IF
+checkitem 五个悠悠币 1
+#ACT
+take 五个悠悠币 1
+GAMEGOLD + 2000
+#SAY
+已经给你兑换了2000元宝，请查看元宝数量！\ \
+<返 回/@MAIN>
+#ELSESAY
+你没有五个悠悠币，无法兑换！\
+<返 回/@MAIN>
+
+[@sgjzb]
+#IF
+checkitem 十个悠悠币 1
+#ACT
+take 十个悠悠币 1
+GAMEGOLD + 4000
+#SAY
+已经给你兑换了4000元宝，请查看元宝数量！\ \
+<返 回/@MAIN>
+#ELSESAY
+你没有十个悠悠币，无法兑换！\
+<返 回/@MAIN>
+
+[@esgjzb]
+#IF
+checkitem 二十个悠悠币 1
+#ACT
+take 二十个悠悠币 1
+GAMEGOLD + 8000
+#SAY
+已经给你兑换了8000元宝，请查看元宝数量！\ \
+<返 回/@MAIN>
+#ELSESAY
+你没有二十个悠悠币，无法兑换！\
+<返 回/@MAIN>
+
+[@wsgjzb]
+#IF
+checkitem 五十个悠悠币 1
+#ACT
+take 五十个悠悠币 1
+GAMEGOLD + 20000
+#SAY
+已经给你兑换了20000元宝，请查看元宝数量！\ \
+<返 回/@MAIN>
+#ELSESAY
+你没有五十个悠悠币，无法兑换！\
+<返 回/@MAIN>
+
+[@ybgjzb]
+#IF
+checkitem 一百个悠悠币 1
+#ACT
+take 一百个悠悠币 1
+GAMEGOLD + 40000
+#SAY
+已经给你兑换了40000元宝，请查看元宝数量！\ \
+<返 回/@MAIN>
+#ELSESAY
+你没有一百个悠悠币，无法兑换！\
+<返 回/@MAIN>
+
+[@wbgjzb]
+#IF
+checkitem 五百个悠悠币 1
+#ACT
+take 五百个悠悠币 1
+GAMEGOLD + 200000
+#SAY
+已经给你兑换了200000元宝，请查看元宝数量！\ \
+<返 回/@MAIN>
+#ELSESAY
+你没有五百个悠悠币，无法兑换！\
+<返 回/@MAIN>

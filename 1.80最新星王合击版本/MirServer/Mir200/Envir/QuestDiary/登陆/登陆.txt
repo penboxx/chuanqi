@@ -1,0 +1,72 @@
+[@DL]
+{
+#IF
+ISADMIN
+#ACT
+CHANGEMODE 1 1
+CHANGEMODE 2 1
+CHANGEMODE 3 1
+SENDMSG 5 %s管理员,当前在线人数<$USERCOUNT>人
+ADDLINELIST .\QuestDiary\数据文件\GM登陆记录.txt 登陆人物:<$USERNAME>IP为:<$IPLOCAL><$IPADDR>时间为:<$DATETIME>
+
+#IF
+checknamelist ..\QuestDiary\数据文件\禁止登陆.txt
+#ACT
+MESSAGEBOX 你已经违反游戏规则,请速度联系管理QQ:<$QQ>\1.偷盗他人游戏物品.\2.恶意造谣.\3.广告.\4.侮辱管理员.\5.脱机.\6.加速
+SENDMSG 7 〖公告〗:请联系客服QQ：277677778，如诚心忏悔可以考虑解封
+KICK
+
+#IF
+CHECKIPLIST ..\QuestDiary\数据文件\禁止登陆IP.txt
+#ACT
+addnamelist ..\QuestDiary\数据文件\禁止登陆.txt
+MESSAGEBOX 你已经违反游戏规则,请速度联系管理QQ:<$QQ>\1.偷盗他人游戏物品.\2.恶意造谣.\3.广告.\4.侮辱管理员.\5.脱机.\6.加速
+SENDMSG 7 〖公告〗:请联系客服QQ：277677778，如诚心忏悔可以考虑解封
+KICK
+
+#IF
+ISCASTLEMASTER
+#ACT
+SENDMSG 1 沙巴克城城主〖%s〗进入游戏中！！！
+CHANGENAMECOLOR 215
+
+
+#IF
+ISNEWHUMAN
+#ACT
+GIVE 魔血石(赠品) 2
+give 聚灵珠(赠品) 1
+give 英雄聚灵珠(赠品) 1
+TAKEON 乌木剑 1
+TAKEON 布衣(男) 0
+TAKEON 布衣(女) 0
+SENDMSG 5 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+SENDMSG 5 ┃凡使用加速、脱机、公开刷屏捣乱,刷广告,我们有权封号　┃
+SENDMSG 5 ┃凡游戏内辱骂管理、盗号,诈骗,外挂我们有权封号处理　　┃
+SENDMSG 5 ┃凡未经担保，私下交易，购买黑货,被骗,被封号自己负责　┃
+SENDMSG 5 ┃游戏内装备道具被骗、被盗,我们不负责找回,只找回ID　　┃
+SENDMSG 5 ┃申请帐号时的密保，请一定牢记，忘记或丢失请自负　　　┃
+SENDMSG 5 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+SENDMSG 5 游戏私下买元宝是黑滩的找回不处理
+SENDMSG 0 <$USERNAME>加入游戏,柚子星王合计因你而精彩!
+
+#IF
+CheckLevelex < 50
+#ACT
+SENDMSG 0 ★欢迎〖%s〗登陆[<$SERVERNAME>]，打造2015最火爆的星王合击!  151 219
+SENDMSG 5 游戏私下买元宝是黑滩的找回不处理
+
+
+#if
+CHECKLEVELEX < 48
+#act
+GMEXECUTE 禁言 self 65535
+SendMsg 6 [提示]:为避免新区小号捣乱，48级以下禁止发言,到48级即可自动发言！
+SendMsg 6 [提示]:为避免新区小号捣乱，48级以下禁止发言,到48级即可自动发言！
+
+#IF
+CheckLevelEx > 47
+#ACT
+Gmexecute 解除禁言 Self 655555
+}
+}

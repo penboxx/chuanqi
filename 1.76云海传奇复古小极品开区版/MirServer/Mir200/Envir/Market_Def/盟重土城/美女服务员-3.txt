@@ -1,0 +1,18 @@
+[@main]
+╔┄╗　　　　      ╔┄┄┄┄┄┄╗　　　　       ╔┄╗\
+┆<COLOR=clLime 小>┆              ┆<进入赌馆[新]/@进入赌场>┆               ┆<COLOR=clLime 大>┆\
+┆<COLOR=clLime 赌>┆              ╚┄┄┄┄┄┄╝               ┆<COLOR=clLime 赌>┆\
+┆<COLOR=clLime 可>┆                                             ┆<COLOR=clLime 可>┆\
+┆<COLOR=clLime 怡>┆  ╔┄┄┄┄╗╔┄┄┄┄┄┄╗╔┄┄┄┄╗   ┆<COLOR=clLime 发>┆\
+┆<COLOR=clLime 情>┆  ┆<COLOR=clLime 小赌怡情>┆┆ <COLOR=clLime 无名★赌王> ┆┆<COLOR=clLime 大赌发家>┆   ┆<COLOR=clLime 家>┆\
+┆<COLOR=clLime 养>┆  ╚┄┄┄┄╝╚┄┄┄┄┄┄╝╚┄┄┄┄╝   ┆<COLOR=clLime 至>┆\
+┆<COLOR=clLime 性>┆                                             ┆<COLOR=clLime 富>┆\
+╚┄╝                                             ╚┄╝\
+
+[@进入赌场]
+#IF
+#ACT
+MAPMOVE TXDGA 5 11
+SENDMSG 0 大款[%s]在土城341:322进入了盟重赌城，想要赢钱的赶快跟着进来吧。
+CLOSE
+BREAK

@@ -1,0 +1,65 @@
+[@main]
+<COLOR=clFuchsia ╔══════════════════════════╗>\
+<COLOR=clFuchsia ║>                    『本服活动』      　　　    　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║----------------------------------------------------║>\
+<COLOR=clFuchsia ║>                                                    <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>       <神秘之战/@smzz>       <行会争霸/@hhzb>       <ＰＫ圣地/@pksd>       <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>                                                    <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚══════════════════════════╝>\
+　                        <关  闭/@exit>\
+
+[@smzz]
+<COLOR=clLime 开放时间：>每天晚上19:25开启\
+<COLOR=clLime 进入时间：>19:25-19:35为进入战场时间<COLOR=clSkyBlue (只有10分钟的进入时间)>\
+<COLOR=clLime 详细规则：>进入神秘战场后，全部玩家显示为“神秘人”\
+　　　　　统一显示血量为：100 (其实还是原来自身的血量)\
+　　　　　强制全体攻击模式、不能说话、不能查看对方装备\
+　　　　　在神秘战场内清理完所有对手，即可领取神秘奖励！\ 
+<COLOR=clLime 神秘奖励：><COLOR=clRed 3000元宝+200万经验>\
+　\
+<进入神秘战场/@进入神秘战场>\
+
+[@进入神秘战场]
+#IF
+hour 19 19
+min 25 35
+#ACT
+CHANGEATTACKMODE 0
+MAP SMZZ
+#elseact
+messageboX 现在不是开放时间，无法进入神秘战场！
+
+[@hhzb]
+<COLOR=clLime 详细规则：>每天晚上22:30系统自动举行全服行会争霸赛\
+　　　　　所有行会都可以参加，没加入行会的不能参加\
+　　　　　22:30-22:50为进入时间，22:51行会争霸开始\
+　　　　　行会争霸开始后将无法进入，23:30争霸赛结束\ \
+<COLOR=clLime 获胜奖励：>最终赢得胜利的行会，可以获得<COLOR=clRed 10000元宝>奖励！\ \
+<COLOR=clLime 进入条件：>需要加入行会，并且等级40级以上！　<进入场地/@JINRU>\ 
+
+[@JINRU]
+#IF
+HAVEGUILD
+CHECKLEVELEX > 39
+HOUR 22 22
+MIN 30 50
+#ACT
+MAPMOVE HHBZ
+GIVE 回城卷
+#ELSEACT
+MESSAGEBOX 不是进入时间段或者你没有40级和加入行会！
+BREAK
+
+[@pksd]
+<COLOR=clLime 谁是英雄？谁是狗熊？比比就知道！>\ \
+<COLOR=clFuchsia 地图内每天13点、17点、23点刷出富贵教主，狂爆元宝卷！>\
+<COLOR=clFuchsia 还有几率爆出：[沃玛面巾] [祖玛面巾] [赤月面巾] 喔~>\ \
+<COLOR=clRed 地图内杀人不增加PK值！>\ \
+<进入ＰＫ圣地/@jrzjybdt>　　　　　　<我不敢进去/@exit>\
+
+[@jrzjybdt]
+#IF
+#ACT
+MAPMOVE ZJYBDT
+GIVE 回城卷
+BREAK

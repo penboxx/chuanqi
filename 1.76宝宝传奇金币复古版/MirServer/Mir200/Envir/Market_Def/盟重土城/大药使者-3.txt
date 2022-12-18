@@ -1,0 +1,41 @@
+
+[@main]
+欢迎光临本店，被管理员所逼，在此卖太阳水包，请多多光顾！\ \
+<COLOR=clRed 一包太阳包3万金币>      <购买太阳包/@购买1>\ \
+<COLOR=clRed 五包太阳包14万金币>     <购买太阳包/@购买2>\ \
+<COLOR=clRed 十包太阳包26万金币>     <购买太阳包/@购买3>\ \
+
+　　　　　　　　　　　　　　　　　　　　　　　　<离开/@exit>
+
+
+
+
+[@购买3]
+#if
+checkgold 260000
+#act
+take 金币 260000
+give 强效太阳包 10
+break
+#elsesay
+对不起，需要26万金币。\
+
+[@购买1]
+#if
+checkgold 30000
+#act
+take 金币 30000
+give 强效太阳包 1
+break
+#elsesay
+对不起，需要1万金币。\
+
+[@购买2]
+#if
+checkgold 140000
+#act
+take 金币 140000
+give 强效太阳包 5
+break
+#elsesay
+对不起，需要14万金币。\

@@ -1,0 +1,31 @@
+[@MAIN]
+这里是天关十五层\
+你必须将本地图内所有怪物杀光，才可以领取奖励进入下一关！\
+<COLOR=clRed 注:请不要将聚灵珠放在包袱内,否则会被收取掉!>\
+　\
+<领取奖励进入下一关/@SHIWUCJLLQ>\
+
+[@SHIWUCJLLQ]
+#IF
+CheckRangeMonCount TG15 16 12 15 = 0
+#ACT
+GOTO @SHIWUCJLLQ1
+#ELSESAY
+地图内的怪物还没杀光呢！
+
+[@SHIWUCJLLQ1]
+#IF
+CHECKMAPHUMANCOUNT TG16 = 0
+CHECKGAMEGOLD > 629
+#ACT
+GAMEGOLD - 630
+CLEARMAPMON TG16
+take 聚灵珠 50
+CHANGEEXP + 1900000
+Param1 TG16
+MonGen 烟花金刚 1 1
+MAPMOVE TG16
+SENDMSG 0 %s闯过了天关十五层，获得1900000经验奖励！
+BREAK
+#ELSEACT
+MESSAGEBOX 里面有人了，或者你的元宝不足630！

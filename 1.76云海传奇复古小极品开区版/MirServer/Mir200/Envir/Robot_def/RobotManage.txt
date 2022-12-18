@@ -1,0 +1,1436 @@
+[@押镖清理]
+#IF
+#act
+CLEARNAMELIST ..\QuestDiary\数据文件\经验次数Save.txt
+break
+
+[@天下第一]
+#ACT
+INC H10 1
+INC G83 1
+INC G86 1
+INC G89 1
+INC G92 1
+INC G95 1
+INC G98 1
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一奖励.txt
+BREAK
+
+[@城主领奖]
+#IF
+#ACT
+MOV H12 0
+BREAK
+
+[@坐庄游戏A]
+#IF
+EQUAL I12 0
+#ACT
+GMEXECUTE 开始提问 @抢庄开始
+INC I12 1
+BREAK
+#IF
+EQUAL I12 30
+#ACT
+GMEXECUTE 开始提问 @抢庄结束
+INC I12 1
+BREAK
+#IF
+EQUAL I12 31
+#ACT
+GMEXECUTE 开始提问 @下注开始
+INC I12 1
+BREAK
+#IF
+EQUAL I12 87
+#ACT
+GMEXECUTE 开始提问 @下注结束
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 88
+LARGE I64 0
+LARGE I65 0
+LARGE I66 0
+#ACT
+MOV I42 <$STR(I64)>
+MOV I43 <$STR(I65)>
+MOV I44 <$STR(I66)>
+MOV I45 <$STR(I42)>
+INC I45 <$STR(I43)>
+INC I45 <$STR(I44)>
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 88
+#ACT
+MOVR I42 6
+inc I42 1
+MOVR I43 6
+inc I43 1
+MOVR I44 6
+inc I44 1
+MOV I45 <$STR(I42)>
+INC I45 <$STR(I43)>
+INC I45 <$STR(I44)>
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 90
+#ACT
+GMEXECUTE 开始提问 @猜点开始
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 96
+#ACT
+GMEXECUTE 开始提问 @赌博结帐
+INC I12 1
+BREAK
+#IF
+EQUAL I12 98
+#ACT
+GMEXECUTE 开始提问 @赌博清零
+MOV I64 0
+MOV I65 0
+MOV I66 0
+MOV A34 无
+MOV I16 0
+MOV I17 0
+MOV I11 0
+MOV I13 0
+MOV I14 0
+MOV I31 0
+MOV I42 0
+MOV I43 0
+MOV I44 0
+MOV I45 0
+INC I12 1
+BREAK
+#IF
+EQUAL I12 100
+#ACT
+MOV A35 无
+MOV I12 0
+BREAK
+#IF
+#ACT
+INC I12 1
+BREAK
+
+[@坐庄游戏B]
+#IF
+#ACT
+MOV I18 0
+MOV I19 0
+MOV I15 100
+DEC I15 <$STR(I12)>
+MOV I11 <$STR(I13)>
+INC I11 <$STR(I14)>
+MOV I16 <$STR(I31)>
+INC I16 <$STR(I14)>
+DEC I16 <$STR(I13)>
+MOV I17 <$STR(I31)>
+INC I17 <$STR(I13)>
+DEC I17 <$STR(I14)>
+BREAK
+
+[@坐庄游戏C]
+#IF
+EQUAL I12 92
+EQUAL I42 <$STR(I43)>
+EQUAL I42 <$STR(I44)>
+#ACT
+MOV A34 豹子
+BREAK
+#IF
+EQUAL I12 92
+SMALL I45 11
+#ACT
+MOV A34 小
+BREAK
+#IF
+EQUAL I12 92
+LARGE I45 10
+#ACT
+MOV A34 大
+BREAK
+
+
+[@赌博开启]
+#IF
+#ACT
+SENDMSG 0 赌博开放了，请勿沉迷赌博喔！ 31 241
+SENDMSG 0 赌博开放了，请勿沉迷赌博喔！ 31 241
+SENDMSG 0 赌博开放了，请勿沉迷赌博喔！ 31 241
+SENDMSG 0 赌博开放了，请勿沉迷赌博喔！ 31 241
+SENDMSG 0 赌博开放了，请勿沉迷赌博喔！ 31 241
+BREAK
+
+
+[@赌博关闭]
+#IF
+#ACT
+SENDMSG 0 赌博关闭了，适当休息一下吧！ 31 241
+SENDMSG 0 赌博关闭了，适当休息一下吧！ 31 241
+SENDMSG 0 赌博关闭了，适当休息一下吧！ 31 241
+SENDMSG 0 赌博关闭了，适当休息一下吧！ 31 241
+SENDMSG 0 赌博关闭了，适当休息一下吧！ 31 241
+BREAK
+
+[@赌博五分关闭]
+#IF
+#ACT
+SENDMSG 0 赌博系统5分钟后关闭，请现在停止赌博！ 31 241
+SENDMSG 0 赌博系统5分钟后关闭，请现在停止赌博！ 31 241
+SENDMSG 0 赌博系统5分钟后关闭，请现在停止赌博！ 31 241
+SENDMSG 0 赌博系统5分钟后关闭，请现在停止赌博！ 31 241
+SENDMSG 0 赌博系统5分钟后关闭，请现在停止赌博！ 31 241
+BREAK
+
+[@赌博三分关闭]
+#IF
+#ACT
+SENDMSG 0 赌博系统3分钟后关闭，请现在停止赌博！ 31 241
+SENDMSG 0 赌博系统3分钟后关闭，请现在停止赌博！ 31 241
+SENDMSG 0 赌博系统3分钟后关闭，请现在停止赌博！ 31 241
+SENDMSG 0 赌博系统3分钟后关闭，请现在停止赌博！ 31 241
+SENDMSG 0 赌博系统3分钟后关闭，请现在停止赌博！ 31 241
+BREAK
+
+[@赌博一分关闭]
+#IF
+#ACT
+SENDMSG 0 赌博系统1分钟后关闭，请立刻停止赌博！ 31 241
+SENDMSG 0 赌博系统1分钟后关闭，请立刻停止赌博！ 31 241
+SENDMSG 0 赌博系统1分钟后关闭，请立刻停止赌博！ 31 241
+SENDMSG 0 赌博系统1分钟后关闭，请立刻停止赌博！ 31 241
+SENDMSG 0 赌博系统1分钟后关闭，请立刻停止赌博！ 31 241
+BREAK
+
+[@一小时怪活动]
+#IF
+#ACT
+Param1 HHZDT
+PARAM2 14
+PARAM3 16
+MonGen 元宝使者 1 5
+SENDMSG 0 系统：活动地图的元宝使者再次复活，元宝多多~
+SENDMSG 0 系统：活动地图的元宝使者再次复活，元宝多多~
+BREAK
+
+[@三小时怪活动]
+#IF
+#ACT
+Param1 HHZDT
+PARAM2 14
+PARAM3 16
+MonGen 送葬者 1 5
+SENDMSG 0 系统：活动地图的送葬者再次复活，要装备的来吧~
+SENDMSG 0 系统：活动地图的送葬者再次复活，要装备的来吧~
+BREAK
+
+[@四小时怪活动]
+#IF
+#ACT
+Param1 HHZDT
+PARAM2 14
+PARAM3 16
+MonGen 赤月恶魔88 1 5
+MonGen 双头金刚 1 5
+MonGen 双头血魔 1 5
+SENDMSG 0 系统：活动地图的赤月恶魔再次复活！！！
+SENDMSG 0 系统：活动地图的双头金刚再次复活！！！
+SENDMSG 0 系统：活动地图的双头血魔再次复活！！！
+BREAK
+
+[@五小时怪活动]
+#IF
+#ACT
+Param1 HHZDT
+PARAM2 14
+PARAM3 16
+MonGen 送宝使者 1 5
+MonGen 狂暴野猪王 1 5
+SENDMSG 0 系统：活动地图的送宝使者再次复活，可爆超级祝福油哦~
+SENDMSG 0 系统：活动地图的狂暴野猪王再次复活，可爆幸运项链哦~
+BREAK
+
+[@六小时怪活动]
+#IF
+#ACT
+Param1 HHZDT
+PARAM2 14
+PARAM3 16
+MonGen 阴沉石墓尸王 1 5
+SENDMSG 0 系统：活动地图的阴沉石墓尸王再次复活！！！
+SENDMSG 0 系统：活动地图的阴沉石墓尸王再次复活！！！
+BREAK
+
+[@三小时怪]
+#IF
+#ACT
+Param1 3
+PARAM2 358
+PARAM3 333
+MonGen 送宝使者 1 5
+SENDMSG 0 系统：土城药店的送宝使者再次复活，可爆超级祝福油哦~
+SENDMSG 0 系统：土城药店的送宝使者再次复活，可爆超级祝福油哦~
+BREAK
+
+[@经验1]
+#IF
+#ACT
+Param1 3
+PARAM2 405
+PARAM3 331
+MonGen 经验树妖
+BREAK
+
+[@经验2]
+#IF
+#ACT
+Param1 4
+PARAM2 220
+PARAM3 216
+MonGen 经验树妖
+BREAK
+
+[@经验3]
+#IF
+#ACT
+Param1 5
+PARAM2 107
+PARAM3 325
+MonGen 经验树妖
+BREAK
+
+[@经验4]
+#IF
+#ACT
+Param1 3
+PARAM2 297
+PARAM3 343
+MonGen 经验树妖
+BREAK
+
+[@神鹰]
+#IF
+#ACT
+Param1 SWZG
+PARAM2 43
+PARAM3 43
+MonGen 死亡神鹰
+BREAK
+
+[@富贵教主]
+#IF
+#ACT
+Param1 ZJYBDT
+PARAM2 27
+PARAM3 24
+MonGen 富贵教主
+BREAK
+
+[@富贵教主1]
+#IF
+#ACT
+Param1 ZJYBDT
+PARAM2 27
+PARAM3 24
+MonGen 富贵教主
+BREAK
+
+[@富贵教主2]
+#IF
+#ACT
+Param1 ZJYBDT
+PARAM2 27
+PARAM3 24
+MonGen 富贵教主
+BREAK
+
+[@天地虎卫]
+#IF
+#ACT
+Param1 1002
+PARAM2 15
+PARAM3 12
+MonGen 天地虎卫
+BREAK
+
+[@天地虎卫1]
+#IF
+#ACT
+Param1 1002
+PARAM2 15
+PARAM3 12
+MonGen 天地虎卫
+BREAK
+
+[@王者之战4]
+#ACT
+GMEXECUTE 集体传送 wangzhe1 wangzhe2
+BREAK
+
+[@王者之战6]
+#ACT
+GMEXECUTE 集体传送 wangzhe2 wangzhe3
+BREAK
+
+[@王者之战结束]
+#ACT
+GMEXECUTE 集体传送 wangzhe3 0159
+BREAK
+
+[@行会争霸]
+#ACT
+SENDMSG 0 行会争霸20分钟后开始，请各大行会成员及时进入，获胜行会可获得10000元宝奖励！ 31 241
+SENDMSG 0 行会争霸20分钟后开始，请各大行会成员及时进入，获胜行会可获得10000元宝奖励！ 31 241
+SENDMSG 0 行会争霸20分钟后开始，请各大行会成员及时进入，获胜行会可获得10000元宝奖励！ 31 241
+BREAK
+
+[@行会争霸1]
+#ACT
+SENDMSG 0 行会争霸10分钟后开始，请各大行会成员及时进入，获胜行会可获得10000元宝奖励！ 31 241
+SENDMSG 0 行会争霸10分钟后开始，请各大行会成员及时进入，获胜行会可获得10000元宝奖励！ 31 241
+SENDMSG 0 行会争霸10分钟后开始，请各大行会成员及时进入，获胜行会可获得10000元宝奖励！ 31 241
+BREAK
+
+[@行会争霸开始]
+#ACT
+GMEXECUTE 集体传送 HHBZ HHZB
+SENDMSG 0 行会争霸已经开始！ 31 241
+SENDMSG 0 行会争霸已经开始！ 31 241
+SENDMSG 0 行会争霸已经开始！ 31 241
+break
+
+[@行会争霸结束]
+#ACT
+GMEXECUTE 集体传送 HHZB 3
+break
+
+[@提示公告]
+#ACT
+SendScrollMsg 欢迎各位喜爱1.76复古传奇玩家的光临！云海1.76小极品传奇官方网站:www.kuyoux.com，服务器每个新区都会强力宣传，请玩家放心游戏的人气问题。我们会提供一个最公平最稳定的传奇游戏给大家！ 251 249
+BREAK
+
+[@提示公告1]
+#ACT
+SendScrollMsg 请大家牢记注册帐号时所填写的生日、提示问题和回答问题，请妥善保管好自己的游戏帐号和物品，并且在土城上方设置二级密码，可以有效防止盗号。若发生物品被骗或者丢失服务器不提供找回装备服务！ 251 249
+BREAK
+
+[@提示公告2]
+#ACT
+SendScrollMsg 本服务器为1.76复古小极品版，普通赤月首饰装备相对来说爆率较高，终极装备为赤月+3，只要你付出努力，终极装备就属于你！ 251 249
+BREAK
+
+[@提示公告3]
+#ACT
+SendScrollMsg 服务器本着“公平公正”为运营宗旨，拒绝内服、拒绝待遇、拒绝拉人、拒绝家族、拒绝元宝比例！云海传奇团队格言：做到“公平”才能取得玩家信任！做到“公平”服务器才能长久！ 251 249
+BREAK
+
+[@提示公告4]
+#ACT
+SendScrollMsg 服务器增加了升级奖励，每一级别都能给您惊喜，等级奖励人人都有，只要你付出努力... 251 249
+BREAK
+
+[@提示公告5]
+#ACT
+SendScrollMsg 如果你想对本服务器全面了解，请查看土城右下角NPC“必看游戏攻略” 251 249
+BREAK
+
+[@提示公告6]
+#ACT
+SendScrollMsg 我们不敢说我们是最好的1.76传奇服务器，但是我们一直在努力的试着让曾经的那份热血激情在这里再次燃烧，让我们一起牵手将热血激情在这里延续...... 251 249
+BREAK
+
+[@提示公告7]
+#ACT
+SendScrollMsg 服务器本着“公平公正”为运营宗旨，拒绝内服、拒绝待遇、拒绝拉人、拒绝家族、拒绝元宝比例！云海传奇团队格言：做到“公平”才能取得玩家信任！做到“公平”服务器才能长久！ 251 249
+BREAK
+
+[@提示公告8]
+#ACT
+SendScrollMsg 欢迎各位喜爱1.76复古传奇玩家的光临！云海1.76小极品传奇官方网站:www.kuyoux.com，服务器每个新区都会强力宣传，请玩家放心游戏的人气问题。我们会提供一个最公平最稳定的传奇游戏给大家！ 251 249
+BREAK
+
+[@提示公告9]
+#ACT
+SendScrollMsg 服务器增加了升级奖励，每一级别都能给您惊喜，等级奖励人人都有，只要你付出努力... 251 249
+BREAK
+
+[@提示公告10]
+#ACT
+SendScrollMsg 本服务器为1.76复古小极品版，普通赤月首饰装备相对来说爆率较高，终极装备为赤月+3，只要你付出努力，终极装备就属于你！ 251 249
+BREAK
+
+[@提示公告11]
+#ACT
+SendScrollMsg 我们不敢说我们是最好的1.76传奇服务器，但是我们一直在努力的试着让曾经的那份热血激情在这里再次燃烧，让我们一起牵手将热血激情在这里延续...... 251 249
+BREAK
+
+[@提示公告12]
+#ACT
+SendScrollMsg 欢迎各位喜爱1.76复古传奇玩家的光临！云海1.76小极品传奇官方网站:www.kuyoux.com，服务器每个新区都会强力宣传，请玩家放心游戏的人气问题。我们会提供一个最公平最稳定的传奇游戏给大家！ 251 249
+BREAK
+
+[@提示公告13]
+#ACT
+SendScrollMsg 请大家牢记注册帐号时所填写的生日、提示问题和回答问题，请妥善保管好自己的游戏帐号和物品，并且在土城上方设置二级密码，可以有效防止盗号。若发生物品被骗或者丢失服务器不提供找回装备服务！ 251 249
+BREAK
+
+[@提示公告14]
+#ACT
+SendScrollMsg 本服务器为1.76复古小极品版，普通赤月首饰装备相对来说爆率较高，终极装备为赤月+3，只要你付出努力，终极装备就属于你！ 251 249
+BREAK
+
+[@提示公告15]
+#ACT
+SendScrollMsg 服务器本着“公平公正”为运营宗旨，拒绝内服、拒绝待遇、拒绝拉人、拒绝家族、拒绝元宝比例！云海传奇团队格言：做到“公平”才能取得玩家信任！做到“公平”服务器才能长久！ 251 249
+BREAK
+
+[@提示公告16]
+#ACT
+SendScrollMsg 欢迎各位喜爱1.76复古传奇玩家的光临！云海1.76小极品传奇官方网站:www.kuyoux.com，服务器每个新区都会强力宣传，请玩家放心游戏的人气问题。我们会提供一个最公平最稳定的传奇游戏给大家！ 251 249
+BREAK
+
+[@提示公告17]
+#ACT
+SendScrollMsg 云海传奇一路走来，经历了许多困难，但是我们没有畏惧，谢谢有你们的支持！让我们一起努力做最好的传奇游戏！ 251 249
+BREAK
+
+[@提示公告18]
+#ACT
+SendScrollMsg 本服务器为1.76复古小极品版，普通赤月首饰装备相对来说爆率较高，终极装备为赤月+3，只要你付出努力，终极装备就属于你！ 251 249
+BREAK
+
+[@提示公告19]
+#ACT
+SendScrollMsg 服务器本着“公平公正”为运营宗旨，拒绝内服、拒绝待遇、拒绝拉人、拒绝家族、拒绝元宝比例！云海传奇团队格言：做到“公平”才能取得玩家信任！做到“公平”服务器才能长久！ 251 249
+BREAK
+
+[@提示公告20]
+#ACT
+SendScrollMsg 我们不敢说我们是最好的1.76传奇服务器，但是我们一直在努力的试着让曾经的那份热血激情在这里再次燃烧，让我们一起牵手将热血激情在这里延续...... 251 249
+BREAK
+
+[@提示公告21]
+#ACT
+SendScrollMsg 我们不敢说我们是最好的1.76传奇服务器，但是我们一直在努力的试着让曾经的那份热血激情在这里再次燃烧，让我们一起牵手将热血激情在这里延续...... 251 249
+BREAK
+
+[@提示公告22]
+#ACT
+SendScrollMsg 本服务器为1.76复古小极品版，普通赤月首饰装备相对来说爆率较高，终极装备为赤月+3，只要你付出努力，终极装备就属于你！ 251 249
+BREAK
+
+[@提示公告23]
+#ACT
+SendScrollMsg 服务器本着“公平公正”为运营宗旨，拒绝内服、拒绝待遇、拒绝拉人、拒绝家族、拒绝元宝比例！云海传奇团队格言：做到“公平”才能取得玩家信任！做到“公平”服务器才能长久！ 251 249
+BREAK
+
+[@怪物攻城结束]
+#ACT
+GMEXECUTE 清除怪物 5 * 0
+SENDMSG 0 苍月岛怪物攻城结束了！ 31 241
+SENDMSG 0 苍月岛怪物攻城结束了！ 31 241
+SENDMSG 0 苍月岛怪物攻城结束了！ 31 241
+SENDMSG 0 苍月岛怪物攻城结束了！ 31 241
+SENDMSG 0 苍月岛怪物攻城结束了！ 31 241
+BREAK
+
+[@怪物攻城开始]
+#ACT
+GMEXECUTE 开始提问 @苍月岛飞
+
+[@经验提示1]
+#ACT
+GMEXECUTE 开始提问 @提示飞1
+
+[@经验提示2]
+#ACT
+GMEXECUTE 开始提问 @提示飞2
+
+[@经验提示3]
+#ACT
+GMEXECUTE 开始提问 @提示飞3
+
+[@经验提示4]
+#ACT
+GMEXECUTE 开始提问 @提示飞4
+
+[@神鹰开启]
+#ACT
+GMEXECUTE 开始提问 @神鹰飞
+
+[@富贵教主提]
+#ACT
+GMEXECUTE 开始提问 @富贵教主飞
+
+[@富贵教主提1]
+#ACT
+GMEXECUTE 开始提问 @富贵教主飞1
+
+[@富贵教主提2]
+#ACT
+GMEXECUTE 开始提问 @富贵教主飞2
+
+[@天地虎卫提]
+#ACT
+GMEXECUTE 开始提问 @天地虎卫飞
+
+[@天地虎卫提1]
+#ACT
+GMEXECUTE 开始提问 @天地虎卫飞1
+
+[@神秘之战提]
+#ACT
+GMEXECUTE 开始提问 @神秘之战飞
+
+[@王者之战提]
+#ACT
+GMEXECUTE 开始提问 @王者之战飞
+
+[@怪物攻城1]
+#IF
+#ACT
+Mission 5 123 338
+Param1 118
+Param2 280
+Param3 5
+Param4 1
+MobPlace 白野猪
+SENDMSG 0 白野猪进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 131 312
+Param1 181
+Param2 277
+Param3 2
+Param4 1
+MobPlace 黄泉教主
+SENDMSG 0 黄泉教主进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 151 307
+Param1 112
+Param2 305
+Param3 1
+Param4 1
+MobPlace 重装使者
+SENDMSG 0 重装使者进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 159 321
+Param1 98
+Param2 319
+Param3 1
+Param4 1
+MobPlace 重装使者
+BREAK
+
+#IF
+#ACT
+Mission 5 163 347
+Param1 200
+Param2 321
+Param3 2
+Param4 1
+MobPlace 沃玛教主
+SENDMSG 0 沃玛教主进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 135 362
+Param1 174
+Param2 362
+Param3 2
+Param4 1
+MobPlace 虹魔教主
+SENDMSG 0 虹魔教主进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 127 351
+Param1 137
+Param2 370
+Param3 2
+Param4 1
+MobPlace 虹魔猪卫
+BREAK
+
+#IF
+#ACT
+Mission 5 111 334
+Param1 138
+Param2 378
+Param3 2
+Param4 1
+MobPlace 牛魔王
+SENDMSG 0 牛魔王进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 111 321
+Param1 174
+Param2 360
+Param3 2
+Param4 1
+MobPlace 牛魔王
+BREAK
+
+#IF
+#ACT
+Mission 5 119 313
+Param1 184
+Param2 354
+Param3 3
+Param4 1
+MobPlace 血僵尸
+SENDMSG 0 血僵尸进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 126 310
+Param1 199
+Param2 335
+Param3 3
+Param4 1
+MobPlace 邪恶毒蛇
+BREAK
+
+#IF
+#ACT
+Mission 5 136 300
+Param1 207
+Param2 309
+Param3 5
+Param4 1
+MobPlace 牛魔将军
+BREAK
+
+#IF
+#ACT
+Mission 5 141 291
+Param1 190
+Param2 275
+Param3 5
+Param4 1
+MobPlace 牛魔祭司
+BREAK
+
+#IF
+#ACT
+Mission 5 152 283
+Param1 137
+Param2 374
+Param3 3
+Param4 1
+MobPlace 骷髅精灵
+BREAK
+
+#IF
+#ACT
+Mission 5 156 307
+Param1 99
+Param2 319
+Param3 4
+Param4 1
+MobPlace 虹魔蝎卫
+BREAK
+
+#IF
+#ACT
+Mission 5 164 299
+Param1 129
+Param2 310
+Param3 1
+Param4 1
+MobPlace 邪恶教主
+SENDMSG 0 邪恶教主进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 168 291
+Param1 160
+Param2 322
+Param3 1
+Param4 1
+MobPlace 邪恶教主
+BREAK
+
+[@怪物攻城2]
+#IF
+#ACT
+Mission 5 175 306
+Param1 166
+Param2 368
+Param3 1
+Param4 1
+MobPlace 暗之虹魔教主
+SENDMSG 0 暗之虹魔教主进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 176 318
+Param1 194
+Param2 362
+Param3 1
+Param4 1
+MobPlace 暗之黄泉教主
+SENDMSG 0 暗之黄泉教主进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 184 318
+Param1 194
+Param2 362
+Param3 1
+Param4 1
+MobPlace 重装使者
+BREAK
+
+#IF
+#ACT
+Mission 5 169 329
+Param1 192
+Param2 300
+Param3 1
+Param4 1
+MobPlace 暗之骷髅精灵
+SENDMSG 0 暗之骷髅精灵进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 167 355
+Param1 111
+Param2 338
+Param3 1
+Param4 1
+MobPlace 复古教主
+SENDMSG 0 复古教主进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 173 360
+Param1 183
+Param2 280
+Param3 1
+Param4 1
+MobPlace 暗之双头金刚
+SENDMSG 0 暗之双头金刚进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 148 357
+Param1 150
+Param2 266
+Param3 1
+Param4 1
+MobPlace 暗之双头血魔
+SENDMSG 0 暗之双头血魔进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 141 359
+Param1 118
+Param2 280
+Param3 1
+Param4 1
+MobPlace 暗之沃玛教主
+SENDMSG 0 暗之沃玛教主进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 138 371
+Param1 104
+Param2 303
+Param3 1
+Param4 1
+MobPlace 暗之牛魔王
+SENDMSG 0 暗之牛魔王进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 128 350
+Param1 112
+Param2 305
+Param3 1
+Param4 1
+MobPlace 重装使者
+SENDMSG 0 重装使者进攻了苍月岛...
+BREAK
+
+[@怪物攻城3]
+#IF
+#ACT
+Mission 5 125 338
+Param1 84
+Param2 327
+Param3 2
+Param4 1
+MobPlace 地藏魔王
+SENDMSG 0 地藏魔王进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 112 336
+Param1 111
+Param2 338
+Param3 1
+Param4 1
+MobPlace 复古教主
+SENDMSG 0 复古教主进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 104 324
+Param1 112
+Param2 305
+Param3 1
+Param4 1
+MobPlace 重装使者
+SENDMSG 0 重装使者进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 98 318
+Param1 123
+Param2 353
+Param3 7
+Param4 1
+MobPlace 虹魔蝎卫
+BREAK
+
+#IF
+#ACT
+Mission 5 98 318
+Param1 125
+Param2 354
+Param3 5
+Param4 1
+MobPlace 花吻蜘蛛
+BREAK
+
+#IF
+#ACT
+Mission 5 98 318
+Param1 175
+Param2 371
+Param3 1
+Param4 1
+MobPlace 圣域牛魔王
+SENDMSG 0 圣域牛魔王进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 98 318
+Param1 129
+Param2 356
+Param3 5
+Param4 1
+MobPlace 幻影蜘蛛
+BREAK
+
+#IF
+#ACT
+Mission 5 117 309
+Param1 156
+Param2 346
+Param3 1
+Param4 1
+MobPlace 送葬者
+SENDMSG 0 送葬者进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 107 299
+Param1 136
+Param2 367
+Param3 1
+Param4 1
+MobPlace 梦幻教主
+SENDMSG 0 梦幻教主进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 113 289
+Param1 152
+Param2 376
+Param3 3
+Param4 1
+MobPlace 双头金刚
+SENDMSG 0 双头金刚进攻了苍月岛...
+BREAK
+
+
+#IF
+#ACT
+Mission 5 125 287
+Param1 175
+Param2 371
+Param3 3
+Param4 1
+MobPlace 双头血魔
+SENDMSG 0 双头血魔进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 133 287
+Param1 170
+Param2 357
+Param3 1
+Param4 1
+MobPlace 赤月恶魔
+SENDMSG 0 赤月恶魔进攻了苍月岛...
+BREAK
+
+[@怪物攻城4]
+#IF
+#ACT
+Mission 5 124 275
+Param1 179
+Param2 310
+Param3 1
+Param4 1
+MobPlace 暗之邪恶毒蛇
+SENDMSG 0 暗之邪恶毒蛇进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 138 269
+Param1 150
+Param2 280
+Param3 1
+Param4 1
+MobPlace 暗之白野猪
+SENDMSG 0 暗之白野猪进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 151 268
+Param1 103
+Param2 263
+Param3 1
+Param4 1
+MobPlace 盗宝贼
+SENDMSG 0 盗宝贼进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 161 272
+Param1 138
+Param2 269
+Param3 1
+Param4 1
+MobPlace 狂暴野猪王
+SENDMSG 0 狂暴野猪王进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 168 281
+Param1 158
+Param2 272
+Param3 1
+Param4 1
+MobPlace 送葬者
+SENDMSG 0 送葬者进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 180 285
+Param1 156
+Param2 307
+Param3 1
+Param4 1
+MobPlace 送宝使者
+SENDMSG 0 送宝使者进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 185 297
+Param1 98
+Param2 332
+Param3 1
+Param4 1
+MobPlace 千年树妖
+SENDMSG 0 千年树妖进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 194 305
+Param1 106
+Param2 355
+Param3 1
+Param4 1
+MobPlace 暗之赤月恶魔
+SENDMSG 0 暗之赤月恶魔进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 196 320
+Param1 140
+Param2 328
+Param3 1
+Param4 1
+MobPlace 阴沉石墓尸王
+SENDMSG 0 阴沉石墓尸王进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 196 326
+Param1 181
+Param2 372
+Param3 2
+Param4 1
+MobPlace 重装使者
+SENDMSG 0 重装使者进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 190 339
+Param1 115
+Param2 375
+Param3 2
+Param4 1
+MobPlace 地藏魔王
+SENDMSG 0 地藏魔王进攻了苍月岛...
+BREAK
+
+[@怪物攻城5]
+#IF
+#ACT
+Mission 5 181 348
+Param1 88
+Param2 324
+Param3 1
+Param4 1
+MobPlace 烟花恶魔
+SENDMSG 0 烟花恶魔进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 177 356
+Param1 164
+Param2 259
+Param3 2
+Param4 1
+MobPlace 烟花金刚
+SENDMSG 0 烟花金刚进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 177 367
+Param1 199
+Param2 292
+Param3 2
+Param4 1
+MobPlace 烟花血魔
+SENDMSG 0 烟花血魔进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 151 374
+Param1 141
+Param2 300
+Param3 1
+Param4 1
+MobPlace 烟花教主
+SENDMSG 0 烟花教主进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 138 373
+Param1 101
+Param2 303
+Param3 1
+Param4 1
+MobPlace 烟花老魔
+SENDMSG 0 烟花老魔进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 136 361
+Param1 136
+Param2 367
+Param3 1
+Param4 1
+MobPlace 梦幻教主
+SENDMSG 0 梦幻教主进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 127 352
+Param1 152
+Param2 376
+Param3 3
+Param4 1
+MobPlace 双头金刚
+SENDMSG 0 双头金刚进攻了苍月岛...
+BREAK
+
+
+#IF
+#ACT
+Mission 5 121 337
+Param1 175
+Param2 371
+Param3 3
+Param4 1
+MobPlace 双头血魔
+SENDMSG 0 双头血魔进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 112 334
+Param1 121
+Param2 309
+Param3 1
+Param4 1
+MobPlace 赤月恶魔
+SENDMSG 0 赤月恶魔进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 127 308
+Param1 152
+Param2 308
+Param3 1
+Param4 1
+MobPlace 暗之赤月恶魔
+SENDMSG 0 暗之赤月恶魔进攻了苍月岛...
+BREAK
+
+[@怪物攻城6]
+#IF
+#ACT
+Mission 5 136 299
+Param1 177
+Param2 368
+Param3 3
+Param4 1
+MobPlace 云海白野猪
+SENDMSG 0 云海白野猪进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 150 305
+Param1 189
+Param2 290
+Param3 2
+Param4 1
+MobPlace 云海猪王
+SENDMSG 0 云海猪王进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 161 298
+Param1 166
+Param2 293
+Param3 1
+Param4 1
+MobPlace 烟花恶魔
+SENDMSG 0 烟花恶魔进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 159 321
+Param1 164
+Param2 259
+Param3 2
+Param4 1
+MobPlace 烟花金刚
+SENDMSG 0 烟花金刚进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 162 349
+Param1 199
+Param2 292
+Param3 2
+Param4 1
+MobPlace 烟花血魔
+SENDMSG 0 烟花血魔进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 172 359
+Param1 141
+Param2 300
+Param3 1
+Param4 1
+MobPlace 烟花教主
+SENDMSG 0 烟花教主进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 152 376
+Param1 185
+Param2 319
+Param3 1
+Param4 1
+MobPlace 烟花老魔
+SENDMSG 0 烟花老魔进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 138 371
+Param1 199
+Param2 342
+Param3 2
+Param4 1
+MobPlace 云海金刚
+SENDMSG 0 云海金刚进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 126 360
+Param1 203
+Param2 316
+Param3 2
+Param4 1
+MobPlace 云海血魔
+SENDMSG 0 云海血魔进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 114 328
+Param1 183
+Param2 272
+Param3 2
+Param4 1
+MobPlace 云海牛魔王
+SENDMSG 0 云海牛魔王进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 87 326
+Param1 163
+Param2 297
+Param3 8
+Param4 1
+MobPlace 云海月魔蜘蛛
+BREAK
+
+#IF
+#ACT
+Mission 5 87 326
+Param1 133
+Param2 362
+Param3 5
+Param4 1
+MobPlace 云海蝎卫
+BREAK
+
+#IF
+#ACT
+Mission 5 87 326
+Param1 112
+Param2 305
+Param3 1
+Param4 1
+MobPlace 圣域教主
+SENDMSG 0 圣域教主进攻了苍月岛...
+BREAK
+
+#IF
+#ACT
+Mission 5 87 326
+Param1 167
+Param2 326
+Param3 1
+Param4 1
+MobPlace 云海恶魔
+BREAK
+
+#IF
+#ACT
+Mission 5 106 297
+Param1 99
+Param2 315
+Param3 1
+Param4 1
+MobPlace 云海恶魔
+SENDMSG 0 云海恶魔进攻了苍月岛...
+BREAK
+
+
+#IF
+#ACT
+Mission 5 109 326
+Param1 99
+Param2 315
+Param3 1
+Param4 1
+MobPlace 云海教主
+BREAK
+
+#IF
+#ACT
+Mission 5 130 310
+Param1 117
+Param2 312
+Param3 1
+Param4 1
+MobPlace 云海教主
+SENDMSG 0 云海教主进攻了苍月岛...
+BREAK

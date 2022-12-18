@@ -1,0 +1,76 @@
+[@开始合雷霆男]
+{
+合成雷霆战甲(男)所需物品：\
+金刚石:388颗，\
+藏宝图301、藏宝图302、藏宝图303、藏宝图304，\
+藏宝图305、藏宝图306、藏宝图307、藏宝图308，\
+圣战头盔、圣战项链、圣战手镯、圣战戒指中的任意1-10件，\
+<返回查看配方/@合成衣服>\
+<进行合成/@进行合成雷霆男>\
+<退出/@EXIT>\
+
+[@进行合成雷霆男]
+#IF
+CHECKGAMEDIAMOND > 387
+CHECKITEM 藏宝图301 1
+CHECKITEM 藏宝图302 1
+CHECKITEM 藏宝图303 1
+CHECKITEM 藏宝图304 1
+CHECKITEM 藏宝图305 1
+CHECKITEM 藏宝图306 1
+CHECKITEM 藏宝图307 1
+CHECKITEM 藏宝图308 1
+#ACT
+MOVR d7 2
+DELAYGOTO 1 @雷霆男开始合成
+#ELSESAY
+您没有升级需要的足够原料，我也无能为力了。\
+
+[@雷霆男开始合成]
+#IF
+CHECKGAMEDIAMOND > 387
+CHECKITEM 藏宝图301 1
+CHECKITEM 藏宝图302 1
+CHECKITEM 藏宝图303 1
+CHECKITEM 藏宝图304 1
+CHECKITEM 藏宝图305 1
+CHECKITEM 藏宝图306 1
+CHECKITEM 藏宝图307 1
+CHECKITEM 藏宝图308 1
+EQUAL d7 1
+#ACT
+MOV d7 0
+GAMEDIAMOND - 388
+TAKE 藏宝图301 1
+TAKE 藏宝图302 1
+TAKE 藏宝图303 1
+TAKE 藏宝图304 1
+TAKE 藏宝图305 1
+TAKE 藏宝图306 1
+TAKE 藏宝图307 1
+TAKE 藏宝图308 1
+TAKE 圣战头盔 10
+TAKE 圣战项链 10
+TAKE 圣战手镯 10
+TAKE 圣战戒指 10
+GIVE 雷霆战甲(男) 1
+SENDMSG 0 恭喜:<$USERNAME>升级雷霆战甲(男)成功！
+CLOSE
+#ELSEACT
+MOV d7 0
+GAMEDIAMOND - 388
+TAKE 藏宝图301 1
+TAKE 藏宝图302 1
+TAKE 藏宝图303 1
+TAKE 藏宝图304 1
+TAKE 藏宝图305 1
+TAKE 藏宝图306 1
+TAKE 藏宝图307 1
+TAKE 藏宝图308 1
+TAKE 圣战头盔 10
+TAKE 圣战项链 10
+TAKE 圣战手镯 10
+TAKE 圣战戒指 10
+messagebox  可惜了：\<$USERNAME>你合成失败，藏宝图和金刚石在合成过程中被熔化！
+CLOSE
+}

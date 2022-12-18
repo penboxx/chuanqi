@@ -1,0 +1,26 @@
+
+()
+%100
+[@main]
+══════★═════邪剑神殿═════★══════\
+<COLOR=clFuchsia 【邪剑神殿】属边境之外，属陈"人间公海"，在那里有个>\
+<COLOR=clAqua “邪剑仙”是蜀山五长老的邪气所化，邪灵本源！毁灭天地，末日>\
+<COLOR=clFuchsia 杀神。六界之外的生命，性格残忍奸诈，吸取邪恶为能量。法力高>\
+<COLOR=clAqua 强，我可以使仙法驶船送往你们去那里，希望你们能消灭他！但是>\
+<COLOR=clFuchsia 我的船坏了!你们要支付我50个元宝的修船费用我才使法驶船！>  \
+<COLOR=clAqua 此BOSS可爆出赤月，屠龙，至尊系列，爆率超高！>\
+<COLOR=clRed =====2小时刷新系统自动提示，90分钟没消灭怪物将自动消失=====>\ 
+<我要马上去灭掉这个狗杂碎/@现在就去>            <我再观望.观望/@EXIT>
+
+
+[@现在就去]
+#IF
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50 
+mapmove xiejian
+SENDMSG 0 【%s】花费50元宝进入了【邪剑神殿】
+#ELSEACT
+MESSAGEBOX 对不起，你元宝不足！
+BREAK
+

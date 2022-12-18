@@ -1,0 +1,9 @@
+卫士
+MainDoor
+LeftWall
+RightWall
+CenterWall
+弓箭手
+护卫
+弓箭护卫
+带刀护卫

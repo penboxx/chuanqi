@@ -1,0 +1,294 @@
+[@登录设置]
+{
+#IF
+CHECKLEVELEX = 49
+#ACT
+AbilityAdd 4 1 999999
+AbilityAdd 5 1 999999
+AbilityAdd 6 1 999999
+#call [系统功能\封号系统.txt] @封号检测
+break
+
+#IF
+CHECKLEVELEX = 50
+#ACT
+AbilityAdd 4 2 999999
+AbilityAdd 5 2 999999
+AbilityAdd 6 2 999999
+#call [系统功能\封号系统.txt] @封号检测
+break
+
+#IF
+CHECKLEVELEX = 51
+#ACT
+AbilityAdd 4 3 999999
+AbilityAdd 5 3 999999
+AbilityAdd 6 3 999999
+#call [系统功能\封号系统.txt] @封号检测
+break
+
+#IF
+CHECKLEVELEX = 52
+#ACT
+AbilityAdd 4 4 999999
+AbilityAdd 5 4 999999
+AbilityAdd 6 4 999999
+#call [系统功能\封号系统.txt] @封号检测
+break
+
+#IF
+CHECKLEVELEX = 53
+#ACT
+AbilityAdd 4 5 999999
+AbilityAdd 5 5 999999
+AbilityAdd 6 5 999999
+#call [系统功能\封号系统.txt] @封号检测
+break
+
+#IF
+CHECKLEVELEX = 54
+#ACT
+AbilityAdd 4 6 999999
+AbilityAdd 5 6 999999
+AbilityAdd 6 6 999999
+#call [系统功能\封号系统.txt] @封号检测
+break
+
+#IF
+CHECKLEVELEX = 55
+#ACT
+AbilityAdd 4 7 999999
+AbilityAdd 5 7 999999
+AbilityAdd 6 7 999999
+#call [系统功能\封号系统.txt] @封号检测
+break
+
+#IF
+CHECKLEVELEX = 56
+#ACT
+AbilityAdd 4 8 999999
+AbilityAdd 5 8 999999
+AbilityAdd 6 8 999999
+#call [系统功能\封号系统.txt] @封号检测
+break
+
+#IF
+CHECKLEVELEX = 57
+#ACT
+AbilityAdd 4 10 999999
+AbilityAdd 5 10 999999
+AbilityAdd 6 10 999999
+#call [系统功能\封号系统.txt] @封号检测
+break
+
+#IF
+CHECKLEVELEX = 58
+#ACT
+AbilityAdd 4 10 999999
+AbilityAdd 5 10 999999
+AbilityAdd 6 10 999999
+#call [系统功能\封号系统.txt] @封号检测
+break
+
+#IF
+CHECKLEVELEX = 59
+#ACT
+AbilityAdd 4 10 999999
+AbilityAdd 5 10 999999
+AbilityAdd 6 10 999999
+#call [系统功能\封号系统.txt] @封号检测
+break
+
+#IF
+CHECKLEVELEX > 59
+#ACT
+AbilityAdd 4 13 999999
+AbilityAdd 5 13 999999
+AbilityAdd 6 13 999999
+#call [系统功能\封号系统.txt] @封号检测
+break
+
+#IF
+checknamelist \特色功能\禁止登陆人物.txt
+#ACT
+KILL 3
+SENDMSG 5 [提示]：你现在的人物已被封，请更换人物登陆！
+
+#IF
+CHECKACCOUNTLIST \特色功能\禁止登陆帐号.txt
+#ACT
+KILL 3
+SENDMSG 5 [提示]：你现在的帐号已被封，请更换帐号登陆！
+
+#IF
+CHECKIPLIST \特色功能\禁止登陆IP.txt
+#ACT
+KILL 3
+SENDMSG 5 [提示]：你现在登陆IP已被封，请更换IP登陆！
+
+#IF
+checknamelist \特色功能\清除仓库密码名单.txt
+#ACT
+CLEARPASSWORD
+SENDMSG 5 [提示]：您的仓库密码被清除！
+
+#IF
+GENDER MAN
+checkjob warrior
+ISNEWHUMAN
+#ACT
+give 游戏攻略(必看) 1
+give 双倍经验卡 1
+give 强效太阳包 1
+give 金钻服务 1
+give 刷新背包 1
+give 金币 1000000
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 烈火剑法 3
+MESSAGEBOX 欢迎加入云海1.76复古小极品传奇！
+SENDMSG 0 欢迎《%s》加入1.76云海传奇！
+break
+
+#IF
+GENDER WOMAN
+checkjob warrior
+ISNEWHUMAN
+#ACT
+give 游戏攻略(必看) 1
+give 双倍经验卡 1
+give 强效太阳包 1
+give 金钻服务 1
+give 刷新背包 1
+give 金币 1000000
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 烈火剑法 3
+MESSAGEBOX 欢迎加入云海1.76复古小极品传奇！
+SENDMSG 0 欢迎《%s》加入1.76云海传奇！
+break
+
+#IF
+GENDER MAN
+checkjob wizard
+ISNEWHUMAN
+#ACT
+give 游戏攻略(必看) 1
+give 双倍经验卡 1
+give 强效太阳包 1
+give 金钻服务 1
+give 刷新背包 1
+give 心灵召唤 1
+give 金币 1000000
+ADDSKILL 火球术 3
+ADDSKILL 大火球 3
+ADDSKILL 地狱火 3
+ADDSKILL 雷电术 3
+ADDSKILL 爆裂火焰 3
+ADDSKILL 抗拒火环 3
+ADDSKILL 疾光电影 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 火墙 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+MESSAGEBOX 欢迎加入云海1.76复古小极品传奇！
+SENDMSG 0 欢迎《%s》加入1.76云海传奇！
+break
+
+#IF
+GENDER WOMAN
+checkjob wizard
+ISNEWHUMAN
+#ACT
+give 游戏攻略(必看) 1
+give 双倍经验卡 1
+give 强效太阳包 1
+give 金钻服务 1
+give 刷新背包 1
+give 心灵召唤 1
+give 金币 1000000
+ADDSKILL 火球术 3
+ADDSKILL 大火球 3
+ADDSKILL 地狱火 3
+ADDSKILL 雷电术 3
+ADDSKILL 爆裂火焰 3
+ADDSKILL 抗拒火环 3
+ADDSKILL 疾光电影 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 火墙 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+MESSAGEBOX 欢迎加入云海1.76复古小极品传奇！
+SENDMSG 0 欢迎《%s》加入1.76云海传奇！
+break
+
+#IF
+GENDER MAN
+checkjob taoist
+ISNEWHUMAN
+#ACT
+give 游戏攻略(必看) 1
+give 双倍经验卡 1
+give 强效太阳包 1
+give 金钻服务 1
+give 刷新背包 1
+give 心灵召唤 1
+give 金币 1000000
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 召唤骷髅 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 心灵启示 3
+ADDSKILL 困魔咒 3
+ADDSKILL 群体治疗术 3
+ADDSKILL 召唤神兽 3
+MESSAGEBOX 欢迎加入云海1.76复古小极品传奇！
+SENDMSG 0 欢迎《%s》加入1.76云海传奇！
+break
+
+#IF
+GENDER WOMAN
+checkjob taoist
+ISNEWHUMAN
+#ACT
+give 游戏攻略(必看) 1
+give 双倍经验卡 1
+give 强效太阳包 1
+give 金钻服务 1
+give 刷新背包 1
+give 心灵召唤 1
+give 金币 1000000
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 召唤骷髅 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 心灵启示 3
+ADDSKILL 困魔咒 3
+ADDSKILL 群体治疗术 3
+ADDSKILL 召唤神兽 3
+MESSAGEBOX 欢迎加入云海1.76复古小极品传奇！
+SENDMSG 0 欢迎《%s》加入1.76云海传奇！
+break
+}

@@ -1,0 +1,89 @@
+[@main]
+<COLOR=clFuchsia 注意:只有记忆、灯笼、虎齿、不带(幸)字的项链可以升级幸运!>\
+<COLOR=#254 注意:带(幸)字的幸运项链在猪8猪9爆出,带幸和不带幸效果是一样的!>\
+<COLOR=#254 提示:项链升级幸运不会破碎,成功率为随机!>\ \
+<COLOR=clSkyBlue -----幸运9发挥最大威力，幸运10发挥神秘属性(自行体验)----->\
+<COLOR=clLime 项链>幸运升级至+1   <COLOR=clRed 需要2000元宝→成功率:100%>    <确定升级/@幸运1>\
+<COLOR=clLime 项链>幸运升级至+2   <COLOR=clRed 需要4000元宝→成功率:25%>     <确定升级/@幸运2>\
+<COLOR=clLime 项链>幸运升级至+3   <COLOR=clRed 需要6000元宝→成功率:15%>     <确定升级/@幸运3>\
+
+[@幸运1]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 1999
+#ACT
+#CALL [\幸运项链\灯笼项链1.txt] @灯笼项链1
+BREAK
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 1999
+#ACT
+#CALL [\幸运项链\虎齿项链1.txt] @白色虎齿项链1
+BREAK
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 1999
+#ACT
+#CALL [\幸运项链\记忆项链1.txt] @记忆项链1
+BREAK
+#ELSEACT
+MESSAGEBOX 友情提示:\1.您没有佩带项链\2.或者您没有2000元宝,无法升级!
+CLOSE
+BREAK
+
+[@幸运2]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 3999
+#ACT
+#CALL [\幸运项链\灯笼项链2.txt] @灯笼项链2
+BREAK
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 3999
+#ACT
+#CALL [\幸运项链\虎齿项链2.txt] @白色虎齿项链2
+BREAK
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 3999
+#ACT
+#CALL [\幸运项链\记忆项链2.txt] @记忆项链2
+BREAK
+#ELSEACT
+MESSAGEBOX 友情提示:\1.您没有佩带项链\2.您的项链不是幸运+1的\3.或者您没有4000元宝,无法升级!
+CLOSE
+BREAK
+
+[@幸运3]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 5999
+#ACT
+#CALL [\幸运项链\灯笼项链3.txt] @灯笼项链3
+BREAK
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 5999
+#ACT
+#CALL [\幸运项链\虎齿项链3.txt] @白色虎齿项链3
+BREAK
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 5999
+#ACT
+#CALL [\幸运项链\记忆项链3.txt] @记忆项链3
+BREAK
+#ELSEACT
+MESSAGEBOX 友情提示:\1.您没有佩带项链\2.您的项链不是幸运+2的\3.或者您没有6000元宝,无法升级!
+CLOSE
+BREAK

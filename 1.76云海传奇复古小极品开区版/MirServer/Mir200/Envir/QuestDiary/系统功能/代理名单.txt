@@ -1,0 +1,9 @@
+[@代理检测]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\元宝代理名单.txt
+#ACT
+setranklevelname %s\◥■■■元■■■◤\◥■■宝■■◤\◥■银■◤\◥商◤\官方授权代理商
+changenamecolor 241
+BREAK
+}

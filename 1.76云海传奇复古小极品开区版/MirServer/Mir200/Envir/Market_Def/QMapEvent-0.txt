@@ -1,0 +1,5 @@
+[@killplay3]
+#if
+#act
+CALCVAR HUMAN SD + 1
+SAVEVAR HUMAN SD ..\QuestDiary\数据文件\杀人次数SAVE.txt

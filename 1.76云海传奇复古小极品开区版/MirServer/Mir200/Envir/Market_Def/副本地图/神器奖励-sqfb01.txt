@@ -1,0 +1,27 @@
+()
+%100
+[@main]
+<COLOR=clYellow ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+<COLOR=clAqua 如果你已经获得了《神器宝石》你可以获得国王的赏赐>\
+<COLOR=clYellow ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+<COLOR=clRED ♀.物品奖励为随机获得，看个人运气！ >\
+<COLOR=clAqua ♀.奖励包括 本服所有装备随机领取！>\
+<COLOR=clLime ♀.如果你人品特别差，也有可能得不到任何物品> \
+<COLOR=clYellow ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+\ \
+<我要获取奖励/@shenqi01>                         <只是看看/@exit> 
+[@shenqi01]
+#if
+checkitem 神器宝石 1
+#act
+take 神器宝石 1
+ReadRandomLine .\QuestDiary\副本奖励\神器奖励.txt S13
+give <$STR(S13)> 1
+MessageBox 恭喜您获得：<$STR(S13)>一件！！！！
+sendmsg 0 恭喜玩家:<$USERNAME>完成了【神】【器】【副】【本】活动获得:《<$STR(S13)>》奖励！ 251 0
+SENDMSG 0 恭喜玩家:<$USERNAME>完成了【神】【器】【副】【本】活动获得:《<$STR(S13)>》奖励！ 253 0 30
+#ELSEACT
+MessageBox  你没有集齐物品别来欺骗我了！
+break
+
+;----此b--b 来 自  -W-w-w-g-m-0-0-5 -c-o-m - -

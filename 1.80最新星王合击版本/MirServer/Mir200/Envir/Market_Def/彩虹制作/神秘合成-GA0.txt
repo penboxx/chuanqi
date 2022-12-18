@@ -1,0 +1,223 @@
+()
+%100
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【神秘合成】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+【<白银勋章/@白银勋章>】【<黄金勋章/@黄金勋章>】【<钻石勋章/@钻石勋章>】【<至尊勋章/@至尊勋章>】【<卓越勋章/@卓越勋章>】\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+【<白银斗笠/@白银斗笠>】【<黄金斗笠/@黄金斗笠>】【<钻石斗笠/@钻石斗笠>】【<至尊斗笠/@至尊斗笠>】【<卓越斗笠/@卓越斗笠>】\
+<COLOR=clFuchsia --------------------------------------------------------- --->\
+<COLOR=clLime 本服所有装备全部游戏爆出.绝对公平公正.魔龙教主可以爆所有装备>\ 
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+[@白银勋章]
+<COLOR=clLime 想合成白银勋章吗？>\ \
+需要材料：爱情鲜花两个\
+需要元宝：10000颗\ \
+<合成白银勋章/@合成白银勋章>\
+<返回/@main>
+
+[@合成白银勋章]
+#IF
+CHECKGAMEGOLD > 9999
+checkitem 爱情鲜花 2
+#ACT
+take 爱情鲜花 2
+GAMEGOLD - 10000
+give 白银勋章 1
+SENDMSG 7 恭喜您，合成【白银勋章】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【白银勋章】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+
+[@黄金勋章]
+<COLOR=clLime 想合成黄金勋章吗？>\ \
+需要材料：白银勋章两个\
+需要元宝：20000颗\ \
+<合成黄金勋章/@合成黄金勋章>\
+<返回/@main>
+
+[@合成黄金勋章]
+#IF
+CHECKGAMEGOLD > 19999
+checkitem 白银勋章 2
+#ACT
+take 白银勋章 2
+GAMEGOLD - 20000
+give 黄金勋章 1
+SENDMSG 7 恭喜您，合成【黄金勋章】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【黄金勋章】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+[@钻石勋章]
+<COLOR=clLime 想合成钻石勋章吗？>\ \
+需要材料：黄金勋章两个\
+需要元宝：30000颗\ \
+<合成钻石勋章/@合成钻石勋章>\
+<返回/@main>
+
+[@合成钻石勋章]
+#IF
+CHECKGAMEGOLD > 29999
+checkitem 黄金勋章 2
+#ACT
+take 黄金勋章 2
+GAMEGOLD - 30000
+give 钻石勋章 1
+SENDMSG 7 恭喜您，合成【钻石勋章】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【钻石勋章】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+[@至尊勋章]
+<COLOR=clLime 想合成至尊勋章吗？>\ \
+需要材料：钻石勋章两个\
+需要元宝：50000颗\ \
+<合成至尊勋章/@合成至尊勋章>\
+<返回/@main>
+
+[@合成至尊勋章]
+#IF
+CHECKGAMEGOLD > 49999
+checkitem 钻石勋章 2
+#ACT
+take 钻石勋章 2
+GAMEGOLD - 50000
+give 至尊勋章 1
+SENDMSG 7 恭喜您，合成【至尊勋章】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【至尊勋章】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+[@卓越勋章]
+<COLOR=clLime 想合成卓越勋章吗？>\ \
+需要材料：至尊勋章两个\
+需要元宝：200000颗\ \
+<合成卓越勋章/@合成卓越勋章>\
+<返回/@main>
+
+[@合成卓越勋章]
+#IF
+CHECKGAMEGOLD > 199999
+checkitem 至尊勋章 2
+#ACT
+take 至尊勋章 2
+GAMEGOLD - 200000
+give 卓越勋章 1
+SENDMSG 7 恭喜您，合成【卓越勋章】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【卓越勋章】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+[@白银斗笠]
+<COLOR=clLime 想合成白银斗笠吗？>\ \
+需要材料：战神斗笠两个\
+需要元宝：10000颗\ \
+<合成白银斗笠/@合成白银斗笠>\
+<返回/@main>
+
+[@合成白银斗笠]
+#IF
+CHECKGAMEGOLD > 9999
+checkitem 战神斗笠 2
+#ACT
+take 战神斗笠 2
+GAMEGOLD - 10000
+give 白银斗笠 1
+SENDMSG 7 恭喜您，合成【白银斗笠】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【白银斗笠】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+
+[@黄金斗笠]
+<COLOR=clLime 想合成黄金斗笠吗？>\ \
+需要材料：白银斗笠两个\
+需要元宝：20000颗\ \
+<合成黄金斗笠/@合成黄金斗笠>\
+<返回/@main>
+
+[@合成黄金斗笠]
+#IF
+CHECKGAMEGOLD > 19999
+checkitem 白银斗笠 2
+#ACT
+take 白银斗笠 2
+GAMEGOLD - 20000
+give 黄金斗笠 1
+SENDMSG 7 恭喜您，合成【黄金斗笠】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【黄金斗笠】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+[@钻石斗笠]
+<COLOR=clLime 想合成钻石斗笠吗？>\ \
+需要材料：黄金斗笠两个\
+需要元宝：30000颗\ \
+<合成钻石斗笠/@合成钻石斗笠>\
+<返回/@main>
+
+[@合成钻石斗笠]
+#IF
+CHECKGAMEGOLD > 29999
+checkitem 黄金斗笠 2
+#ACT
+take 黄金斗笠 2
+GAMEGOLD - 30000
+give 钻石斗笠 1
+SENDMSG 7 恭喜您，合成【钻石斗笠】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【钻石斗笠】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+[@至尊斗笠]
+<COLOR=clLime 想合成至尊斗笠吗？>\ \
+需要材料：钻石斗笠两个\
+需要元宝：50000颗\ \
+<合成至尊斗笠/@合成至尊斗笠>\
+<返回/@main>
+
+[@合成至尊斗笠]
+#IF
+CHECKGAMEGOLD > 49999
+checkitem 钻石斗笠 2
+#ACT
+take 钻石斗笠 2
+GAMEGOLD - 50000
+give 至尊斗笠 1
+SENDMSG 7 恭喜您，合成【至尊斗笠】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【至尊斗笠】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+[@卓越斗笠]
+<COLOR=clLime 想合成卓越斗笠吗？>\ \
+需要材料：至尊斗笠两个\
+需要元宝：200000颗\ \
+<合成卓越斗笠/@合成卓越斗笠>\
+<返回/@main>
+
+[@合成卓越斗笠]
+#IF
+CHECKGAMEGOLD > 199999
+checkitem 至尊斗笠 2
+#ACT
+take 至尊斗笠 2
+GAMEGOLD - 200000
+give 卓越斗笠 1
+SENDMSG 7 恭喜您，合成【卓越斗笠】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【卓越斗笠】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？

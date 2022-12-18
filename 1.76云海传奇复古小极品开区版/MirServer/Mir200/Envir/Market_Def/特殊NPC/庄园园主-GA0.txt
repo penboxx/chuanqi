@@ -1,0 +1,116 @@
+[@main]
+勇士好，我是这个庄园的园主，庄园被<COLOR=clFuchsia 暗之云海教主>经常入侵...\
+而且它抢走了我的宝贝<COLOR=clLime 云海金叶>，你愿意帮我清除它们吗？\
+暗之云海教主每过一个小时出现前面的宫殿内...它非常的强大\
+我希望你能喊上你的伙伴并肩作战！如果你能夺回五个云海金叶\
+和五万元宝，我愿意将传家之宝<COLOR=clRed 云海腰带>或者<COLOR=clRed 云海靴子>赠送与你\
+<COLOR=clSkyBlue 暗之云海教主每一个小时入侵一次,爆云海金叶的几率为:2/1>\ \
+
+<我有五个云海金叶/@wgzzjy>　　　　<查看腰带和靴子属性/@cksx>\
+
+[@wgzzjy]
+你想要哪个？\ \
+<云海腰带(战)/@zzydz>　　<云海靴子(战)/@zzxzz>\ \
+<云海腰带(法)/@zzydf>　　<云海靴子(法)/@zzxzf>\ \
+<云海腰带(道)/@zzydd>　　<云海靴子(道)/@zzxzd>\ \
+<返 回/@main>
+[@zzydz]
+#IF
+checkitem 云海金叶 5
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+take 云海金叶 5
+give 云海腰带(战)
+#SAY
+你已经获得了：云海腰带(战)\ \
+<离 开/@exit>
+#ELSESAY
+你没有五个云海金叶和五万元宝...\ \
+<离 开/@exit>
+
+[@zzydf]
+#IF
+checkitem 云海金叶 5
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+take 云海金叶 5
+give 云海腰带(法)
+#SAY
+你已经获得了：云海腰带(法)\ \
+<离 开/@exit>
+#ELSESAY
+你没有五个云海金叶和五万元宝...\ \
+<离 开/@exit>
+
+[@zzydd]
+#IF
+checkitem 云海金叶 5
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+take 云海金叶 5
+give 云海腰带(道)
+#SAY
+你已经获得了：云海腰带(道)\ \
+<离 开/@exit>
+#ELSESAY
+你没有五个云海金叶和五万元宝...\ \
+<离 开/@exit>
+
+[@zzxzz]
+#IF
+checkitem 云海金叶 5
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+take 云海金叶 5
+give 云海靴子(战)
+#SAY
+你已经获得了：云海靴子(战)\ \
+<离 开/@exit>
+#ELSESAY
+你没有五个云海金叶和五万元宝...\ \
+<离 开/@exit>
+
+[@zzxzf]
+#IF
+checkitem 云海金叶 5
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+take 云海金叶 5
+give 云海靴子(法)
+#SAY
+你已经获得了：云海靴子(法)\ \
+<离 开/@exit>
+#ELSESAY
+你没有五个云海金叶和五万元宝...\ \
+<离 开/@exit>
+
+[@zzxzd]
+#IF
+checkitem 云海金叶 5
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+take 云海金叶 5
+give 云海靴子(道)
+#SAY
+你已经获得了：云海靴子(道)\ \
+<离 开/@exit>
+#ELSESAY
+你没有五个云海金叶和五万元宝...\ \
+<离 开/@exit>
+
+[@cksx]
+云海腰带(战):防御1-3 攻击1-3 单件触发2%攻击力\
+云海靴子(战):魔防1-3 攻击1-3 单件触发2%攻击力\ \
+
+云海腰带(法):防御1-3 魔法1-3 单件触发2%魔法力\
+云海靴子(法):魔防1-3 魔法1-3 单件触发2%魔法力\ \
+
+云海腰带(道):防御1-3 道术1-3 单件触发2%道术力\
+云海靴子(道):魔防1-3 道术1-3 单件触发2%道术力\
+<返 回/@main>

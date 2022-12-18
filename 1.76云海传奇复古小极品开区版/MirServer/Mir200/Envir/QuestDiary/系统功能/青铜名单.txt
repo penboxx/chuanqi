@@ -1,0 +1,8 @@
+[@青铜检测]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\青铜大使名单.txt
+#ACT
+setranklevelname %s\≮青铜大使≯\<$STR(S11)>
+BREAK
+}

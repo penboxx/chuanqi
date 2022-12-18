@@ -1,0 +1,4 @@
+#DEFINE	ma		CHAN
+#DEFINE	pm		GEPE		
+#DEFINE	ove		RMISSION						
+#DEFINE	3		10

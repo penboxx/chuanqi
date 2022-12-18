@@ -1,0 +1,243 @@
+[@gjcs]
+{
+<COLOR=clRed 以下地图收取一定的费用才可进入！> \
+╔═════每次需要收取10万金币的传送费════╗　\
+║  <尸 王 殿/@传送001>        <沃玛三层/@传送002>      <幻境三层/@传送003>      ║\
+║  <石 墓 阵/@传送004>        <祖玛七层/@传送005>      <牛魔六层/@传送006>      ║\
+║  <万恶之源/@传送007>        <幻境六层/@传送008>      <未知暗殿/@传送009>      ║\
+║  <恶魔祭坛/@传送010>        <赤月老巢/@传送011>      <霸者大厅/@传送012>      ║\
+╠═════每次需要收取30万金币的传送费════╣　\
+║  <天外丛林/@传送013>  <复古之路/@传送014>  <沙藏宝阁/@传送015>  <王者禁地/@传送016>      ║ \
+★★╚═══════════════════════╝\
+
+
+[@传送001]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove Q004 15 9
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送002]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D023  52 366
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送003]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove H003 
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送004]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D715 83 81 
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送005]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D5071 8 10 
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送006]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D2078 250 250
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送007]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D10071
+break
+#ELSESAY
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送008]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove H006 
+break
+#ELSESAY
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送009]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove m001
+break
+#ELSESAY
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送010]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D10051 179 54  
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+
+[@传送011]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D10052 139 25
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+
+[@传送012]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D2008 84 85
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+
+[@传送013]
+#if
+checkgold 300000
+#act
+take 金币 300000
+mapmove FOX02 63 271
+SENDMSG 0 ★玩家[%s],进入天外丛林，看他能带着什么宝物归来，！！ 254  200
+break
+#ELSESAY 
+你没有30w金币用来支付我们的服务费用!\\
+
+
+
+[@衣服01]
+#if
+checkgold 200000
+#act
+take 金币 200000
+mapmove 4 205 218
+break
+#ELSESAY
+你没有20w金币用来支付我们的服务费用!\\
+
+[@衣服02]
+#if
+checkgold 200000
+#act
+take 金币 200000
+mapmove 0 428 474
+break
+#ELSESAY
+你没有20w金币用来支付我们的服务费用!\\
+
+[@衣服03]
+#if
+checkgold 200000
+#act
+take 金币 200000
+mapmove 11 343 325
+break
+#ELSESAY
+你没有20w金币用来支付我们的服务费用!\\
+
+[@衣服04]
+#if
+checkgold 200000
+#act
+take 金币 200000
+mapmove 1 320 56
+break
+#ELSESAY
+你没有20w金币用来支付我们的服务费用!\\
+
+[@衣服05]
+#if
+checkgold 200000
+#act
+take 金币 200000
+mapmove R001 55 94
+break
+#ELSESAY
+你没有20w金币用来支付我们的服务费用!\\
+
+[@衣服06]
+#if
+checkgold 200000
+#act
+take 金币 200000
+mapmove 1 215 312
+break
+#ELSESAY
+你没有20w金币用来支付我们的服务费用!\\
+
+[@传送014]
+#if
+checkgold 300000
+#act
+take 金币 300000
+mapmove fuchouzhilu 86 23
+SENDMSG 0 ★玩家[%s],进入复古之路，看他能带着什么宝物归来，！！ 254  200
+break 
+#ELSESAY 
+你没有30w金币用来支付我们的服务费用!\\
+
+[@传送015]
+#if
+checkgold 300000
+#act
+take 金币 300000
+mapmove H201 95 21
+SENDMSG 0 ★玩家[%s],进入沙藏宝阁，看他能带着什么宝物归来，！！ 254  200
+break
+#ELSESAY 
+你没有30w金币用来支付我们的服务费用!\\
+
+[@传送016]
+#if
+checkgold 300000
+#act
+take 金币 300000
+mapmove H106  100  100
+SENDMSG 0 ★玩家[%s],进入王者禁地，看他能带着什么宝物归来，！！ 254  200
+break
+#ELSESAY
+你没有30w金币用来支付我们的服务费用!\\
+
+}

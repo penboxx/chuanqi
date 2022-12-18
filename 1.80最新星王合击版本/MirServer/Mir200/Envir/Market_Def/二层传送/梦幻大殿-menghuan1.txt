@@ -1,0 +1,21 @@
+()
+%100
+[@main]
+
+<COLOR=clAqua ═════════════梦幻大殿═════════════>\  \
+<COLOR=clLime          免费进入梦幻大殿        免费进入梦幻大殿> \  \
+<COLOR=clFuchsia              ╔═════════════╗>\
+<COLOR=clFuchsia              ║>         <确定进入/@我要进入>         <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia              ╚═════════════╝>\  \
+
+
+<COLOR=clAqua ═════════════梦幻大殿═════════════>\  \
+
+                         
+[@我要进入]
+#if
+#act
+GIVE 回城卷 1
+mapmove menghuan2
+SENDMSG 0 ★玩家[%s],进入梦幻大殿
+

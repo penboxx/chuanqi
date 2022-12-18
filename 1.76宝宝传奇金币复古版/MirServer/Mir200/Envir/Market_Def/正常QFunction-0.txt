@@ -1,0 +1,853 @@
+	(@@offlinemsg @@RecallPneuma @@useitemname @@sendmsg @@InPutString @@INPUTINTEGER @getback @buy @sell @repair @s_repair @storage @getnextpage @getPreviouspage))
+[@StdModeFunc84]
+#IF
+#ACT
+addnamelist ..\QuestDiary\天下第一\翡翠名单.txt
+delnamelist ..\QuestDiary\天下第一\黄金名单.txt
+delnamelist ..\QuestDiary\天下第一\白金名单.txt
+#CALL [\登陆\封号脚本.txt] @封号设置
+SENDMSG 5 恭喜你已经获得了≮金牌赞助大使≯的荣誉！
+[@StdModeFunc83]
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\翡翠赞助名单.txt
+#ACT
+;KILLMONEXPRATE 360 3600
+;SENDMSG 0 玩家<$USERNAME>使用了3倍经验卷轴,获得一小时3倍经验!
+Break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\黄金赞助名单.txt
+#ACT
+;KILLMONEXPRATE 340 3600
+;SENDMSG 0 玩家<$USERNAME>使用了3倍经验卷轴,获得一小时3倍经验!
+Break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\白金赞助名单.txt
+#ACT
+;KILLMONEXPRATE 320 3600
+;SENDMSG 0 玩家<$USERNAME>使用了3倍经验卷轴,获得一小时3倍经验!
+Break
+
+#IF
+#ACT
+KILLMONEXPRATE 300 3600
+SENDMSG 0 玩家<$USERNAME>使用了3倍经验卷轴,获得一小时3倍经验!   251 249
+[@StdModeFunc85]
+#IF
+#ACT
+addnamelist ..\QuestDiary\天下第一\银牌名单.txt
+delnamelist ..\QuestDiary\天下第一\铜牌名单.txt
+#CALL [\登陆\封号脚本.txt] @封号设置
+SENDMSG 5 恭喜你已经获得了≮银牌赞助大使≯的荣誉！
+
+[@StdModeFunc86]
+#IF
+#ACT
+addnamelist ..\QuestDiary\天下第一\铜牌名单.txt
+#CALL [\登陆\封号脚本.txt] @封号设置
+SENDMSG 5 恭喜你已经获得了≮铜牌赞助大使≯的荣誉！
+
+
+
+[@playdie]
+#if
+checklevelex > 0
+KillByHum
+#act
+CALCVAR HUMAN ZZAB + 1
+SAVEVAR HUMAN ZZAB ..\QuestDiary\数据文件\ZZAB.txt
+SendMsg 0 玩家【<$USERNAME>】在%m(%x:%y)被【<$KILLER>】无情的杀害. 151 1
+Break
+
+
+[@StdModeFunc25]
+#if
+checklevelex > 0
+#act
+mapmove D718  25 75
+sendmsg 0 玩家[%s]走上了前往猪洞八的路程！ 254 200
+break
+
+[@StdModeFunc26]
+#if
+checklevelex > 0
+#act
+mapmove M001
+sendmsg 0 玩家[%s]进入了未知暗殿！ 254 200
+break
+
+[@PlayLevelUp]
+#IF
+CHECKLEVELEX = 16
+#ACT
+GIVE 金币 10000
+SENDMSG 0 <$USERNAME>升级到16系统奖励1W金币！ 254 200
+break
+
+#IF
+CHECKLEVELEX = 26
+#ACT
+GIVE 金币 50000
+SENDMSG 0 <$USERNAME>升级到26系统奖励5W金币！ 254 200
+break
+
+#IF
+CHECKLEVELEX = 30
+#ACT
+GIVE 金币 50000
+SENDMSG 0 <$USERNAME>升级到30系统奖励8W金币！ 254 200
+break
+
+#IF
+CHECKLEVELEX = 35
+#ACT
+GIVE 金币 100000
+SENDMSG 0 <$USERNAME>升级到35系统奖励10W金币！ 254 200
+break
+
+#IF
+CHECKLEVELEX = 40
+#ACT
+GIVE 金币 200000
+SENDMSG 0 <$USERNAME>升级到40系统奖励20W金币！ 254 200
+break
+
+
+#IF
+CHECKLEVELEX = 42
+#ACT
+GIVE 金币 500000
+
+SENDMSG 0 <$USERNAME>升级到42系统奖励50W金币！ 254 200
+break
+
+
+
+#IF
+CHECKLEVELEX = 45
+#ACT
+GIVE 金币 1000000
+SENDMSG 0 <$USERNAME>升级到45系统奖励100W金币！ 254 200
+break
+
+
+
+
+
+[@MagSelfFunc99]
+#ACT
+QUERYBAGITEMS 3
+SENDMSG 6 刷新包裹成功...
+
+
+
+
+
+[@StdModeFunc35]
+#IF
+checklevelex > 39
+checkjob warrior
+#ACT
+SkillLevel 烈火剑法 = 4
+SENDMSG 7 恭喜您成功修炼了四级烈火剑法！
+SENDMSG 1 玩家<$USERNAME>成功修炼了四级烈火剑法!   254 200
+SENDMSG 1 玩家<$USERNAME>成功修炼了四级烈火剑法!   254 200
+SENDMSG 1 玩家<$USERNAME>成功修炼了四级烈火剑法!   254 200
+#ELSEACT
+GIVE 四级烈火剑法 1
+SENDMSG 7 四级烈火剑法需要40级修炼！
+[@StdModeFunc44]
+#IF
+checklevelex > 39
+checkjob wizard
+#ACT
+SkillLevel 魔法盾 = 4
+SENDMSG 7 恭喜您成功修炼了四级魔法盾！
+SENDMSG 1 玩家<$USERNAME>成功修炼了四级魔法盾!   254 200
+SENDMSG 1 玩家<$USERNAME>成功修炼了四级魔法盾!   254 200
+SENDMSG 1 玩家<$USERNAME>成功修炼了四级魔法盾!   254 200
+#ELSEACT
+GIVE 四级魔法盾 1
+SENDMSG 7 四级魔法盾需要40级修炼！
+[@StdModeFunc45]
+#IF
+checklevelex > 39
+checkjob taoist
+#ACT
+SkillLevel 灵魂火符 = 4
+SENDMSG 7 恭喜您成功修炼了四级灵魂火符！
+SENDMSG 1 玩家<$USERNAME>成功修炼了四级灵魂火符!   254 200
+SENDMSG 1 玩家<$USERNAME>成功修炼了四级灵魂火符!   254 200
+SENDMSG 1 玩家<$USERNAME>成功修炼了四级灵魂火符!   254 200
+#ELSEACT
+GIVE 四级灵魂火符 1
+SENDMSG 7 四级灵魂火符需要40级修炼！
+[@StdModeFunc59]
+#IF
+#ACT
+CHANGEEXP + 1000000
+SENDMSG 7  您的经验已经增加100W!
+break
+
+[@StdModeFunc88]
+#IF
+random 12
+#ACT
+GMEXECUTE SHOWEFFECT 78
+;mapmove F007A
+mapmove yhditu
+SENDMSG 7 恭喜你燃放烟花的同时进入烟花地图！！
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<漂亮烟花>!同时他将有几率进入烟花地图打宝！ 254 200
+#ELSEACT
+GMEXECUTE SHOWEFFECT 78
+SENDMSG 7 很可惜，你没有进入烟花地图，再放一个吧！
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<漂亮烟花>!同时他将有几率进入烟花地图打宝！ 254 200
+break
+
+;[@StdModeFunc15]
+;#ACT
+;GMEXECUTE SHOWEFFECT 78
+;SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<一心一意>烟花!
+;break
+
+[@StdModeFunc16]
+#ACT
+GMEXECUTE SHOWEFFECT 79
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<心心相印>烟花!
+break
+
+[@StdModeFunc17]
+#ACT
+GMEXECUTE SHOWEFFECT 80
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<飞火流量>烟花!
+break
+
+[@StdModeFunc18]
+#ACT
+GMEXECUTE SHOWEFFECT 81
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<浪漫星雨>烟花!
+break
+
+[@StdModeFunc19]
+#ACT
+GMEXECUTE SHOWEFFECT 82
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<绮梦幻想>烟花!
+break
+
+[@StdModeFunc20]
+#ACT
+GMEXECUTE SHOWEFFECT 83
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<长空火舞>烟花!
+break
+
+[@StdModeFunc21]
+#ACT
+GMEXECUTE SHOWEFFECT 82
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<如梦似雾>烟花!
+break
+
+[@StdModeFunc22]
+#IF
+gender woman
+#ACT
+HAIRSTYLE 0
+SENDMSG 6 发型已经变更! 
+break
+#IF
+gender man
+#ACT
+HAIRSTYLE 0
+SENDMSG 6 发型已经变更! 
+break
+
+[@StdModeFunc23]
+#IF
+gender woman
+#ACT
+HAIRSTYLE 1
+SENDMSG 6 发型已经变更! 
+break
+#IF
+gender man
+#ACT
+HAIRSTYLE 1
+SENDMSG 6 发型已经变更! 
+break
+
+[@StdModeFunc24]
+#ACT
+KILLMONEXPRATE 400 3600
+SENDMSG 0 玩家<$USERNAME>使用了四倍经验卷轴,获得一小时四倍经验!
+
+
+
+[@StdModeFunc27]
+
+<染成橙色/@颜色3>\
+
+[@颜色3]
+#IF
+#ACT
+CHANGENAMECOLOR 253
+SENDMSG 6 名字颜色已经变更! 
+close
+
+[@StdModeFunc31]
+#IF
+checkitem 强效太阳水 6
+#ACT
+take 强效太阳水 6
+give 强效太阳包 1
+close
+#ELSESAY
+你都没有足够的强效太阳水需要打捆，\
+还捆什么? \
+浪费... \ \
+<离 开/@exit>\ \ \ \
+
+[@StdModeFunc30]
+#IF
+#ACT
+KILLMONEXPRATE 200 3600
+SENDMSG 0 玩家<$USERNAME>使用了双倍经验卷轴,获得一小时双倍经验!
+SENDMSG 7 你已经购买了1个小时双倍经验时间，如果掉线或死亡双倍时间将冻结！重新登陆将开始余下计算！
+
+[@StdModeFunc33]
+#IF
+checkitem 疗伤药 6
+#ACT
+take 疗伤药 6
+give 疗伤药包 1
+close
+#ELSESAY
+你都没有足够的疗伤药需要打捆，\
+还捆什么? \
+浪费... \ \
+<离 开/@exit>\ \ \ \
+
+[@StdModeFunc41]
+#IF
+  small M3 60
+#Act
+  INC M3 2
+  Gmexecute showeffect 78
+  Gmexecute showeffect 79
+  Gmexecute showeffect 80
+  SENDMSG 0 [%s]在:%m%x:%y处放庆典蛋糕、大家快去欣赏哦。
+  DelayCall 2000 @庆典蛋糕1
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+
+[@庆典蛋糕1]
+#IF
+  small M3 60
+#Act
+  INC M3 2
+  Gmexecute showeffect 79
+  Gmexecute showeffect 80
+  Gmexecute showeffect 81
+  DelayCall 2000 @庆典蛋糕2
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+
+[@庆典蛋糕2]
+#IF
+  small M3 60
+#Act
+  INC M3 2
+  Gmexecute showeffect 80
+  Gmexecute showeffect 81
+  Gmexecute showeffect 82
+  DelayCall 2000 @庆典蛋糕3
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+
+[@庆典蛋糕3]
+#IF
+  small M3 60
+#Act
+  INC M3 2
+  Gmexecute showeffect 81
+  Gmexecute showeffect 82
+  Gmexecute showeffect 83
+  DelayCall 2000 @庆典蛋糕4
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+
+[@庆典蛋糕4]
+#IF
+  small M3 60
+#Act
+  INC M3 2
+  Gmexecute showeffect 82
+  Gmexecute showeffect 83
+  Gmexecute showeffect 82
+  DelayCall 2000 @庆典蛋糕5
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+
+[@庆典蛋糕5]
+#IF
+  small M3 60
+#Act
+  INC M3 2
+  Gmexecute showeffect 78
+  Gmexecute showeffect 83
+  Gmexecute showeffect 82
+  DelayCall 2000 @庆典蛋糕6
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+
+[@庆典蛋糕6]
+#IF
+  small M3 60
+#Act
+  INC M3 2
+  Gmexecute showeffect 78
+  Gmexecute showeffect 79
+  Gmexecute showeffect 82
+  DelayCall 2000 @庆典蛋糕
+#ELSEAct
+  MOV M3 0
+  ClearDelayGoto
+
+[@StdModeFunc42]
+你想暗杀你的仇人吗?\
+你的朋友正在被人追杀吗?\
+你想和你的朋友一起打BOSS吗?\
+你的朋友打BOSS的时侯没药了吗?\
+我可以让你直接飞到他的身边!\
+注意:<人物不在线.或者名字输错不会浪费元宝>\ \
+<输入人物角色名/@@InPutString1>     <关闭对话/@EXIT>\
+
+[@CALLInPutString1]
+#IF
+S1.CHECKONLINE 
+#ACT
+GMEXECUTE 传送自己 <$STR(S1)>
+CLOSE
+break
+#ELSEACT
+SENDMSG 6 你要追杀的人物当前并不在线.或者名字输入错误!
+give 追杀令 1
+break
+CLOSE
+
+[@StdModeFunc43]
+怎么?想知道你的仇人在哪里?\
+还是想查看本服高等级的人物在哪里练级?\
+想使用追杀令直接飞.可是又不知道人物在哪里\
+担心浪费元宝?不用怕.使用这个就可以事先探测他的位置\ \
+注意:<人物不在线.或者名字输错不会浪费元宝>\ \
+<输入人物角色名/@@InPutString2>     <关闭对话/@EXIT>\
+
+[@@InPutString2]
+#ACT
+DELAYGOTO 1 @InPutString2
+[@InPutString2]
+#IF
+#ACT
+GMEXECUTE 探测 <$STR(S2)>
+CLOSE
+
+[@StdModeFunc46]
+#If
+#Act
+give 祝福油 1
+
+[@StdModeFunc47]
+#If
+#Act
+give 金币 1000000
+
+[@StdModeFunc227]
+#If
+CheckBagSize	6
+#Act
+give 金条 5
+Sendmsg 7 金砖兑换成功.
+#ELSEACT
+GIVE 金砖 1
+SENDMSG 7 请在背包留出5个空格
+
+
+[@StdModeFunc31]
+#IF
+checkitem 强效太阳水 6
+#ACT
+take 强效太阳水 6
+give 强效太阳包 1
+close
+#ELSESAY
+你都没有足够的强效太阳水需要打捆，\
+还捆什么? \
+浪费... \ \
+
+
+
+[@StdModeFunc100]
+移动仓库为您提供以下服务功能:\ \ \
+<存放物品/@storage>\ \
+<取回物品/@getback>\
+[@storage]
+需要保管什么东西?\ \
+<取回物品/@getback>\ \
+<返回上页/@StdModeFunc100>
+[@getback]
+请看目录决定找什么东西.\ \
+<存放物品/@storage>\ \
+<返回上页/@StdModeFunc100>
+
+[@StdModeFunc101]
+#ACT
+MAPMOVE 3 330 333
+break
+
+[@StdModeFunc102]
+#IF
+#ACT
+mapmove Fama1 84 70
+sendmsg 0 玩家[%s]进入了玛雅神殿. 254 200
+close
+
+[@StdModeFunc103]
+#if
+checklevel 1
+#ACT
+GAMEGOLD + 10
+SENDMSG 6 提示:增加10个元宝!
+
+[@StdModeFunc104]
+#if
+checklevel 1
+#ACT
+GAMEGOLD + 20
+SENDMSG 6 提示:增加20个元宝!
+
+[@StdModeFunc105]
+#if
+checklevel 1
+#ACT
+GAMEGOLD + 50
+SENDMSG 6 提示:增加50个元宝!
+
+[@StdModeFunc106]
+#if
+checklevel 1
+#ACT
+GAMEGOLD + 100
+SENDMSG 6 提示:增加100个元宝!
+
+[@StdModeFunc107]
+#if
+checklevel 1
+#ACT
+GAMEGOLD + 500
+SENDMSG 6 提示:增加500个元宝!
+
+[@StdModeFunc108]
+#if
+checklevel 1
+#ACT
+GAMEGOLD + 1000
+SENDMSG 6 提示:增加1000个元宝!
+
+[@StdModeFunc109]
+#if
+checklevel 1
+#ACT
+GAMEGOLD + 5000
+SENDMSG 6 提示:增加5000个元宝!
+
+[@StdModeFunc110]
+#if
+checklevel 1
+#ACT
+GAMEGOLD + 10000
+SENDMSG 6 提示:增加10000个元宝!
+
+[@StdModeFunc132]
+#ACT
+CHANGEPKPOINT = 0
+SENDMSG 6 你的PK值已清洗! 
+
+[@StdModeFunc75]
+#If
+CheckItemAddValue 1 3 > 6
+#Act 
+GIVE 超级祝福油 1
+SendMsg 5 [提示]:你的武器已经幸运值已经+7以上点了,系统无法给你增加了. 
+BREAK
+#IF
+CHECKUSEITEM 1
+#ACT
+UPGRADEITEMEX 1 3 0 1 0
+goto @gongji
+SendMsg 5 [提示]:你的武器已经幸运值增加1点.
+break
+#ELSEACT
+GIVE 超级祝福油 1
+SendMsg 5 [失败]:升级失败!!加油下次会成功的!!!呵呵!!!。
+break
+
+[@TakeOn13]
+#if
+checkitemw 斗笠 1
+#act
+SETRANKLEVELNAME ≮神秘人≯\≮神秘人≯\　\　\　\　\　\　\　\　\　\　\　\%s
+CHANGENAMECOLOR 255
+SendMsg 5 你佩带了神秘斗笠,名字显示为《神秘人》
+
+[@TakeOff13]
+#if
+checkitemw 斗笠 1
+#act
+SETRANKLEVELNAME %s
+
+
+[@OnLogout_OffLinePlaying]
+#if
+#ACT
+SETAUTOGETEXP 1400 1 1
+#IF
+#ACT
+H.setautogetexp 1400 1 1
+
+[@StdModeFunc209]
+#IF
+CHECKMAPHUMANCOUNT guibin1 = 0
+#ACT
+CLEARMAPMON guibin1
+Param1 guibin1
+Param2 13
+Param3 16
+MonGen 神殿恶魔 1 1
+MAPMOVE guibin1 10 12
+SENDMSG 7 此地图内有一只神殿恶魔！5分钟后您将被召回！
+SENDMSG 0 玩家『<$USERNAME>』使用贵宾神殿卡进入贵宾神殿，祝『<$USERNAME>』满载而归！
+BREAK
+
+#IF
+CHECKMAPHUMANCOUNT guibin2 = 0
+#ACT
+CLEARMAPMON guibin2
+Param1 guibin2
+Param2 13
+Param3 16
+MonGen 神殿恶魔 1 1
+MAPMOVE guibin2 10 12
+SENDMSG 7 此地图内有一只神殿恶魔！5分钟后您将被召回！
+SENDMSG 0 玩家『<$USERNAME>』使用贵宾神殿卡进入贵宾神殿，祝『<$USERNAME>』满载而归！
+BREAK
+
+#IF
+CHECKMAPHUMANCOUNT guibin3 = 0
+#ACT
+CLEARMAPMON guibin3
+Param1 guibin3
+Param2 13
+Param3 16
+MonGen 神殿恶魔 1 1
+MAPMOVE guibin3 10 12
+SENDMSG 7 此地图内有一只神殿恶魔！5分钟后您将被召回！
+SENDMSG 0 玩家『<$USERNAME>』使用贵宾神殿卡进入贵宾神殿，祝『<$USERNAME>』满载而归！
+BREAK
+
+#IF
+CHECKMAPHUMANCOUNT guibin4 = 0
+#ACT
+CLEARMAPMON guibin4
+Param1 guibin4
+Param2 13
+Param3 16
+MonGen 神殿恶魔 1 1
+MAPMOVE guibin4 10 12
+SENDMSG 7 此地图内有一只神殿恶魔！5分钟后您将被召回！
+SENDMSG 0 玩家『<$USERNAME>』使用贵宾神殿卡进入贵宾神殿，祝『<$USERNAME>』满载而归！
+BREAK
+
+#IF
+CHECKMAPHUMANCOUNT guibin5 = 0
+#ACT
+CLEARMAPMON guibin5
+Param1 guibin5
+Param2 13
+Param3 16
+MonGen 神殿恶魔 1 1
+MAPMOVE guibin5 10 12
+SENDMSG 7 此地图内有一只神殿恶魔！5分钟后您将被召回！
+SENDMSG 0 玩家『<$USERNAME>』使用贵宾神殿卡进入贵宾神殿，祝『<$USERNAME>』满载而归！
+BREAK
+
+#IF
+CHECKMAPHUMANCOUNT guibin6 = 0
+#ACT
+CLEARMAPMON guibin6
+Param1 guibin6
+Param2 13
+Param3 16
+MonGen 神殿恶魔 1 1
+MAPMOVE guibin6 10 12
+SENDMSG 7 此地图内有一只神殿恶魔！5分钟后您将被召回！
+SENDMSG 0 玩家『<$USERNAME>』使用贵宾神殿卡进入贵宾神殿，祝『<$USERNAME>』满载而归！
+BREAK
+#IF
+#ACT
+GIVE 贵宾神殿卡 1
+MESSAGEBOX [提示]：当前贵宾神殿人员已满，请稍等片刻。。。
+
+
+[@StdModeFunc131]
+传音筒>可以将你要说出的话置顶，特别醒目！\
+每句话限制为：30个字，可在置顶位置停留30秒！\
+请将要说的话，编写到<传音筒>内！\ \
+<传音筒/@@InPutString1>
+
+[@@InPutString1]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 ~InPutString1
+[~InPutString1]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DEC S1 62 999
+SENDMSG 0 老板「<$USERNAME>」说：<$STR(S1)> 249 251 30
+CLOSE
+BREAK
+
+[@IsInFilterList]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MESSAGEBOX 输入数据中包含了非法字符.请重新编辑
+GOTO @StdModeFunc131
+BREAK
+
+[@StdModeFunc70]
+#IF 
+CHECKITEMADDVALUE 1 3 = 7
+#Act 
+GIVE 超级祝福油
+SENDMSG 6 %s您武器幸运值已经达到7点.不能继续增加!
+#ElseAct 
+UPGRADEITEMEX 1 3 1 1 0
+SENDMSG 6 %s恭喜您武器增加了一点幸运!
+break
+
+[@UserCmd1]
+#IF
+#act
+#CALL [\更新制作\在线元宝.txt] @在线元宝1
+
+[@UserCmd2]
+#IF
+#CALL [\\会员服务\金钻服务.txt] @金钻
+#elseact
+messagebox 对不起.你没有加入会员!
+break
+
+[@UserCmd3]
+#IF
+ISADMIN
+#Act
+#Call [\系统功能\后台管理.txt] @管理
+BREAK
+
+[@StdModeFunc141]
+#if
+#act
+addnamelist ..\QuestDiary\天下第一\金牌名单.txt
+delnamelist ..\QuestDiary\天下第一\银牌名单.txt
+delnamelist ..\QuestDiary\天下第一\铜牌名单.txt
+MESSAGEBOX 你已经成功成为金牌赞助大使!
+
+[@StdModeFunc142]
+#if
+#act
+addnamelist ..\QuestDiary\天下第一\银牌名单.txt
+delnamelist ..\QuestDiary\天下第一\金牌名单.txt
+delnamelist ..\QuestDiary\天下第一\铜牌名单.txt
+MESSAGEBOX 你已经成功成为银牌赞助大使!
+
+
+[@StdModeFunc143]
+#if
+#act
+addnamelist ..\QuestDiary\天下第一\铜牌名单.txt
+delnamelist ..\QuestDiary\天下第一\银牌名单.txt
+delnamelist ..\QuestDiary\天下第一\金牌名单.txt
+MESSAGEBOX 你已经成功成为铜牌赞助大使!
+
+[@StdModeFunc144]
+#IF
+checklevelex > 25
+CheckSlaveCount < 5
+#Act
+RecallMob 巨型多角虫1 7 7 65535
+SENDMSG 7 你成功召唤了1只巨型多角虫为你的宝宝！最高5只！
+
+
+[@StdModeFunc145]
+#IF
+checklevelex > 44
+CheckSlaveCount < 5
+#Act
+RecallMob 半兽勇士1 7 7 65535
+SENDMSG 7 你成功召唤了1只半兽勇士为你的宝宝！最高5只！
+
+
+
+[@StdModeFunc146]
+#IF
+checknamelist ..\QuestDiary\会员服务\金钻名单.txt
+#ACT
+messagebox 您已经享受金钻服务!
+give 金钻服务 1
+#ELSEACT
+addnamelist ..\QuestDiary\会员服务\金钻名单.txt
+CHANGENAMECOLOR 254
+messagebox 成功加入金钻会员名单，金钻会员使用命令【@服务】。。。
+
+
+[@StdModeFunc147]
+#IF
+CHECKBAGSIZE 6
+#ACT
+give 万年雪霜 6
+#ELSEACT
+give 雪霜包 1
+break
+
+
+[@StdModeFunc148]
+#IF
+HaveGuild
+#ACT
+MOV A35 <$GUILDNAME>
+MOV A34 <$USERNAME>
+Gmexecute 开始提问 @风雷召唤
+SENDMSG 5 穿云箭已放出，请等待你的援军！
+SENDMSG 5 穿云箭已放出，请等待你的援军！
+SENDMSG 8   一筐穿云箭,千军万马来相见!
+SENDMSG 8   一筐穿云箭,千军万马来相见!
+SENDMSG 1   一筐穿云箭,千军万马来相见!
+BREAK
+#ELSEACT
+give 穿云箭 1
+SENDMSG 5 您没有加入任何行会，使用穿云箭无效果。
+BREAK
+
+[@StdModeFunc149]
+#if
+checklevelex > 0
+#act
+mapmove F010 
+sendmsg 0 玩家[%s]走上了前往BOSS之家的路程！ 254 200
+BREAK

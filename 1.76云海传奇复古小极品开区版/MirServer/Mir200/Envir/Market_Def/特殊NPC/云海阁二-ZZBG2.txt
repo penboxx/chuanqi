@@ -1,0 +1,12 @@
+[@MAIN]
+我可以将你送到下一层，你确定要去吗？\
+　\
+<进入下一层/@SCCS>\
+<返回/@EXIT>\
+
+[@SCCS]
+#IF
+#ACT
+MAPMOVE ZZBG3
+GIVE 回城卷 1
+BREAK

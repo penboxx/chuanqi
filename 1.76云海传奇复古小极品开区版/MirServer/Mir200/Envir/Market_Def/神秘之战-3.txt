@@ -1,0 +1,20 @@
+[@MAIN]
+<COLOR=clLime 开放时间：>每天晚上19:25开启\
+<COLOR=clLime 进入时间：>19:25-19:35为进入战场时间<COLOR=clSkyBlue (只有10分钟的进入时间)>\
+<COLOR=clLime 详细规则：>进入神秘战场后，全部玩家显示为“神秘人”\
+　　　　　统一显示血量为：100 (其实还是原来自身的血量)\
+　　　　　强制全体攻击模式、不能说话、不能查看对方装备\
+　　　　　在神秘战场内清理完所有对手，即可领取神秘奖励！\ 
+<COLOR=clLime 神秘奖励：><COLOR=clRed 3000元宝+200万经验>\
+　\
+<进入神秘战场/@进入神秘战场>\
+
+[@进入神秘战场]
+#IF
+hour 19 19
+min 25 35
+#ACT
+CHANGEATTACKMODE 0
+MAP SMZZ
+#elseact
+messageboX 现在不是开放时间，无法进入神秘战场！

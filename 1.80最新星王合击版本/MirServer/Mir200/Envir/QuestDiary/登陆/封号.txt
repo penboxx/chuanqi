@@ -1,0 +1,146 @@
+[@FH]
+{
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S1 
+#IF
+CHECK [46] 1
+#ACT
+MOV S1 [九品★知县]
+#IF
+CHECK [47] 1
+#ACT
+MOV S1 [八品★知府]
+#IF
+CHECK [48] 1
+#ACT
+MOV S1 [七品★太守]
+#IF
+CHECK [49] 1
+#ACT
+MOV S1 [六品★巡抚]
+#IF
+CHECK [50] 1
+#ACT
+MOV S1 [五品★提督]
+#IF
+CHECK [51] 1
+#ACT
+MOV S1 [四品★总督]
+#IF
+CHECK [52] 1
+#ACT
+MOV S1 [三品★尚书]
+#IF
+CHECK [53] 1
+#ACT
+MOV S1 [二品★太傅]
+#IF
+CHECK [54] 1
+#ACT
+MOV S1 [一品★宰相]
+#IF
+CHECK [55] 1
+#ACT
+MOV S1 [九五★至尊]
+#IF
+CHECK [200] 1
+#ACT
+MOV S2 ※普通赞助大使※
+KillMonExpRate 500 999999
+PowerRate 101 999999
+SENDMSG 7 您是尊敬的※普通赞助大使※享受5.0倍打怪经验+1.01倍攻击
+SENDMSG 0 系统：热烈欢迎尊贵的『普通赞助大使』%s上线了，从此以后他可以享受5.0倍打怪经验+1.01倍攻击！ 151 249 5
+#IF
+CHECK [201] 1
+#ACT
+MOV S2 ※高级赞助大使※
+KillMonExpRate 520 999999
+PowerRate 102 999999
+SENDMSG 7 您是尊敬的※高级赞助大使※享受5.2倍打怪经验+1.02倍攻击
+SENDMSG 0 系统：热烈欢迎尊贵的『高级赞助大使』%s上线了，从此以后他可以享受4.6倍打怪经验+1.02倍攻击！ 151 249 5
+#IF
+CHECK [202] 1
+#ACT
+MOV S2 ※超级赞助大使※
+KillMonExpRate 540 999999
+PowerRate 103 999999
+SENDMSG 7 您是尊敬的※超级赞助大使※享受5.4倍打怪经验+1.03倍攻击
+SENDMSG 0 系统：热烈欢迎尊贵的『超级赞助大使』%s上线了，从此以后他可以享受4.7倍打怪经验+1.03倍攻击！ 151 249 5
+#IF
+CHECK [203] 1
+#ACT
+MOV S2 ※钻石赞助大使※
+KillMonExpRate 560 999999
+PowerRate 104 999999
+SENDMSG 7 您是尊敬的※钻石赞助大使※享受5.6倍打怪经验+1.04倍攻击
+SENDMSG 0 系统：热烈欢迎尊贵的『钻石赞助大使』%s上线了，从此以后他可以享受4.8倍打怪经验+1.04倍攻击！ 151 249 5
+#IF
+CHECK [204] 1
+#ACT
+MOV S2 ※至尊赞助大使※
+KillMonExpRate 580 999999
+PowerRate 106 999999
+SENDMSG 7 您是尊敬的※至尊赞助大使※享受5.8倍打怪经验+1.06倍攻击
+SENDMSG 0 系统：热烈欢迎尊贵的『至尊赞助大使』%s上线了，从此以后他可以享受4.9倍打怪经验+1.06倍攻击！ 151 249 5
+#IF
+CHECK [205] 1
+#ACT
+MOV S2 ※皇冠赞助大使※
+KillMonExpRate 600 999999
+PowerRate 108 999999
+SENDMSG 7 您是尊敬的※皇冠赞助大使※享受6.0倍打怪经验+1.08倍攻击
+SENDMSG 0 系统：热烈欢迎尊贵的『皇冠赞助大使』%s上线了，从此以后他可以享受5.0倍打怪经验+1.08倍攻击！ 151 249 5
+#IF
+CHECK [206] 1
+#ACT
+MOV S2 ※总统赞助大使※
+KillMonExpRate 650 999999
+PowerRate 110 999999
+SENDMSG 7 您是尊敬的※总统赞助大使※享受6.5倍打怪经验+1.10倍攻击
+SENDMSG 0 系统：热烈欢迎尊贵的『总统赞助大使』%s上线了，从此以后他可以享受5.5倍打怪经验+1.10倍攻击！ 151 249 5
+
+#IF
+CHECK [200] 1
+#act
+ChangeNameColor 254
+#IF
+CHECK [201] 1
+#act
+ChangeNameColor 147
+#IF
+CHECK [202] 1
+#act
+ChangeNameColor 250
+#IF
+CHECK [203] 1
+#act
+ChangeNameColor 251
+#IF
+CHECK [204] 1
+#act
+ChangeNameColor 154
+#IF
+CHECK [205] 1
+#act
+ChangeNameColor 252
+#IF
+CHECK [206] 1
+#act
+NAMECOLOR 1
+
+#IF
+checknamelist ..\QuestDiary\比武大会\颠峰战神.txt
+#act
+ChangeNameColor 180
+SETRANKLEVELNAME %s\★☆★☆巅★☆★☆\★☆★峰★☆★\★☆战★☆\★神★
+SENDMSG 0 系统：热烈欢迎尊贵的『巅峰战神』%s上线了 151 249 5
+#elseact
+SETRANKLEVELNAME %s\『爆菊【<$HUMAN(杀人数)>】次』·『被日【<$HUMAN(被杀数)>】次』\<$STR(S2)>\<$STR(S1)>
+
+#IF
+equal A85 <$USERNAME>
+#act
+SETRANKLEVELNAME %s\★☆★☆★午夜屠夫★☆★☆★\★☆★☆★生人勿近★☆★☆★
+}

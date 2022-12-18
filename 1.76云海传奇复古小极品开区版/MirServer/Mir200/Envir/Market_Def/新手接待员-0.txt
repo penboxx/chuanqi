@@ -1,0 +1,196 @@
+[@main]
+#IF
+CHECKLEVELEX > 25
+#SAY
+本游戏完全仿盛大1.76版设计，体会2003年的传奇！\
+如果您觉得本游戏不错，邀上朋友，一起征战吧！\ \
+≮<传送比齐大城/@biqi>≯\ \ 
+≮<比齐矿区门口/@kuanqu>≯\
+#ELSESAY
+<$USERNAME>，你好！这里是新人练级的地方\
+建议新人在<COLOR=clLime 新人战场>练级！\
+请选择要去的练级场！\ \ 
+<新人练级一/@xiulianyi>  <新人练级二/@xiulianer2>\ \ 
+<新人练级三/@xiulianer3>  <新人练级四/@xiulianer>\ \
+
+[@kuanqu]
+#IF
+#ACT
+mapmove 0 659 218
+GIVE 回城卷 1
+BREAK
+
+[@kulo]
+#IF
+#ACT
+mapmove 0  147 33
+GIVE 回城卷 1
+BREAK
+
+
+[@qianwangjian]
+#IF
+#ACT
+GIVE 回城卷 1
+mapmove D405 12 147
+
+
+
+[@baishi]
+想拜师吗？请去白日门天尊，他可以帮你的..\
+<确定/@exit>
+[@next]
+#IF
+checkjob warrior
+#SAY
+你知道吗？你是一名<战士>哦！\
+拥有<强健的体魄>是你最为突出的优势。\
+无论面对任何险恶的环境你都能进退自如。\
+不过你这种职业有一点不足之处就是。\
+没有<远程攻击>的魔法。在组队中适合和道士共同打猎！\ \
+<返回/@main>\
+#ELSEACT
+GOTO @next_1_2
+
+[@next_1_2]
+#IF
+checkjob taoist
+#SAY
+你是一名伟大的<道士>。你有着博大的胸怀。\
+由于你的智慧与胸襟，你所修炼的都是一些博爱的武术。\
+在打猎的时候你最适合与战士配合。\ \
+<返回/@main>\
+#ELSESAY
+强大的精神力量造就了你——<魔法师>！\
+正是因为<精神力的强大>，你可以学习众多的攻击魔法！\
+不过在初期，你的<体质>是最让人担心的！\
+保护好自己的生命是最重要的！\ \
+<返回/@main>\
+
+[@biqi]
+#IF
+CHECKLEVELEX > 25
+#ACT
+mapmove 0 334 266
+#ELSESAY
+看你的体格很是<脆弱>。\
+等到你把级别提升到<26级>以上再来找我吧。\
+我告诉你的那个洞里的怪物<经验很高>的哦。\ \
+<返回/@main>\
+
+[@next1]
+<$USERNAME>，你好！这里是新人练级的地方。\
+建议新人在<新人战场>练级！\
+请选择要去的练级场！\ \
+<新人战场一/@xiulianyi>  <新人战场二/@xiulianer>\
+<新人战场三/@xiulianer2>  <新人战场四/@xiulianer3>\
+<返回/@main>
+
+
+[@xiulianer]
+#IF
+CHECKLEVELEX > 25
+#ACT
+goto @next3
+BREAK
+#IF
+checkmonmap G003 150
+#ACT
+GIVE 回城卷 1
+mapmove G003 67 38
+#ELSEACT
+Param1 G003
+Param2 50
+Param3 50
+MonGen 鹿 80 100
+MonGen 羊 80 100
+MonGen 稻草人 80 100
+MonGen 多钩猫 80 100
+MonGen 钉耙猫 80 100
+GIVE 回城卷 1
+mapmove G003 67 38
+
+
+[@xiulianer2]
+#IF
+CHECKLEVELEX > 25
+#ACT
+goto @next3
+BREAK
+#IF
+checkmonmap G002 150
+#ACT
+GIVE 回城卷 1
+mapmove G002 67 38
+#ELSEACT
+Param1 G002
+Param2 50
+Param3 50
+MonGen 鹿 80 100
+MonGen 羊 80 100
+MonGen 稻草人 80 100
+MonGen 多钩猫 80 100
+MonGen 钉耙猫 80 100
+GIVE 回城卷 1
+mapmove G002 67 38
+
+
+[@xiulianer3]
+#IF
+CHECKLEVELEX > 25
+#ACT
+goto @next3
+BREAK
+#IF
+checkmonmap G001 150
+#ACT
+GIVE 回城卷 1
+mapmove G001 67 38
+#ELSEACT
+Param1 G001
+Param2 50
+Param3 50
+MonGen 鹿 80 100
+MonGen 羊 80 100
+MonGen 稻草人 80 100
+MonGen 多钩猫 80 100
+MonGen 钉耙猫 80 100
+GIVE 回城卷 1
+mapmove G001 67 38
+
+
+[@xiulianyi]
+#IF
+CHECKLEVELEX > 25
+#ACT
+goto @next2
+BREAK
+#IF
+checkmonmap 0139 40
+#ACT
+GIVE 回城卷 1
+mapmove 0139 20 22
+#ELSEACT
+Param1 0139
+Param2 20
+Param3 22
+MonGen 鹿 80 100
+MonGen 羊 80 100
+MonGen 稻草人 80 100
+MonGen 多钩猫 80 100
+MonGen 钉耙猫 80 100
+GIVE 回城卷 1
+mapmove 0139 20 22
+
+[@next3]
+看看你现在的这个级别吧.\
+你已经不需要再去这里冲级啦.里面有很多新手.\
+为了保护新手.我们决定<25级以上>的玩家无法进入新人战场.\
+实在抱歉,你可以选择其他冲级的地方.\
+<返回/@main>\
+[@next2]
+看看你现在的这个级别吧.\
+你已经不需要再去这里冲级啦.里面有很多新手.\
+为了保护新手.我们决定<25级以上>的玩家无法进入新人战场.\
+实在抱歉,你可以选择其他冲级的地方.\
+<返回/@main>\

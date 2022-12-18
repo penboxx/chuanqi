@@ -1,0 +1,37 @@
+[@MAIN]
+这里是天关一层\
+你必须将本地图内所有怪物杀光，才可以领取奖励进入下一关！\
+<COLOR=clRed 注:请不要将聚灵珠放在包袱内,否则会被收取掉!>\
+　\
+<领取奖励进入下一关/@YCJLLQ>\
+
+[@YCJLLQ]
+#IF
+CheckRangeMonCount TG1 16 12 15 = 0
+#ACT
+GOTO @YCJLLQ1
+#ELSESAY
+地图内的怪物还没杀光呢！
+
+[@YCJLLQ1]
+#IF
+CHECKMAPHUMANCOUNT TG2 = 0
+CHECKGAMEGOLD > 59
+#ACT
+GAMEGOLD - 60
+CLEARMAPMON TG2
+take 聚灵珠 50
+CHANGEEXP + 100000
+Param1 TG2       
+MonGen 半兽人 1 1
+MonGen 巨型蠕虫 1 1
+MonGen 钳虫 1 1
+MonGen 蜈蚣 1 1
+MonGen 跳跳蜂 1 1
+MonGen 楔蛾 1 1
+MonGen 蝎蛇 1 1
+MAPMOVE TG2
+SENDMSG 0 %s闯过了天关一层，获得100000经验奖励！
+BREAK
+#ELSEACT
+MESSAGEBOX 里面有人了，或者你的元宝不足60！

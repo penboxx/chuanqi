@@ -1,0 +1,15 @@
+[@风雷召唤令]
+{
+#IF
+HaveGuild
+#ACT
+MOV A99 <$GUILDNAME>
+MOV A98 <$USERNAME>
+Gmexecute 开始提问 @风雷召唤
+SENDMSG 5 行会召唤已发出，请等待你的援军！
+BREAK
+#ELSEACT
+give 风雷召唤令 1
+SENDMSG 5 您没有加入任何行会，使用风雷召唤令无效果。
+BREAK
+}

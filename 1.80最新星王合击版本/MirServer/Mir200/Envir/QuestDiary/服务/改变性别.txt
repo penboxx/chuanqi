@@ -1,0 +1,70 @@
+[@性别]
+{
+#IF
+checkmarry
+#SAY
+对不起。结过婚的人是不能变性的！\ \
+<关闭/@exit>\
+#elseact
+goto @dhqskqioq
+
+[@dhqskqioq]
+#if
+CHECKLEVELEX > 69
+#act
+goto @加入会员12
+#elsesay
+你还不足70级，不能享受变性服务！\
+赶快去升级吧，我随时恭候大驾！\
+另外还要拿出<1000个元宝/SCOLOR=250>费用才能成功变性、\
+<关闭/@exit>\
+
+[@加入会员12]
+其实做妖和做人一样，要有一颗仁慈的心.....\
+前些时候前往海外，遇到了一个医术超群的医生。\
+学会了这种技术，回来为玛珐大陆的英雄服务。\
+可不是免费的哦，需要<1000元宝/SCOLOR=250>手续费\
+<转换性别/@ChangGender>\
+<关闭/@exit>\
+
+[@ChangGender]
+#IF
+gender man
+#SAY
+是不是做猛男没什么意思呀，想不想尝尝做淑女的滋味呀！\ \
+<尝尝/@towoman>\ 
+<返回/@加入会员>\
+#ELSESAY
+是不是做淑女挺累的，想不想尝尝做猛男的滋味呀！\ \
+<尝尝/@toman>\
+<返回/@加入会员>\
+
+[@toman]
+#IF
+CHECKGAMEGOLD > 999
+CHECKLEVELEX > 44
+#ACT
+GAMEGOLD - 1000
+CHANGEGENDER 0
+#SAY
+呵呵，你已经变成一位猛男了。\ 
+请下线在进来看看！\
+<返回/@加入会员>
+#ELSESAY
+钱都没有，想做手术？我这不是慈善机构!!\ 
+<离开/@exit>
+
+[@towoman]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+CHANGEGENDER 1
+#SAY
+呵呵，你已经变成一位淑女了。\ 
+请下线在进来看看！\
+<返回/@加入会员>
+#ELSESAY
+钱都没有，想做手术？我这不是慈善机构!!\ 
+<离开/@exit>\
+}

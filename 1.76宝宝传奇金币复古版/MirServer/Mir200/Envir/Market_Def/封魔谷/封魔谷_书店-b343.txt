@@ -1,0 +1,15 @@
+
+
+
+(@buy @sell )
+%100
++4
+#INCLUDE 5bo.txt
+[@main]
+#ACT
+#CALL	[\Market\Market2.txt]		@Markets
+#CALL	[\Market\ ÈµÍ.txt]		@7
+
+
+
+

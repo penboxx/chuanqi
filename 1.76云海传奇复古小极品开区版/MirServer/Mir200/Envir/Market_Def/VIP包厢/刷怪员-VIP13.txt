@@ -1,0 +1,59 @@
+[@MAIN]
+天牢里面BOSS携带着大量的宝物，如果你想让我把他们释放出来\
+这可是非常危险、非常恐怖的事情，如果你愿意给我200个元宝\
+我会帮你释放出它们的...\ \
+╔══════╦═════════════════════╗\
+║<→点击释放←/@17UTCOM>║<使用200元宝随机释放BOOS怪物.让我来歼灭它吧>║\
+╚══════╬═════════════════════╣\
+　　　　      ║<友情提示:随机释放,释放不出怪物不会扣取元宝>║\
+　　　　      ╚═════════════════════╝
+　　　　      
+
+
+[@17UTCOM]
+#IF
+ CheckRangeMonCount VIP13 16 12 15 = 0
+#ACT
+GOTO @17UTCOM1
+#ELSESAY
+地图中怪物还没清理干净呢！
+
+[@17UTCOM1]
+#if
+random 2
+ CHECKGAMEGOLD > 199
+#ACT
+ GAMEGOLD - 200
+ PARAM1 VIP13
+ PARAM2 13
+ PARAM3 16
+MONGen 赤月恶魔88 1 2 
+break
+CLOSE
+#ELSESAY
+
+#if
+random 2
+ CHECKGAMEGOLD > 199
+#act
+ GAMEGOLD - 200
+ PARAM1 VIP13
+ PARAM2 13
+ PARAM3 16
+MONGen 双头血魔88 1 2 
+break
+CLOSE
+#ELSESAY
+
+#if
+random 2
+ CHECKGAMEGOLD > 199
+#act
+ PARAM1 VIP13
+ PARAM2 13
+ PARAM3 16
+ GAMEGOLD - 200
+MONGen 双头金刚88 1 2 
+break
+CLOSE
+#ELSESAY

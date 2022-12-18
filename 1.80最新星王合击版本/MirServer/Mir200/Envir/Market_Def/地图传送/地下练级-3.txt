@@ -1,0 +1,117 @@
+[@MAIN]
+#IF
+SMALL G61 9
+#SAY
+<COLOR=clAqua 地下长廊怪物密集，刷新速度快，配合多倍经验卷升级超爽>\
+<COLOR=clLime 宫殿大厅每1小时刷新一次	BOSS，升级同时不要忘了蹲点>\
+<COLOR=clFuchsia 我可以送你前往地下迷宫，那里也有一个地下城守卫>\
+<他可以送你去宫殿长廊，前去解救天工神剪>\  \
+<单独前往地下迷宫/@单独前往地下>    <COLOR=clAqua  0级+0元宝>\  \
+<关闭/@exit>
+#ELSESAY
+考虑到散人玩家的利益，游戏决定开启单人包厢。免费进入。\ \
+<一号包厢/@1>    <四号包厢/@4>    <七号包厢/@7>\ \
+<二号包厢/@2>    <五号包厢/@5>    <八号包厢/@8>\ \
+<三号包厢/@3>    <六号包厢/@6>    <九号包厢/@9>\ \
+
+
+[@1]
+#if
+checkhum baoxiang1 1
+#ACT
+MESSAGEBOX  此房间已经有老板了，请选择其他房间！
+BREAK
+#ELSEACT
+mapmove baoxiang1
+BREAK
+
+[@2]
+#if
+checkhum baoxiang2 1
+#ACT
+MESSAGEBOX  此房间已经有老板了，请选择其他房间！
+BREAK
+#ELSEACT
+mapmove baoxiang2
+BREAK
+
+[@3]
+#if
+checkhum baoxiang3 1
+#ACT
+MESSAGEBOX  此房间已经有老板了，请选择其他房间！
+BREAK
+#ELSEACT
+mapmove baoxiang3
+BREAK
+
+[@4]
+#if
+checkhum baoxiang4 1
+#ACT
+MESSAGEBOX  此房间已经有老板了，请选择其他房间！
+BREAK
+#ELSEACT
+mapmove baoxiang4
+BREAK
+
+[@5]
+#if
+checkhum baoxiang5 1
+#ACT
+MESSAGEBOX  此房间已经有老板了，请选择其他房间！
+BREAK
+#ELSEACT
+mapmove baoxiang5
+BREAK
+
+[@6]
+#if
+checkhum baoxiang6 1
+#ACT
+MESSAGEBOX  此房间已经有老板了，请选择其他房间！
+BREAK
+#ELSEACT
+mapmove baoxiang6
+BREAK
+
+[@7]
+#if
+checkhum baoxiang7 1
+#ACT
+MESSAGEBOX  此房间已经有老板了，请选择其他房间！
+BREAK
+#ELSEACT
+mapmove baoxiang7
+BREAK
+
+[@8]
+#if
+checkhum baoxiang8 1
+#ACT
+MESSAGEBOX  此房间已经有老板了，请选择其他房间！
+BREAK
+#ELSEACT
+mapmove baoxiang8
+BREAK
+
+[@9]
+#if
+checkhum baoxiang9 1
+#ACT
+MESSAGEBOX  此房间已经有老板了，请选择其他房间！
+BREAK
+#ELSEACT
+mapmove baoxiang9
+BREAK
+
+[@单独前往地下]
+#IF
+#ACT
+GIVE 回城卷 1
+MAPMOVE   T1061A
+SENDMSG 0  玛法勇士[<$USERNAME>]进入了地下迷宫寻找宝藏去了！ 250  0
+SENDMSG 0  玛法勇士[<$USERNAME>]进入了地下迷宫寻找宝藏去了！ 250  0
+BREAK
+#ELSESAY
+你没有200元宝啊，我不能送你去

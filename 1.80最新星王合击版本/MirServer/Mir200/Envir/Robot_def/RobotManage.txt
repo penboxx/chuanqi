@@ -1,0 +1,552 @@
+[@新手刷怪]
+#IF
+checkmonmap 0139 100
+#ACT
+BREAK
+#ELSEACT
+Param1 0139
+Param2 25
+Param3 25
+MonGen 稻草人 50 10
+Param1 0139
+Param2 25
+Param3 25
+MonGen 稻草人 50 10
+BREAK
+
+[@行会战场]
+#IF
+#ACT
+MOV G15 1
+Gmexecute 开始提问 @行会窗口
+SENDMSG 0 ┌──────────────────────────┐ 1 242 
+SENDMSG 0 │　　　公告【行会BOSS地图】活动现在正式开始进入　　　│ 1 242 
+SENDMSG 0 │　　　　　　　　　　　　　　　　　　　　　　　　　　│ 1 242 
+SENDMSG 0 │　　　　　　　　各位勇士带好补给进入　　　　　　　　│ 1 242
+SENDMSG 0 │　　　　　　　　　　　　　　　　　　　　　　　　　　│ 1 242  
+SENDMSG 0 │　　　　→→→十分钟后[BOSS]登陆战场←←←　　　　　│ 1 242 
+SENDMSG 0 └──────────────────────────┘ 1 242 
+BREAK
+
+[@战场刷怪]
+#IF
+#ACT
+ClearMapMon E1
+PARAM1 E1
+PARAM2 20
+PARAM3 23
+MONGEN 行会·终极魔王 1 0
+SENDMSG 0 ┌────┐┌────────────────────┐ 242 4 
+SENDMSG 0 │行会战场││(行会·终极魔王)已登陆战场!成员们,虐杀吧│ 242 4 
+SENDMSG 0 └────┘└────────────────────┘ 242 4 
+BREAK
+
+[@行会结束]
+#IF
+#ACT
+MOV G15 0
+Gmexecute 集体传送 E1 0159
+ClearMapMon E1
+SENDMSG 0 ┌────┐┌────────────────────┐ 242 4 
+SENDMSG 0 │关闭提示││行会BOSS地图已关闭－明晚22:30分.再次开启│ 242 4 
+SENDMSG 0 └────┘└────────────────────┘ 242 4 
+BREAK
+
+[@武林大会开始]
+#IF
+#ACT
+MOV G20 1
+CLEARNAMELIST ..\QuestDiary\比武大会\颠峰战神.txt
+GMEXECUTE 开始提问 @武林大会开始1
+SENDMSG 0 今天武林大会活动已经开始，武林大会为每天的18点30开门.19点关门 151 249 10
+SENDMSG 0 今天武林大会活动已经开始，武林大会为每天的18点30开门.19点关门 151 249 10
+SENDMSG 0 今天武林大会活动已经开始，武林大会为每天的18点30开门.19点关门 151 249 10
+SENDMSG 0 今天武林大会活动已经开始，武林大会为每天的18点30开门.19点关门 151 249 10
+SENDMSG 0 今天武林大会活动已经开始，武林大会为每天的18点30开门.19点关门 151 249 10
+SENDMSG 0 今天武林大会活动已经开始，武林大会为每天的18点30开门.19点关门 151 249 5
+
+[@武林大会关闭]
+#IF
+#ACT
+MOV G20 0
+SENDMSG 0 今天武林大会活动已经结束，武林大会为每天的18点30开门.19点关门 151 249 5
+SENDMSG 0 今天武林大会活动已经结束，武林大会为每天的18点30开门.19点关门 151 249 5
+SENDMSG 0 今天武林大会活动已经结束，武林大会为每天的18点30开门.19点关门 151 249 5
+SENDMSG 0 今天武林大会活动已经结束，武林大会为每天的18点30开门.19点关门 151 249 5
+SENDMSG 0 今天武林大会活动已经结束，武林大会为每天的18点30开门.19点关门 151 249 5
+SENDMSG 0 今天武林大会活动已经结束，武林大会为每天的18点30开门.19点关门 151 249 5
+
+[@每日清理]
+#IF
+#ACT
+INC G90 1
+CLEARNAMELIST ..\QuestDiary\数据文件\变量.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\沙老大名单.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\行会领取奖励.txt
+CLEARNAMELIST ..\QuestDiary\赞助大使\普通赞助大使.txt
+CLEARNAMELIST ..\QuestDiary\赞助大使\高级赞助大使.txt
+CLEARNAMELIST ..\QuestDiary\赞助大使\超级赞助大使.txt
+CLEARNAMELIST ..\QuestDiary\赞助大使\钻石赞助大使.txt
+CLEARNAMELIST ..\QuestDiary\赞助大使\至尊赞助大使.txt
+CLEARNAMELIST ..\QuestDiary\赞助大使\皇冠赞助大使.txt
+CLEARNAMELIST ..\QuestDiary\赞助大使\总统赞助大使.txt
+CLEARNAMELIST ..\QuestDiary\签到功能\每日签到.txt
+GMEXECUTE 开始提问 @清除变量
+BREAK
+
+[@拿沙开始]
+#IF
+EQUAL G30 100
+#ACT
+Gmexecute AddToCastleWarList 0 *
+MOV G31 0
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 253 255 300
+BREAK
+
+[@游戏说明]
+#IF
+#ACT
+SendScrollMsg 温馨提示：如果不能正常游戏。请更新盛大最新客户端再安装本服补丁。天黑路滑，社会复杂，请玩家谨慎交易。 251 191
+SendScrollMsg GM绝不参与游戏。竭诚为所有玩家提供一个公平、公正的游戏环境，希望大家玩的开心！玩的愉快！  251 191
+SendScrollMsg 本服魔龙教主以上BOSS均可以爆出金币聚灵珠.高等级不再是土豪的专利！  251 191
+SendScrollMsg 装备层次设置：圣战-魔龙-战神-星王-极品星王-卓越星王！本服承诺小怪也可爆终极！真实人民币回收！  251 191
+SendScrollMsg 本服元宝比例1:500为通过精心配置，网银1:1000，点卡1:900！一秒到帐，百分之百不掉单！ 251 191
+SendScrollMsg 本服幸运9触发最大威力.项链可以通过幸运之家最高升级到3点.武器可以使用祝福油喝到5.再使用超级祝福油喝到6.超级祝福油只有在BOSS身上爆出！ 251 191
+SendScrollMsg 本服练级全靠手动练级.可以到商铺买聚灵珠升级.另外BOSS还可以爆出金币聚灵珠.本服等级封顶为75级.75级之后打怪有经验但是已经无法升级.切记！！ 251 191
+SendScrollMsg 时间设置：攻城开始时间20点、攻城时长120分钟、行会战时长180分钟；清理死尸时间60秒、清理物品时间120秒；喝药间隔300毫秒以上(过快导致卡药)！ 251 191
+BREAK
+
+
+[@土城跑酷]
+#IF
+EQUAL G58 0
+#ACT
+Gmexecute 开始提问 @新区土城酷跑
+SENDMSG 0  ★新区土城酷跑开始了★在土城安全区范围内跑动可以获得大量经验.赶快来参加吧 251 249 20
+SENDMSG 0  ★新区土城酷跑开始了★在土城安全区范围内跑动可以获得大量经验.赶快来参加吧 251 249 20
+SENDMSG 0  ★新区土城酷跑开始了★在土城安全区范围内跑动可以获得大量经验.赶快来参加吧 251 249 20
+SENDMSG 0  ★新区土城酷跑开始了★在土城安全区范围内跑动可以获得大量经验.赶快来参加吧 251 249 20
+MOV G58 1
+MOV G68 5
+BREAK
+
+[@酷跑计时]
+#IF
+EQUAL G58 1
+#ACT
+DEC G68 1
+
+#IF
+EQUAL G68 1
+#ACT
+SENDMSG 0  ★新区土城酷跑结束了★请等待下个新区开放.谢谢大家的支持 251 249 20
+SENDMSG 0  ★新区土城酷跑结束了★请等待下个新区开放.谢谢大家的支持 251 249 20
+SENDMSG 0  ★新区土城酷跑结束了★请等待下个新区开放.谢谢大家的支持 251 249 20
+SENDMSG 0  ★新区土城酷跑结束了★请等待下个新区开放.谢谢大家的支持 251 249 20
+MOV G58 2
+MOV G68 0
+
+
+[@送宝金猪]
+#IF
+EQUAL G25 0
+#ACT
+Gmexecute 开始提问 @新区皇宫送宝
+Param1 0122
+Param2 27
+Param3 26
+MonGen 送宝金猪 50 20
+SENDMSG 0  ★新区送宝活动开始了★比奇皇宫已出现大量送宝金猪,每只送宝金猪必爆2千元宝 251 249 20
+SENDMSG 0  ★新区送宝活动开始了★比奇皇宫已出现大量送宝金猪,每只送宝金猪必爆2千元宝 251 249 20
+SENDMSG 0  ★新区送宝活动开始了★比奇皇宫已出现大量送宝金猪,每只送宝金猪必爆2千元宝 251 249 20
+SENDMSG 0  ★新区送宝活动开始了★比奇皇宫已出现大量送宝金猪,每只送宝金猪必爆2千元宝 251 249 20
+MOV G25 1
+MOV G55 10
+break
+
+
+[@金猪计时]
+#IF
+EQUAL G25 1
+#ACT
+DEC G55 1
+
+#IF
+EQUAL G55 1
+#ACT
+SENDMSG 0  ★新区送宝活动结束了★请等待下个新区开放.谢谢大家的支持 251 249 20
+SENDMSG 0  ★新区送宝活动结束了★请等待下个新区开放.谢谢大家的支持 251 249 20
+SENDMSG 0  ★新区送宝活动结束了★请等待下个新区开放.谢谢大家的支持 251 249 20
+SENDMSG 0  ★新区送宝活动结束了★请等待下个新区开放.谢谢大家的支持 251 249 20
+MOV G25 2
+MOV G55 0
+
+[@天降宝物开始]
+#IF
+EQUAL G40 0
+#ACT
+MOV G40 1
+MOV G41 5
+DropItemMap bwtt  6 16 0 500元宝
+DropItemMap bwtt  7 15 0 500元宝
+DropItemMap bwtt  8 14 0 500元宝
+DropItemMap bwtt  9 13 0 500元宝
+DropItemMap bwtt  10 12 0 500元宝
+DropItemMap bwtt  11 11 0 500元宝
+DropItemMap bwtt  12 10 0 500元宝
+DropItemMap bwtt  13 9 0 500元宝
+DropItemMap bwtt  14 10 0 500元宝
+DropItemMap bwtt  15 11 0 500元宝
+DropItemMap bwtt  16 12 0 500元宝
+DropItemMap bwtt  17 13 0 500元宝
+DropItemMap bwtt  18 14 0 500元宝
+DropItemMap bwtt  19 15 0 500元宝
+DropItemMap bwtt  20 16 0 500元宝
+DropItemMap bwtt  21 17 0 500元宝
+DropItemMap bwtt  20 18 0 500元宝
+DropItemMap bwtt  19 19 0 500元宝
+DropItemMap bwtt  18 20 0 500元宝
+DropItemMap bwtt  17 21 0 500元宝
+DropItemMap bwtt  16 22 0 500元宝
+DropItemMap bwtt  15 23 0 500元宝
+DropItemMap bwtt  14 24 0 500元宝
+DropItemMap bwtt  13 23 0 500元宝
+DropItemMap bwtt  12 22 0 500元宝
+DropItemMap bwtt  11 21 0 500元宝
+DropItemMap bwtt  10 20 0 500元宝
+DropItemMap bwtt  9  19 0 500元宝
+DropItemMap bwtt  8 18 0 500元宝
+DropItemMap bwtt  7 17 0 500元宝
+DropItemMap bwtt  7 16 0 500元宝
+DropItemMap bwtt  8 17 0 500元宝
+DropItemMap bwtt  9 18 0 500元宝
+DropItemMap bwtt 10 19 0 500元宝
+DropItemMap bwtt 11 20 0 500元宝
+DropItemMap bwtt 12 21 0 500元宝
+DropItemMap bwtt 13 22 0 500元宝
+DropItemMap bwtt 14 23 0 500元宝
+DropItemMap bwtt 15 22 0 500元宝
+DropItemMap bwtt 16 21 0 500元宝
+DropItemMap bwtt 17 20 0 500元宝
+DropItemMap bwtt 18 19 0 500元宝
+DropItemMap bwtt 19 18 0 500元宝
+DropItemMap bwtt 20 17 0 500元宝
+DropItemMap bwtt 19 16 0 500元宝
+DropItemMap bwtt 18 15 0 500元宝
+DropItemMap bwtt 17 14 0 500元宝
+DropItemMap bwtt 16 13 0 500元宝
+DropItemMap bwtt 15 12 0 500元宝
+DropItemMap bwtt 14 11 0 500元宝
+DropItemMap bwtt 13 10 0 500元宝
+DropItemMap bwtt 12 11 0 500元宝
+DropItemMap bwtt 11 12 0 500元宝
+DropItemMap bwtt 10 13 0 500元宝
+DropItemMap bwtt  9 14 0 500元宝
+DropItemMap bwtt  8 15 0 500元宝
+DropItemMap bwtt  13 12 0 战神手镯
+DropItemMap bwtt  12 13 0 战神戒指
+DropItemMap bwtt  11 14 0 战神项链
+DropItemMap bwtt  10 15 0 战神腰带
+DropItemMap bwtt  9  16 0 战神圣靴
+DropItemMap bwtt  10 17 0 战神头盔
+DropItemMap bwtt  11 18 0 圣魔手镯
+DropItemMap bwtt  12 19 0 圣魔法戒
+DropItemMap bwtt  13 20 0 圣魔项链
+DropItemMap bwtt  14 21 0 圣魔腰带
+DropItemMap bwtt  15 20 0 圣魔法靴
+DropItemMap bwtt  16 19 0 圣魔头盔
+DropItemMap bwtt  17 18 0 真魂手镯
+DropItemMap bwtt  18 17 0 真魂道戒
+DropItemMap bwtt  17 16 0 真魂项链
+DropItemMap bwtt  16 15 0 真魂腰带
+DropItemMap bwtt  15 14 0 真魂道靴
+DropItemMap bwtt  14 13 0 真魂头盔
+DropItemMap bwtt  16 17 0 星王战链
+DropItemMap bwtt  15 18 0 星王道链
+DropItemMap bwtt  14 19 0 星王法链
+DropItemMap bwtt  12 15 0 屠龙
+DropItemMap bwtt  13 14 0 嗜魂法杖
+DropItemMap bwtt  14 15 0 霸者之刃
+Gmexecute 开始提问 @步步惊心活动
+SENDMSG 0  ★新区步步惊心活动开始了★活动开放5分钟,随机飞就可获得宝物 251 249 20
+SENDMSG 0  ★新区步步惊心活动开始了★活动开放5分钟,随机飞就可获得宝物 251 249 20
+SENDMSG 0  ★新区步步惊心活动开始了★活动开放5分钟,随机飞就可获得宝物 251 249 20
+SENDMSG 0  ★新区步步惊心活动开始了★活动开放5分钟,随机飞就可获得宝物 251 249 20
+BREAK
+
+[@天降宝物计时]
+#IF
+EQUAL G40 1
+#ACT
+DEC G41 1
+
+#IF
+EQUAL G41 1
+#ACT
+Gmexecute 集体传送 BWTT 0159
+Gmexecute 集体传送 bwtt1 0159
+SENDMSG 0  ★新区步步惊心活动结束了★请等待下个新区开放.谢谢大家的支持 251 249 20
+SENDMSG 0  ★新区步步惊心活动结束了★请等待下个新区开放.谢谢大家的支持 251 249 20
+SENDMSG 0  ★新区步步惊心活动结束了★请等待下个新区开放.谢谢大家的支持 251 249 20
+SENDMSG 0  ★新区步步惊心活动结束了★请等待下个新区开放.谢谢大家的支持 251 249 20
+MOV G40 2
+MOV G41 0
+
+
+[@新区活动魔王]
+#IF
+EQUAL G80 3
+#ACT
+Gmexecute  开始提问 @活动魔王
+MONGENEX 0122 21  34 新区活动魔王  10  1  1
+SENDMSG 0 新区活动魔王活动开始了！新区活动魔王必爆开天.镇天.玄天.此活动只限新区开放.抓紧去抢吧 251 249 20
+SENDMSG 0 新区活动魔王活动开始了！新区活动魔王必爆开天.镇天.玄天.此活动只限新区开放.抓紧去抢吧 251 249 20
+SENDMSG 0 新区活动魔王活动开始了！新区活动魔王必爆开天.镇天.玄天.此活动只限新区开放.抓紧去抢吧 251 249 20
+SENDMSG 0 新区活动魔王活动开始了！新区活动魔王必爆开天.镇天.玄天.此活动只限新区开放.抓紧去抢吧 251 249 20
+MOV G80 4
+BREAK
+
+[@至尊夺宝活动]
+#IF
+LARGE G70 2
+EQUAL G71 0
+#ACT
+mov G71 1
+Gmexecute  开始提问 @至尊夺宝
+MONGENEX duobao1 24  27 至尊专属BOSS  10  3   1
+MONGENEX duobao2 24  27 散人专属BOSS  10  10  1
+SENDMSG 0 至尊夺宝活动已经开启.夺宝地图刷新大量BOSS.勇士们赶快前去参加吧 251 249 20
+SENDMSG 0 至尊夺宝活动已经开启.夺宝地图刷新大量BOSS.勇士们赶快前去参加吧 251 249 20
+SENDMSG 0 至尊夺宝活动已经开启.夺宝地图刷新大量BOSS.勇士们赶快前去参加吧 251 249 20
+SENDMSG 0 至尊夺宝活动已经开启.夺宝地图刷新大量BOSS.勇士们赶快前去参加吧 251 249 20
+BREAK
+
+[@全民赛跑开始]
+#IF
+#ACT
+CLEARNAMELIST ..\QuestDiary\赞助大使\赛跑名单.txt
+CLEARMAPMON ZASP
+MOV G33 1
+MOV G34 1
+MONGENEX ZASP   261     256    路障①号   	4	2
+MONGENEX ZASP   261     256    路障②号   	4	2
+MONGENEX ZASP   261     256    路障③号   	4	2
+MONGENEX ZASP   194     215    路障①号   	4	2
+MONGENEX ZASP   194     215    路障②号   	4	2
+MONGENEX ZASP   194     215    路障③号   	4	2
+MONGENEX ZASP   164     187    路障①号   	4	2
+MONGENEX ZASP   164     187    路障②号   	4	2
+MONGENEX ZASP   164     187    路障③号   	4	2
+MONGENEX ZASP   142     156   路障①号   	4	2
+MONGENEX ZASP   142     156    路障②号   	4	2
+MONGENEX ZASP   142     156    路障③号   	4	2
+MONGENEX ZASP   120     143    路障①号   	4	2
+MONGENEX ZASP   120     143    路障②号   	4	2
+MONGENEX ZASP   120     143    路障③号   	4	2
+MONGENEX ZASP   96     128    路障①号   	4	2
+MONGENEX ZASP   96     128    路障②号   	4	2
+MONGENEX ZASP   96     128    路障③号   	4	2
+MONGENEX ZASP   60     114    路障①号   	4	2
+MONGENEX ZASP   60     114     路障②号   	4	2
+MONGENEX ZASP   60     114     路障③号   	4	2
+MONGENEX ZASP   82     136    路障①号   	4	2
+MONGENEX ZASP   82     136     路障②号   	4	2
+MONGENEX ZASP   82     136     路障③号   	4	2
+MONGENEX ZASP   212     206    路障①号   	4	2
+MONGENEX ZASP   212     206    路障②号   	4	2
+MONGENEX ZASP   212     206    路障③号   	4	2
+MONGENEX ZASP   236     230    路障①号   	4	2
+MONGENEX ZASP   236     230    路障②号   	4	2
+MONGENEX ZASP   236     230    路障③号   	4	2
+MONGENEX ZASP   48     102    路障①号   	4	2
+MONGENEX ZASP   48     102    路障②号   	4	2
+MONGENEX ZASP   48     102    路障③号   	4	2
+MONGENEX ZASP   261     256    路障①号   	10	3
+MONGENEX ZASP   261     256    路障②号   	10	3
+MONGENEX ZASP   261     256    路障③号   	10	3
+MONGENEX ZASP   194     215    路障①号   	10	3
+MONGENEX ZASP   194     215    路障②号   	10	3
+MONGENEX ZASP   194     215    路障③号   	10	3
+MONGENEX ZASP   164     187    路障①号   	10	3
+MONGENEX ZASP   164     187    路障②号   	10	3
+MONGENEX ZASP   164     187    路障③号   	10	3
+MONGENEX ZASP   142     156   路障①号   	10	3
+MONGENEX ZASP   142     156    路障②号   	10	3
+MONGENEX ZASP   142     156    路障③号   	10	3
+MONGENEX ZASP   120     143    路障①号   	10	3
+MONGENEX ZASP   120     143    路障②号   	10	3
+MONGENEX ZASP   120     143    路障③号   	10	3
+MONGENEX ZASP   96     128    路障①号   	10	3
+MONGENEX ZASP   96     128    路障②号   	10	3
+MONGENEX ZASP   96     128    路障③号   	10	3
+MONGENEX ZASP   60     114    路障①号   	10	3
+MONGENEX ZASP   60     114     路障②号   	10	3
+MONGENEX ZASP   60     114     路障③号   	10	3
+MONGENEX ZASP   82     136    路障①号   	10	3
+MONGENEX ZASP   82     136     路障②号   	10	3
+MONGENEX ZASP  82      136     路障③号   	10	3
+MONGENEX ZASP   212     206    路障①号   	10	3
+MONGENEX ZASP   212     206    路障②号   	10	3
+MONGENEX ZASP   212     206    路障③号   	10	3
+MONGENEX ZASP   236     230    路障①号   	10	3
+MONGENEX ZASP   236     230    路障②号   	10	3
+MONGENEX ZASP   236     230    路障③号   	10	3
+MONGENEX ZASP   48     102    路障①号   	10	3
+MONGENEX ZASP   48     102    路障②号   	10	3
+MONGENEX ZASP   48     102    路障③号   	10	3
+GMEXECUTE 开始提问 @障碍赛跑1
+SENDMSG 0 ╔════╤════╤══════╤════╤════╗ 180 251
+SENDMSG 0 ‖　　　╭╧╮　　╭╧╮　　　　╭╧╮　　╭╧╮　　　‖ 180 251
+SENDMSG 0 ‖　　　┊全┊　　┊民┊【开启】┊赛┊　　┊跑┊　　　‖ 180 251
+SENDMSG 0 ‖　　　╰─╯　　╰─╯　　　　╰─╯　　╰─╯　　　‖ 180 251
+SENDMSG 0 ‖　【全民赛跑活动已经开启，10分钟后入口将关门~~~~】　‖ 180 251
+SENDMSG 0 ‖　【全民赛跑活动已经开启，10分钟后入口将关门~~~~】　‖ 180 251
+SENDMSG 0 ╚══════════════════════════╝ 180 251
+
+[@全民赛跑关闭]
+#IF
+#ACT
+mov G33 0
+Gmexecute 集体传送 zasp 0159
+SENDMSG 0 ╔════╤════╤══════╤════╤════╗ 180 251
+SENDMSG 0 ‖　　　╭╧╮　　╭╧╮　　　　╭╧╮　　╭╧╮　　　‖ 180 251
+SENDMSG 0 ‖　　　┊全┊　　┊民┊【关闭】┊赛┊　　┊跑┊　　　‖ 180 251
+SENDMSG 0 ‖　　　╰─╯　　╰─╯　　　　╰─╯　　╰─╯　　　‖ 180 251
+SENDMSG 0 ‖　【全民赛跑活动已经关闭，请玩家等待下个新区开放】　‖ 180 251
+SENDMSG 0 ‖　【全民赛跑活动已经关闭，请玩家等待下个新区开放】　‖ 180 251
+SENDMSG 0 ╚══════════════════════════╝ 180 251
+break
+
+[@押镖开始]
+#if
+EQUAL G28 0
+#ACT
+MOV G28 1
+SENDMSG 0 押镖活动已经开始.玩家可以前往活动使者处领取押镖任务！ 251 249 100
+SENDMSG 0 押镖活动已经开始.玩家可以前往活动使者处领取押镖任务！ 251 249 100
+SENDMSG 0 押镖活动已经开始.玩家可以前往活动使者处领取押镖任务！ 251 249 100
+SENDMSG 0 押镖活动已经开始.玩家可以前往活动使者处领取押镖任务！ 251 249 100
+SENDMSG 0 押镖活动已经开始.玩家可以前往活动使者处领取押镖任务！ 251 249 100
+SENDMSG 0 押镖活动已经开始.玩家可以前往活动使者处领取押镖任务！ 251 249 100
+
+[@押镖结束]
+#if
+EQUAL G28 1
+#ACT
+MOV G28 0
+SENDMSG 0 押镖活动已经结束.押镖时间为每日的18点开始到21点结束！ 251 249 100
+SENDMSG 0 押镖活动已经结束.押镖时间为每日的18点开始到21点结束！ 251 249 100
+SENDMSG 0 押镖活动已经结束.押镖时间为每日的18点开始到21点结束！ 251 249 100
+SENDMSG 0 押镖活动已经结束.押镖时间为每日的18点开始到21点结束！ 251 249 100
+SENDMSG 0 押镖活动已经结束.押镖时间为每日的18点开始到21点结束！ 251 249 100
+SENDMSG 0 押镖活动已经结束.押镖时间为每日的18点开始到21点结束！ 251 249 100
+
+[@激情泡点开始]
+#IF
+#ACT
+MOV G18 1
+Gmexecute 开始提问 @激情泡点开始1
+SENDMSG 0 ╔════╤════╤══════╤════╤════╗ 180 251
+SENDMSG 0 ‖　　　╭╧╮　　╭╧╮　　　　╭╧╮　　╭╧╮　　　‖ 180 251
+SENDMSG 0 ‖　　　┊激┊　　┊情┊【开启】┊泡┊　　┊点┊　　　‖ 180 251
+SENDMSG 0 ‖　　　╰─╯　　╰─╯　　　　╰─╯　　╰─╯　　　‖ 180 251
+SENDMSG 0 ‖　【激情泡点活动已经开启，5分钟后入口将关门~~~~~】　‖ 180 251
+SENDMSG 0 ‖　【激情泡点活动已经开启，5分钟后入口将关门~~~~~】　‖ 180 251
+SENDMSG 0 ╚══════════════════════════╝ 180 251
+BREAK
+
+
+[@激情泡点关闭]
+#IF
+#ACT
+MOV G18 0
+Gmexecute 集体传送 jiqing 0159
+SENDMSG 0 ╔════╤════╤══════╤════╤════╗ 180 251
+SENDMSG 0 ‖　　　╭╧╮　　╭╧╮　　　　╭╧╮　　╭╧╮　　　‖ 180 251
+SENDMSG 0 ‖　　　┊激┊　　┊情┊【关闭】┊泡┊　　┊点┊　　　‖ 180 251
+SENDMSG 0 ‖　　　╰─╯　　╰─╯　　　　╰─╯　　╰─╯　　　‖ 180 251
+SENDMSG 0 ‖　【激情泡点活动已经关闭，请玩家关注下一次的开放】　‖ 180 251
+SENDMSG 0 ‖　【激情泡点活动已经关闭，请玩家关注下一次的开放】　‖ 180 251
+SENDMSG 0 ╚══════════════════════════╝ 180 251
+break
+
+[@午夜屠夫]
+#IF
+#ACT
+mov G84 1
+mov G85 0
+mov A85 暂无
+CLEARNAMELIST ..\QuestDiary\天子数卡\杀人数量.txt
+CLEARNAMELIST ..\QuestDiary\天子数卡\战场奖励名单.txt
+SENDMSG 0 玩家注意：午夜屠夫活动已经开始,进入活动场地每秒获得3元宝
+SENDMSG 0 玩家注意：午夜屠夫活动已经开始,进入活动场地每秒获得3元宝
+SENDMSG 0 玩家注意：午夜屠夫活动已经开始,进入活动场地每秒获得3元宝
+SENDMSG 0 玩家注意：午夜屠夫活动已经开始,进入活动场地每秒获得3元宝
+GMEXECUTE 开始提问 @激情战场
+
+[@午夜屠夫1]
+#ACT
+mov G84 0
+GMEXECUTE 集体传送 rongyu 0159
+GMEXECUTE 集体传送 rongyu1 0159
+SENDMSG 0 午夜屠夫活动已经结束,请今日的午夜屠夫<$STR(A85)>去领取20000元宝奖励!!!
+SENDMSG 0 午夜屠夫活动已经结束,请今日的午夜屠夫<$STR(A85)>去领取20000元宝奖励!!!
+SENDMSG 0 午夜屠夫活动已经结束,请今日的午夜屠夫<$STR(A85)>去领取20000元宝奖励!!!
+
+[@屠龙战场]
+#IF
+#ACT
+CLEARMAPMON tulong
+MONGENEX tulong 20  23 卓越超级神龙  1  1  1
+GMEXECUTE 开始提问 @激情战场A
+SENDMSG 0 卓越超级神龙出现在屠龙.勇士们赶紧前去屠杀.终极装备就在眼前 251 249 20
+SENDMSG 0 卓越超级神龙出现在屠龙.勇士们赶紧前去屠杀.终极装备就在眼前 251 249 20
+SENDMSG 0 卓越超级神龙出现在屠龙.勇士们赶紧前去屠杀.终极装备就在眼前 251 249 20
+SENDMSG 0 卓越超级神龙出现在屠龙.勇士们赶紧前去屠杀.终极装备就在眼前 251 249 20
+BREAK
+
+
+[@卓越基金预告]
+#IF
+EQUAL G60 0
+#ACT
+mov G60 1
+SENDMSG 0 卓越基金5分钟后开始出售.请想购买基金的玩家做好准备 251 249 30
+SENDMSG 0 卓越基金5分钟后开始出售.请想购买基金的玩家做好准备 251 249 30
+SENDMSG 0 卓越基金5分钟后开始出售.请想购买基金的玩家做好准备 251 249 30
+BREAK
+
+[@卓越基金开始]
+#IF
+EQUAL G63 0
+#ACT
+mov G63 1
+SENDMSG 0 卓越基金开始出售.请玩家到土城全民基金处购买.10小时之内可以获得百分之百的分红 251 249 30
+SENDMSG 0 卓越基金开始出售.请玩家到土城全民基金处购买.10小时之内可以获得百分之百的分红 251 249 30
+SENDMSG 0 卓越基金开始出售.请玩家到土城全民基金处购买.10小时之内可以获得百分之百的分红 251 249 30
+SENDMSG 0 卓越基金开始出售.请玩家到土城全民基金处购买.10小时之内可以获得百分之百的分红 251 249 30
+BREAK
+
+[@卓越基金结束]
+#IF
+EQUAL G63 1
+#ACT
+mov G63 2
+SENDMSG 0 卓越基金已经停止出售.已经购买的玩家请等待分红 251 249 30
+SENDMSG 0 卓越基金已经停止出售.已经购买的玩家请等待分红 251 249 30
+SENDMSG 0 卓越基金已经停止出售.已经购买的玩家请等待分红 251 249 30
+BREAK
+
+[@基金升值]
+#IF
+small G61 10
+#ACT
+INC G61 1
+SENDMSG 0 卓越基金已经升值百分之<$STR(G61)>0.已购买的玩家可以到卓越基金NPC处查看 251 249 20
+SENDMSG 0 卓越基金已经升值百分之<$STR(G61)>0.已购买的玩家可以到卓越基金NPC处查看 251 249 20
+BREAK

@@ -1,0 +1,175 @@
+() 
+%100
+[@main]
+#IF
+#SAY
+<COLOR=clLime 本服冲级奖励只限新区.合区之后取消所有冲级奖励.请抓191g-m.c==o=m提--供紧练级>\ \
+{<50级-奖励物品>} -- {元宝5000} -------- <COLOR=clAqua 50名> <COLOR=clFuchsia 已领取>:<$STR(G99)><COLOR=clFuchsia 名> <领取/@50级>\
+{<52级-奖励物品>} -- {元宝10000} ------- <COLOR=clAqua 40名> <COLOR=clFuchsia 已领取>:<$STR(G98)><COLOR=clFuchsia 名> <领取/@52级>\
+{<54级-奖励物品>} -- {元宝20000} ------- <COLOR=clAqua 30名> <COLOR=clFuchsia 已领取>:<$STR(G97)><COLOR=clFuchsia 名> <领取/@55级>\
+{<56级-奖励物品>} -- {元宝30000} ------- <COLOR=clAqua 20名> <COLOR=clFuchsia 已领取>:<$STR(G96)><COLOR=clFuchsia 名> <领取/@58级>\
+{<58级-奖励物品>} -- {元宝40000} ------- <COLOR=clAqua 10名> <COLOR=clFuchsia 已领取>:<$STR(G95)><COLOR=clFuchsia 名> <领取/@60级>\
+{<60级-奖励物品>} -- {元宝50000} ------- <COLOR=clAqua 5名>  <COLOR=clFuchsia 已领取>:<$STR(G94)><COLOR=clFuchsia 名> <领取/@65级>\
+
+
+[@50级]
+#IF
+check [400] 1
+#ACT
+MESSAGEBOX [提示]：对不起，你领取过冲级奖励了
+BREAK
+
+#if
+small G99 50
+#elseact
+messagebox [提示]：对不起，本等级奖励全区限量50个，已经领取完了！
+break
+
+#IF
+check [400] 0
+CHECKLEVELEX > 49
+#ACT
+SET [400] 1
+INC G99 1
+GAMEGOLD + 5000
+SENDMSG 0 [冲级奖励]：%S成功领取了50级冲级奖励5000元宝
+MESSAGEBOX [提示]：成功领取冲级奖励5000元宝
+goto @main
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：对不起，你的等级不符合
+
+[@52级]
+#IF
+check [401] 1
+#ACT
+MESSAGEBOX [提示]：对不起，你领取过冲级奖励了
+BREAK
+
+#if
+small G98 40
+#elseact
+messagebox [提示]：对不起，本等级奖励全区限量40个，已经领取完了！
+break
+
+#IF
+check [401] 0
+CHECKLEVELEX > 51
+#ACT
+SET [401] 1
+INC G98 1
+GAMEGOLD + 10000
+SENDMSG 0 [冲级奖励]：%S成功领取了52级冲级奖励10000元宝
+MESSAGEBOX [提示]：成功领取冲级奖励10000元宝
+goto @main
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：对不起，你的等级不符合
+
+[@55级]
+#IF
+check [402] 1
+#ACT
+MESSAGEBOX [提示]：对不起，你领取过冲级奖励了
+BREAK
+
+#if
+small G97 30
+#elseact
+messagebox [提示]：对不起，本等级奖励全区限量30个，已经领取完了！
+break
+
+#IF
+check [402] 0
+CHECKLEVELEX > 53
+#ACT
+SET [402] 1
+INC G97 1
+GAMEGOLD + 20000
+SENDMSG 0 [冲级奖励]：%S成功领取了54级冲级奖励20000元宝
+MESSAGEBOX [提示]：成功领取冲级奖励20000元宝
+goto @main
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：对不起，你的等级不符合
+
+[@58级]
+#IF
+check [403] 1
+#ACT
+MESSAGEBOX [提示]：对不起，你领取过冲级奖励了
+BREAK
+
+#if
+small G96 20
+#elseact
+messagebox [提示]：对不起，本等级奖励全区限量20个，已经领取完了！
+break
+
+#IF
+check [403] 0
+CHECKLEVELEX > 55
+#ACT
+SET [403] 1
+INC G96 1
+GAMEGOLD + 30000
+SENDMSG 0 [冲级奖励]：%S成功领取了56级冲级奖励30000元宝
+MESSAGEBOX [提示]：成功领取冲级奖励30000元宝
+goto @main
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：对不起，你的等级不符合
+
+[@60级]
+#IF
+check [404] 1
+#ACT
+MESSAGEBOX [提示]：对不起，你领取过冲级奖励了
+BREAK
+
+#if
+small G95 10
+#elseact
+messagebox [提示]：对不起，本等级奖励全区限量10个，已经领取完了！
+break
+
+#IF
+check [404] 0
+CHECKLEVELEX > 57
+#ACT
+SET [404] 1
+INC G95 1
+GAMEGOLD + 40000
+SENDMSG 0 [冲级奖励]：%S成功领取了58级冲级奖励4W元宝
+MESSAGEBOX [提示]：成功领取冲级奖励4W元宝
+goto @main
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：对不起，你的等级不符合
+
+[@65级]
+#IF
+check [405] 1
+#ACT
+MESSAGEBOX [提示]：对不起，你领取过冲级奖励了
+BREAK
+
+#if
+small G94 5
+#elseact
+messagebox [提示]：对不起，本等级奖励全区限量5个，已经领取完了！
+break
+
+#IF
+check [405] 0
+CHECKLEVELEX > 59
+#ACT
+SET [405] 1
+INC G94 1
+GAMEGOLD + 50000
+SENDMSG 0 [冲级奖励]：%S成功领取了60级冲级奖励5W元宝
+MESSAGEBOX [提示]：成功领取冲级奖励5W元宝
+goto @main
+BREAK
+#ELSEACT
+MESSAGEBOX [提示]：对不起，你的等级不符合

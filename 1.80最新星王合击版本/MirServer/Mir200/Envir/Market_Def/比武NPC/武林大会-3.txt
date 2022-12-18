@@ -1,0 +1,24 @@
+[@main]
+　<COLOR=clFuchsia ╔═════════════════════════╗>\
+　<COLOR=clFuchsia ‖ ★☆★☆★☆><进 入 武 林 大 会 场 地/@武林大会><COLOR=clFuchsia ☆★☆★☆★  ‖>\
+　<COLOR=clFuchsia ╠═════════════════════════╣>\
+　<COLOR=clFuchsia ‖>每天18:30全服举行一次武林大会.45级以上才才可进入 <COLOR=clFuchsia  ‖>\
+　<COLOR=clFuchsia ‖>大门开启十分钟内可以复进入.大门关闭后.当场只剩下 <COLOR=clFuchsia  ‖>\
+　<COLOR=clFuchsia ‖>最后一个人为胜利者.可以找比武裁判领取武林大会奖励<COLOR=clFuchsia  ‖>\
+　<COLOR=clFuchsia ‖><COLOR=clLime 奖励物品：38888元宝+1亿经验+霸气封号>              <COLOR=clFuchsia ‖>\
+　<COLOR=clFuchsia ‖><COLOR=clYellow 开门时间为10分钟.请开门后10分钟内领取奖励.过期作废><COLOR=clFuchsia ‖>\
+　<COLOR=clFuchsia ╚═════════════════════════╝>\
+
+[@武林大会]
+#IF
+equal G20 1
+CHECKLEVELEX > 44
+#ACT
+CHANGEATTACKMODE 0
+give 回城卷 1
+mapmove E2
+SENDMSG 0 [%s]进入武林大会场地.18.30开放，18点40关闭，奖励38888元宝+1亿经验+霸气封号 249 252 5
+#elseACT
+messagebox 武林大会每天晚上18点30举行.现在时间还没到
+break
+CLOSE

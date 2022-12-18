@@ -1,0 +1,215 @@
+[@main]
+你知道吗？玛法各大BOSS身上都藏着未解封的<COLOR=clRed 赤月封印装备>...\
+这些装备一旦被解封，将会意外获得<COLOR=clLime 大量经验>和随机<COLOR=clLime 极品装备>...\
+<COLOR=clFuchsia 解封一个赤月封印装备将获得100万经验，还会出现极品，最高+3>\
+<COLOR=clFuchsia 解封的时候如果你给我解封卷(白野猪爆)，获得极品的几率会增加！>\
+<COLOR=clSkyBlue 你要解封下面哪个装备？解封一个需要400元宝！(穿齐封印套会？)>\
+
+<圣战头盔·佛/@sztkfy>　　　<法神头盔·佛/@fstkfy>　　　<天尊头盔·佛/@tztkfy>\
+<圣战项链·佛/@szxlfy>　　　<法神项链·佛/@fsxlfy>　　　<天尊项链·佛/@tzxlfy>\
+<圣战手镯·佛/@szszfy>　　　<法神手镯·佛/@fsszfy>　　　<天尊手镯·佛/@tzszfy>\
+<圣战戒指·佛/@szjzfy>　　　<法神戒指·佛/@fsjzfy>　　　<天尊戒指·佛/@tzjzfy>\
+
+[@tzjzfy]
+#IF
+checkitem 天尊戒指·佛 1
+CHECKGAMEGOLD > 399
+#ACT
+GAMEGOLD - 400
+take 解封卷 1
+take 天尊戒指·佛 1
+give 天尊戒指 1
+CHANGEEXP + 1000000
+#SAY
+已成功给你解封！\ \
+<返 回/@main>
+#ELSESAY
+你没有：天尊戒指·佛或者没有400元宝，无法解封！\
+<返 回/@main>
+
+[@tzszfy]
+#IF
+checkitem 天尊手镯·佛 1
+CHECKGAMEGOLD > 399
+#ACT
+GAMEGOLD - 400
+take 解封卷 1
+take 天尊手镯·佛 1
+give 天尊手镯 1
+CHANGEEXP + 1000000
+#SAY
+已成功给你解封！\ \
+<返 回/@main>
+#ELSESAY
+你没有：天尊手镯·佛或者没有400元宝，无法解封！\
+<返 回/@main>
+
+[@tzxlfy]
+#IF
+checkitem 天尊项链·佛 1
+CHECKGAMEGOLD > 399
+#ACT
+GAMEGOLD - 400
+take 解封卷 1
+take 天尊项链·佛 1
+give 天尊项链 1
+CHANGEEXP + 1000000
+#SAY
+已成功给你解封！\ \
+<返 回/@main>
+#ELSESAY
+你没有：天尊项链·佛或者没有400元宝，无法解封！\
+<返 回/@main>
+
+[@tztkfy]
+#IF
+checkitem 天尊头盔·佛 1
+CHECKGAMEGOLD > 399
+#ACT
+GAMEGOLD - 400
+take 解封卷 1
+take 天尊头盔·佛 1
+give 天尊头盔 1
+CHANGEEXP + 1000000
+#SAY
+已成功给你解封！\ \
+<返 回/@main>
+#ELSESAY
+你没有：天尊头盔·佛或者没有400元宝，无法解封！\
+<返 回/@main>
+
+[@fsjzfy]
+#IF
+checkitem 法神戒指·佛 1
+CHECKGAMEGOLD > 399
+#ACT
+GAMEGOLD - 400
+take 解封卷 1
+take 法神戒指·佛 1
+give 法神戒指 1
+CHANGEEXP + 1000000
+#SAY
+已成功给你解封！\ \
+<返 回/@main>
+#ELSESAY
+你没有：法神戒指·佛或者没有400元宝，无法解封！\
+<返 回/@main>
+
+[@fsszfy]
+#IF
+checkitem 法神手镯·佛 1
+CHECKGAMEGOLD > 399
+#ACT
+GAMEGOLD - 400
+take 解封卷 1
+take 法神手镯·佛 1
+give 法神手镯 1
+CHANGEEXP + 1000000
+#SAY
+已成功给你解封！\ \
+<返 回/@main>
+#ELSESAY
+你没有：法神手镯·佛或者没有400元宝，无法解封！\
+<返 回/@main>
+
+[@fsxlfy]
+#IF
+checkitem 法神项链·佛 1
+CHECKGAMEGOLD > 399
+#ACT
+GAMEGOLD - 400
+take 解封卷 1
+take 法神项链·佛 1
+give 法神项链 1
+CHANGEEXP + 1000000
+#SAY
+已成功给你解封！\ \
+<返 回/@main>
+#ELSESAY
+你没有：法神项链·佛或者没有400元宝，无法解封！\
+<返 回/@main>
+
+[@fstkfy]
+#IF
+checkitem 法神头盔·佛 1
+CHECKGAMEGOLD > 399
+#ACT
+GAMEGOLD - 400
+take 解封卷 1
+take 法神头盔·佛 1
+give 法神头盔 1
+CHANGEEXP + 1000000
+#SAY
+已成功给你解封！\ \
+<返 回/@main>
+#ELSESAY
+你没有：法神头盔·佛或者没有400元宝，无法解封！\
+<返 回/@main>
+
+[@szjzfy]
+#IF
+checkitem 圣战戒指·佛 1
+CHECKGAMEGOLD > 399
+#ACT
+GAMEGOLD - 400
+take 解封卷 1
+take 圣战戒指·佛 1
+give 圣战戒指 1
+CHANGEEXP + 1000000
+#SAY
+已成功给你解封！\ \
+<返 回/@main>
+#ELSESAY
+你没有：圣战戒指·佛或者没有400元宝，无法解封！\
+<返 回/@main>
+
+[@szszfy]
+#IF
+checkitem 圣战手镯·佛 1
+CHECKGAMEGOLD > 399
+#ACT
+GAMEGOLD - 400
+take 解封卷 1
+take 圣战手镯·佛 1
+give 圣战手镯 1
+CHANGEEXP + 1000000
+#SAY
+已成功给你解封！\ \
+<返 回/@main>
+#ELSESAY
+你没有：圣战手镯·佛或者没有400元宝，无法解封！\
+<返 回/@main>
+
+[@szxlfy]
+#IF
+checkitem 圣战项链·佛 1
+CHECKGAMEGOLD > 399
+#ACT
+GAMEGOLD - 400
+take 解封卷 1
+take 圣战项链·佛 1
+give 圣战项链 1
+CHANGEEXP + 1000000
+#SAY
+已成功给你解封！\ \
+<返 回/@main>
+#ELSESAY
+你没有：圣战项链·佛或者没有400元宝，无法解封！\
+<返 回/@main>
+
+[@sztkfy]
+#IF
+checkitem 圣战头盔·佛 1
+CHECKGAMEGOLD > 399
+#ACT
+GAMEGOLD - 400
+take 解封卷 1
+take 圣战头盔·佛 1
+give 圣战头盔 1
+CHANGEEXP + 1000000
+#SAY
+已成功给你解封！\ \
+<返 回/@main>
+#ELSESAY
+你没有：圣战头盔·佛或者没有400元宝，无法解封！\
+<返 回/@main>

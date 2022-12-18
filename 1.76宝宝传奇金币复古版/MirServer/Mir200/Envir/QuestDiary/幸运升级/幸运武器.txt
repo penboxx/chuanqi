@@ -1,0 +1,51 @@
+[@幸运武器]
+{
+#IF
+random 15
+#act
+UPGRADEITEMEX 1 3 0 1 0
+SENDMSG 1 恭喜[%s]使用.红色祝福油.武器幸运增加1点.。
+BREAK
+
+#IF
+random 6
+#act
+SendMsg 5 此油无效
+BREAK
+
+#IF
+random 5
+#act
+SendMsg 5 此油无效
+BREAK
+
+#IF
+random 4
+#act
+SendMsg 5 此油无效
+BREAK
+
+#IF
+random 3
+#act
+SendMsg 5 此油无效
+BREAK
+
+#IF
+random 2
+#act
+SendMsg 5 此油无效
+BREAK
+
+#IF
+random 1
+#act
+SendMsg 5 此油无效
+BREAK
+
+#IF
+random
+#act
+SendMsg 5 此油无效
+BREAK
+}

@@ -1,0 +1,1392 @@
+(@upgradenow @getbackupgnow )
+%100
++5
++6
++10
++11
++15
++19
++20
++21
++22
++23
++24
++26
++43
+[@MAIN]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【装备升级】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<升级武器/@武器>    <升级项链/@项链>    <升级头盔/@头盔>    <升级勋章/@勋章>    <升级靴子/@靴子>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<升级盔甲/@盔甲>    <升级手镯/@手镯>    <升级戒指/@戒指>    <升级腰带/@腰带>    <独家体验> \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 每次升级装备需要消耗><COLOR=clAqua 2000><元宝><COLOR=clAqua 成功几率为50%.失败装备不破碎> \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+[@武器]
+<COLOR=clAqua 需要消耗2000><元宝><COLOR=clAqua 成功几率为50%.失败装备不破碎> \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+ 1.武器准确:<点击升级/@武器准> 升级上限:<COLOR=clFuchsia 5>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 2.武器攻击:<点击升级/@武器攻> 升级上限:<COLOR=clFuchsia 7>点  升级条件:消耗2000<COLOR=clAqua 元宝>\
+ 3.武器魔法:<点击升级/@武器魔> 升级上限:<COLOR=clFuchsia 7>点  升级条件:消耗2000<COLOR=clAqua 元宝>\
+ 4.武器道术:<点击升级/@武器道> 升级上限:<COLOR=clFuchsia 7>点  升级条件:消耗2000<COLOR=clAqua 元宝>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<返回上一页/@MAIN>                                       <关闭页面/@exit>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+[@盔甲]
+<COLOR=clAqua 需要消耗2000><元宝><COLOR=clAqua 成功几率为50%.失败装备不破碎> \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+ 1.盔甲防御:<点击升级/@盔甲防> 升级上限:<3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 2.盔甲魔御:<点击升级/@盔甲御> 升级上限:<3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 3.盔甲攻击:<点击升级/@盔甲攻> 升级上限:<3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 4.盔甲魔法:<点击升级/@盔甲魔> 升级上限:<3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 5.盔甲道术:<点击升级/@盔甲道> 升级上限:<3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<返回上一页/@MAIN>                                       <关闭页面/@exit>\
+[@勋章]
+<COLOR=clAqua 需要消耗2000><元宝><COLOR=clAqua 成功几率为50%.失败装备不破碎> \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+ 1.勋章防御:<点击升级/@勋章防> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 2.勋章魔御:<点击升级/@勋章御> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 3.勋章攻击:<点击升级/@勋章攻> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 4.勋章魔法:<点击升级/@勋章魔> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 5.勋章道术:<点击升级/@勋章道> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<返回上一页/@MAIN>                                       <关闭页面/@exit>\
+[@头盔]
+<COLOR=clAqua 需要消耗2000><元宝><COLOR=clAqua 成功几率为50%.失败装备不破碎> \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+ 1.头盔防御:<点击升级/@头盔防> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 2.头盔魔御:<点击升级/@头盔御> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 3.头盔攻击:<点击升级/@头盔攻> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 4.头盔魔法:<点击升级/@头盔魔> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 5.头盔道术:<点击升级/@头盔道> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<返回上一页/@MAIN>                                       <关闭页面/@exit>\
+[@项链]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 需要消耗2000><元宝><COLOR=clAqua 成功几率为50%.失败装备不破碎> \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+ 1.项链攻击:<点击升级/@项链攻> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 2.项链魔法:<点击升级/@项链魔> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 3.项链道术:<点击升级/@项链道> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\ 
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<返回上一页/@MAIN>                                       <关闭页面/@exit>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+[@手镯]
+<COLOR=clLime 请把装备佩带在左边><COLOR=clAqua 消耗2000><元宝><COLOR=clAqua 成功几率为50%.失败装备不破碎> \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+ 1.手镯防御:<点击升级/@手镯防> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 2.手镯魔御:<点击升级/@手镯御> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 3.手镯攻击:<点击升级/@手镯攻> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 4.手镯魔法:<点击升级/@手镯魔> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 5.手镯道术:<点击升级/@手镯道> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<返回上一页/@MAIN>                                       <关闭页面/@exit>\
+[@戒指]
+<COLOR=clLime 请把装备佩带在左边><COLOR=clAqua 消耗2000><元宝><COLOR=clAqua 成功几率为50%.失败装备不破碎> \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+ 1.戒指防御:<点击升级/@戒指防> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 2.戒指魔御:<点击升级/@戒指御> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 3.戒指攻击:<点击升级/@戒指攻> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 4.戒指魔法:<点击升级/@戒指魔> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 5.戒指道术:<点击升级/@戒指道> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<返回上一页/@MAIN>                                       <关闭页面/@exit>\
+[120.26.102.73]
+<COLOR=clAqua 需要消耗2000><元宝><COLOR=clAqua 成功几率为50%.失败装备不破碎> \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+ 1.靴子防御:<点击升级/@靴子防> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 2.靴子魔御:<点击升级/@靴子御> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 3.靴子攻击:<点击升级/@靴子攻> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 4.靴子魔法:<点击升级/@靴子法> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 5.靴子道术:<点击升级/@靴子道> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<返回上一页/@MAIN>                                       <关闭页面/@exit>\
+[@腰带]
+<COLOR=clAqua 需要消耗2000><元宝><COLOR=clAqua 成功几率为50%.失败装备不破碎> \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+ 1.腰带防御:<点击升级/@腰带防> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 2.腰带魔御:<点击升级/@腰带御> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 3.腰带攻击:<点击升级/@腰带攻> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 4.腰带魔法:<点击升级/@腰带魔> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 5.腰带道术:<点击升级/@腰带道> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<返回上一页/@MAIN>                                       <关闭页面/@exit>\
+[@靴子]
+<COLOR=clAqua 需要消耗2000><元宝><COLOR=clAqua 成功几率为50%.失败装备不破碎> \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+ 1.靴子防御:<点击升级/@靴子防> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 2.靴子魔御:<点击升级/@靴子御> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 3.靴子攻击:<点击升级/@靴子攻> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 4.靴子魔法:<点击升级/@靴子魔> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+ 5.靴子道术:<点击升级/@靴子道> 升级上限:<COLOR=clFuchsia 3>点  升级条件:消耗2000<COLOR=clAqua 元宝>　\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<返回上一页/@MAIN>                                       <关闭页面/@exit>\
+
+[@戒指道]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @戒指道1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@戒指道1]
+#IF
+CheckItemAddvalue 8 4 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 8 4 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把戒指道术提升1点 250 0
+goto @戒指
+#ELSEACT
+goto @戒指
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@戒指魔]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @戒指魔1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@戒指魔1]
+#IF
+CheckItemAddvalue 8 3 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 8 3 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把戒指魔法提升1点 250 0
+goto @戒指
+#ELSEACT
+goto @戒指
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@戒指攻]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @戒指攻1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@戒指攻1]
+#IF
+CheckItemAddvalue 8 2 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 8 2 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把戒指攻击提升1点 250 0
+goto @戒指
+#ELSEACT
+goto @戒指
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@戒指防]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @戒指防1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@戒指防1]
+#IF
+CheckItemAddvalue 8 0 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 8 0 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把戒指防御提升1点 250 0
+goto @戒指
+#ELSEACT
+goto @戒指
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@戒指御]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @戒指御1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@戒指御1]
+#IF
+CheckItemAddvalue 8 1 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 8 1 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把戒指魔御提升1点 250 0
+goto @戒指
+#ELSEACT
+goto @戒指
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@手镯道]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @手镯道1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@手镯道1]
+#IF
+CheckItemAddvalue 6 4 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 6 4 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把手镯道术提升1点 250 0
+goto @手镯
+#ELSEACT
+goto @手镯
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@手镯魔]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @手镯魔1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@手镯魔1]
+#IF
+CheckItemAddvalue 6 3 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 6 3 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把手镯魔法提升1点 250 0
+goto @手镯
+#ELSEACT
+goto @手镯
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@手镯攻]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @手镯攻1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@手镯攻1]
+#IF
+CheckItemAddvalue 6 2 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 6 2 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把手镯攻击提升1点 250 0
+goto @手镯
+#ELSEACT
+goto @手镯
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@手镯防]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @手镯防1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@手镯防1]
+#IF
+CheckItemAddvalue 6 0 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 6 0 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把手镯防御提升1点 250 0
+goto @手镯
+#ELSEACT
+goto @手镯
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@手镯御]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @手镯御1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@手镯御1]
+#IF
+CheckItemAddvalue 6 1 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 6 1 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把手镯魔御提升1点 250 0
+goto @手镯
+#ELSEACT
+goto @手镯
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@头盔道]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @头盔道1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@头盔道1]
+#IF
+CheckItemAddvalue 4 4 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 4 4 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把头盔道术提升1点 250 0
+goto @头盔
+#ELSEACT
+goto @头盔
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@头盔魔]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @头盔魔1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@头盔魔1]
+#IF
+CheckItemAddvalue 4 3 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 4 3 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把头盔魔法提升1点 250 0
+goto @头盔
+#ELSEACT
+goto @头盔
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@头盔攻]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @头盔攻1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@头盔攻1]
+#IF
+CheckItemAddvalue 4 2 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 4 2 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把头盔攻击提升1点 250 0
+goto @头盔
+#ELSEACT
+goto @头盔
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@头盔防]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @头盔防1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@头盔防1]
+#IF
+CheckItemAddvalue 4 0 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 4 0 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把头盔防御提升1点 250 0
+goto @头盔
+#ELSEACT
+goto @头盔
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@头盔御]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @头盔御1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@头盔御1]
+#IF
+CheckItemAddvalue 4 1 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 4 1 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把头盔魔御提升1点 250 0
+goto @头盔
+#ELSEACT
+goto @头盔
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@勋章道]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @勋章道1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@勋章道1]
+#IF
+CheckItemAddvalue 2 4 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 2 4 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把勋章道术提升1点 250 0
+goto @勋章
+#ELSEACT
+goto @勋章
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@勋章魔]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @勋章魔1
+break
+#ELSEACT
+ReadRandomStr .\MonItems\仙子.mp3 A15
+SENDMSG 6 请确定你是否拥有2000元宝！！
+
+[@勋章魔1]
+#IF
+CheckItemAddvalue 2 3 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 2 3 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把勋章魔法提升1点 250 0
+goto @勋章
+#ELSEACT
+goto @勋章
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@勋章攻]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @勋章攻1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@勋章攻1]
+#IF
+CheckItemAddvalue 2 2 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 2 2 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把勋章攻击提升1点 250 0
+goto @勋章
+#ELSEACT
+goto @勋章
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@勋章防]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @勋章防1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@勋章防1]
+#IF
+CheckItemAddvalue 2 0 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 2 0 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把勋章防御提升1点 250 0
+goto @勋章
+#ELSEACT
+goto @勋章
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@勋章御]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @勋章御1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@勋章御1]
+#IF
+CheckItemAddvalue 2 1 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 2 1 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把勋章魔御提升1点 250 0
+goto @勋章
+#ELSEACT
+goto @勋章
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@腰带道]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @腰带道1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@腰带道1]
+#IF
+CheckItemAddvalue 10 4 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 10 4 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把腰带道术提升1点 250 0
+goto @腰带
+#ELSEACT
+goto @腰带
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@腰带魔]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @腰带魔1
+break
+#ELSEACT
+QUERYVALUE 5 0 100 <$STR(A15)>  1 NPC
+MOV A15 1
+SENDMSG 6 请确定你是否拥有2000元宝！！
+
+
+[@腰带魔1]
+#IF
+CheckItemAddvalue 10 3 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 10 3 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把腰带魔法提升1点 250 0
+goto @腰带
+#ELSEACT
+goto @腰带
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@腰带攻]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @腰带攻1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@腰带攻1]
+#IF
+CheckItemAddvalue 10 2 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 10 2 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把腰带攻击提升1点 250 0
+goto @腰带
+#ELSEACT
+goto @腰带
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@腰带防]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @腰带防1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@腰带防1]
+#IF
+CheckItemAddvalue 10 0 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 10 0 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把腰带防御提升1点 250 0
+goto @腰带
+#ELSEACT
+goto @腰带
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@腰带御]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @腰带御1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@腰带御1]
+#IF
+CheckItemAddvalue 10 1 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 10 1 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把腰带魔御提升1点 250 0
+goto @腰带
+#ELSEACT
+goto @腰带
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@靴子道]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @靴子道1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@靴子道1]
+#IF
+CheckItemAddvalue 11 4 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 11 4 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把靴子道术提升1点 250 0
+goto @靴子
+#ELSEACT
+goto @靴子
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@靴子魔]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @靴子魔1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@靴子魔1]
+#IF
+CheckItemAddvalue 11 3 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 11 3 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把靴子魔法提升1点 250 0
+goto @靴子
+#ELSEACT
+goto @靴子
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@靴子攻]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @靴子攻1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@靴子攻1]
+#IF
+CheckItemAddvalue 11 2 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 11 2 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把靴子攻击提升1点 250 0
+goto @靴子
+#ELSEACT
+goto @靴子
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@靴子防]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @靴子防1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@靴子防1]
+#IF
+CheckItemAddvalue 11 0 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 11 0 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把靴子防御提升1点 250 0
+goto @靴子
+#ELSEACT
+goto @靴子
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@靴子御]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @靴子御1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@靴子御1]
+#IF
+CheckItemAddvalue 11 1 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 11 1 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把靴子魔御提升1点 250 0
+goto @靴子
+#ELSEACT
+goto @靴子
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@项链道]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @项链道1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@项链道1]
+#IF
+CheckItemAddvalue 3 4 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 3 4 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把项链道术提升1点 250 0
+goto @项链
+#ELSEACT
+goto @项链
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@项链魔]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @项链魔1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@项链魔1]
+#IF
+CheckItemAddvalue 3 3 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 3 3 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把项链魔法提升1点 250 0
+goto @项链
+#ELSEACT
+goto @项链
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@项链攻]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @项链攻1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@项链攻1]
+#IF
+CheckItemAddvalue 3 2 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 3 2 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把项链攻击提升1点 250 0
+goto @项链
+#ELSEACT
+goto @项链
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@盔甲道]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @盔甲道1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@盔甲道1]
+#IF
+CheckItemAddvalue 0 4 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 0 4 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把盔甲道术提升1点 250 0
+goto @盔甲
+#ELSEACT
+goto @盔甲
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@盔甲魔]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @盔甲魔1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@盔甲魔1]
+#IF
+CheckItemAddvalue 0 3 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 0 3 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把盔甲魔法提升1点 250 0
+goto @盔甲
+#ELSEACT
+goto @盔甲
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@盔甲攻]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @盔甲攻1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@盔甲攻1]
+#IF
+CheckItemAddvalue 0 2 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 0 2 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把盔甲攻击提升1点 250 0
+goto @盔甲
+#ELSEACT
+goto @盔甲
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@盔甲防]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @盔甲防1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@盔甲防1]
+#IF
+CheckItemAddvalue 0 0 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 0 0 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把盔甲防御提升1点 250 0
+goto @盔甲
+#ELSEACT
+goto @盔甲
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@盔甲御]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @盔甲御1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@盔甲御1]
+#IF
+CheckItemAddvalue 0 1 > 2
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有3点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 0 1 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把盔甲魔御提升1点 250 0
+goto @盔甲
+#ELSEACT
+goto @盔甲
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@武器道]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @武器道1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@武器道1]
+#IF
+CheckItemAddvalue 1 2 > 6
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有7点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 1 2 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把武器道术提升1点 250 0
+goto @武器
+#ELSEACT
+goto @武器
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@武器魔]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @武器魔1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@武器魔1]
+#IF
+CheckItemAddvalue 1 1 > 6
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有7点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 1 1 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把武器魔法提升1点 250 0
+goto @武器
+#ELSEACT
+goto @武器
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@武器攻]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @武器攻1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+[@靴子法]
+#act
+QUERYVALUE 5 0 100 <$PARAM(0)>  1 QF
+
+[@武器攻1]
+#IF
+CheckItemAddvalue 1 0 > 6
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有7点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 1 0 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把武器攻击提升1点 250 0
+goto @武器
+#ELSEACT
+goto @武器
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000
+
+[@武器准]
+#IF
+CHECKGAMEGOLD > 1999
+#ACT
+goto @武器准1
+break
+#ELSEACT
+MESSAGEBOX 请确定你是否拥有2000元宝！！
+
+[@武器准1]
+#IF
+CheckItemAddvalue 1 5 > 4
+#ACT
+MESSAGEBOX 请确定你的装备是否已经有5点极品属性了！
+break
+
+#IF
+random 5
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 1 5 0 1 0
+SENDMSG 6 装备属性升级成功！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]在庄园装备升级处使用元宝把武器准御提升1点 250 0
+goto @武器
+#ELSEACT
+goto @武器
+SENDMSG 6 升级失败!!加油下次会成功的!!!呵呵!!!
+#ELSEACT
+GAMEGOLD - 2000

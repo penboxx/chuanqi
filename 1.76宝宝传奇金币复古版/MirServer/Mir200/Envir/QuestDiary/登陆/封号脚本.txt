@@ -1,0 +1,168 @@
+[@封号设置]
+{
+#if
+#act
+MOV M1 0
+MOV S1 [平民]
+
+#if
+CHECK [38] 1
+#act
+MOV S1 [九品知县]
+INC M1 1
+sendmsg 6 您现在的官爵是：九品知县，获得功魔道属性各1点提升！
+
+#if
+CHECK [39] 1
+#act
+MOV S1 [八品知府]
+AbilityAdd 4 2 65535
+AbilityAdd 5 2 65535
+AbilityAdd 6 2 65535
+sendmsg 6 您现在的官爵是：八品知府，获得功魔道属性各2点提升！
+
+#if
+CHECK [40] 1
+#act
+MOV S1 [七品太守]
+AbilityAdd 4 3 65535
+AbilityAdd 5 3 65535
+AbilityAdd 6 3 65535
+sendmsg 6 您现在的官爵是：七品太守，获得功魔道属性各3点提升！
+
+#if
+CHECK [41] 1
+#act
+MOV S1 [六品巡抚]
+AbilityAdd 4 4 65535
+AbilityAdd 5 4 65535
+AbilityAdd 6 4 65535
+sendmsg 6 您现在的官爵是：六品巡抚，获得功魔道属性各4点提升！
+
+#if
+CHECK [42] 1
+#act
+MOV S1 [五品提督]
+AbilityAdd 4 5 65535
+AbilityAdd 5 5 65535
+AbilityAdd 6 5 65535
+sendmsg 6 您现在的官爵是：五品提督，获得功魔道属性各5点提升！
+
+#if
+CHECK [43] 1
+#act
+MOV S1 [四品总督]
+AbilityAdd 4 6 65535
+AbilityAdd 5 6 65535
+AbilityAdd 6 6 65535
+sendmsg 6 您现在的官爵是：四品总督，获得功魔道属性各6点提升！
+
+#if
+CHECK [44] 1
+#act
+MOV S1 [三品尚书]
+AbilityAdd 4 7 65535
+AbilityAdd 5 7 65535
+AbilityAdd 6 7 65535
+sendmsg 6 您现在的官爵是：三品尚书，获得功魔道属性各7点提升！
+
+#if
+CHECK [45] 1
+#act
+MOV S1 [二品太傅]
+AbilityAdd 4 8 65535
+AbilityAdd 5 8 65535
+AbilityAdd 6 8 65535
+sendmsg 6 您现在的官爵是：二品太傅，获得功魔道属性各8点提升！
+
+#if
+CHECK [46] 1
+#act
+MOV S1 [一统天下]
+AbilityAdd 4 9 65535
+AbilityAdd 5 9 65535
+AbilityAdd 6 9 65535
+sendmsg 6 您现在的官爵是：一统天下，获得功魔道属性各9点提升！
+
+#if
+CHECK [47] 1
+#act
+MOV S1 [独孤求败]
+AbilityAdd 4 10 65535
+AbilityAdd 5 10 65535
+AbilityAdd 6 10 65535
+sendmsg 6 您现在的官爵是：独孤求败，获得功魔道属性各10点提升！
+
+#if
+CHECK [48] 1
+#act
+MOV S1 [唯我独尊]
+AbilityAdd 4 11 65535
+AbilityAdd 5 11 65535
+AbilityAdd 6 11 65535
+sendmsg 6 您现在的官爵是：唯我独尊，获得功魔道属性各11点提升！
+
+#if
+CHECK [49] 1
+#act
+MOV S1 [至尊无上]
+AbilityAdd 4 12 65535
+AbilityAdd 5 12 65535
+AbilityAdd 6 12 65535
+sendmsg 6 您现在的官爵是：至尊无上，获得功魔道属性各12点提升！
+
+#if
+CHECK [50] 1
+#act
+MOV S1 [天下无敌]
+AbilityAdd 4 13 65535
+AbilityAdd 5 13 65535
+AbilityAdd 6 13 65535
+sendmsg 6 您现在的官爵是：天下无敌，获得功魔道属性各13点提升！
+
+
+
+
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\黄金赞助名单.txt
+#ACT
+ChangeNameColor 254
+mov s1 ≮黄金赞助大使≯
+;Mov S1 <$USERNAME>\
+;SETRANKLEVELNAME %s≮黄金赞助大使≯
+;KILLMONEXPRATE 140 200000000
+SENDMSG 0 黄金赞助大使【<$USERNAME>】上线了!  251 200
+
+
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\白金赞助名单.txt
+#ACT
+ChangeNameColor 253
+mov s1 ≮白金赞助大使≯
+;Mov S1 <$USERNAME>\
+;SETRANKLEVELNAME %s≮白金赞助大使≯
+;KILLMONEXPRATE 120 200000000
+SENDMSG 0 白金赞助大使【<$USERNAME>】上线了!  251 200
+
+
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\翡翠赞助名单.txt
+#ACT
+mov s1 ≮翡翠赞助大使≯
+;Mov S1 <$USERNAME>\
+;SETRANKLEVELNAME %s≮翡翠赞助大使≯
+;KILLMONEXPRATE 160 200000000
+SENDMSG 0 翡翠赞助大使【<$USERNAME>】上线了!  251 200
+
+
+
+#if
+CHECKNAMELIST ..\QuestDiary\天下第一\代理名单.txt
+checklevelex > 0
+#act
+;SETRANKLEVELNAME %s\<$STR(S7)>\<$STR(S1)>\<$STR(S2)>\
+SETRANKLEVELNAME %s\<$STR(S1)>\
+#ELSEACT
+SETRANKLEVELNAME %s\<$STR(S1)>\<$STR(S2)>\
+BREAK
+}

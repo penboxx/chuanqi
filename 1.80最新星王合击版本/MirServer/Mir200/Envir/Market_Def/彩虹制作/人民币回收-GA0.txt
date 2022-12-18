@@ -1,0 +1,345 @@
+()
+%100
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【人民币回收】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=CLLIME 目前极品以上装备官方人民币回收.以适中价格回馈广大玩家的厚爱>\
+<COLOR=CLAQUA 玩家可以把打到的装备在我这里兑换成人民币卷.满一百元即可联系>\
+<COLOR=CLFUCHSIA 客服回收人民币.回收时间为每周一上午10点-晚上18点间.其他时间>\
+<COLOR=CLLIME 概不受理请广大玩家一定注意保护好你的虚拟财产.以免被坏人窃取>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<点击兑换人民币/@兑换>                            <点击查询回收价格/@查询> \        
+
+[@查询]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【人民币回收】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=CLAQUA 卓越星王战刃:500RMB 卓越星王道剑:300RMB 卓越星王法杖:200RMB> \
+<COLOR=CLFUCHSIA 卓越星王战甲:300RMB 卓越星王道袍:200RMB 卓越星王魔袍:100RMB> \
+<COLOR=CLAQUA 卓越星王战套:300RMB 卓越星王道套:200RMB 卓越星王法套:100RMB>\
+<COLOR=CLLIME 极品星王战刃: 50RMB 极品星王道剑: 30RMB 极品星王法剑: 20RMB>\
+<COLOR=CLFUCHSIA 极品星王战甲: 30RMB 极品星王道袍: 20RMB 极品星王魔袍: 10RMB>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+
+[@兑换]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【人民币回收】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=CLAQUA 卓越首饰整套回收:手镯*2.戒指*2.头盔*1.项链*1.腰带*1.靴子*1>\
+<回收卓越星王战刃/@20>     <回收卓越星王道剑/@21>     <回收卓越星王法杖/@22>\
+<回收卓越星王战甲/@23>     <回收卓越星王道袍/@24>     <回收卓越星王魔袍/@25>\
+<回收卓越星王战套/@17>     <回收卓越星王道套/@18>     <回收卓越星王法套/@19>\
+<回收极品星王战刃/@11>     <回收极品星王道剑/@12>     <回收极品星王法剑/@13>\
+<回收极品星王战甲/@14>     <回收极品星王道袍/@15>     <回收极品星王魔袍/@16>\
+[@11]
+#IF
+checkitem 极品星王战刃 1
+#ACT
+take 极品星王战刃 1
+GameGold +  50000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝50000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 50
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符50个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 〖提示〗你没有极品星王战刃！
+BREAK
+
+[@12]
+#IF
+checkitem 极品星王道剑 1
+#ACT
+take 极品星王道剑 1
+GameGold +  30000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝30000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 30
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符30个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 〖提示〗你没有极品星王道剑！
+BREAK
+
+[@13]
+#IF
+checkitem 极品星王法剑 1
+#ACT
+take 极品星王法剑 1
+GameGold +  20000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝20000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 20
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符20个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 〖提示〗你没有极品星王法剑！
+BREAK
+
+[@14]
+#IF
+checkitem 极品星王战甲 1
+#ACT
+take 极品星王战甲 1
+GameGold +  30000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝30000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 30
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符30个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+
+#IF
+checkitem 极品星王战袍 1
+#ACT
+take 极品星王战袍 1
+GameGold +  30000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝30000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 30
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符30个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 〖提示〗你没有极品星王战甲！
+
+[@15]
+#IF
+checkitem 极品星王道袍 1
+#ACT
+take 极品星王道袍 1
+GameGold +  20000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝20000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 20
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符20个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#IF
+checkitem 极品星王道衣 1
+#ACT
+take 极品星王道衣 1
+GameGold +  20000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝20000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 20
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符20个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 〖提示〗你没有极品星王道袍！
+
+[@16]
+#IF
+checkitem 极品星王魔袍 1
+#ACT
+take 极品星王魔袍 1
+GameGold +  10000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝10000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 10
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符10个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#IF
+checkitem 极品星王魔衣 1
+#ACT
+take 极品星王魔衣 1
+GameGold +  10000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝10000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 10
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符10个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 〖提示〗你没有极品星王魔袍！
+
+[@20]
+#IF
+checkitem 卓越星王战刃 1
+#ACT
+take 卓越星王战刃 1
+GameGold +  500000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝500000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 500
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符500个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 〖提示〗你没有卓越星王战刃！
+BREAK
+
+[@21]
+#IF
+checkitem 卓越星王道剑 1
+#ACT
+take 卓越星王道剑 1
+GameGold +  300000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝300000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 300
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符300个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 〖提示〗你没有卓越星王道剑！
+BREAK
+
+[@22]
+#IF
+checkitem 卓越星王法杖 1
+#ACT
+take 卓越星王法杖 1
+GameGold +  200000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝200000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 200
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符200个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 〖提示〗你没有卓越星王法杖！
+BREAK
+
+[@23]
+#IF
+checkitem 卓越星王战甲 1
+#ACT
+take 卓越星王战甲 1
+GameGold +  300000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝300000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 300
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符300个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#IF
+checkitem 卓越星王战袍 1
+#ACT
+take 卓越星王战袍 1
+GameGold +  300000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝300000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 300
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符300个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 〖提示〗你没有卓越星王战甲！
+
+[@24]
+#IF
+checkitem 卓越星王道袍 1
+#ACT
+take 卓越星王道袍 1
+GameGold +  200000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝200000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 200
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符200个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#IF
+checkitem 卓越星王道衣 1
+#ACT
+take 卓越星王道衣 1
+GameGold +  200000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝200000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 200
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符200个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 〖提示〗你没有卓越星王道袍！
+
+[@25]
+#IF
+checkitem 卓越星王魔袍 1
+#ACT
+take 卓越星王魔袍 1
+GameGold +  100000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝100000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 100
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符100个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#IF
+checkitem 卓越星王魔衣 1
+#ACT
+take 卓越星王魔衣 1
+GameGold +  100000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝100000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 100
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符100个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 〖提示〗你没有卓越星王魔袍！
+BREAK
+
+[@17]
+#IF
+checkitem 卓越星王战盔 1
+checkitem 卓越星王战链 1
+checkitem 卓越星王战镯 2
+checkitem 卓越星王战戒 2
+checkitem 卓越星王战带 1
+checkitem 卓越星王战靴 1
+#ACT
+take 卓越星王战盔 1
+take 卓越星王战链 1
+take 卓越星王战镯 2
+take 卓越星王战戒 2
+take 卓越星王战带 1
+take 卓越星王战靴 1
+GameGold +  300000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝300000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 300
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符300个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 卓越首饰是整套回收.请检查你是否拥有以下装备:\　\卓越星王战盔*1　卓越星王战链*1\　\卓越星王战镯*2　卓越星王战戒*2\　\卓越星王战带*1　卓越星王战靴*1
+BREAK
+
+[@18]
+#IF
+checkitem 卓越星王道盔 1
+checkitem 卓越星王道链 1
+checkitem 卓越星王道镯 2
+checkitem 卓越星王道戒 2
+checkitem 卓越星王道带 1
+checkitem 卓越星王道靴 1
+#ACT
+take 卓越星王道盔 1
+take 卓越星王道链 1
+take 卓越星王道镯 2
+take 卓越星王道戒 2
+take 卓越星王道带 1
+take 卓越星王道靴 1
+GameGold +  200000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝200000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 200
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符200个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 卓越首饰是整套回收.请检查你是否拥有以下装备:\　\卓越星王道盔*1　卓越星王道链*1\　\卓越星王道镯*2　卓越星王道戒*2\　\卓越星王道带*1　卓越星王道靴*1
+BREAK
+
+[@19]
+#IF
+checkitem 卓越星王法盔 1
+checkitem 卓越星王法链 1
+checkitem 卓越星王法镯 2
+checkitem 卓越星王法戒 2
+checkitem 卓越星王法带 1
+checkitem 卓越星王法靴 1
+#ACT
+take 卓越星王法盔 1
+take 卓越星王法链 1
+take 卓越星王法镯 2
+take 卓越星王法戒 2
+take 卓越星王法带 1
+take 卓越星王法靴 1
+GameGold +  100000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用我服推出的在线充值购买功能，获得元宝100000个.如果您也需要充值,请赶紧找充值使者充值获取吧！！
+GAMEGIRD + 100
+SENDMSG 1  ★[%s]:玩家<$USERNAME>使用本服在线自动冲值系统购买,灵符100个
+messagebox 〖提示〗恭喜你挥手成功，系统已经为你兑换成等值的网银冲值。
+BREAK
+#ELSEACT
+messagebox 卓越首饰是整套回收.请检查你是否拥有以下装备:\　\卓越星王法盔*1　卓越星王法链*1\　\卓越星王法镯*2　卓越星王法戒*2\　\卓越星王法带*1　卓越星王法靴*1
+BREAK

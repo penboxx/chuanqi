@@ -1,0 +1,231 @@
+[@初始锻造]
+{
+锻造需要用强大的意志力，一旦开始锻造不管是否在线都将持续进行\
+用户确认自己需要锻造的元宝数量后，\
+<COLOR=clLime 30个元宝可以锻造1小时，随之附赠60颗金刚石。>\
+一旦申请元宝锻造成功后，此次锻造将不能被终止\
+锻造所获得的经验值，必须再到我这里来领取\
+<COLOR=clLime 进行元宝锻造后无论你是否在线，锻造都不会中断>\
+<同意元宝锻造的规则并接受元宝锻造/@元宝锻造>\
+<返回/@main>\
+
+[@元宝锻造]
+请输入想要用于锻造经验值的元宝数量\
+一次申请范围在1~300个元宝之间\ \
+特别提示:一次申请满50个元宝，将有机会得到一份礼品；\
+一次性申请满300元宝，将有机会得到一份超级大奖！\
+领取礼品前请注意留有足够的包裹空间，否则会导致不能正常领取\
+<请输入用于锻造的元宝数量/@@InPutInteger1>\
+<取消/@exit>\
+
+[@@InPutInteger1]
+#If
+Check [044] 0
+#ACT
+QUERYVALUE 1 1 3 @提交锻造数量 请在下面输入需要锻造的元宝数量（单位：30）\例如：您想使用30元宝锻造金刚石，那么就直接输入数字：1 NPC
+#ELSESAY
+　[失败]：您的上次的锻造尚未完成\ \
+<返回/@main>\
+
+[@提交锻造数量]
+#IF
+SMALL M1 1
+#SAY
+　[失败]：一次申请范围在1~300个元宝之间\ \
+<返回/@main>\
+#ACT
+BREAK
+#IF
+Large M1 300
+#SAY
+　[失败]：一次申请范围在1~300个元宝之间\ \
+<返回/@main>\
+#ACT
+BREAK
+
+#IF
+#ACT
+MOV M3 30
+MUL M3 <$STR(M1)>
+
+#IF
+CHECKGAMEGOLD ? <$STR(M3)>
+#SAY
+<$USERNAME>，你打算使用 <$STR(M3)> 个元宝来锻造经验值，\
+并且，整个锻造过程你将获得附赠：<$STR(M6)>颗金刚石，\
+这可能要花费 <$STR(M1)> 小时的时间，请注意，锻造一但开始，\
+就无法终止；锻造成功后，您必须到我这里来领取经验值，\
+领取经验值的同时，您也将获得锻造附赠品：金刚石。\
+当您一次领取满12颗金刚石时，还会得到神秘礼品！\
+你确认开始锻造吗？\ \
+<确认开始锻造/@确认开始锻造>  <放弃/@exit>\
+#ACT
+MOV M6 60
+MUL M6 $STR(M1)
+BREAK
+#ELSESAY
+对不起，你没有那么多的元宝。\
+
+[@确认开始锻造]
+#IF
+CHECKGAMEGOLD ? <$STR(M3)>
+#ACT
+Set [044] 1
+GAMEGOLD - <$STR(M3)>
+AddUserDate ..\QuestDiary\数据文件\日期.txt
+CALCVAR HUMAN 分钟计 = 0
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+CALCVAR HUMAN 小时计 = 0
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+CALCVAR HUMAN 分钟算 = 0
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+CALCVAR HUMAN 小时算 = 0
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+CALCVAR HUMAN 完成总数 = 0
+SAVEVAR HUMAN 完成总数 ..\QuestDiary\数据文件\完成总数Save.txt
+CALCVAR HUMAN 已领取数 = 0
+SAVEVAR HUMAN 已领取数 ..\QuestDiary\数据文件\已领取数Save.txt
+CALCVAR HUMAN 金刚石总数 = 0
+SAVEVAR HUMAN 金刚石总数 ..\QuestDiary\数据文件\金刚石总数Save.txt
+CALCVAR HUMAN 尚未完成 = 0
+SAVEVAR HUMAN 尚未完成 ..\QuestDiary\数据文件\尚未完成Save.txt
+CALCVAR HUMAN 剩余领取 = 0
+SAVEVAR HUMAN 剩余领取 ..\QuestDiary\数据文件\剩余领取Save.txt
+CALCVAR HUMAN 金刚石总数 = <$STR(M6)>
+SAVEVAR HUMAN 金刚石总数 ..\QuestDiary\数据文件\金刚石总数Save.txt
+CALCVAR HUMAN 尚未完成 = <$STR(M6)>
+SAVEVAR HUMAN 尚未完成 ..\QuestDiary\数据文件\尚未完成Save.txt
+#CALL [\系统功能\元宝锻造\时间计算.txt] @小时计
+#CALL [\系统功能\元宝锻造\时间计算.txt] @分钟计
+GOTO @领取意外惊喜
+BREAK
+#ELSESAY
+对不起，你没有那么多的元宝。\
+
+[@领取意外惊喜]
+#IF
+LARGE M1 299
+#SAY
+恭喜您申请元宝锻造金刚石成功。\ \
+<离开/@exit>\
+#ACT
+ReadRandomStr .\QuestDiary\抽取数据\元宝锻造奖励\300元宝.txt S锻造奖励
+GIVE <$STR(S锻造奖励)> 1
+ReadRandomStr .\QuestDiary\抽取数据\元宝锻造奖励\300元宝.txt S锻造奖励
+GIVE <$STR(S锻造奖励)> 1
+BREAK
+#IF
+LARGE M1 49
+SMALL M1 300
+#SAY
+恭喜您申请元宝锻造金刚石成功。\ \
+<离开/@exit>\
+#ACT
+ReadRandomStr .\QuestDiary\抽取数据\元宝锻造奖励\50元宝.txt S锻造奖励
+GIVE <$STR(S锻造奖励)> 1
+BREAK
+#ELSESAY
+恭喜您申请元宝锻造金刚石成功。\ \
+<离开/@exit>\
+
+
+[@IsInFilterList]
+#If
+CheckLevelEx > 0 
+#Act
+MessageBox 输入数据中包含了非法字符.请重新编辑
+Goto @Main
+Break
+}
+
+[@时间设置]
+{
+#IF
+Check [044] 0
+#SAY
+还未申请锻造！\ \
+<返回/@main>\
+#ACT
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+#CALL [\系统功能\元宝锻造\时间计算.txt] @小时算
+#CALL [\系统功能\元宝锻造\时间计算.txt] @分钟算
+MOV D0 <$HUMAN(分钟计)>
+MOV D1 <$HUMAN(分钟算)>
+MOV D2 <$HUMAN(小时计)>
+MOV D3 <$HUMAN(小时算)>
+MOV D9 <$HUMAN(小时算)>
+DEC D9 <$STR(D2)>
+;-----------------------
+#IF
+CHECKUSERDATE ..\QuestDiary\数据文件\日期.txt = 0 p0
+equal D3 <$STR(D2)>
+#ACT
+#CALL [\系统功能\元宝锻造\锻造计算.txt] @锻造未成
+BREAK
+#IF
+CHECKUSERDATE ..\QuestDiary\数据文件\日期.txt = 0 p0
+large D3 <$STR(D2)>
+large D0 <$STR(D1)>
+#ACT
+DEC D3 <$STR(D2)>
+DEC D3 1
+MUL D3 60
+#CALL [\系统功能\元宝锻造\锻造计算.txt] @锻造完成
+BREAK
+;-----------------------
+#IF
+CHECKUSERDATE ..\QuestDiary\数据文件\日期.txt = 0 p0
+large D3 <$STR(D2)>
+equal D1 <$STR(D0)>
+#ACT
+DEC D3 <$STR(D2)>
+MUL D3 60
+#CALL [\系统功能\元宝锻造\锻造计算.txt] @锻造完成
+BREAK
+#IF
+CHECKUSERDATE ..\QuestDiary\数据文件\日期.txt = 0 p0
+large D3 <$STR(D2)>
+large D1 <$STR(D0)>
+#ACT
+DEC D3 <$STR(D2)>
+MUL D3 60
+#CALL [\系统功能\元宝锻造\锻造计算.txt] @锻造完成
+BREAK
+;----------------------
+#IF
+CHECKUSERDATE ..\QuestDiary\数据文件\日期.txt > 0 p0
+large D3 <$STR(D2)>
+#ACT
+MUL P0 24
+DEC D3 <$STR(D2)>
+INC D3 <$STR(P0)>
+MUL D3 60
+#CALL [\系统功能\元宝锻造\锻造计算.txt] @锻造完成
+BREAK
+#IF
+CHECKUSERDATE ..\QuestDiary\数据文件\日期.txt > 0 p0
+equal D3 <$STR(D2)>
+#ACT
+MUL P0 24
+MOV D3 <$STR(P0)>
+MUL D3 60
+#CALL [\系统功能\元宝锻造\锻造计算.txt] @锻造完成
+BREAK
+#IF
+CHECKUSERDATE ..\QuestDiary\数据文件\日期.txt > 0 p0
+large D2 <$STR(D3)>
+#ACT
+DEC P0 1
+MUL P0 24
+MOV D8 24
+DEC D8 <$STR(D2)>
+INC D8 <$STR(D3)>
+INC D8 <$STR(P0)>
+MOV D3 <$STR(D8)>
+MUL D3 60
+#CALL [\系统功能\元宝锻造\锻造计算.txt] @锻造完成
+BREAK
+}

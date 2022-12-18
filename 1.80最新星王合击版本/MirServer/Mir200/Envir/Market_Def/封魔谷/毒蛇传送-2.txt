@@ -1,0 +1,399 @@
+#INCLUDE 5bo.txt
+[@main]
+#IF
+#ACT
+#SAY
+<比奇大城/@bwmove>　　　　<银杏山谷/@ginmove>　　　　<新手小村/@新手小村>　　\
+<封魔神谷/@fmgmove>　　　　<婚姻神殿/@姻缘神殿>　　　　<封魔神殿/@fengmo>　　\
+<白日天门/@wwmove>　　　　<苍月海岛/@cymove>　　　　<攻沙区域/@samove>　　　\
+<盟重土城/@tucheng>　　　　<激情泡点/@jqmove>　　　　<金钻服务/@服务>　　　 \
+
+
+
+
+[@jqmove]
+#IF
+#ACT
+MAPMOVE 3 340 339
+
+
+[@tucheng]
+#IF
+#ACT
+MAPMOVE 3 333 333
+
+[@新手小村]
+#act
+mapmove 0 289 615
+
+
+[@姻缘神殿]
+#IF
+#ACT
+take 金币 1000
+give 回城卷 1
+mapmove M101
+
+[@cymove]
+#IF 
+#ACT
+mapmove 5 140 338
+break 
+
+
+[@封魔殿]
+#IF
+#ACT
+give 回城卷 1
+mapmove D2013
+
+
+
+
+[@122]
+#IF
+checkgamegold > 14
+checknamelist ..\QuestDiary\会员名单.txt
+#ACT
+gamegold - 15
+mapmove hanpq6
+SENDMSG 6 尊贵的『%s』会员前往主打vip贵宾房间,祝愿他满载而归！
+give 回城卷 1
+#ELSESAY
+您不是会员玩家，不可以免费进入。\ \
+
+[@111]
+#IF
+checknamelist ..\QuestDiary\会员名单.txt
+#ACT
+mapmove shouxue1
+SENDMSG 6 尊贵的『%s』会员前往狂暴地图寻宝,祝愿他满载而归！
+give 回城卷 1
+#ELSESAY
+您不是金钻玩家，不可以免费进入。\ \
+
+[@主打地图]
+#IF
+checkitem 金条 1
+#ACT
+take 金条 1
+give 回城卷 1
+mapmove shouxue1
+#ELSEACT
+messagebox 对不起,你没有一根金条.
+close
+
+
+
+
+[@三宫]
+#IF
+checklevel 50
+#ACT
+give 回城卷 1
+mapmove 0137a 
+SENDMSG 6 您的当前声望指数为：<$CREDITPOINT>
+#ELSEACT
+MESSAGEBOX 你有50级吗？
+
+[@pangu]
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove D2008a 
+SENDMSG 6 您的当前声望指数为：<$CREDITPOINT>
+#ELSEACT
+messagebox 进入盘古之地需要10W金币！
+
+
+[@魔宫鬼殿]
+嘿嘿！小伙子，欢迎来到微变，这是一个未知的世界，这最深处是\
+所有BOOS级恶魔聚会场所<魔宫禁地>,和<烈火鬼殿>里面有大量的财宝！\ \
+          <★前住魔宫★/@mogong>     <★前住鬼殿★/@guidian>
+
+[@mommove]
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\
+进入本地图前四层需要等级达到45级以上，声望10点最后一层需要等级\
+50级，50w金钱，声望10点，前四层允许夫妻传送，记忆拉人！\ \
+【<鬼殿一层/@111>】【<鬼殿二层/@122>】【<鬼殿三层/@guidian3>】【<鬼殿四层/@guidian4>】【<烈火鬼殿/@guidian5>】\\
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\
+
+[@guidian1]
+#IF
+checklevel 45
+#ACT
+give 回城卷 1
+mapmove ly6
+SENDMSG 6 您的当前声望指数为：<$CREDITPOINT>
+#ELSEACT
+MESSAGEBOX 你有45级吗？
+
+[@guidian2]
+#IF
+checklevel 45
+#ACT
+give 回城卷 1
+mapmove ly7
+SENDMSG 6 您的当前声望指数为：<$CREDITPOINT>
+#ELSEACT
+MESSAGEBOX 你有45级吗？
+
+[@guidian3]
+#IF
+checklevel 45
+#ACT
+give 回城卷 1
+mapmove ly8
+SENDMSG 6 您的当前声望指数为：<$CREDITPOINT>
+#ELSEACT
+MESSAGEBOX 你有45级吗？
+
+[@guidian4]
+#IF
+checklevel 45
+#ACT
+give 回城卷 1
+mapmove ly9
+SENDMSG 6 您的当前声望指数为：<$CREDITPOINT>
+#ELSEACT
+MESSAGEBOX 你有45级吗？
+
+[@guidian5]
+#IF
+checklevel 50
+CHECKCREDITPOINT > 9
+#ACT
+CREDITPOINT - 10
+give 回城卷 1
+mapmove ly10
+SENDMSG 6 您的当前声望指数为：<$CREDITPOINT>
+#ELSEACT
+MESSAGEBOX 你有50级吗？还有声望10点你有吗？
+
+
+[@momgong]
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\
+进入本地图前四层需要等级达到45级以上，声望10点最后一层需要等级\
+50级，50w金钱，声望10点，前四层允许夫妻传送，记忆拉人！\ \
+【<魔宫一层/@mogong1>】【<魔宫二层/@mogong2>】【<魔宫三层/@mogong3>】【<魔宫四层/@mogong4>】【<魔宫禁地/@mogong5>】\\
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\
+
+[@mogong1]
+#IF
+checklevel 45
+#ACT
+give 回城卷 1
+mapmove ly1
+SENDMSG 6 您的当前声望指数为：<$CREDITPOINT>
+#ELSEACT
+MESSAGEBOX 你有45级吗？
+
+[@mogong2]
+#IF
+checklevel 45
+#ACT
+give 回城卷 1
+mapmove ly3
+SENDMSG 6 您的当前声望指数为：<$CREDITPOINT>
+#ELSEACT
+MESSAGEBOX 你有45级吗？
+
+[@mogong3]
+#IF
+checklevel 45
+#ACT
+give 回城卷 1
+mapmove ly4
+SENDMSG 6 您的当前声望指数为：<$CREDITPOINT>
+#ELSEACT
+MESSAGEBOX 你有45级吗？
+
+[@mogong4]
+#IF
+checklevel 45
+#ACT
+give 回城卷 1
+mapmove ly5
+SENDMSG 6 您的当前声望指数为：<$CREDITPOINT>
+#ELSEACT
+MESSAGEBOX 你有45级吗？
+
+[@mogong5]
+#IF
+checklevel 50
+CHECKCREDITPOINT > 9
+#ACT
+CREDITPOINT - 10
+give 回城卷 1
+mapmove ly2
+SENDMSG 6 您的当前声望指数为：<$CREDITPOINT>
+#ELSEACT
+MESSAGEBOX 你有50级吗？还有声望10点你有吗？
+
+[@jjf004]
+#IF
+checklevel 45
+checkgold 1000000
+#ACT
+take 金币 1000000
+CREDITPOINT - 10
+give 回城卷 1
+mapmove d2004
+SENDMSG 6 您的当前声望指数为：<$CREDITPOINT>
+#ELSEACT
+messagebox 进入废弃废墟需要玩家等级大于45级，100W金币！
+
+[@gotosh]
+#IF
+CHECKLEVELEX > 39
+CHECKCREDITPOINT > 4
+#ACT
+CREDITPOINT - 5
+give 回城卷 1
+mapmove d711 205 198
+#ELSEACT
+MESSAGEBOX 你有40级吗？还有声望5点你有吗？
+
+[@yb在线充值]
+#IF
+#ACT
+messagebox 土城安全区找<短信元宝使者>进行元宝充值,坐标343,338。
+
+[@csyhfjy]
+#IF 
+CheckLevelEx > 35
+#ACT
+Gmexecute 恢复禁言 Self
+#ELSEACT
+SENDMSG 6 35级以上玩家才能恢复禁言。
+
+[@魔龙血路]
+#ACT
+give 回城卷 1
+mapmove 65
+
+
+[@魔龙血域]
+#ACT
+give 回城卷 1
+mapmove 66
+
+
+[@魔龙血域]
+#ACT
+give 回城卷 1
+mapmove 66
+
+
+
+[@zhu7]
+#IF
+#ACT
+take 金币 2000
+give 回城卷 1
+mapmove D717 
+
+[@h8]
+#IF
+#ACT
+take 金币 2000
+give 回城卷 1
+mapmove h008
+
+[@w3]
+#IF
+#ACT
+take 金币 2000
+give 回城卷 1
+mapmove d024
+
+[@bzmove]
+#IF
+#ACT
+take 金币 2000
+give 回城卷 1
+mapmove D2008 41 74
+
+[@samove] 
+#IF
+#ACT
+take 金币 2000
+give 回城卷 1
+mapmove 3 716 406
+
+
+
+[@bwmove]
+#IF
+#ACT
+take 金币 1000
+mapmove 0 333 268
+
+[@ginmove]
+#IF
+#ACT
+take 金币 1000
+mapmove 0 634 612
+
+[@brdmove]
+#IF
+#ACT
+take 金币 1000
+mapmove 0 288 615
+
+[@mwmove]
+#IF
+#ACT
+take 金币 1000
+mapmove 3 330 330
+
+[@wwmove]
+#IF
+#ACT
+take 金币 1000
+mapmove 11 177 324
+
+
+[@fmgmove]
+#IF
+#ACT
+take 金币 1000
+mapmove 4 240  200
+
+[@zumasimove]
+#IF
+#ACT
+take 金币 2000
+give 回城卷 1
+mapmove D5071
+
+[@cymove] 
+#IF 
+#ACT 
+take 金币 2000
+give 回城卷 1
+mapmove D1004 175 123
+
+[@zdmove] 
+#IF 
+#ACT 
+take 金币 2000
+give 回城卷 1
+mapmove 3 298 337
+
+[@wzmove]
+#IF
+#ACT 
+take 金币 2000
+give 回城卷 1
+mapmove M001 202 11
+
+
+[@fengmo]
+#IF
+#ACT 
+take 金币 2000
+give 回城卷 1
+mapmove D2013

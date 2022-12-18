@@ -1,0 +1,511 @@
+[@MAIN]
+╔┄╗╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗╔┄╗\
+┆<COLOR=clLime ★>┆┆ <比奇大城/@比奇大城>  <银杏山谷/@银杏山谷>  <新 手 村/@新手小村>  <白 日 门/@白日门> ┆┆<COLOR=clLime ★>┆\
+┆<COLOR=clLime 云>┆┆ <盟重土城/@盟重土城>  <封 魔 谷/@封魔谷>  <毒蛇山谷/@毒蛇山谷>  <苍 月 岛/@苍月岛> ┆┆<COLOR=clLime 长>┆\
+┆<COLOR=clLime 海>┆╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╣┆<COLOR=clLime 久>┆\
+┆<COLOR=clLime 传>┆┆ <比奇矿区/@比奇矿区>  <死亡山谷/@死亡山谷>  <沃玛寺庙/@沃玛寺庙>  <石墓洞口/@石墓洞口> ┆┆<COLOR=clLime 稳>┆\
+┆<COLOR=clLime 奇>┆┆ <祖玛寺庙/@祖玛寺庙>  <牛魔寺庙/@牛魔寺庙>  <尸魔洞穴/@尸魔洞穴>  <骨魔洞穴/@骨魔洞穴> ┆┆<COLOR=clLime 定>┆\
+┆<COLOR=clLime ★>┆┆ <赤月峡谷/@赤月峡谷>  <幻境洞口/@幻境洞口>  <未知暗殿/@未知暗殿>  <沙城区域/@沙城区域> ┆┆<COLOR=clLime ★>┆\
+╚┄╝╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝╚┄╝\
+
+
+[@沙城区域]
+云海1.76传奇最新沙巴克多点传送策略战，激情从这里开始！\
+　\
+<传送到沙巴克大门外面/@sdm>  (防外援46级以上可以传送)\
+　\
+<传送到沙巴克武器店外/@wqdw>  (防外援46级以上可以传送)\
+　\
+<传送到沙巴克监狱门口/@jymk>  (防外援46级以上可以传送)\
+　\
+<传送到沙巴克衣服店后/@yfdh>  (防外援46级以上可以传送)\
+
+[@sdm]
+#IF
+checklevelex > 45
+#ACT
+MAPMOVE 3 676 334
+BREAK
+#ELSESAY
+你没有46级，不能进行传送！
+<返回/@main>\
+
+[@wqdw]
+#IF
+checklevelex > 45
+#ACT
+MAPMOVE 3 633 319
+BREAK
+#ELSESAY
+你没有46级，不能进行传送！
+<返回/@main>\
+
+[@jymk]
+#IF
+checklevelex > 45
+#ACT
+MAPMOVE 3 603 285
+BREAK
+#ELSESAY
+你没有46级，不能进行传送！
+<返回/@main>\
+
+[@yfdh]
+#IF
+checklevelex > 45
+#ACT
+MAPMOVE 3 661 266
+BREAK
+#ELSESAY
+你没有46级，不能进行传送！
+<返回/@main>\
+
+[@金币传送]
+<尸 王 殿/@传送05>      <生死之间/@传送06>      <沃玛三层/@传送07>      <石 墓 阵/@传送08>\ \
+<祖玛七层/@传送09>      <牛魔五层/@传送10>      <霸者大厅/@传送11>      <沙藏宝阁/@传送12>\ \
+<快择之地/@传送13>      <幻境七层/@传送14>      <王者禁地/@传送15>      <六新衣服/@传送16>\ \
+<返回/@MAIN>\
+
+
+[@传送01]
+#IF
+CHECKGOLD 100000
+#ACT
+GIVE 回城卷 1
+mapmove 0 659 218
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送02]
+#IF
+CHECKGOLD 100000
+#ACT
+GIVE 回城卷 1
+mapmove 3 333 333
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送03]
+#IF
+CHECKGOLD 100000
+#ACT
+GIVE 回城卷 1
+mapmove 5 140 338
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送04]
+#IF
+CHECKGOLD 100000
+#ACT
+mapmove 11 177 324
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送05]
+#IF
+CHECKGOLD 100000
+#ACT
+mapmove D402 138 107
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送06]
+#IF
+CHECKGOLD 100000
+#ACT
+mapmove  D613 9 51
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送07]
+#IF
+CHECKGOLD 100000
+#ACT
+mapmove D023 52 366
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送08]
+#IF
+CHECKGOLD 100000
+#ACT
+mapmove D715 83 81
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送09]
+#IF
+CHECKGOLD 100000
+#ACT
+mapmove D5071 8 10
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送10]
+#IF
+CHECKGOLD 100000
+#ACT
+mapmove D2076 94 130
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送11]
+#IF
+CHECKGOLD 100000
+#ACT
+mapmove D2008 84 85
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送12]
+#IF
+CHECKGOLD 100000
+#ACT
+mapmove h201 13 103
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送13]
+#IF
+CHECKGOLD 100000
+#ACT
+mapmove D1004 171 88
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送14]
+#IF
+CHECKGOLD 100000
+#ACT
+mapmove H007 161 172
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送15]
+#IF
+CHECKGOLD 100000
+#ACT
+mapmove h105 135 184
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否10万金币\
+<返回/@main>\
+
+[@传送16]
+　╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+　┆ <死亡神殿/@衣服01>    <地狱烈焰/@衣服02>    <钳虫巢穴/@衣服03> ┆\
+　╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╣\
+　┆ <堕落坟场/@衣服04>    <困惑殿堂/@衣服05>    <深渊魔域/@衣服06> ┆\
+　╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝
+
+[@衣服01]
+#IF
+CHECKGOLD 200000
+#ACT
+mapmove 4 205 218
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否20万金币\
+<返回/@main>\
+
+[@衣服02]
+#IF
+CHECKGOLD 200000
+#ACT
+mapmove 0 428 474
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否20万金币\
+<返回/@main>\
+
+[@衣服03]
+#IF
+CHECKGOLD 200000
+#ACT
+mapmove 11 343 325
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否20万金币\
+<返回/@main>\
+
+[@衣服04]
+#IF
+CHECKGOLD 200000
+#ACT
+mapmove 1 320 56
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否20万金币\
+<返回/@main>\
+
+[@衣服05]
+#IF
+CHECKGOLD 200000
+#ACT
+mapmove R001 55 94
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否20万金币\
+<返回/@main>\
+
+[@衣服06]
+#IF
+CHECKGOLD 200000
+#ACT
+mapmove 1 215 312
+CLOSE
+BREAK
+#ELSESAY
+对不起，请确认您是否20万金币\
+<返回/@main>\
+
+[@比奇矿区]
+#ACT
+GIVE 回城卷 1
+MAPMOVE 0 659 218
+BREAK
+
+[@死亡山谷]
+#IF 
+checkgold 10000
+#ACT
+TAKE 金币 10000
+MAPMOVE 3 142 92
+BREAK 
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+[@沃玛寺庙]
+#IF
+checkgold 10000
+#ACT
+TAKE 金币 10000
+GIVE 回城卷 1
+MAPMOVE D021 71 69
+BREAK
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+[@石墓洞口]
+#IF
+checkgold 10000
+#ACT
+TAKE 金币 10000
+GIVE 回城卷 1
+MAPMOVE D710 27 20
+BREAK
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+[@祖玛寺庙]
+#IF
+checkgold 10000
+#ACT
+TAKE 金币 10000
+GIVE 回城卷 1
+MAPMOVE 0157 17 17
+BREAK
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+[@牛魔寺庙]
+#IF
+checkgold 10000
+#ACT
+TAKE 金币 10000
+MAPMOVE 5 658 463
+GIVE 回城卷 1
+BREAK
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+[@骨魔洞穴]
+#IF
+checkgold 10000
+#ACT
+TAKE 金币 10000
+GIVE 回城卷 1
+MAPMOVE 5 544 131
+BREAK
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+[@尸魔洞穴]
+#IF
+checkgold 10000
+#ACT
+TAKE 金币 10000
+GIVE 回城卷 1
+MAPMOVE 5 522 615
+BREAK
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+[@赤月峡谷]
+#IF
+checkgold 10000
+#ACT
+TAKE 金币 10000
+GIVE 回城卷 1
+MAPMOVE 12  89 13
+BREAK
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+[@幻境洞口]
+#IF
+checkgold 10000
+#ACT
+TAKE 金币 10000
+GIVE 回城卷 1
+MAPMOVE H001 73 67
+BREAK
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+[@未知暗殿]
+#IF
+checkgold 10000
+#ACT
+TAKE 金币 10000
+GIVE 回城卷 1
+MAPMOVE M001 201 10
+BREAK
+#ELSEACT
+MESSAGEBOX 需要1万金币用来支付我们的服务费用!
+
+[@圣域之门]
+#IF
+checkgold 200000
+#ACT
+TAKE 金币 200000
+GIVE 回城卷 1
+MAPMOVE B101 12 14
+BREAK
+#ELSEACT
+MESSAGEBOX 需要20万金币用来支付我们的服务费用!
+
+[@qipais]
+注意:开放本棋牌室为防止“多色诈骗”法，在土密室，仓库2楼等\
+其他地方，部分人可以一次仍多颗色子，想仍多少点就仍多少点！\
+<COLOR=CLRED 在庄家仍色子的时候，将鼠标放在色子上，看是否叠的多颗色子>\
+<COLOR=CLRED 如果是叠，必是骗子...>\
+注意：<COLOR=CLYELLOW 跑单自负，请在信任庄家的情况下进行游戏!>\
+进入<防骗棋牌⑴号包厢/@gofp1>\
+进入<防骗棋牌⑵号包厢/@gofp2>\
+进入<防骗棋牌⑶号包厢/@gofp3>\
+进入<防骗棋牌⑷号包厢/@gofp4>\
+
+[@gofp1]
+#ACT
+MAPMOVE FPQP1
+
+[@gofp2]
+#ACT
+MAPMOVE FPQP2
+
+[@gofp3]
+#ACT
+MAPMOVE FPQP3
+
+[@gofp4]
+#ACT
+MAPMOVE FPQP4
+
+;======普通传送======
+[@盟重土城]
+#ACT
+MAPMOVE 3 333 333
+CLOSE
+BREAK
+
+[@毒蛇山谷]
+#ACT
+MAPMOVE 2 501 484
+CLOSE
+BREAK
+
+[@比奇大城]
+#ACT
+MAPMOVE 0 333 268
+CLOSE
+BREAK
+
+[@苍月岛]
+#ACT
+MAPMOVE 5 140 338
+CLOSE
+BREAK
+
+[@封魔谷]
+#ACT
+MAPMOVE 4 241 202
+CLOSE
+BREAK
+  
+[@白日门]
+#ACT
+MAPMOVE 11 177 324
+CLOSE
+BREAK
+
+[@新手小村]
+#ACT
+MAPMOVE 0 288 615
+CLOSE
+BREAK
+  
+[@银杏山谷]
+#ACT
+MAPMOVE 0 634 612
+CLOSE
+BREAK

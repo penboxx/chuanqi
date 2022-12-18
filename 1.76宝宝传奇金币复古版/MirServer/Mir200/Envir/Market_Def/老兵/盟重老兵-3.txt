@@ -1,0 +1,339 @@
+
+[@main]
+<COLOR=clRed 在这里我将为你提供一些传送！>\  \ 
+<《商店传送》/@商店传送>  <《城市传送》/@城市传送>\   \  \  
+<《洞口传送》/@洞口传送>  <《收费传送》/@收费传送>\   \  
+<COLOR=clAqua 精锐宝宝感谢大家的支持！客服QQ911560366.！>\
+
+[@收费传送]
+<COLOR=clRed 以下地图收取10W费用才可进入！> \
+<尸 王 殿/@传送001>        <沃玛三层/@传送002>      <幻境三层/@传送003>       <幻境一层/@神秘幻境>\  \ 
+<石 墓 阵/@传送004>        <祖玛七层/@传送005>      <牛魔六层/@传送006>\  \ 
+<万恶之源/@传送007>        <幻境六层/@传送008>      <未知暗殿/@传送009>\  \ 
+<恶魔祭坛/@传送010>        <赤月老巢/@传送011>      <霸者大厅/@传送012>\  \ 
+
+
+[@神秘幻境]
+#if
+;checkgold 100000
+#ACT
+;take 金币 100000
+mapmove H001
+#elsesay
+你没有10w金币来支付我们的服务费用!\
+
+[@传送001]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove Q004 15 9
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送002]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D023  52 366
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送003]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove H003 
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送004]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D715 83 81 
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送005]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D5071 8 10 
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送006]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D2078 250 250
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送007]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D10071
+break
+#ELSESAY
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送008]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove H006 
+break
+#ELSESAY
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送009]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove m001
+break
+#ELSESAY
+你没有10w金币用来支付我们的服务费用!\\
+
+[@传送010]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D10051 179 54  
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+
+[@传送011]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D10052 139 25
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+
+[@传送012]
+#if
+checkgold 100000
+#act
+take 金币 100000
+mapmove D2008 84 85
+break
+#ELSESAY 
+你没有10w金币用来支付我们的服务费用!\\
+
+
+[@洞口传送]
+<矿区洞口/@矿区洞口>    <蜈蚣洞口/@蜈蚣洞口>   <沃玛洞口/@沃玛洞口>   <石墓洞口/@石墓洞口>\   \  \     
+<祖玛洞口/@祖玛洞口>    <牛魔洞口/@牛魔洞口>   <尸魔洞口/@尸魔洞口>\   \  \     
+<赤月洞口/@赤月洞口>    <封魔洞口/@封魔洞口>   <骨魔洞口/@骨魔洞口>\   \  \ 
+    
+
+
+[@矿区洞口]
+#IF
+#ACT
+mapmove 0 659 218
+break
+
+[@蜈蚣洞口]
+#IF
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 3 142 92
+break
+#ELSESAY
+需要1000金币用来支付我们的服务费用!\
+
+[@沃玛洞口]
+#IF
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove D021 71 69
+break
+#ELSESAY
+需要1000金币用来支付我们的服务费用!\
+
+[@石墓洞口]
+#IF
+checkgold 1000
+#act
+take 金币 1000
+mapmove D710 27 20
+#ELSESAY
+你没有1000金币用来支付我们的服务费用!\
+
+[@赤月洞口]
+#IF
+checkgold 1000
+#act
+take 金币 1000
+mapmove 12 89 13
+#ELSESAY
+你没有3000金币用来支付我们的服务费用!\
+
+[@祖玛洞口]
+#IF
+checkgold 1000
+#act
+take 金币 1000
+mapmove 0157 17 17
+#ELSESAY
+你没有1000金币用来支付我们的服务费用!\
+
+[@牛魔洞口]
+#IF
+checkgold 1000
+#act
+take 金币 1000
+mapmove 5 658 463
+#ELSESAY
+你没有1000金币用来支付我们的服务费用!\
+
+[@尸魔洞口]
+#IF 
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 5 522 615
+break 
+#ELSESAY 
+你没有1000金币用来支付我们的服务费用!\
+
+[@骨魔洞口]
+#IF 
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 5 545 131
+break 
+#ELSESAY 
+你没有1000金币用来支付我们的服务费用!\
+
+[@封魔洞口]
+#IF 
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 4 60 71
+break 
+#ELSESAY 
+你没有1000金币用来支付我们的服务费用!\
+
+[@城市传送]
+<比奇大城/@比奇大城>    <银杏山谷/@银杏山谷>   <苍月海岛/@苍月小岛>   <白日天门/@白日天门>\   \  \
+<盟重土城/@盟重土城>    <封魔神谷/@封魔神谷>   <毒蛇山谷/@毒蛇山谷>   <沙城区域/@沙城区域>\    \  \
+
+[@比奇大城]
+#if
+#ACT
+mapmove 0 333 268
+break
+
+[@银杏山谷]
+#if
+#ACT
+mapmove 0 650 624
+break
+
+[@比奇村庄]
+#if
+#ACT
+mapmove 0 290 615
+break
+
+[@毒蛇山谷]
+#if
+#ACT
+mapmove 2 503 483
+break
+
+[@盟重土城]
+#if
+#ACT
+mapmove 3 333 333
+break
+
+[@白日天门]
+#if
+#ACT
+mapmove 11 177 324
+break
+
+[@封魔神谷]
+#if
+#ACT
+mapmove 4 241 203
+break
+
+[@苍月小岛]
+#if
+#ACT
+mapmove 5 140 338
+break
+
+[@沙城区域]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove 3 706 407
+break
+
+
+
+[@商店传送]
+<≮铁匠铺≯/@Gwe>   <≮客  栈≯/@Gwh>\
+<≮首饰店≯/@Gza>   <≮布料店≯/@Gpo>\
+<≮书  店≯/@Gbo>\  \
+
+
+[@Gwe]
+#IF
+#ACT
+map 0159
+
+[@Gpo]
+#IF
+#ACT
+map 0149
+
+[@Gza]
+#IF
+#ACT
+map 0158
+
+[@Gwh]
+#IF
+#ACT
+map 0145
+
+[@Gbo]
+#IF
+#ACT
+map 0161
+

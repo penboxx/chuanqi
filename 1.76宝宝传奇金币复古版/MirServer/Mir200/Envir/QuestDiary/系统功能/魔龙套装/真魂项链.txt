@@ -1,0 +1,60 @@
+[@开始真魂项链]
+{
+真魂项链所需物品：\
+金刚石:1000颗\
+强化光芒项链三件\
+光芒绒丝、魔龙颚骨、魔龙骨、魔龙牙各五颗\
+<强化后属性/@1> 神秘属性\
+<进行强化/@进行真魂项链>\
+<返回/@升级魔龙戒指>\
+<退出/@EXIT>\
+
+[@进行真魂项链]
+#IF
+CHECKGAMEDIAMOND ? 1000
+CHECKITEM 强化光芒项链 3
+CHECKITEM 魔龙颚骨 5
+CHECKITEM 光芒绒丝 5
+CHECKITEM 魔龙骨 5
+CHECKITEM 魔龙牙 5
+#ACT
+MOVR d7 2
+DELAYGOTO 1 @强化光芒项链开始强化
+#ELSESAY
+对不起：<$USERNAME>真魂项链所需物品：\
+金刚石:1000颗\
+强化光芒项链三件\
+光芒绒丝、魔龙颚骨、魔龙骨、魔龙牙各五颗\
+<返回/@升级魔龙戒指>\
+<退出/@EXIT>\
+
+[@强化光芒项链开始强化]
+#IF
+CHECKGAMEDIAMOND ? 1000
+CHECKITEM 强化光芒项链 3
+CHECKITEM 魔龙颚骨 5
+CHECKITEM 光芒绒丝 5
+CHECKITEM 魔龙骨 5
+CHECKITEM 魔龙牙 5
+EQUAL d7 1
+#ACT
+MOV d7 0
+GAMEDIAMOND - 1000
+TAKE 光芒绒丝 5
+TAKE 强化光芒项链 3
+TAKE 魔龙牙 5
+TAKE 魔龙骨 5
+TAKE 魔龙颚骨 5
+GIVE 真魂项链 1
+SENDMSG 0 恭喜:<$USERNAME>升级真魂项链成功！
+CLOSE
+#ELSEACT
+MOV d7 0
+GAMEDIAMOND - 1000
+TAKE 魔龙颚骨 5
+TAKE 光芒绒丝 5
+TAKE 魔龙骨  5
+TAKE 魔龙牙 5
+messagebox  可惜了：\<$USERNAME>你合成失败，魔龙材料和金刚石在合成过程中被熔化！
+CLOSE
+}

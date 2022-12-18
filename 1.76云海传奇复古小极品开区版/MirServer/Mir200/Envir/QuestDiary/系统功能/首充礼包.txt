@@ -1,0 +1,60 @@
+[@首充礼包]
+{
+首冲大礼包，赠送金刚石大于1，一个人物只可领取一次(不扣元宝)\
+领取物品如下：你当前金刚石:[<$GAMEDIAMOND>]\
+1. 祖玛装备一套\
+2. 三倍经验书一本\
+3. 你做好准备了吗?\
+\ \
+<我要领取/@领取>
+
+[@领取]
+#if
+CHECKGAMEDIAMOND > 1
+checkjob warrior
+Check [001] 0
+#act
+GIVE 绿色项链  1
+GIVE 黑铁头盔  1
+GIVE 骑士手镯  2
+GIVE 力量戒指  2
+GIVE 裁决之杖  1
+GIVE 三倍经验书  1
+SET [001] 1
+SENDMSG 0 恭喜:『%s』充值金刚石达到2个,领取了首充礼包物品！ 245 0 30
+
+#if
+CHECKGAMEDIAMOND > 1
+checkjob wizard
+Check [001] 0
+#act
+GIVE 恶魔铃铛  1
+GIVE 红宝石戒指  2
+GIVE 龙之手镯  2
+GIVE 紫碧螺  2
+GIVE 骨玉权杖  1
+GIVE 三倍经验书  1
+SET [001] 1
+SENDMSG 0 恭喜:『%s』充值金刚石达到2个,领取了首充礼包物品！ 245 0 30
+
+#if
+CHECKGAMEDIAMOND > 1
+checkjob Taoist
+Check [001] 0
+#act
+GIVE 灵魂项链  1
+GIVE 铂金戒指  1
+GIVE 三眼手镯  2
+GIVE 泰坦戒指  2
+GIVE 龙纹剑  1
+GIVE 三倍经验书  1
+SET [001] 1
+SENDMSG 0 恭喜:『%s』充值金刚石达到2个,领取了首充礼包物品！ 245 0 30
+
+#ELSEACT
+#if
+#act
+GIVE 首充礼包  1
+#say
+你已经领取过!或者还没有充值!
+}

@@ -1,0 +1,480 @@
+[@忽视目标防御]
+ {
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+ <项  链/@3H>{: <$NECKLACE>/SCOLOR=253}          <衣  服/@0H>{: <$DRESS>/SCOLOR=253}\
+ <左手镯/@6H>{: <$ARMRING_R>/SCOLOR=253}          <武  器/@1H>{: <$WEAPON>/SCOLOR=253}\
+ <右手镯/@5H>{: <$ARMRING_L>/SCOLOR=253}          <头  盔/@4H>{: <$HELMET>/SCOLOR=253}\
+ <左戒指/@8H>{: <$RING_R>/SCOLOR=253}          <勋  章/@2H>{: <$RIGHTHAND>/SCOLOR=253}\
+ <右戒指/@7H>{: <$RING_L>/SCOLOR=253}          <宝  石/@12H>{: <$CHARM>/SCOLOR=253}\
+ <腰  带/@10H>{: <$BELT>/SCOLOR=253}          <鞋  子/@11H>{: <$BOOTS>/SCOLOR=253}\
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+ {成功机率：４０％(配合普通幸运石可达到１００％)/SCOLOR=250}
+
+[@11H]
+#IF
+checkitem 红焰·石[无视] 1
+checkitem 幸运石 1
+CheckNewItemValue 11 4 < 3
+#ACT
+take 红焰·石[无视] 1
+take 幸运石 1
+SetNewItemValue 11 4 + 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的靴子已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$BOOTS>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 3
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 11 4 < 3
+#ACT
+take 红焰·石[无视] 1
+SetNewItemValue 11 4 + 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的靴子已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$BOOTS>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 1
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 11 4 < 3
+#ACT
+take 红焰·石[无视] 1
+goto @忽视目标防御
+GuildNoticeMsg 0 250 玩家『%s』提升忽视目标防御失败,建议配合幸运石加元素一次性成功！
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的靴子已经有了3%的忽视目标防御或者您的材料不足。
+break
+
+[@12H]
+#IF
+checkitem 红焰·石[无视] 1
+checkitem 幸运石 1
+CheckNewItemValue 12 4 < 3
+#ACT
+SetNewItemValue 12 4 + 1
+take 红焰·石[无视] 1
+take 幸运石 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的宝石已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$CHARM>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 3
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 12 4 < 3
+#ACT
+SetNewItemValue 12 4 + 1
+take 红焰·石[无视] 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的宝石已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$CHARM>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 1
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 12 4 < 3
+#ACT
+take 红焰·石[无视] 1
+goto @忽视目标防御
+GuildNoticeMsg 0 250 玩家『%s』提升忽视目标防御失败,建议配合幸运石加元素一次性成功！
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的宝石已经有了3%的忽视目标防御或者您的材料不足。
+break
+
+[@2H]
+#IF
+checkitem 红焰·石[无视] 1
+checkitem 幸运石 1
+CheckNewItemValue 2 4 < 3
+#ACT
+SetNewItemValue 2 4 + 1
+take 红焰·石[无视] 1
+take 幸运石 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的勋章已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$RIGHTHAND>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 3
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 2 4 < 3
+#ACT
+SetNewItemValue 2 4 + 1
+take 红焰·石[无视] 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的勋章已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$RIGHTHAND>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 1
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 2 4 < 3
+#ACT
+take 红焰·石[无视] 1
+goto @忽视目标防御
+GuildNoticeMsg 0 250 玩家『%s』提升忽视目标防御失败,建议配合幸运石加元素一次性成功！
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的勋章已经有了3%的忽视目标防御或者您的材料不足。
+break
+
+[@4H]
+#IF
+checkitem 红焰·石[无视] 1
+checkitem 幸运石 1
+CheckNewItemValue 4 4 < 3
+#ACT
+SetNewItemValue 4 4 + 1
+take 红焰·石[无视] 1
+take 幸运石 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的头盔已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$HELMET>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 3
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 4 4 < 3
+#ACT
+SetNewItemValue 4 4 + 1
+take 红焰·石[无视] 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的头盔已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$HELMET>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 1
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 4 4 < 3
+#ACT
+take 红焰·石[无视] 1
+goto @忽视目标防御
+GuildNoticeMsg 0 250 玩家『%s』提升忽视目标防御失败,建议配合幸运石加元素一次性成功！
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的头盔已经有了3%的忽视目标防御或者您的材料不足。
+break
+
+[@1H]
+#IF
+checkitem 红焰·石[无视] 1
+checkitem 幸运石 1
+CheckNewItemValue 1 4 < 3
+#ACT
+SetNewItemValue 1 4 + 1
+take 红焰·石[无视] 1
+take 幸运石 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的武器已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$WEAPON>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 3
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 1 4 < 3
+#ACT
+SetNewItemValue 1 4 + 1
+take 红焰·石[无视] 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的武器已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$WEAPON>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 1
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 1 4 < 3
+#ACT
+take 红焰·石[无视] 1
+goto @忽视目标防御
+GuildNoticeMsg 0 250 玩家『%s』提升忽视目标防御失败,建议配合幸运石加元素一次性成功！
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的武器已经有了3%的忽视目标防御或者您的材料不足。
+break
+
+[@0H]
+#IF
+checkitem 红焰·石[无视] 1
+checkitem 幸运石 1
+CheckNewItemValue 0 4 < 3
+#ACT
+SetNewItemValue 0 4 + 1
+take 红焰·石[无视] 1
+take 幸运石 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的衣服已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$DRESS>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 3
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 0 4 < 3
+#ACT
+SetNewItemValue 0 4 + 1
+take 红焰·石[无视] 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的衣服已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$DRESS>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 1
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 0 4 < 3
+#ACT
+take 红焰·石[无视] 1
+goto @忽视目标防御
+GuildNoticeMsg 0 250 玩家『%s』提升忽视目标防御失败,建议配合幸运石加元素一次性成功！
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的衣服已经有了3%的忽视目标防御或者您的材料不足。
+break
+
+[@10H]
+#IF
+checkitem 红焰·石[无视] 1
+checkitem 幸运石 1
+CheckNewItemValue 10 4 < 3
+#ACT
+SetNewItemValue 10 4 + 1
+take 红焰·石[无视] 1
+take 幸运石 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的腰带已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$BELT>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 3
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 10 4 < 3
+#ACT
+SetNewItemValue 10 4 + 1
+take 红焰·石[无视] 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的腰带已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$BELT>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 1
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 10 4 < 3
+#ACT
+take 红焰·石[无视] 1
+goto @忽视目标防御
+GuildNoticeMsg 0 250 玩家『%s』提升忽视目标防御失败,建议配合幸运石加元素一次性成功！
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的腰带已经有了3%的忽视目标防御或者您的材料不足。
+break
+
+[@7H]
+#IF
+checkitem 红焰·石[无视] 1
+checkitem 幸运石 1
+CheckNewItemValue 7 4 < 3
+#ACT
+SetNewItemValue 7 4 + 1
+take 红焰·石[无视] 1
+take 幸运石 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的右戒指已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$RING_L>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 3
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 7 4 < 3
+#ACT
+SetNewItemValue 7 4 + 1
+take 红焰·石[无视] 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的右戒指已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$RING_L>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 1
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 7 4 < 3
+#ACT
+take 红焰·石[无视] 1
+goto @忽视目标防御
+GuildNoticeMsg 0 250 玩家『%s』提升忽视目标防御失败,建议配合幸运石加元素一次性成功！
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的右戒指已经有了3%的忽视目标防御或者您的材料不足。
+break
+
+[@8H]
+#IF
+checkitem 红焰·石[无视] 1
+checkitem 幸运石 1
+CheckNewItemValue 8 4 < 3
+#ACT
+SetNewItemValue 8 4 + 1
+take 红焰·石[无视] 1
+take 幸运石 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的左戒指已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$RING_R>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 3
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 8 4 < 3
+#ACT
+SetNewItemValue 8 4 + 1
+take 红焰·石[无视] 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的左戒指已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$RING_R>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 1
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 8 4 < 3
+#ACT
+take 红焰·石[无视] 1
+goto @忽视目标防御
+GuildNoticeMsg 0 250 玩家『%s』提升忽视目标防御失败,建议配合幸运石加元素一次性成功！
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的左戒指已经有了3%的忽视目标防御或者您的材料不足。
+break
+
+[@5H]
+#IF
+checkitem 红焰·石[无视] 1
+checkitem 幸运石 1
+CheckNewItemValue 5 4 < 3
+#ACT
+SetNewItemValue 5 4 + 1
+take 红焰·石[无视] 1
+take 幸运石 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的右手镯已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$ARMRING_L>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 3
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 5 4 < 3
+#ACT
+SetNewItemValue 5 4 + 1
+take 红焰·石[无视] 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的右手镯已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$ARMRING_L>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 1
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 5 4 < 3
+#ACT
+take 红焰·石[无视] 1
+goto @忽视目标防御
+GuildNoticeMsg 0 250 玩家『%s』提升忽视目标防御失败,建议配合幸运石加元素一次性成功！
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的右手镯已经有了3%的忽视目标防御或者您的材料不足。
+break
+
+[@6H]
+#IF
+checkitem 红焰·石[无视] 1
+checkitem 幸运石 1
+CheckNewItemValue 6 4 < 3
+#ACT
+SetNewItemValue 6 4 + 1
+take 红焰·石[无视] 1
+take 幸运石 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的左手镯已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$ARMRING_R>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 3
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 6 4 < 3
+#ACT
+SetNewItemValue 6 4 + 1
+take 红焰·石[无视] 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的左手镯已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$ARMRING_R>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 1
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 6 4 < 3
+#ACT
+take 红焰·石[无视] 1
+goto @忽视目标防御
+GuildNoticeMsg 0 250 玩家『%s』提升忽视目标防御失败,建议配合幸运石加元素一次性成功！
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的左手镯已经有了3%的忽视目标防御或者您的材料不足。
+break
+
+[@3H]
+#IF
+checkitem 红焰·石[无视] 1
+checkitem 幸运石 1
+CheckNewItemValue 3 4 < 3
+#ACT
+SetNewItemValue 3 4 + 1
+take 红焰·石[无视] 1
+take 幸运石 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的项链已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$NECKLACE>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 3
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 3 4 < 3
+#ACT
+SetNewItemValue 3 4 + 1
+take 红焰·石[无视] 1
+goto @忽视目标防御
+SENDMSG 6 〖提示〗您的项链已经成功增加了1%的忽视目标防御。
+GuildNoticeMsg 0 250 玩家『%s』成功为(<$NECKLACE>)增加了1%的忽视目标防御！
+break
+
+#IF
+Random 1
+checkitem 红焰·石[无视] 1
+CheckNewItemValue 3 4 < 3
+#ACT
+take 红焰·石[无视] 1
+goto @忽视目标防御
+GuildNoticeMsg 0 250 玩家『%s』提升忽视目标防御失败,建议配合幸运石加元素一次性成功！
+break
+#ELSEACT
+SENDMSG 6 〖提示〗可能您的项链已经有了3%的忽视目标防御或者您的材料不足。
+break
+ }

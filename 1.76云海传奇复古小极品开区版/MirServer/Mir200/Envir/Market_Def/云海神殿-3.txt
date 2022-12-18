@@ -1,0 +1,30 @@
+[@main]
+<COLOR=clFuchsia ╔════════════════════════════╗>\
+<COLOR=clFuchsia ║>主要BOSS：<COLOR=clSkyBlue 云海神龙守护＋云海神龙>　   　　　　　　　　　 <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>刷新时间：<COLOR=clSkyBlue 120分钟..>                                     <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>可爆物品：<COLOR=clSkyBlue 赤月、屠龙、云海装备、>[爆率中]　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>危险指数：<COLOR=clLime ★★★★★★★★★★>　　　　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>进入条件：<COLOR=clRed 50级4000元宝+每秒扣除2元宝>　　　   　　　　　 <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>地图介绍：<COLOR=clRed 地图怪物强悍,建议带足元宝前往!>　　　    　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║><进入云海神殿/@jraxsd>　　　　　　　<查看怪物爆率/@ckgwblaxsd>　　　　　　　<返回/@EXIT><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚════════════════════════════╝>\
+
+[@jraxsd]
+#IF
+CHECKLEVELEX > 49
+CHECKGAMEGOLD > 3999
+#ACT
+GAMEGOLD - 4000
+MAPMOVE AXSD 38 91
+SENDMSG 0 勇士%s进入了云海神殿，此地图BOSS爆终极装备！
+GIVE 回城卷 1
+BREAK
+#ELSEACT
+MESSAGEBOX 进入需要等级50级和4000元宝。
+
+[@ckgwblaxsd]
+<COLOR=clFuchsia 服务器向每位玩家承诺：所有装备都可以在BOSS身上爆出！>\ \
+云海神龙(死亡掉落)：赤月、屠龙、云海装备、\ \
+云海神龙守护(死亡掉落)：赤月、屠龙、云海装备、\ \
+
+<返回/@main>\

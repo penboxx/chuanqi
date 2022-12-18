@@ -1,0 +1,204 @@
+[@装备]
+{
+#IF
+gender man
+checkjob warrior
+check [122] 0
+checklevelex = 8
+#ACT
+ChangeLevel = 35
+SET [122] 1
+give 四倍经验卷(赠品) 1
+GIVE 金币 200000
+GIVE 盟重传送石 1
+GIVE 随机传送石 1
+GIVE 在线回收(赠品) 1
+GIVE 重盔甲(男) 1
+GIVE 死神手套 2
+GIVE 龙之戒指 2
+GIVE 井中月 1
+GIVE 幽灵项链 1
+GIVE 道士头盔 1
+TAKEON 重盔甲(男) 0
+TAKEON 井中月 1
+TAKEON 幽灵项链 3
+TAKEON 道士头盔 4
+TAKEON 死神手套 5
+TAKEON 死神手套 6
+TAKEON 龙之戒指 7
+TAKEON 龙之戒指 8
+TAKE 乌木剑 1
+TAKE 布衣(男) 1
+QUERYBAGITEMS
+mapmove 3 330 330
+break
+
+#IF
+gender woman
+checkjob warrior
+check [123] 0
+checklevelex = 8
+#ACT
+ChangeLevel = 35
+SET [123] 1
+give 四倍经验卷(赠品) 1
+GIVE 金币 200000
+GIVE 盟重传送石 1
+GIVE 随机传送石 1
+GIVE 在线回收(赠品) 1
+GIVE 重盔甲(女) 1
+GIVE 死神手套 2
+GIVE 龙之戒指 2
+GIVE 井中月 1
+GIVE 幽灵项链 1
+GIVE 道士头盔 1
+TAKEON 重盔甲(女) 0
+TAKEON 井中月 1
+TAKEON 幽灵项链 3
+TAKEON 道士头盔 4
+TAKEON 死神手套 5
+TAKEON 死神手套 6
+TAKEON 龙之戒指 7
+TAKEON 龙之戒指 8
+TAKE 乌木剑 1
+TAKE 布衣(女) 1
+QUERYBAGITEMS
+mapmove 3 330 330
+break
+
+;-------------------法师----------------------
+
+#IF
+gender man
+checkjob wizard
+check [124] 0
+checklevelex = 8
+#ACT
+ChangeLevel = 35
+SET [124] 1
+give 四倍经验卷(赠品) 1
+GIVE 金币 200000
+GIVE 盟重传送石 1
+GIVE 随机传送石 1
+GIVE 在线回收(赠品) 1
+GIVE 魔法长袍(男) 1
+GIVE 道士头盔 1
+GIVE 思贝儿手镯 2
+GIVE 红宝石戒指 2
+GIVE 血饮 1
+GIVE 生命项链 1
+TakeON 魔法长袍(男) 0
+TakeON 血饮 1
+TakeON 生命项链 3
+TakeON 道士头盔 4
+TakeON 思贝儿手镯 5
+TakeON 思贝儿手镯 6
+TakeON 红宝石戒指 7
+TakeON 红宝石戒指 8
+TAKE 乌木剑 1
+TAKE 布衣(男) 1
+QUERYBAGITEMS
+mapmove 3 330 330
+break
+
+#IF
+gender woman
+checkjob wizard
+check [125] 0
+checklevelex = 8
+#ACT
+ChangeLevel = 35
+SET [125] 1
+give 四倍经验卷(赠品) 1
+GIVE 金币 200000
+GIVE 盟重传送石 1
+GIVE 随机传送石 1
+GIVE 在线回收(赠品) 1
+GIVE 魔法长袍(女) 1
+GIVE 道士头盔 1
+GIVE 思贝儿手镯 2
+GIVE 红宝石戒指 2
+GIVE 血饮 1
+GIVE 生命项链 1
+TakeON 魔法长袍(女) 0
+TakeON 血饮 1
+TakeON 生命项链 3
+TakeON 道士头盔 4
+TakeON 思贝儿手镯 5
+TakeON 思贝儿手镯 6
+TakeON 红宝石戒指 7
+TakeON 红宝石戒指 8
+TAKE 乌木剑 1
+TAKE 布衣(女) 1
+QUERYBAGITEMS
+mapmove 3 330 330
+break
+
+;-------------------道士----------------------
+
+#IF
+gender man
+checkjob taoist
+check [126] 0
+checklevelex = 8
+#ACT
+ChangeLevel = 35
+SET [126] 1
+give 四倍经验卷(赠品) 1
+GIVE 金币 200000
+GIVE 随机传送石 1
+GIVE 盟重传送石 1
+GIVE 在线回收(赠品) 1
+GIVE 灵魂战衣(男) 1
+GIVE 道士头盔 1
+GIVE 心灵手镯 2
+GIVE 铂金戒指 2
+GIVE 无极棍 1
+GIVE 天珠项链 1
+TakeON 灵魂战衣(男) 0
+TakeON 无极棍 1
+TakeON 天珠项链 3
+TakeON 道士头盔 4
+TakeON 心灵手镯 5
+TakeON 心灵手镯 6
+TakeON 铂金戒指 7
+TakeON 铂金戒指 8
+TAKE 乌木剑 1
+TAKE 布衣(男) 1
+QUERYBAGITEMS
+mapmove 3 330 330
+break
+
+#IF
+gender woman
+checkjob taoist
+check [127] 0
+checklevelex = 8
+#ACT
+ChangeLevel = 35
+SET [127] 1
+give 四倍经验卷(赠品) 1
+GIVE 金币 200000
+GIVE 盟重传送石 1
+GIVE 随机传送石 1
+GIVE 在线回收(赠品) 1
+GIVE 灵魂战衣(女) 1
+GIVE 道士头盔 1
+GIVE 心灵手镯 2
+GIVE 铂金戒指 2
+GIVE 无极棍 1
+GIVE 天珠项链 1
+TakeON 灵魂战衣(女) 0
+TakeON 无极棍 1
+TakeON 天珠项链 3
+TakeON 道士头盔 4
+TakeON 心灵手镯 5
+TakeON 心灵手镯 6
+TakeON 铂金戒指 7
+TakeON 铂金戒指 8
+TAKE 乌木剑 1
+TAKE 布衣(女) 1
+QUERYBAGITEMS
+mapmove 3 330 330
+break
+}

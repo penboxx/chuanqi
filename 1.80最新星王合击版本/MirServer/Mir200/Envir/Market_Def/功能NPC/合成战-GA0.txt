@@ -1,0 +1,146 @@
+[@MAIN]
+#IF
+CHECKLEVELEX > 59
+#SAY
+使用3个残片+适量的元宝可以在我这合成出来终极装备。\ \
+<卓越星王战刃/@卓越星王战刃>  <卓越星王战盔/@卓越星王战盔>  <卓越星王战链/@卓越星王战链>\
+<卓越星王战甲/@卓越星王战甲>  <卓越星王战镯/@卓越星王战镯>  <卓越星王战戒/@卓越星王战戒>\
+<卓越星王战袍/@卓越星王战袍>  <卓越星王战靴/@卓越星王战靴>  <卓越星王战带/@卓越星王战带>\
+#ELSESAY
+我这边有战士终极装备的获取秘籍。\
+请60级以后再来看看吧。\
+
+[@卓越星王战刃]
+#IF
+CHECKGAMEGOLD > 299999
+CHECKITEM 卓越星王战刃残片 3
+#ACT
+GAMEGOLD - 300000
+TAKE 卓越星王战刃残片 3
+GIVE 卓越星王战刃 1
+BREAK
+#ELSESAY
+合成失败：\
+合成条件：\
+⒈元宝 300000\
+⒉卓越星王战刃残片 * 3\
+
+[@卓越星王战甲]
+#IF
+CHECKGAMEGOLD > 199999
+CHECKITEM 卓越星王战甲残片 3
+#ACT
+GAMEGOLD - 200000
+TAKE 卓越星王战甲残片 3
+GIVE 卓越星王战甲 1
+BREAK
+#ELSESAY
+合成失败：\
+合成条件：\
+⒈元宝 200000\
+⒉卓越星王战甲残片 * 3\
+
+[@卓越星王战袍]
+#IF
+CHECKGAMEGOLD > 199999
+CHECKITEM 卓越星王战袍残片 3
+#ACT
+GAMEGOLD - 200000
+TAKE 卓越星王战袍残片 3
+GIVE 卓越星王战袍 1
+BREAK
+#ELSESAY
+合成失败：\
+合成条件：\
+⒈元宝 200000\
+⒉卓越星王战袍残片 * 3\
+
+[@卓越星王战盔]
+#IF
+CHECKGAMEGOLD > 49999
+CHECKITEM 卓越星王战盔残片 3
+#ACT
+GAMEGOLD - 50000
+TAKE 卓越星王战盔残片 3
+GIVE 卓越星王战盔 1
+BREAK
+#ELSESAY
+合成失败：\
+合成条件：\
+⒈元宝 50000\
+⒉卓越星王战盔残片 * 3\
+
+[@卓越星王战链]
+#IF
+CHECKGAMEGOLD > 49999
+CHECKITEM 卓越星王战链残片 3
+#ACT
+GAMEGOLD - 50000
+TAKE 卓越星王战链残片 3
+GIVE 卓越星王战链 1
+BREAK
+#ELSESAY
+合成失败：\
+合成条件：\
+⒈元宝 50000\
+⒉卓越星王战链残片 * 3\
+
+[@卓越星王战镯]
+#IF
+CHECKGAMEGOLD > 49999
+CHECKITEM 卓越星王战镯残片 3
+#ACT
+GAMEGOLD - 50000
+TAKE 卓越星王战镯残片 3
+GIVE 卓越星王战镯 1
+BREAK
+#ELSESAY
+合成失败：\
+合成条件：\
+⒈元宝 50000\
+⒉卓越星王战镯残片 * 3\
+
+[@卓越星王战戒]
+#IF
+CHECKGAMEGOLD > 49999
+CHECKITEM 卓越星王战戒残片 3
+#ACT
+GAMEGOLD - 50000
+TAKE 卓越星王战戒残片 3
+GIVE 卓越星王战戒 1
+BREAK
+#ELSESAY
+合成失败：\
+合成条件：\
+⒈元宝 50000\
+⒉卓越星王战戒残片 * 3\
+
+[@卓越星王战靴]
+#IF
+CHECKGAMEGOLD > 49999
+CHECKITEM 卓越星王战靴残片 3
+#ACT
+GAMEGOLD - 50000
+TAKE 卓越星王战靴残片 3
+GIVE 卓越星王战靴 1
+BREAK
+#ELSESAY
+合成失败：\
+合成条件：\
+⒈元宝 50000\
+⒉卓越星王战靴残片 * 3\
+
+[@卓越星王战带]
+#IF
+CHECKGAMEGOLD > 49999
+CHECKITEM 卓越星王战带残片 3
+#ACT
+GAMEGOLD - 50000
+TAKE 卓越星王战带残片 3
+GIVE 卓越星王战带 1
+BREAK
+#ELSESAY
+合成失败：\
+合成条件：\
+⒈元宝 50000\
+⒉卓越星王战带残片 * 3\

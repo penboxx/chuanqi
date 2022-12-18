@@ -1,0 +1,50 @@
+[@开始合雷霆战戒]
+{
+合成雷霆战戒所需物品：\
+金刚石:38\
+藏宝图001、藏宝图002、藏宝图003、藏宝图004\
+进行<锻造/@进行合成雷霆战戒>\ \
+<返回查看配方/@锻造魔龙>\
+<退出/@EXIT>\
+
+[@进行合成雷霆战戒]
+#IF
+CHECKGAMEDIAMOND ? 38
+CHECKITEM 藏宝图001 1
+CHECKITEM 藏宝图002 1
+CHECKITEM 藏宝图003 1
+CHECKITEM 藏宝图004 1
+#ACT
+MOVR d7 2
+DELAYGOTO 1 @雷霆战戒开始合成
+#ELSESAY
+很可惜，您没有锻造所需的足够原料。\
+
+[@雷霆战戒开始合成]
+#IF
+CHECKGAMEDIAMOND ? 38
+CHECKITEM 藏宝图001 1
+CHECKITEM 藏宝图002 1
+CHECKITEM 藏宝图003 1
+CHECKITEM 藏宝图004 1
+EQUAL d7 1
+#ACT
+MOV d7 0
+GAMEDIAMOND - 38
+TAKE 藏宝图001 1
+TAKE 藏宝图002 1
+TAKE 藏宝图003 1
+TAKE 藏宝图004 1
+GIVE 雷霆战戒 1
+SENDMSG 0 恭喜:<$USERNAME>升级雷霆战戒成功！
+CLOSE
+#ELSEACT
+MOV d7 0
+GAMEDIAMOND - 38
+TAKE 藏宝图001 1
+TAKE 藏宝图002 1
+TAKE 藏宝图003 1
+TAKE 藏宝图004 1
+messagebox  可惜了：\<$USERNAME>你合成失败，藏宝图和金刚石在合成过程中被熔化！
+CLOSE
+}

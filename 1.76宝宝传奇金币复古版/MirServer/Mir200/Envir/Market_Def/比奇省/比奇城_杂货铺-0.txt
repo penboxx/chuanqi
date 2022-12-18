@@ -1,0 +1,18 @@
+
+
+
+(@buy @sell @s_repair )
+%100
++1
++3
++30
++25
++45
+#INCLUDE 7st.txt
+[@main]
+#ACT
+#CALL	[\Market\Market3.txt]		@Markets
+#CALL	[\Market\тс╩У.txt]		@6
+
+
+

@@ -1,0 +1,25 @@
+[@main]
+<COLOR=clYellow ------------------------------------------------------------>　\
+<COLOR=CLLIME 卓越合击独创神威狱地图.散人打宝天堂.本地图一共分九层>\
+<COLOR=CLAQUA 每一层都有一个BOSS守护.每个BOSS都有可能爆出终极装备>\
+<COLOR=CLFUCHSIA 每一层会刷新一只[神威统领].击杀神威统领方可进入下一层>\
+<COLOR=CLLIME 神威统领每1分钟刷新一次.通关神威狱可获得大量经验奖励>\
+<COLOR=CLLIME BOSS刷新时间:1-2层：30分钟 3-4层：45分钟 4-9层：60分钟>\
+<COLOR=CLAQUA 进入条件：需要等级达到54级+5000元宝>\
+<COLOR=clYellow ------------------------------------------------------------>　\
+
+　　　　　　　　　　<我要勇闯神威狱/@神威狱>
+[@神威狱]
+#if
+CHECKLEVELEX > 53
+CHECKGAMEGOLD > 4999
+#act
+GAMEGOLD - 5000
+GIVE 回城卷 1
+mapmove shenwei1
+SENDMSG 0 ★玩家[%s],进入神威狱闯关了 249  216
+SENDMSG 0 ★玩家[%s],进入神威狱闯关了 249  216
+SENDMSG 0 ★玩家[%s],进入神威狱闯关了 249  216
+#ELSEACT
+MESSAGEBOX 进入此地图需要花费5000元宝并且等级54级以上
+BREAK

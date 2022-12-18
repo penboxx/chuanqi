@@ -1,0 +1,38 @@
+[@白色虎齿项链2]
+{
+#IF
+random 4
+#act
+GAMEGOLD - 1000
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将白色虎齿项链升级成功。  254 0
+BREAK
+
+#IF
+random 3
+#act
+GAMEGOLD - 1000
+MESSAGEBOX 非常抱歉您的白色虎齿项链升级失败
+BREAK
+
+#IF
+random 3
+#act
+GAMEGOLD - 1000
+MESSAGEBOX 非常抱歉您的白色虎齿项链升级失败
+BREAK
+
+#IF
+random 1
+#act
+GAMEGOLD - 1000
+MESSAGEBOX 非常抱歉您的白色虎齿项链升级失败
+BREAK
+
+#IF
+random
+#act
+GAMEGOLD - 1000
+MESSAGEBOX 非常抱歉您的白色虎齿项链升级失败
+BREAK
+}

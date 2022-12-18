@@ -1,0 +1,178 @@
+[@封号检测]
+{
+#IF
+CHECKLEVELEX 	< 46
+#ACT
+mov S11 \═初入江湖═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	= 46
+#ACT
+mov S11 \═江湖小卒═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	= 47
+#ACT
+mov S11 \═江湖小卒═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	= 48
+#ACT
+mov S11 \═江湖小卒═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	= 49
+#ACT
+mov S11 \═牛刀小试═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	= 50
+#ACT
+mov S11 \═崭露头角═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	= 51
+#ACT
+mov S11 \═小有名气═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	= 52
+#ACT
+mov S11 \═声名鹤起═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	= 53
+#ACT
+mov S11 \═名动四方═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	= 54
+#ACT
+mov S11 \═如日中天═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	= 55
+#ACT
+mov S11 \═技冠群雄═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	= 56
+#ACT
+mov S11 \═威震八方═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	= 57
+#ACT
+mov S11 \═独步天下═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	= 58
+#ACT
+mov S11 \═独步天下═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	= 59
+#ACT
+mov S11 \═独步天下═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+#IF
+CHECKLEVELEX 	> 59
+#ACT
+mov S11 \═云海无上═\斩杀[<$HUMAN(SD)>]人·被杀[<$HUMAN(SW)>]次
+setranklevelname %s\<$STR(S11)>
+goto @天下第一检测
+BREAK
+
+[@天下第一检测]
+#IF
+equal A81 <$USERNAME>
+#ACT
+mov S10 \☆天下第一女战士☆
+setranklevelname %s\<$STR(S10)>\<$STR(S11)>
+goto @沙巴克成员检测
+BREAK
+#IF
+equal A84 <$USERNAME>
+#ACT
+mov S10 \☆天下第一男战士☆
+setranklevelname %s\<$STR(S10)>\<$STR(S11)>
+goto @沙巴克成员检测
+BREAK
+
+#IF
+equal A90 <$USERNAME>
+#ACT
+mov S10 \☆天下第一男法师☆
+setranklevelname %s\<$STR(S10)>\<$STR(S11)>
+goto @沙巴克成员检测
+BREAK
+#IF
+equal A87 <$USERNAME>
+#ACT
+mov S10 \☆天下第一女法师☆
+setranklevelname %s\<$STR(S10)>\<$STR(S11)>
+goto @沙巴克成员检测
+BREAK
+
+#IF
+equal A96 <$USERNAME>
+#ACT
+mov S10 \☆天下第一男道士☆
+setranklevelname %s\<$STR(S10)>\<$STR(S11)>
+goto @沙巴克成员检测
+BREAK
+
+#IF
+equal A93 <$USERNAME>
+#ACT
+mov S10 \☆天下第一女道士☆
+setranklevelname %s\<$STR(S10)>\<$STR(S11)>
+goto @沙巴克成员检测
+BREAK
+
+
+[@沙巴克成员检测]
+#IF
+ISCASTLEMASTER
+#ACT
+mov S12 \★★★沙城主★★★
+SENDMSG 0 万人景仰的城主〖%s〗在%m上线了...
+setranklevelname %s\<$STR(S12)>\<$STR(S10)>\<$STR(S11)>
+break
+#IF
+ISCASTLEGUILD
+#ACT
+mov S12 \★沙精英★
+setranklevelname %s\<$STR(S12)>\<$STR(S10)>\<$STR(S11)>
+break
+}

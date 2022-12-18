@@ -1,0 +1,38 @@
+[@MAIN]
+这里是天关三层\
+你必须将本地图内所有怪物杀光，才可以领取奖励进入下一关！\
+<COLOR=clRed 注:请不要将聚灵珠放在包袱内,否则会被收取掉!>\
+　\
+<领取奖励进入下一关/@SCJLLQ>\
+
+[@SCJLLQ]
+#IF
+CheckRangeMonCount TG3 16 12 15 = 0
+#ACT
+GOTO @SCJLLQ1
+#ELSESAY
+地图内的怪物还没杀光呢！
+
+[@SCJLLQ1]
+#IF
+CHECKMAPHUMANCOUNT TG4 = 0
+CHECKGAMEGOLD > 119
+#ACT
+GAMEGOLD - 120
+CLEARMAPMON TG4
+take 聚灵珠 50
+CHANGEEXP + 300000
+Param1 TG4     
+MonGen 黑野猪 1 1
+MonGen 红野猪 1 1
+MonGen 蝎蛇 1 1
+MonGen 黑色恶蛆 1 1
+MonGen 楔蛾 1 1
+MonGen 蝎蛇 1 1
+MonGen 黑色恶蛆 1 1
+MonGen 楔蛾 1 1
+MAPMOVE TG4
+SENDMSG 0 %s闯过了天关三层，获得300000经验奖励！
+BREAK
+#ELSEACT
+MESSAGEBOX 里面有人了，或者你的元宝不足120！

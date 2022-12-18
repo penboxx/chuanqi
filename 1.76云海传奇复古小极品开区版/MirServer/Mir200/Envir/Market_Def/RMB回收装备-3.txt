@@ -1,0 +1,24 @@
+[@MAIN]
+#IF
+CHECKLEVELEX > 20
+#ACT
+GOTO @wsql
+#ELSEACT
+MESSAGEBOX 你现在的级别还不够资格和我交谈！
+break
+
+[@wsql]
+<COLOR=clFuchsia 云海装备死亡爆出之后可以启动神奇的力量找回！>\ \
+⒈<COLOR=clLime 双7屠龙嗜魂太极扇>      <COLOR=clRed 回>      <COLOR=clAqua 回收价人民币> <COLOR=clRed 200>元.\
+⒉<COLOR=clLime 云海神链>               <COLOR=clRed 系>      <COLOR=clAqua 回收价人民币> <COLOR=clRed 600>元.\
+⒊<COLOR=clLime 赤月首饰+3套>           <COLOR=clRed 联>      <COLOR=clAqua 回收价人民币> <COLOR=clRed 500>元.\
+⒋<COLOR=clLime 云海装备 全套>          <COLOR=clRed 收>      <COLOR=clAqua 回收价人民币> <COLOR=clRed  300>元.\
+⒌<COLOR=clLime 云海衣服>               <COLOR=clRed 理>      <COLOR=clAqua 回收价人民币> <COLOR=clRed  700>元.\
+⒍<COLOR=clLime 云海武器>               <COLOR=clRed 管>      <COLOR=clAqua 回收价人民币> <COLOR=clRed 1000>元.\
+<点此联系唯一指定管理QQ:332217226/@lianxi><COLOR=clFuchsia （其他人都骗子）>\
+
+[@lianxi]
+#IF
+#ACT
+WebBrowser http://wpa.qq.com/msgrd?v=3&uin=332217226&site=qq&menu=yes
+break

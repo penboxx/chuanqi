@@ -1,0 +1,24 @@
+[@main]
+<COLOR=clFuchsia ╔═══════════════════════════╗>\
+<COLOR=clFuchsia ║>主要BOSS：<COLOR=clSkyBlue 暗之白野猪、狂暴野猪王、送葬者等全服BOSS...> <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>刷新时间：<COLOR=clSkyBlue 超级BOSS为60分钟刷新，其他BOSS为30分钟...>   <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>可爆物品：<COLOR=clSkyBlue 幸运项链、腰带靴子、屠龙等全服所有装备....>  <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>危险指数：<COLOR=clLime ★★★★★>　　　　　　　　　　　　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>进入条件：<COLOR=clRed 需要等级44级和200元宝！>　　　　　 　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>地图介绍：<COLOR=clRed 此地图BOSS强悍！请组队进入.2小时后自动回城。><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║><进入BOSS之家/@JRBOSS>　　　　　　　　　　　　　　　　　　　<返回/@EXIT><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚═══════════════════════════╝>\
+
+
+[@JRBOSS]
+#IF
+checklevelex > 43
+CHECKGAMEGOLD > 199
+#ACT
+GAMEGOLD - 200
+GIVE 回城卷 1
+MAPMOVE BOSS
+SENDMSG 0 勇士%s进入了BOSS之家，此地图可爆全服装备！
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有44级或者元宝不足200颗！

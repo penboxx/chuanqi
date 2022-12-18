@@ -1,0 +1,60 @@
+(@@InPutString @@InPutInteger)
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【微信大使】> <COLOR=clRed Hot~>  <COLOR=clLime ≡≡≡★2015柚子极品星王合击★≡≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clLime 到官方网站加入微信公众平台.即可兑换8888元宝的超值微信礼包>\
+<COLOR=clFuchsia 获取方法:联系微信客服索要微信礼包兑换码.可以领取一个微信>\
+<COLOR=clAqua 礼包.每个人只可以领取一次微信礼包.微信礼包包含以下物品>\
+<COLOR=clLime 微信专属药箱*1+英雄满忠诚度卷*1+微信专属神器(幸运9+技巧属性)>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<扫微信兑换微信礼包/@@InPutString21>                   <点击加入官方微信平台/@加平台>
+
+[@@InPutString21]
+#if
+#say
+\            \
+\            \
+\      正在为你兑换微信礼包.请勿关闭对话框......\
+\            \
+\................................................       \
+\            \
+\                请稍后.\
+#act
+DelayCall 2000 @abcdE
+
+[@abcdE]
+#if
+CHECK [111] 1
+#act
+MESSAGEBOX 提示:您已经领取过了无法重复领取
+break
+
+#if
+CHECKBAGSIZE  16
+CHECKSTRINGLIST ..\QuestDiary\游戏触发\微信礼包兑换码.txt <$STR(S21)>
+#act
+set [111] 1
+DELLINELIST QuestDiary\游戏触发\微信礼包兑换码.txt <$STR(S21)>
+goto @奖励aa
+#elseact
+MESSAGEBOX 提示:\　\1.微信兑换码错误,或者此微信兑换码已经被他人使用\　\2.你的背包没有16个空位
+goto @main
+break
+
+[@奖励aa]
+#IF
+#ACT
+give 微信专属药箱 1
+give 微信专属神器 1
+give 英雄满忠诚度卷 1
+SENDMSG 0 恭喜(%s)使用微信兑换码兑换(微信礼包).加入微信公众平台即可获得兑换码  242 4 10
+MESSAGEBOX 提示:兑换微信礼包成功
+goto @main
+break
+
+[@加平台]
+#IF
+#ACT
+WebBrowser http://www.kuyoux.com
+break

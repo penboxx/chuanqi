@@ -1,0 +1,652 @@
+[@main]
+#say
+年轻人，我这里有失传已久的神兵利器打造办法，因为年代已久，\
+我也不能保证就一定能够打造成功，但是几率帮你打造出高级装备，\
+45级新衣服+<COLOR=clRed 400万金币.>宝石徽章+<COLOR=clRed 400万金币.>45级武器+<COLOR=clRed 400万金币.>\
+衣服1件+<COLOR=clRed 200万金币.>武器1件+<COLOR=clRed 200万金币>.注：强化失败，装备不消失\ \  
+<升级战士装备/@升级战士装备>  <升级法师装备/@升级法师装备>  <升级道士装备/@升级道士装备>  <升级至尊/@升级至尊>\ \ 
+
+<COLOR=clAqua 精锐数据宝宝传奇.客服QQ911560366.！>\
+
+
+                              
+[@升级战士装备]
+#say
+<光辉战甲/@光辉战甲>  <光辉战袍/@光辉战袍>  <黄金屠龙/@黄金屠龙>\
+
+[@升级法师装备]
+#say
+<赤血魔衣/@赤血魔衣>  <赤血魔炮/@赤血魔炮>  <紫金法杖/@紫金法杖>\
+
+[@升级道士装备]
+#say
+<暖玉道甲/@暖玉道甲>  <暖玉道袍/@暖玉道袍>  <黄金逍遥扇/@黄金逍遥扇>\
+
+[@升级至尊]
+#say
+<至尊宝石/@至尊宝石>  <至尊战章/@至尊战章>  <至尊法章/@至尊法章>      <至尊道章/@至尊道章> \
+ \
+<至尊屠龙/@至尊屠龙>  <至尊逍遥扇/@至尊逍遥扇>    <至尊嗜魂法杖/@至尊嗜魂法杖>\
+ \
+<至尊靴子/@至尊靴子>  <至尊腰带/@至尊腰带>  <至尊神袍/@至尊神袍>  <至尊神甲/@至尊神甲>\
+
+
+[@光辉战甲]
+#if
+random 11
+checkitem 天魔神甲 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+TAKE 天魔神甲 1
+give 光辉战甲 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 天魔神甲 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@光辉战袍]
+#if
+random 11
+checkitem 圣战宝甲 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+TAKE 圣战宝甲 1
+give 光辉战袍 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 圣战宝甲 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@黄金屠龙]
+#if
+random 11
+checkitem 屠龙 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+TAKE 屠龙 1
+give 黄金屠龙 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((黄金屠龙))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((黄金屠龙))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 屠龙 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+
+[@赤血魔炮]
+#if
+random 11
+checkitem 法神披风 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+TAKE 法神披风 1
+give 赤血魔炮 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((赤血魔炮))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((赤血魔炮))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 法神披风 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@赤血魔衣]
+#if
+random 11
+checkitem 霓裳羽衣 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+TAKE 霓裳羽衣 1
+give 赤血魔衣 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((赤血魔衣))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((赤血魔衣))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 霓裳羽衣 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@紫金法杖]
+#if
+random 11
+checkitem 嗜魂法杖 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+TAKE 嗜魂法杖 1
+give 紫金法杖 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((紫金法杖))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((紫金法杖))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 嗜魂法杖 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@暖玉道袍]
+#if
+random 11
+checkitem 天尊道袍 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+TAKE 天尊道袍 1
+give 盛世天尊道袍 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((暖玉道袍))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((暖玉道袍))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 天尊道袍 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@暖玉道甲]
+#if
+random 11
+checkitem 天师长袍 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+TAKE 天师长袍 1
+give 暖玉道甲 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((暖玉道甲))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((暖玉道甲))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 天师长袍 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@黄金逍遥扇]
+#if
+random 11
+checkitem 逍遥扇 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+TAKE 逍遥扇 1
+give 黄金逍遥扇 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((黄金羽扇))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((黄金羽扇))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 逍遥扇 1
+CHECKGOLD 2000000
+#ACT
+take 金币 2000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+
+[@至尊宝石]
+#if
+random 12
+checkitem 赤月宝石 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 赤月宝石 1
+give 至尊宝石 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊宝石))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊宝石))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊宝石))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊宝石))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊宝石))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊宝石))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 赤月宝石 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@至尊战章]
+#if
+random 12
+checkitem 荣誉勋章43号 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 荣誉勋章43号 1
+give 至尊战章 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊战章))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊战章))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊战章))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊战章))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊战章))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊战章))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 荣誉勋章43号 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@至尊法章]
+#if
+random 12
+checkitem 荣誉勋章44号 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 荣誉勋章44号 1
+give 至尊法章 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊法章))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊法章))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊法章))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊法章))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊法章))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊法章))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 荣誉勋章44号 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@至尊道章]
+#if
+random 12
+checkitem 荣誉勋章45号 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 荣誉勋章45号 1
+give 至尊道章 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊道章))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊道章))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊道章))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊道章))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊道章))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊道章))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 荣誉勋章45号 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@至尊神袍]
+#if
+random 12
+checkitem 光辉战袍 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 光辉战袍 1
+give 至尊神袍 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 光辉战袍 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+
+#if
+random 12
+checkitem 赤血魔衣 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 赤血魔衣 1
+give 至尊神袍 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 赤血魔衣 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+
+#if
+random 12
+checkitem 暖玉道袍 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 暖玉道袍 1
+give 至尊神袍 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊神袍))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 暖玉道袍 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@至尊神甲]
+#if
+random 12
+checkitem 赤血魔炮 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 赤血魔炮 1
+give 至尊神甲 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 赤血魔炮 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+
+#if
+random 12
+checkitem 暖玉道甲 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 暖玉道甲 1
+give 至尊神甲 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 暖玉道甲 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+
+#if
+random 12
+checkitem 光辉战甲 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 光辉战甲 1
+give 至尊神甲 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0  20
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊神甲))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 光辉战甲 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@至尊屠龙]
+#if
+random 12
+checkitem 黄金屠龙 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 黄金屠龙 1
+give 至尊屠龙 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊屠龙))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊屠龙))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊屠龙))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊屠龙))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊屠龙))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊屠龙))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 黄金屠龙 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@至尊嗜魂法杖]
+#if
+random 12
+checkitem 紫金法杖 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 紫金法杖 1
+give 至尊嗜魂法杖 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊嗜魂法杖))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊嗜魂法杖))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊嗜魂法杖))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊嗜魂法杖))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊嗜魂法杖))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊嗜魂法杖))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 紫金法杖 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@至尊逍遥扇]
+#if
+random 12
+checkitem 黄金逍遥扇 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 黄金逍遥扇 1
+give 至尊逍遥扇 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊逍遥扇))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊逍遥扇))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊逍遥扇))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊逍遥扇))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊逍遥扇))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊逍遥扇))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 黄金逍遥扇 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@至尊靴子]
+#if
+random 12
+checkitem 神级靴子 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 神级靴子 1
+give 至尊靴子 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊靴子))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊靴子))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊靴子))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊靴子))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊靴子))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊靴子))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 神级靴子 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+[@至尊腰带]
+#if
+random 12
+checkitem 神级腰带 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+TAKE 神级腰带 1
+give 至尊腰带 1
+SENDMSG 7 装备属性升级成功！！
+SENDMSG 1 恭喜：%s，合成((至尊腰带))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊腰带))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊腰带))成功！遇见他的时候要小心了。。。 254 0   20
+SENDMSG 1 恭喜：%s，合成((至尊腰带))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊腰带))成功！遇见他的时候要小心了。。。 254 0
+SENDMSG 1 恭喜：%s，合成((至尊腰带))成功！遇见他的时候要小心了。。。 254 0
+break
+#if
+checkitem 神级腰带 1
+CHECKGOLD 4000000
+#ACT
+take 金币 4000000
+SENDMSG 7 装备属性升级失败！！
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。\
+
+
+
+
+
+

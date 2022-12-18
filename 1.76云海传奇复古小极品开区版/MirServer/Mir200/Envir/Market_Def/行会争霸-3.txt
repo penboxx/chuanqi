@@ -1,0 +1,20 @@
+[@MAIN]
+<COLOR=clLime 详细规则：>每天晚上22:30系统自动举行全服行会争霸赛\
+　　　　　所有行会都可以参加，没加入行会的不能参加\
+　　　　　22:30-22:50为进入时间，22:51行会争霸开始\
+　　　　　行会争霸开始后将无法进入，23:30争霸赛结束\ \
+<COLOR=clLime 获胜奖励：>最终赢得胜利的行会，可以获得<COLOR=clRed 10000元宝>奖励！\ \
+<COLOR=clLime 进入条件：>需要加入行会，并且等级40级以上！　<进入场地/@JINRU>\ 
+
+[@JINRU]
+#IF
+HAVEGUILD
+CHECKLEVELEX > 39
+HOUR 22 22
+MIN 30 50
+#ACT
+MAPMOVE HHBZ
+GIVE 回城卷
+#ELSEACT
+MESSAGEBOX 不是进入时间段或者你没有40级和加入行会！
+BREAK

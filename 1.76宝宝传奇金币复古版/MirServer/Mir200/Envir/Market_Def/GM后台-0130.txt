@@ -1,0 +1,194 @@
+
+[@main]
+#IF
+ISADMIN
+#say
+这里是游戏管理后台，你想做些什么？\ \
+<进行怪物攻城活动/@进行怪物攻城>　<清除四个城内怪物/@清除怪物>\
+<查看赌博机赚了多少元宝/@查看赌博机赚了多少元宝>\
+<关闭/@exit>
+#act
+#ELSEACT
+mapmove 3 330 330
+
+[@查看赌博机赚了多少元宝]
+#IF
+ISADMIN
+#ACT
+#say
+赌博机为管理员赚了<$str(G21)>个元宝\
+
+[@清除怪物]
+#IF
+ISADMIN
+#ACT
+CLEARMAPMON 0
+CLEARMAPMON 4
+CLEARMAPMON 5
+goto @main
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @main
+
+[@进行怪物攻城]
+这里可以控制怪物攻城，你想要怪物进攻哪个城市？\ \
+<盟重省/@盟重省>\ \
+
+<返回/@main>
+[@盟重省]
+请选择进攻盟重省的怪物！\ 
+<暗之系怪物进攻/@盟暗之系>　<祖玛系怪物进攻/@盟祖玛系>\
+<牛魔系怪物进攻/@盟牛魔系>　<猪洞系怪物进攻/@盟猪洞系>\
+<虹魔系怪物进攻/@盟虹魔系>  <BOSS系怪物进攻/@盟BOSS系>\
+<返回/@进行怪物攻城>
+
+
+[@盟BOSS系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 1
+PARAM4 50
+MOBPLACE 黄泉教主
+MOBPLACE 重装使者
+MOBPLACE 镜像明王
+MOBPLACE 地狱犬
+MOBPLACE 沃玛教主
+MOBPLACE 堕落明王
+MOBPLACE 圣地魔王
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟统领系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 1
+PARAM4 50
+MOBPLACE 蝎蛇统领
+MOBPLACE 沃玛统领
+MOBPLACE 沃玛统领
+MOBPLACE 钳虫统领
+MOBPLACE 骷髅统领
+MOBPLACE 幽冥统领
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟虹魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 5
+PARAM4 50
+MOBPLACE 虹魔蝎卫
+MOBPLACE 虹魔猪卫
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟幽冥系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 3
+PARAM4 50
+MOBPLACE 幽冥弓箭手
+MOBPLACE 幽冥卫士
+MOBPLACE 幽冥教主
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟猪洞系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 5
+PARAM4 50
+MOBPLACE 白野猪
+MOBPLACE 邪恶毒蛇
+MOBPLACE 黑野猪
+MOBPLACE 红野猪
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟牛魔系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军8
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司8
+MOBPLACE 牛魔法师8
+MOBPLACE 牛魔战士
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟祖玛系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 5
+PARAM4 50
+MOBPLACE 祖玛卫士3
+MOBPLACE 祖玛弓箭手3
+MOBPLACE 祖玛雕像3
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+[@盟暗之系]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 2
+PARAM4 50
+MOBPLACE 暗之双头血魔
+MOBPLACE 暗之双头金刚
+MOBPLACE 暗之骷髅精灵
+MOBPLACE 暗之黄泉教主
+MOBPLACE 暗之虹魔教主
+MOBPLACE 暗之沃玛教主
+MOBPLACE 暗之牛魔王
+SENDMSG 6 怪物进攻了盟重省！
+goto @盟重省
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行怪物攻城！
+goto @盟重省
+

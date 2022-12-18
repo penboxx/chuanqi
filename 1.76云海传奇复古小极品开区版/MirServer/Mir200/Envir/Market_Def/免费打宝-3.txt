@@ -1,0 +1,34 @@
+[@main]
+　全服玩家可以<COLOR=clLime 完全免费>进入以下地图！\
+<COLOR=clFuchsia ╔════════════════════════════╗>\
+<COLOR=clFuchsia ║>复古之路：<COLOR=clSkyBlue 爆祖玛、ＢＯＳＳ可爆新衣服、怒斩、龙牙、逍遥扇><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>玛雅神殿：<COLOR=clSkyBlue 爆赤月、新衣服、屠龙、嗜魂法杖、太极逍遥扇>　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>幻境十层：<COLOR=clSkyBlue 爆赤月、新衣服、屠龙、嗜魂法杖、太极逍遥扇>　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>地图介绍：<COLOR=clRed 三个地图非常适合免费散人进行打宝！>　　　　　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╠════════════════════════════╣>\
+<COLOR=clFuchsia ║><免费进入复古之路/@FGZL>　　<免费进入玛雅神殿/@MYSD>　　<免费进入幻境十层/@HJSC><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚════════════════════════════╝>\
+
+[@FGZL]
+#IF
+#ACT
+MAPMOVE FGZL1 8 52
+SENDMSG 0 玩家%s免费进入了复古之路！
+GIVE 回城卷 1
+BREAK
+
+[@MYSD]
+#IF
+#ACT
+MAPMOVE Fama1 78 78
+SENDMSG 0 玩家%s免费进入了玛雅神殿！
+GIVE 回城卷 1
+BREAK
+
+[@HJSC]
+#IF
+#ACT
+MAPMOVE H010 156 157
+SENDMSG 0 玩家%s免费进入了幻境十层！
+GIVE 回城卷 1
+BREAK

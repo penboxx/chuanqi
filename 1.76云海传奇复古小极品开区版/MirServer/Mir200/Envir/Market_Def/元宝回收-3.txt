@@ -1,0 +1,1074 @@
+[@main]
+<COLOR=clRed 注意：回收装备前请仔细检查包袱内是否有极品，以免造成损失！>\
+<COLOR=clMoneyGreen ════【><COLOR=clSkyBlue 元宝回收><COLOR=clMoneyGreen 】══════════【><COLOR=clSkyBlue 经验回收><COLOR=clMoneyGreen 】════>\
+<COLOR=clFuchsia 祖玛首饰   10元宝一个> <1键回收/@1B><COLOR=clMoneyGreen ║><COLOR=clLime 祖玛首饰   3W经验一个> <1键回收/@1A>\
+<COLOR=clFuchsia 祖玛武器   20元宝一个> <1键回收/@2B><COLOR=clMoneyGreen ║><COLOR=clLime 祖玛武器   6W经验一个> <1键回收/@2A>\
+<COLOR=clFuchsia 赤月首饰   50元宝一个> <1键回收/@3B><COLOR=clMoneyGreen ║><COLOR=clLime 赤月首饰  20W经验一个> <1键回收/@3A>\
+<COLOR=clFuchsia 40级衣服  200元宝一个> <1键回收/@4B><COLOR=clMoneyGreen ║><COLOR=clLime 40级衣服  60W经验一个> <1键回收/@4A>\
+<COLOR=clFuchsia 怒斩龙牙  500元宝一个> <1键回收/@5B><COLOR=clMoneyGreen ║><COLOR=clLime 怒斩龙牙  88W经验一个> <1键回收/@5A>\
+<COLOR=clFuchsia 赤月·佛  800元宝一个> <1键回收/@3Bf><COLOR=clMoneyGreen ║><COLOR=clLime 赤月·佛 200W经验一个> <1键回收/@3Af>\
+<COLOR=clMoneyGreen ═══════><COLOR=clSkyBlue 【经验回收→聚灵珠也会获得经验】><COLOR=clMoneyGreen ═══════>\
+
+[@2B]
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+GAMEGOLD + 20
+INC M1 20
+INC M2 1
+DELAYGOTO 1 @2B
+Break
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+GAMEGOLD + 20
+INC M1 20
+INC M2 1
+DELAYGOTO 1 @2B
+Break
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+GAMEGOLD + 20
+INC M1 20
+INC M2 1
+DELAYGOTO 1 @2B
+Break
+#IF
+large M2 0
+#ACT
+SENDMSG 0 玩家【%s】一键回收装备(<$STR(M2)>)件。
+mov M1 0
+mov M2 0
+
+#elseact 
+
+break
+
+
+[@1B]
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+GAMEGOLD + 10
+INC M1 10
+INC M2 1
+DELAYGOTO 1 @1B
+Break
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+GAMEGOLD + 10
+INC M1 10
+INC M2 1
+DELAYGOTO 1 @1B
+Break
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+GAMEGOLD + 10
+INC M1 10
+INC M2 1
+DELAYGOTO 1 @1B
+Break
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+GAMEGOLD + 10
+INC M1 10
+INC M2 1
+DELAYGOTO 1 @1B
+Break
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+GAMEGOLD + 10
+INC M1 10
+INC M2 1
+DELAYGOTO 1 @1B
+Break
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+GAMEGOLD + 10
+INC M1 10
+INC M2 1
+DELAYGOTO 1 @1B
+Break
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+GAMEGOLD + 10
+INC M1 10
+INC M2 1
+DELAYGOTO 1 @1B
+Break
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+GAMEGOLD + 10
+INC M1 10
+INC M2 1
+DELAYGOTO 1 @1B
+Break
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+GAMEGOLD + 10
+INC M1 10
+INC M2 1
+DELAYGOTO 1 @1B
+Break
+#IF
+large M2 0
+#ACT
+SENDMSG 0 玩家【%s】一键回收装备(<$STR(M2)>)件。
+mov M1 0
+mov M2 0
+
+#elseact 
+
+break
+
+
+
+
+[@3A]
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+
+INC M1 200000
+INC M2 1
+DELAYGOTO 1 @3A
+Break
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+
+INC M1 200000
+INC M2 1
+DELAYGOTO 1 @3A
+Break
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+
+INC M1 200000
+INC M2 1
+DELAYGOTO 1 @3A
+Break
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+
+INC M1 200000
+INC M2 1
+DELAYGOTO 1 @3A
+Break
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+
+INC M1 200000
+INC M2 1
+DELAYGOTO 1 @3A
+Break
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+
+INC M1 200000
+INC M2 1
+DELAYGOTO 1 @3A
+Break
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+
+INC M1 200000
+INC M2 1
+DELAYGOTO 1 @3A
+Break
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+
+INC M1 200000
+INC M2 1
+DELAYGOTO 1 @3A
+Break
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+
+INC M1 200000
+INC M2 1
+DELAYGOTO 1 @3A
+Break
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+
+INC M1 200000
+INC M2 1
+DELAYGOTO 1 @3A
+Break
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+
+INC M1 200000
+INC M2 1
+DELAYGOTO 1 @3A
+Break
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+
+INC M1 200000
+INC M2 1
+DELAYGOTO 1 @3A
+Break
+#IF
+large M2 0
+#ACT
+CHANGEEXP + <$STR(M1)>
+SENDMSG 0 玩家【%s】一键回收装备(<$STR(M2)>)件。
+mov M1 0
+mov M2 0
+
+#elseact 
+
+break
+
+
+
+
+[@3B]
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+GAMEGOLD + 50
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3B
+Break
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+GAMEGOLD + 50
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3B
+Break
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+GAMEGOLD + 50
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3B
+Break
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+GAMEGOLD + 50
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3B
+Break
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+GAMEGOLD + 50
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3B
+Break
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+GAMEGOLD + 50
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3B
+Break
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+GAMEGOLD + 50
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3B
+Break
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+GAMEGOLD + 50
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3B
+Break
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+GAMEGOLD + 50
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3B
+Break
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+GAMEGOLD + 50
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3B
+Break
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+GAMEGOLD + 50
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3B
+Break
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+GAMEGOLD + 50
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3B
+Break
+#IF
+large M2 0
+#ACT
+SENDMSG 0 玩家【%s】一键回收装备(<$STR(M2)>)件。
+mov M1 0
+mov M2 0
+
+#elseact 
+
+break
+
+
+[@4b]
+#if
+checkitem 天魔神甲 1
+#ACT
+take 天魔神甲 1
+GAMEGOLD + 200
+INC M1 200
+INC M2 1
+DELAYGOTO 1 @4b
+Break
+#if
+checkitem 圣战宝甲 1
+#ACT
+take 圣战宝甲 1
+GAMEGOLD + 200
+INC M1 200
+INC M2 1
+DELAYGOTO 1 @4b
+Break
+#if
+checkitem 天尊道袍 1
+#ACT
+take 天尊道袍 1
+GAMEGOLD + 200
+INC M1 200
+INC M2 1
+DELAYGOTO 1 @4b
+Break
+#if
+checkitem 天师长袍 1
+#ACT
+take 天师长袍 1
+GAMEGOLD + 200
+INC M1 200
+INC M2 1
+DELAYGOTO 1 @4b
+Break
+#if
+checkitem 法神披风 1
+#ACT
+take 法神披风 1
+GAMEGOLD + 200
+INC M1 200
+INC M2 1
+DELAYGOTO 1 @4b
+Break
+#if
+checkitem 霓裳羽衣 1
+#ACT
+take 霓裳羽衣 1
+GAMEGOLD + 200
+INC M1 200
+INC M2 1
+DELAYGOTO 1 @4b
+Break
+#IF
+large M2 0
+#ACT
+SENDMSG 0 玩家【%s】一键回收装备(<$STR(M2)>)件。
+mov M1 0
+mov M2 0
+
+#elseact 
+
+break
+
+
+
+[@5b]
+#if
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+GAMEGOLD + 500
+INC M1 500
+INC M2 1
+DELAYGOTO 1 @5b
+Break
+#if
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+GAMEGOLD + 500
+INC M1 500
+INC M2 1
+DELAYGOTO 1 @5b
+Break
+#if
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+GAMEGOLD + 500
+INC M1 500
+INC M2 1
+DELAYGOTO 1 @5b
+Break
+#IF
+large M2 0
+#ACT
+SENDMSG 0 玩家【%s】一键回收装备(<$STR(M2)>)件。
+mov M1 0
+mov M2 0
+
+#elseact 
+
+break
+
+
+
+[@6b]
+#if
+checkitem 屠龙 1
+#ACT
+take 屠龙 1
+GAMEGOLD + 3000
+INC M1 3000
+INC M2 1
+DELAYGOTO 1 @6b
+Break
+#if
+checkitem 嗜魂法杖 1
+#ACT
+take 嗜魂法杖 1
+GAMEGOLD + 3000
+INC M1 3000
+INC M2 1
+DELAYGOTO 1 @6b
+Break
+#if
+checkitem 太极逍遥扇 1
+#ACT
+take 太极逍遥扇 1
+GAMEGOLD + 3000
+INC M1 3000
+INC M2 1
+DELAYGOTO 1 @6b
+Break
+#IF
+large M2 0
+#ACT
+SENDMSG 0 玩家【%s】一键回收装备(<$STR(M2)>)件。
+mov M1 0
+mov M2 0
+
+#elseact 
+
+break
+
+
+[@4a]
+#if
+checkitem 天魔神甲 1
+#ACT
+take 天魔神甲 1
+
+INC M1 600000
+INC M2 1
+DELAYGOTO 1 @4a
+Break
+#if
+checkitem 圣战宝甲 1
+#ACT
+take 圣战宝甲 1
+
+INC M1 600000
+INC M2 1
+DELAYGOTO 1 @4a
+Break
+#if
+checkitem 天尊道袍 1
+#ACT
+take 天尊道袍 1
+
+INC M1 600000
+INC M2 1
+DELAYGOTO 1 @4a
+Break
+#if
+checkitem 天师长袍 1
+#ACT
+take 天师长袍 1
+
+INC M1 600000
+INC M2 1
+DELAYGOTO 1 @4a
+Break
+#if
+checkitem 法神披风 1
+#ACT
+take 法神披风 1
+
+INC M1 600000
+INC M2 1
+DELAYGOTO 1 @4a
+Break
+#if
+checkitem 霓裳羽衣 1
+#ACT
+take 霓裳羽衣 1
+
+INC M1 600000
+INC M2 1
+DELAYGOTO 1 @4a
+Break
+#IF
+large M2 0
+#ACT
+CHANGEEXP + <$STR(M1)>
+SENDMSG 0 玩家【%s】一键回收装备(<$STR(M2)>)件。
+mov M1 0
+mov M2 0
+
+#elseact 
+
+break
+
+
+
+[@5a]
+#if
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+
+INC M1 880000
+INC M2 1
+DELAYGOTO 1 @5a
+Break
+#if
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+
+INC M1 880000
+INC M2 1
+DELAYGOTO 1 @5a
+Break
+#if
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+
+INC M1 880000
+INC M2 1
+DELAYGOTO 1 @5a
+Break
+#IF
+large M2 0
+#ACT
+CHANGEEXP + <$STR(M1)>
+SENDMSG 0 玩家【%s】一键回收装备(<$STR(M2)>)件。
+mov M1 0
+mov M2 0
+
+#elseact 
+
+break
+
+
+[@6a]
+#if
+checkitem 屠龙 1
+#ACT
+take 屠龙 1
+
+INC M1 4000000
+INC M2 1
+DELAYGOTO 1 @6a
+Break
+#if
+checkitem 嗜魂法杖 1
+#ACT
+take 嗜魂法杖 1
+
+INC M1 4000000
+INC M2 1
+DELAYGOTO 1 @6a
+Break
+#if
+checkitem 太极逍遥扇 1
+#ACT
+take 太极逍遥扇 1
+
+INC M1 4000000
+INC M2 1
+Break
+DELAYGOTO 1 @6a
+#IF
+large M2 0
+#ACT
+CHANGEEXP + <$STR(M1)>
+SENDMSG 0 玩家【%s】一键回收装备(<$STR(M2)>)件。
+mov M1 0
+mov M2 0
+
+#elseact 
+
+break
+
+
+
+[@2A]
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+
+INC M1 60000
+INC M2 1
+DELAYGOTO 1 @2A
+Break
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+
+INC M1 60000
+INC M2 1
+DELAYGOTO 1 @2A
+Break
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+
+INC M1 60000
+INC M2 1
+DELAYGOTO 1 @2A
+Break
+#IF
+large M2 0
+#ACT
+CHANGEEXP + <$STR(M1)>
+SENDMSG 0 玩家【%s】一键回收装备(<$STR(M2)>)件。
+mov M1 0
+mov M2 0
+
+#elseact 
+
+break
+
+
+
+[@1A]
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+
+INC M1 30000
+INC M2 1
+DELAYGOTO 1 @1A
+Break
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+
+INC M1 30000
+INC M2 1
+DELAYGOTO 1 @1A
+Break
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+
+INC M1 30000
+INC M2 1
+DELAYGOTO 1 @1A
+Break
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+
+INC M1 30000
+INC M2 1
+DELAYGOTO 1 @1A
+Break
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+
+INC M1 30000
+INC M2 1
+DELAYGOTO 1 @1A
+Break
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+
+INC M1 30000
+INC M2 1
+DELAYGOTO 1 @1A
+Break
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+
+INC M1 30000
+INC M2 1
+DELAYGOTO 1 @1A
+Break
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+
+INC M1 30000
+INC M2 1
+DELAYGOTO 1 @1A
+Break
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+
+INC M1 30000
+INC M2 1
+DELAYGOTO 1 @1A
+Break
+#IF
+large M2 0
+#ACT
+CHANGEEXP + <$STR(M1)>
+SENDMSG 0 玩家【%s】一键回收装备(<$STR(M2)>)件。
+mov M1 0
+mov M2 0
+
+#elseact 
+
+break
+
+
+
+[@3Af]
+#if
+checkitem 圣战戒指·佛 1
+#ACT
+take 圣战戒指·佛 1
+
+INC M1 2000000
+INC M2 1
+DELAYGOTO 1 @3Af
+Break
+#if
+checkitem 圣战手镯·佛 1
+#ACT
+take 圣战手镯·佛 1
+
+INC M1 2000000
+INC M2 1
+DELAYGOTO 1 @3Af
+Break
+#if
+checkitem 圣战项链·佛 1
+#ACT
+take 圣战项链·佛 1
+
+INC M1 2000000
+INC M2 1
+DELAYGOTO 1 @3Af
+Break
+#if
+checkitem 天尊戒指·佛 1
+#ACT
+take 天尊戒指·佛 1
+
+INC M1 2000000
+INC M2 1
+DELAYGOTO 1 @3Af
+Break
+#if
+checkitem 天尊手镯·佛 1
+#ACT
+take 天尊手镯·佛 1
+
+INC M1 2000000
+INC M2 1
+DELAYGOTO 1 @3Af
+Break
+#if
+checkitem 天尊项链·佛 1
+#ACT
+take 天尊项链·佛 1
+
+INC M1 2000000
+INC M2 1
+DELAYGOTO 1 @3Af
+Break
+#if
+checkitem 法神戒指·佛 1
+#ACT
+take 法神戒指·佛 1
+
+INC M1 2000000
+INC M2 1
+DELAYGOTO 1 @3Af
+Break
+#if
+checkitem 法神手镯·佛 1
+#ACT
+take 法神手镯·佛 1
+
+INC M1 2000000
+INC M2 1
+DELAYGOTO 1 @3Af
+Break
+#if
+checkitem 法神项链·佛 1
+#ACT
+take 法神项链·佛 1
+
+INC M1 2000000
+INC M2 1
+DELAYGOTO 1 @3Af
+Break
+#if
+checkitem 法神头盔·佛 1
+#ACT
+take 法神头盔·佛 1
+
+INC M1 2000000
+INC M2 1
+DELAYGOTO 1 @3Af
+Break
+#if
+checkitem 天尊头盔·佛 1
+#ACT
+take 天尊头盔·佛 1
+
+INC M1 2000000
+INC M2 1
+DELAYGOTO 1 @3Af
+Break
+#if
+checkitem 圣战头盔·佛 1
+#ACT
+take 圣战头盔·佛 1
+
+INC M1 2000000
+INC M2 1
+DELAYGOTO 1 @3Af
+Break
+#IF
+large M2 0
+#ACT
+CHANGEEXP + <$STR(M1)>
+SENDMSG 0 玩家【%s】一键回收装备(<$STR(M2)>)件。
+mov M1 0
+mov M2 0
+
+#elseact 
+
+break
+
+
+
+
+[@3Bf]
+#if
+checkitem 圣战戒指·佛 1
+#ACT
+take 圣战戒指·佛 1
+GAMEGOLD + 800
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3Bf
+Break
+#if
+checkitem 圣战手镯·佛 1
+#ACT
+take 圣战手镯·佛 1
+GAMEGOLD + 800
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3Bf
+Break
+#if
+checkitem 圣战项链·佛 1
+#ACT
+take 圣战项链·佛 1
+GAMEGOLD + 800
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3Bf
+Break
+#if
+checkitem 天尊戒指·佛 1
+#ACT
+take 天尊戒指·佛 1
+GAMEGOLD + 800
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3Bf
+Break
+#if
+checkitem 天尊手镯·佛 1
+#ACT
+take 天尊手镯·佛 1
+GAMEGOLD + 800
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3Bf
+Break
+#if
+checkitem 天尊项链·佛 1
+#ACT
+take 天尊项链·佛 1
+GAMEGOLD + 800
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3Bf
+Break
+#if
+checkitem 法神戒指·佛 1
+#ACT
+take 法神戒指·佛 1
+GAMEGOLD + 800
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3Bf
+Break
+#if
+checkitem 法神手镯·佛 1
+#ACT
+take 法神手镯·佛 1
+GAMEGOLD + 800
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3Bf
+Break
+#if
+checkitem 法神项链·佛 1
+#ACT
+take 法神项链·佛 1
+GAMEGOLD + 800
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3Bf
+Break
+#if
+checkitem 法神头盔·佛 1
+#ACT
+take 法神头盔·佛 1
+GAMEGOLD + 800
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3Bf
+Break
+#if
+checkitem 天尊头盔·佛 1
+#ACT
+take 天尊头盔·佛 1
+GAMEGOLD + 800
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3Bf
+Break
+#if
+checkitem 圣战头盔·佛 1
+#ACT
+take 圣战头盔·佛 1
+GAMEGOLD + 800
+INC M1 50
+INC M2 1
+DELAYGOTO 1 @3Bf
+Break
+#IF
+large M2 0
+#ACT
+SENDMSG 0 玩家【%s】一键回收装备(<$STR(M2)>)件。
+mov M1 0
+mov M2 0
+
+#elseact 
+
+break

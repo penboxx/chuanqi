@@ -1,0 +1,191 @@
+[@天头解封]
+{
+#IF
+CHECKITEM 天尊头盔(封印) 1
+#ACT
+MOVR d0 3
+SET [100] 1
+DELAYGOTO 1 @天尊头一
+#ELSESAY
+你没有相应的头盔需要解封,还是到其他地方看看吧\
+
+[@天尊头一]
+#IF
+CHECK [100] 0
+#ACT
+MAPMOVE 0147
+BREAK
+#IF
+CHECKITEM 天尊头盔(封印) 1
+EQUAL d0 0
+#SAY
+天之天尊头盔已经解封成功\ \
+<返回/@解开头盔封印>\
+#ACT
+SET [172] 0
+MOV d0 0
+SET [100] 0
+TAKE 天尊头盔(封印) 1
+GIVE 天之天尊头盔 1
+SENDMSG 0 恭喜:<$USERNAME>解封天尊头盔(封印)成功，获得了：天之天尊头盔
+CLOSE
+BREAK
+#IF
+CHECKITEM 天尊头盔(封印) 1
+#SAY
+天尊头盔已经解封成功\ \
+<返回/@解开头盔封印>\
+#ACT
+SET [172] 0
+MOV d0 0
+SET [100] 0
+TAKE 天尊头盔(封印) 1
+GIVE 天尊头盔 1
+SENDMSG 0 恭喜:<$USERNAME>解封天尊头盔(封印)成功，获得了：天尊头盔
+CLOSE
+BREAK
+}
+
+[@法头解封]
+{
+#IF
+CHECKITEM 法神头盔(封印) 1
+#ACT
+MOVR d0 3
+SET [100] 1
+DELAYGOTO 1 @法神头一
+#ELSESAY
+你没有相应的头盔需要解封,还是到其他地方看看吧\
+
+[@法神头一]
+#IF
+CHECK [100] 0
+#ACT
+MAPMOVE 0147
+BREAK
+#IF
+CHECKITEM 法神头盔(封印) 1
+EQUAL d0 0
+#SAY
+天之法神头盔已经解封成功\ \
+<返回/@解开头盔封印>\
+#ACT
+SET [172] 0
+MOV d0 0
+SET [100] 0
+TAKE 法神头盔(封印) 1
+GIVE 天之法神头盔 1
+SENDMSG 0 恭喜:<$USERNAME>解封法神头盔(封印)成功，获得了：天之法神头盔
+CLOSE
+BREAK
+#IF
+CHECKITEM 法神头盔(封印) 1
+#SAY
+法神头盔已经解封成功\ \
+<返回/@解开头盔封印>\
+#ACT
+SET [172] 0
+MOV d0 0
+SET [100] 0
+TAKE 法神头盔(封印) 1
+GIVE 法神头盔 1
+SENDMSG 0 恭喜:<$USERNAME>解封法神头盔(封印)成功，获得了：法神头盔
+CLOSE
+BREAK
+}
+
+[@圣头解封]
+{
+#IF
+CHECKITEM 圣战头盔(封印) 1
+#ACT
+MOVR d0 3
+SET [100] 1
+DELAYGOTO 1 @圣战头一
+#ELSESAY
+你没有相应的头盔需要解封,还是到其他地方看看吧\
+
+[@圣战头一]
+#IF
+CHECK [100] 0
+#ACT
+MAPMOVE 0147
+BREAK
+#IF
+CHECKITEM 圣战头盔(封印) 1
+EQUAL d0 0
+#SAY
+天之圣战头盔已经解封成功\ \
+<返回/@解开头盔封印>\
+#ACT
+SET [172] 0
+MOV d0 0
+SET [100] 0
+TAKE 圣战头盔(封印) 1
+GIVE 天之圣战头盔 1
+SENDMSG 0 恭喜:<$USERNAME>解封圣战头盔(封印)成功，获得了：天之圣战头盔
+CLOSE
+BREAK
+#IF
+CHECKITEM 圣战头盔(封印) 1
+#SAY
+圣战头盔已经解封成功\ \
+<返回/@解开头盔封印>\
+#ACT
+SET [172] 0
+MOV d0 0
+SET [100] 0
+TAKE 圣战头盔(封印) 1
+GIVE 圣战头盔 1
+SENDMSG 0 恭喜:<$USERNAME>解封圣战头盔(封印)成功，获得了：圣战头盔
+CLOSE
+BREAK
+}
+
+[@黑头解封]
+{
+#IF
+CHECKITEM 黑铁头盔(封印) 1
+#ACT
+MOVR d0 3
+SET [100] 1
+DELAYGOTO 1 @黑铁头一
+#ELSESAY
+你没有相应的头盔需要解封,还是到其他地方看看吧\
+
+[@黑铁头一]
+#IF
+CHECK [100] 0
+#ACT
+MAPMOVE 0147
+BREAK
+#IF
+CHECKITEM 黑铁头盔(封印) 1
+EQUAL d0 0
+#SAY
+天之黑铁头盔已经解封成功\ \
+<返回/@解开头盔封印>\
+#ACT
+SET [172] 0
+MOV d0 0
+SET [100] 0
+TAKE 黑铁头盔(封印) 1
+GIVE 天之黑铁头盔 1
+SENDMSG 0 恭喜:<$USERNAME>解封黑铁头盔(封印)成功，获得了：天之黑铁头盔
+CLOSE
+BREAK
+#IF
+CHECKITEM 黑铁头盔(封印) 1
+#SAY
+黑铁头盔已经解封成功\ \
+<返回/@解开头盔封印>\
+#ACT
+SET [172] 0
+MOV d0 0
+SET [100] 0
+TAKE 黑铁头盔(封印) 1
+GIVE 黑铁头盔 1
+SENDMSG 0 恭喜:<$USERNAME>解封黑铁头盔(封印)成功，获得了：黑铁头盔
+CLOSE
+BREAK
+}

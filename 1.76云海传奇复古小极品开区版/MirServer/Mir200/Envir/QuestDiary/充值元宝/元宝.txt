@@ -1,0 +1,396 @@
+[@领取元宝]
+{
+#IF
+#ACT
+mov p0 0
+#ELSEACT
+mov p0 0
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account1.txt
+#ACT
+GAMEDIAMOND + 0
+inc p0 2
+GAMEGOLD + 2
+DelAccountList ..\QuestDiary\充值元宝\account1.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account2.txt
+#ACT
+GAMEDIAMOND + 0
+inc p0 4
+GAMEGOLD + 4
+DelAccountList ..\QuestDiary\充值元宝\account2.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account3.txt
+#ACT
+GAMEDIAMOND + 0
+inc p0 6
+GAMEGOLD + 6
+DelAccountList ..\QuestDiary\充值元宝\account3.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account4.txt
+#ACT
+GAMEDIAMOND + 0
+inc p0 8
+GAMEGOLD + 8
+DelAccountList ..\QuestDiary\充值元宝\account4.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account5.txt
+#ACT
+GAMEDIAMOND + 0
+inc p0 10
+GAMEGOLD + 10
+DelAccountList ..\QuestDiary\充值元宝\account5.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account6.txt
+#ACT
+GAMEDIAMOND + 0
+inc p0 12
+GAMEGOLD + 12
+DelAccountList ..\QuestDiary\充值元宝\account6.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account7.txt
+#ACT
+GAMEDIAMOND + 0
+inc p0 14
+GAMEGOLD + 14
+DelAccountList ..\QuestDiary\充值元宝\account7.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account8.txt
+#ACT
+GAMEDIAMOND + 0
+inc p0 16
+GAMEGOLD + 16
+DelAccountList ..\QuestDiary\充值元宝\account8.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account9.txt
+#ACT
+GAMEDIAMOND + 0
+inc p0 18
+GAMEGOLD + 18
+DelAccountList ..\QuestDiary\充值元宝\account9.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account10.txt
+#ACT
+GAMEDIAMOND + 0
+inc p0 20
+GAMEGOLD + 20
+DelAccountList ..\QuestDiary\充值元宝\account10.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account20.txt
+#ACT
+GAMEDIAMOND + 0
+inc p0 40
+GAMEGOLD + 40
+DelAccountList ..\QuestDiary\充值元宝\account20.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account30.txt
+#ACT
+GAMEDIAMOND + 0
+inc p0 60
+GAMEGOLD + 60
+DelAccountList ..\QuestDiary\充值元宝\account30.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account40.txt
+#ACT
+GAMEDIAMOND + 0
+inc p0 80
+GAMEGOLD + 80
+DelAccountList ..\QuestDiary\充值元宝\account40.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account50.txt
+#ACT
+GAMEDIAMOND + 0
+inc p0 100
+GAMEGOLD + 100
+DelAccountList ..\QuestDiary\充值元宝\account50.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account60.txt
+#ACT
+GAMEDIAMOND + 1
+inc p0 120
+GAMEGOLD + 120
+DelAccountList ..\QuestDiary\充值元宝\account60.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account70.txt
+#ACT
+GAMEDIAMOND + 1
+inc p0 140
+GAMEGOLD + 140
+DelAccountList ..\QuestDiary\充值元宝\account70.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account80.txt
+#ACT
+GAMEDIAMOND + 1
+inc p0 160
+GAMEGOLD + 160
+DelAccountList ..\QuestDiary\充值元宝\account80.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account90.txt
+#ACT
+GAMEDIAMOND + 1
+inc p0 180
+GAMEGOLD + 180
+DelAccountList ..\QuestDiary\充值元宝\account90.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account100.txt
+#ACT
+GAMEDIAMOND + 1
+inc p0 200
+GAMEGOLD + 200
+DelAccountList ..\QuestDiary\充值元宝\account100.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account200.txt
+#ACT
+GAMEDIAMOND + 2
+inc p0 400
+GAMEGOLD + 400
+DelAccountList ..\QuestDiary\充值元宝\account200.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account300.txt
+#ACT
+GAMEDIAMOND + 3
+inc p0 600
+GAMEGOLD + 600
+DelAccountList ..\QuestDiary\充值元宝\account300.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account400.txt
+#ACT
+GAMEDIAMOND + 4
+inc p0 800
+GAMEGOLD + 800
+DelAccountList ..\QuestDiary\充值元宝\account400.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account500.txt
+#ACT
+GAMEDIAMOND + 5
+inc p0 1000
+GAMEGOLD + 1000
+DelAccountList ..\QuestDiary\充值元宝\account500.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account600.txt
+#ACT
+GAMEDIAMOND + 6
+inc p0 1200
+GAMEGOLD + 1200
+DelAccountList ..\QuestDiary\充值元宝\account600.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account700.txt
+#ACT
+GAMEDIAMOND + 7
+inc p0 1400
+GAMEGOLD + 1400
+DelAccountList ..\QuestDiary\充值元宝\account700.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account800.txt
+#ACT
+GAMEDIAMOND + 8
+inc p0 1600
+GAMEGOLD + 1600
+DelAccountList ..\QuestDiary\充值元宝\account800.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account900.txt
+#ACT
+GAMEDIAMOND + 9
+inc p0 1800
+GAMEGOLD + 1800
+DelAccountList ..\QuestDiary\充值元宝\account900.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account1000.txt
+#ACT
+GAMEDIAMOND + 10
+inc p0 2000
+GAMEGOLD + 2000
+DelAccountList ..\QuestDiary\充值元宝\account1000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account2000.txt
+#ACT
+GAMEDIAMOND + 20
+inc p0 4000
+GAMEGOLD + 4000
+DelAccountList ..\QuestDiary\充值元宝\account2000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account3000.txt
+#ACT
+GAMEDIAMOND + 30
+inc p0 6000
+GAMEGOLD + 6000
+DelAccountList ..\QuestDiary\充值元宝\account3000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account4000.txt
+#ACT
+GAMEDIAMOND + 40
+inc p0 8000
+GAMEGOLD + 8000
+DelAccountList ..\QuestDiary\充值元宝\account4000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account5000.txt
+#ACT
+GAMEDIAMOND + 50
+inc p0 10000
+GAMEGOLD + 10000
+DelAccountList ..\QuestDiary\充值元宝\account5000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account6000.txt
+#ACT
+GAMEDIAMOND + 60
+inc p0 12000
+GAMEGOLD + 12000
+DelAccountList ..\QuestDiary\充值元宝\account6000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account7000.txt
+#ACT
+GAMEDIAMOND + 70
+inc p0 14000
+GAMEGOLD + 14000
+DelAccountList ..\QuestDiary\充值元宝\account7000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account8000.txt
+#ACT
+GAMEDIAMOND + 80
+inc p0 16000
+GAMEGOLD + 16000
+DelAccountList ..\QuestDiary\充值元宝\account8000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account9000.txt
+#ACT
+GAMEDIAMOND + 90
+inc p0 18000
+GAMEGOLD + 18000
+DelAccountList ..\QuestDiary\充值元宝\account9000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account10000.txt
+#ACT
+GAMEDIAMOND + 100
+inc p0 20000
+GAMEGOLD + 20000
+DelAccountList ..\QuestDiary\充值元宝\account10000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account20000.txt
+#ACT
+GAMEDIAMOND + 200
+inc p0 40000
+GAMEGOLD + 40000
+DelAccountList ..\QuestDiary\充值元宝\account20000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account30000.txt
+#ACT
+GAMEDIAMOND + 300
+inc p0 60000
+GAMEGOLD + 60000
+DelAccountList ..\QuestDiary\充值元宝\account30000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account40000.txt
+#ACT
+GAMEDIAMOND + 400
+inc p0 80000
+GAMEGOLD + 80000
+DelAccountList ..\QuestDiary\充值元宝\account40000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account50000.txt
+#ACT
+GAMEDIAMOND + 500
+inc p0 100000
+GAMEGOLD + 100000
+DelAccountList ..\QuestDiary\充值元宝\account50000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account60000.txt
+#ACT
+GAMEDIAMOND + 600
+inc p0 120000
+GAMEGOLD + 120000
+DelAccountList ..\QuestDiary\充值元宝\account60000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account70000.txt
+#ACT
+GAMEDIAMOND + 700
+inc p0 140000
+GAMEGOLD + 140000
+DelAccountList ..\QuestDiary\充值元宝\account70000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account80000.txt
+#ACT
+GAMEDIAMOND + 800
+inc p0 160000
+GAMEGOLD + 160000
+DelAccountList ..\QuestDiary\充值元宝\account80000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account90000.txt
+#ACT
+GAMEDIAMOND + 900
+inc p0 180000
+GAMEGOLD + 180000
+DelAccountList ..\QuestDiary\充值元宝\account90000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account100000.txt
+#ACT
+GAMEDIAMOND + 1000
+inc p0 200000
+GAMEGOLD + 200000
+DelAccountList ..\QuestDiary\充值元宝\account100000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account200000.txt
+#ACT
+GAMEDIAMOND + 2000
+inc p0 400000
+GAMEGOLD + 400000
+DelAccountList ..\QuestDiary\充值元宝\account200000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account300000.txt
+#ACT
+GAMEDIAMOND + 3000
+inc p0 600000
+GAMEGOLD + 600000
+DelAccountList ..\QuestDiary\充值元宝\account300000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account400000.txt
+#ACT
+GAMEDIAMOND + 4000
+inc p0 800000
+GAMEGOLD + 800000
+DelAccountList ..\QuestDiary\充值元宝\account400000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account500000.txt
+#ACT
+GAMEDIAMOND + 5000
+inc p0 1000000
+GAMEGOLD + 1000000
+DelAccountList ..\QuestDiary\充值元宝\account500000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account600000.txt
+#ACT
+GAMEDIAMOND + 6000
+inc p0 1200000
+GAMEGOLD + 1200000
+DelAccountList ..\QuestDiary\充值元宝\account600000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account700000.txt
+#ACT
+GAMEDIAMOND + 7000
+inc p0 1400000
+GAMEGOLD + 1400000
+DelAccountList ..\QuestDiary\充值元宝\account700000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account800000.txt
+#ACT
+GAMEDIAMOND + 8000
+inc p0 1600000
+GAMEGOLD + 1600000
+DelAccountList ..\QuestDiary\充值元宝\account800000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account900000.txt
+#ACT
+GAMEDIAMOND + 9000
+inc p0 1800000
+GAMEGOLD + 1800000
+DelAccountList ..\QuestDiary\充值元宝\account900000.txt
+#IF
+large p0 0
+#ACT
+SENDMSG 1 ★恭喜玩家[%s]使用我服推出的在线自动冲值系统，购买元宝<$str(p0)>个。
+messagebox  恭喜你获得元宝<$str(p0)>个，你可以换取装备或换取系统给你的高级服务。
+#Elsesay
+您当前还没有充值或已领取成功,自己的元宝数量: <$GAMEGOLD>!\
+没有充值请按提示进行充值!\
+充值问题请打开 www.175111.com 进行咨询处理!\
+<返回/@元宝使者>
+}

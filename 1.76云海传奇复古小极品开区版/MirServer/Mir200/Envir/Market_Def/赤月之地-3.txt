@@ -1,0 +1,23 @@
+[@main]
+<COLOR=clFuchsia ╔═══════════════════════════╗>\
+<COLOR=clFuchsia ║>主要BOSS：<COLOR=clSkyBlue 送葬者、六大暗之教主、赤月恶魔等各大BOSS...> <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>刷新时间：<COLOR=clSkyBlue 小怪10分钟，暗之教主30分钟，赤月恶魔30分钟..><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>可爆物品：<COLOR=clSkyBlue 屠龙、40级衣服、赤月、极品装备...>       　　<COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>危险指数：<COLOR=clLime ★★★★☆>                                  <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>进入条件：<COLOR=clRed 需要45级和200元宝！>  　　　　　　　　　　   <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║>地图介绍：<COLOR=clRed 此地图怪物非常强悍。建议组队进入。>          <COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ║><进入赤月之地/@JRCYZD>　　　　　　　　　　　　　            <返回/@EXIT><COLOR=clFuchsia ║>\
+<COLOR=clFuchsia ╚═══════════════════════════╝>\
+
+[@JRCYZD]
+#IF
+checklevelex > 44
+CHECKGAMEGOLD > 199
+#ACT
+GAMEGOLD - 200
+MAPMOVE gg003
+SENDMSG 0 勇士%s进入了赤月之地，遭大批BOSS围攻！
+GIVE 回城卷 1
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有45级或者元宝不足200颗！

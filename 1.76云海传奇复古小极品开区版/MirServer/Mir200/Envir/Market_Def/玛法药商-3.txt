@@ -1,0 +1,42 @@
+[@main]
+闯荡江湖多年，只能靠卖药维持生计了...\
+珍贵的药品是一位辉煌勇士的必备品！\
+<COLOR=clFuchsia 注意:请将包袱留出5个空格以上!>\
+　\
+<花费50元宝购买5包强效太阳包/@wbtysb>\
+　\
+<花费100元宝购买5包雪霜包/@wbxsb>\
+
+[@wbtysb]
+#IF
+CHECKBAGSIZE 5
+#ELSEACT
+MESSAGEBOX 请将包袱留出5个空格以上！
+BREAK
+
+#IF
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+give 强效太阳包 5
+BREAK
+#ELSESAY
+你没有50元宝，无法购买5包强效太阳包。\
+<离 开/@exit>
+
+[@wbxsb]
+#IF
+CHECKBAGSIZE 5
+#ELSEACT
+MESSAGEBOX 请将包袱留出5个空格以上！
+BREAK
+
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+give 雪霜包 5
+BREAK
+#ELSESAY
+你没有100元宝，无法购买5包雪霜包。\
+<离 开/@exit>

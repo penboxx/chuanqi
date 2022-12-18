@@ -1,0 +1,300 @@
+()
+%100
+[@main]
+<COLOR=clAqua 提升到4级.需要5个><技能神石><COLOR=clAqua 逐日.开天.护体需要10个就可以提升.> \
+<COLOR=clLime 人物>·<四级攻杀剑术/@41>  <四级刺杀剑术/@42>  <四级逐日剑法/@43>  <四级开天斩/@44>\
+<COLOR=clLime 人物>·<四级无极真气/@61>  <四级灵魂火符/@62>  <四级施毒术/@63>    <四级噬血术/@64>\
+<COLOR=clLime 人物>·<四级护体神盾/@52>  <四级流星火雨/@51>  <四级灭天火/@54>    <四级火墙/@53>\
+<COLOR=clFuchsia ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄75-w--w.c-o--m提-=供┄>\
+<COLOR=clAqua 提升到4级.需要5个><技能神石><COLOR=clAqua 逐日.开天.护体需要10个就可以提升.> \
+<COLOR=clLime 英雄>·<四级攻杀剑术/@11>  <四级刺杀剑术/@12>  <四级逐日剑法/@13>  <四级开天斩/@14>\
+<COLOR=clLime 英雄>·<四级无极真气/@21>  <四级灵魂火符/@22>  <四级施毒术/@23>    <四级噬血术/@24>\
+<COLOR=clLime 英雄>·<四级护体神盾/@32>  <四级流星火雨/@31>  <四级灭天火/@34>    <四级火墙/@33>\
+<COLOR=clFuchsia ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+[@34]
+#IF
+CHECKHEROJOB WIZARD
+H.CHECKMAGICLEVEL 英雄灭天火 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+H.SKILLLEVEL 英雄灭天火 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@33]
+#IF
+CHECKHEROJOB WIZARD
+H.CHECKMAGICLEVEL 英雄火墙 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+H.SKILLLEVEL 英雄火墙 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@32]
+#IF
+CHECKHEROJOB WIZARD
+H.CHECKMAGICLEVEL 英雄护体神盾 = 3
+checkitem 技能神石 10
+#ACT
+take 技能神石 10
+H.SKILLLEVEL 英雄护体神盾 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有10个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@31]
+#IF
+CHECKHEROJOB WIZARD
+H.CHECKMAGICLEVEL 英雄流星火雨 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+H.SKILLLEVEL 英雄流星火雨 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@21]
+#IF
+CHECKHEROJOB TAOIST
+H.CHECKMAGICLEVEL 英雄无极真气 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+H.SKILLLEVEL 英雄无极真气 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@22]
+#IF
+CHECKHEROJOB TAOIST
+H.CHECKMAGICLEVEL 英雄灵魂火符 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+H.SKILLLEVEL 英雄灵魂火符 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@23]
+#IF
+CHECKHEROJOB TAOIST
+H.CHECKMAGICLEVEL 英雄施毒术 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+H.SKILLLEVEL 英雄施毒术 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@24]
+#IF
+CHECKHEROJOB TAOIST
+H.CHECKMAGICLEVEL 英雄噬血术 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+H.SKILLLEVEL 英雄噬血术 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@14]
+#IF
+CHECKHEROJOB  WARRIOR
+H.CHECKMAGICLEVEL 英雄开天斩 = 3
+checkitem 技能神石 10
+#ACT
+take 技能神石 10
+H.SKILLLEVEL 英雄开天斩 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有10个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@13]
+#IF
+CHECKHEROJOB  WARRIOR
+H.CHECKMAGICLEVEL 英雄逐日剑法 = 3
+checkitem 技能神石 10
+#ACT
+take 技能神石 10
+H.SKILLLEVEL 英雄逐日剑法 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有10个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@12]
+#IF
+CHECKHEROJOB  WARRIOR
+H.CHECKMAGICLEVEL 英雄刺杀剑术 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+H.SKILLLEVEL 英雄刺杀剑术 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@11]
+#IF
+CHECKHEROJOB  WARRIOR
+H.CHECKMAGICLEVEL 英雄攻杀剑术 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+H.SKILLLEVEL 英雄攻杀剑术 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@54]
+#IF
+CHECKJOB WIZARD
+CHECKMAGICLEVEL 灭天火 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+SKILLLEVEL 灭天火 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@53]
+#IF
+CHECKJOB WIZARD
+CHECKMAGICLEVEL 火墙 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+SKILLLEVEL 火墙 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@52]
+#IF
+CHECKMAGICLEVEL 护体神盾 = 3
+checkitem 技能神石 10
+#ACT
+take 技能神石 10
+SKILLLEVEL 护体神盾 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有10个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@51]
+#IF
+CHECKJOB WIZARD
+CHECKMAGICLEVEL 流星火雨 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+SKILLLEVEL 流星火雨 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@64]
+#IF
+CHECKJOB TAOIST
+CHECKMAGICLEVEL 噬血术 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+SKILLLEVEL 噬血术 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@63]
+#IF
+CHECKJOB TAOIST
+CHECKMAGICLEVEL 施毒术 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+SKILLLEVEL 施毒术 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@62]
+#IF
+CHECKJOB TAOIST
+CHECKMAGICLEVEL 灵魂火符 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+SKILLLEVEL 灵魂火符 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@61]
+#IF
+CHECKJOB TAOIST
+CHECKMAGICLEVEL 无极真气 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+SKILLLEVEL 无极真气 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@44]
+#IF
+CHECKJOB WARRIOR
+CHECKMAGICLEVEL 开天斩 = 3
+checkitem 技能神石 10
+#ACT
+take 技能神石 10
+SKILLLEVEL 开天斩 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有10个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@43]
+#IF
+CHECKJOB WARRIOR
+CHECKMAGICLEVEL 逐日剑法 = 3
+checkitem 技能神石 10
+#ACT
+take 技能神石 10
+SKILLLEVEL 逐日剑法 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有10个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@42]
+#IF 
+CHECKJOB WARRIOR
+CHECKMAGICLEVEL 刺杀剑术 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+SKILLLEVEL 刺杀剑术 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK
+[@41]
+#IF
+CHECKJOB WARRIOR
+CHECKMAGICLEVEL 攻杀剑术 = 3
+checkitem 技能神石 5
+#ACT
+take 技能神石 5
+SKILLLEVEL 攻杀剑术 = 4
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你没有5个技能神石。或你的技能等级没有得到3级！
+BREAK

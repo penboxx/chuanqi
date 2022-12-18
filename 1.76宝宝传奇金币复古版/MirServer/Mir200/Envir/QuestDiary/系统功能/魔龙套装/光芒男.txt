@@ -1,0 +1,76 @@
+[@开始合光芒男]
+{
+合成光芒道袍(男)所需物品：\
+金刚石:388颗，\
+藏宝图305、藏宝图306、藏宝图307、藏宝图308，\
+藏宝图321、藏宝图322、藏宝图323、藏宝图324，\
+天尊头盔、天尊项链、天尊手镯、天尊戒指中的任意1-10件。\
+<返回查看配方/@合成衣服>\
+<进行合成/@进行合成光芒男>\
+<退出/@EXIT>\
+
+[@进行合成光芒男]
+#IF
+CHECKGAMEDIAMOND > 387
+CHECKITEM 藏宝图305 1
+CHECKITEM 藏宝图306 1
+CHECKITEM 藏宝图307 1
+CHECKITEM 藏宝图308 1
+CHECKITEM 藏宝图321 1
+CHECKITEM 藏宝图322 1
+CHECKITEM 藏宝图323 1
+CHECKITEM 藏宝图324 1
+#ACT
+MOVR d7 2
+DELAYGOTO 1 @光芒男开始合成
+#ELSESAY
+您没有升级需要的足够原料，我也无能为力了。\
+
+[@光芒男开始合成]
+#IF
+CHECKGAMEDIAMOND > 387
+CHECKITEM 藏宝图305 1
+CHECKITEM 藏宝图306 1
+CHECKITEM 藏宝图307 1
+CHECKITEM 藏宝图308 1
+CHECKITEM 藏宝图321 1
+CHECKITEM 藏宝图322 1
+CHECKITEM 藏宝图323 1
+CHECKITEM 藏宝图324 1
+EQUAL d7 1
+#ACT
+MOV d7 0
+GAMEDIAMOND - 388
+TAKE 藏宝图305 1
+TAKE 藏宝图306 1
+TAKE 藏宝图307 1
+TAKE 藏宝图308 1
+TAKE 藏宝图321 1
+TAKE 藏宝图322 1
+TAKE 藏宝图323 1
+TAKE 藏宝图324 1
+TAKE 天尊头盔 10
+TAKE 天尊项链 10
+TAKE 天尊手镯 10
+TAKE 天尊戒指 10
+GIVE 光芒道袍(男) 1
+SENDMSG 0 恭喜:<$USERNAME>升级光芒道袍(男)成功！
+CLOSE
+#ELSEACT
+MOV d7 0
+GAMEDIAMOND - 388
+TAKE 藏宝图305 1
+TAKE 藏宝图306 1
+TAKE 藏宝图307 1
+TAKE 藏宝图308 1
+TAKE 藏宝图321 1
+TAKE 藏宝图322 1
+TAKE 藏宝图323 1
+TAKE 藏宝图324 1
+TAKE 天尊头盔 10
+TAKE 天尊项链 10
+TAKE 天尊手镯 10
+TAKE 天尊戒指 10
+messagebox  可惜了：\<$USERNAME>你合成失败，藏宝图和金刚石在合成过程中被熔化！
+CLOSE
+}

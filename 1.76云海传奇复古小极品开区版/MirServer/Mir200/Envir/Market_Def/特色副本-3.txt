@@ -1,0 +1,37 @@
+()
+%100
+[@main]
+<COLOR=clYellow ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+<COLOR=clAqua 本服为散人玩家好发展，特设三大副本地图,进入免费不限制等级>\
+<COLOR=clYellow ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+<COLOR=clRED ♀.⑴ 神器副本每小时刷新一只神器使者爆出《神器宝石》 >\
+<COLOR=clAqua ♀.⑵ 财富副本每小时刷新一只财富使者爆出《财富宝石》>\
+<COLOR=clLime ♀.⑶ 经验副本每小时刷新一只经验使者爆出《经验宝石》> \
+<COLOR=clFuchsia ♀.⑷ 副本奖励物品丰厚,听说里面很激情!> <查看副本奖励/@奖励>\
+<COLOR=clYellow ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+<进入神器副本/@shenqi01>        <进入财富副本/@caifu01>         <进入经验副本/@jingyan01>       
+[@奖励]
+<COLOR=clAqua  神器副本 本服所有装备随机奖励领取，就看你的运气如何了！ > \
+<COLOR=clLime  财富副本 奖励元宝10000个  > \
+<COLOR=clFuchsia  经验副本 奖励 2000万经验  > \
+[@shenqi01]
+#IF
+#ACT
+GIVE 回城卷 1
+mapmove sqfb01
+SENDMSG 0 勇敢的玩家『%s』进入了神器副本，奖励很丰厚的哦，你准备好了吗！ 245 0
+BREAK
+[@caifu01]
+#IF
+#ACT
+GIVE 回城卷 1
+mapmove cffb01
+SENDMSG 0 勇敢的玩家『%s』进入了财富副本，奖励很丰厚的哦，你准备好了吗！ 245 0
+BREAK
+[@jingyan01]
+#IF
+#ACT
+GIVE 回城卷 1
+mapmove jyfb01
+SENDMSG 0 勇敢的玩家『%s』进入了财富副本，奖励很丰厚的哦，你准备好了吗！ 245 0
+BREAK

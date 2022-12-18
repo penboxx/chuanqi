@@ -1,0 +1,31 @@
+[@MAIN]
+这里是天关十一层\
+你必须将本地图内所有怪物杀光，才可以领取奖励进入下一关！\
+<COLOR=clRed 注:请不要将聚灵珠放在包袱内,否则会被收取掉!>\
+　\
+<领取奖励进入下一关/@SYCJLLQ>\
+
+[@SYCJLLQ]
+#IF
+CheckRangeMonCount TG11 16 12 15 = 0
+#ACT
+GOTO @SYCJLLQ1
+#ELSESAY
+地图内的怪物还没杀光呢！
+
+[@SYCJLLQ1]
+#IF
+CHECKMAPHUMANCOUNT TG12 = 0
+CHECKGAMEGOLD > 389
+#ACT
+GAMEGOLD - 390
+CLEARMAPMON TG12
+take 聚灵珠 50
+CHANGEEXP + 1100000
+Param1 TG12
+MonGen 双头血魔 1 1
+MAPMOVE TG12
+SENDMSG 0 %s闯过了天关十一层，获得1100000经验奖励！
+BREAK
+#ELSEACT
+MESSAGEBOX 里面有人了，或者你的元宝不足390！

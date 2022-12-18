@@ -1,0 +1,609 @@
+[@封号分类]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\元宝代理名单.txt
+#ACT
+ChangeNameColor 253
+SETRANKLEVELNAME %s\◥■■■元■■■◤\◥■■宝■■◤\◥■代■◤\◥理◤\≮【<指定元宝代理商>】≯
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\翡翠赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆翡翠∝╬→\▂▆◣赞★助★大★使◢▆▂
+ChangeNameColor 253
+POWERRATE 110 720000000
+sendmsg 6 您现在的翡翠是：赞助大使，获得功魔道属性提升！
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\白金赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆白金∝╬→\▁▂▃赞☆助☆大☆使▃▂▁
+ChangeNameColor 253
+sendmsg 6 您现在的白金是：赞助大使，获得功魔道属性提升！
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\黄金赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆黄金∝╬→\▁▂赞☆助☆大☆使▂▁
+sendmsg 0
+ChangeNameColor 253
+sendmsg 6 您现在的黄金是：赞助大使，获得功魔道属性提升！
+break
+#IF
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+POWERRATE 120 8888
+#IF
+checkrenewlevel = 1
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【村长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 2
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【村委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 3
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【县长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 4
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【县委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 5
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【市长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 6
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【市委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 7
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【省长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 8
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【省委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 9
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【国家总理】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 10
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【国家主席】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+}
+[@封号分类]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\元宝代理名单.txt
+#ACT
+ChangeNameColor 253
+SETRANKLEVELNAME %s\◥■■■元■■■◤\◥■■宝■■◤\◥■代■◤\◥理◤\≮【<指定元宝代理商>】≯
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\翡翠赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆翡翠∝╬→\▂▆◣赞★助★大★使◢▆▂
+ChangeNameColor 253
+POWERRATE 110 720000000
+sendmsg 6 您现在的翡翠是：赞助大使，获得功魔道属性提升！
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\白金赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆白金∝╬→\▁▂▃赞☆助☆大☆使▃▂▁
+ChangeNameColor 253
+sendmsg 6 您现在的白金是：赞助大使，获得功魔道属性提升！
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\黄金赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆黄金∝╬→\▁▂赞☆助☆大☆使▂▁
+sendmsg 0
+ChangeNameColor 253
+sendmsg 6 您现在的黄金是：赞助大使，获得功魔道属性提升！
+break
+#IF
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+POWERRATE 120 8888
+#IF
+checkrenewlevel = 1
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【村长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 2
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【村委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 3
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【县长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 4
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【县委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 5
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【市长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 6
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【市委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 7
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【省长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 8
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【省委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 9
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【国家总理】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 10
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【国家主席】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+}
+[@封号分类]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\元宝代理名单.txt
+#ACT
+ChangeNameColor 253
+SETRANKLEVELNAME %s\◥■■■元■■■◤\◥■■宝■■◤\◥■代■◤\◥理◤\≮【<指定元宝代理商>】≯
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\翡翠赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆翡翠∝╬→\▂▆◣赞★助★大★使◢▆▂
+ChangeNameColor 253
+POWERRATE 110 720000000
+sendmsg 6 您现在的翡翠是：赞助大使，获得功魔道属性提升！
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\白金赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆白金∝╬→\▁▂▃赞☆助☆大☆使▃▂▁
+ChangeNameColor 253
+sendmsg 6 您现在的白金是：赞助大使，获得功魔道属性提升！
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\黄金赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆黄金∝╬→\▁▂赞☆助☆大☆使▂▁
+sendmsg 0
+ChangeNameColor 253
+sendmsg 6 您现在的黄金是：赞助大使，获得功魔道属性提升！
+break
+#IF
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+POWERRATE 120 8888
+#IF
+checkrenewlevel = 1
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【村长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 2
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【村委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 3
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【县长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 4
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【县委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 5
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【市长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 6
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【市委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 7
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【省长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 8
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【省委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 9
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【国家总理】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 10
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【国家主席】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+}
+[@封号分类]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\元宝代理名单.txt
+#ACT
+ChangeNameColor 253
+SETRANKLEVELNAME %s\◥■■■元■■■◤\◥■■宝■■◤\◥■代■◤\◥理◤\≮【<指定元宝代理商>】≯
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\翡翠赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆翡翠∝╬→\▂▆◣赞★助★大★使◢▆▂
+ChangeNameColor 253
+POWERRATE 110 720000000
+sendmsg 6 您现在的翡翠是：赞助大使，获得功魔道属性提升！
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\白金赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆白金∝╬→\▁▂▃赞☆助☆大☆使▃▂▁
+ChangeNameColor 253
+sendmsg 6 您现在的白金是：赞助大使，获得功魔道属性提升！
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\黄金赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆黄金∝╬→\▁▂赞☆助☆大☆使▂▁
+sendmsg 0
+ChangeNameColor 253
+sendmsg 6 您现在的黄金是：赞助大使，获得功魔道属性提升！
+break
+#IF
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+POWERRATE 120 8888
+#IF
+checkrenewlevel = 1
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【村长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 2
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【村委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 3
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【县长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 4
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【县委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 5
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【市长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 6
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【市委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 7
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【省长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 8
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【省委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 9
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【国家总理】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 10
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【国家主席】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+}
+[@封号分类]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\元宝代理名单.txt
+#ACT
+ChangeNameColor 253
+SETRANKLEVELNAME %s\◥■■■元■■■◤\◥■■宝■■◤\◥■代■◤\◥理◤\≮【<指定元宝代理商>】≯
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\翡翠赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆翡翠∝╬→\▂▆◣赞★助★大★使◢▆▂
+ChangeNameColor 253
+POWERRATE 110 720000000
+sendmsg 6 您现在的翡翠是：赞助大使，获得功魔道属性提升！
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\白金赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆白金∝╬→\▁▂▃赞☆助☆大☆使▃▂▁
+ChangeNameColor 253
+sendmsg 6 您现在的白金是：赞助大使，获得功魔道属性提升！
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\黄金赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆黄金∝╬→\▁▂赞☆助☆大☆使▂▁
+sendmsg 0
+ChangeNameColor 253
+sendmsg 6 您现在的黄金是：赞助大使，获得功魔道属性提升！
+break
+#IF
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+POWERRATE 120 8888
+#IF
+checkrenewlevel = 1
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【村长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 2
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【村委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 3
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【县长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 4
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【县委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 5
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【市长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 6
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【市委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 7
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【省长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 8
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【省委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 9
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【国家总理】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 10
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【国家主席】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+}
+[@封号分类]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\元宝代理名单.txt
+#ACT
+ChangeNameColor 253
+SETRANKLEVELNAME %s\◥■■■元■■■◤\◥■■宝■■◤\◥■代■◤\◥理◤\≮【<指定元宝代理商>】≯
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\翡翠赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆翡翠∝╬→\▂▆◣赞★助★大★使◢▆▂
+ChangeNameColor 253
+POWERRATE 110 720000000
+sendmsg 6 您现在的翡翠是：赞助大使，获得功魔道属性提升！
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\白金赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆白金∝╬→\▁▂▃赞☆助☆大☆使▃▂▁
+ChangeNameColor 253
+sendmsg 6 您现在的白金是：赞助大使，获得功魔道属性提升！
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\黄金赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆黄金∝╬→\▁▂赞☆助☆大☆使▂▁
+sendmsg 0
+ChangeNameColor 253
+sendmsg 6 您现在的黄金是：赞助大使，获得功魔道属性提升！
+break
+#IF
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+POWERRATE 120 8888
+#IF
+checkrenewlevel = 1
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【村长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 2
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【村委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 3
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【县长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 4
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【县委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 5
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【市长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 6
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【市委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 7
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【省长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 8
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【省委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 9
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【国家总理】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 10
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【国家主席】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+}
+[@封号分类]
+{
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\元宝代理名单.txt
+#ACT
+ChangeNameColor 253
+SETRANKLEVELNAME %s\◥■■■元■■■◤\◥■■宝■■◤\◥■代■◤\◥理◤\≮【<指定元宝代理商>】≯
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\翡翠赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆翡翠∝╬→\▂▆◣赞★助★大★使◢▆▂
+ChangeNameColor 253
+POWERRATE 110 720000000
+sendmsg 6 您现在的翡翠是：赞助大使，获得功魔道属性提升！
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\白金赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆白金∝╬→\▁▂▃赞☆助☆大☆使▃▂▁
+ChangeNameColor 253
+sendmsg 6 您现在的白金是：赞助大使，获得功魔道属性提升！
+break
+#IF
+CHECKNAMELIST ..\QuestDiary\封号系统\黄金赞助名单.txt
+#ACT
+SETRANKLEVELNAME %s\--═☆黄金∝╬→\▁▂赞☆助☆大☆使▂▁
+sendmsg 0
+ChangeNameColor 253
+sendmsg 6 您现在的黄金是：赞助大使，获得功魔道属性提升！
+break
+#IF
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+POWERRATE 120 8888
+#IF
+checkrenewlevel = 1
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【村长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 2
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【村委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 3
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【县长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 4
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【县委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 5
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【市长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 6
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【市委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 7
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【省长】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 8
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【省委书记】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 9
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【国家总理】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+#IF
+checkrenewlevel = 10
+check [368] 1
+#ACT
+SETRANKLEVELNAME %s\【国家主席】\▁▂▃▄▅▆金☆牌☆会☆员▆▅▄▃▂▁\≮爺在茳湖砍翻【<$HUMAN(XZ)>】条人命≯\≮身中【<$HUMAN(XV)>】刀≯
+}

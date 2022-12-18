@@ -1,0 +1,14 @@
+[@BL]
+{
+#IF
+#ACT
+VAR Integer HUMAN 押镖次数
+VAR Integer HUMAN 杀人数
+VAR Integer HUMAN 被杀数
+VAR Integer HUMAN 杀人
+LOADVAR HUMAN 押镖次数 ..\QuestDiary\数据文件\变量.txt
+LOADVAR HUMAN 杀人 ..\QuestDiary\天子数卡\杀人数量.txt
+LOADVAR HUMAN 杀人数 ..\QuestDiary\数据文件\杀人.txt
+LOADVAR HUMAN 被杀数 ..\QuestDiary\数据文件\被杀.txt
+LOADVAR HUMAN 押镖次数 ..\QuestDiary\数据文件\变量.txt
+}

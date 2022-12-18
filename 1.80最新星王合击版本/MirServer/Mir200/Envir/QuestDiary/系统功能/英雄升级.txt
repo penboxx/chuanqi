@@ -1,0 +1,64 @@
+[@英雄升级]
+{
+#IF
+H.checkjob warrior
+H.CHECKLEVELEX = 5
+#ACT
+H.ADDSKILL 英雄基本剑术 3
+H.ADDSKILL 英雄攻杀剑术 3
+H.ADDSKILL 英雄刺杀剑术 3
+H.ADDSKILL 英雄半月弯刀 3
+H.ADDSKILL 英雄野蛮冲撞 3
+H.ADDSKILL 英雄烈火剑法 3
+break
+
+#IF
+H.checkjob taoist
+H.CHECKLEVELEX = 5
+#ACT
+H.ADDSKILL 英雄治愈术 3
+H.ADDSKILL 英雄精神战法 3
+H.ADDSKILL 英雄施毒术 3
+H.ADDSKILL 英雄灵魂火符 3
+H.ADDSKILL 英雄隐身术 3
+H.ADDSKILL 英雄集体隐身 3
+H.ADDSKILL 英雄幽灵盾 3
+H.ADDSKILL 英雄神圣战术 3
+H.ADDSKILL 英雄心灵启示 3
+H.ADDSKILL 英雄困魔咒 3
+H.ADDSKILL 英雄群疗术 3
+H.ADDSKILL 英雄召唤神兽 3
+H.ADDSKILL 英雄气功波 3
+break
+
+#IF
+H.checkjob wizard
+H.CHECKLEVELEX = 5
+#ACT
+H.ADDSKILL 英雄火球术 3
+H.ADDSKILL 英雄抗拒火环 3
+H.ADDSKILL 英雄诱惑之光 3
+H.ADDSKILL 英雄地狱火 3
+H.ADDSKILL 英雄雷电术 3
+H.ADDSKILL 英雄瞬息移动 3
+H.ADDSKILL 英雄大火球 3
+H.ADDSKILL 英雄爆裂火焰 3
+H.ADDSKILL 英雄火墙 3
+H.ADDSKILL 英雄疾光电影 3
+H.ADDSKILL 英雄地狱雷光 3
+H.ADDSKILL 英雄魔法盾 3
+H.ADDSKILL 英雄圣言术 3
+H.ADDSKILL 英雄冰咆哮 3
+H.ADDSKILL 英雄灭天火 3
+break
+
+#IF
+H.CHECKLEVELEX > 75
+#ACT
+H.ChangeLevel = 75
+SENDMSG 7 〖公告〗:本服封顶75级.75级之后无法继续升级
+SENDMSG 7 〖公告〗:本服封顶75级.75级之后无法继续升级
+SENDMSG 7 〖公告〗:本服封顶75级.75级之后无法继续升级
+SENDMSG 7 〖公告〗:本服封顶75级.75级之后无法继续升级
+break
+}

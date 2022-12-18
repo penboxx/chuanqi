@@ -1,0 +1,89 @@
+2015-9-20 上午 01:58:00 已读取 2个行会信息...
+2015-9-20 上午 01:58:00 已读取 1个城堡信息...
+2015-9-20 上午 01:58:00 连接SQL数据成功...
+2015-9-20 上午 01:58:00 [Exception] TFrmSrvMsg::StartMsgServer
+2015-9-20 上午 01:58:00 服务启动时出现异常错误！ Code:1
+2015-9-20 上午 01:58:00 Windows socket error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。 (10055), on API 'connect'
+2015-9-20 上午 01:58:01 游戏网关端口(127.0.0.1:5053)已打开...
+2015-9-20 上午 01:58:03 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:04 Windows socket error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。 (10055), on API 'connect'
+2015-9-20 上午 01:58:04 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:04 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:04 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:05 RobotManage SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:06 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:07 Windows socket error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。 (10055), on API 'connect'
+2015-9-20 上午 01:58:07 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:08 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:08 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:08 QManage SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:09 QFunction SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:10 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:10 Windows socket error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。 (10055), on API 'connect'
+2015-9-20 上午 01:58:11 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:11 QMapEvent SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:12 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:12 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:13 Windows socket error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。 (10055), on API 'connect'
+2015-9-20 上午 01:58:13 QFunction SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:13 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:14 QFunction SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:14 QFunction SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:14 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:16 Windows socket error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。 (10055), on API 'connect'
+2015-9-20 上午 01:58:16 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:16 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:16 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:17 QFunction SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:17 RobotManage SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:18 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:19 QFunction SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:19 Windows socket error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。 (10055), on API 'connect'
+2015-9-20 上午 01:58:19 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:20 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:20 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:20 RobotManage SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:21 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:22 Windows socket error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。 (10055), on API 'connect'
+2015-9-20 上午 01:58:22 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:24 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:24 QFunction SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:24 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:24 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:25 Windows socket error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。 (10055), on API 'connect'
+2015-9-20 上午 01:58:25 RobotManage SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:25 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:28 QMapEvent SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:28 Windows socket error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。 (10055), on API 'connect'
+2015-9-20 上午 01:58:28 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:28 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:28 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:29 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:29 QManage SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:29 RobotManage SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:30 [Exception] TEnvirnoment::VerifyMapTime
+2015-9-20 上午 01:58:30 [Exception] TEnvirnoment::VerifyMapTime
+2015-9-20 上午 01:58:30 [Exception] TEnvirnoment::VerifyMapTime
+2015-9-20 上午 01:58:30 [Exception] TEnvirnoment::VerifyMapTime
+2015-9-20 上午 01:58:31 Windows socket error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。 (10055), on API 'connect'
+2015-9-20 上午 01:58:31 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:32 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:32 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:32 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:34 QMapEvent SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:34 RobotManage SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:34 Windows socket error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。 (10055), on API 'connect'
+2015-9-20 上午 01:58:35 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:35 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:36 RobotManage SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:36 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:36 QFunction SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:36 QMapEvent SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:36 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:36 QMapEvent SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:37 Windows socket error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。 (10055), on API 'connect'
+2015-9-20 上午 01:58:38 RobotManage SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:38 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:38 TBaseObject::SearchViewRange nil PEnvir
+2015-9-20 上午 01:58:39 QFunction SendRefMsg nil PEnvir
+2015-9-20 上午 01:58:40 Windows socket error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。 (10055), on API 'connect'

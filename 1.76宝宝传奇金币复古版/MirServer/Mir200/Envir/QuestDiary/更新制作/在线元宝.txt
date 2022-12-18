@@ -1,0 +1,305 @@
+[@在线元宝1]
+{
+#IF
+#SAY
+<$USERNAME>你好，欢迎来到<$SERVERNAME>，很高兴为您服务.\
+<★充值元宝注意事项★>\
+①系统支持短信,充值卡,网银.\
+②充值后请在本NPC处领取元宝，1元=10元宝.\
+③如果支付或发送不成功,不收取任何费用\
+④如果您在充值时遇到问题，请联系客服\
+‖<网银卡类充值/@其他>‖<元宝领取/@领取元宝>‖<元宝查询/@元宝查询>‖<退出/@exit>‖\
+[@元宝查询]
+#SAY
+您当前的元宝为：<$GAMEGOLD>个 \ \
+<返回/@在线元宝1>\
+[@其他]
+#IF
+#SAY
+请到游戏官网上进行网银卡类充值！\
+
+
+
+[@领取元宝]
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\0.1Y.txt
+#ACT
+GAMEGOLD + 1
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝1。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\0.1Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\0.2Y.txt
+#ACT
+GAMEGOLD + 2
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝2。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\0.2Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\0.3Y.txt
+#ACT
+GAMEGOLD + 3
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝3。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\0.3Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\0.4Y.txt
+#ACT
+GAMEGOLD + 4
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝4。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\0.4Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\0.5Y.txt
+#ACT
+GAMEGOLD + 5
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝5。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\0.5Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\0.6Y.txt
+#ACT
+GAMEGOLD + 6
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝6。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\0.6Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\0.7Y.txt
+#ACT
+GAMEGOLD + 7
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝7。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\0.7Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\0.8Y.txt
+#ACT
+GAMEGOLD + 8
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝8。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\0.8Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\0.9Y.txt
+#ACT
+GAMEGOLD + 9
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝9。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\0.9Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\1Y.txt
+#ACT
+GAMEGOLD + 10
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝10。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\1Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\2Y.txt
+#ACT
+GAMEGOLD + 20
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝20。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\2Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\3Y.txt
+#ACT
+GAMEGOLD + 30
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝30。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\3Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\4Y.txt
+#ACT
+GAMEGOLD + 40
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝40。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\4Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\5Y.txt
+#ACT
+GAMEGOLD + 50
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝50。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\5Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\6Y.txt
+#ACT
+GAMEGOLD + 60
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝60。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\6Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\7Y.txt
+#ACT
+GAMEGOLD + 70
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝70。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\7Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\8Y.txt
+#ACT
+GAMEGOLD + 80
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝80。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\8Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\9Y.txt
+#ACT
+GAMEGOLD + 90
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝90。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\9Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\10Y.txt
+#ACT
+GAMEGOLD + 100
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝100。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\10Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\20Y.txt
+#ACT
+GAMEGOLD + 200
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝200。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\20Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\30Y.txt
+#ACT
+GAMEGOLD + 300
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝300。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\30Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\40Y.txt
+#ACT
+GAMEGOLD + 400
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝400。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\40Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\50Y.txt
+#ACT
+GAMEGOLD + 500
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝500。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\50Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\60Y.txt
+#ACT
+GAMEGOLD + 600
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝600。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\60Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\70Y.txt
+#ACT
+GAMEGOLD + 700
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝700。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\70Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\80Y.txt
+#ACT
+GAMEGOLD + 800
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝800。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\80Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\90Y.txt
+#ACT
+GAMEGOLD + 900
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝900。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\90Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\100Y.txt
+#ACT
+GAMEGOLD + 1000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝1000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\100Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\200Y.txt
+#ACT
+GAMEGOLD + 2000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝2000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\200Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\300Y.txt
+#ACT
+GAMEGOLD + 3000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝3000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\300Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\400Y.txt
+#ACT
+GAMEGOLD + 4000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝4000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\400Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\500Y.txt
+#ACT
+GAMEGOLD + 5000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝5000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\500Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\600Y.txt
+#ACT
+GAMEGOLD + 6000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝6000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\600Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\700Y.txt
+#ACT
+GAMEGOLD + 7000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝7000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\700Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\800Y.txt
+#ACT
+GAMEGOLD + 8000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝8000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\800Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\900Y.txt
+#ACT
+GAMEGOLD + 9000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝9000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\900Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\1000Y.txt
+#ACT
+GAMEGOLD + 10000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝10000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\1000Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\2000Y.txt
+#ACT
+GAMEGOLD + 20000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝20000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\2000Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\3000Y.txt
+#ACT
+GAMEGOLD + 30000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝30000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\3000Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\4000Y.txt
+#ACT
+GAMEGOLD + 40000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝40000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\4000Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\5000Y.txt
+#ACT
+GAMEGOLD + 50000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝50000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\5000Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\6000Y.txt
+#ACT
+GAMEGOLD + 60000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝60000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\6000Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\7000Y.txt
+#ACT
+GAMEGOLD + 70000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝70000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\7000Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\8000Y.txt
+#ACT
+GAMEGOLD + 80000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝80000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\8000Y.txt
+#IF
+checkaccountlist ..\QuestDiary\yuanbao\9000Y.txt
+#ACT
+GAMEGOLD + 90000
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值系统购买元宝功能,获得元宝90000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+delaccountlist ..\QuestDiary\yuanbao\9000Y.txt
+
+
+messagebox 恭喜您充值元宝成功，你可以换取装备或换取系统给你的高级服务！
+break
+#ELSESAY
+本服元宝短信冲值系统由中国移动，中国网通，中国电信。\
+建设银行，工商银行，农业银行，招商银行等提供。\
+特别声明：没有充值成功或信息发送不成功不会扣费\
+请玩家放心游戏!\ \
+<返回/@在线元宝1>\
+
+}
