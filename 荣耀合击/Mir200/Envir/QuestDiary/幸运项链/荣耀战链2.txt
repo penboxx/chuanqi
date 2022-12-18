@@ -1,0 +1,86 @@
+[@荣耀战链22]
+{
+#IF
+random 8
+#act
+GAMEGOLD - 800
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将荣耀战链升级成功。
+BREAK
+
+#IF
+random 10
+#act
+GAMEGOLD - 800
+MESSAGEBOX 非常抱歉您的荣耀战链升级失败
+BREAK
+
+
+#IF
+random 9
+#act
+GAMEGOLD - 800
+MESSAGEBOX 非常抱歉您的荣耀战链升级失败
+BREAK
+
+#IF
+#act
+GAMEGOLD - 800
+MESSAGEBOX 非常抱歉您的荣耀战链升级失败
+BREAK
+#IF
+random 7
+#act
+GAMEGOLD - 800
+MESSAGEBOX 非常抱歉您的荣耀战链升级失败
+BREAK
+
+
+#IF
+random 6
+#act
+GAMEGOLD - 800
+MESSAGEBOX 非常抱歉您的荣耀战链升级失败
+BREAK
+
+#IF
+#act
+GAMEGOLD - 800
+MESSAGEBOX 非常抱歉您的荣耀战链升级失败
+BREAK
+
+#IF
+random 2
+#act
+GAMEGOLD - 800
+MESSAGEBOX 非常抱歉您的荣耀战链升级失败
+BREAK
+
+
+#IF
+random 1
+#act
+GAMEGOLD - 800
+MESSAGEBOX 非常抱歉您的荣耀战链升级失败
+BREAK
+
+#IF
+#act
+GAMEGOLD - 800
+MESSAGEBOX 非常抱歉您的荣耀战链升级失败
+BREAK
+
+
+#IF
+#act
+GAMEGOLD - 800
+MESSAGEBOX 非常抱歉您的荣耀战链升级失败
+BREAK
+
+
+#IF
+#act
+GAMEGOLD - 800
+MESSAGEBOX 非常抱歉您的荣耀战链升级失败
+BREAK
+}

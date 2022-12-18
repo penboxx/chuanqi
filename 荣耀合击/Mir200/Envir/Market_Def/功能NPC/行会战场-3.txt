@@ -1,0 +1,39 @@
+()
+%100
+[@main]
+<COLOR=clAqua 【行会战场】><COLOR=clRed Hot~>  <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+　<COLOR=clSkyBlue 所有玩家在进入行会战场后每秒可以获得经验增加3000点>\
+　<COLOR=clLime 在开启行会战><COLOR=clFuchsia 10分钟后><COLOR=clLime 将刷出一只><COLOR=clFuchsia (行会·终极魔王)Boss>\
+　<COLOR=clSkyBlue 成功斩杀(行会·终极魔王)Boss.有几率获得终极装备！>\
+　<COLOR=clLime 行会战活动开放时间为><COLOR=clFuchsia 每天晚上22:20><COLOR=clFuchsia 限时30分钟>\
+　<COLOR=clSkyBlue 战场Boss可是会爆荣耀装备.大量聚灵珠和大量金刚石哦！>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+　　　　　　　　　　<进入行会Boss战场/@进入>
+[@进入]
+#IF
+checkstringlist ..\QuestDiary\测试奖励\本区状态.txt 测试区 HardDisk
+#ACT
+MESSAGEBOX 目前是测试区，行会战场活动正式开区以后才可以参加！
+BREAK
+
+#IF
+EQUAL G15 1
+CHECKLEVELEX > 35
+#ACT
+#ELSEACT
+Messagebox 行会战活动开放时间为每天晚上22：20分.需要35级
+break
+
+#IF
+HAVEGUILD
+#ACT
+CHANGEATTACKMODE 5
+SetAutoGeteXp 1	3000 0 E1
+H.SetAutoGeteXp 1 3000 0 E1
+MAPMOVE E1
+SENDMSG 0 恭喜『<$GUILDNAME>』行会的『<$USERNAME>』进入了行会战场地图....
+break
+#ELSEACT
+Messagebox 你还没有行会或者行会战场大门已经关闭.请明日22:20再来
+BREAK

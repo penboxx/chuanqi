@@ -1,0 +1,9 @@
+.\bluem2_client3.dat	BCB58E2576C761217523F39336805053	http://www.kuyoux.com/LoginTool/Upgrade/bluem2_client3.txt
+.\data\lui.pkg          fe8f0a7fee6bc201e400b9521673381c        http://www.kuyoux.com/LoginTool/Upgrade/lui.txt
+.\CDClient.dll		D2D2ED9F0C850BEAC28309074AC230EC	http://www.kuyoux.com/LoginTool/Upgrade/CDClient2.txt
+.\map\3.map	        25CD154E35D39095C4B6CB12A80CBCFA	http://www.kuyoux.com/LoginTool/Upgrade/3.map
+.\map\B012.map	        7150E0E9775C9EC15A3E7487E8857CBD	http://www.kuyoux.com/LoginTool/Upgrade/B012.map
+.\map\M001.map	        505081B90FA1E6B59D8C92A4F65C53BD	http://www.kuyoux.com/LoginTool/Upgrade/M001.map
+.\data\NewopUI.wil	5C56361A3CFE92EEFCA26195430B7200	http://www.kuyoux.com/LoginTool/Upgrade/NewopUI.wil
+.\data\NewopUI.wix 	B4F0A28E2B06B6367548A424944D3E81    	http://www.kuyoux.com/LoginTool/Upgrade/NewopUI.wix
+.\data\ItemDesc.dat 	689FFE019DCC77FAFC99DDD741E4BDA8    	http://www.kuyoux.com/LoginTool/Upgrade/ItemDesc.dat

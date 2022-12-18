@@ -1,0 +1,341 @@
+[@500PI求购平台脚本QM]
+{
+#IF
+SMALL I92 101529177
+#ACT
+MOV I92 101529177
+VAR String  GLOBAL 求购平台空格
+VAR String  GLOBAL 求购平台姓名1
+VAR String  GLOBAL 求购平台姓名2
+VAR String  GLOBAL 求购平台姓名3
+VAR String  GLOBAL 求购平台姓名4
+VAR String  GLOBAL 求购平台姓名5
+VAR String  GLOBAL 求购平台姓名6
+VAR String  GLOBAL 求购平台姓名7
+VAR String  GLOBAL 求购平台姓名8
+VAR String  GLOBAL 求购平台姓名9
+VAR String  GLOBAL 求购平台姓名10
+VAR String  GLOBAL 求购平台姓名11
+VAR String  GLOBAL 求购平台姓名12
+VAR String  GLOBAL 求购平台姓名13
+VAR String  GLOBAL 求购平台姓名14
+VAR String  GLOBAL 求购平台姓名15
+VAR String  GLOBAL 求购平台姓名16
+VAR String  GLOBAL 求购平台姓名17
+VAR String  GLOBAL 求购平台姓名18
+VAR String  GLOBAL 求购平台姓名19
+VAR String  GLOBAL 求购平台姓名20
+VAR String  GLOBAL 求购平台姓名21
+VAR String  GLOBAL 求购平台姓名22
+VAR String  GLOBAL 求购平台姓名23
+VAR String  GLOBAL 求购平台姓名24
+VAR String  GLOBAL 求购平台姓名25
+VAR String  GLOBAL 求购平台姓名26
+VAR String  GLOBAL 求购平台姓名27
+VAR String  GLOBAL 求购平台姓名28
+VAR String  GLOBAL 求购平台姓名29
+VAR String  GLOBAL 求购平台姓名30
+VAR String  GLOBAL 求购平台姓名31
+VAR String  GLOBAL 求购平台姓名32
+VAR String  GLOBAL 求购平台物品1
+VAR String  GLOBAL 求购平台物品2
+VAR String  GLOBAL 求购平台物品3
+VAR String  GLOBAL 求购平台物品4
+VAR String  GLOBAL 求购平台物品5
+VAR String  GLOBAL 求购平台物品6
+VAR String  GLOBAL 求购平台物品7
+VAR String  GLOBAL 求购平台物品8
+VAR String  GLOBAL 求购平台物品9
+VAR String  GLOBAL 求购平台物品10
+VAR String  GLOBAL 求购平台物品11
+VAR String  GLOBAL 求购平台物品12
+VAR String  GLOBAL 求购平台物品13
+VAR String  GLOBAL 求购平台物品14
+VAR String  GLOBAL 求购平台物品15
+VAR String  GLOBAL 求购平台物品16
+VAR String  GLOBAL 求购平台物品17
+VAR String  GLOBAL 求购平台物品18
+VAR String  GLOBAL 求购平台物品19
+VAR String  GLOBAL 求购平台物品20
+VAR String  GLOBAL 求购平台物品21
+VAR String  GLOBAL 求购平台物品22
+VAR String  GLOBAL 求购平台物品23
+VAR String  GLOBAL 求购平台物品24
+VAR String  GLOBAL 求购平台物品25
+VAR String  GLOBAL 求购平台物品26
+VAR String  GLOBAL 求购平台物品27
+VAR String  GLOBAL 求购平台物品28
+VAR String  GLOBAL 求购平台物品29
+VAR String  GLOBAL 求购平台物品30
+VAR String  GLOBAL 求购平台物品31
+VAR String  GLOBAL 求购平台物品32
+VAR Integer GLOBAL 求购平台数量1
+VAR Integer GLOBAL 求购平台数量2
+VAR Integer GLOBAL 求购平台数量3
+VAR Integer GLOBAL 求购平台数量4
+VAR Integer GLOBAL 求购平台数量5
+VAR Integer GLOBAL 求购平台数量6
+VAR Integer GLOBAL 求购平台数量7
+VAR Integer GLOBAL 求购平台数量8
+VAR Integer GLOBAL 求购平台数量9
+VAR Integer GLOBAL 求购平台数量10
+VAR Integer GLOBAL 求购平台数量11
+VAR Integer GLOBAL 求购平台数量12
+VAR Integer GLOBAL 求购平台数量13
+VAR Integer GLOBAL 求购平台数量14
+VAR Integer GLOBAL 求购平台数量15
+VAR Integer GLOBAL 求购平台数量16
+VAR Integer GLOBAL 求购平台数量17
+VAR Integer GLOBAL 求购平台数量18
+VAR Integer GLOBAL 求购平台数量19
+VAR Integer GLOBAL 求购平台数量20
+VAR Integer GLOBAL 求购平台数量21
+VAR Integer GLOBAL 求购平台数量22
+VAR Integer GLOBAL 求购平台数量23
+VAR Integer GLOBAL 求购平台数量24
+VAR Integer GLOBAL 求购平台数量25
+VAR Integer GLOBAL 求购平台数量26
+VAR Integer GLOBAL 求购平台数量27
+VAR Integer GLOBAL 求购平台数量28
+VAR Integer GLOBAL 求购平台数量29
+VAR Integer GLOBAL 求购平台数量30
+VAR Integer GLOBAL 求购平台数量31
+VAR Integer GLOBAL 求购平台数量32
+VAR Integer GLOBAL 求购平台件数1
+VAR Integer GLOBAL 求购平台件数2
+VAR Integer GLOBAL 求购平台件数3
+VAR Integer GLOBAL 求购平台件数4
+VAR Integer GLOBAL 求购平台件数5
+VAR Integer GLOBAL 求购平台件数6
+VAR Integer GLOBAL 求购平台件数7
+VAR Integer GLOBAL 求购平台件数8
+VAR Integer GLOBAL 求购平台件数9
+VAR Integer GLOBAL 求购平台件数10
+VAR Integer GLOBAL 求购平台件数11
+VAR Integer GLOBAL 求购平台件数12
+VAR Integer GLOBAL 求购平台件数13
+VAR Integer GLOBAL 求购平台件数14
+VAR Integer GLOBAL 求购平台件数15
+VAR Integer GLOBAL 求购平台件数16
+VAR Integer GLOBAL 求购平台件数17
+VAR Integer GLOBAL 求购平台件数18
+VAR Integer GLOBAL 求购平台件数19
+VAR Integer GLOBAL 求购平台件数20
+VAR Integer GLOBAL 求购平台件数21
+VAR Integer GLOBAL 求购平台件数22
+VAR Integer GLOBAL 求购平台件数23
+VAR Integer GLOBAL 求购平台件数24
+VAR Integer GLOBAL 求购平台件数25
+VAR Integer GLOBAL 求购平台件数26
+VAR Integer GLOBAL 求购平台件数27
+VAR Integer GLOBAL 求购平台件数28
+VAR Integer GLOBAL 求购平台件数29
+VAR Integer GLOBAL 求购平台件数30
+VAR Integer GLOBAL 求购平台件数31
+VAR Integer GLOBAL 求购平台件数32
+VAR Integer GLOBAL 求购平台价格1
+VAR Integer GLOBAL 求购平台价格2
+VAR Integer GLOBAL 求购平台价格3
+VAR Integer GLOBAL 求购平台价格4
+VAR Integer GLOBAL 求购平台价格5
+VAR Integer GLOBAL 求购平台价格6
+VAR Integer GLOBAL 求购平台价格7
+VAR Integer GLOBAL 求购平台价格8
+VAR Integer GLOBAL 求购平台价格9
+VAR Integer GLOBAL 求购平台价格10
+VAR Integer GLOBAL 求购平台价格11
+VAR Integer GLOBAL 求购平台价格12
+VAR Integer GLOBAL 求购平台价格13
+VAR Integer GLOBAL 求购平台价格14
+VAR Integer GLOBAL 求购平台价格15
+VAR Integer GLOBAL 求购平台价格16
+VAR Integer GLOBAL 求购平台价格17
+VAR Integer GLOBAL 求购平台价格18
+VAR Integer GLOBAL 求购平台价格19
+VAR Integer GLOBAL 求购平台价格20
+VAR Integer GLOBAL 求购平台价格21
+VAR Integer GLOBAL 求购平台价格22
+VAR Integer GLOBAL 求购平台价格23
+VAR Integer GLOBAL 求购平台价格24
+VAR Integer GLOBAL 求购平台价格25
+VAR Integer GLOBAL 求购平台价格26
+VAR Integer GLOBAL 求购平台价格27
+VAR Integer GLOBAL 求购平台价格28
+VAR Integer GLOBAL 求购平台价格29
+VAR Integer GLOBAL 求购平台价格30
+VAR Integer GLOBAL 求购平台价格31
+VAR Integer GLOBAL 求购平台价格32
+LOADVAR GLOBAL 求购平台姓名1 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名2 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名3 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名4 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名5 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名6 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名7 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名8 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名9 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名10 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名11 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名12 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名13 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名14 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名15 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名16 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名17 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名18 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名19 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名20 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名21 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名22 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名23 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名24 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名25 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名26 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名27 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名28 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名29 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名30 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名31 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台姓名32 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品1 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品2 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品3 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品4 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品5 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品6 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品7 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品8 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品9 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品10 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品11 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品12 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品13 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品14 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品15 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品16 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品17 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品18 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品19 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品20 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品21 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品22 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品23 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品24 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品25 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品26 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品27 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品28 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品29 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品30 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品31 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台物品32 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量1 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量2 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量3 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量4 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量5 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量6 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量7 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量8 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量9 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量10 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量11 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量12 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量13 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量14 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量15 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量16 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量17 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量18 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量19 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量20 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量21 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量22 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量23 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量24 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量25 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量26 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量27 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量28 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量29 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量30 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量31 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台数量32 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数1 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数2 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数3 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数4 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数5 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数6 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数7 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数8 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数9 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数10 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数11 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数12 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数13 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数14 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数15 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数16 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数17 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数18 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数19 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数20 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数21 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数22 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数23 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数24 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数25 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数26 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数27 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数28 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数29 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数30 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数31 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台件数32 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格1 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格2 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格3 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格4 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格5 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格6 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格7 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格8 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格9 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格10 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格11 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格12 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格13 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格14 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格15 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格16 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格17 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格18 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格19 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格20 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格21 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格22 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格23 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格24 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格25 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格26 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格27 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格28 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格29 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格30 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格31 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台价格32 ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+LOADVAR GLOBAL 求购平台空格 ..\QuestDiary\500PI求购平台配置\500PI求购平台常量.ini HardDisk
+MOV S10 <$GLOBAL(求购平台空格)>
+DEC S10 1 1
+CALCVAR GLOBAL 求购平台空格 = <$STR(S10)>
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+VAR String  HUMAN 求购平台输入1
+VAR Integer HUMAN 求购平台输入2
+VAR Integer HUMAN 求购平台输入3
+VAR Integer HUMAN 求购平台输入4
+VAR String  HUMAN 求购平台输入5
+}

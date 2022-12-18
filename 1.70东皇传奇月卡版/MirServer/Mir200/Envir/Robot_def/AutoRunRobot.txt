@@ -1,0 +1,19 @@
+#AutoRun NPC RUNONDAY 0:00 @清零
+
+;#AutoRun NPC RUNONDAY 20:00 @地图开放
+
+#AutoRun NPC MIN 30 @HONGZI1
+
+#AutoRun NPC MIN 1 @计时
+#AutoRun NPC RUNONDAY 20:00 @地图开放
+#AutoRun NPC RUNONWEEK 3:20:30 @行会争霸A
+#AutoRun NPC RUNONWEEK 4:20:30 @行会争霸A
+#AutoRun NPC RUNONWEEK 5:20:30 @行会争霸A
+#AutoRun NPC RUNONWEEK 6:20:30 @行会争霸A
+#AutoRun NPC RUNONWEEK 7:20:30 @行会争霸A
+
+;#AutoRun NPC RUNONDAY 20:00 @怪物攻城
+;#AutoRun NPC RUNONDAY 20:12 @怪物攻城
+;#AutoRun NPC RUNONDAY 20:25 @怪物攻城
+;#AutoRun NPC RUNONDAY 21:00 @金鸡送福
+#AutoRun NPC SEC 1 @Mir2m2排号抢庄脚本RM

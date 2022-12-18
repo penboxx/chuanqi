@@ -1,0 +1,23 @@
+[@main]
+╔─┬────────────────────────╗\
+┊<COLOR=clRed 宫>┊<COLOR=clFuchsia 地图怪物：>终极BOSS每60分钟刷新1次               ┊\
+┊<COLOR=clRed 殿>┊------------------------------------------------┊\
+┊<COLOR=clRed 大>┊<COLOR=clRed 进入条件：><COLOR=clSKYBLUE  1000元宝进入一次>             ┊\
+┊<COLOR=clRed 厅>┊<COLOR=clSKYBLUE 怪物爆率：>爆全服终极装备  双倍暴率             ┊\ 
+├─┴────────────────────────┤\
+┊                                                    ┊\   
+┊                        <立即进入/@jinru>                    ┊\
+╚──────────────────────────╝\
+
+
+[@jinru]
+#IF
+CHECKGAMEGOLD > 999
+#act
+GAMEGOLD - 1000
+mapmove H008A 38 40
+give 回城卷 1
+SENDMSG 0 【%s】进入了宫殿大厅!
+#ELSEACT
+MESSAGEBOX 对不起，你的元宝不够！
+BREAK

@@ -1,0 +1,49 @@
+(@@offlinemsg)
+[@main]
+你好，现在只有比奇城才可以摆摊做生意了。\
+你可以设置你的摆摊风格\
+以下有三种摆摊风格供你选择:\  \
+<第一种/@1>                   <挂机摆摊/@挂机摆摊>\
+<第二种/@2>                   <挂机摆摊/@挂机摆摊>\
+<第三种/@3>                   <挂机摆摊/@挂机摆摊>\
+
+[@挂机摆摊]
+欢迎使用我提供的挂机功能.使用此功能可以让你不必开电脑\
+就可以进行泡点\
+点击开始挂机后.可输入一段留言信息给你的朋友\
+<开始挂机摆摊/@@OffLineMsg>
+
+[@@OffLineMsg]
+#If
+IsDupMode
+#Act
+SendMsg 7 [提示]:请找一个空位置.不能与别人站在一起. 255 249
+Goto @Main
+Break
+#If
+InSafeZone
+#ElseAct
+SendMsg 7 [提示]:请在安全区找一个位置站好.不然会被人杀的. 255 249
+Goto @Main
+Break
+#If
+CheckLevelEx > 0
+#Act
+OffLine 7200 2
+GMEXECUTE StallLooks 1
+Break
+
+[@1]
+#if
+#ACT
+GMEXECUTE StallLooks 1
+
+[@2]
+#if
+#ACT
+GMEXECUTE StallLooks 2
+
+[@3]
+#if
+#ACT
+GMEXECUTE StallLooks 3

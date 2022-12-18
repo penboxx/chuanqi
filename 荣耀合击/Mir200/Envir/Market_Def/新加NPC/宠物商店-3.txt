@@ -1,0 +1,53 @@
+()
+%100
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+全职业宝宝(超级半兽勇士攻击强悍)用于前期发展！\
+每个人可领取3只，法师还可以在宝宝圣地多召唤2只\
+巨型多脚虫1万金币一只，半兽勇士5万金币一只，超级半兽勇士10万金币一只\
+\<COLOR=clFuchsia ♀.领取条件：26级领取多多，40级领取半兽勇士 46级领取超级半兽勇士>  \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<【巨型多角虫】/@DXA>  <【半兽勇士】/@DXB>  <【超级半兽勇士】/@DXX> 
+
+[@DXA] 
+#IF 
+CHECKSLAVECOUNT < 3
+checkgold 10000 
+CHECKLEVELEX > 25
+#ACT 
+take 金币 10000 
+RECALLMOB 巨型多角虫1 0  999 999
+#say 
+#ELSESAY 
+你已经有3只宝宝了，等级不够，或没有足够的金币 \ 
+<退出/@exit>
+
+[@DXB] 
+#IF 
+CHECKSLAVECOUNT < 3
+checkgold 50000
+CHECKLEVELEX > 39
+#ACT 
+take 金币 50000
+RECALLMOB 半兽勇士1 0  999 999
+#say 
+#ELSESAY 
+你已经有3只宝宝了，等级不够，或没有足够的金币 \ 
+<退出/@exit>
+
+
+
+[@DXX] 
+#IF 
+CHECKSLAVECOUNT < 3
+checkgold 100000 
+CHECKLEVELEX > 45
+#ACT 
+take 金币 100000 
+RECALLMOB 半兽勇士9 0  999 999
+#say 
+#ELSESAY 
+你已经有3只宝宝了，等级不够，或没有足够的金币 \ 
+<退出/@exit>

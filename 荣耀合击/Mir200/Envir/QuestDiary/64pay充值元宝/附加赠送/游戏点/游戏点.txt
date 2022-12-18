@@ -1,0 +1,385 @@
+[@领取游戏点]
+{
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\01.txt 
+#ACT
+GAMEPOINT + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\01.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\1.txt 
+#ACT
+GAMEPOINT + 1
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\1.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了1游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\02.txt 
+#ACT
+GAMEPOINT + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\02.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\2.txt 
+#ACT
+GAMEPOINT + 2
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\2.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了2游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\03.txt 
+#ACT
+GAMEPOINT + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\03.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\3.txt 
+#ACT
+GAMEPOINT + 3
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\3.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了3游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\04.txt 
+#ACT
+GAMEPOINT + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\04.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\4.txt 
+#ACT
+GAMEPOINT + 4
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\4.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了4游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\05.txt 
+#ACT
+GAMEPOINT + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\05.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\5.txt 
+#ACT
+GAMEPOINT + 5
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\5.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了5游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\06.txt 
+#ACT
+GAMEPOINT + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\06.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\6.txt 
+#ACT
+GAMEPOINT + 6
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\6.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了6游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\07.txt 
+#ACT
+GAMEPOINT + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\07.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\7.txt 
+#ACT
+GAMEPOINT + 7
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\7.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了7游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\08.txt 
+#ACT
+GAMEPOINT + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\08.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\8.txt 
+#ACT
+GAMEPOINT + 8
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\8.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了8游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\09.txt 
+#ACT
+GAMEPOINT + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\09.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\9.txt 
+#ACT
+GAMEPOINT + 9
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\9.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了9游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\10.txt 
+#ACT
+GAMEPOINT + 10
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\10.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了10游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\20.txt 
+#ACT
+GAMEPOINT + 20
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\20.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了20游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\30.txt 
+#ACT
+GAMEPOINT + 30
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\30.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了30游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\40.txt 
+#ACT
+GAMEPOINT + 40
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\40.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了40游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\50.txt 
+#ACT
+GAMEPOINT + 50
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\50.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了50游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\60.txt 
+#ACT
+GAMEPOINT + 60
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\60.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了60游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\70.txt 
+#ACT
+GAMEPOINT + 70
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\70.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了70游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\80.txt 
+#ACT
+GAMEPOINT + 80
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\80.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了80游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\90.txt 
+#ACT
+GAMEPOINT + 90
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\90.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了90游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\100.txt 
+#ACT
+GAMEPOINT + 100
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\100.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了100游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\200.txt 
+#ACT
+GAMEPOINT + 200
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\200.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了200游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\300.txt 
+#ACT
+GAMEPOINT + 300
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\300.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了300游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\400.txt 
+#ACT
+GAMEPOINT + 400
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\400.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了400游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\500.txt 
+#ACT
+GAMEPOINT + 500
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\500.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了500游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\600.txt 
+#ACT
+GAMEPOINT + 600
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\600.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了600游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\700.txt 
+#ACT
+GAMEPOINT + 700
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\700.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了700游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\800.txt 
+#ACT
+GAMEPOINT + 800
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\800.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了800游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\900.txt 
+#ACT
+GAMEPOINT + 900
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\900.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了900游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\1000.txt 
+#ACT
+GAMEPOINT + 1000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\1000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了1000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\2000.txt 
+#ACT
+GAMEPOINT + 2000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\2000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了2000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\3000.txt 
+#ACT
+GAMEPOINT + 3000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\3000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了3000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\4000.txt 
+#ACT
+GAMEPOINT + 4000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\4000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了4000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\5000.txt 
+#ACT
+GAMEPOINT + 5000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\5000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了5000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\6000.txt 
+#ACT
+GAMEPOINT + 6000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\6000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了6000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\7000.txt 
+#ACT
+GAMEPOINT + 7000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\7000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了7000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\8000.txt 
+#ACT
+GAMEPOINT + 8000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\8000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了8000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\9000.txt 
+#ACT
+GAMEPOINT + 9000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\9000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了9000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\10000.txt 
+#ACT
+GAMEPOINT + 10000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\10000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了10000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\20000.txt 
+#ACT
+GAMEPOINT + 20000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\20000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了20000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\30000.txt 
+#ACT
+GAMEPOINT + 30000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\30000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了30000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\40000.txt 
+#ACT
+GAMEPOINT + 40000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\40000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了40000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\50000.txt 
+#ACT
+GAMEPOINT + 50000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\50000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了50000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\60000.txt 
+#ACT
+GAMEPOINT + 60000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\60000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了60000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\70000.txt 
+#ACT
+GAMEPOINT + 70000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\70000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了70000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\80000.txt 
+#ACT
+GAMEPOINT + 80000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\80000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了80000游戏点。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\90000.txt 
+#ACT
+GAMEPOINT + 90000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\游戏点\90000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了90000游戏点。
+
+#ELSESAY
+请查看自己的充值数量!\
+没有充值请按提示进行充值!\
+<退出/@exit>
+}

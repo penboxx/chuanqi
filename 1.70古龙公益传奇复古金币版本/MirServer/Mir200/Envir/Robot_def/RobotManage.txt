@@ -1,0 +1,66 @@
+[@摇钱树]
+#IF
+CheckRangeMonCount G003 20 22 0 = 0
+#ACT
+Param1 G003
+Param2 20
+Param3 22
+MonGen 复古教主 1 0
+SENDMSG 0 复古教主刷新在激情PK殿堂，请各位英雄们速度前往啊~
+SENDMSG 0 复古教主刷新在激情PK殿堂，请各位英雄们速度前往啊~
+SENDMSG 0 复古教主刷新在激情PK殿堂，请各位英雄们速度前往啊~
+SENDMSG 0 复古教主刷新在激情PK殿堂，请各位英雄们速度前往啊~
+SENDMSG 0 复古教主刷新在激情PK殿堂，请各位英雄们速度前往啊~
+SENDMSG 0 复古教主刷新在激情PK殿堂，请各位英雄们速度前往啊~
+SENDMSG 0 复古教主刷新在激情PK殿堂，请各位英雄们速度前往啊~
+SENDMSG 0 复古教主刷新在激情PK殿堂，请各位英雄们速度前往啊~
+BREAK
+
+
+
+[@沙奖励]
+#IF
+#ACT
+MOV I88 0
+BREAK
+
+#AutoRun NPC MIN 5 @滚动广告
+#AutoRun NPC MIN 60 @盗号广告
+#AutoRun NPC RUNONWEEK 1:00:00 @开区周数
+#AutoRun NPC RUNONWEEK 6:19:00 @开启双倍
+#AutoRun NPC RUNONWEEK 6:22:00 @关闭双倍
+#AutoRun NPC RUNONWEEK 7:19:00 @开启双倍
+#AutoRun NPC RUNONWEEK 7:22:00 @关闭双倍
+#AutoRun NPC RUNONDAY 22:30 @群雄争霸1
+#AutoRun NPC RUNONDAY 22:35 @群雄争霸2
+#AutoRun NPC RUNONDAY 22:40 @群雄争霸3
+#AutoRun NPC RUNONDAY 22:45 @群雄争霸4
+#AutoRun NPC MIN 1 @群雄检测
+#AutoRun NPC RUNONWEEK 6:19:00 @调整功沙
+#AutoRun NPC RUNONWEEK 6:19:55 @调整功沙
+#AutoRun NPC RUNONWEEK 6:22:01 @更新沙属
+#AutoRun NPC RUNONDAY 00:00 @零点运行
+
+#AutoRun NPC RUNONDAY 00:01 @自动开石祖
+#AutoRun NPC RUNONDAY 12:00 @自动开封魔
+#AutoRun NPC RUNONDAY 14:00 @自动开苍月
+#AutoRun NPC RUNONDAY 16:00 @自动开白日
+#AutoRun NPC RUNONDAY 18:00 @自动开焰火
+#AutoRun NPC RUNONDAY 22:00 @自动开地下
+
+#AutoRun NPC RUNONDAY 12:00 @幻境4-8
+#AutoRun NPC RUNONDAY 12:00 @幻境910
+
+
+#AutoRun NPC RUNONDAY 19:15 @夺宝战提示1
+#AutoRun NPC RUNONDAY 19:20 @夺宝战提示2
+#AutoRun NPC RUNONDAY 19:25 @夺宝战提示2
+#AutoRun NPC RUNONDAY 19:30 @夺宝战提示3
+#AutoRun NPC RUNONDAY 19:35 @夺宝战提示2
+#AutoRun NPC MIN 1 @夺宝提示
+
+#AutoRun NPC RUNONWEEK 1:00:00 @幸运历练
+#AutoRun NPC RUNONWEEK 1:00:00 @历练公布
+#AutoRun NPC RUNONWEEK 1:00:00 @历练校零
+#AutoRun NPC RUNONWEEK 2:23:59 @历练奖励清除
+

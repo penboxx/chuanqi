@@ -1,0 +1,37 @@
+[@main]
+#if
+Large G4 1
+#act
+MOV I0 <$STR(G0)>
+INC I0 1
+#say
+未知暗殿，神秘莫测，里面的<COLOR=clRed 神秘装备>更是属性多变\ \
+进入条件：暗殿凭证+5000金币,开区第2天20点\\
+未知暗殿所需的凭证需在蜈蚣以上怪爆出\ \
+
+<进入未知暗殿/@1>   
+#elsesay
+未知暗殿，神秘莫测，里面的<COLOR=clRed 神秘装备>更是属性多变\ \
+进入条件：暗殿凭证+5000金币,开区第2天20点\\
+未知暗殿所需的凭证需在蜈蚣以上怪爆出\ \
+
+
+[@1]
+#IF
+checkitem 暗殿凭证 1
+checkgold 5000
+#act
+goto @jixu
+#ELSEACT
+messagebox 你需要提供5000金币的传送费用！或者你没有暗殿凭证！！
+break
+
+[@jixu]
+#IF
+CHECKUSERDATE ..\QuestDiary\季卡\时间记载.txt < 90 p0 p1
+#ACT
+close
+take 暗殿凭证 1
+take 金币 5000
+MAPMOVE M001
+break

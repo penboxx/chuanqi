@@ -1,0 +1,13 @@
+(@@InPutInteger, @@InPutString @storage @getback @upgradenow @getbackupgnow)
+%100
+[@main]
+请选择你所需要的服务：\ \ \ \
+<武器升级/@武器升级>              <项链幸运/@幸运项链>
+
+
+[@武器升级]
+#CALL [\系统功能\脚本调用\武器升级.txt] @武器升级_脚本头
+
+
+[@幸运项链]
+#CALL [\系统功能\脚本调用\幸运项链.txt] @幸运项链_脚本头

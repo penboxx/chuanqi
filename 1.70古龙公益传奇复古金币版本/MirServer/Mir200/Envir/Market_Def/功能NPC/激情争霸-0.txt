@@ -1,0 +1,18 @@
+()
+%100
+[@main]
+pk场由于远离玛法大陆，所以不受国王管辖！\
+在那里面杀人是不犯法的，你想进去玩玩吗？\
+<COLOR=clFuchsia ★★★> <COLOR=clLime PK不犯法，而且每4个小时还会刷新一只复古DOSS> <COLOR=clFuchsia ★★★>\
+<COLOR=clFuchsia ★★★> <COLOR=clLime 要想获得“丰厚奖励”必须消灭复古教主！！！>  <COLOR=clFuchsia ★★★>\
+<COLOR=clFuchsia ★★★> <COLOR=clLime 怪物爆率也是极其高，请玩家不要单独前往除魔>  <COLOR=clFuchsia ★★★>\ \
+
+<进入PK殿堂/@进入>  <我怕，不敢去/@EXIT>
+
+
+[@进入]
+#IF
+#ACT
+SENDMSG 0 『%s』已进入激情PK地图,请参加的玩家赶紧从土城激情PK处进入！
+mapmove G003
+break

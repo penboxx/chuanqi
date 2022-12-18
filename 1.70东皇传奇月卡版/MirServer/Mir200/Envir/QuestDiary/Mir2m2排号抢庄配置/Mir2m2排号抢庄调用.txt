@@ -1,0 +1,3516 @@
+[@Mir2m2排号抢庄脚本调用]
+{
+
+[@Mir2m2排号抢庄脚本检查]
+#IF
+CHECKVAR HUMAN 抢庄个人延迟2 = 0
+#ACT
+CALCVAR HUMAN 抢庄个人延迟1 = 1
+DELAYGOTO 1 @Mir2m2排号抢庄脚本读秒
+
+[@Mir2m2排号抢庄输赢排名]
+#IF
+CHECKVAR GLOBAL 抢庄排名开启1 < 1
+CHECKVAR GLOBAL 抢庄排名开启2 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，输赢排名榜未开启！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄排名开启1 < 1
+#ACT
+GOTO @Mir2m2排号抢庄输赢排名2
+BREAK
+#ELSEACT
+GOTO @Mir2m2排号抢庄输赢排名1
+BREAK
+
+[@Mir2m2排号抢庄输赢排名1]
+#IF
+CHECKVAR GLOBAL 抢庄排名开启1 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，输钱排名榜未开启！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 10
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+#IF
+CHECKLEVELEX > 0
+#SAY
+<$GLOBAL(抢庄今日排名1)>\
+<今日赢钱>　<今日输钱/@Mir2m2排号抢庄输赢排名2>　<昨日赢钱/@Mir2m2排号抢庄输赢排名3>　<昨日输钱/@Mir2m2排号抢庄输赢排名4>　<领奖/@Mir2m2排号抢庄领取奖金>　<说明/@Mir2m2排号抢庄排名说明>　[<返回/@Mir2m2排号抢庄脚本NPC>]\
+
+[@Mir2m2排号抢庄输赢排名2]
+#IF
+CHECKVAR GLOBAL 抢庄排名开启2 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，输钱排名榜未开启！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 10
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+#IF
+CHECKLEVELEX > 0
+#SAY
+<$GLOBAL(抢庄今日排名2)>\
+<今日赢钱/@Mir2m2排号抢庄输赢排名1>　<今日输钱>　<昨日赢钱/@Mir2m2排号抢庄输赢排名3>　<昨日输钱/@Mir2m2排号抢庄输赢排名4>　<领奖/@Mir2m2排号抢庄领取奖金>　<说明/@Mir2m2排号抢庄排名说明>　[<返回/@Mir2m2排号抢庄脚本NPC>]\
+
+[@Mir2m2排号抢庄输赢排名3]
+#IF
+CHECKVAR GLOBAL 抢庄排名开启1 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，赢钱排名榜未开启！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 10
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+#IF
+CHECKLEVELEX > 0
+#SAY
+<$GLOBAL(抢庄昨日排名1)>\
+<今日赢钱/@Mir2m2排号抢庄输赢排名1>　<今日输钱/@Mir2m2排号抢庄输赢排名2>　<昨日赢钱>　<昨日输钱/@Mir2m2排号抢庄输赢排名4>　<领奖/@Mir2m2排号抢庄领取奖金>　<说明/@Mir2m2排号抢庄排名说明>　[<返回/@Mir2m2排号抢庄脚本NPC>]\
+
+[@Mir2m2排号抢庄输赢排名4]
+#IF
+CHECKVAR GLOBAL 抢庄排名开启2 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，输钱排名榜未开启！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 10
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+#IF
+CHECKLEVELEX > 0
+#SAY
+<$GLOBAL(抢庄昨日排名2)>\
+<今日赢钱/@Mir2m2排号抢庄输赢排名1>　<今日输钱/@Mir2m2排号抢庄输赢排名2>　<昨日赢钱/@Mir2m2排号抢庄输赢排名3>　<昨日输钱>　<领奖/@Mir2m2排号抢庄领取奖金>　<说明/@Mir2m2排号抢庄排名说明>　[<返回/@Mir2m2排号抢庄脚本NPC>]\
+
+[@Mir2m2排号抢庄排名说明]
+#IF
+CHECKVAR GLOBAL 抢庄庄家税率 = <$GLOBAL(抢庄闲家税率)>
+#ACT
+MOV S10 本系统赢钱纳税率为：
+INC S10 <$GLOBAL(抢庄闲家税率)>
+INC S10 %
+#ELSEACT
+MOV S10 【庄家】赢钱纳税率为：
+INC S10 <$GLOBAL(抢庄庄家税率)>
+INC S10 %　【闲家】赢钱纳税率为：
+INC S10 <$GLOBAL(抢庄闲家税率)>
+INC S10 %　注意庄闲纳税率不一样！
+#IF
+CHECKLEVELEX > 0
+#ACT
+MESSAGEBOX 1.每天统计当日赢钱数前七名（每局赢钱金额累加，只算赢钱数，不算输钱）\2.每天统计当日输钱数前七名（当日扣除赢钱数后实际输钱总额）\3.奖金根据纳税所得进行分配，实时变化，参与人数越多奖金越多！\4.今日的排名在零点过后才可领取（需24小时内领取，超时视为弃奖）\　\<$STR(S10)>
+
+[@Mir2m2排号抢庄领取奖金]
+#IF
+CHECKVAR GLOBAL 抢庄排名开启1 < 1
+CHECKVAR GLOBAL 抢庄排名开启2 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，输赢排名榜未开启！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 > 10
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，系统正在处理数据，请稍后1-2秒再领取奖金！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+LOADVAR HUMAN 抢庄个人名次1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排名.txt HardDisk
+LOADVAR HUMAN 抢庄个人名次2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排名.txt HardDisk
+#IF
+CHECKVAR HUMAN 抢庄个人名次1 = 0
+CHECKVAR HUMAN 抢庄个人名次2 = 0
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您没有进入昨日的输赢排名榜！\　\今日的排名需要明天才能领取！
+BREAK
+#ELSEACT
+LOADVAR HUMAN 抢庄个人奖励1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排名.txt HardDisk
+LOADVAR HUMAN 抢庄个人奖励2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排名.txt HardDisk
+#IF
+CHECKVAR HUMAN 抢庄个人奖励1 = 0
+CHECKVAR HUMAN 抢庄个人奖励2 = 0
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您已经领取过昨日的排名奖励！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人奖励1 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$USERNAME>】领取了昨日赢钱【第<$HUMAN(抢庄个人名次1)>名】奖金【<$HUMAN(抢庄个人奖励1)>元宝】 255 244
+GAMEGOLD + <$HUMAN(抢庄个人奖励1)>
+
+CALCVAR HUMAN 抢庄个人奖励1 = 0
+SAVEVAR HUMAN 抢庄个人奖励1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排名.txt HardDisk
+#IF
+CHECKVAR HUMAN 抢庄个人奖励2 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$USERNAME>】领取了昨日输钱【第<$HUMAN(抢庄个人名次2)>名】奖金【<$HUMAN(抢庄个人奖励2)>元宝】 255 244
+GAMEGOLD + <$HUMAN(抢庄个人奖励2)>
+
+CALCVAR HUMAN 抢庄个人奖励2 = 0
+SAVEVAR HUMAN 抢庄个人奖励2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排名.txt HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>恭喜您，领取奖金成功！
+BREAK
+
+[@Mir2m2排号抢庄输赢记录]
+#IF
+CHECKVAR HUMAN 抢庄个人提示3 =
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您还没有输赢记录！
+BREAK
+#ELSEACT
+CALCVAR HUMAN 抢庄个人读秒 = 0
+CALCVAR HUMAN 抢庄个人结算 = 2
+#IF
+CHECKVAR HUMAN 抢庄个人延迟1 = 0
+#ACT
+CALCVAR HUMAN 抢庄个人延迟1 = 1
+DELAYGOTO 1 @Mir2m2排号抢庄脚本读秒
+BREAK
+#ELSEACT
+CALCVAR HUMAN 抢庄个人延迟2 = 0
+DELAYGOTO 2000 @Mir2m2排号抢庄脚本检查
+
+[@Mir2m2排号抢庄关闭读秒]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 10
+CLOSE
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+BREAK
+
+[@Mir2m2排号抢庄押注输入庄]
+#ACT
+QUERYVALUE 61 1 10 Mir2m2排号抢庄押注输入庄2 请输入您要抢庄的本钱：（<$GLOBAL(抢庄本钱最小)>—<$GLOBAL(抢庄本钱封顶)>）
+[Mir2m2排号抢庄押注输入庄2]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MOV P9 <$STR(M61)>
+MOV M61 0
+#IF
+CHECKVAR GLOBAL 抢庄运行状态 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄程序未启动，请联系GM启动程序...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄运行状态 = 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄系统已关闭！\　\开放时间：<$GLOBAL(抢庄开放时间)>
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄系统未开放，请等待GM手动开放...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 = 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，新区暂不开放排号抢庄系统...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 = 3
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，新区暂不开放排号抢庄系统...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄运行控制 > 0
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，攻城期间抢庄系统暂时关闭...
+BREAK
+
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 = 1
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，现在不是抢庄时间！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你目前已经是庄家！
+BREAK
+#IF
+LARGE P9 0
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，请输入【<$GLOBAL(抢庄本钱最小)>】—【<$GLOBAL(抢庄本钱封顶)>】之间的整数！
+BREAK
+#IF
+SMALL P9 <$GLOBAL(抢庄本钱最小)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，抢庄最小金额为【<$GLOBAL(抢庄本钱最小)>】！
+BREAK
+#IF
+LARGE P9 <$GLOBAL(抢庄本钱封顶)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，抢庄最大金额为【<$GLOBAL(抢庄本钱封顶)>】！
+BREAK
+#IF
+CHECKGAMEGOLD < <$STR(P9)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你身上的元宝不足【<$STR(P9)>】！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P5 <$GLOBAL(抢庄抽庄人数)>
+#IF
+LARGE P5 0
+SMALL P9 <$GLOBAL(抢庄本钱最大)>
+#ACT
+MESSAGEBOX 对不起，现在是抽庄时间，最少需要输入【<$GLOBAL(抢庄本钱最大)>】元宝才能参与抽庄！
+BREAK
+#IF
+LARGE P5 0
+CHECKNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄参与.txt HardDisk
+#ACT
+MESSAGEBOX 对不起，你已参与系统抽庄，请等待系统抽出庄家！
+BREAK
+#IF
+LARGE P5 0
+CHECKVAR GLOBAL 抢庄抽庄同IP > 0
+CHECKIPLIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄IP号.txt HardDisk
+#ACT
+MESSAGEBOX 对不起，您所在的IP【<$IPADDR>】已有玩家参与抽庄！\　\同一个IP只允许一个玩家同时参与抽庄！
+BREAK
+#IF
+LARGE P5 0
+CHECKLEVELEX < <$GLOBAL(抢庄抽庄等级)>
+#ACT
+MESSAGEBOX 对不起，需要人物等级达到<$GLOBAL(抢庄抽庄等级)>级才能参与抽庄！
+BREAK
+#IF
+LARGE P5 0
+#ACT
+INC P5 1
+CALCVAR GLOBAL 抢庄抽庄人数 + 1
+MOV S11 <$USERNAME>
+INC S11 <$GLOBAL(抢庄名字空格)>
+DEC S11 16 500
+INC S11 <$GLOBAL(抢庄抽庄名单)>
+CALCVAR GLOBAL 抢庄抽庄名单 = <$STR(S11)>
+MOV S11
+MOV P6 <$GLOBAL(抢庄抽庄人数)>
+DIV P6 4
+MUL P6 4
+MESSAGEBOX 恭喜您成功参与本次抽庄！系统尚未扣除您的元宝！\　\请勿下线，同时保持身上元宝不低于【<$STR(P9)>】\　\如抽到您时您不在线或元宝不够<$STR(P9)>，则视为您放弃，继续抽其他庄家！
+ADDLINELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄名单.txt <$USERNAME>:<$STR(P9)> HardDisk
+ADDNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄参与.txt HardDisk
+ADDIPLIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄IP号.txt HardDisk
+SAVEVAR HUMAN 抢庄个人IP号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人信息.txt HardDisk
+SAVEVAR GLOBAL 抢庄抽庄人数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P5 0
+EQUAL P5 <$STR(P6)>
+#ACT
+MOV S11 \
+INC S11 <$GLOBAL(抢庄抽庄名单)>
+CALCVAR GLOBAL 抢庄抽庄名单 = <$STR(S11)>
+MOV S11
+#IF
+LARGE P5 0
+CHECKVAR GLOBAL 抢庄公告提示0 = 1
+#ACT
+SENDMSG 4 【%s】使用【<$STR(P9)>】元宝参与系统抽庄！
+#IF
+LARGE P5 0
+CHECKVAR GLOBAL 抢庄公告提示0 > 1
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【%s】使用【<$STR(P9)>】元宝参与系统抽庄！ 255 244
+#IF
+LARGE P5 0
+#ACT
+BREAK
+
+#IF
+CHECKVAR GLOBAL 抢庄庄家本钱 < <$GLOBAL(抢庄本钱最大)>
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，庄家本钱已超过【<$GLOBAL(抢庄本钱最大)>】，无法抢庄！
+BREAK
+#IF
+LARGE P9 <$GLOBAL(抢庄庄家本钱)>
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你必须出大于【<$GLOBAL(抢庄庄家本钱)>】的金额才能抢庄！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 <$GLOBAL(抢庄抢庄时间)>
+DEC P8 <$GLOBAL(抢庄开始计时)>
+MOV P7 1
+#IF
+CHECKVAR GLOBAL 抢庄押中开启 > 0
+#ACT
+MOV P4 <$GLOBAL(抢庄押中赔率)>
+#ELSEACT
+MOV P4 1
+#IF
+SMALL P4 1
+#ACT
+MOV P4 1
+#IF
+CHECKVAR GLOBAL 抢庄抽庄时间 > 0
+SMALL P8 <$GLOBAL(抢庄抽庄时间)>
+#ACT
+MOV P7 0
+#IF
+SMALL P9 <$GLOBAL(抢庄本钱最大)>
+#ACT
+MOV P7 1
+#IF
+EQUAL P7 0
+#ACT
+MOV S10 <$GLOBAL(抢庄庄家姓名)>
+MOV P8 <$GLOBAL(抢庄庄家本钱)>
+CALCVAR GLOBAL 抢庄庄家姓名 = <$GLOBAL(抢庄抽庄显示)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P9)>
+MOV P6 <$STR(P9)>
+DIV P6 <$STR(P4)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P9)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+INC P5 1
+CALCVAR GLOBAL 抢庄抽庄人数 + 1
+MOV S11 <$USERNAME>
+INC S11 <$GLOBAL(抢庄名字空格)>
+DEC S11 16 500
+INC S11 <$GLOBAL(抢庄抽庄名单)>
+CALCVAR GLOBAL 抢庄抽庄名单 = <$STR(S11)>
+MOV S11
+MOV P6 <$GLOBAL(抢庄抽庄人数)>
+DIV P6 4
+MUL P6 4
+MESSAGEBOX 恭喜您成功参与本次抽庄！系统尚未扣除您的元宝！\　\请勿下线，同时保持身上元宝不低于【<$STR(P9)>】\　\如抽到您时您不在线或元宝不够<$STR(P9)>，则视为您放弃，继续抽其他庄家！
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+ADDLINELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄名单.txt <$USERNAME>:<$STR(P9)> HardDisk
+ADDNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄参与.txt HardDisk
+ADDIPLIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄IP号.txt HardDisk
+SAVEVAR GLOBAL 抢庄抽庄人数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#ELSEACT
+MOV S10 <$GLOBAL(抢庄庄家姓名)>
+MOV P8 <$GLOBAL(抢庄庄家本钱)>
+GAMEGOLD - <$STR(P9)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P9)>
+MOV P6 <$STR(P9)>
+DIV P6 <$STR(P4)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P9)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P5 0
+EQUAL P5 <$STR(P6)>
+#ACT
+MOV S11 \
+INC S11 <$GLOBAL(抢庄抽庄名单)>
+CALCVAR GLOBAL 抢庄抽庄名单 = <$STR(S11)>
+MOV S11
+#IF
+LARGE P5 0
+CHECKVAR GLOBAL 抢庄公告提示0 = 1
+#ACT
+SENDMSG 4 【%s】使用【<$STR(P9)>】元宝参与系统抽庄！
+#IF
+LARGE P5 0
+CHECKVAR GLOBAL 抢庄公告提示0 > 1
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【%s】使用【<$STR(P9)>】元宝参与系统抽庄！ 255 244
+#IF
+EQUAL P7 1
+CHECKVAR GLOBAL 抢庄庄家本钱 < <$GLOBAL(抢庄本钱最大)>
+#ACT
+MOV P7 2
+MOV S11 成功抢庄
+#IF
+EQUAL P7 1
+#ACT
+MOV S11 直接成为庄家
+CALCVAR GLOBAL 抢庄开始计时 = 0
+#IF
+LARGE P7 0
+CHECKVAR GLOBAL 抢庄公告提示0 = 1
+#ACT
+SENDMSG 4 【%s】使用【<$GLOBAL(抢庄庄家本钱)>】元宝<$STR(S11)>！
+#IF
+LARGE P7 0
+CHECKVAR GLOBAL 抢庄公告提示0 > 1
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【%s】使用【<$GLOBAL(抢庄庄家本钱)>】元宝<$STR(S11)>！ 255 244
+#IF
+LARGE P7 0
+#ACT
+SAVEVAR HUMAN 抢庄个人IP号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人信息.txt HardDisk
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>恭喜，你已使用【<$GLOBAL(抢庄庄家本钱)>】元宝<$STR(S11)>！
+MOV S11 
+#IF
+EQUAL S10 
+#ACT
+BREAK
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P8)>
+<$STR(S10)>.GAMEGOLD + <$GLOBAL(抢庄变量数字1)>
+
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的庄家被【<$GLOBAL(抢庄庄家姓名)>】抢夺，系统退还您【<$GLOBAL(抢庄变量数字1)>】元宝！
+BREAK
+#ELSEACT
+LOADVAR HUMAN 抢庄个人退庄 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人退庄.txt HardDisk
+INC S10 :<$STR(P8)>#
+INC S10 <$HUMAN(抢庄个人退庄)>
+CALCVAR HUMAN 抢庄个人退庄 = <$STR(S10)>
+SAVEVAR HUMAN 抢庄个人退庄 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人退庄.txt HardDisk
+
+
+[@Mir2m2排号抢庄押注快速大]
+#IF
+CheckGAMEGOLD < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你欢乐豆为:<$GAMEGOLD>！请充值后再来
+BREAK
+
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 = 2
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，现在不是下注时间！
+BREAK
+
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你是庄家，不能进行押注！
+BREAK
+
+#IF
+CHECKVAR GLOBAL 抢庄可押大总 < 1
+#ACT
+SENDMSG 7 <$GLOBAL(抢庄公告前缀)>对不起，押注大为【<$GLOBAL(抢庄可押大总)>】不够押注！
+BREAK
+
+#IF
+CHECKVAR HUMAN 抢庄个人押数 < 1
+#ACT
+MOV M32 <$HUMAN(默认上线)>
+#ELSEACT
+MOV M32 <$HUMAN(默认上线)>
+DEC M32 <$HUMAN(抢庄个人押数)>
+
+#IF
+SMALL M32 100
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，\　\你已超越最高上限，如继续下注，请修改上限:<$HUMAN(默认上线)>【<$STR(M32)>】
+MOV M32 0
+BREAK
+
+#IF
+LARGE M32 <$GLOBAL(抢庄可押大总)>
+#ACT
+MOV M62 <$GLOBAL(抢庄可押大总)>
+#ELSEACT
+MOV M62 <$STR(M32)>
+
+
+#IF
+LARGE M62 <$GAMEGOLD>
+#ACT
+MOV M62 <$GAMEGOLD>
+DelayGoto 1 ~Mir2m2排号抢庄押注输入大2
+BREAK
+#ELSEACT
+DelayGoto 1 ~Mir2m2排号抢庄押注输入大2
+BREAK
+
+[@Mir2m2排号抢庄押注输入大]
+#ACT
+QUERYVALUE 62 1 10 ~Mir2m2排号抢庄押注输入大2 请输入您要下注的金额：（<$GLOBAL(抢庄押注最小)>—<$GLOBAL(抢庄押注最大)>）
+
+[~Mir2m2排号抢庄押注输入大2]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MOV P9 <$STR(M62)>
+MOV M62 0
+#IF
+CHECKVAR GLOBAL 抢庄运行状态 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄程序未启动，请联系GM启动程序...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄运行状态 = 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄系统已关闭！\　\开放时间：<$GLOBAL(抢庄开放时间)>
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄系统未开放，请等待GM手动开放...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 = 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，新区暂不开放排号抢庄系统...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 = 3
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，新区暂不开放排号抢庄系统...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄运行控制 > 0
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，攻城期间抢庄系统暂时关闭...
+BREAK
+
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 = 2
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，现在不是下注时间！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你是庄家，不能进行押注！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+LOADVAR HUMAN 抢庄个人押数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押注.txt HardDisk
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+CHECKVAR GLOBAL 抢庄允许加注 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>你已经下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】，不能重复押注！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人押名 = 大
+#ACT
+MOV P8 1
+#ELSEACT
+MOV P8 0
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+EQUAL P8 0
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>你已经下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】\　\需要加注只能加注押【<$HUMAN(抢庄个人押名)>】！
+BREAK
+#IF
+LARGE P9 0
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，请输入【<$GLOBAL(抢庄押注最小)>】—【<$GLOBAL(抢庄押注最大)>】之间的整数！
+BREAK
+#IF
+SMALL P9 <$GLOBAL(抢庄押注最小)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，单次最小下注金额为【<$GLOBAL(抢庄押注最小)>】！
+BREAK
+#IF
+LARGE P9 <$GLOBAL(抢庄押注最大)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，单次最大下注金额为【<$GLOBAL(抢庄押注最大)>】！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 <$HUMAN(抢庄个人押数)>
+INC P8 <$STR(P9)>
+#IF
+LARGE P8 <$GLOBAL(抢庄押注最大)>
+#ACT
+MOV P8 <$GLOBAL(抢庄押注最大)>
+DEC P8 <$HUMAN(抢庄个人押数)>
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，单次最大下注金额为【<$GLOBAL(抢庄押注最大)>】！\　\你已下注【<$HUMAN(抢庄个人押数)>】，最多只能加注【<$STR(P8)>】！
+BREAK
+#IF
+LARGE P9 <$GLOBAL(抢庄可押大总)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，庄家的本钱已达到上限不够赔了！\　\目前你最多只能下注【<$GLOBAL(抢庄可押大总)>】押注大！
+BREAK
+#IF
+CHECKGAMEGOLD < <$STR(P9)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你身上的元宝不足【<$STR(P9)>】！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+CALCVAR HUMAN 抢庄个人押数 + <$STR(P9)>
+MOV P8 <$STR(P9)>
+#ELSEACT
+CALCVAR HUMAN 抢庄个人押数 = <$STR(P9)>
+MOV P8 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - <$STR(P9)>
+
+CALCVAR GLOBAL 抢庄已押大总 + <$STR(P9)>
+CALCVAR HUMAN 抢庄个人押名 = 大
+CALCVAR HUMAN 抢庄个人IP号 = <$IPADDR>
+SAVEVAR HUMAN 抢庄个人押数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押注.txt HardDisk
+SAVEVAR HUMAN 抢庄个人押名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押名.txt HardDisk
+SAVEVAR HUMAN 抢庄个人IP号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押IP.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄押中开启 > 0
+#ACT
+MOV P7 <$GLOBAL(抢庄押中赔率)>
+#ELSEACT
+MOV P7 1
+#IF
+SMALL P7 1
+#ACT
+MOV P7 1
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$GLOBAL(抢庄庄家本钱)>
+MOV P5 <$GLOBAL(抢庄已押大总)>
+INC P5 10
+INC P9 <$STR(P5)>
+MOV P5 <$GLOBAL(抢庄已押小总)>
+INC P5 10
+INC P9 <$STR(P5)>
+MOV P5 <$GLOBAL(抢庄已押中总)>
+INC P5 10
+INC P9 <$STR(P5)>
+MOV P5 <$GLOBAL(抢庄已押豹总)>
+INC P5 10
+INC P9 <$STR(P5)>
+DEC P9 40
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押大总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$STR(P7)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押小总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$STR(P7)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押中总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$STR(P7)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押豹总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 = 1
+SMALL P8 1
+#ACT
+SENDMSG 4 【%s】下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 = 1
+LARGE P8 0
+#ACT
+SENDMSG 4 【%s】加注【<$STR(P8)>】累计【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 > 1
+SMALL P8 1
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【%s】下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】 255 244
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 > 1
+LARGE P8 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【%s】加注【<$STR(P8)>】累计【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】 255 244
+
+#IF
+SMALL P8 1
+#ACT
+MOV S10 【
+INC S10 <$USERNAME>
+INC S10 】下注【
+INC S10 <$HUMAN(抢庄个人押数)>
+INC S10 】押【
+INC S10 <$HUMAN(抢庄个人押名)>
+INC S10 】\
+INC S10 <$GLOBAL(抢庄押注记录)>
+DEC S10 1000 3000
+CALCVAR GLOBAL 抢庄押注记录 = <$STR(S10)>
+MOV S10
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>恭喜，你已下注【<$HUMAN(抢庄个人押数)>】元宝押【<$HUMAN(抢庄个人押名)>】！
+#ELSEACT
+MOV S10 【
+INC S10 <$USERNAME>
+INC S10 】加注【
+INC S10 <$STR(P8)>
+INC S10 】累计下注【
+INC S10 <$HUMAN(抢庄个人押数)>
+INC S10 】押【
+INC S10 <$HUMAN(抢庄个人押名)>
+INC S10 】\
+INC S10 <$GLOBAL(抢庄押注记录)>
+DEC S10 1000 3000
+CALCVAR GLOBAL 抢庄押注记录 = <$STR(S10)>
+MOV S10
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>恭喜，你已加注【<$STR(P8)>】元宝押【<$HUMAN(抢庄个人押名)>】！\　\您目前累计下注【<$HUMAN(抢庄个人押数)>】元宝押【<$HUMAN(抢庄个人押名)>】！
+
+
+[@Mir2m2排号抢庄押注快速小]
+#IF
+CheckGAMEGOLD < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你欢乐豆为:<$GAMEGOLD>！请充值后再来
+BREAK
+
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 = 2
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，现在不是下注时间！
+BREAK
+
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你是庄家，不能进行押注！
+BREAK
+
+
+#IF
+CHECKVAR GLOBAL 抢庄可押小总 < 1
+#ACT
+SENDMSG 7 <$GLOBAL(抢庄公告前缀)>对不起，押注小为【<$GLOBAL(抢庄可押小总)>】不够押注！
+BREAK
+
+#IF
+CHECKVAR HUMAN 抢庄个人押数 < 1
+#ACT
+MOV M33 <$HUMAN(默认上线)>
+#ELSEACT
+MOV M33 <$HUMAN(默认上线)>
+DEC M33 <$HUMAN(抢庄个人押数)>
+
+#IF
+SMALL M33 100
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，\　\你已超越最高上限，如继续下注，请修改上限:<$HUMAN(默认上线)>【<$STR(M33)>】
+MOV M33 0
+BREAK
+
+#IF
+LARGE M33 <$GLOBAL(抢庄可押小总)>
+#ACT
+MOV M63 <$GLOBAL(抢庄可押小总)>
+#ELSEACT
+MOV M63 <$STR(M33)>
+
+#IF
+LARGE M63 <$GAMEGOLD>
+#ACT
+MOV M63 <$GAMEGOLD>
+DelayGoto 1 ~Mir2m2排号抢庄押注输入小2
+BREAK
+#ELSEACT
+DelayGoto 1 ~Mir2m2排号抢庄押注输入小2
+BREAK
+
+[@Mir2m2排号抢庄押注输入小]
+#ACT
+QUERYVALUE 63 1 10 ~Mir2m2排号抢庄押注输入小2 请输入您要下注的金额：（<$GLOBAL(抢庄押注最小)>—<$GLOBAL(抢庄押注最大)>）
+
+[~Mir2m2排号抢庄押注输入小2]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MOV P9 <$STR(M63)>
+MOV M63 0
+#IF
+CHECKVAR GLOBAL 抢庄运行状态 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄程序未启动，请联系GM启动程序...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄运行状态 = 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄系统已关闭！\　\开放时间：<$GLOBAL(抢庄开放时间)>
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄系统未开放，请等待GM手动开放...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 = 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，新区暂不开放排号抢庄系统...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 = 3
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，新区暂不开放排号抢庄系统...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄运行控制 > 0
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，攻城期间抢庄系统暂时关闭...
+BREAK
+
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 = 2
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，现在不是下注时间！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你是庄家，不能进行押注！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+LOADVAR HUMAN 抢庄个人押数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押注.txt HardDisk
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+CHECKVAR GLOBAL 抢庄允许加注 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>你已经下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】，不能重复押注！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人押名 = 小
+#ACT
+MOV P8 1
+#ELSEACT
+MOV P8 0
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+EQUAL P8 0
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>你已经下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】\　\需要加注只能加注押【<$HUMAN(抢庄个人押名)>】！
+BREAK
+#IF
+LARGE P9 0
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，请输入【<$GLOBAL(抢庄押注最小)>】—【<$GLOBAL(抢庄押注最大)>】之间的整数！
+BREAK
+#IF
+SMALL P9 <$GLOBAL(抢庄押注最小)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，单次最小下注金额为【<$GLOBAL(抢庄押注最小)>】！
+BREAK
+#IF
+LARGE P9 <$GLOBAL(抢庄押注最大)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，单次最大下注金额为【<$GLOBAL(抢庄押注最大)>】！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 <$HUMAN(抢庄个人押数)>
+INC P8 <$STR(P9)>
+#IF
+LARGE P8 <$GLOBAL(抢庄押注最大)>
+#ACT
+MOV P8 <$GLOBAL(抢庄押注最大)>
+DEC P8 <$HUMAN(抢庄个人押数)>
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，单次最大下注金额为【<$GLOBAL(抢庄押注最大)>】！\　\你已下注【<$HUMAN(抢庄个人押数)>】，最多只能加注【<$STR(P8)>】！
+BREAK
+#IF
+LARGE P9 <$GLOBAL(抢庄可押小总)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，庄家的本钱已达到上限不够赔了！\　\目前你最多只能下注【<$GLOBAL(抢庄可押小总)>】押注小！
+BREAK
+#IF
+CHECKGAMEGOLD < <$STR(P9)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你身上的元宝不足【<$STR(P9)>】！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+CALCVAR HUMAN 抢庄个人押数 + <$STR(P9)>
+MOV P8 <$STR(P9)>
+#ELSEACT
+CALCVAR HUMAN 抢庄个人押数 = <$STR(P9)>
+MOV P8 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - <$STR(P9)>
+
+CALCVAR HUMAN 抢庄个人押名 = 小
+CALCVAR GLOBAL 抢庄已押小总 + <$STR(P9)>
+CALCVAR HUMAN 抢庄个人IP号 = <$IPADDR>
+SAVEVAR HUMAN 抢庄个人押数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押注.txt HardDisk
+SAVEVAR HUMAN 抢庄个人押名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押名.txt HardDisk
+SAVEVAR HUMAN 抢庄个人IP号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押IP.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄押中开启 > 0
+#ACT
+MOV P7 <$GLOBAL(抢庄押中赔率)>
+#ELSEACT
+MOV P7 1
+#IF
+SMALL P7 1
+#ACT
+MOV P7 1
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$GLOBAL(抢庄庄家本钱)>
+MOV P5 <$GLOBAL(抢庄已押大总)>
+INC P5 10
+INC P9 <$STR(P5)>
+MOV P5 <$GLOBAL(抢庄已押小总)>
+INC P5 10
+INC P9 <$STR(P5)>
+MOV P5 <$GLOBAL(抢庄已押中总)>
+INC P5 10
+INC P9 <$STR(P5)>
+MOV P5 <$GLOBAL(抢庄已押豹总)>
+INC P5 10
+INC P9 <$STR(P5)>
+DEC P9 40
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押大总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$STR(P7)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押小总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$STR(P7)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押中总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$STR(P7)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押豹总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 = 1
+SMALL P8 1
+#ACT
+SENDMSG 4 【%s】下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 = 1
+LARGE P8 0
+#ACT
+SENDMSG 4 【%s】加注【<$STR(P8)>】累计【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 > 1
+SMALL P8 1
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【%s】下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】 255 244
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 > 1
+LARGE P8 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【%s】加注【<$STR(P8)>】累计【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】 255 244
+
+#IF
+SMALL P8 1
+#ACT
+MOV S10 【
+INC S10 <$USERNAME>
+INC S10 】下注【
+INC S10 <$HUMAN(抢庄个人押数)>
+INC S10 】押【
+INC S10 <$HUMAN(抢庄个人押名)>
+INC S10 】\
+INC S10 <$GLOBAL(抢庄押注记录)>
+DEC S10 1000 3000
+CALCVAR GLOBAL 抢庄押注记录 = <$STR(S10)>
+MOV S10
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>恭喜，你已下注【<$HUMAN(抢庄个人押数)>】元宝押【<$HUMAN(抢庄个人押名)>】！
+#ELSEACT
+MOV S10 【
+INC S10 <$USERNAME>
+INC S10 】加注【
+INC S10 <$STR(P8)>
+INC S10 】累计下注【
+INC S10 <$HUMAN(抢庄个人押数)>
+INC S10 】押【
+INC S10 <$HUMAN(抢庄个人押名)>
+INC S10 】\
+INC S10 <$GLOBAL(抢庄押注记录)>
+DEC S10 1000 3000
+CALCVAR GLOBAL 抢庄押注记录 = <$STR(S10)>
+MOV S10
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>恭喜，你已加注【<$STR(P8)>】元宝押【<$HUMAN(抢庄个人押名)>】！\　\您目前累计下注【<$HUMAN(抢庄个人押数)>】元宝押【<$HUMAN(抢庄个人押名)>】！
+
+[@Mir2m2排号抢庄押注快速中]
+#ACT
+MOV M67 <$GLOBAL(抢庄可押中总)>
+QUERYVALUE 0 2 0 Mir2m2排号抢庄押注输入中2 当前可押中的金额为：<$GLOBAL(抢庄可押中总)>\　\是否确定下注【<$GLOBAL(抢庄可押中总)>】押【中】？\　\确定下注请点【确定】，使用其他金额下注请点【取消】
+[@Mir2m2排号抢庄押注输入中]
+#ACT
+QUERYVALUE 67 1 10 Mir2m2排号抢庄押注输入中2 请输入您要下注的金额：（<$GLOBAL(抢庄押注最小)>—<$GLOBAL(抢庄押注最大)>）
+[Mir2m2排号抢庄押注输入中2]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MOV P9 <$STR(M67)>
+MOV M67 0
+#IF
+CHECKVAR GLOBAL 抢庄运行状态 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄程序未启动，请联系GM启动程序...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄运行状态 = 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄系统已关闭！\　\开放时间：<$GLOBAL(抢庄开放时间)>
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄系统未开放，请等待GM手动开放...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 = 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，新区暂不开放排号抢庄系统...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 = 3
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，新区暂不开放排号抢庄系统...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄运行控制 > 0
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，攻城期间抢庄系统暂时关闭...
+BREAK
+
+#IF
+CHECKVAR GLOBAL 抢庄押中开启 > 0
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，系统未开放押注【中】，请押注其他！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 = 2
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，现在不是下注时间！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你是庄家，不能进行押注！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+LOADVAR HUMAN 抢庄个人押数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押注.txt HardDisk
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+CHECKVAR GLOBAL 抢庄允许加注 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>你已经下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】，不能重复押注！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人押名 = 中
+#ACT
+MOV P8 1
+#ELSEACT
+MOV P8 0
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+EQUAL P8 0
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>你已经下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】\　\需要加注只能加注押【<$HUMAN(抢庄个人押名)>】！
+BREAK
+#IF
+LARGE P9 0
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，请输入【<$GLOBAL(抢庄押注最小)>】—【<$GLOBAL(抢庄押注最大)>】的整数！
+BREAK
+#IF
+SMALL P9 <$GLOBAL(抢庄押注最小)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，单次最小下注金额为【<$GLOBAL(抢庄押注最小)>】！
+BREAK
+#IF
+LARGE P9 <$GLOBAL(抢庄押注最大)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，单次最大下注金额为【<$GLOBAL(抢庄押注最大)>】！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 <$HUMAN(抢庄个人押数)>
+INC P8 <$STR(P9)>
+#IF
+LARGE P8 <$GLOBAL(抢庄押注最大)>
+#ACT
+MOV P8 <$GLOBAL(抢庄押注最大)>
+DEC P8 <$HUMAN(抢庄个人押数)>
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，单次最大下注金额为【<$GLOBAL(抢庄押注最大)>】！\　\你已下注【<$HUMAN(抢庄个人押数)>】，最多只能加注【<$STR(P8)>】！
+BREAK
+#IF
+LARGE P9 <$GLOBAL(抢庄可押中总)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，庄家的本钱已达到上限不够赔了！\　\目前你最多只能下注【<$GLOBAL(抢庄可押中总)>】押注中！
+BREAK
+#IF
+CHECKGAMEGOLD < <$STR(P9)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你身上的元宝不足【<$STR(P9)>】！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+CALCVAR HUMAN 抢庄个人押数 + <$STR(P9)>
+MOV P8 <$STR(P9)>
+#ELSEACT
+CALCVAR HUMAN 抢庄个人押数 = <$STR(P9)>
+MOV P8 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - <$STR(P9)>
+
+CALCVAR HUMAN 抢庄个人押名 = 中
+CALCVAR GLOBAL 抢庄已押中总 + <$STR(P9)>
+CALCVAR HUMAN 抢庄个人IP号 = <$IPADDR>
+SAVEVAR HUMAN 抢庄个人押数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押注.txt HardDisk
+SAVEVAR HUMAN 抢庄个人押名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押名.txt HardDisk
+SAVEVAR HUMAN 抢庄个人IP号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押IP.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+
+#IF
+CHECKVAR GLOBAL 抢庄押中开启 > 0
+#ACT
+MOV P7 <$GLOBAL(抢庄押中赔率)>
+#ELSEACT
+MOV P7 1
+#IF
+SMALL P7 1
+#ACT
+MOV P7 1
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$GLOBAL(抢庄庄家本钱)>
+MOV P5 <$GLOBAL(抢庄已押大总)>
+INC P5 10
+INC P9 <$STR(P5)>
+MOV P5 <$GLOBAL(抢庄已押小总)>
+INC P5 10
+INC P9 <$STR(P5)>
+MOV P5 <$GLOBAL(抢庄已押中总)>
+INC P5 10
+INC P9 <$STR(P5)>
+MOV P5 <$GLOBAL(抢庄已押豹总)>
+INC P5 10
+INC P9 <$STR(P5)>
+DEC P9 40
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押大总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$STR(P7)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押小总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$STR(P7)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押中总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$STR(P7)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押豹总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 = 1
+SMALL P8 1
+#ACT
+SENDMSG 4 【%s】下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 = 1
+LARGE P8 0
+#ACT
+SENDMSG 4 【%s】加注【<$STR(P8)>】累计【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 > 1
+SMALL P8 1
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【%s】下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】 255 244
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 > 1
+LARGE P8 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【%s】加注【<$STR(P8)>】累计【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】 255 244
+
+#IF
+SMALL P8 1
+#ACT
+MOV S10 【
+INC S10 <$USERNAME>
+INC S10 】下注【
+INC S10 <$HUMAN(抢庄个人押数)>
+INC S10 】押【
+INC S10 <$HUMAN(抢庄个人押名)>
+INC S10 】\
+INC S10 <$GLOBAL(抢庄押注记录)>
+DEC S10 1000 3000
+CALCVAR GLOBAL 抢庄押注记录 = <$STR(S10)>
+MOV S10
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>恭喜，你已下注【<$HUMAN(抢庄个人押数)>】元宝押【<$HUMAN(抢庄个人押名)>】！
+#ELSEACT
+MOV S10 【
+INC S10 <$USERNAME>
+INC S10 】加注【
+INC S10 <$STR(P8)>
+INC S10 】累计下注【
+INC S10 <$HUMAN(抢庄个人押数)>
+INC S10 】押【
+INC S10 <$HUMAN(抢庄个人押名)>
+INC S10 】\
+INC S10 <$GLOBAL(抢庄押注记录)>
+DEC S10 1000 3000
+CALCVAR GLOBAL 抢庄押注记录 = <$STR(S10)>
+MOV S10
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>恭喜，你已加注【<$STR(P8)>】元宝押【<$HUMAN(抢庄个人押名)>】！\　\您目前累计下注【<$HUMAN(抢庄个人押数)>】元宝押【<$HUMAN(抢庄个人押名)>】！
+
+[@Mir2m2排号抢庄押注快速豹]
+#ACT
+MOV M64 <$GLOBAL(抢庄可押豹总)>
+QUERYVALUE 0 2 0 Mir2m2排号抢庄押注输入豹2 当前可押豹子的金额为：<$GLOBAL(抢庄可押豹总)>\　\是否确定下注【<$GLOBAL(抢庄可押豹总)>】押【豹子】？\　\确定下注请点【确定】，使用其他金额下注请点【取消】
+[@Mir2m2排号抢庄押注输入豹]
+#ACT
+QUERYVALUE 64 1 10 Mir2m2排号抢庄押注输入豹2 请输入您要下注的金额：（<$GLOBAL(抢庄押注最小)>—<$GLOBAL(抢庄押注最大)>）
+[Mir2m2排号抢庄押注输入豹2]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MOV P9 <$STR(M64)>
+MOV M64 0
+#IF
+CHECKVAR GLOBAL 抢庄运行状态 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄程序未启动，请联系GM启动程序...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄运行状态 = 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄系统已关闭！\　\开放时间：<$GLOBAL(抢庄开放时间)>
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄系统未开放，请等待GM手动开放...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 = 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，新区暂不开放排号抢庄系统...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 = 3
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，新区暂不开放排号抢庄系统...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄运行控制 > 0
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，攻城期间抢庄系统暂时关闭...
+BREAK
+
+#IF
+CHECKVAR GLOBAL 抢庄押豹开启 > 0
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，系统未开放押注【豹子】，请押注其他！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 = 2
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，现在不是下注时间！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你是庄家，不能进行押注！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+LOADVAR HUMAN 抢庄个人押数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押注.txt HardDisk
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+CHECKVAR GLOBAL 抢庄允许加注 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>你已经下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】，不能重复押注！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人押名 = 豹子
+#ACT
+MOV P8 1
+#ELSEACT
+MOV P8 0
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+EQUAL P8 0
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>你已经下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】\　\需要加注只能加注押【<$HUMAN(抢庄个人押名)>】！
+BREAK
+#IF
+LARGE P9 0
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，请输入【<$GLOBAL(抢庄押注最小)>】—【<$GLOBAL(抢庄押注最大)>】的整数！
+BREAK
+#IF
+SMALL P9 <$GLOBAL(抢庄押注最小)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，单次最小下注金额为【<$GLOBAL(抢庄押注最小)>】！
+BREAK
+#IF
+LARGE P9 <$GLOBAL(抢庄押注最大)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，单次最大下注金额为【<$GLOBAL(抢庄押注最大)>】！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 <$HUMAN(抢庄个人押数)>
+INC P8 <$STR(P9)>
+#IF
+LARGE P8 <$GLOBAL(抢庄押注最大)>
+#ACT
+MOV P8 <$GLOBAL(抢庄押注最大)>
+DEC P8 <$HUMAN(抢庄个人押数)>
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，单次最大下注金额为【<$GLOBAL(抢庄押注最大)>】！\　\你已下注【<$HUMAN(抢庄个人押数)>】，最多只能加注【<$STR(P8)>】！
+BREAK
+#IF
+LARGE P9 <$GLOBAL(抢庄可押豹总)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，庄家的本钱已达到上限不够赔了！\　\目前你最多只能下注【<$GLOBAL(抢庄可押豹总)>】押注豹！
+BREAK
+#IF
+CHECKGAMEGOLD < <$STR(P9)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，你身上的元宝不足【<$STR(P9)>】！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+CALCVAR HUMAN 抢庄个人押数 + <$STR(P9)>
+MOV P8 <$STR(P9)>
+#ELSEACT
+CALCVAR HUMAN 抢庄个人押数 = <$STR(P9)>
+MOV P8 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - <$STR(P9)>
+
+CALCVAR HUMAN 抢庄个人押名 = 豹子
+CALCVAR GLOBAL 抢庄已押豹总 + <$STR(P9)>
+CALCVAR HUMAN 抢庄个人IP号 = <$IPADDR>
+SAVEVAR HUMAN 抢庄个人押数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押注.txt HardDisk
+SAVEVAR HUMAN 抢庄个人押名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押名.txt HardDisk
+SAVEVAR HUMAN 抢庄个人IP号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押IP.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+
+#IF
+CHECKVAR GLOBAL 抢庄押中开启 > 0
+#ACT
+MOV P7 <$GLOBAL(抢庄押中赔率)>
+#ELSEACT
+MOV P7 1
+#IF
+SMALL P7 1
+#ACT
+MOV P7 1
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$GLOBAL(抢庄庄家本钱)>
+MOV P5 <$GLOBAL(抢庄已押大总)>
+INC P5 10
+INC P9 <$STR(P5)>
+MOV P5 <$GLOBAL(抢庄已押小总)>
+INC P5 10
+INC P9 <$STR(P5)>
+MOV P5 <$GLOBAL(抢庄已押中总)>
+INC P5 10
+INC P9 <$STR(P5)>
+MOV P5 <$GLOBAL(抢庄已押豹总)>
+INC P5 10
+INC P9 <$STR(P5)>
+DEC P9 40
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押大总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$STR(P7)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押小总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$STR(P7)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押中总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$STR(P7)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P9)>
+MOV P5 <$GLOBAL(抢庄已押豹总)>
+INC P5 10
+INC P6 10
+DEC P6 <$STR(P5)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+INC P6 10
+DEC P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 = 1
+SMALL P8 1
+#ACT
+SENDMSG 4 【%s】下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 = 1
+LARGE P8 0
+#ACT
+SENDMSG 4 【%s】加注【<$STR(P8)>】累计【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 > 1
+SMALL P8 1
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【%s】下注【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】 255 244
+#IF
+CHECKVAR GLOBAL 抢庄公告提示1 > 1
+LARGE P8 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【%s】加注【<$STR(P8)>】累计【<$HUMAN(抢庄个人押数)>】押【<$HUMAN(抢庄个人押名)>】 255 244
+
+#IF
+SMALL P8 1
+#ACT
+MOV S10 【
+INC S10 <$USERNAME>
+INC S10 】下注【
+INC S10 <$HUMAN(抢庄个人押数)>
+INC S10 】押【
+INC S10 <$HUMAN(抢庄个人押名)>
+INC S10 】\
+INC S10 <$GLOBAL(抢庄押注记录)>
+DEC S10 1000 3000
+CALCVAR GLOBAL 抢庄押注记录 = <$STR(S10)>
+MOV S10
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>恭喜，你已下注【<$HUMAN(抢庄个人押数)>】元宝押【<$HUMAN(抢庄个人押名)>】！
+#ELSEACT
+MOV S10 【
+INC S10 <$USERNAME>
+INC S10 】加注【
+INC S10 <$STR(P8)>
+INC S10 】累计下注【
+INC S10 <$HUMAN(抢庄个人押数)>
+INC S10 】押【
+INC S10 <$HUMAN(抢庄个人押名)>
+INC S10 】\
+INC S10 <$GLOBAL(抢庄押注记录)>
+DEC S10 1000 3000
+CALCVAR GLOBAL 抢庄押注记录 = <$STR(S10)>
+MOV S10
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>恭喜，你已加注【<$STR(P8)>】元宝押【<$HUMAN(抢庄个人押名)>】！\　\您目前累计下注【<$HUMAN(抢庄个人押数)>】元宝押【<$HUMAN(抢庄个人押名)>】！
+
+[@Mir2m2排号抢庄排号说明]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 10
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+
+#IF
+CHECKVAR GLOBAL 抢庄排号触发 < 1
+#SAY
+<COLOR=clLime 1.><COLOR=clTeal 类似银行叫号式的排号，您可以随时申请，排到的玩家自动上庄！>\
+<COLOR=clLime 2.><COLOR=clTeal 排号无人数限制，点击> [<我要排号/@Mir2m2排号抢庄申请排号>] <COLOR=clTeal 后可自定义设置上庄的本钱！>\
+#ELSESAY
+<COLOR=clLime 1.><COLOR=clTeal 每局结束后，如果当前排号人数小于><$GLOBAL(抢庄排号触发)><COLOR=clTeal 人，则开放> <$GLOBAL(抢庄排号时间)> <COLOR=clTeal 秒时间排号>\
+<COLOR=clLime 2.><COLOR=clTeal 请注意排号人数变化把握时间进行排号，过时则要等到下次开放！>\
+#IF
+CHECKLEVELEX > 0
+#SAY
+<COLOR=clLime 3.><COLOR=$00B317E3 排号最少需要本钱（即庄家本钱）【><$GLOBAL(抢庄本钱最大)><COLOR=$00B317E3 】，最大【><$GLOBAL(抢庄本钱封顶)><COLOR=$00B317E3 】>\
+<COLOR=clLime 4.><COLOR=clTeal 排号后如掉线您的排号不会取消，如不想上庄了可点> [<取消排号/@Mir2m2排号抢庄取消排号>]\
+<COLOR=clLime 5.><COLOR=clTeal 排号后不会扣除您元宝，但请保持身上元宝为排号时输入的本钱！>\
+<COLOR=clLime 6.><COLOR=$00006BEF 当排到您上庄时，如您不在线，或者您身上元宝数量不足本钱数，>\
+　<COLOR=$00006BEF 都会直接取消您的上庄资格，作过号处理，自动排入下一号！>\
+<COLOR=clLime 7.><COLOR=$00B317E3 排号只显示前180位，180位以后排号只是不显示，不影响您上庄>\
+\　[<返回上页/@Mir2m2排号抢庄脚本NPC>]               \
+
+[@Mir2m2排号抢庄查看排号1]
+#ACT
+MOV P8 1
+GOTO @Mir2m2排号抢庄查看排号
+[@Mir2m2排号抢庄查看排号2]
+#ACT
+MOV P8 2
+GOTO @Mir2m2排号抢庄查看排号
+[@Mir2m2排号抢庄查看排号3]
+#ACT
+MOV P8 3
+GOTO @Mir2m2排号抢庄查看排号
+[@Mir2m2排号抢庄查看排号4]
+#ACT
+MOV P8 4
+GOTO @Mir2m2排号抢庄查看排号
+[@Mir2m2排号抢庄查看排号5]
+#ACT
+MOV P8 5
+GOTO @Mir2m2排号抢庄查看排号
+[@Mir2m2排号抢庄查看排号6]
+#ACT
+MOV P8 6
+GOTO @Mir2m2排号抢庄查看排号
+[@Mir2m2排号抢庄查看排号7]
+#ACT
+MOV P8 7
+GOTO @Mir2m2排号抢庄查看排号
+[@Mir2m2排号抢庄查看排号8]
+#ACT
+MOV P8 8
+GOTO @Mir2m2排号抢庄查看排号
+[@Mir2m2排号抢庄查看排号9]
+#ACT
+MOV P8 9
+GOTO @Mir2m2排号抢庄查看排号
+
+[@Mir2m2排号抢庄查看排号]
+#IF
+LARGE P8 0
+SMALL P8 10
+#ELSEACT
+MESSAGEBOX 操作错误，请勿使用外挂进行跳转！
+close
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 10
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 0
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名20 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型20 = 0
+#ACT
+MOV P9 20
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名19 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型19 = 0
+#ACT
+MOV P9 19
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名18 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型18 = 0
+#ACT
+MOV P9 18
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名17 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型17 = 0
+#ACT
+MOV P9 17
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名16 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型16 = 0
+#ACT
+MOV P9 16
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名15 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型15 = 0
+#ACT
+MOV P9 15
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名14 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型14 = 0
+#ACT
+MOV P9 14
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名13 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型13 = 0
+#ACT
+MOV P9 13
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名12 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型12 = 0
+#ACT
+MOV P9 12
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名11 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型11 = 0
+#ACT
+MOV P9 11
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名10 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型10 = 0
+#ACT
+MOV P9 10
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名9 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型9 = 0
+#ACT
+MOV P9 9
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名8 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型8 = 0
+#ACT
+MOV P9 8
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名7 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型7 = 0
+#ACT
+MOV P9 7
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名6 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型6 = 0
+#ACT
+MOV P9 6
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名5 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型5 = 0
+#ACT
+MOV P9 5
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名4 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型4 = 0
+#ACT
+MOV P9 4
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名3 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型3 = 0
+#ACT
+MOV P9 3
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名2 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型2 = 0
+#ACT
+MOV P9 2
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名1 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型1 = 0
+#ACT
+MOV P9 1
+
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄开始判断 > 10
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，系统正在处理数据，请稍后1-2秒再查看排号！
+BREAK
+#IF
+EQUAL P9 0
+CHECKVAR HUMAN 抢庄个人号数 > 0
+CheckStringList ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人名单.txt 0<$USERNAME> HardDisk
+#ACT
+LOADVAR HUMAN 抢庄个人号数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号.txt HardDisk
+MOV P9 <$HUMAN(抢庄个人号数)>
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P7 <$STR(P9)>
+MOV P9 0
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名20 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型20 = 1
+#ACT
+MOV P9 20
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名19 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型19 = 1
+#ACT
+MOV P9 19
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名18 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型18 = 1
+#ACT
+MOV P9 18
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名17 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型17 = 1
+#ACT
+MOV P9 17
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名16 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型16 = 1
+#ACT
+MOV P9 16
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名15 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型15 = 1
+#ACT
+MOV P9 15
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名14 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型14 = 1
+#ACT
+MOV P9 14
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名13 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型13 = 1
+#ACT
+MOV P9 13
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名12 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型12 = 1
+#ACT
+MOV P9 12
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名11 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型11 = 1
+#ACT
+MOV P9 11
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名10 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型10 = 1
+#ACT
+MOV P9 10
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名9 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型9 = 1
+#ACT
+MOV P9 9
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名8 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型8 = 1
+#ACT
+MOV P9 8
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名7 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型7 = 1
+#ACT
+MOV P9 7
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名6 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型6 = 1
+#ACT
+MOV P9 6
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名5 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型5 = 1
+#ACT
+MOV P9 5
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名4 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型4 = 1
+#ACT
+MOV P9 4
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名3 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型3 = 1
+#ACT
+MOV P9 3
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名2 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型2 = 1
+#ACT
+MOV P9 2
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名1 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型1 = 1
+#ACT
+MOV P9 1
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄开始判断 > 10
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，系统正在处理数据，请稍后1-2秒再查看排号！
+BREAK
+#IF
+EQUAL P9 0
+CHECKVAR HUMAN 抢庄个人号数2 > 0
+CheckStringList ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人名单.txt 1<$USERNAME> HardDisk
+#ACT
+LOADVAR HUMAN 抢庄个人号数2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号2.txt HardDisk
+MOV P9 <$HUMAN(抢庄个人号数2)>
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 
+#IF
+CHECKVAR GLOBAL 抢庄人物排号 > 0
+#ACT
+INC S10 <COLOR=$00B317E3
+INC S10
+INC S10 <$STR(P7)>
+INC S10 >/
+#ELSEACT
+MOV P7 0
+#IF
+CHECKVAR GLOBAL 抢庄英雄排号 > 0
+#ACT
+INC S10 <COLOR=$00A55200
+INC S10
+INC S10 <$STR(P9)>
+INC S10 >/
+#ELSEACT
+MOV P9 0
+#IF
+EQUAL P7 0
+EQUAL P9 0
+#ACT
+MOV S10 <COLOR=clred
+INC S10
+INC S10 未排号>/
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S11 <COLOR=clGreen
+INC S11
+INC S11 <$GLOBAL(抢庄排号总数)>
+INC S11 >
+MOV S12 <$GLOBAL(抢庄排号名单
+INC S12 <$STR(P8)>
+INC S12 )>
+MOV S12 <$STR(S12)>
+#SAY
+<$STR(S12)>   <COLOR=clTeal 您所在排号:><$STR(S10)><$STR(S11)>\
+
+[@Mir2m2排号抢庄取消排号]
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 > 10
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，系统正在处理数据，请稍后1-2秒再取消排号！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 0
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名20 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名20 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名20 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名19 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名19 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名19 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名18 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名18 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名18 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名17 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名17 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名17 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名16 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名16 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名16 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名15 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名15 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名15 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名14 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名14 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名14 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名13 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名13 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名13 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名12 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名12 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名12 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名11 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名11 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名11 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名10 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名10 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名10 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名9 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名9 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名9 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名8 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名8 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名8 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名7 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名7 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名7 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名6 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名6 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名6 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名5 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名5 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名5 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名4 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名4 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名4 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名3 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名3 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名2 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名2 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名1 = <$USERNAME>
+#ACT
+INC P9 1
+MOV S10 <COLOR=clMaroon
+INC S10 
+INC S10 <$USERNAME>
+INC S10 >
+CALCVAR GLOBAL 抢庄排号姓名1 = <$STR(S10)>
+SAVEVAR GLOBAL 抢庄排号姓名1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+#IF
+CHECKVAR HUMAN 抢庄个人号数 > 0
+#ACT
+LOADVAR HUMAN 抢庄个人号数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号.txt HardDisk
+#IF
+CHECKVAR HUMAN 抢庄个人号数 > 0
+#ACT
+MOV P8 1
+CALCVAR HUMAN 抢庄个人排号 = 0
+CALCVAR HUMAN 抢庄个人号数 = 0
+SAVEVAR HUMAN 抢庄个人排号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号.txt HardDisk
+SAVEVAR HUMAN 抢庄个人号数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号.txt HardDisk
+#IF
+EQUAL P8 1
+CheckStringList ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人名单.txt 0<$USERNAME> HardDisk
+#ACT
+INC P9 1
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+#IF
+CHECKVAR HUMAN 抢庄个人号数2 > 0
+#ACT
+LOADVAR HUMAN 抢庄个人号数2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号2.txt HardDisk
+#IF
+CHECKVAR HUMAN 抢庄个人号数2 > 0
+#ACT
+MOV P8 1
+CALCVAR HUMAN 抢庄个人排号2 = 0
+CALCVAR HUMAN 抢庄个人号数2 = 0
+SAVEVAR HUMAN 抢庄个人排号2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号2.txt HardDisk
+SAVEVAR HUMAN 抢庄个人号数2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号2.txt HardDisk
+#IF
+EQUAL P8 1
+CheckStringList ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人名单.txt 1<$USERNAME> HardDisk
+#ACT
+INC P9 1
+#IF
+LARGE P9 0
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄查看排号1
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>恭喜你，您已成功取消排号！\　\如需要重新排号请在下一局结算后再申请！
+MOV S10
+#ELSEACT
+DELAYGOTO 1 @Mir2m2排号抢庄查看排号1
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您还没有排号！
+MOV S10
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号总数 < <$STR(P9)>
+#ACT
+MOV P9 0
+CALCVAR GLOBAL 抢庄排号总数 = 0
+SAVEVAR GLOBAL 抢庄排号总数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+#ACT
+CALCVAR GLOBAL 抢庄排号总数 - <$STR(P9)>
+SAVEVAR GLOBAL 抢庄排号总数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+
+[@Mir2m2排号抢庄申请排号]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 10
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+
+#IF
+CHECKVAR HUMAN 抢庄个人输入 < <$GLOBAL(抢庄本钱最大)>
+#ACT
+CALCVAR HUMAN 抢庄个人输入 = <$GLOBAL(抢庄本钱最大)>
+#IF
+CHECKVAR HUMAN 抢庄个人输入 > <$GLOBAL(抢庄本钱封顶)>
+#ACT
+CALCVAR HUMAN 抢庄个人输入 = <$GLOBAL(抢庄本钱封顶)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S11 <$HUMAN(抢庄个人输入)><$GLOBAL(抢庄名字空格)>
+DEC S11 11 500
+#SAY
+　<COLOR=clRed 您当前排号上庄的本钱为：><$STR(S11)> <COLOR=clRed →> [<点这里修改排号本钱/@Mir2m2排号抢庄排号输入>]\
+#IF
+CHECKVAR GLOBAL 抢庄排号触发 < 1
+#SAY
+<COLOR=clLime 1.><COLOR=clTeal 类似银行叫号式的排号，您可以随时申请，排到的玩家自动上庄！>\
+#ELSESAY
+<COLOR=clLime 1.><COLOR=clTeal 每局结束后，如果当前排号人数小于><$GLOBAL(抢庄排号触发)><COLOR=clTeal 人，则开放> <$GLOBAL(抢庄排号时间)> <COLOR=clTeal 秒时间排号>\
+#IF
+CHECKLEVELEX > 0
+#SAY
+<COLOR=clLime 3.><COLOR=$00B317E3 排号最少需要本钱（即庄家本钱）【><$GLOBAL(抢庄本钱最大)><COLOR=$00B317E3 】，最大【><$GLOBAL(抢庄本钱封顶)><COLOR=$00B317E3 】>\
+<COLOR=clLime 4.><COLOR=clTeal 排号后如掉线您的排号不会取消，如不想上庄了可点> [<取消排号/@Mir2m2排号抢庄取消排号>]\
+<COLOR=clLime 5.><COLOR=clTeal 排号后不会扣除您元宝，但请保持身上元宝为排号时输入的本钱！>\
+<COLOR=clLime 6.><COLOR=$00006BEF 当排到您上庄时，如您不在线，或者您身上元宝数量不足本钱数，>\
+　<COLOR=$00006BEF 都会直接取消您的上庄资格，作过号处理，自动排入下一号！>\
+<COLOR=clLime 7.><COLOR=$00B317E3 排号只显示前180位，180位以后排号只是不显示，不影响您上庄>\
+
+#IF
+CHECKVAR GLOBAL 抢庄人物排号 > 0
+#SAY
+\[<确定排号/@Mir2m2排号抢庄排号人物>]
+#IF
+CHECKVAR GLOBAL 抢庄英雄排号 > 0
+#SAY
+　[<确定英雄排号/@Mir2m2排号抢庄排号英雄>]　[<开通英雄排号/@Mir2m2排号抢庄排号开通>]
+#IF
+CHECKLEVELEX > 0
+#SAY
+　[<排号说明/@Mir2m2排号抢庄排号说明>]　[<返回/@Mir2m2排号抢庄脚本NPC>]\
+
+[@Mir2m2排号抢庄排号开通]
+#IF
+CHECKVAR GLOBAL 抢庄开通金额 < 1
+CHECKVAR GLOBAL 抢庄排号等级2 < 1
+#ACT
+MESSAGEBOX 目前英雄排号功能免费使用！（英雄排号与人物排号用不同颜色区分）\　\只需要人物等级达到<$GLOBAL(抢庄排号等级1)>级，即可申请英雄排号！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄开通金额 < 1
+#ACT
+MESSAGEBOX 目前英雄排号功能免费使用！（英雄排号与人物排号用不同颜色区分）\　\只需要人物等级达到<$GLOBAL(抢庄排号等级1)>级，并且英雄等级达到<$GLOBAL(抢庄排号等级2)>级，即可申请英雄排号！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄排号等级2 < 1
+#SAY
+<COLOR=clLime 开通英雄排号功能需要以下条件：><COLOR=clRed （英雄排号与人物排号用不同颜色区分）>\ \
+<COLOR=clRed 1.><COLOR=clFuchsia 人物等级达到【><$GLOBAL(抢庄排号等级1)><COLOR=clFuchsia 级】！>\ \
+<COLOR=clRed 2.><COLOR=clFuchsia 一次性支付【><$GLOBAL(抢庄开通金额)><COLOR=clFuchsia 元宝】费用即可永久开通！>\ \
+<COLOR=$00006BEF 是否确定开通英雄排号功能？>\ \
+　[<确定开通英雄排号/@Mir2m2排号抢庄排号开通2>]　　　　[<返回上页/@Mir2m2排号抢庄申请排号>]
+#ELSESAY
+<COLOR=clLime 开通英雄排号功能需要以下条件：><COLOR=clRed （英雄排号与人物排号用不同颜色区分）>\ \
+<COLOR=clRed 1.><COLOR=clFuchsia 人物等级达到【><$GLOBAL(抢庄排号等级1)><COLOR=clFuchsia 级】，英雄等级达到【><$GLOBAL(抢庄排号等级2)><COLOR=clFuchsia 级】！>\ \
+<COLOR=clRed 2.><COLOR=clFuchsia 一次性支付【><$GLOBAL(抢庄开通金额)><COLOR=clFuchsia 元宝】费用即可永久开通！>\ \
+<COLOR=$00006BEF 是否确定开通英雄排号功能？>\ \
+　[<确定开通英雄排号/@Mir2m2排号抢庄排号开通2>]　　　　[<返回上页/@Mir2m2排号抢庄申请排号>]
+
+[Mir2m2排号抢庄排号开通2]
+#IF
+CHECKVAR GLOBAL 抢庄英雄排号 > 0
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，英雄排号功能未开启！
+BREAK
+#IF
+CHECKLEVELEX < <$GLOBAL(抢庄排号等级1)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您的人物等级没有达到<$GLOBAL(抢庄排号等级1)>级，无法开通英雄排号！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄排号等级2 > 0
+CHECKHEROONLINE
+#ACT
+MOV P9 1
+#ELSEACT
+MOV P9 0
+#IF
+CHECKVAR GLOBAL 抢庄排号等级2 < 1
+#ACT
+MOV P9 2
+#IF
+EQUAL P9 0
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，请先召唤出您的英雄才能申请开通英雄排号！
+BREAK
+#IF
+EQUAL P9 1
+H.CHECKLEVELEX < <$GLOBAL(抢庄排号等级2)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您的英雄等级没有达到<$GLOBAL(抢庄排号等级2)>级，无法开通英雄排号！
+BREAK
+#IF
+CHECK [466] 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您已经开通英雄排号功能，无需重复开通！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄开通金额 < 1
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，目前英雄排号功能免费使用，无需开通！
+BREAK
+#IF
+CHECKGAMEGOLD < <$GLOBAL(抢庄开通金额)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您身上的元宝不够【<$GLOBAL(抢庄开通金额)>】，无法开通英雄排号！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - <$GLOBAL(抢庄开通金额)>
+
+SET [466] 1
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>恭喜【<$USERNAME>】支付【<$GLOBAL(抢庄开通金额)>】元宝成功开通英雄排号功能！ 255 244
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>恭喜您，支付【<$GLOBAL(抢庄开通金额)>】元宝成功开通英雄排号功能！
+
+[@Mir2m2排号抢庄排号输入]
+#ACT
+QUERYVALUE 65 1 10 Mir2m2排号抢庄排号输入2 请输入您要上庄的本钱：（<$GLOBAL(抢庄本钱最大)>—<$GLOBAL(抢庄本钱封顶)>）
+[Mir2m2排号抢庄排号输入2]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$STR(M65)>
+MOV M65 0
+#IF
+LARGE P9 0
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，请输入【<$GLOBAL(抢庄本钱最大)>】—【<$GLOBAL(抢庄本钱封顶)>】之间的整数！
+BREAK
+#IF
+SMALL P9 <$GLOBAL(抢庄本钱最大)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号最低本钱为【<$GLOBAL(抢庄本钱最大)>】，请重新输入！
+BREAK
+#IF
+LARGE P9 <$GLOBAL(抢庄本钱封顶)>
+#ACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号最大本钱为【<$GLOBAL(抢庄本钱封顶)>】，请重新输入！
+BREAK
+#ELSEACT
+CALCVAR HUMAN 抢庄个人输入 = <$STR(P9)>
+;SAVEVAR HUMAN 抢庄个人输入 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人输入.txt HardDisk
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+
+[@Mir2m2排号抢庄排号人物]
+#ACT
+MOV P8 1
+GOTO @Mir2m2排号抢庄排号确定
+[@Mir2m2排号抢庄排号英雄]
+#ACT
+MOV P8 2
+GOTO @Mir2m2排号抢庄排号确定
+[@Mir2m2排号抢庄排号确定]
+#IF
+LARGE P8 0
+SMALL P8 3
+#ACT
+DEC P8 1
+#ELSEACT
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>操作错误，请勿使用外挂跳转！
+close
+BREAK
+
+#IF
+CHECKVAR GLOBAL 抢庄运行状态 < 1
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄程序未启动，请联系GM启动程序...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄运行状态 = 1
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄系统已关闭！\　\开放时间：<$GLOBAL(抢庄开放时间)>
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 < 1
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号抢庄系统未开放，请等待GM手动开放...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 = 1
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，新区暂不开放排号抢庄系统...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄是否启动 = 3
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，新区暂不开放排号抢庄系统...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄运行控制 > 0
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，攻城期间抢庄系统暂时关闭...
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄排号开启 > 0
+#ELSEACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号功能已关闭！
+BREAK
+#IF
+EQUAL P8 0
+CHECKVAR GLOBAL 抢庄人物排号 < 1
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，人物排号功能未开启！
+BREAK
+#IF
+EQUAL P8 1
+CHECKVAR GLOBAL 抢庄英雄排号 < 1
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，英雄排号功能未开启！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 0
+#IF
+CHECKVAR GLOBAL 抢庄排号触发 < 1
+#ACT
+MOV P9 1
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 = 7
+#ACT
+MOV P9 1
+#IF
+EQUAL P9 0
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，现在不是排号时间！\　\每局结束后，如果当前排号人数小于<$GLOBAL(抢庄排号触发)>人，则开放<$GLOBAL(抢庄排号时间)>秒时间排号！\　\请注意排号人数变化并把握时间进行排号，过时则要等到下次开放！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 > 10
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，系统正在处理数据，请稍后1-2秒再申请排号！
+BREAK
+
+#IF
+EQUAL P8 0
+CHECKLEVELEX < <$GLOBAL(抢庄排号等级)>
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您的人物等级没有达到<$GLOBAL(抢庄排号等级)>级，无法排号！
+BREAK
+#IF
+EQUAL P8 1
+CHECKLEVELEX < <$GLOBAL(抢庄排号等级1)>
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您的人物等级没有达到<$GLOBAL(抢庄排号等级1)>级，无法申请英雄排号！
+BREAK
+#IF
+EQUAL P8 1
+CHECKVAR GLOBAL 抢庄排号等级2 > 0
+CHECKHEROONLINE
+#ACT
+MOV P9 1
+#ELSEACT
+MOV P9 0
+#IF
+EQUAL P8 1
+CHECKVAR GLOBAL 抢庄排号等级2 < 1
+#ACT
+MOV P9 2
+#IF
+EQUAL P8 1
+EQUAL P9 0
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，请先召唤出您的英雄才能申请英雄排号！
+BREAK
+#IF
+EQUAL P8 1
+EQUAL P9 1
+H.CHECKLEVELEX < <$GLOBAL(抢庄排号等级2)>
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您的英雄等级没有达到<$GLOBAL(抢庄排号等级2)>级，无法申请英雄排号！
+BREAK
+#IF
+EQUAL P8 1
+CHECK [466] 0
+CHECKVAR GLOBAL 抢庄开通金额 > 0
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您还没有开通英雄排号功能，请先开通才能申请英雄排号！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人输入 < <$GLOBAL(抢庄本钱最大)>
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号最低本钱为【<$GLOBAL(抢庄本钱最大)>】，请重新输入！
+BREAK
+#IF
+CHECKVAR HUMAN 抢庄个人输入 > <$GLOBAL(抢庄本钱封顶)>
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，排号最大本钱为【<$GLOBAL(抢庄本钱封顶)>】，请重新输入！
+BREAK
+#IF
+CHECKGAMEGOLD < <$HUMAN(抢庄个人输入)>
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您身上的元宝不够【<$HUMAN(抢庄个人输入)>】，无法排号！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 0
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名1 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型1 = <$STR(P8)>
+#ACT
+MOV P9 1
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名2 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型2 = <$STR(P8)>
+#ACT
+MOV P9 2
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名3 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型3 = <$STR(P8)>
+#ACT
+MOV P9 3
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名4 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型4 = <$STR(P8)>
+#ACT
+MOV P9 4
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名5 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型5 = <$STR(P8)>
+#ACT
+MOV P9 5
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名6 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型6 = <$STR(P8)>
+#ACT
+MOV P9 6
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名7 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型7 = <$STR(P8)>
+#ACT
+MOV P9 7
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名8 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型8 = <$STR(P8)>
+#ACT
+MOV P9 8
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名9 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型9 = <$STR(P8)>
+#ACT
+MOV P9 9
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名10 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型10 = <$STR(P8)>
+#ACT
+MOV P9 10
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名11 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型11 = <$STR(P8)>
+#ACT
+MOV P9 11
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名12 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型12 = <$STR(P8)>
+#ACT
+MOV P9 12
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名13 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型13 = <$STR(P8)>
+#ACT
+MOV P9 13
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名14 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型14 = <$STR(P8)>
+#ACT
+MOV P9 14
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名15 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型15 = <$STR(P8)>
+#ACT
+MOV P9 15
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名16 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型16 = <$STR(P8)>
+#ACT
+MOV P9 16
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名17 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型17 = <$STR(P8)>
+#ACT
+MOV P9 17
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名18 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型18 = <$STR(P8)>
+#ACT
+MOV P9 18
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名19 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型19 = <$STR(P8)>
+#ACT
+MOV P9 19
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名20 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型20 = <$STR(P8)>
+#ACT
+MOV P9 20
+#IF
+LARGE P9 0
+EQUAL P8 0
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您的人物已经排在【第<$STR(P9)>号】，请勿重复排号！
+BREAK
+#IF
+LARGE P9 0
+EQUAL P8 1
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您的英雄已经排在【第<$STR(P9)>号】，请勿重复排号！
+BREAK
+#IF
+CheckStringList ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人名单.txt 0<$USERNAME> HardDisk
+#ACT
+MOV P7 1
+#ELSEACT
+MOV P7 0
+#IF
+CHECKVAR HUMAN 抢庄个人号数 > 0
+#ACT
+LOADVAR HUMAN 抢庄个人号数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号.txt HardDisk
+#IF
+EQUAL P8 0
+EQUAL P7 1
+CHECKVAR HUMAN 抢庄个人号数 > 0
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您的人物已经排在【第<$HUMAN(抢庄个人号数)>号】，请勿重复排号！
+BREAK
+#IF
+CheckStringList ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人名单.txt 1<$USERNAME> HardDisk
+#ACT
+MOV P6 1
+#ELSEACT
+MOV P6 0
+#IF
+CHECKVAR HUMAN 抢庄个人号数2 > 0
+#ACT
+LOADVAR HUMAN 抢庄个人号数2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号2.txt HardDisk
+#IF
+EQUAL P8 1
+EQUAL P6 1
+CHECKVAR HUMAN 抢庄个人号数2 > 0
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您的英雄已经排在【第<$HUMAN(抢庄个人号数2)>号】，请勿重复排号！
+BREAK
+
+#IF
+EQUAL P8 0
+#ACT
+MOV P8 1
+#ELSEACT
+MOV P8 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 0
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名1 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型1 = <$STR(P8)>
+#ACT
+MOV P9 1
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名2 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型2 = <$STR(P8)>
+#ACT
+MOV P9 2
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名3 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型3 = <$STR(P8)>
+#ACT
+MOV P9 3
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名4 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型4 = <$STR(P8)>
+#ACT
+MOV P9 4
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名5 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型5 = <$STR(P8)>
+#ACT
+MOV P9 5
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名6 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型6 = <$STR(P8)>
+#ACT
+MOV P9 6
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名7 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型7 = <$STR(P8)>
+#ACT
+MOV P9 7
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名8 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型8 = <$STR(P8)>
+#ACT
+MOV P9 8
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名9 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型9 = <$STR(P8)>
+#ACT
+MOV P9 9
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名10 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型10 = <$STR(P8)>
+#ACT
+MOV P9 10
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名11 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型11 = <$STR(P8)>
+#ACT
+MOV P9 11
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名12 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型12 = <$STR(P8)>
+#ACT
+MOV P9 12
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名13 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型13 = <$STR(P8)>
+#ACT
+MOV P9 13
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名14 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型14 = <$STR(P8)>
+#ACT
+MOV P9 14
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名15 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型15 = <$STR(P8)>
+#ACT
+MOV P9 15
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名16 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型16 = <$STR(P8)>
+#ACT
+MOV P9 16
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名17 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型17 = <$STR(P8)>
+#ACT
+MOV P9 17
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名18 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型18 = <$STR(P8)>
+#ACT
+MOV P9 18
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名19 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型19 = <$STR(P8)>
+#ACT
+MOV P9 19
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名20 = <$USERNAME>
+CHECKVAR GLOBAL 抢庄排号类型20 = <$STR(P8)>
+#ACT
+MOV P9 20
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P5 0
+MOV P4 <$HUMAN(抢庄个人输入)>
+#IF
+LARGE P9 0
+#ACT
+MOV S10 <$GLOBAL(抢庄排号数量
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV P3 <$STR(S10)>
+#ELSEACT
+MOV P3 0
+#IF
+LARGE P3 0
+#ACT
+INC P5 <$STR(P3)>
+INC P4 <$STR(P3)>
+MOV P3 0
+#IF
+EQUAL P7 1
+EQUAL P8 0
+#ACT
+LOADVAR HUMAN 抢庄个人排号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号.txt HardDisk
+#IF
+EQUAL P7 1
+EQUAL P8 0
+CHECKVAR HUMAN 抢庄个人排号 > 0
+#ACT
+INC P5 <$HUMAN(抢庄个人排号)>
+INC P4 <$HUMAN(抢庄个人排号)>
+MOV P9 <$HUMAN(抢庄个人号数)>
+#IF
+EQUAL P6 1
+EQUAL P8 1
+#ACT
+LOADVAR HUMAN 抢庄个人排号2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号2.txt HardDisk
+#IF
+EQUAL P6 1
+EQUAL P8 1
+CHECKVAR HUMAN 抢庄个人排号2 > 0
+#ACT
+INC P5 <$HUMAN(抢庄个人排号2)>
+INC P4 <$HUMAN(抢庄个人排号2)>
+MOV P9 <$HUMAN(抢庄个人号数2)>
+#IF
+EQUAL P8 0
+#ACT
+MOV P8 1
+MOV S10 人物
+#ELSEACT
+MOV P8 0
+MOV S10 英雄
+#IF
+CHECKGAMEGOLD < <$STR(P4)>
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您的<$STR(S10)>当前已排在【第<$STR(P9)>号】，\　\继续排号需要身上的元宝不低于【<$STR(P5)>+<$HUMAN(抢庄个人输入)>】\　\即需要身上拥有【<$STR(P4)>】元宝才能排号！
+MOV S10
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10
+#IF
+EQUAL P8 0
+EQUAL P7 1
+CHECKVAR HUMAN 抢庄个人号数 < 1
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您的人物已经取消排号！\　\请在下一局结算结束后再申请排号！
+BREAK
+#IF
+EQUAL P8 1
+EQUAL P6 1
+CHECKVAR HUMAN 抢庄个人号数2 < 1
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您的英雄已经取消排号！\　\请在下一局结算结束后再申请排号！
+BREAK
+#IF
+EQUAL P8 0
+CHECKVAR GLOBAL 抢庄排号同IP > 0
+CHECKIPLIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号IP号.txt HardDisk
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您人物所在的IP【<$IPADDR>】已有排号，请勿重复排号！
+BREAK
+#IF
+EQUAL P8 1
+CHECKVAR GLOBAL 抢庄排号同IP > 0
+CHECKIPLIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号IP号2.txt HardDisk
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄申请排号
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，您英雄所在的IP【<$IPADDR>】已有排号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄排号验证 > 0
+CHECKVAR HUMAN 抢庄个人验证 < 1
+#ACT
+CALCVAR HUMAN 抢庄个人验证 = 1
+;CALCVAR HUMAN 自绘个人时间1 = 0
+;#IF
+;CHECKVAR GLOBAL 抢庄排号验证 > 0
+;CHECKVAR GLOBAL 自绘验证计时 > <$HUMAN(自绘个人时间1)>
+;#ACT
+;CALCVAR HUMAN 自绘个人跳回 = @Mir2m2排号抢庄排号确定
+;#CALL [\Mir2m2自绘验证配置(脚本QQ.52838555)\Mir2m2自绘验证脚本.txt] @Mir2m2自绘验证脚本NPC
+;break
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 0
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名1 =
+#ACT
+MOV P9 1
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名2 =
+#ACT
+MOV P9 2
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名3 =
+#ACT
+MOV P9 3
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名4 =
+#ACT
+MOV P9 4
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名5 =
+#ACT
+MOV P9 5
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名6 =
+#ACT
+MOV P9 6
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名7 =
+#ACT
+MOV P9 7
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名8 =
+#ACT
+MOV P9 8
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名9 =
+#ACT
+MOV P9 9
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名10 =
+#ACT
+MOV P9 10
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名11 =
+#ACT
+MOV P9 11
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名12 =
+#ACT
+MOV P9 12
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名13 =
+#ACT
+MOV P9 13
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名14 =
+#ACT
+MOV P9 14
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名15 =
+#ACT
+MOV P9 15
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名16 =
+#ACT
+MOV P9 16
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名17 =
+#ACT
+MOV P9 17
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名18 =
+#ACT
+MOV P9 18
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名19 =
+#ACT
+MOV P9 19
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄排号姓名20 =
+#ACT
+MOV P9 20
+#IF
+LARGE P9 0
+#ACT
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> = <$USERNAME>
+CALCVAR GLOBAL 抢庄排号数量<$STR(P9)> = <$HUMAN(抢庄个人输入)>
+CALCVAR GLOBAL 抢庄排号类型<$STR(P9)> = <$STR(P8)>
+SAVEVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR HUMAN 抢庄个人IP号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人信息.txt HardDisk
+MOV P7 <$STR(P9)>
+#IF
+EQUAL P8 0
+#ACT
+ADDIPLIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号IP号.txt HardDisk
+#ELSEACT
+ADDIPLIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号IP号2.txt HardDisk
+#IF
+EQUAL P9 0
+EQUAL P8 0
+#ACT
+MOV P7 <$GLOBAL(抢庄排号总数)>
+INC P7 1
+CALCVAR HUMAN 抢庄个人排号 = <$HUMAN(抢庄个人输入)>
+CALCVAR HUMAN 抢庄个人号数 = <$STR(P7)>
+SAVEVAR HUMAN 抢庄个人排号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号.txt HardDisk
+SAVEVAR HUMAN 抢庄个人号数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号.txt HardDisk
+SAVEVAR HUMAN 抢庄个人IP号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人信息1.txt HardDisk
+ADDLINELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人名单.txt 0<$USERNAME> HardDisk
+#IF
+EQUAL P9 0
+EQUAL P8 1
+#ACT
+MOV P7 <$GLOBAL(抢庄排号总数)>
+INC P7 1
+CALCVAR HUMAN 抢庄个人排号2 = <$HUMAN(抢庄个人输入)>
+CALCVAR HUMAN 抢庄个人号数2 = <$STR(P7)>
+SAVEVAR HUMAN 抢庄个人排号2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号2.txt HardDisk
+SAVEVAR HUMAN 抢庄个人号数2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号2.txt HardDisk
+SAVEVAR HUMAN 抢庄个人IP号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人信息2.txt HardDisk
+ADDLINELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人名单.txt 1<$USERNAME> HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 抢庄排号总数 = <$STR(P7)>
+SAVEVAR GLOBAL 抢庄排号总数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>恭喜您排号成功，当前排在【第<$STR(P7)>号】（名字在读秒结束后才显示）\　\您的上庄本钱为：<$HUMAN(抢庄个人输入)>（系统还未扣除您的元宝）\请保持身上的元宝数量不低于【<$STR(P4)>】！\当排到您上庄时，如您不在线，或元宝数不足，将取消您的排号当过号处理！
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+
+[@Mir2m2排号抢庄控制开中]
+#IF
+ISADMIN
+#ELSEACT
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄押中开启 > 0
+#ELSEACT
+MESSAGEBOX 对不起，未开启押注【中】，不能控制开【中】！\　\请在程序主页点【修改分区→勾选开放押大中小】
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 > 10
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，系统正在处理数据，请稍后1-2秒再申请控制！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄控制方式 < 2
+#ACT
+CALCVAR GLOBAL 抢庄控制方式 = 2
+SAVEVAR GLOBAL 抢庄控制方式 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制方式.txt HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 抢庄控制点名 = 中
+SAVEVAR GLOBAL 抢庄控制点名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制点数.txt HardDisk
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>已控制本局将开出【<$GLOBAL(抢庄控制点名)>】\　\是否控制成功请以界面显示的将开出点数为准！
+CALCVAR GLOBAL 抢庄控制点名 =
+CALCVAR GLOBAL 抢庄控制点数1 = 0
+CALCVAR GLOBAL 抢庄控制点数2 = 0
+CALCVAR GLOBAL 抢庄控制点数3 = 0
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+[@Mir2m2排号抢庄控制开大]
+#IF
+ISADMIN
+#ELSEACT
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 > 10
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，系统正在处理数据，请稍后1-2秒再申请控制！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄控制方式 < 2
+#ACT
+CALCVAR GLOBAL 抢庄控制方式 = 2
+SAVEVAR GLOBAL 抢庄控制方式 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制方式.txt HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 抢庄控制点名 = 大
+SAVEVAR GLOBAL 抢庄控制点名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制点数.txt HardDisk
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>已控制本局将开出【<$GLOBAL(抢庄控制点名)>】\　\是否控制成功请以界面显示的将开出点数为准！
+CALCVAR GLOBAL 抢庄控制点名 =
+CALCVAR GLOBAL 抢庄控制点数1 = 0
+CALCVAR GLOBAL 抢庄控制点数2 = 0
+CALCVAR GLOBAL 抢庄控制点数3 = 0
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+[@Mir2m2排号抢庄控制开小]
+#IF
+ISADMIN
+#ELSEACT
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 > 10
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，系统正在处理数据，请稍后1-2秒再申请控制！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄控制方式 < 2
+#ACT
+CALCVAR GLOBAL 抢庄控制方式 = 2
+SAVEVAR GLOBAL 抢庄控制方式 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制方式.txt HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 抢庄控制点名 = 小
+SAVEVAR GLOBAL 抢庄控制点名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制点数.txt HardDisk
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>已控制本局将开出【<$GLOBAL(抢庄控制点名)>】\　\是否控制成功请以界面显示的将开出点数为准！
+CALCVAR GLOBAL 抢庄控制点名 =
+CALCVAR GLOBAL 抢庄控制点数1 = 0
+CALCVAR GLOBAL 抢庄控制点数2 = 0
+CALCVAR GLOBAL 抢庄控制点数3 = 0
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+[@Mir2m2排号抢庄控制开豹]
+#IF
+ISADMIN
+#ELSEACT
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 > 10
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，系统正在处理数据，请稍后1-2秒再申请控制！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄控制方式 < 2
+#ACT
+CALCVAR GLOBAL 抢庄控制方式 = 2
+SAVEVAR GLOBAL 抢庄控制方式 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制方式.txt HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 抢庄控制点名 = 豹子
+SAVEVAR GLOBAL 抢庄控制点名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制点数.txt HardDisk
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>已控制本局将开出【<$GLOBAL(抢庄控制点名)>】\　\是否控制成功请以界面显示的将开出点数为准！
+CALCVAR GLOBAL 抢庄控制点名 =
+CALCVAR GLOBAL 抢庄控制点数1 = 0
+CALCVAR GLOBAL 抢庄控制点数2 = 0
+CALCVAR GLOBAL 抢庄控制点数3 = 0
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+
+[@Mir2m2排号抢庄控制输入]
+#IF
+ISADMIN
+#ACT
+QUERYVALUE 66 1 3 Mir2m2排号抢庄控制输入2 请连续输入3个骰子点数，比如：324
+[Mir2m2排号抢庄控制输入2]
+#IF
+ISADMIN
+#ELSEACT
+MOV M66 0
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$STR(M66)>
+MOV M66 0
+#IF
+LARGE P9 110
+SMALL P9 667
+#ELSEACT
+MESSAGEBOX 输入有误，请连续输入3个骰子点数！比如：324
+BREAK
+#ACT
+MOV P1 <$STR(P9)>
+MOV P2 <$STR(P9)>
+MOV P3 <$STR(P9)>
+DIV P1 100
+MOV P8 <$STR(P1)>
+MUL P8 100
+DEC P2 <$STR(P8)>
+DIV P2 10
+MOV P7 <$STR(P2)>
+MUL P7 10
+INC P8 1
+INC P7 1
+INC P3 2
+DEC P3 <$STR(P8)>
+DEC P3 <$STR(P7)>
+#IF
+LARGE P1 0
+SMALL P1 7
+#ELSEACT
+MESSAGEBOX 输入的第1个骰子数不正确！必须为1-6之间！
+BREAK
+#IF
+LARGE P2 0
+SMALL P2 7
+#ELSEACT
+MESSAGEBOX 输入的第2个骰子数不正确！必须为1-6之间！
+BREAK
+#IF
+LARGE P3 0
+SMALL P3 7
+#ELSEACT
+MESSAGEBOX 输入的第3个骰子数不正确！必须为1-6之间！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 > 10
+#ACT
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>对不起，系统正在处理数据，请稍后1-2秒再申请控制！
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄控制方式 < 2
+#ACT
+CALCVAR GLOBAL 抢庄控制方式 = 2
+SAVEVAR GLOBAL 抢庄控制方式 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制方式.txt HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$STR(P1)>
+INC P9 <$STR(P2)>
+INC P9 <$STR(P3)>
+CALCVAR GLOBAL 抢庄控制点数1 = <$STR(P1)>
+CALCVAR GLOBAL 抢庄控制点数2 = <$STR(P2)>
+CALCVAR GLOBAL 抢庄控制点数3 = <$STR(P3)>
+SAVEVAR GLOBAL 抢庄控制点数1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制点数.txt HardDisk
+SAVEVAR GLOBAL 抢庄控制点数2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制点数.txt HardDisk
+SAVEVAR GLOBAL 抢庄控制点数3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制点数.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄押中开启 > 0
+#ACT
+MOV P8 1
+#ELSEACT
+MOV P8 0
+#IF
+EQUAL P8 0
+LARGE P9 10
+#ACT
+CALCVAR GLOBAL 抢庄控制点名 = 大
+#IF
+EQUAL P8 0
+SMALL P9 11
+#ACT
+CALCVAR GLOBAL 抢庄控制点名 = 小
+#IF
+EQUAL P8 1
+LARGE P9 13
+#ACT
+CALCVAR GLOBAL 抢庄控制点名 = 大
+#IF
+EQUAL P8 1
+LARGE P9 7
+SMALL P9 14
+#ACT
+CALCVAR GLOBAL 抢庄控制点名 = 中
+#IF
+EQUAL P8 1
+SMALL P9 8
+#ACT
+CALCVAR GLOBAL 抢庄控制点名 = 小
+#IF
+Equal P1 <$STR(P2)>
+Equal P1 <$STR(P3)>
+#ACT
+CALCVAR GLOBAL 抢庄控制点名 = 豹子
+#IF
+CHECKLEVELEX > 0
+#ACT
+SAVEVAR GLOBAL 抢庄控制点名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制点数.txt HardDisk
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)>已控制本局将开出【<$STR(P1)>.<$STR(P2)>.<$STR(P3)>.<$GLOBAL(抢庄控制点名)>】\　\是否控制成功请以界面显示的将开出点数为准！
+CALCVAR GLOBAL 抢庄控制点名 =
+CALCVAR GLOBAL 抢庄控制点数1 = 0
+CALCVAR GLOBAL 抢庄控制点数2 = 0
+CALCVAR GLOBAL 抢庄控制点数3 = 0
+DELAYGOTO 1 @Mir2m2排号抢庄脚本NPC
+
+[@Mir2m2排号抢庄返回土城]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE 3 330 330
+}

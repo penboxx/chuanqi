@@ -1,0 +1,264 @@
+[@MAIN]
+#if
+CHECKLEVELEX > 54
+#act
+goto  @main1
+#elseact
+MESSAGEBOX 【提示】:不够55级，不能了解，以免走火入魔！
+[@main1]
+<COLOR=clLime ★━━━━━━━━━━━━━━━━━━━━━━━━━━━━★> \ 
+-------------------------------------------------------------\
+<赤金屠龙/@锻造神剑1> <COLOR=clRed 需要:鲜花*500+800金刚石+1000元宝+屠龙+命运之刃+赤血魔剑,合成几率20%>\
+-------------------------------------------------------------\
+<赤金扇子/@锻造神甲1> <COLOR=clRed 需要:鲜花*500+800金刚石+1000元宝+霸者+命运之刃+赤血魔剑,合成几率20%>\
+-------------------------------------------------------------\
+<赤金法杖/@锻造神衣1> <COLOR=clRed 需要:鲜花*500+800金刚石+1000元宝+嗜魂+命运之刃+赤血魔剑,合成几率20%>\
+-------------------------------------------------------------\
+<本服所有装备可以爆出来，不推荐合成，合成失败材料全部消失！>\
+<COLOR=clLime ★━━━━━━━━━━━━━━━━━━━━━━━━━━━━★> \ 
+
+
+
+
+[@锻造神衣1]
+#IF
+checkitem 鲜花 500
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：你的材料不足！
+BREAK
+
+#IF
+checkitem 命运之刃 1
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：需要.命运之刃一件！
+BREAK
+#IF
+checkitem 赤血魔剑 1
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：需要.赤血魔剑一件！
+BREAK
+
+#IF
+checkitem 嗜魂法杖 1
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：需要.嗜魂法杖一件！
+BREAK
+
+
+#IF
+CHECKGAMEDIAMOND > 799
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：你的金刚石不足！
+BREAK
+#IF
+checkgamegold > 999
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：你的元宝不足！
+BREAK
+#IF
+checkitem 嗜魂法杖 1
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：需要.嗜魂法杖一件！
+BREAK
+
+#IF
+RANDOM 10
+#ACT
+GOTO @成功神衣1
+BREAK
+
+#IF
+#ACT
+take 命运之刃 1
+take 赤血魔剑 1
+take 嗜魂法杖  1
+gamegold - 1000
+TAKE 鲜花 500
+GAMEDIAMOND - 800
+#ACT
+MESSAGEBOX 锻造失败：很遗憾！~
+BREAK
+
+[@成功神衣1]
+#IF
+checkitem 鲜花 500
+#ACT
+take 命运之刃 1
+take 赤血魔剑 1
+TAKE 鲜花 500
+GAMEDIAMOND - 800
+gamegold - 1000
+take 嗜魂法杖  1
+GIVE 紫金嗜魂法杖 1
+SENDMSG 11  玩家〖%s〗成功锻造出紫金嗜魂法杖，让风云为之变色！   49 223
+SENDMSG 11  玩家〖%s〗成功锻造出紫金嗜魂法杖，让风云为之变色！   49 223
+SENDMSG 11  玩家〖%s〗成功锻造出紫金嗜魂法杖，让风云为之变色！   49 223
+SENDMSG 11  玩家〖%s〗成功锻造出紫金嗜魂法杖，让风云为之变色！   49 223
+SENDMSG 11  玩家〖%s〗成功锻造出紫金嗜魂法杖，让风云为之变色！   49 223
+#ACT
+MESSAGEBOX 锻造成功：请收好！~
+BREAK
+
+[@锻造神甲1]
+#IF
+checkitem 鲜花 500
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：你的材料不足！
+BREAK
+#IF
+checkgamegold > 999
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：你的元宝不足！
+BREAK
+#IF
+CHECKGAMEDIAMOND > 799
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：你的金刚石不足！
+BREAK
+
+
+
+#IF
+checkitem 命运之刃 1
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：需要.命运之刃一件！
+BREAK
+#IF
+checkitem 赤血魔剑 1
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：需要.赤血魔剑一件！
+BREAK
+#IF
+checkitem 霸者之刃 1
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：需要.霸者之刃.一件！
+BREAK
+
+#IF
+RANDOM 10
+#ACT
+GOTO @成功神甲1
+BREAK
+#IF
+#ACT
+take 命运之刃 1
+take 赤血魔剑 1
+TAKE 霸者之刃 1
+TAKE 鲜花 500
+GAMEDIAMOND - 800
+gamegold - 1000
+#ACT
+MESSAGEBOX 锻造失败：很遗憾！~
+BREAK
+
+[@成功神甲1]
+#IF
+checkitem 鲜花 500
+#ACT
+take 命运之刃 1
+take 赤血魔剑 1
+TAKE 霸者之刃 1
+TAKE 鲜花 500
+gamegold - 1000
+GAMEDIAMOND - 800
+GIVE 赤金逍遥扇 1
+SENDMSG 11  玩家〖%s〗成功锻造出赤金逍遥扇，让风云为之变色！   49 223
+SENDMSG 11  玩家〖%s〗成功锻造出赤金逍遥扇，让风云为之变色！   49 223
+SENDMSG 11  玩家〖%s〗成功锻造出赤金逍遥扇，让风云为之变色！   49 223
+SENDMSG 11  玩家〖%s〗成功锻造出赤金逍遥扇，让风云为之变色！   49 223
+SENDMSG 11  玩家〖%s〗成功锻造出赤金逍遥扇，让风云为之变色！   49 223
+#ACT
+MESSAGEBOX 锻造成功：请收好！~
+BREAK
+
+[@锻造神剑1]
+#IF
+checkitem 鲜花 500
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：你的材料不足！
+BREAK
+
+
+
+#IF
+checkitem 命运之刃 1
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：需要.命运之刃一件！
+BREAK
+#IF
+checkitem 赤血魔剑 1
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：需要.赤血魔剑一件！
+BREAK
+#IF
+checkgamegold > 999
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：你的元宝不足！
+BREAK
+#IF
+CHECKGAMEDIAMOND > 799
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：你的金刚石不足！
+BREAK
+#IF
+checkitem 屠龙 1
+#ACT
+#ELSEACT
+SENDMSG 6 锻造失败：需要.屠龙.一把！
+BREAK
+
+#IF
+RANDOM 10
+#ACT
+GOTO @成功神剑1
+BREAK
+#IF
+#ACT
+take 命运之刃 1
+take 赤血魔剑 1
+TAKE 屠龙 1
+TAKE 鲜花 500
+GAMEDIAMOND - 800
+gamegold - 1000
+#ACT
+MESSAGEBOX 锻造失败：很遗憾！~
+BREAK
+
+[@成功神剑1]
+#IF
+checkitem 鲜花 500
+#ACT
+take 命运之刃 1
+take 赤血魔剑 1
+TAKE 屠龙 1
+TAKE 鲜花 500
+GAMEDIAMOND - 800
+gamegold - 1000
+GIVE 黄金屠龙 1
+SENDMSG 11  玩家〖%s〗成功锻造出黄金屠龙，让风云为之变色！   49 223
+SENDMSG 11  玩家〖%s〗成功锻造出黄金屠龙，让风云为之变色！   49 223
+SENDMSG 11  玩家〖%s〗成功锻造出黄金屠龙，让风云为之变色！   49 223
+SENDMSG 11  玩家〖%s〗成功锻造出黄金屠龙，让风云为之变色！   49 223
+SENDMSG 11  玩家〖%s〗成功锻造出黄金屠龙，让风云为之变色！   49 223
+#ACT
+MESSAGEBOX 锻造成功：请收好！~
+BREAK
+

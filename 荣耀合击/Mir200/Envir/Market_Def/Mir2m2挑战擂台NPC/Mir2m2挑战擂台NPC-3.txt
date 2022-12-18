@@ -1,0 +1,3 @@
+(@@InPutString @@InPutInteger )
+[@main]
+#CALL [\Mir2m2挑战擂台配置(免费脚本群.101529177)\Mir2m2挑战擂台脚本.txt] @Mir2m2挑战擂台脚本NPC

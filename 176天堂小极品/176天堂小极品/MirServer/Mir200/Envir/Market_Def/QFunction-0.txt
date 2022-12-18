@@ -1,0 +1,1201 @@
+(@storage @getback @@InPutInteger @@InPutString)
+
+[@Mir2m2摆摊锁定脚本加载(脚本QQ.800125104)]
+#CALL [\Mir2m2摆摊锁定配置(脚本QQ.800125104)\Mir2m2摆摊锁定脚本.txt] @Mir2m2摆摊锁定脚本QF
+
+[@PLAYDIE]
+#IF
+KillByHum
+#ACT
+MOV A49 <$DECEDENT>
+MOV A13 <$USERNAME>
+MOV A14 <$KILLER>
+CALCVAR HUMAN XV + 1
+SAVEVAR HUMAN XV ..\QuestDiary\数据文件\杀敌阵亡.txt
+<$KILLER>.CALCVAR HUMAN XZ + 1
+<$KILLER>.SAVEVAR HUMAN XZ ..\QuestDiary\数据文件\杀敌阵亡.txt
+SendMsg 1 [<$KILLER>]在%m把[<$USERNAME>]杀害了.兄弟们帮忙打个120看能否抢救  250  0
+SendMsg 1 [<$KILLER>]在%m把[<$USERNAME>]杀害了.兄弟们帮忙打个120看能否抢救  250  0
+DELAYGOTO 1 @检测杀人
+DELAYGOTO 1 @手工封号设置
+<$KILLER>.DELAYGOTO 1 @手工封号设置
+BREAK
+#ElseAct
+SendMsg 1 [<$MONKILLER>]在%m把[<$USERNAME>]杀害了.兄弟们帮忙打个120看能否抢救  250  0
+SendMsg 1 [<$MONKILLER>]在%m把[<$USERNAME>]杀害了.兄弟们帮忙打个120看能否抢救  250  0
+break
+
+
+
+
+
+
+[@检测杀人]
+#If
+<$str(A13)>.CHECK [18] 1
+#Act 
+<$KILLER>.GAMEGOLD + 2500
+SET [18] 0
+DEPRIVETITLE ALL
+SendMsg 1  [<$KILLER>]把“神罚之力”[<$str(A13)>]杀害了.获得了2500个元宝的奖励  250  0
+SendMsg 1  [<$KILLER>]把“神罚之力”[<$str(A13)>]杀害了.获得了2500个元宝的奖励  191 251
+BREAK
+
+
+
+
+;[@KillPlay]
+;#IF
+;CHECKLEVELEX > 0
+;#ACT
+;CALCVAR HUMAN XZ + 1
+;SAVEVAR HUMAN XZ ..\QuestDiary\数据文件\杀敌阵亡.txt
+;Break
+
+
+
+
+
+
+
+;-----------------------↓封号↓-------------------------
+
+[@手工封号设置]
+#IF
+CHECKLEVELEX < 43
+#ACT
+MOV S27 ═══市井小民═══
+#IF
+CHECKLEVELEX = 44
+#ACT
+MOV S27 ═══⑨品知县═══\
+#IF
+CHECKLEVELEX = 45
+#ACT
+MOV S27 ═══⑧品知府═══\
+#IF
+CHECKLEVELEX = 46
+#ACT
+MOV S27 ═══⑦品太守═══\
+#IF
+CHECKLEVELEX = 47
+#ACT
+MOV S27 ═══⑥品巡抚═══\
+#IF
+CHECKLEVELEX = 48
+#ACT
+MOV S27 ═══⑤品提督═══\
+#IF
+CHECKLEVELEX = 49
+#ACT
+MOV S27 ═══④品总督═══\
+#IF
+CHECKLEVELEX = 50
+#ACT
+MOV S27 ═══③品尚书═══\
+#IF
+CHECKLEVELEX = 51
+#ACT
+MOV S27 ═══②品太傅═══\
+#IF
+CHECKLEVELEX = 52
+#ACT
+MOV S27 ═══①统天下═══\
+#IF
+CHECKLEVELEX = 53
+#ACT
+MOV S27 ═══九五至尊═══\
+
+#IF
+CHECKLEVELEX > 53
+#ACT
+MOV S27 ═══永恒传说═══\
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\林盟主名单.txt <$USERNAME> HardDisk
+#ACT
+MOV S27 ═══武林至尊═══\
+
+#IF
+CHECK [18] 1
+#ACT
+CONFERTITLE ◆杀死有惊喜◆
+
+#IF
+CHECKVAR HUMAN 神力护身 > 0
+#ACT
+MOV S28 ══神力护身══\
+
+#IF
+checklevelex > 0
+#ACT
+SETRANKLEVELNAME %s\<$STR(S28)>\<$STR(S27)>\奸杀[<$HUMAN(XZ)>]人·被奸[<$HUMAN(XV)>]次
+BREAK
+
+
+;-----------------------↑封号↑-------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+[@PlayLevelUp]
+;-----------------------战士-------------------------
+#IF
+checkjob warrior
+CHECKLEVELEX = 7
+#ACT
+ADDSKILL 基本剑术 0
+BREAK
+#IF
+checkjob warrior
+checklevelex = 19
+#ACT
+ADDSKILL 攻杀剑术 0
+BREAK
+#IF
+checkjob warrior
+checklevelex = 25
+#ACT
+ADDSKILL 刺杀剑术 0
+BREAK
+#IF
+checkjob warrior
+checklevelex = 28
+#ACT
+ADDSKILL 半月弯刀 0
+BREAK
+#IF
+checkjob warrior
+checklevelex = 30
+#ACT
+ADDSKILL 野蛮冲撞 0
+BREAK
+;-----------------------方士-------------------------
+#IF
+checkjob taoist
+checklevelex = 7
+#ACT
+ADDSKILL 治愈术 0
+BREAK
+#IF
+checkjob taoist
+checklevelex = 9
+#ACT
+ADDSKILL 精神力战法 0
+BREAK
+#IF
+checkjob taoist
+checklevelex = 14
+#ACT
+ADDSKILL 施毒术 0
+BREAK
+#IF
+checkjob taoist
+checklevelex = 18
+#ACT
+ADDSKILL 召唤骷髅 0
+BREAK
+#IF
+checkjob taoist
+checklevelex = 19
+#ACT
+ADDSKILL 灵魂火符 0
+BREAK
+#IF
+checkjob taoist
+checklevelex = 20
+#ACT
+ADDSKILL 隐身术 0
+BREAK
+#IF
+checkjob taoist
+checklevelex = 21
+#ACT
+ADDSKILL 集体隐身术 0
+BREAK
+#IF
+checkjob taoist
+checklevelex = 22
+#ACT
+ADDSKILL 幽灵盾 0
+BREAK
+#IF
+checkjob taoist
+checklevelex = 25
+#ACT
+ADDSKILL 神圣战甲术 0
+BREAK
+
+#IF
+checkjob taoist
+checklevelex = 28
+#ACT
+ADDSKILL 困魔咒 0
+BREAK
+#IF
+checkjob taoist
+checklevelex = 33
+#ACT
+ADDSKILL 群体治疗术 0
+BREAK
+;-----------------------法师-------------------------
+#IF
+checkjob wizard
+checklevelex = 7
+#ACT
+ADDSKILL 火球术 0
+BREAK
+#IF
+checkjob wizard
+checklevelex = 12
+#ACT
+ADDSKILL 抗拒火环 0
+BREAK
+#IF
+checkjob wizard
+checklevelex = 13
+#ACT
+ADDSKILL 诱惑之光 0
+BREAK
+#IF
+checkjob wizard
+checklevelex = 16
+#ACT
+ADDSKILL 地狱火 0
+BREAK
+#IF
+checkjob wizard
+checklevelex = 17
+#ACT
+ADDSKILL 雷电术 0
+BREAK
+#IF
+checkjob wizard
+checklevelex = 19
+#ACT
+ADDSKILL 瞬息移动 0
+BREAK
+#IF
+checkjob wizard
+checklevelex = 19
+#ACT
+ADDSKILL 大火球 0
+BREAK
+#IF
+checkjob wizard
+checklevelex = 22
+#ACT
+ADDSKILL 爆裂火焰 0
+BREAK
+#IF
+checkjob wizard
+checklevelex = 24
+#ACT
+ADDSKILL 火墙 0
+BREAK
+
+#IF
+checkjob wizard
+checklevelex = 30
+#ACT
+ADDSKILL 地狱雷光 0
+BREAK
+#IF
+checkjob wizard
+checklevelex = 31
+#ACT
+ADDSKILL 魔法盾 0
+BREAK
+#IF
+checkjob wizard
+checklevelex = 32
+#ACT
+ADDSKILL 圣言术 0
+BREAK
+;====================================================
+
+#IF
+checkjob warrior
+gender MAN
+CHECKLEVELEX = 15
+#ACT
+Give 八荒
+Give 轻型盔甲(男)
+Give 金币 10000
+TAKEON 八荒 1
+TAKEON 轻型盔甲(男) 0
+TAKE 乌木剑 1
+TAKE 布衣(男) 1
+break
+#IF
+checkjob warrior
+gender WOMAN
+CHECKLEVELEX = 15
+#ACT
+Give 八荒
+Give 轻型盔甲(女)
+Give 金币 10000
+TAKEON 八荒 1
+TAKEON 轻型盔甲(女) 0
+TAKE 乌木剑 1
+TAKE 布衣(女) 1
+break
+#IF
+gender MAN
+checkjob wizard
+CHECKLEVELEX = 15
+#ACT
+Give 海魂
+Give 轻型盔甲(男)
+Give 金币 10000
+TAKEON 海魂 1
+TAKEON 轻型盔甲(男) 0
+TAKE 乌木剑 1
+TAKE 布衣(男) 1
+break
+#IF
+gender WOMAN
+checkjob wizard
+CHECKLEVELEX = 15
+#ACT
+Give 海魂
+Give 轻型盔甲(女)
+Give 金币 10000
+TAKEON 海魂 1
+TAKEON 轻型盔甲(女) 0
+TAKE 乌木剑 1
+TAKE 布衣(女) 1
+break
+#IF
+gender MAN
+checkjob taoist
+CHECKLEVELEX = 15
+#ACT
+Give 半月
+Give 轻型盔甲(男)
+Give 金币 10000
+TAKEON 半月 1
+TAKEON 轻型盔甲(男) 0
+TAKE 乌木剑 1
+TAKE 布衣(男) 1
+break
+#IF
+gender WOMAN
+checkjob taoist
+CHECKLEVELEX = 15
+#ACT
+Give 半月
+Give 轻型盔甲(女)
+Give 金币 10000
+TAKEON 半月 1
+TAKEON 轻型盔甲(女) 0
+TAKE 乌木剑 1
+TAKE 布衣(女) 1
+break
+
+#IF
+checkjob warrior
+gender Woman
+checklevelex = 26
+#ACT
+GIVE 超级金创药 5
+GIVE 超级魔法药 1
+GIVE 修罗 1
+GIVE 重盔甲(女) 1
+GIVE 蓝翡翠项链 1
+GIVE 死神手套 2
+GIVE 珊瑚戒指 2
+GIVE 骷髅头盔 1
+Give 金币 50000
+give 盟重传送石 1
+give 随机传送石 1
+TAKEON 修罗 1
+TAKEON 重盔甲(女) 0
+TAKEON 蓝翡翠项链 3
+TAKEON 死神手套 5
+TAKEON 死神手套 6
+TAKEON 珊瑚戒指 7
+TAKEON 珊瑚戒指 8
+TAKEON 骷髅头盔 4
+TAKE 八荒 1
+TAKE 轻型盔甲(女) 1
+MAPMOVE 0 331 264
+QUERYBAGITEMS
+BREAK
+#IF
+gender man
+checkjob warrior
+checklevelex = 26
+#ACT
+GIVE 超级金创药 5
+GIVE 超级魔法药 1
+GIVE 修罗 1
+GIVE 重盔甲(男) 1
+GIVE 蓝翡翠项链 1
+GIVE 死神手套 2
+GIVE 珊瑚戒指 2
+GIVE 骷髅头盔 1
+Give 金币 50000
+give 盟重传送石 1
+give 随机传送石 1
+TAKEON 修罗 1
+TAKEON 蓝翡翠项链 3
+TAKEON 死神手套 5
+TAKEON 死神手套 6
+TAKEON 珊瑚戒指 7
+TAKEON 珊瑚戒指 8
+TAKEON 骷髅头盔 4
+TAKEON 重盔甲(男) 0
+TAKE 八荒 1
+TAKE 轻型盔甲(男) 1
+MAPMOVE 0 331 264
+QUERYBAGITEMS
+BREAK
+#IF
+checkjob taoist
+gender Woman
+checklevelex = 26
+#ACT
+ADDSKILL 心灵启示 0
+GIVE 超级金创药 2
+GIVE 超级魔法药 4
+GIVE 降魔 1
+GIVE 灵魂战衣(女) 1
+GIVE 竹笛 1
+GIVE 道士头盔 1
+GIVE 道士手镯 2
+GIVE 道德戒指 2
+Give 金币 50000
+give 盟重传送石 1
+give 随机传送石 1
+TAKEON 道士头盔 4
+TAKEON 竹笛 3
+TAKEON 道士手镯 5
+TAKEON 道士手镯 6
+TAKEON 道德戒指 7
+TAKEON 道德戒指 8
+TAKEON 降魔 1
+TAKEON 灵魂战衣(女) 0
+TAKE 半月 1
+TAKE 轻型盔甲(女) 1
+MAPMOVE 0 331 264
+QUERYBAGITEMS
+BREAK
+#IF
+checkjob taoist
+gender man
+checklevelex = 26
+#ACT
+ADDSKILL 心灵启示 0
+GIVE 超级金创药 2
+GIVE 超级魔法药 4
+GIVE 降魔 1
+GIVE 灵魂战衣(男) 1
+GIVE 竹笛 1
+GIVE 道士头盔 1
+GIVE 道士手镯 2
+GIVE 道德戒指 2
+Give 金币 50000
+give 盟重传送石 1
+give 随机传送石 1
+TAKEON 道士头盔 4
+TAKEON 竹笛 3
+TAKEON 道士手镯 5
+TAKEON 道士手镯 6
+TAKEON 道德戒指 7
+TAKEON 道德戒指 8
+TAKEON 降魔 1
+TAKEON 灵魂战衣(男) 0
+TAKE 半月 1
+TAKE 轻型盔甲(男) 1
+MAPMOVE 0 331 264
+QUERYBAGITEMS
+BREAK
+#IF
+checkjob wizard
+gender Woman
+checklevelex = 26
+#ACT
+ADDSKILL 疾光电影 0
+GIVE 超级金创药 1
+GIVE 超级魔法药 5
+GIVE 偃月 1
+GIVE 魔法长袍(女) 1
+GIVE 黑檀手镯 2
+GIVE 蛇眼戒指 2
+GIVE 放大镜 1
+GIVE 道士头盔 1
+Give 金币 50000
+give 盟重传送石 1
+give 随机传送石 1
+TAKEON 黑檀手镯 5
+TAKEON 蛇眼戒指 7
+TAKEON 放大镜 3
+TAKEON 黑檀手镯 6
+TAKEON 蛇眼戒指 8
+TAKEON 道士头盔 4
+TAKEON 偃月 1
+TAKEON 魔法长袍(女) 0
+TAKE 海魂 1
+TAKE 轻型盔甲(女) 1
+MAPMOVE 0 331 264
+QUERYBAGITEMS
+BREAK
+#IF
+checkjob wizard
+gender man
+checklevelex = 26
+#ACT
+ADDSKILL 疾光电影 0
+GIVE 超级金创药 1
+GIVE 超级魔法药 5
+GIVE 偃月 1
+GIVE 魔法长袍(男) 1
+GIVE 黑檀手镯 2
+GIVE 蛇眼戒指 2
+GIVE 放大镜 1
+GIVE 道士头盔 1
+Give 金币 50000
+give 盟重传送石 1
+give 随机传送石 1
+TAKEON 黑檀手镯 5
+TAKEON 蛇眼戒指 7
+TAKEON 放大镜 3
+TAKEON 黑檀手镯 6
+TAKEON 蛇眼戒指 8
+TAKEON 道士头盔 4
+TAKEON 偃月 1
+TAKEON 魔法长袍(男) 0
+TAKE 海魂 1
+TAKE 轻型盔甲(男) 1
+MAPMOVE 0 331 264
+QUERYBAGITEMS
+BREAK
+
+
+
+
+#IF
+CHECKLEVELEX = 35
+#ACT
+TAGMAPINFO 1
+GMEXECUTE ReleaseShutup <$USERNAME>
+mapmove mima2
+SENDMSG 6 [提示:]恭喜你达到35级,请设置二级密码后点击《我要出去》!
+SENDMSG 6 [提示:]恭喜你达到35级,请设置二级密码后点击《我要出去》!
+SENDMSG 6 [提示:]恭喜你达到35级,请设置二级密码后点击《我要出去》!
+SENDMSG 6 [提示:]恭喜你达到35级,请设置二级密码后点击《我要出去》!
+BREAK
+
+#IF
+CHECKLEVELEX = 36
+#ACT
+GMEXECUTE ReleaseShutup <$USERNAME>
+BREAK
+
+#IF
+CHECKLEVELEX = 37
+#ACT
+GMEXECUTE ReleaseShutup <$USERNAME>
+BREAK
+
+#IF
+CHECKLEVELEX = 38
+#ACT
+GMEXECUTE ReleaseShutup <$USERNAME>
+BREAK
+
+#IF
+CHECKLEVELEX = 39
+#ACT
+GMEXECUTE ReleaseShutup <$USERNAME>
+BREAK
+
+
+#IF
+CHECKLEVELEX = 40
+#ACT
+GMEXECUTE ReleaseShutup <$USERNAME>
+BREAK
+
+#IF
+CheckStringList ..\QuestDiary\测试区.txt 测试 HardDisk
+CHECKLEVELEX = 44
+#ACT
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\44级测试奖励.txt HardDisk
+SENDMSG 7 提示：恭喜您在测试区等级升到44级，开区后可以直接领取【500元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到44级，开区后可以直接领取【500元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到44级，开区后可以直接领取【500元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到44级，开区后可以直接领取【500元宝】！！
+break
+
+
+#IF 
+CHECKLEVELEX = 45
+CheckStringList ..\QuestDiary\测试区.txt 测试 HardDisk
+#ACT
+DelAccountList ..\QuestDiary\测试奖励\44级测试奖励.txt HardDisk
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\45级测试奖励.txt HardDisk
+SENDMSG 7 提示：恭喜您在测试区等级升到45级，开区后可以直接领取【1000元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到45级，开区后可以直接领取【1000元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到45级，开区后可以直接领取【1000元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到45级，开区后可以直接领取【1000元宝】！！
+break
+
+#IF 
+CHECKLEVELEX = 46
+CheckStringList ..\QuestDiary\测试区.txt 测试 HardDisk
+#ACT
+DelAccountList ..\QuestDiary\测试奖励\45级测试奖励.txt HardDisk
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\46级测试奖励.txt HardDisk
+SENDMSG 7 提示：恭喜您在测试区等级升到46级，开区后可以直接领取【2000元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到46级，开区后可以直接领取【2000元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到46级，开区后可以直接领取【2000元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到46级，开区后可以直接领取【2000元宝】！！
+break
+
+#IF 
+CHECKLEVELEX = 47
+CheckStringList ..\QuestDiary\测试区.txt 测试 HardDisk
+#ACT
+DelAccountList ..\QuestDiary\测试奖励\46级测试奖励.txt HardDisk
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\47级测试奖励.txt HardDisk
+SENDMSG 7 提示：恭喜您在测试区等级升到47级，开区后可以直接领取【10000元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到47级，开区后可以直接领取【10000元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到47级，开区后可以直接领取【10000元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到47级，开区后可以直接领取【10000元宝】！！
+break
+
+#IF 
+CHECKLEVELEX = 48
+CheckStringList ..\QuestDiary\测试区.txt 测试 HardDisk
+#ACT
+DelAccountList ..\QuestDiary\测试奖励\47级测试奖励.txt HardDisk
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\48级测试奖励.txt HardDisk
+SENDMSG 7 提示：恭喜您在测试区等级升到48级，开区后可以直接领取【10000元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到48级，开区后可以直接领取【10000元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到48级，开区后可以直接领取【10000元宝】！！
+SENDMSG 7 提示：恭喜您在测试区等级升到48级，开区后可以直接领取【10000元宝】！！
+break
+
+
+#CALL [\系统功能\脚本调用\QF触发类调用.txt] @触发
+#CALL [\系统功能\脚本调用\QF自定义命令调用.txt] @自定义命令
+
+
+
+[@MagSelfFunc99]
+#IF
+CHECKLEVELEX > 0
+#ACT
+QUERYBAGITEMS 2
+CLOSE
+BREAK
+
+[@OnLogout_OffLinePlaying]
+#IF
+CHECKGAMEGOLD ? 300000
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\30W元宝名单.txt <$USERNAME>|<$DATETIME>|IP：<$IPADDR>|元宝：<$GAMEGOLD>个 HardDisk
+
+#IF
+CHECKGAMEGOLD ? 200000
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\20W元宝名单.txt <$USERNAME>|<$DATETIME>|IP：<$IPADDR>|元宝：<$GAMEGOLD>个 HardDisk
+
+#IF
+CHECKGAMEGOLD ? 100000
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\10W元宝名单.txt <$USERNAME>|<$DATETIME>|IP：<$IPADDR>|元宝：<$GAMEGOLD>个 HardDisk
+
+#IF
+CHECKGAMEGOLD ? 50000
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\5W元宝名单.txt <$USERNAME>|<$DATETIME>|IP：<$IPADDR>|元宝：<$GAMEGOLD>个 HardDisk
+
+#IF
+SMALL G88 5
+IsOnMap 3
+#ACT
+INC G85 <$GAMEGOLD>
+SET [102] 1
+#ELSEACT
+INC G85 <$GAMEGOLD>
+SET [102] 1
+Gmexecute T <$USERNAME>
+Break
+
+[@OnLogout_SoftClosing]
+#IF
+CHECKGAMEGOLD ? 300000
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\30W元宝名单.txt <$USERNAME>|<$DATETIME>|IP：<$IPADDR>|元宝：<$GAMEGOLD>个ce2：<$GAMEGIRD>个 HardDisk
+
+#IF
+CHECKGAMEGOLD ? 200000
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\20W元宝名单.txt <$USERNAME>|<$DATETIME>|IP：<$IPADDR>|元宝：<$GAMEGOLD>个ce2：<$GAMEGIRD>个 HardDisk
+
+#IF
+CHECKGAMEGOLD ? 100000
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\10W元宝名单.txt <$USERNAME>|<$DATETIME>|IP：<$IPADDR>|元宝：<$GAMEGOLD>个ce2：<$GAMEGIRD>个 HardDisk
+
+#IF
+CHECKGAMEGOLD ? 50000
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\5W元宝名单.txt <$USERNAME>|<$DATETIME>|IP：<$IPADDR>|元宝：<$GAMEGOLD>个ce2：<$GAMEGIRD>个 HardDisk
+
+#IF
+#ACT
+INC G85 <$GAMEGOLD>
+SET [102] 1
+Break
+
+
+
+
+[@TakeOn1]
+#IF
+checkjob Warrior
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 3
+CheckItemAddValue 1 3 = 7
+#ACT
+MOV M11 5
+INC M11 <$HUMAN(攻击点)>
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+10触发人物最佳状态,攻魔道+5点。
+SendMsg 0 玩家【%s】全身幸运+10的触发人物最佳状态,各位小心此人物危险. 
+inc M11 5
+
+#IF
+checkjob Warrior
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 3
+CheckItemAddValue 1 3 = 6
+#ACT
+MOV M11 2
+INC M11 <$HUMAN(攻击点)>
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+9触发人物最佳状态,攻魔道+2点。
+SendMsg 0 玩家【%s】全身幸运+9的触发人物最佳状态,各位小心此人物危险. 
+
+#IF
+checkjob Warrior
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 2
+CheckItemAddValue 1 3 = 7
+#ACT
+MOV M11 2
+INC M11 <$HUMAN(攻击点)>
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+9触发人物最佳状态,攻魔道+2点。
+SendMsg 0 玩家【%s】全身幸运+9的触发人物最佳状态,各位小心此人物危险. 
+
+
+
+#IF
+checkjob Wizard
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 3
+CheckItemAddValue 1 3 = 7
+#ACT
+MOV M11 5
+INC M11 <$HUMAN(攻击点)>
+AbilityAdd 0  30 720000
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+10触发人物最佳状态,攻魔道+5点.HP+30。
+SendMsg 0 玩家【%s】全身幸运+10的触发人物最佳状态,各位小心此人物危险. 
+
+#IF
+checkjob Wizard
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 3
+CheckItemAddValue 1 3 = 6
+#ACT
+MOV M11 2
+INC M11 <$HUMAN(攻击点)>
+AbilityAdd 0  10 720000
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+9触发人物最佳状态,攻魔道+2点.HP+10。
+SendMsg 0 玩家【%s】全身幸运+9的触发人物最佳状态,各位小心此人物危险. 
+
+
+#IF
+checkjob Wizard
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 2
+CheckItemAddValue 1 3 = 7
+#ACT
+MOV M11 2
+INC M11 <$HUMAN(攻击点)>
+AbilityAdd 0  10 720000
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+9触发人物最佳状态,攻魔道+2点.HP+10。
+SendMsg 0 玩家【%s】全身幸运+9的触发人物最佳状态,各位小心此人物危险. 
+
+
+
+#IF
+checkjob Taoist
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 3
+CheckItemAddValue 1 3 = 7
+#ACT
+MOV M11 5
+INC M11 <$HUMAN(攻击点)>
+AbilityAdd 0  40 720000
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+10触发人物最佳状态,攻魔道+5点.HP+40。
+SendMsg 0 玩家【%s】全身幸运+10的触发人物最佳状态,各位小心此人物危险. 
+
+
+#IF
+checkjob Taoist
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 3
+CheckItemAddValue 1 3 = 6
+#ACT
+MOV M11 2
+INC M11 <$HUMAN(攻击点)>
+AbilityAdd 0  15 720000
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+9触发人物最佳状态,攻魔道+2点.HP+15。
+SendMsg 0 玩家【%s】全身幸运+9的触发人物最佳状态,各位小心此人物危险. 
+
+
+#IF
+checkjob Taoist
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 2
+CheckItemAddValue 1 3 = 7
+#ACT
+MOV M11 2
+INC M11 <$HUMAN(攻击点)>
+AbilityAdd 0  15 720000
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+9触发人物最佳状态,攻魔道+2点.HP+15。
+SendMsg 0 玩家【%s】全身幸运+9的触发人物最佳状态,各位小心此人物危险. 
+
+
+
+
+
+
+[@TakeOn3]
+#IF
+checkjob Warrior
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 3
+CheckItemAddValue 1 3 = 7
+#ACT
+MOV M11 5
+INC M11 <$HUMAN(攻击点)>
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+10触发人物最佳状态,攻魔道+5点。
+SendMsg 0 玩家【%s】全身幸运+10的触发人物最佳状态,各位小心此人物危险. 
+inc M11 5
+
+#IF
+checkjob Warrior
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 3
+CheckItemAddValue 1 3 = 6
+#ACT
+MOV M11 2
+INC M11 <$HUMAN(攻击点)>
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+9触发人物最佳状态,攻魔道+2点。
+SendMsg 0 玩家【%s】全身幸运+9的触发人物最佳状态,各位小心此人物危险. 
+
+#IF
+checkjob Warrior
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 2
+CheckItemAddValue 1 3 = 7
+#ACT
+MOV M11 2
+INC M11 <$HUMAN(攻击点)>
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+9触发人物最佳状态,攻魔道+2点。
+SendMsg 0 玩家【%s】全身幸运+9的触发人物最佳状态,各位小心此人物危险. 
+
+
+
+#IF
+checkjob Wizard
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 3
+CheckItemAddValue 1 3 = 7
+#ACT
+MOV M11 5
+INC M11 <$HUMAN(攻击点)>
+AbilityAdd 0  30 720000
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+10触发人物最佳状态,攻魔道+5点.HP+30。
+SendMsg 0 玩家【%s】全身幸运+10的触发人物最佳状态,各位小心此人物危险. 
+
+#IF
+checkjob Wizard
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 3
+CheckItemAddValue 1 3 = 6
+#ACT
+MOV M11 2
+INC M11 <$HUMAN(攻击点)>
+AbilityAdd 0  10 720000
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+9触发人物最佳状态,攻魔道+2点.HP+10。
+SendMsg 0 玩家【%s】全身幸运+9的触发人物最佳状态,各位小心此人物危险. 
+
+
+#IF
+checkjob Wizard
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 2
+CheckItemAddValue 1 3 = 7
+#ACT
+MOV M11 2
+INC M11 <$HUMAN(攻击点)>
+AbilityAdd 0  10 720000
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+9触发人物最佳状态,攻魔道+2点.HP+10。
+SendMsg 0 玩家【%s】全身幸运+9的触发人物最佳状态,各位小心此人物危险. 
+
+
+
+#IF
+checkjob Taoist
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 3
+CheckItemAddValue 1 3 = 7
+#ACT
+MOV M11 5
+INC M11 <$HUMAN(攻击点)>
+AbilityAdd 0  40 720000
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+10触发人物最佳状态,攻魔道+5点.HP+40。
+SendMsg 0 玩家【%s】全身幸运+10的触发人物最佳状态,各位小心此人物危险. 
+
+
+#IF
+checkjob Taoist
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 3
+CheckItemAddValue 1 3 = 6
+#ACT
+MOV M11 2
+INC M11 <$HUMAN(攻击点)>
+AbilityAdd 0  15 720000
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+9触发人物最佳状态,攻魔道+2点.HP+15。
+SendMsg 0 玩家【%s】全身幸运+9的触发人物最佳状态,各位小心此人物危险. 
+
+
+#IF
+checkjob Taoist
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 2
+CheckItemAddValue 1 3 = 7
+#ACT
+MOV M11 2
+INC M11 <$HUMAN(攻击点)>
+AbilityAdd 0  15 720000
+ABILITYADD 4   <$STR(M11)> 720000
+ABILITYADD 5   <$STR(M11)> 720000
+ABILITYADD 6   <$STR(M11)> 720000
+SendMSG 5 全身幸运+9触发人物最佳状态,攻魔道+2点.HP+15。
+SendMsg 0 玩家【%s】全身幸运+9的触发人物最佳状态,各位小心此人物危险. 
+
+
+
+
+
+
+
+[@TakeOff1]
+#IF
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 2
+CheckItemAddValue 1 3 = 6
+#ACT
+AbilityAdd 0  0 720000
+ABILITYADD 4  <$HUMAN(攻击点)> 720000
+ABILITYADD 5  <$HUMAN(攻击点)> 720000
+ABILITYADD 6  <$HUMAN(攻击点)> 720000
+SendMsg 5 幸运状态已经取消!
+BREAK
+
+#IF
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 3
+CheckItemAddValue 1 3 = 6
+#ACT
+AbilityAdd 0  0 720000
+ABILITYADD 4  <$HUMAN(攻击点)> 720000
+ABILITYADD 5  <$HUMAN(攻击点)> 720000
+ABILITYADD 6  <$HUMAN(攻击点)> 720000
+SendMsg 5 幸运状态已经取消!
+BREAK
+
+
+#IF
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 2
+CheckItemAddValue 1 3 = 6
+#ACT
+AbilityAdd 0  0 720000
+ABILITYADD 4  <$HUMAN(攻击点)> 720000
+ABILITYADD 5  <$HUMAN(攻击点)> 720000
+ABILITYADD 6  <$HUMAN(攻击点)> 720000
+SendMsg 5 幸运状态已经取消!
+BREAK
+
+#IF
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 < 2
+CheckItemAddValue 1 3 < 6
+#ACT
+AbilityAdd 0  0 720000
+ABILITYADD 4  <$HUMAN(攻击点)> 720000
+ABILITYADD 5  <$HUMAN(攻击点)> 720000
+ABILITYADD 6  <$HUMAN(攻击点)> 720000
+SendMsg 5 幸运状态已经取消!
+BREAK
+
+
+
+#If
+#Act 
+AbilityAdd 0  0 720000
+ABILITYADD 4  <$HUMAN(攻击点)> 720000
+ABILITYADD 5  <$HUMAN(攻击点)> 720000
+ABILITYADD 6  <$HUMAN(攻击点)> 720000
+SendMsg 5 幸运状态已经取消!
+BREAK
+
+[@TakeOff3]
+#IF
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 1
+CheckItemAddValue 1 3 = 7
+#ACT
+AbilityAdd 0  0 720000
+ABILITYADD 4  <$HUMAN(攻击点)> 720000
+ABILITYADD 5  <$HUMAN(攻击点)> 720000
+ABILITYADD 6  <$HUMAN(攻击点)> 720000
+SendMsg 5 幸运状态已经取消!
+BREAK
+
+#IF
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 2
+CheckItemAddValue 1 3 = 6
+#ACT
+AbilityAdd 0  0 720000
+ABILITYADD 4  <$HUMAN(攻击点)> 720000
+ABILITYADD 5  <$HUMAN(攻击点)> 720000
+ABILITYADD 6  <$HUMAN(攻击点)> 720000
+SendMsg 5 幸运状态已经取消!
+BREAK
+
+#IF
+CHECKUSEITEM 1
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 < 2
+CheckItemAddValue 1 3 < 6
+#ACT
+AbilityAdd 0  0 720000
+ABILITYADD 4  <$HUMAN(攻击点)> 720000
+ABILITYADD 5  <$HUMAN(攻击点)> 720000
+ABILITYADD 6  <$HUMAN(攻击点)> 720000
+SendMsg 5 幸运状态已经取消!
+BREAK
+
+
+
+#If
+#Act 
+AbilityAdd 0  0 720000
+ABILITYADD 4  <$HUMAN(攻击点)> 720000
+ABILITYADD 5  <$HUMAN(攻击点)> 720000
+ABILITYADD 6  <$HUMAN(攻击点)> 720000
+SendMsg 5 幸运状态已经取消!
+BREAK
+
+
+
+
+
+
+
+
+
+

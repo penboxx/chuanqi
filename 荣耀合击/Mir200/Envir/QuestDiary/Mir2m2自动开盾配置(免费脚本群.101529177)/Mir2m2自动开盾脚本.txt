@@ -1,0 +1,101 @@
+[@Mir2m2自动开盾脚本QM]
+{
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 <$IPADDR>
+#IF
+EQUAL S10 127.0.0.1
+#ACT
+MOVR D55 10
+MOVR D56 10
+INC D55 1
+INC D56 1
+SetScTimer 7 1
+
+[@ONTIMER7]
+#IF
+EQUAL D55 1000
+EQUAL D56 1000
+#ACT
+KillScTimer 7
+break
+#IF
+LARGE D55 0
+#ACT
+DEC D55 1
+#IF
+LARGE D56 0
+#ACT
+DEC D56 1
+#IF
+LARGE D55 0
+LARGE D56 0
+#ACT
+break
+#ELSEACT
+MOV S10 
+
+#IF
+LARGE D55 0
+#ACT
+MOV S10 免费脚本群:101529177
+#IF
+checkjob wizard
+#ELSEACT
+MOV D55 1000
+MOV S10 免费脚本群:101529177
+#IF
+EQUAL S10 
+CHECKLEVELEX > $(自动开盾人物等级)
+CHECKMAGICNAME $(自动开盾人物技能)
+#ACT
+MOVR D55 $(自动开盾人物加时)
+INC D55 $(自动开盾人物间隔)
+Gmexecute TestStatus 11 <$STR(D55)>
+DEC D55 1
+MOV D10 <$STR(D55)>
+MOV D55 $(自动开盾人物延迟)
+INC D55 <$STR(D10)>
+
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MOV D56 1000
+BREAK
+#IF
+H.checkjob wizard
+#ELSEACT
+MOV D56 1000
+BREAK
+#IF
+LARGE D56 0
+#ACT
+break
+#IF
+H.CHECKLEVELEX > $(自动开盾英雄等级)
+H.CHECKMAGICNAME $(自动开盾英雄技能)
+#ACT
+MOVR D56 $(自动开盾英雄加时)
+INC D56 $(自动开盾英雄间隔)
+H.Gmexecute TestStatus 11 <$STR(D56)>
+DEC D56 1
+MOV D10 <$STR(D56)>
+MOV D56 $(自动开盾英雄延迟)
+INC D56 <$STR(D10)>
+
+[@Mir2m2自动开盾常量加载]
+#CALL [\Mir2m2自动开盾配置(免费脚本群.101529177)\Mir2m2自动开盾常量.ini] @Mir2m2自动开盾常量
+}
+
+[@Mir2m2自动开盾脚本QF]
+{
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOVR D55 10
+MOVR D56 10
+INC D55 1
+INC D56 1
+SetScTimer 7 1
+}

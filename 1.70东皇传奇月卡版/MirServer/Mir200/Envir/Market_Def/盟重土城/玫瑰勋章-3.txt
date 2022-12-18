@@ -1,0 +1,225 @@
+()
+%100
+[@main]
+<COLOR=clAqua 玫瑰花>不仅仅是爱的传达，还可以在我这里兑换各种个性服务哦！\ \
+<9朵兑换[一心一意]烟花/@9hua>         <9朵兑换[心心相印]烟花/@9xin>\ \
+<99朵兑换[求婚戒指]/@99jie>            <99朵更换[个性发型]/@99fa>\ \
+<999朵与勋章融合/@qu999>               <9999朵升级勋章/@qu10000>\ \
+<购买[玫瑰花]/@shua>                  您当前拥有<COLOR=clAqua 玫瑰花>：<$GAMEGIRD>朵               
+[@qu10000]
+<COLOR=clMoneyGreen 所需材料：玫瑰花9999朵,千花级别勋章x1>\
+<COLOR=clMoneyGreen 融合属性：攻击3-7,道术3-7,魔法3-7>\ \
+<一树梨花压海棠融合(天下谁人不识君)/@R451>\
+<落红不是无情物融合(天下谁人不识君)/@R452>\
+<天生丽质难自弃融合(天下谁人不识君)/@R453>\ \
+<返回/@yhua>
+[@R453]
+#if
+CHECKGAMEGIRD < 8999
+#act
+messagebox 玫瑰花数量不足！
+break
+#if
+checkitem 天生丽质难自弃 1
+#act
+take 天生丽质难自弃 1
+GAMEGIRD - 9999
+give 天下谁人不识君 1
+sendmsg 6 [提示]：融合完成!!!
+SendScrollMsg 恭喜：<$USERNAME>成功打造出勋章(天下谁人不识君)! 250 0
+#elseact
+messagebox 请准备好天生丽质难自弃(放在背包里)！
+break
+[@R452]
+#if
+CHECKGAMEGIRD < 8999
+#act
+messagebox 玫瑰花数量不足！
+break
+#if
+checkitem 落红不是无情物 1
+#act
+take 落红不是无情物 1
+GAMEGIRD - 9999
+give 天下谁人不识君 1
+sendmsg 6 [提示]：融合完成!!!
+SendScrollMsg 恭喜：<$USERNAME>成功打造出勋章(天下谁人不识君)! 250 0
+#elseact
+messagebox 请准备好落红不是无情物(放在背包里)！
+break
+[@R451]
+#if
+CHECKGAMEGIRD < 8999
+#act
+messagebox 玫瑰花数量不足！
+break
+#if
+checkitem 一树梨花压海棠 1
+#act
+take 一树梨花压海棠 1
+GAMEGIRD - 9999
+give 天下谁人不识君 1
+sendmsg 6 [提示]：融合完成!!!
+SendScrollMsg 恭喜：<$USERNAME>成功打造出勋章(天下谁人不识君)! 250 0
+#elseact
+messagebox 请准备好一树梨花压海棠(放在背包里)！
+break
+[@qu999]
+999朵玫瑰可以与43、44、45号荣誉勋章进行100%镶嵌融合\ \
+镶嵌融合后，勋章属性为对应攻击2-5、魔法2-5、道术2-5\ \
+<与43号勋章融合/@Y43>    <与44号勋章融合/@Y44>    <与45号勋章融合/@Y45>\ \
+<COLOR=clMoneyGreen 融合时请注意包裹留空>\ \
+<返回/@yhua>
+[@Y45]
+#if
+CHECKGAMEGIRD < 999
+#act
+messagebox 玫瑰花数量不足！
+break
+#if
+CheckItem 荣誉勋章45号 1
+#elseact
+messagebox 你没有45号勋章！
+break
+#if
+#act
+GAMEGIRD - 999
+take 荣誉勋章45号 1
+give 天生丽质难自弃 1
+sendmsg 0 [恭喜]：玩家(%s)成功融合出天生丽质难自弃!!! 242 255
+break
+[@Y44]
+#if
+CHECKGAMEGIRD < 999
+#act
+messagebox 玫瑰花数量不足！
+break
+#if
+CheckItem 荣誉勋章44号 1
+#elseact
+messagebox 你没有44号勋章！
+break
+#if
+#act
+GAMEGIRD - 999
+take 荣誉勋章44号 1
+give 落红不是无情物 1
+sendmsg 0 [恭喜]：玩家(%s)成功融合出落红不是无情物!!! 242 255
+break
+[@Y43]
+#if
+CHECKGAMEGIRD < 999
+#act
+messagebox 玫瑰花数量不足！
+break
+#if
+CheckItem 荣誉勋章43号 1
+#elseact
+messagebox 你没有43号勋章！
+break
+#if
+#act
+GAMEGIRD - 999
+take 荣誉勋章43号 1
+give 一树梨花压海棠 1
+sendmsg 0 [恭喜]：玩家(%s)成功融合出一树梨花压海棠!!! 242 255
+break
+[@99fa]
+#if
+CHECKGAMEGIRD > 98
+#act
+GAMEGIRD - 99
+HAIRSTYLE 0
+sendmsg 6 提示：您的发型已经改变！
+goto @yhua
+#elseact
+messagebox 玫瑰花数量不足！
+break
+[@99jie]
+#if
+CHECKGAMEGIRD > 98
+#act
+GAMEGIRD - 99
+give 求婚戒指 1
+sendmsg 6 提示：兑换成功！
+goto @yhua
+#elseact
+messagebox 玫瑰花数量不足！
+break
+[@9xin]
+#if
+CHECKGAMEGIRD > 8
+#act
+GAMEGIRD - 9
+give 心心相印包 1
+sendmsg 6 提示：兑换成功！
+goto @yhua
+#elseact
+messagebox 玫瑰花数量不足！
+break
+[@9hua]
+#if
+CHECKGAMEGIRD > 8
+#act
+GAMEGIRD - 9
+give 一心一意包 1
+sendmsg 6 提示：兑换成功！
+goto @yhua
+#elseact
+messagebox 玫瑰花数量不足！
+break
+[@shua]
+你想购买给多少朵<COLOR=clRed 玫瑰花>呢？999朵？一万朵？\ \
+<购买1朵玫瑰/@1d>      <$STR(S7)>\
+<购买10朵玫瑰/@10d>     <$STR(S7)>\
+<购买100朵玫瑰/@100d>    <$STR(S7)>\
+<购买1000朵玫瑰/@1000d>   <$STR(S7)>\ \
+注：<购买玫瑰花数量会在全区逐条累计显示 每朵花5元宝>
+[@1d]
+#if
+CHECKGAMEGOLD > 8
+#act
+GAMEGOLD - 5
+INC M7 1
+sendmsg 0 玩家[%s]购买了玫瑰花★<$STR(M7)>朵★
+GAMEGIRD + 1
+sendmsg 6 玫瑰花增加：1朵
+#elseact
+messagebox 元宝不足，无法购买
+break
+[@10d]
+#if
+CHECKGAMEGOLD > 89
+#act
+GAMEGOLD - 50
+INC M7 10
+sendmsg 0 玩家[%s]购买了玫瑰花★<$STR(M7)>朵★
+GAMEGIRD + 10
+sendmsg 6 玫瑰花增加：10朵
+#elseact
+messagebox 元宝不足，无法购买
+break
+[@100d]
+#if
+CHECKGAMEGOLD > 899
+#act
+GAMEGOLD - 500
+INC M7 100
+sendmsg 0 玩家[%s]购买了玫瑰花★<$STR(M7)>朵★
+GAMEGIRD + 100
+sendmsg 6 玫瑰花增加：100朵
+#elseact
+messagebox 元宝不足，无法购买
+break
+[@1000d]
+#if
+CHECKGAMEGOLD > 8999
+#act
+GAMEGOLD - 5000
+INC M7 1000
+sendmsg 0 玩家[%s]购买了玫瑰花★<$STR(M7)>朵★
+GAMEGIRD + 1000
+sendmsg 6 玫瑰花增加：1000朵
+#elseact
+messagebox 元宝不足，无法购买
+break

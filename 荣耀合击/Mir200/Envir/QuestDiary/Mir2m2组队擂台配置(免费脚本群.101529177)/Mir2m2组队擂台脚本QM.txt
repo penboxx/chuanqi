@@ -1,0 +1,349 @@
+[@Mir2m2组队擂台脚本QM]
+{
+#ACT
+VAR Integer HUMAN 组队个人序号
+VAR Integer HUMAN 组队个人弹窗
+VAR String  HUMAN 组队个人输入1
+VAR String  HUMAN 组队个人输入2
+VAR Integer HUMAN 组队个人输入3
+VAR Integer HUMAN 组队个人输入4
+CALCVAR HUMAN 组队个人输入2 = $(组队默认喝药模式)
+CALCVAR HUMAN 组队个人输入3 = $(组队押注数量最小)
+CALCVAR HUMAN 组队个人输入4 = $(组队允许人数最小)
+CALCVAR HUMAN 组队个人弹窗 = $(组队上线默认弹窗)
+MOV D88 1
+
+[@Mir2m2组队擂台关闭接收]
+#ACT
+CALCVAR HUMAN 组队个人弹窗 = 1
+SENDMSG 6 $(组队公告提示前缀)你已关闭接组队弹窗！需重新开启请点击NPC！
+close
+
+[@Mir2m2组队擂台发起响应]
+#IF
+EQUAL D88 0
+ONLINELONGMIN < 1
+#ACT
+break
+#ELSEACT
+MOV D9 <$GLOBAL(组队系统序号)>
+#IF
+LARGE D9 0
+SMALL D9 10
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 组队应战姓名<$STR(D9)> = <$USERNAME>
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 组队开始判断<$STR(D9)> = 1
+#ELSEACT
+BREAK
+#ACT
+MOV S10 <$
+INC S10 GLOBAL(组队擂主姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+#IF
+checkvar human 组队个人弹窗 = 1
+#ACT
+SENDMSG 6 $(组队公告提示前缀)【<$STR(S10)>】向您发起组队擂台邀请，如需响应请找NPC进行回应！
+BREAK
+#ELSEACT
+CALCVAR HUMAN 组队个人序号 = <$STR(D9)>
+DELAYGOTO 1 @Mir2m2组队擂台响应显示
+
+[@Mir2m2组队擂台响应显示]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$HUMAN(组队个人序号)>
+#IF
+LARGE D9 0
+SMALL D9 10
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 组队应战姓名<$STR(D9)> = <$USERNAME>
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 组队开始判断<$STR(D9)> = 1
+#ELSEACT
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 <$
+INC S10 GLOBAL(组队擂主姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$
+INC S11 GLOBAL(组队开始计时
+INC S11 <$STR(D9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV S12 <$
+INC S12 GLOBAL(组队押注数量
+INC S12 <$STR(D9)>
+INC S12 )>
+MOV S12 <$STR(S12)>
+MOV S13 <$
+INC S13 GLOBAL(组队地图代码
+INC S13 <$STR(D9)>
+INC S13 )>
+MOV S13 <$STR(S13)>
+DEC S13 10 100
+MOV S15 <$
+INC S15 GLOBAL(组队允许人数
+INC S15 <$STR(D9)>
+INC S15 )>
+MOV S15 <$STR(S15)>
+#IF
+EQUAL S13 zuduimapA
+#ACT
+MOV S13 可以喝药
+#ELSEACT
+MOV S13 禁止喝药
+#IF
+CHECKLEVELEX > 0
+#SAY
+<$紫0 【><$STR(S10)><$紫0 】向您发起组队擂台邀请> <$红0 请><$STR(S11)><$红0 秒内响应>\
+\ \
+<$橙0 押注元宝数量:><$STR(S12)>　　　　<$橙0 地图喝药模式:><$STR(S13)>\
+<$橙0 允许组队人数:><$STR(S15)>　<$红0 ←您的组队可低于但不能超过此人数>\
+\ \
+<$橙0 挑战获胜方式:><$青1 地图内剩余1人时可领取获胜奖励！双方均离开地图视为平局！>\
+<$橙0 挑战进行时长:><$青1 如$(组队进行最大时长)分钟内未分出胜负视为平局，双方可领回押注！>\
+\ \
+<接受挑战/@Mir2m2组队擂台响应接受>　 <拒绝挑战/@Mir2m2组队擂台响应拒绝>　 <关闭接收弹窗/@Mir2m2组队擂台关闭接收>\
+
+[@Mir2m2组队擂台响应拒绝]
+#IF
+CHECKLEVELEX > 0
+#ACT
+close
+MOV D9 <$HUMAN(组队个人序号)>
+#IF
+LARGE D9 0
+SMALL D9 10
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 组队应战姓名<$STR(D9)> = <$USERNAME>
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 组队开始判断<$STR(D9)> = 1
+#ELSEACT
+BREAK
+#ACT
+MOV S10 <$
+INC S10 GLOBAL(组队擂主姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+CALCVAR GLOBAL 组队擂主姓名<$STR(D9)> = 
+CALCVAR GLOBAL 组队应战姓名<$STR(D9)> = 
+CALCVAR GLOBAL 组队开始计时<$STR(D9)> = 0
+CALCVAR GLOBAL 组队开始判断<$STR(D9)> = 0
+<$STR(S10)>.MESSAGEBOX 对不起，【<$USERNAME>】拒绝接受您的组队挑战！
+
+[@Mir2m2组队擂台响应接受]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$HUMAN(组队个人序号)>
+#IF
+LARGE D9 0
+SMALL D9 10
+#ELSEACT
+close
+MESSAGEBOX 对不起，操作超时，请重新点NPC！
+BREAK
+#IF
+checkvar GLOBAL 组队应战姓名<$STR(D9)> = <$USERNAME>
+#ELSEACT
+close
+MESSAGEBOX 对不起，响应超时，该挑战已经取消！
+BREAK
+#IF
+checkvar GLOBAL 组队开始判断<$STR(D9)> = 1
+#ELSEACT
+close
+MESSAGEBOX 对不起，响应超时，该挑战已经开始！
+BREAK
+#ACT
+MOV S10 <$
+INC S10 GLOBAL(组队押注数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$
+INC S10 GLOBAL(组队允许人数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$
+INC S10 GLOBAL(组队擂主姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+#IF
+CHECKGAMEGOLD < <$STR(D8)>
+#ACT
+MESSAGEBOX 对不起，您身上的元宝数量不足<$STR(D8)>个！\　\无法接受挑战！
+BREAK
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ELSEACT
+MESSAGEBOX 对不起，组队发起者【<$STR(S10)>】已经下线！\　\请稍后再试！
+BREAK
+#IF
+<$STR(S10)>.CHECKGAMEGOLD < <$STR(D8)>
+#ACT
+<$STR(S10)>.MESSAGEBOX 对不起，您的元宝数量已不足<$STR(D8)>个！\　\对方无法接受挑战，挑战正式开始前请勿将元宝转移！\　\请您身上元宝恢复<$STR(D8)>个后通知对方点接受挑战！
+MESSAGEBOX 对不起，【<$STR(S10)>】的元宝数量已不足<$STR(D8)>个！\　\请通知其将元宝保持在<$STR(D8)>个，您再点接受挑战！
+BREAK
+#IF
+CheckGroupCount > <$STR(D8)>
+#ACT
+MESSAGEBOX 对不起，您的组队人数超过允许的【<$STR(D8)>人】！\　\请减少您的组队的人数再接受！
+BREAK
+#IF
+<$STR(S10)>.CheckGroupCount > <$STR(D8)>
+#ACT
+<$STR(S10)>.MESSAGEBOX 对不起，您的组队人数已超过允许的【<$STR(D8)>人】！\　\对方无法接受挑战，挑战正式开始前请勿增加组队人数！\　\请您将组队人数减少到<$STR(D8)>人后通知对方点接受挑战！
+MESSAGEBOX 对不起，【<$STR(S10)>】的组队人数超过允许的【<$STR(D8)>人】！\　\请通知其减少组队人数到【<$STR(D8)>人】您再点接受！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 组队开始计时<$STR(D9)> = $(组队开始提示时间)
+CALCVAR GLOBAL 组队开始判断<$STR(D9)> = 2
+GAMEGOLD - <$STR(D8)>
+<$STR(S10)>.GAMEGOLD - <$STR(D8)>
+CALCVAR GLOBAL 组队系统序号 = <$STR(D9)>
+Gmexecute $(组队开始提问命令) @Mir2m2组队擂台开始提示
+MESSAGEBOX 接受挑战成功，组队将在$(组队开始提示时间)秒后正式开始，请做好作战准备！\　\注意：传送进入地图前请勿增加组队人数，否则只传送您1人进入地图！
+close
+
+[@Mir2m2组队擂台开始提示]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$GLOBAL(组队系统序号)>
+#IF
+LARGE D9 0
+SMALL D9 10
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 组队开始判断<$STR(D9)> = 2
+#ELSEACT
+BREAK
+#ACT
+MOV S10
+#IF
+checkvar GLOBAL 组队擂主姓名<$STR(D9)> = <$USERNAME>
+#ACT
+MOV S10 免费脚本群:101529177
+#IF
+checkvar GLOBAL 组队应战姓名<$STR(D9)> = <$USERNAME>
+#ACT
+MOV S10 免费脚本群:101529177
+#IF
+EQUAL S10
+#ACT
+BREAK
+#IF
+CheckGroupCount > 0
+#ACT
+SENDMSG 12 $(组队公告提示前缀)组队挑战将在%t秒后传送您进入地图，请勿增加组队人数，否则只传送组长进入！ 253 255 $(组队开始提示时间)
+BREAK
+#ELSEACT
+SENDMSG 6 $(组队公告提示前缀)组队挑战将在%t秒后传送您进入地图，请勿增加组队人数，否则只传送组长进入！ 253 255 $(组队开始提示时间)
+BREAK
+
+[@Mir2m2组队擂台开始进入]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$GLOBAL(组队系统序号)>
+#IF
+LARGE D9 0
+SMALL D9 10
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 组队开始判断<$STR(D9)> = 3
+#ELSEACT
+BREAK
+#ACT
+MOV S10
+#IF
+checkvar GLOBAL 组队擂主姓名<$STR(D9)> = <$USERNAME>
+#ACT
+MOV S10 免费脚本群:101529177
+#IF
+checkvar GLOBAL 组队应战姓名<$STR(D9)> = <$USERNAME>
+#ACT
+MOV S10 免费脚本群:101529177
+#IF
+EQUAL S10
+#ACT
+BREAK
+#ELSEACT
+MOV S10 <$
+INC S10 GLOBAL(组队允许人数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$
+INC S10 GLOBAL(组队地图代码
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MAP <$STR(S10)>
+#IF
+CheckGroupCount > <$STR(D8)>
+#ACT
+SENDMSG 6 $(组队公告提示前缀)组队挑战正式开始，由于您的组队人数已超过<$STR(D8)>人，系统只传送您1人进入地图！
+BREAK
+#IF
+CheckGroupCount > 0
+#ACT
+GroupMapMove <$STR(S10)>
+SENDMSG 12 $(组队公告提示前缀)组队挑战正式开始，请在$(组队进行最大时长)分钟内分成胜负，否则判为平局！
+#ELSEACT
+SENDMSG 6 $(组队公告提示前缀)组队挑战正式开始，请在$(组队进行最大时长)分钟内分成胜负，否则判为平局！
+
+[@Mir2m2组队擂台清理场地]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$GLOBAL(组队系统序号)>
+#IF
+LARGE D9 0
+SMALL D9 10
+#ELSEACT
+BREAK
+#ACT
+MOV S10 <$
+INC S10 GLOBAL(组队地图代码
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+#IF
+ISONMAP <$STR(S10)>
+#ACT
+MAPMOVE 3 330 330
+
+[@Mir2m2组队擂台常量加载QM]
+#CALL [\Mir2m2组队擂台配置(免费脚本群.101529177)\Mir2m2组队擂台常量.ini] @Mir2m2组队擂台常量
+#INCLUDE 免费脚本群101529177.ini
+}

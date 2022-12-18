@@ -1,0 +1,907 @@
+(@storage @getback @upgradenow @getbackupgnow @Buy @Sell @Repair @s_Repai)
+%100
++10
++11
++19
++20
++21
++22
++23
++24
++25
++26
++31
++30
++5
++6
++15
+[@main]
+　   <COLOR=clFuchsia 我为你提供以下服务>          <COLOR=clFuchsia 天堂复古1.76小极品！>\
+-------------------------------------------------------------\ \
+<≮玩家攻略≯/@玩家攻略>   <≮专卖药店≯/@专卖药店>     <≮加官进爵≯/@加进爵>    <≮技能强化≯/@技能强化>\ \
+<≮玛雅洞穴≯/@玛雅洞穴>   <≮猪洞八层≯/@猪洞八层>     <≮东郊皇陵≯/@东郊皇陵>    <≮神泣废墟≯/@神泣废墟> \ \
+<≮武器升级≯/@wuqi>   <≮幸运项链≯/@xianglian>     <≮我存东西≯/@storage>    <≮我取东西≯/@getback>\ \  
+-------------------------------------------------------------\
+
+
+
+[@玩家攻略]
+
+
+我为你提供以下服务             天堂复古1.76小极品\
+---------------------------------------------------\
+本服所有装备由BOSS爆出:顶级装备为赤月装备，极品最高+\
+武器+7.金刚石唯一产出方式:由游戏内BOSS爆出，爆率1/3\ \
+
+本服为最纯净，最绿色的176复古小极品:无赞助，无鲜花，\
+无四格，无冲级奖励，无押镖，无比例，永不售出装备，等级\
+------------------------------------------------------\
+<非RMB玩家玩法介绍/@玩家攻略1>           <RMB玩家玩法介绍/@玩家攻略3> \
+
+
+
+[@玩家攻略1]
+【非RMB玩家】\
+------------------------------------------------------\
+　打开@服务传送到幻境7层.祖玛7层.玛雅1-2等地图打祖玛装备\
+注:打出祖玛装备兑换荣誉卖给RMB玩家获得元宝.\ \
+　最快升级路线:吃四倍经验卷猴.携带聚灵珠大.打开@服务传送到\
+幻3.4.6石墓阵等杀怪升级，获得经验的同时，珠子经验也会增加\
+----------------------------------------------------------\
+　       <下一页/@玩家攻略1>                     <首页/@玩家攻略>  \
+
+[@玩家攻略2]
+【非RMB玩家】\
+---------------------------------------------------------\
+　祖玛装备配齐全猴可以前往玛雅猪八.东郊皇陵.魔兽之地等地图\
+打BOSS获取金刚石.赤月装备.40级衣服等.本服金刚BOSS爆率为1/3\ \
+
+　在打宝的同时，建议玩家携带聚灵珠，吃四倍经验卷，打满聚灵珠后可\
+卖给RMB玩家获得大量元宝.档珠子经验存满后，可以自己使用，也\
+可以卖给RMB玩家获得元宝\
+-----------------------------------------------------------\
+　       <上一页/@玩家攻略>                     <首页/@玩家攻略>\
+
+
+[@玩家攻略3]
+【RMB玩家】\
+-----------------------------------------------------------\
+新手出来之后,找到游戏商人充值元宝。有了元宝之后，找散人玩家\
+购买荣誉卷回收经验,记得携带聚灵珠（大）\
+赤月装备及40级衣服,找玩家进行购买,自己协商价格,其次再找玩家\
+购买金刚石，到金刚石使者处，回收经验或锻造各种装备\
+　本服幸运项链可在土城左下角NPC处使用元宝升级，搞好等级9套\
+和装备后.可到各大地图进行愉快的玩耍.\
+-------------------------------------------------------------\
+　                                   <首页/@玩家攻略>         \
+
+
+
+
+
+[@技能强化]
+　  只要你给我足够的材料，我可以免费帮你合成四级技能！达到相应\
+的等级就可<COLOR=clRed 免费修炼>！修炼后<COLOR=clRed 威力提升1.2倍>。\ \
+
+<四级基本剑术/@技能1>         <四级雷电术/@技能11>           <四级治愈术/@技能111>     \
+<四级攻杀剑术/@技能2>         <四级疾光电影/@技能22>         <四级幽灵盾/@技能222>     \
+<四级半月弯刀/@技能3>         <四级地狱雷光/@技能33>         <四级神圣战甲术/@技能333> \
+<四级野蛮冲撞/@技能4>         <四级冰咆哮/@技能44>           <四级群体治疗术/@技能444> \
+<四级烈火剑法/@技能5>         <四级魔法盾/@技能55>           <四级灵魂火符/@技能555>   \
+<四级刺杀剑术/@技能6>         <四级火墙/@技能66>             <四级施毒术/@技能666>     \
+
+[@技能666]
+#ACT 
+MOV S1 施毒术
+MOV M1 500
+MOV S3 Taoist
+MOV M2 48 
+MOV M9 200
+DelayGoto 5 ~QIANGHUA 
+
+[@技能555]
+#ACT 
+MOV S1 灵魂火符
+MOV M1 50
+MOV S3 Taoist
+MOV M2 47 
+MOV M9 25
+DelayGoto 5 ~QIANGHUA 
+
+[@技能444]
+#ACT 
+MOV S1 群体治疗术
+MOV M1 10
+MOV S3 Taoist
+MOV M2 45 
+MOV M9 5
+DelayGoto 5 ~QIANGHUA 
+
+
+[@技能333]
+#ACT 
+MOV S1 神圣战甲术
+MOV M1 20
+MOV S3 Taoist
+MOV M2 46 
+MOV M9 10
+DelayGoto 5 ~QIANGHUA 
+
+[@技能222]
+#ACT 
+MOV S1 幽灵盾
+MOV M1 20
+MOV S3 Taoist
+MOV M2 46 
+MOV M9 10
+DelayGoto 5 ~QIANGHUA 
+
+
+[@技能111]
+#ACT 
+MOV S1 治愈术
+MOV M1 10
+MOV S3 Taoist
+MOV M2 44 
+MOV M9 5
+DelayGoto 5 ~QIANGHUA 
+
+
+[@技能66]
+#ACT 
+MOV S1 火墙
+MOV M1 500
+MOV S3 Wizard
+MOV M2 50 
+MOV M9 300
+DelayGoto 5 ~QIANGHUA 
+
+[@技能55]
+#ACT 
+MOV S1 魔法盾
+MOV M1 500
+MOV S3 Wizard
+MOV M2 48 
+MOV M9 200
+DelayGoto 5 ~QIANGHUA 
+
+[@技能44]
+#ACT 
+MOV S1 冰咆哮
+MOV M1 50
+MOV S3 Wizard
+MOV M2 48 
+MOV M9 25
+DelayGoto 5 ~QIANGHUA 
+
+[@技能33]
+#ACT 
+MOV S1 地狱雷光
+MOV M1 40
+MOV S3 Wizard
+MOV M2 47 
+MOV M9 20
+DelayGoto 5 ~QIANGHUA 
+
+[@技能22]
+#ACT 
+MOV S1 疾光电影
+MOV M1 30
+MOV S3 Wizard
+MOV M2 46 
+MOV M9 15
+DelayGoto 5 ~QIANGHUA 
+
+[@技能11]
+#ACT 
+MOV S1 雷电术
+MOV M1 20
+MOV S3 Wizard
+MOV M2 45 
+MOV M9 10
+DelayGoto 5 ~QIANGHUA 
+
+
+
+[@技能6]
+#ACT 
+MOV S1 刺杀剑术
+MOV M1 1000
+MOV S3 Warrior  
+MOV M2 50 
+MOV M9 500
+DelayGoto 5 ~QIANGHUA 
+
+[@技能5]
+#ACT 
+MOV S1 烈火剑法
+MOV M1 500
+MOV S3 Warrior  
+MOV M2 48 
+MOV M9 300
+DelayGoto 5 ~QIANGHUA 
+
+[@技能4]
+#ACT 
+MOV S1 野蛮冲撞
+MOV M1 40
+MOV S3 Warrior  
+MOV M2 47 
+MOV M9 20
+DelayGoto 5 ~QIANGHUA 
+
+
+[@技能3]
+#ACT 
+MOV S1 半月弯刀
+MOV M1 20
+MOV S3 Warrior  
+MOV M2 46 
+MOV M9 10
+DelayGoto 5 ~QIANGHUA 
+
+[@技能2]
+#ACT 
+MOV S1 攻杀剑术
+MOV M1 20
+MOV S3 Warrior  
+MOV M2 46 
+MOV M9 10
+DelayGoto 5 ~QIANGHUA 
+
+[@技能1]
+#ACT 
+MOV S1 基本剑术
+MOV M1 10
+MOV S3 Warrior  
+MOV M2 45 
+MOV M9 5
+DelayGoto 5 ~QIANGHUA 
+
+
+
+
+[~QIANGHUA] 
+#IF 
+CHECKJOB <$STR(S3)> 
+#ACT 
+QUERYVALUE 2 2 10 @NowQIANGHUA 合成[<$STR(S1)>]需要<$STR(M9)>张书页,<$STR(M1)>颗金刚石，修炼等级需要:<$STR(M2)>级\确认合成点击确定
+#ELSEACT 
+MESSAGEBOX 错误！请看清楚您自己是什么职业! 
+
+[@NowQIANGHUA]
+#IF 
+CHECKLEVELEX < <$STR(M2)> 
+#ACT 
+MESSAGEBOX <$STR(M2)>级以上才可以提升四级<$STR(S1)>! 
+BREAK 
+
+#IF 
+CHECKMAGICLEVEL <$STR(S1)> = 4
+#ACT 
+MESSAGEBOX 您的<$STR(S1)>已经四级了无须在提升! 
+BREAK 
+
+#IF 
+CHECKMAGICNAME <$STR(S1)> 
+CHECKGAMEDIAMOND ? <$STR(M1)> 
+checkitem 书页 <$STR(M9)>
+#ACT 
+GAMEDIAMOND - <$STR(M1)> 
+take 书页 <$STR(M9)>
+SKILLLEVEL <$STR(S1)> = 4
+SENDMSG 7 恭喜您的<$STR(S1)>技能已经提升到四级! 
+SENDMSG 0 恭喜【%S】成功提升四级<$STR(S1)>成功！技能再次飞跃！ 
+break 
+#ELSEACT 
+MESSAGEBOX 你的没有<$STR(M9)>书页金刚石不足<$STR(M1)>颗，或者你没有学习<$STR(S1)>！ 
+
+
+
+[@加进爵]
+<COLOR=clAqua 九品知县> + <COLOR=cllime 特殊封号> <COLOR=clFuchsia 上线+1点攻.魔.道属性>  →  <COLOR=clYellow 44级自动赠送>\
+<COLOR=clAqua 八品知府> + <COLOR=cllime 特殊封号> <COLOR=clFuchsia 上线+2点攻.魔.道属性>  →  <COLOR=clYellow 45级自动赠送>\
+<COLOR=clAqua 七品太守> + <COLOR=cllime 特殊封号> <COLOR=clFuchsia 上线+3点攻.魔.道属性>  →  <COLOR=clYellow 46级自动赠送>\
+<COLOR=clAqua 六品巡抚> + <COLOR=cllime 特殊封号> <COLOR=clFuchsia 上线+4点攻.魔.道属性>  →  <COLOR=clYellow 47级自动赠送>\
+<COLOR=clAqua 五品提督> + <COLOR=cllime 特殊封号> <COLOR=clFuchsia 上线+5点攻.魔.道属性>  →  <COLOR=clYellow 48级自动赠送>\
+<COLOR=clAqua 四品总督> + <COLOR=cllime 特殊封号> <COLOR=clFuchsia 上线+6点攻.魔.道属性>  →  <COLOR=clYellow 49级自动赠送>\
+<COLOR=clAqua 三品尚书> + <COLOR=cllime 特殊封号> <COLOR=clFuchsia 上线+7点攻.魔.道属性>  →  <COLOR=clYellow 50级自动赠送>\
+<COLOR=clAqua 二品太傅> + <COLOR=cllime 特殊封号> <COLOR=clFuchsia 上线+8点攻.魔.道属性>  →  <COLOR=clYellow 51级自动赠送>\
+<COLOR=clAqua 一统天下> + <COLOR=cllime 特殊封号> <COLOR=clFuchsia 上线+10点攻.魔.道属性> →  <COLOR=clYellow 52级自动赠送>\
+<COLOR=#254 注：以上封号及上线属性，玩家达到相应级别后，小退上线即可查看！>
+
+
+[@专卖药店]
+\ \  \ \
+<COLOR=clAqua 一一一一一一一一一一一一一一一一一一一一一一一一一一一一>\
+<COLOR=clFuchsia 大家PK必备良药，女人喝了气度非凡，男人喝了英俊潇洒！>\
+<COLOR=clAqua ⑤一☆→一一一一一一一一一一一一一一一一一一一一←☆一⑤>\
+<强效太阳包（5包）/@太阳包2>： 25元宝　 <强效太阳包（10包）/@太阳包10>： 50元宝    \
+;<COLOR=clAqua ⑤一☆→一一一一一一一一一一一一一一一一一一一一←☆一⑤>\
+;<万年雪霜包（5包）/@雪霜包2>： 50元宝　 <万年雪霜包（10包）/@雪霜包10>：100元宝    \
+<COLOR=clAqua ⑤一☆→一一一一一一一一一一一一一一一一一一一一←☆一⑤>\
+
+
+[@太阳包2]
+#IF
+CHECKBAGSIZE 5
+#ELSEACT
+messagebox 提示：请保留5个空格再来购买
+BREAK
+
+#IF
+CHECKBAGSIZE 5
+CHECKGAMEGOLD ? 25
+#ACT
+GAMEGOLD - 25
+give 强效太阳包(捆) 5
+BREAK
+#ELSEACT
+messagebox 提示：你的元宝不足以购买！
+BREAK
+
+
+[@太阳包10]
+#IF
+CHECKBAGSIZE 10
+#ELSEACT
+messagebox 提示：请保留10个空格再来购买
+BREAK
+
+#IF
+CHECKBAGSIZE 10
+CHECKGAMEGOLD ? 50
+#ACT
+GAMEGOLD - 50
+give 强效太阳包(捆) 10
+BREAK
+#ELSEACT
+messagebox 提示：你的元宝不足以购买！
+BREAK
+
+
+
+
+
+
+[@雪霜包2]
+#IF
+CHECKBAGSIZE 5
+#ELSEACT
+messagebox 提示：请保留5个空格再来购买
+BREAK
+
+#IF
+CHECKBAGSIZE 5
+CHECKGAMEGOLD ? 50
+#ACT
+GAMEGOLD - 50
+give 万年雪霜捆 5
+BREAK
+#ELSEACT
+messagebox 提示：你的元宝不足以购买！
+BREAK
+
+
+[@雪霜包10]
+#IF
+CHECKBAGSIZE 10
+#ELSEACT
+messagebox 提示：请保留2个空格再来购买
+BREAK
+
+#IF
+CHECKBAGSIZE 10
+CHECKGAMEGOLD ? 100
+#ACT
+GAMEGOLD - 100
+give 万年雪霜捆 10
+BREAK
+#ELSEACT
+messagebox 提示：你的元宝不足以购买！
+BREAK
+
+
+
+[@猪洞八层]
+随着暗之魔龙教主来到盟重大陆以后，它的小弟就将猪洞\
+占据，听说还有许多暗之统领级别的将领住在猪洞的最后\
+一层，它们身上可是带有许多宝贝的哦，勇士你想去争夺\
+它们身上的宝物吗？我这里有条密道直接可以到猪洞八层\
+勇士你要我传送你过去吗？\ \ \
+<我要花100元宝直接进入猪洞八层/@jin猪洞八层>             <离开/@exit> 
+
+[@jin猪洞八层]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+GIVE 回城卷 1
+MAPMOVE ZD8
+SENDMSG 7 本地图总共二层.
+SENDMSG 0 玩家「<$USERNAME>」从土城服务员处到达了[猪洞八层]!
+BREAK
+#ELSEACT
+MESSAGEBOX 需要100元宝用来支付我们的服务费用！
+BREAK
+
+
+
+[@东郊皇陵]
+地图介绍：地图分为4层，拥有暗之BOSS\
+进入条件：需要使用200元宝进入\
+地图爆率：双倍爆率双倍经验\
+刷怪时间：BOSS刷新时间为30-60分钟\
+特殊提示：进入第3层和第4层时将无法返回上一层！\ \
+<我要使用200元宝进入东郊皇陵/@jinru东郊皇陵>   <我还是去别的地图打打小怪吧/@exit>
+
+[@jinru东郊皇陵]
+#IF
+CHECKGAMEGOLD > 199
+#ACT
+GIVE 回城卷 1
+GAMEGOLD - 200  
+SENDMSG 1 【%s】花费200元白进入【东郊皇陵】。 
+MAPMOVE E701A
+#ELSEACT
+MESSAGEBOX 需要200元宝用来支付沃玛的服务费用！
+BREAK
+
+
+
+
+[@玛雅洞穴]
+盟重大陆上，存在着这样一个国度：那里的人们对于时间，\
+空间和历法的研究历史悠久。他们可以计算出万年以后的日\
+落潮汐，天体运行，他们甚至创造了大预言术，可以详尽的\
+预测未来的因果变化。他们是盟重大陆的巫师，是盟重大陆\
+上最神秘的存在。而强大的国家从来都不缺少宝物，玛雅人\
+将自己的财富都藏匿在玛雅神殿之中。而亿万年后的今天，\
+仍然有无数的冒险者去探索那神秘的宫殿。\ \
+<我也要花50元宝进去探索神秘的宫殿/@jin玛雅洞穴>           <离开/@exit>
+
+[@jin玛雅洞穴]
+#If
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+GIVE 回城卷 1
+mapmove Fama1 84 70
+SENDMSG 5 本地图总共三层.暴率为2倍.
+SENDMSG 0 玩家「<$USERNAME>」从土城服务员处到达了[玛雅洞穴]!
+BREAK
+#ELSEACT
+MESSAGEBOX 需要50元宝用来支付我们的服务费用！
+BREAK
+
+
+
+
+
+
+[@神泣废墟]
+年轻人，我新发现了一个神秘的地方，据说是以前神魔决战的魔神殿,\
+神魔都在这里陨落了，现在里面的怪物被神魔血淋浴后产生了变异!\
+装备也是一样。你想要极品装备的话可以进里面碰碰运气.进入需要200元宝。\
+并且进入后<每10秒钟扣5元宝>我进去碰碰运气等我存点钱再来\
+为了防止出现BUG,进入必须带上300元宝!\ \
+
+<进入/@进入神泣废墟>\
+
+[@进入神泣废墟]
+#IF
+CHECKGAMEGOLD > 299
+#ACT
+GameGold -  300
+MAPMOVE sqzd01
+SENDMSG 0 珐玛勇士『<$USERNAME>』进入了【神泣废墟】！想获得极品装备的赶快跟上啦……
+#ELSEACT
+Messagebox 进入神泣废墟需要200元宝.. \
+
+
+
+
+
+
+[@baoji]
+当你的项链幸运值已达到3点\
+就可以在我这里为你心爱的项链添加暴击\
+每次添加1点暴击需要100赤月精魂\
+成功率为100%  <我要添加暴击/@baoji1>\
+
+
+[@baoji1]
+#if
+CHECKITEMADDVALUE 3 1 = 3
+CHECKITEMADDVALUE 3 8 < 3
+checkitem 赤月精魂 100
+#act
+take 赤月精魂 100
+UPGRADEITEMEX 3 8 0 1 0
+sendmsg 5 恭喜您成功将您的项链成功加了一点暴击！
+#ELSEACT
+MESSAGEBOX 你的项链幸运不足，或材料不足，无法增加暴击
+BREAK
+
+
+[@wuqi]
+没有一个人来光顾，顾客，请进。\
+我的自尊使我不允许对这个物品的价格再要求打折。\ \
+ <开始武器升级/@upgrade>     <购买黑铁矿石/@购买黑铁矿石>\
+ <返回武器升级/@getbackupgnow>\
+ <听更多的歌/@heardsing>\ \
+ <离开/@exit>
+[@upgrade]
+你像是想要升级你的武器。给我看你的武器，\
+升级价格是<$UPGRADEWEAPONFEE>金币。修炼这个武器需要原料\
+<黑铁矿/@Biron>，<饰品/@Etc>，<武器/@Weapon>和<金币/@Gold>。\
+别的原料你可以使用你包内的物品。\
+你想委托你的武器进入修炼系统吗？\ \
+ <确认修炼/@confirmupgrade>\ \
+ <取消/@wuqi>\
+[@Biron]
+你可以在矿山里采到黑铁矿石。如果你想修炼过程得到\
+一个好得结果你最好拿给我更高纯度的黑铁矿。\
+顺便请记得，在修炼期间如果没有足够数量的黑色铁矿，\
+那怕你的矿石纯度再高修练的结果也可能不好。\ \
+ <返回/@upgrade>
+[@Etc]
+装饰品，项链，手镯当你的特殊技能融入了这种装饰物的时候，\
+能够加强你的武器。如果你给我好原料我能给你好结果。\
+如果你给我糟糕的装饰品那可能会失败，除非你有很好的运气。\ \
+ <返回/@upgrade>
+[@Weapon]
+只能对武器进行炼制。\
+如果你想要升级武器请给我你携带的武器...\ \
+ <返回/@upgrade>
+[@Gold]
+修练武器的金子太少...\
+你真的认为我的技术的价值就这么点数量的程度？\
+这个价格我不能做这个工作。\ \
+ <返回/@upgrade>
+[@confirmupgrade]
+给我看你给我的原料，修炼你的<$USERWEAPON>，我的视力不好，\
+我想从你的包里取得更多的饰品和黑铁矿石。\
+如果你有重要的物品，在你寄存在仓库后请回来。\ \
+ <请求修炼/@upgradenow>\ \
+ <在安排好以后再回来/@exit>
+[@heardsing]
+ 如果你给我3万金子我会再考虑一下...\ \
+ <支付3万金币/@paythree>\ \
+ <退出/@wuqi>
+[@paythree]
+不知名的杂草...\ \
+ <退出/@exit>
+[~@upgradenow_ok]
+我会把它弄得像新的一样，\
+所以请1分钟后再回来。\ \
+ <返回/@wuqi>
+[~@upgradenow_ing]
+我们工作的规则是一个人只能进行一个项目。\
+请下次再来...\ \
+ <返回/@Main>
+[~@upgradenow_fail]
+材料不够。请你下次来的时候，\
+准备好所有的矿石，武器和饰品。\
+当然，我的工作才是最基本的...\ \
+ <返回/@wuqi>
+[~@getbackupgnow_ok]
+就这样了，我尽我最大努力精炼了你的武器， 
+结果是否<成功/@Success>\
+只有在你使用过一次后才知道，出去试试吧。\ \
+ <退出/@exit>
+[@Success]
+通过使用它，你可以体会到它精炼的好处。\
+无论你的战斗对象是其他玩家还是怪物...\
+你都会发现这个成果...\ \
+ <退出/@exit>
+[~@getbackupgnow_ing]
+这个工作正忙着呢，请稍等片刻...\ \
+ <返回/@wuqi>
+[~@getbackupgnow_fail]
+以前你是不是寄存了很多东西？\
+如果你找我是为了取回你很久前寄存在这里的物品，\
+那你还是回去吧，我可记不起来了。\
+这也过去太长时间了...\ \
+ <返回/@wuqi>
+
+[@购买黑铁矿石]
+#IF
+CheckGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+GIVE 黑铁矿石
+#ELSEACT
+messagebox 你没有50元宝！
+
+
+[@storage]
+需要保管什么东西?\ \ 
+<返回/@main>
+[@getback]
+请看目录决定找什么东西.\ \ \  
+<返回/@main>
+[@getPreviouspage]
+#ACT
+goto @getback
+[@getnextpage]
+#ACT
+goto @getback
+[@xianglian]
+ ¤╭⌒╮╭⌒╮      \     
+ ╱◥██◣ ╭⌒╮     欢迎光临<COLOR=#254 提示：幸运项链可随机爆出>\ 
+︱田︱田田|╰-------  本服灯笼，记忆，白虎，天堂项链可升幸运\
+╬╬╬╬╬╬╬╬╬╬ <COLOR=#254 注意：项链升级不会破碎，成功率为随机>\
+-------------------------------------------------------\
+升级<COLOR=#254 项链>幸运+1   <COLOR=#254 需要2000元宝   成功率 100%>   <确定升级/@幸运一>\
+升级<COLOR=#254 项链>幸运+2   <COLOR=#254 需要3000元宝   成功率 20%>    <确定升级/@幸运二>\
+升级<COLOR=#254 项链>幸运+3   <COLOR=#254 需要5000元宝   成功率 10%>    <确定升级/@幸运三>\
+<幸运项链铸造暴击/@项链铸造暴击>                           <返回首页/@main>\
+
+
+
+[@项链铸造暴击]
+　  我曾经在上古洞穴找到了一本秘籍.经过不断的学习和反复的推\
+敲.今日总算是获得了成功.现在你给我<COLOR=#254 相应的材料>.我就可以帮你把\
+佩戴在身上幸运3的<COLOR=#254 灯笼、白虎、记忆、天堂项链>才能够练出暴击属性\ \
+
+铸造项链暴击+1 幸运+3项链+1000点灵符  <COLOR=#254 100%成功>  <确实铸造/@铸造暴击1>\
+铸造项链暴击+2 暴击+1项链+2500点灵符  <COLOR=#254 100%成功>  <确实铸造/@铸造暴击2>\
+铸造项链暴击+3 暴击+2项链+5000点灵符  <COLOR=#254 100%成功>  <确实铸造/@铸造暴击3>\ \
+
+注：只有<COLOR=#254 幸运+3>的项链才可铸造！\
+
+
+[@铸造暴击1]
+#IF
+CHECKUSEITEM 3
+#elseact
+messagebox 您当前没有佩戴项链！
+break
+
+#IF(1)
+CHECKITEMW 记忆项链
+CHECKITEMW 白色虎齿项链
+CHECKITEMW 灯笼项链
+CHECKITEMW 天堂战链
+CHECKITEMW 天堂法链
+CHECKITEMW 天堂道链
+#ELSEACT
+messagebox 您当前佩戴项链不可升级。\　\本服只限记忆项链、灯笼项链、白色虎齿项链、天堂项链升级
+break
+
+#IF
+CheckItemAddValue 3 1 = 3
+CHECKGAMEGIRD > 999
+#ACT
+GAMEGIRD - 1000
+Gmexecute 改属性 3 8 1
+SENDMSG 0 恭喜玩家【%s】在幸运使者处把自己的项链提升到了暴击1
+#ELSEACT
+messagebox 升级条件不足
+
+
+[@铸造暴击2]
+#IF
+CHECKUSEITEM 3
+#elseact
+messagebox 您当前没有佩戴项链！
+break
+
+#IF(1)
+CHECKITEMW 记忆项链
+CHECKITEMW 白色虎齿项链
+CHECKITEMW 灯笼项链
+CHECKITEMW 天堂战链
+CHECKITEMW 天堂法链
+CHECKITEMW 天堂道链
+#ELSEACT
+messagebox 您当前佩戴项链不可升级。\　\本服只限记忆项链、灯笼项链、白色虎齿项链、天堂项链升级
+break
+
+
+#IF
+CheckItemAddValue 3 8 = 1
+CHECKGAMEGIRD > 2499
+#ACT
+GAMEGIRD - 2500
+Gmexecute 改属性 3 8 2
+SENDMSG 0 恭喜玩家【%s】在幸运使者处把自己的项链提升到了暴击2
+#ELSEACT
+messagebox 升级条件不足
+
+
+[@铸造暴击3]
+#IF
+CHECKUSEITEM 3
+#elseact
+messagebox 您当前没有佩戴项链！
+break
+
+#IF(1)
+CHECKITEMW 记忆项链
+CHECKITEMW 白色虎齿项链
+CHECKITEMW 灯笼项链
+CHECKITEMW 天堂战链
+CHECKITEMW 天堂法链
+CHECKITEMW 天堂道链
+#ELSEACT
+messagebox 您当前佩戴项链不可升级。\　\本服只限记忆项链、灯笼项链、白色虎齿项链、天堂项链升级
+break
+
+
+#IF
+CheckItemAddValue 3 8 = 2
+CHECKGAMEGIRD > 4999
+#ACT
+GAMEGIRD - 5000
+Gmexecute 改属性 3 8 3
+SENDMSG 0 恭喜玩家【%s】在幸运使者处把自己的项链提升到了暴击3
+#ELSEACT
+messagebox 升级条件不足
+
+
+
+
+
+[@幸运一]
+#IF
+CHECKUSEITEM 3
+#elseact
+messagebox 您当前没有佩戴项链！
+break
+
+#IF(1)
+CHECKITEMW 记忆项链
+CHECKITEMW 白色虎齿项链
+CHECKITEMW 灯笼项链
+CHECKITEMW 天堂战链
+CHECKITEMW 天堂法链
+CHECKITEMW 天堂道链
+#ELSEACT
+messagebox 您当前佩戴项链不可升级。\　\本服只限记忆项链、灯笼项链、白色虎齿项链、天堂项链升级
+break
+
+
+#IF
+CheckItemAddValue 3 1 = 0
+CheckGAMEGOLD > 1999
+#ACT
+GAMEGOLD - 2000
+goto @幸运一a
+#ELSEACT
+messagebox 升级条件不足！
+[@幸运一a]
+#IF
+TRUE
+#ACT
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 0 恭喜玩家【%s】在幸运使者处把自己的项链提升到了幸运1
+break
+[@幸运二]
+#IF
+CHECKUSEITEM 3
+#elseact
+messagebox 您当前没有佩戴项链！
+break
+
+#IF(1)
+CHECKITEMW 记忆项链
+CHECKITEMW 白色虎齿项链
+CHECKITEMW 灯笼项链
+CHECKITEMW 天堂战链
+CHECKITEMW 天堂法链
+CHECKITEMW 天堂道链
+#ELSEACT
+messagebox 您当前佩戴项链不可升级。\　\本服只限记忆项链、灯笼项链、白色虎齿项链、天堂项链升级
+break
+
+#IF
+CheckItemAddValue 3 1 = 1
+CheckGAMEGOLD > 2999
+#ACT
+GAMEGOLD - 3000
+goto @幸运二a
+#ELSEACT
+messagebox 升级条件不足
+[@幸运二a]
+#IF
+random 8
+#ACT
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 0 恭喜玩家【%s】在幸运使者处把自己的项链提升到了幸运2
+break
+
+#IF
+TRUE
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+
+[@幸运三]
+#IF
+CHECKUSEITEM 3
+#elseact
+messagebox 您当前没有佩戴项链！
+break
+
+#IF(1)
+CHECKITEMW 记忆项链
+CHECKITEMW 白色虎齿项链
+CHECKITEMW 灯笼项链
+CHECKITEMW 天堂战链
+CHECKITEMW 天堂法链
+CHECKITEMW 天堂道链
+#ELSEACT
+messagebox 您当前佩戴项链不可升级。\　\本服只限记忆项链、灯笼项链、白色虎齿项链、天堂项链升级
+break
+
+#IF
+CheckItemAddValue 3 1 = 2
+CheckGAMEGOLD > 4999
+#ACT
+GAMEGOLD - 5000
+goto @幸运三a
+#ELSEACT
+messagebox 升级条件不足
+
+[@幸运三a]
+#IF
+random 10
+#ACT
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 0 恭喜玩家【%s】在幸运使者处把自己的项链提升到了幸运3
+break
+
+#IF
+TRUE
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+
+
+[@幸运四]
+#IF
+CHECKUSEITEM 3
+#elseact
+messagebox 您当前没有佩戴项链！
+break
+
+#IF(1)
+CHECKITEMW 记忆项链
+CHECKITEMW 白色虎齿项链
+CHECKITEMW 灯笼项链
+CHECKITEMW 天堂战链
+CHECKITEMW 天堂法链
+CHECKITEMW 天堂道链
+#ELSEACT
+messagebox 您当前佩戴项链不可升级。\　\本服只限记忆项链、灯笼项链、白色虎齿项链、天堂项链升级
+break
+
+#IF
+CheckItemAddValue 3 1 = 3
+CheckGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+goto @幸运四a
+#ELSEACT
+messagebox 升级条件不足
+[@幸运四a]
+#IF
+random 3
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+
+#IF
+random 2
+#ACT
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 0 恭喜玩家【%s】在幸运使者处把自己的项链提升到了幸运4
+break
+
+#IF
+random 1
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break

@@ -1,0 +1,314 @@
+()
+%100
+[@main]  
+转职送35之前所有三级技能，不包括，冰咆哮英雄刺杀，合击\
+<英雄变更职业/@变更英雄职业>   需要2000元宝   <英雄变更性别/@性别变更11>   需要1000元宝\
+　\
+<主体变更职业/@职业变更>   需要2000元宝   <主体变更性别/@性别变更>   需要1000元宝\ 
+　
+[@性别变更11]
+#IF
+H.gender man
+#SAY
+你的英雄是不是做猛男没什么意思呀，想不想尝尝做淑女的滋味呀！！！\  \
+『<尝尝/@towoman11>』\ \
+〖<返回/@变性转职>〗 〖<关闭/@exit>〗
+#ELSESAY
+你的英雄是不是做淑女挺累的，想不想尝尝做猛男的滋味呀！！！\ \
+『<尝尝/@toman11>』\ \
+〖<返回/@变性转职>〗 〖<关闭/@exit>〗
+[@toman11]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+H.CHANGEGENDER 0
+#SAY
+呵呵，你的英雄已经变成一位猛男了。\ \
+<返回/@变性转职>
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足1000个。
+[@towoman11]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+H.CHANGEGENDER 1
+#SAY
+呵呵，你的英雄已经变成一位淑女了。\ \
+〖<返回/@变性转职>〗 〖<关闭/@exit>〗
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足1000个。
+[@性别变更]
+#IF
+gender man
+#SAY
+是不是做猛男没什么意思呀，想不想尝尝做淑女的滋味呀！！！\  \
+『<尝尝/@towoman>』\ \
+〖<返回/@变性转职>〗 〖<关闭/@exit>〗
+#ELSESAY
+是不是做淑女挺累的，想不想尝尝做猛男的滋味呀！！！\ \
+『<尝尝/@toman>』\ \
+〖<返回/@变性转职>〗 〖<关闭/@exit>〗
+[@toman]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+CHANGEGENDER 0
+#SAY
+呵呵，你已经变成一位猛男了。\ \
+<返回/@变性转职>
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足1000个。
+[@towoman]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+CHANGEGENDER 1
+#SAY
+呵呵，你已经变成一位淑女了。\ \
+〖<返回/@变性转职>〗 〖<关闭/@exit>〗
+#ELSEACT
+MESSAGEBOX 对不起，您的元宝已经不足1000个。
+[@职业变更]
+#IF
+CHECKJOB warrior
+#SAY
+是不是战士不好玩呀，换换别的职业试试吧！\ \
+『<玩玩法师/@法师>』\
+『<玩玩道士/@道士>』\ \
+〖<返回/@changjob>〗〖<关闭/@exit>〗
+#ACT
+break
+#IF
+CHECKJOB wizard
+#SAY
+是不是法师不好玩呀，换换别的职业试试吧！\ \
+『<玩玩战士/@战士>』\
+『<玩玩道士/@道士>』\ \
+〖<返回/@changjob>〗〖<关闭/@exit>〗
+#ACT
+break
+#IF
+CHECKJOB taoist
+#SAY
+是不是道士不好玩呀，换换别的职业试试吧！\ \
+『<玩玩战士/@战士>』\
+『<玩玩法师/@法师>』\ \
+〖<返回/@changjob>〗〖<关闭/@exit>〗
+#ACT
+break
+[@战士]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 由于转职涉及到合击技能，\　\所以请先召唤出你的英雄，再选择转职。
+BREAK
+#IF
+Checkjob Warrior
+#ACT
+MESSAGEBOX 您是战士
+BREAK
+#IF
+CHECKGAMEGOLD < 2000
+#ACT
+MESSAGEBOX 你的元宝不足2000颗
+BREAK
+#IF
+CheckLevelEx > 0
+#ACT
+GAMEGOLD - 2000
+CHANGEJOB Warrior
+DelNoJobSkill
+CLEARSKILL
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 烈火剑法 3
+ADDSKILL 野蛮冲撞 3
+SENDMSG 0 恭喜【%s】转职成功，成功转职为一名战士，学会战士全部技能。 255 180
+MOV D99 1
+DELAYCALL 1 ~TS5AndTS6
+BREAK
+[@法师]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 由于转职涉及到合击技能，\　\所以请先召唤出你的英雄，再选择转职。
+BREAK
+#IF
+Checkjob Wizard
+#ACT
+MESSAGEBOX 您是法师
+BREAK
+#IF
+CHECKGAMEGOLD < 2000
+#ACT
+MESSAGEBOX 你的元宝不足2000颗
+BREAK
+#IF
+CheckLevelEx > 0
+#ACT
+GAMEGOLD - 2000
+CHANGEJOB Wizard
+DelNoJobSkill
+CLEARSKILL
+ADDSKILL 雷电术 3
+ADDSKILL 抗拒火环 3
+ADDSKILL 疾光电影 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 爆裂火焰 3
+ADDSKILL 火墙 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+SENDMSG 0 恭喜【%s】转职成功，成功转职为一名法师，学会法师全部技能。 255 180
+MOV D99 1
+DELAYCALL 1 ~TS5AndTS6
+BREAK
+[@道士]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 由于转职涉及到合击技能，\　\所以请先召唤出你的英雄，再选择转职。
+BREAK
+#IF
+Checkjob Taoist
+#ACT
+MESSAGEBOX 你就是道士职业，不需要再转成道士。
+BREAK
+#IF
+CHECKGAMEGOLD < 2000
+#ACT
+MESSAGEBOX 您是道士
+BREAK
+#IF
+CheckLevelEx > 0
+#ACT
+CHANGEJOB Taoist
+DelNoJobSkill
+CLEARSKILL
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 隐身术 3
+ADDSKILL 召唤神兽 3
+SENDMSG 0 恭喜【%s】转职成功，成功转职为一名道士，学会道士全部技能。 255 180
+MOV D99 1
+DELAYCALL 1 ~TS5AndTS6
+BREAK
+[@变更英雄职业]
+想把你的英雄变更为其它职业的英雄？\
+<转职英雄不会等级>，并且转职完后勿必小退。\
+只要你交纳2000个元宝，我即可将你的英雄成功转职。\
+但是合击技能将会被删除，只给予新职业的部分技能、\
+是否同意将英雄转职呢？\
+<我同意将英雄转成战士/@同意英雄转职1>\
+<我同意将英雄转成法师/@同意英雄转职2>\
+<我同意将英雄转成道士/@同意英雄转职3>\
+[@同意英雄转职1]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 请先召唤出你的英雄，再选择英雄转职。
+BREAK
+#IF
+H.Checkjob Warrior
+#ACT
+MESSAGEBOX 你的英雄就是战士职业
+BREAK
+#IF
+CHECKGAMEGOLD < 2000
+#ACT
+MESSAGEBOX 你的元宝不足2000颗
+BREAK
+#IF
+CHECKHEROONLINE
+#ACT
+GAMEGOLD - 2000
+H.CHANGEJOB Warrior
+H.DelNoJobSkill
+H.ADDSKILL 英雄基本剑术 3
+H.ADDSKILL 英雄攻杀剑术 3
+H.ADDSKILL 英雄半月弯刀 3
+H.ADDSKILL 英雄野蛮冲撞 3
+H.ADDSKILL 英雄烈火剑法 3
+H.SENDMSG 0 恭喜【%s】转职成功，成功转职为一名战士，学会战士全部技能。 255 180
+MOV D99 1
+DELAYCALL 1 ~TS5AndTS6
+BREAK
+[@同意英雄转职2]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 请先召唤出你的英雄，再选择英雄转职。
+BREAK
+#IF
+H.Checkjob Wizard
+#ACT
+MESSAGEBOX 你的英雄就是法师职业
+BREAK
+#IF
+CHECKGAMEGOLD < 2000
+#ACT
+MESSAGEBOX 你的元宝不足2000颗
+BREAK
+#IF
+CHECKHEROONLINE
+#ACT
+GAMEGOLD - 2000
+H.CHANGEJOB Wizard
+H.DelNoJobSkill
+H.ADDSKILL 英雄抗拒火环 3
+H.ADDSKILL 英雄雷电术 3
+H.ADDSKILL 英雄疾光电影 3
+H.ADDSKILL 英雄火墙 3
+H.ADDSKILL 英雄魔法盾 3
+H.ADDSKILL 英雄冰咆哮 3
+H.SENDMSG 0 恭喜【%s】转职成功，成功转职为一名法师，学会法师全部技能。 255 180
+MOV D99 1
+DELAYCALL 1 ~TS5AndTS6
+BREAK
+[@同意英雄转职3]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 请先召唤出你的英雄，再选择英雄转职。
+BREAK
+#IF
+H.Checkjob Taoist
+#ACT
+MESSAGEBOX 你的英雄就是道士职业
+BREAK
+#IF
+CHECKGAMEGOLD < 2000
+#ACT
+MESSAGEBOX 你的元宝不足2000颗
+BREAK
+#IF
+CHECKHEROONLINE
+#ACT
+GAMEGOLD - 2000
+H.CHANGEJOB Taoist
+H.DelNoJobSkill
+H.ADDSKILL 英雄治愈术 3
+H.ADDSKILL 英雄精神战法 3
+H.ADDSKILL 英雄施毒术 3
+H.ADDSKILL 英雄灵魂火符 3
+H.ADDSKILL 英雄幽灵盾 3
+H.ADDSKILL 英雄神圣战术 3
+H.ADDSKILL 英雄隐身术 3
+H.ADDSKILL 英雄集体隐身 3
+H.ADDSKILL 英雄召唤神兽 3
+H.SENDMSG 0 恭喜【%s】转职成功，成功转职为一名道士，学会道士全部技能。 255 180
+MOV D99 1
+DELAYCALL 1 ~TS5AndTS6
+BREAK

@@ -1,0 +1,121 @@
+()
+%100
+[@main]
+只有剩下最后一名成员才可以获得奖励\
+有一名以上玩家将不可以得到奖励\
+领取奖励将在比赛结束后，45分到50分内领取!\
+过了这段时间或者还没有将敌人杀光将不能领取\
+不在规定时间内将不能领取!\ \
+<我要领取奖励/@我要领取>       <返回盟重/@mengzhong> \
+<我要领取奖励/@我要领取>       <返回盟重/@mengzhong> \
+[@我要领取]
+#IF
+CHECKMAPHUMANCOUNT qunying = 1
+#ACT
+SENDMSG 0 群英争霸大赛正在进行中，请参加比赛的玩家赶快进入，奖励非常好！
+goto @lingqu
+#ELSESAY
+难道地图里只有你一个人吗？？？\
+难道地图里只有你一个人吗？？？\
+难道地图里只有你一个人吗？？？\
+难道地图里只有你一个人吗？？？\
+[@lingqu]
+#IF
+hour 19 19
+min 45 50
+#act
+goto @lingqu2
+break
+#IF
+hour 21 21
+min 45 50
+#act
+goto @lingqu2
+break
+#IF
+hour 23 23
+min 45 50
+#act
+goto @lingqu2
+break
+#IF
+hour 01 01
+min 45 50
+#act
+goto @lingqu2
+break
+#IF
+hour 03 03
+min 45 50
+#act
+goto @lingqu2
+break
+#IF
+hour 05 05
+min 45 50
+#act
+goto @lingqu2
+break
+#IF
+hour 07 07
+min 45 50
+#act
+goto @lingqu2
+break
+#IF
+hour 09 09
+min 45 50
+#act
+goto @lingqu2
+break
+#ELSESAY
+#IF
+hour 11 11
+min 45 50
+#act
+goto @lingqu2
+break
+#IF
+hour 13 13
+min 45 50
+#act
+goto @lingqu2
+break
+#IF
+hour 15 15
+min 45 50
+#act
+goto @lingqu2
+break
+#IF
+hour 17 17
+min 45 50
+#act
+goto @lingqu2
+break
+#ELSESAY
+领取时间还没到或者超过了领取时间.不能领取奖励！\ 
+领取时间还没到或者超过了领取时间.不能领取奖励！\ 
+领取时间还没到或者超过了领取时间.不能领取奖励！\ 
+领取时间还没到或者超过了领取时间.不能领取奖励！\ 
+[@lingqu2]
+#IF
+checknamelist ..\QuestDiary\数据文件\群英争霸领奖名单.txt HardDisk
+#act
+goto @guanya
+mapmove t225
+#ELSEACT
+give 1000元宝 1
+SENDMSG 0 恭喜玩家【%s】成为群英争霸大赛冠军，获得许多好东东！！！
+SENDMSG 0 恭喜玩家【%s】成为群英争霸大赛冠军，获得许多好东东！！！
+SENDMSG 0 恭喜玩家【%s】成为群英争霸大赛冠军，获得许多好东东！！！
+SENDMSG 0 恭喜玩家【%s】成为群英争霸大赛冠军，获得许多好东东！！！
+addnamelist ..\QuestDiary\数据文件\群英争霸领奖名单.txt HardDisk
+mapmove 3 330 330
+[@guanya]
+你已经领取过了奖励！已经被我们查处，你将被关押\ \
+<离开[url=]/@exit[/url]>
+[@mengzhong]
+#if
+#act
+mapmove 3 330 330

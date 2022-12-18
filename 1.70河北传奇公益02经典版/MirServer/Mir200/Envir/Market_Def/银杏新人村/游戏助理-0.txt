@@ -1,0 +1,5 @@
+(@bigstorage @biggetback @getnextpage @getPreviouspage)
+%100
+[@main]
+#ACT
+#CALL	[\服务\助理.txt] @助理

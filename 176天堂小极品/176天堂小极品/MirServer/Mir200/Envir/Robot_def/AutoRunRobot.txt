@@ -1,0 +1,42 @@
+#AUTORUN NPC MIN 5 @游戏说明
+#AutoRun NPC Min 30 @刷摇钱树
+#AutoRun NPC Min 30 @功城提示
+#AutoRun NPC Min 1 @全服元宝统计
+#AutoRun NPC Min 1 @大额元宝统计
+
+#AutoRun NPC RunOnWeek 2:19:05 @老区功城提示
+#AutoRun NPC RunOnWeek 4:19:05 @老区功城提示
+#AutoRun NPC RunOnWeek 6:19:05 @老区功城提示
+#AutoRun NPC RunOnWeek 7:19:05 @老区功城提示
+
+#AutoRun NPC RUNONDAY 20:59 @武林大会开启
+#AutoRun NPC RUNONDAY 21:19 @武林大会停止
+#AutoRun NPC RUNONDAY 21:29 @武林大会领奖
+
+
+#AutoRun NPC RUNONDAY 19:01 @设首次功沙
+#AutoRun NPC RUNONDAY 00:01 @过一天
+
+#AutoRun NPC MIN 1 @贵宾房间计时
+#AutoRun NPC RUNONDAY 0:01:00 @每日清理
+#AutoRun NPC SEC 1 @自定义全局变量申明
+
+#AutoRun NPC RUNONDAY 22:00 @行会争夺战11
+#AutoRun NPC RUNONDAY 22:15 @行会争夺战
+#AutoRun NPC RUNONDAY 22:25 @行会争夺战1
+#AutoRun NPC RUNONDAY 22:29 @行会争夺战2
+#AutoRun NPC RUNONDAY 22:30 @行会争霸入口关闭
+#AutoRun NPC RUNONDAY 22:31 @转移玩家
+#AutoRun NPC RUNONDAY 22:50 @转移玩家1
+
+#AutoRun NPC RUNONDAY 19:00 @开放押镖
+#AutoRun NPC RUNONDAY 20:00 @关闭押镖
+
+#AutoRun NPC RUNONDAY 19:59 @开区激情夺宝
+#AutoRun NPC RUNONDAY 21:00 @关闭激情夺宝
+
+#AutoRun NPC RUNONDAY 15:00 @开区屠龙战场
+#AutoRun NPC RUNONDAY 16:00 @关闭屠龙战场
+
+
+#AutoRun NPC Min 35 @红包大雨

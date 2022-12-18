@@ -1,0 +1,34 @@
+; 此 版 本 来 自 润 芒 论 坛 ｗ ｗｗ.ｒｕｎｍａｎｇ.ｃｏｍ
+
+[@Login]
+#IF
+ISADMIN
+#ACT
+goto @GM
+#ELSEACT
+GOTO @登陆执行
+SETOFFLINEPLAY ON
+
+[@GM]
+#CALL [\登陆\管理员.txt] @管理员
+
+[@登陆执行]
+#CALL [\登陆\新人登陆.txt] @新人登陆
+#CALL [\登陆\沙城主.txt] @沙城主
+#CALL [\登陆\经验设置.txt] @经验
+#CALL [\登陆\公告设置.txt] @公告
+#CALL [\登陆\升级提示.txt] @升级提示
+#CALL [\会员\封号.txt] @封号
+
+
+[@RESUME]
+#ACT
+SENDMSG 7 　　　　　　因为你上次下线的时候直接大退了 253 255
+SENDMSG 7 　　　　　　　　　　　　　　　　　　　　　　　　 253 255
+SENDMSG 7 　　　　　　　管理员为避免你在游戏中出现数据错误 253 255
+SENDMSG 7 　　　　　　　　　　　　　　　　　　　　　　　　 253 255
+SENDMSG 7 　　　　　　　　　所以请你小退一下再重新登陆 253 255
+SENDMSG 7 　　　　　　　　　　　　　　　　　　　　　　　　 253 255
+KICK
+SETOFFLINEPLAY ON
+

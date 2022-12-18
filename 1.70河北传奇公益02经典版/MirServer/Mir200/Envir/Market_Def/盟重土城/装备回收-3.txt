@@ -1,0 +1,812 @@
+[@回收]
+{
+.\◆<沃玛回收>◆    ◆<祖玛回收/@祖玛>◆    ◆<赤月回收/@赤月>◆ \
+由于本服装备非常难打,此回收比例不作为游戏内装备的实际价值！\
+<COLOR=253 首饰每个换取10万传奇币!!>\
+<幽灵项链/@幽灵项链>  <龙之戒指/@龙之戒指>\
+<生命项链/@生命项链> <思贝儿手镯/@思贝儿手镯> <红宝石戒指/@红宝石戒指>\
+<天珠项链/@天珠项链> <心灵手镯/@心灵手镯>   <铂金戒指/@铂金戒指>\
+<COLOR=253 武器每把换取20万传奇币!!>\
+<井中月/@井中月> <无极棍/@无极棍>  
+[@祖玛]
+.\◆<沃玛回收/@回收>◆    ◆<祖玛回收>◆    ◆<赤月回收/@赤月>◆ \
+由于本服装备非常难打,此回收比例不作为游戏内装备的实际价值！\
+<COLOR=253 首饰每个换取5元宝!!>\
+<绿色项链/@绿色项链> <骑士手镯/@骑士手镯> <力量戒指/@力量戒指>\
+<恶魔铃铛/@恶魔铃铛> <龙之手镯/@龙之手镯> <紫 碧 螺/@紫碧螺>\
+<灵魂项链/@灵魂项链> <三眼手镯/@三眼手镯> <泰坦戒指/@泰坦戒指>\
+<COLOR=253 武器每个换取20元宝!!>\
+<裁决之杖/@裁决之杖>   <骨玉权杖/@骨玉权杖>   <龙纹剑/@龙纹剑>\
+
+[@赤月]
+.\◆<沃玛回收/@回收>◆    ◆<祖玛回收/@祖玛>◆    ◆<赤月回收>◆ \
+由于本服装备非常难打,此回收比例不作为游戏内装备的实际价值！\
+<COLOR=253 首饰每个换取50元宝!!>\
+<圣战头盔/@圣战头盔> <圣战项链/@圣战项链> <圣战手镯/@圣战手镯> <圣战戒指/@圣战戒指>\
+<法神头盔/@法神头盔> <法神项链/@法神项链> <法神手镯/@法神手镯> <法神戒指/@法神戒指>\
+<天尊头盔/@天尊头盔> <天尊项链/@天尊项链> <天尊手镯/@天尊手镯> <天尊戒指/@天尊戒指>\
+;<COLOR=253 新衣服每个换取20元宝!!>\
+
+;<天魔神甲/@天魔> <圣战宝甲/@宝甲> <法神披风/@披风> <霓裳羽衣/@羽衣> <天尊道袍/@道袍> <天师长袍/@天师>
+[@绿色项链]
+#if
+checkitem 绿色项链 1
+#act
+take 绿色项链 1
+GAMEGOLD + 5
+goto @祖玛
+#ELSEACT
+MESSAGEBOX 你没有绿色项链！
+goto @祖玛
+[@恶魔铃铛]
+#if
+checkitem 恶魔铃铛 1
+#act
+take 恶魔铃铛 1
+GAMEGOLD + 5
+goto @祖玛
+#ELSEACT
+MESSAGEBOX 你没有恶魔铃铛！
+goto @祖玛
+[@灵魂项链]
+#if
+checkitem 灵魂项链 1
+#act
+take 灵魂项链 1
+GAMEGOLD + 5
+goto @祖玛
+#ELSEACT
+MESSAGEBOX 你没有灵魂项链！
+goto @祖玛
+[@骑士手镯]
+#if
+checkitem 骑士手镯 1
+#act
+take 骑士手镯 1
+GAMEGOLD + 5
+goto @祖玛
+#ELSEACT
+MESSAGEBOX 你没有骑士手镯！
+goto @祖玛
+[@龙之手镯]
+#if
+checkitem 龙之手镯 1
+#act
+take 龙之手镯 1
+GAMEGOLD + 5
+goto @祖玛
+#ELSEACT
+MESSAGEBOX 你没有龙之手镯！
+goto @祖玛
+[@三眼手镯]
+#if
+checkitem 三眼手镯 1
+#act
+take 三眼手镯 1
+GAMEGOLD + 5
+goto @祖玛
+#ELSEACT
+MESSAGEBOX 你没有三眼手镯！
+goto @祖玛
+[@力量戒指]
+#if
+checkitem 力量戒指 1
+#act
+take 力量戒指 1
+GAMEGOLD + 5
+goto @祖玛
+#ELSEACT
+MESSAGEBOX 你没有力量戒指！
+goto @祖玛
+[@紫碧螺]
+#if
+checkitem 紫碧螺 1
+#act
+take 紫碧螺 1
+GAMEGOLD + 5
+goto @祖玛
+#ELSEACT
+MESSAGEBOX 你没有紫碧螺！
+goto @祖玛
+[@泰坦戒指]
+#if
+checkitem 泰坦戒指 1
+#act
+take 泰坦戒指 1
+GAMEGOLD + 5
+goto @祖玛
+#ELSEACT
+MESSAGEBOX 你没有泰坦戒指！
+goto @祖玛
+[@裁决之杖]
+#if
+checkitem 裁决之杖 1
+#act
+take 裁决之杖 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[裁决之杖]得到<20>元宝
+goto @祖玛
+#ELSEACT
+MESSAGEBOX 你没有裁决之杖！
+goto @祖玛
+[@龙纹剑]
+#if
+checkitem 龙纹剑 1
+#act
+take 龙纹剑 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[龙纹剑]得到<20>元宝
+goto @祖玛
+#ELSEACT
+MESSAGEBOX 你没有龙纹剑！
+goto @祖玛
+[@骨玉权杖]
+#if
+checkitem 骨玉权杖 1
+#act
+take 骨玉权杖 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[骨玉权杖]得到<20>元宝
+goto @祖玛
+#ELSEACT
+MESSAGEBOX 你没有骨玉权杖！
+goto @祖玛
+[@圣战头盔]
+#if
+checkitem 圣战头盔 1
+#act
+take 圣战头盔 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[圣战头盔]得到<50>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有圣战头盔！
+goto @赤月
+[@圣战项链]
+#if
+checkitem 圣战项链 1
+#act
+take 圣战项链 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[圣战项链]得到<50>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有圣战项链！
+goto @赤月
+[@圣战手镯]
+#if
+checkitem 圣战手镯 1
+#act
+take 圣战手镯 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[圣战手镯]得到<50>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有圣战手镯！
+goto @赤月
+[@圣战戒指]
+#if
+checkitem 圣战戒指 1
+#act
+take 圣战戒指 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[圣战戒指]得到<50>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有圣战戒指！
+goto @赤月
+
+[@法神头盔]
+#if
+checkitem 法神头盔 1
+#act
+take 法神头盔 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[法神头盔]得到<50>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有法神头盔！
+goto @赤月
+[@法神项链]
+#if
+checkitem 法神项链 1
+#act
+take 法神项链 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[法神项链]得到<50>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有法神项链！
+goto @赤月
+[@法神手镯]
+#if
+checkitem 法神手镯 1
+#act
+take 法神手镯 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[法神手镯]得到<50>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有法神手镯！
+goto @赤月
+[@法神戒指]
+#if
+checkitem 法神戒指 1
+#act
+take 法神戒指 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[法神戒指]得到<50>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有法神戒指！
+goto @赤月
+[@天尊头盔]
+#if
+checkitem 天尊头盔 1
+#act
+take 天尊头盔 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[天尊头盔]得到<50>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有天尊头盔！
+goto @赤月
+[@天尊项链]
+#if
+checkitem 天尊项链 1
+#act
+take 天尊项链 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[天尊项链]得到<50>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有天尊项链！
+goto @赤月
+[@天尊手镯]
+#if
+checkitem 天尊手镯 1
+#act
+take 天尊手镯 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[天尊手镯]得到<50>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有天尊手镯！
+goto @赤月
+[@天尊戒指]
+#if
+checkitem 天尊戒指 1
+#act
+take 天尊戒指 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[天尊戒指]得到<50>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有天尊戒指！
+goto @赤月
+
+[@怒斩]
+#if
+checkitem 怒斩 1
+#act
+take 怒斩 1
+GAMEGOLD + 30
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[怒斩]得到<30>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有怒斩！
+goto @赤月
+[@龙牙]
+#if
+checkitem 龙牙 1
+#act
+take 龙牙 1
+GAMEGOLD + 30
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[龙牙]得到<30>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有龙牙！
+goto @赤月
+[@逍遥扇]
+#if
+checkitem 逍遥扇 1
+#act
+take 逍遥扇 1
+GAMEGOLD + 30
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[逍遥扇]得到<30>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有逍遥扇！
+goto @赤月
+[@天魔]
+#if
+checkitem 天魔神甲 1
+#act
+take 天魔神甲 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[天魔神甲]得到<20>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有天魔！
+goto @赤月
+[@宝甲]
+#if
+checkitem 圣战宝甲 1
+#act
+take 圣战宝甲 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[圣战宝甲]得到<20>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有宝甲！
+goto @赤月
+[@披风]
+#if
+checkitem 法神披风 1
+#act
+take 法神披风 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[法神披风]得到<20>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有法神披风！
+goto @赤月
+[@羽衣]
+#if
+checkitem 霓裳羽衣 1
+#act
+take 霓裳羽衣 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[霓裳羽衣]得到<20>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有霓裳羽衣！
+goto @赤月
+[@道袍]
+#if
+checkitem 天尊道袍 1
+#act
+take 天尊道袍 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[天尊道袍]得到<20>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有天尊道袍！
+goto @赤月
+[@天师]
+#if
+checkitem 天师长袍 1
+#act
+take 天师长袍 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[天师长袍]得到<20>元宝
+goto @赤月
+#ELSEACT
+MESSAGEBOX 你没有天师长袍！
+goto @赤月
+[@幽灵项链]
+#if
+checkitem 幽灵项链 1
+#act
+take 幽灵项链 1
+give 金币 100000
+goto @回收
+#ELSEACT
+MESSAGEBOX 你没有幽灵项链！
+goto @回收
+[@幽灵手套]
+#if
+checkitem 幽灵手套 1
+#act
+take 幽灵手套 1
+give 金币 100000
+goto @回收
+#ELSEACT
+MESSAGEBOX 你没有幽灵手套！
+goto @回收
+[@龙之戒指]
+#if
+checkitem 龙之戒指 1
+#act
+take 龙之戒指 1
+give 金币 100000
+goto @回收
+#ELSEACT
+MESSAGEBOX 你没有龙之戒指！
+goto @回收
+[@生命项链]
+#if
+checkitem 生命项链 1
+#act
+take 生命项链 1
+give 金币 100000
+goto @回收
+#ELSEACT
+MESSAGEBOX 你没有生命项链！
+goto @回收
+[@思贝儿手镯]
+#if
+checkitem 思贝儿手镯 1
+#act
+take 思贝儿手镯 1
+give 金币 100000
+goto @回收
+#ELSEACT
+MESSAGEBOX 你没有思贝儿手镯！
+goto @回收
+[@红宝石戒指]
+#if
+checkitem 红宝石戒指 1
+#act
+take 红宝石戒指 1
+give 金币 100000
+goto @回收
+#ELSEACT
+MESSAGEBOX 你没有红宝石戒指！
+goto @回收
+[@天珠项链]
+#if
+checkitem 天珠项链 1
+#act
+take 天珠项链 1
+give 金币 100000
+goto @回收
+#ELSEACT
+MESSAGEBOX 你没有天珠项链！
+goto @回收
+[@心灵手镯]
+#if
+checkitem 心灵手镯 1
+#act
+take 心灵手镯 1
+give 金币 100000
+goto @回收
+#ELSEACT
+MESSAGEBOX 你没有心灵手镯！
+goto @回收
+[@铂金戒指]
+#if
+checkitem 铂金戒指 1
+#act
+take 铂金戒指 1
+give 金币 100000
+goto @回收
+#ELSEACT
+MESSAGEBOX 你没有铂金戒指！
+goto @回收
+[@井中月]
+#if
+checkitem 井中月 1
+#act
+take 井中月 1
+give 金币 200000
+goto @回收
+#ELSEACT
+MESSAGEBOX 你没有井中月！
+goto @回收
+[@魔杖]
+#if
+checkitem 魔杖 1
+#act
+take 魔杖 1
+give 金币 200000
+goto @回收
+#ELSEACT
+MESSAGEBOX 你没有魔杖！
+goto @回收
+[@无极棍]
+#if
+checkitem 无极棍 1
+#act
+take 无极棍 1
+give 金币 200000
+goto @回收
+#ELSEACT
+MESSAGEBOX 你没有无极棍！
+goto @回收
+[@一键回收1]
+.\◆<沃玛回收/@回收>◆    ◆<祖玛回收/@祖玛>◆    ◆<赤月回收/@赤月>◆    ◆<一键回收>\ \
+一键回收将一次性回收所有可以回收的物品\
+<请仔细检查您的包裹是否有自己用得着的装备>\
+万一回收将不能恢复\
+因此而出现的问题客服概不处理！\ \
+
+<开始回收/@一键回收>     <返回/@回收>
+[@一键回收]
+#if
+checkitem 绿色项链 1
+#act
+take 绿色项链 1
+GAMEGOLD + 5
+goto @一键回收
+#if
+checkitem 恶魔铃铛 1
+#act
+take 恶魔铃铛 1
+GAMEGOLD + 5
+goto @一键回收
+#if
+checkitem 灵魂项链 1
+#act
+take 灵魂项链 1
+GAMEGOLD + 5
+goto @一键回收
+#if
+checkitem 骑士手镯 1
+#act
+take 骑士手镯 1
+GAMEGOLD + 5
+goto @一键回收
+#if
+checkitem 龙之手镯 1
+#act
+take 龙之手镯 1
+GAMEGOLD + 5
+goto @一键回收
+#if
+checkitem 三眼手镯 1
+#act
+take 三眼手镯 1
+GAMEGOLD + 5
+goto @一键回收
+#if
+checkitem 力量戒指 1
+#act
+take 力量戒指 1
+GAMEGOLD + 5
+goto @一键回收
+#if
+checkitem 紫碧螺 1
+#act
+take 紫碧螺 1
+GAMEGOLD + 5
+goto @一键回收
+#if
+checkitem 泰坦戒指 1
+#act
+take 泰坦戒指 1
+GAMEGOLD + 5
+goto @一键回收
+#if
+checkitem 裁决之杖 1
+#act
+take 裁决之杖 1
+GAMEGOLD + 5
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[裁决之杖]得到<5>元宝
+goto @一键回收
+#if
+checkitem 龙纹剑 1
+#act
+take 龙纹剑 1
+GAMEGOLD + 5
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[龙纹剑]得到<5>元宝
+goto @一键回收
+#if
+checkitem 骨玉权杖 1
+#act
+take 骨玉权杖 1
+GAMEGOLD + 5
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[骨玉权杖]得到<5>元宝
+goto @一键回收
+#if
+checkitem 圣战头盔 1
+#act
+take 圣战头盔 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[圣战头盔]得到<5>元宝
+goto @一键回收
+#if
+checkitem 圣战项链 1
+#act
+take 圣战项链 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[圣战项链]得到<10>元宝
+goto @一键回收
+#if
+checkitem 圣战手镯 1
+#act
+take 圣战手镯 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[圣战手镯]得到<10>元宝
+goto @一键回收
+#if
+checkitem 圣战戒指 1
+#act
+take 圣战戒指 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[圣战戒指]得到<10>元宝
+goto @一键回收
+#if
+checkitem 法神头盔 1
+#act
+take 法神头盔 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[法神头盔]得到<10>元宝
+goto @一键回收
+#if
+checkitem 法神项链 1
+#act
+take 法神项链 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[法神项链]得到<10>元宝
+goto @一键回收
+#if
+checkitem 法神手镯 1
+#act
+take 法神手镯 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[法神手镯]得到<10>元宝
+goto @一键回收
+#if
+checkitem 法神戒指 1
+#act
+take 法神戒指 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[法神戒指]得到<10>元宝
+goto @一键回收
+#if
+checkitem 天尊头盔 1
+#act
+take 天尊头盔 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[天尊头盔]得到<10>元宝
+goto @一键回收
+#if
+checkitem 天尊项链 1
+#act
+take 天尊项链 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[天尊项链]得到<10>元宝
+goto @一键回收
+#if
+checkitem 天尊手镯 1
+#act
+take 天尊手镯 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[天尊手镯]得到<10>元宝
+goto @一键回收
+#if
+checkitem 天尊戒指 1
+#act
+take 天尊戒指 1
+GAMEGOLD + 50
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[天尊戒指]得到<10>元宝
+goto @一键回收
+#if
+checkitem 怒斩 1
+#act
+take 怒斩 1
+GAMEGOLD + 30
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[怒斩]得到<30>元宝
+goto @一键回收
+#if
+checkitem 龙牙 1
+#act
+take 龙牙 1
+GAMEGOLD + 30
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[龙牙]得到<30>元宝
+goto @一键回收
+#if
+checkitem 逍遥扇 1
+#act
+take 逍遥扇 1
+GAMEGOLD + 30
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[逍遥扇]得到<30>元宝
+goto @一键回收
+#if
+checkitem 天魔神甲 1
+#act
+take 天魔神甲 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[天魔神甲]得到<20>元宝
+goto @一键回收
+#if
+checkitem 圣战宝甲 1
+#act
+take 圣战宝甲 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[圣战宝甲]得到<20>元宝
+goto @一键回收
+#if
+checkitem 法神披风 1
+#act
+take 法神披风 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[法神披风]得到<20>元宝
+goto @一键回收
+#if
+checkitem 霓裳羽衣 1
+#act
+take 霓裳羽衣 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[霓裳羽衣]得到<20>元宝
+goto @一键回收
+#if
+checkitem 天尊道袍 1
+#act
+take 天尊道袍 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[天尊道袍]得到<20>元宝
+goto @一键回收
+#if
+checkitem 天师长袍 1
+#act
+take 天师长袍 1
+GAMEGOLD + 20
+;SENDMSG 0 玩家[%s]使用装备回收功能回收[天师长袍]得到<20>元宝
+goto @一键回收
+#if
+checkitem 幽灵项链 1
+#act
+take 幽灵项链 1
+give 金币 100000
+goto @一键回收
+#if
+checkitem 幽灵手套 1
+#act
+take 幽灵手套 1
+give 金币 100000
+goto @一键回收
+#if
+checkitem 龙之戒指 1
+#act
+take 龙之戒指 1
+give 金币 100000
+goto @一键回收
+#if
+checkitem 生命项链 1
+#act
+take 生命项链 1
+give 金币 100000
+goto @一键回收
+#if
+checkitem 思贝儿手镯 1
+#act
+take 思贝儿手镯 1
+give 金币 100000
+goto @一键回收
+#if
+checkitem 红宝石戒指 1
+#act
+take 红宝石戒指 1
+give 金币 100000
+goto @一键回收
+#if
+checkitem 天珠项链 1
+#act
+take 天珠项链 1
+give 金币 100000
+goto @一键回收
+#if
+checkitem 心灵手镯 1
+#act
+take 心灵手镯 1
+give 金币 100000
+goto @一键回收
+#if
+checkitem 铂金戒指 1
+#act
+take 铂金戒指 1
+give 金币 100000
+goto @一键回收
+#if
+checkitem 井中月 1
+#act
+take 井中月 1
+give 金币 200000
+goto @一键回收
+#if
+checkitem 魔杖 1
+#act
+take 魔杖 1
+give 金币 200000
+goto @一键回收
+#if
+checkitem 无极棍 1
+#act
+take 无极棍 1
+give 金币 200000
+goto @一键回收
+#ELSEACT
+MESSAGEBOX 一键回收完成！
+}

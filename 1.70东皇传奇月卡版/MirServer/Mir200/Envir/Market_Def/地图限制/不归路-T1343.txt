@@ -1,0 +1,27 @@
+[@main]
+#if
+#act
+MOV I0 <$STR(G1)>
+INC I0 1
+#say
+进入白日门需要开区第13天晚上20点\ \
+目前开区天数为：第<$STR(I0)>天！\ \
+<进入白日门/@1>
+
+[@1]
+#IF
+equal G94 1
+CHECKUSERDATE ..\QuestDiary\季卡\时间记载.txt < 90 p0 p1
+#ACT
+close
+MAPMOVE 10123 7 5
+break
+
+#If
+equal G94 1
+#act
+sendmsg 7 提示：请购买季卡
+break 
+#elseact
+SendMsg 7  提示：开区第13天晚上20点自动开放！
+break

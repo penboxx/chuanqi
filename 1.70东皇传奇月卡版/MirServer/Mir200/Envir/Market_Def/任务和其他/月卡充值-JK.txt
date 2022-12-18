@@ -1,0 +1,25 @@
+[@main]
+<COLOR=clMoneyGreen 游戏规则说明>\ \
+1、本服为季卡版本,所以游戏必须充值一张季卡\ 
+2、免费体验到11级,充卡后继续游戏\ 
+3、在官网平台上充值后输入@元宝,即可领取元宝\
+4、有了元宝后在商铺购买季卡(100元宝),背包里双击即可使用\
+5、元宝比例1：10元宝\ \
+<充卡后返回比奇/@bq>
+
+[@bq]
+#if
+checkNameList ..\QuestDiary\季卡\季卡名单.txt HardDisk
+#act
+goto @季卡
+#elseact
+SENDMSG 5 提示：请及时进行季卡充值 251 0 5
+SENDMSG 5 提示:你的帐户没有冲值，请充卡再进行游戏
+break
+
+[@季卡]
+#IF
+CHECKUSERDATE ..\QuestDiary\季卡\时间记载.txt < 90 p0 p1
+#ACT
+mapmove 0 326 272
+break

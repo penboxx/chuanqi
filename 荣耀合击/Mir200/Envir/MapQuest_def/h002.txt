@@ -1,0 +1,6 @@
+[@main]
+#if
+#ACT
+SetScTimer 2 60
+
+

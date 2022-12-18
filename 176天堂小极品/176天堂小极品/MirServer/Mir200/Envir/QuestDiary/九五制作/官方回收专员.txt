@@ -1,0 +1,36 @@
+[@官方回收]
+{
+------------------------------------------------------------\
+48级 战士/道士  价格 <COLOR=clRed 500RMB>       48级 魔法师  价格 <COLOR=clRed 400RMB>\
+49级 战士/道士  价格 <COLOR=clRed 1000RMB>      49级 魔法师  价格 <COLOR=clRed 800RMB>\
+50级 战士/道士  价格 <COLOR=clRed 2000RMB>      50级 魔法师  价格<COLOR=clRed 1200RMB>\
+51级 战士/道士  价格 <COLOR=clRed 3000RMB>      51级 魔法师  价格<COLOR=clRed 2500RMB>\
+52级 战士/道士  价格 <COLOR=clRed 5000RMB>      52级 魔法师  价格<COLOR=clRed 5000RMB>\
+53级 战士/道士  价格 <COLOR=clRed 6000RMB>      53级 魔法师  价格<COLOR=clRed 6000RMB>\
+54级 战士/道士  价格 <COLOR=clRed 8000RMB>      54级 魔法师  价格<COLOR=clRed 8000RMB>\
+------------------------------------------------------------\
+<COLOR=clRed 54级后每级增加2000RMB，技术QQ:21896311>       <下一页/@main1>
+
+[@main1]
+------------------------------------------------------------\
+强化天堂屠龙    价格:<COLOR=clRed 10000RMB>      天堂屠龙  价格:<COLOR=clRed 6000RMB>\
+强化天堂法杖    价格:<COLOR=clRed 10000RMB>      天堂法杖  价格:<COLOR=clRed 6000RMB>\
+强化天堂霸者    价格:<COLOR=clRed 10000RMB>      天堂霸者  价格:<COLOR=clRed 6000RMB>\
+强化天堂战甲    价格:<COLOR=clRed 10000RMB>      天堂战甲  价格:<COLOR=clRed 6000RMB>\
+强化天堂斗笠    价格:<COLOR=clRed 10000RMB>      天堂斗笠  价格:<COLOR=clRed 6000RMB>\
+强化天堂勋章    价格:<COLOR=clRed 10000RMB>      天堂勋章  价格:<COLOR=clRed 6000RMB>\
+------------------------------------------------------------\
+<COLOR=clRed 回收请联系技术QQ:21896311>                              <下一页/@main2>
+
+[@main2]
+------------------------------------------------------------\
+天堂屠龙【残】  价格:<COLOR=clRed 1000RMB>       +3暴击链  价格:<COLOR=clRed 800RMB>\
+天堂法杖【残】  价格:<COLOR=clRed 1000RMB>       +1天堂套  价格:<COLOR=clRed 500RMB>\
+天堂霸者【残】  价格:<COLOR=clRed 1000RMB>       +2天堂套  价格:<COLOR=clRed 800RMB>\
+屠龙            价格:<COLOR=clRed 1200RMB>       +3天堂套  价格:<COLOR=clRed 2000RMB>\
+嗜魂法杖        价格:<COLOR=clRed 1200RMB>       钻石斗笠  价格:<COLOR=clRed 1500RMB>\
+霸者之刃        价格:<COLOR=clRed 1200RMB>       钻石勋章  价格:<COLOR=clRed 1500RMB>\
+------------------------------------------------------------\
+<COLOR=clRed 回收请联系技术QQ:21896311>                              <回首页/@官方回收>
+
+}

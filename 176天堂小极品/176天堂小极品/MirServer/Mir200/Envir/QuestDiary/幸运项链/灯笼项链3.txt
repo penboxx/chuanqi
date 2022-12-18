@@ -1,0 +1,35 @@
+[@灯笼项链3]
+{
+#IF
+random 10
+#act
+GAMEGOLD - 3000
+UPGRADEITEMEX 3 1 0 1 0
+goto @暴击属性_灯笼项链
+#ELSEACT
+GAMEGOLD - 3000
+MESSAGEBOX 非常抱歉您的项链升级失败
+BREAK
+
+[@暴击属性_灯笼项链]
+#IF
+random 6
+#act
+;UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+sendmsg 0 恭喜[%s]在幸运之家将项链升级成功，同时被赋予了暴击属性+2。
+BREAK
+
+#IF
+random 5
+#act
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+sendmsg 0 恭喜[%s]在幸运之家将项链升级成功，同时被赋予了暴击属性+2。
+BREAK
+#ELSEACT
+UPGRADEITEMEX 3 8 0 1 0
+sendmsg 0 恭喜[%s]在幸运之家将项链升级成功，同时被赋予了暴击属性+1。
+BREAK
+}

@@ -1,0 +1,55 @@
+[@赞助]
+{
+
+
+#IF
+equal a325 <$USERNAME>
+#ACT
+SENDMSG 0 全国上下，欢迎武林至尊[<$USERNAME>]进入了<$SERVERIP>！！
+SENDMSG 0 全国上下，欢迎武林至尊[<$USERNAME>]进入了<$SERVERIP>！！
+SENDMSG 0 全国上下，欢迎武林至尊[<$USERNAME>]进入了<$SERVERIP>！！
+
+
+#IF
+CHECKNAMELIST ..\questDiary\封号系统\土豪.txt HardDisk
+#ACT
+SENDMSG 0 全国上下，欢迎土豪赞助大使[<$USERNAME>]进入了<$SERVERIP>，要想获得靓丽的封号赶紧充值吧！！
+SENDMSG 0 全国上下，欢迎土豪赞助大使[<$USERNAME>]进入了<$SERVERIP>，要想获得靓丽的封号赶紧充值吧！！
+SENDMSG 0 全国上下，欢迎土豪赞助大使[<$USERNAME>]进入了<$SERVERIP>，要想获得靓丽的封号赶紧充值吧！！
+ChangeNameColor 254
+;SETRANKLEVELNAME  %s\◥■■■土■■■◤\◥■■豪■■◤\◥■大■◤\◥使◤\≮【<我是土豪>】≯
+break
+
+#IF
+CHECKNAMELIST ..\questDiary\封号系统\地主.txt HardDisk
+#ACT
+SENDMSG 0 全国上下，欢迎地主赞助大使[<$USERNAME>]进入了<$SERVERIP>，要想获得靓丽的封号赶紧充值吧！！
+SENDMSG 0 全国上下，欢迎地主赞助大使[<$USERNAME>]进入了<$SERVERIP>，要想获得靓丽的封号赶紧充值吧！！
+SENDMSG 0 全国上下，欢迎地主赞助大使[<$USERNAME>]进入了<$SERVERIP>，要想获得靓丽的封号赶紧充值吧！！
+ChangeNameColor 252
+;SETRANKLEVELNAME  %s\◥■■■地■■■◤\◥■■主■■◤\◥■大■◤\◥使◤\≮【<大地主>】≯
+break
+
+
+#IF
+CHECKNAMELIST ..\questDiary\封号系统\煤老板.txt HardDisk
+#ACT
+SENDMSG 0 全国上下，欢迎煤老板赞助大使[<$USERNAME>]进入了<$SERVERIP>，要想获得靓丽的封号赶紧充值吧！！
+SENDMSG 0 全国上下，欢迎煤老板赞助大使[<$USERNAME>]进入了<$SERVERIP>，要想获得靓丽的封号赶紧充值吧！！
+SENDMSG 0 全国上下，欢迎煤老板赞助大使[<$USERNAME>]进入了<$SERVERIP>，要想获得靓丽的封号赶紧充值吧！！
+ChangeNameColor 253
+;SETRANKLEVELNAME  %s\◥■■■煤■■■◤\◥■■矿■■◤\◥■大■◤\◥使◤\≮【<山西煤老板>】≯
+break
+
+#IF
+CHECKNAMELIST ..\questDiary\封号系统\钻石.txt HardDisk
+#ACT
+SENDMSG 0 全国上下，欢迎金牌赞助大使[<$USERNAME>]进入了<$SERVERIP>，要想获得靓丽的封号赶紧充值吧！！
+SENDMSG 0 全国上下，欢迎金牌赞助大使[<$USERNAME>]进入了<$SERVERIP>，要想获得靓丽的封号赶紧充值吧！！
+SENDMSG 0 全国上下，欢迎金牌赞助大使[<$USERNAME>]进入了<$SERVERIP>，要想获得靓丽的封号赶紧充值吧！！
+#CALL [\系统功能\七彩封号.txt] @七彩设置
+;SETRANKLEVELNAME  %s\◥■■■钻■■■◤\◥■■石■■◤\◥■大■◤\◥使◤\≮【<钻石王老五>】≯
+break
+
+
+}

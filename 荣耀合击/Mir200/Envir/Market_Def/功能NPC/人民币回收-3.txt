@@ -1,0 +1,1076 @@
+(@@InPutString @@InPutInteger)
+[@main]
+<COLOR=clAqua 【荣誉兑换】> <COLOR=clRed Hot~> <COLOR=clLime ≡荣誉点用于铸炼高级剑甲≡>   <COLOR=$00FFF8 当前荣誉点>[<$NIMBUS>]\
+
+<COLOR=clLime 星王首饰(战)  ≡ 荣誉点+ 5>    〖<确认兑换/@星王战荣誉>〗      |前|铸|\
+<COLOR=clLime 星王首饰(道)  ≡ 荣誉点+ 5>    〖<确认兑换/@星王道荣誉>〗      |往|炼|\
+<COLOR=clLime 星王首饰(法)  ≡ 荣誉点+ 5>    〖<确认兑换/@星王法荣誉>〗      |七|高|\
+<COLOR=clLime  星王三格     ≡ 荣誉点+ 5>    〖<确认兑换/@星王三格荣誉>〗      |界|级|\
+<COLOR=clLime 荣耀首饰(战)  ≡ 荣誉点+20>    〖<确认兑换/@荣耀战荣誉>〗      |秘|剑|\
+<COLOR=clLime 荣耀首饰(道)  ≡ 荣誉点+20>    〖<确认兑换/@荣耀道荣誉>〗      |镜|甲|\
+<COLOR=clLime 荣耀首饰(法)  ≡ 荣誉点+20>    〖<确认兑换/@荣耀法荣誉>〗      |深|需|\
+<COLOR=clLime  荣耀三格     ≡ 荣誉点+15>    〖<确认兑换/@荣耀三格荣誉>〗      |层|要|\
+<注意：项链可做荣誉点兑换！>   〖<荣誉点提取/@荣誉点提取>〗
+
+[@荣誉点提取]
+
+请选择需要提取的荣誉点数量：           <COLOR=clLime 当前荣誉点：>[<$NIMBUS>]个\ \
+<1:荣誉点/@1荣誉点>           <5:荣誉点/@5荣誉点>           <10:荣誉点/@10荣誉点>\ \
+　　　　　　　　　<50:荣誉点/@50荣誉点> \ \         
+
+
+[@1荣誉点]
+#IF
+CHECKNIMBUS > 0
+#ACT
+NIMBUS - 1
+GIVE 荣誉点：1 1
+SENDMSG 7 提示：剩余荣誉点:<$NIMBUS>
+GOTO @荣誉点提取
+BREAK
+#ELSESAY
+对不起，你没有足够的荣誉点！\ \
+<返回/@荣誉点提取>\
+
+
+[@5荣誉点]
+#IF
+CHECKNIMBUS > 4
+#ACT
+NIMBUS - 5
+GIVE 荣誉点：5 1
+SENDMSG 7 提示：剩余荣誉点:<$NIMBUS>
+GOTO @荣誉点提取
+BREAK
+#ELSESAY
+对不起，你没有足够的荣誉点！\ \
+<返回/@荣誉点提取>\
+
+
+[@10荣誉点]
+#IF
+CHECKNIMBUS > 9
+#ACT
+NIMBUS - 10
+GIVE 荣誉点：10 1
+SENDMSG 7 提示：剩余荣誉点:<$NIMBUS>
+GOTO @荣誉点提取
+BREAK
+#ELSESAY
+对不起，你没有足够的荣誉点！\ \
+<返回/@荣誉点提取>\
+
+
+[@50荣誉点]
+#IF
+CHECKNIMBUS > 49
+#ACT
+NIMBUS - 50
+GIVE 荣誉点：50 1
+SENDMSG 7 提示：剩余荣誉点:<$NIMBUS>
+GOTO @荣誉点提取
+BREAK
+#ELSESAY
+对不起，你没有足够的荣誉点！\ \
+<返回/@荣誉点提取>\
+
+
+
+
+
+
+
+
+[@荣耀战荣誉]
+#if
+checkitem 荣耀战戒 1
+#ACT
+take 荣耀战戒 1
+INC D18 1
+INC D30 1
+NIMBUS + 20
+DelayCall 100 @荣耀战荣誉
+break
+#if
+checkitem 荣耀战镯 1
+#ACT
+take 荣耀战镯 1
+INC D18 1
+INC D30 1
+NIMBUS + 20
+DelayCall 100 @荣耀战荣誉
+break
+#if
+checkitem 荣耀战链 1
+#ACT
+take 荣耀战链 1
+INC D18 1
+INC D30 1
+NIMBUS + 20
+DelayCall 100 @荣耀战荣誉
+break
+#if
+LARGE D18 0
+#ACT
+MUL D30 20
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换荣耀首饰(战)(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换荣耀首饰(战)(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>). 255 253 30
+MOV D18 0
+MOV D30 0
+break
+#ELSEACT
+sendmsg 6 你背包中无荣耀首饰。
+break
+[@荣耀道荣誉]
+#if
+checkitem 荣耀道戒 1
+#ACT
+take 荣耀道戒 1
+INC D18 1
+INC D30 1
+NIMBUS + 20
+DelayCall 100 @荣耀道荣誉
+break
+#if
+checkitem 荣耀道镯 1
+#ACT
+take 荣耀道镯 1
+INC D18 1
+INC D30 1
+NIMBUS + 20
+DelayCall 100 @荣耀道荣誉
+break
+#if
+checkitem 荣耀道链 1
+#ACT
+take 荣耀道链 1
+INC D18 1
+INC D30 1
+NIMBUS + 20
+DelayCall 100 @荣耀道荣誉
+break
+#if
+LARGE D18 0
+#ACT
+MUL D30 20
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换荣耀首饰(道)(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换荣耀首饰(道)(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>). 255 253 30
+MOV D18 0
+MOV D30 0
+break
+#ELSEACT
+sendmsg 6 你背包中无荣耀首饰。
+break
+
+[@荣耀法荣誉]
+#if
+checkitem 荣耀法戒 1
+#ACT
+take 荣耀法戒 1
+INC D18 1
+INC D30 1
+NIMBUS + 20
+DelayCall 100 @荣耀法荣誉
+break
+#if
+checkitem 荣耀法镯 1
+#ACT
+take 荣耀法镯 1
+INC D18 1
+INC D30 1
+NIMBUS + 20
+DelayCall 100 @荣耀法荣誉
+break
+#if
+checkitem 荣耀法链 1
+#ACT
+take 荣耀法链 1
+INC D18 1
+INC D30 1
+NIMBUS + 20
+DelayCall 100 @荣耀法荣誉
+break
+#if
+LARGE D18 0
+#ACT
+MUL D30 20
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换荣耀首饰(法)(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换荣耀首饰(法)(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>). 255 253 30
+MOV D18 0
+MOV D30 0
+break
+#ELSEACT
+sendmsg 6 你背包中无荣耀首饰。
+break
+
+[@荣耀三格荣誉]
+#if
+checkitem 荣耀法带 1
+#ACT
+take 荣耀法带 1
+INC D18 1
+INC D30 1
+NIMBUS + 15
+DelayCall 100 @荣耀三格荣誉
+break
+#if
+checkitem 荣耀法靴 1
+#ACT
+take 荣耀法靴 1
+INC D18 1
+INC D30 1
+NIMBUS + 15
+DelayCall 100 @荣耀三格荣誉
+break
+#if
+checkitem 荣耀法盔 1
+#ACT
+take 荣耀法盔 1
+INC D18 1
+INC D30 1
+NIMBUS + 15
+DelayCall 100 @荣耀三格荣誉
+break
+#if
+checkitem 荣耀道带 1
+#ACT
+take 荣耀道带 1
+INC D18 1
+INC D30 1
+NIMBUS + 15
+DelayCall 100 @荣耀三格荣誉
+break
+#if
+checkitem 荣耀道靴 1
+#ACT
+take 荣耀道靴 1
+INC D18 1
+INC D30 1
+NIMBUS + 15
+DelayCall 100 @荣耀三格荣誉
+break
+#if
+checkitem 荣耀道盔 1
+#ACT
+take 荣耀道盔 1
+INC D18 1
+INC D30 1
+NIMBUS + 15
+DelayCall 100 @荣耀三格荣誉
+break
+#if
+checkitem 荣耀战带 1
+#ACT
+take 荣耀战带 1
+INC D18 1
+INC D30 1
+NIMBUS + 15
+DelayCall 100 @荣耀三格荣誉
+break
+#if
+checkitem 荣耀战靴 1
+#ACT
+take 荣耀战靴 1
+INC D18 1
+INC D30 1
+NIMBUS + 15
+DelayCall 100 @荣耀三格荣誉
+break
+#if
+checkitem 荣耀战盔 1
+#ACT
+take 荣耀战盔 1
+INC D18 1
+INC D30 1
+NIMBUS + 15
+DelayCall 100 @荣耀三格荣誉
+break
+#if
+LARGE D18 0
+#ACT
+MUL D30 15
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换荣耀三格(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换荣耀三格(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>). 255 253 30
+MOV D18 0
+MOV D30 0
+break
+#ELSEACT
+sendmsg 6 你背包中无荣耀三格。
+break
+[@星王三格荣誉]
+#if
+checkitem 星王法带 1
+#ACT
+take 星王法带 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王三格荣誉
+break
+#if
+checkitem 星王法靴 1
+#ACT
+take 星王法靴 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王三格荣誉
+break
+#if
+checkitem 星王法盔 1
+#ACT
+take 星王法盔 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王三格荣誉
+break
+#if
+checkitem 星王道带 1
+#ACT
+take 星王道带 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王三格荣誉
+break
+#if
+checkitem 星王道靴 1
+#ACT
+take 星王道靴 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王三格荣誉
+break
+#if
+checkitem 星王道盔 1
+#ACT
+take 星王道盔 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王三格荣誉
+break
+#if
+checkitem 星王战带 1
+#ACT
+take 星王战带 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王三格荣誉
+break
+#if
+checkitem 星王战靴 1
+#ACT
+take 星王战靴 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王三格荣誉
+break
+#if
+checkitem 星王战盔 1
+#ACT
+take 星王战盔 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王三格荣誉
+break
+#if
+LARGE D18 0
+#ACT
+MUL D30 5
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换星王三格(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换星王三格(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>). 255 253 30
+MOV D18 0
+MOV D30 0
+break
+#ELSEACT
+sendmsg 6 你背包中无星王三格。
+break
+[@星王战荣誉]
+#if
+checkitem 星王战戒 1
+#ACT
+take 星王战戒 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王战荣誉
+break
+#if
+checkitem 星王战镯 1
+#ACT
+take 星王战镯 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王战荣誉
+break
+#if
+checkitem 星王战链 1
+#ACT
+take 星王战链 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王战荣誉
+break
+#if
+LARGE D18 0
+#ACT
+MUL D30 5
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换星王首饰(战)(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换星王首饰(战)(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>). 255 253 30
+MOV D18 0
+MOV D30 0
+break
+#ELSEACT
+sendmsg 6 你背包中无星王首饰。
+break
+[@星王道荣誉]
+#if
+checkitem 星王道戒 1
+#ACT
+take 星王道戒 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王道荣誉
+break
+#if
+checkitem 星王道镯 1
+#ACT
+take 星王道镯 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王道荣誉
+break
+#if
+checkitem 星王道链 1
+#ACT
+take 星王道链 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王道荣誉
+break
+#if
+LARGE D18 0
+#ACT
+MUL D30 5
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换星王首饰(道)(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换星王首饰(道)(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>). 255 253 30
+MOV D18 0
+MOV D30 0
+break
+#ELSEACT
+sendmsg 6 你背包中无星王首饰。
+break
+[@星王法荣誉]
+#if
+checkitem 星王法戒 1
+#ACT
+take 星王法戒 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王法荣誉
+break
+#if
+checkitem 星王法镯 1
+#ACT
+take 星王法镯 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王法荣誉
+break
+#if
+checkitem 星王法链 1
+#ACT
+take 星王法链 1
+INC D18 1
+INC D30 1
+NIMBUS + 5
+DelayCall 100 @星王法荣誉
+break
+#if
+LARGE D18 0
+#ACT
+MUL D30 5
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换星王首饰(法)(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收荣誉点兑换功能兑换星王首饰(法)(<$STR(D18)>)件,获得荣誉点(<$STR(D30)>). 255 253 30
+MOV D18 0
+MOV D30 0
+break
+#ELSEACT
+sendmsg 6 你背包中无星王首饰。
+break
+
+
+
+[@回收]
+<COLOR=clAqua 【回收充值】> <COLOR=clRed Hot~> <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ※※双倍充值点+双倍积分+元宝※※>\
+
+<COLOR=clLime 星王首饰(战)  ≡ 10积分 +  10充值点 +  600元宝>   〖<确认回收/@星王战>〗\
+<COLOR=clLime 星王首饰(道)  ≡ 10积分 +  10充值点 +  450元宝>   〖<确认回收/@星王道>〗\
+<COLOR=clLime 星王首饰(法)  ≡ 10积分 +  10充值点 +  300元宝>   〖<确认回收/@星王法>〗\
+<COLOR=clLime  星王三格     ≡ 10积分 +  10充值点 +  300元宝>   〖<确认回收/@星王三格>〗\
+<COLOR=clLime 荣耀首饰(战)  ≡ 50积分 +  50充值点 + 1800元宝>   〖<确认回收/@荣耀战>〗\
+<COLOR=clLime 荣耀首饰(道)  ≡ 50积分 +  50充值点 + 1500元宝>   〖<确认回收/@荣耀道>〗\
+<COLOR=clLime 荣耀首饰(法)  ≡ 50积分 +  50充值点 + 1200元宝>   〖<确认回收/@荣耀法>〗\
+<COLOR=clLime  荣耀三格     ≡ 50积分 +  50充值点 +  900元宝>   〖<确认回收/@荣耀三格>〗\
+<注:双倍充值点+双倍积分只限于本区回收。项链不可回收.可兑换荣誉点！>
+[@荣耀战]
+#if
+checkitem 荣耀战戒 1
+#ACT
+take 荣耀战戒 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 1800
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀战
+break
+#if
+checkitem 荣耀战镯 1
+#ACT
+take 荣耀战镯 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 1800
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀战
+break
+#if
+LARGE D18 0
+#ACT
+MUL D19 1800
+MUL D20 50
+MUL D23 50
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收荣耀首饰(战)(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收荣耀首饰(战)(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>). 255 253 30
+MOV D18 0
+MOV D19 0
+MOV D20 0
+MOV D23 0
+break
+#ELSEACT
+sendmsg 6 你背包中无荣耀首饰。
+break
+
+[@荣耀道]
+#if
+checkitem 荣耀道戒 1
+#ACT
+take 荣耀道戒 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 1500
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀道
+break
+#if
+checkitem 荣耀道镯 1
+#ACT
+take 荣耀道镯 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 1500
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀道
+break
+#if
+LARGE D18 0
+#ACT
+MUL D19 1500
+MUL D20 50
+MUL D23 50
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收荣耀首饰(道)(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收荣耀首饰(道)(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>). 255 253 30
+MOV D18 0
+MOV D19 0
+MOV D20 0
+MOV D23 0
+break
+#ELSEACT
+sendmsg 6 你背包中无荣耀首饰。
+break
+
+[@荣耀法]
+#if
+checkitem 荣耀法戒 1
+#ACT
+take 荣耀法戒 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 1200
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀法
+break
+#if
+checkitem 荣耀法镯 1
+#ACT
+take 荣耀法镯 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 1200
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀法
+break
+#if
+LARGE D18 0
+#ACT
+MUL D19 1200
+MUL D20 50
+MUL D23 50
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收荣耀首饰(法)(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收荣耀首饰(法)(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>). 255 253 30
+MOV D18 0
+MOV D19 0
+MOV D20 0
+MOV D23 0
+break
+#ELSEACT
+sendmsg 6 你背包中无荣耀首饰。
+break
+
+
+[@荣耀三格]
+#if
+checkitem 荣耀法带 1
+#ACT
+take 荣耀法带 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 900
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀三格
+break
+#if
+checkitem 荣耀法靴 1
+#ACT
+take 荣耀法靴 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 900
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀三格
+break
+#if
+checkitem 荣耀法盔 1
+#ACT
+take 荣耀法盔 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 900
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀三格
+break
+#if
+checkitem 荣耀道带 1
+#ACT
+take 荣耀道带 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 900
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀三格
+break
+#if
+checkitem 荣耀道靴 1
+#ACT
+take 荣耀道靴 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 900
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀三格
+break
+#if
+checkitem 荣耀道盔 1
+#ACT
+take 荣耀道盔 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 900
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀三格
+break
+#if
+checkitem 荣耀战带 1
+#ACT
+take 荣耀战带 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 900
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀三格
+break
+#if
+checkitem 荣耀战靴 1
+#ACT
+take 荣耀战靴 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 900
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀三格
+break
+#if
+checkitem 荣耀战盔 1
+#ACT
+take 荣耀战盔 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 900
+GAMEGIRD + 50
+GAMEPOINT + 50
+DelayCall 100 @荣耀三格
+break
+#if
+LARGE D18 0
+#ACT
+MUL D19 900
+MUL D20 50
+MUL D23 50
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收荣耀三格(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收荣耀三格(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>). 255 253 30
+MOV D18 0
+MOV D19 0
+MOV D20 0
+MOV D23 0
+break
+#ELSEACT
+sendmsg 6 你背包中无荣耀三格。
+break
+
+[@星王战]
+#if
+checkitem 星王战戒 1
+#ACT
+take 星王战戒 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 600
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王战
+break
+#if
+checkitem 星王战镯 1
+#ACT
+take 星王战镯 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 600
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王战
+break
+#if
+LARGE D18 0
+#ACT
+MUL D19 600
+MUL D20 10
+MUL D23 10
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收星王首饰(战)(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收星王首饰(战)(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>). 255 253 30
+MOV D18 0
+MOV D19 0
+MOV D20 0
+MOV D23 0
+break
+#ELSEACT
+sendmsg 6 你背包中无星王首饰。
+break
+
+
+
+[@星王道]
+#if
+checkitem 星王道戒 1
+#ACT
+take 星王道戒 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 450
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王道
+break
+#if
+checkitem 星王道镯 1
+#ACT
+take 星王道镯 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 450
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王道
+break
+#if
+LARGE D18 0
+#ACT
+MUL D19 450
+MUL D20 10
+MUL D23 10
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收星王首饰(道)(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收星王首饰(道)(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>). 255 253 30
+MOV D18 0
+MOV D19 0
+MOV D20 0
+MOV D23 0
+break
+#ELSEACT
+sendmsg 6 你背包中无星王首饰。
+break
+
+
+
+
+
+
+
+
+
+
+
+
+[@星王法]
+#if
+checkitem 星王法戒 1
+#ACT
+take 星王法戒 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 300
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王法
+break
+#if
+checkitem 星王法镯 1
+#ACT
+take 星王法镯 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 300
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王法
+break
+#if
+LARGE D18 0
+#ACT
+MUL D19 300
+MUL D20 10
+MUL D23 10
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收星王首饰(法)(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收星王首饰(法)(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>). 255 253 30
+MOV D18 0
+MOV D19 0
+MOV D20 0
+MOV D23 0
+break
+#ELSEACT
+sendmsg 6 你背包中无星王首饰。
+break
+
+
+[@星王三格]
+#if
+checkitem 星王法带 1
+#ACT
+take 星王法带 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 300
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王三格
+break
+#if
+checkitem 星王法靴 1
+#ACT
+take 星王法靴 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 300
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王三格
+break
+#if
+checkitem 星王法盔 1
+#ACT
+take 星王法盔 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 300
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王三格
+break
+#if
+checkitem 星王道带 1
+#ACT
+take 星王道带 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 300
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王三格
+break
+#if
+checkitem 星王道靴 1
+#ACT
+take 星王道靴 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 300
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王三格
+break
+#if
+checkitem 星王道盔 1
+#ACT
+take 星王道盔 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 300
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王三格
+break
+#if
+checkitem 星王战带 1
+#ACT
+take 星王战带 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 300
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王三格
+break
+#if
+checkitem 星王战靴 1
+#ACT
+take 星王战靴 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 300
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王三格
+break
+#if
+checkitem 星王战盔 1
+#ACT
+take 星王战盔 1
+INC D18 1
+INC D19 1
+INC D20 1
+INC D23 1
+GAMEGOLD + 300
+GAMEGIRD + 10
+GAMEPOINT + 10
+DelayCall 100 @星王三格
+break
+#if
+LARGE D18 0
+#ACT
+MUL D19 300
+MUL D20 10
+MUL D23 10
+sendmsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收星王三格(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>).
+SendMsg 2 提示：玩家【<$USERNAME>】使用高级回收系统回收星王三格(<$STR(D18)>)件,获得元宝(<$STR(D19)>),充值积分(<$STR(D20)>).充值点(<$STR(D23)>). 255 253 30
+MOV D18 0
+MOV D19 0
+MOV D20 0
+MOV D23 0
+break
+#ELSEACT
+sendmsg 6 你背包中无星王三格。
+break

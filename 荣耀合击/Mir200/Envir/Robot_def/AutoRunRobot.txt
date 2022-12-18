@@ -1,0 +1,61 @@
+#AUTORUN NPC MIN 5 @游戏说明
+#AutoRun NPC SEC 1 @安全区刷怪
+#AutoRun NPC RUNONDAY 23:59 @激情战场
+#AutoRun NPC RUNONDAY 05:59 @激情战场
+#AutoRun NPC RUNONDAY 11:59 @激情战场
+#AutoRun NPC RUNONDAY 17:59 @激情战场
+#AutoRun NPC MIN 1 @gm005装备求购脚本RM
+#AutoRun NPC SEC 1 @Mir2m2单挑擂台脚本RM
+#AutoRun NPC SEC 1 @Mir2m2组队擂台脚本RM
+#AutoRun NPC MIN 149  @新区活动
+#AutoRun NPC MIN 1   @新区活动计时
+#AutoRun NPC MIN 3  @新手大乱斗
+#AutoRun NPC MIN 140  @新手活动计时
+#AutoRun NPC RUNONDAY 00:01 @每日清理
+#AutoRun NPC RUNONDAY 19:00 @拿沙申请
+#AutoRun NPC SEC 300 @自动修装备
+
+
+
+#AutoRun NPC SEC 1 @监狱脚本
+
+#AutoRun NPC RUNONDAY 22:19 @行会战场
+#AutoRun NPC RUNONDAY 22:29 @战场刷怪
+#AutoRun NPC RUNONDAY 22:49 @行会结束
+
+#AutoRun NPC RUNONDAY 22:10 @奖励喊话
+#AutoRun NPC RUNONDAY 22:20 @奖励喊话
+#AutoRun NPC RUNONDAY 22:30 @奖励喊话
+#AutoRun NPC RUNONDAY 22:40 @奖励喊话
+#AutoRun NPC RUNONDAY 22:50 @奖励喊话
+#AutoRun NPC RUNONDAY 22:55 @奖励喊话
+
+
+#AutoRun NPC RUNONDAY 23:00 @奖励关闭
+#AutoRun NPC RUNONDAY 0:00 @清理沙奖励
+
+#AutoRun NPC RUNONDAY 00:58 @散人部落
+#AutoRun NPC RUNONDAY 01:58 @散人部落
+#AutoRun NPC RUNONDAY 02:58 @散人部落
+#AutoRun NPC RUNONDAY 03:58 @散人部落
+#AutoRun NPC RUNONDAY 04:58 @散人部落
+#AutoRun NPC RUNONDAY 05:58 @散人部落
+#AutoRun NPC RUNONDAY 06:58 @散人部落
+#AutoRun NPC RUNONDAY 07:58 @散人部落
+#AutoRun NPC RUNONDAY 08:58 @散人部落
+#AutoRun NPC RUNONDAY 09:58 @散人部落
+#AutoRun NPC RUNONDAY 10:58 @散人部落
+#AutoRun NPC RUNONDAY 11:58 @散人部落
+#AutoRun NPC RUNONDAY 12:58 @散人部落
+#AutoRun NPC RUNONDAY 13:58 @散人部落
+#AutoRun NPC RUNONDAY 14:58 @散人部落
+#AutoRun NPC RUNONDAY 15:58 @散人部落
+#AutoRun NPC RUNONDAY 16:58 @散人部落
+#AutoRun NPC RUNONDAY 17:58 @散人部落
+#AutoRun NPC RUNONDAY 18:58 @散人部落
+#AutoRun NPC RUNONDAY 19:58 @散人部落
+#AutoRun NPC RUNONDAY 20:58 @散人部落
+#AutoRun NPC RUNONDAY 21:58 @散人部落
+#AutoRun NPC RUNONDAY 22:58 @散人部落
+#AutoRun NPC RUNONDAY 23:58 @散人部落
+

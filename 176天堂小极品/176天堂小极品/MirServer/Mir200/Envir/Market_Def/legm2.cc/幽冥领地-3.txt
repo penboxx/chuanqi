@@ -1,0 +1,22 @@
+()
+%100
+[@main]
+地图介绍：幽冥领地，拥有暗之BOSS\
+进入条件：需要使用50W金币进入\
+地图爆率：双倍爆率双倍经验\
+刷怪时间：BOSS刷新时间为30分钟\ \ \
+<我要使用50W金币进入幽冥领地/@jinru>   <我还是去别的地图打打小怪吧/@exit>
+
+
+[@jinru]
+#IF
+checkgold 500000
+#ACT
+GIVE 回城卷 1
+take 金币 500000
+SENDMSG 1 【%s】花费50W金币进入【幽冥领地】。 
+MAPMOVE F004 
+#ELSEACT
+MESSAGEBOX 需要50W金币用来支付传送的服务费用！
+BREAK
+

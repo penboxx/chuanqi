@@ -1,0 +1,803 @@
+
+[@MAIN]
+我正在研究一种新的升级技术，我能合成各种装备，但技术还\
+不是太成熟，还在学习阶段你想合成什么呢？\
+等我学好就即将出现新物品哦！~\ 
+※<合成首饰/@hechengshou>※\ \
+<离开/@exit>
+
+[@hechengshou]
+我可以帮你把底等级的首饰合成为高等级的首饰，但并不是\
+每次都能成功，你想合成以下哪种套装？\
+※<祖玛套装/@zumataozhuang>※<赤月套装/@chiyuetaozhuang>※\ \
+<返回/@main>
+
+[@chiyuetaozhuang]
+你想合成以下哪种赤月装备？\
+※<法神戒指/@fashenjie>※<法神手镯/@fashenshou>※<法神项链/@fashenliang>※\ \
+※<天尊戒指/@tianzunjie>※<天尊手镯/@tianzunshou>※<天尊项链/@tianzunliang>※\ \
+※<圣战戒指/@shengzhanjie>※<圣战手镯/@shengzhanshou>※<圣战项链/@shengzhanliang>※\ \
+<返回/@hechengshou>
+
+[@shengzhanliang]
+合成圣战项链需要2个<绿色项链>，成功的几率为百分之一，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@heshengzhanliang><圣战项链>\ \
+<返回/@chiyuetaozhuang>
+
+[@heshengzhanliang]
+#IF
+checkitem 绿色项链 2
+#ACT
+movr d6 25
+set [100] 1
+goto @heshengzhanliang1
+#ELSESAY
+合成圣战项链需要2个绿色项链！\ \
+<返回/@chiyuetaozhuang>
+
+[@heshengzhanliang1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 绿色项链 2
+equal d6 9
+#SAY
+恭喜你，合成圣战项链成功！\ \
+<返回/@shengzhanliang>
+#ACT
+mov d6 0
+set [100] 0
+take 绿色项链 2
+give 圣战项链 1
+#ELSESAY
+合成失败！\ \
+<返回/@shengzhanliang>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 绿色项链 2
+give 金币 100000
+
+
+[@shengzhanshou]
+合成圣战手镯需要2个<骑士手镯>，成功的几率为百分之一，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@heshengzhanshou><圣战手镯>\ \
+<返回/@chiyuetaozhuang>
+
+[@heshengzhanshou]
+#IF
+checkitem 骑士手镯 2
+#ACT
+movr d6 25
+set [100] 1
+goto @heshengzhanshou1
+#ELSESAY
+合成圣战手镯需要2个骑士手镯！\ \
+<返回/@chiyuetaozhuang>
+
+[@heshengzhanshou1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 骑士手镯 2
+equal d6 8
+#SAY
+恭喜你，合成圣战手镯成功！\ \
+<返回/@shengzhanshou>
+#ACT
+mov d6 0
+set [100] 0
+take 骑士手镯 2
+give 圣战手镯 1
+#ELSESAY
+合成失败！\ \
+<返回/@shengzhanshou>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 骑士手镯 2
+give 金币 100000
+
+[@shengzhanjie]
+合成圣战戒指需要2个<力量戒指>，成功的几率为百分之一，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@heshengzhanjie><圣战戒指>\ \
+<返回/@chiyuetaozhuang>
+
+[@heshengzhanjie]
+#IF
+checkitem 力量戒指 2
+#ACT
+movr d6 25
+set [100] 1
+goto @heshengzhanjie1
+#ELSESAY
+合成圣战戒指需要2个力量戒指！\ \
+<返回/@chiyuetaozhuang>
+
+[@heshengzhanjie1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 力量戒指 2
+equal d6 10
+#SAY
+恭喜你，合成圣战戒指成功！\ \
+<返回/@shengzhanjie>
+#ACT
+mov d6 0
+set [100] 0
+take 力量戒指 2
+give 圣战戒指 1
+#ELSESAY
+合成失败！\ \
+<返回/@shengzhanjie>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 力量戒指 2
+give 金币 100000
+
+[@tianzunliang]
+合成天尊项链需要2个<灵魂项链>，成功的几率为百分之一，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hetianzunliang><天尊项链>\ \
+<返回/@chiyuetaozhuang>
+
+[@hetianzunliang]
+#IF
+checkitem 灵魂项链 2
+#ACT
+movr d6 25
+set [100] 1
+goto @hetianzunliang1
+#ELSESAY
+合成天尊项链需要2个灵魂项链！\ \
+<返回/@chiyuetaozhuang>
+
+[@hetianzunliang1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 灵魂项链 2
+equal d6 11
+#SAY
+恭喜你，合成天尊项链成功！\ \
+<返回/@tianzunliang>
+#ACT
+mov d6 0
+set [100] 0
+take 灵魂项链 2
+give 天尊项链 1
+#ELSESAY
+合成失败！\ \
+<返回/@tianzunliang>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 灵魂项链 2
+give 金币 100000
+
+[@tianzunshou]
+合成天尊手镯需要2个<三眼手镯>，成功的几率为百分之一，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hetianzunshou><天尊手镯>\ \
+<返回/@chiyuetaozhuang>
+
+[@hetianzunshou]
+#IF
+checkitem 三眼手镯 2
+#ACT
+movr d6 25
+set [100] 1
+goto @hetianzunshou1
+#ELSESAY
+合成天尊手镯戒指需要2个三眼手镯！\ \
+<返回/@chiyuetaozhuang>
+
+[@hetianzunshou1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 三眼手镯 2
+equal d6 12
+#SAY
+恭喜你，合成天尊手镯成功！\ \
+<返回/@tianzunshou>
+#ACT
+mov d6 0
+set [100] 0
+take 三眼手镯 2
+give 天尊手镯 1
+#ELSESAY
+合成失败！\ \
+<返回/@tianzunshou>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 三眼手镯 2
+give 金币 100000
+
+[@tianzunjie]
+合成天尊戒指需要2个<泰坦戒指>，成功的几率为百分之一，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hetianzunjie><天尊戒指>\ \
+<返回/@chiyuetaozhuang>
+
+[@hetianzunjie]
+#IF
+checkitem 泰坦戒指 2
+#ACT
+set [100] 1
+movr d6 25
+goto @hetianzunjie1
+#ELSESAY
+合成天尊戒指需要2个泰坦戒指！\ \
+<返回/@chiyuetaozhuang>
+
+[@hetianzunjie1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 泰坦戒指 2
+equal d6 13
+#SAY
+恭喜你，合成天尊戒指成功！\ \
+<返回/@tianzunjie>
+#ACT
+mov d6 0
+set [100] 0
+take 泰坦戒指 2
+give 天尊戒指 1
+#ELSESAY
+合成失败！\ \
+<返回/@tianzunjie>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 泰坦戒指 2
+give 金币 100000
+
+[@fashenshou]
+合成法神手镯需要2个<龙之手镯>，成功的几率为百分之一，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hefashenshou><法神手镯>\ \
+<返回/@chiyuetaozhuang>
+
+[@fashenliang]
+合成法神项链需要2个<恶魔铃铛>，成功的几率为百分之一，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hefashenliang><法神项链>\ \
+<返回/@chiyuetaozhuang>
+
+[@hefashenliang]
+#IF
+checkitem 恶魔铃铛 2
+#ACT
+movr d6 25
+set [100] 1
+goto @hefashenliang1
+#ELSESAY
+合成法神手镯需要2个恶魔铃铛！\ \
+<返回/@chiyuetaozhuang>
+
+[@hefashenliang1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 恶魔铃铛 2
+equal d6 14
+#SAY
+恭喜你，合成法神项链成功！\ \
+<返回/@fashenliang>
+#ACT
+mov d6 0
+set [100] 0
+take 恶魔铃铛 2
+give 法神项链 1
+#ELSESAY
+合成失败！\ \
+<返回/@fashenliang>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 恶魔铃铛 2
+give 金币 100000
+
+[@hefashenshou]
+#IF
+checkitem 龙之手镯 2
+#ACT
+movr d6 25
+set [100] 1
+goto @hefashenshou1
+#ELSESAY
+合成法神手镯需要2个龙之手镯！\ \
+<返回/@chiyuetaozhuang>
+
+[@hefashenshou1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 龙之手镯 2
+equal d6 14
+#SAY
+恭喜你，合成法神手镯成功！\ \
+<返回/@fashenshou>
+#ACT
+mov d6 0
+set [100] 0
+take 龙之手镯 2
+give 法神手镯 1
+#ELSESAY
+合成失败！\ \
+<返回/@fashenshou>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 龙之手镯 2
+give 金币 100000
+
+[@fashenjie]
+合成法神戒指需要2个<紫碧螺>，成功的几率为百分之一，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hefashen><法神戒指>\ \
+<返回/@chiyuetaozhuang>
+
+[@hefashen]
+#IF
+checkitem 紫碧螺 2
+#ACT
+movr d6 25
+set [100] 1
+goto @hefashen1
+#ELSESAY
+合成法神戒指需要2个紫碧螺！\ \
+<返回/@chiyuetaozhuang>
+
+[@hefashen1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 紫碧螺 2
+equal d6 15
+#SAY
+恭喜你，合成法神戒指成功！\ \
+<返回/@fashenjie>
+#ACT
+mov d6 0
+set [100] 0
+take 紫碧螺 2
+give 法神戒指 1
+#ELSESAY
+合成失败！\ \
+<返回/@fashenjie>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 紫碧螺 2
+give 金币 100000
+
+[@zumataozhuang]
+你想合成以下哪种祖玛装备？\
+※<紫碧螺戒/@zibiluo>※<龙之手镯/@longzhishou>※<恶魔铃铛/@emoling>※\ \
+※<泰坦戒指/@taitanjie>※<三眼手镯/@sanyanshou>※<灵魂项链/@linghunlian>※\ \
+※<力量戒指/@liliangjie>※<阎罗手套/@qishishou>※<绿色项链/@lvseliang>※\ \
+<返回/@hechengshou>
+
+[@lvseliang]
+合成绿色项链需要2个<幽灵项链>，成功的几率为百分之十，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hechengkaishilvse><绿色项链>\ \
+<返回/@zumataozhuang>
+
+[@hechengkaishilvse]
+#IF
+checkitem 幽灵项链 2
+#ACT
+set [100] 1
+movr d6 15
+goto @lvseliang1
+#ELSESAY
+合成绿色项链需要2个幽灵项链！\ \
+<返回/@zumataozhuang>
+
+[@lvseliang1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 幽灵项链 2
+equal d6 9
+#SAY
+恭喜你，合成绿色项链成功！\ \
+<返回/@lvseliang>
+#ACT
+mov d6 0
+set [100] 0
+take 幽灵项链 2
+give 绿色项链 1
+#ELSESAY
+合成失败！\ \
+<返回/@lvseliang>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 幽灵项链 2
+give 金币 100000
+
+[@qishishou]
+合成阎罗手套需要2个<幽灵手套>，成功的几率为百分之十，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hechengkaishitaiqishi><阎罗手套>\ \
+<返回/@zumataozhuang>
+
+[@hechengkaishitaiqishi]
+#IF
+checkitem 幽灵手套 2
+#ACT
+movr d6 15
+set [100] 1
+goto @qishishou1
+#ELSESAY
+合成阎罗手套需要2个幽灵手套！\ \
+<返回/@zumataozhuang>
+
+[@qishishou1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 幽灵手套 2
+equal d6 10
+#SAY
+恭喜你，合成阎罗手套成功！\ \
+<返回/@qishishou>
+#ACT
+mov d6 0
+set [100] 0
+take 幽灵手套 2
+give 阎罗手套 1
+#ELSESAY
+合成失败！\ \
+<返回/@qishishou>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 幽灵手套 2
+give 金币 100000
+
+[@liliangjie]
+合成力量戒指需要2个<龙之戒指>，成功的几率为百分之十，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hechengkaishitaili><力量戒指>\ \
+<返回/@zumataozhuang>
+
+[@hechengkaishitaili]
+#IF
+checkitem 龙之戒指 2
+#ACT
+movr d6 15
+set [100] 1
+goto @liliangjie1
+#ELSESAY
+合成力量戒指需要2个龙之戒指！\ \
+<返回/@zumataozhuang>
+
+[@liliangjie1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 龙之戒指 2
+equal d6 11
+#SAY
+恭喜你，合成力量戒指成功！\ \
+<返回/@liliangjie>
+#ACT
+mov d6 0
+set [100] 0
+take 龙之戒指 2
+give 力量戒指 1
+#ELSESAY
+合成失败！\ \
+<返回/@liliangjie>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 龙之戒指 2
+give 金币 100000
+
+[@linghunlian]
+合成灵魂项链需要2个<天珠项链>，成功的几率为百分之十，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hechengkaishitailing><灵魂项链>\ \
+<返回/@zumataozhuang>
+
+[@hechengkaishitailing]
+#IF
+checkitem 天珠项链 2
+#ACT
+movr d6 15
+set [100] 1
+goto @linghunlian1
+#ELSESAY
+合成灵魂项链需要2个天珠项链！\ \
+<返回/@zumataozhuang>
+
+[@linghunlian1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 天珠项链 2
+equal d6 12
+#SAY
+恭喜你，合成灵魂项链成功！\ \
+<返回/@linghunlian>
+#ACT
+mov d6 0
+set [100] 0
+take 天珠项链 2
+give 灵魂项链 1
+#ELSESAY
+合成失败！\ \
+<返回/@linghunlian>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 天珠项链 2
+give 金币 100000
+
+[@sanyanshou]
+合成三眼手镯需要2个<心灵手镯>，成功的几率为百分之十，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hechengkaishitaisan><三眼手镯>\ \
+<返回/@zumataozhuang>
+
+[@taitanjie]
+合成泰坦戒指需要2个<铂金戒指>，成功的几率为百分之十，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hechengkaishitaitan><泰坦戒指>\ \
+<返回/@zumataozhuang>
+
+[@hechengkaishitaisan]
+#IF
+checkitem 心灵手镯 2
+#ACT
+movr d6 15
+set [100] 1
+goto @sanyanshou1
+#ELSESAY
+合成三眼手镯需要2个心灵手镯！\ \
+<返回/@zumataozhuang>
+
+[@sanyanshou1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 心灵手镯 2
+equal d6 13
+#SAY
+恭喜你，合成三眼手镯成功！\ \
+<返回/@sanyanshou>
+#ACT
+mov d6 0
+set [100] 0
+take 心灵手镯 2
+give 三眼手镯 1
+#ELSESAY
+合成失败！\ \
+<返回/@sanyanshou>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 心灵手镯 2
+give 金币 100000
+
+[@hechengkaishitaitan]
+#IF
+checkitem 铂金戒指 2
+#ACT
+movr d6 15
+set [100] 1
+goto @taitanjie1
+#ELSESAY
+合成泰坦戒指需要2个铂金戒指！\ \
+<返回/@zumataozhuang>
+
+[@taitanjie1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 铂金戒指 2
+equal d6 13
+#SAY
+恭喜你，合成泰坦戒指成功！\ \
+<返回/@taitanjie>
+#ACT
+mov d6 0
+set [100] 0
+take 铂金戒指 2
+give 泰坦戒指 1
+#ELSESAY
+合成失败！\ \
+<返回/@taitanjie>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 铂金戒指 2
+give 金币 100000
+
+[@emoling]
+合成恶魔铃铛需要2个<生命项链>，成功的几率为百分之十，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hechengkaishie><恶魔铃铛>\ \
+<返回/@zumataozhuang>
+
+[@zibiluo]
+合成紫碧螺需要2个<红宝石戒指>，成功的几率为百分之十，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hechengkaishizi><紫碧螺>\ \
+<返回/@zumataozhuang>
+
+[@longzhishou]
+合成龙之手镯需要2个<思贝儿手镯>，成功的几率为百分之十，合\
+成前请考虑清楚，合成失败物品将消失！ \ \
+<合成/@hechengkaishilong><龙之手镯>\ \
+<返回/@zumataozhuang>
+
+[@hechengkaishie]
+#IF
+checkitem 生命项链 2
+#ACT
+set [100] 1
+movr d6 15
+goto @emoling1
+#ELSESAY
+合成恶魔铃铛需要2个生命项链！\ \
+<返回/@zumataozhuang>
+
+[@emoling1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 生命项链 2
+equal d6 14
+#SAY
+恭喜你，合成恶魔铃铛成功！\ \
+<返回/@emoling>
+#ACT
+mov d6 0
+set [100] 0
+take 生命项链 2
+give 恶魔铃铛 1
+#ELSESAY
+合成失败！\ \
+<返回/@emoling>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 生命项链 2
+give 金币 100000
+
+[@hechengkaishilong]
+#IF
+checkitem 思贝儿手镯 2
+#ACT
+movr d6 15
+set [100] 1
+goto @longzhishou1
+#ELSESAY
+合成龙之手镯需要2个思贝儿手镯！\ \
+<返回/@zumataozhuang>
+
+[@longzhishou1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 思贝儿手镯 2
+equal d6 8
+#SAY
+恭喜你，合成龙之手镯成功！\ \
+<返回/@longzhishou>
+#ACT
+mov d6 0
+set [100] 0
+take 思贝儿手镯 2
+give 龙之手镯 1
+#ELSESAY
+合成失败！\ \
+<返回/@longzhishou>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 思贝儿手镯 2
+give 金币 100000
+
+[@hechengkaishizi]
+#IF
+checkitem 红宝石戒指 2
+#ACT
+movr d6 15
+set [100] 1
+goto @zibiluo1
+#ELSESAY
+合成紫碧螺需要2个红宝石戒指！\ \
+<返回/@zumataozhuang>
+
+[@zibiluo1]
+#IF
+Check [100] 0
+#act
+mapmove B311
+break
+#IF
+checkitem 红宝石戒指 2
+equal d6 7
+#SAY
+恭喜你，合成紫碧螺成功！\ \
+<返回/@zibiluo>
+#ACT
+mov d6 0
+set [100] 0
+take 红宝石戒指 2
+give 紫碧螺 1
+#ELSESAY
+合成失败！\ \
+<返回/@zibiluo>
+#ELSEACT
+mov d6 0
+set [100] 0
+take 红宝石戒指 2
+give 金币 100000
+

@@ -1,0 +1,225 @@
+()
+%100
+[@main]
+<COLOR=clyellow ---------------------------------------------------------> \
+<COLOR=clFuchsia 你好>，<COLOR=clAqua 你当前拥有元宝数量>：【<$GAMEGOLD>】\ 
+<COLOR=clyellow ---------------------------------------------------------> \
+<普通斗笠/@1>   <白金斗笠/@2>   <黄金斗笠/@3>\
+<屠龙/@11>    <嗜魂法杖/@12>    <霸者之刃/@13>\
+
+
+
+[@1]
+想合成普通斗笠?\
+\ \
+需要斗笠碎片*3+200祖玛精魂才能合成,   成功率 40%\
+\ \
+能不能弄到这些东西就看你自己的本事了!
+\ \
+<合成/@01>  <返回/@main>
+
+
+
+[@01]
+#IF
+random 3
+checkitem  斗笠碎片 3
+checkitem  祖玛精魂 200
+#ACT
+take 祖玛精魂 200
+TAKE 斗笠碎片 3
+GIVE 普通斗笠 1
+SENDMSG 0 恭喜『%s』成功合成 普通斗笠! 245 0 
+BREAK
+
+#IF
+checkitem  斗笠碎片 3
+checkitem  祖玛精魂 200
+#ACT
+take 祖玛精魂 200
+TAKE 斗笠碎片 3
+messagebox 合成失败，祝您好运。\
+BREAK
+#ELSEACT
+messagebox 你的材料没有齐全我怎么帮你呢？\想想办法吧。\
+BREAK
+
+
+
+
+[@2]
+想合成白金斗笠?\
+\ \
+需要普通斗笠+斗笠碎片*4+300祖玛精魂才能合成,   成功率 30%\
+\ \
+能不能弄到这些东西就看你自己的本事了（失败普通斗笠不会消失）!
+\ \
+<合成/@02>  <返回/@main>
+
+
+
+[@02]
+#IF
+random 4
+checkitem  斗笠碎片 4
+checkitem  普通斗笠 1
+checkitem  祖玛精魂 300
+#ACT
+take 祖玛精魂 300
+take 普通斗笠 1
+TAKE 斗笠碎片 4
+GIVE 白金斗笠 1
+SENDMSG 0 恭喜『%s』成功合成 白金斗笠! 245 0 
+BREAK
+
+#IF
+checkitem  斗笠碎片 4
+checkitem  普通斗笠 1
+checkitem  祖玛精魂 300
+#ACT
+take 祖玛精魂 300
+TAKE 斗笠碎片 4
+messagebox 合成失败，祝您好运。失败普通斗笠保留\
+BREAK
+#ELSEACT
+messagebox 你的材料没有齐全我怎么帮你呢？\想想办法吧。\
+BREAK
+
+
+
+[@3]
+想合成黄金斗笠?\
+\ \
+需要白金斗笠+斗笠碎片*4+400祖玛精魂才能合成,   成功率 20%\
+\ \
+能不能弄到这些东西就看你自己的本事了（失败普通斗笠不会消失）!
+\ \
+<合成/@03>  <返回/@main>
+
+
+
+[@03]
+#IF
+random 5
+checkitem  斗笠碎片 4
+checkitem  白金斗笠 1
+checkitem  祖玛精魂 400
+#ACT
+take 祖玛精魂 400
+take 白金斗笠 1
+TAKE 斗笠碎片 4
+GIVE 黄金斗笠 1
+SENDMSG 0 恭喜『%s』成功合成 黄金斗笠! 245 0 
+BREAK
+
+#IF
+checkitem  斗笠碎片 4
+checkitem  白金斗笠 1
+checkitem  祖玛精魂 400
+#ACT
+take 祖玛精魂 400
+TAKE 斗笠碎片 4
+messagebox 合成失败，祝您好运。失败白金斗笠保留\
+BREAK
+#ELSEACT
+messagebox 你的材料没有齐全我怎么帮你呢？\想想办法吧。\
+BREAK
+
+
+
+[@11]
+想合成屠龙?\
+\ \
+需要武器碎片*12+怒斩*3+金砖*2+赤月精魂*500+元宝8万  成功率100%\
+\ \
+能不能弄到这些东西就看你自己的本事了!
+\ \
+<合成/@011>  <返回/@main>
+
+
+
+[@011]
+#IF
+checkitem  武器碎片 12
+checkitem  怒斩 3
+checkitem  金砖 2
+checkitem  赤月精魂 500
+checkgamegold > 79999
+#ACT
+take  武器碎片 12
+take  怒斩 3
+take  金砖 2
+take 赤月精魂 500
+gamegold - 80000
+give 屠龙 1
+SENDMSG 0 恭喜『%s』成功合成 屠龙! 245 0 
+BREAK
+#ELSEACT
+messagebox 你的材料没有齐全我怎么帮你呢？\想想办法吧。\
+BREAK
+
+
+
+[@12]
+想合成嗜魂法杖?\
+\ \
+需要武器碎片*6+龙牙*3+金砖*2+赤月精魂*500+元宝8万  成功率100%\
+\ \
+能不能弄到这些东西就看你自己的本事了!
+\ \
+<合成/@012>  <返回/@main>
+
+
+
+[@012]
+#IF
+checkitem  武器碎片 6
+checkitem  龙牙 3
+checkitem  金砖 2
+checkitem  赤月精魂 500
+checkgamegold > 79999
+#ACT
+take  武器碎片 6
+take  龙牙 3
+take  金砖 2
+take 赤月精魂 500
+gamegold - 80000
+give 嗜魂法杖 1
+SENDMSG 0 恭喜『%s』成功合成 嗜魂法杖! 245 0 
+BREAK
+#ELSEACT
+messagebox 你的材料没有齐全我怎么帮你呢？\想想办法吧。\
+BREAK
+
+
+
+[@13]
+想合成霸者之刃?\
+\ \
+需要武器碎片*6+逍遥扇*3+金砖*2+赤月精魂*500+元宝8万  成功率100%\
+\ \
+能不能弄到这些东西就看你自己的本事了!
+\ \
+<合成/@013>  <返回/@main>
+
+
+
+[@013]
+#IF
+checkitem  武器碎片 6
+checkitem  逍遥扇 3
+checkitem  金砖 2
+checkitem  赤月精魂 500
+checkgamegold > 79999
+#ACT
+take  武器碎片 6
+take  逍遥扇 3
+take  金砖 2
+take 赤月精魂 500
+gamegold - 80000
+give 霸者之刃 1
+SENDMSG 0 恭喜『%s』成功合成 霸者之刃! 245 0 
+BREAK
+#ELSEACT
+messagebox 你的材料没有齐全我怎么帮你呢？\想想办法吧。\
+BREAK

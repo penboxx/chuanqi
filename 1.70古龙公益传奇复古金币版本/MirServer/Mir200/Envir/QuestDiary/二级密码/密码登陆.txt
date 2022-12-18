@@ -1,0 +1,19 @@
+[@密码登陆]
+{
+#IF
+checknamelist ..\QuestDiary\二级密码\密码名单.txt
+#ACT
+GOTO @检测IP
+#ELSEACT
+SENDMSG 6 〖提示〗你还没有设置2级密码,及时去比奇[326.265]设置!
+[@检测ip]
+#IF
+CHECKSTRINGLIST ..\QuestDiary\二级密码\IP数据.txt <$USERNAME><$IPADDR>
+#ACT
+SENDMSG 6 〖提示〗当前IP为安全IP!祝你游戏愉快!
+#ELSEACT
+TAGMAPINFO 1
+VAR Integer HUMAN 二级密码
+LOADVAR HUMAN 二级密码 ..\QuestDiary\二级密码\密码数据.txt
+mapmove mima
+}

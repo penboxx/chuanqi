@@ -1,0 +1,99 @@
+[@main]
+您好,我是聚灵道人\
+您可以在我这里兑换成英雄聚灵珠\
+也可以将聚灵珠兑换城金刚石\
+您想兑换成什么呢？\\
+<【兑换英雄聚灵珠】/@dh1>　　　　<【兑换成金刚石】/@dh2>\\
+<随便看看/@exit>\
+
+[@dh1]
+在我这里兑换，\
+需要些费用去买酒喝哦！\
+<兑换英雄聚灵珠(小)/@dh11><COLOR=clAqua 兑换需1万金币>\
+<兑换英雄聚灵珠(中)/@dh12><COLOR=clAqua 兑换需3万金币>\
+<兑换英雄聚灵珠(大)/@dh13><COLOR=clAqua 兑换需5万金币>\
+<COLOR=clSkyBlue 英雄聚灵珠需在英雄包裹内释放经验！>\
+<返回/@main>
+
+[@dh11]
+#if
+checkitem 聚灵珠(小) 1
+checkgold 10000
+#ACT
+take 金币 10000
+take 聚灵珠(小)
+give 英雄聚灵珠(小) 1
+SENDMSG 1 ★恭喜【<$USERNAME>】成功的兑换了英雄聚灵珠(小)！ 246 162
+SENDMSG 1 ★恭喜【<$USERNAME>】成功的兑换了英雄聚灵珠(小)！ 246 162
+#elsesay
+你没有指定物品或包裹没有空闲位置！\
+
+[@dh12]
+#if
+checkitem 聚灵珠(中) 1
+checkgold 30000
+#ACT
+take 金币 30000
+take 聚灵珠(中)
+give 英雄聚灵珠(中) 1
+SENDMSG 1 ★恭喜【<$USERNAME>】成功的兑换了英雄聚灵珠(中)！ 246 162
+SENDMSG 1 ★恭喜【<$USERNAME>】成功的兑换了英雄聚灵珠(中)！ 246 162
+#elsesay
+你没有指定物品或包裹没有空闲位置！\
+
+[@dh13]
+#if
+checkitem 聚灵珠(大) 1
+checkgold 50000
+#ACT
+take 金币 50000
+take 聚灵珠(大)
+give 英雄聚灵珠(大) 1
+SENDMSG 1 ★恭喜【<$USERNAME>】成功的兑换了英雄聚灵珠(大)！ 246 162
+SENDMSG 1 ★恭喜【<$USERNAME>】成功的兑换了英雄聚灵珠(大)！ 246 162
+#elsesay
+你没有指定物品或包裹没有空闲位置！\
+
+[@dh2]
+兑换金刚石需要缴纳一些元宝的哦,准备好了吗？\
+我先告诉你兑换比率吧,让您有个思想准备哈！\
+<兑换聚灵珠(小)/@dh21><COLOR=clAqua 聚灵珠(小)免费兑换金刚石5颗>\
+<兑换聚灵珠(中)/@dh22><COLOR=clAqua 聚灵珠(中)免费兑换金刚石10颗>\
+<兑换聚灵珠(大)/@dh23><COLOR=clAqua 聚灵珠(大)免费兑换金刚石20颗>\
+<COLOR=clSkyBlue 金刚石可以在炼金师或藏宝图合成技师那合成高级装备！>\
+<返回/@main>
+
+
+
+[@dh21]
+#if
+checkitem 聚灵珠(小) 1
+#ACT
+take 聚灵珠(小)
+give 金刚石5颗 1
+SENDMSG 1 ★恭喜【<$USERNAME>】成功的兑换了金刚石！！！ 58 219
+SENDMSG 1 ★恭喜【<$USERNAME>】成功的兑换了金刚石！！！ 58 219
+#elsesay
+你没有指定物品或包裹没有空闲位置！
+
+[@dh22]
+#if
+checkitem 聚灵珠(中) 1
+#ACT
+take 聚灵珠(中)
+give 金刚石10颗 1
+SENDMSG 1 ★恭喜【<$USERNAME>】成功的兑换了金刚石！！！ 58 219
+SENDMSG 1 ★恭喜【<$USERNAME>】成功的兑换了金刚石！！！ 58 219
+#elsesay
+你没有指定物品或包裹没有空闲位置！
+
+[@dh23]
+#if
+checkitem 聚灵珠(大) 1
+#ACT
+take 聚灵珠(大)
+give 金刚石10颗 2
+SENDMSG 1 ★恭喜【<$USERNAME>】成功的兑换了金刚石！！！ 58 219
+SENDMSG 1 ★恭喜【<$USERNAME>】成功的兑换了金刚石！！！ 58 219
+#elsesay
+你没有指定物品或包裹没有空闲位置！

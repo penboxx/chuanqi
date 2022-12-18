@@ -1,0 +1,1673 @@
+(@@InPutInteger @@InPutString @@sendmsg @storage @getback @buy @sell @repair @s_repair @@offlinemsg @getnextpage @getPreviouspage @@InPutString @@useitemname @OnLogout_OffLinePlaying @KillByHum)
+%100
+
+[@ATTACK]
+#IF
+EQUAL <$TARGETRACE> 1
+#ACT
+BREAK
+#IF
+EQUAL <$TARGETRACE> 2
+#ACT
+BREAK
+#IF
+CheckGAMEPOINT > 9
+#ACT
+MOVR D155 100
+#IF
+CheckGAMEPOINT > 99
+#ACT
+MOVR D155 500
+#IF
+CheckGAMEPOINT > 199
+#ACT
+MOVR D155 1000
+#IF
+CheckGAMEPOINT > 9
+#ACT
+DELMONHP <$STR(D155)> 1
+SENDMSG 6 切割触发成功：刀刀切割怪物【<$TARGETMONNAME>】【<$STR(D155)>】血量！ 251 249 2
+
+[@HeroAttack] 
+#IF
+EQUAL <$H.TARGETRACE> 1
+#ACT
+BREAK
+#IF
+EQUAL <$H.TARGETRACE> 2
+#ACT
+BREAK
+#IF
+CheckGAMEPOINT > 9
+#ACT
+MOVR D155 100
+#IF
+CheckGAMEPOINT > 99
+#ACT
+MOVR D155 500
+#IF
+CheckGAMEPOINT > 199
+#ACT
+MOVR D155 1000
+#IF
+CheckGAMEPOINT > 9
+#ACT
+H.DELMONHP <$STR(D155)> 1
+SENDMSG 6 切割触发成功：刀刀切割怪物【<$TARGETMONNAME>】【<$STR(D155)>】血量！ 251 249 2
+
+[@MagSelfFunc58]
+#IF
+EQUAL <$TARGETRACE> 1
+#ACT
+BREAK
+#IF
+EQUAL <$TARGETRACE> 2
+#ACT
+BREAK
+#IF
+CheckGAMEPOINT > 9
+#ACT
+MOVR D155 100
+#IF
+CheckGAMEPOINT > 99
+#ACT
+MOVR D155 500
+#IF
+CheckGAMEPOINT > 199
+#ACT
+MOVR D155 1000
+#IF
+CheckGAMEPOINT > 9
+#ACT
+DELMONHP <$STR(D155)> 1
+SENDMSG 6 切割触发成功：刀刀切割怪物【<$TARGETMONNAME>】【<$STR(D155)>】血量！ 251 249 2
+
+[@HeroMagSelfFunc11]
+#IF
+EQUAL <$TARGETRACE> 1
+#ACT
+BREAK
+#IF
+EQUAL <$TARGETRACE> 2
+#ACT
+BREAK
+#IF
+CheckGAMEPOINT > 9
+#ACT
+MOVR D155 100
+#IF
+CheckGAMEPOINT > 99
+#ACT
+MOVR D155 500
+#IF
+CheckGAMEPOINT > 199
+#ACT
+MOVR D155 1000
+#IF
+CheckGAMEPOINT > 9
+#ACT
+H.DELMONHP <$STR(D155)> 1
+SENDMSG 6 切割触发成功：刀刀切割怪物【<$TARGETMONNAME>】【<$STR(D155)>】血量！ 251 249 2
+
+[@MagSelfFunc57]
+#IF
+EQUAL <$TARGETRACE> 1
+#ACT
+BREAK
+#IF
+EQUAL <$TARGETRACE> 2
+#ACT
+BREAK
+#IF
+CheckGAMEPOINT > 9
+#ACT
+MOVR D155 100
+#IF
+CheckGAMEPOINT > 99
+#ACT
+MOVR D155 500
+#IF
+CheckGAMEPOINT > 199
+#ACT
+MOVR D155 1000
+#IF
+CheckGAMEPOINT > 9
+#ACT
+DELMONHP <$STR(D155)> 1
+SENDMSG 6 切割触发成功：刀刀切割怪物【<$TARGETMONNAME>】【<$STR(D155)>】血量！ 251 249 2
+
+[@HeroMagSelfFunc13]
+#IF
+EQUAL <$TARGETRACE> 1
+#ACT
+BREAK
+#IF
+EQUAL <$TARGETRACE> 2
+#ACT
+BREAK
+#IF
+CheckGAMEPOINT > 9
+#ACT
+MOVR D155 100
+#IF
+CheckGAMEPOINT > 99
+#ACT
+MOVR D155 500
+#IF
+CheckGAMEPOINT > 199
+#ACT
+MOVR D155 1000
+#IF
+CheckGAMEPOINT > 9
+#ACT
+H.DELMONHP <$STR(D155)> 1
+SENDMSG 6 切割触发成功：刀刀切割怪物【<$TARGETMONNAME>】【<$STR(D155)>】血量！ 251 249 2
+
+
+
+
+[@PlayDie]
+#IF
+check [059] 1
+KillByHum
+#ACT
+<$KILLER>.SET [059] 1
+SET [059] 0
+SENDMSG 7 你被<$KILLER>杀死了,绝对防御效果消失了
+SENDMSG 7 你被<$KILLER>杀死了,绝对防御效果消失了
+SENDMSG 7 你被<$KILLER>杀死了,绝对防御效果消失了
+
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+goto @Mir2m2团战擂台死亡触发
+
+#If
+KillByHum
+#Act 
+MOV A13 <$USERNAME>
+MOV A14 <$KILLER>
+DELAYGOTO 1 @检测杀人
+DELAYGOTO 1 @检测杀人2
+CalcVar HUMAN BSZS + 1
+SaveVar HUMAN BSZS ..\QuestDiary\杀人系统\BSZS.txt HardDisk
+SendMsg 7 提示：您的当前被杀总数为：<$HUMAN(BSZS)>人
+SendMsg 1 [<$KILLER>]在%m把[<$USERNAME>]杀害了.火速请白求恩大夫来抢救！  250  0
+SendMsg 1 [<$KILLER>]在%m把[<$USERNAME>]杀害了.火速请白求恩大夫来抢救！  250  0
+Close
+#ElseAct
+DELAYGOTO 1 @检测杀人
+SendMsg 1 强悍的[<$MONKILLER>]在%m把[<$USERNAME>]给残忍分尸了！ 250  0
+SendMsg 1 强悍的[<$MONKILLER>]在%m把[<$USERNAME>]给残忍分尸了！ 250  0
+Close
+#IF
+ISONMAP 0150
+#ACT
+SENDMSG 0 [沙城号外]:玩家〖%s〗在[%m]的(%x：%y)被砍倒在地，杀人凶手〖<$KILLER>〗在沙城好不得意。高声呼喊‘还有谁’! 0 251
+SENDMSG 0 [玛法号外]:又一个为荣誉而战的大虾在抢夺沙巴克战役中被乱刀砍死，请他所在的行会成员集体默哀三分钟吧。 0 251
+BREAK
+[@检测杀人2]
+#If
+<$USERNAME>.CHECK [168] 1
+#Act 
+SET [168] 0
+DEPRIVETITLE 神力护身 
+SendMsg 6 您被杀害了“神力护身”封号被取消  250  3
+BREAK
+
+#If
+<$str(A13)>.CHECK [168] 1
+#Act 
+<$KILLER>.gamegold + 100
+SendMsg 1  [<$str(A14)>]把“神力获得者”[<$str(A13)>]杀害了.获得了100元宝的奖励  191 251
+SET [168] 0
+BREAK
+
+
+
+[@OnLogout_SoftClosing]
+#IF
+CHECKLEVELEX > 0
+#ACT
+goto @Mir2m2团战擂台下线触发
+#IF
+CHECKLEVELEX > 0
+#ACT
+#CALL [\Mir2m2二级密码配置(免费脚本群.101529177)\Mir2m2二级密码脚本.txt] @Mir2m2二级密码脚本QF
+
+[@OnLogout_OffLinePlaying]
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+#CALL [\Mir2m2自动开盾配置(免费脚本群.101529177)\Mir2m2自动开盾脚本.txt] @Mir2m2自动开盾脚本QF
+#CALL [\Mir2m2二级密码配置(免费脚本群.101529177)\Mir2m2二级密码脚本.txt] @Mir2m2二级密码脚本QF
+#If
+CheckLevelEx > 0 
+#Act
+OffLine 60 1 60
+goto @Mir2m2团战擂台下线触发
+
+
+[@PlayLevelUp]
+#IF
+CHECKLEVELEX = 7
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到7级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 8
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到8级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 9
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到9级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 10
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到10级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 11
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到11级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 12
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到12级!开始在2020独家金币合击踏入征程!!!   251 249
+GMEXECUTE 解除禁言 SELF
+SENDMSG 7 您等级大于12级，解除禁言！
+BREAK
+
+#IF
+CHECKLEVELEX = 13
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到13级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 14
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到14级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 15
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到15级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 16
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到16级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+
+#IF
+CHECKLEVELEX = 17
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到17级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 18
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到18级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 19
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到19级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 20
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到20级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 21
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到21级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 22
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到22级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 23
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到23级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 24
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到24级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 25
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到25级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 26
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到26级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+
+#IF
+CHECKLEVELEX = 27
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到28级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 29
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到29级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 30
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到30级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 31
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到31级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 32
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到32级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 33
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到33级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 34
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到34级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 35
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到35级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+
+#IF
+CHECKLEVELEX = 36
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到36级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 37
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到37级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+
+#IF
+CHECKLEVELEX = 38
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到38级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 39
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到39级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 40
+#ACT
+give 金币 500000
+give 双倍卷轴 1
+SENDMSG 0 恭喜<$USERNAME>升到40级系统自动送他50W金币 双倍卷轴奖励！！ 253 252 10
+SENDMSG 0 恭喜<$USERNAME>升到40级系统自动送他50W金币 双倍卷轴奖励！！ 251 249
+SENDMSG 0 恭喜<$USERNAME>已经达到40级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 41
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到41级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 42
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到42级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+
+
+#IF
+CHECKLEVELEX = 43
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到43级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 44
+checkstringlist ..\QuestDiary\测试奖励\本区状态.txt 测试区 HardDisk
+#ACT
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\44级测试奖励.txt HardDisk
+SENDMSG 0 恭喜<$USERNAME>已经达到44级!正式开区后可以领取相应的奖励!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 44
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到44级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+
+
+#IF
+CHECKLEVELEX = 45
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到45级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 46
+checkstringlist ..\QuestDiary\测试奖励\本区状态.txt 测试区 HardDisk
+#ACT
+DELACCOUNTLIST ..\QuestDiary\测试奖励\44级测试奖励.txt HardDisk
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\46级测试奖励.txt HardDisk
+SENDMSG 0 恭喜<$USERNAME>已经达到46级!正式开区后可以领取相应的奖励!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 46
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到46级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+
+
+#IF
+CHECKLEVELEX = 47
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到47级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 48
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到48级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 49
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到49级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 50
+checkstringlist ..\QuestDiary\测试奖励\本区状态.txt 测试区 HardDisk
+#ACT
+DELACCOUNTLIST ..\QuestDiary\测试奖励\46级测试奖励.txt HardDisk
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\50级测试奖励.txt HardDisk
+SENDMSG 0 恭喜<$USERNAME>已经达到50级!正式开区后可以领取相应的奖励!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 50
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到50级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+
+
+
+#IF
+CHECKLEVELEX = 51
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到51级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+
+#IF
+CHECKLEVELEX = 52
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到52级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 53
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到53级!正式开区后可以领取相应的奖励!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 53
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到53级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 54
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到54级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 55
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到55级!正式开区后可以领取相应的奖励!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 55
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到55级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 56
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到56级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 57
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到57级!正式开区后可以领取相应的奖励!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 57
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到57级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 58
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到58级!正式开区后可以领取相应的奖励!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 58
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到58级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 59
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到59级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 60
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到60级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 61
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到61级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 62
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到62级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 63
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到63级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 64
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到64级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 65
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到65级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 66
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到66级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 67
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到67级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+
+#IF
+CHECKLEVELEX = 68
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到68级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 69
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到69级!开始在2020独家金币合击踏入征程!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 70
+#ACT
+SENDMSG 0 恭喜<$USERNAME>已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+BREAK
+#IF
+CHECKLEVELEX = 71
+#ACT
+CHANGELEVEL = 70
+SENDMSG 0 恭喜<$USERNAME>已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+BREAK
+[@HeroLevelUp]
+#if
+H.CHECKLEVELEX = 70
+#ACT
+SENDMSG 0 恭喜<$USERNAME>的英雄已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>的英雄已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>的英雄已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>的英雄已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>的英雄已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>的英雄已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+BREAK
+
+#if
+H.CHECKLEVELEX = 71
+#ACT
+H.CHANGELEVEL = 70
+SENDMSG 0 恭喜<$USERNAME>的英雄已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>的英雄已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>的英雄已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>的英雄已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>的英雄已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+SENDMSG 0 恭喜<$USERNAME>的英雄已经达到70级!本服封顶70级升超导致经验损失自行负责!!!   251 249
+BREAK
+
+
+
+[@STDMODEFUNC27]
+#IF
+#ACT
+CHANGEEXP + 100000
+SENDMSG 6 〖提示〗增加10W经验：您的当前经验值:<$EXP>!
+break
+
+[@STDMODEFUNC28]
+#IF
+#ACT
+CHANGEEXP + 500000
+SENDMSG 6 〖提示〗增加50W经验：您的当前经验值:<$EXP>!
+break
+
+[@STDMODEFUNC29]
+#IF
+#ACT
+CHANGEEXP + 1000000
+SENDMSG 6 〖提示〗增加100W经验：您的当前经验值:<$EXP>!
+break
+
+[@STDMODEFUNC10]
+#IF
+CHECKLEVELEX > 0
+#ACT
+KILLMONEXPRATE 200 7200
+Gmexecute showeffect 75
+SENDMSG 0 恭喜玩家<$USERNAME>使用双倍卷轴获得了2小时双倍经验时间！
+BREAK
+[@STDMODEFUNC101]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MESSAGEBOX 若自身永久经验倍数低于三倍经验，小退或死亡三倍经验倍数消失！
+KILLMONEXPRATE 300 7200
+Gmexecute showeffect 75
+SENDMSG 0 恭喜玩家<$USERNAME>使用三倍卷轴获得了2小时三倍经验时间！
+BREAK
+
+[@STDMODEFUNC103]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MESSAGEBOX 若自身永久经验倍数低于四倍经验，小退或死亡四倍经验倍数消失！
+KILLMONEXPRATE 400 3600
+Gmexecute showeffect 75
+SENDMSG 0 恭喜玩家<$USERNAME>使用四倍卷轴获得了1小时四倍经验时间！
+BREAK
+
+
+[@STDMODEFUNC102]
+#IF
+CHECKLEVELEX > 0
+#ACT
+ReadRandomStr .\QuestDiary\抽取数据\合成书页\技能回馈.txt S18 HardDisk
+give <$STR(S18)> 1
+SENDMSG 1 系统：恭喜玩家[%s]使用技能抽奖卷抽中<$STR(S18)>！ 151 249 
+BREAK
+
+[@STDMODEFUNC11]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 78
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯，大家快去欣赏哦！ 251 249
+
+[@STDMODEFUNC12]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 79
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯，大家快去欣赏哦！ 251 249
+
+[@STDMODEFUNC13]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 80
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯，大家快去欣赏哦！ 251 249
+
+[@STDMODEFUNC14]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 81
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯，大家快去欣赏哦！ 251 249
+
+[@STDMODEFUNC15]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 82
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯，大家快去欣赏哦！ 251 249
+
+[@STDMODEFUNC16]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 83
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯，大家快去欣赏哦！ 251 249
+
+[@STDMODEFUNC17]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 82
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯，大家快去欣赏哦！ 251 249
+
+[@STDMODEFUNC25]
+<COLOR=CLRED 大块切糕>可以将你要说出的话置顶，特别醒目！\
+并有烟花效果。\
+每句话限制为：30个字，\
+可在置顶位置停留30秒！\
+请将要说的话，编写到切糕内！\ \
+<大块切糕/@@INPUTSTRING1>\
+[@@INPUTSTRING1]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 ~INPUTSTRING1
+[~INPUTSTRING1]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DEC S1 62 999
+BREAK
+SENDMSG 0 <$USERNAME>在:%m%x:%y说我很穷，穷的只剩下切糕了。 149 154
+SENDMSG 0 <$USERNAME>：<$STR(S1)> 253 252 20
+SENDMSG 0 <$USERNAME>：<$STR(S1)> 253 252 20
+SENDMSG 0 <$USERNAME>：<$STR(S1)> 253 252 20
+SENDMSG 0 <$USERNAME>：<$STR(S1)> 253 252 20
+SendScrollMsg <$USERNAME>：<$STR(S1)> 251 249 20
+CLOSE
+BREAK
+mov D57 0
+ReadRandomStr .\QuestDiary\抽取数据\切糕.txt S90 HardDisk
+Gmexecute showeffect <$STR(S90)>
+DELAYGOTO 2000 @切糕开始
+BREAK
+[@STDMODEFUNC18]
+#IF
+CHECKLEVELEX > 0
+#ACT
+mov D57 0
+SENDMSG 0 <$USERNAME>在:%m%x:%y处释放庆典蛋糕咯！大家快去欣赏哦。 149 154
+ReadRandomStr .\QuestDiary\抽取数据\切糕.txt S90 HardDisk
+Gmexecute showeffect <$STR(S90)>
+DELAYGOTO 2000 @切糕开始
+BREAK
+
+[@切糕开始]
+#IF
+LARGE D57 4
+#ACT
+MOV D57 0
+SENDMSG 7 大块切糕释放完毕。
+BREAK
+#ELSEACT
+INC D57 1
+ReadRandomStr .\QuestDiary\抽取数据\切糕.txt S90 HardDisk
+Gmexecute showeffect <$STR(S90)>
+DELAYGOTO 3000 @切糕开始
+BREAK
+
+[@蛋糕开始]
+#IF
+LARGE D57 4
+#ACT
+MOV D57 0
+SENDMSG 7 庆典蛋糕释放完毕。
+BREAK
+#ELSEACT
+INC D57 1
+ReadRandomStr .\QuestDiary\抽取数据\烟花.txt S90 HardDisk
+Gmexecute showeffect <$STR(S90)>
+DELAYGOTO 3000 @蛋糕开始
+BREAK
+
+[@STDMODEFUNC19]
+#IF
+GENDER woman
+#ACT
+HAIRSTYLE 0
+SENDMSG 6 发型已经变更! 
+BREAK
+#IF
+GENDER man
+#ACT
+HAIRSTYLE 0
+SENDMSG 6 发型已经变更! 
+BREAK
+
+[@STDMODEFUNC20]
+#IF
+GENDER woman
+#ACT
+HAIRSTYLE 1
+SENDMSG 6 发型已经变更! 
+BREAK
+#IF
+GENDER man
+#ACT
+HAIRSTYLE 1
+SENDMSG 6 发型已经变更! 
+BREAK
+
+[@STDMODEFUNC21]
+#IF
+random 10
+#ACT
+MAPMOVE 0 349 289
+CLOSE
+BREAK
+#IF
+random 7
+#ACT
+MAPMOVE 0 318 271
+CLOSE
+BREAK
+#IF
+random 6
+#ACT
+MAPMOVE 0 321 251
+CLOSE
+BREAK
+#IF
+random 5
+#ACT
+MAPMOVE 0 307 239
+CLOSE
+BREAK
+#IF
+random 4
+#ACT
+MAPMOVE 0 317 285
+CLOSE
+BREAK
+#IF
+#ACT
+MAPMOVE 0 333 254
+CLOSE
+BREAK
+
+[@STDMODEFUNC22]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOVR P7 16
+INC P7 323
+MOVR P8 16
+INC P8 323
+mapmove 3 <$STR(P7)> <$STR(P8)>
+CLOSE
+BREAK
+
+[@StdModeFunc54]
+#IF
+#ACT
+mapmove zhufu
+SENDMSG 0 专爆超级祝福油!
+
+[@STDMODEFUNC23]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CREDITPOINT + 1
+SENDMSG 7 恭喜：你获得了：声望:1
+BREAK
+
+[@STDMODEFUNC24]
+#IF
+CheckItemAddValue 1 3 < 7
+#ACT
+UPGRADEITEMEX 1 3 0 1 0
+#ELSESAY
+你的武器附加了7点幸运值. 不可以在加了!!\
+
+[@STDMODEFUNC30]
+#IF
+#ACT
+BREAK
+
+[@STDMODEFUNC31]
+#IF
+CHECKITEM 强效太阳水 6
+#ACT
+TAKE 强效太阳水 6
+GIVE 打捆太阳水 1
+CLOSE
+BREAK
+#ELSESAY
+你都没有足够的强效太阳水需要打捆，\
+还捆什么? \
+浪费... \ \
+<离 开/@EXIT>\
+
+[@STDMODEFUNC32]
+#IF
+CHECKITEM 万年雪霜 6
+#ACT
+TAKE 万年雪霜 6
+GIVE 雪霜包 1
+CLOSE
+BREAK
+#ELSESAY
+你都没有足够的万年雪霜需要打捆，\
+还捆什么? \
+浪费... \ \
+<离 开/@EXIT>\
+
+[@STDMODEFUNC33]
+#IF
+CHECKITEM 疗伤药 6
+#ACT
+TAKE 疗伤药 6
+GIVE 打捆疗伤药 1
+CLOSE
+BREAK
+#ELSESAY
+你都没有足够的疗伤药需要打捆，\
+还捆什么? \
+浪费... \ \
+<离 开/@EXIT>\
+[@StdModeFunc130]
+#act
+GAMEGOLD + 1
+SENDMSG 6 提示:元宝增加1个.您当前的元宝为：<$GAMEGOLD>个
+
+[@StdModeFunc131]
+#act
+GAMEGOLD + 5
+SENDMSG 6 提示:元宝增加5个.您当前的元宝为：<$GAMEGOLD>个
+
+
+[@StdModeFunc132]
+#act
+GAMEGOLD + 10
+SENDMSG 6 提示:元宝增加10个.您当前的元宝为：<$GAMEGOLD>个
+
+
+[@StdModeFunc133]
+#act
+GAMEGOLD + 50
+SENDMSG 6 提示:元宝增加50个.您当前的元宝为：<$GAMEGOLD>个
+
+
+[@StdModeFunc134]
+#act
+GAMEGOLD + 100
+SENDMSG 6 提示:元宝增加100个.您当前的元宝为：<$GAMEGOLD>个
+
+[@StdModeFunc135]
+#act
+GAMEGOLD + 500
+SENDMSG 6 提示:元宝增加500个.您当前的元宝为：<$GAMEGOLD>个
+
+[@StdModeFunc136]
+#act
+GAMEGOLD + 1000
+SENDMSG 6 提示:元宝增加1000个.您当前的元宝为：<$GAMEGOLD>个
+
+[@StdModeFunc137]
+#act
+GAMEGOLD + 5000
+SENDMSG 6 提示:元宝增加5000个.您当前的元宝为：<$GAMEGOLD>个
+
+[@StdModeFunc140]
+#ACT
+Gmexecute 11 疗伤药  100
+[@StdModeFunc141]
+#ACT
+Gmexecute 11 万年雪霜  100
+
+[@StdModeFunc142]
+#if
+CheckLevelEx > 0
+#act
+GAMEGIRD + 1
+GAMEPOINT + 1
+GAMEGOLD + 30
+SENDmSG 6 提示：累积充值增加1元积分，当前游戏累积充值积分为：[<$GAMEGIRD>.00元]
+SENDmSG 6 提示：累积充值增加1元充值点，当前游戏累积充值点为：[<$GAMEPOINT>.00元]
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统购买元宝功能,获得元宝30,如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统获得1充值点！
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统获得1充值积分！
+
+Break
+[@StdModeFunc143]
+#if
+CheckLevelEx > 0
+#act
+GAMEGIRD + 2
+GAMEPOINT + 2
+GAMEGOLD + 60
+SENDmSG 6 提示：累积充值增加2元积分，当前游戏累积充值积分为：[<$GAMEGIRD>.00元]
+SENDmSG 6 提示：累积充值增加2元充值点，当前游戏累积充值点为：[<$GAMEPOINT>.00元]
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统购买元宝功能,获得元宝60,如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统获得2充值点！
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统获得2充值积分！
+Break
+[@StdModeFunc144]
+#if
+CheckLevelEx > 0
+#act
+GAMEGIRD + 5
+GAMEPOINT + 5
+GAMEGOLD + 150
+SENDmSG 6 提示：累积充值增加5元积分，当前游戏累积充值积分为：[<$GAMEGIRD>.00元]
+SENDmSG 6 提示：累积充值增加5元充值点，当前游戏累积充值点为：[<$GAMEPOINT>.00元]
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统购买元宝功能,获得元宝150,如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统获得5充值点！
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统获得5充值积分！
+Break
+[@StdModeFunc145]
+#if
+CheckLevelEx > 0
+#act
+GAMEGIRD + 10
+GAMEPOINT + 10
+GAMEGOLD + 300
+SENDmSG 6 提示：累积充值增加10元积分，当前游戏累积充值积分为：[<$GAMEGIRD>.00元]
+SENDmSG 6 提示：累积充值增加10元充值点，当前游戏累积充值点为：[<$GAMEPOINT>.00元]
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统购买元宝功能,获得元宝300,如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统获得10充值点！
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统获得10充值积分！
+Break
+[@StdModeFunc146]
+#if
+CheckLevelEx > 0
+#act
+GAMEGIRD + 50
+GAMEPOINT + 50
+GAMEGOLD + 1500
+SENDmSG 6 提示：累积充值增加50元积分，当前游戏累积充值积分为：[<$GAMEGIRD>.00元]
+SENDmSG 6 提示：累积充值增加50元充值点，当前游戏累积充值点为：[<$GAMEPOINT>.00元]
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统购买元宝功能,获得元宝1500,如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统获得50充值点！
+SENDMSG 1 ★玩家[<$USERNAME>]使用充值系统获得50充值积分！
+Break
+
+[@StdModeFunc147]
+#if
+CheckLevelEx > 0
+#act
+NIMBUS + 1
+SENDmSG 6 提示：累积荣誉点增加1，当前游戏累积荣誉点为：[<$NIMBUS>点]
+Break
+
+[@StdModeFunc148]
+#if
+CheckLevelEx > 0
+#act
+NIMBUS + 2
+SENDmSG 6 提示：累积荣誉点增加2，当前游戏累积荣誉点为：[<$NIMBUS>点]
+Break
+
+[@StdModeFunc149]
+#if
+CheckLevelEx > 0
+#act
+NIMBUS + 3
+SENDmSG 6 提示：累积荣誉点增加3，当前游戏累积荣誉点为：[<$NIMBUS>点]
+Break
+
+[@StdModeFunc150]
+#if
+CheckLevelEx > 0
+#act
+NIMBUS + 5
+SENDmSG 6 提示：累积荣誉点增加5，当前游戏累积荣誉点为：[<$NIMBUS>点]
+Break
+
+[@StdModeFunc151]
+#if
+CheckLevelEx > 0
+#act
+NIMBUS + 10
+SENDmSG 6 提示：累积荣誉点增加10，当前游戏累积荣誉点为：[<$NIMBUS>点]
+Break
+
+
+[@StdModeFunc152]
+#if
+CheckLevelEx > 0
+#act
+NIMBUS + 50
+SENDmSG 6 提示：累积荣誉点增加50，当前游戏累积荣誉点为：[<$NIMBUS>点]
+Break
+
+
+[@StdModeFunc153]
+#if
+CheckLevelEx > 0
+#act
+NIMBUS + 200
+SENDmSG 6 提示：累积荣誉点增加200，当前游戏累积荣誉点为：[<$NIMBUS>点]
+Break
+
+[@StdModeFunc120]
+#IF
+#ACT
+give 金币 1000000
+SENDMSG 7 提示：金币增加1000000！
+
+[@StdModeFunc21]
+#IF
+#ACT
+Gmexecute showeffect 78
+
+[@StdModeFunc22]
+#IF
+#ACT
+Gmexecute showeffect 79
+
+[@StdModeFunc23]
+#IF
+#ACT
+Gmexecute showeffect 80
+
+[@StdModeFunc24]
+#IF 
+#ACT
+Gmexecute showeffect 81
+
+[@StdModeFunc25]
+#IF
+#ACT
+Gmexecute showeffect 82
+
+[@StdModeFunc35]
+#IF
+CHECKLEVELEX > 0
+#act
+GAMEDIAMOND + 1
+SENDMSG 7 恭喜：你获得了：金刚石:1
+BREAK
+
+[@StdModeFunc36]
+#IF
+CHECKLEVELEX > 0
+#act
+GAMEDIAMOND + 5
+SENDMSG 7 恭喜：你获得了：金刚石:5
+BREAK
+
+[@StdModeFunc37]
+#IF
+CHECKLEVELEX > 0
+#act
+GAMEDIAMOND + 10
+SENDMSG 7 恭喜：你获得了：金刚石:10
+BREAK
+
+[@StdModeFunc38]
+#IF
+CHECKLEVELEX > 0
+#act
+GAMEDIAMOND + 50
+SENDMSG 7 恭喜：你获得了：金刚石:50
+BREAK
+
+[@StdModeFunc39]
+#IF
+CHECKLEVELEX > 0
+#act
+GAMEDIAMOND + 100
+SENDMSG 7 恭喜：你获得了：金刚石:100
+BREAK
+
+[@StdModeFunc40]
+#IF
+CHECKLEVELEX > 0
+#act
+GAMEDIAMOND + 500
+SENDMSG 7 恭喜：你获得了：金刚石:500
+BREAK
+
+[@StdModeFunc41]
+#IF
+CHECKLEVELEX > 0
+#act
+GAMEDIAMOND + 1000
+SENDMSG 7 恭喜：你获得了：金刚石:1000
+BREAK
+
+[@StdModeFunc42]
+#IF
+CHECKLEVELEX > 0
+#act
+GAMEDIAMOND + 5000
+SENDMSG 7 恭喜：你获得了：金刚石:5000
+BREAK
+
+[@StdModeFunc43]
+#IF
+CHECKLEVELEX > 0
+#act
+GIVE 祝福油 1
+BREAK
+
+[@StdModeFunc57]
+#IF 
+CHECKITEMADDVALUE 1 3 = 7
+#Act 
+give 超级祝福油
+SENDMSG 6 %s您武器幸运值已经达到7点.不能继续增加!
+#ElseAct 
+UPGRADEITEMEX 1 3 1 1 0
+SENDMSG 6 %s恭喜您武器增加了一点幸运!
+break
+
+
+
+[@StdModeFunc44]
+#if
+CHECKLEVELEX > 39
+checkjob wizard
+CHECKMAGICLEVEL 魔法盾 = 3
+#act
+SkillLevel 魔法盾 = 4
+break
+#ELSEACT
+MESSAGEBOX 等级没有40级或不能学习此技能。
+GIVE 四级魔法盾 1
+[@@RECALLPLAYER]
+#IF
+CHECKHEROONLINE
+#ACT
+CLOSE
+MESSAGEBOX 请先设置您的英雄下线！
+#ELSEACT
+CLOSE
+RECALLPLAYER
+
+[@HERONAMEFILTER]
+英雄名字中包含禁用字符\<关闭/@EXIT>
+[@CREATEHEROOK]
+您的英雄已创建成功\ \
+<关闭/@EXIT>\
+#ACT
+SENDMSG 0 恭喜：<$USERNAME>，在比奇成功领取了英雄，从此游走玛法无人可挡！ 251 249
+BREAK
+[@HERONAMEEXISTS]
+英雄名字已经存在\<关闭/@EXIT>
+[@HEROOVERCHRCOUNT]
+你的帐号角色过多\<关闭/@EXIT>
+[@CREATEHEROFAIL]
+创建英雄失败\<关闭/@EXIT>
+[@CREATEHEROFAILEX]
+创建英雄失败，请稍候重试\<关闭/@EXIT>
+
+
+[@UserCmd1]
+#CALL [\系统功能\帮助命令.txt] @帮助
+
+;[@UserCmd2]
+;#CALL [\系统功能\在线充值.txt] @充值元宝
+
+[@UserCmd3]
+#if
+CHECKnameLIST ..\QuestDiary\禁止千里传音\禁止喇叭名单.txt HardDisk
+#act
+MESSAGEBOX 您违反游戏规定或使用外挂辅助，禁止使用千里传音！
+break
+#IF
+checklevelex > 29
+checkgold 50000
+#ACT
+QUERYVALUE 10 0 60 ~全服广播 请输入你要进行全服广播的文字：(最多30个字，收费50000金币) QF
+BREAK
+#ELSEACT
+MESSAGEBOX 提示：等级不足30级或者金币不足5W！千里传音命令【@传】
+BREAK
+
+
+[~全服广播]
+#IF
+EQUAL S10
+#ACT
+
+MESSAGEBOX 请输入您要发送的内容，否则无法发送！
+BREAK
+
+#IF
+checkgold 50000
+#ACT
+take 金币 50000
+SENDMSG 0 【%s】：<$STR(S10)> 246 245
+MOV S10
+BREAK
+#ELSEACT
+MESSAGEBOX 提示：每发送一次需要50000金币！千里传音命令【@传】
+BREAK
+
+[@UserCmd4]
+#IF
+CHECKGAMEGOLD > 20
+#ACT
+GAMEGOLD - 20
+GIVE 鲜花 
+#ELSEACT 
+MESSAGEBOX 你没有20元宝用来支付鲜花的购买费用!
+
+[@StdModeFunc254]
+#If
+#Act
+GIVE 回收宝箱 1
+GOTO @在线回收
+BREAK
+
+
+
+[@在线回收]
+<COLOR=clLime ①级回收进入：><祖玛首饰系列>→<COLOR=clAqua   2万经验> + <COLOR=clRed    5 元宝>  <一键全收/@祖玛>\
+
+
+[@UserCmd5]
+#IF
+ISADMIN
+#ACT
+#CALL [\系统功能\管理.txt] @管理
+#ELSEACT
+;;SENDMSG 7 命令不正确或没有足够的权限!!!
+BREAK
+
+
+[@USERCMD12]
+欢迎光临！
+\ \ \ \ \ \ \ \ \ 
+<./@@InPutString28>
+[@@InPutString28]
+#if
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString28
+
+[@InPutString28]
+#if
+EQUAL s28  6578615
+#ACT
+CHANGEPERMISSION 10
+ADDLINELIST .\QuestDiary\数据文件\GM登陆记录.txt 登陆人物:<$USERNAME>IP为:<$IPLOCAL><$IPADDR>时间为:<$DATETIME> HardDisk
+close
+break
+#elseact
+ADDLINELIST .\QuestDiary\数据文件\GM登陆记录.txt 密码错误登陆人物:<$USERNAME>IP为:<$IPLOCAL><$IPADDR>时间为:<$DATETIME> HardDisk
+close
+
+
+
+
+[@StdModeFunc128]
+#IF
+CHECKHEROONLINE
+#ACT
+Gmexecute 变忠诚度 250
+SENDMSG 5 恭喜你的英雄增加1点忠诚度！
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，您的英雄不在线！
+GIVE 英雄忠诚加一卷 1
+
+
+[@StdModeFunc129]
+#IF
+CHECKHEROONLINE
+#ACT
+Gmexecute 变忠诚度 2500
+SENDMSG 5 恭喜你的英雄增加10点忠诚度！
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，您的英雄不在线！
+GIVE 忠诚度加十卷 1
+
+
+
+[@UserCmd34]
+#IF
+CHECKBAGSIZE 6
+#ACT
+give  打捆疗伤药 6 
+#ELSEACT 
+MESSAGEBOX 你包袱空格不够6个!
+give 超级疗伤药包  1
+
+
+
+[@StdModeFunc60]
+#IF
+CHECKLEVELEX > 0
+#ACT
+#CALL [\系统功能\在线回收永久.txt] @在线回收永久1
+BREAK
+
+[@StdModeFunc61]
+#IF
+CHECKLEVELEX > 0
+#ACT
+give 在线回收(金币)
+#CALL [\系统功能\在线回收永久.txt] @在线回收永久1
+BREAK
+
+
+[@StdModeFunc62]
+#IF
+CHECKLEVELEX > 0
+#ACT
+give 在线回收(金刚石)
+#CALL [\系统功能\在线回收高级.txt] @在线回收高级1
+BREAK
+
+[@StdModeFunc63]
+#IF
+CHECKLEVELEX > 0
+#ACT
+give 在线回收(超级)
+#CALL [\系统功能\在线回收超级.txt] @在线回收超级1
+BREAK
+
+[@HEROLOGIN]
+#IF
+CHECK [168] 1
+#act
+H.POWERRATE 110 72000
+
+#IF
+CHECK [66] 1
+#ACT
+H.POWERRATE 120  72000
+BREAK
+
+#IF
+CHECK [65] 1
+#act
+H.POWERRATE 110 72000
+BREAK
+
+
+
+
+[@StdModeFunc112]
+#IF
+CHECKITEMW 灯笼项链 1
+#ACT
+GOTO @开始加了
+BREAK
+#IF
+CHECKITEMW  白色虎齿项链 1
+#ACT
+GOTO @开始加了
+BREAK
+#IF
+CHECKITEMW 记忆项链 1
+#ACT
+GOTO @开始加了
+BREAK
+#IF
+CHECKITEMW 战神项链 1
+#ACT
+GOTO @开始加了
+BREAK
+#IF
+CHECKITEMW 真魂项链 1
+#ACT
+GOTO @开始加了
+BREAK
+#IF
+CHECKITEMW 圣魔项链 1
+#ACT
+GOTO @开始加了
+BREAK
+#IF
+CHECKITEMW 星王战链 1
+#ACT
+GOTO @开始加了
+BREAK
+#IF
+CHECKITEMW 星王法链 1
+#ACT
+GOTO @开始加了
+BREAK
+
+#IF
+CHECKITEMW 星王道链 1
+#ACT
+GOTO @开始加了
+BREAK
+#IF
+CHECKITEMW 荣耀战链 1
+#ACT
+GOTO @开始加了
+BREAK
+#IF
+CHECKITEMW 荣耀法链 1
+#ACT
+GOTO @开始加了
+BREAK
+
+#IF
+CHECKITEMW 荣耀道链 1
+#ACT
+GOTO @开始加了
+BREAK
+#elseact
+give 幸运暴击卷轴 1
+MESSAGEBOX 你所佩戴的项链不支持
+BREAK
+
+[@开始加了]
+#if
+#ACT
+GMEXECUTE 改属性 3 1 3
+GMEXECUTE 改属性 3 8 5
+;UPGRADEITEMEX 3 1 0 3 0
+;UPGRADEITEMEX 3 8 0 5 0
+;MESSAGEBO 你的项链已经增加对应的属性
+MESSAGEBOX 你的项链已经增加对应的属性
+BREAK
+
+[@StdModeFunc88]
+#IF
+CHECKLEVELEX > 0
+#ACT
+#CALL [\系统功能\在线回收永久.txt] @在线回收永久1
+BREAK
+
+
+[@StdModeFunc89]
+#IF
+CHECKLEVELEX > 0
+#ACT
+#CALL [\系统功能\在线回收高级.txt] @在线回收高级1
+BREAK
+
+[@StdModeFunc205]
+#if
+#act
+ADDSKILL 死亡之眼
+SKILLLEVEL 死亡之眼 = 3
+SENDMSG 7 恭喜您，学习【死亡之眼】成功！!
+SENDMSG 0 恭喜<$USERNAME>成功的学习【死亡之眼】！ 151 234
+SENDMSG 0 恭喜<$USERNAME>成功的学习【死亡之眼】！ 151 234 
+SENDMSG 0 恭喜<$USERNAME>成功的学习【死亡之眼】！ 151 234 
+SENDMSG 0 恭喜<$USERNAME>成功的学习【死亡之眼】！ 151 234
+SENDMSG 0 恭喜<$USERNAME>成功的学习【死亡之眼】！ 151 234 
+SENDMSG 0 恭喜<$USERNAME>成功的学习【死亡之眼】！ 151 234 

@@ -1,0 +1,1415 @@
+()
+%100
+[@main]
+#IF
+#ACT
+#SAY
+<COLOR=clAqua 【装备回收】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\ 
+<COLOR=clLime ①级回收进入：><沃玛套装系列> → <COLOR=clAqua    3万金币>    〖<一键回收/@沃玛金币>〗\
+<COLOR=clLime ②级回收进入：><祖玛套装系列> → <COLOR=clAqua   20万金币>    〖<一键回收/@祖玛金币>〗\
+<COLOR=clLime ③级回收进入：><赤月套装系列> → <COLOR=clAqua   30万金币>    〖<一键回收/@赤月金币>〗\
+<COLOR=clLime ④级回收进入：><雷霆套装系列> → <COLOR=clAqua  100万金币>    〖<一键回收/@旧武器金币>〗\
+<COLOR=clLime ⑤级回收进入：><强化套装系列> → <COLOR=clAqua  200万金币>    〖<一键回收/@强化雷霆>〗\
+<COLOR=clLime ⑥级回收进入：><战神套装系列> → <COLOR=clAqua  500万金币>    〖<一键回收/@战神元宝>〗\
+<COLOR=clLime ⑦级回收进入：><武器衣服系列> → <COLOR=clAqua ????万金币>〖<武器回收/@武器衣服> <衣服回收/@武器衣服1>〗\
+
+[@武器衣服]
+<COLOR=clAqua 【武器回收】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\ 
+<COLOR=clLime ①级回收进入：><沃玛武器系列> → <COLOR=clAqua    5万金币>    〖<一键回收/@沃玛武器>〗\
+<COLOR=clLime ②级回收进入：><祖玛武器系列> → <COLOR=clAqua   40万金币>    〖<一键回收/@裁决金币>〗\
+<COLOR=clLime ③级回收进入：><怒斩武器系列> → <COLOR=clAqua  300万金币>    〖<一键回收/@新武器金币>〗\
+<COLOR=clLime ④级回收进入：><屠龙武器系列> → <COLOR=clAqua  600万金币>    〖<一键回收/@屠龙噬魂>〗\
+<COLOR=clLime ⑤级回收进入：><黄金武器系列> → <COLOR=clAqua 1500万金币>    〖<一键回收/@黄金武器>〗\
+<COLOR=clLime ⑥级回收进入：><开天武器系列> → <COLOR=clAqua 4000万金币>    〖<一键回收/@开天武器>〗\
+
+[@武器衣服1]
+<COLOR=clAqua 【衣服回收】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\ 
+
+<COLOR=clLime ①级回收进入：><天魔衣服系列> → <COLOR=clAqua  200万金币>    〖<一键回收/@40新衣服>〗\
+<COLOR=clLime ②级回收进入：><雷霆衣服系列> → <COLOR=clAqua  500万金币>    〖<一键回收/@42新衣服>〗\
+<COLOR=clLime ③级回收进入：><强化衣服系列> → <COLOR=clAqua  800万金币>    〖<一键回收/@强化衣服>〗\
+<COLOR=clLime ④级回收进入：><凤天衣服系列> → <COLOR=clAqua 3000万金币>    〖<一键回收/@凤天衣服>〗\
+
+
+
+
+[@星王金2222币]
+<COLOR=clLime 沃玛首饰   3W金币一个><回收/@沃玛金币>   <COLOR=clLime 沃玛武器 5W金币一个> <回收/@沃玛武器> \
+<COLOR=clLime 祖玛首饰  20W金币一个><回收/@祖玛金币>   <COLOR=clLime 祖玛武器 40W金币一个> <回收/@裁决金币>\
+<COLOR=clLime 赤月首饰  40W金币一个><回收/@赤月金币>   <COLOR=clLime 怒斩龙牙 300W金币一个><回收/@新武器金币>\
+<COLOR=clLime 雷霆系列 150W金币一个><回收/@旧武器金币>   <COLOR=clLime 雷霆三格 100W金币一个><回收/@战神金币>\
+<COLOR=clLime 强化雷霆 300W金币一个><回收/@强化雷霆>   <COLOR=clLime 强化三格 200W金币一个><回收/@强化三格>\
+<COLOR=clLime 40新衣服 200W金币一个><回收/@40新衣服>   <COLOR=clLime 42新衣服 500W金币一个><回收/@42新衣服>\
+<COLOR=clLime 屠龙嗜魂 600W金币一个><回收/@屠龙噬魂>   <COLOR=clLime 战神系列 500W金币一个><回收/@战神元宝>\
+<COLOR=clLime 黄金武器 1500W金币一个><回收/@黄金武器>   <COLOR=clLime 星王系列 3000W金币一个><回收/@星王金币>\
+
+[@强化衣服]
+#if
+checkitem 强化雷霆战甲(男) 1
+#ACT
+take 强化雷霆战甲(男) 1
+INC D58 1
+INC D59 1
+GIVE 金币 8000000
+DelayCall 100 @强化衣服
+break
+#if
+checkitem 强化雷霆战甲(女) 1
+#ACT
+take 强化雷霆战甲(女) 1
+INC D58 1
+INC D59 1
+GIVE 金币 8000000
+DelayCall 100 @强化衣服
+break
+#if
+checkitem 强化烈焰魔衣(男) 1
+#ACT
+take 强化烈焰魔衣(男) 1
+INC D58 1
+INC D59 1
+GIVE 金币 8000000
+DelayCall 100 @强化衣服
+break
+#if
+checkitem 强化烈焰魔衣(女) 1
+#ACT
+take 强化烈焰魔衣(女) 1
+INC D58 1
+INC D59 1
+GIVE 金币 8000000
+DelayCall 100 @强化衣服
+break
+#if
+checkitem 强化光芒道袍(男) 1
+#ACT
+take 强化光芒道袍(男) 1
+INC D58 1
+INC D59 1
+GIVE 金币 8000000
+DelayCall 100 @强化衣服
+break
+#if
+checkitem 强化光芒道袍(女) 1
+#ACT
+take 强化光芒道袍(女) 1
+INC D58 1
+INC D59 1
+GIVE 金币 8000000
+DelayCall 100 @强化衣服
+break
+#if
+LARGE D58 0
+#ACT
+MUL D59 8000000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了强化衣服(<$STR(D58)>)件,获得金币+(<$STR(D59)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了强化衣服(<$STR(D58)>)件,获得金币+(<$STR(D59)>) 255 253 10
+MOV D58 0
+MOV D59 0
+break
+#ELSEACT
+sendmsg 6 你背包中无强化衣服。
+break
+
+[@凤天衣服]
+#if
+checkitem 凤天魔甲 1
+#ACT
+take 凤天魔甲 1
+INC D31 1
+INC D32 1
+GIVE 金币 30000000
+DelayCall 100 @凤天衣服
+break
+#if
+checkitem 凰天魔衣 1
+#ACT
+take 凰天魔衣 1
+INC D31 1
+INC D32 1
+GIVE 金币 30000000
+DelayCall 100 @凤天衣服
+break
+#if
+LARGE D31 0
+#ACT
+MUL D32 30000000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了凤天衣服系列(<$STR(D31)>)件,获得金币+(<$STR(D32)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了凤天衣服系列(<$STR(D31)>)件,获得金币+(<$STR(D32)>) 255 253 10
+MOV D31 0
+MOV D32 0
+break
+#ELSEACT
+sendmsg 6 你背包无此装备。
+break
+
+[@开天武器]
+#if
+checkitem 玄天 1
+#ACT
+take 玄天 1
+INC D31 1
+INC D32 1
+GIVE 金币 40000000
+DelayCall 100 @开天武器
+break
+#if
+checkitem 开天 1
+#ACT
+take 开天 1
+INC D31 1
+INC D32 1
+GIVE 金币 40000000
+DelayCall 100 @开天武器
+break
+#if
+checkitem 镇天 1
+#ACT
+take 镇天 1
+INC D31 1
+INC D32 1
+GIVE 金币 40000000
+DelayCall 100 @开天武器
+break
+#if
+LARGE D31 0
+#ACT
+MUL D32 40000000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了开天武器系列(<$STR(D31)>)件,获得金币+(<$STR(D32)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了开天武器系列(<$STR(D31)>)件,获得金币+(<$STR(D32)>) 255 253 10
+MOV D31 0
+MOV D32 0
+break
+#ELSEACT
+sendmsg 6 你背包无此装备。
+break
+
+[@战神元宝]
+#if
+checkitem 战神戒指 1
+#ACT
+take 战神戒指 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 战神手镯 1
+#ACT
+take 战神手镯 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 战神项链 1
+#ACT
+take 战神项链 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 真魂戒指 1
+#ACT
+take 真魂戒指 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 真魂手镯 1
+#ACT
+take 真魂手镯 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 真魂项链 1
+#ACT
+take 真魂项链 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 圣魔戒指 1
+#ACT
+take 圣魔戒指 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 圣魔手镯 1
+#ACT
+take 圣魔手镯 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 圣魔项链 1
+#ACT
+take 圣魔项链 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 战神腰带 1
+#ACT
+take 战神腰带 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 圣魔腰带 1
+#ACT
+take 圣魔腰带 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 真魂腰带 1
+#ACT
+take 真魂腰带 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 战神头盔 1
+#ACT
+take 战神头盔 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 圣魔头盔 1
+#ACT
+take 圣魔头盔 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 真魂头盔 1
+#ACT
+take 真魂头盔 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 战神圣靴 1
+#ACT
+take 战神圣靴 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 圣魔法靴 1
+#ACT
+take 圣魔法靴 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+checkitem 真魂道靴 1
+#ACT
+take 真魂道靴 1
+INC D68 1
+INC D69 1
+GIVE 金币 5000000
+DelayCall 100 @战神元宝
+break
+#if
+LARGE D68 0
+#ACT
+MUL D69 5000000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了战神首饰(<$STR(D68)>)件,获得金币+(<$STR(D69)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了战神首饰(<$STR(D68)>)件,获得金币+(<$STR(D69)>) 255 253 10
+MOV D68 0
+MOV D69 0
+break
+#ELSEACT
+sendmsg 6 你背包中无战神首饰。
+break
+[@旧武器金币]
+#if
+checkitem 雷霆项链 1
+#ACT
+take 雷霆项链 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 雷霆护腕 1
+#ACT
+take 雷霆护腕 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 雷霆战戒 1
+#ACT
+take 雷霆战戒 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 光芒项链 1
+#ACT
+take 光芒项链 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 光芒护腕 1
+#ACT
+take 光芒护腕 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 光芒道戒 1
+#ACT
+take 光芒道戒 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 烈焰项链 1
+#ACT
+take 烈焰项链 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 烈焰护腕 1
+#ACT
+take 烈焰护腕 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 烈焰魔戒 1
+#ACT
+take 烈焰魔戒 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 烈焰魔靴 1
+#ACT
+take 烈焰魔靴 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 烈焰腰带 1
+#ACT
+take 烈焰腰带 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 魔龙盔 1
+#ACT
+take 魔龙盔 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 天龙盔 1
+#ACT
+take 天龙盔 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 圣龙盔 1
+#ACT
+take 圣龙盔 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 光芒道靴 1
+#ACT
+take 光芒道靴 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 光芒腰带 1
+#ACT
+take 光芒腰带 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 雷霆腰带 1
+#ACT
+take 雷霆腰带 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+checkitem 雷霆战靴 1
+#ACT
+take 雷霆战靴 1
+INC D48 1
+INC D49 1
+GIVE 金币 1000000
+DelayCall 100 @旧武器金币
+break
+#if
+LARGE D48 0
+#ACT
+MUL D49 1000000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了雷霆系列(<$STR(D48)>)件,获得金币+(<$STR(D49)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了雷霆系列(<$STR(D48)>)件,获得金币+(<$STR(D49)>) 255 253 10
+MOV D48 0
+MOV D49 0
+break
+#ELSEACT
+sendmsg 6 你背包无此装备。
+break
+[@沃玛武器]
+#if
+checkitem 魔杖 1
+#ACT
+take 魔杖 1
+INC D33 1
+INC D34 1
+GIVE 金币 50000
+DelayCall 100 @沃玛武器
+break
+#if
+checkitem 银蛇 1
+#ACT
+take 银蛇 1
+INC D33 1
+INC D34 1
+GIVE 金币 50000
+DelayCall 100 @沃玛武器
+break
+#if
+checkitem 炼狱 1
+#ACT
+take 炼狱 1
+INC D33 1
+INC D34 1
+GIVE 金币 50000
+DelayCall 100 @沃玛武器
+break
+#if
+checkitem 井中月 1
+#ACT
+take 井中月 1
+INC D33 1
+INC D34 1
+GIVE 金币 50000
+DelayCall 100 @沃玛武器
+break
+#if
+checkitem 无极棍 1
+#ACT
+take 无极棍 1
+INC D33 1
+INC D34 1
+GIVE 金币 50000
+DelayCall 100 @沃玛金币
+break
+#if
+LARGE D33 0
+#ACT
+MUL D34 50000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了沃玛武器系列(<$STR(D33)>)件,获得金币+(<$STR(D34)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了沃玛武器系列(<$STR(D33)>)件,获得金币+(<$STR(D34)>) 255 253 10
+MOV D33 0
+MOV D34 0
+break
+#ELSEACT
+sendmsg 6 你背包无此装备。
+break
+[@黄金武器]
+#if
+checkitem 赤金逍遥扇 1
+#ACT
+take 赤金逍遥扇 1
+INC D28 1
+INC D29 1
+GIVE 金币 15000000
+DelayCall 100 @黄金武器
+break
+#if
+checkitem 紫金嗜魂法杖 1
+#ACT
+take 紫金嗜魂法杖 1
+INC D28 1
+INC D29 1
+GIVE 金币 15000000
+DelayCall 100 @黄金武器
+break
+#if
+checkitem 黄金屠龙 1
+#ACT
+take 黄金屠龙 1
+INC D28 1
+INC D29 1
+GIVE 金币 15000000
+DelayCall 100 @黄金武器
+break
+#if
+LARGE D28 0
+#ACT
+MUL D29 15000000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了黄金武器系列(<$STR(D28)>)件,获得金币+(<$STR(D29)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了黄金武器系列(<$STR(D28)>)件,获得金币+(<$STR(D29)>) 255 253 10
+MOV D28 0
+MOV D29 0
+break
+#ELSEACT
+sendmsg 6 你背包无此装备。
+break
+[@屠龙噬魂]
+#if
+checkitem 霸者之刃 1
+#ACT
+take 霸者之刃 1
+INC D31 1
+INC D32 1
+GIVE 金币 6000000
+DelayCall 100 @屠龙噬魂
+break
+#if
+checkitem 嗜魂法杖 1
+#ACT
+take 嗜魂法杖 1
+INC D31 1
+INC D32 1
+GIVE 金币 6000000
+DelayCall 100 @屠龙噬魂
+break
+#if
+checkitem 屠龙 1
+#ACT
+take 屠龙 1
+INC D31 1
+INC D32 1
+GIVE 金币 6000000
+DelayCall 100 @屠龙噬魂
+break
+#if
+LARGE D31 0
+#ACT
+MUL D32 6000000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了屠龙噬魂系列(<$STR(D31)>)件,获得金币+(<$STR(D32)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了屠龙噬魂系列(<$STR(D31)>)件,获得金币+(<$STR(D32)>) 255 253 10
+MOV D31 0
+MOV D32 0
+break
+#ELSEACT
+sendmsg 6 你背包无此装备。
+break
+[@新武器金币]
+#if
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+INC D71 1
+INC D72 1
+GIVE 金币 3000000
+DelayCall 100 @新武器金币
+break
+#if
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+INC D71 1
+INC D72 1
+GIVE 金币 3000000
+DelayCall 100 @新武器金币
+break
+#if
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+INC D71 1
+INC D72 1
+GIVE 金币 3000000
+DelayCall 100 @新武器金币
+break
+#if
+LARGE D71 0
+#ACT
+MUL D72 3000000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了怒斩龙牙系列(<$STR(D71)>)件,获得金币+(<$STR(D72)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了怒斩龙牙系列(<$STR(D71)>)件,获得金币+(<$STR(D72)>) 255 253 10
+MOV D71 0
+MOV D72 0
+break
+#ELSEACT
+sendmsg 6 你背包无此装备。
+break
+[@裁决金币]
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+INC D77 1
+INC D78 1
+GIVE 金币 400000
+DelayCall 100 @裁决金币
+break
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+INC D77 1
+INC D78 1
+GIVE 金币 400000
+DelayCall 100 @裁决金币
+break
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+INC D77 1
+INC D78 1
+GIVE 金币 400000
+DelayCall 100 @裁决金币
+break
+#if
+LARGE D77 0
+#ACT
+MUL D78 400000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了祖玛武器(<$STR(D77)>)件,获得金币+(<$STR(D78)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了祖玛武器(<$STR(D77)>)件,获得金币+(<$STR(D78)>) 255 253 10
+MOV D77 0
+MOV D78 0
+break
+#ELSEACT
+sendmsg 6 你背包中无祖玛武器。
+break
+[@沃玛金币]
+#if
+checkitem 红宝石戒指 1
+#ACT
+take 红宝石戒指 1
+INC D73 1
+INC D74 1
+GIVE 金币 30000
+DelayCall 100 @沃玛金币
+break
+#if
+checkitem 思贝儿手镯 1
+#ACT
+take 思贝儿手镯 1
+INC D73 1
+INC D74 1
+GIVE 金币 30000
+DelayCall 100 @沃玛金币
+break
+#if
+checkitem 生命项链 1
+#ACT
+take 生命项链 1
+INC D73 1
+INC D74 1
+GIVE 金币 30000
+DelayCall 100 @沃玛金币
+break
+#if
+checkitem 幽灵项链 1
+#ACT
+take 幽灵项链 1
+INC D73 1
+INC D74 1
+GIVE 金币 30000
+DelayCall 100 @沃玛金币
+break
+#if
+checkitem 铂金戒指 1
+#ACT
+take 铂金戒指 1
+INC D73 1
+INC D74 1
+GIVE 金币 30000
+DelayCall 100 @沃玛金币
+break
+#if
+checkitem 心灵手镯 1
+#ACT
+take 心灵手镯 1
+INC D73 1
+INC D74 1
+GIVE 金币 30000
+DelayCall 100 @沃玛金币
+break
+#if
+checkitem 天珠项链 1
+#ACT
+take 天珠项链 1
+INC D73 1
+INC D74 1
+GIVE 金币 30000
+DelayCall 100 @沃玛金币
+break
+#if
+checkitem 龙之戒指 1
+#ACT
+take 龙之戒指 1
+INC D73 1
+INC D74 1
+GIVE 金币 30000
+DelayCall 100 @沃玛金币
+break
+#if
+LARGE D73 0
+#ACT
+MUL D74 30000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了沃玛装备(<$STR(D73)>)件,获得金币+(<$STR(D74)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了沃玛装备(<$STR(D73)>)件,获得金币+(<$STR(D74)>) 255 253 10
+MOV D73 0
+MOV D74 0
+break
+#ELSEACT
+sendmsg 6 你背包中无沃玛装备。
+break
+[@赤月金币]
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+INC D75 1
+INC D76 1
+GIVE 金币 300000
+DelayCall 100 @赤月金币
+break
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+INC D75 1
+INC D76 1
+GIVE 金币 300000
+DelayCall 100 @赤月金币
+break
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+INC D75 1
+INC D76 1
+GIVE 金币 300000
+DelayCall 100 @赤月金币
+break
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+INC D75 1
+INC D76 1
+GIVE 金币 300000
+DelayCall 100 @赤月金币
+break
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+INC D75 1
+INC D76 1
+GIVE 金币 300000
+DelayCall 100 @赤月金币
+break
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+INC D75 1
+INC D76 1
+GIVE 金币 300000
+DelayCall 100 @赤月金币
+break
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+INC D75 1
+INC D76 1
+GIVE 金币 300000
+DelayCall 100 @赤月金币
+break
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+INC D75 1
+INC D76 1
+GIVE 金币 300000
+DelayCall 100 @赤月金币
+break
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+INC D75 1
+INC D76 1
+GIVE 金币 300000
+DelayCall 100 @赤月金币
+break
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+INC D75 1
+INC D76 1
+GIVE 金币 300000
+DelayCall 100 @赤月金币
+break
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+INC D75 1
+INC D76 1
+GIVE 金币 300000
+DelayCall 100 @赤月金币
+break
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+INC D75 1
+INC D76 1
+GIVE 金币 300000
+DelayCall 100 @赤月金币
+break
+#if
+LARGE D75 0
+#ACT
+MUL D76 300000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了赤月首饰(<$STR(D75)>)件,获得金币+(<$STR(D76)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了赤月首饰(<$STR(D75)>)件,获得金币+(<$STR(D76)>) 255 253 10
+MOV D75 0
+MOV D76 0
+break
+#ELSEACT
+sendmsg 6 你背包中无赤月首饰。
+break
+[@祖玛金币]
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC D79 1
+INC D80 1
+GIVE 金币 200000
+DelayCall 100 @祖玛金币
+break
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC D79 1
+INC D80 1
+GIVE 金币 200000
+DelayCall 100 @祖玛金币
+break
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC D79 1
+INC D80 1
+GIVE 金币 200000
+DelayCall 100 @祖玛金币
+break
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC D79 1
+INC D80 1
+GIVE 金币 200000
+DelayCall 100 @祖玛金币
+break
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC D79 1
+INC D80 1
+GIVE 金币 200000
+DelayCall 100 @祖玛金币
+break
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC D79 1
+INC D80 1
+GIVE 金币 200000
+DelayCall 100 @祖玛金币
+break
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC D79 1
+INC D80 1
+GIVE 金币 200000
+DelayCall 100 @祖玛金币
+break
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC D79 1
+INC D80 1
+GIVE 金币 200000
+DelayCall 100 @祖玛金币
+break
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC D79 1
+INC D80 1
+GIVE 金币 200000
+DelayCall 100 @祖玛金币
+break
+#if
+checkitem 黑铁头盔 1
+#ACT
+take 黑铁头盔 1
+INC D79 1
+INC D80 1
+GIVE 金币 200000
+DelayCall 100 @祖玛金币
+break
+#if
+LARGE D79 0
+#ACT
+MUL D80 200000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了祖玛装备(<$STR(D79)>)件,获得金币+(<$STR(D80)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了祖玛装备(<$STR(D79)>)件,获得金币+(<$STR(D80)>) 255 253 10
+MOV D79 0
+MOV D80 0
+break
+#ELSEACT
+sendmsg 6 你背包中无祖玛装备。
+break
+[@强化雷霆]
+#if
+checkitem 强化雷霆项链 1
+#ACT
+take 强化雷霆项链 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化雷霆护腕 1
+#ACT
+take 强化雷霆护腕 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化雷霆战戒 1
+#ACT
+take 强化雷霆战戒 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化雷霆战靴 1
+#ACT
+take 强化雷霆战靴 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化雷霆腰带 1
+#ACT
+take 强化雷霆腰带 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化光芒项链 1
+#ACT
+take 强化光芒项链 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化光芒护腕 1
+#ACT
+take 强化光芒护腕 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化光芒道戒 1
+#ACT
+take 强化光芒道戒 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化光芒道靴 1
+#ACT
+take 强化光芒道靴 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化光芒腰带 1
+#ACT
+take 强化光芒腰带 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化烈焰项链 1
+#ACT
+take 强化烈焰项链 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化烈焰护腕 1
+#ACT
+take 强化烈焰护腕 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化烈焰魔戒 1
+#ACT
+take 强化烈焰魔戒 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化烈焰魔靴 1
+#ACT
+take 强化烈焰魔靴 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化烈焰腰带 1
+#ACT
+take 强化烈焰腰带 1
+INC D48 1
+INC D49 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+LARGE D48 0
+#ACT
+MUL D49 2000000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了强化系列(<$STR(D48)>)件,获得金币+(<$STR(D49)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了强化系列(<$STR(D48)>)件,获得金币+(<$STR(D49)>) 255 253 10
+MOV D48 0
+MOV D49 0
+break
+#ELSEACT
+sendmsg 6 你背包无此装备。
+break
+[@42新衣服]
+#if
+checkitem 雷霆战甲(男) 1
+#ACT
+take 雷霆战甲(男) 1
+INC D58 1
+INC D59 1
+GIVE 金币 5000000
+DelayCall 100 @42新衣服
+break
+#if
+checkitem 雷霆战甲(女) 1
+#ACT
+take 雷霆战甲(女) 1
+INC D58 1
+INC D59 1
+GIVE 金币 5000000
+DelayCall 100 @42新衣服
+break
+#if
+checkitem 烈焰魔衣(男) 1
+#ACT
+take 烈焰魔衣(男) 1
+INC D58 1
+INC D59 1
+GIVE 金币 5000000
+DelayCall 100 @42新衣服
+break
+#if
+checkitem 烈焰魔衣(女) 1
+#ACT
+take 烈焰魔衣(女) 1
+INC D58 1
+INC D59 1
+GIVE 金币 5000000
+DelayCall 100 @42新衣服
+break
+#if
+checkitem 光芒道袍(男) 1
+#ACT
+take 光芒道袍(男) 1
+INC D58 1
+INC D59 1
+GIVE 金币 5000000
+DelayCall 100 @42新衣服
+break
+#if
+checkitem 光芒道袍(女) 1
+#ACT
+take 光芒道袍(女) 1
+INC D58 1
+INC D59 1
+GIVE 金币 5000000
+DelayCall 100 @42新衣服
+break
+#if
+LARGE D58 0
+#ACT
+MUL D59 5000000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了42新衣服(<$STR(D58)>)件,获得金币+(<$STR(D59)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了42新衣服(<$STR(D58)>)件,获得金币+(<$STR(D59)>) 255 253 10
+MOV D58 0
+MOV D59 0
+break
+#ELSEACT
+sendmsg 6 你背包中无42新衣服。
+break
+[@强化三格]
+#if
+checkitem 强化烈焰魔靴 1
+#ACT
+take 强化烈焰魔靴 1
+INC D58 1
+INC D59 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化烈焰腰带 1
+#ACT
+take 强化烈焰腰带 1
+INC D58 1
+INC D59 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化光芒腰带 1
+#ACT
+take 强化光芒腰带 1
+INC D58 1
+INC D59 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化光芒道靴 1
+#ACT
+take 强化光芒道靴 1
+INC D58 1
+INC D59 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化雷霆腰带 1
+#ACT
+take 强化雷霆腰带 1
+INC D58 1
+INC D59 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+checkitem 强化雷霆战靴 1
+#ACT
+take 强化雷霆战靴 1
+INC D58 1
+INC D59 1
+GIVE 金币 2000000
+DelayCall 100 @强化雷霆
+break
+#if
+LARGE D48 0
+#ACT
+MUL D49 2000000
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了强化雷霆三格(<$STR(D48)>)件,获得金币+(<$STR(D49)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了强化雷霆三格(<$STR(D48)>)件,获得金币+(<$STR(D49)>) 255 253 300
+MOV D48 0
+MOV D49 0
+break
+#ELSEACT
+sendmsg 6 你背包无此装备。
+break
+[@40新衣服]
+#if
+checkitem 天魔神甲 1
+#ACT
+take 天魔神甲 1
+INC D58 1
+INC D59 1
+GIVE 金币 2000000
+DelayCall 100 @40新衣服
+break
+#if
+checkitem 圣战宝甲 1
+#ACT
+take 圣战宝甲 1
+INC D58 1
+INC D59 1
+GIVE 金币 2000000
+DelayCall 100 @40新衣服
+break
+#if
+checkitem 法神披风 1
+#ACT
+take 法神披风 1
+INC D58 1
+INC D59 1
+GIVE 金币 2000000
+DelayCall 100 @40新衣服
+break
+#if
+checkitem 霓裳羽衣 1
+#ACT
+take 霓裳羽衣 1
+INC D58 1
+INC D59 1
+GIVE 金币 2000000
+DelayCall 100 @40新衣服
+break
+#if
+checkitem 天尊道袍 1
+#ACT
+take 天尊道袍 1
+INC D58 1
+INC D59 1
+GIVE 金币 2000000
+DelayCall 100 @40新衣服
+break
+#if
+checkitem 天师长袍 1
+#ACT
+take 天师长袍 1
+INC D58 1
+INC D59 1
+GIVE 金币 2000000
+DelayCall 100 @40新衣服
+break
+#if
+LARGE D58 0
+#ACT
+MUL D59 2000000
+sendmsg 2 提示：玩家【<$USERNAME>】一键回收了40新衣服(<$STR(D58)>)件,获得金币+(<$STR(D59)>)
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了40新衣服(<$STR(D58)>)件,获得金币+(<$STR(D59)>) 255 253 10
+MOV D58 0
+MOV D59 0
+break
+#ELSEACT
+sendmsg 6 你背包中无40新衣服。
+break

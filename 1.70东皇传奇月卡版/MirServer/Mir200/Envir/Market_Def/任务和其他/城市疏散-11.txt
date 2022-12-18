@@ -1,0 +1,385 @@
+(@YBDEAL)
+[@main]
+<COLOR=clAqua 请仔细阅读以下内容>\ \
+<COLOR=clLime 离线摆摊请先摆好摊位不要确认,再打开离线摆摊按钮或命令>\ \
+<COLOR=clLime,再确认摆摊,最后确认点击离线>\ \
+<前往1号疏散点/@1>      <前往2号疏散点/@2>      <前往3号疏散点/@3>\ \
+<离线摆摊/@4>           <捆金币/@5>             <捆金刚石/@7>\ \
+
+
+[@js]
+您好，有什么可以效劳的？我可以为您提供关于元宝的各类服务 \
+现在已经开通了金刚石的元宝交易功能，\
+点击交易栏的第十格可以放置金刚石进行交易，\
+如果不更新客户端，<交易栏的第十格将不能使用>。\
+<查询元宝交易协议/@RULE1> <开通元宝交易/@RULE>\
+<查询元宝数/@ASKYBNUM> <出售物品/@@DEALYBME>\
+<查询正在出售的物品/@ASKYBSELL> <购买物品/@ASKYBDEAL>\
+<查询交易信息/@ASKYBDEALLOG> <关闭对话/@EXIT>\
+
+[@ASKYBSELL]
+我只能保证在我这里出售的物品3天内是不会有差池\
+如果超过3天交易还没有成功，我可不能保证物品不会丢失\
+并且就算不丢失，取回时也需要另外交给我1个元宝\
+要知道，我做这行是很辛苦的，如果不想找麻烦\
+那就在3天之内保证交易成功\
+<返回/@MAIN>
+#ACT
+QUERYYBSELL
+
+[@ASKYBDEAL]
+我只能保证在我这里出售的物品3天内是不会有差池\
+如果超过3天交易还没有成功，我可不能保证物品不会丢失\
+并且就算不丢失，取回时也需要另外交给我1个元宝\
+要知道，我做这行是很辛苦的，如果不想找麻烦\
+那就在3天之内保证交易成功\
+<返回/@MAIN>
+#ACT
+QUERYYBDEAL
+
+[@ASKYBDEALLOG]
+<$QUERYYBDEALLOG>
+
+[@ASKYBNUM]
+你的帐号里元宝的总数是：<$GAMEGOLD>颗。\ \ \
+<返回/@MAIN>
+
+[@RULE]
+人人都知道，我是玛法大陆最公正的人\
+您要开通以元宝出售道具，必须向我支付1个元宝\
+我将为您提供永久、公正的服务\ \
+<我已阅读并同意元宝交易协议，支付一个元宝开通元宝交易/@OPENYBSELL>\
+<不同意/@EXIT>
+
+[@OPENYBSELL]
+#ACT
+//参数1 表示开通需要元宝
+OPENYBDEAL 1
+
+[@RULE1]
+您确定已仔细阅读了《元宝交易协议》并接受协议内的所有条款\
+1、第一次使用元宝交易，必须开通元宝交易功能并向NPC支付1个元宝\
+2、充值元宝是针对帐号进行的，\
+该帐号下相同服务器的角色均可以使用这些元宝\
+3、如果物品放在NPC处出售超过3天，交易将被终止，\
+同时卖方取回物品时需额外再支付1个元宝。\
+4、卖方在输入买方角色和元宝数量时，请注意输入正确的角色名\
+因自己本身操作失误造成的损失系统将不进行补偿。\
+<下一页/@RULE2>
+
+[@RULE2]
+5、在一笔交易未完成的情况下，交易双方均不可以再次进行元宝交易\
+6、帐号在单组服务器携带元宝上限:9999个，\
+元宝单次交易额最高不超过9999个，\
+交易成功如果角色携带元宝数量超过上限，\
+超过上限的元宝数量将被自动转换成游戏时间（天卡）\
+7、交易成功，卖方将自动获得相应元宝\
+8、玩家可在我这里查询最近一次的元宝交易记录\
+在取消交易或接受交易物品时,若包裹栏无足够空间，则物品将不能取回\
+<返回/@MAIN>
+
+[@ASKYBSELLFAIL]
+没有查询到指定的记录
+[@ASKYBDEALFAIL]
+没有查询到指定的记录
+[@YBDEALOK]
+收购物品成功
+
+[@6]
+<COLOR=clLime 说明:10张书页可以随机抽取一本技能,免费的哦!>\ \
+<COLOR=clSkyBlue 烈火剑法,召唤神兽,冰咆哮.>      概率 1/8\ \
+<COLOR=clSkyBlue 野蛮冲撞,地狱雷光,魔法盾.>      概率 1/4\ \
+<COLOR=clSkyBlue 群体治疗术,半月弯刀,困魔咒.>    概率 1/2\ \
+<我要合成/@68>    <返回/@main>
+
+[@68]
+#if
+checkitem 书页 10
+#elseact
+sendmsg 7 提示：抱歉，您没有10张书页！
+break
+
+#if
+random 8
+#act
+goto @70
+break
+
+#if
+random 4
+#act
+goto @69
+break
+
+#if
+random 3
+#act
+take 书页 10
+give 群体治疗术 1
+sendmsg 0 恭喜:玩家(%s)消耗10张书页合了一本群体治疗术 255 8
+break
+
+#if
+random 3
+#act
+take 书页 10
+give 半月弯刀 1
+sendmsg 0 恭喜:玩家(%s)消耗10张书页合了一本半月弯刀 255 8
+break
+#elseact
+take 书页 10
+give 困魔咒 1
+sendmsg 0 恭喜:玩家(%s)消耗10张书页合了一本困魔咒 255 8
+break
+
+[@69]
+#if
+random 2
+#act
+take 书页 10
+give 野蛮冲撞 1
+sendmsg 0 恭喜:玩家(%s)消耗10张书页合了一本野蛮冲撞 255 8
+break
+
+#if
+random 2
+#act
+take 书页 10
+give 地狱雷光 1
+sendmsg 0 恭喜:玩家(%s)消耗10张书页合了一本地狱雷光 255 8
+break
+#elseact
+take 书页 10
+give 魔法盾 1
+sendmsg 0 恭喜:玩家(%s)消耗10张书页合了一本魔法盾 255 8
+break
+
+[@70]
+#if
+random 4
+#act
+take 书页 10
+give 召唤神兽 1
+sendmsg 0 恭喜:玩家(%s)消耗10张书页合了一本召唤神兽 255 8
+break
+
+#if
+random 2
+#act
+take 书页 10
+give 烈火剑法 1
+sendmsg 0 恭喜:玩家(%s)消耗10张书页合了一本烈火剑法 255 8
+break
+#elseact
+take 书页 10
+give 冰咆哮 1
+sendmsg 0 恭喜:玩家(%s)消耗10张书页合了一本冰咆哮 255 8
+break
+
+[@1]
+#act
+mapmove 11 175 327
+break
+
+[@2]
+#act
+mapmove 11 185 327
+break
+
+[@3]
+#act
+mapmove 11 173 321
+break
+
+[@4]
+<COLOR=clLtGray 改变摆摊外观：变更外观提示文字在右边(红色)>\ \
+<[外观类型一]/@一>：地摊,有好货两个字的牌子\
+<[外观类型二]/@二>：两层小桌,最小的外观\
+<[外观类型三]/@三>：摆着一张桌子的外观\ \
+<[开启离线功能]/@OffLinePlay>  1000金币/次\ \
+注：<COLOR=clAqua 服务器重启、脱机人物清理都将导致离线摆摊终止>\
+　　<COLOR=clAqua 如果摆摊涉嫌欺诈，官方有权没收全部元宝并封号>
+#elsesay
+　\ \
+离线摆摊只可以在[安全区]使用
+
+[@一]
+#if
+#act
+Gmexecute StallLooks 0
+break
+
+[@二]
+#if
+#act
+Gmexecute StallLooks 1
+break
+
+[@三]
+#if
+#act
+Gmexecute StallLooks 2
+break
+
+[@OffLinePlay]
+#If
+IsDupMode
+#Act
+messagebox 不能与他人重叠
+break
+
+#if
+checkgold 1000
+InSafeZone
+#act
+take 金币 1000
+;GMEXECUTE 管理
+OffLine 1200 1
+break
+#elseact
+messagebox 离线摆摊需要1000金币并且在安全区
+break
+
+[@5]
+<1千散金/@51>    <1万散金/@52>    <10万散金/@53>\ \ \
+<5千散金/@54>    <5万散金/@55>    <50万散金/@56>\ \ \
+<返回/@main>
+
+[@51]
+#if
+checkgold 1000
+#act
+take 金币 1000
+give 1千散金 1
+sendmsg 6 提示：已为你捆好1千金币!
+break
+#elsesay
+你并没有1000金币！
+
+[@52]
+#if
+checkgold 10000
+#act
+take 金币 10000
+give 1万散金 1
+sendmsg 6 提示：已为你捆好1万金币!
+break
+#elsesay
+你并没有10000金币！
+
+[@53]
+#if
+checkgold 100000
+#act
+take 金币 100000
+give 10万散金 1
+sendmsg 6 提示：已为你捆好10万金币!
+break
+#elsesay
+你并没有100000金币！
+
+[@54]
+#if
+checkgold 5000
+#act
+take 金币 5000
+give 5千散金 1
+sendmsg 6 提示：已为你捆好5千金币!
+break
+#elsesay
+你并没有5000金币！
+
+[@55]
+#if
+checkgold 50000
+#act
+take 金币 50000
+give 5万散金 1
+sendmsg 6 提示：已为你捆好5万金币!
+break
+#elsesay
+你并没有50000金币！
+
+[@56]
+#if
+checkgold 500000
+#act
+take 金币 500000
+give 50万散金 1
+sendmsg 6 提示：已为你捆好50万金币!
+break
+#elsesay
+你并没有500000金币！
+
+[@7]
+<提取1个金刚石/@61>    <提取5个金刚石/@62>\ \
+<提取10个金刚石/@64>   <提取50个金刚石/@65>\ \
+<存入10个金刚石/@66>   <存入50个金刚石/@67>\ \
+<返回/@main>
+
+[@67]
+#if
+checkitem 金刚石 50
+#act
+take 金刚石 50
+GAMEDIAMOND + 50
+sendmsg 6 提示：已为你存入了50个金刚石!
+break
+#elsesay
+你没有50个金刚石哦！
+
+[@66]
+#if
+checkitem 金刚石 10
+#act
+take 金刚石 10
+GAMEDIAMOND + 10
+sendmsg 6 提示：已为你存入了10个金刚石!
+break
+break
+#elsesay
+你没有10个金刚石哦！
+
+[@61]
+#if
+Checkgamediamond > 0
+#act
+GAMEDIAMOND - 1
+giveex 金刚石 1
+sendmsg 6 提示：已为你提取了1个金刚石!
+break
+#elsesay
+你没有足够的金刚石！
+
+[@62]
+#if
+Checkgamediamond > 4
+#act
+GAMEDIAMOND - 5
+giveex 金刚石 5
+sendmsg 6 提示：已为你提取了5个金刚石!
+break
+#elsesay
+你没有足够的金刚石！
+
+[@64]
+#if
+Checkgamediamond > 9
+#act
+GAMEDIAMOND - 10
+giveex 金刚石 10
+sendmsg 6 提示：已为你提取了10个金刚石!
+break
+#elsesay
+你没有足够的金刚石！
+
+[@65]
+#if
+Checkgamediamond > 49
+#act
+GAMEDIAMOND - 50
+giveex 金刚石 50
+sendmsg 6 提示：已为你提取了50个金刚石!
+break
+#elsesay
+你没有足够的金刚石！

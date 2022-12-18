@@ -1,0 +1,264 @@
+[@SX]
+{
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M1 0
+MOV M2 0
+MOV M3 0
+#IF
+CHECK [35] 1
+#ACT
+MOV M1 50
+SENDMSG 7 九品知县属性激活：血量增加50
+#IF
+CHECK [37] 1
+#ACT
+MOV M1 100
+SENDMSG 7 八品知府属性激活：血量增加100
+#IF
+CHECK [40] 1
+#ACT
+MOV M1 150
+SENDMSG 7 七品太守属性激活：血量增加150
+#IF
+CHECK [42] 1
+#ACT
+MOV M1 200
+SENDMSG 7 六品巡抚属性激活：血量增加200
+#IF
+CHECK [44] 1
+#ACT
+MOV M1 250
+SENDMSG 7 五品提督属性激活：血量增加250
+#IF
+CHECK [46] 1
+#ACT
+MOV M1 300
+SENDMSG 7 四品总督属性激活：血量增加300
+#IF
+CHECK [48] 1
+#ACT
+MOV M1 350
+SENDMSG 7 三品尚书属性激活：血量增加350
+#IF
+CHECK [50] 1
+#ACT
+MOV M1 400
+SENDMSG 7 二品太傅属性激活：血量增加400
+#IF
+CHECK [52] 1
+#ACT
+MOV M1 450
+SENDMSG 7 一统天下属性激活：血量增加450
+#IF
+CHECK [54] 1
+#ACT
+MOV M1 500
+SENDMSG 7 孤独求败属性激活：血量增加500
+#IF
+CHECK [56] 1
+#ACT
+MOV M1 550
+SENDMSG 7 唯我独尊属性激活：血量增加550
+#IF
+CHECK [58] 1
+#ACT
+MOV M1 600
+SENDMSG 7 天下无敌属性激活：血量增加600
+#IF
+CHECK [60] 1
+#ACT
+MOV M1 700
+SENDMSG 7 万人之上属性激活：血量增加700
+#IF
+CHECK [101] 1
+#ACT
+MOV M1 1000
+SENDMSG 7 号令天下属性激活：血量增加1000
+
+
+
+#IF
+CHECK [18] 1
+CHECKJOB WARRIOR
+#ACT
+INC M1 1200
+SENDMSG 7 战士55级冲级奖励属性激活:血量增加1200
+;AbilityAdd 0 1200 65535
+
+
+#IF
+CHECK [18] 1
+CHECKJOB WIZARD
+#ACT
+INC M1 300
+SENDMSG 7 法师55级冲级奖励属性激活:血量增加300
+;AbilityAdd 0 300 65535
+
+#IF
+CHECK [18] 1
+CHECKJOB TAOIST
+#ACT
+INC M1 1000
+SENDMSG 7 道士55级冲级奖励属性激活:血量增加1000
+;AbilityAdd 0 1000 65535
+
+
+#IF
+CHECK [168] 1
+#ACT
+;INC M1 200
+SENDMSG 7 神力护身属性激活:血量增加200
+SENDMSG 7 神力护身属性激活:本体和英雄攻击力增加1.1倍
+;AbilityAdd 0 600 65535
+
+
+#IF
+CHECK [70] 1
+#ACT
+INC M1 100
+INC M2 10
+INC M3 10
+SENDMSG 7 极限之力LV1属性激活:血量增加100
+SENDMSG 7 极限之力LV1属性激活:防御增加10
+SENDMSG 7 极限之力LV1属性激活:魔御增加10
+
+
+#IF
+CHECK [71] 1
+#ACT
+INC M1 200
+INC M2 10
+INC M3 10
+SENDMSG 7 极限之力LV2属性激活:血量增加300
+SENDMSG 7 极限之力LV2属性激活:防御增加20
+SENDMSG 7 极限之力LV2属性激活:魔御增加20
+
+
+#IF
+CHECK [72] 1
+#ACT
+INC M1 200
+INC M2 10
+INC M3 10
+SENDMSG 7 极限之力LV3属性激活:血量增加500
+SENDMSG 7 极限之力LV3属性激活:防御增加30
+SENDMSG 7 极限之力LV3属性激活:魔御增加30
+
+
+#IF
+CHECK [73] 1
+#ACT
+INC M1 300
+INC M2 20
+INC M3 20
+SENDMSG 7 极限之力LV4属性激活:血量增加500
+SENDMSG 7 极限之力LV4属性激活:防御增加50
+SENDMSG 7 极限之力LV4属性激活:魔御增加50
+
+
+#IF
+CHECK [059] 1
+#ACT
+INC M2 80
+INC M3 80
+;AbilityAdd 2 80 65535
+;AbilityAdd 3 80 65535
+SENDMSG 7 绝对防御属性激活:防御魔御增加40-80
+
+
+#IF
+LARGE M1 0
+#ACT
+AbilityAdd 0 <$STR(M1)> 720000
+SENDMSG 7 所有加血属性累计激活,获得血量<$STR(M1)>
+
+
+
+#IF
+LARGE M2 0
+LARGE M3 0
+#ACT
+AbilityAdd 2 <$STR(M2)> 720000
+AbilityAdd 3 <$STR(M3)> 720000
+SENDMSG 7 所有防御属性累计激活,获得防御<$STR(M2)>
+SENDMSG 7 所有防御属性累计激活,获得魔御<$STR(M3)>
+
+
+
+
+
+
+#IF
+CHECKNAMELIST ..\QuestDiary\重要数据\男道士名单.txt HardDisk
+#ACT
+AbilityAdd 6 20 70000
+SENDMSG 0 天下第一男道士：【%S】上线了！
+
+#IF
+CHECKNAMELIST ..\QuestDiary\重要数据\男法师名单.txt HardDisk
+#ACT
+AbilityAdd 5 20 70000
+SENDMSG 0 天下第一男法师：【%S】上线了！
+
+#IF
+CHECKNAMELIST ..\QuestDiary\重要数据\男战士名单.txt HardDisk
+#ACT
+AbilityAdd 4 20 70000
+SENDMSG 0 天下第一男战士：【%S】上线了！
+
+
+#IF
+CHECKNAMELIST ..\QuestDiary\重要数据\女道士名单.txt HardDisk
+#ACT
+AbilityAdd 6 20 70000
+SENDMSG 0 天下第一女道士：【%S】上线了！
+
+#IF
+CHECKNAMELIST ..\QuestDiary\重要数据\女法师名单.txt HardDisk
+#ACT
+AbilityAdd 5 20 70000
+SENDMSG 0 天下第一女法师：【%S】上线了！
+
+
+#IF
+CHECKNAMELIST ..\QuestDiary\重要数据\女战士名单.txt HardDisk
+#ACT
+AbilityAdd 4 20 700000
+SENDMSG 0 天下第一女战士：【%S】上线了！
+
+
+
+#IF
+CHECK [62] 1
+#ACT
+KillMonExpRate 400 999999
+NameColor 1
+SENDMSG 7 您是尊敬的[荣耀大使]享受4.0倍经验!
+SENDMSG 0 荣耀大使：【%s】登陆游戏！ 49 254
+break
+
+#IF
+CHECK [67] 1
+#ACT
+KillMonExpRate 300 999999
+NameColor 1
+SENDMSG 7 您是尊敬的[赞助大使]享受3.0倍经验!
+SENDMSG 0 赞助大使：【%s】登陆游戏！ 49 254
+break
+
+
+#IF
+CHECK [61] 1
+#ACT
+KillMonExpRate 250 999999
+NameColor 1
+SENDMSG 7 您是尊敬的[宣传大使]享受2.5倍经验!
+SENDMSG 0 宣传大使：【%s】登陆游戏！ 49 254
+break
+
+
+
+
+}

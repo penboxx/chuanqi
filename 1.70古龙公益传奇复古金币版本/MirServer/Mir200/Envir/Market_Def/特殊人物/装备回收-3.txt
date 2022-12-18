@@ -1,0 +1,873 @@
+
+[@main]
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆目前位置：装备回收                   『<返回/@main>』 『<离开/@exit>』┆\
+╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╣\
+┆  <回 收   说 明/@回收说明>                                       ┆\
+╠┄┄┄┄┄┄┄┄╦┄┄┄┄┄┄┄┄╦┄┄┄┄┄┄┄┄┄╣\
+┆『<一 级  回 收/@使一级回收>』┆『<二 级  回 收/@使二级回收>』┆『 <三 级   回 收/@三级回收>』┆\
+╚┄┄┄┄┄┄┄┄╩┄┄┄┄┄┄┄┄╩┄┄┄┄┄┄┄┄┄╝\
+
+[@三级回收]
+三级回收主要回收祖玛装备，可以获得50万经验+5点声望\
+请选择你要回收的装备：\ \
+
+<裁决之杖/@裁决之杖>\
+<骨玉权杖/@骨头>\
+<龙 纹 剑/@龙纹>\\
+
+<返回/@main>
+
+[@骨头]
+#IF
+CHECKHEROONLINE
+#ACT
+goto @gutou1
+#elseact
+goto @gutou2
+
+[@gutou1]
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+CHANGEEXP + 250000
+H.CHANGEEXP + 125000
+CREDITPOINT + 5
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使三级回收
+#ELSEACT
+MESSAGEBOX  你没有骨玉权杖！
+GOTO @使三级回收
+
+[@gutou2]
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+CHANGEEXP + 500000
+CREDITPOINT + 5
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使三级回收
+#ELSEACT
+MESSAGEBOX  你没有骨玉权杖！
+GOTO @使三级回收
+
+[@龙纹]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @LONGWEN1
+#ELSEACT
+GOTO @LONGWEN2
+
+[@LONGWEN1]
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+CHANGEEXP + 250000
+H.CHANGEEXP + 125000
+CREDITPOINT + 5
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使三级回收
+#ELSEACT
+MESSAGEBOX  你没有龙纹剑！
+GOTO @使三级回收
+
+[@LONGWEN2]
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+CHANGEEXP + 500000
+CREDITPOINT + 5
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使三级回收
+#ELSEACT
+MESSAGEBOX  你没有龙纹剑！
+GOTO @使三级回收
+
+[@裁决之杖]
+#IF
+CHECKHEROONLINE
+#act
+goto @caijue1
+#elseact
+goto @caijue2
+
+[@caijue1]
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+CHANGEEXP + 250000
+H.CHANGEEXP + 125000
+CREDITPOINT + 5
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使三级回收
+#ELSEACT
+MESSAGEBOX  你没有裁决之杖！
+GOTO @使三级回收
+
+[@caijue2]
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+CHANGEEXP + 5000000
+CREDITPOINT + 5
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使三级回收
+#ELSEACT
+MESSAGEBOX  你没有裁决之杖！
+GOTO @使三级回收
+
+[@使二级回收]
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆选择你需要回收的祖玛首饰：          『<返回/@回收无用>』 『<离开/@exit>』 ┆\
+╠┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╣\
+┆『<力量戒指/@回力戒>』┆『<骑士手镯/@回骑手>』┆『<绿色项链/@回绿项>』┆『<感谢光临/@回裁决1>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆『<泰坦戒指/@回泰戒>』┆『<三眼手镯/@回三手>』┆『<灵魂项链/@回灵项>』┆『<感谢光临/@骨头1>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆『 <紫碧螺/@回紫碧> 』┆『<龙之手镯/@回龙手>』┆『<恶魔铃铛/@回恶铃>』┆『<感谢光临/@龙纹1> 』┆\
+╚┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\
+
+
+[@回力戒]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @LIJIE1
+#ELSEACT
+GOTO @LIJIE2
+
+[@LIJIE1]
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+CHANGEEXP + 100000
+H.CHANGEEXP + 5000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有力量戒指！
+GOTO @使二级回收
+
+[@LIJIE2]
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+CHANGEEXP + 200000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有力量戒指！
+GOTO @使二级回收
+
+[@回骑手]
+#if
+CHECKHEROONLINE
+#act
+goto @qishou1
+#elseact
+goto @qishou2
+
+[@qishou1]
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+CHANGEEXP + 100000
+H.CHANGEEXP + 50000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有骑士手镯！
+GOTO @使二级回收
+
+[@qishou2]
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+CHANGEEXP + 200000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有骑士手镯！
+GOTO @使二级回收
+
+[@回泰戒]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @TAIJIE1
+#ELSEACT
+GOTO @TAIJIE2
+
+[@TAIJIE1]
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+CHANGEEXP + 100000
+H.CHANGEEXP + 50000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有泰坦戒指！
+GOTO @使二级回收
+
+[@TAIJIE2]
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+CHANGEEXP + 200000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有泰坦戒指！
+GOTO @使二级回收
+
+
+[@回三手]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @SANYAN1
+#ELSEACT
+GOTO @SANYAN2
+
+[@SANYAN1]
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+CHANGEEXP + 100000
+H.CHANGEEXP + 50000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有三眼手镯！
+GOTO @使二级回收
+
+[@SANYAN2]
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+CHANGEEXP + 200000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有三眼手镯！
+GOTO @使二级回收
+
+[@回绿项]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @LVSE1
+#ELSEACT
+GOTO @LVSE2
+
+[@LVSE1]
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+CHANGEEXP + 100000
+H.CHANGEEXP + 50000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有绿色项链！
+GOTO @使二级回收
+
+[@LVSE2]
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+CHANGEEXP + 200000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有绿色项链！
+GOTO @使二级回收
+
+[@回灵项]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @LINGXIANG1
+#ELSEACT
+GOTO @LINGXIANG2
+
+[@LINGXIANG1]
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+CHANGEEXP + 100000
+H.CHANGEEXP + 50000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有灵魂项链！
+GOTO @使二级回收
+
+[@LINGXIANG2]
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+CHANGEEXP + 200000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有灵魂项链！
+GOTO @使二级回收
+
+[@回紫碧]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @ZIBI1
+#ELSEACT
+GOTO @ZIBI2
+
+[@ZIBI1]
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+CHANGEEXP + 100000
+H.CHANGEEXP + 50000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有紫碧螺！
+GOTO @使二级回收
+
+[@ZIBI2]
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+CHANGEEXP + 200000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有紫碧螺！
+GOTO @使二级回收
+
+
+[@回龙手]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @LONGSHOU1
+#ELSEACT
+GOTO @LONGSHOU2
+
+[@LONGSHOU1]
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+CHANGEEXP + 100000
+H.CHANGEEXP + 50000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有龙之手镯！
+GOTO @使二级回收
+
+[@LONGSHOU2]
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+CHANGEEXP + 200000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有龙之手镯！
+GOTO @使二级回收
+
+[@回恶铃]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @ELING1
+#ELSEACT
+GOTO @ELING2
+
+[@ELING1]
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+CHANGEEXP + 100000
+H.CHANGEEXP + 50000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有恶魔铃铛！
+GOTO @使二级回收
+
+[@ELING2]
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+CHANGEEXP + 200000
+CREDITPOINT + 2
+SENDMSG 6 〖提示〗回收成功，经验值:<$EXP>，当前声望为<$CREDITPOINT>点
+GOTO @使二级回收
+#ELSEACT
+MESSAGEBOX  你没有恶魔铃铛！
+GOTO @使二级回收
+
+
+[@使一级回收]
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆选择你需要回收的沃玛首饰：          『<返回/@main>』 『<离开/@exit>』 ┆\
+╠┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╣\
+┆『<龙之戒指/@回圣戒>』┆『<幽灵手套/@回圣手>』┆『<幽灵项链/@回圣项>』┆『<炼    狱/@回圣头>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆『<铂金戒指/@回天戒>』┆『<心灵手镯/@回天手>』┆『<天珠项链/@回天项>』┆『<银    蛇/@回天头>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆『<红宝石戒/@回法戒>』┆『<思贝儿手/@回法手>』┆『<生命项链/@回法项>』┆『<魔    杖/@回法头>』┆\
+╚┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\
+
+[@回圣戒]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @SHENGJIE1
+#ELSEACT
+GOTO @SHENGJIE2
+
+[@SHENGJIE1]
+#if
+checkitem 龙之戒指 1
+#ACT
+take 龙之戒指 
+CHANGEEXP + 25000
+H.CHANGEEXP + 12500
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有龙之戒指！
+GOTO @使一级回收
+
+[@SHENGJIE2]
+#if
+checkitem 龙之戒指 1
+#ACT
+take 龙之戒指 
+CHANGEEXP + 50000
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有龙之戒指！
+GOTO @使一级回收
+
+[@回圣手]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @SHENGSHOU1
+#ELSEACT
+GOTO @SHENGSHOU2
+
+[@SHENGSHOU1]
+#if
+checkitem 幽灵手套 1
+#ACT
+take 幽灵手套 1
+CHANGEEXP + 25000
+H.CHANGEEXP + 12500
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有幽灵手套！
+GOTO @使一级回收
+
+[@SHENGSHOU2]
+#if
+checkitem 幽灵手套 1
+#ACT
+take 幽灵手套 1
+CHANGEEXP + 50000
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有幽灵手套！
+GOTO @使一级回收
+
+[@回圣项]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @SHENGXIANG1
+#ELSEACT
+GOTO @SHENGXIANG2
+
+[@SHENGXIANG1]
+#if
+checkitem 幽灵项链 1
+#ACT
+take 幽灵项链 1
+CHANGEEXP + 25000
+H.CHANGEEXP + 12500
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有幽灵项链！
+GOTO @使一级回收
+
+[@SHENGXIANG2]
+#if
+checkitem 幽灵项链 1
+#ACT
+take 幽灵项链 1
+CHANGEEXP + 50000
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有幽灵项链！
+GOTO @使一级回收
+
+[@回天戒]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @TIANJIE1
+#ELSEACT
+GOTO @TIANJIE2
+
+[@TIANJIE1]
+#if
+checkitem 铂金戒指 1
+#ACT
+take 铂金戒指 1
+CHANGEEXP + 25000
+H.CHANGEEXP + 12500
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有铂金戒指！
+GOTO @使一级回收
+
+[@TIANJIE2]
+#if
+checkitem 铂金戒指 1
+#ACT
+take 铂金戒指 1
+CHANGEEXP + 50000
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有铂金戒指！
+GOTO @使一级回收
+
+[@回天手]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @TIANSHOU1
+#ELSEACT
+GOTO @TIANSHOU2
+
+[@TIANSHOU1]
+#if
+checkitem 心灵手镯 1
+#ACT
+take 心灵手镯 1
+CHANGEEXP + 25000
+H.CHANGEEXP + 12500
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有心灵手镯！
+GOTO @使一级回收
+
+[@TIANSHOU2]
+#if
+checkitem 心灵手镯 1
+#ACT
+take 心灵手镯 1
+CHANGEEXP + 50000
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有心灵手镯！
+GOTO @使一级回收
+
+[@回天项]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @TIANXIANG1
+#ELSEACT
+GOTO @TIANXIANG2
+
+[@TIANXIANG1]
+#if
+checkitem 天珠项链 1
+#ACT
+take 天珠项链 1
+CHANGEEXP + 25000
+H.CHANGEEXP + 12500
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有天珠项链！
+GOTO @使一级回收
+
+[@TIANXIANG2]
+#if
+checkitem 天珠项链 1
+#ACT
+take 天珠项链 1
+CHANGEEXP + 50000
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有天珠项链！
+GOTO @使一级回收
+
+[@回法戒]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @FAJIE1
+#ELSEACT
+GOTO @FAJIE2
+
+[@FAJIE1]
+#if
+checkitem 红宝石戒指 1
+#ACT
+take 红宝石戒指 1
+CHANGEEXP + 25000
+H.CHANGEEXP + 12500
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有红宝石戒指！
+GOTO @使一级回收
+
+[@FAJIE2]
+#if
+checkitem 红宝石戒指 1
+#ACT
+take 红宝石戒指 1
+CHANGEEXP + 50000
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有红宝石戒指！
+GOTO @使一级回收
+
+[@回法手]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @FASHOU1
+#ELSEACT
+GOTO @FASHOU2
+
+[@FASHOU1]
+#if
+checkitem 思贝儿手镯 1
+#ACT
+take 思贝儿手镯 1
+CHANGEEXP + 25000
+H.CHANGEEXP + 12500
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有思贝儿手镯！
+GOTO @使一级回收
+
+[@FASHOU2]
+#if
+checkitem 思贝儿手镯 1
+#ACT
+take 思贝儿手镯 1
+CHANGEEXP + 50000
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有思贝儿手镯！
+GOTO @使一级回收
+
+[@回法项]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @FAXIANG1
+#ELSEACT
+GOTO @FAXIANG2
+
+[@FAXIANG1]
+#if
+checkitem 生命项链 1
+#ACT
+take 生命项链 1
+CHANGEEXP + 25000
+H.CHANGEEXP + 12500
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有生命项链！
+GOTO @使一级回收
+
+[@FAXIANG2]
+#if
+checkitem 生命项链 1
+#ACT
+take 生命项链 1
+CHANGEEXP + 50000
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有生命项链！
+GOTO @使一级回收
+
+[@回法头]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @FATOU1
+#ELSEACT
+GOTO @FATOU2
+
+[@FATOU1]
+#if
+checkitem 魔杖 1
+#ACT
+take 魔杖 1
+CHANGEEXP + 25000
+H.CHANGEEXP + 12500
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有魔杖！
+GOTO @使一级回收
+
+[@FATOU2]
+#if
+checkitem 魔杖 1
+#ACT
+take 魔杖 1
+CHANGEEXP + 50000
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有魔杖！
+GOTO @使一级回收
+
+[@回天头]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @TIANTOU1
+#ELSEACT
+GOTO @TIANTOU2
+
+[@TIANTOU1]
+#if
+checkitem 银蛇 1
+#ACT
+take 银蛇 1
+CHANGEEXP + 25000
+H.CHANGEEXP + 12500
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有银蛇！
+GOTO @使一级回收
+
+[@TIANTOU2]
+#if
+checkitem 银蛇 1
+#ACT
+take 银蛇 1
+CHANGEEXP + 50000
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有银蛇！
+GOTO @使一级回收
+
+[@回圣头]
+#IF
+CHECKHEROONLINE
+#ACT
+GOTO @SHENGTOU1
+#ELSEACT
+GOTO @SHENGTOU2
+
+[@SHENGTOU1]
+#if
+checkitem 炼狱 1
+#ACT
+take 炼狱 1
+CHANGEEXP + 25000
+H.CHANGEEXP + 12500
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有炼狱。
+GOTO @使一级回收
+
+[@SHENGTOU2]
+#if
+checkitem 炼狱 1
+#ACT
+take 炼狱 1
+CHANGEEXP + 50000
+SENDMSG 6 〖提示〗回收成功.经验值:<$EXP>
+GOTO @使一级回收
+#ELSEACT
+MESSAGEBOX  你没有炼狱。
+GOTO @使一级回收
+
+
+[@回收说明]
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆目前位置：装备回收∷回收说明        『<返回/@main>』 『<离开/@exit>』 ┆\
+╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╣\
+┆一级回收：可以将你不需要的沃玛装备武器5万经验         ┆\
+┆二级回收：可以将你不需要的祖玛装备换成20W经验+2点声望 ┆\
+┆三级回收：可以将您不需要的祖玛武器换成50W经验+5点声望 ┆\
+╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╣\
+┆注意：<声望值最高能到达255>                             ┆\
+╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝\

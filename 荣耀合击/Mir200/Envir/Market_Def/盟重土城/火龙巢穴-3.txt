@@ -1,0 +1,23 @@
+()
+%100
+[@main]
+\          <COLOR=clLime ∴∵∴※2020经典80金币复古※∵∴∵>\
+\<COLOR=clAqua ╰══════════><COLOR=clAqua 【通天神殿】><COLOR=clAqua ══════════╯>\
+\<COLOR=clRed ♀.高级地图，难度适中，适合法道生存赚钱的好地图>\
+\<COLOR=clAqua ♀.怪物刷新：魔龙教主，雷炎蛛王，通天神龙>\
+\<COLOR=clLime ♀.爆率介绍：全服所有装备>\
+\<COLOR=clFuchsia ♀.进入条件：49级+200元宝>  \
+------------------------------------------------------------　\
+<前往通天神殿/@单人>\
+[@单人]
+#if
+checkgamegold > 399
+CHECKLEVELEX > 48
+#act
+gamegold - 400
+mapmove tongtian
+give 回城卷
+SENDMSG 0 玩家〖%s〗单独进入了通天神殿！   49 223
+SENDMSG 0 玩家〖%s〗单独进入了通天神殿！   49 223
+#elseact
+MESSAGEBOX 【提示】:你达到进入条件了吗，孩子别冲动不要以卵击石！

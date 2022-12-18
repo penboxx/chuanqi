@@ -1,0 +1,138 @@
+[@聚灵珠]
+{
+金币传奇独家聚灵珠免费，我可以帮你兑换成英雄聚灵珠，\
+只要把你的聚灵珠交给我并且给我<COLOR=CLYELLOW 2万金币>，\
+我便可以给你一个<COLOR=CLRED 英雄聚灵珠>。\
+<COLOR=CLSKYBLUE 聚灵珠使用后人物将获得100%经验，>\
+<COLOR=CLSKYBLUE 而英雄使用英雄聚灵珠后，英雄将获得100%的经验。>\
+<点击进入祖玛装备兑换聚灵珠功能/@111>！！
+#ACT
+QUERYITEMDLG 放入要升级的珠子 @聚灵珠2 0
+
+[@聚灵珠2]
+#IF
+CHECKGOLD 20000
+#ELSEACT
+DELAYCALL 10 @聚灵珠
+MESSAGEBOX 升级为英雄聚灵珠需要金币20000！
+BREAK
+#IF
+CHECKDLGITEMNAME 聚灵珠(小)
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<$DLGITEMNAME>成功升级为英雄聚灵珠(小)！ 255 249
+TAKEDLGITEM
+TAKE 金币 20000
+GIVE 英雄聚灵珠(小) 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 聚灵珠(中)
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<$DLGITEMNAME>成功升级为英雄聚灵珠(中)！ 255 249
+TAKEDLGITEM
+TAKE 金币 20000
+GIVE 英雄聚灵珠(中) 1
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 聚灵珠(大)
+#ACT
+SENDMSG 0 恭喜玩家：%s，使用<$DLGITEMNAME>成功升级为英雄聚灵珠(大)！ 255 249
+TAKEDLGITEM
+TAKE 金币 20000
+GIVE 英雄聚灵珠(大) 1
+MOV P0 1
+
+#IF
+EQUAL P0 1
+#ACT
+MOV P0 0
+DELAYCALL 10 @聚灵珠
+BREAK
+#ELSEACT
+SENDMSG 7 你给我的是什么东西啊？请放入要升级的聚灵珠！
+DELAYCALL 10 @聚灵珠
+BREAK
+
+[@111]
+<你好，请把需要兑换的祖玛装备放在包裹里>\
+\
+<不需要兑换的祖玛装备赶快放入仓库或英雄包裹里>\
+\
+\
+\
+\
+<使用一键全部兑换/@兑换> \
+
+[@兑换]
+#IF
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+GIVE 聚灵珠(大) 1
+SENDMSG 0 恭喜玩家：%s，使用<绿色项链>成功兑换到聚灵珠(大)一颗！ 255 249
+
+#IF
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+GIVE 聚灵珠(大) 1
+SENDMSG 0 恭喜玩家：%s，使用<骑士手镯>成功兑换到聚灵珠(大)一颗！ 255 249
+
+#IF
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+GIVE 聚灵珠(大) 1
+SENDMSG 0 恭喜玩家：%s，使用<力量戒指>成功兑换到聚灵珠(大)一颗！ 255 249
+
+#IF
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+GIVE 聚灵珠(大) 1
+SENDMSG 0 恭喜玩家：%s，使用<灵魂项链>成功兑换到聚灵珠(大)一颗！ 255 249
+
+#IF
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+GIVE 聚灵珠(大) 1
+SENDMSG 0 恭喜玩家：%s，使用<三眼手镯>成功兑换到聚灵珠(大)一颗！ 255 249
+
+#IF
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+GIVE 聚灵珠(大) 1
+SENDMSG 0 恭喜玩家：%s，使用<泰坦戒指>成功兑换到聚灵珠(大)一颗！ 255 249
+
+#IF
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+GIVE 聚灵珠(大) 1
+SENDMSG 0 恭喜玩家：%s，使用<恶魔铃铛>成功兑换到聚灵珠(大)一颗！ 255 249
+
+#IF
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+GIVE 聚灵珠(大) 1
+SENDMSG 0 恭喜玩家：%s，使用<龙之手镯>成功兑换到聚灵珠(大)一颗！ 255 249
+
+#IF
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+GIVE 聚灵珠(大) 1
+SENDMSG 0 恭喜玩家：%s，使用<紫碧螺>成功兑换到聚灵珠(大)一颗！ 255 249
+
+#IF
+checkitem 黑铁头盔 1
+#ACT
+take 黑铁头盔 1
+GIVE 聚灵珠(大) 1
+SENDMSG 0 恭喜玩家：%s，使用<黑铁头盔>成功兑换到聚灵珠(大)一颗！ 255 249
+
+}

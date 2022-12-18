@@ -1,0 +1,1532 @@
+[@Mir2m2单挑擂台脚本RM]
+{
+#IF
+SMALL I56 101529177
+#ACT
+MOV I56 101529177
+VAR String  GLOBAL 单挑补发姓名A1
+VAR String  GLOBAL 单挑补发姓名A2
+VAR String  GLOBAL 单挑补发姓名A3
+VAR String  GLOBAL 单挑补发姓名A4
+VAR String  GLOBAL 单挑补发姓名A5
+VAR String  GLOBAL 单挑补发姓名A6
+VAR String  GLOBAL 单挑补发姓名A7
+VAR String  GLOBAL 单挑补发姓名A8
+VAR String  GLOBAL 单挑补发姓名A9
+VAR Integer GLOBAL 单挑补发数量A1
+VAR Integer GLOBAL 单挑补发数量A2
+VAR Integer GLOBAL 单挑补发数量A3
+VAR Integer GLOBAL 单挑补发数量A4
+VAR Integer GLOBAL 单挑补发数量A5
+VAR Integer GLOBAL 单挑补发数量A6
+VAR Integer GLOBAL 单挑补发数量A7
+VAR Integer GLOBAL 单挑补发数量A8
+VAR Integer GLOBAL 单挑补发数量A9
+VAR String  GLOBAL 单挑补发姓名B1
+VAR String  GLOBAL 单挑补发姓名B2
+VAR String  GLOBAL 单挑补发姓名B3
+VAR String  GLOBAL 单挑补发姓名B4
+VAR String  GLOBAL 单挑补发姓名B5
+VAR String  GLOBAL 单挑补发姓名B6
+VAR String  GLOBAL 单挑补发姓名B7
+VAR String  GLOBAL 单挑补发姓名B8
+VAR String  GLOBAL 单挑补发姓名B9
+VAR Integer GLOBAL 单挑补发数量B1
+VAR Integer GLOBAL 单挑补发数量B2
+VAR Integer GLOBAL 单挑补发数量B3
+VAR Integer GLOBAL 单挑补发数量B4
+VAR Integer GLOBAL 单挑补发数量B5
+VAR Integer GLOBAL 单挑补发数量B6
+VAR Integer GLOBAL 单挑补发数量B7
+VAR Integer GLOBAL 单挑补发数量B8
+VAR Integer GLOBAL 单挑补发数量B9
+VAR String  GLOBAL 单挑擂主姓名1
+VAR String  GLOBAL 单挑擂主姓名2
+VAR String  GLOBAL 单挑擂主姓名3
+VAR String  GLOBAL 单挑擂主姓名4
+VAR String  GLOBAL 单挑擂主姓名5
+VAR String  GLOBAL 单挑擂主姓名6
+VAR String  GLOBAL 单挑擂主姓名7
+VAR String  GLOBAL 单挑擂主姓名8
+VAR String  GLOBAL 单挑擂主姓名9
+VAR String  GLOBAL 单挑应战姓名1
+VAR String  GLOBAL 单挑应战姓名2
+VAR String  GLOBAL 单挑应战姓名3
+VAR String  GLOBAL 单挑应战姓名4
+VAR String  GLOBAL 单挑应战姓名5
+VAR String  GLOBAL 单挑应战姓名6
+VAR String  GLOBAL 单挑应战姓名7
+VAR String  GLOBAL 单挑应战姓名8
+VAR String  GLOBAL 单挑应战姓名9
+VAR Integer GLOBAL 单挑押注数量1
+VAR Integer GLOBAL 单挑押注数量2
+VAR Integer GLOBAL 单挑押注数量3
+VAR Integer GLOBAL 单挑押注数量4
+VAR Integer GLOBAL 单挑押注数量5
+VAR Integer GLOBAL 单挑押注数量6
+VAR Integer GLOBAL 单挑押注数量7
+VAR Integer GLOBAL 单挑押注数量8
+VAR Integer GLOBAL 单挑押注数量9
+VAR String  GLOBAL 单挑地图代码1
+VAR String  GLOBAL 单挑地图代码2
+VAR String  GLOBAL 单挑地图代码3
+VAR String  GLOBAL 单挑地图代码4
+VAR String  GLOBAL 单挑地图代码5
+VAR String  GLOBAL 单挑地图代码6
+VAR String  GLOBAL 单挑地图代码7
+VAR String  GLOBAL 单挑地图代码8
+VAR String  GLOBAL 单挑地图代码9
+VAR Integer GLOBAL 单挑开始计时1
+VAR Integer GLOBAL 单挑开始计时2
+VAR Integer GLOBAL 单挑开始计时3
+VAR Integer GLOBAL 单挑开始计时4
+VAR Integer GLOBAL 单挑开始计时5
+VAR Integer GLOBAL 单挑开始计时6
+VAR Integer GLOBAL 单挑开始计时7
+VAR Integer GLOBAL 单挑开始计时8
+VAR Integer GLOBAL 单挑开始计时9
+VAR Integer GLOBAL 单挑开始判断1
+VAR Integer GLOBAL 单挑开始判断2
+VAR Integer GLOBAL 单挑开始判断3
+VAR Integer GLOBAL 单挑开始判断4
+VAR Integer GLOBAL 单挑开始判断5
+VAR Integer GLOBAL 单挑开始判断6
+VAR Integer GLOBAL 单挑开始判断7
+VAR Integer GLOBAL 单挑开始判断8
+VAR Integer GLOBAL 单挑开始判断9
+VAR Integer GLOBAL 单挑系统序号
+
+#IF
+checkvar GLOBAL 单挑开始计时1 > 0
+#ACT
+CALCVAR GLOBAL 单挑开始计时1 - 1
+#IF
+checkvar GLOBAL 单挑开始计时1 = 0
+checkvar GLOBAL 单挑开始判断1 = 1
+<$GLOBAL(单挑擂主姓名1)>.ONLINELONGMIN ? 0
+#ACT
+<$GLOBAL(单挑擂主姓名1)>.SENDMSG 6 $(单挑公告提示前缀)【<$GLOBAL(单挑应战姓名1)>】超时没有接受您的挑战，挑战取消！
+#IF
+checkvar GLOBAL 单挑开始计时1 = 0
+checkvar GLOBAL 单挑开始判断1 = 1
+#ACT
+CALCVAR GLOBAL 单挑擂主姓名1 = 
+CALCVAR GLOBAL 单挑应战姓名1 = 
+CALCVAR GLOBAL 单挑开始判断1 = 0
+#IF
+checkvar GLOBAL 单挑开始计时1 = 0
+checkvar GLOBAL 单挑开始判断1 = 2
+#ACT
+CALCVAR GLOBAL 单挑开始计时1 = $(单挑进行最大时长)
+CALCVAR GLOBAL 单挑开始计时1 * 60
+CALCVAR GLOBAL 单挑开始判断1 = 3
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名1)>】对战【<$GLOBAL(单挑应战姓名1)>】的单挑正式开始！ 253 255
+CALCVAR GLOBAL 单挑系统序号 = 1
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台开始进入
+CALCVAR GLOBAL 单挑开始判断1 = 4
+#IF
+checkvar GLOBAL 单挑开始判断1 = 4
+CheckmapHumanCount <$GLOBAL(单挑地图代码1)> < 1
+#ACT
+CALCVAR GLOBAL 单挑开始判断1 = 5
+#IF
+checkvar GLOBAL 单挑开始计时1 = 0
+checkvar GLOBAL 单挑开始判断1 = 4
+#ACT
+CALCVAR GLOBAL 单挑开始判断1 = 5
+#IF
+checkvar GLOBAL 单挑开始判断1 = 5
+#ACT
+MOV D5 0
+MOV D6 0
+#ELSEACT
+MOV D5 100
+MOV D6 100
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A1 = 
+#ACT
+MOV D5 1
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A2 = 
+#ACT
+MOV D5 2
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A3 = 
+#ACT
+MOV D5 3
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A4 = 
+#ACT
+MOV D5 4
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A5 = 
+#ACT
+MOV D5 5
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A6 = 
+#ACT
+MOV D5 6
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A7 = 
+#ACT
+MOV D5 7
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A8 = 
+#ACT
+MOV D5 8
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A9 = 
+#ACT
+MOV D5 9
+#IF
+EQUAL D5 0
+#ACT
+MOV D5 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B1 = 
+#ACT
+MOV D6 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B2 = 
+#ACT
+MOV D6 2
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B3 = 
+#ACT
+MOV D6 3
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B4 = 
+#ACT
+MOV D6 4
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B5 = 
+#ACT
+MOV D6 5
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B6 = 
+#ACT
+MOV D6 6
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B7 = 
+#ACT
+MOV D6 7
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B8 = 
+#ACT
+MOV D6 8
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B9 = 
+#ACT
+MOV D6 9
+#IF
+EQUAL D6 0
+#ACT
+MOV D6 1
+#IF
+checkvar GLOBAL 单挑开始判断1 = 5
+#ACT
+CALCVAR GLOBAL 单挑补发姓名A<$STR(D5)> = <$GLOBAL(单挑擂主姓名1)>
+CALCVAR GLOBAL 单挑补发数量A<$STR(D5)> = <$GLOBAL(单挑押注数量1)>
+CALCVAR GLOBAL 单挑补发姓名B<$STR(D6)> = <$GLOBAL(单挑应战姓名1)>
+CALCVAR GLOBAL 单挑补发数量B<$STR(D6)> = <$GLOBAL(单挑押注数量1)>
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名1)>】对战【<$GLOBAL(单挑应战姓名1)>】超时未分出胜负，判为平局！ 253 255
+CALCVAR GLOBAL 单挑擂主姓名1 = 
+CALCVAR GLOBAL 单挑应战姓名1 = 
+CALCVAR GLOBAL 单挑开始判断1 = 0
+CALCVAR GLOBAL 单挑系统序号 = 1
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+
+#IF
+checkvar GLOBAL 单挑开始计时2 > 0
+#ACT
+CALCVAR GLOBAL 单挑开始计时2 - 1
+#IF
+checkvar GLOBAL 单挑开始计时2 = 0
+checkvar GLOBAL 单挑开始判断2 = 1
+<$GLOBAL(单挑擂主姓名2)>.ONLINELONGMIN ? 0
+#ACT
+<$GLOBAL(单挑擂主姓名2)>.SENDMSG 6 $(单挑公告提示前缀)【<$GLOBAL(单挑应战姓名2)>】超时没有接受您的挑战，挑战取消！
+#IF
+checkvar GLOBAL 单挑开始计时2 = 0
+checkvar GLOBAL 单挑开始判断2 = 1
+#ACT
+CALCVAR GLOBAL 单挑擂主姓名2 = 
+CALCVAR GLOBAL 单挑应战姓名2 = 
+CALCVAR GLOBAL 单挑开始判断2 = 0
+#IF
+checkvar GLOBAL 单挑开始计时2 = 0
+checkvar GLOBAL 单挑开始判断2 = 2
+#ACT
+CALCVAR GLOBAL 单挑开始计时2 = $(单挑进行最大时长)
+CALCVAR GLOBAL 单挑开始计时2 * 60
+CALCVAR GLOBAL 单挑开始判断2 = 3
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名2)>】对战【<$GLOBAL(单挑应战姓名2)>】的单挑正式开始！ 253 255
+CALCVAR GLOBAL 单挑系统序号 = 2
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台开始进入
+CALCVAR GLOBAL 单挑开始判断2 = 4
+#IF
+checkvar GLOBAL 单挑开始判断2 = 4
+CheckmapHumanCount <$GLOBAL(单挑地图代码2)> < 1
+#ACT
+CALCVAR GLOBAL 单挑开始判断2 = 5
+#IF
+checkvar GLOBAL 单挑开始计时2 = 0
+checkvar GLOBAL 单挑开始判断2 = 4
+#ACT
+CALCVAR GLOBAL 单挑开始判断2 = 5
+#IF
+checkvar GLOBAL 单挑开始判断2 = 5
+#ACT
+MOV D5 0
+MOV D6 0
+#ELSEACT
+MOV D5 100
+MOV D6 100
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A1 = 
+#ACT
+MOV D5 1
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A2 = 
+#ACT
+MOV D5 2
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A3 = 
+#ACT
+MOV D5 3
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A4 = 
+#ACT
+MOV D5 4
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A5 = 
+#ACT
+MOV D5 5
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A6 = 
+#ACT
+MOV D5 6
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A7 = 
+#ACT
+MOV D5 7
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A8 = 
+#ACT
+MOV D5 8
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A9 = 
+#ACT
+MOV D5 9
+#IF
+EQUAL D5 0
+#ACT
+MOV D5 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B1 = 
+#ACT
+MOV D6 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B2 = 
+#ACT
+MOV D6 2
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B3 = 
+#ACT
+MOV D6 3
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B4 = 
+#ACT
+MOV D6 4
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B5 = 
+#ACT
+MOV D6 5
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B6 = 
+#ACT
+MOV D6 6
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B7 = 
+#ACT
+MOV D6 7
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B8 = 
+#ACT
+MOV D6 8
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B9 = 
+#ACT
+MOV D6 9
+#IF
+EQUAL D6 0
+#ACT
+MOV D6 1
+#IF
+checkvar GLOBAL 单挑开始判断2 = 5
+#ACT
+CALCVAR GLOBAL 单挑补发姓名A<$STR(D5)> = <$GLOBAL(单挑擂主姓名2)>
+CALCVAR GLOBAL 单挑补发数量A<$STR(D5)> = <$GLOBAL(单挑押注数量2)>
+CALCVAR GLOBAL 单挑补发姓名B<$STR(D6)> = <$GLOBAL(单挑应战姓名2)>
+CALCVAR GLOBAL 单挑补发数量B<$STR(D6)> = <$GLOBAL(单挑押注数量2)>
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名2)>】对战【<$GLOBAL(单挑应战姓名2)>】超时未分出胜负，判为平局！ 253 255
+CALCVAR GLOBAL 单挑擂主姓名2 = 
+CALCVAR GLOBAL 单挑应战姓名2 = 
+CALCVAR GLOBAL 单挑开始判断2 = 0
+CALCVAR GLOBAL 单挑系统序号 = 2
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+
+#IF
+checkvar GLOBAL 单挑开始计时3 > 0
+#ACT
+CALCVAR GLOBAL 单挑开始计时3 - 1
+#IF
+checkvar GLOBAL 单挑开始计时3 = 0
+checkvar GLOBAL 单挑开始判断3 = 1
+<$GLOBAL(单挑擂主姓名3)>.ONLINELONGMIN ? 0
+#ACT
+<$GLOBAL(单挑擂主姓名3)>.SENDMSG 6 $(单挑公告提示前缀)【<$GLOBAL(单挑应战姓名3)>】超时没有接受您的挑战，挑战取消！
+#IF
+checkvar GLOBAL 单挑开始计时3 = 0
+checkvar GLOBAL 单挑开始判断3 = 1
+#ACT
+CALCVAR GLOBAL 单挑擂主姓名3 = 
+CALCVAR GLOBAL 单挑应战姓名3 = 
+CALCVAR GLOBAL 单挑开始判断3 = 0
+#IF
+checkvar GLOBAL 单挑开始计时3 = 0
+checkvar GLOBAL 单挑开始判断3 = 2
+#ACT
+CALCVAR GLOBAL 单挑开始计时3 = $(单挑进行最大时长)
+CALCVAR GLOBAL 单挑开始计时3 * 60
+CALCVAR GLOBAL 单挑开始判断3 = 3
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名3)>】对战【<$GLOBAL(单挑应战姓名3)>】的单挑正式开始！ 253 255
+CALCVAR GLOBAL 单挑系统序号 = 3
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台开始进入
+CALCVAR GLOBAL 单挑开始判断3 = 4
+#IF
+checkvar GLOBAL 单挑开始判断3 = 4
+CheckmapHumanCount <$GLOBAL(单挑地图代码3)> < 1
+#ACT
+CALCVAR GLOBAL 单挑开始判断3 = 5
+#IF
+checkvar GLOBAL 单挑开始计时3 = 0
+checkvar GLOBAL 单挑开始判断3 = 4
+#ACT
+CALCVAR GLOBAL 单挑开始判断3 = 5
+#IF
+checkvar GLOBAL 单挑开始判断3 = 5
+#ACT
+MOV D5 0
+MOV D6 0
+#ELSEACT
+MOV D5 100
+MOV D6 100
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A1 = 
+#ACT
+MOV D5 1
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A2 = 
+#ACT
+MOV D5 2
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A3 = 
+#ACT
+MOV D5 3
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A4 = 
+#ACT
+MOV D5 4
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A5 = 
+#ACT
+MOV D5 5
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A6 = 
+#ACT
+MOV D5 6
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A7 = 
+#ACT
+MOV D5 7
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A8 = 
+#ACT
+MOV D5 8
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A9 = 
+#ACT
+MOV D5 9
+#IF
+EQUAL D5 0
+#ACT
+MOV D5 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B1 = 
+#ACT
+MOV D6 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B2 = 
+#ACT
+MOV D6 2
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B3 = 
+#ACT
+MOV D6 3
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B4 = 
+#ACT
+MOV D6 4
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B5 = 
+#ACT
+MOV D6 5
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B6 = 
+#ACT
+MOV D6 6
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B7 = 
+#ACT
+MOV D6 7
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B8 = 
+#ACT
+MOV D6 8
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B9 = 
+#ACT
+MOV D6 9
+#IF
+EQUAL D6 0
+#ACT
+MOV D6 1
+#IF
+checkvar GLOBAL 单挑开始判断3 = 5
+#ACT
+CALCVAR GLOBAL 单挑补发姓名A<$STR(D5)> = <$GLOBAL(单挑擂主姓名3)>
+CALCVAR GLOBAL 单挑补发数量A<$STR(D5)> = <$GLOBAL(单挑押注数量3)>
+CALCVAR GLOBAL 单挑补发姓名B<$STR(D6)> = <$GLOBAL(单挑应战姓名3)>
+CALCVAR GLOBAL 单挑补发数量B<$STR(D6)> = <$GLOBAL(单挑押注数量3)>
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名3)>】对战【<$GLOBAL(单挑应战姓名3)>】超时未分出胜负，判为平局！ 253 255
+CALCVAR GLOBAL 单挑擂主姓名3 = 
+CALCVAR GLOBAL 单挑应战姓名3 = 
+CALCVAR GLOBAL 单挑开始判断3 = 0
+CALCVAR GLOBAL 单挑系统序号 = 3
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+
+#IF
+checkvar GLOBAL 单挑开始计时4 > 0
+#ACT
+CALCVAR GLOBAL 单挑开始计时4 - 1
+#IF
+checkvar GLOBAL 单挑开始计时4 = 0
+checkvar GLOBAL 单挑开始判断4 = 1
+<$GLOBAL(单挑擂主姓名4)>.ONLINELONGMIN ? 0
+#ACT
+<$GLOBAL(单挑擂主姓名4)>.SENDMSG 6 $(单挑公告提示前缀)【<$GLOBAL(单挑应战姓名4)>】超时没有接受您的挑战，挑战取消！
+#IF
+checkvar GLOBAL 单挑开始计时4 = 0
+checkvar GLOBAL 单挑开始判断4 = 1
+#ACT
+CALCVAR GLOBAL 单挑擂主姓名4 = 
+CALCVAR GLOBAL 单挑应战姓名4 = 
+CALCVAR GLOBAL 单挑开始判断4 = 0
+#IF
+checkvar GLOBAL 单挑开始计时4 = 0
+checkvar GLOBAL 单挑开始判断4 = 2
+#ACT
+CALCVAR GLOBAL 单挑开始计时4 = $(单挑进行最大时长)
+CALCVAR GLOBAL 单挑开始计时4 * 60
+CALCVAR GLOBAL 单挑开始判断4 = 3
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名4)>】对战【<$GLOBAL(单挑应战姓名4)>】的单挑正式开始！ 253 255
+CALCVAR GLOBAL 单挑系统序号 = 4
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台开始进入
+CALCVAR GLOBAL 单挑开始判断4 = 4
+#IF
+checkvar GLOBAL 单挑开始判断4 = 4
+CheckmapHumanCount <$GLOBAL(单挑地图代码4)> < 1
+#ACT
+CALCVAR GLOBAL 单挑开始判断4 = 5
+#IF
+checkvar GLOBAL 单挑开始计时4 = 0
+checkvar GLOBAL 单挑开始判断4 = 4
+#ACT
+CALCVAR GLOBAL 单挑开始判断4 = 5
+#IF
+checkvar GLOBAL 单挑开始判断4 = 5
+#ACT
+MOV D5 0
+MOV D6 0
+#ELSEACT
+MOV D5 100
+MOV D6 100
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A1 = 
+#ACT
+MOV D5 1
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A2 = 
+#ACT
+MOV D5 2
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A3 = 
+#ACT
+MOV D5 3
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A4 = 
+#ACT
+MOV D5 4
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A5 = 
+#ACT
+MOV D5 5
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A6 = 
+#ACT
+MOV D5 6
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A7 = 
+#ACT
+MOV D5 7
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A8 = 
+#ACT
+MOV D5 8
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A9 = 
+#ACT
+MOV D5 9
+#IF
+EQUAL D5 0
+#ACT
+MOV D5 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B1 = 
+#ACT
+MOV D6 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B2 = 
+#ACT
+MOV D6 2
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B3 = 
+#ACT
+MOV D6 3
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B4 = 
+#ACT
+MOV D6 4
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B5 = 
+#ACT
+MOV D6 5
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B6 = 
+#ACT
+MOV D6 6
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B7 = 
+#ACT
+MOV D6 7
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B8 = 
+#ACT
+MOV D6 8
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B9 = 
+#ACT
+MOV D6 9
+#IF
+EQUAL D6 0
+#ACT
+MOV D6 1
+#IF
+checkvar GLOBAL 单挑开始判断4 = 5
+#ACT
+CALCVAR GLOBAL 单挑补发姓名A<$STR(D5)> = <$GLOBAL(单挑擂主姓名4)>
+CALCVAR GLOBAL 单挑补发数量A<$STR(D5)> = <$GLOBAL(单挑押注数量4)>
+CALCVAR GLOBAL 单挑补发姓名B<$STR(D6)> = <$GLOBAL(单挑应战姓名4)>
+CALCVAR GLOBAL 单挑补发数量B<$STR(D6)> = <$GLOBAL(单挑押注数量4)>
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名4)>】对战【<$GLOBAL(单挑应战姓名4)>】超时未分出胜负，判为平局！ 253 255
+CALCVAR GLOBAL 单挑擂主姓名4 = 
+CALCVAR GLOBAL 单挑应战姓名4 = 
+CALCVAR GLOBAL 单挑开始判断4 = 0
+CALCVAR GLOBAL 单挑系统序号 = 4
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+
+#IF
+checkvar GLOBAL 单挑开始计时5 > 0
+#ACT
+CALCVAR GLOBAL 单挑开始计时5 - 1
+#IF
+checkvar GLOBAL 单挑开始计时5 = 0
+checkvar GLOBAL 单挑开始判断5 = 1
+<$GLOBAL(单挑擂主姓名5)>.ONLINELONGMIN ? 0
+#ACT
+<$GLOBAL(单挑擂主姓名5)>.SENDMSG 6 $(单挑公告提示前缀)【<$GLOBAL(单挑应战姓名5)>】超时没有接受您的挑战，挑战取消！
+#IF
+checkvar GLOBAL 单挑开始计时5 = 0
+checkvar GLOBAL 单挑开始判断5 = 1
+#ACT
+CALCVAR GLOBAL 单挑擂主姓名5 = 
+CALCVAR GLOBAL 单挑应战姓名5 = 
+CALCVAR GLOBAL 单挑开始判断5 = 0
+#IF
+checkvar GLOBAL 单挑开始计时5 = 0
+checkvar GLOBAL 单挑开始判断5 = 2
+#ACT
+CALCVAR GLOBAL 单挑开始计时5 = $(单挑进行最大时长)
+CALCVAR GLOBAL 单挑开始计时5 * 60
+CALCVAR GLOBAL 单挑开始判断5 = 3
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名5)>】对战【<$GLOBAL(单挑应战姓名5)>】的单挑正式开始！ 253 255
+CALCVAR GLOBAL 单挑系统序号 = 5
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台开始进入
+CALCVAR GLOBAL 单挑开始判断5 = 4
+#IF
+checkvar GLOBAL 单挑开始判断5 = 4
+CheckmapHumanCount <$GLOBAL(单挑地图代码5)> < 1
+#ACT
+CALCVAR GLOBAL 单挑开始判断5 = 5
+#IF
+checkvar GLOBAL 单挑开始计时5 = 0
+checkvar GLOBAL 单挑开始判断5 = 4
+#ACT
+CALCVAR GLOBAL 单挑开始判断5 = 5
+#IF
+checkvar GLOBAL 单挑开始判断5 = 5
+#ACT
+MOV D5 0
+MOV D6 0
+#ELSEACT
+MOV D5 100
+MOV D6 100
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A1 = 
+#ACT
+MOV D5 1
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A2 = 
+#ACT
+MOV D5 2
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A3 = 
+#ACT
+MOV D5 3
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A4 = 
+#ACT
+MOV D5 4
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A5 = 
+#ACT
+MOV D5 5
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A6 = 
+#ACT
+MOV D5 6
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A7 = 
+#ACT
+MOV D5 7
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A8 = 
+#ACT
+MOV D5 8
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A9 = 
+#ACT
+MOV D5 9
+#IF
+EQUAL D5 0
+#ACT
+MOV D5 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B1 = 
+#ACT
+MOV D6 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B2 = 
+#ACT
+MOV D6 2
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B3 = 
+#ACT
+MOV D6 3
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B4 = 
+#ACT
+MOV D6 4
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B5 = 
+#ACT
+MOV D6 5
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B6 = 
+#ACT
+MOV D6 6
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B7 = 
+#ACT
+MOV D6 7
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B8 = 
+#ACT
+MOV D6 8
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B9 = 
+#ACT
+MOV D6 9
+#IF
+EQUAL D6 0
+#ACT
+MOV D6 1
+#IF
+checkvar GLOBAL 单挑开始判断5 = 5
+#ACT
+CALCVAR GLOBAL 单挑补发姓名A<$STR(D5)> = <$GLOBAL(单挑擂主姓名5)>
+CALCVAR GLOBAL 单挑补发数量A<$STR(D5)> = <$GLOBAL(单挑押注数量5)>
+CALCVAR GLOBAL 单挑补发姓名B<$STR(D6)> = <$GLOBAL(单挑应战姓名5)>
+CALCVAR GLOBAL 单挑补发数量B<$STR(D6)> = <$GLOBAL(单挑押注数量5)>
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名5)>】对战【<$GLOBAL(单挑应战姓名5)>】超时未分出胜负，判为平局！ 253 255
+CALCVAR GLOBAL 单挑擂主姓名5 = 
+CALCVAR GLOBAL 单挑应战姓名5 = 
+CALCVAR GLOBAL 单挑开始判断5 = 0
+CALCVAR GLOBAL 单挑系统序号 = 5
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+
+#IF
+checkvar GLOBAL 单挑开始计时6 > 0
+#ACT
+CALCVAR GLOBAL 单挑开始计时6 - 1
+#IF
+checkvar GLOBAL 单挑开始计时6 = 0
+checkvar GLOBAL 单挑开始判断6 = 1
+<$GLOBAL(单挑擂主姓名6)>.ONLINELONGMIN ? 0
+#ACT
+<$GLOBAL(单挑擂主姓名6)>.SENDMSG 6 $(单挑公告提示前缀)【<$GLOBAL(单挑应战姓名6)>】超时没有接受您的挑战，挑战取消！
+#IF
+checkvar GLOBAL 单挑开始计时6 = 0
+checkvar GLOBAL 单挑开始判断6 = 1
+#ACT
+CALCVAR GLOBAL 单挑擂主姓名6 = 
+CALCVAR GLOBAL 单挑应战姓名6 = 
+CALCVAR GLOBAL 单挑开始判断6 = 0
+#IF
+checkvar GLOBAL 单挑开始计时6 = 0
+checkvar GLOBAL 单挑开始判断6 = 2
+#ACT
+CALCVAR GLOBAL 单挑开始计时6 = $(单挑进行最大时长)
+CALCVAR GLOBAL 单挑开始计时6 * 60
+CALCVAR GLOBAL 单挑开始判断6 = 3
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名6)>】对战【<$GLOBAL(单挑应战姓名6)>】的单挑正式开始！ 253 255
+CALCVAR GLOBAL 单挑系统序号 = 6
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台开始进入
+CALCVAR GLOBAL 单挑开始判断6 = 4
+#IF
+checkvar GLOBAL 单挑开始判断6 = 4
+CheckmapHumanCount <$GLOBAL(单挑地图代码6)> < 1
+#ACT
+CALCVAR GLOBAL 单挑开始判断6 = 5
+#IF
+checkvar GLOBAL 单挑开始计时6 = 0
+checkvar GLOBAL 单挑开始判断6 = 4
+#ACT
+CALCVAR GLOBAL 单挑开始判断6 = 5
+#IF
+checkvar GLOBAL 单挑开始判断6 = 5
+#ACT
+MOV D5 0
+MOV D6 0
+#ELSEACT
+MOV D5 100
+MOV D6 100
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A1 = 
+#ACT
+MOV D5 1
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A2 = 
+#ACT
+MOV D5 2
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A3 = 
+#ACT
+MOV D5 3
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A4 = 
+#ACT
+MOV D5 4
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A5 = 
+#ACT
+MOV D5 5
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A6 = 
+#ACT
+MOV D5 6
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A7 = 
+#ACT
+MOV D5 7
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A8 = 
+#ACT
+MOV D5 8
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A9 = 
+#ACT
+MOV D5 9
+#IF
+EQUAL D5 0
+#ACT
+MOV D5 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B1 = 
+#ACT
+MOV D6 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B2 = 
+#ACT
+MOV D6 2
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B3 = 
+#ACT
+MOV D6 3
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B4 = 
+#ACT
+MOV D6 4
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B5 = 
+#ACT
+MOV D6 5
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B6 = 
+#ACT
+MOV D6 6
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B7 = 
+#ACT
+MOV D6 7
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B8 = 
+#ACT
+MOV D6 8
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B9 = 
+#ACT
+MOV D6 9
+#IF
+EQUAL D6 0
+#ACT
+MOV D6 1
+#IF
+checkvar GLOBAL 单挑开始判断6 = 5
+#ACT
+CALCVAR GLOBAL 单挑补发姓名A<$STR(D5)> = <$GLOBAL(单挑擂主姓名6)>
+CALCVAR GLOBAL 单挑补发数量A<$STR(D5)> = <$GLOBAL(单挑押注数量6)>
+CALCVAR GLOBAL 单挑补发姓名B<$STR(D6)> = <$GLOBAL(单挑应战姓名6)>
+CALCVAR GLOBAL 单挑补发数量B<$STR(D6)> = <$GLOBAL(单挑押注数量6)>
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名6)>】对战【<$GLOBAL(单挑应战姓名6)>】超时未分出胜负，判为平局！ 253 255
+CALCVAR GLOBAL 单挑擂主姓名6 = 
+CALCVAR GLOBAL 单挑应战姓名6 = 
+CALCVAR GLOBAL 单挑开始判断6 = 0
+CALCVAR GLOBAL 单挑系统序号 = 6
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+
+#IF
+checkvar GLOBAL 单挑开始计时7 > 0
+#ACT
+CALCVAR GLOBAL 单挑开始计时7 - 1
+#IF
+checkvar GLOBAL 单挑开始计时7 = 0
+checkvar GLOBAL 单挑开始判断7 = 1
+<$GLOBAL(单挑擂主姓名7)>.ONLINELONGMIN ? 0
+#ACT
+<$GLOBAL(单挑擂主姓名7)>.SENDMSG 6 $(单挑公告提示前缀)【<$GLOBAL(单挑应战姓名7)>】超时没有接受您的挑战，挑战取消！
+#IF
+checkvar GLOBAL 单挑开始计时7 = 0
+checkvar GLOBAL 单挑开始判断7 = 1
+#ACT
+CALCVAR GLOBAL 单挑擂主姓名7 = 
+CALCVAR GLOBAL 单挑应战姓名7 = 
+CALCVAR GLOBAL 单挑开始判断7 = 0
+#IF
+checkvar GLOBAL 单挑开始计时7 = 0
+checkvar GLOBAL 单挑开始判断7 = 2
+#ACT
+CALCVAR GLOBAL 单挑开始计时7 = $(单挑进行最大时长)
+CALCVAR GLOBAL 单挑开始计时7 * 60
+CALCVAR GLOBAL 单挑开始判断7 = 3
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名7)>】对战【<$GLOBAL(单挑应战姓名7)>】的单挑正式开始！ 253 255
+CALCVAR GLOBAL 单挑系统序号 = 7
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台开始进入
+CALCVAR GLOBAL 单挑开始判断7 = 4
+#IF
+checkvar GLOBAL 单挑开始判断7 = 4
+CheckmapHumanCount <$GLOBAL(单挑地图代码7)> < 1
+#ACT
+CALCVAR GLOBAL 单挑开始判断7 = 5
+#IF
+checkvar GLOBAL 单挑开始计时7 = 0
+checkvar GLOBAL 单挑开始判断7 = 4
+#ACT
+CALCVAR GLOBAL 单挑开始判断7 = 5
+#IF
+checkvar GLOBAL 单挑开始判断7 = 5
+#ACT
+MOV D5 0
+MOV D6 0
+#ELSEACT
+MOV D5 100
+MOV D6 100
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A1 = 
+#ACT
+MOV D5 1
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A2 = 
+#ACT
+MOV D5 2
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A3 = 
+#ACT
+MOV D5 3
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A4 = 
+#ACT
+MOV D5 4
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A5 = 
+#ACT
+MOV D5 5
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A6 = 
+#ACT
+MOV D5 6
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A7 = 
+#ACT
+MOV D5 7
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A8 = 
+#ACT
+MOV D5 8
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A9 = 
+#ACT
+MOV D5 9
+#IF
+EQUAL D5 0
+#ACT
+MOV D5 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B1 = 
+#ACT
+MOV D6 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B2 = 
+#ACT
+MOV D6 2
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B3 = 
+#ACT
+MOV D6 3
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B4 = 
+#ACT
+MOV D6 4
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B5 = 
+#ACT
+MOV D6 5
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B6 = 
+#ACT
+MOV D6 6
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B7 = 
+#ACT
+MOV D6 7
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B8 = 
+#ACT
+MOV D6 8
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B9 = 
+#ACT
+MOV D6 9
+#IF
+EQUAL D6 0
+#ACT
+MOV D6 1
+#IF
+checkvar GLOBAL 单挑开始判断7 = 5
+#ACT
+CALCVAR GLOBAL 单挑补发姓名A<$STR(D5)> = <$GLOBAL(单挑擂主姓名7)>
+CALCVAR GLOBAL 单挑补发数量A<$STR(D5)> = <$GLOBAL(单挑押注数量7)>
+CALCVAR GLOBAL 单挑补发姓名B<$STR(D6)> = <$GLOBAL(单挑应战姓名7)>
+CALCVAR GLOBAL 单挑补发数量B<$STR(D6)> = <$GLOBAL(单挑押注数量7)>
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名7)>】对战【<$GLOBAL(单挑应战姓名7)>】超时未分出胜负，判为平局！ 253 255
+CALCVAR GLOBAL 单挑擂主姓名7 = 
+CALCVAR GLOBAL 单挑应战姓名7 = 
+CALCVAR GLOBAL 单挑开始判断7 = 0
+CALCVAR GLOBAL 单挑系统序号 = 7
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+
+#IF
+checkvar GLOBAL 单挑开始计时8 > 0
+#ACT
+CALCVAR GLOBAL 单挑开始计时8 - 1
+#IF
+checkvar GLOBAL 单挑开始计时8 = 0
+checkvar GLOBAL 单挑开始判断8 = 1
+<$GLOBAL(单挑擂主姓名8)>.ONLINELONGMIN ? 0
+#ACT
+<$GLOBAL(单挑擂主姓名8)>.SENDMSG 6 $(单挑公告提示前缀)【<$GLOBAL(单挑应战姓名8)>】超时没有接受您的挑战，挑战取消！
+#IF
+checkvar GLOBAL 单挑开始计时8 = 0
+checkvar GLOBAL 单挑开始判断8 = 1
+#ACT
+CALCVAR GLOBAL 单挑擂主姓名8 = 
+CALCVAR GLOBAL 单挑应战姓名8 = 
+CALCVAR GLOBAL 单挑开始判断8 = 0
+#IF
+checkvar GLOBAL 单挑开始计时8 = 0
+checkvar GLOBAL 单挑开始判断8 = 2
+#ACT
+CALCVAR GLOBAL 单挑开始计时8 = $(单挑进行最大时长)
+CALCVAR GLOBAL 单挑开始计时8 * 60
+CALCVAR GLOBAL 单挑开始判断8 = 3
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名8)>】对战【<$GLOBAL(单挑应战姓名8)>】的单挑正式开始！ 253 255
+CALCVAR GLOBAL 单挑系统序号 = 8
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台开始进入
+CALCVAR GLOBAL 单挑开始判断8 = 4
+#IF
+checkvar GLOBAL 单挑开始判断8 = 4
+CheckmapHumanCount <$GLOBAL(单挑地图代码8)> < 1
+#ACT
+CALCVAR GLOBAL 单挑开始判断8 = 5
+#IF
+checkvar GLOBAL 单挑开始计时8 = 0
+checkvar GLOBAL 单挑开始判断8 = 4
+#ACT
+CALCVAR GLOBAL 单挑开始判断8 = 5
+#IF
+checkvar GLOBAL 单挑开始判断8 = 5
+#ACT
+MOV D5 0
+MOV D6 0
+#ELSEACT
+MOV D5 100
+MOV D6 100
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A1 = 
+#ACT
+MOV D5 1
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A2 = 
+#ACT
+MOV D5 2
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A3 = 
+#ACT
+MOV D5 3
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A4 = 
+#ACT
+MOV D5 4
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A5 = 
+#ACT
+MOV D5 5
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A6 = 
+#ACT
+MOV D5 6
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A7 = 
+#ACT
+MOV D5 7
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A8 = 
+#ACT
+MOV D5 8
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A9 = 
+#ACT
+MOV D5 9
+#IF
+EQUAL D5 0
+#ACT
+MOV D5 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B1 = 
+#ACT
+MOV D6 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B2 = 
+#ACT
+MOV D6 2
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B3 = 
+#ACT
+MOV D6 3
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B4 = 
+#ACT
+MOV D6 4
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B5 = 
+#ACT
+MOV D6 5
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B6 = 
+#ACT
+MOV D6 6
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B7 = 
+#ACT
+MOV D6 7
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B8 = 
+#ACT
+MOV D6 8
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B9 = 
+#ACT
+MOV D6 9
+#IF
+EQUAL D6 0
+#ACT
+MOV D6 1
+#IF
+checkvar GLOBAL 单挑开始判断8 = 5
+#ACT
+CALCVAR GLOBAL 单挑补发姓名A<$STR(D5)> = <$GLOBAL(单挑擂主姓名8)>
+CALCVAR GLOBAL 单挑补发数量A<$STR(D5)> = <$GLOBAL(单挑押注数量8)>
+CALCVAR GLOBAL 单挑补发姓名B<$STR(D6)> = <$GLOBAL(单挑应战姓名8)>
+CALCVAR GLOBAL 单挑补发数量B<$STR(D6)> = <$GLOBAL(单挑押注数量8)>
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名8)>】对战【<$GLOBAL(单挑应战姓名8)>】超时未分出胜负，判为平局！ 253 255
+CALCVAR GLOBAL 单挑擂主姓名8 = 
+CALCVAR GLOBAL 单挑应战姓名8 = 
+CALCVAR GLOBAL 单挑开始判断8 = 0
+CALCVAR GLOBAL 单挑系统序号 = 8
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+
+#IF
+checkvar GLOBAL 单挑开始计时9 > 0
+#ACT
+CALCVAR GLOBAL 单挑开始计时9 - 1
+#IF
+checkvar GLOBAL 单挑开始计时9 = 0
+checkvar GLOBAL 单挑开始判断9 = 1
+<$GLOBAL(单挑擂主姓名9)>.ONLINELONGMIN ? 0
+#ACT
+<$GLOBAL(单挑擂主姓名9)>.SENDMSG 6 $(单挑公告提示前缀)【<$GLOBAL(单挑应战姓名9)>】超时没有接受您的挑战，挑战取消！
+#IF
+checkvar GLOBAL 单挑开始计时9 = 0
+checkvar GLOBAL 单挑开始判断9 = 1
+#ACT
+CALCVAR GLOBAL 单挑擂主姓名9 = 
+CALCVAR GLOBAL 单挑应战姓名9 = 
+CALCVAR GLOBAL 单挑开始判断9 = 0
+#IF
+checkvar GLOBAL 单挑开始计时9 = 0
+checkvar GLOBAL 单挑开始判断9 = 2
+#ACT
+CALCVAR GLOBAL 单挑开始计时9 = $(单挑进行最大时长)
+CALCVAR GLOBAL 单挑开始计时9 * 60
+CALCVAR GLOBAL 单挑开始判断9 = 3
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名9)>】对战【<$GLOBAL(单挑应战姓名9)>】的单挑正式开始！ 253 255
+CALCVAR GLOBAL 单挑系统序号 = 9
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台开始进入
+CALCVAR GLOBAL 单挑开始判断9 = 4
+#IF
+checkvar GLOBAL 单挑开始判断9 = 4
+CheckmapHumanCount <$GLOBAL(单挑地图代码9)> < 1
+#ACT
+CALCVAR GLOBAL 单挑开始判断9 = 5
+#IF
+checkvar GLOBAL 单挑开始计时9 = 0
+checkvar GLOBAL 单挑开始判断9 = 4
+#ACT
+CALCVAR GLOBAL 单挑开始判断9 = 5
+#IF
+checkvar GLOBAL 单挑开始判断9 = 5
+#ACT
+MOV D5 0
+MOV D6 0
+#ELSEACT
+MOV D5 100
+MOV D6 100
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A1 = 
+#ACT
+MOV D5 1
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A2 = 
+#ACT
+MOV D5 2
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A3 = 
+#ACT
+MOV D5 3
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A4 = 
+#ACT
+MOV D5 4
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A5 = 
+#ACT
+MOV D5 5
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A6 = 
+#ACT
+MOV D5 6
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A7 = 
+#ACT
+MOV D5 7
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A8 = 
+#ACT
+MOV D5 8
+#IF
+EQUAL D5 0
+checkvar GLOBAL 单挑补发姓名A9 = 
+#ACT
+MOV D5 9
+#IF
+EQUAL D5 0
+#ACT
+MOV D5 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B1 = 
+#ACT
+MOV D6 1
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B2 = 
+#ACT
+MOV D6 2
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B3 = 
+#ACT
+MOV D6 3
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B4 = 
+#ACT
+MOV D6 4
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B5 = 
+#ACT
+MOV D6 5
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B6 = 
+#ACT
+MOV D6 6
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B7 = 
+#ACT
+MOV D6 7
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B8 = 
+#ACT
+MOV D6 8
+#IF
+EQUAL D6 0
+checkvar GLOBAL 单挑补发姓名B9 = 
+#ACT
+MOV D6 9
+#IF
+EQUAL D6 0
+#ACT
+MOV D6 1
+#IF
+checkvar GLOBAL 单挑开始判断9 = 5
+#ACT
+CALCVAR GLOBAL 单挑补发姓名A<$STR(D5)> = <$GLOBAL(单挑擂主姓名9)>
+CALCVAR GLOBAL 单挑补发数量A<$STR(D5)> = <$GLOBAL(单挑押注数量9)>
+CALCVAR GLOBAL 单挑补发姓名B<$STR(D6)> = <$GLOBAL(单挑应战姓名9)>
+CALCVAR GLOBAL 单挑补发数量B<$STR(D6)> = <$GLOBAL(单挑押注数量9)>
+SENDMSG 0 $(单挑公告提示前缀)【<$GLOBAL(单挑擂主姓名9)>】对战【<$GLOBAL(单挑应战姓名9)>】超时未分出胜负，判为平局！ 253 255
+CALCVAR GLOBAL 单挑擂主姓名9 = 
+CALCVAR GLOBAL 单挑应战姓名9 = 
+CALCVAR GLOBAL 单挑开始判断9 = 0
+CALCVAR GLOBAL 单挑系统序号 = 9
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台清理场地
+
+[@Mir2m2单挑擂台常量加载RM]
+#CALL [\Mir2m2单挑擂台配置(免费脚本群.101529177)\Mir2m2单挑擂台常量.ini] @Mir2m2单挑擂台常量
+}

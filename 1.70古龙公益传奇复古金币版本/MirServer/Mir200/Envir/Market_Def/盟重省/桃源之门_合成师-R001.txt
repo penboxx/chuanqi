@@ -1,0 +1,262 @@
+
+[@main]
+传说中的宝石具有神奇的魔力，能融入首饰盔甲之中！\
+获取新的宝石，给予首饰装备无穷的力量！\ \
+<使用宝石/@sm>
+
+[@sm]
+请将所有需要装佩宝石的装备佩带在身上！\ 
+<祝福宝石/@UpItem3>，赐予<项链>神的力量！\
+<灵魂宝石/@UpItem8>，赐予<戒指>神的力量！\
+<至尊宝石/@UpItem2>，赐予<手镯>神的力量！\
+<创造宝石/@UpItem4>，赐予<头盔>以无穷的力量！\
+<英雄宝石/@UpItem0>，赐予<盔甲>以超凡的力量！\ \
+<返回/@main>
+[@UpItem3]
+你想赐予<项链>哪种力量？\ \
+<攻击/@项链攻击>　<魔法/@项链魔法>　<道术/@项链道术>\ \
+<返回/@sm>
+[@项链道术]
+#if
+CHECKUSEITEM 3
+checkitem 祝福宝石 1
+#ACT
+take 祝福宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 3 4 30 1 0
+goto @UpItem3
+#elseact
+SENDMSG 6 你没有带好祝福宝石或者你没把项链带好！
+goto @UpItem3
+[@项链魔法]
+#if
+CHECKUSEITEM 3
+checkitem 祝福宝石 1
+#ACT
+take 祝福宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 3 3 30 1 0
+goto @UpItem3
+#elseact
+SENDMSG 6 你没有带好祝福宝石或者你没把项链带好！
+goto @UpItem3
+[@项链攻击]
+#if
+CHECKUSEITEM 3
+checkitem 祝福宝石 1
+#ACT
+take 祝福宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 3 2 30 1 0
+goto @UpItem3
+#elseact
+SENDMSG 6 你没有带好祝福宝石或者你没把项链带好！
+goto @UpItem3
+[@UpItem8]
+你想赐予<戒指>哪种力量？\ \
+<攻击/@戒指攻击>　<魔法/@戒指魔法>　<道术/@戒指道术>\ \
+<返回/@sm>
+[@戒指道术]
+#if
+CHECKUSEITEM 7
+checkitem 灵魂宝石 1
+#ACT
+take 灵魂宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 7 4 30 1 0
+goto @UpItem8
+#elseact
+SENDMSG 6 你没有带好灵魂宝石或者你没把戒指带在右边！
+goto @UpItem8
+[@戒指魔法]
+#if
+CHECKUSEITEM 7
+checkitem 灵魂宝石 1
+#ACT
+take 灵魂宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 7 3 30 1 0
+goto @UpItem8
+#elseact
+SENDMSG 6 你没有带好灵魂宝石或者你没把戒指带在右边！
+goto @UpItem8
+[@戒指攻击]
+#if
+CHECKUSEITEM 7
+checkitem 灵魂宝石 1
+#ACT
+take 灵魂宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 7 2 30 1 0
+goto @UpItem8
+#elseact
+SENDMSG 6 你没有带好灵魂宝石或者你没把戒指带在右边！
+goto @UpItem8
+[@UpItem2]
+你想赐予<手镯>哪种力量？\ \
+<攻击/@手镯攻击>　<魔法/@手镯魔法>　<道术/@手镯道术>\ \
+<返回/@sm>
+[@手镯攻击]
+#if
+CHECKUSEITEM 5
+checkitem 至尊宝石 1
+#ACT
+take 至尊宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 5 2 30 1 0
+goto @UpItem2
+#elseact
+SENDMSG 6 你没有带好至尊宝石或者你没把手镯带在右边！
+goto @UpItem2
+[@手镯魔法]
+#if
+CHECKUSEITEM 5
+checkitem 至尊宝石 1
+#ACT
+take 至尊宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 5 3 30 1 0
+goto @UpItem2
+#elseact
+SENDMSG 6 你没有带好至尊宝石或者你没把手镯带在右边！
+goto @UpItem2
+[@手镯道术]
+#if
+CHECKUSEITEM 5
+checkitem 至尊宝石 1
+#ACT
+take 至尊宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 5 4 30 1 0
+goto @UpItem2
+#elseact
+SENDMSG 6 你没有带好至尊宝石或者你没把手镯带在右边！
+goto @UpItem2
+[@UpItem0]
+你想赐予<盔甲>哪种力量？\ \
+<防御/@盔甲防御>　<魔御/@盔甲魔御>　<攻击/@盔甲攻击>　<魔法/@盔甲魔法>　<道术/@盔甲道术>\ \
+<返回/@sm>
+[@盔甲道术]
+#if
+CHECKUSEITEM 0
+checkitem 英雄宝石 1
+#ACT
+take 英雄宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 0 4 30 1 0
+goto @UpItem0
+#elseact
+SENDMSG 6 你没有带好英雄宝石或者你还没穿衣服呢！
+goto @UpItem0
+[@盔甲魔法]
+#if
+CHECKUSEITEM 0
+checkitem 英雄宝石 1
+#ACT
+take 英雄宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 0 3 30 1 0
+goto @UpItem0
+#elseact
+SENDMSG 6 你没有带好英雄宝石或者你还没穿衣服呢！
+goto @UpItem0
+[@盔甲攻击]
+#if
+CHECKUSEITEM 0
+checkitem 英雄宝石 1
+#ACT
+take 英雄宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 0 2 30 1 0
+goto @UpItem0
+#elseact
+SENDMSG 6 你没有带好英雄宝石或者你还没穿衣服呢！
+goto @UpItem0
+[@盔甲魔御]
+#if
+CHECKUSEITEM 0
+checkitem 英雄宝石 1
+#ACT
+take 英雄宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 0 1 30 1 0
+goto @UpItem0
+#elseact
+SENDMSG 6 你没有带好英雄宝石或者你还没穿衣服呢！
+goto @UpItem0
+[@盔甲防御]
+#if
+CHECKUSEITEM 0
+checkitem 英雄宝石 1
+#ACT
+take 英雄宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 0 0 30 1 0
+goto @UpItem0
+#elseact
+SENDMSG 6 你没有带好英雄宝石或者你还没穿衣服呢！
+goto @UpItem0
+[@UpItem4]
+你想赐予<头盔>哪种力量？\ \
+<防御/@头盔防御>　<魔御/@头盔魔御>　<攻击/@头盔攻击>　<魔法/@头盔魔法>　<道术/@头盔道术>\ \
+<返回/@sm>
+[@头盔防御]
+#if
+CHECKUSEITEM 4
+checkitem 创造宝石 1
+#ACT
+take 创造宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 4 0 30 1 0
+goto @UpItem4
+#elseact
+SENDMSG 6 你没有带好创造宝石或者你还没带头盔呢！
+goto @UpItem4
+[@头盔魔御]
+#if
+CHECKUSEITEM 4
+checkitem 创造宝石 1
+#ACT
+take 创造宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 4 1 30 1 0
+goto @UpItem4
+#elseact
+SENDMSG 6 你没有带好创造宝石或者你还没带头盔呢！
+goto @UpItem4
+[@头盔攻击]
+#if
+CHECKUSEITEM 4
+checkitem 创造宝石 1
+#ACT
+take 创造宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 4 2 30 1 0
+goto @UpItem4
+#elseact
+SENDMSG 6 你没有带好创造宝石或者你还没带头盔呢！
+goto @UpItem4
+[@头盔魔法]
+#if
+CHECKUSEITEM 4
+checkitem 创造宝石 1
+#ACT
+take 创造宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 4 3 30 1 0
+goto @UpItem4
+#elseact
+SENDMSG 6 你没有带好创造宝石或者你还没带头盔呢！
+goto @UpItem4
+[@头盔道术]
+#if
+CHECKUSEITEM 4
+checkitem 创造宝石 1
+#ACT
+take 创造宝石 1
+SENDMSG 6 宝石的精灵已经释放...祝您好运！！！
+UPGRADEITEMEX 4 4 30 1 0
+goto @UpItem4
+#elseact
+SENDMSG 6 你没有带好创造宝石或者你还没带头盔呢！
+goto @UpItem4

@@ -1,0 +1,14 @@
+[@main]
+#if
+CHECKUSERDATE ..\QuestDiary\季卡\时间记载.txt < 90 p0 p1
+#elseact
+sendmsg 7 提示：请购买季卡
+break
+
+#if
+equal A36 开放
+#act
+MAPMOVE 3 12 324 475
+#elsesay
+进入盟重省为第2天下午2点\ \
+

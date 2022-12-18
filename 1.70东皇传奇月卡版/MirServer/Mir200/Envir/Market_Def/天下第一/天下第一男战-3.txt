@@ -1,0 +1,111 @@
+[@main] 
+<COLOR=clLime 同等级可以用元宝竟标,请继续点申请天下第一>\ \
+第一男战：<$STR(A6)>\ 
+他的等级：<$STR(A8)>\ 
+所属行会：<$STR(A7)>\ \
+<COLOR=clSkyBlue 今天的天下第一是 ><$STR(A6)><COLOR=clSkyBlue  明天的天下第一会是谁？>\ \
+<申请天下第一/@申请第一>
+#if
+equal G50 0
+#act
+mov G50 10
+
+[@申请第一] 
+#IF 
+checknamelist ..\QuestDiary\天下第一\男战士.txt  HardDisk
+#ACT 
+sendmsg 7 你已经是天下第一了！
+break
+ 
+#IF 
+CHECKLEVELEX < 30
+#say 
+看来你很有信心，不过你还没有达到资格，\ 
+你需要30级来证明自己的实力\ 
+现在来申请天下第一恐怕还嫌早.\ \
+<离开/@exit> 
+
+#IF 
+gender man 
+#elseact
+sendmsg 7 你似乎找错申请对象了吧！ 
+break 
+
+#IF 
+checkjob warrior 
+CHECKLEVELEX > 29
+#act 
+mov S0 <$LEVEL> 
+MOV S1 <$STR(A8)>
+goto @男战申请 
+break 
+
+[@男战申请] 
+#IF 
+small S0 <$STR(S1)> 
+#act
+sendmsg 7 对不起！！你目前还不是最高等级！
+break
+ 
+#IF 
+EQUAL S0 <$STR(S1)> 
+#say 
+抱歉！！你目前的等级跟现在的天下第一等级相同 \ \
+需要支付<$STR(G50)>个元宝才能申请 \ \
+<老子钱多，我要做天下第一/@钱申请第一>\ \
+<穷啊/@exit>
+
+#if
+large S0 <$STR(S1)> 
+#act
+mov A6 <$USERNAME>
+mov A8 <$LEVEL>
+CLEARNAMELIST ..\QuestDiary\天下第一\男战士.txt  HardDisk
+addnamelist ..\QuestDiary\天下第一\男战士.txt  HardDisk
+SENDMSG 4 %s成功申请到了<$STR(A8)>级的天下第一男战士！
+SENDMSG 0 %s成功申请到了<$STR(A8)>级的天下第一男战士！
+SENDMSG 0 %s成功申请到了<$STR(A8)>级的天下第一男战士！
+#say 
+申请成功！目前今天的天下第一男战士是<$USERNAME>，\ 
+明天的天下第一会是谁？\ \
+<离开/@exit> 
+
+#IF
+HAVEGUILD 
+#ACT 
+mov A7 <$GUILDNAME> 
+#ELSEACT 
+mov A7 暂无 
+
+[@钱申请第一] 
+#if
+CHECKGAMEGOLD > <$STR(G50)>
+#act
+goto @竞标天下第一
+#elseact
+sendmsg 7 对不起，你没那么多钱！
+break
+
+[@竞标天下第一] 
+#IF 
+#ACT
+GAMEGOLD - <$STR(G50)>
+mov A6 <$USERNAME>
+mov A8 <$LEVEL>
+INC G50 10
+CLEARNAMELIST ..\QuestDiary\天下第一\男战士.txt HardDisk
+addnamelist ..\QuestDiary\天下第一\男战士.txt HardDisk
+SENDMSG 4 %s成功竞价到了<$STR(A8)>级的天下第一男战士！价格涨到了<$STR(G50)>元宝
+SENDMSG 0 %s成功竞价到了<$STR(A8)>级的天下第一男战士！价格涨到了<$STR(G50)>元宝
+SENDMSG 0 %s成功竞价到了<$STR(A8)>级的天下第一男战士！价格涨到了<$STR(G50)>元宝
+#say 
+申请成功！目前今天的天下第一男战士是<$USERNAME>，\ 
+明天的天下第一会是谁？\ \
+<离开/@exit>
+
+#IF
+HAVEGUILD
+#ACT
+mov A7 <$GUILDNAME>
+#ELSEACT
+mov A7 暂无

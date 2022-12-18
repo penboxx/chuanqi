@@ -1,0 +1,258 @@
+[@main]
+#if
+#ACT
+;SENDMSG 4 欢迎来天堂复古1.76小极品传奇，目前游戏测试状态！正式开区10月20号下午14:00准时开放,测试区充值多送10%！
+#SAY
+<COLOR=clAqua 【活动大使】>  <COLOR=clRed Hot～>  <COLOR=clLime ★〓〓〓★2022最火暴76小极品★〓〓〓★>\ 
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　　 ╔┈┈┈┈┈┈╗  　　　　　　  　　╔┈┈┈┈┈┈╗\
+　　 ┊<行会争霸活动/@活动1>┊　　　　　　　    　┊<武林大会活动/@活动2>┊\
+　　 ┊<COLOR=clLime 每天22点开始>┊  ╔┈┈┈┈┈┈╗  ┊<COLOR=clLime 每天21点开始>┊\
+　　 ╚┈┈┈┈┈┈╝  ┊<震威镖局活动/@活动5>┊  ╚┈┈┈┈┈┈╝\
+　　 ╔┈┈┈┈┈┈╗  ┊<COLOR=clLime 每天19点开始>┊  ╔┈┈┈┈┈┈╗\
+　　 ┊<屠龙战场活动/@活动3>┊  ╚┈┈┈┈┈┈╝  ┊<激情夺宝活动/@活动4>┊\
+　　 ┊<COLOR=clLime 每天15点开始>┊    　　　　　　　　┊<COLOR=clLime 每天20点开始>┊\
+　　 ╚┈┈┈┈┈┈╝    　　　　　　　　╚┈┈┈┈┈┈╝\
+
+
+
+
+[@活动3]
+　1.活动时间：<COLOR=$002AB4F0 每天下午15:00大门开启，16:00大门关闭>\ \
+
+　2.活动内容：<COLOR=$002AB4F0 屠龙战场出现一只烟花恶魔.>\ \
+
+　3.注意事项：<COLOR=clLime 请在怪物临近死亡前，及时放开装备爆点>\ \
+
+　  <进入①号点/@①号1>   <进入②号点/@②号1>   <进入③号点/@③号1>   <进入④号点/@④号1>
+
+[@①号1]
+#IF
+equal G66 1
+#ACT
+movr p0 2
+movr p1 2
+inc p0 34
+inc p1 84
+MAPMOVE TLZCHD <$STR(P0)> <$STR(P1)>
+#ELSEACT
+MESSAGEBOX 对不起，未到开放时间！
+BREAK
+
+
+[@②号1]
+#IF
+equal G66 1
+#ACT
+movr p0 2
+movr p1 2
+inc p0 76
+inc p1 56
+MAPMOVE TLZCHD <$STR(P0)> <$STR(P1)>
+#ELSEACT
+MESSAGEBOX 对不起，未到开放时间！
+BREAK
+
+
+[@③号1]
+#IF
+equal G66 1
+#ACT
+movr p0 2
+movr p1 2
+inc p0 25
+inc p1 28
+MAPMOVE TLZCHD <$STR(P0)> <$STR(P1)>
+#ELSEACT
+MESSAGEBOX 对不起，未到开放时间！
+BREAK
+
+
+[@④号1]
+#IF
+equal G66 1
+#ACT
+movr p0 2
+movr p1 2
+inc p0 54
+inc p1 27
+MAPMOVE TLZCHD <$STR(P0)> <$STR(P1)>
+#ELSEACT
+MESSAGEBOX 对不起，未到开放时间！
+BREAK
+
+
+
+
+
+
+[@活动4]
+　1.活动时间：<COLOR=$002AB4F0 每天晚上20:00大门开启，21:00大门关闭>\ \
+
+　2.活动内容：<COLOR=$002AB4F0 激情夺宝出现一只夺宝教主.>\ \
+
+　3.注意事项：<COLOR=clLime 请在怪物临近死亡前，及时放开装备爆点>\ \
+
+　  <进入①号点/@①号2>   <进入②号点/@②号2>   <进入③号点/@③号2>   <进入④号点/@④号2>
+
+[@①号2]
+#IF
+equal G67 1
+#ACT
+movr p0 2
+movr p1 2
+inc p0 37
+inc p1 37
+MAPMOVE JQDBHD <$STR(P0)> <$STR(P1)>
+#ELSEACT
+MESSAGEBOX 对不起，未到开放时间！
+BREAK
+
+[@②号2]
+#IF
+equal G67 1
+#ACT
+movr p0 2
+movr p1 2
+inc p0 66
+inc p1 36
+MAPMOVE JQDBHD <$STR(P0)> <$STR(P1)>
+#ELSEACT
+MESSAGEBOX 对不起，未到开放时间！
+BREAK
+
+
+[@③号2]
+#IF
+equal G67 1
+#ACT
+movr p0 2
+movr p1 2
+inc p0 68
+inc p1 68
+MAPMOVE JQDBHD <$STR(P0)> <$STR(P1)>
+#ELSEACT
+MESSAGEBOX 对不起，未到开放时间！
+BREAK
+
+
+[@④号2]
+#IF
+equal G67 1
+#ACT
+movr p0 2
+movr p1 2
+inc p0 39
+inc p1 66
+MAPMOVE JQDBHD <$STR(P0)> <$STR(P1)>
+#ELSEACT
+MESSAGEBOX 对不起，未到开放时间！
+BREAK
+
+
+
+
+
+
+[@活动5]
+<COLOR=clSkyblue ╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗>\
+<COLOR=clSkyblue ┆><COLOR=clLime ☆震威镖局☆>        <[进入押镖之路]/@GOLB>        <COLOR=clLime ☆震威镖局☆><COLOR=clSkyblue ┆>\
+<COLOR=clSkyblue ╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝>\
+<COLOR=clRed ①：押镖时间为每天的19:00至20:00，每人一天可接三次任务>\
+<COLOR=clFuchsia ②：随机分配普通、高级、超级、无敌等镖车，奖励不一样>\
+<COLOR=clRed ③：押镖途中下线或者任务超过15分钟视为失败，没收押金>\
+<COLOR=clFuchsia ④：接受押镖任务需要800元宝做押金，完成后退回全部押金>\
+<COLOR=clRed ⑤：押镖途中镖车被仇人损坏视为失败，仇人将获得600元宝>\
+　  <COLOR=clAqua ((请把镖车拉运到：押镖之路(二)的镖务总管处换取酬劳))>\
+
+[@GOLB]
+#IF
+EQUAL G31 1
+#ACT
+DelayCall 100 @GOLB~
+break
+#ELSEACT
+MESSAGEBOX 每日押镖人物还末开放！\　\开放时间：每天晚上19:00至20:00可以接受任务。
+break
+
+[@GOLB~]
+#IF
+CHECKLEVELEX > 39
+#ACT
+give 回城卷 1
+MAPMOVE YB01 80 81
+break
+#ELSEACT
+MESSAGEBOX 40级以上玩家才可以进入此地图!
+break
+
+
+
+
+[@活动2]
+　1. 活动时间：<COLOR=$002AB4F0 每天下午21:00大门开启 21:20大门关闭>\  \
+
+　2. 活动内容：<COLOR=$002AB4F0 全服举行一次武林大会，40级以上才能进入>\  \
+
+　3. 注意事项：<COLOR=clLime 进入地图后每秒减少5HP，禁止使用随机类物品>\  \
+
+　4. 活动奖励：<COLOR=clLime 武林至尊封号（攻/魔/道+5点）+1000元宝>\  \
+
+　    <参加武林大会/@进入比赛场地>\  
+
+
+[@进入比赛场地]
+#IF
+equal G56 1
+#ELSEACT
+messagebox 此活动暂时还没开放。
+goto @main
+break
+#IF
+equal G57 1
+#ACT
+messagebox 活动正在举行，禁止入场。\请等待武林盟主的诞生
+goto @main
+break
+#IF
+
+CHECKLEVELEX > 39
+#ACT
+mapmove zlg101
+SENDMSG 1 [活动]：【<$USERNAME>】进入了争霸场地争夺武林盟主宝座
+SENDMSG 1 [活动]：【<$USERNAME>】进入了争霸场地争夺武林盟主宝座
+SENDMSG 1 [活动]：【<$USERNAME>】进入了争霸场地争夺武林盟主宝座
+#ELSEACT
+messagebox 需要40级才能进入
+goto @main
+break
+
+
+
+
+
+[@活动1]
+　1.活动时间：<COLOR=$002AB4F0 每天晚上22:00-22:30>\  \
+
+　2.进入条件：<COLOR=$002AB4F0 参加者必须达到40级，并且是行会成员！>\  \
+
+　3.活动奖励：<COLOR=clLime 获胜行会掌门可以领取50000元宝作为奖励>\  \
+
+　    <参加行会争霸/@进入场地>\
+
+
+[@进入场地]
+#IF
+HOUR 22 22
+MIN 00 30
+HAVEGUILD
+checklevelex > 40
+#ACT
+mapmove D507122
+SENDMSG 0 『<$GUILDNAME>』行会的『<$USERNAME>』进入了行会争霸地图...
+#ELSESAY
+\\\\
+      你加入行会了吗,等级够40级吗?\\
+      每天行会争霸开门时间是每天22:00-22:30分\
+[@领取]
+获胜后直接在争霸地图领取！！

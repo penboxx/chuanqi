@@ -1,0 +1,2763 @@
+[@Mir2m2二级密码脚本NPC]
+{
+#IF
+ISADMIN
+#SAY
+<输入玩家姓名/@@InPutString82>:<$STR(S82)>　<清理该玩家二级密码和资料/@Mir2m2二级密码GM清理>　<查看该玩家二级密码资料/@Mir2m2二级密码GM查看>\
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+MOV D9 0
+#ELSEACT
+MOV D9 1
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D8 0
+#IF
+ISONMAP $(二级密码初次设置地图)
+#ACT
+MOV D8 1
+#IF
+ISONMAP $(二级密码IP错进入地图)
+#ACT
+MOV D8 1
+#IF
+EQUAL D9 1
+EQUAL D8 1
+CHECKVAR HUMAN 二级密码验证 > 0
+#ACT
+MOV D8 0
+MOV D9 0
+BREAK
+#SAY
+您已成功设置二级密码。\ \ \
+当前密码为：<$HUMAN(二级密码输入3)>\ \ \
+<离开本地图./@Mir2m2二级密码确定>\
+
+#IF
+EQUAL D9 1
+EQUAL D8 1
+CHECKVAR HUMAN 二级密码选择 = 0
+#ACT
+CALCVAR HUMAN 二级密码选择 = 1
+CALCVAR HUMAN 二级密码跳转 = @Mir2m2二级密码确定
+#IF
+CHECKVAR HUMAN 二级密码选择 = 1
+#ACT
+MOV S10 <$HUMAN(二级密码输入2)>
+MOV S12 <找回二级密码/@Mir2m2找回二级密码>
+MOV S11 $(二级密码输入显示符号)
+#IF
+CHECKVAR HUMAN 二级密码选择 = 1
+EQUAL S11 无
+#ACT
+MOV S10 <$HUMAN(二级密码输入1)>
+#IF
+CHECKVAR HUMAN 二级密码选择 > 1
+#ACT
+MOV S10 <$HUMAN(二级密码输入1)>
+MOV S12 <返回首页/@Mir2m2二级密码取消输入>
+#IF
+CHECKVAR HUMAN 二级密码选择 > 0
+#ACT
+MOV S13
+MOV S14 $(二级密码手动输入开启)
+#IF
+CHECKVAR HUMAN 二级密码选择 = 1
+EQUAL S14 是
+#ACT
+MOV S13 <手动输入/@@InPutString81>
+#IF
+CHECKVAR HUMAN 二级密码选择 > 0
+#ACT
+MOV S11 <COLOR=$00006BEF
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <确定密码/
+INC S10 <$HUMAN(二级密码跳转)>
+INC S10 >
+MOV D8 0
+MOV D9 0
+BREAK
+#SAY
+<１/@Mir2m2二级密码１>　　<２/@Mir2m2二级密码２>　　<３/@Mir2m2二级密码３>　　<４/@Mir2m2二级密码４>　　<５/@Mir2m2二级密码５>　　<６/@Mir2m2二级密码６>　　<７/@Mir2m2二级密码７>　　<８/@Mir2m2二级密码８>　　<９/@Mir2m2二级密码９>　　<０/@Mir2m2二级密码０>\ \
+<Ｑ/@Mir2m2二级密码Ｑ>　　<Ｗ/@Mir2m2二级密码Ｗ>　　<Ｅ/@Mir2m2二级密码Ｅ>　　<Ｒ/@Mir2m2二级密码Ｒ>　　<Ｔ/@Mir2m2二级密码Ｔ>　　<Ｙ/@Mir2m2二级密码Ｙ>　　<Ｕ/@Mir2m2二级密码Ｕ>　　<Ｉ/@Mir2m2二级密码Ｉ>　　<Ｏ/@Mir2m2二级密码Ｏ>　　<Ｐ/@Mir2m2二级密码Ｐ>\ \
+<Ａ/@Mir2m2二级密码Ａ>　　<Ｓ/@Mir2m2二级密码Ｓ>　　<Ｄ/@Mir2m2二级密码Ｄ>　　<Ｆ/@Mir2m2二级密码Ｆ>　　<Ｇ/@Mir2m2二级密码Ｇ>　　<Ｈ/@Mir2m2二级密码Ｈ>　　<Ｊ/@Mir2m2二级密码Ｊ>　　<Ｋ/@Mir2m2二级密码Ｋ>　　<Ｌ/@Mir2m2二级密码Ｌ>\ \
+<Ｚ/@Mir2m2二级密码Ｚ>　　<Ｘ/@Mir2m2二级密码Ｘ>　　<Ｃ/@Mir2m2二级密码Ｃ>　　<Ｖ/@Mir2m2二级密码Ｖ>　　<Ｂ/@Mir2m2二级密码Ｂ>　　<Ｎ/@Mir2m2二级密码Ｎ>　　<Ｍ/@Mir2m2二级密码Ｍ>　　<$STR(S12)>\ \
+<$STR(S10)>　<$STR(S13)>　<COLOR=clFuchsia 您选择的密码>：<$STR(S11)>　　<清除重输/@Mir2m2二级密码重输>
+
+#IF
+CHECKVAR HUMAN 二级密码模式 > 0
+CHECKVAR HUMAN 二级密码模式 < 5
+#ELSEACT
+CALCVAR HUMAN 二级密码模式 = $(二级密码默认输入模式)
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S11 <IP地址/@Mir2m2二级密码模式1>
+MOV S12 <机器码/@Mir2m2二级密码模式2>
+MOV S13 <IP+机器码/@Mir2m2二级密码模式3>
+MOV S14 <每次都输入/@Mir2m2二级密码模式4>
+MOV S10 <$HWID>
+DEC S10 1 2
+#IF
+CHECKVAR HUMAN 二级密码模式 > 1
+CHECKVAR HUMAN 二级密码模式 < 4
+EQUAL S10 HWID>
+#ACT
+CALCVAR HUMAN 二级密码模式 = 1
+#IF
+CHECKVAR HUMAN 二级密码模式 = 1
+#ACT
+MOV S11 <COLOR=clRed
+INC S11 
+INC S11 IP地址>
+#IF
+CHECKVAR HUMAN 二级密码模式 = 2
+#ACT
+MOV S12 <COLOR=clRed
+INC S12 
+INC S12 机器码>
+#IF
+CHECKVAR HUMAN 二级密码模式 = 3
+#ACT
+MOV S13 <COLOR=clRed
+INC S13 
+INC S13 IP+机器码>
+#IF
+CHECKVAR HUMAN 二级密码模式 = 4
+#ACT
+MOV S14 <COLOR=clRed
+INC S14 
+INC S14 每次都输入>
+
+#IF
+EQUAL S10 HWID>
+#ACT
+MOV S10
+#SAY
+为了防止木马盗号事件为玩家造成损失，现在特采用双密码验证登\
+陆，当玩家登陆IP与之前登陆IP不同时会锁定玩家角色，需输入二\
+次密码解锁。现在检测你没有输入密码，请点击下面的设置密码设\
+置。密码可以为数字和字母的组合，<COLOR=clRed 密码位数最少设置$(二级密码最少设置位数)位！！>\
+设置好之后请不要泄漏给任何人。<COLOR=$00006BEF 注：密码中如包含字母不区分大小写>\
+\ \
+<COLOR=clFuchsia 当上线此项不一致时需输入：><$STR(S11)>　　<$STR(S14)>\
+\ \
+<设置密码/@Mir2m2初始设置二级密码>　　<修改密码/@Mir2m2修改二级密码>　　<清除密码/@Mir2m2清除二级密码>　　<找回密码/@Mir2m2找回二级密码>\
+
+#ELSEACT
+MOV S10
+#ELSESAY
+为了防止木马盗号事件为玩家造成损失，现在特采用双密码验证登\
+陆，当玩家登陆IP与之前登陆IP不同时会锁定玩家角色，需输入二\
+次密码解锁。现在检测你没有输入密码，请点击下面的设置密码设\
+置。密码可以为数字和字母的组合，<COLOR=clRed 密码位数最少设置$(二级密码最少设置位数)位！！>\
+设置好之后请不要泄漏给任何人。<COLOR=$00006BEF 注：密码中如包含字母不区分大小写>\
+\ \
+<COLOR=clFuchsia 当上线此项不一致时需输入：><$STR(S11)>　<$STR(S12)>　<$STR(S13)>　<$STR(S14)>\
+\ \
+<设置密码/@Mir2m2初始设置二级密码>　　<修改密码/@Mir2m2修改二级密码>　　<清除密码/@Mir2m2清除二级密码>　　<找回密码/@Mir2m2找回二级密码>　　<重新绑定机器码/@Mir2m2重新绑定机器码>\
+
+[@@InPutString82]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString82
+[@InPutString82]
+#IF
+ISADMIN
+#ELSEACT
+SENDMSG 6 对不起，权限不足！
+BREAK
+#ACT
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+
+[@Mir2m2二级密码GM查看]
+#IF
+ISADMIN
+#ELSEACT
+SENDMSG 6 对不起，权限不足！
+BREAK
+#IF
+Equal S82 
+#ACT
+MESSAGEBOX 对不起，请输入玩家名字！
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+<$STR(S82)>.ONLINELONGMIN ? 0
+#ELSEACT
+MESSAGEBOX 对不起，玩家【<$STR(S82)>】不在线无法查看！
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV $(二级密码占用变量A) <$STR(S82)>
+GMEXECUTE $(二级密码开始提问) @Mir2m2二级密码获取资料
+#IF
+EQUAL $(二级密码占用变量A) <$STR(S82)>
+#ACT
+MESSAGEBOX 对不起，玩家【<$STR(S82)>】不在线无法查看！
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+MOV $(二级密码占用变量A)
+BREAK
+#ELSEACT
+SENDMSG 6 【<$STR(S82)>】的二级密码资料如下：<$STR($(二级密码占用变量A))>
+MESSAGEBOX 【<$STR(S82)>】的二级密码资料如下：\<$STR($(二级密码占用变量A))>
+MOV $(二级密码占用变量A)
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+
+[@Mir2m2二级密码GM清理]
+#IF
+ISADMIN
+#ELSEACT
+SENDMSG 6 对不起，权限不足！
+BREAK
+#IF
+Equal S82 
+#ACT
+MESSAGEBOX 对不起，请输入玩家名字！
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+<$STR(S82)>.ONLINELONGMIN ? 0
+#ELSEACT
+QUERYVALUE 0 2 0 @Mir2m2二级密码GM清理2 【<$STR(S82)>】目前不在线，是否继续清理？\　\点确定后将在他下次上线自动清理！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A1)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A2)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A3)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A4)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A1)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A2)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A3)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A4)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务B1)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务B2)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务C1)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务C2)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务C3)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务C4)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务C5)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务C6)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务D1)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务F1)
+<$STR(S82)>.CALCVAR HUMAN 二级密码次数 = 0
+<$STR(S82)>.CALCVAR HUMAN 二级密码模式 = 0
+<$STR(S82)>.CALCVAR HUMAN 二级密码IP号0 = 0
+<$STR(S82)>.CALCVAR HUMAN 二级密码机器0 = 0#0#0
+<$STR(S82)>.CALCVAR HUMAN 二级密码密码 = 0#0
+<$STR(S82)>.SENDMSG 6 您的二级密码已清理，请找NPC重新设置！
+<$STR(S82)>.SENDMSG 6 您的二级密码已清理，请找NPC重新设置！
+<$STR(S82)>.SENDMSG 6 您的二级密码已清理，请找NPC重新设置！
+SENDMSG 6 【<$STR(S82)>】的二级密码已在线清理！
+MESSAGEBOX 【<$STR(S82)>】的二级密码已在线清理！
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 $(二级密码保护是否开启)
+#IF
+EQUAL S10 是
+#ACT
+<$STR(S82)>.CALCVAR HUMAN 二级密码生日 = 
+<$STR(S82)>.CALCVAR HUMAN 二级密码问题 = 
+<$STR(S82)>.CALCVAR HUMAN 二级密码答案 = 
+<$STR(S82)>.SAVEVAR HUMAN 二级密码生日 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+<$STR(S82)>.SAVEVAR HUMAN 二级密码问题 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+<$STR(S82)>.SAVEVAR HUMAN 二级密码答案 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+
+[@Mir2m2二级密码GM清理2]
+#IF
+ISADMIN
+#ELSEACT
+SENDMSG 6 对不起，权限不足！
+BREAK
+#IF
+Equal S82 
+#ACT
+MESSAGEBOX 对不起，请输入玩家名字！
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+<$STR(S82)>.ONLINELONGMIN ? 0
+#ACT
+MOV D9 0
+#ELSEACT
+MOV D9 1
+#IF
+EQUAL D9 0
+#ACT
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A1)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A2)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A3)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A4)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A1)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A2)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A3)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务A4)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务B1)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务B2)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务C1)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务C2)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务C3)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务C4)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务C5)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务C6)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务D1)
+<$STR(S82)>.SETMISSION - $(二级密码占用任务F1)
+<$STR(S82)>.CALCVAR HUMAN 二级密码次数 = 0
+<$STR(S82)>.CALCVAR HUMAN 二级密码模式 = 0
+<$STR(S82)>.CALCVAR HUMAN 二级密码IP号0 = 0
+<$STR(S82)>.CALCVAR HUMAN 二级密码机器0 = 0#0#0
+<$STR(S82)>.CALCVAR HUMAN 二级密码密码 = 0#0
+<$STR(S82)>.SENDMSG 6 您的二级密码已清理，请找NPC重新设置！
+<$STR(S82)>.SENDMSG 6 您的二级密码已清理，请找NPC重新设置！
+<$STR(S82)>.SENDMSG 6 您的二级密码已清理，请找NPC重新设置！
+SENDMSG 6 【<$STR(S82)>】的二级密码已在线清理！
+MESSAGEBOX 【<$STR(S82)>】的二级密码已在线清理！
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+MOV S10 $(二级密码保护是否开启)
+#IF
+EQUAL D9 0
+EQUAL S10 是
+#ACT
+<$STR(S82)>.CALCVAR HUMAN 二级密码生日 = 
+<$STR(S82)>.CALCVAR HUMAN 二级密码问题 = 
+<$STR(S82)>.CALCVAR HUMAN 二级密码答案 = 
+<$STR(S82)>.SAVEVAR HUMAN 二级密码生日 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+<$STR(S82)>.SAVEVAR HUMAN 二级密码问题 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+<$STR(S82)>.SAVEVAR HUMAN 二级密码答案 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+EQUAL D9 0
+#ACT
+BREAK
+#IF
+CheckStringList ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级清除密码.txt <$STR(S82)> HardDisk
+#ELSEACT
+ADDLINELIST ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级清除密码.txt <$STR(S82)> HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+SENDMSG 6 【<$STR(S82)>】已加入二级密码清理列表！
+MESSAGEBOX 【<$STR(S82)>】已加入二级密码清理列表！\　\将在他下线上线时自动清理！
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+
+[@@InPutString81]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString81
+[@InPutString81]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 $(二级密码手动输入开启)
+#IF
+EQUAL S10 是
+#ELSEACT
+MESSAGEBOX 对不起，系统未开放手动输入！
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码选择 = 1
+#ELSEACT
+MESSAGEBOX 对不起，设置密码不能手动输入！
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+Equal S81 
+#ACT
+MESSAGEBOX 对不起，输入的字符不能为空！
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+BREAK
+#ELSEACT
+MOV S10 <$STR(S81)>
+GOTO @Mir2m2二级密码数据输入
+CALCVAR HUMAN 二级密码输入6 = <$STR(D4)>
+CALCVAR HUMAN 二级密码输入7 = <$STR(D5)>
+MOV D4 0
+MOV D5 0
+GOTO @Mir2m2二级密码确定
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+BREAK
+
+[@Mir2m2二级密码取消输入]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+
+[@Mir2m2清除二级密码]
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MESSAGEBOX 您都还没有设置二级密码，清除什么？请先设置二级密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 $(二级密码保护是否开启)
+#IF
+EQUAL S10 是
+#ACT
+MOV S10
+#ELSEACT
+MOV S10
+MESSAGEBOX 本系统暂未开放自动清除功能，需要清理密码请联系GM进行清除！！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ACT
+LOADVAR HUMAN 二级密码生日 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ELSEACT
+LOADVAR HUMAN 二级密码答案 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+LOADVAR HUMAN 二级密码问题 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ACT
+MESSAGEBOX 对不起，您还没有设置二级密码保护！\　\请先设置二级密码保护才能清除密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码问题 = 
+#ACT
+MESSAGEBOX 对不起，您还没有设置二级密码保护！\　\请先设置二级密码保护才能清除密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码答案 = 
+#ACT
+MESSAGEBOX 对不起，您还没有设置二级密码保护！\　\请先设置二级密码保护才能清除密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#SAY
+<COLOR=clFuchsia 请正确填写以下密码保护资料为您清除二级帐号密码：>\ \
+<COLOR=clLime 点此输入→><您的二级密码保护生日/@@InPutInteger97>：<$HUMAN(二级密码输入8)> \
+<COLOR=clLime 点此输入→><您的二级密码保护问题/@@InPutString83>：<$HUMAN(二级密码输入9)>\
+<COLOR=clLime 点此输入→><您的二级密码保护答案/@@InPutString84>：<$HUMAN(二级密码输入10)>\ \
+
+<确定清除二级帐号密码/@Mir2m2确定清除二级帐号密码>
+
+[@@InPutInteger97]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutInteger97
+[@InPutInteger97]
+#IF
+LARGE M97 10000000
+small M97 29999999
+#ACT
+CALCVAR HUMAN 二级密码输入8 = <$STR(M97)>
+MOV M97 0
+GOTO @Mir2m2清除二级密码
+BREAK
+#ELSEACT
+MOV M97 0
+CALCVAR HUMAN 二级密码输入8 = <$STR(M97)>
+GOTO @Mir2m2清除二级密码
+MESSAGEBOX 出错！生日必须为8位纯数字格式(格式：19700902)！\　\请重新输入你的生日！
+BREAK
+[@@InPutString83]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString83
+[@InPutString83]
+#IF
+Equal S83 
+#ACT
+CALCVAR HUMAN 二级密码输入9 = <$STR(S83)>
+GOTO @Mir2m2清除二级密码
+MESSAGEBOX 请输入你的二级密码保护问题！
+BREAK
+#ELSEACT
+CALCVAR HUMAN 二级密码输入9 = <$STR(S83)>
+MOV S83 
+GOTO @Mir2m2清除二级密码
+BREAK
+[@@InPutString84]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString84
+[@InPutString84]
+#IF
+Equal S84 
+#ACT
+CALCVAR HUMAN 二级密码输入10 = <$STR(S84)>
+GOTO @Mir2m2清除二级密码
+MESSAGEBOX 请输入你的二级密码保护答案！
+BREAK
+#ELSEACT
+CALCVAR HUMAN 二级密码输入10 = <$STR(S84)>
+MOV S84
+GOTO @Mir2m2清除二级密码
+BREAK
+
+[@Mir2m2确定清除二级帐号密码]
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MESSAGEBOX 您都还没有设置二级密码，清除什么？请先设置二级密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 $(二级密码保护是否开启)
+#IF
+EQUAL S10 是
+#ACT
+MOV S10
+#ELSEACT
+MOV S10
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+MESSAGEBOX 本系统暂未开放自动清除功能，需要清理密码请联系GM进行清除！！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ACT
+LOADVAR HUMAN 二级密码生日 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ELSEACT
+LOADVAR HUMAN 二级密码答案 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+LOADVAR HUMAN 二级密码问题 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+MESSAGEBOX 对不起，您还没有设置二级密码保护！\　\请先设置二级密码保护才能清除密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码问题 = 
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+MESSAGEBOX 对不起，您还没有设置二级密码保护！\　\请先设置二级密码保护才能清除密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码答案 = 
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+MESSAGEBOX 对不起，您还没有设置二级密码保护！\　\请先设置二级密码保护才能清除密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码输入8 > 10000000
+CHECKVAR HUMAN 二级密码输入8 < 30000000
+#ELSEACT
+GOTO @Mir2m2清除二级密码
+MESSAGEBOX 您还没有输入二级密码保护生日！\　\请先点击【您的二级密码保护生日】输入你的生日！
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码输入9 = 
+#ACT
+GOTO @Mir2m2清除二级密码
+MESSAGEBOX 您还没有输入二级密码保护问题！\　\请先点击【您的二级密码保护问题】输入你的问题！
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码输入10 = 
+#ACT
+GOTO @Mir2m2清除二级密码
+MESSAGEBOX 您还没有输入二级密码保护答案！\　\请先点击【您的二级密码保护答案】输入你的答案！
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码次数 ? $(二级密码限制错误次数)
+ONLINELONGMIN < $(二级密码错误等待时间)
+#ACT
+MESSAGEBOX 您已经累积输入密码错误（<$HUMAN(二级密码次数)>）次。\为防止盗号者用外挂扫描密码保护，每次登陆均需要在线等待$(二级密码错误等待时间)分钟后才能输入密码。\你当前已在线：<$LOGINLONG>，请稍后再输入密码保护！
+GOTO @Mir2m2清除二级密码
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S11 免费脚本群:101529177
+#IF
+CHECKVAR HUMAN 二级密码生日 = <$HUMAN(二级密码输入8)>
+#ELSEACT
+MOV S11 
+#IF
+CHECKVAR HUMAN 二级密码问题 = <$HUMAN(二级密码输入9)>
+#ELSEACT
+MOV S11 
+#IF
+CHECKVAR HUMAN 二级密码答案 = <$HUMAN(二级密码输入10)>
+#ELSEACT
+MOV S11 
+#IF
+CHECKVAR HUMAN 二级密码次数 > 65530
+#ACT
+CALCVAR HUMAN 二级密码次数 = 65530
+#IF
+EQUAL S11 
+#ACT
+CALCVAR HUMAN 二级密码次数 + 1
+SETMISSION + $(二级密码占用任务D1) 1
+SETMISSION ^ $(二级密码占用任务D1) <$HUMAN(二级密码次数)>
+#IF
+CHECKVAR HUMAN 二级密码次数 ? $(二级密码限制错误次数)
+EQUAL S11 
+#ACT
+MESSAGEBOX 对不起，您的密码保护资料不正确！注意字母区分大小写！\您已经累积输入密码保护错误（<$HUMAN(二级密码次数)>）次。\系统将自动踢您下线，以后每次登陆均只有一次输入密码保护的机会。
+KICK
+BREAK
+#SAY
+密码保护输入错误次数过多，请小退后重新登陆。\ \
+<COLOR=clFuchsia 注：密码保护中如包含字母区分大小写>\ \
+您已经输入密码保护错误（<$HUMAN(二级密码次数)>）次，系统自动踢您下线。\
+#IF
+EQUAL S11 
+#ACT
+CALCVAR HUMAN 二级密码输入8 = 0
+CALCVAR HUMAN 二级密码输入9 = 
+CALCVAR HUMAN 二级密码输入10 = 
+MESSAGEBOX 对不起，您的密码保护资料不正确！注意字母区分大小写！\您已经累积输入密码保护错误（<$HUMAN(二级密码次数)>）次！\累计输入错误达到$(二级密码限制错误次数)次将踢您下线！
+GOTO @Mir2m2清除二级密码
+BREAK
+
+#IF
+CHECKVAR HUMAN 二级密码IP号1 = 0
+#ACT
+GOTO @Mir2m2二级密码数据IP号
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S11
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+CALCVAR HUMAN 二级密码密码 = 0#0
+CALCVAR HUMAN 二级密码次数 = 0
+SETMISSION - $(二级密码占用任务A1)
+SETMISSION - $(二级密码占用任务A2)
+SETMISSION - $(二级密码占用任务A3)
+SETMISSION - $(二级密码占用任务A4)
+SETMISSION - $(二级密码占用任务D1)
+CALCVAR HUMAN 二级密码IP号0 = <$HUMAN(二级密码IP号1)>
+MOV D9 <$HUMAN(二级密码IP号0)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+SETMISSION - $(二级密码占用任务B1)
+SETMISSION - $(二级密码占用任务B2)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务B1) 1
+SETMISSION ^ $(二级密码占用任务B1) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务B2) 1
+SETMISSION ^ $(二级密码占用任务B2) <$STR(D8)>
+MOV D8 0
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码验证 = 1
+CALCVAR HUMAN 二级密码输入3 = 
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+SENDMSG 6 恭喜您！您成功清除了二级密码！
+MESSAGEBOX 恭喜您！您成功清除了二级密码！
+GOTO @Mir2m2二级密码脚本NPC
+
+[@Mir2m2找回二级密码]
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MESSAGEBOX 您都还没有设置二级密码，找回什么？请先设置二级密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 $(二级密码保护是否开启)
+#IF
+EQUAL S10 是
+#ELSEACT
+MESSAGEBOX 本系统暂未开放自动找回功能，需要找回密码请联系GM进行找回！！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ACT
+LOADVAR HUMAN 二级密码生日 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ELSEACT
+LOADVAR HUMAN 二级密码答案 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+LOADVAR HUMAN 二级密码问题 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ACT
+MESSAGEBOX 对不起，您还没有设置二级密码保护！\　\请先设置二级密码保护才能找回密码！
+GOTO @Mir2m2初始设置二级密码
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码问题 = 
+#ACT
+MESSAGEBOX 对不起，您还没有设置二级密码保护！\　\请先设置二级密码保护才能找回密码！
+GOTO @Mir2m2初始设置二级密码
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码答案 = 
+#ACT
+MESSAGEBOX 对不起，您还没有设置二级密码保护！\　\请先设置二级密码保护才能找回密码！
+GOTO @Mir2m2初始设置二级密码
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码选择 = 3
+#ELSEACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+#IF
+CHECKLEVELEX > 0
+#SAY
+<COLOR=clFuchsia 请正确填写以下密码保护资料为您重新设置二级帐号密码：>\ \
+<COLOR=clLime 点此输入→><您的二级密码保护生日/@@InPutInteger98>：<$HUMAN(二级密码输入8)>\
+<COLOR=clLime 点此输入→><您的二级密码保护问题/@@InPutString85>：<$HUMAN(二级密码输入9)>\
+<COLOR=clLime 点此输入→><您的二级密码保护答案/@@InPutString86>：<$HUMAN(二级密码输入10)>\ \
+<COLOR=clLime 点此输入→><新的二级帐号密码/@Mir2m2二级密码找回输入>：<$HUMAN(二级密码输入1)>\ \
+<确定重新设置二级帐号密码/@Mir2m2确定找回二级帐号密码>
+
+[@Mir2m2二级密码找回输入]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码跳转 = @Mir2m2找回二级密码
+CALCVAR HUMAN 二级密码选择 = 3
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+
+[@@InPutInteger98]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutInteger98
+[@InPutInteger98]
+#IF
+LARGE M98 10000000
+small M98 29999999
+#ACT
+CALCVAR HUMAN 二级密码输入8 = <$STR(M98)>
+MOV M98 0
+GOTO @Mir2m2找回二级密码
+BREAK
+#ELSEACT
+MOV M98 0
+CALCVAR HUMAN 二级密码输入8 = <$STR(M98)>
+GOTO @Mir2m2找回二级密码
+MESSAGEBOX 出错！生日必须为8位纯数字格式(格式：19700902)！\　\请重新输入你的生日！
+BREAK
+[@@InPutString85]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString85
+[@InPutString85]
+#IF
+Equal S85 
+#ACT
+CALCVAR HUMAN 二级密码输入9 = <$STR(S85)>
+GOTO @Mir2m2找回二级密码
+MESSAGEBOX 请输入你的二级密码保护问题！
+BREAK
+#ELSEACT
+CALCVAR HUMAN 二级密码输入9 = <$STR(S85)>
+MOV S85 
+GOTO @Mir2m2找回二级密码
+BREAK
+[@@InPutString86]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString86
+[@InPutString86]
+#IF
+Equal S86 
+#ACT
+CALCVAR HUMAN 二级密码输入10 = <$STR(S86)>
+GOTO @Mir2m2找回二级密码
+MESSAGEBOX 请输入你的二级密码保护答案！
+BREAK
+#ELSEACT
+CALCVAR HUMAN 二级密码输入10 = <$STR(S86)>
+MOV S86
+GOTO @Mir2m2找回二级密码
+BREAK
+
+[@Mir2m2确定找回二级帐号密码]
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MESSAGEBOX 您都还没有设置二级密码，找回什么？请先设置二级密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 $(二级密码保护是否开启)
+#IF
+EQUAL S10 是
+#ACT
+MOV S10
+#ELSEACT
+MOV S10
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+MESSAGEBOX 本系统暂未开放自动找回功能，需要找回密码请联系GM进行找回！！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ACT
+LOADVAR HUMAN 二级密码生日 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ELSEACT
+LOADVAR HUMAN 二级密码答案 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+LOADVAR HUMAN 二级密码问题 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+MESSAGEBOX 对不起，您还没有设置二级密码保护！\　\请先设置二级密码保护才能找回密码！
+GOTO @Mir2m2初始设置二级密码
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码问题 = 
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+MESSAGEBOX 对不起，您还没有设置二级密码保护！\　\请先设置二级密码保护才能找回密码！
+GOTO @Mir2m2初始设置二级密码
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码答案 = 
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+MESSAGEBOX 对不起，您还没有设置二级密码保护！\　\请先设置二级密码保护才能找回密码！
+GOTO @Mir2m2初始设置二级密码
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码输入8 > 10000000
+CHECKVAR HUMAN 二级密码输入8 < 30000000
+#ELSEACT
+CALCVAR HUMAN 二级密码输入8 = 0
+GOTO @Mir2m2找回二级密码
+MESSAGEBOX 您还没有输入二级密码保护生日！\　\请先点击【您的二级密码保护生日】输入你的生日！
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码输入9 = 
+#ACT
+GOTO @Mir2m2找回二级密码
+MESSAGEBOX 您还没有输入二级密码保护问题！\　\请先点击【您的二级密码保护问题】输入你的问题！
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码输入10 = 
+#ACT
+GOTO @Mir2m2找回二级密码
+MESSAGEBOX 您还没有输入二级密码保护答案！\　\请先点击【您的二级密码保护答案】输入你的答案！
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码次数 ? $(二级密码限制错误次数)
+ONLINELONGMIN < $(二级密码错误等待时间)
+#ACT
+MESSAGEBOX 您已经累积输入密码错误（<$HUMAN(二级密码次数)>）次。\为防止盗号者用外挂扫描密码保护，每次登陆均需要在线等待$(二级密码错误等待时间)分钟后才能输入密码。\你当前已在线：<$LOGINLONG>，请稍后再输入密码保护！
+GOTO @Mir2m2找回二级密码
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S11 免费脚本群:101529177
+#IF
+CHECKVAR HUMAN 二级密码生日 = <$HUMAN(二级密码输入8)>
+#ELSEACT
+MOV S11 
+#IF
+CHECKVAR HUMAN 二级密码问题 = <$HUMAN(二级密码输入9)>
+#ELSEACT
+MOV S11 
+#IF
+CHECKVAR HUMAN 二级密码答案 = <$HUMAN(二级密码输入10)>
+#ELSEACT
+MOV S11 
+#IF
+CHECKVAR HUMAN 二级密码次数 > 65530
+#ACT
+CALCVAR HUMAN 二级密码次数 = 65530
+#IF
+EQUAL S11 
+#ACT
+CALCVAR HUMAN 二级密码次数 + 1
+SETMISSION + $(二级密码占用任务D1) 1
+SETMISSION ^ $(二级密码占用任务D1) <$HUMAN(二级密码次数)>
+#IF
+CHECKVAR HUMAN 二级密码次数 ? $(二级密码限制错误次数)
+EQUAL S11 
+#ACT
+MESSAGEBOX 对不起，您的密码保护资料不正确！注意字母区分大小写！\您已经累积输入密码保护错误（<$HUMAN(二级密码次数)>）次。\系统将自动踢您下线，以后每次登陆均只有一次输入密码保护的机会。
+KICK
+BREAK
+#SAY
+密码保护输入错误次数过多，请小退后重新登陆。\ \
+<COLOR=clFuchsia 注：密码保护中如包含字母区分大小写>\ \
+您已经输入密码保护错误（<$HUMAN(二级密码次数)>）次，系统自动踢您下线。\
+#IF
+EQUAL S11 
+#ACT
+MESSAGEBOX 对不起，您的密码保护资料不正确！注意字母区分大小写！\您已经累积输入密码保护错误（<$HUMAN(二级密码次数)>）次！\累计输入错误达到$(二级密码限制错误次数)次将踢您下线！
+CALCVAR HUMAN 二级密码输入8 = 0
+CALCVAR HUMAN 二级密码输入9 = 
+CALCVAR HUMAN 二级密码输入10 = 
+GOTO @Mir2m2找回二级密码
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S11
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+CALCVAR HUMAN 二级密码密码 = <$HUMAN(二级密码输入6)>#<$HUMAN(二级密码输入7)>
+CALCVAR HUMAN 二级密码次数 = 0
+SETMISSION - $(二级密码占用任务D1)
+MOV D9 <$HUMAN(二级密码输入6)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+SETMISSION - $(二级密码占用任务A1)
+SETMISSION - $(二级密码占用任务A2)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务A1) 1
+SETMISSION ^ $(二级密码占用任务A1) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务A2) 1
+SETMISSION ^ $(二级密码占用任务A2) <$STR(D8)>
+MOV D8 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$HUMAN(二级密码输入7)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+SETMISSION - $(二级密码占用任务A3)
+SETMISSION - $(二级密码占用任务A4)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务A3) 1
+SETMISSION ^ $(二级密码占用任务A3) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务A4) 1
+SETMISSION ^ $(二级密码占用任务A4) <$STR(D8)>
+MOV D8 0
+#IF
+CHECKVAR HUMAN 二级密码IP号1 = 0
+#ACT
+GOTO @Mir2m2二级密码数据IP号
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码IP号0 = <$HUMAN(二级密码IP号1)>
+MOV D9 <$HUMAN(二级密码IP号0)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+SETMISSION - $(二级密码占用任务B1)
+SETMISSION - $(二级密码占用任务B2)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务B1) 1
+SETMISSION ^ $(二级密码占用任务B1) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务B2) 1
+SETMISSION ^ $(二级密码占用任务B2) <$STR(D8)>
+MOV D8 0
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码验证 = 1
+CALCVAR HUMAN 二级密码输入3 = <$HUMAN(二级密码输入1)>
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+SENDMSG 6 恭喜您！您成功设置新的二级密码为：【<$HUMAN(二级密码输入3)>】
+#SAY
+<COLOR=clFuchsia 恭喜您成功设置新的二级密码。请务必牢记，不要再忘记了！>\ \ \
+<COLOR=clLime 您新的二级帐号密码为>：<$HUMAN(二级密码输入3)>\ \ \
+<返回./@Mir2m2二级密码脚本NPC>
+
+#IF
+ISONMAP $(二级密码初次设置地图)
+#SAY
+　　　　　　<离开本地图./@Mir2m2二级密码确定>\
+#IF
+ISONMAP $(二级密码IP错进入地图)
+#SAY
+　　　　　　<离开本地图./@Mir2m2二级密码确定>\
+
+[@Mir2m2初始设置二级密码]
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+MOV D9 0
+#ELSEACT
+MOV D9 1
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 $(二级密码保护是否开启)
+#IF
+EQUAL S10 否
+EQUAL D9 1
+#ACT
+MOV S10 
+MOV D9 0
+MESSAGEBOX 对不起，您已经设置过二级密码，可点修改密码进行修改！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ACT
+LOADVAR HUMAN 二级密码生日 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ELSEACT
+LOADVAR HUMAN 二级密码答案 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+LOADVAR HUMAN 二级密码问题 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D8 1
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ACT
+MOV D8 0
+#IF
+CHECKVAR HUMAN 二级密码问题 = 
+#ACT
+MOV D8 0
+#IF
+CHECKVAR HUMAN 二级密码答案 = 
+#ACT
+MOV D8 0
+#IF
+EQUAL S10 是
+EQUAL D9 1
+EQUAL D8 1
+#ACT
+MOV S10 
+MOV D9 0
+MOV D8 0
+MESSAGEBOX 对不起，您已经设置过二级密码，可点修改密码进行修改！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码选择 = 2
+#ELSEACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+#IF
+EQUAL S10 是
+EQUAL D8 0
+#ACT
+MOV S10 
+MOV D9 0
+MOV D8 0
+#SAY
+<COLOR=clLime 点此输入→><设置二级帐号密码/@Mir2m2二级密码设置输入>：<$HUMAN(二级密码输入1)>\ \
+<COLOR=clFuchsia 以下为二级密码保护资料，忘记二级密码可以通过密码保护找回>\ \
+<COLOR=clLime 点此输入→><二级密码保护生日/@@InPutInteger99>：<$HUMAN(二级密码输入8)> <COLOR=clred (格式：19910502)>\
+<COLOR=clLime 点此输入→><二级密码保护问题/@@InPutString88>：<$HUMAN(二级密码输入9)>\
+<COLOR=clLime 点此输入→><二级密码保护答案/@@InPutString89>：<$HUMAN(二级密码输入10)>\ \
+<确定设置二级密码及密码保护资料/@Mir2m2确定设置二级密码及密码保护资料>
+
+#ELSEACT
+MOV S10 
+MOV D9 0
+MOV D8 0
+#ELSESAY
+\　\
+\　\
+<COLOR=clLime 点此输入→><设置二级帐号密码/@Mir2m2二级密码设置输入>：<$HUMAN(二级密码输入1)>\
+\　\
+\　\
+<确定设置二级密码/@Mir2m2确定设置二级密码及密码保护资料>
+
+
+[@Mir2m2二级密码设置输入]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码跳转 = @Mir2m2初始设置二级密码
+CALCVAR HUMAN 二级密码选择 = 2
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+
+[@@InPutInteger99]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutInteger99
+[@InPutInteger99]
+#IF
+LARGE M99 10000000
+small M99 29999999
+#ACT
+CALCVAR HUMAN 二级密码输入8 = <$STR(M99)>
+MOV M99 0
+GOTO @Mir2m2初始设置二级密码
+SENDMSG 6 您设置二级密码保护生日为：【<$HUMAN(二级密码输入8)>】，请牢记此生日。
+BREAK
+#ELSEACT
+MOV M99 0
+CALCVAR HUMAN 二级密码输入8 = <$STR(M99)>
+GOTO @Mir2m2初始设置二级密码
+MESSAGEBOX 出错！生日必须为8位纯数字格式(格式：19700902)！\　\请重新输入你的生日！
+BREAK
+[@@InPutString88]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString88
+[@InPutString88]
+#IF
+Equal S88
+#ACT
+CALCVAR HUMAN 二级密码输入9 = <$STR(S88)>
+GOTO @Mir2m2初始设置二级密码
+MESSAGEBOX 请输入你的二级密码保护问题！
+BREAK
+#ELSEACT
+CALCVAR HUMAN 二级密码输入9 = <$STR(S88)>
+MOV S88 
+GOTO @Mir2m2初始设置二级密码
+SENDMSG 6 您设置二级密码保护问题为：【<$HUMAN(二级密码输入9)>】，请牢记此问题。
+BREAK
+[@@InPutString89]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString89
+[@InPutString89]
+#IF
+Equal S89 
+#ACT
+CALCVAR HUMAN 二级密码输入10 = <$STR(S89)>
+GOTO @Mir2m2找回二级密码
+MESSAGEBOX 请输入你的二级密码保护答案！
+BREAK
+#ELSEACT
+CALCVAR HUMAN 二级密码输入10 = <$STR(S89)>
+MOV S89
+GOTO @Mir2m2初始设置二级密码
+SENDMSG 6 您设置二级密码保护答案为：【<$HUMAN(二级密码输入10)>】，请牢记此答案。
+BREAK
+
+[@Mir2m2确定设置二级密码及密码保护资料]
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+MOV D9 0
+#ELSEACT
+MOV D9 1
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 $(二级密码保护是否开启)
+#IF
+EQUAL S10 否
+EQUAL D9 1
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+MOV S10 
+MOV D9 0
+MESSAGEBOX 对不起，您已经设置过二级密码，可点修改密码进行修改！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ACT
+LOADVAR HUMAN 二级密码生日 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ELSEACT
+LOADVAR HUMAN 二级密码答案 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+LOADVAR HUMAN 二级密码问题 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D8 1
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ACT
+MOV D8 0
+#IF
+CHECKVAR HUMAN 二级密码问题 = 
+#ACT
+MOV D8 0
+#IF
+CHECKVAR HUMAN 二级密码答案 = 
+#ACT
+MOV D8 0
+#IF
+EQUAL S10 是
+EQUAL D9 1
+EQUAL D8 1
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+MOV S10 
+MOV D9 0
+MOV D8 0
+MESSAGEBOX 对不起，您已经设置过二级密码，可点修改密码进行修改！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码输入1 = 
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MOV S10
+MOV D9 0
+MOV D8 0
+MESSAGEBOX 您还没有输入密码！\　\请先点击【设置二级帐号密码】输入你要设置的密码！
+GOTO @Mir2m2初始设置二级密码
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码输入6 = 0
+CHECKVAR HUMAN 二级密码输入7 = 0
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MOV S10
+MOV D9 0
+MOV D8 0
+MESSAGEBOX 您还没有输入密码！\　\请先点击【设置二级帐号密码】输入你要设置的密码！
+GOTO @Mir2m2初始设置二级密码
+BREAK
+#IF
+CheckStringList ..\QuestDiary\Mir2m2二级密码配置(免费脚本群.101529177)\Mir2m2二级禁止使用密码.ini <$HUMAN(二级密码输入1)> HardDisk
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MOV S10
+MOV D9 0
+MOV D8 0
+MESSAGEBOX 对不起，此密码【<$HUMAN(二级密码输入1)>】过于简单，禁止使用！\　\请勿设置所有位数相同或连续数字的密码！
+GOTO @Mir2m2初始设置二级密码
+BREAK
+#ELSEACT
+GETSTRLENGTH <$HUMAN(二级密码输入1)> D7
+#IF
+SMALL D7 $(二级密码最少设置位数)
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MOV S10
+MOV D9 0
+MOV D8 0
+MOV D7 0
+MESSAGEBOX 对不起，密码最少要设置【$(二级密码最少设置位数)位】，请重新选择！
+GOTO @Mir2m2初始设置二级密码
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码输入8 > 10000000
+CHECKVAR HUMAN 二级密码输入8 < 30000000
+#ACT
+MOV D7 0
+#ELSEACT
+MOV D7 1
+#IF
+EQUAL S10 是
+EQUAL D8 0
+EQUAL D7 1
+#ACT
+CALCVAR HUMAN 二级密码输入8 = 0
+MOV S10
+MOV D9 0
+MOV D8 0
+MOV D7 0
+MESSAGEBOX 您还没有输入二级密码保护生日！\　\请先点击【二级密码保护生日】输入你要设置的生日！
+GOTO @Mir2m2初始设置二级密码
+BREAK
+#IF
+EQUAL S10 是
+EQUAL D8 0
+CHECKVAR HUMAN 二级密码输入9 = 
+#ACT
+MOV S10
+MOV D9 0
+MOV D8 0
+MOV D7 0
+MESSAGEBOX 您还没有输入二级密码保护问题！\　\请先点击【二级密码保护问题】输入你要设置的问题！
+GOTO @Mir2m2初始设置二级密码
+BREAK
+#IF
+EQUAL S10 是
+EQUAL D8 0
+CHECKVAR HUMAN 二级密码输入10 = 
+#ACT
+MOV S10
+MOV D9 0
+MOV D8 0
+MOV D7 0
+MESSAGEBOX 您还没有输入二级密码保护答案！\　\请先点击【二级密码保护答案】输入你要设置的答案！
+GOTO @Mir2m2初始设置二级密码
+BREAK
+#IF
+EQUAL D8 0
+#ACT
+MOV S21 
+#ELSEACT
+MOV S21 免费脚本群:101529177
+#IF
+EQUAL S10 是
+#ACT
+MOV S20 
+#ELSEACT
+MOV S20 免费脚本群:101529177
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+CALCVAR HUMAN 二级密码验证 = 1
+CALCVAR HUMAN 二级密码密码 = <$HUMAN(二级密码输入6)>#<$HUMAN(二级密码输入7)>
+CALCVAR HUMAN 二级密码次数 = 0
+SETMISSION - $(二级密码占用任务D1)
+MOV D9 <$HUMAN(二级密码输入6)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+#IF
+CHECKMISSION $(二级密码占用任务A1) > 0
+#ACT
+SETMISSION - $(二级密码占用任务A1)
+#IF
+CHECKMISSION $(二级密码占用任务A2) > 0
+#ACT
+SETMISSION - $(二级密码占用任务A2)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务A1) 1
+SETMISSION ^ $(二级密码占用任务A1) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务A2) 1
+SETMISSION ^ $(二级密码占用任务A2) <$STR(D8)>
+MOV D8 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$HUMAN(二级密码输入7)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+#IF
+CHECKMISSION $(二级密码占用任务A3) > 0
+#ACT
+SETMISSION - $(二级密码占用任务A3)
+#IF
+CHECKMISSION $(二级密码占用任务A4) > 0
+#ACT
+SETMISSION - $(二级密码占用任务A4)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务A3) 1
+SETMISSION ^ $(二级密码占用任务A3) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务A4) 1
+SETMISSION ^ $(二级密码占用任务A4) <$STR(D8)>
+MOV D8 0
+#IF
+CHECKVAR HUMAN 二级密码IP号1 = 0
+#ACT
+GOTO @Mir2m2二级密码数据IP号
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码IP号0 = <$HUMAN(二级密码IP号1)>
+MOV D9 <$HUMAN(二级密码IP号0)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+SETMISSION - $(二级密码占用任务B1)
+SETMISSION - $(二级密码占用任务B2)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务B1) 1
+SETMISSION ^ $(二级密码占用任务B1) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务B2) 1
+SETMISSION ^ $(二级密码占用任务B2) <$STR(D8)>
+MOV D8 0
+
+#IF
+CHECKVAR HUMAN 二级密码机器0 =
+#ACT
+GOTO @Mir2m2二级密码数据机器
+CALCVAR HUMAN 二级密码机器1 = <$STR(D3)>
+CALCVAR HUMAN 二级密码机器2 = <$STR(D4)>
+CALCVAR HUMAN 二级密码机器3 = <$STR(D5)>
+MOV D3 0
+MOV D4 0
+MOV D5 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 <$HUMAN(二级密码机器1)>
+INC S10 #
+INC S10 <$HUMAN(二级密码机器2)>
+INC S10 #
+INC S10 <$HUMAN(二级密码机器3)>
+CALCVAR HUMAN 二级密码机器0 = <$STR(S10)>
+MOV S10 
+MOV D9 <$HUMAN(二级密码机器1)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+SETMISSION - $(二级密码占用任务C1)
+SETMISSION - $(二级密码占用任务C2)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务C1) 1
+SETMISSION ^ $(二级密码占用任务C1) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务C2) 1
+SETMISSION ^ $(二级密码占用任务C2) <$STR(D8)>
+MOV D8 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$HUMAN(二级密码机器2)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+SETMISSION - $(二级密码占用任务C3)
+SETMISSION - $(二级密码占用任务C4)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务C3) 1
+SETMISSION ^ $(二级密码占用任务C3) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务C4) 1
+SETMISSION ^ $(二级密码占用任务C4) <$STR(D8)>
+MOV D8 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$HUMAN(二级密码机器3)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+SETMISSION - $(二级密码占用任务C5)
+SETMISSION - $(二级密码占用任务C6)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务C5) 1
+SETMISSION ^ $(二级密码占用任务C5) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务C6) 1
+SETMISSION ^ $(二级密码占用任务C6) <$STR(D8)>
+MOV D8 0
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码验证 = 1
+CALCVAR HUMAN 二级密码输入3 = <$HUMAN(二级密码输入1)>
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+SENDMSG 6 恭喜您！您成功设置二级密码为：【<$HUMAN(二级密码输入3)>】
+#IF
+EQUAL S20 
+EQUAL S21 
+#ACT
+CALCVAR HUMAN 二级密码生日 = <$HUMAN(二级密码输入8)>
+CALCVAR HUMAN 二级密码问题 = <$HUMAN(二级密码输入9)>
+CALCVAR HUMAN 二级密码答案 = <$HUMAN(二级密码输入10)>
+SAVEVAR HUMAN 二级密码生日 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+SAVEVAR HUMAN 二级密码问题 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+SAVEVAR HUMAN 二级密码答案 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+SENDMSG 6 您成功设置二级密码保护生日为：【<$HUMAN(二级密码输入8)>】
+SENDMSG 6 您成功设置二级密码保护问题为：【<$HUMAN(二级密码输入9)>】
+SENDMSG 6 您成功设置二级密码保护答案为：【<$HUMAN(二级密码输入10)>】
+#SAY
+<COLOR=clFuchsia 恭喜您成功设置二级密码及密码保护。请牢记以下资料：>\ \
+<COLOR=clLime 您的二级帐号密码为>：<$HUMAN(二级密码输入3)>\
+<COLOR=clLime 二级密码保护生日为>：<$HUMAN(二级密码生日)>\
+<COLOR=clLime 二级密码保护问题为>：<$HUMAN(二级密码问题)>\
+<COLOR=clLime 二级密码保护答案为>：<$HUMAN(二级密码答案)>\ \
+<返回上页./@Mir2m2二级密码脚本NPC>
+#ELSEACT
+MOV S20
+MOV S21
+#ELSESAY
+<COLOR=clFuchsia 恭喜您成功设置二级密码。请牢记以下二级密码：>\ \ \
+<COLOR=clLime 您的二级帐号密码为>：<$HUMAN(二级密码输入3)>\ \ \
+<返回上页./@Mir2m2二级密码脚本NPC>
+
+#IF
+ISONMAP $(二级密码初次设置地图)
+#SAY
+　　　　　　<离开本地图./@Mir2m2二级密码确定>\
+#IF
+ISONMAP $(二级密码IP错进入地图)
+#SAY
+　　　　　　<离开本地图./@Mir2m2二级密码确定>\
+
+
+[@Mir2m2重新绑定机器码]
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+MESSAGEBOX 对不起，您还没有设置二级密码，不能进行此操作！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码验证 = 0
+#ACT
+MESSAGEBOX 对不起，您还没有验证二级密码，请先验证密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 <$HUMAN(二级密码机器1)>
+INC S10 #
+INC S10 <$HUMAN(二级密码机器2)>
+INC S10 #
+INC S10 <$HUMAN(二级密码机器3)>
+#IF
+checkvar human 二级密码机器0 = <$STR(S10)>
+#ACT
+MOV S10
+MESSAGEBOX 您已绑定本机机器码，可设置当上线机器码不同时才需要输入二级密码！
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码机器0 =
+#ACT
+GOTO @Mir2m2二级密码数据机器
+CALCVAR HUMAN 二级密码机器1 = <$STR(D3)>
+CALCVAR HUMAN 二级密码机器2 = <$STR(D4)>
+CALCVAR HUMAN 二级密码机器3 = <$STR(D5)>
+MOV D3 0
+MOV D4 0
+MOV D5 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 <$HUMAN(二级密码机器1)>
+INC S10 #
+INC S10 <$HUMAN(二级密码机器2)>
+INC S10 #
+INC S10 <$HUMAN(二级密码机器3)>
+CALCVAR HUMAN 二级密码机器0 = <$STR(S10)>
+MOV S10 
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$HUMAN(二级密码机器1)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+SETMISSION - $(二级密码占用任务C1)
+SETMISSION - $(二级密码占用任务C2)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务C1) 1
+SETMISSION ^ $(二级密码占用任务C1) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务C2) 1
+SETMISSION ^ $(二级密码占用任务C2) <$STR(D8)>
+MOV D8 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$HUMAN(二级密码机器2)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+SETMISSION - $(二级密码占用任务C3)
+SETMISSION - $(二级密码占用任务C4)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务C3) 1
+SETMISSION ^ $(二级密码占用任务C3) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务C4) 1
+SETMISSION ^ $(二级密码占用任务C4) <$STR(D8)>
+MOV D8 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$HUMAN(二级密码机器3)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+SETMISSION - $(二级密码占用任务C5)
+SETMISSION - $(二级密码占用任务C6)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务C5) 1
+SETMISSION ^ $(二级密码占用任务C5) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务C6) 1
+SETMISSION ^ $(二级密码占用任务C6) <$STR(D8)>
+MOV D8 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+MESSAGEBOX 恭喜您，重新绑定本机机器码成功！\　\可设置当上线机器码不同时才需要输入二级密码！
+BREAK
+
+[@Mir2m2二级密码模式1]
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+MESSAGEBOX 对不起，您还没有设置二级密码，不能进行此操作！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码验证 = 0
+#ACT
+MESSAGEBOX 对不起，您还没有验证二级密码，请先验证密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码模式 = 1
+SETMISSION + $(二级密码占用任务F1) 1
+SETMISSION ^ $(二级密码占用任务F1) 1
+MESSAGEBOX 恭喜您，设置成功！当前上线需要输入密码的模式为：\　\每次上线当【IP地址】与上次不同时才需要输入二级密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+[@Mir2m2二级密码模式2]
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+MESSAGEBOX 对不起，您还没有设置二级密码，不能进行此操作！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码验证 = 0
+#ACT
+MESSAGEBOX 对不起，您还没有验证二级密码，请先验证密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 <$HWID>
+DEC S10 1 2
+#IF
+EQUAL S10 HWID>
+#ACT
+MOV S10
+MESSAGEBOX 对不起，不支持绑定机器码，请选择其他模式！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10
+CALCVAR HUMAN 二级密码模式 = 2
+SETMISSION + $(二级密码占用任务F1) 1
+SETMISSION ^ $(二级密码占用任务F1) 2
+MESSAGEBOX 恭喜您，设置成功！当前上线需要输入密码的模式为：\　\每次上线当【机器码】与上次不同时才需要输入二级密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+[@Mir2m2二级密码模式3]
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+MESSAGEBOX 对不起，您还没有设置二级密码，不能进行此操作！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码验证 = 0
+#ACT
+MESSAGEBOX 对不起，您还没有验证二级密码，请先验证密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 <$HWID>
+DEC S10 1 2
+#IF
+EQUAL S10 HWID>
+#ACT
+MOV S10
+MESSAGEBOX 对不起，不支持绑定机器码，请选择其他模式！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10
+CALCVAR HUMAN 二级密码模式 = 3
+SETMISSION + $(二级密码占用任务F1) 1
+SETMISSION ^ $(二级密码占用任务F1) 3
+MESSAGEBOX 恭喜您，设置成功！当前上线需要输入密码的模式为：\　\每次上线当【IP地址】或【机器码】其中一个不同时需要输入二级密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+[@Mir2m2二级密码模式4]
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+MESSAGEBOX 对不起，您还没有设置二级密码，不能进行此操作！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码验证 = 0
+#ACT
+MESSAGEBOX 对不起，您还没有验证二级密码，请先验证密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码模式 = 4
+SETMISSION + $(二级密码占用任务F1) 1
+SETMISSION ^ $(二级密码占用任务F1) 4
+MESSAGEBOX 恭喜您，设置成功！当前上线需要输入密码的模式为：\　\每次上线不管IP和机器码是否相同均需要输入二级密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+
+[@Mir2m2修改二级密码]
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MESSAGEBOX 对不起，你还没有设置二级密码，请先设置二级密码才能进行此操作！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#ELSESAY
+为了防止木马盗号事件为玩家造成损失，现在特采用双密码验证登\
+陆，当玩家登陆IP与之前登陆IP不同时会锁定玩家角色，需输入二\
+次密码解锁。现在检测你没有输入密码，请点击下面的设置密码设\
+置。密码可以为数字和字母的组合，<COLOR=clRed 密码位数最少设置$(二级密码最少设置位数)位！！>\
+<COLOR=clFuchsia 请玩家不要将二次密码设置成与登陆密码一致！>\
+设置好之后请不要泄漏给任何人。<COLOR=$00A55200 注：密码中如包含字母不区分大小写>\
+点击下方的验证密码输入原始密码进行原密码验证.\ \
+<验证原密码/@Mir2m2二级密码验证输入>　　　　　　　　　　　　　<返回/@Mir2m2二级密码脚本NPC>
+
+[@Mir2m2二级密码验证输入]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码跳转 = @Mir2m2二级密码修改NPC
+CALCVAR HUMAN 二级密码选择 = 4
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+
+[@Mir2m2二级密码修改NPC]
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MESSAGEBOX 对不起，您还没有设置二级密码！\　\为了您的帐号安全，请先设置二级密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码次数 ? $(二级密码限制错误次数)
+ONLINELONGMIN < $(二级密码错误等待时间)
+#ACT
+MESSAGEBOX 您已经累积输入密码错误（<$HUMAN(二级密码次数)>）次。\为防止盗号者用外挂扫描密码，每次登陆均需要在线等待$(二级密码错误等待时间)分钟后才能输入密码。\你当前已在线：<$LOGINLONG>，请稍后再验证密码！
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码次数 > 65530
+#ACT
+CALCVAR HUMAN 二级密码次数 = 65530
+#IF
+CHECKVAR HUMAN 二级密码密码 = <$HUMAN(二级密码输入6)>#<$HUMAN(二级密码输入7)>
+#ACT
+MOV D9 1
+#ELSEACT
+MOV D9 0
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+CALCVAR HUMAN 二级密码次数 + 1
+SETMISSION + $(二级密码占用任务D1) 1
+SETMISSION ^ $(二级密码占用任务D1) <$HUMAN(二级密码次数)>
+#IF
+CHECKVAR HUMAN 二级密码次数 ? $(二级密码限制错误次数)
+EQUAL D9 0
+#ACT
+MESSAGEBOX 对不起，您已经累积输入密码错误（<$HUMAN(二级密码次数)>）次。\系统将自动踢您下线，以后每次登陆均只有一次输入密码的机会。\更改密码可以清空此数值，请到二级密码特使处更改密码。
+KICK
+BREAK
+#SAY
+密码输入错误次数过多，请小退后重新登陆。\ \
+<COLOR=clFuchsia 注：密码中如包含字母不区分大小写>\ \
+您已经输入密码错误（<$HUMAN(二级密码次数)>）次，系统自动踢您下线。\
+#IF
+EQUAL D9 0
+#ACT
+MESSAGEBOX 对不起，您的密码输入有误，请重新输入！\您已经累积输入密码错误（<$HUMAN(二级密码次数)>）次！\累计输入错误达到$(二级密码限制错误次数)次将踢您下线！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#SAY
+对不起，您的密码输入有误，请重新选择输入！\
+<COLOR=clFuchsia 注：密码中如包含字母不区分大小写>\
+您已经输入密码错误（<$HUMAN(二级密码次数)>）次，达到$(二级密码限制错误次数)次系统自动踢您下线。\ \ \
+【<重新选择二级密码/@Mir2m2二级密码脚本NPC>】　　　　【<找回二级密码/@Mir2m2找回二级密码>】
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+CALCVAR HUMAN 二级密码验证 = 2
+#SAY
+为了防止木马盗号事件为玩家造成损失，现在特采用双密码验证登\
+陆，当玩家登陆IP与之前登陆IP不同时会锁定玩家角色，需输入二\
+次密码解锁。现在检测你没有输入密码，请点击下面的设置密码设\
+置。密码可以为数字和字母的组合，<COLOR=clRed 密码位数最少设置$(二级密码最少设置位数)位！！>\
+<COLOR=clFuchsia 请玩家不要将二次密码设置成与登陆密码一致！>\
+设置好之后请不要泄漏给任何人。<COLOR=$00A55200 注：密码中如包含字母不区分大小写>\
+原密码验证通过，请输入新密码..<COLOR=clFuchsia 注：密码中如包含字母不区分大小写>\ \
+<输入新密码/@Mir2m2二级密码重置输入>　　　　　　　　　　　　　<返回/@Mir2m2二级密码脚本NPC>
+
+[@Mir2m2二级密码重置输入]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码跳转 = @Mir2m2二级密码重置NPC
+CALCVAR HUMAN 二级密码选择 = 5
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+DELAYGOTO 1 @Mir2m2二级密码脚本NPC
+
+[@Mir2m2二级密码重置NPC]
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MESSAGEBOX 对不起，您还没有设置二级密码！\　\为了您的帐号安全，请先设置二级密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码验证 < 2
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+BREAK
+#SAY
+对不起，请先验证原密码，才能进行新密码设置。\ \ \
+<COLOR=clFuchsia 注：密码中如包含字母不区分大小写>\ \ \
+
+<验证原密码/@Mir2m2二级密码验证输入>　　　　　　　　　　　　　<返回/@Mir2m2二级密码脚本NPC>
+
+#IF
+CHECKVAR HUMAN 二级密码输入1 = 
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MESSAGEBOX 您还没有输入密码！\　\请先选择输入你要设置的密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码输入6 = 0
+CHECKVAR HUMAN 二级密码输入7 = 0
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MESSAGEBOX 您还没有输入密码！\　\请先选择输入你要设置的密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CheckStringList ..\QuestDiary\Mir2m2二级密码配置(免费脚本群.101529177)\Mir2m2二级禁止使用密码.ini <$HUMAN(二级密码输入1)> HardDisk
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MESSAGEBOX 对不起，此密码【<$HUMAN(二级密码输入1)>】过于简单，禁止使用！\　\请勿设置所有位数相同或连续数字的密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#ELSEACT
+GETSTRLENGTH <$HUMAN(二级密码输入1)> D7
+#IF
+SMALL D7 $(二级密码最少设置位数)
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MOV D7 0
+MESSAGEBOX 对不起，密码最少要设置【$(二级密码最少设置位数)位】，请重新选择！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+CALCVAR HUMAN 二级密码验证 = 1
+CALCVAR HUMAN 二级密码密码 = <$HUMAN(二级密码输入6)>#<$HUMAN(二级密码输入7)>
+CALCVAR HUMAN 二级密码次数 = 0
+SETMISSION - $(二级密码占用任务D1)
+MOV D9 <$HUMAN(二级密码输入6)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+SETMISSION - $(二级密码占用任务A1)
+SETMISSION - $(二级密码占用任务A2)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务A1) 1
+SETMISSION ^ $(二级密码占用任务A1) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务A2) 1
+SETMISSION ^ $(二级密码占用任务A2) <$STR(D8)>
+MOV D8 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$HUMAN(二级密码输入7)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+SETMISSION - $(二级密码占用任务A3)
+SETMISSION - $(二级密码占用任务A4)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务A3) 1
+SETMISSION ^ $(二级密码占用任务A3) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务A4) 1
+SETMISSION ^ $(二级密码占用任务A4) <$STR(D8)>
+MOV D8 0
+#IF
+CHECKVAR HUMAN 二级密码IP号1 = 0
+#ACT
+GOTO @Mir2m2二级密码数据IP号
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码IP号0 = <$HUMAN(二级密码IP号1)>
+MOV D9 <$HUMAN(二级密码IP号0)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+MOV D7 0
+SETMISSION - $(二级密码占用任务B1)
+SETMISSION - $(二级密码占用任务B2)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务B1) 1
+SETMISSION ^ $(二级密码占用任务B1) <$STR(D9)>
+MOV D9 0
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务B2) 1
+SETMISSION ^ $(二级密码占用任务B2) <$STR(D8)>
+MOV D8 0
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码输入3 = <$HUMAN(二级密码输入1)>
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+SENDMSG 6 恭喜您！您成功修改二级密码为：【<$HUMAN(二级密码输入3)>】
+#SAY
+恭喜您成功修改了二级密码密码。\ \
+当前密码为：<$HUMAN(二级密码输入3)>\ \
+密码输入错误次数清零。\ \
+<返回./@Mir2m2二级密码脚本NPC>\
+<退出./@exit>
+
+[@Mir2m2二级密码重输]
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+GOTO @Mir2m2二级密码脚本NPC
+
+[@Mir2m2二级密码０]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + 0
+CALCVAR HUMAN 二级密码输入4 = 1
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码１]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + 1
+CALCVAR HUMAN 二级密码输入4 = 2
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码２]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + 2
+CALCVAR HUMAN 二级密码输入4 = 3
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码３]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + 3
+CALCVAR HUMAN 二级密码输入4 = 4
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码４]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + 4
+CALCVAR HUMAN 二级密码输入4 = 5
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码５]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + 5
+CALCVAR HUMAN 二级密码输入4 = 6
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码６]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + 6
+CALCVAR HUMAN 二级密码输入4 = 7
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码７]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + 7
+CALCVAR HUMAN 二级密码输入4 = 8
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码８]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + 8
+CALCVAR HUMAN 二级密码输入4 = 9
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码９]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + 9
+CALCVAR HUMAN 二级密码输入4 = 10
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ａ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + A
+CALCVAR HUMAN 二级密码输入4 = 11
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｂ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + B
+CALCVAR HUMAN 二级密码输入4 = 12
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｃ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + C
+CALCVAR HUMAN 二级密码输入4 = 13
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｄ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + D
+CALCVAR HUMAN 二级密码输入4 = 14
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｅ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + E
+CALCVAR HUMAN 二级密码输入4 = 15
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｆ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + F
+CALCVAR HUMAN 二级密码输入4 = 16
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｇ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + G
+CALCVAR HUMAN 二级密码输入4 = 17
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｈ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + H
+CALCVAR HUMAN 二级密码输入4 = 18
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｉ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + I
+CALCVAR HUMAN 二级密码输入4 = 19
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｊ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + J
+CALCVAR HUMAN 二级密码输入4 = 20
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｋ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + K
+CALCVAR HUMAN 二级密码输入4 = 21
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｌ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + L
+CALCVAR HUMAN 二级密码输入4 = 22
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｍ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + M
+CALCVAR HUMAN 二级密码输入4 = 23
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｎ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + N
+CALCVAR HUMAN 二级密码输入4 = 24
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｏ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + O
+CALCVAR HUMAN 二级密码输入4 = 25
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｐ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + P
+CALCVAR HUMAN 二级密码输入4 = 26
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｑ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + Q
+CALCVAR HUMAN 二级密码输入4 = 27
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｒ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + R
+CALCVAR HUMAN 二级密码输入4 = 28
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｓ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + S
+CALCVAR HUMAN 二级密码输入4 = 29
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｔ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + T
+CALCVAR HUMAN 二级密码输入4 = 30
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｕ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + U
+CALCVAR HUMAN 二级密码输入4 = 31
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｖ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + V
+CALCVAR HUMAN 二级密码输入4 = 32
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｗ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + W
+CALCVAR HUMAN 二级密码输入4 = 33
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｘ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + X
+CALCVAR HUMAN 二级密码输入4 = 34
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｙ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + Y
+CALCVAR HUMAN 二级密码输入4 = 35
+GOTO @Mir2m2二级密码输入判断
+[@Mir2m2二级密码Ｚ]
+#ACT
+CALCVAR HUMAN 二级密码输入1 + Z
+CALCVAR HUMAN 二级密码输入4 = 35
+GOTO @Mir2m2二级密码输入判断
+
+[@Mir2m2二级密码输入判断]
+#IF
+CHECKVAR HUMAN 二级密码输入4 > 0
+CHECKVAR HUMAN 二级密码输入4 < 36
+#ELSEACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+SENDMSG 6 非法操作，请勿使用外挂跳转！
+CLOSE
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码输入1 = 
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+SENDMSG 6 非法操作，请勿使用外挂跳转！
+CLOSE
+BREAK
+#ELSEACT
+GETSTRLENGTH <$HUMAN(二级密码输入1)> D9
+CALCVAR HUMAN 二级密码输入5 + 1
+#IF
+CHECKVAR HUMAN 二级密码输入5 = <$STR(D9)>
+#ELSEACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+SENDMSG 6 非法操作，请勿使用外挂跳转！
+CLOSE
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码输入5 > 12
+#ACT
+SENDMSG 6 二级密码最大长度为12位，大于12位只有前12位生效！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码输入4 - 1
+MOV D9 <$HUMAN(二级密码输入5)>
+DEC D9 1
+MOV D8 <$STR(D9)>
+DIV D8 6
+MUL D8 6
+INC D9 1
+INC D8 1
+DEC D9 <$STR(D8)>
+MOV D8 1
+#IF
+EQUAL D9 0
+CHECKVAR HUMAN 二级密码输入4 = 0
+#ACT
+CALCVAR HUMAN 二级密码输入4 = 1
+#IF
+LARGE D9 0
+#ACT
+DEC D9 1
+MUL D8 35
+#IF
+LARGE D9 0
+#ACT
+DEC D9 1
+MUL D8 35
+#IF
+LARGE D9 0
+#ACT
+DEC D9 1
+MUL D8 35
+#IF
+LARGE D9 0
+#ACT
+DEC D9 1
+MUL D8 35
+#IF
+LARGE D9 0
+#ACT
+DEC D9 1
+MUL D8 35
+#IF
+CHECKLEVELEX > 0
+#ACT
+MUL D8 <$HUMAN(二级密码输入4)>
+INC D8 1
+#IF
+CHECKVAR HUMAN 二级密码输入5 > 6
+#ACT
+CALCVAR HUMAN 二级密码输入7 + <$STR(D8)>
+CALCVAR HUMAN 二级密码输入7 - 1
+#ELSEACT
+CALCVAR HUMAN 二级密码输入6 + <$STR(D8)>
+CALCVAR HUMAN 二级密码输入6 - 1
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码输入2 + $(二级密码输入显示符号)
+GOTO @Mir2m2二级密码脚本NPC
+
+[@Mir2m2二级密码确定]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码跳转 = 
+CALCVAR HUMAN 二级密码选择 = 0
+#IF
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MESSAGEBOX 对不起，您还没有设置二级密码！\　\为了您的帐号安全，请先设置二级密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码验证 = 0
+CHECKVAR HUMAN 二级密码次数 ? $(二级密码限制错误次数)
+ONLINELONGMIN < $(二级密码错误等待时间)
+#ACT
+MESSAGEBOX 您已经累积输入密码错误（<$HUMAN(二级密码次数)>）次。\为防止盗号者用外挂扫描密码，每次登陆均需要在线等待$(二级密码错误等待时间)分钟后才能输入密码。\你当前已在线：<$LOGINLONG>，请稍后再验证密码！
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码验证 = 0
+CHECKVAR HUMAN 二级密码输入6 = 0
+CHECKVAR HUMAN 二级密码输入7 = 0
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+MESSAGEBOX 对不起，您还没有选择密码！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码验证 = 0
+CHECKVAR HUMAN 二级密码次数 > 65530
+#ACT
+CALCVAR HUMAN 二级密码次数 = 65530
+#IF
+CHECKVAR HUMAN 二级密码验证 = 0
+CHECKVAR HUMAN 二级密码密码 = <$HUMAN(二级密码输入6)>#<$HUMAN(二级密码输入7)>
+#ACT
+CALCVAR HUMAN 二级密码验证 = 1
+CALCVAR HUMAN 二级密码输入3 = <$HUMAN(二级密码输入1)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码输入1 = 
+CALCVAR HUMAN 二级密码输入2 = 
+CALCVAR HUMAN 二级密码输入4 = 0
+CALCVAR HUMAN 二级密码输入5 = 0
+CALCVAR HUMAN 二级密码输入6 = 0
+CALCVAR HUMAN 二级密码输入7 = 0
+CALCVAR HUMAN 二级密码次数 + 1
+SETMISSION + $(二级密码占用任务D1) 1
+SETMISSION ^ $(二级密码占用任务D1) <$HUMAN(二级密码次数)>
+#IF
+CHECKVAR HUMAN 二级密码验证 = 0
+CHECKVAR HUMAN 二级密码次数 ? $(二级密码限制错误次数)
+#ACT
+MESSAGEBOX 对不起，您已经累积输入密码错误（<$HUMAN(二级密码次数)>）次。\系统将自动踢您下线，以后每次登陆均只有一次输入密码的机会。\更改密码可以清空此数值，请到二级密码特使处更改密码。
+KICK
+BREAK
+#SAY
+密码输入错误次数过多，请小退后重新登陆。\ \
+<COLOR=clFuchsia 注：密码中如包含字母不区分大小写>\ \
+您已经输入密码错误（<$HUMAN(二级密码次数)>）次，系统自动踢您下线。\
+#IF
+CHECKVAR HUMAN 二级密码验证 = 0
+#ACT
+MESSAGEBOX 对不起，您的密码输入有误，请重新输入！\您已经累积输入密码错误（<$HUMAN(二级密码次数)>）次！\累计输入错误达到$(二级密码限制错误次数)次将踢您下线！
+GOTO @Mir2m2二级密码脚本NPC
+BREAK
+#SAY
+对不起，您的密码输入有误，请重新选择输入！\
+<COLOR=clFuchsia 注：密码中如包含字母不区分大小写>\
+您已经输入密码错误（<$HUMAN(二级密码次数)>）次，达到$(二级密码限制错误次数)次系统自动踢您下线。\ \ \
+【<重新选择二级密码/@Mir2m2二级密码脚本NPC>】　　　　【<找回二级密码/@Mir2m2找回二级密码>】
+
+#IF
+CHECKVAR HUMAN 二级密码IP号1 = 0
+#ACT
+GOTO @Mir2m2二级密码数据IP号
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$HUMAN(二级密码IP号1)>
+MOV D8 <$STR(D9)>
+DIV D8 65536
+MOV D7 <$STR(D8)>
+MUL D7 65536
+INC D7 1
+INC D9 1
+DEC D9 <$STR(D7)>
+SETMISSION - $(二级密码占用任务B1)
+SETMISSION - $(二级密码占用任务B2)
+#IF
+LARGE D9 0
+#ACT
+SETMISSION + $(二级密码占用任务B1) 1
+SETMISSION ^ $(二级密码占用任务B1) <$STR(D9)>
+#IF
+LARGE D8 0
+#ACT
+SETMISSION + $(二级密码占用任务B2) 1
+SETMISSION ^ $(二级密码占用任务B2) <$STR(D8)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 二级密码次数 = 0
+SETMISSION - $(二级密码占用任务D1)
+SENDMSG 7 二级密码密码验证通过，当前IP地址已经加入到常用IP列表中。
+sendmsg 7 如果您是网吧用户，为了防止同网吧盗号现象，您可以到二级密码特使处设置下次登陆时需要输入二级密码方能正常游戏。
+MOV D9 0
+#IF
+CHECKVAR HUMAN 二级密码地图 = 
+#ACT
+MOV D9 1
+#IF
+CHECKVAR HUMAN 二级密码地图 = $(二级密码IP错进入地图)
+#ACT
+MOV D9 1
+#IF
+CHECKVAR HUMAN 二级密码地图 = $(二级密码初次设置地图)
+#ACT
+MOV D9 1
+#IF
+EQUAL D9 0
+#ACT
+MAPMOVE <$HUMAN(二级密码地图)> <$HUMAN(二级密码坐标X)> <$HUMAN(二级密码坐标Y)>
+#ELSEACT
+MOV D9 0
+MAPMOVE 3 330 330
+#IF
+ISONMAP $(二级密码IP错进入地图)
+#ACT
+MAPMOVE 3 330 330
+#IF
+ISONMAP $(二级密码初次设置地图)
+#ACT
+MAPMOVE 3 330 330
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 
+#IF
+CHECKVAR HUMAN 二级密码元宝 > 0
+#ACT
+GAMEGOLD + <$HUMAN(二级密码元宝)>
+INC S10 已解除冻结元宝：<$HUMAN(二级密码元宝)>个　
+CALCVAR HUMAN 二级密码元宝 = 0
+SETMISSION - $(二级密码占用任务G1)
+SETMISSION - $(二级密码占用任务G2)
+#IF
+CHECKVAR HUMAN 二级密码金币 > 0
+#ACT
+GIVE 金币 <$HUMAN(二级密码金币)>
+INC S10 已解除冻结金币：<$HUMAN(二级密码金币)>　
+CALCVAR HUMAN 二级密码金币 = 0
+SETMISSION - $(二级密码占用任务H1)
+SETMISSION - $(二级密码占用任务H2)
+#IF
+CHECKVAR HUMAN 二级密码金刚石 > 0
+#ACT
+GAMEDIAMOND + <$HUMAN(二级密码金刚石)>
+INC S10 已解除冻结$(二级密码金刚石变量名)：<$HUMAN(二级密码金刚石)>　
+CALCVAR HUMAN 二级密码金刚石 = 0
+SETMISSION - $(二级密码占用任务I1)
+SETMISSION - $(二级密码占用任务I2)
+#IF
+EQUAL S10 
+#ELSEACT
+sendmsg 6 <$STR(S10)>
+MOV S10 
+
+[@Mir2m2二级密码固定常量加载]
+#CALL [\Mir2m2二级密码配置(免费脚本群.101529177)\Mir2m2二级密码固定常量.ini] @Mir2m2二级密码固定常量
+#CALL [\Mir2m2二级密码配置(免费脚本群.101529177)\Mir2m2二级密码数据.txt] @Mir2m2二级密码数据读取
+#CALL [\Mir2m2二级密码配置(免费脚本群.101529177)\Mir2m2二级密码数据.txt] @Mir2m2二级密码数据输入
+}

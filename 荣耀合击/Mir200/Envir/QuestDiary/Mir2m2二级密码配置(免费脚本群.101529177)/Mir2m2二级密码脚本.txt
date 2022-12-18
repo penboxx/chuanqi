@@ -1,0 +1,632 @@
+[@Mir2m2二级密码脚本QM]
+{
+#IF
+CHECKLEVELEX > 0
+#ACT
+SETOFFLINEPLAY ON
+VAR String  HUMAN 二级密码密码
+VAR Integer HUMAN 二级密码IP号0
+VAR Integer HUMAN 二级密码IP号1
+VAR String  HUMAN 二级密码机器0
+VAR Integer HUMAN 二级密码机器1
+VAR Integer HUMAN 二级密码机器2
+VAR Integer HUMAN 二级密码机器3
+VAR Integer HUMAN 二级密码次数
+VAR Integer HUMAN 二级密码模式
+VAR Integer HUMAN 二级密码元宝
+VAR Integer HUMAN 二级密码金币
+VAR Integer HUMAN 二级密码金刚石
+VAR String  HUMAN 二级密码问题
+VAR String  HUMAN 二级密码答案
+VAR String  HUMAN 二级密码生日
+VAR String  HUMAN 二级密码输入1
+VAR String  HUMAN 二级密码输入2
+VAR String  HUMAN 二级密码输入3
+VAR Integer HUMAN 二级密码输入4
+VAR Integer HUMAN 二级密码输入5
+VAR Integer HUMAN 二级密码输入6
+VAR Integer HUMAN 二级密码输入7
+VAR Integer HUMAN 二级密码输入8
+VAR String  HUMAN 二级密码输入9
+VAR String  HUMAN 二级密码输入10
+VAR Integer HUMAN 二级密码选择
+VAR Integer HUMAN 二级密码验证
+VAR String  HUMAN 二级密码跳转
+VAR String  HUMAN 二级密码地图
+VAR Integer HUMAN 二级密码坐标X
+VAR Integer HUMAN 二级密码坐标Y
+MOV S10 $(二级密码保护是否开启)
+
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+LOADVAR HUMAN 二级密码元宝 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+LOADVAR HUMAN 二级密码金币 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+LOADVAR HUMAN 二级密码金刚石 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+checkvar human 二级密码元宝 > 0
+#ACT
+GAMEGOLD + <$HUMAN(二级密码元宝)>
+CALCVAR HUMAN 二级密码元宝 = 0
+SAVEVAR HUMAN 二级密码元宝 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+checkvar human 二级密码金币 > 0
+#ACT
+GIVE 金币 <$HUMAN(二级密码金币)>
+CALCVAR HUMAN 二级密码金币 = 0
+SAVEVAR HUMAN 二级密码金币 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+checkvar human 二级密码金刚石 > 0
+#ACT
+GAMEDIAMOND + <$HUMAN(二级密码金刚石)>
+CALCVAR HUMAN 二级密码金刚石 = 0
+SAVEVAR HUMAN 二级密码金刚石 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+
+
+#IF
+EQUAL S10 是
+CHECKNAMELIST ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级清除密码.txt HardDisk
+#ACT
+CALCVAR HUMAN 二级密码生日 = 
+CALCVAR HUMAN 二级密码问题 = 
+CALCVAR HUMAN 二级密码答案 = 
+SAVEVAR HUMAN 二级密码生日 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+SAVEVAR HUMAN 二级密码问题 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+SAVEVAR HUMAN 二级密码答案 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+CHECKNAMELIST ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级清除密码.txt HardDisk
+#ACT
+DELNAMELIST ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级清除密码.txt HardDisk
+SETMISSION - $(二级密码占用任务A1)
+SETMISSION - $(二级密码占用任务A2)
+SETMISSION - $(二级密码占用任务A3)
+SETMISSION - $(二级密码占用任务A4)
+SETMISSION - $(二级密码占用任务B1)
+SETMISSION - $(二级密码占用任务B2)
+SETMISSION - $(二级密码占用任务C1)
+SETMISSION - $(二级密码占用任务C2)
+SETMISSION - $(二级密码占用任务C3)
+SETMISSION - $(二级密码占用任务C4)
+SETMISSION - $(二级密码占用任务C5)
+SETMISSION - $(二级密码占用任务C6)
+SETMISSION - $(二级密码占用任务D1)
+SETMISSION - $(二级密码占用任务F1)
+CALCVAR HUMAN 二级密码次数 = 0
+CALCVAR HUMAN 二级密码模式 = 0
+CALCVAR HUMAN 二级密码IP号0 = 0
+CALCVAR HUMAN 二级密码机器0 = 0#0#0
+CALCVAR HUMAN 二级密码密码 = 0#0
+#ELSEACT
+MOV D6 $(二级密码占用任务A1)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MOV D9 <$STR(D7)>
+MOV D6 $(二级密码占用任务A2)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MUL D7 65536
+INC D7 1
+INC D9 <$STR(D7)>
+DEC D9 1
+MOV S10 <$STR(D9)>#
+MOV D6 $(二级密码占用任务A3)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MOV D9 <$STR(D7)>
+MOV D6 $(二级密码占用任务A4)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MUL D7 65536
+INC D7 1
+INC D9 <$STR(D7)>
+DEC D9 1
+INC S10 <$STR(D9)>
+CALCVAR HUMAN 二级密码密码 = <$STR(S10)>
+MOV S10
+
+#IF
+CHECKLEVELEX < $(二级密码强制设置等级)
+checkvar human 二级密码密码 = 0#0
+#ACT
+SENDMSG 6 ★你还没有设置二级密码，请及时去NPC(帐号二代密保)处设置，使你的帐号更安全★ 251 249 20
+sendmsg 6 ═════════════════════════════
+sendmsg 6 您还没有设置二级密码，请尽快前往土城(帐号二代密保)处设置！
+sendmsg 6 您还没有设置二级密码，请尽快前往土城(帐号二代密保)处设置！
+sendmsg 6 您还没有设置二级密码，请尽快前往土城(帐号二代密保)处设置！
+sendmsg 6 ═════════════════════════════
+break
+#ELSEACT
+MOV D6 $(二级密码占用任务F1)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+CALCVAR HUMAN 二级密码模式 = <$STR(D7)>
+MOV S16 由于检测到您目前的【登录信息】与上次不同。\请点击NPC输入您的二级密码以正常游戏。
+MOV D10 0
+MOV D11 0
+#IF
+CHECKVAR HUMAN 二级密码模式 > 0
+CHECKVAR HUMAN 二级密码模式 < 5
+#ELSEACT
+MOV S16 由于你设置每次上线都需要输入二级密码。\请点击NPC输入您的二级密码以正常游戏。
+CALCVAR HUMAN 二级密码模式 = $(二级密码默认输入模式)
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 <$HWID>
+DEC S10 1 2
+#IF
+CHECKVAR HUMAN 二级密码模式 > 1
+CHECKVAR HUMAN 二级密码模式 < 4
+EQUAL S10 HWID>
+#ACT
+CALCVAR HUMAN 二级密码模式 = 1
+#IF
+checkvar human 二级密码模式 = 1
+#ACT
+MOV D10 1
+MOV S16 由于检测到您目前的【IP地址】与上次不同。\请点击NPC输入您的二级密码以正常游戏。
+#IF
+checkvar human 二级密码模式 = 2
+#ACT
+MOV D11 1
+MOV S16 由于检测到您的【机器码】与上次不同（可找NPC重新绑定机器码）。\请点击NPC输入您的二级密码以正常游戏。
+#IF
+checkvar human 二级密码模式 = 3
+#ACT
+MOV D10 1
+MOV D11 1
+MOV S16 由于检测到您的【IP地址+机器码】与上次不同（可找NPC重新绑定机器码）。\请点击NPC输入您的二级密码以正常游戏。
+#IF
+checkvar human 二级密码模式 = 4
+#ACT
+MOV S16 由于你设置每次上线都需要输入二级密码。\请点击NPC输入您的二级密码以正常游戏。
+#IF
+EQUAL D10 1
+#ACT
+MOV D6 $(二级密码占用任务B1)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MOV D9 <$STR(D7)>
+MOV D6 $(二级密码占用任务B2)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MUL D7 65536
+INC D7 1
+INC D9 <$STR(D7)>
+DEC D9 1
+CALCVAR HUMAN 二级密码IP号0 = <$STR(D9)>
+GOTO @Mir2m2二级密码数据IP号
+MOV D8 0
+#IF
+EQUAL D11 1
+#ACT
+MOV D6 $(二级密码占用任务C1)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MOV D9 <$STR(D7)>
+MOV D6 $(二级密码占用任务C2)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MUL D7 65536
+INC D7 1
+INC D9 <$STR(D7)>
+DEC D9 1
+MOV S10 <$STR(D9)>
+INC S10 #
+MOV D6 $(二级密码占用任务C3)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MOV D9 <$STR(D7)>
+MOV D6 $(二级密码占用任务C4)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MUL D7 65536
+INC D7 1
+INC D9 <$STR(D7)>
+DEC D9 1
+INC S10 <$STR(D9)>
+INC S10 #
+MOV D6 $(二级密码占用任务C5)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MOV D9 <$STR(D7)>
+MOV D6 $(二级密码占用任务C6)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MUL D7 65536
+INC D7 1
+INC D9 <$STR(D7)>
+DEC D9 1
+INC S10 <$STR(D9)>
+CALCVAR HUMAN 二级密码机器0 = <$STR(S10)>
+MOV S10
+GOTO @Mir2m2二级密码数据机器
+CALCVAR HUMAN 二级密码机器1 = <$STR(D3)>
+CALCVAR HUMAN 二级密码机器2 = <$STR(D4)>
+CALCVAR HUMAN 二级密码机器3 = <$STR(D5)>
+MOV D3 0
+MOV D4 0
+MOV D5 0
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S11 
+MOV S10 <$HUMAN(二级密码机器1)>
+INC S10 #
+INC S10 <$HUMAN(二级密码机器2)>
+INC S10 #
+INC S10 <$HUMAN(二级密码机器3)>
+#IF
+ISONMAP $(二级密码IP错进入地图)
+#ACT
+MOV S11 免费脚本群:101529177
+#IF
+ISONMAP $(二级密码初次设置地图)
+#ACT
+MOV S11 免费脚本群:101529177
+#IF
+EQUAL S11 
+checkvar human 二级密码模式 = 1
+checkvar human 二级密码IP号0 = <$HUMAN(二级密码IP号1)>
+#ACT
+CALCVAR HUMAN 二级密码验证 = 1
+sendmsg 7 本次登陆与您上次登陆的【IP地址】符合，通过验证。
+break
+#IF
+EQUAL S11 
+checkvar human 二级密码模式 = 2
+checkvar human 二级密码机器0 = <$STR(S10)>
+#ACT
+MOV S10 
+CALCVAR HUMAN 二级密码验证 = 1
+sendmsg 7 本次登陆与您上次登陆的【机器码】符合，通过验证。
+break
+#IF
+EQUAL S11 
+checkvar human 二级密码模式 = 3
+checkvar human 二级密码IP号0 = <$HUMAN(二级密码IP号1)>
+checkvar human 二级密码机器0 = <$STR(S10)>
+#ACT
+MOV S10 
+CALCVAR HUMAN 二级密码验证 = 1
+sendmsg 7 本次登陆与您上次登陆的【IP地址+机器码】符合，通过验证。
+break
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D6 $(二级密码占用任务D1)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+CALCVAR HUMAN 二级密码次数 = <$STR(D7)>
+MOV D6 $(二级密码占用任务G1)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MOV D9 <$STR(D7)>
+MOV D6 $(二级密码占用任务G2)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MUL D7 65536
+INC D7 1
+INC D9 <$STR(D7)>
+DEC D9 1
+CALCVAR HUMAN 二级密码元宝 = <$STR(D9)>
+MOV D6 $(二级密码占用任务H1)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MOV D9 <$STR(D7)>
+MOV D6 $(二级密码占用任务H2)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MUL D7 65536
+INC D7 1
+INC D9 <$STR(D7)>
+DEC D9 1
+CALCVAR HUMAN 二级密码金币 = <$STR(D9)>
+MOV D6 $(二级密码占用任务I1)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MOV D9 <$STR(D7)>
+MOV D6 $(二级密码占用任务I2)
+MOV D7 0
+GOTO @Mir2m2二级密码数据数量
+MUL D7 65536
+INC D7 1
+INC D9 <$STR(D7)>
+DEC D9 1
+CALCVAR HUMAN 二级密码金刚石 = <$STR(D9)>
+MOV S11 
+$(二级密码上线冻结元宝)#IF
+$(二级密码上线冻结元宝)CHECKGAMEGOLD > 0
+$(二级密码上线冻结元宝)#ACT
+$(二级密码上线冻结元宝)CALCVAR HUMAN 二级密码元宝 + <$GAMEGOLD>
+$(二级密码上线冻结元宝)GAMEGOLD = 0
+$(二级密码上线冻结金币)#IF
+$(二级密码上线冻结金币)CHECKGOLD 1
+$(二级密码上线冻结金币)#ACT
+$(二级密码上线冻结金币)MOV D9 2
+$(二级密码上线冻结金币)#IF
+$(二级密码上线冻结金币)CHECKGOLD 10
+$(二级密码上线冻结金币)#ACT
+$(二级密码上线冻结金币)MOV D9 3
+$(二级密码上线冻结金币)#IF
+$(二级密码上线冻结金币)CHECKGOLD 100
+$(二级密码上线冻结金币)#ACT
+$(二级密码上线冻结金币)MOV D9 4
+$(二级密码上线冻结金币)#IF
+$(二级密码上线冻结金币)CHECKGOLD 1000
+$(二级密码上线冻结金币)#ACT
+$(二级密码上线冻结金币)MOV D9 5
+$(二级密码上线冻结金币)#IF
+$(二级密码上线冻结金币)CHECKGOLD 10000
+$(二级密码上线冻结金币)#ACT
+$(二级密码上线冻结金币)MOV D9 6
+$(二级密码上线冻结金币)#IF
+$(二级密码上线冻结金币)CHECKGOLD 100000
+$(二级密码上线冻结金币)#ACT
+$(二级密码上线冻结金币)MOV D9 7
+$(二级密码上线冻结金币)#IF
+$(二级密码上线冻结金币)CHECKGOLD 1000000
+$(二级密码上线冻结金币)#ACT
+$(二级密码上线冻结金币)MOV D9 8
+$(二级密码上线冻结金币)#IF
+$(二级密码上线冻结金币)CHECKGOLD 10000000
+$(二级密码上线冻结金币)#ACT
+$(二级密码上线冻结金币)MOV D9 9
+$(二级密码上线冻结金币)#IF
+$(二级密码上线冻结金币)CHECKGOLD 100000000
+$(二级密码上线冻结金币)#ACT
+$(二级密码上线冻结金币)MOV D9 10
+$(二级密码上线冻结金币)#IF
+$(二级密码上线冻结金币)CHECKGOLD 1000000000
+$(二级密码上线冻结金币)#ACT
+$(二级密码上线冻结金币)MOV D9 11
+$(二级密码上线冻结金币)#IF
+$(二级密码上线冻结金币)CHECKGOLD 1
+$(二级密码上线冻结金币)#ACT
+$(二级密码上线冻结金币)MOV S13 <$GOLDCOUNT>
+$(二级密码上线冻结金币)DEC S13 <$STR(D9)> 30
+$(二级密码上线冻结金币)CALCVAR HUMAN 二级密码金币 + <$STR(S13)>
+$(二级密码上线冻结金币)TAKE 金币 <$STR(S13)>
+$(二级密码上线冻金刚石)#IF
+$(二级密码上线冻金刚石)CHECKGAMEDIAMOND > 0
+$(二级密码上线冻金刚石)#ACT
+$(二级密码上线冻金刚石)CALCVAR HUMAN 二级密码金刚石 + <$GAMEDIAMOND>
+$(二级密码上线冻金刚石)GAMEDIAMOND = 0
+$(二级密码上线冻结元宝)#IF
+$(二级密码上线冻结元宝)checkvar human 二级密码元宝 > 0
+$(二级密码上线冻结元宝)#ACT
+$(二级密码上线冻结元宝)MOV D9 <$HUMAN(二级密码元宝)>
+$(二级密码上线冻结元宝)MOV D8 <$STR(D9)>
+$(二级密码上线冻结元宝)DIV D8 65536
+$(二级密码上线冻结元宝)MOV D7 <$STR(D8)>
+$(二级密码上线冻结元宝)MUL D7 65536
+$(二级密码上线冻结元宝)INC D7 1
+$(二级密码上线冻结元宝)INC D9 1
+$(二级密码上线冻结元宝)DEC D9 <$STR(D7)>
+$(二级密码上线冻结元宝)SETMISSION - $(二级密码占用任务G1)
+$(二级密码上线冻结元宝)SETMISSION - $(二级密码占用任务G2)
+$(二级密码上线冻结元宝)INC S11 已冻结元宝：<$HUMAN(二级密码元宝)>个　
+$(二级密码上线冻结元宝)#IF
+$(二级密码上线冻结元宝)checkvar human 二级密码元宝 > 0
+$(二级密码上线冻结元宝)LARGE D9 0
+$(二级密码上线冻结元宝)#ACT
+$(二级密码上线冻结元宝)SETMISSION + $(二级密码占用任务G1) 1
+$(二级密码上线冻结元宝)SETMISSION ^ $(二级密码占用任务G1) <$STR(D9)>
+$(二级密码上线冻结元宝)#IF
+$(二级密码上线冻结元宝)checkvar human 二级密码元宝 > 0
+$(二级密码上线冻结元宝)LARGE D8 0
+$(二级密码上线冻结元宝)#ACT
+$(二级密码上线冻结元宝)SETMISSION + $(二级密码占用任务G2) 1
+$(二级密码上线冻结元宝)SETMISSION ^ $(二级密码占用任务G2) <$STR(D8)>
+$(二级密码上线冻结金币)#IF
+$(二级密码上线冻结金币)checkvar human 二级密码金币 > 0
+$(二级密码上线冻结金币)#ACT
+$(二级密码上线冻结金币)MOV D9 <$HUMAN(二级密码金币)>
+$(二级密码上线冻结金币)MOV D8 <$STR(D9)>
+$(二级密码上线冻结金币)DIV D8 65536
+$(二级密码上线冻结金币)MOV D7 <$STR(D8)>
+$(二级密码上线冻结金币)MUL D7 65536
+$(二级密码上线冻结金币)INC D7 1
+$(二级密码上线冻结金币)INC D9 1
+$(二级密码上线冻结金币)DEC D9 <$STR(D7)>
+$(二级密码上线冻结金币)SETMISSION - $(二级密码占用任务H1)
+$(二级密码上线冻结金币)SETMISSION - $(二级密码占用任务H2)
+$(二级密码上线冻结金币)INC S11 已冻结金币：<$HUMAN(二级密码金币)>　
+$(二级密码上线冻结金币)#IF
+$(二级密码上线冻结金币)checkvar human 二级密码金币 > 0
+$(二级密码上线冻结金币)LARGE D9 0
+$(二级密码上线冻结金币)#ACT
+$(二级密码上线冻结金币)SETMISSION + $(二级密码占用任务H1) 1
+$(二级密码上线冻结金币)SETMISSION ^ $(二级密码占用任务H1) <$STR(D9)>
+$(二级密码上线冻结金币)#IF
+$(二级密码上线冻结金币)checkvar human 二级密码金币 > 0
+$(二级密码上线冻结金币)LARGE D8 0
+$(二级密码上线冻结金币)#ACT
+$(二级密码上线冻结金币)SETMISSION + $(二级密码占用任务H2) 1
+$(二级密码上线冻结金币)SETMISSION ^ $(二级密码占用任务H2) <$STR(D8)>
+$(二级密码上线冻金刚石)#IF
+$(二级密码上线冻金刚石)checkvar human 二级密码金刚石 > 0
+$(二级密码上线冻金刚石)#ACT
+$(二级密码上线冻金刚石)MOV D9 <$HUMAN(二级密码金刚石)>
+$(二级密码上线冻金刚石)MOV D8 <$STR(D9)>
+$(二级密码上线冻金刚石)DIV D8 65536
+$(二级密码上线冻金刚石)MOV D7 <$STR(D8)>
+$(二级密码上线冻金刚石)MUL D7 65536
+$(二级密码上线冻金刚石)INC D7 1
+$(二级密码上线冻金刚石)INC D9 1
+$(二级密码上线冻金刚石)DEC D9 <$STR(D7)>
+$(二级密码上线冻金刚石)SETMISSION - $(二级密码占用任务I1)
+$(二级密码上线冻金刚石)SETMISSION - $(二级密码占用任务I2)
+$(二级密码上线冻金刚石)INC S11 已冻结$(二级密码金刚石变量名)：<$HUMAN(二级密码金刚石)>个　
+$(二级密码上线冻金刚石)#IF
+$(二级密码上线冻金刚石)checkvar human 二级密码金刚石 > 0
+$(二级密码上线冻金刚石)LARGE D9 0
+$(二级密码上线冻金刚石)#ACT
+$(二级密码上线冻金刚石)SETMISSION + $(二级密码占用任务I1) 1
+$(二级密码上线冻金刚石)SETMISSION ^ $(二级密码占用任务I1) <$STR(D9)>
+$(二级密码上线冻金刚石)#IF
+$(二级密码上线冻金刚石)checkvar human 二级密码金刚石 > 0
+$(二级密码上线冻金刚石)LARGE D8 0
+$(二级密码上线冻金刚石)#ACT
+$(二级密码上线冻金刚石)SETMISSION + $(二级密码占用任务I2) 1
+$(二级密码上线冻金刚石)SETMISSION ^ $(二级密码占用任务I2) <$STR(D8)>
+#IF
+checkvar human 二级密码密码 = 0#0
+#ACT
+MOV S16 您还没有设置二级密码，请点击NPC设置二级密码才能正常游戏！
+MOV S10 $(二级密码初次设置地图)
+#ELSEACT
+MOV S10 $(二级密码IP错进入地图)
+#IF
+EQUAL S11 
+#ELSEACT
+INC S16 \　\<$STR(S11)>\　\输入二级密码验证通过后解除冻结！
+sendmsg 6 <$STR(S11)>（验证通过后解除冻结！）
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S11 
+#IF
+ISONMAP $(二级密码初次设置地图)
+#ACT
+MOV S11 免费脚本群:101529177
+#IF
+ISONMAP $(二级密码IP错进入地图)
+#ACT
+MOV S11 免费脚本群:101529177
+#IF
+EQUAL S11
+#ACT
+CALCVAR HUMAN 二级密码地图 = <$CURRENTMAP>
+CALCVAR HUMAN 二级密码坐标X = <$CURRENTX>
+CALCVAR HUMAN 二级密码坐标Y = <$CURRENTY>
+SAVEVAR HUMAN 二级密码地图 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆坐标.txt HardDisk
+SAVEVAR HUMAN 二级密码坐标X ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆坐标.txt HardDisk
+SAVEVAR HUMAN 二级密码坐标Y ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆坐标.txt HardDisk
+#ELSEACT
+LOADVAR HUMAN 二级密码地图 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆坐标.txt HardDisk
+LOADVAR HUMAN 二级密码坐标X ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆坐标.txt HardDisk
+LOADVAR HUMAN 二级密码坐标Y ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆坐标.txt HardDisk
+#IF
+ISONMAP <$STR(S10)>
+#ELSEACT
+mapmove <$STR(S10)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 100 @Mir2m2二级密码验证检测
+messagebox <$STR(S16)>
+
+[@Mir2m2二级密码验证检测]
+#IF
+ISONMAP $(二级密码IP错进入地图)
+#ACT
+DELAYGOTO 100 @Mir2m2二级密码验证检测
+BREAK
+#IF
+ISONMAP $(二级密码初次设置地图)
+#ACT
+DELAYGOTO 100 @Mir2m2二级密码验证检测
+BREAK
+#IF
+checkvar human 二级密码密码 = 0#0
+#act
+DELAYGOTO 100 @Mir2m2二级密码验证检测
+MAPMOVE $(二级密码初次设置地图)
+HUMANHP + 1000
+H.HUMANHP + 1000
+sendmsg 6 未验证二级密码不能离开本地图，系统已将您踢下线！请小退重新登录！
+messagebox 未验证二级密码不能离开本地图，系统已将您踢下线！\　\请小退重新登录！
+KICK
+BREAK
+#IF
+checkvar human 二级密码验证 > 0
+#act
+break
+#ELSEACT
+DELAYGOTO 100 @Mir2m2二级密码验证检测
+MAPMOVE $(二级密码IP错进入地图)
+HUMANHP + 1000
+H.HUMANHP + 1000
+sendmsg 6 未验证二级密码不能离开本地图，系统已将您踢下线！请小退重新登录！
+messagebox 未验证二级密码不能离开本地图，系统已将您踢下线！\　\请小退重新登录！
+KICK
+BREAK
+
+[@Mir2m2二级密码获取资料]
+#IF
+EQUAL $(二级密码占用变量A) <$USERNAME>
+#ELSEACT
+BREAK
+#IF
+CHECKVAR HUMAN 二级密码生日 = 
+#ACT
+LOADVAR HUMAN 二级密码生日 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+LOADVAR HUMAN 二级密码答案 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+LOADVAR HUMAN 二级密码问题 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.101529177)\Mir2m2二级登陆密码.txt HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV $(二级密码占用变量A) 二级密码生日：<$HUMAN(二级密码生日)>\二级密码问题：<$HUMAN(二级密码问题)>\二级密码答案：<$HUMAN(二级密码答案)>\
+
+[@Mir2m2二级密码固定常量加载]
+#CALL [\Mir2m2二级密码配置(免费脚本群.101529177)\Mir2m2二级密码固定常量.ini] @Mir2m2二级密码固定常量
+#CALL [\Mir2m2二级密码配置(免费脚本群.101529177)\Mir2m2二级密码数据.txt] @Mir2m2二级密码数据读取
+}
+
+[@Mir2m2二级密码脚本QF]
+{
+#IF
+CHECKVAR HUMAN 二级密码元宝 > 0
+#ACT
+GAMEGOLD + <$HUMAN(二级密码元宝)>
+CALCVAR HUMAN 二级密码元宝 = 0
+SETMISSION - $(二级密码占用任务G1)
+SETMISSION - $(二级密码占用任务G2)
+#IF
+CHECKVAR HUMAN 二级密码金币 > 0
+#ACT
+GIVE 金币 <$HUMAN(二级密码金币)>
+CALCVAR HUMAN 二级密码金币 = 0
+SETMISSION - $(二级密码占用任务H1)
+SETMISSION - $(二级密码占用任务H2)
+#IF
+CHECKVAR HUMAN 二级密码金刚石 > 0
+#ACT
+GAMEDIAMOND + <$HUMAN(二级密码金刚石)>
+CALCVAR HUMAN 二级密码金刚石 = 0
+SETMISSION - $(二级密码占用任务I1)
+SETMISSION - $(二级密码占用任务I2)
+#IF
+ISONMAP $(二级密码IP错进入地图)
+#ACT
+OFFLINE 65535 1 1
+KICK
+BREAK
+#IF
+ISONMAP $(二级密码初次设置地图)
+#ACT
+OFFLINE 65535 1 1
+KICK
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 $(二级密码下线挂机等级)
+#IF
+EQUAL D9 0
+#ACT
+OFFLINE 65535 1 1
+KICK
+BREAK
+#IF
+CHECKLEVELEX < $(二级密码下线挂机等级)
+#ACT
+OFFLINE 65535 1 1
+KICK
+BREAK
+
+[@Mir2m2二级密码固定常量加载]
+#CALL [\Mir2m2二级密码配置(免费脚本群.101529177)\Mir2m2二级密码固定常量.ini] @Mir2m2二级密码固定常量
+}

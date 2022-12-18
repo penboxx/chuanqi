@@ -1,0 +1,169 @@
+﻿/* - - - - - - - - - 各浏览器样式默认值标准化  - - - - - - - - -*/
+html, body, span, object, iframe, h1, h2, h3, h4, h5, p, blockquote, pre, a, address, code, del, em, img, dl, dt, dd, ol, ul, li, fieldset, form, label {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-style: inherit;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+html {
+	-webkit-text-size-adjust: none;
+}
+img {
+	border: none;
+	vertical-align: middle;
+}
+input, select, button {
+	padding: 0;
+	margin: 0;
+	outline: none;
+	font-family: inherit;
+	vertical-align: middle;
+}
+textarea {
+	font-family: inherit;
+}
+button {
+	cursor: pointer;
+}
+html {
+	overflow-x: hidden;
+}
+body {
+	font-size: 12px;
+	background: #000;
+	font-family: 'Microsoft YaHei';
+}
+ul, ol {
+	list-style-type: none;
+}
+h1 {
+	font-size: 24px;
+}
+h2 {
+	font-size: 18px;
+}
+h3, h4 {
+	font-size: 14px;
+}
+h5 {
+	font-size: 12px;
+}
+i, em, address {
+	font-style: normal;
+}
+a {
+	text-decoration: none;
+	color: #4f4f4f;
+}
+a:hover {
+	text-decoration: underline;
+	transition: color 200ms linear 0s, background-color 200ms linear 0s, border-color 200ms linear 0s;
+}	/*鼠标悬停时*/
+a:active {
+}	/*点击与释放时*/
+a:visited {
+}/* 访问过 */
+/*  - - - - - - - - - 常用类样式  - - - - - - - - -*/
+.no_bor {
+	border: none!important;
+}	/*无边框*/
+.no_bg {
+	background: none!important;
+}	/*无背景*/
+.clear {
+	display: block;
+	height: 0;
+	line-height: 0;
+	overflow: hidden;
+	clear: both;
+	font-size: 0;
+}/*清除浮动*/
+.center {
+	width: 1280px;
+	margin: 0 auto;
+}
+/*窗口*/
+*html {
+	background-image: url(about:blank);
+	background-attachment: fixed;
+}/*解决IE6下滚动抖动的问题*/
+#window {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: url(../images/spacesbg.gif) repeat left top;
+	display: none;
+	z-index: 10000;
+	_position: absolute;
+_top:expression(eval(document.documentElement.scrollTop));
+}
+#float_window {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 0px;
+	z-index: 20001;
+}
+#float_window .closewindow {
+	width: 52px;
+	background: url(../images/btn_close.png) no-repeat left bottom;
+	height: 52px;
+	position: absolute;
+}
+#float_window .closewindow:hover {
+	background-position: left top;
+}
+#video {
+	width: 850;
+	height: 600px;
+	background: #000;
+}
+/*在线客服*/
+#KeFu {
+	width: 137px;
+	height: 261px;
+	position: fixed;
+	top: 50%;
+	right: 3%;
+	margin-top: -130px;
+	_position: absolute;
+_top:expression(eval(document.documentElement.scrollTop+400));
+	z-index: 5000;
+}
+#KeFu ul {
+	margin-bottom: 2px;
+}
+#KeFu ul li {
+	margin-bottom: 4px;
+}
+#KeFu ul li a {
+	width: 137px;
+	height: 47px;
+	line-height: 47px;
+	text-align: center;
+	font-size: 20px;
+	color: #ffcf83;
+	background: url(../images/kefu_a_bg.png) no-repeat 0px 0px;
+	display: block;
+}
+#KeFu ul li a:hover {
+	background-position: right top;
+	text-decoration: none;
+}
+#KeFu ul li#btn_backtop a {
+	height: 50px;
+	font-size: 13px;
+	background: url(../images/btn_backtop.png) no-repeat left top;
+}
+#KeFu ul li#btn_backtop a:hover {
+	background-position: right top;
+}

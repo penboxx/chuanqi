@@ -1,0 +1,3149 @@
+[@gm005装备求购检测]
+{
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P4 <$HUMAN(装备求购输入4)>
+#IF
+EQUAL P4 0
+#ACT
+BREAK
+#ELSEACT
+MOV P5 <$HUMAN(装备求购输入5)>
+MOV P6 <$HUMAN(装备求购输入6)>
+MOV P7 <$HUMAN(装备求购输入7)>
+MOV S10 <$HUMAN(装备求购输入1)>
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+MOV S11 免　费　脚　本　群　3　4　7　9　7　9
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+#IF
+CHECK [0] 0
+#ACT
+DEC S21 1 32
+#IF
+EQUAL S21 7　9
+#ELSEACT
+BREAK
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+MOV S21 免　费　脚　本　群　3　4　7　9　7　9
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+#IF
+CHECK [0] 0
+#ACT
+DEC S21 1 32
+#IF
+EQUAL S21 7　9
+#ELSEACT
+BREAK
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+MOV S21 免　费　脚　本　群　3　4　7　9　7　9
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+#IF
+CHECK [0] 0
+#ACT
+DEC S21 1 32
+#IF
+EQUAL S21 7　9
+#ELSEACT
+BREAK
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P4)>
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 0
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+#IF
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P4)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购单价)>
+MUL P0 <$GLOBAL(装备求购个数)>
+INC P5 1
+INC P6 <$STR(P0)>
+MOV P0 1
+INC P4 1
+#ELSEACT
+MOV P0 0
+INC P4 1
+#IF
+EQUAL P0 1
+CHECKVAR GLOBAL 装备求购名称 = <$STR(S10)>
+#ACT
+INC P7 1
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 装备求购输入4 = <$STR(P4)>
+CALCVAR HUMAN 装备求购输入5 = <$STR(P5)>
+CALCVAR HUMAN 装备求购输入6 = <$STR(P6)>
+CALCVAR HUMAN 装备求购输入7 = <$STR(P7)>
+GOTO @gm005装备求购发布检测
+}

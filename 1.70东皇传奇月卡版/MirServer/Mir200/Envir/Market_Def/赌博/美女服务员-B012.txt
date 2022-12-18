@@ -1,0 +1,2856 @@
+(@@InPutString @@InPutInteger )
+[@main]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M67 13
+#IF
+ISADMIN
+#ACT
+CLEARNAMELIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+ADDIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#IF
+ISADMIN
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+SMALL I64 3
+#SAY
+<设置/@173hh设置> <控制开大/@173hh控制开大> <控制开小/@173hh控制开小> <控制开豹/@173hh控制开豹>  <输入3个骰子数/@173hh输入3个骰子数> <COLOR=clRed 本局未控制将开出>：<$GLOBAL(大小骰子点数1)>.<$GLOBAL(大小骰子点数2)>.<$GLOBAL(大小骰子点数3)>.<$GLOBAL(大小骰子点数)>\
+#IF
+ISADMIN
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+LARGE I64 2
+#SAY
+<设置/@173hh设置> <控制开大/@173hh控制开大> <控制开小/@173hh控制开小> <控制开豹/@173hh控制开豹>  <输入3个骰子数/@173hh输入3个骰子数> <COLOR=clLime 已控制本局将开出>：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>\
+#IF
+CHECKVAR GLOBAL 大小是否开放 = 已关闭
+#ACT
+MESSAGEBOX 赌场尚未开放！
+BREAK
+#IF
+SMALL G37 <$GLOBAL(大小抢庄时间)>
+CHECKVAR GLOBAL 大小开放豹子 = 已开放
+#ACT
+BREAK
+#SAY
+<COLOR=clRed 现在是抢庄时间> <COLOR=clAqua 你可以选择><抢庄/@@InPutInteger80><COLOR=clAqua 或><刷新等待下注/@main> <COLOR=clRed 抢庄倒计时>：<$STR(G36)>\
+　　　　　　　 <COLOR=clFuchsia 庄家名字><COLOR=clMedGray 【><$GLOBAL(大小庄家姓名)><COLOR=clMedGray 】> <COLOR=clFuchsia 庄家本钱><COLOR=clMedGray 【><$GLOBAL(大小庄家本钱)><COLOR=clMedGray 】>\
+<COLOR=clMedGray ╔┈┈┈┈╦┈┈┈┈╦┈┈┈┈╦┈┈┈┈╦┈┈┈┈╦┈┈┈╗>\
+<COLOR=clMedGray ┊><我要抢庄/@@InPutInteger80><COLOR=clMedGray ┊><下注豹子/@@InPutInteger81><COLOR=clMedGray ┊><下注押大/@@InPutInteger82><COLOR=clMedGray ┊><下注押小/@@InPutInteger83><COLOR=clMedGray ┊><规则说明/@173hh规则说明><COLOR=clMedGray ┊> <刷新/@main> <COLOR=clMedGray ┊>\
+<COLOR=clMedGray ╚┈┈┈┈╩┈┈┈┈╩┈┈┈┈╩┈┈┈┈╩┈┈┈┈╩┈┈┈╝>\
+<COLOR=clLime 已押豹子总><COLOR=clMedGray 【><$GLOBAL(大小已押豹总)><COLOR=clMedGray 】> <COLOR=clAqua 还可押豹子><COLOR=clMedGray 【><$GLOBAL(大小可押豹总)><COLOR=clMedGray 】> 豹子赔率1赔<$GLOBAL(大小豹子赔率)>\
+<COLOR=clLime 已押大总数><COLOR=clMedGray 【><$GLOBAL(大小已押大总)><COLOR=clMedGray 】> <COLOR=clAqua 还可押大数><COLOR=clMedGray 【><$GLOBAL(大小可押大总)><COLOR=clMedGray 】> 押大赔率1赔1\
+<COLOR=clLime 已押小总数><COLOR=clMedGray 【><$GLOBAL(大小已押小总)><COLOR=clMedGray 】> <COLOR=clAqua 还可押小数><COLOR=clMedGray 【><$GLOBAL(大小可押小总)><COLOR=clMedGray 】> 押小赔率1赔1\
+<COLOR=clFuchsia 您的下注情况：您下注><COLOR=clMedGray 【><$HUMAN(猜点押注数量)><COLOR=clMedGray 】><COLOR=clFuchsia 元宝押><COLOR=clMedGray 【><$HUMAN(猜点押注名称)><COLOR=clMedGray 】> 您剩余元宝【<$GAMEGOLD>】个\
+<COLOR=clRed 历史记录>：<$GLOBAL(大小开庄记录)>\
+<$GLOBAL(大小押注记录)>
+#IF
+CHECKVAR GLOBAL 大小开放豹子 = 已开放
+#ACT
+BREAK
+#SAY
+<COLOR=clRed 现在是下注时间> <COLOR=clAqua 请下注，买定离手！> <COLOR=clRed 下注倒计时>：<$STR(G36)>\
+　　　　　　　 <COLOR=clFuchsia 庄家名字><COLOR=clMedGray 【><$GLOBAL(大小庄家姓名)><COLOR=clMedGray 】> <COLOR=clFuchsia 庄家本钱><COLOR=clMedGray 【><$GLOBAL(大小庄家本钱)><COLOR=clMedGray 】>\
+<COLOR=clMedGray ╔┈┈┈┈╦┈┈┈┈╦┈┈┈┈╦┈┈┈┈╦┈┈┈┈╦┈┈┈╗>\
+<COLOR=clMedGray ┊><抢庄结束/@@InPutInteger80><COLOR=clMedGray ┊><下注豹子/@@InPutInteger81><COLOR=clMedGray ┊><下注押大/@@InPutInteger82><COLOR=clMedGray ┊><下注押小/@@InPutInteger83><COLOR=clMedGray ┊><规则说明/@173hh规则说明><COLOR=clMedGray ┊> <刷新/@main> <COLOR=clMedGray ┊>\
+<COLOR=clMedGray ╚┈┈┈┈╩┈┈┈┈╩┈┈┈┈╩┈┈┈┈╩┈┈┈┈╩┈┈┈╝>\
+<COLOR=clLime 已押豹子总><COLOR=clMedGray 【><$GLOBAL(大小已押豹总)><COLOR=clMedGray 】> <COLOR=clAqua 还可押豹子><COLOR=clMedGray 【><$GLOBAL(大小可押豹总)><COLOR=clMedGray 】> 豹子赔率1赔<$GLOBAL(大小豹子赔率)>\
+<COLOR=clLime 已押大总数><COLOR=clMedGray 【><$GLOBAL(大小已押大总)><COLOR=clMedGray 】> <COLOR=clAqua 还可押大数><COLOR=clMedGray 【><$GLOBAL(大小可押大总)><COLOR=clMedGray 】> 押大赔率1赔1\
+<COLOR=clLime 已押小总数><COLOR=clMedGray 【><$GLOBAL(大小已押小总)><COLOR=clMedGray 】> <COLOR=clAqua 还可押小数><COLOR=clMedGray 【><$GLOBAL(大小可押小总)><COLOR=clMedGray 】> 押小赔率1赔1\
+<COLOR=clFuchsia 您的下注情况：您下注><COLOR=clMedGray 【><$HUMAN(猜点押注数量)><COLOR=clMedGray 】><COLOR=clFuchsia 元宝押><COLOR=clMedGray 【><$HUMAN(猜点押注名称)><COLOR=clMedGray 】> 您剩余元宝【<$GAMEGOLD>】个\
+<COLOR=clRed 历史记录>：<$GLOBAL(大小开庄记录)>\
+<$GLOBAL(大小押注记录)>
+#IF
+SMALL G37 <$GLOBAL(大小抢庄时间)>
+#ACT
+BREAK
+#SAY
+<COLOR=clRed 现在是抢庄时间> <COLOR=clAqua 你可以选择><抢庄/@@InPutInteger80><COLOR=clAqua 或><刷新等待下注/@main> <COLOR=clRed 抢庄倒计时>：<$STR(G36)>\
+　　　　　　　 <COLOR=clFuchsia 庄家名字><COLOR=clMedGray 【><$GLOBAL(大小庄家姓名)><COLOR=clMedGray 】> <COLOR=clFuchsia 庄家本钱><COLOR=clMedGray 【><$GLOBAL(大小庄家本钱)><COLOR=clMedGray 】>\
+　<COLOR=clMedGray [><我要抢庄/@@InPutInteger80><COLOR=clMedGray ]>  <COLOR=clMedGray [><下注押大/@@InPutInteger82><COLOR=clMedGray ]>  <COLOR=clMedGray [><下注押小/@@InPutInteger83><COLOR=clMedGray ]>  <COLOR=clMedGray [><游戏规则/@173hh规则说明><COLOR=clMedGray ]>   <COLOR=clMedGray [><刷新/@main><COLOR=clMedGray ]>\
+<COLOR=clMedGray ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　<COLOR=clMedGray [><我要排号/@我要排号><COLOR=clMedGray ]>  <COLOR=clMedGray [><查看排号/@查看排号><COLOR=clMedGray ]>  <COLOR=clMedGray [><排号说明/@排号说明><COLOR=clMedGray ]>  <COLOR=clMedGray [><点击回城/@173hh猜点回土城><COLOR=clMedGray ]>   <COLOR=clMedGray [><刷新/@main><COLOR=clMedGray ]>\
+<COLOR=clLime 已押大总数><COLOR=clMedGray 【><$GLOBAL(大小已押大总)><COLOR=clMedGray 】> <COLOR=clAqua 还可押大数><COLOR=clMedGray 【><$GLOBAL(大小可押大总)><COLOR=clMedGray 】> 押大赔率1赔1\
+<COLOR=clLime 已押小总数><COLOR=clMedGray 【><$GLOBAL(大小已押小总)><COLOR=clMedGray 】> <COLOR=clAqua 还可押小数><COLOR=clMedGray 【><$GLOBAL(大小可押小总)><COLOR=clMedGray 】> 押小赔率1赔1\
+<COLOR=clFuchsia 您的下注情况：您下注><COLOR=clMedGray 【><$HUMAN(猜点押注数量)><COLOR=clMedGray 】><COLOR=clFuchsia 元宝押><COLOR=clMedGray 【><$HUMAN(猜点押注名称)><COLOR=clMedGray 】> 您剩余元宝【<$GAMEGOLD>】个\
+<COLOR=clRed 历史记录>：<$GLOBAL(大小开庄记录)>\ \
+<$GLOBAL(大小押注记录)>
+#ELSESAY
+<COLOR=clRed 现在是下注时间> <COLOR=clAqua 请下注，买定离手！> <COLOR=clRed 下注倒计时>：<$STR(G36)>\
+　　　　　　　 <COLOR=clFuchsia 庄家名字><COLOR=clMedGray 【><$GLOBAL(大小庄家姓名)><COLOR=clMedGray 】> <COLOR=clFuchsia 庄家本钱><COLOR=clMedGray 【><$GLOBAL(大小庄家本钱)><COLOR=clMedGray 】>\
+　<COLOR=clMedGray [><我要抢庄/@@InPutInteger80><COLOR=clMedGray ]>  <COLOR=clMedGray [><下注押大/@@InPutInteger82><COLOR=clMedGray ]>  <COLOR=clMedGray [><下注押小/@@InPutInteger83><COLOR=clMedGray ]>  <COLOR=clMedGray [><游戏规则/@173hh规则说明><COLOR=clMedGray ]>   <COLOR=clMedGray [><刷新/@main><COLOR=clMedGray ]>\
+<COLOR=clMedGray ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　<COLOR=clMedGray [><我要排号/@我要排号><COLOR=clMedGray ]>  <COLOR=clMedGray [><查看排号/@查看排号><COLOR=clMedGray ]>  <COLOR=clMedGray [><排号说明/@排号说明><COLOR=clMedGray ]>  <COLOR=clMedGray [><点击回城/@173hh猜点回土城><COLOR=clMedGray ]>   <COLOR=clMedGray [><刷新/@main><COLOR=clMedGray ]>\
+<COLOR=clLime 已押大总数><COLOR=clMedGray 【><$GLOBAL(大小已押大总)><COLOR=clMedGray 】> <COLOR=clAqua 还可押大数><COLOR=clMedGray 【><$GLOBAL(大小可押大总)><COLOR=clMedGray 】> 押大赔率1赔1\
+<COLOR=clLime 已押小总数><COLOR=clMedGray 【><$GLOBAL(大小已押小总)><COLOR=clMedGray 】> <COLOR=clAqua 还可押小数><COLOR=clMedGray 【><$GLOBAL(大小可押小总)><COLOR=clMedGray 】> 押小赔率1赔1\
+<COLOR=clFuchsia 您的下注情况：您下注><COLOR=clMedGray 【><$HUMAN(猜点押注数量)><COLOR=clMedGray 】><COLOR=clFuchsia 元宝押><COLOR=clMedGray 【><$HUMAN(猜点押注名称)><COLOR=clMedGray 】> 您剩余元宝【<$GAMEGOLD>】个 \
+<COLOR=clRed 历史记录>：<$GLOBAL(大小开庄记录)>\ \
+<$GLOBAL(大小押注记录)>
+[@173hh设置]
+<关闭或开放赌场系统/@173hh开放赌场>：<$GLOBAL(大小是否开放)>\
+<关闭或开放可押豹子/@173hh是否开放押豹子>：<$GLOBAL(大小开放豹子)>　 <押豹子赔率/@173hh押豹子赔率>：1赔<$GLOBAL(大小豹子赔率)>\
+<关闭或开放抢庄延迟/@173hh抢庄延迟>：<$GLOBAL(大小抢庄延迟)>\
+<设置税率/@173hh设置1>：<$GLOBAL(大小坐庄税率)>%\
+<抢庄最小元宝数/@173hh设置2>：<$GLOBAL(大小最小抢庄)>   <抢庄最大元宝数/@173hh设置3>：<$GLOBAL(大小最大抢庄)>\
+<押注最小元宝数/@173hh设置4>：<$GLOBAL(大小最小押注)>   <押注最大元宝数/@173hh设置5>：<$GLOBAL(大小最大押注)>\
+<COLOR=clFuchsia 以下设置请输入【双数】>\
+<抢庄时间/@173hh抢庄时间>：<$GLOBAL(大小抢庄时间)>秒    <押注时间/@173hh押注时间>：<$GLOBAL(大小押注时间)>秒    <开点时间/@173hh开点时间>：第<$GLOBAL(大小开点时间)>秒\
+<更新脚本后如不想重启，点一次这里再加载更新的脚本/@不重启更新>       <返回/@main>
+
+[@不重启更新]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ACT
+;VAR Integer GLOBAL 大小抢庄时间
+;VAR Integer GLOBAL 大小押注时间
+;VAR Integer GLOBAL 大小开点时间
+;VAR Integer GLOBAL 大小停押时间
+;VAR Integer GLOBAL 大小摇骰时间
+;VAR Integer GLOBAL 大小开局时间
+;VAR Integer GLOBAL 大小结算时间
+;VAR Integer GLOBAL 大小清零时间
+;LOADVAR GLOBAL 大小抢庄时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+;LOADVAR GLOBAL 大小押注时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+;LOADVAR GLOBAL 大小开点时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+;LOADVAR GLOBAL 大小停押时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+;LOADVAR GLOBAL 大小摇骰时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+;LOADVAR GLOBAL 大小开局时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+;LOADVAR GLOBAL 大小结算时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+;LOADVAR GLOBAL 大小清零时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+MESSAGEBOX 变量申明成功，请重新加载机器人脚本、QM等脚本！
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+
+[@173hh开点时间]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ACT
+QUERYVALUE 99 1 3 @173hh开点时间2 请输入【双数】：
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+[@173hh开点时间2]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M99 <$GLOBAL(大小抢庄时间)>
+SMALL M99 <$GLOBAL(大小摇骰时间)>
+#ACT
+CALCVAR GLOBAL 大小开点时间 = <$STR(M99)>
+SAVEVAR GLOBAL 大小开点时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SENDMSG 6 设置成功！点数将在第<$STR(M99)>秒开出！
+GOTO @173hh设置
+BREAK
+#ELSEACT
+MESSAGEBOX 输入有误，请输入【双数】：\　\开点时间必须为【大于（抢庄时间），并且小于（抢庄时间+押注时间）】
+GOTO @173hh设置
+BREAK
+
+[@173hh押注时间]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ACT
+QUERYVALUE 99 1 3 @173hh押注时间2 请输入【双数】：
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+[@173hh押注时间2]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M99 0
+#ACT
+CALCVAR GLOBAL 大小押注时间 = <$STR(M99)>
+CALCVAR GLOBAL 大小停押时间 = <$GLOBAL(大小抢庄时间)>
+CALCVAR GLOBAL 大小停押时间 + <$GLOBAL(大小押注时间)>
+CALCVAR GLOBAL 大小停押时间 - 2
+CALCVAR GLOBAL 大小摇骰时间 = <$GLOBAL(大小抢庄时间)>
+CALCVAR GLOBAL 大小摇骰时间 + <$GLOBAL(大小押注时间)>
+CALCVAR GLOBAL 大小开局时间 = <$GLOBAL(大小抢庄时间)>
+CALCVAR GLOBAL 大小开局时间 + <$GLOBAL(大小押注时间)>
+CALCVAR GLOBAL 大小开局时间 + 4
+CALCVAR GLOBAL 大小结算时间 = <$GLOBAL(大小抢庄时间)>
+CALCVAR GLOBAL 大小结算时间 + <$GLOBAL(大小押注时间)>
+CALCVAR GLOBAL 大小结算时间 + 6
+CALCVAR GLOBAL 大小清零时间 = <$GLOBAL(大小抢庄时间)>
+CALCVAR GLOBAL 大小清零时间 + <$GLOBAL(大小押注时间)>
+CALCVAR GLOBAL 大小清零时间 + 8
+SAVEVAR GLOBAL 大小押注时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SAVEVAR GLOBAL 大小停押时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SAVEVAR GLOBAL 大小摇骰时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SAVEVAR GLOBAL 大小开局时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SAVEVAR GLOBAL 大小结算时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SAVEVAR GLOBAL 大小清零时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SENDMSG 6 设置成功！
+GOTO @173hh设置
+#ELSEACT
+MESSAGEBOX 输入有误，请输入大于0的【双数】！
+GOTO @173hh设置
+BREAK
+#IF
+CHECKVAR GLOBAL 大小开点时间 > <$GLOBAL(大小抢庄时间)>
+CHECKVAR GLOBAL 大小开点时间 < <$GLOBAL(大小摇骰时间)>
+#ELSEACT
+CALCVAR GLOBAL 大小开点时间 = <$GLOBAL(大小停押时间)>
+SAVEVAR GLOBAL 大小开点时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+GOTO @173hh设置
+
+[@173hh抢庄时间]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ACT
+QUERYVALUE 99 1 3 @173hh抢庄时间2 请输入【双数】：
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+[@173hh抢庄时间2]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M99 0
+#ACT
+CALCVAR GLOBAL 大小抢庄时间 = <$STR(M99)>
+CALCVAR GLOBAL 大小停押时间 = <$GLOBAL(大小抢庄时间)>
+CALCVAR GLOBAL 大小停押时间 + <$GLOBAL(大小押注时间)>
+CALCVAR GLOBAL 大小停押时间 - 2
+CALCVAR GLOBAL 大小摇骰时间 = <$GLOBAL(大小抢庄时间)>
+CALCVAR GLOBAL 大小摇骰时间 + <$GLOBAL(大小押注时间)>
+CALCVAR GLOBAL 大小开局时间 = <$GLOBAL(大小抢庄时间)>
+CALCVAR GLOBAL 大小开局时间 + <$GLOBAL(大小押注时间)>
+CALCVAR GLOBAL 大小开局时间 + 4
+CALCVAR GLOBAL 大小结算时间 = <$GLOBAL(大小抢庄时间)>
+CALCVAR GLOBAL 大小结算时间 + <$GLOBAL(大小押注时间)>
+CALCVAR GLOBAL 大小结算时间 + 6
+CALCVAR GLOBAL 大小清零时间 = <$GLOBAL(大小抢庄时间)>
+CALCVAR GLOBAL 大小清零时间 + <$GLOBAL(大小押注时间)>
+CALCVAR GLOBAL 大小清零时间 + 8
+SAVEVAR GLOBAL 大小抢庄时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SAVEVAR GLOBAL 大小停押时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SAVEVAR GLOBAL 大小摇骰时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SAVEVAR GLOBAL 大小开局时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SAVEVAR GLOBAL 大小结算时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SAVEVAR GLOBAL 大小清零时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SENDMSG 6 设置成功！
+GOTO @173hh设置
+#ELSEACT
+MESSAGEBOX 输入有误，请输入大于0的【双数】！
+GOTO @173hh设置
+BREAK
+#IF
+CHECKVAR GLOBAL 大小开点时间 > <$GLOBAL(大小抢庄时间)>
+CHECKVAR GLOBAL 大小开点时间 < <$GLOBAL(大小摇骰时间)>
+#ELSEACT
+CALCVAR GLOBAL 大小开点时间 = <$GLOBAL(大小停押时间)>
+SAVEVAR GLOBAL 大小开点时间 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+GOTO @173hh设置
+
+[@173hh抢庄延迟]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+CHECKVAR GLOBAL 大小抢庄延迟 = 已开放
+#ACT
+CALCVAR GLOBAL 大小抢庄延迟 = 已关闭
+SAVEVAR GLOBAL 大小抢庄延迟 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+GOTO @173hh设置
+BREAK
+#ELSEACT
+CALCVAR GLOBAL 大小抢庄延迟 = 已开放
+SAVEVAR GLOBAL 大小抢庄延迟 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+GOTO @173hh设置
+BREAK
+
+[@173hh押豹子赔率]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ACT
+QUERYVALUE 99 1 3 @173hh押豹子赔率2 请输入大于0的数值：
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+[@173hh押豹子赔率2]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M99 0
+#ACT
+CALCVAR GLOBAL 大小豹子赔率 = <$STR(M99)>
+SAVEVAR GLOBAL 大小豹子赔率 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SENDMSG 6 设置成功！
+GOTO @173hh设置
+BREAK
+#ELSEACT
+MESSAGEBOX 输入有误，请输入大于0的数值！
+GOTO @173hh设置
+BREAK
+
+[@173hh是否开放押豹子]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+CHECKVAR GLOBAL 大小开放豹子 = 已开放
+#ACT
+CALCVAR GLOBAL 大小开放豹子 = 已关闭
+SAVEVAR GLOBAL 大小开放豹子 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+GOTO @173hh设置
+BREAK
+#ELSEACT
+CALCVAR GLOBAL 大小开放豹子 = 已开放
+SAVEVAR GLOBAL 大小开放豹子 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+GOTO @173hh设置
+BREAK
+
+[@173hh开放赌场]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+CHECKVAR GLOBAL 大小是否开放 = 已开放
+#ACT
+CALCVAR GLOBAL 大小是否开放 = 已关闭
+SAVEVAR GLOBAL 大小是否开放 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+GOTO @173hh设置
+BREAK
+#ELSEACT
+CALCVAR GLOBAL 大小是否开放 = 已开放
+SAVEVAR GLOBAL 大小是否开放 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+GOTO @173hh设置
+BREAK
+
+[@173hh设置5]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ACT
+QUERYVALUE 99 1 20 @173hh设置50 请输入大于0的数值：
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+[@173hh设置50]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M99 0
+#ACT
+CALCVAR GLOBAL 大小最大押注 = <$STR(M99)>
+SAVEVAR GLOBAL 大小最大押注 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SENDMSG 6 设置成功！
+GOTO @173hh设置
+BREAK
+#ELSEACT
+MESSAGEBOX 输入有误，请输入大于0的数值！
+GOTO @173hh设置
+BREAK
+
+[@173hh设置4]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ACT
+QUERYVALUE 99 1 20 @173hh设置40 请输入大于0的数值：
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+[@173hh设置40]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M99 0
+#ACT
+CALCVAR GLOBAL 大小最小押注 = <$STR(M99)>
+SAVEVAR GLOBAL 大小最小押注 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SENDMSG 6 设置成功！
+GOTO @173hh设置
+BREAK
+#ELSEACT
+MESSAGEBOX 输入有误，请输入大于0的数值！
+GOTO @173hh设置
+BREAK
+
+[@173hh设置3]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ACT
+QUERYVALUE 99 1 20 @173hh设置30 请输入大于0的数值：
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+[@173hh设置30]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M99 0
+#ACT
+CALCVAR GLOBAL 大小最大抢庄 = <$STR(M99)>
+SAVEVAR GLOBAL 大小最大抢庄 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SENDMSG 6 设置成功！
+GOTO @173hh设置
+BREAK
+#ELSEACT
+MESSAGEBOX 输入有误，请输入大于0的数值！
+GOTO @173hh设置
+BREAK
+
+[@173hh设置2]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ACT
+QUERYVALUE 99 1 20 @173hh设置20 请输入大于0的数值：
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+[@173hh设置20]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M99 0
+#ACT
+CALCVAR GLOBAL 大小最小抢庄 = <$STR(M99)>
+SAVEVAR GLOBAL 大小最小抢庄 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SENDMSG 6 设置成功！
+GOTO @173hh设置
+BREAK
+#ELSEACT
+MESSAGEBOX 输入有误，请输入大于0的数值！
+GOTO @173hh设置
+BREAK
+
+[@173hh设置1]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ACT
+QUERYVALUE 99 1 2 @173hh设置10 请输入1-99的税率：
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+[@173hh设置10]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M99 0
+SMALL M99 100
+#ACT
+CALCVAR GLOBAL 大小坐庄税率 = <$STR(M99)>
+SAVEVAR GLOBAL 大小坐庄税率 ..\QuestDiary\173hh变量文件\173hh固定变量\大小坐庄固定变量.txt HardDisk
+SENDMSG 6 设置成功，当前税率为：<$GLOBAL(大小坐庄税率)>%
+GOTO @173hh设置
+BREAK
+#ELSEACT
+MESSAGEBOX 输入有误，请输入1-99的税率！
+GOTO @173hh设置
+BREAK
+
+[@173hh输入3个骰子数]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ACT
+QUERYVALUE 99 1 3 @173hh输入3个骰子数2 请连续输入3个骰子点数：比如123
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+[@173hh输入3个骰子数2]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+SMALL G37 <$GLOBAL(大小抢庄时间)>
+#ACT
+MESSAGEBOX 请等待抢庄结束后再控制！
+DELAYGOTO 10 @main
+BREAK
+#IF
+SMALL G37 <$GLOBAL(大小摇骰时间)>
+#ELSEACT
+MESSAGEBOX 点数已经开出，不能控制！请等待下一局！
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M99 110
+SMALL M99 667
+#ACT
+MOV M61 <$STR(M99)>
+MOV M62 <$STR(M99)>
+MOV M63 <$STR(M99)>
+DIV M61 100
+MOV M64 <$STR(M61)>
+MUL M61 100
+DEC M62 <$STR(M61)>
+DIV M62 10
+MOV M65 <$STR(M62)>
+MUL M62 10
+DEC M63 <$STR(M61)>
+DEC M63 <$STR(M62)>
+#ELSEACT
+MESSAGEBOX 输入有误，请输入3个连续的骰子数！比如：456
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M64 0
+SMALL M64 7
+#ELSEACT
+MESSAGEBOX 输入的第1个骰子数不正确！必须为1-6之间！
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M65 0
+SMALL M65 7
+#ELSEACT
+MESSAGEBOX 输入的第2个骰子数不正确！必须为1-6之间！
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M63 0
+SMALL M63 7
+#ELSEACT
+MESSAGEBOX 输入的第3个骰子数不正确！必须为1-6之间！
+DELAYGOTO 10 @main
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV I61 <$STR(M64)>
+MOV I62 <$STR(M65)>
+MOV I63 <$STR(M63)>
+MOV I64 <$STR(M64)>
+INC I64 <$STR(M65)>
+INC I64 <$STR(M63)>
+#IF
+Equal I61 <$STR(I62)>
+Equal I61 <$STR(I63)>
+#ACT
+MOV A60 豹子
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE I64 10
+#ACT
+MOV A60 大
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+#ELSEACT
+MOV A60 小
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+
+[@173hh控制开大]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+SMALL G37 <$GLOBAL(大小抢庄时间)>
+#ACT
+MESSAGEBOX 请等待抢庄结束后再控制！
+DELAYGOTO 10 @main
+BREAK
+#IF
+SMALL G37 <$GLOBAL(大小摇骰时间)>
+#ELSEACT
+MESSAGEBOX 点数已经开出，不能控制！请等待下一局！
+DELAYGOTO 10 @main
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV A60 大
+READRANDOMSTR ..\QuestDiary\173hh变量文件\随机数大.txt S10 HardDisk
+MOV M88 <$STR(S10)>
+MOV M85 <$STR(M88)>
+MOV M86 <$STR(M88)>
+MOV M87 <$STR(M88)>
+DIV M87 100
+MOV M88 <$STR(M87)>
+MUL M88 100
+DEC M86 <$STR(M88)>
+DIV M86 10
+DEC M85 <$STR(M88)>
+MOV M88 <$STR(M86)>
+MUL M88 10
+DEC M85 <$STR(M88)>
+MOVR M88 6
+inc M88 1
+
+#IF
+EQUAL M88 1
+#ACT
+MOV M88 0
+MOV I61 <$STR(M87)>
+MOV I62 <$STR(M86)>
+MOV I63 <$STR(M85)>
+MOV I64 <$STR(M85)>
+INC I64 <$STR(M86)>
+INC I64 <$STR(M87)>
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+#IF
+EQUAL M88 2
+#ACT
+MOV M88 0
+MOV I61 <$STR(M87)>
+MOV I62 <$STR(M85)>
+MOV I63 <$STR(M86)>
+MOV I64 <$STR(M85)>
+INC I64 <$STR(M86)>
+INC I64 <$STR(M87)>
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+#IF
+EQUAL M88 3
+#ACT
+MOV M88 0
+MOV I61 <$STR(M86)>
+MOV I62 <$STR(M87)>
+MOV I63 <$STR(M85)>
+MOV I64 <$STR(M85)>
+INC I64 <$STR(M86)>
+INC I64 <$STR(M87)>
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+#IF
+EQUAL M88 4
+#ACT
+MOV M88 0
+MOV I61 <$STR(M86)>
+MOV I62 <$STR(M85)>
+MOV I63 <$STR(M87)>
+MOV I64 <$STR(M85)>
+INC I64 <$STR(M86)>
+INC I64 <$STR(M87)>
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+#IF
+EQUAL M88 5
+#ACT
+MOV M88 0
+MOV I61 <$STR(M85)>
+MOV I62 <$STR(M87)>
+MOV I63 <$STR(M86)>
+MOV I64 <$STR(M85)>
+INC I64 <$STR(M86)>
+INC I64 <$STR(M87)>
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+#IF
+EQUAL M88 6
+#ACT
+MOV M88 0
+MOV I61 <$STR(M85)>
+MOV I62 <$STR(M86)>
+MOV I63 <$STR(M87)>
+MOV I64 <$STR(M85)>
+INC I64 <$STR(M86)>
+INC I64 <$STR(M87)>
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+
+[@173hh控制开小]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+SMALL G37 <$GLOBAL(大小抢庄时间)>
+#ACT
+MESSAGEBOX 请等待抢庄结束后再控制！
+DELAYGOTO 10 @main
+BREAK
+#IF
+SMALL G37 <$GLOBAL(大小摇骰时间)>
+#ELSEACT
+MESSAGEBOX 点数已经开出，不能控制！请等待下一局！
+DELAYGOTO 10 @main
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV A60 小
+READRANDOMSTR ..\QuestDiary\173hh变量文件\随机数小.txt S10 HardDisk
+MOV M88 <$STR(S10)>
+MOV M85 <$STR(M88)>
+MOV M86 <$STR(M88)>
+MOV M87 <$STR(M88)>
+DIV M87 100
+MOV M88 <$STR(M87)>
+MUL M88 100
+DEC M86 <$STR(M88)>
+DIV M86 10
+DEC M85 <$STR(M88)>
+MOV M88 <$STR(M86)>
+MUL M88 10
+DEC M85 <$STR(M88)>
+MOVR M88 6
+inc M88 1
+
+#IF
+EQUAL M88 1
+#ACT
+MOV M88 0
+MOV I61 <$STR(M87)>
+MOV I62 <$STR(M86)>
+MOV I63 <$STR(M85)>
+MOV I64 <$STR(M85)>
+INC I64 <$STR(M86)>
+INC I64 <$STR(M87)>
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+#IF
+EQUAL M88 2
+#ACT
+MOV M88 0
+MOV I61 <$STR(M87)>
+MOV I62 <$STR(M85)>
+MOV I63 <$STR(M86)>
+MOV I64 <$STR(M85)>
+INC I64 <$STR(M86)>
+INC I64 <$STR(M87)>
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+#IF
+EQUAL M88 3
+#ACT
+MOV M88 0
+MOV I61 <$STR(M86)>
+MOV I62 <$STR(M87)>
+MOV I63 <$STR(M85)>
+MOV I64 <$STR(M85)>
+INC I64 <$STR(M86)>
+INC I64 <$STR(M87)>
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+#IF
+EQUAL M88 4
+#ACT
+MOV M88 0
+MOV I61 <$STR(M86)>
+MOV I62 <$STR(M85)>
+MOV I63 <$STR(M87)>
+MOV I64 <$STR(M85)>
+INC I64 <$STR(M86)>
+INC I64 <$STR(M87)>
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+#IF
+EQUAL M88 5
+#ACT
+MOV M88 0
+MOV I61 <$STR(M85)>
+MOV I62 <$STR(M87)>
+MOV I63 <$STR(M86)>
+MOV I64 <$STR(M85)>
+INC I64 <$STR(M86)>
+INC I64 <$STR(M87)>
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+#IF
+EQUAL M88 6
+#ACT
+MOV M88 0
+MOV I61 <$STR(M85)>
+MOV I62 <$STR(M86)>
+MOV I63 <$STR(M87)>
+MOV I64 <$STR(M85)>
+INC I64 <$STR(M86)>
+INC I64 <$STR(M87)>
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+
+[@173hh控制开豹]
+#IF
+CHECKIPLIST ..\QuestDiary\173hh变量文件\控制点数IP.txt HardDisk
+#ELSEACT
+DELAYGOTO 10 @main
+BREAK
+#IF
+SMALL G37 <$GLOBAL(大小抢庄时间)>
+#ACT
+MESSAGEBOX 请等待抢庄结束后再控制！
+DELAYGOTO 10 @main
+BREAK
+#IF
+SMALL G37 <$GLOBAL(大小摇骰时间)>
+#ELSEACT
+MESSAGEBOX 点数已经开出，不能控制！请等待下一局！
+DELAYGOTO 10 @main
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOVR M88 6
+inc M88 1
+MOV I61 <$STR(M88)>
+MOV I62 <$STR(M88)>
+MOV I63 <$STR(M88)>
+MOV I64 <$STR(M88)>
+INC I64 <$STR(M88)>
+INC I64 <$STR(M88)>
+MOV A60 豹子
+SENDMSG 6 已控制当本局将开出：<$STR(I61)>.<$STR(I62)>.<$STR(I63)>.<$STR(A60)>
+DELAYGOTO 10 @main
+BREAK
+
+[@@InPutInteger80]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutInteger80
+[@InPutInteger80]
+#IF
+SMALL G37 <$GLOBAL(大小抢庄时间)>
+#ELSEACT
+MESSAGEBOX [美女赌庄]：抢庄已结束。现在开始下注了，押定离手！
+MOV M80 0
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+SMALL M80 <$GLOBAL(大小最小抢庄)>
+#ACT
+MESSAGEBOX [美女赌庄]：你最少要输入<$GLOBAL(大小最小抢庄)>个元宝才能坐庄！
+MOV M80 0
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M80 <$GLOBAL(大小最大抢庄)>
+#ACT
+MESSAGEBOX [美女赌庄]：你最多只能输入<$GLOBAL(大小最大抢庄)>个元宝！
+MOV M80 0
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+CHECKGAMEGOLD < <$STR(M80)>
+#ACT
+MESSAGEBOX [美女赌庄]：你身上的元宝不足<$STR(M80)>个。
+MOV M80 0
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+CHECKVAR GLOBAL 大小庄家姓名 = <$USERNAME>
+#ACT
+MESSAGEBOX [美女赌庄]：你已经是庄家！
+MOV M80 0
+DELAYGOTO 10 @main
+BREAK
+#IF
+CHECKVAR GLOBAL 大小庄家姓名1 = <$USERNAME>
+#ACT
+MOVR D10 3
+INC D10 3
+#ELSEACT
+MOVR D10 6
+#IF
+checknamelist ..\QuestDiary\173hh变量文件\抢庄延迟名单6.txt HardDisk
+#ELSEACT
+ADDNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单.txt HardDisk
+ADDNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单6.txt HardDisk
+ADDNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单<$STR(D10)>.txt HardDisk
+#IF
+LARGE G37 0
+checknamelist ..\QuestDiary\173hh变量文件\抢庄延迟名单0.txt HardDisk
+#ACT
+DELNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单0.txt HardDisk
+DELNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单.txt HardDisk
+#IF
+LARGE G37 2
+checknamelist ..\QuestDiary\173hh变量文件\抢庄延迟名单1.txt HardDisk
+#ACT
+DELNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单1.txt HardDisk
+DELNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单.txt HardDisk
+#IF
+LARGE G37 4
+checknamelist ..\QuestDiary\173hh变量文件\抢庄延迟名单2.txt HardDisk
+#ACT
+DELNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单2.txt HardDisk
+DELNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单.txt HardDisk
+#IF
+LARGE G37 6
+checknamelist ..\QuestDiary\173hh变量文件\抢庄延迟名单3.txt HardDisk
+#ACT
+DELNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单3.txt HardDisk
+DELNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单.txt HardDisk
+#IF
+LARGE G37 8
+checknamelist ..\QuestDiary\173hh变量文件\抢庄延迟名单4.txt HardDisk
+#ACT
+DELNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单4.txt HardDisk
+DELNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单.txt HardDisk
+#IF
+LARGE G37 10
+checknamelist ..\QuestDiary\173hh变量文件\抢庄延迟名单5.txt HardDisk
+#ACT
+DELNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单5.txt HardDisk
+DELNAMELIST ..\QuestDiary\173hh变量文件\抢庄延迟名单.txt HardDisk
+#IF
+CHECKVAR GLOBAL 大小抢庄延迟 = 已开放
+checknamelist ..\QuestDiary\173hh变量文件\抢庄延迟名单.txt HardDisk
+#ACT
+MESSAGEBOX 防止外挂恶意抢庄，抢庄时间随机延迟1-10秒，请稍后再试！
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+CHECKVAR GLOBAL 大小庄家姓名 = 
+CHECKVAR GLOBAL 大小庄家本钱 = 0
+Equal M80 <$GLOBAL(大小最大抢庄)>
+#ACT
+GAMEGOLD - <$STR(M80)>
+CALCVAR GLOBAL 大小庄家姓名 = <$USERNAME>
+CALCVAR GLOBAL 大小庄家本钱 = <$STR(M80)>
+CALCVAR GLOBAL 大小可押大总 = <$STR(M80)>
+CALCVAR GLOBAL 大小可押小总 = <$STR(M80)>
+DIV M80 <$GLOBAL(大小豹子赔率)>
+CALCVAR GLOBAL 大小可押豹总 = <$STR(M80)>
+SAVEVAR GLOBAL 大小庄家姓名 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小庄家本钱 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小可押大总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小可押小总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小可押豹总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SENDMSG 4 【%s】使用【<$GLOBAL(大小庄家本钱)>】个元宝直接成为庄家
+MESSAGEBOX [美女赌庄]：你已使用【<$GLOBAL(大小庄家本钱)>】个元宝坐庄！
+MOV G36 <$GLOBAL(大小押注时间)>
+MOV G37 <$GLOBAL(大小抢庄时间)>
+DEC G37 2
+DELAYGOTO 10 @main
+BREAK
+#IF
+CHECKVAR GLOBAL 大小庄家姓名 = 
+CHECKVAR GLOBAL 大小庄家本钱 = 0
+#ACT
+GAMEGOLD - <$STR(M80)>
+CALCVAR GLOBAL 大小庄家姓名 = <$USERNAME>
+CALCVAR GLOBAL 大小庄家本钱 = <$STR(M80)>
+CALCVAR GLOBAL 大小可押大总 = <$STR(M80)>
+CALCVAR GLOBAL 大小可押小总 = <$STR(M80)>
+DIV M80 <$GLOBAL(大小豹子赔率)>
+CALCVAR GLOBAL 大小可押豹总 = <$STR(M80)>
+SAVEVAR GLOBAL 大小庄家姓名 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小庄家本钱 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小可押大总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小可押小总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小可押豹总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SENDMSG 4 【%s】使用【<$GLOBAL(大小庄家本钱)>】个元宝坐庄
+MESSAGEBOX [美女赌庄]：你已使用【<$GLOBAL(大小庄家本钱)>】个元宝坐庄！
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+LARGE M80 <$GLOBAL(大小庄家本钱)>
+Equal M80 <$GLOBAL(大小最大抢庄)>
+#ACT
+<$GLOBAL(大小庄家姓名)>.GAMEGOLD + <$GLOBAL(大小庄家本钱)>
+<$GLOBAL(大小庄家姓名)>.MESSAGEBOX [美女赌庄]：【<$USERNAME>】成功抢庄，系统退回您<$GLOBAL(大小庄家本钱)>个元宝！
+GAMEGOLD - <$STR(M80)>
+CALCVAR GLOBAL 大小庄家姓名 = <$USERNAME>
+CALCVAR GLOBAL 大小庄家本钱 = <$STR(M80)>
+CALCVAR GLOBAL 大小可押大总 = <$STR(M80)>
+CALCVAR GLOBAL 大小可押小总 = <$STR(M80)>
+DIV M80 <$GLOBAL(大小豹子赔率)>
+CALCVAR GLOBAL 大小可押豹总 = <$STR(M80)>
+SAVEVAR GLOBAL 大小庄家姓名 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小庄家本钱 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小可押大总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小可押小总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小可押豹总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SENDMSG 4 【%s】使用【<$GLOBAL(大小庄家本钱)>】个元宝直接成为庄家
+MESSAGEBOX [美女赌庄]：你已使用【<$GLOBAL(大小庄家本钱)>】个元宝成功抢庄！
+MOV G36 <$GLOBAL(大小押注时间)>
+MOV G37 <$GLOBAL(大小抢庄时间)>
+DEC G37 2
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M80 <$GLOBAL(大小庄家本钱)>
+#ACT
+<$GLOBAL(大小庄家姓名)>.GAMEGOLD + <$GLOBAL(大小庄家本钱)>
+<$GLOBAL(大小庄家姓名)>.MESSAGEBOX [美女赌庄]：【<$USERNAME>】成功抢庄，系统退回您<$GLOBAL(大小庄家本钱)>个元宝！
+GAMEGOLD - <$STR(M80)>
+CALCVAR GLOBAL 大小庄家姓名 = <$USERNAME>
+CALCVAR GLOBAL 大小庄家本钱 = <$STR(M80)>
+CALCVAR GLOBAL 大小可押大总 = <$STR(M80)>
+CALCVAR GLOBAL 大小可押小总 = <$STR(M80)>
+DIV M80 <$GLOBAL(大小豹子赔率)>
+CALCVAR GLOBAL 大小可押豹总 = <$STR(M80)>
+SAVEVAR GLOBAL 大小庄家姓名 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小庄家本钱 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小可押大总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小可押小总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL 大小可押豹总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SENDMSG 4 【%s】使用【<$GLOBAL(大小庄家本钱)>】个元宝成功抢庄
+MESSAGEBOX [美女赌庄]：你已使用【<$GLOBAL(大小庄家本钱)>】个元宝成功抢庄！
+DELAYGOTO 10 @main
+BREAK
+#ELSEACT
+MOV M80 0
+MESSAGEBOX [美女赌庄]：你必须出多于【<$GLOBAL(大小庄家本钱)>】个元宝才能抢庄。
+DELAYGOTO 10 @main
+BREAK
+
+[@@InPutInteger81]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutInteger81
+[@InPutInteger81]
+#IF
+SMALL G37 <$GLOBAL(大小抢庄时间)>
+#ACT
+MESSAGEBOX [美女赌庄]：下注时间还没到，现在是抢庄时间。
+MOV M81 0
+DELAYGOTO 10 @main
+BREAK
+#IF
+SMALL G37 <$GLOBAL(大小停押时间)>
+#ELSEACT
+MESSAGEBOX [美女赌庄]：下注时间已经结束。请等待开局！
+MOV M81 0
+DELAYGOTO 10 @main
+BREAK
+#IF
+CHECKVAR GLOBAL 大小庄家姓名 = <$USERNAME>
+#ACT
+MOV M81 0
+MESSAGEBOX [美女赌庄]：你目前已经是庄家，无法进行押注。
+DELAYGOTO 10 @main
+BREAK
+#IF
+CHECKVAR HUMAN 猜点押注数量 ? 1
+#ACT
+MOV M81 0
+MESSAGEBOX [美女赌庄]：你已经下注，不能再押注。
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+SMALL M81 <$GLOBAL(大小最小押注)>
+#ACT
+MESSAGEBOX [美女赌庄]：你最少要下注<$GLOBAL(大小最小押注)>个元宝！
+MOV M81 0
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M81 <$GLOBAL(大小最大押注)>
+#ACT
+MESSAGEBOX [美女赌庄]：你最多只能下注<$GLOBAL(大小最大押注)>个元宝！
+MOV M81 0
+DELAYGOTO 10 @main
+BREAK
+
+
+#IF
+LARGE M81 <$GLOBAL(大小可押豹总)>
+#ACT
+MOV M81 0
+MESSAGEBOX [美女赌庄]：对不起，庄家的本钱已达到上限不够赔了。\　\目前你只可以下注【<$GLOBAL(大小可押豹总)>】以下的元宝押注豹子！或者押注其他！
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+CHECKGAMEGOLD < <$STR(M81)>
+#ACT
+MESSAGEBOX [美女赌庄]：你身上的元宝不足<$STR(M81)>个。
+MOV M81 0
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - <$STR(M81)>
+CALCVAR GLOBAL 大小已押豹总 + <$STR(M81)>
+SAVEVAR GLOBAL 大小已押豹总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR HUMAN 猜点押注数量 = <$STR(M81)>
+CALCVAR HUMAN 猜点押注数量豹 = <$STR(M81)>
+CALCVAR HUMAN 猜点押注名称 = 豹子
+SAVEVAR HUMAN 猜点押注名称 ..\QuestDiary\173hh变量文件\猜点押注数量.txt HardDisk
+SAVEVAR HUMAN 猜点押注数量 ..\QuestDiary\173hh变量文件\猜点押注数量.txt HardDisk
+SAVEVAR HUMAN 猜点押注数量豹 ..\QuestDiary\173hh变量文件\猜点押注数量豹.txt HardDisk
+MOV M81 <$GLOBAL(大小庄家本钱)>
+#IF
+CHECKVAR GLOBAL 大小已押大总 > 0
+#ACT
+INC M81 <$GLOBAL(大小已押大总)>
+#IF
+CHECKVAR GLOBAL 大小已押小总 > 0
+#ACT
+INC M81 <$GLOBAL(大小已押小总)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+DIV M81 <$GLOBAL(大小豹子赔率)>
+DEC M81 <$GLOBAL(大小已押豹总)>
+CALCVAR GLOBAL 大小可押豹总 = <$STR(M81)>
+SAVEVAR GLOBAL 大小可押豹总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MOV M81 <$GLOBAL(大小庄家本钱)>
+INC M81 <$GLOBAL(大小已押豹总)>
+#IF
+CHECKVAR GLOBAL 大小已押大总 > 0
+#ACT
+INC M81 <$GLOBAL(大小已押大总)>
+#IF
+CHECKVAR GLOBAL 大小已押小总 > 0
+#ACT
+DEC M81 <$GLOBAL(大小已押小总)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 大小可押小总 = <$STR(M81)>
+SAVEVAR GLOBAL 大小可押小总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MOV M81 <$GLOBAL(大小庄家本钱)>
+INC M81 <$GLOBAL(大小已押豹总)>
+#IF
+CHECKVAR GLOBAL 大小已押小总 > 0
+#ACT
+INC M81 <$GLOBAL(大小已押小总)>
+#IF
+CHECKVAR GLOBAL 大小已押大总 > 0
+#ACT
+DEC M81 <$GLOBAL(大小已押大总)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 大小可押大总 = <$STR(M81)>
+SAVEVAR GLOBAL 大小可押大总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MOV S10 【
+INC S10 <$USERNAME>
+INC S10 】下注【
+INC S10 <$HUMAN(猜点押注数量)>
+INC S10 】个元宝押【豹子】\
+INC S10 <$GLOBAL(大小押注记录)>
+CALCVAR GLOBAL 大小押注记录 = <$STR(S10)>
+SAVEVAR GLOBAL 大小押注记录 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SENDMSG 4 【%s】下注【<$HUMAN(猜点押注数量)>】个元宝押【豹子】
+MESSAGEBOX [美女赌庄]：你已使用【<$HUMAN(猜点押注数量)>】个元宝下注押【豹子】！
+MOV M81 0
+DELAYGOTO 10 @main
+BREAK
+
+[@@InPutInteger82]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutInteger82
+[@InPutInteger82]
+#IF
+SMALL G37 <$GLOBAL(大小抢庄时间)>
+#ACT
+MESSAGEBOX [美女赌庄]：下注时间还没到，现在是抢庄时间。
+MOV M81 0
+DELAYGOTO 10 @main
+BREAK
+#IF
+SMALL G37 <$GLOBAL(大小停押时间)>
+#ELSEACT
+MESSAGEBOX [美女赌庄]：下注时间已经结束。请等待开局！
+MOV M81 0
+DELAYGOTO 10 @main
+BREAK
+#IF
+CHECKVAR GLOBAL 大小庄家姓名 = <$USERNAME>
+#ACT
+MOV M82 0
+MESSAGEBOX [美女赌庄]：你目前已经是庄家，无法进行押注。
+DELAYGOTO 10 @main
+BREAK
+#IF
+CHECKVAR HUMAN 猜点押注数量 ? 1
+#ACT
+MOV M82 0
+MESSAGEBOX [美女赌庄]：你已经下注，不能再押注。
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+SMALL M82 <$GLOBAL(大小最小押注)>
+#ACT
+MESSAGEBOX [美女赌庄]：你最少要下注<$GLOBAL(大小最小押注)>个元宝！
+MOV M82 0
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M82 <$GLOBAL(大小最大押注)>
+#ACT
+MESSAGEBOX [美女赌庄]：你最多只能下注<$GLOBAL(大小最大押注)>个元宝！
+MOV M82 0
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+LARGE M82 <$GLOBAL(大小可押大总)>
+#ACT
+MOV M82 0
+MESSAGEBOX [美女赌庄]：对不起，庄家的本钱已达到上限不够赔了。\　\目前你只可以下注【<$GLOBAL(大小可押大总)>】以下的元宝押注大！或者押注小！
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+CHECKGAMEGOLD < <$STR(M82)>
+#ACT
+MESSAGEBOX [美女赌庄]：你身上的元宝不足<$STR(M82)>个。
+MOV M82 0
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - <$STR(M82)>
+CALCVAR GLOBAL 大小已押大总 + <$STR(M82)>
+SAVEVAR GLOBAL 大小已押大总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR HUMAN 猜点押注数量 = <$STR(M82)>
+CALCVAR HUMAN 猜点押注数量大 = <$STR(M82)>
+CALCVAR HUMAN 猜点押注名称 = 大
+SAVEVAR HUMAN 猜点押注名称 ..\QuestDiary\173hh变量文件\猜点押注数量.txt HardDisk
+SAVEVAR HUMAN 猜点押注数量 ..\QuestDiary\173hh变量文件\猜点押注数量.txt HardDisk
+SAVEVAR HUMAN 猜点押注数量大 ..\QuestDiary\173hh变量文件\猜点押注数量大.txt HardDisk
+MOV M82 <$GLOBAL(大小庄家本钱)>
+#IF
+CHECKVAR GLOBAL 大小已押小总 > 0
+#ACT
+INC M82 <$GLOBAL(大小已押小总)>
+#IF
+CHECKVAR GLOBAL 大小已押豹总 > 0
+#ACT
+INC M82 <$GLOBAL(大小已押豹总)>
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+DEC M82 <$GLOBAL(大小已押大总)>
+CALCVAR GLOBAL 大小可押大总 = <$STR(M82)>
+SAVEVAR GLOBAL 大小可押大总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MOV M82 <$GLOBAL(大小庄家本钱)>
+INC M82 <$GLOBAL(大小已押大总)>
+#IF
+CHECKVAR GLOBAL 大小已押豹总 > 0
+#ACT
+INC M82 <$GLOBAL(大小已押豹总)>
+#IF
+CHECKVAR GLOBAL 大小已押小总 > 0
+#ACT
+DEC M82 <$GLOBAL(大小已押小总)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 大小可押小总 = <$STR(M82)>
+SAVEVAR GLOBAL 大小可押小总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MOV M82 <$GLOBAL(大小庄家本钱)>
+INC M82 <$GLOBAL(大小已押大总)>
+#IF
+CHECKVAR GLOBAL 大小已押小总 > 0
+#ACT
+INC M82 <$GLOBAL(大小已押小总)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+DIV M82 <$GLOBAL(大小豹子赔率)>
+#IF
+CHECKVAR GLOBAL 大小已押豹总 > 0
+#ACT
+DEC M82 <$GLOBAL(大小已押豹总)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 大小可押豹总 = <$STR(M82)>
+SAVEVAR GLOBAL 大小可押豹总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MOV S10 【
+INC S10 <$USERNAME>
+INC S10 】下注【
+INC S10 <$HUMAN(猜点押注数量)>
+INC S10 】个元宝押【大】\
+INC S10 <$GLOBAL(大小押注记录)>
+CALCVAR GLOBAL 大小押注记录 = <$STR(S10)>
+SAVEVAR GLOBAL 大小押注记录 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SENDMSG 4 【%s】下注【<$HUMAN(猜点押注数量)>】个元宝押【大】
+MESSAGEBOX [美女赌庄]：你已使用【<$HUMAN(猜点押注数量)>】个元宝下注押【大】！
+MOV M82 0
+DELAYGOTO 10 @main
+BREAK
+
+[@@InPutInteger83]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutInteger83
+[@InPutInteger83]
+#IF
+SMALL G37 <$GLOBAL(大小抢庄时间)>
+#ACT
+MESSAGEBOX [美女赌庄]：下注时间还没到，现在是抢庄时间。
+MOV M81 0
+DELAYGOTO 10 @main
+BREAK
+#IF
+SMALL G37 <$GLOBAL(大小停押时间)>
+#ELSEACT
+MESSAGEBOX [美女赌庄]：下注时间已经结束。请等待开局！
+MOV M81 0
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+CHECKVAR GLOBAL 大小庄家姓名 = <$USERNAME>
+#ACT
+MOV M83 0
+MESSAGEBOX [美女赌庄]：你目前已经是庄家，无法进行押注。
+DELAYGOTO 10 @main
+BREAK
+#IF
+CHECKVAR HUMAN 猜点押注数量 ? 1
+#ACT
+MOV M83 0
+MESSAGEBOX [美女赌庄]：你已经下注，不能再押注。
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+SMALL M83 <$GLOBAL(大小最小押注)>
+#ACT
+MESSAGEBOX [美女赌庄]：你最少要下注<$GLOBAL(大小最小押注)>个元宝！
+MOV M83 0
+DELAYGOTO 10 @main
+BREAK
+#IF
+LARGE M83 <$GLOBAL(大小最大押注)>
+#ACT
+MESSAGEBOX [美女赌庄]：你最多只能下注<$GLOBAL(大小最大押注)>个元宝！
+MOV M83 0
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+LARGE M83 <$GLOBAL(大小可押小总)>
+#ACT
+MOV M83 0
+MESSAGEBOX [美女赌庄]：对不起，庄家的本钱已达到上限不够赔了。\　\目前你只可以下注【<$GLOBAL(大小可押小总)>】以下的元宝押注小！或者押注大！
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+CHECKGAMEGOLD < <$STR(M83)>
+#ACT
+MESSAGEBOX [美女赌庄]：你身上的元宝不足<$STR(M83)>个。
+MOV M83 0
+DELAYGOTO 10 @main
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - <$STR(M83)>
+CALCVAR GLOBAL 大小已押小总 + <$STR(M83)>
+SAVEVAR GLOBAL 大小已押小总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR HUMAN 猜点押注数量 = <$STR(M83)>
+CALCVAR HUMAN 猜点押注数量小 = <$STR(M83)>
+CALCVAR HUMAN 猜点押注名称 = 小
+SAVEVAR HUMAN 猜点押注名称 ..\QuestDiary\173hh变量文件\猜点押注数量.txt HardDisk
+SAVEVAR HUMAN 猜点押注数量 ..\QuestDiary\173hh变量文件\猜点押注数量.txt HardDisk
+SAVEVAR HUMAN 猜点押注数量小 ..\QuestDiary\173hh变量文件\猜点押注数量小.txt HardDisk
+MOV M83 <$GLOBAL(大小庄家本钱)>
+#IF
+CHECKVAR GLOBAL 大小已押大总 > 0
+#ACT
+INC M83 <$GLOBAL(大小已押大总)>
+#IF
+CHECKVAR GLOBAL 大小已押豹总 > 0
+#ACT
+INC M83 <$GLOBAL(大小已押豹总)>
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+DEC M83 <$GLOBAL(大小已押小总)>
+CALCVAR GLOBAL 大小可押小总 = <$STR(M83)>
+SAVEVAR GLOBAL 大小可押小总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MOV M83 <$GLOBAL(大小庄家本钱)>
+INC M83 <$GLOBAL(大小已押小总)>
+#IF
+CHECKVAR GLOBAL 大小已押豹总 > 0
+#ACT
+INC M83 <$GLOBAL(大小已押豹总)>
+#IF
+CHECKVAR GLOBAL 大小已押大总 > 0
+#ACT
+DEC M83 <$GLOBAL(大小已押大总)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 大小可押大总 = <$STR(M83)>
+SAVEVAR GLOBAL 大小可押大总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MOV M83 <$GLOBAL(大小庄家本钱)>
+INC M83 <$GLOBAL(大小已押小总)>
+#IF
+CHECKVAR GLOBAL 大小已押大总 > 0
+#ACT
+INC M83 <$GLOBAL(大小已押大总)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+DIV M83 <$GLOBAL(大小豹子赔率)>
+#IF
+CHECKVAR GLOBAL 大小已押豹总 > 0
+#ACT
+DEC M83 <$GLOBAL(大小已押豹总)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 大小可押豹总 = <$STR(M83)>
+SAVEVAR GLOBAL 大小可押豹总 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MOV S10 【
+INC S10 <$USERNAME>
+INC S10 】下注【
+INC S10 <$HUMAN(猜点押注数量)>
+INC S10 】个元宝押【小】\
+INC S10 <$GLOBAL(大小押注记录)>
+CALCVAR GLOBAL 大小押注记录 = <$STR(S10)>
+SAVEVAR GLOBAL 大小押注记录 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SENDMSG 4 【%s】下注【<$HUMAN(猜点押注数量)>】个元宝押【小】
+MESSAGEBOX [美女赌庄]：你已使用【<$HUMAN(猜点押注数量)>】个元宝下注押【小】！
+MOV M83 0
+DELAYGOTO 10 @main
+BREAK
+
+[@IsInFilterList]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MESSAGEBOX [错误]：输入数据中包含了非法字符，请重新编辑！
+
+[@排号说明]
+1.点击【我要排号】即默认您同意使用【<$GLOBAL(大小最大抢庄)>元宝】上庄！\
+2.如需要使用小于【<$GLOBAL(大小最大抢庄)>元宝】上庄，请使用【抢庄】功能！\
+3.排号后不会扣除您元宝，但身上请保持【<$GLOBAL(大小最大抢庄)>元宝】，否则排号失败！\
+4.排号期间下线：掉线请迅速重连，如IP发生变化，则排号失败！\
+5.排号期间下线：如排到您的时候不在线，则排号失败！\
+6.排号期间掉线：在排号未满20位的情况下，排号不会取消，重连可继续排号！\
+7.排号期间掉线：如排号已满20位，且有玩家点击排号，系统将取消您的排号！\
+8.排号失败解释：排到您的时候取消您上庄资格，自动排入下一位！\
+<返回/@main>\
+
+[@查看排号]
+　　 以下是当前排号顺序：\　\
+　　 <COLOR=clLime 01号:><$GLOBAL(Zname1)>　　　　　<COLOR=clLime 02号:><$GLOBAL(Zname2)>　　　　　<COLOR=clLime 03号:><$GLOBAL(Zname3)>\
+　　 <COLOR=clLime 04号:><$GLOBAL(Zname4)>　　　　　<COLOR=clLime 05号:><$GLOBAL(Zname5)>　　　　　<COLOR=clLime 06号:><$GLOBAL(Zname6)>\
+　　 <COLOR=clLime 07号:><$GLOBAL(Zname7)>　　　　　<COLOR=clLime 08号:><$GLOBAL(Zname8)>　　　　　<COLOR=clLime 09号:><$GLOBAL(Zname9)>\
+　　 <COLOR=clLime 10号:><$GLOBAL(Zname10)>　　　　　<COLOR=clLime 11号:><$GLOBAL(Zname11)>　　　　　<COLOR=clLime 12号:><$GLOBAL(Zname12)>\
+　　 <COLOR=clLime 13号:><$GLOBAL(Zname13)>　　　　　<COLOR=clLime 14号:><$GLOBAL(Zname14)>　　　　　<COLOR=clLime 15号:><$GLOBAL(Zname15)>\
+　　 <COLOR=clLime 16号:><$GLOBAL(Zname16)>　　　　　<COLOR=clLime 17号:><$GLOBAL(Zname17)>　　　　　<COLOR=clLime 18号:><$GLOBAL(Zname18)>\
+　　 <COLOR=clLime 19号:><$GLOBAL(Zname19)>　　　　　<COLOR=clLime 20号:><$GLOBAL(Zname20)>　　　　　<返回/@main>\
+
+[@我要排号]
+#IF
+CHECKGAMEGOLD < <$GLOBAL(大小最大抢庄)>
+#ACT
+MESSAGEBOX 对不起，您身上的元宝不够【<$GLOBAL(大小最大抢庄)>个】，无法排号！
+BREAK
+
+#IF
+CHECKLEVELEX < 55
+#ACT
+MESSAGEBOX 对不起，您的等级没有达到55级，无法排号！
+BREAK
+
+#IF
+LARGE G37 0
+SMALL G37 <$GLOBAL(大小结算时间)>
+#ELSEACT
+MESSAGEBOX 对不起，本局正在结算，请稍后再试！
+BREAK
+
+#IF
+CHECKVAR GLOBAL Zname1 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第1号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname2 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第2号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname3 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第3号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname4 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第4号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname5 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第5号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname6 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第9号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname7 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第7号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname8 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第8号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname9 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第9号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname10 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第10号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname11 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第11号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname12 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第12号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname13 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第13号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname14 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第14号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname15 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第15号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname16 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第16号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname17 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第17号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname18 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第18号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname19 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第19号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname20 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，您已经排在第20号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip1 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第1号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip2 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第2号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip3 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第3号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip4 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第4号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip5 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第5号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip6 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第9号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip7 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第7号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip8 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第8号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip9 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第9号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip10 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第10号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip11 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第11号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip12 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第12号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip13 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第13号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip14 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第14号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip15 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第15号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip16 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第16号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip17 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第17号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip18 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第18号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip19 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第19号，请勿重复排号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zphip20 = <$IPADDR>
+#ACT
+MESSAGEBOX 对不起，您的IP已经排在第20号，请勿重复排号！
+BREAK
+
+#IF
+CHECKVAR GLOBAL Zname1 = 
+#ACT
+CALCVAR GLOBAL Zname1 = <$USERNAME>
+CALCVAR GLOBAL Zphip1 = <$IPADDR>
+SAVEVAR GLOBAL Zphip1 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname1 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第1号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname2 = 
+#ACT
+CALCVAR GLOBAL Zname2 = <$USERNAME>
+CALCVAR GLOBAL Zphip2 = <$IPADDR>
+SAVEVAR GLOBAL Zphip2 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname2 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第2号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname3 = 
+#ACT
+CALCVAR GLOBAL Zname3 = <$USERNAME>
+CALCVAR GLOBAL Zphip3 = <$IPADDR>
+SAVEVAR GLOBAL Zphip3 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname3 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第3号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname4 = 
+#ACT
+CALCVAR GLOBAL Zname4 = <$USERNAME>
+CALCVAR GLOBAL Zphip4 = <$IPADDR>
+SAVEVAR GLOBAL Zphip4 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname4 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第4号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname5 = 
+#ACT
+CALCVAR GLOBAL Zname5 = <$USERNAME>
+CALCVAR GLOBAL Zphip5 = <$IPADDR>
+SAVEVAR GLOBAL Zphip5 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname5 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第5号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname6 = 
+#ACT
+CALCVAR GLOBAL Zname6 = <$USERNAME>
+CALCVAR GLOBAL Zphip6 = <$IPADDR>
+SAVEVAR GLOBAL Zphip6 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname6 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第6号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname7 = 
+#ACT
+CALCVAR GLOBAL Zname7 = <$USERNAME>
+CALCVAR GLOBAL Zphip7 = <$IPADDR>
+SAVEVAR GLOBAL Zphip7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第7号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname8 = 
+#ACT
+CALCVAR GLOBAL Zname8 = <$USERNAME>
+CALCVAR GLOBAL Zphip8 = <$IPADDR>
+SAVEVAR GLOBAL Zphip8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第8号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname9 = 
+#ACT
+CALCVAR GLOBAL Zname9 = <$USERNAME>
+CALCVAR GLOBAL Zphip9 = <$IPADDR>
+SAVEVAR GLOBAL Zphip9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第9号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname10 = 
+#ACT
+CALCVAR GLOBAL Zname10 = <$USERNAME>
+CALCVAR GLOBAL Zphip10 = <$IPADDR>
+SAVEVAR GLOBAL Zphip10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第10号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname11 = 
+#ACT
+CALCVAR GLOBAL Zname11 = <$USERNAME>
+CALCVAR GLOBAL Zphip11 = <$IPADDR>
+SAVEVAR GLOBAL Zphip11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第11号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname12 = 
+#ACT
+CALCVAR GLOBAL Zname12 = <$USERNAME>
+CALCVAR GLOBAL Zphip12 = <$IPADDR>
+SAVEVAR GLOBAL Zphip12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第12号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname13 = 
+#ACT
+CALCVAR GLOBAL Zname13 = <$USERNAME>
+CALCVAR GLOBAL Zphip13 = <$IPADDR>
+SAVEVAR GLOBAL Zphip13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第13号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname14 = 
+#ACT
+CALCVAR GLOBAL Zname14 = <$USERNAME>
+CALCVAR GLOBAL Zphip14 = <$IPADDR>
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第14号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname15 = 
+#ACT
+CALCVAR GLOBAL Zname15 = <$USERNAME>
+CALCVAR GLOBAL Zphip15 = <$IPADDR>
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第15号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname16 = 
+#ACT
+CALCVAR GLOBAL Zname16 = <$USERNAME>
+CALCVAR GLOBAL Zphip16 = <$IPADDR>
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第16号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname17 = 
+#ACT
+CALCVAR GLOBAL Zname17 = <$USERNAME>
+CALCVAR GLOBAL Zphip17 = <$IPADDR>
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第17号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname18 = 
+#ACT
+CALCVAR GLOBAL Zname18 = <$USERNAME>
+CALCVAR GLOBAL Zphip18 = <$IPADDR>
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第18号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname19 = 
+#ACT
+CALCVAR GLOBAL Zname19 = <$USERNAME>
+CALCVAR GLOBAL Zphip19 = <$IPADDR>
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第19号！
+BREAK
+#IF
+CHECKVAR GLOBAL Zname20 = 
+#ACT
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+
+#IF
+<$GLOBAL(Zname20)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname19)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname18)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname17)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname16)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname15)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname14)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname14 = <$GLOBAL(Zname15)>
+CALCVAR GLOBAL Zphip14 = <$GLOBAL(Zphip15)>
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname13)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname13 = <$GLOBAL(Zname14)>
+CALCVAR GLOBAL Zphip13 = <$GLOBAL(Zphip14)>
+SAVEVAR GLOBAL Zname13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname14 = <$GLOBAL(Zname15)>
+CALCVAR GLOBAL Zphip14 = <$GLOBAL(Zphip15)>
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname12)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname12 = <$GLOBAL(Zname13)>
+CALCVAR GLOBAL Zphip12 = <$GLOBAL(Zphip13)>
+SAVEVAR GLOBAL Zname12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname13 = <$GLOBAL(Zname14)>
+CALCVAR GLOBAL Zphip13 = <$GLOBAL(Zphip14)>
+SAVEVAR GLOBAL Zname13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname14 = <$GLOBAL(Zname15)>
+CALCVAR GLOBAL Zphip14 = <$GLOBAL(Zphip15)>
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname11)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname11 = <$GLOBAL(Zname12)>
+CALCVAR GLOBAL Zphip11 = <$GLOBAL(Zphip12)>
+SAVEVAR GLOBAL Zname11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname12 = <$GLOBAL(Zname13)>
+CALCVAR GLOBAL Zphip12 = <$GLOBAL(Zphip13)>
+SAVEVAR GLOBAL Zname12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname13 = <$GLOBAL(Zname14)>
+CALCVAR GLOBAL Zphip13 = <$GLOBAL(Zphip14)>
+SAVEVAR GLOBAL Zname13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname14 = <$GLOBAL(Zname15)>
+CALCVAR GLOBAL Zphip14 = <$GLOBAL(Zphip15)>
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname10)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname10 = <$GLOBAL(Zname11)>
+CALCVAR GLOBAL Zphip10 = <$GLOBAL(Zphip11)>
+SAVEVAR GLOBAL Zname10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname11 = <$GLOBAL(Zname12)>
+CALCVAR GLOBAL Zphip11 = <$GLOBAL(Zphip12)>
+SAVEVAR GLOBAL Zname11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname12 = <$GLOBAL(Zname13)>
+CALCVAR GLOBAL Zphip12 = <$GLOBAL(Zphip13)>
+SAVEVAR GLOBAL Zname12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname13 = <$GLOBAL(Zname14)>
+CALCVAR GLOBAL Zphip13 = <$GLOBAL(Zphip14)>
+SAVEVAR GLOBAL Zname13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname14 = <$GLOBAL(Zname15)>
+CALCVAR GLOBAL Zphip14 = <$GLOBAL(Zphip15)>
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname9)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname9 = <$GLOBAL(Zname10)>
+CALCVAR GLOBAL Zphip9 = <$GLOBAL(Zphip10)>
+SAVEVAR GLOBAL Zname9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname10 = <$GLOBAL(Zname11)>
+CALCVAR GLOBAL Zphip10 = <$GLOBAL(Zphip11)>
+SAVEVAR GLOBAL Zname10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname11 = <$GLOBAL(Zname12)>
+CALCVAR GLOBAL Zphip11 = <$GLOBAL(Zphip12)>
+SAVEVAR GLOBAL Zname11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname12 = <$GLOBAL(Zname13)>
+CALCVAR GLOBAL Zphip12 = <$GLOBAL(Zphip13)>
+SAVEVAR GLOBAL Zname12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname13 = <$GLOBAL(Zname14)>
+CALCVAR GLOBAL Zphip13 = <$GLOBAL(Zphip14)>
+SAVEVAR GLOBAL Zname13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname14 = <$GLOBAL(Zname15)>
+CALCVAR GLOBAL Zphip14 = <$GLOBAL(Zphip15)>
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname8)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname8 = <$GLOBAL(Zname9)>
+CALCVAR GLOBAL Zphip8 = <$GLOBAL(Zphip9)>
+SAVEVAR GLOBAL Zname8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname9 = <$GLOBAL(Zname10)>
+CALCVAR GLOBAL Zphip9 = <$GLOBAL(Zphip10)>
+SAVEVAR GLOBAL Zname9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname10 = <$GLOBAL(Zname11)>
+CALCVAR GLOBAL Zphip10 = <$GLOBAL(Zphip11)>
+SAVEVAR GLOBAL Zname10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname11 = <$GLOBAL(Zname12)>
+CALCVAR GLOBAL Zphip11 = <$GLOBAL(Zphip12)>
+SAVEVAR GLOBAL Zname11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname12 = <$GLOBAL(Zname13)>
+CALCVAR GLOBAL Zphip12 = <$GLOBAL(Zphip13)>
+SAVEVAR GLOBAL Zname12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname13 = <$GLOBAL(Zname14)>
+CALCVAR GLOBAL Zphip13 = <$GLOBAL(Zphip14)>
+SAVEVAR GLOBAL Zname13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname14 = <$GLOBAL(Zname15)>
+CALCVAR GLOBAL Zphip14 = <$GLOBAL(Zphip15)>
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname7)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname7 = <$GLOBAL(Zname8)>
+CALCVAR GLOBAL Zphip7 = <$GLOBAL(Zphip8)>
+SAVEVAR GLOBAL Zname7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname8 = <$GLOBAL(Zname9)>
+CALCVAR GLOBAL Zphip8 = <$GLOBAL(Zphip9)>
+SAVEVAR GLOBAL Zname8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname9 = <$GLOBAL(Zname10)>
+CALCVAR GLOBAL Zphip9 = <$GLOBAL(Zphip10)>
+SAVEVAR GLOBAL Zname9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname10 = <$GLOBAL(Zname11)>
+CALCVAR GLOBAL Zphip10 = <$GLOBAL(Zphip11)>
+SAVEVAR GLOBAL Zname10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname11 = <$GLOBAL(Zname12)>
+CALCVAR GLOBAL Zphip11 = <$GLOBAL(Zphip12)>
+SAVEVAR GLOBAL Zname11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname12 = <$GLOBAL(Zname13)>
+CALCVAR GLOBAL Zphip12 = <$GLOBAL(Zphip13)>
+SAVEVAR GLOBAL Zname12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname13 = <$GLOBAL(Zname14)>
+CALCVAR GLOBAL Zphip13 = <$GLOBAL(Zphip14)>
+SAVEVAR GLOBAL Zname13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname14 = <$GLOBAL(Zname15)>
+CALCVAR GLOBAL Zphip14 = <$GLOBAL(Zphip15)>
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname6)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname6 = <$GLOBAL(Zname7)>
+CALCVAR GLOBAL Zphip6 = <$GLOBAL(Zphip7)>
+SAVEVAR GLOBAL Zname6 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip6 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname7 = <$GLOBAL(Zname8)>
+CALCVAR GLOBAL Zphip7 = <$GLOBAL(Zphip8)>
+SAVEVAR GLOBAL Zname7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname8 = <$GLOBAL(Zname9)>
+CALCVAR GLOBAL Zphip8 = <$GLOBAL(Zphip9)>
+SAVEVAR GLOBAL Zname8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname9 = <$GLOBAL(Zname10)>
+CALCVAR GLOBAL Zphip9 = <$GLOBAL(Zphip10)>
+SAVEVAR GLOBAL Zname9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname10 = <$GLOBAL(Zname11)>
+CALCVAR GLOBAL Zphip10 = <$GLOBAL(Zphip11)>
+SAVEVAR GLOBAL Zname10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname11 = <$GLOBAL(Zname12)>
+CALCVAR GLOBAL Zphip11 = <$GLOBAL(Zphip12)>
+SAVEVAR GLOBAL Zname11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname12 = <$GLOBAL(Zname13)>
+CALCVAR GLOBAL Zphip12 = <$GLOBAL(Zphip13)>
+SAVEVAR GLOBAL Zname12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname13 = <$GLOBAL(Zname14)>
+CALCVAR GLOBAL Zphip13 = <$GLOBAL(Zphip14)>
+SAVEVAR GLOBAL Zname13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname14 = <$GLOBAL(Zname15)>
+CALCVAR GLOBAL Zphip14 = <$GLOBAL(Zphip15)>
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname5)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname5 = <$GLOBAL(Zname6)>
+CALCVAR GLOBAL Zphip5 = <$GLOBAL(Zphip6)>
+SAVEVAR GLOBAL Zname5 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip5 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname6 = <$GLOBAL(Zname7)>
+CALCVAR GLOBAL Zphip6 = <$GLOBAL(Zphip7)>
+SAVEVAR GLOBAL Zname6 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip6 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname7 = <$GLOBAL(Zname8)>
+CALCVAR GLOBAL Zphip7 = <$GLOBAL(Zphip8)>
+SAVEVAR GLOBAL Zname7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname8 = <$GLOBAL(Zname9)>
+CALCVAR GLOBAL Zphip8 = <$GLOBAL(Zphip9)>
+SAVEVAR GLOBAL Zname8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname9 = <$GLOBAL(Zname10)>
+CALCVAR GLOBAL Zphip9 = <$GLOBAL(Zphip10)>
+SAVEVAR GLOBAL Zname9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname10 = <$GLOBAL(Zname11)>
+CALCVAR GLOBAL Zphip10 = <$GLOBAL(Zphip11)>
+SAVEVAR GLOBAL Zname10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname11 = <$GLOBAL(Zname12)>
+CALCVAR GLOBAL Zphip11 = <$GLOBAL(Zphip12)>
+SAVEVAR GLOBAL Zname11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname12 = <$GLOBAL(Zname13)>
+CALCVAR GLOBAL Zphip12 = <$GLOBAL(Zphip13)>
+SAVEVAR GLOBAL Zname12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname13 = <$GLOBAL(Zname14)>
+CALCVAR GLOBAL Zphip13 = <$GLOBAL(Zphip14)>
+SAVEVAR GLOBAL Zname13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname14 = <$GLOBAL(Zname15)>
+CALCVAR GLOBAL Zphip14 = <$GLOBAL(Zphip15)>
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname4)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname4 = <$GLOBAL(Zname5)>
+CALCVAR GLOBAL Zphip4 = <$GLOBAL(Zphip5)>
+SAVEVAR GLOBAL Zname4 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip4 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname5 = <$GLOBAL(Zname6)>
+CALCVAR GLOBAL Zphip5 = <$GLOBAL(Zphip6)>
+SAVEVAR GLOBAL Zname5 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip5 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname6 = <$GLOBAL(Zname7)>
+CALCVAR GLOBAL Zphip6 = <$GLOBAL(Zphip7)>
+SAVEVAR GLOBAL Zname6 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip6 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname7 = <$GLOBAL(Zname8)>
+CALCVAR GLOBAL Zphip7 = <$GLOBAL(Zphip8)>
+SAVEVAR GLOBAL Zname7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname8 = <$GLOBAL(Zname9)>
+CALCVAR GLOBAL Zphip8 = <$GLOBAL(Zphip9)>
+SAVEVAR GLOBAL Zname8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname9 = <$GLOBAL(Zname10)>
+CALCVAR GLOBAL Zphip9 = <$GLOBAL(Zphip10)>
+SAVEVAR GLOBAL Zname9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname10 = <$GLOBAL(Zname11)>
+CALCVAR GLOBAL Zphip10 = <$GLOBAL(Zphip11)>
+SAVEVAR GLOBAL Zname10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname11 = <$GLOBAL(Zname12)>
+CALCVAR GLOBAL Zphip11 = <$GLOBAL(Zphip12)>
+SAVEVAR GLOBAL Zname11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname12 = <$GLOBAL(Zname13)>
+CALCVAR GLOBAL Zphip12 = <$GLOBAL(Zphip13)>
+SAVEVAR GLOBAL Zname12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname13 = <$GLOBAL(Zname14)>
+CALCVAR GLOBAL Zphip13 = <$GLOBAL(Zphip14)>
+SAVEVAR GLOBAL Zname13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname14 = <$GLOBAL(Zname15)>
+CALCVAR GLOBAL Zphip14 = <$GLOBAL(Zphip15)>
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname3)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname3 = <$GLOBAL(Zname4)>
+CALCVAR GLOBAL Zphip3 = <$GLOBAL(Zphip4)>
+SAVEVAR GLOBAL Zname3 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip3 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname4 = <$GLOBAL(Zname5)>
+CALCVAR GLOBAL Zphip4 = <$GLOBAL(Zphip5)>
+SAVEVAR GLOBAL Zname4 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip4 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname5 = <$GLOBAL(Zname6)>
+CALCVAR GLOBAL Zphip5 = <$GLOBAL(Zphip6)>
+SAVEVAR GLOBAL Zname5 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip5 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname6 = <$GLOBAL(Zname7)>
+CALCVAR GLOBAL Zphip6 = <$GLOBAL(Zphip7)>
+SAVEVAR GLOBAL Zname6 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip6 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname7 = <$GLOBAL(Zname8)>
+CALCVAR GLOBAL Zphip7 = <$GLOBAL(Zphip8)>
+SAVEVAR GLOBAL Zname7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname8 = <$GLOBAL(Zname9)>
+CALCVAR GLOBAL Zphip8 = <$GLOBAL(Zphip9)>
+SAVEVAR GLOBAL Zname8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname9 = <$GLOBAL(Zname10)>
+CALCVAR GLOBAL Zphip9 = <$GLOBAL(Zphip10)>
+SAVEVAR GLOBAL Zname9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname10 = <$GLOBAL(Zname11)>
+CALCVAR GLOBAL Zphip10 = <$GLOBAL(Zphip11)>
+SAVEVAR GLOBAL Zname10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname11 = <$GLOBAL(Zname12)>
+CALCVAR GLOBAL Zphip11 = <$GLOBAL(Zphip12)>
+SAVEVAR GLOBAL Zname11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname12 = <$GLOBAL(Zname13)>
+CALCVAR GLOBAL Zphip12 = <$GLOBAL(Zphip13)>
+SAVEVAR GLOBAL Zname12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname13 = <$GLOBAL(Zname14)>
+CALCVAR GLOBAL Zphip13 = <$GLOBAL(Zphip14)>
+SAVEVAR GLOBAL Zname13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname14 = <$GLOBAL(Zname15)>
+CALCVAR GLOBAL Zphip14 = <$GLOBAL(Zphip15)>
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname2)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname2 = <$GLOBAL(Zname3)>
+CALCVAR GLOBAL Zphip2 = <$GLOBAL(Zphip3)>
+SAVEVAR GLOBAL Zname2 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip2 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname3 = <$GLOBAL(Zname4)>
+CALCVAR GLOBAL Zphip3 = <$GLOBAL(Zphip4)>
+SAVEVAR GLOBAL Zname3 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip3 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname4 = <$GLOBAL(Zname5)>
+CALCVAR GLOBAL Zphip4 = <$GLOBAL(Zphip5)>
+SAVEVAR GLOBAL Zname4 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip4 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname5 = <$GLOBAL(Zname6)>
+CALCVAR GLOBAL Zphip5 = <$GLOBAL(Zphip6)>
+SAVEVAR GLOBAL Zname5 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip5 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname6 = <$GLOBAL(Zname7)>
+CALCVAR GLOBAL Zphip6 = <$GLOBAL(Zphip7)>
+SAVEVAR GLOBAL Zname6 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip6 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname7 = <$GLOBAL(Zname8)>
+CALCVAR GLOBAL Zphip7 = <$GLOBAL(Zphip8)>
+SAVEVAR GLOBAL Zname7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname8 = <$GLOBAL(Zname9)>
+CALCVAR GLOBAL Zphip8 = <$GLOBAL(Zphip9)>
+SAVEVAR GLOBAL Zname8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname9 = <$GLOBAL(Zname10)>
+CALCVAR GLOBAL Zphip9 = <$GLOBAL(Zphip10)>
+SAVEVAR GLOBAL Zname9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname10 = <$GLOBAL(Zname11)>
+CALCVAR GLOBAL Zphip10 = <$GLOBAL(Zphip11)>
+SAVEVAR GLOBAL Zname10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname11 = <$GLOBAL(Zname12)>
+CALCVAR GLOBAL Zphip11 = <$GLOBAL(Zphip12)>
+SAVEVAR GLOBAL Zname11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname12 = <$GLOBAL(Zname13)>
+CALCVAR GLOBAL Zphip12 = <$GLOBAL(Zphip13)>
+SAVEVAR GLOBAL Zname12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname13 = <$GLOBAL(Zname14)>
+CALCVAR GLOBAL Zphip13 = <$GLOBAL(Zphip14)>
+SAVEVAR GLOBAL Zname13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname14 = <$GLOBAL(Zname15)>
+CALCVAR GLOBAL Zphip14 = <$GLOBAL(Zphip15)>
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+#IF
+<$GLOBAL(Zname1)>.ONLINELONGMIN ? 0
+#ELSEACT
+CALCVAR GLOBAL Zname1 = <$GLOBAL(Zname2)>
+CALCVAR GLOBAL Zphip1 = <$GLOBAL(Zphip2)>
+SAVEVAR GLOBAL Zname1 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip1 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname2 = <$GLOBAL(Zname3)>
+CALCVAR GLOBAL Zphip2 = <$GLOBAL(Zphip3)>
+SAVEVAR GLOBAL Zname2 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip2 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname3 = <$GLOBAL(Zname4)>
+CALCVAR GLOBAL Zphip3 = <$GLOBAL(Zphip4)>
+SAVEVAR GLOBAL Zname3 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip3 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname4 = <$GLOBAL(Zname5)>
+CALCVAR GLOBAL Zphip4 = <$GLOBAL(Zphip5)>
+SAVEVAR GLOBAL Zname4 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip4 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname5 = <$GLOBAL(Zname6)>
+CALCVAR GLOBAL Zphip5 = <$GLOBAL(Zphip6)>
+SAVEVAR GLOBAL Zname5 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip5 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname6 = <$GLOBAL(Zname7)>
+CALCVAR GLOBAL Zphip6 = <$GLOBAL(Zphip7)>
+SAVEVAR GLOBAL Zname6 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip6 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname7 = <$GLOBAL(Zname8)>
+CALCVAR GLOBAL Zphip7 = <$GLOBAL(Zphip8)>
+SAVEVAR GLOBAL Zname7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip7 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname8 = <$GLOBAL(Zname9)>
+CALCVAR GLOBAL Zphip8 = <$GLOBAL(Zphip9)>
+SAVEVAR GLOBAL Zname8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip8 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname9 = <$GLOBAL(Zname10)>
+CALCVAR GLOBAL Zphip9 = <$GLOBAL(Zphip10)>
+SAVEVAR GLOBAL Zname9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip9 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname10 = <$GLOBAL(Zname11)>
+CALCVAR GLOBAL Zphip10 = <$GLOBAL(Zphip11)>
+SAVEVAR GLOBAL Zname10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip10 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname11 = <$GLOBAL(Zname12)>
+CALCVAR GLOBAL Zphip11 = <$GLOBAL(Zphip12)>
+SAVEVAR GLOBAL Zname11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip11 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname12 = <$GLOBAL(Zname13)>
+CALCVAR GLOBAL Zphip12 = <$GLOBAL(Zphip13)>
+SAVEVAR GLOBAL Zname12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip12 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname13 = <$GLOBAL(Zname14)>
+CALCVAR GLOBAL Zphip13 = <$GLOBAL(Zphip14)>
+SAVEVAR GLOBAL Zname13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip13 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname14 = <$GLOBAL(Zname15)>
+CALCVAR GLOBAL Zphip14 = <$GLOBAL(Zphip15)>
+SAVEVAR GLOBAL Zname14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip14 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname15 = <$GLOBAL(Zname16)>
+CALCVAR GLOBAL Zphip15 = <$GLOBAL(Zphip16)>
+SAVEVAR GLOBAL Zname15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip15 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname16 = <$GLOBAL(Zname17)>
+CALCVAR GLOBAL Zphip16 = <$GLOBAL(Zphip17)>
+SAVEVAR GLOBAL Zname16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip16 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname17 = <$GLOBAL(Zname18)>
+CALCVAR GLOBAL Zphip17 = <$GLOBAL(Zphip18)>
+SAVEVAR GLOBAL Zname17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip17 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname18 = <$GLOBAL(Zname19)>
+CALCVAR GLOBAL Zphip18 = <$GLOBAL(Zphip19)>
+SAVEVAR GLOBAL Zname18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip18 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname19 = <$GLOBAL(Zname20)>
+CALCVAR GLOBAL Zphip19 = <$GLOBAL(Zphip20)>
+SAVEVAR GLOBAL Zname19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zphip19 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+CALCVAR GLOBAL Zname20 = <$USERNAME>
+CALCVAR GLOBAL Zphip20 = <$IPADDR>
+SAVEVAR GLOBAL Zphip20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+SAVEVAR GLOBAL Zname20 ..\QuestDiary\173hh变量文件\大小坐庄变量.txt HardDisk
+MESSAGEBOX 恭喜您排号成功，当前排在第20号！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MESSAGEBOX 对不起，当前排号已满，请等待本局结束后再来排号！
+BREAK
+
+
+[@173hh猜点回土城]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE 3 330 330
+
+[@173hh规则说明]
+抢庄游戏规则：\
+(1)庄家坐庄后，其他玩家可下注，一分钟后三个骰子由庄家掷出，\
+骰子点数随机出现点数总和小于11代表小，点数总和大于10代表\
+大，三个点数相同代表豹子。\
+(2)押大赢大，押小赢小，豹子通杀，本游戏系统收取1%税金。\
+(3)正在坐庄或已下注的玩家如下线将被视做弃权，损失下注元宝。\
+(4)玩家下注数不能超过庄家坐庄的元宝总和。\　\
+<返回/@MAIN>　　   <离开/@EXIT>\

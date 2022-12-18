@@ -1,0 +1,20 @@
+[@main]
+是不是想获得神的祝福\
+让你的武器发挥更高的力量\
+如果你弄齐三个祝福碎片\
+我可以帮你合成神卷去超级祝福油地图\
+<如何/@helpmakedrug>合成物品\
+<退出/@exit>
+
+[@helpmakedrug]
+#if
+checkitem 祝福碎片 3
+#ACT
+TAKE 祝福碎片 3
+give 超级祝福油地图卷 1
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\想想办法吧。\
+
+
+

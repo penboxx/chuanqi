@@ -1,0 +1,654 @@
+[@在线回收高级1]
+{
+<COLOR=clAqua 【金刚石回收】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------>【<高级服务/@高级服务>】<COLOR=clFuchsia ------>\
+<COLOR=clLime ①级回收进入：><书页>     → <COLOR=clAqua    2个金刚石>    〖<一键回收/@书页>〗\
+<COLOR=clLime ②级回收进入：><聚灵珠中> → <COLOR=clAqua   10个金刚石>    〖<一键回收/@聚灵珠中>〗\
+<COLOR=clLime ③级回收进入：><聚灵珠大> → <COLOR=clAqua   15个金刚石>    〖<一键回收/@聚灵珠大>〗\
+<COLOR=clLime ④级回收进入：><祖玛首饰> → <COLOR=clAqua   15个金刚石>    〖<一键回收/@祖玛金币1>〗\
+<COLOR=clLime ⑤级回收进入：><祖玛武器> → <COLOR=clAqua   30个金刚石>    〖<一键回收/@裁决金币1>〗\
+<COLOR=clLime ⑥级回收进入：><赤月首饰> → <COLOR=clAqua   30个金刚石>    〖<一键回收/@赤月金币1>〗\
+<COLOR=clLime ⑦级回收进入：><40级衣服> → <COLOR=clAqua  100个金刚石>    〖<一键回收/@40新衣服1>〗\
+
+[@书页]
+#if
+checkitem 书页 1
+#ACT
+take 书页 1
+INC D39 1
+INC D40 1
+GAMEDIAMOND + 2
+DelayCall 100 @书页
+break
+#if
+LARGE D39 0
+#ACT
+MUL D40 2
+sendmsg 1 提示：玩家【<$USERNAME>】一键回收了书页(<$STR(D39)>)个,获得金刚石+(<$STR(D40)>)个！
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了书页(<$STR(D39)>)个,获得金刚石+(<$STR(D40)>)个！ 255 253 10
+MOV D39 0
+MOV D40 0
+break
+#ELSEACT
+sendmsg 6 你背包中无书页。
+break
+[@聚灵珠大]
+#if
+checkitem 聚灵珠(大) 1
+#ACT
+take 聚灵珠(大) 1
+INC D21 1
+INC D22 1
+GAMEDIAMOND + 15
+DelayCall 100 @聚灵珠大
+break
+#if
+LARGE D21 0
+#ACT
+MUL D22 15
+sendmsg 1 提示：玩家【<$USERNAME>】一键回收了聚灵珠(大)(<$STR(D21)>)个,获得金刚石+(<$STR(D22)>)个！
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了聚灵珠(大)(<$STR(D21)>)个,获得金刚石+(<$STR(D22)>)个！ 255 253 10
+MOV D21 0
+MOV D22 0
+break
+#ELSEACT
+sendmsg 6 你背包中无聚灵珠(中)。
+break
+[@聚灵珠中]
+#if
+checkitem 聚灵珠(中) 1
+#ACT
+take 聚灵珠(中) 1
+INC D21 1
+INC D22 1
+GAMEDIAMOND + 10
+DelayCall 100 @聚灵珠中
+break
+#if
+LARGE D21 0
+#ACT
+MUL D22 10
+sendmsg 1 提示：玩家【<$USERNAME>】一键回收了聚灵珠(中)(<$STR(D21)>)个,获得金刚石+(<$STR(D22)>)个！
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了聚灵珠(中)(<$STR(D21)>)个,获得金刚石+(<$STR(D22)>)个！ 255 253 10
+MOV D21 0
+MOV D22 0
+break
+#ELSEACT
+sendmsg 6 你背包中无聚灵珠(中)。
+break
+[@裁决金币1]
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+INC D37 1
+INC D38 1
+GAMEDIAMOND + 30
+DelayCall 100 @裁决金币1
+break
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+INC D37 1
+INC D38 1
+GAMEDIAMOND + 30
+DelayCall 100 @裁决金币1
+break
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+INC D37 1
+INC D38 1
+GAMEDIAMOND + 30
+DelayCall 100 @裁决金币1
+break
+#if
+LARGE D37 0
+#ACT
+MUL D38 30
+sendmsg 1 提示：玩家【<$USERNAME>】一键回收了祖玛武器(<$STR(D37)>)件,获得金刚石+(<$STR(D38)>)个！
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了祖玛武器(<$STR(D37)>)件,获得金刚石+(<$STR(D38)>)个！ 255 253 10
+MOV D37 0
+MOV D38 0
+break
+#ELSEACT
+sendmsg 6 你背包中无祖玛武器。
+break
+
+[@40新衣服1]
+#if
+checkitem 天魔神甲 1
+#ACT
+take 天魔神甲 1
+INC D35 1
+INC D36 1
+GAMEDIAMOND + 100
+DelayCall 100 @40新衣服1
+break
+#if
+checkitem 圣战宝甲 1
+#ACT
+take 圣战宝甲 1
+INC D35 1
+INC D36 1
+GAMEDIAMOND + 100
+DelayCall 100 @40新衣服1
+break
+#if
+checkitem 法神披风 1
+#ACT
+take 法神披风 1
+INC D35 1
+INC D36 1
+GAMEDIAMOND + 100
+DelayCall 100 @40新衣服1
+break
+#if
+checkitem 霓裳羽衣 1
+#ACT
+take 霓裳羽衣 1
+INC D35 1
+INC D36 1
+GAMEDIAMOND + 100
+DelayCall 100 @40新衣服1
+break
+#if
+checkitem 天尊道袍 1
+#ACT
+take 天尊道袍 1
+INC D35 1
+INC D36 1
+GAMEDIAMOND + 100
+DelayCall 100 @40新衣服1
+break
+#if
+checkitem 天师长袍 1
+#ACT
+take 天师长袍 1
+INC D35 1
+INC D36 1
+GAMEDIAMOND + 100
+DelayCall 100 @40新衣服1
+break
+#if
+LARGE D35 0
+#ACT
+MUL D36 100
+sendmsg 1 提示：玩家【<$USERNAME>】一键回收了40新衣服(<$STR(D35)>)件,获得金刚石+(<$STR(D36)>)个！
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了40新衣服(<$STR(D35)>)件,获得金刚石+(<$STR(D36)>)个！ 255 253 10
+MOV D35 0
+MOV D36 0
+break
+#ELSEACT
+sendmsg 6 你背包中无40新衣服。
+break
+
+[@赤月金币1]
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+INC D24 1
+INC D25 1
+GAMEDIAMOND + 30
+DelayCall 100 @赤月金币1
+break
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+INC D24 1
+INC D25 1
+GAMEDIAMOND + 30
+DelayCall 100 @赤月金币1
+break
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+INC D24 1
+INC D25 1
+GAMEDIAMOND + 30
+DelayCall 100 @赤月金币1
+break
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+INC D24 1
+INC D25 1
+GAMEDIAMOND + 30
+DelayCall 100 @赤月金币1
+break
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+INC D24 1
+INC D25 1
+GAMEDIAMOND + 30
+DelayCall 100 @赤月金币1
+break
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+INC D24 1
+INC D25 1
+GAMEDIAMOND + 30
+DelayCall 100 @赤月金币1
+break
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+INC D24 1
+INC D25 1
+GAMEDIAMOND + 30
+DelayCall 100 @赤月金币1
+break
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+INC D24 1
+INC D25 1
+GAMEDIAMOND + 30
+DelayCall 100 @赤月金币1
+break
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+INC D24 1
+INC D25 1
+GAMEDIAMOND + 30
+DelayCall 100 @赤月金币1
+break
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+INC D24 1
+INC D25 1
+GAMEDIAMOND + 30
+DelayCall 100 @赤月金币1
+break
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+INC D24 1
+INC D25 1
+GAMEDIAMOND + 30
+DelayCall 100 @赤月金币1
+break
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+INC D24 1
+INC D25 1
+GAMEDIAMOND + 30
+DelayCall 100 @赤月金币1
+break
+#if
+LARGE D24 0
+#ACT
+MUL D25 30
+sendmsg 1 提示：玩家【<$USERNAME>】一键回收了赤月首饰(<$STR(D24)>)件,获得金刚石+(<$STR(D25)>)个！
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了赤月首饰(<$STR(D24)>)件,获得金刚石+(<$STR(D25)>)个！ 255 253 10
+MOV D24 0
+MOV D25 0
+break
+#ELSEACT
+sendmsg 6 你背包中无赤月首饰。
+break
+
+[@祖玛金币1]
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC D26 1
+INC D27 1
+GAMEDIAMOND + 15
+DelayCall 100 @祖玛金币1
+break
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC D26 1
+INC D27 1
+GAMEDIAMOND + 15
+DelayCall 100 @祖玛金币1
+break
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC D26 1
+INC D27 1
+GAMEDIAMOND + 15
+DelayCall 100 @祖玛金币1
+break
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC D26 1
+INC D27 1
+GAMEDIAMOND + 15
+DelayCall 100 @祖玛金币1
+break
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC D26 1
+INC D27 1
+GAMEDIAMOND + 15
+DelayCall 100 @祖玛金币1
+break
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC D26 1
+INC D27 1
+GAMEDIAMOND + 15
+DelayCall 100 @祖玛金币1
+break
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC D26 1
+INC D27 1
+GAMEDIAMOND + 15
+DelayCall 100 @祖玛金币1
+break
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC D26 1
+INC D27 1
+GAMEDIAMOND + 15
+DelayCall 100 @祖玛金币1
+break
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC D26 1
+INC D27 1
+GAMEDIAMOND + 15
+DelayCall 100 @祖玛金币1
+break
+#if
+checkitem 黑铁头盔 1
+#ACT
+take 黑铁头盔 1
+INC D26 1
+INC D27 1
+GAMEDIAMOND + 15
+DelayCall 100 @祖玛金币1
+break
+#if
+LARGE D26 0
+#ACT
+MUL D27 15
+sendmsg 1 提示：玩家【<$USERNAME>】一键回收了祖玛装备(<$STR(D26)>)件,获得金刚石+(<$STR(D27)>)个！
+SendMsg 7 提示：玩家【<$USERNAME>】一键回收了祖玛装备(<$STR(D26)>)件,获得金刚石+(<$STR(D27)>)个！ 255 253 10
+MOV D26 0
+MOV D27 0
+break
+#ELSEACT
+sendmsg 6 你背包中无祖玛装备。
+break
+
+
+
+
+
+
+[@高级服务]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【高级服务】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\ \
+
+
+
+     〖<提取金刚石/@提取金刚石>〗 〖<聚灵珠兑换/@珠子>〗 〖<仓库服务/@仓库>〗 〖<兑换金刚石/@兑换金刚石>〗\ \
+
+\         <注意：金刚石最多支持65000个，爆了后果自负！>
+[@提取金刚石]
+请选择需要提取的金刚石数量：           <COLOR=clLime 当前金刚石：>[<$GAMEDIAMOND>]个\ \
+<1:金刚石/@1金刚石>           <5:金刚石/@5金刚石>           <10:金刚石/@10金刚石>\ \
+<50:金刚石/@50金刚石>          <100:金刚石/@100金刚石>         <500:金刚石/@500金刚石>\ \
+<1000:金刚石/@1000金刚石>        <5000:金刚石/@5000金刚石>\ \
+<返回/@MAIN>
+
+#CALL [\\装备回收\珠子.txt] @珠子111
+
+[@仓库]
+需要帮什么忙吗？\
+目前不收保管费，请多利用。\ \
+ <保管/@storage>东西\
+ <找回/@getback>东西\
+ <捆/@mbind>各种卷书和药水\
+ <关 闭/@exit>\
+[@storage]
+需要保管什么东西？\ \ \
+ <返 回/@仓库>
+[@getback]
+请看目录决定找什么东西。\ \ \
+ <返 回/@仓库>
+
+[@1金刚石]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 1
+GIVE 金刚石：1 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+[@5金刚石]
+#IF
+CHECKGAMEDIAMOND > 4
+#ACT
+GAMEDIAMOND - 5
+GIVE 金刚石：5 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+[@10金刚石]
+#IF
+CHECKGAMEDIAMOND > 9
+#ACT
+GAMEDIAMOND - 10
+GIVE 金刚石：10 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+[@50金刚石]
+#IF
+CHECKGAMEDIAMOND > 49
+#ACT
+GAMEDIAMOND - 50
+GIVE 金刚石：50 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+[@100金刚石]
+#IF
+CHECKGAMEDIAMOND > 99
+#ACT
+GAMEDIAMOND - 100
+GIVE 金刚石：100 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+[@500金刚石]
+#IF
+CHECKGAMEDIAMOND > 499
+#ACT
+GAMEDIAMOND - 500
+GIVE 金刚石：500 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+[@1000金刚石]
+#IF
+CHECKGAMEDIAMOND > 999
+#ACT
+GAMEDIAMOND - 1000
+GIVE 金刚石：1000 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+[@5000金刚石]
+#IF
+CHECKGAMEDIAMOND > 4999
+#ACT
+GAMEDIAMOND - 5000
+GIVE 金刚石：5000 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+[@兑换金刚石]
+请选择需要兑换的金刚石数量：           <COLOR=clLime 当前金刚石：>[<$GAMEDIAMOND>]个\ \
+<1:金刚石/@1个金刚石>           <5:金刚石/@5个金刚石>           <10:金刚石/@10个金刚石>\ \
+<50:金刚石/@50个金刚石>          <100:金刚石/@100个金刚石>         <500:金刚石/@500个金刚石>\ \
+<1000:金刚石/@1000个金刚石>        <5000:金刚石/@5000个金刚石>\ \
+<返回/@MAIN>                       <COLOR=clFuchsia 金刚石兑换比例：1元宝=1金刚石>
+[@1个金刚石]
+#IF
+CHECKGAMEGOLD > 1
+#ACT
+GAMEGOLD - 1
+GAMEDIAMOND + 1
+SENDMSG 7 提示：当前金刚石:<$GAMEDIAMOND>
+GOTO @兑换金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的元宝！\ \
+<返回/@兑换金刚石>\
+
+[@5个金刚石]
+#IF
+CHECKGAMEGOLD > 4
+#ACT
+GAMEGOLD - 5
+GAMEDIAMOND + 5
+SENDMSG 7 提示：当前金刚石:<$GAMEDIAMOND>
+GOTO @兑换金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的元宝！\ \
+<返回/@兑换金刚石>\
+
+[@10个金刚石]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+GAMEDIAMOND + 10
+SENDMSG 7 提示：当前金刚石:<$GAMEDIAMOND>
+GOTO @兑换金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的元宝！\ \
+<返回/@兑换金刚石>\
+
+[@50个金刚石]
+#IF
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+GAMEDIAMOND + 50
+SENDMSG 7 提示：当前金刚石:<$GAMEDIAMOND>
+GOTO @兑换金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的元宝！\ \
+<返回/@兑换金刚石>\
+
+[@100个金刚石]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+GAMEDIAMOND + 100
+SENDMSG 7 提示：当前金刚石:<$GAMEDIAMOND>
+GOTO @兑换金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的元宝！\ \
+<返回/@兑换金刚石>\
+[@500个金刚石]
+#IF
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+GAMEDIAMOND + 500
+SENDMSG 7 提示：当前金刚石:<$GAMEDIAMOND>
+GOTO @兑换金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的元宝！\ \
+<返回/@兑换金刚石>\
+[@1000个金刚石]
+#IF
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+GAMEDIAMOND + 1000
+SENDMSG 7 提示：当前金刚石:<$GAMEDIAMOND>
+GOTO @兑换金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的元宝！\ \
+<返回/@兑换金刚石>\
+[@5000个金刚石]
+#IF
+CHECKGAMEGOLD > 4999
+#ACT
+GAMEGOLD - 5000
+GAMEDIAMOND + 5000
+SENDMSG 7 提示：当前金刚石:<$GAMEDIAMOND>
+GOTO @兑换金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的元宝！\ \
+<返回/@兑换金刚石>\
+}

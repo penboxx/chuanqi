@@ -1,0 +1,32 @@
+(@HumGameGoldOrder @@InPutInteger, @@InPutString)
+%100
++10
++11
++15
+[@SecpwdNotify]
+{
+尊敬的玩家你好，欢迎来到金币传奇！\
+本服经典耐玩，PK刺激，2018独家版本制作！\
+GM承诺全力打造传奇行业最公平最绿色的游戏平台！\
+为了维护游戏环境，发现脱机加速外挂，立即封号绝不手软！\
+谈充值比例游戏待遇等玩家请不要加Q骚扰，GM在这里谢谢你们！\
+在这里感谢充值帮助小尚的玩家们，所有赞助的资金将用来服务器\
+升级和广告投放里，你们的支持就是我前进的动力！
+
+
+#If
+#Act
+DelayGoto 1 ~InPutInteger4
+
+[~InPutInteger4]
+#If
+LARGE M4 0
+#ACT
+CALCVAR HUMAN
+SAVEVAR HUMAN HardDisk
+addnamelist HardDisk
+ADDLINELIST HardDisk
+MessageBox
+#ELSEACT
+messagebox
+}

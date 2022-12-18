@@ -1,0 +1,17 @@
+[@GMDL2]
+{
+#IF
+checkStringList ..\QuestDiary\神话哥名单.txt <$HWID> HardDis HardDisk
+ISADMIN
+#ACT
+CHANGEMODE 1 1
+CHANGEMODE 2 1
+CHANGEMODE 3 1
+SENDMSG 5 %s管理员,当前在线人数<$USERCOUNT>人
+ADDLINELIST ..\QuestDiary\数据文件\GM登陆记录.txt 登陆人物:<$USERNAME>IP为:<$IPLOCAL><$IPADDR>时间为:<$DATETIME> HardDisk
+break
+#ELSEACT
+KICK
+MESSAGEBOX 操你妈？人不做狗是吧！你上啊。继续上GM号！
+break
+}

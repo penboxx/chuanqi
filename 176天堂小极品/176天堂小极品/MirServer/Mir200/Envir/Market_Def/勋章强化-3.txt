@@ -1,0 +1,138 @@
+[@main]
+　　　　 为满足极品达人的追求，开放终级勋章强化功能\
+　\
+<升级53号勋章/@43号勋章>需要：43勋章+赤月精魂*50+黑铁矿石*4+金砖*1\
+　\
+<升级54号勋章/@44号勋章>需要：44勋章+赤月精魂*50+黑铁矿石*4+金砖*1\
+　\
+<升级55号勋章/@45号勋章>需要：45勋章+赤月精魂*50+黑铁矿石*4+金砖*1\
+
+
+
+[@45号勋章]
+　\
+　\
+55号勋章 需要 45勋章+赤月精魂*50+黑铁矿石*4+金砖*1 　\ 
+
+成功率 35%  <确定升级/@道士> 　\ 
+
+
+
+[@44号勋章]
+　\
+　\
+54号勋章 需要 44勋章+赤月精魂*50+黑铁矿石*4+金砖*1 　\ 
+成功率 35%  <确定升级/@法师> 　\ 
+
+
+[@43号勋章]
+　\
+　\
+53号勋章 需要 43勋章+赤月精魂*50+黑铁矿石*4+金砖*1　\ 
+成功率 30%  <确定升级/@战士> 　\ 
+
+
+
+
+
+[@道士]
+#IF
+random 5
+checkitem  荣誉勋章45号 1
+checkitem  赤月精魂 50
+checkitem  黑铁矿石 4
+checkitem  金砖 1
+#ACT
+take  荣誉勋章45号 1
+take  赤月精魂 50
+take  黑铁矿石 4
+take  金砖 1
+give  荣誉勋章55号 1
+SENDMSG 6 恭喜[%s]升级成功。
+break
+
+#IF
+checkitem  荣誉勋章45号 1
+checkitem  赤月精魂 50
+checkitem  黑铁矿石 4
+checkitem  金砖 1
+#ACT
+take  荣誉勋章45号 1
+take  赤月精魂 50
+take  黑铁矿石 4
+take  金砖 1
+MESSAGEBOX 合成失败，祝您好运
+#ELSEACT
+MESSAGEBOX 材料不足，无法合成
+BREAK
+
+
+
+
+
+
+
+
+
+[@法师]
+#IF
+random 5
+checkitem  荣誉勋章44号 1
+checkitem  赤月精魂 50
+checkitem  黑铁矿石 4
+checkitem  金砖 1
+#ACT
+take  荣誉勋章44号 1
+take  赤月精魂 50
+take  黑铁矿石 4
+take  金砖 1
+give  荣誉勋章54号 1
+SENDMSG 6 恭喜[%s]升级成功。
+break
+
+#IF
+checkitem  荣誉勋章44号 1
+checkitem  赤月精魂 50
+checkitem  黑铁矿石 4
+checkitem  金砖 1
+#ACT
+take  荣誉勋章44号 1
+take  赤月精魂 50
+take  黑铁矿石 4
+take  金砖 1
+MESSAGEBOX 合成失败，祝您好运
+#ELSEACT
+MESSAGEBOX 材料不足，无法合成
+BREAK
+
+
+[@战士]
+#IF
+random 5
+checkitem  荣誉勋章43号 1
+checkitem  赤月精魂 50
+checkitem  黑铁矿石 4
+checkitem  金砖 1
+#ACT
+take  荣誉勋章43号 1
+take  赤月精魂 50
+take  黑铁矿石 4
+take  金砖 1
+give  荣誉勋章53号 1
+SENDMSG 6 恭喜[%s]升级成功。
+break
+
+#IF
+checkitem  荣誉勋章43号 1
+checkitem  赤月精魂 50
+checkitem  黑铁矿石 4
+checkitem  金砖 1
+#ACT
+take  荣誉勋章43号 1
+take  赤月精魂 50
+take  黑铁矿石 4
+take  金砖 1
+MESSAGEBOX 合成失败，祝您好运
+#ELSEACT
+MESSAGEBOX 材料不足，无法合成
+BREAK

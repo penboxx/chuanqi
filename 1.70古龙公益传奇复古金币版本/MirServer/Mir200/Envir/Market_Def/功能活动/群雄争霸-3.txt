@@ -1,0 +1,67 @@
+[@main]
+#IF
+LARGE G10 0
+#SAY
+这里是一直被封锁的行会站地图，你确定要进去吗？\
+群雄争霸入口 <COLOR=CLYELLOW 20:30 开通>，<COLOR=CLYELLOW 20:45 关闭>\
+<COLOR=CLRED 入口关闭后地图内所剩唯一行会获胜>。\
+20:45地图封闭后，药,随机，迟早会消耗光，胜负拒绝一切借口！\
+行会战时长不限，行会站地图内小退到比齐省！\
+群雄争霸奖励为 <$STR(G11)> 金币，奖励由获胜行会会长领取！\ \
+<参加群雄争霸/@进入行会战场>         <领取争霸奖励/@领取争霸奖励>\
+#ELSESAY
+这里是一直被封锁的行会站地图，你确定要进去吗？\
+群雄争霸入口 <COLOR=CLYELLOW 20:30 开通>，<COLOR=CLYELLOW 20:45 关闭>\
+<COLOR=CLRED 入口关闭后地图内所剩唯一行会获胜>。\
+20:45地图封闭后，药,随机，迟早会消耗光，胜负拒绝一切借口！\
+行会战时长不限，行会站地图内小退到比齐省！\
+群雄争霸奖励为 X 金币奖励由获胜行会会长领取！\
+
+[@领取争霸奖励]
+#IF
+HAVEGUILD
+#ACT
+#ELSEACT
+MESSAGEBOX 对不起，您不是获胜行会的会长！
+BREAK
+#IF
+ISGUILDMASTER
+#ACT
+#ELSEACT
+MESSAGEBOX 对不起，您不是获胜行会的会长！
+BREAK
+#IF
+ISGUILDMASTER
+CHECKGUILDLIST ..\QuestDiary\数据文件\会员名单\群雄胜利行会.txt
+#ACT
+CLEARNAMELIST ..\QuestDiary\数据文件\会员名单\群雄胜利行会.txt
+GIVE 金币 <$STR(G11)>
+SENDMSG 0 恭喜：<$USERNAME>，成功领取群雄争霸奖励！金币:<$STR(G11)> 255 249
+#ELSEACT
+MESSAGEBOX 对不起，您所在的行会并未获得争霸胜利！
+BREAK
+[@进入行会战场]
+#IF
+HAVEGUILD
+#ACT
+#ELSEACT
+MESSAGEBOX 对不起！你还不属于任何行会，无法进入争霸地图！
+BREAK
+#IF
+CHECKGUILDLIST ..\QuestDiary\抽取数据\禁止争霸行会.txt
+#ACT
+MESSAGEBOX 对不起！你所属行会，禁止进入争霸地图！
+BREAK
+#IF
+HOUR 20 20
+MIN 30 45
+#ACT
+MAPMOVE <$STR(A6)>
+SENDMSG 0 群雄争霸：<$USERNAME>，通过盟重群雄争霸NPC进入行会战地图！ 255 249
+BREAK
+#ELSESAY
+群雄争霸入口 <COLOR=CLYELLOW 20:30 开通>，<COLOR=CLYELLOW 20:45 关闭>\
+<COLOR=CLRED 入口关闭后地图内所剩唯一行会获胜>。\
+20:45地图封闭后，药,随机，迟早会消耗光，胜负拒绝一切借口！\
+行会战时长不限，行会站地图内小退到比齐省！\
+群雄争霸奖励为 <$STR(G11)> 金币，奖励由获胜行会会长领取！\ \

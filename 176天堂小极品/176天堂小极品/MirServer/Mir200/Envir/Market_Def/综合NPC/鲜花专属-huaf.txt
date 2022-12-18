@@ -1,0 +1,781 @@
+[@MAIN]
+#if
+#say
+鲜花超过  <COLOR=clAqua 3999> 朵可以使用  <COLOR=clAqua @鲜花> 直接进入本房间\  \
+
+<每日领取/@lingqu>  --- 每日领取一次系统赠送物品，注意清理包袱！\  \
+<半价传送/@chuansong>  --- 所有地图半价传送\ \
+<守护天使/@shouhu>  --- 每日开启一次守护天使属性 \
+
+[@shouhu]
+#if
+CHECKVAR HUMAN 守护次数 < 1
+#act
+AbilityAdd 2 25 1800
+AbilityAdd 3 25 1800
+SetRankLevelName  %s\[★★守护の天使★★]
+SENDMSG 5 开启守护天使，魔御增加25，防御增加25，小退消失
+SENDMSG 0 玩家[%s]开启鲜花专属[守护天使],半小时内防御魔御大幅度提升！ 255 253
+CALCVAR HUMAN 守护次数 + 1
+SAVEVAR HUMAN 守护次数 ..\QuestDiary\数据文件\鲜花系统\守护次数.txt
+#ELSESAY
+你今天已经领取过了！
+
+[@lingqu]
+#if
+CHECKVAR HUMAN 鲜花次数 < 1
+#act
+give 金条 1
+give 超级祝福油 1
+give 玛雅传送卡 1
+give 聚灵珠(大) 1
+give 血霜包 4
+CALCVAR HUMAN 鲜花次数 + 1
+SAVEVAR HUMAN 鲜花次数 ..\QuestDiary\数据文件\鲜花系统\鲜花次数.txt
+#ELSESAY
+你今天已经领取过了！
+
+[@chuansong]
+我提供以下地图半价传送：\ \
+<玛雅神殿/@传送_玛雅>       <猪洞八层/@传送_猪八>       <东郊皇陵/@传送_东郊>\ \
+<返回/@main>
+
+[@传送_玛雅]
+#If
+CHECKGAMEGOLD > 14
+#ACT
+GAMEGOLD - 15
+GIVE 回城卷 1
+mapmove Fama1 84 70
+SENDMSG 5 本地图总共三层.暴率为2倍.
+SENDMSG 0 鲜花玩家「<$USERNAME>」享受半价进入了[玛雅洞穴]!
+BREAK
+#ELSEACT
+MESSAGEBOX 需要15元宝用来支付我们的服务费用！
+BREAK
+
+[@传送_猪八]
+#IF
+CHECKGAMEGOLD > 49
+#ACT
+GAMEGOLD - 50
+GIVE 回城卷 1
+MAPMOVE ZD8
+SENDMSG 7 本地图总共二层.
+SENDMSG 0 鲜花玩家「<$USERNAME>」享受半价进入了[猪洞八层]!
+BREAK
+#ELSEACT
+MESSAGEBOX 需要50元宝用来支付我们的服务费用！
+BREAK
+
+
+[@传送_东郊]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GIVE 回城卷 1
+GAMEGOLD - 100  
+sendmsg 0 鲜花玩家「<$USERNAME>」享受半价进入了[东郊皇陵] 
+MAPMOVE SW01 72 17 
+#ELSEACT
+MESSAGEBOX 需要100元宝用来支付我们的服务费用！
+BREAK
+
+
+[@chuans]
+#SAY
+ <COLOR=clOlive ╔┅┅┅┅┅┅╦┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╗>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><COLOR=clAqua 安全区域><COLOR=clOlive 】><COLOR=clOlive ┋>欢迎您来到复古传奇：<COLOR=ClLime www.sf1995.com ><COLOR=clOlive 　　┋>\
+ <COLOR=clOlive ╠┅┅┅┅┅┅╬┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╣>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><洞口传送/@险恶传送><COLOR=clOlive 】><COLOR=clOlive ┋><比奇大城/@比奇传送>　<盟重土城/@盟重传送>　<新手小村/@新手传送>　<银杏山谷/@银杏传送><COLOR=clOlive ┋>\
+ <COLOR=clOlive ╠┅┅┅┅┅┅╣>　　　　　　　　　　　　　　　　　　　<COLOR=clOlive ┋>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><金币传送/@金币传送><COLOR=clOlive 】><COLOR=clOlive ┋><毒蛇山谷/@毒蛇传送>　<封魔神谷/@封魔传送>　<白日天门/@白日传送>　<苍月海岛/@苍月传送><COLOR=clOlive ┋>\
+ <COLOR=clOlive ╠┅┅┅┅┅┅╣>　　　　　　　　　　　　　　　　　　　<COLOR=clOlive ┋>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><特殊传送/@特殊传送><COLOR=clOlive 】><COLOR=clOlive ┋><沃玛森林/@沃玛森林>　<婚姻神殿/@婚姻传送>　<比奇皇宫/@皇宫传送>　<沙 巴 克/@沙城传送><COLOR=clOlive ┋>\
+ <COLOR=clOlive ╚┅┅┅┅┅┅╩┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╝>\
+
+[@险恶传送]
+ <COLOR=clOlive ╔┅┅┅┅┅┅╦┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╗>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><安全区域/@main><COLOR=clOlive 】><COLOR=clOlive ┋>欢迎您来到复古传奇：<COLOR=ClLime www.sf1995.com ><COLOR=clOlive 　　┋>\
+ <COLOR=clOlive ╠┅┅┅┅┅┅╬┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╣>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><COLOR=clAqua 洞口传送><COLOR=clOlive 】><COLOR=clOlive ┋><矿区洞口/@矿区传送>　<蜈蚣洞口/@蜈蚣传送>　<沃玛洞口/@沃玛传送>　<石墓洞口/@石墓传送><COLOR=clOlive ┋>\
+ <COLOR=clOlive ╠┅┅┅┅┅┅╣>　　　　　　　　　　　　　　　　　　　<COLOR=clOlive ┋>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><金币传送/@金币传送><COLOR=clOlive 】><COLOR=clOlive ┋><祖玛洞口/@祖玛传送>　<牛魔洞口/@牛魔传送>　<尸魔洞口/@尸魔传送>　<封魔洞口/@封魔传送><COLOR=clOlive ┋>\
+ <COLOR=clOlive ╠┅┅┅┅┅┅╣>　　　　　　　　　　　　　　　　　　　<COLOR=clOlive ┋>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><特殊传送/@特殊传送><COLOR=clOlive 】><COLOR=clOlive ┋><骨魔洞口/@骨魔传送>　<幻境洞口/@幻境传送>　<赤月洞口/@赤月传送>　<圣域之门/@圣域传送><COLOR=clOlive ┋>\
+ <COLOR=clOlive ╚┅┅┅┅┅┅╩┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╝>\
+
+[@金币传送]
+ <COLOR=clOlive ╔┅┅┅┅┅┅╦┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╗>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><安全区域/@main><COLOR=clOlive 】><COLOR=clOlive ┋>欢迎您来到复古传奇：<COLOR=ClLime www.sf1995.com ><COLOR=clOlive 　　┋>\
+ <COLOR=clOlive ╠┅┅┅┅┅┅╬┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╣>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><洞口传送/@险恶传送><COLOR=clOlive 】><COLOR=clOlive ┋><尸 王 殿/@尸王传送>　<生死之间/@生死之间>　<沃玛三层/@沃玛三层>　<石 墓 阵/@石墓阵><COLOR=clOlive ┋>\
+ <COLOR=clOlive ╠┅┅┅┅┅┅╣><祖玛七层/@祖玛七层>　<牛魔五层/@牛魔五层>　<尸魔三层/@尸魔三层>　<霸者大厅/@霸者大厅><COLOR=clOlive ┋>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><COLOR=clAqua 金币传送><COLOR=clOlive 】><COLOR=clOlive ┋><骨魔四层/@骨魔四层>　<幻境七层/@幻境七层>　<抉择之地/@抉择之地>　<沙藏宝阁/@沙藏宝阁><COLOR=clOlive ┋>\
+ <COLOR=clOlive ╠┅┅┅┅┅┅╣><王者禁地/@王者禁地>　<死亡神殿/@死亡神殿>　<地狱烈焰/@地狱烈焰>　<钳虫巢穴/@钳虫巢穴><COLOR=clOlive ┋>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><特殊传送/@特殊传送><COLOR=clOlive 】><COLOR=clOlive ┋><堕落坟场/@堕落坟场>　<困惑殿堂/@困惑殿堂>　<深渊魔域/@深渊魔域>　<返回首页/@mian><COLOR=clOlive ┋>\
+ <COLOR=clOlive ╚┅┅┅┅┅┅╩┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╝>\
+
+[@特殊传送]
+ <COLOR=clOlive ╔┅┅┅┅┅┅╦┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╗>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><安全区域/@main><COLOR=clOlive 】><COLOR=clOlive ┋>欢迎您来到复古传奇：<COLOR=ClLime www.sf1995.com ><COLOR=clOlive 　　┋>\
+ <COLOR=clOlive ╠┅┅┅┅┅┅╬┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╣>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><洞口传送/@险恶传送><COLOR=clOlive 】><COLOR=clOlive ┋>　　　　　　　　　　　　　　　　　　　<COLOR=clOlive ┋>\
+ <COLOR=clOlive ╠┅┅┅┅┅┅╣>　<地底魔宫/@地下>　 　<玛雅神殿/@玛雅>　 　<赤月秘穴/@秘穴>　<COLOR=clOlive ┋>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><金币传送/@金币传送><COLOR=clOlive 】><COLOR=clOlive ┋>　　　　　　　　　　　　　　　　　　　<COLOR=clOlive ┋>\
+ <COLOR=clOlive ╠┅┅┅┅┅┅╣>　<死亡陵墓/@死亡>　　 　　　　　　 　　　　　<COLOR=clOlive ┋>\
+; <COLOR=clOlive ╠┅┅┅┅┅┅╣>　<极限之地/@极限>　 　<秦始皇陵/@秦始>　　 <万蛛丛林/@万蛛>　<COLOR=clOlive ┋>\
+ <COLOR=clOlive ┋><COLOR=clOlive 【><COLOR=clAqua 特殊传送><COLOR=clOlive 】><COLOR=clOlive ┋>　　　　　　　　　　　　　　　　　　　<COLOR=clOlive ┋>\
+ <COLOR=clOlive ╚┅┅┅┅┅┅╩┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╝>\
+
+;普通传送----------------------------------------------------------------------
+[@比奇传送]
+#IF 
+#ACT
+mapmove 0 333 268 
+break 
+;---------------------
+[@沃玛森林]
+#IF 
+#ACT
+mapmove 1 306 71
+break 
+;---------------------
+[@盟重传送]
+#IF 
+#ACT
+mapmove 3 333 333
+break 
+;---------------------
+[@苍月传送]
+#IF 
+#ACT
+mapmove 5 140 338
+break 
+;---------------------
+[@魔龙传送]
+#IF 
+#ACT
+mapmove 6    124  156
+break 
+;---------------------
+[@封魔传送]
+#IF 
+#ACT
+mapmove 4 241 202
+break 
+;---------------------
+[@白日传送]
+#IF 
+#ACT
+mapmove 11 177 324
+break 
+;---------------------
+[@新手传送]
+#IF 
+#ACT
+mapmove 0 288 615
+break 
+;---------------------
+[@银杏传送]
+#IF 
+#ACT
+mapmove 0 634 612
+break 
+;---------------------
+[@毒蛇传送]
+#IF 
+#ACT
+mapmove 2 503 483
+break 
+;---------------------
+[@沙城传送]
+#IF 
+checkgold 1000
+#ACT
+mapmove 3 706 407
+give 回城卷 1
+break 
+;---------------------
+[@婚姻传送]
+#IF 
+checkgold 1000
+#ACT
+mapmove M101 22 32
+give 回城卷 1
+break 
+;---------------------
+[@皇宫传送]
+#IF 
+checkgold 1000
+#ACT
+mapmove 0122
+give 回城卷 1
+break 
+
+;==========================================================
+[@矿区传送]
+#IF
+#ACT
+give 回城卷 1
+mapmove 0 659 218
+break
+
+
+[@蜈蚣传送]
+#IF 
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 3 142 92
+break 
+#ELSEACT
+MESSAGEBOX 需要2000金币用来支付我们的服务费用!
+break 
+
+[@沃玛传送]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+give 回城卷 1
+mapmove D021 71 69
+break
+#ELSEACT
+MESSAGEBOX 需要2000金币用来支付我们的服务费用!
+break 
+
+[@石墓传送]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+give 回城卷 1
+mapmove D710 27 20
+break
+#ELSEACT
+MESSAGEBOX 需要2000金币用来支付我们的服务费用!
+break 
+
+[@祖玛传送]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+give 回城卷 1
+mapmove 0157 17 17
+break
+#ELSEACT
+MESSAGEBOX 需要2000金币用来支付我们的服务费用!
+break 
+
+
+[@牛魔传送]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 5 658 463
+give 回城卷 1
+break
+#ELSEACT
+MESSAGEBOX 需要2000金币用来支付我们的服务费用!
+break 
+
+[@尸魔传送]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+give 回城卷 1
+mapmove 5 522 615
+break
+#ELSEACT
+MESSAGEBOX 需要2000金币用来支付我们的服务费用!
+break 
+
+[@骨魔传送]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+give 回城卷 1
+mapmove 5 544 131
+break
+#ELSEACT
+MESSAGEBOX 需要2000金币用来支付我们的服务费用!
+break 
+
+
+[@幻境传送]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+give 回城卷 1
+mapmove H001 73 67
+break
+#ELSEACT
+MESSAGEBOX 需要2000金币用来支付我们的服务费用!
+break 
+[@赤月传送]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+give 回城卷 1
+mapmove 12  89 13
+break
+#ELSEACT
+MESSAGEBOX 需要2000金币用来支付我们的服务费用!
+break 
+
+[@圣域传送]
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove B101 12 14
+break
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+break 
+
+
+
+
+[@尸王传送]
+#IF
+checkgold 20000
+#ACT
+take 金币 20000
+give 回城卷 1
+mapmove Q004 15 6 
+break
+#ELSEACT
+MESSAGEBOX 需要2万金币用来支付我们的服务费用!
+break 
+
+
+[@生死之间]
+#IF
+checkgold 20000
+#ACT
+Take 金币 20000
+give 回城卷 1
+mapmove  D613 9 51
+break
+#ELSEACT
+MESSAGEBOX 需要2万金币用来支付我们的服务费用!
+break 
+
+[@沃玛三层]
+#IF
+checkgold 20000
+#ACT
+Take 金币 20000
+give 回城卷 1
+mapmove  D023 50 360
+break
+#ELSEACT
+MESSAGEBOX 需要2万金币用来支付我们的服务费用!
+break 
+
+
+[@石墓阵]
+#IF
+checkgold 20000
+#ACT
+Take 金币 20000
+give 回城卷 1
+mapmove D715 83 81
+break
+#ELSEACT
+MESSAGEBOX 需要2万金币用来支付我们的服务费用!
+break 
+
+
+
+[@祖玛七层]
+#IF
+checkgold 20000
+#ACT
+Take 金币 20000
+give 回城卷 1
+mapmove D5071 8 10
+break
+#ELSEACT
+MESSAGEBOX 需要2万金币用来支付我们的服务费用!
+break 
+
+
+
+[@牛魔五层]
+#IF
+checkgold 20000
+#ACT
+Take 金币 20000
+give 回城卷 1
+mapmove D2076 94 130
+break
+#ELSEACT
+MESSAGEBOX 需要2万金币用来支付我们的服务费用!
+break 
+
+[@尸魔三层]
+#IF
+checkgold 20000
+#ACT
+Take 金币 20000
+give 回城卷 1
+mapmove D2053 36 226
+break
+#ELSEACT
+MESSAGEBOX 需要2万金币用来支付我们的服务费用!
+break 
+
+
+[@霸者大厅]
+#IF
+checkgold 20000
+#ACT
+Take 金币 20000
+give 回城卷 1
+mapmove D2008 84 85
+break
+#ELSEACT
+MESSAGEBOX 需要2万金币用来支付我们的服务费用!
+break 
+
+
+[@骨魔四层]
+#IF
+checkgold 20000
+#ACT
+Take 金币 20000
+give 回城卷 1
+mapmove D2064 13 29
+break
+#ELSEACT
+MESSAGEBOX 需要2万金币用来支付我们的服务费用!
+break 
+
+
+[@幻境七层]
+#IF
+checkgold 20000
+#ACT
+Take 金币 20000
+give 回城卷 1
+mapmove H007 161 172
+break
+#ELSEACT
+MESSAGEBOX 需要2万金币用来支付我们的服务费用!
+break 
+
+
+[@抉择之地]
+#IF
+checkgold 20000
+#ACT
+Take 金币 20000
+give 回城卷 1
+mapmove D1004 171 88
+break
+#ELSEACT
+MESSAGEBOX 需要2万金币用来支付我们的服务费用!
+break 
+
+[@沙藏宝阁]
+#IF
+checkgold 50000
+#ACT
+take 金币 50000
+give 回城卷 1
+mapmove h201 13 103
+break
+#ELSEACT
+MESSAGEBOX 需要5万金币用来支付我们的服务费用!
+break 
+
+[@王者禁地]
+#IF
+checkgold 50000
+#ACT
+take 金币 50000
+give 回城卷 1
+mapmove h105 135 184
+break
+#ELSEACT
+MESSAGEBOX 需要5万金币用来支付我们的服务费用!
+break 
+
+[@死亡神殿]
+
+#IF
+checkgold 40000
+#ACT
+take 金币 40000
+give 回城卷 1
+mapmove 4 205 218
+break
+#ELSEACT
+MESSAGEBOX 需要4万金币用来支付我们的服务费用!
+break 
+
+
+
+[@地狱烈焰]
+#IF
+checkgold 40000
+#ACT
+take 金币 40000
+give 回城卷 1
+mapmove 0 428 474
+break
+#ELSEACT
+MESSAGEBOX 需要4万金币用来支付我们的服务费用!
+break 
+
+
+
+[@钳虫巢穴]
+
+#IF
+checkgold 40000
+#ACT
+take 金币 40000
+give 回城卷 1
+mapmove 11 343 325
+break
+#ELSEACT
+MESSAGEBOX 需要40万金币用来支付我们的服务费用!
+break 
+
+
+
+[@堕落坟场]
+#IF
+checkgold 40000
+#ACT
+take 金币 40000
+give 回城卷 1
+mapmove 1 320 56
+break
+#ELSEACT
+MESSAGEBOX 需要4万金币用来支付我们的服务费用!
+break 
+
+
+
+
+[@困惑殿堂]
+#IF
+checkgold 40000
+#ACT
+take 金币 40000
+give 回城卷 1
+mapmove R001 55 94
+break
+#ELSEACT
+MESSAGEBOX 需要4万金币用来支付我们的服务费用!
+break 
+
+
+
+[@深渊魔域]
+#IF
+checkgold 40000
+#ACT
+take 金币 40000
+give 回城卷 1
+mapmove 1 215 312
+break
+#ELSEACT
+MESSAGEBOX 需要4万金币用来支付我们的服务费用!
+break 
+;=================================================================
+
+[@地下]
+#if
+#say
+╔─┬─────────────────────────╗\
+┊<COLOR=clRed 地>┊魔宫地图：<COLOR=clLime 魔宫一层,魔宫二层> 高级:<COLOR=clRed 魔宫神殿,魔宫大堂>┊\
+┊<COLOR=clRed 底>┊怪物爆率：<COLOR=clLime 祖玛系列,圣战系列,40级新衣服,终极武器等!>┊\
+┊<COLOR=clRed 魔>├─────────────────────────┤\
+┊<COLOR=clRed 宫>┊<COLOR=clFuchsia BOSS:神之祖玛教主                刷新时间:60分钟>  ┊\
+├─┴─────────────────────────┤\
+┊<COLOR=clAqua 难度指数:><COLOR=clLime ★★★☆☆>　　 　<COLOR=clAqua 进入条件:><COLOR=clLime 等级38以上,20万金币>┊\
+┊　　　　　　　　　　　　　　<COLOR=clRed --→> ※<进入地底魔宫/@地下1>※ <COLOR=clRed ←-->┊\
+╚───────────────────────────╝\
+
+[@地下1]
+#if
+CHECKLEVELEX > 37
+checkgold 200000
+#act
+take 金币 200000
+mapmove sw3 90 21
+SendMSG 0 玩家：[%s]进入[地下宫殿]探险！
+#ELSESAY 
+您金币数量小于20万！或者您的等级不到38级\
+
+
+
+
+[@玛雅]
+#if
+#say
+╔─┬─────────────────────────╗\
+┊<COLOR=clRed 玛>┊玛雅地图：<COLOR=clLime 玛雅一层,玛雅二层>  高级:<COLOR=clRed 玛雅峡谷,屠魔殿!>┊\
+┊<COLOR=clRed 雅>┊怪物爆率：<COLOR=clLime 祖玛系列,圣战系列,40级新衣服,终极武器等!>┊\
+┊<COLOR=clRed 神>├─────────────────────────┤\
+┊<COLOR=clRed 殿>┊<COLOR=clFuchsia BOSS:暗之赤月恶魔,玛雅魔主        刷新时间:60分钟> ┊\
+├─┴─────────────────────────┤\
+┊<COLOR=clAqua 难度指数:><COLOR=clLime ★★★☆☆>　　 　<COLOR=clAqua 进入条件:><COLOR=clLime 等级40以上,20万金币>┊\
+┊　　　　　　　　　　　　　　<COLOR=clRed --→> ※<进入玛雅神殿/@玛雅1>※ <COLOR=clRed ←-->┊\
+╚───────────────────────────╝\
+
+[@玛雅1]
+
+#if
+CHECKLEVELEX > 39
+checkgold 200000
+#act
+Take 金币 200000
+mapmove fama1
+SendMSG 0 玩家：[%s]进入[玛雅神殿]探险！
+#ELSESAY 
+您金币数量小于20万！或者您的等级不到40级\
+
+
+
+
+[@秘穴]
+#if
+#say
+╔─┬─────────────────────────╗\
+┊<COLOR=clRed 赤>┊秘穴地图：<COLOR=clLime 赤月秘道,赤月殿堂>     　　高级:<COLOR=clRed 赤月峡谷!>┊\
+┊<COLOR=clRed 月>┊怪物爆率：<COLOR=clLime 圣战系列,40级新衣服,屠龙,嗜魂,噬血剑等!> ┊\
+┊<COLOR=clRed 秘>├─────────────────────────┤\
+┊<COLOR=clRed 穴>┊<COLOR=clFuchsia BOSS:神之赤月恶魔               刷新时间:60分钟>   ┊\
+├─┴─────────────────────────┤\
+┊<COLOR=clAqua 难度指数:><COLOR=clLime ★★★★☆>　　 　<COLOR=clAqua 进入条件:><COLOR=clLime 等级40以上,20万金币>┊\
+┊　　　　　　　　　　　　　　<COLOR=clRed --→> ※<进入赤月秘穴/@秘穴1>※ <COLOR=clRed ←-->┊\
+╚───────────────────────────╝\
+
+[@秘穴1]
+#if
+CHECKLEVELEX > 39
+checkgold 200000
+#ACT
+Take 金币 200000
+MAPMOVE cy01 258 270
+SendMSG 0 玩家：[%s]进入[赤月秘道]中探险！
+BREAK
+#ELSESAY
+您金币数量小于20万！或者您的等级不到40级\
+
+[@死亡]
+#if
+#say
+╔─┬─────────────────────────╗\
+┊<COLOR=clRed 死>┊极限地图：<COLOR=clLime 死亡皇陵>   　　　　  <COLOR=clRed 本地图只有两层>　　 ┊\
+┊<COLOR=clRed 亡>┊怪物爆率：<COLOR=clLime 圣战系列,40级新衣服,屠龙,嗜魂,噬血剑等!> ┊\
+┊<COLOR=clRed 皇>├─────────────────────────┤\
+┊<COLOR=clRed 陵>┊<COLOR=clFuchsia BOSS:人形怪    刷新时间:60分钟>　　　　　　　　　　┊\
+├─┴─────────────────────────┤\
+┊<COLOR=clAqua 难度指数:><COLOR=clLime ★★★★★>　　　<COLOR=clAqua 进入条件:><COLOR=clLime 等级40以上+40万金币> ┊\
+┊　　　　　　　　　　　　　　<COLOR=clRed --→> ※<进入死亡皇陵/@死亡1>※ <COLOR=clRed ←-->┊\
+╚───────────────────────────╝\
+
+[@死亡1]
+#if
+checkgold 400000
+CHECKLEVELEX > 39
+#act
+take 金币 400000
+mapmove GW1F 27 74
+SendMSG 0 玩家[%s]进入【死亡皇陵】探险！ 254 252
+#ELSESay
+需要等级达到40级以上!\  \
+需要40万金币费用! \
+
+
+[@极限]
+#if
+#say
+╔─┬─────────────────────────╗\
+┊<COLOR=clRed 极>┊极限地图：<COLOR=clLime 极限之地>   　　　　  <COLOR=clRed 本地图只有一层>　　 ┊\
+┊<COLOR=clRed 限>┊怪物爆率：<COLOR=clLime 圣战系列,40级新衣服,屠龙,嗜魂,噬血剑等!> ┊\
+┊<COLOR=clRed 之>├─────────────────────────┤\
+┊<COLOR=clRed 地>┊<COLOR=clFuchsia BOSS:神之赤月恶魔,暗之赤月恶魔    刷新时间:60分钟> ┊\
+├─┴─────────────────────────┤\
+┊<COLOR=clAqua 难度指数:><COLOR=clLime ★★★★☆>　　　<COLOR=clAqua 进入条件:><COLOR=clLime 等级42以上+20万金币> ┊\
+┊　　　　　　　　　　　　　　<COLOR=clRed --→> ※<进入极限之地/@极限1>※ <COLOR=clRed ←-->┊\
+╚───────────────────────────╝\
+
+[@极限1]
+#if
+CHECKLEVELEX > 41
+checkgold 200000
+#ACT
+Take 金币 200000
+MAPMOVE jixian 97 98
+SendMSG 0 玩家：[%s]进入[极限山谷]中探险！
+BREAK
+#ELSESAY
+您金币数量小于20万！或者您的等级不到42级\
+
+
+
+[@秦始]
+╔─┬─────────────────────────╗\
+┊<COLOR=clRed 秦>┊皇陵地图：<COLOR=clLime 秦始皇陵大殿>     　　高级:<COLOR=clRed 秦始皇陵宫殿!> ┊\
+┊<COLOR=clRed 始>┊怪物爆率：<COLOR=clLime 圣战系列,40级新衣服,屠龙,嗜魂,噬血剑等!> ┊\
+┊<COLOR=clRed 皇>├─────────────────────────┤\
+┊<COLOR=clRed 陵>┊<COLOR=clFuchsia BOSS:秦始皇·赢政, 秦皇妃·黎姜   刷新时间:60分钟> ┊\
+├─┴─────────────────────────┤\
+┊<COLOR=clAqua 难度指数:><COLOR=clLime ★★★★★>　　 　<COLOR=clAqua 进入条件:><COLOR=clLime 等级42以上+40万金币>┊\
+┊　　　　　　　　　　　　　　<COLOR=clRed --→> ※<进入秦始皇陵/@秦始1>※ <COLOR=clRed ←-->┊\
+╚───────────────────────────╝\
+
+[@秦始1]
+#if
+CHECKLEVELEX > 41
+checkgold 400000
+#ACT
+take 金币 400000
+MAPMOVE dg4F 57 142
+SendMSG 0 玩家：[%s]进入[秦始皇陵]中探险！
+BREAK
+#ELSESAY
+您金币数量小于40万！或者您的等级不到42级\
+
+
+
+
+
+[@万蛛]
+╔─┬─────────────────────────╗\
+┊<COLOR=clRed 万>┊丛林地图：<COLOR=clLime 丛林一,丛林二>    高级:<COLOR=clRed 万蛛峡谷,万蛛巢穴!>┊\
+┊<COLOR=clRed 蛛>┊怪物爆率：<COLOR=clLime 圣战系列,40级新衣服,屠龙,嗜魂,噬血剑等!> ┊\
+┊<COLOR=clRed 丛>├─────────────────────────┤\
+┊<COLOR=clRed 林>┊<COLOR=clFuchsia BOSS:丛林蛛王,镰刀蜘蛛,金杖蜘蛛    刷新时间:60分钟>┊\
+├─┴─────────────────────────┤\
+┊<COLOR=clAqua 难度指数:><COLOR=clLime ★★★★★★>　　<COLOR=clAqua 进入条件:><COLOR=clLime 等级44以上+50万金币> ┊\
+┊　　　　　　　　　　　　　　<COLOR=clRed --→> ※<进入万蛛丛林/@万蛛1>※ <COLOR=clRed ←-->┊\
+╚───────────────────────────╝\
+
+[@万蛛1]
+#if
+CHECKLEVELEX > 43
+checkgold 500000
+#ACT
+take 金币 500000
+MAPMOVE N101 55 78
+SendMSG 0 玩家：[%s]进入[万蛛丛林]中探险！
+BREAK
+#ELSESAY
+您金币数量小于50万！或者您的等级不到44级\

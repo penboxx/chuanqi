@@ -1,0 +1,109 @@
+()
+%100
+[@MAIN]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【剑指沙城】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+　　　<[人物英雄瞬间满血恢复]/@恢复>  <COLOR=clAqua 提示：满血收费20万金币一次> \
+╔━━━━━━━━━━━━━━━━━━━━━━━━━━━╗\
+┊<COLOR=clAqua 提示：每传送一次需要5万金币的过路费>                   ┊\
+┠┈┈┈┈┈┬┬┈┈┈┈┈┬┈┬┈┈┈┈┈┬┬┈┈┈┈┈┨\
+┊<沙城武器店/@YF01>┊┊<沙城首饰店/@YF02>┊  ┊<沙城正大门/@YF03>┊┊<沙城复活点/@YF04>┊\
+╚─────┴┴─────┴┈┴─────┴┴─────╝\
+
+
+
+
+[@YF05]
+#IF
+checkgold 50000
+#ACT
+MAPMOVE H201
+#ACT
+take 金币 50000
+BREAK
+#ELSEACT
+MESSAGEBOX 您的元宝不足5，无法进入！
+BREAK
+
+
+[@恢复]
+#IF
+CHECKHEROONLINE
+#ELSEACT
+MESSAGEBOX 对不起您的英雄没有招出来我无法为您服务......
+BREAK
+
+#IF
+checkgold 200000
+IsOnMap 3
+InSafeZone
+h.InSafeZone
+#ACT
+take 金币 200000
+HUMANHP = 60000
+HUMANMP = 60000
+H.HUMANHP = 60000
+H.HUMANMP = 60000
+;GMEXECUTE fuhuo <$USERNAME>
+;GMEXECUTE 传唤 <$H.USERNAME>
+SENDMSG 6 体力值和魔法值已瞬间恢复。
+SENDMSG 0 [%s]在沙城指传送瞬间恢复：兄弟们要顶住，我马上赶来救援！ 254 252 
+break
+#ELSEACT
+MESSAGEBOX 您的金币不足20W或者您和您的英雄不在安全区！！！
+
+
+
+
+[@YF01]
+#IF
+checkgold 50000
+#ACT
+GIVE 回城卷 1
+MAPMOVE 3 638 309
+#ACT
+take 金币 50000
+BREAK
+#ELSEACT
+MESSAGEBOX 您的元宝不足，无法进入！
+BREAK
+
+[@YF02]
+#IF
+checkgold 50000
+#ACT
+GIVE 回城卷 1
+MAPMOVE 3 663 286
+#ACT
+take 金币 50000
+BREAK
+#ELSEACT
+MESSAGEBOX 您的元宝不足，无法进入！
+BREAK
+
+[@YF03]
+#IF
+checkgold 50000
+#ACT
+GIVE 回城卷 1
+MAPMOVE 3 674 332
+#ACT
+take 金币 50000
+BREAK
+#ELSEACT
+MESSAGEBOX 您的元宝不足，无法进入！
+BREAK
+
+[@YF04]
+#IF
+checkgold 50000
+#ACT
+GIVE 回城卷 1
+MAPMOVE 3 649 293
+#ACT
+take 金币 50000
+BREAK
+#ELSEACT
+MESSAGEBOX 您的元宝不足，无法进入！
+BREAK

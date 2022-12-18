@@ -1,0 +1,558 @@
+
+[@Login]
+#IF
+CHECKLEVELEX > 0
+#ACT
+;SETOFFLINEPLAY ON
+;SendMsg 7 禁止使用任何外挂，使用外挂直接封号处理 255 252 300
+;SendMsg 7 唯一客服QQ1976645821，请看清QQ号不要只看QQ名字 255 252 300
+;SendMsg 7 新区第五天功城奖励RMB888,老区每周2,4,6,7功城奖励20000元宝 255 253 300
+VAR Integer HUMAN XV "" HardDisk
+VAR Integer HUMAN XZ "" HardDisk
+;VAR Integer HUMAN 消费积分 "" HardDisk
+VAR String HUMAN 二级密码 "" HardDisk
+VAR Integer HUMAN 每日签到 "" HardDisk
+VAR Integer HUMAN 连续签到 "" HardDisk
+VAR Integer HUMAN 赞助大使 "" HardDisk
+VAR String HUMAN 贵宾房主名字 "" HardDisk
+VAR String HUMAN 贵宾房间地图 "" HardDisk
+VAR Integer HUMAN 守护次数 "" HardDisk
+VAR Integer HUMAN 经验次数 "" HardDisk
+VAR Integer HUMAN 神力护身 "" HardDisk
+VAR Integer HUMAN 押镖次数 "" HardDisk
+VAR Integer HUMAN 数据存档 "" HardDisk
+VAR String HUMAN 商人微信 "" HardDisk
+VAR Integer HUMAN 人民币点 "" HardDisk
+VAR String  HUMAN 地图号 "" HardDisk
+VAR Integer HUMAN 坐标X "" HardDisk
+VAR Integer HUMAN 坐标Y "" HardDisk
+VAR Integer HUMAN 攻击点 "" HardDisk
+LOADVAR HUMAN 神力护身 ..\QuestDiary\数据文件\神力护身.txt
+LOADVAR HUMAN 二级密码 ..\QuestDiary\二级密码\密码数据.txt
+LOADVAR HUMAN 经验次数 ..\QuestDiary\数据文件\鲜花系统\经验次数.txt
+;LOADVAR HUMAN 消费积分 ..\QuestDiary\充值积分\消费积分Save.txt
+LOADVAR HUMAN 二级密码 ..\QuestDiary\二级密码\密码数据.txt
+LOADVAR HUMAN 每日签到 ..\QuestDiary\数据文件\签到系统Save.txt
+LOADVAR HUMAN 连续签到 ..\QuestDiary\数据文件\签到系统Save.txt
+LOADVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+LOADVAR HUMAN XV ..\QuestDiary\数据文件\杀敌阵亡.txt
+LOADVAR HUMAN XZ ..\QuestDiary\数据文件\杀敌阵亡.txt
+LOADVAR HUMAN 数据存档 ..\QuestDiary\九五制作\数据存档.txt
+LOADVAR HUMAN 商人微信 ..\QuestDiary\商人微信.txt
+LOADVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+LOADVAR HUMAN 坐标X ..\QuestDiary\二级密码\密码数据.txt
+LOADVAR HUMAN 坐标Y ..\QuestDiary\二级密码\密码数据.txt
+LOADVAR HUMAN 地图号 ..\QuestDiary\二级密码\密码数据.txt
+LOADVAR HUMAN 押镖次数 ..\QuestDiary\数据文件\变量.txt
+LOADVAR HUMAN 攻击点 ..\QuestDiary\数据文件\变量.txt
+#CALL [\系统功能\封号设置.txt] @封号设置
+#CALL [\系统功能\登陆脚本.txt] @登陆设置
+#CALL [\二级密码\密码登陆.txt] @密码登陆
+#CALL [\封号系统\赞助封号.txt] @赞助
+#CALL [\Mir2m2捡物奖励配置(免费脚本群.347979)\Mir2m2捡物奖励脚本.txt] @Mir2m2捡物奖励脚本QM
+#CALL [\Mir2m2测试回收配置(免费脚本群.347979)\Mir2m2测试回收脚本.txt] @Mir2m2测试回收脚本QM
+#CALL [\Mir2m2摆摊锁定配置(脚本QQ.800125104)\Mir2m2摆摊锁定脚本.txt] @Mir2m2摆摊锁定脚本QM
+#CALL [\神话RMB提现配置\神话RMB提现变量.txt] @神话RMB提现变量声明
+;SetScTimer 2 1
+SetScTimer 6 1
+
+
+#IF
+CHECKVAR HUMAN 神力护身 > 0
+#ACT
+SetScTimer 4 58
+
+;#IF
+;ISADMIN
+;#ACT
+;#CALL [\GM登陆.txt] @GMDL2
+;BREAK
+
+;#IF
+;checknamelist ..\QuestDiary\查脱机专员名单.txt  HardDis HardDisk
+;#ACT
+;#CALL [\查脱机专员登陆.txt] @查脱机查脱机
+;BREAK
+
+
+
+#IF
+check [58] 0
+CHECKLEVELEX = 54
+#ACT
+set [58] 1
+RENEWLEVEL 1 0 0
+BREAK
+
+
+
+[@清理自定义]
+#IF
+#ACT
+CALCVAR HUMAN 押镖次数 = 0
+SAVEVAR HUMAN 押镖次数 ..\QuestDiary\数据文件\变量.txt
+break
+
+
+
+[@OnTimer6]
+#IF
+CHECKLEVELEX < 30
+IsOnMap xrlj1
+IsOnMap xrlj2
+IsOnMap xrlj3
+IsOnMap xrlj4
+IsOnMap xrlj5
+IsOnMap xrlj1
+IsOnMap xrlj2
+IsOnMap xrlj3
+IsOnMap xrlj4
+IsOnMap xrlj5
+IsOnMap xrlj1
+IsOnMap xrlj2
+IsOnMap xrlj3
+IsOnMap xrlj4
+IsOnMap xrlj5
+IsOnMap xrlj1
+IsOnMap xrlj2
+IsOnMap xrlj3
+IsOnMap xrlj4
+IsOnMap xrlj5
+#ACT
+CHANGEEXP + 150
+BREAK
+
+
+[@OnTimer1]
+#if
+#act
+CHANGENAMECOLOR 253
+Delaycall 1000 @变颜色1
+break
+
+[@变颜色1]
+#IF
+#ACT
+CHANGENAMECOLOR 254
+Delaycall 1000 @变颜色2
+break
+
+[@变颜色2]
+#IF
+#ACT
+CHANGENAMECOLOR 250
+Delaycall 1000 @变颜色3
+break
+
+[@变颜色3]
+#IF
+#ACT
+CHANGENAMECOLOR 251
+Delaycall 1000 @变颜色4
+break
+
+[@变颜色4]
+#IF
+#ACT
+CHANGENAMECOLOR 241
+break
+
+
+
+[@OnTimer4]
+#IF
+CHECKVAR HUMAN 神力护身 > 0
+#ACT
+CALCVAR HUMAN 神力护身 - 1
+SAVEVAR HUMAN 神力护身 ..\QuestDiary\数据文件\神力护身.txt
+#ELSEACT
+KillScTimer 4
+CHANGENAMECOLOR 255
+break
+
+
+
+[@红包发放]
+#IF
+#SAY
+╔════════════════════════════╗\
+║         <COLOR=clRed 天堂复古1.76传奇有你更精彩>          ║\
+╠════════════════════════════╣\
+║                     <COLOR=clRed 福利枪红包>                         ║\
+║   <COLOR=clLime 10秒中内每个人可以领取一个现金红包,金额不等抢到红包后>║\
+║<COLOR=clLime 请加游戏群联系客服进行现金兑换。活动不定时举行。>        ║\
+║                                                        ║\
+║                  <COLOR=clRed 10><COLOR=clFuchsia 秒钟后开始抢红包>                    ║\
+║                                                        ║\
+╚════════════════════════════╝\
+#ACT
+set [88] 0
+DelayCall 1100 @红包发放1
+break
+
+
+
+[@红包发放1]
+#IF
+#SAY
+╔════════════════════════════╗\
+║         <COLOR=clRed 天堂复古1.76传奇有你更精彩天堂>          ║\
+╠════════════════════════════╣\
+║                     <COLOR=clRed 福利枪红包>                         ║\
+║   <COLOR=clLime 10秒中内每个人可以领取一个现金红包,金额不等抢到红包后>║\
+║<COLOR=clLime 请加游戏群联系客服进行现金兑换。活动不定时举行。>        ║\
+║                                                        ║\
+║                  <COLOR=clRed 09><COLOR=clFuchsia 秒钟后开始抢红包>                    ║\
+║                                                        ║\
+╚════════════════════════════╝\
+#ACT
+set [88] 0
+DelayCall 1100 @红包发放2
+break
+
+[@红包发放2]
+#IF
+#SAY
+╔════════════════════════════╗\
+║         <COLOR=clRed 天堂复古1.76传奇有你更精彩>          ║\
+╠════════════════════════════╣\
+║                     <COLOR=clRed 福利枪红包>                         ║\
+║   <COLOR=clLime 10秒中内每个人可以领取一个现金红包,金额不等抢到红包后>║\
+║<COLOR=clLime 请加游戏群联系客服进行现金兑换。活动不定时举行。>        ║\
+║                                                        ║\
+║                  <COLOR=clRed 08><COLOR=clFuchsia 秒钟后开始抢红包>                    ║\
+║                                                        ║\
+╚════════════════════════════╝\
+#ACT
+set [88] 0
+DelayCall 1100 @红包发放3
+break
+
+[@红包发放3]
+#IF
+#SAY
+╔════════════════════════════╗\
+║         <COLOR=clRed 天堂复古1.76传奇有你更精彩>          ║\
+╠════════════════════════════╣\
+║                     <COLOR=clRed 福利枪红包>                         ║\
+║   <COLOR=clLime 10秒中内每个人可以领取一个现金红包,金额不等抢到红包后>║\
+║<COLOR=clLime 请加游戏群联系客服进行现金兑换。活动不定时举行。>        ║\
+║                                                        ║\
+║                  <COLOR=clRed 07><COLOR=clFuchsia 秒钟后开始抢红包>                    ║\
+║                                                        ║\
+╚════════════════════════════╝\
+#ACT
+DelayCall 1100 @红包发放4
+break
+
+[@红包发放4]
+#IF
+#SAY
+╔════════════════════════════╗\
+║         <COLOR=clRed 天堂复古1.76传奇有你更精彩>          ║\
+╠════════════════════════════╣\
+║                     <COLOR=clRed 福利枪红包>                         ║\
+║   <COLOR=clLime 10秒中内每个人可以领取一个现金红包,金额不等抢到红包后>║\
+║<COLOR=clLime 请加游戏群联系客服进行现金兑换。活动不定时举行。>        ║\
+║                                                        ║\
+║                  <COLOR=clRed 06><COLOR=clFuchsia 秒钟后开始抢红包>                    ║\
+║                                                        ║\
+╚════════════════════════════╝\
+#ACT
+DelayCall 1100 @红包发放5
+break
+
+[@红包发放5]
+#IF
+#SAY
+╔════════════════════════════╗\
+║         <COLOR=clRed 天堂复古1.76传奇有你更精彩>          ║\
+╠════════════════════════════╣\
+║                     <COLOR=clRed 福利枪红包>                         ║\
+║   <COLOR=clLime 10秒中内每个人可以领取一个现金红包,金额不等抢到红包后>║\
+║<COLOR=clLime 请加游戏群联系客服进行现金兑换。活动不定时举行。>        ║\
+║                                                        ║\
+║                  <COLOR=clRed 05><COLOR=clFuchsia 秒钟后开始抢红包>                    ║\
+║                                                        ║\
+╚════════════════════════════╝\
+#ACT
+DelayCall 1100 @红包发放6
+break
+
+[@红包发放6]
+#IF
+#SAY
+╔════════════════════════════╗\
+║         <COLOR=clRed 天堂复古1.76传奇有你更精彩>          ║\
+╠════════════════════════════╣\
+║                     <COLOR=clRed 福利枪红包>                         ║\
+║   <COLOR=clLime 10秒中内每个人可以领取一个现金红包,金额不等抢到红包后>║\
+║<COLOR=clLime 请加游戏群联系客服进行现金兑换。活动不定时举行。>        ║\
+║                                                        ║\
+║                  <COLOR=clRed 04><COLOR=clFuchsia 秒钟后开始抢红包>                    ║\
+║                                                        ║\
+╚════════════════════════════╝\
+#ACT
+DelayCall 1100 @红包发放7
+break
+
+[@红包发放7]
+#IF
+#SAY
+╔════════════════════════════╗\
+║         <COLOR=clRed 天堂复古1.76传奇有你更精彩>          ║\
+╠════════════════════════════╣\
+║                     <COLOR=clRed 福利枪红包>                         ║\
+║   <COLOR=clLime 10秒中内每个人可以领取一个现金红包,金额不等抢到红包后>║\
+║<COLOR=clLime 请加游戏群联系客服进行现金兑换。活动不定时举行。>        ║\
+║                                                        ║\
+║                  <COLOR=clRed 03><COLOR=clFuchsia 秒钟后开始抢红包>                    ║\
+║                                                        ║\
+╚════════════════════════════╝\
+#ACT
+DelayCall 1100 @红包发放8
+break
+
+[@红包发放8]
+#IF
+#SAY
+╔════════════════════════════╗\
+║         <COLOR=clRed 天堂复古1.76传奇有你更精彩>          ║\
+╠════════════════════════════╣\
+║                     <COLOR=clRed 福利枪红包>                         ║\
+║   <COLOR=clLime 10秒中内每个人可以领取一个现金红包,金额不等抢到红包后>║\
+║<COLOR=clLime 请加游戏群联系客服进行现金兑换。活动不定时举行。>        ║\
+║                                                        ║\
+║                  <COLOR=clRed 02><COLOR=clFuchsia 秒钟后开始抢红包>                    ║\
+║                                                        ║\
+╚════════════════════════════╝\
+#ACT
+DelayCall 1100 @红包发放9
+break
+
+[@红包发放9]
+#IF
+#SAY
+╔════════════════════════════╗\
+║         <COLOR=clRed 天堂复古1.76传奇有你更精彩>          ║\
+╠════════════════════════════╣\
+║                     <COLOR=clRed 福利枪红包>                         ║\
+║   <COLOR=clLime 10秒中内每个人可以领取一个现金红包,金额不等抢到红包后>║\
+║<COLOR=clLime 请加游戏群联系客服进行现金兑换。活动不定时举行。>        ║\
+║                                                        ║\
+║                  <COLOR=clRed 01><COLOR=clFuchsia 秒钟后开始抢红包>                    ║\
+║                                                        ║\
+╚════════════════════════════╝\
+#ACT
+DelayCall 1100 @红包发放10
+break
+
+[@红包发放10]
+#IF
+#SAY
+╔════════════════════════════╗\
+║         <COLOR=clRed 天堂复古1.76传奇有你更精彩>          ║\
+╠════════════════════════════╣\
+║                     <COLOR=clRed 福利枪红包>                         ║\
+║   <COLOR=clLime 10秒中内每个人可以领取一个现金红包,金额不等抢到红包后>║\
+║<COLOR=clLime 请加游戏群联系客服进行现金兑换。活动不定时举行。>        ║\
+║                                                        ║\
+║                      <开始枪红包/@开始枪红包>                        ║\
+║                                                        ║\
+╚════════════════════════════╝\
+#ACT
+DelayCall 800 @红包发放11
+break
+
+[@红包发放11]
+#IF
+#SAY
+╔════════════════════════════╗\
+║         <COLOR=clRed 天堂复古1.76传奇有你更精彩>          ║\
+╠════════════════════════════╣\
+║                     <COLOR=clRed 福利枪红包>                         ║\
+║   <COLOR=clLime 10秒中内每个人可以领取一个现金红包,金额不等抢到红包后>║\
+║<COLOR=clLime 请加游戏群联系客服进行现金兑换。活动不定时举行。>        ║\
+║                                                        ║\
+║          <COLOR=clRed :(> <COLOR=clAqua 很遗憾您的手速真慢！下次继续吧！>           ║\
+║                                                        ║\
+╚════════════════════════════╝\
+
+[@开始枪红包]
+#IF
+Check [88] 1
+#ACT
+MESSAGEBOX 你这种人天生就是穷人命给你红包，你他妈还开着鼠标连点器！家里揭不开锅了啊。穷和我说。哥施舍点你.
+break
+
+#IF
+;checklevelex > 41
+Check [88] 0
+#ACT
+set [88] 1
+give 等待区小红包
+ClearDelayGoto
+CLOSE
+#ELSEACT
+MESSAGEBOX 42级以上玩家才可以领取红包哦!
+break
+
+
+
+[@送财福地开]
+#IF
+#SAY
+╔════════════════════════════╗\
+║         <COLOR=clRed 天堂复古1.76传奇有你更精彩>          ║\
+╠════════════════════════════╣\
+║                     <COLOR=clRed 送财福地>                         ║\
+║   送财福地是福利活动二里面将会有大量的-<COLOR=clRed 福猪送财(福猪)>。║\
+║每只福猪必暴一个<COLOR=clRed 大红包>哦。您还在等什么还不抓紧时间进入场║\
+║大量的<COLOR=clRed 大红包>等着你去打开，希望大家多多宣传本服。        ║\
+║                                                        ║\
+║                    <马上进入场地/@马上进入场地>                        ║\
+╚════════════════════════════╝\
+[@马上进入场地]
+#IF
+IsOnMap mima
+#ACT
+SENDMSG 6 当前地图不允许使用此命令
+BREAK
+
+#IF
+IsOnMap mima2
+#ACT
+SENDMSG 6 当前地图不允许使用此命令
+BREAK
+
+#IF
+IsOnMap mima3
+#ACT
+SENDMSG 6 当前地图不允许使用此命令
+BREAK
+
+#IF
+IsOnMap xinqu
+#ACT
+SENDMSG 6 当前地图不允许使用此命令
+BREAK
+
+#IF
+#ACT
+movr p0 20
+movr p1 20
+inc p0 39
+inc p1 39
+MAPMOVE SCFD001 <$STR(P0)> <$STR(P1)>
+BREAK
+
+
+
+[@全体禁言]
+#IF
+#ACT
+GMEXECUTE Shutup SELF 72000
+
+
+[@全体解言]
+#IF
+#ACT
+GMEXECUTE ReleaseShutup <$USERNAME>
+
+[@关全图检查]
+#IF
+#ACT
+KillScTimer 2
+
+[@全图检查]
+#IF
+#ACT
+SetScTimer 2 1
+
+[@OnTimer2]
+#IF
+equal G15 0
+ISONMAP xinqu 
+#ACT
+#ELSEACT
+mapmove xinqu
+break
+
+
+
+[@OnTimer3]
+#IF
+#ACT
+CHANGEEXP + 1000000
+CHANGEEXP - 1100000
+break
+
+
+[@发送元宝]
+#IF
+EQUAL A45 <$USERNAME>
+#ACT
+GAMEGOLD + <$STR(G45)>
+SENDMSG 1 ★恭喜玩家<$STR(A45)>通过官方人证商人【<$STR(A38)>】处获得<$STR(G45)>元宝,如果您也想获得,请赶快联系<$STR(A38)>吧!
+SENDMSG 6 〖提示〗成功收到<$STR(G45)>颗元宝！
+mov A45 暂无
+mov G45 0
+break
+
+
+[@发送回收元宝]
+#IF
+EQUAL A46 <$USERNAME>
+#ACT
+set [89] 0
+#SAY
+\ \ 
+官方人证商人【<$STR(A38)>】要回收您<$STR(G50)>颗元宝你确定回收吗？\ \ 
+　            <确定回收/@确定回收元宝>               <不回收/@玩家不回收>\  \   \ 
+　  <COLOR=clLime 注:为保证您财产安全，如30分钟内没收到商人打款，您> \
+<COLOR=clLime 可以找举报，请注意时间交易聊天记录保存做为证据！> \
+<COLOR=clLime 在证据正确下我们将取消><$STR(A38)><COLOR=clLime 商人资格。> \
+
+
+[@玩家不回收]
+#IF
+Check [89] 0
+EQUAL A46 <$USERNAME>
+#ACT
+Gmexecute 开始提问 @玩家拒绝回收
+CLOSE
+break
+
+
+[@确定回收元宝]
+#IF
+Check [89] 0
+EQUAL A46 <$USERNAME>
+#ACT
+GAMEGOLD - <$STR(G50)>
+SENDMSG 1 ★恭喜玩家<$STR(A46)>通过官方人证商人【<$STR(A38)>】处回收<$STR(G50)>元宝,如果您也想回收元宝,请赶快联系<$STR(A38)>吧!
+SENDMSG 6 〖提示〗您被商人回收了<$STR(G50)>颗元宝！
+Gmexecute 开始提问 @商人回收
+set [89] 1
+CLOSE
+break
+
+[@玩家拒绝回收]
+#IF
+EQUAL A38 <$USERNAME>
+#ACT
+MESSAGEBOX 玩家<$STR(A46)>拒绝回收元宝！
+CLOSE
+break
+
+[@商人回收]
+#IF
+EQUAL A38 <$USERNAME>
+#ACT
+GAMEGOLD + <$STR(G50)>
+INC G81 <$STR(G50)>
+SENDMSG 6 〖提示〗已经给【<$STR(A46)>】回收〖<$STR(G50)>〗颗元宝！
+mov A46 暂无
+mov G50 0
+CLOSE
+break

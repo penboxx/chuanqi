@@ -1,0 +1,359 @@
+()
+%100
++10
++11
++15
+[@main]
+听说虹魔教主复活了!他的领地“封魔谷”也已重现大陆!\
+好象封魔谷的入口在沃玛森林附近\
+不过那么邪恶的地方,你真的打算去吗?\\
+  <坐标/@xy> 询问          \
+  <想瞬息移动/@yidong>\
+  <去商店/@talkwith>\
+
+[@cangyue]
+#if
+#act
+MOV I0 <$STR(G1)>
+INC I0 1
+#say
+进入苍月岛需要开区第6天晚上20点\ \
+目前开区天数为：第<$STR(I0)>天！\ \
+<进入苍月岛/@1>
+
+[@1]
+#if
+equal G92 1
+CHECKUSERDATE ..\QuestDiary\季卡\时间记载.txt < 90 p0 p1
+#act
+close
+mapmove 5 141 333
+break
+
+#If
+equal G92 1
+#act
+sendmsg 7 提示：请购买季卡
+break 
+#elseact
+SendMsg 7  提示：开区第6天晚上20点自动开放！
+break
+
+[@回收]
+<COLOR=clMoneyGreen 生命项链+50元宝兑换1点声望>      <兑换/@1>\
+<COLOR=clMoneyGreen 生命项链+20w金币兑换1点声望>     <兑换/@2>\
+<COLOR=clMoneyGreen 天珠项链+50元宝兑换1点声望>      <兑换/@3>\
+<COLOR=clMoneyGreen 天珠项链+20w金币兑换1点声望>     <兑换/@4>\
+<COLOR=clMoneyGreen 幽灵项链+50元宝兑换1点声望>      <兑换/@5>\
+<COLOR=clMoneyGreen 幽灵项链+20w金币兑换1点声望>     <兑换/@6>\ \
+<下一页/@回收2>    <返回/@main>
+[@回收2]
+<COLOR=clMoneyGreen 思贝儿手镯+45元宝兑换1点声望>    <兑换/@7>\
+<COLOR=clMoneyGreen 思贝儿手镯+18w金币兑换1点声望>   <兑换/@8>\
+<COLOR=clMoneyGreen 心灵手镯+45元宝兑换1点声望>      <兑换/@9>\
+<COLOR=clMoneyGreen 心灵手镯+18w金币兑换1点声望>     <兑换/@10>\
+<COLOR=clMoneyGreen 幽灵手套x2+50元宝兑换1点声望>    <兑换/@11>\ 
+<COLOR=clMoneyGreen 幽灵手套x2+20w金币兑换1点声望>   <兑换/@12>\ \
+<上一页/@回收>    <下一页/@回收3>
+[@回收3]
+<COLOR=clMoneyGreen 红宝石戒指+40元宝兑换1点声望>    <兑换/@13>\
+<COLOR=clMoneyGreen 红宝石戒指+16w金币兑换1点声望>   <兑换/@14>\
+<COLOR=clMoneyGreen 铂金戒指+40元宝兑换1点声望>      <兑换/@15>\
+<COLOR=clMoneyGreen 铂金戒指+16w金币兑换1点声望>     <兑换/@16>\
+<COLOR=clMoneyGreen 龙之戒指+40元宝兑换1点声望>      <兑换/@17>\
+<COLOR=clMoneyGreen 龙之戒指+16w金币兑换1点声望>     <兑换/@18>\ \
+<上一页/@回收2>
+[@yidong]
+不要相信什么凌波微步,其实这个东西很\
+简单,只要你付钱,什么问题不能解决呢?\
+来吧,小伙子这个世界充满危险,让我送你一程吧!\\
+   <向比奇省移动/@比奇> \
+   <返 回/@Main>
+[@01]
+#if
+checkitem 生命项链 1
+checkgamegold > 49
+#act
+gamegold - 50
+take 生命项链 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收生命项链声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@2]
+#if
+checkitem 生命项链 1
+checkgold 200000
+#act
+take 金币 200000
+take 生命项链 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收生命项链声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@3]
+#if
+checkitem 天珠项链 1
+checkgamegold > 49
+#act
+gamegold - 50
+take 天珠项链 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收天珠项链声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@4]
+#if
+checkitem 天珠项链 1
+checkgold 200000
+#act
+take 金币 200000
+take 天珠项链 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收天珠项链声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@5]
+#if
+checkitem 幽灵项链 1
+checkgamegold > 49
+#act
+gamegold - 50
+take 幽灵项链 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收幽灵项链声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@6]
+#if
+checkitem 幽灵项链 1
+checkgold 200000
+#act
+take 金币 200000
+take 幽灵项链 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收幽灵项链声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@7]
+#if
+checkitem 思贝儿手镯 1
+checkgamegold > 44
+#act
+gamegold - 45
+take 思贝儿手镯 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收思贝儿手镯声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@8]
+#if
+checkitem 思贝儿手镯 1
+checkgold 180000
+#act
+take 金币 180000
+take 思贝儿手镯 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收思贝儿手镯声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@9]
+#if
+checkitem 心灵手镯 1
+checkgamegold > 44
+#act
+gamegold - 45
+take 心灵手镯 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收心灵手镯声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@10]
+#if
+checkitem 心灵手镯 1
+checkgold 180000
+#act
+take 金币 180000
+take 心灵手镯 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收心灵手镯声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@11]
+#if
+checkitem 幽灵手套 2
+checkgamegold > 49
+#act
+gamegold - 50
+take 幽灵手套 2
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收幽灵手套声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@12]
+#if
+checkitem 幽灵手套 2
+checkgold 200000
+#act
+take 金币 200000
+take 幽灵手套 2
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收幽灵手套声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@13]
+#if
+checkitem 红宝石戒指 1
+checkgamegold > 39
+#act
+gamegold - 40
+take 红宝石戒指 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收红宝石戒指声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@14]
+#if
+checkitem 红宝石戒指 1
+checkgold 160000
+#act
+take 金币 160000
+take 红宝石戒指 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收红宝石戒指声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@15]
+#if
+checkitem 铂金戒指 1
+checkgamegold > 39
+#act
+gamegold - 40
+take 铂金戒指 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收铂金戒指声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@16]
+#if
+checkitem 铂金戒指 1
+checkgold 160000
+#act
+take 金币 160000
+take 铂金戒指 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收铂金戒指声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@17]
+#if
+checkitem 龙之戒指 1
+checkgamegold > 39
+#act
+gamegold - 40
+take 龙之戒指 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收龙之戒指声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+[@18]
+#if
+checkitem 龙之戒指 1
+checkgold 160000
+#act
+take 金币 160000
+take 龙之戒指 1
+CreditPoint + 1
+sendmsg 0 提示：[<$USERNAME>]回收龙之戒指声望增加1点.. 242 255
+break
+#elseact
+sendmsg 6 提示：材料不足
+break
+
+[@xy]
+比奇最大的城市就是你所在的比奇城，坐标就不用我说了吧！\
+毒蛇山谷的小村很好找，你只要往500 500 的坐标走就能够\
+到了。不过，如果你要到盟重土城，就应该牢记300 300\
+这个数字, 他会指引你走到那里。离流放地很近的沙巴克，是\
+一个危险的区域，我记得以前在600 300找到它的。不过我要提\
+醒你，每个省份的坐标都是不同的，可别在比奇找沙巴克哦！\
+所以，要记住每个通往其他省的关口。\
+最后，要记得多跟朋友走走，你就会和我一样熟悉这个大陆。\\
+ <返 回/@Main>
+
+[@talkwith]
+#IF
+#SAY
+你要去哪个商店？这个是免费服务！ \ \
+<铁匠铺/@Gwe>    <布料店/@Gpo> \
+<首饰店/@Gza>    <客栈/@Gwh> \
+<书店/@Gbo> \
+[@Gwe]
+#IF
+#ACT
+map 0159
+ 
+[@Gpo]
+#IF
+#ACT
+map 0149
+ 
+[@Gza]
+#IF
+#ACT
+map 0158
+ 
+[@Gwh]
+#IF
+#ACT
+map 0145
+ 
+[@Gbo]
+#IF
+#ACT
+map 0161
+ 
+[@比奇]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 0 330 270
+break
+#ELSESAY
+你没有2000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\ \

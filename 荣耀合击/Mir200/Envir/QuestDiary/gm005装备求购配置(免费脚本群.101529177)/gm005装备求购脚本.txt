@@ -1,0 +1,75 @@
+[@gm005装备求购脚本QM]
+{
+#IF
+EQUAL I83 101529177
+#ELSEACT
+MOV I83 101529177
+VAR String  GLOBAL 装备求购名字
+VAR String  GLOBAL 装备求购名称
+VAR Integer GLOBAL 装备求购单价
+VAR Integer GLOBAL 装备求购个数
+VAR Integer GLOBAL 装备求购个总
+VAR Integer GLOBAL 装备求购时间
+VAR Integer GLOBAL 装备求购总时
+VAR Integer GLOBAL 装备求购总数
+LOADVAR GLOBAL 装备求购总时 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+LOADVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+VAR String GLOBAL 装备求购空格
+LOADVAR GLOBAL 装备求购空格 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购常量.ini HardDisk
+MOV S10 <$GLOBAL(装备求购空格)>
+DEC S10 1 1
+CALCVAR GLOBAL 装备求购空格 = <$STR(S10)>
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+VAR String  HUMAN 装备求购显示0
+VAR String  HUMAN 装备求购显示1
+VAR String  HUMAN 装备求购显示2
+VAR String  HUMAN 装备求购显示3
+VAR String  HUMAN 装备求购显示4
+VAR String  HUMAN 装备求购显示5
+VAR String  HUMAN 装备求购显示6
+VAR String  HUMAN 装备求购显示7
+VAR String  HUMAN 装备求购显示8
+VAR String  HUMAN 装备求购显示9
+VAR String  HUMAN 装备求购输入1
+VAR Integer HUMAN 装备求购输入2
+VAR Integer HUMAN 装备求购输入3
+VAR Integer HUMAN 装备求购输入4
+VAR Integer HUMAN 装备求购输入5
+VAR Integer HUMAN 装备求购输入6
+VAR Integer HUMAN 装备求购输入7
+VAR Integer HUMAN 装备求购输入页
+VAR Integer HUMAN 装备求购输入号
+VAR Integer HUMAN 装备求购输入刷
+}
+
+[@gm005装备求购脚本RM]
+{
+#IF
+EQUAL I83 101529177
+#ELSEACT
+MOV I83 101529177
+VAR String  GLOBAL 装备求购名字
+VAR String  GLOBAL 装备求购名称
+VAR Integer GLOBAL 装备求购单价
+VAR Integer GLOBAL 装备求购个数
+VAR Integer GLOBAL 装备求购个总
+VAR Integer GLOBAL 装备求购时间
+VAR Integer GLOBAL 装备求购总时
+VAR Integer GLOBAL 装备求购总数
+LOADVAR GLOBAL 装备求购总时 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+LOADVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+VAR String GLOBAL 装备求购空格
+LOADVAR GLOBAL 装备求购空格 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购常量.ini HardDisk
+MOV S10 <$GLOBAL(装备求购空格)>
+DEC S10 1 1
+CALCVAR GLOBAL 装备求购空格 = <$STR(S10)>
+
+#IF
+CHECK [0] 0
+#ACT
+CALCVAR GLOBAL 装备求购总时 + 1
+SAVEVAR GLOBAL 装备求购总时 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+}

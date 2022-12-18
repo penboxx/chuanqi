@@ -1,0 +1,53 @@
+[@清零]
+#IF
+#ACT
+INC G1 1
+mov A6 暂无
+mov A7 暂无
+mov A8  
+mov A10 暂无
+mov A11 暂无 
+mov A12 
+mov A14 暂无
+mov A15 暂无
+mov A16  
+mov A18 暂无
+mov A19 暂无
+mov A20  
+mov A22 暂无
+mov A23 暂无
+mov A24
+mov A26 暂无
+mov A27 暂无
+mov A28  
+mov G50 0
+mov G51 0
+mov G52 0
+mov G53 0
+mov G54 0
+mov G55 0
+CLEARNAMELIST ..\QuestDiary\天下第一\男战士.txt
+CLEARNAMELIST ..\QuestDiary\天下第一\男法师.txt
+CLEARNAMELIST ..\QuestDiary\天下第一\男道士.txt
+CLEARNAMELIST ..\QuestDiary\天下第一\女战士.txt
+CLEARNAMELIST ..\QuestDiary\天下第一\女法师.txt
+CLEARNAMELIST ..\QuestDiary\天下第一\女道士.txt
+CLEARNAMELIST ..\QuestDiary\其他数据\命运之刃名单.txt
+sendmsg 0 ★天下第一已经清理，请有资格玩家速去申请！
+sendmsg 0 ★天下第一已经清理，请有资格玩家速去申请！
+sendmsg 0 ★天下第一已经清理，请有资格玩家速去申请！
+break
+
+[@HONGZI1]
+#if
+#act
+SENDMSG 0 ★★★【官方网址www.91mir.com】★★★ 0 250
+SENDMSG 0 ◆【流年传奇--季卡2003--复古1.70】
+SENDMSG 0 ◆【充值比例:点卡1比10,网银1比11】
+SENDMSG 0 ◆【打怪经验:1到30级为盛大十倍！】
+SENDMSG 0 ◆【打怪经验:31到35级为盛大7倍！】
+SENDMSG 0 ◆【打怪经验:36到40级为盛大4倍！】
+SENDMSG 0 ◆【打怪经验:40级开始为盛大1.5倍】
+SENDMSG 0 ★★★【官方客服QQ:2608114499】★★★ 0 250
+SendScrollMsg 欢迎进入<$SERVERNAME>,请保护好自己帐号信息,二级密码不要跟账号密码一样,新增@离线摆摊命令 251 0
+break

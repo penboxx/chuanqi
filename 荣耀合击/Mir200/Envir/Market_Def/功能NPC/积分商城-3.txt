@@ -1,0 +1,64 @@
+()
+%100
+[@main]
+#IF
+#say
+\  <COLOR=clAqua 【积分商城】> <COLOR=clRed Hot~>  <COLOR=clLime         当前充值积分：>[<$GAMEGIRD>]元 \
+\<COLOR=clFuchsia ╰══════════════════════════╯>\
+\<COLOR=clLime  100金刚石>　　　 <需要10 充值积分>    <【确认兑换】/@1>\
+\<COLOR=clLime  技能抽奖卷>      <需要30 充值积分>    <【确认兑换】/@2>\
+\<COLOR=clLime  死亡之眼>        <需要300 充值积分>   <【确认兑换】/@3>\
+\<COLOR=clLime  十步一杀>        <需要300 充值积分>   <【确认兑换】/@4>\
+\<COLOR=clLime  冰霜群雨>        <需要300 充值积分>   <【确认兑换】/@5>\
+\<COLOR=clFuchsia -------  -------  -------  -------  -------  ------->\
+\<注：充值积分使用和领取赞助不影响，积分只限于兑换积分物品！>\
+[@1]
+#IF
+CHECKGAMEGIRD > 9
+#act
+GAMEGIRD - 10
+give 金刚石：100
+SENDMSG 0 系统：恭喜玩家%s在土城积分商城处购买100金刚石！ 151 249 
+#ELSEACT
+MESSAGEBOX 对不起，您的积分不足！
+
+
+[@2]
+#IF
+CHECKGAMEGIRD > 29
+#act
+GAMEGIRD - 30
+give 技能抽奖卷
+SENDMSG 2 恭喜玩家[%s]在土城积分商城处购买技能抽奖卷！ 151 249 
+#ELSEACT
+MESSAGEBOX 对不起，您的积分不足！
+
+[@3]
+#IF
+CHECKGAMEGIRD > 299
+#act
+GAMEGIRD - 300
+give 死亡之眼
+SENDMSG 2 恭喜玩家[%s]在土城积分商城处购买死亡之眼！ 151 249 
+#ELSEACT
+MESSAGEBOX 对不起，您的积分不足！
+
+[@4]
+#IF
+CHECKGAMEGIRD > 299
+#act
+GAMEGIRD - 300
+give 十步一杀
+SENDMSG 2 恭喜玩家[%s]在土城积分商城处购买十步一杀！ 151 249 
+#ELSEACT
+MESSAGEBOX 对不起，您的积分不足！
+
+[@5]
+#IF
+CHECKGAMEGIRD > 299
+#act
+GAMEGIRD - 300
+give 冰霜群雨
+SENDMSG 2 恭喜玩家[%s]在土城积分商城处购买冰霜群雨！ 151 249 
+#ELSEACT
+MESSAGEBOX 对不起，您的积分不足！

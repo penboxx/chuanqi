@@ -1,0 +1,136 @@
+[@封号设置2]
+{
+#IF
+ISCASTLEMASTER
+#ACT
+mov S2 \╔┄┄┄┄┄┄┄╗\┆★沙巴克城主★┆\╚┄┄┄┄┄┄┄╝
+SendScrollMsg 号令天下的沙城主『<$USERNAME>』进入了<$SERVERNAME>! 150 1
+SETRANKLEVELNAME %s\<$STR(S1)>\<$STR(S2)>\
+CHANGENAMECOLOR 70
+break
+
+#if
+checknamelist ..\QuestDiary\其他数据\巡逻.txt HardDisk
+#act
+mov S1 \╔┄┄┄┄┄┄┄╗\┆官方查挂巡逻员┆\╚┄┄┄┄┄┄┄╝
+SETRANKLEVELNAME %s\<$STR(S1)>\<$STR(S2)>\
+CHANGENAMECOLOR 116
+break
+
+#if
+checknamelist ..\QuestDiary\其他数据\商人.txt HardDisk
+#act
+SETRANKLEVELNAME %s\◥■■■东■■■◤\◥■■皇■■◤\◥■商■◤\◥务◤\
+CHANGENAMECOLOR 250
+break
+
+#if
+checknamelist ..\QuestDiary\其他数据\钻石赞助.txt HardDisk
+#act
+SETRANKLEVELNAME %s\◥■■■钻■■■◤\◥■■石■■◤\◥■赞■◤\◥助◤\
+CHANGENAMECOLOR 254
+sendmsg 0 欢迎绿色赞助大使玩家【<$USERNAME>】进入游戏 251 1 6
+break
+
+#if
+checknamelist ..\QuestDiary\其他数据\金牌赞助.txt HardDisk
+#act
+SETRANKLEVELNAME %s\◥■■■金■■■◤\◥■■牌■■◤\◥■赞■◤\◥助◤\
+CHANGENAMECOLOR 242
+sendmsg 0 欢迎绿色赞助大使玩家【<$USERNAME>】进入游戏 251 1 6
+break
+
+#if
+checknamelist ..\QuestDiary\其他数据\女性玩家.txt HardDisk
+#act
+mov S1 \〖美女玩家〗
+SETRANKLEVELNAME %s\<$STR(S1)>\<$STR(S2)>\
+CHANGENAMECOLOR 19
+sendmsg 0 欢迎美女玩家【<$USERNAME>】进入游戏 251 1 6
+
+
+#if
+checknamelist ..\QuestDiary\其他数据\七彩神豪.txt HardDisk
+#act
+CHANGEMODE 1 1
+CHANGEMODE 2 1
+CHANGEMODE 3 1
+SETRANKLEVELNAME %s\◥■■■七■■■◤\◥■■彩■■◤\◥■神■◤\◥豪◤\
+goto @变色1
+break
+
+;◥■■■东■■■◤
+;　◥■■皇■■◤
+;　　◥■神■◤
+;　　　◥豪◤
+
+[@变色1]
+#if
+#act
+CHANGENAMECOLOR 242
+DELAYGOTO 500 @变色2
+break
+
+[@变色2]
+#if
+#act
+CHANGENAMECOLOR 242
+DELAYGOTO 500 @变色3
+break
+
+[@变色3]
+#if
+#act
+CHANGENAMECOLOR 254
+DELAYGOTO 500 @变色4
+break
+
+[@变色4]
+#if
+#act
+CHANGENAMECOLOR 254
+DELAYGOTO 500 @变色5
+break
+
+[@变色5]
+#if
+#act
+CHANGENAMECOLOR 161
+DELAYGOTO 500 @变色6
+break
+
+[@变色6]
+#if
+#act
+CHANGENAMECOLOR 161
+DELAYGOTO 500 @变色7
+break
+
+[@变色7]
+#if
+#act
+CHANGENAMECOLOR 229
+DELAYGOTO 500 @变色8
+break
+
+[@变色8]
+#if
+#act
+CHANGENAMECOLOR 229
+DELAYGOTO 500 @变色9
+break
+
+[@变色9]
+#if
+#act
+CHANGENAMECOLOR 250
+DELAYGOTO 500 @变色0
+break
+
+[@变色0]
+#if
+#act
+CHANGENAMECOLOR 250
+DELAYGOTO 500 @变色1
+break
+}

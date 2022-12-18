@@ -1,0 +1,34 @@
+()
+%100
+[@main]
+#IF
+CHECKNAMELIST ..\QuestDiary\其他数据\命运之刃名单.txt HardDisk
+#ACT
+MESSAGEBOX 今天你已经完成此任务!
+break
+#if
+check [105] 1
+#act
+messagebox 带上1块纯度15的金矿去找比奇武器店老板
+break
+#if
+checklevel 35
+#say
+　\ \
+确定开始[命运之刃]任务吗？\ \
+<[确定]/@05rw>        <[取消]/@exit>
+#elsesay
+35级才可接此任务
+[@05rw]
+#if
+check [90] 1
+#act
+sendmsg 7 提示：一个人只可以打造一把命运之刃！
+break 
+
+#if
+#act
+set [105] 1
+close
+messagebox 带上1块纯度15的金矿去比奇<卫家店>
+break

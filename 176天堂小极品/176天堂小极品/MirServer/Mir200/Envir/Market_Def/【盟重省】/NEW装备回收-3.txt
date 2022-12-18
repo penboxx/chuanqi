@@ -1,0 +1,13 @@
+[@main]
+\ \ \
+<COLOR=#254 本服回收系统已增加防脱机验证>\
+<COLOR=#254 进去后请点击><COLOR=clLime 变色的NPC><COLOR=#254 ，其他NPC全为防脱机假NPC>\
+<COLOR=clLime 点击错误三次将被自动封号>\ \
+
+<进去回收/@进去>\ \
+<不去了/@exit>\
+
+[@进去]
+#IF
+#ACT
+mapmove huishou

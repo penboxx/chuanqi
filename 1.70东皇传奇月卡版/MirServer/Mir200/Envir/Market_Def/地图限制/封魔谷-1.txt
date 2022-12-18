@@ -1,0 +1,31 @@
+[@main]
+#if
+equal A35 开放
+#act
+MOV I0 <$STR(G0)>
+INC I0 1
+#say
+进入封魔谷需要开区第9天晚上20点\ \
+目前开区天数为：第<$STR(I0)>天！\ \
+<进入封魔谷/@1>
+#elsesay
+进入封魔谷需要开区第9天晚上20点\ \
+目前开区天数为：第<$STR(I0)>天！\ \
+
+
+[@1]
+#IF
+CHECKUSERDATE ..\QuestDiary\季卡\时间记载.txt < 90 p0 p1
+#ACT
+close
+MAPMOVE 4 447 190
+break
+
+#If
+equal G93 1
+#act
+sendmsg 7 提示：请购买季卡
+break 
+#elseact
+SendMsg 7  提示：开区第9天晚上20点自动开放！
+break

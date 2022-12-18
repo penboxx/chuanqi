@@ -1,0 +1,1099 @@
+[@金刚石使者11]
+{
+　                                  <COLOR=clFuchsia 天堂复古1.76小极品>\
+<COLOR=clAqua ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+　 本服金刚石<COLOR=clRed 只能BOSS爆出>.金刚石的爆率为:1/3,只要给我足够\
+的金刚石.现在可以为您提供以下服务:\
+<COLOR=clAqua ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+　<锻造斗笠/@锻造斗笠>              <锻造勋章/@锻造勋章>              <锻造屠龙/@锻造屠龙12>\ \
+　<兑换经验/@兑换经验>              <兑换灵符/@兑换灵符>              <换金刚石/@换金刚石>\ \
+　<召唤勇士/@召唤勇士>              <取回灵符/@取回灵符>              <取金刚石/@取金刚石>\
+
+
+[@取金刚石]
+　                                  <COLOR=clFuchsia 天堂复古1.76小极品>\
+<COLOR=clAqua ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+　 本服金刚石<COLOR=clRed 只能BOSS爆出>.金刚石的爆率为:1/3,只要给我足够\
+的金刚石.现在可以为您提供以下服务:\
+<COLOR=clAqua ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\ \
+
+　 　 <提取1颗金刚石/@提取1颗金刚石>            <提取5颗金刚石/@提取5颗金刚石> \ \
+　 　 <提取10颗金刚石/@提取10颗金刚石>           <提取50颗金刚石/@提取50颗金刚石> \ 
+
+
+　　　　　　　　　　　　　　　　　　　　　　　　<返回上一页/@金刚石使者11>\
+
+[@提取50颗金刚石]
+#IF
+CHECKGAMEDIAMOND > 49
+#ACT
+GAMEDIAMOND - 50
+give 50颗金刚石
+sendmsg 0 提示：玩家【<$USERNAME>】在金刚石使者出提取了50颗金刚石！
+break
+#ELSEACT
+sendmsg 6 你背包中金刚石不足。
+break
+
+
+[@提取10颗金刚石]
+#IF
+CHECKGAMEDIAMOND > 9
+#ACT
+GAMEDIAMOND - 10
+give 10颗金刚石
+sendmsg 0 提示：玩家【<$USERNAME>】在金刚石使者出提取了10颗金刚石！
+break
+#ELSEACT
+sendmsg 6 你背包中金刚石不足。
+break
+
+
+
+[@提取5颗金刚石]
+#IF
+CHECKGAMEDIAMOND > 4
+#ACT
+GAMEDIAMOND - 5
+give 5颗金刚石
+sendmsg 0 提示：玩家【<$USERNAME>】在金刚石使者出提取了5颗金刚石！
+break
+#ELSEACT
+sendmsg 6 你背包中金刚石不足。
+break
+
+
+
+
+[@提取1颗金刚石]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GAMEDIAMOND - 1
+give 金刚石
+sendmsg 0 提示：玩家【<$USERNAME>】在金刚石使者出提取了1颗金刚石！
+break
+#ELSEACT
+sendmsg 6 你背包中金刚石不足。
+break
+
+
+
+
+
+[@取回灵符]
+　                                  <COLOR=clFuchsia 天堂复古1.76小极品>\
+<COLOR=clAqua ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+　 本服金刚石<COLOR=clRed 只能BOSS爆出>.金刚石的爆率为:1/3,只要给我足够\
+的金刚石.现在可以为您提供以下服务:\
+<COLOR=clAqua ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\ \
+
+　 　 　 　 <提取50灵符/@提取50灵符>              <提取100灵符/@提取100灵符> \ 
+　　　　　　　　您当前点灵符:【<$GAMEGIRD>】\
+
+　　　　　　　　　　　　　　　　　　　　　　　　<返回上一页/@金刚石使者11>\
+
+
+[@提取100灵符]
+#IF
+CHECKGAMEGIRD > 99
+#ACT
+GAMEGIRD - 100
+give 100点灵符
+sendmsg 0 提示：玩家【<$USERNAME>】在金刚石使者出提取了100点灵符！
+break
+#ELSEACT
+sendmsg 6 你背包中灵符不足，您当前点灵符:【<$GAMEGIRD>】。
+break
+
+
+
+
+[@提取50灵符]
+#IF
+CHECKGAMEGIRD > 49
+#ACT
+GAMEGIRD - 50
+give 50点灵符
+sendmsg 0 提示：玩家【<$USERNAME>】在金刚石使者出提取了50点灵符！
+break
+#ELSEACT
+sendmsg 6 你背包中灵符不足，您当前点灵符:【<$GAMEGIRD>】。
+break
+
+
+
+
+[@召唤勇士]
+　                                  <COLOR=clFuchsia 天堂复古1.76小极品>\
+<COLOR=clAqua ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+　 为增加游戏乐趣，提高游戏效率，使大家不再为了招不到宝宝\
+而烦恼勋章开始使用金刚石召唤巨型多角虫和半兽勇士。\
+<COLOR=clAqua ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄>\
+1颗金刚石召唤1只巨型多角虫（900）   <COLOR=clRed 100%成功>     <确定召唤/@召唤多角虫>\
+2颗金刚石召唤1只半兽勇士  （900）   <COLOR=clRed 100%成功>     <确定召唤/@召唤半兽勇士> \ \
+注:此功能只限法师使用,必须达到相应的召唤等级,宝宝最多为<COLOR=clRed 5个>!\
+　　　　　　　　　　　　　　　　　　　　　　　　<返回上一页/@金刚石使者11>\
+
+
+
+[@召唤半兽勇士]
+#If
+checkjob Wizard
+#Act
+DelayCall 10 @召唤半兽勇士-1
+#ELSEACT
+messagebox  您是一名法师吗？此功能只限法师使用。
+break
+
+[@召唤半兽勇士-1]
+#If
+CHECKLEVELEX < 45
+#Act
+messagebox  很遗憾！召唤失败了，您的等级不够45级！
+break
+
+#If
+CheckSlaveCount < 5
+CHECKGAMEDIAMOND > 1
+#ACT
+GAMEDIAMOND - 2
+RECALLMOBEX 半兽勇士1 324 326 1 5 30 0 -1
+sendmsg 0 提示：玩家【<$USERNAME>】在金刚石使者处使用了2颗金刚石召唤了一只半兽勇士。
+#ELSEACT
+messagebox  您没有金刚石或者你已经有5个或以上的宝宝.现在不可以再召宝宝.
+break
+
+
+
+
+[@召唤多角虫]
+#If
+checkjob Wizard
+#Act
+DelayCall 10 @召唤多角虫-1
+#ELSEACT
+messagebox  您是一名法师吗？此功能只限法师使用。
+break
+
+[@召唤多角虫-1]
+#If
+CHECKLEVELEX < 28
+#Act
+messagebox  很遗憾！召唤失败了，您的等级不够28级！
+break
+
+#If
+CheckSlaveCount < 5
+CHECKGAMEDIAMOND > 1
+#ACT
+GAMEDIAMOND - 1
+RECALLMOBEX 巨型多角虫1 324 326 1 5 30 0 -1
+sendmsg 0 提示：玩家【<$USERNAME>】在金刚石使者处使用了1颗金刚石召唤了一只巨型多角虫。
+#ELSEACT
+messagebox  您没有金刚石或者你已经有5个或以上的宝宝.现在不可以再召宝宝.
+break
+
+
+
+
+
+
+
+
+[@换金刚石]
+赤月首饰兑换           <COLOR=clRed 2颗金刚石>            <确实兑换/@赤月首饰换金刚石>\ \
+43号级勋章兑换         <COLOR=clRed 3颗金刚石>            <确实兑换/@43号级勋章换金刚石>\ \
+40级衣服兑换           <COLOR=clRed 8颗金刚石>            <确实兑换/@40级衣服换金刚石>\ \
+怒斩级武器兑换        <COLOR=clRed 10颗金刚石>            <确实兑换/@怒斩级武器换金刚石>\ \
+<COLOR=clRed 注：赤月首饰包含“血饮”！> \
+
+　　　　　　　　　　　　　　　　　　　　　　　　<返回上一页/@金刚石使者11>\
+
+[@43号级勋章换金刚石]
+#if
+checkitem 荣誉勋章43号 1
+#ACT
+take 荣誉勋章43号 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 3
+DelayCall 100 @43号级勋章换金刚石
+break
+
+#if
+checkitem 荣誉勋章44号 1
+#ACT
+take 荣誉勋章44号 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 3
+DelayCall 100 @43号级勋章换金刚石
+break
+
+#if
+checkitem 荣誉勋章45号 1
+#ACT
+take 荣誉勋章45号 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 3
+DelayCall 100 @43号级勋章换金刚石
+break
+#if
+LARGE D65 0
+#ACT
+MUL D66 3
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了43号级勋章(<$STR(D65)>)件,获得金刚石+(<$STR(D66)>)
+MOV D65 0
+MOV D66 0
+break
+#ELSEACT
+sendmsg 6 你背包中无43号级勋章。
+break
+
+
+
+
+[@赤月首饰换金刚石]
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 2
+DelayCall 100 @赤月首饰换金刚石
+break
+
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 2
+DelayCall 100 @赤月首饰换金刚石
+break
+
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 2
+DelayCall 100 @赤月首饰换金刚石
+break
+
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 2
+DelayCall 100 @赤月首饰换金刚石
+break
+
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 2
+DelayCall 100 @赤月首饰换金刚石
+break
+
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 2
+DelayCall 100 @赤月首饰换金刚石
+break
+
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 2
+DelayCall 100 @赤月首饰换金刚石
+break
+
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 2
+DelayCall 100 @赤月首饰换金刚石
+break
+
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 2
+DelayCall 100 @赤月首饰换金刚石
+break
+
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 2
+DelayCall 100 @赤月首饰换金刚石
+break
+
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 2
+DelayCall 100 @赤月首饰换金刚石
+break
+
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 2
+DelayCall 100 @赤月首饰换金刚石
+break
+
+#if
+checkitem 血饮 1
+#ACT
+take 血饮 1
+INC D65 1
+INC D66 1
+GAMEDIAMOND + 2
+DelayCall 100 @赤月首饰换金刚石
+break
+
+
+#if
+LARGE D65 0
+#ACT
+MUL D66 2
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了赤月首饰(<$STR(D65)>)件,获得金刚石+(<$STR(D66)>)
+MOV D65 0
+MOV D66 0
+break
+#ELSEACT
+sendmsg 6 你背包中无赤月首饰。
+break
+
+
+
+[@40级衣服换金刚石]
+
+#if
+checkitem 天师长袍 1
+#ACT
+take 天师长袍 1
+INC D63 1
+INC D64 1
+GAMEDIAMOND + 8
+DelayCall 100 @40级衣服换金刚石
+break
+
+#if
+checkitem 天尊道袍 1
+#ACT
+take 天尊道袍 1
+INC D63 1
+INC D64 1
+GAMEDIAMOND + 8
+DelayCall 100 @40级衣服换金刚石
+break
+
+#if
+checkitem 霓裳羽衣 1
+#ACT
+take 霓裳羽衣 1
+INC D63 1
+INC D64 1
+GAMEDIAMOND + 8
+DelayCall 100 @40级衣服换金刚石
+break
+
+#if
+checkitem 法神披风 1
+#ACT
+take 法神披风 1
+INC D63 1
+INC D64 1
+GAMEDIAMOND + 8
+DelayCall 100 @40级衣服换金刚石
+break
+
+#if
+checkitem 圣战宝甲 1
+#ACT
+take 圣战宝甲 1
+INC D63 1
+INC D64 1
+GAMEDIAMOND + 8
+DelayCall 100 @40级衣服换金刚石
+break
+
+#if
+checkitem 天魔神甲 1
+#ACT
+take 天魔神甲 1
+INC D63 1
+INC D64 1
+GAMEDIAMOND + 8
+DelayCall 100 @40级衣服换金刚石
+break
+
+#if
+LARGE D63 0
+#ACT
+MUL D64 8
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了40级衣服(<$STR(D63)>)件,获得金刚石+(<$STR(D64)>)
+MOV D63 0
+MOV D64 0
+break
+#ELSEACT
+sendmsg 6 你背包中无40级衣服。
+break
+
+
+[@怒斩级武器换金刚石]
+#if
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+INC D61 1
+INC D62 1
+GAMEDIAMOND + 10
+DelayCall 100 @怒斩级武器换金刚石
+break
+
+#if
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+INC D61 1
+INC D62 1
+GAMEDIAMOND + 10
+DelayCall 100 @怒斩级武器换金刚石
+break
+
+#if
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+INC D61 1
+INC D62 1
+GAMEDIAMOND + 10
+DelayCall 100 @怒斩级武器换金刚石
+break
+
+#if
+LARGE D61 0
+#ACT
+MUL D62 10
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了怒斩级武器(<$STR(D61)>)件,获得金刚石+(<$STR(D62)>)
+MOV D61 0
+MOV D62 0
+break
+#ELSEACT
+sendmsg 6 你背包中无怒斩级武器。
+break
+
+
+
+
+
+
+
+
+[@兑换灵符]
+1个祖玛首饰兑换1点灵符   <祖玛首饰兑换灵符/@祖玛首饰兑换灵符>\ \
+1个祖玛武器兑换2点灵符   <祖玛武器兑换灵符/@祖玛武器兑换灵符>\ \
+1张书页兑换3点灵符       <1张书页兑换灵符/@1张书页兑换灵符>     <书页一键兑换灵符/@书页一键换灵符>\ \
+1颗金刚石兑换5点灵符     <1颗金刚石兑换灵符/@1颗金刚石兑换灵符>\ \
+10颗金刚石兑换50点灵符   <10颗金刚石兑换灵符/@10颗金刚石兑换灵符>\ 
+　　　　　　　　　　　　　　　　　　　　　　　　<返回上一页/@金刚石使者11>\
+
+
+[@10颗金刚石兑换灵符]
+#IF
+CHECKGAMEDIAMOND > 9
+#ACT
+GAMEDIAMOND - 10
+GAMEGIRD + 50
+sendmsg 0 提示：玩家【<$USERNAME>】用10颗金刚石兑换了50点灵符！
+break
+#ELSEACT
+sendmsg 6 你背包中金刚石不足。
+break
+
+[@1颗金刚石兑换灵符]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GAMEDIAMOND - 1
+GAMEGIRD + 5
+sendmsg 0 提示：玩家【<$USERNAME>】用1颗金刚石兑换了5点灵符！
+break
+#ELSEACT
+sendmsg 6 你背包中金刚石不足。
+break
+
+[@1张书页兑换灵符]
+#if
+checkitem 书页 1
+#ACT
+take 书页 1
+GAMEGIRD + 3
+sendmsg 0 提示：玩家【<$USERNAME>】回收了1张书页,获得灵符+(3)
+break
+
+
+[@书页一键换灵符]
+#if
+checkitem 书页 1
+#ACT
+take 书页 1
+INC D69 1
+INC D70 1
+GAMEGIRD + 3
+DelayCall 100 @书页一键换灵符
+break
+
+#if
+LARGE D69 0
+#ACT
+MUL D70 3
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了书页(<$STR(D69)>)张,获得灵符+(<$STR(D70)>)
+MOV D69 0
+MOV D70 0
+break
+#ELSEACT
+sendmsg 6 你背包中无书页。
+break
+
+
+
+
+
+[@祖玛首饰兑换灵符]
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC D69 1
+INC D70 1
+GAMEGIRD + 1
+DelayCall 100 @祖玛首饰兑换灵符
+break
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC D69 1
+INC D70 1
+GAMEGIRD + 1
+DelayCall 100 @祖玛首饰兑换灵符
+break
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC D69 1
+INC D70 1
+GAMEGIRD + 1
+DelayCall 100 @祖玛首饰兑换灵符
+break
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC D69 1
+INC D70 1
+GAMEGIRD + 1
+DelayCall 100 @祖玛首饰兑换灵符
+break
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC D69 1
+INC D70 1
+GAMEGIRD + 1
+DelayCall 100 @祖玛首饰兑换灵符
+break
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC D69 1
+INC D70 1
+GAMEGIRD + 1
+DelayCall 100 @祖玛首饰兑换灵符
+break
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC D69 1
+INC D70 1
+GAMEGIRD + 1
+DelayCall 100 @祖玛首饰兑换灵符
+break
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC D69 1
+INC D70 1
+GAMEGIRD + 1
+DelayCall 100 @祖玛首饰兑换灵符
+break
+
+#if
+checkitem 黑铁头盔 1
+#ACT
+take 黑铁头盔 1
+INC D69 1
+INC D70 1
+GAMEGIRD + 1
+DelayCall 100 @祖玛首饰兑换灵符
+break
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC D69 1
+INC D70 1
+GAMEGIRD + 1
+DelayCall 100 @祖玛首饰兑换灵符
+break
+
+#if
+LARGE D69 0
+#ACT
+MUL D70 1
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了祖玛装备(<$STR(D69)>)件,获得灵符+(<$STR(D70)>)
+MOV D69 0
+MOV D70 0
+break
+#ELSEACT
+sendmsg 6 你背包中无祖玛装备。
+break
+
+
+[@祖玛武器兑换灵符]
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+INC D67 1
+INC D68 1
+GAMEGIRD + 2
+DelayCall 100 @祖玛武器兑换灵符
+break
+
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+INC D67 1
+INC D68 1
+GAMEGIRD + 2
+DelayCall 100 @祖玛武器兑换灵符
+break
+
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+INC D67 1
+INC D68 1
+GAMEGIRD + 2
+DelayCall 100 @祖玛武器兑换灵符
+break
+
+#if
+LARGE D67 0
+#ACT
+MUL D68 2
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了祖玛武器(<$STR(D67)>)件,获得灵符+(<$STR(D68)>)
+MOV D67 0
+MOV D68 0
+break
+#ELSEACT
+sendmsg 6 你背包中无祖玛武器。
+break
+
+
+
+
+[@兑换经验]
+　  1颗金刚石兑换             <COLOR=clRed 25W经验>          <确实兑换/@1颗兑换经验>\ \
+
+　  2颗金刚石兑换             <COLOR=clRed 50W经验>          <确实兑换/@2颗兑换经验>\ \
+
+　  5颗金刚石兑换            <COLOR=clRed 125W经验>          <确实兑换/@5颗兑换经验>\ \
+
+　 10颗金刚石兑换            <COLOR=clRed 250W经验>          <确实兑换/@10颗兑换经验>\ \
+
+　 50颗金刚石兑换           <COLOR=clRed 1250W经验>          <确实兑换/@50颗兑换经验>\ 
+　　　　　　　　　　　　 　<返回上一页/@金刚石使者11>\
+
+
+[@50颗兑换经验]
+#IF
+CHECKGAMEDIAMOND > 49
+#ACT
+GAMEDIAMOND - 50
+CHANGEEXP + 12500000
+SENDMSG 7 恭喜您，兑换【1250W经验】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【金刚石使者】使用50颗金刚石兑换【1250W经验】！ 251 249
+#elseact
+messagebox  很遗憾！兑换验失败了，您的金刚石不足！
+break
+
+
+
+[@10颗兑换经验]
+#IF
+CHECKGAMEDIAMOND > 9
+#ACT
+GAMEDIAMOND - 10
+CHANGEEXP + 2500000
+SENDMSG 7 恭喜您，兑换【250W经验】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【金刚石使者】使用10颗金刚石兑换【250W经验】！ 251 249
+#elseact
+messagebox  很遗憾！兑换验失败了，您的金刚石不足！
+break
+
+[@5颗兑换经验]
+#IF
+CHECKGAMEDIAMOND > 4
+#ACT
+GAMEDIAMOND - 5
+CHANGEEXP + 1250000
+SENDMSG 7 恭喜您，兑换【125W经验】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【金刚石使者】使用5颗金刚石兑换【125W经验】！ 251 249
+#elseact
+messagebox  很遗憾！兑换验失败了，您的金刚石不足！
+break
+
+
+[@2颗兑换经验]
+#IF
+CHECKGAMEDIAMOND > 2
+#ACT
+GAMEDIAMOND - 2
+CHANGEEXP + 500000
+SENDMSG 7 恭喜您，兑换【50W经验】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【金刚石使者】使用2颗金刚石兑换【50W经验】！ 251 249
+#elseact
+messagebox  很遗憾！兑换验失败了，您的金刚石不足！
+break
+
+
+[@1颗兑换经验]
+#IF
+CHECKGAMEDIAMOND > 1
+#ACT
+GAMEDIAMOND - 1
+CHANGEEXP + 250000
+SENDMSG 7 恭喜您，兑换【25W经验】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【金刚石使者】使用1颗金刚石兑换【25W经验】！ 251 249
+#elseact
+messagebox  很遗憾！兑换验失败了，您的金刚石不足！
+break
+
+
+
+
+
+
+[@锻造屠龙12]
+现在只要你给我相应的材料，我这里可以免费帮你铸造斗笠，如果\
+铸造失败，所有的材料全部消失！\ \
+
+屠龙     【残】屠龙5把+300金刚石+1500灵符  <COLOR=clRed 50%>  <确定铸造/@锻造屠龙> \
+嗜魂法杖 【残】嗜魂5把+300金刚石+1500灵符  <COLOR=clRed 50%>  <确定铸造/@锻造嗜魂法杖> \
+霸者之刃 【残】霸者5把+300金刚石+1500灵符  <COLOR=clRed 50%>  <确定铸造/@锻造霸者之刃> \  \
+
+注：屠龙属性：攻击5-35 准确+3 <COLOR=clRed 暴击+2> \
+　  嗜魂属性：攻击6-13 魔法2-10 准确+3 <COLOR=clRed 暴击+2>\
+　  霸者属性：攻击6-32 魔法2-8 道术3-13 准确+3 <COLOR=clRed 暴击+2>  <返回/@金刚石使者11>\
+
+[@锻造霸者之刃]
+#IF
+CHECKGAMEDIAMOND > 299
+CHECKGAMEGIRD > 1499
+checkitem 【残】霸者之刃 3
+#ACT
+DelayCall 100 @锻造霸者之刃-1
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+[@锻造霸者之刃-1]
+#IF
+random 5
+#ACT
+DelayCall 100 @锻造霸者之刃-2
+#elseact
+take 【残】霸者之刃 3
+GAMEDIAMOND - 300
+GAMEGIRD - 1500
+messagebox  很遗憾！铸造失败了，别灰心收集材料继续吧！下次一定成功！
+break
+
+[@锻造霸者之刃-2]
+#IF
+#ACT
+take 【残】霸者之刃 3
+GAMEDIAMOND - 300
+GAMEGIRD - 1500
+give 霸者之刃 1
+SENDMSG 7 恭喜您，铸造【黄金勋章】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【金刚石使者】处成功的铸造了【霸者之刃】！ 251 249
+break
+
+
+
+
+[@锻造嗜魂法杖]
+#IF
+CHECKGAMEDIAMOND > 299
+CHECKGAMEGIRD > 1499
+checkitem 【残】嗜魂法杖 3
+#ACT
+DelayCall 100 @锻造嗜魂法杖-1
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+[@锻造嗜魂法杖-1]
+#IF
+random 5
+#ACT
+DelayCall 100 @锻造嗜魂法杖-2
+#elseact
+take 【残】嗜魂法杖 3
+GAMEDIAMOND - 300
+GAMEGIRD - 1500
+messagebox  很遗憾！铸造失败了，别灰心收集材料继续吧！下次一定成功！
+break
+
+[@锻造嗜魂法杖-2]
+#IF
+#ACT
+take 【残】嗜魂法杖 3
+GAMEDIAMOND - 300
+GAMEGIRD - 1500
+give 嗜魂法杖 1
+SENDMSG 7 恭喜您，铸造【黄金勋章】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【金刚石使者】处成功的铸造了【嗜魂法杖】！ 251 249
+break
+
+
+[@锻造屠龙]
+#IF
+CHECKGAMEDIAMOND > 299
+CHECKGAMEGIRD > 1499
+checkitem 【残】屠龙 3
+#ACT
+DelayCall 100 @锻造屠龙-1
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+[@锻造屠龙-1]
+#IF
+random 5
+#ACT
+DelayCall 100 @锻造屠龙-2
+#elseact
+take 【残】屠龙 3
+GAMEDIAMOND - 300
+GAMEGIRD - 1500
+messagebox  很遗憾！铸造失败了，别灰心收集材料继续吧！下次一定成功！
+break
+
+[@锻造屠龙-2]
+#IF
+#ACT
+take 【残】屠龙 3
+GAMEDIAMOND - 300
+GAMEGIRD - 1500
+give 屠龙 1
+SENDMSG 7 恭喜您，铸造【黄金勋章】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【金刚石使者】处成功的铸造了【屠龙】！ 251 249
+break
+
+
+
+
+[@锻造勋章]
+现在只要你给我相应的材料，我这里可以免费帮你铸造斗笠，如果\
+铸造失败，所有的材料全部消失！\ \
+
+白银勋章 3个普通勋章+ 50金刚石+ 250灵符  <COLOR=clRed 100%>  <确定铸造/@锻造白银勋章> \
+黄金勋章 3个白银勋章+200金刚石+1000灵符   <COLOR=clRed 75%>  <确定铸造/@锻造黄金勋章> \ \
+
+注：白银勋章属性：1-5攻魔道 \
+　  黄金勋章属性：1-5攻魔道 <COLOR=clRed HP+100>\
+　　　　　　　　　　　　　　　　　　　　　　　　<返回上一页/@金刚石使者11>\
+
+
+
+
+
+[@锻造黄金勋章]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKGAMEGIRD > 999
+checkitem 白银勋章 3
+#ACT
+DelayCall 100 @锻造黄金勋章-1
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+[@锻造黄金勋章-1]
+#IF
+random 3
+#ACT
+DelayCall 100 @锻造黄金勋章-2
+#elseact
+take 白银勋章 3
+GAMEDIAMOND - 200
+GAMEGIRD - 1000
+messagebox  很遗憾！铸造失败了，别灰心收集材料继续吧！下次一定成功！
+break
+
+[@锻造黄金勋章-2]
+#IF
+#ACT
+take 白银勋章 3
+GAMEDIAMOND - 200
+GAMEGIRD - 1000
+give 黄金勋章 1
+SENDMSG 7 恭喜您，铸造【黄金勋章】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【金刚石使者】处成功的铸造了【黄金勋章】！ 251 249
+break
+
+
+
+[@锻造白银勋章]
+#IF
+CHECKGAMEDIAMOND > 49
+CHECKGAMEGIRD > 249
+checkitem 普通勋章 3
+#ACT
+take 普通勋章 3
+GAMEDIAMOND - 50
+GAMEGIRD - 250
+give 白银勋章 1
+SENDMSG 7 恭喜您，铸造【白银勋章】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【金刚石使者】处成功的铸造了【白银勋章】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+
+
+
+
+[@锻造斗笠]
+现在只要你给我相应的材料，我这里可以免费帮你铸造斗笠，如果\
+铸造失败，所有的材料全部消失！\ \
+
+白银斗笠 3个普通斗笠+ 50金刚石+ 250灵符  <COLOR=clRed 100%>  <确定铸造/@锻造白银斗笠> \
+黄金斗笠 3个白银斗笠+200金刚石+1000灵符   <COLOR=clRed 75%>  <确定铸造/@锻造黄金斗笠> \ \
+
+注：白银斗笠属性：1-3攻魔道 物理魔法伤害<COLOR=clRed -5%>\
+　  黄金斗笠属性：1-5攻魔道 物理魔法伤害<COLOR=clRed -8%>\
+　　　　　　　　　　  　　　　　　　　　　　　<返回上一页/@金刚石使者11>\ \
+
+
+[@锻造黄金斗笠]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKGAMEGIRD > 999
+checkitem 白银斗笠 3
+#ACT
+DelayCall 100 @锻造黄金斗笠-1
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+[@锻造黄金斗笠-1]
+#IF
+random 3
+#ACT
+DelayCall 100 @锻造黄金斗笠-2
+#elseact
+take 白银斗笠 3
+GAMEDIAMOND - 200
+GAMEGIRD - 1000
+messagebox  很遗憾！铸造失败了，别灰心收集材料继续吧！下次一定成功！
+break
+
+[@锻造黄金斗笠-2]
+#IF
+#ACT
+take 白银斗笠 3
+GAMEDIAMOND - 200
+GAMEGIRD - 1000
+give 黄金斗笠 1
+SENDMSG 7 恭喜您，铸造【黄金斗笠】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【金刚石使者】处成功的铸造了【黄金斗笠】！ 251 249
+break
+
+
+
+[@锻造白银斗笠]
+#IF
+CHECKGAMEDIAMOND > 49
+CHECKGAMEGIRD > 249
+checkitem 普通斗笠 3
+#ACT
+take 普通斗笠 3
+GAMEDIAMOND - 50
+GAMEGIRD - 250
+give 白银斗笠 1
+SENDMSG 7 恭喜您，铸造【白银斗笠】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【金刚石使者】处成功的铸造了【白银勋章】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+}
+
+

@@ -1,0 +1,9 @@
+[@星王法链11j]
+{
+#IF
+#act
+take 金币 6000000
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将星王法链升级成功。
+BREAK
+}

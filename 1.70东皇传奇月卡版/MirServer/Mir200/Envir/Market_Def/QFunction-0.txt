@@ -1,0 +1,981 @@
+
+(@@sendmsg)
+
+
+
+
+
+;-----------------------------------------------------------------------------------------------
+;玩家死亡触发
+;-----------------------------------------------------------------------------------------------
+
+[@PlayDie]
+#If
+KillByHum
+#Act 
+SendMsg 1 玩家[<$KILLER>]在:%m(%x:%y)放倒了[<$USERNAME>]！ 255 5
+break
+
+;-----------------------------------------------------------------------------------------------
+;修复神水
+;-----------------------------------------------------------------------------------------------
+
+[@StdModeFunc4]
+#IF
+#Act
+RepairAll
+break
+
+;-----------------------------------------------------------------------------------------------
+;烟花
+;-----------------------------------------------------------------------------------------------
+
+[@StdModeFunc5]
+#IF
+#ACT
+Gmexecute showeffect 78
+sendMsg 1 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。 255 22
+BREAK
+
+[@StdModeFunc6]
+#IF
+#ACT
+Gmexecute showeffect 79
+sendMsg 1 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。 255 22
+BREAK
+
+[@StdModeFunc7]
+#IF
+#ACT
+Gmexecute showeffect 80
+sendMsg 1 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。255 22
+BREAK
+
+[@StdModeFunc8]
+#IF
+#ACT
+Gmexecute showeffect 81
+sendMsg 1 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。255 22
+BREAK
+
+[@StdModeFunc9]
+#IF
+#ACT
+Gmexecute showeffect 82
+sendMsg 1 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。255 22
+BREAK
+
+;-----------------------------------------------------------------------------------------------
+;庆典蛋糕
+;-----------------------------------------------------------------------------------------------
+
+[@StdModeFunc10]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M3 0
+SENDMSG 0 <$USERNAME>在:%m%x:%y处释放庆典蛋糕咯，大家快去欣赏啊！
+SendScrollMsg <$USERNAME>在:%m%x:%y处释放庆典蛋糕咯，大家快去欣赏啊！  255 22
+READRANDOMSTR ..\QuestDiary\游戏功能\烟花.txt S3 HardDisk
+GMEXECUTE SHOWEFFECT <$STR(S3)>
+KILLSCTIMER 0
+SETSCTIMER 0 3
+BREAK
+
+;-----------------------------------------------------------------------------------------------
+;个性发型
+;-----------------------------------------------------------------------------------------------
+
+[@StdModeFunc11]
+#IF
+#ACT
+HAIRSTYLE 0
+SENDMSG 6 %s，你的发型已经改变了...
+break
+
+[@StdModeFunc12]
+#IF
+#ACT
+HAIRSTYLE 1
+SENDMSG 6 %s，你的发型已经恢复了...
+break
+
+;-----------------------------------------------------------------------------------------------
+;金条金砖
+;-----------------------------------------------------------------------------------------------
+
+[@StdModeFunc13]
+#if
+checkgold 19000001
+#act
+give 金条 1
+messagebox 你身上携带的金钱太多了.无法再进行兑换!
+#elseact
+give 金币 998000
+SENDMSG 7 提示：金币已经增加100W在包裹里面
+break
+
+[@StdModeFunc14]
+#if
+#act
+give 金条 5
+break
+
+;-----------------------------------------------------------------------------------------------
+;元宝
+;-----------------------------------------------------------------------------------------------
+
+[@StdModeFunc15]
+#act
+GAMEGOLD + 1
+SENDMSG 6 提示:元宝增加1个.您当前的元宝为：<$GAMEGOLD>个
+break
+
+[@StdModeFunc16]
+#act
+GAMEGOLD + 10
+SENDMSG 6 提示:元宝增加10个.您当前的元宝为：<$GAMEGOLD>个
+break
+
+[@StdModeFunc17]
+#act
+GAMEGOLD + 50
+SENDMSG 6 提示:元宝增加50个.您当前的元宝为：<$GAMEGOLD>个
+break
+
+[@StdModeFunc18]
+#act
+GAMEGOLD + 100
+SENDMSG 6 提示:元宝增加100个.您当前的元宝为：<$GAMEGOLD>个
+break
+
+[@StdModeFunc19]
+#act
+GAMEGOLD + 500
+SENDMSG 6 提示:元宝增加500个.您当前的元宝为：<$GAMEGOLD>个
+break
+
+[@StdModeFunc20]
+#act
+GAMEGOLD + 1000
+SENDMSG 6 提示:元宝增加1000个.您当前的元宝为：<$GAMEGOLD>个
+break
+
+[@StdModeFunc21]
+#act
+GAMEGOLD + 5000
+SENDMSG 6 提示:元宝增加5000个.您当前的元宝为：<$GAMEGOLD>个
+break
+
+[@StdModeFunc22]
+#act
+GAMEGOLD + 10000
+SENDMSG 6 提示:元宝增加10000个.您当前的元宝为：<$GAMEGOLD>个
+break
+
+;-----------------------------------------------------------------------------------------------
+;金币
+;-----------------------------------------------------------------------------------------------
+
+[@StdModeFunc23]
+#IF
+#act
+give 金币 1000
+sendmsg 6 提示：你已兑换了1000金币
+break
+
+[@StdModeFunc24]
+#IF
+#act
+give 金币 5000
+sendmsg 6 提示：你已兑换了5000金币
+break
+
+[@StdModeFunc25]
+#IF
+#act
+give 金币 10000
+sendmsg 6 提示：你已兑换了1万金币
+break
+
+[@StdModeFunc26]
+#IF
+#act
+give 金币 50000
+sendmsg 6 提示：你已兑换了5万金币
+break
+
+[@StdModeFunc27]
+#IF
+#act
+give 金币 100000
+sendmsg 6 提示：你已兑换了10万金币
+break
+
+[@StdModeFunc28]
+#IF
+#act
+give 金币 500000
+sendmsg 6 提示：你已兑换了50万金币
+break
+
+;-----------------------------------------------------------------------------------------------
+;金刚石
+;-----------------------------------------------------------------------------------------------
+
+[@StdModeFunc29]
+#IF
+#act
+GAMEDIAMOND + 1
+sendmsg 6 提示：你兑换了1个金刚石
+break
+
+;-----------------------------------------------------------------------------------------------
+;传送石
+;-----------------------------------------------------------------------------------------------
+
+[@StdModeFunc30]
+#IF
+equal  A31 开放
+#Act
+mapmove 3 330 330
+BREAK
+#elseact
+sendmsg 7 提示：盟重地图还未开放！
+break
+
+[@StdModeFunc31]
+#if
+isonmap DB
+#act
+sendmsg 7 提示：此地图不允许使用
+break
+
+#IF
+isonmap 0101A
+#elseAct
+mapmove 0 326 272
+BREAK
+
+;-----------------------------------------------------------------------------------------------
+;季卡
+;-----------------------------------------------------------------------------------------------
+
+[@StdModeFunc32]
+#if
+#act
+DelNameList ..\QuestDiary\季卡\季卡名单.txt HardDisk
+DELUSERDATE ..\QuestDiary\季卡\时间记载.txt
+addnamelist ..\QuestDiary\季卡\季卡名单.txt HardDisk
+ADDUSERDATE ..\QuestDiary\季卡\时间记载.txt
+ADDLINELIST ..\QuestDiary\季卡\机器码.txt <$USERNAME>|<$HWID> HardDisk
+sendmsg 7 季卡充值成功！
+ClearDelayGoto
+break
+
+[@StdModeFunc40]
+#if
+#act
+give 平安果 1
+break
+
+;-----------------------------------------------------------------------------------------------
+;皇宫随机石
+;-----------------------------------------------------------------------------------------------
+
+[@StdModeFunc33]
+#IF
+IsOnMap 0150
+#act
+map 0150
+break
+#elseact
+sendmsg 6 提示：仅限沙巴克皇宫内使用！
+break
+
+;-----------------------------------------------------------------------------------------------
+;木材
+;-----------------------------------------------------------------------------------------------
+
+[@StdModeFunc43]
+#IF
+#act
+map D606
+sendmsg 7 提示:双机使用了劣质木材,被送入了死亡棺材
+break
+
+[@StdModeFunc44]
+#IF
+#act
+map D715
+sendmsg 7 提示:双机使用了优质木材,被送入了石墓五层
+break
+
+[@StdModeFunc45]
+#IF
+#act
+map D505
+sendmsg 7 提示:双机使用了红木,被送入了祖玛五层
+break
+
+[@StdModeFunc46]
+#IF
+#act
+map D2011
+sendmsg 7 提示:双机使用了梨花木,被送入了魔魂殿
+break
+
+[@StdModeFunc47]
+#IF
+#act
+map D10031
+sendmsg 7 提示:双机使用了紫檀木,被送入了左回廊
+break
+
+[@StdModeFunc48]
+#IF
+#act
+map M001
+sendmsg 7 提示:双机使用了暗殿凭证,被送入了未知暗殿
+break
+
+;-----------------------------------------------------------------------------------------------
+;升级触发
+;-----------------------------------------------------------------------------------------------
+
+[@PlayLevelUp]
+#IF
+#ACT
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+
+#if
+checklevelex = 7
+#act
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+mapmove JK
+BREAK
+
+#if
+checklevelex = 10
+#act
+Gmexecute 取消禁言 self
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+BREAK
+
+
+
+#IF
+CHECKLEVELEX = 22
+#ACT
+KILLMONEXPRATE 800 600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+#IF
+CHECKLEVELEX = 23
+#ACT
+KILLMONEXPRATE 800  600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+#IF
+CHECKLEVELEX = 24
+#ACT
+KILLMONEXPRATE 800  600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+#IF
+CHECKLEVELEX = 25
+#ACT
+KILLMONEXPRATE 800  600000
+sendmsg 0 恭喜<$USERNAME>升到25级！
+break
+
+#if
+checklevelex = 26
+#act
+KILLMONEXPRATE 800  600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+#IF
+CHECKLEVELEX = 27
+#ACT
+KILLMONEXPRATE 800  600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+#IF
+CHECKLEVELEX = 28
+#ACT
+KILLMONEXPRATE 800  600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+#IF
+CHECKLEVELEX = 29
+#ACT
+KILLMONEXPRATE 800 600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+#IF
+CHECKLEVELEX = 30
+#ACT
+KILLMONEXPRATE 500 600000
+sendmsg 0 恭喜<$USERNAME>升到30级！
+;ADDACCOUNTLIST \测试\测试30级.txt HardDisk
+;SENDMSG 0 恭喜<$USERNAME>升到到30级！正式开区后可去测试使者处领取相应奖励！！ 251 0 10
+break
+
+#IF
+CHECKLEVELEX = 31
+#ACT
+KILLMONEXPRATE 500 600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+#if
+checklevelex = 32
+#act
+KILLMONEXPRATE 500 600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+#IF
+CHECKLEVELEX = 33
+#ACT
+KILLMONEXPRATE 500 600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+;ADDACCOUNTLIST \测试\测试35级.txt HardDisk
+;SENDMSG 0 恭喜<$USERNAME>升到到33级！正式开区后可去测试NPC处领取测试勋章！！ 251 0 10
+break
+
+#IF
+CHECKLEVELEX = 34
+#ACT
+KILLMONEXPRATE 500 600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+#IF
+CHECKLEVELEX = 35
+#ACT
+sendmsg 0 恭喜<$USERNAME>升到35级！
+KILLMONEXPRATE 300 600000
+ADDACCOUNTLIST \测试\宣传季卡.txt HardDisk
+ADDACCOUNTLIST ..\QuestDiary\其他数据\宣传季卡.txt HardDisk
+break
+
+
+
+
+#IF
+CHECKLEVELEX = 36
+#ACT
+KILLMONEXPRATE 300 600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+#IF
+CHECKLEVELEX = 37
+#ACT
+KILLMONEXPRATE 300 600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+#IF
+CHECKLEVELEX = 38
+#ACT
+KILLMONEXPRATE 300 600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+#IF
+CHECKLEVELEX = 38
+#ACT
+KILLMONEXPRATE 300 600000
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+#IF
+CHECKLEVELEX = 39
+#ACT
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+KILLMONEXPRATE 300 600000
+break
+
+#if
+checklevelex = 40
+#act
+KILLMONEXPRATE 100 600000
+sendmsg 0 恭喜<$USERNAME>升到40级！
+break
+
+#IF
+#ACT
+sendmsg 0 恭喜<$USERNAME>升到<$LEVEL>级！
+break
+
+[@踢人]
+#act
+GMEXECUTE 踢人 <$USERNAME>
+break
+
+;-----------------------------------------------------------------------------------------------
+;离线触发
+;-----------------------------------------------------------------------------------------------
+
+[@OnLogout_OffLinePlaying]
+#If
+CheckLevelEx > 0 
+#Act
+CALCVAR HUMAN 抢庄个人挂机 = 1
+OffLine 300 1 1440
+
+[@OnLogout_SoftClosing] 
+
+#If
+CheckLevelEx > 0 
+#Act
+OffLine 300 1 1440
+
+
+
+#IF
+CHECK [0] 0
+#ACT
+CALCVAR HUMAN 抢庄个人挂机 = 1
+#IF
+CHECK [0] 0
+#SAY
+#If
+isonmap 0101A
+#act
+;OffLine 7200 1
+GMEXECUTE 踢人 <$USERNAME>
+break
+
+#If
+#act
+GMEXECUTE 踢人 <$USERNAME>
+break
+
+;-----------------------------------------------------------------------------------------------
+;领取元宝
+;-----------------------------------------------------------------------------------------------
+
+[@UserCmd1]
+#act
+#CALL [充值\元宝\元宝.txt] @领取元宝
+break
+
+[@UserCmd0]
+#act
+#CALL [游戏功能\开区天数.txt] @开区天数
+break
+;-----------------------------------------------------------------------------------------------
+;清洗红名
+;-----------------------------------------------------------------------------------------------
+
+[@UserCmd2]
+　\
+您当前的PK值：<$PKPOINT> 点    \ \
+您当前的声望：<$CREDITPOINT> 点\ \
+<[1点声望消除70点PK值]/@洗红>
+
+[@洗红]
+#if
+CHECKCREDITPOINT > 0
+#act
+CREDITPOINT - 1
+CHANGEPKPOINT - 70
+sendmsg 6 提示：成功消除70点PK值！
+close
+#elseact
+sendmsg 5 提示：声望不足1点，无法消除PK值！
+break
+
+;-----------------------------------------------------------------------------------------------
+;全服喊话
+;-----------------------------------------------------------------------------------------------
+
+[@UserCmd3]
+#if
+checklevel > 10
+#elseact
+sendmsg 7 提示：喊话必须大于10级！
+break
+
+#if
+isonmap DB
+#act
+sendmsg 7 抱歉：该地图不允许喊话
+break
+
+;#if
+;isonmap 0101A
+;#act
+;sendmsg 7 抱歉：该地图不允许喊话
+;break
+
+#if
+checkgamegold > 99
+#elseact
+sendmsg 7 提示：喊话需要身上有100元宝！
+break
+
+#if
+checknamelist ..\QuestDiary\其他数据\商人.txt HardDisk
+CHECKGAMEGOLD > 1
+#act
+GAMEGOLD - 2
+MOV S1 $PARAM(1)
+SENDMSG 0 <$USERNAME>:<$STR(S1)> 255 253
+break
+
+#if
+checknamelist ..\QuestDiary\其他数据\VIP.txt HardDisk
+CHECKGAMEGOLD > 7
+#act
+GAMEGOLD - 8
+MOV S1 $PARAM(1)
+SENDMSG 0 <$USERNAME>:<$STR(S1)> 255 229
+break
+
+#if
+CHECKGAMEGOLD > 7
+#act
+GAMEGOLD - 8
+MOV S1 $PARAM(1)
+SENDMSG 0 <$USERNAME>:<$STR(S1)> 255 253
+break
+
+;-----------------------------------------------------------------------------------------------
+;骰子
+;-----------------------------------------------------------------------------------------------
+
+[@UserCmd4]
+#if
+isadmin
+#ACT
+GMEXECUTE 全服触发 @骰子随机启动
+sendmsg 7 提示:骰子已随机启动
+break
+
+;-----------------------------------------------------------------------------------------------
+;测试
+;-----------------------------------------------------------------------------------------------
+
+[@UserCmd5]
+;#if
+;isadmin
+;#act
+;MOV G1 19
+;MOV G91 1
+;MOV G92 1
+;MOV G93 1
+;MOV G94 1
+;MOV G95 1
+;sendmsg 7 当前开区为第<$STR(G1)>天！
+
+;#if
+;#act
+;mov G95 1
+;break
+
+#if
+#act
+mov G3 21500
+break
+
+;#IF 
+;isadmin
+;CHECKMAPRANGEMONNAMECOUNT Self 200 200 200 送福金鸡 > 0
+;#act
+;sendmsg 7 提示：地图金鸡大于0
+;#elseact
+;sendmsg 7 提示：地图金鸡小于0
+
+;-----------------------------------------------------------------------------------------------
+;怪物攻城
+;-----------------------------------------------------------------------------------------------
+
+[@UserCmd8]
+#if
+isadmin
+#act
+PARAM1 4
+PARAM2 240
+PARAM3 200 
+MONGEN 黑色恶蛆 30 30
+MONGEN 红野猪 30 30
+MONGEN 黑野猪 30 30
+MONGEN 白野猪 50 30
+MONGEN 祖玛卫士3 30 30
+MONGEN 祖玛雕像3 30 30
+MONGEN 祖玛弓箭手3 30 30
+MONGEN 石墓尸王 1 30
+MONGEN 触龙神 1 30
+MONGEN 骷髅精灵 1 30
+MONGEN 沃玛教主 1 30
+MONGEN 沃玛卫士 2 30
+;MONGEN 祖玛教主 1 30
+MONGEN 虹魔教主 1 30
+;MONGEN 赤月恶魔 1 30
+;MONGEN 双头金刚 1 30
+;MONGEN 双头血魔 1 30
+MONGEN 血僵尸 5 30
+MONGEN 血巨人 5 30
+MONGEN 尸王2 20 30
+MONGEN 黑锷蜘蛛0 10 30
+MONGEN 钢牙蜘蛛 10 30
+MONGEN 虹魔蝎卫 2 30
+MONGEN 幻影蜘蛛 1 30
+MONGEN 千年树妖 2 30
+MONGEN 邪恶毒蛇 4 30
+MONGEN 邪恶钳虫 4 30
+MONGEN 暗之沃玛教主 1 30
+;MONGEN 暗之双头金刚 1 30
+MONGEN 暗之双头血魔 1 30
+MONGEN 暗之骷髅精灵 1 30
+MONGEN 暗之虹魔教主 1 30
+MONGEN 暗之黄泉教主 1 30
+break
+
+;-----------------------------------------------------------------------------------------------
+;金鸡送福
+;-----------------------------------------------------------------------------------------------
+
+[@UserCmd9]
+#if
+isadmin
+#act
+PARAM1 M001
+PARAM2 200
+PARAM3 200
+MONGEN 送福金鸡 20 200
+break
+
+;-----------------------------------------------------------------------------------------------
+;开土城
+;-----------------------------------------------------------------------------------------------
+
+[@UserCmd10]
+#if
+isadmin
+#act
+mov G2 1
+sendmsg 7 提示:土城已开放!
+break
+
+[@UserCmd12]
+#if
+checknamelist ..\QuestDiary\其他数据\商人.txt HardDisk
+#act
+MOV S23 暂无
+MOV S24 暂无
+goto @商人服务
+#elseact
+SENDMSG 5 你不是商人,无法使用这个功能!
+break
+
+[@商人服务]
+#if
+#act
+;SENDMSG 5 确认：<$STR(S24)>
+#say
+　\
+<输入需要赠送的玩家名称/@1125>   玩家名字:<$STR(S23)>\　\
+<输入需要赠送的元宝数量/@1126>   赠送元宝:<$STR(S24)>\　\
+　　　　　　　　　　　　　　　<确定赠送/@开始赠送>　　　<取消赠送/@exit>\
+
+[@商人服务1]
+#if
+#act
+;SENDMSG 5 确认：<$STR(S23)>
+#say
+　\
+<输入需要赠送的玩家名称/@1125>   玩家名字:<$STR(S23)>\　\
+<输入需要赠送的元宝数量/@1126>   赠送元宝:<$STR(S24)>\　\
+　　　　　　　　　　　　　　　<确定赠送/@开始赠送>　　　<取消赠送/@exit>\
+
+
+[@1125]
+#ACT
+QUERYVALUE 23 0 15 @商人服务1 请在下面输入需要接受赠送的玩家名字： QF
+break
+
+[@1126]
+#ACT
+QUERYVALUE 24 0 15 @商人服务 请在下面输入需要接受赠送的元宝数量： QF
+break
+
+
+
+[@开始赠送]
+#if
+CHECKONLINE <$STR(S23)>
+#act
+goto @开始赠送1
+#elsesay
+　\　\　对不起,你需要赠送的玩家不在线\　\　\
+　　　　　　　　　　　　　　　　　<返回/@商人服务>　　　<关闭/@exit>\
+
+
+
+[@开始赠送1]
+#if
+CHECKGAMEGOLD > <$STR(S24)>
+#ACT
+MOV S27 <$USERNAME>
+GAMEGOLD - <$STR(S24)>
+<$STR(S23)>.GAMEGOLD + <$STR(S24)>
+<$STR(S23)>.SENDMSG 6 你获得了『商人玩家』:<$STR(S27)>赠送的<$STR(S24)>个元宝!
+#say
+　\　恭喜你赠送成功!　\　\
+　玩家:<$STR(S23)> 获得了你赠送的<$STR(S24)> 个元宝\　\　\
+　　　　　　　　　　　　　　　　　　　　　　<关闭/@exit>\
+#ELSESAY
+　\　\　对不起,你需要赠送的元宝数量不够\　\　\
+　　　　　　　　　　　　　　　　　<返回/@商人服务>　　　<关闭/@exit>\
+
+
+
+;-----------------------------------------------------------------------------------------------
+;封号
+;-----------------------------------------------------------------------------------------------
+
+[@UserCmd11]
+#if
+ISADMIN
+#ACT
+#SAY
+<输入被封号的名字/@1119>\ \
+封号命令 @+jww  玩家名字  (0,1)是否永久封号\
+
+[@1119]
+#if
+#act
+QUERYVALUE 9 0 15 @封号提示 请输入要封号的玩家名字： QF
+break
+
+[@@InPutString9]
+#If
+#Act
+DelayGoto 1 ~InPutString9
+
+[~InPutString9]
+#if
+equal S9 <$USERNAME>
+#act
+MESSAGEBOX 禁止封自己
+break
+
+
+[@封号提示]
+#if
+equal S9 <$USERNAME>
+#act
+MESSAGEBOX 禁止封自己
+break
+
+
+#if
+#act
+sendmsg 0 通知：玩家<$STR(S9)>因违反游戏规则，现被强制封号！！！
+sendmsg 0 通知：玩家<$STR(S9)>因违反游戏规则，现被强制封号！！！
+sendmsg 0 通知：玩家<$STR(S9)>因违反游戏规则，现被强制封号！！！
+break
+
+;-----------------------------------------------------------------------------------------------
+;离线测试
+;-----------------------------------------------------------------------------------------------
+
+[@UserCmd6]
+<COLOR=clLtGray 改变摆摊外观：变更外观提示文字在右边(红色)>\ \
+<[外观类型一]/@一>：地摊,有好货两个字的牌子\
+<[外观类型二]/@二>：两层小桌,最小的外观\
+<[外观类型三]/@三>：摆着一张桌子的外观\ \
+<[开启离线功能]/@OffLinePlay>  1000金币/次\ \
+注：<COLOR=clAqua 服务器重启、脱机人物清理都将导致离线摆摊终止>\
+　　<COLOR=clAqua 如果摆摊涉嫌欺诈，官方有权没收全部元宝并封号>
+#elsesay
+　\ \
+离线摆摊只可以在[安全区]使用
+
+[@一]
+#if
+#act
+Gmexecute StallLooks 0
+break
+
+[@二]
+#if
+#act
+Gmexecute StallLooks 1
+break
+
+[@三]
+#if
+#act
+Gmexecute StallLooks 2
+break
+
+[@OffLinePlay]
+#If
+IsDupMode
+#Act
+messagebox 不能与他人重叠
+break
+
+#if
+checkgold 1000
+InSafeZone
+#act
+take 金币 1000
+;GMEXECUTE 管理
+OffLine 1200 1
+break
+#elseact
+messagebox 离线摆摊需要1000金币并且在安全区
+break
+
+;-----------------------------------------------------------------------------------------------
+;代练
+;-----------------------------------------------------------------------------------------------
+
+[@UserCmd7]
+#if
+CHECKLEVELEX < 4
+#act
+messagebox 达到5级才可以使用代练
+break
+
+#if
+CHECKLEVELEX > 41
+#act
+messagebox 提示：42级开始不能使用系统代练了！
+break
+
+#if
+isonmap 0101A
+#act
+messagebox 此地图不允许开启代练!
+break
+
+#if
+CHECKVAR HUMAN 标识 > <$STR(G3)>
+#act
+sendmsg 7 提示：您的代练时间有异常<$HUMAN(标识)>:<$STR(G3)>
+close
+break
+
+#if
+#act
+;sendmsg 7 通知：代练异常,暂时关闭代练功能,彻底调试好后开放
+#CALL [\代练系统\代练.txt] @系统代练
+break
+
+

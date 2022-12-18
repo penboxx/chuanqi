@@ -1,0 +1,6 @@
+#DEFINE	MAINMSG		欢迎光临，有什么我可帮忙的吗？
+#DEFINE	BUYITEMMSG	购买物品
+#DEFINE	SELLITEMMSG	出售物品
+#DEFINE	HELPMSG		对话
+#DEFINE	MAINBUYMSG	请挑选你想要物品。
+#DEFINE	MAINSELLMSG	把你要卖的物品给我看看吧，我会给你好价钱的。

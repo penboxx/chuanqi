@@ -1,0 +1,342 @@
+[@领取元宝]
+{
+#IF
+#ACT
+mov p0 0
+#ELSEACT
+mov p0 0
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account1.txt
+#ACT
+inc p0 1000
+give 金币 1000
+DelAccountList ..\QuestDiary\充值元宝\account1.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account2.txt
+#ACT
+inc p0 2000
+give 金币 2000
+DelAccountList ..\QuestDiary\充值元宝\account2.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account3.txt
+#ACT
+inc p0 3000
+give 金币 3000
+DelAccountList ..\QuestDiary\充值元宝\account3.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account4.txt
+#ACT
+inc p0 4000
+give 金币 4000
+DelAccountList ..\QuestDiary\充值元宝\account4.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account5.txt
+#ACT
+inc p0 5000
+give 金币 5000
+DelAccountList ..\QuestDiary\充值元宝\account5.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account6.txt
+#ACT
+inc p0 6000
+give 金币 6000
+DelAccountList ..\QuestDiary\充值元宝\account6.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account7.txt
+#ACT
+inc p0 7000
+give 金币 7000
+DelAccountList ..\QuestDiary\充值元宝\account7.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account8.txt
+#ACT
+inc p0 8000
+give 金币 8000
+DelAccountList ..\QuestDiary\充值元宝\account8.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account9.txt
+#ACT
+inc p0 9000
+give 金币 9000
+DelAccountList ..\QuestDiary\充值元宝\account9.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account10.txt
+#ACT
+inc p0 10000
+give 金币 10000
+DelAccountList ..\QuestDiary\充值元宝\account10.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account20.txt
+#ACT
+inc p0 20000
+give 金币 20000
+DelAccountList ..\QuestDiary\充值元宝\account20.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account30.txt
+#ACT
+inc p0 30000
+give 金币 30000
+DelAccountList ..\QuestDiary\充值元宝\account30.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account40.txt
+#ACT
+inc p0 40000
+give 金币 40000
+DelAccountList ..\QuestDiary\充值元宝\account40.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account50.txt
+#ACT
+inc p0 50000
+give 金币 50000
+DelAccountList ..\QuestDiary\充值元宝\account50.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account60.txt
+#ACT
+inc p0 60000
+give 金币 60000
+DelAccountList ..\QuestDiary\充值元宝\account60.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account70.txt
+#ACT
+inc p0 70000
+give 金币 70000
+DelAccountList ..\QuestDiary\充值元宝\account70.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account80.txt
+#ACT
+inc p0 80000
+give 金币 80000
+DelAccountList ..\QuestDiary\充值元宝\account80.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account90.txt
+#ACT
+inc p0 90000
+give 金币 90000
+DelAccountList ..\QuestDiary\充值元宝\account90.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account100.txt
+#ACT
+inc p0 100000
+give 金币 100000
+DelAccountList ..\QuestDiary\充值元宝\account100.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account200.txt
+#ACT
+inc p0 200000
+give 金币 200000
+DelAccountList ..\QuestDiary\充值元宝\account200.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account300.txt
+#ACT
+inc p0 300000
+give 金币 300000
+DelAccountList ..\QuestDiary\充值元宝\account300.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account400.txt
+#ACT
+inc p0 400000
+give 金币 400000
+DelAccountList ..\QuestDiary\充值元宝\account400.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account500.txt
+#ACT
+inc p0 500000
+give 金币 500000
+DelAccountList ..\QuestDiary\充值元宝\account500.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account600.txt
+#ACT
+inc p0 600000
+give 金币 600000
+DelAccountList ..\QuestDiary\充值元宝\account600.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account700.txt
+#ACT
+inc p0 700000
+give 金币 700000
+DelAccountList ..\QuestDiary\充值元宝\account700.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account800.txt
+#ACT
+inc p0 800000
+give 金币 800000
+DelAccountList ..\QuestDiary\充值元宝\account800.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account900.txt
+#ACT
+inc p0 900000
+give 金币 900000
+DelAccountList ..\QuestDiary\充值元宝\account900.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account1000.txt
+#ACT
+inc p0 1000000
+give 金币 1000000
+DelAccountList ..\QuestDiary\充值元宝\account1000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account2000.txt
+#ACT
+inc p0 2000000
+give 金币 2000000
+DelAccountList ..\QuestDiary\充值元宝\account2000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account3000.txt
+#ACT
+inc p0 3000000
+give 金币 3000000
+DelAccountList ..\QuestDiary\充值元宝\account3000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account4000.txt
+#ACT
+inc p0 4000000
+give 金币 4000000
+DelAccountList ..\QuestDiary\充值元宝\account4000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account5000.txt
+#ACT
+inc p0 5000000
+give 金币 5000000
+DelAccountList ..\QuestDiary\充值元宝\account5000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account6000.txt
+#ACT
+inc p0 6000000
+give 金币 6000000
+DelAccountList ..\QuestDiary\充值元宝\account6000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account7000.txt
+#ACT
+inc p0 7000000
+give 金币 7000000
+DelAccountList ..\QuestDiary\充值元宝\account7000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account8000.txt
+#ACT
+inc p0 8000000
+give 金币 8000000
+DelAccountList ..\QuestDiary\充值元宝\account8000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account9000.txt
+#ACT
+inc p0 9000000
+give 金币 9000000
+DelAccountList ..\QuestDiary\充值元宝\account9000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account10000.txt
+#ACT
+inc p0 10000000
+give 金币 10000000
+DelAccountList ..\QuestDiary\充值元宝\account10000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account20000.txt
+#ACT
+inc p0 20000000
+give 金币 20000000
+DelAccountList ..\QuestDiary\充值元宝\account20000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account30000.txt
+#ACT
+inc p0 30000000
+give 金币 30000000
+DelAccountList ..\QuestDiary\充值元宝\account30000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account40000.txt
+#ACT
+inc p0 40000000
+give 金币 40000000
+DelAccountList ..\QuestDiary\充值元宝\account40000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account50000.txt
+#ACT
+inc p0 50000000
+give 金币 50000000
+DelAccountList ..\QuestDiary\充值元宝\account50000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account60000.txt
+#ACT
+inc p0 60000000
+give 金币 60000000
+DelAccountList ..\QuestDiary\充值元宝\account60000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account70000.txt
+#ACT
+inc p0 70000000
+give 金币 70000000
+DelAccountList ..\QuestDiary\充值元宝\account70000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account80000.txt
+#ACT
+inc p0 80000000
+give 金币 80000000
+DelAccountList ..\QuestDiary\充值元宝\account80000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account90000.txt
+#ACT
+inc p0 90000000
+give 金币 90000000
+DelAccountList ..\QuestDiary\充值元宝\account90000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account100000.txt
+#ACT
+inc p0 100000000
+give 金币 100000000
+DelAccountList ..\QuestDiary\充值元宝\account100000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account200000.txt
+#ACT
+inc p0 200000000
+give 金币 200000000
+DelAccountList ..\QuestDiary\充值元宝\account200000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account300000.txt
+#ACT
+inc p0 300000000
+give 金币 300000000
+DelAccountList ..\QuestDiary\充值元宝\account300000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account400000.txt
+#ACT
+inc p0 400000000
+give 金币 400000000
+DelAccountList ..\QuestDiary\充值元宝\account400000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account500000.txt
+#ACT
+inc p0 500000000
+give 金币 500000000
+DelAccountList ..\QuestDiary\充值元宝\account500000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account600000.txt
+#ACT
+inc p0 600000000
+give 金币 600000000
+DelAccountList ..\QuestDiary\充值元宝\account600000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account700000.txt
+#ACT
+inc p0 700000000
+give 金币 700000000
+DelAccountList ..\QuestDiary\充值元宝\account700000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account800000.txt
+#ACT
+inc p0 800000000
+give 金币 800000000
+DelAccountList ..\QuestDiary\充值元宝\account800000.txt
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\account900000.txt
+#ACT
+inc p0 900000000
+give 金币 900000000
+DelAccountList ..\QuestDiary\充值元宝\account900000.txt
+#IF
+large p0 0
+#ACT
+SENDMSG 1 ★恭喜玩家[%s]使用我服推出的在线自动冲值系统，购买金币<$str(p0)>个。
+messagebox  恭喜你获得金币<$str(p0)>个，你可以换取装备或换取系统给你的高级服务。
+#Elsesay
+您当前还没有充值或已领取成功,自己的金币数量: <$GamePoint>!\
+没有充值请按提示进行充值!\
+充值问题请打开 www.175111.com 进行咨询处理!\
+<返回/@元宝使者>
+}

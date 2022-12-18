@@ -1,0 +1,774 @@
+#AutoRun NPC MIN 240 @摇钱树
+
+
+#AutoRun NPC RUNONDAY 21:59 @沙奖励
+
+[@滚动广告]
+#ACT
+ReadRandomLine .\QuestDiary\抽取数据\滚动广告.txt A7
+SendScrollMsg <$STR(A7)> 251 0
+BREAK
+
+[@盗号广告]
+#ACT
+SENDMSG 0 热血传奇管理郑重提醒广大用户，加强对个人资料的保护意识 255 249
+SENDMSG 0 不要将个人信息随意提供或告知他人，特别是密码保护等信息 255 249
+SENDMSG 0 切勿轻易点击不明链接和网站！ 255 249
+BREAK
+
+[@开区周数]
+#IF
+#ACT
+INC G8 1
+MOV G9 0
+BREAK
+
+[@开启双倍]
+#IF
+large G8 0
+#ACT
+MOV G9 1
+GMEXECUTE 开始提问 @全区开双
+BREAK
+
+[@关闭双倍]
+#IF
+large G8 0
+#ACT
+MOV G9 0
+GMEXECUTE 开始提问 @全区关双
+BREAK
+
+[@群雄争霸1]
+#IF
+LARGE G10 0
+#ACT
+MOV I4 0
+SENDMSG 0 “群雄争霸”正式活动已开始！勇士们可在22:45前通过比奇群雄争霸进入活动地图…… 252 253 20
+BREAK
+[@群雄争霸2]
+#IF
+LARGE G10 0
+#ACT
+MOV I4 0
+SENDMSG 0 “群雄争霸”正式活动已开始！勇士们可在22:45前通过比奇群雄争霸进入活动地图…… 252 253 20
+BREAK
+[@群雄争霸3]
+#IF
+LARGE G10 0
+#ACT
+MOV I4 0
+SENDMSG 0 “群雄争霸”正式活动已开始！勇士们可在22:45前通过比奇群雄争霸进入活动地图…… 252 253 20
+BREAK
+[@群雄争霸4]
+#IF
+LARGE G10 0
+#ACT
+MOV I4 1
+SENDMSG 0 群雄争霸地图入口已关闭！现在开始地图内所剩唯一行会为获胜行会！ 252 253 20
+BREAK
+[@群雄检测]
+#IF
+LARGE I4 0
+IsSameGuildOnMap <$STR(A6)>
+#ACT
+CLEARNAMELIST ..\QuestDiary\数据文件\会员名单\群雄胜利行会.txt
+MOV I4 0
+GMEXECUTE 开始提问 @群雄登记
+BREAK
+
+[@调整功沙]
+#IF
+equal G3 1
+#ACT
+Gmexecute AddToCastleWarList 0 *
+SENDMSG 0 ╔┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╗ 249 151
+SENDMSG 0 ┇今晚所有行会攻沙,请各位踊跃参加..沙行会奖励500万金币┇ 249 151
+SENDMSG 0 ╚┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅╝ 249 151
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，占领沙巴克奖励为【500万金币】，各玩家请互相转告... 253 0 300
+BREAK
+
+[@更新沙属]
+#IF
+equal G3 1
+#ACT
+MOV G15 0
+SENDMSG 0 激烈的沙城争夺战已经完了，沙城的老大赶快去领取您今天的金币奖励吧！ 255 249
+SENDMSG 0 激烈的沙城争夺战已经完了，沙城的老大赶快去领取您今天的金币奖励吧！ 255 249
+SENDMSG 0 激烈的沙城争夺战已经完了，沙城的老大赶快去领取您今天的金币奖励吧！ 151 0 60
+BREAK
+
+;----------------------------------------------------------------
+
+[@零点运行]
+#ACT
+INC G18 1
+CLEARNAMELIST ..\QuestDiary\数据文件\会员名单\历练报名名单.txt
+BREAK
+
+;----------------------------------------------------------------
+
+[@自动开石祖]
+#IF
+EQUAL G18 1
+#ACT
+MOV G17 1
+SENDMSG 0 神秘的石墓阵、祖玛七层地图成功开放！…… 252 253 20
+BREAK
+
+[@自动开封魔]
+#IF
+EQUAL G18 1
+#ACT
+MOV G4 1
+MOV A1 <向封魔谷移动/@move3>
+SENDMSG 0 神秘的封魔谷地图成功开放！…… 252 253 20
+BREAK
+
+[@自动开苍月]
+#IF
+EQUAL G18 1
+#ACT
+MOV G35 1
+SENDMSG 0 神秘的苍月岛地图成功开放！…… 252 253 20
+BREAK
+
+[@自动开白日]
+#IF
+EQUAL G18 1
+#ACT
+MOV G6 1
+MOV A3 <向白日门移动/@move1>
+SENDMSG 0 神秘的白日门地图成功开放！…… 252 253 20
+BREAK
+
+[@自动开焰火]
+#IF
+EQUAL G18 1
+#ACT
+MOV G5 1
+MOV A2 <焰火屠魔/@火焰屠魔>
+SENDMSG 0 神秘的焰火屠魔地图成功开放！…… 252 253 20
+BREAK
+
+[@自动开地下]
+#IF
+EQUAL G18 1
+#ACT
+MOV G14 1
+MOV A5 <解救天工神剪/@天工神剪>
+SENDMSG 0 神秘的地下宫殿成功开放！…… 252 253 20
+BREAK
+
+[@幻境4-8]
+#IF
+EQUAL G18 1
+#ACT
+MOV H90 1
+SENDMSG 0 神秘的幻境4-8层地图成功开放！…… 252 253 20
+BREAK
+
+[@幻境910]
+#IF
+EQUAL G18 2
+#ACT
+MOV H91 1
+SENDMSG 0 神秘的幻境9、10层地图成功开放！…… 252 253 20
+BREAK
+
+;----------------------------------------------------------------
+
+
+[@夺宝战提示1]
+#IF
+EQUAL G19 1
+#ACT
+SENDMSG 0 比奇夺宝特使：5分钟后夺宝战大门将打开，请各位勇士抓紧准备！ 255 249
+SENDMSG 0 盟重夺宝特使：5分钟后夺宝战大门将打开，请各位勇士抓紧准备！ 255 249
+BREAK
+
+[@夺宝战提示2]
+#IF
+EQUAL G19 1
+#ACT
+SENDMSG 0 比奇夺宝特使：夺宝战入场时间为19：00-19：40，请各位勇士抓紧入场，夺取宝藏！ 255 249
+SENDMSG 0 盟重夺宝特使：夺宝战入场时间为19：00-19：40，请各位勇士抓紧入场，夺取宝藏！ 255 249
+BREAK
+
+[@夺宝战提示3]
+#IF
+EQUAL G19 1
+#ACT
+Param1 TTSD
+Param2 25
+Param3 23
+MonGen 通天教主 1 3
+SENDMSG 0 比奇夺宝特使：通天教主出现在通天战场！10分钟后夺宝战大门将关闭！ 255 249
+SENDMSG 0 盟重夺宝特使：通天教主出现在通天战场！10分钟后夺宝战大门将关闭！ 255 249
+BREAK
+
+[@夺宝提示]
+#IF
+EQUAL G19 1
+#ACT
+GMEXECUTE 开始提问 @夺宝时间
+BREAK
+
+
+[@幸运历练]
+#IF
+EQUAL G50 1
+#ACT
+MOV G49 0
+MOVR G49 4
+INC G49 7
+MOV G48 0
+MOVR G48 3
+INC G48 4
+MOV G47 0
+MOVR G47 3
+INC G47 1
+BREAK
+
+[@历练公布]
+#IF
+EQUAL G50 1
+EQUAL G49 10
+#ACT
+MOV G73 <$STR(G60)>
+ADDLINELIST QuestDiary\数据文件\会员名单\历练三等奖.txt <$STR(A60)>
+SENDMSG 0 上周历练赛，随机三等奖获奖者为排名第10的玩家：<$STR(A60)> 255 249
+#IF
+EQUAL G50 1
+EQUAL G49 9
+#ACT
+MOV G73 <$STR(G59)>
+ADDLINELIST QuestDiary\数据文件\会员名单\历练三等奖.txt <$STR(A59)>
+SENDMSG 0 上周历练赛，随机三等奖获奖者为排名第9的玩家：<$STR(A59)> 255 249
+#IF
+EQUAL G50 1
+EQUAL G49 8
+#ACT
+MOV G73 <$STR(G58)>
+ADDLINELIST QuestDiary\数据文件\会员名单\历练三等奖.txt <$STR(A58)>
+SENDMSG 0 上周历练赛，随机三等奖获奖者为排名第8的玩家：<$STR(A58)> 255 249
+#IF
+EQUAL G50 1
+EQUAL G49 7
+#ACT
+MOV G73 <$STR(G57)>
+ADDLINELIST QuestDiary\数据文件\会员名单\历练三等奖.txt <$STR(A57)>
+SENDMSG 0 上周历练赛，随机三等奖获奖者为排名第7的玩家：<$STR(A57)> 255 249
+#IF
+EQUAL G50 1
+EQUAL G48 6
+#ACT
+MOV G72 <$STR(G56)>
+ADDLINELIST QuestDiary\数据文件\会员名单\历练二等奖.txt <$STR(A56)>
+SENDMSG 0 上周历练赛，随机二等奖获奖者为排名第6的玩家：<$STR(A56)> 255 249
+#IF
+EQUAL G50 1
+EQUAL G48 5
+#ACT
+MOV G72 <$STR(G55)>
+ADDLINELIST QuestDiary\数据文件\会员名单\历练二等奖.txt <$STR(A55)>
+SENDMSG 0 上周历练赛，随机二等奖获奖者为排名第5的玩家：<$STR(A55)> 255 249
+#IF
+EQUAL G50 1
+EQUAL G48 4
+#ACT
+MOV G72 <$STR(G54)>
+ADDLINELIST QuestDiary\数据文件\会员名单\历练二等奖.txt <$STR(A54)>
+SENDMSG 0 上周历练赛，随机二等奖获奖者为排名第4的玩家：<$STR(A54)> 255 249
+#IF
+EQUAL G50 1
+EQUAL G47 3
+#ACT
+MOV G71 <$STR(G53)>
+ADDLINELIST QuestDiary\数据文件\会员名单\历练一等奖.txt <$STR(A53)>
+ADDLINELIST QuestDiary\数据文件\会员名单\历练大奖.txt <$STR(A51)>
+SENDMSG 0 上周历练赛，随机一等奖获奖者为排名第3的玩家：<$STR(A53)> 255 249
+SENDMSG 0 上周历练赛，大奖获奖者为排名第1的玩家：<$STR(A51)> 255 249
+#IF
+EQUAL G50 1
+EQUAL G47 2
+#ACT
+MOV G71 <$STR(G52)>
+ADDLINELIST QuestDiary\数据文件\会员名单\历练一等奖.txt <$STR(A52)>
+ADDLINELIST QuestDiary\数据文件\会员名单\历练大奖.txt <$STR(A51)>
+SENDMSG 0 上周历练赛，随机一等奖获奖者为排名第2的玩家：<$STR(A52)> 255 249
+SENDMSG 0 上周历练赛，大奖获奖者为排名第1的玩家：<$STR(A51)> 255 249
+#IF
+EQUAL G50 1
+EQUAL G47 1
+#ACT
+MOV G71 <$STR(G51)>
+ADDLINELIST QuestDiary\数据文件\会员名单\历练一等奖.txt <$STR(A51)>
+ADDLINELIST QuestDiary\数据文件\会员名单\历练大奖.txt <$STR(A51)>
+SENDMSG 0 上周历练赛，随机一等奖获奖者为排名第1的玩家：<$STR(A51)> 255 249
+SENDMSG 0 上周历练赛，大奖获奖者为排名第1的玩家：<$STR(A51)> 255 249
+
+[@历练校零]
+#IF
+#ACT
+MOV G61 <$STR(G51)>
+MOV G62 <$STR(G52)>
+MOV G63 <$STR(G53)>
+MOV G64 <$STR(G54)>
+MOV G65 <$STR(G55)>
+MOV G66 <$STR(G56)>
+MOV G67 <$STR(G57)>
+MOV G68 <$STR(G58)>
+MOV G69 <$STR(G59)>
+MOV G70 <$STR(G60)>
+MOV A61 <$STR(A51)>
+MOV A62 <$STR(A52)>
+MOV A63 <$STR(A53)>
+MOV A64 <$STR(A54)>
+MOV A65 <$STR(A55)>
+MOV A66 <$STR(A56)>
+MOV A67 <$STR(A57)>
+MOV A68 <$STR(A58)>
+MOV A69 <$STR(A59)>
+MOV A70 <$STR(A60)>
+MOV G51 0
+MOV G52 0
+MOV G53 0
+MOV G54 0
+MOV G55 0
+MOV G56 0
+MOV G57 0
+MOV G58 0
+MOV G59 0
+MOV G60 0
+MOV A51 暂无
+MOV A52 暂无
+MOV A53 暂无
+MOV A54 暂无
+MOV A55 暂无
+MOV A56 暂无
+MOV A57 暂无
+MOV A58 暂无
+MOV A59 暂无
+MOV A60 暂无
+CLEARNAMELIST ..\QuestDiary\数据文件\周历练点Save.txt
+GMEXECUTE 开始提问 @在线历练清零
+BREAK
+
+[@历练奖励清除]
+#IF
+#ACT
+CLEARNAMELIST ..\QuestDiary\数据文件\会员名单\历练大奖.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\会员名单\历练一等奖.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\会员名单\历练二等奖.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\会员名单\历练三等奖.txt
+BREAK
+
+
+[@复古教主]
+#act
+clearmapmon jqpk
+MISSION JQPK 20 22
+PARAM1 20
+PARAM2 22
+PARAM3 1
+PARAM4 1
+MOBPLACE 复古教主
+gmexecute 开始提问 @刷复古教主
+
+[@坐庄游戏A]
+#IF
+EQUAL G12 0
+#ACT
+GMEXECUTE 开始提问 @抢庄开始
+INC G12 1
+BREAK
+#IF
+EQUAL G12 60
+#ACT
+GMEXECUTE 开始提问 @抢庄结束
+INC G12 1
+BREAK
+#IF
+EQUAL G12 61
+#ACT
+GMEXECUTE 开始提问 @下注开始
+INC G12 1
+BREAK
+#IF
+EQUAL G12 117
+#ACT
+GMEXECUTE 开始提问 @下注结束
+INC G12 1
+BREAK
+
+#IF
+EQUAL G12 118
+#ACT
+MOVR G42 6
+inc G42 1
+MOVR G43 6
+inc G43 1
+MOVR G44 6
+inc G44 1
+MOV G45 <$STR(G42)>
+INC G45 <$STR(G43)>
+INC G45 <$STR(G44)>
+INC G12 1
+BREAK
+
+#IF
+EQUAL G12 119
+EQUAL G455 1
+#ACT
+MOV G42 3
+MOV G43 3
+MOV G44 6
+MOV G45 <$STR(G42)>
+INC G45 <$STR(G43)>
+INC G45 <$STR(G44)>
+MOV G455 0
+INC G12 1
+BREAK
+
+#IF
+EQUAL G12 120
+#ACT
+GMEXECUTE 开始提问 @猜点开始
+GMEXECUTE 开始提问 @猜点开始1
+INC G12 1
+BREAK
+
+#IF
+EQUAL G12 126
+#ACT
+GMEXECUTE 开始提问 @赌博结帐
+INC G12 1
+BREAK
+#IF
+EQUAL G12 128
+#ACT
+GMEXECUTE 开始提问 @赌博清零
+MOV A33 无
+MOV G16 0
+MOV G17 0
+MOV G11 0
+MOV G13 0
+MOV G14 0
+MOV G29 0
+MOV G42 0
+MOV G43 0
+MOV G44 0
+MOV G45 0
+INC G12 1
+BREAK
+#IF
+EQUAL G12 130
+#ACT
+MOV A34 无
+MOV G12 0
+BREAK
+#IF
+#ACT
+INC G12 1
+BREAK
+
+[@坐庄游戏B]
+#IF
+#ACT
+MOV G18 0
+MOV G19 0
+MOV G15 130
+DEC G15 <$STR(G12)>
+MOV G11 <$STR(G13)>
+INC G11 <$STR(G14)>
+MOV G16 <$STR(G29)>
+INC G16 <$STR(G14)>
+DEC G16 <$STR(G13)>
+MOV G17 <$STR(G29)>
+INC G17 <$STR(G13)>
+DEC G17 <$STR(G14)>
+BREAK
+
+[@坐庄游戏C]
+#IF
+EQUAL G12 122
+EQUAL G42 <$STR(G43)>
+EQUAL G42 <$STR(G44)>
+#ACT
+MOV A33 豹子
+BREAK
+#IF
+EQUAL G12 122
+SMALL G45 11
+#ACT
+MOV A33 小
+BREAK
+#IF
+EQUAL G12 122
+LARGE G45 10
+#ACT
+MOV A33 大
+BREAK
+
+[@清除天下第一]
+#IF
+#act
+mov G5 0
+mov G6 0
+mov G7 0
+mov G8 0
+mov G9 0
+mov G10 0
+mov A0
+mov A1
+mov A2
+mov A3
+mov A4
+mov A5
+mov A6 暂无
+mov A7 暂无
+mov A8 0
+mov A10 暂无
+mov A11 暂无
+mov A12 0
+mov A14 暂无
+mov A15 暂无
+mov A16 0
+mov A18 暂无
+mov A19 暂无
+mov A20 0
+mov A22 暂无
+mov A23 暂无
+mov A24 0
+mov A26 暂无
+mov A27 暂无
+mov A28 0
+MOV A35 暂无\天下第一男战士
+MOV A36 暂无\天下第一女战士
+MOV A37 暂无\天下第一男法师
+MOV A38 暂无\天下第一女法师
+MOV A39 暂无\天下第一男道士
+MOV A40 暂无\天下第一女道士
+MOV G37 0
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\男道士.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\女道士.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\男战士.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\女战士.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\男法师.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\女法师.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\每日斩杀名单.txt
+SENDMSG 0 天下第一名单已清空.3小时清理1次.这次的天下第一将会属于谁？
+SENDMSG 0 天下第一名单已清空.3小时清理1次.这次的天下第一将会属于谁？
+SENDMSG 0 天下第一名单已清空.3小时清理1次.这次的天下第一将会属于谁？
+SENDMSG 0 天下第一名单已清空.3小时清理1次.这次的天下第一将会属于谁？
+BREAK
+
+[@行会开始7]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]还有5分钟就开始了，请参赛行会做好进入场地的准备！
+SENDMSG 0 [行会争霸]还有5分钟就开始了，请参赛行会做好进入场地的准备！
+SENDMSG 0 [行会争霸]还有5分钟就开始了，请参赛行会做好进入场地的准备！
+SENDMSG 0 [行会争霸]还有5分钟就开始了，请参赛行会做好进入场地的准备！
+
+[@行会开始8]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，15分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，15分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，15分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，15分钟后入口自动关闭！
+
+[@行会开始9]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，10分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，10分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，10分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，10分钟后入口自动关闭！
+
+[@行会开始10]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，5分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，5分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，5分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，5分钟后入口自动关闭！
+
+[@行会开始11]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，1分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，1分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，1分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，1分钟后入口自动关闭！
+
+[@行会开始12]
+#IF
+#ACT
+MOV G98 0
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得3000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得3000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得3000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得3000元宝奖励！
+
+
+[@在线活动预告]
+#IF
+#ACT
+SENDMSG 1 提示：在线活动的大门将于10分后开放！请玩家做好准备！
+SENDMSG 1 提示：在线活动的大门将于10分后开放！请玩家做好准备！
+SENDMSG 1 提示：在线活动的大门将于10分后开放！请玩家做好准备！
+SENDMSG 1 提示：在线活动的大门将于10分后开放！请玩家做好准备！
+SENDMSG 1 提示：在线活动的大门将于10分后开放！请玩家做好准备！
+SENDMSG 1 提示：在线活动的大门将于10分后开放！请玩家做好准备！
+SENDMSG 1 提示：在线活动的大门将于10分后开放！请玩家做好准备！
+SENDMSG 1 提示：在线活动的大门将于10分后开放！请玩家做好准备！
+
+[@在线活动]
+#IF
+#ACT
+Gmexecute 开始提问 @在线活动开始
+SENDMSG 1 在线活动的大门已经打开！请玩家选择进入！
+SENDMSG 1 在线活动的大门已经打开！请玩家选择进入！
+SENDMSG 1 在线活动的大门已经打开！请玩家选择进入！
+SENDMSG 1 在线活动的大门已经打开！请玩家选择进入！
+SENDMSG 1 在线活动的大门已经打开！请玩家选择进入！
+
+
+[@燕子屋开]
+#IF
+#ACT
+SENDMSG 0 燕子坞大门已开、请各路英豪抓紧时间进入寻宝(土城336:320)！
+SENDMSG 0 燕子坞大门已开、请各路英豪抓紧时间进入寻宝(土城336:320)！
+SENDMSG 0 燕子坞大门已开、请各路英豪抓紧时间进入寻宝(土城336:320)！
+SENDMSG 0 燕子坞大门已开、请各路英豪抓紧时间进入寻宝(土城336:320)！
+
+[@燕子屋关]
+#IF
+#ACT
+SENDMSG 0 燕子坞大门已关闭、请各路英继续等候，下次时间再进入！！！
+SENDMSG 0 燕子坞大门已关闭、请各路英继续等候，下次时间再进入！！！
+SENDMSG 0 燕子坞大门已关闭、请各路英继续等候，下次时间再进入！！！
+SENDMSG 0 燕子坞大门已关闭、请各路英继续等候，下次时间再进入！！！
+
+[@燕子屋传回]
+#IF
+#ACT
+Gmexecute 开始提问 @YZWGB
+SENDMSG 0 ╔─────────────────────────────╗
+SENDMSG 0 │30分钟寻宝时间已到、燕子屋所有寻宝人员已被召回│
+SENDMSG 0 │请守侯下次开放时间。。。。。。│
+SENDMSG 0 ╚─────────────────────────────╝
+BREAK
+
+[@行会开始71]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]还有5分钟就开始了，请参赛行会做好进入场地的准备！
+SENDMSG 0 [行会争霸]还有5分钟就开始了，请参赛行会做好进入场地的准备！
+SENDMSG 0 [行会争霸]还有5分钟就开始了，请参赛行会做好进入场地的准备！
+SENDMSG 0 [行会争霸]还有5分钟就开始了，请参赛行会做好进入场地的准备！
+
+[@行会开始81]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，15分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，15分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，15分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，15分钟后入口自动关闭！
+
+[@行会开始91]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，10分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，10分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，10分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，10分钟后入口自动关闭！
+
+[@行会开始101]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，5分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，5分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，5分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，5分钟后入口自动关闭！
+
+[@行会开始111]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，1分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，1分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，1分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，1分钟后入口自动关闭！
+
+[@行会开始121]
+#IF
+#ACT
+MOV G98 0
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得3000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得3000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得3000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得3000元宝奖励！
+
+
+
+[@行会开始72]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]还有5分钟就开始了，请参赛行会做好进入场地的准备！
+SENDMSG 0 [行会争霸]还有5分钟就开始了，请参赛行会做好进入场地的准备！
+SENDMSG 0 [行会争霸]还有5分钟就开始了，请参赛行会做好进入场地的准备！
+SENDMSG 0 [行会争霸]还有5分钟就开始了，请参赛行会做好进入场地的准备！
+
+[@行会开始82]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，15分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，15分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，15分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，15分钟后入口自动关闭！
+
+[@行会开始92]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，10分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，10分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，10分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，10分钟后入口自动关闭！
+
+[@行会开始102]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，5分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，5分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，5分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，5分钟后入口自动关闭！
+
+[@行会开始112]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，1分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，1分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，1分钟后入口自动关闭！
+SENDMSG 0 [行会争霸]请参赛行会进入场地的准备，1分钟后入口自动关闭！
+
+[@行会开始122]
+#IF
+#ACT
+MOV G98 0
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得3000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得3000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得3000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得3000元宝奖励！
+
+[@沙巴克检测]
+#IF
+#ACT
+GMEXECUTE 开始提问 @沙巴克传回
+BREAK
+
+[@清除沙奖励]
+#act
+DEC G470 1

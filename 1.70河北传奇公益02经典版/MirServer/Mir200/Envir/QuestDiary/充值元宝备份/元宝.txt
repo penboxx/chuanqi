@@ -1,0 +1,347 @@
+[@领取元宝]
+{
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb1.5.txt
+#ACT
+GIVE 金币 150000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb1.5.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币150000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币150000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb1.txt
+#ACT
+GIVE 金币 100000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb1.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币100000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币100000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb2.txt
+#ACT
+GIVE 金币 200000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb2.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币200000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币200000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb3.txt
+#ACT
+GIVE 金币 300000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb3.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币300000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币300000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb4.txt
+#ACT
+GIVE 金币 400000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb4.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币400000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币400000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb5.txt
+#ACT
+GIVE 金币 500000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb5.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币500000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币500000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb6.txt
+#ACT
+GIVE 金币 600000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb6.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币600000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币600000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb7.txt
+#ACT
+GIVE 金币 700000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb7.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币700000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币700000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb8.txt
+#ACT
+GIVE 金币 800000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb8.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币800000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币800000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb9.txt
+#ACT
+GIVE 金币 900000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb9.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币900000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币900000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb10.txt
+#ACT
+GIVE 金币 1000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb10.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币1000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币1000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb20.txt
+#ACT
+GIVE 金币 2000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb20.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币2000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币2000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb30.txt
+#ACT
+GIVE 金币 3000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb30.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币3000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币3000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb40.txt
+#ACT
+GIVE 金币 4000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb40.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币4000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币4000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb50.txt
+#ACT
+GIVE 金币 5000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb50.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币5000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币5000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb60.txt
+#ACT
+GIVE 金币 6000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb60.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币6000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币6000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb70.txt
+#ACT
+GIVE 金币 7000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb70.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币7000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币7000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb80.txt
+#ACT
+GIVE 金币 8000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb80.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币8000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币8000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb90.txt
+#ACT
+GIVE 金币 9000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb90.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币9000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币9000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb100.txt
+#ACT
+GIVE 金币 10000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb100.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币10000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币10000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb200.txt
+#ACT
+GIVE 金币 20000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb200.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币20000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币20000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb300.txt
+#ACT
+GIVE 金币 30000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb300.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币30000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币30000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb400.txt
+#ACT
+GIVE 金币 40000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb400.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币40000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币40000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb500.txt
+#ACT
+GIVE 金币 50000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb500.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币50000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币50000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb600.txt
+#ACT
+GIVE 金币 60000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb600.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币60000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币60000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb700.txt
+#ACT
+GIVE 金币 70000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb700.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币70000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币70000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb800.txt
+#ACT
+GIVE 金币 80000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb800.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币80000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币80000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb900.txt
+#ACT
+GIVE 金币 90000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb900.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币90000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币90000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb1000.txt
+#ACT
+GIVE 金币 100000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb1000.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币100000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币100000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb2000.txt
+#ACT
+GIVE 金币 200000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb2000.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币200000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币200000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb3000.txt
+#ACT
+GIVE 金币 300000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb3000.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币300000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币300000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb4000.txt
+#ACT
+GIVE 金币 400000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb4000.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币400000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币400000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb5000.txt
+#ACT
+GIVE 金币 500000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb5000.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币500000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币500000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb6000.txt
+#ACT
+GIVE 金币 600000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb6000.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币600000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币600000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb7000.txt
+#ACT
+GIVE 金币 700000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb7000.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币700000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币700000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb8000.txt
+#ACT
+GIVE 金币 800000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb8000.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币800000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币800000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+#IF
+CheckAccountList ..\QuestDiary\充值元宝\rxcqyb9000.txt
+#ACT
+GIVE 金币 900000000
+DelAccountList ..\QuestDiary\充值元宝\rxcqyb9000.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用本服最新推出的在线自动充值系统，购买金币900000000个，强烈推荐使用此系统进行充值
+messagebox 恭喜你获得金币900000000个，你可以换取装备或换取系统给你的高级服务。
+goto @继续走
+break
+
+#ELSESAY
+请查看自己的金币数量!\
+没有充值请按提示进行充值!\
+如有任何充值问题,请登陆冲值服务网站:<kf.qiye33.com>\
+<返回/@main>
+
+[@继续走]
+#if
+#act
+goto @领取元宝
+}

@@ -1,0 +1,86 @@
+[@投票]
+{
+#IF
+#ACT
+CLEARDELAYGOTO 1
+GOTO @选择
+
+[@选择]
+#IF
+ISADMIN
+#SAY
+〖<查看投票/@查看投票>〗  〖<清除投票/@清除投票>〗  〖<控制投票/@控制投票>〗
+#ELSEACT
+GOTO @检查等级
+
+[@检查等级]
+#IF
+CHECKLEVELEX > 25
+#ACT
+GOTO @检查投票与否
+
+[@检查投票与否]
+#IF
+checknamelist ..\QuestDiary\登陆\投票名单.txt
+#ACT
+SENDMSG 7 目前投票的情况:赞成合到龙争虎斗的<$STR(G1)>票,不赞成的<$STR(G2)>票
+#ELSESAY
+谢谢你长久以来对九天的支持与厚爱,你是我们这个\
+大家庭的一员所以拥有决定九天发展的权利.为了让大家\
+继续更好的游戏,我们不想等到无人后在进行投票\
+无人的游戏做的再好也没有娱乐性,所以我们提前做出投票\
+下面有几项选择.避免申请小号进行恶意刷票.我们\
+决定让等级到达26级的玩家进行投票.\
+〖<查看投票情况/@查看投票>〗 〖<我要进行投票/@进行投票>〗\\
+
+
+[@查看投票]
+#IF
+#SAY
+当前投票情况如下:\
+1.同意合到龙争虎斗(开放3天双倍经验)              〖票数:<$STR(G1)>〗\
+ \
+2.不同意合到龙争虎斗.                     〖票数:<$STR(G2)>〗\
+                                   <返回前面进行投票/@投票>
+ 
+[@进行投票]
+#IF
+checknamelist ..\QuestDiary\登陆\投票名单.txt
+#SAY
+你已经投过票了!不能进行恶意刷票!
+#ACT
+GOTO @选择
+#ELSESAY
+当前投票情况如下:\
+1.同意合到龙争虎斗(开放3天双倍经验)            〖<选择/@1>〗\
+  \
+2.不同意合到龙争虎斗.                      〖<选择/@2>〗\
+
+[@1]
+#IF
+#ACT
+INC G1 1
+addnamelist ..\QuestDiary\登陆\投票名单.txt
+CLOSE
+SENDMSG 7 投票成功,谢谢你参与投票!
+
+
+[@2]
+#IF
+#ACT
+INC G2 1
+addnamelist ..\QuestDiary\登陆\投票名单.txt
+CLOSE
+SENDMSG 7 投票成功,谢谢你参与投票!
+
+[@清除投票]
+#IF
+#ACT
+MOV G1 0
+MOV G2 0
+CLEARNAMELIST ..\QuestDiary\登陆\投票名单.txt
+GOTO @投票
+SENDMSG 7 清除票数成功!
+
+
+}

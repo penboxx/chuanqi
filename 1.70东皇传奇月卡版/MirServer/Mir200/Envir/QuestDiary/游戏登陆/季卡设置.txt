@@ -1,0 +1,49 @@
+[@季卡]
+{
+#IF
+CHECKLEVELEX > 10
+#ACT
+GOTO @检查1
+#ELSEACT
+SENDMSG 6 提示:7级开始需购买季卡才能游戏,商铺160元宝购买
+break
+
+[@检查1]
+#if
+checkNameList ..\QuestDiary\季卡\季卡名单.txt HardDisk
+#act
+goto @季卡检查
+break
+
+#if
+isonmap 0101A
+#act
+SENDMSG 5 提示:你的帐户没有冲值，请充卡再进行游戏
+break
+#elseact
+SENDMSG 5 提示:你的帐户没有冲值，请充卡再进行游戏
+SENDMSG 5 提示：请及时进行季卡充值 251 0 5
+mapmove JK
+break
+
+[@季卡检查]
+#IF
+CHECKUSERDATE ..\QuestDiary\季卡\时间记载.txt > 90 p0 p1
+#ACT
+DelNameList ..\QuestDiary\季卡\季卡名单.txt HardDisk
+DELUSERDATE ..\QuestDiary\季卡\时间记载.txt
+mapmove JK
+SENDMSG 6 提示:季卡时间已到!
+break
+
+#IF
+checknamelist ..\QuestDiary\季卡\季卡名单.txt HardDisk
+#ACT
+SENDMSG 6 提示:季卡时间剩余<$STR(p1)>天!
+BREAK
+
+[@踢人]
+#act
+GMEXECUTE 踢人 <$USERNAME>
+break
+}

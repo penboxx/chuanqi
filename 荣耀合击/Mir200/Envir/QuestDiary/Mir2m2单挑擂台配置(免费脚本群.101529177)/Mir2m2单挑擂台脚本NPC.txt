@@ -1,0 +1,706 @@
+[@Mir2m2单挑擂台脚本NPC]
+{
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 单挑个人弹窗 = 0
+MOV D9 0
+#IF
+checkvar GLOBAL 单挑擂主姓名1 = <$USERNAME>
+#ACT
+MOV D9 1
+#IF
+checkvar GLOBAL 单挑擂主姓名2 = <$USERNAME>
+#ACT
+MOV D9 2
+#IF
+checkvar GLOBAL 单挑擂主姓名3 = <$USERNAME>
+#ACT
+MOV D9 3
+#IF
+checkvar GLOBAL 单挑擂主姓名4 = <$USERNAME>
+#ACT
+MOV D9 4
+#IF
+checkvar GLOBAL 单挑擂主姓名5 = <$USERNAME>
+#ACT
+MOV D9 5
+#IF
+checkvar GLOBAL 单挑擂主姓名6 = <$USERNAME>
+#ACT
+MOV D9 6
+#IF
+checkvar GLOBAL 单挑擂主姓名7 = <$USERNAME>
+#ACT
+MOV D9 7
+#IF
+checkvar GLOBAL 单挑擂主姓名8 = <$USERNAME>
+#ACT
+MOV D9 8
+#IF
+checkvar GLOBAL 单挑擂主姓名9 = <$USERNAME>
+#ACT
+MOV D9 9
+#IF
+LARGE D9 0
+checkvar GLOBAL 单挑开始判断<$STR(D9)> = 1
+#ACT
+MOV S10 <$
+INC S10 GLOBAL(单挑应战姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$
+INC S11 GLOBAL(单挑开始计时
+INC S11 <$STR(D9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV S12 <$
+INC S12 GLOBAL(单挑押注数量
+INC S12 <$STR(D9)>
+INC S12 )>
+MOV S12 <$STR(S12)>
+MOV S13 <$
+INC S13 GLOBAL(单挑地图代码
+INC S13 <$STR(D9)>
+INC S13 )>
+MOV S13 <$STR(S13)>
+DEC S13 9 100
+MOV S14 禁止喝药
+#IF
+LARGE D9 0
+checkvar GLOBAL 单挑开始判断<$STR(D9)> = 1
+EQUAL S13 dantiaoA
+#ACT
+MOV S14 可以喝药
+#IF
+LARGE D9 0
+checkvar GLOBAL 单挑开始判断<$STR(D9)> = 1
+#ACT
+BREAK
+#SAY
+<$紫0 您已向【><$STR(S10)><$紫0 】发起单挑擂台邀请> <$红0 请等待对方><$STR(S11)><$红0 秒内响应>\
+\ \
+<$橙0 押注元宝数量:><$STR(S12)>\
+<$橙0 地图喝药模式:><$STR(S14)>\
+\ \
+<$橙0 挑战获胜方式:><$青1 地图内剩余1人时可领取获胜奖励！双方均离开地图视为平局！>\
+<$橙0 挑战进行时长:><$青1 如$(单挑进行最大时长)分钟内未分出胜负视为平局，双方可领回押注！>\
+\ \
+<$红0 请等待或通知对方响应您的挑战>\
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 0
+#IF
+checkvar GLOBAL 单挑应战姓名1 = <$USERNAME>
+#ACT
+MOV D9 1
+#IF
+checkvar GLOBAL 单挑应战姓名2 = <$USERNAME>
+#ACT
+MOV D9 2
+#IF
+checkvar GLOBAL 单挑应战姓名3 = <$USERNAME>
+#ACT
+MOV D9 3
+#IF
+checkvar GLOBAL 单挑应战姓名4 = <$USERNAME>
+#ACT
+MOV D9 4
+#IF
+checkvar GLOBAL 单挑应战姓名5 = <$USERNAME>
+#ACT
+MOV D9 5
+#IF
+checkvar GLOBAL 单挑应战姓名6 = <$USERNAME>
+#ACT
+MOV D9 6
+#IF
+checkvar GLOBAL 单挑应战姓名7 = <$USERNAME>
+#ACT
+MOV D9 7
+#IF
+checkvar GLOBAL 单挑应战姓名8 = <$USERNAME>
+#ACT
+MOV D9 8
+#IF
+checkvar GLOBAL 单挑应战姓名9 = <$USERNAME>
+#ACT
+MOV D9 9
+#IF
+LARGE D9 0
+checkvar GLOBAL 单挑开始判断<$STR(D9)> = 1
+#ACT
+CALCVAR HUMAN 单挑个人序号 = <$STR(D9)>
+DELAYGOTO 1 @Mir2m2单挑擂台响应显示
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#SAY
+<$紫1 输入玩家姓名和押注数量，点确定发起即可向该玩家发起单挑邀请！>\
+\ \
+<输入玩家名字/@@InPutString80>:<$HUMAN(单挑个人输入1)>　　<$红0 ←指定邀请玩家发起单挑挑战>\
+<输入押注元宝/@@InPutInteger83>:<$HUMAN(单挑个人输入3)>　　<地图喝药模式/@Mir2m2单挑擂台地图喝药>:<$HUMAN(单挑个人输入2)>\
+\ \
+<$橙0 挑战获胜方式:><$青1 地图内剩余1人时可领取获胜奖励！双方均离开地图视为平局！>\
+<$橙0 挑战进行时长:><$青1 如$(单挑进行最大时长)分钟内未分出胜负视为平局，双方可领回押注！>\
+\ \
+<确定发起单挑/@Mir2m2单挑擂台发起确定>     <获胜领取奖励/@Mir2m2单挑擂台领取奖励>     <平局领回押注/@Mir2m2单挑擂台领取平局>\
+
+[@Mir2m2单挑擂台发起确定]
+#IF
+CHECKLEVELEX < $(单挑发起需要等级)
+#ACT
+MESSAGEBOX 对不起，$(单挑发起需要等级)级以上才能发起单挑！
+BREAK
+#IF
+checkvar human 单挑个人输入3 < $(单挑押注数量最小)
+#ACT
+MESSAGEBOX 对不起，押注数量最小限制为【$(单挑押注数量最小)元宝】！
+break
+#IF
+checkvar human 单挑个人输入3 > $(单挑押注数量最大)
+#ACT
+MESSAGEBOX 对不起，押注数量最大限制为【$(单挑押注数量最大)元宝】！
+break
+#IF
+CHECKGAMEGOLD < <$HUMAN(单挑个人输入3)>
+#ACT
+MESSAGEBOX 对不起，您身上的元宝数量不足【<$HUMAN(单挑个人输入3)>】！
+BREAK
+#IF
+checkvar HUMAN 单挑个人输入1 = <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，不能输入自己的姓名！
+BREAK
+#IF
+<$HUMAN(单挑个人输入1)>.ONLINELONGMIN ? 0
+#ELSEACT
+MESSAGEBOX 对不起，玩家【<$HUMAN(单挑个人输入1)>】不在线，请检查名字是否正确！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 0
+#IF
+checkvar GLOBAL 单挑擂主姓名1 = <$USERNAME>
+#ACT
+MOV D9 1
+#IF
+checkvar GLOBAL 单挑擂主姓名2 = <$USERNAME>
+#ACT
+MOV D9 2
+#IF
+checkvar GLOBAL 单挑擂主姓名3 = <$USERNAME>
+#ACT
+MOV D9 3
+#IF
+checkvar GLOBAL 单挑擂主姓名4 = <$USERNAME>
+#ACT
+MOV D9 4
+#IF
+checkvar GLOBAL 单挑擂主姓名5 = <$USERNAME>
+#ACT
+MOV D9 5
+#IF
+checkvar GLOBAL 单挑擂主姓名6 = <$USERNAME>
+#ACT
+MOV D9 6
+#IF
+checkvar GLOBAL 单挑擂主姓名7 = <$USERNAME>
+#ACT
+MOV D9 7
+#IF
+checkvar GLOBAL 单挑擂主姓名8 = <$USERNAME>
+#ACT
+MOV D9 8
+#IF
+checkvar GLOBAL 单挑擂主姓名9 = <$USERNAME>
+#ACT
+MOV D9 9
+#IF
+LARGE D9 0
+#ACT
+MESSAGEBOX 对不起，你已发起挑战，请勿重复发起！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 0
+#IF
+checkvar GLOBAL 单挑应战姓名1 = <$USERNAME>
+#ACT
+MOV D9 1
+#IF
+checkvar GLOBAL 单挑应战姓名2 = <$USERNAME>
+#ACT
+MOV D9 2
+#IF
+checkvar GLOBAL 单挑应战姓名3 = <$USERNAME>
+#ACT
+MOV D9 3
+#IF
+checkvar GLOBAL 单挑应战姓名4 = <$USERNAME>
+#ACT
+MOV D9 4
+#IF
+checkvar GLOBAL 单挑应战姓名5 = <$USERNAME>
+#ACT
+MOV D9 5
+#IF
+checkvar GLOBAL 单挑应战姓名6 = <$USERNAME>
+#ACT
+MOV D9 6
+#IF
+checkvar GLOBAL 单挑应战姓名7 = <$USERNAME>
+#ACT
+MOV D9 7
+#IF
+checkvar GLOBAL 单挑应战姓名8 = <$USERNAME>
+#ACT
+MOV D9 8
+#IF
+checkvar GLOBAL 单挑应战姓名9 = <$USERNAME>
+#ACT
+MOV D9 9
+#IF
+LARGE D9 0
+#ACT
+MESSAGEBOX 对不起，你已接受挑战，请等待结束再发起！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 0
+#IF
+checkvar GLOBAL 单挑擂主姓名1 = 
+#ACT
+MOV D9 1
+#IF
+checkvar GLOBAL 单挑擂主姓名2 = 
+#ACT
+MOV D9 2
+#IF
+checkvar GLOBAL 单挑擂主姓名3 = 
+#ACT
+MOV D9 3
+#IF
+checkvar GLOBAL 单挑擂主姓名4 = 
+#ACT
+MOV D9 4
+#IF
+checkvar GLOBAL 单挑擂主姓名5 = 
+#ACT
+MOV D9 5
+#IF
+checkvar GLOBAL 单挑擂主姓名6 = 
+#ACT
+MOV D9 6
+#IF
+checkvar GLOBAL 单挑擂主姓名7 = 
+#ACT
+MOV D9 7
+#IF
+checkvar GLOBAL 单挑擂主姓名8 = 
+#ACT
+MOV D9 8
+#IF
+checkvar GLOBAL 单挑擂主姓名9 = 
+#ACT
+MOV D9 9
+#IF
+EQUAL D9 0
+#ACT
+MESSAGEBOX 对不起，当前单挑地图已满人，请等待其他玩家单挑结束再试！
+BREAK
+#IF
+checkvar HUMAN 单挑个人输入2 = 可以喝药
+#ACT
+MOV S11 dantiaoA
+INC S11 <$STR(D9)>
+#ELSEACT
+MOV S11 dantiaoB
+INC S11 <$STR(D9)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 单挑擂主姓名<$STR(D9)> = <$USERNAME>
+CALCVAR GLOBAL 单挑应战姓名<$STR(D9)> = <$HUMAN(单挑个人输入1)>
+CALCVAR GLOBAL 单挑地图代码<$STR(D9)> = <$STR(S11)>
+CALCVAR GLOBAL 单挑押注数量<$STR(D9)> = <$HUMAN(单挑个人输入3)>
+CALCVAR GLOBAL 单挑开始判断<$STR(D9)> = 1
+CALCVAR GLOBAL 单挑开始计时<$STR(D9)> = $(单挑发起响应时间)
+CALCVAR GLOBAL 单挑系统序号 = <$STR(D9)>
+;SENDMSG 0 $(单挑公告提示前缀)【<$USERNAME>】向【<$HUMAN(单挑个人输入1)>】发起了单挑邀请 253 255
+Gmexecute $(单挑开始提问命令) @Mir2m2单挑擂台发起响应
+MESSAGEBOX 发起成功，请等待【<$HUMAN(单挑个人输入1)>】回应...
+GOTO @Mir2m2单挑擂台脚本NPC
+
+[@Mir2m2单挑擂台领取平局]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 0
+#IF
+checkvar GLOBAL 单挑补发姓名A1 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量A1)>
+CALCVAR GLOBAL 单挑补发姓名A1 = 
+CALCVAR GLOBAL 单挑补发数量A1 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名A2 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量A2)>
+CALCVAR GLOBAL 单挑补发姓名A2 = 
+CALCVAR GLOBAL 单挑补发数量A2 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名A3 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量A3)>
+CALCVAR GLOBAL 单挑补发姓名A3 = 
+CALCVAR GLOBAL 单挑补发数量A3 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名A4 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量A4)>
+CALCVAR GLOBAL 单挑补发姓名A4 = 
+CALCVAR GLOBAL 单挑补发数量A4 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名A5 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量A5)>
+CALCVAR GLOBAL 单挑补发姓名A5 = 
+CALCVAR GLOBAL 单挑补发数量A5 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名A6 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量A6)>
+CALCVAR GLOBAL 单挑补发姓名A6 = 
+CALCVAR GLOBAL 单挑补发数量A6 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名A7 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量A7)>
+CALCVAR GLOBAL 单挑补发姓名A7 = 
+CALCVAR GLOBAL 单挑补发数量A7 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名A8 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量A8)>
+CALCVAR GLOBAL 单挑补发姓名A8 = 
+CALCVAR GLOBAL 单挑补发数量A8 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名A9 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量A9)>
+CALCVAR GLOBAL 单挑补发姓名A9 = 
+CALCVAR GLOBAL 单挑补发数量A9 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名B1 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量B1)>
+CALCVAR GLOBAL 单挑补发姓名B1 = 
+CALCVAR GLOBAL 单挑补发数量B1 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名B2 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量B2)>
+CALCVAR GLOBAL 单挑补发姓名B2 = 
+CALCVAR GLOBAL 单挑补发数量B2 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名B3 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量B3)>
+CALCVAR GLOBAL 单挑补发姓名B3 = 
+CALCVAR GLOBAL 单挑补发数量B3 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名B4 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量B4)>
+CALCVAR GLOBAL 单挑补发姓名B4 = 
+CALCVAR GLOBAL 单挑补发数量B4 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名B5 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量B5)>
+CALCVAR GLOBAL 单挑补发姓名B5 = 
+CALCVAR GLOBAL 单挑补发数量B5 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名B6 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量B6)>
+CALCVAR GLOBAL 单挑补发姓名B6 = 
+CALCVAR GLOBAL 单挑补发数量B6 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名B7 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量B7)>
+CALCVAR GLOBAL 单挑补发姓名B7 = 
+CALCVAR GLOBAL 单挑补发数量B7 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名B8 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量B8)>
+CALCVAR GLOBAL 单挑补发姓名B8 = 
+CALCVAR GLOBAL 单挑补发数量B8 = 0
+#IF
+checkvar GLOBAL 单挑补发姓名B9 = <$USERNAME>
+#ACT
+INC D9 <$GLOBAL(单挑补发数量B9)>
+CALCVAR GLOBAL 单挑补发姓名B9 = 
+CALCVAR GLOBAL 单挑补发数量B9 = 0
+#IF
+EQUAL D9 0
+#ACT
+MESSAGEBOX 对不起，您没有平局的单挑记录！
+BREAK
+#ELSEACT
+MOV D6 <$STR(D9)>
+MOV D8 $(单挑场地纳税比例)
+MOV S11 
+#IF
+LARGE D8 0
+LARGE D6 20000000
+#ACT
+MOV D7 <$STR(D6)>
+DIV D7 100
+MUL D7 <$STR(D8)>
+DEC D6 <$STR(D7)>
+MOV S11 (
+INC S11 已扣除$(单挑场地纳税比例)%共
+INC S11 <$STR(D7)>
+INC S11 元宝场地费)
+#IF
+LARGE D8 0
+SMALL D6 20000001
+#ACT
+MOV D7 <$STR(D6)>
+MUL D7 <$STR(D8)>
+DIV D7 100
+DEC D6 <$STR(D7)>
+MOV S11 (
+INC S11 已扣除$(单挑场地纳税比例)%共
+INC S11 <$STR(D7)>
+INC S11 元宝场地费)
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + <$STR(D6)>
+SENDMSG 0 $(单挑公告提示前缀)【<$USERNAME>】领取了单挑平局退还的【<$STR(D6)>】个元宝！<$STR(S11)> 253 255
+MESSAGEBOX 恭喜您成功领取了平局退还的【<$STR(D6)>】个元宝！\　\<$STR(S11)>！
+BREAK
+
+[@Mir2m2单挑擂台领取奖励]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 0
+#IF
+checkvar GLOBAL 单挑擂主姓名1 = <$USERNAME>
+#ACT
+MOV D9 1
+#IF
+checkvar GLOBAL 单挑擂主姓名2 = <$USERNAME>
+#ACT
+MOV D9 2
+#IF
+checkvar GLOBAL 单挑擂主姓名3 = <$USERNAME>
+#ACT
+MOV D9 3
+#IF
+checkvar GLOBAL 单挑擂主姓名4 = <$USERNAME>
+#ACT
+MOV D9 4
+#IF
+checkvar GLOBAL 单挑擂主姓名5 = <$USERNAME>
+#ACT
+MOV D9 5
+#IF
+checkvar GLOBAL 单挑擂主姓名6 = <$USERNAME>
+#ACT
+MOV D9 6
+#IF
+checkvar GLOBAL 单挑擂主姓名7 = <$USERNAME>
+#ACT
+MOV D9 7
+#IF
+checkvar GLOBAL 单挑擂主姓名8 = <$USERNAME>
+#ACT
+MOV D9 8
+#IF
+checkvar GLOBAL 单挑擂主姓名9 = <$USERNAME>
+#ACT
+MOV D9 9
+#IF
+checkvar GLOBAL 单挑应战姓名1 = <$USERNAME>
+#ACT
+MOV D9 1
+#IF
+checkvar GLOBAL 单挑应战姓名2 = <$USERNAME>
+#ACT
+MOV D9 2
+#IF
+checkvar GLOBAL 单挑应战姓名3 = <$USERNAME>
+#ACT
+MOV D9 3
+#IF
+checkvar GLOBAL 单挑应战姓名4 = <$USERNAME>
+#ACT
+MOV D9 4
+#IF
+checkvar GLOBAL 单挑应战姓名5 = <$USERNAME>
+#ACT
+MOV D9 5
+#IF
+checkvar GLOBAL 单挑应战姓名6 = <$USERNAME>
+#ACT
+MOV D9 6
+#IF
+checkvar GLOBAL 单挑应战姓名7 = <$USERNAME>
+#ACT
+MOV D9 7
+#IF
+checkvar GLOBAL 单挑应战姓名8 = <$USERNAME>
+#ACT
+MOV D9 8
+#IF
+checkvar GLOBAL 单挑应战姓名9 = <$USERNAME>
+#ACT
+MOV D9 9
+#IF
+EQUAL D9 0
+#ACT
+MESSAGEBOX 对不起，你不是挑战参赛者！
+BREAK
+#IF
+checkvar GLOBAL 单挑开始判断<$STR(D9)> = 4
+#ELSEACT
+MESSAGEBOX 对不起，挑战未开始，不能领取！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 <$
+INC S10 GLOBAL(单挑地图代码
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+#IF
+ISONMAP <$STR(S10)>
+#ELSEACT
+MESSAGEBOX 对不起，你不在单挑地图内，不能领取！
+BREAK
+#IF
+;CheckmapHumanCount <$STR(S10)> > 1
+checkhum <$STR(S10)> 2
+#ACT
+MESSAGEBOX 对不起，地图内只留下你一人时才能领取奖励！
+BREAK
+#ELSEACT
+MOV S10 <$
+INC S10 GLOBAL(单挑押注数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV D5 <$STR(D6)>
+MOV D8 $(单挑场地纳税比例)
+MOV S11 
+#IF
+LARGE D8 0
+LARGE D6 20000000
+#ACT
+MOV D7 <$STR(D6)>
+DIV D7 100
+MUL D7 <$STR(D8)>
+DEC D6 <$STR(D7)>
+MOV S11 (
+INC S11 已扣除$(单挑场地纳税比例)%共
+INC S11 <$STR(D7)>
+INC S11 元宝场地费)
+#IF
+LARGE D8 0
+SMALL D6 20000001
+#ACT
+MOV D7 <$STR(D6)>
+MUL D7 <$STR(D8)>
+DIV D7 100
+DEC D6 <$STR(D7)>
+MOV S11 (
+INC S11 已扣除$(单挑场地纳税比例)%共
+INC S11 <$STR(D7)>
+INC S11 元宝场地费)
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 单挑擂主姓名<$STR(D9)> = 
+CALCVAR GLOBAL 单挑应战姓名<$STR(D9)> = 
+CALCVAR GLOBAL 单挑开始判断<$STR(D9)> = 0
+CALCVAR GLOBAL 单挑开始计时<$STR(D9)> = 0
+MAPMOVE 3 330 330
+INC D5 <$STR(D6)>
+GAMEGOLD + <$STR(D5)>
+SENDMSG 0 $(单挑公告提示前缀)恭喜【<$USERNAME>】单挑获胜赢取了对方【<$STR(D6)>】个元宝！<$STR(S11)> 253 255
+MESSAGEBOX 恭喜您成功领取了获胜赢取的【<$STR(D6)>】个元宝！\　\<$STR(S11)>！
+BREAK
+
+[@@InPutInteger83]
+#ACT
+DELAYGOTO 1 @InPutInteger83
+[@InPutInteger83]
+#IF
+SMALL M83 $(单挑押注数量最小)
+#ACT
+MESSAGEBOX 对不起，押注数量最小限制为【$(单挑押注数量最小)元宝】！
+break
+#IF
+LARGE M83 $(单挑押注数量最大)
+#ACT
+MESSAGEBOX 对不起，押注数量最大限制为【$(单挑押注数量最大)元宝】！
+break
+#IF
+CHECKGAMEGOLD < <$STR(M83)>
+#ACT
+MESSAGEBOX 对不起，您身上的元宝数量不足<$STR(M83)>个！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 单挑个人输入3 = <$STR(M83)>
+GOTO @Mir2m2单挑擂台脚本NPC
+
+[@@InPutString80]
+#ACT
+DELAYGOTO 1 @InPutString80
+[@InPutString80]
+#IF
+EQUAL S80 <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，不能输入自己的姓名！
+BREAK
+#IF
+<$STR(S80)>.ONLINELONGMIN ? 0
+#ELSEACT
+MESSAGEBOX 对不起，玩家【<$STR(S80)>】不在线，请检查名字是否正确！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 单挑个人输入1 = <$STR(S80)>
+GOTO @Mir2m2单挑擂台脚本NPC
+
+[@Mir2m2单挑擂台地图喝药]
+#IF
+checkvar HUMAN 单挑个人输入2 = 禁止喝药
+#ACT
+CALCVAR HUMAN 单挑个人输入2 = 可以喝药
+GOTO @Mir2m2单挑擂台脚本NPC
+#ELSEACT
+CALCVAR HUMAN 单挑个人输入2 = 禁止喝药
+GOTO @Mir2m2单挑擂台脚本NPC
+
+[@Mir2m2单挑擂台脚本NPC加载QM]
+#CALL [\Mir2m2单挑擂台配置(免费脚本群.101529177)\Mir2m2单挑擂台脚本QM.txt] @Mir2m2单挑擂台关闭接收
+}

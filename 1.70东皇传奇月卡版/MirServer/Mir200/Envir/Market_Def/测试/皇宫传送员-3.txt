@@ -1,0 +1,4 @@
+[@main]
+#act
+mapmove 0150 12 15
+break

@@ -1,0 +1,36 @@
+[@KillPlay66]
+#If
+<$str(A13)>.CHECK [168] 1
+#Act 
+gamegold + 100
+SendMsg 1  [<$str(A14)>]把“神力获得者”[<$str(A13)>]杀害了.获得了100元宝的奖励  191 251
+MOV A13 
+MOV A14 
+;SET [168] 0
+
+#IF
+#ACT
+CalcVar HUMAN SRZS + 1
+SaveVar HUMAN SRZS ..\QuestDiary\杀人系统\SRZS.txt HardDisk
+SendMsg 7 提示：您的当前杀人总数为：<$HUMAN(SRZS)>人
+BREAK
+
+
+[@KillPlayMon66]
+#IF
+CHECKLEVELEX > 19
+#ACT
+MOVR D66 500
+INC D66 1
+#IF
+LARGE D66 490
+#ACT
+Gmexecute 变忠诚度 4
+BREAK
+#IF
+LARGE D66 50
+#ACT
+Gmexecute 变忠诚度 2
+BREAK
+;-----
+

@@ -1,0 +1,22 @@
+[@main]
+#if
+#SAY
+呵呵，<$USERNAME>你解决完对手了吗？\
+地图内只剩你一个人了可以到我这里领取50000元宝的奖励！\
+还有其他成员的话可不行的哦~
+<我是胜利者,我要领取奖励/@lqjl>
+#act
+break
+
+[@lqjl]
+#if
+CHECKMAPHUMANCOUNT D5071B = 1
+#act
+mapmove 3 333 333
+GAMEGOLD + 50000
+MOV A86 <$GUILDNAME>
+MOV A85 <$USERNAME>
+SENDMSG 7 恭喜您成功领取888元宝的奖励，当前元宝数为：<$GAMEGOLD>个.
+SENDMSG 0 恭喜:『<$GUILDNAME>』行会的『<$USERNAME>』在本次的行会争霸活动中获胜，斩杀敌人无数.领取了50000元宝的奖励。。下次他们还能继续获胜吗？
+#elsesay
+地图内还有其他成员：无法获得奖励!!!

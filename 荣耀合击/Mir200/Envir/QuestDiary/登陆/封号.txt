@@ -1,0 +1,191 @@
+[@FH]
+{
+
+
+
+
+#IF
+CHECK [059] 1
+#ACT
+
+MOV S33 ↘↘≮绝对防御≯↙↙
+
+
+
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S1 
+#IF
+CHECK [35] 1
+#ACT
+MOV S1 [九品知县]
+#IF
+CHECK [37] 1
+#ACT
+MOV S1 [八品知府]
+#IF
+CHECK [40] 1
+#ACT
+MOV S1 [七品太守]
+#IF
+CHECK [42] 1
+#ACT
+MOV S1 [六品巡抚]
+#IF
+CHECK [44] 1
+#ACT
+MOV S1 [五品提督]
+#IF
+CHECK [46] 1
+#ACT
+MOV S1 [四品总督]
+#IF
+CHECK [48] 1
+#ACT
+MOV S1 [三品尚书]
+#IF
+CHECK [50] 1
+#ACT
+MOV S1 [二品太傅]
+#IF
+CHECK [52] 1
+#ACT
+MOV S1 [一统天下]
+#IF
+CHECK [54] 1
+#ACT
+MOV S1 [孤独求败]
+#IF
+CHECK [56] 1
+#ACT
+MOV S1 [唯我独尊]
+#IF
+CHECK [58] 1
+#ACT
+MOV S1 [天下无敌]
+#IF
+CHECK [60] 1
+#ACT
+MOV S1 [万人之上]
+#IF
+CHECK [101] 1
+#ACT
+MOV S1 [号令天下]
+
+
+
+#IF
+EQUAL A51 <$USERNAME>
+#ACT
+MOV S4 天下第一男战士
+
+#IF
+EQUAL A52 <$USERNAME>
+#ACT
+MOV S4 天下第一女战士
+
+
+#IF
+EQUAL A53 <$USERNAME>
+#ACT
+MOV S4 天下第一男法师
+
+#IF
+EQUAL A54 <$USERNAME>
+#ACT
+MOV S4 天下第一女法师
+
+#IF
+EQUAL A55 <$USERNAME>
+#ACT
+MOV S4 天下第一男道士
+
+#IF
+EQUAL A56 <$USERNAME>
+#ACT
+MOV S4 天下第一女道士
+
+#IF
+CHECK [61] 1
+#ACT
+MOV S3 ↘↘≮宣传●大使≯↙↙
+
+#IF
+CHECK [67] 1
+#ACT
+MOV S3 ↘↘≮赞助●大使≯↙↙
+
+#IF
+CHECK [62] 1
+#ACT
+MOV S3 ↘↘≮荣耀●大使≯↙↙
+
+
+
+#IF
+CHECK [70] 1
+#ACT
+MOV S5 ↘↘≤极限「①」之力≥↙↙
+
+#IF
+CHECK [71] 1
+#ACT
+MOV S5 ↘↘≤极限「②」之力≥↙↙
+#IF
+CHECK [72] 1
+#ACT
+MOV S5 ↘↘≤极限「③」之力≥↙↙
+#IF
+CHECK [73] 1
+#ACT
+MOV S5 ↘↘≤极限「终」之力≥↙↙
+
+#IF
+checklevelex > 0
+#ACT
+SETRANKLEVELNAME %s\<$STR(S33)>\↘↘≮玛珐·勇士≯↙↙\<$STR(S2)>\\<$STR(S3)>\<$STR(S5)>\<$STR(S4)>\<$STR(S1)>\斩杀↘↘≮<$HUMAN(SRZS)>≯↙↙人,阵亡↘↘≮<$HUMAN(BSZS)>≯次
+
+#IF
+CHECK [61] 1
+#ACT
+SETRANKLEVELNAME %s\<$STR(S33)>\<$STR(S2)>\\<$STR(S3)>\<$STR(S5)>\<$STR(S4)>\<$STR(S1)>\斩杀↘↘≮<$HUMAN(SRZS)>≯↙↙人,阵亡↘↘≮<$HUMAN(BSZS)>≯
+
+
+
+#IF
+CHECK [70] 1
+#ACT
+SETRANKLEVELNAME %s\<$STR(S33)>\<$STR(S2)>\\<$STR(S3)>\<$STR(S5)>\<$STR(S4)>\<$STR(S1)>\斩杀↘↘≮<$HUMAN(SRZS)>≯↙↙人,阵亡↘↘≮<$HUMAN(BSZS)>≯次
+
+
+
+
+#IF
+CHECK [71] 1
+#ACT
+SETRANKLEVELNAME %s\<$STR(S33)>\<$STR(S2)>\\<$STR(S3)>\<$STR(S5)>\<$STR(S4)>\<$STR(S1)>\斩杀↘↘≮<$HUMAN(SRZS)>≯↙↙人,阵亡↘↘≮<$HUMAN(BSZS)>≯次
+
+
+
+#IF
+CHECK [72] 1
+#ACT
+SETRANKLEVELNAME %s\<$STR(S33)>\<$STR(S2)>\\<$STR(S3)>\<$STR(S5)>\<$STR(S4)>\<$STR(S1)>\斩杀↘↘≮<$HUMAN(SRZS)>≯↙↙人,阵亡↘↘≮<$HUMAN(BSZS)>≯次
+
+
+
+#IF
+CHECK [73] 1
+#ACT
+SETRANKLEVELNAME %s\<$STR(S33)>\<$STR(S2)>\\<$STR(S3)>\<$STR(S5)>\<$STR(S4)>\<$STR(S1)>\斩杀↘↘≮<$HUMAN(SRZS)>≯↙↙人,阵亡↘↘≮<$HUMAN(BSZS)>≯次
+
+
+
+
+#IF
+checklevelex > 1000
+#ACT
+NAMECOLOR 1
+}

@@ -1,0 +1,929 @@
+()
+%100
+[@MAIN]
+#if
+CHECKLEVELEX < 42
+#act
+messagebox 【提示】:为防止复制、盗用、仿造....\　\42级以后再来查看！\　\后期功能，你现在也用不上！
+break
+#elseact
+goto @kai
+break
+[@kai]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【幸运之家】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+<升级灯笼项链/@灯笼项链>         <升级虎齿项链/@虎齿项链>           <升级记忆项链/@记忆项链>\
+<升级战神项链/@战神项链>         <升级真魂项链/@真魂项链>           <升级圣魔项链/@圣魔项链>\
+<升级星王战链/@星王战链>         <升级星王道链/@星王道链>           <升级星王法链/@星王法链>\
+<升级荣耀战链/@荣耀战链>         <升级荣耀道链/@荣耀道链>           <升级荣耀法链/@荣耀法链>\
+<清洗暴击/@清洗暴击> <COLOR=clFuchsia 清除不满意的暴击需要200元宝！>  \
+                        　 　 　 　 　 　 　 　　　　　　　　　<COLOR=clFuchsia 幸运最多加三>
+[@荣耀道链]
+升级幸运+1    <COLOR=clRed 需要500元宝     成功率 100%>          <元宝升级/@荣耀道链1> 　\
+　　　　　　　<COLOR=clRed 需要1000万金币  成功率 100%>          <金币升级/@荣耀道链1j>　\ \
+升级幸运+2    <COLOR=clRed 需要800元宝     成功率 35%>           <元宝升级/@荣耀道链2> 　\
+　　　　　　　<COLOR=clRed 需要1600万金币  成功率 35%>           <金币升级/@荣耀道链2j>\ \
+升级幸运+3    <COLOR=clRed 需要1200元宝    成功率 20%>           <元宝升级/@荣耀道链3> 　\
+　　　　　　　<COLOR=clRed 需要2400万金币  成功率 20%>           <金币升级/@荣耀道链3j>\
+<COLOR=clLime 温馨提示：升级幸运+3项链会随机出现1-5点暴击属性，强悍无比！>
+[@荣耀道链1j]
+#IF
+CHECKITEMW 荣耀道链 1
+CHECKITEMADDVALUE 3 1 = 0
+checkgold 10000000
+#ACT
+#CALL [\幸运项链1\荣耀道链1.txt] @荣耀道链11j
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀道链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@荣耀道链2j]
+#IF
+CHECKITEMW 荣耀道链 1
+CHECKITEMADDVALUE 3 1 = 1
+checkgold 16000000
+#ACT
+#CALL [\幸运项链1\荣耀道链2.txt] @荣耀道链22j
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀道链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@荣耀道链3j]
+#IF
+CHECKITEMW 荣耀道链 1
+CHECKITEMADDVALUE 3 1 = 2
+checkgold 24000000
+#ACT
+#CALL [\幸运项链1\荣耀道链3.txt] @荣耀道链33j
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀道链\不是幸运加2的\或者您没有足够的金币，无法升级。。　
+CLOSE
+BREAK
+
+[@荣耀道链1]
+#IF
+CHECKITEMW 荣耀道链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 499
+#ACT
+#CALL [\幸运项链\荣耀道链1.txt] @荣耀道链11
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀道链\不是幸运加1的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@荣耀道链2]
+#IF
+CHECKITEMW 荣耀道链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 799
+#ACT
+#CALL [\幸运项链\荣耀道链2.txt] @荣耀道链22
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀道链\不是幸运加1的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@荣耀道链3]
+#IF
+CHECKITEMW 荣耀道链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 1199
+#ACT
+#CALL [\幸运项链\荣耀道链3.txt] @荣耀道链33
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀道链\不是幸运加2的\或者您没有足够的元宝，无法升级。。　
+CLOSE
+BREAK
+[@荣耀战链]
+升级幸运+1    <COLOR=clRed 需要500元宝     成功率 100%>          <元宝升级/@荣耀战链1> 　\
+　　　　　　　<COLOR=clRed 需要1000万金币  成功率 100%>          <金币升级/@荣耀战链1j>　\ \
+升级幸运+2    <COLOR=clRed 需要800元宝     成功率 35%>           <元宝升级/@荣耀战链2> 　\
+　　　　　　　<COLOR=clRed 需要1600万金币  成功率 35%>           <金币升级/@荣耀战链2j>\ \
+升级幸运+3    <COLOR=clRed 需要1200元宝    成功率 20%>           <元宝升级/@荣耀战链3> 　\
+　　　　　　　<COLOR=clRed 需要2400万金币  成功率 20%>           <金币升级/@荣耀战链3j>\
+<COLOR=clLime 温馨提示：升级幸运+3项链会随机出现1-5点暴击属性，强悍无比！>
+　
+[@荣耀战链1j]
+#IF
+CHECKITEMW 荣耀战链 1
+CHECKITEMADDVALUE 3 1 = 0
+checkgold 10000000
+#ACT
+#CALL [\幸运项链1\荣耀战链1.txt] @荣耀战链11j
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀战链\不是幸运加0的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@荣耀战链2j]
+#IF
+CHECKITEMW 荣耀战链 1
+CHECKITEMADDVALUE 3 1 = 1
+checkgold 16000000
+#ACT
+#CALL [\幸运项链1\荣耀战链2.txt] @荣耀战链22j
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀战链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@荣耀战链3j]
+#IF
+CHECKITEMW 荣耀战链 1
+CHECKITEMADDVALUE 3 1 = 2
+checkgold 24000000
+#ACT
+#CALL [\幸运项链1\荣耀战链3.txt] @荣耀战链33j
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀战链\不是幸运加2的\或者您没有足够的金币，无法升级。。　
+CLOSE
+BREAK
+[@荣耀战链1]
+#IF
+CHECKITEMW 荣耀战链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 499
+#ACT
+#CALL [\幸运项链\荣耀战链1.txt] @荣耀战链111
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀战链\不是幸运加0的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@荣耀战链2]
+#IF
+CHECKITEMW 荣耀战链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 799
+#ACT
+#CALL [\幸运项链\荣耀战链2.txt] @荣耀战链22
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀战链\不是幸运加1的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@荣耀战链3]
+#IF
+CHECKITEMW 荣耀战链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 1199
+#ACT
+#CALL [\幸运项链\荣耀战链3.txt] @荣耀战链33
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀战链\不是幸运加2的\或者您没有足够的元宝，无法升级。。　
+CLOSE
+BREAK
+
+[@荣耀法链]
+升级幸运+1    <COLOR=clRed 需要500元宝     成功率 100%>          <元宝升级/@荣耀法链1> 　\
+　　　　　　　<COLOR=clRed 需要1000万金币  成功率 100%>          <金币升级/@荣耀法链1j>　\ \
+升级幸运+2    <COLOR=clRed 需要800元宝     成功率 35%>           <元宝升级/@荣耀法链2> 　\
+　　　　　　　<COLOR=clRed 需要1600万金币  成功率 35%>           <金币升级/@荣耀法链2j>\ \
+升级幸运+3    <COLOR=clRed 需要1200元宝    成功率 20%>           <元宝升级/@荣耀法链3> 　\
+　　　　　　　<COLOR=clRed 需要2400万金币  成功率 20%>           <金币升级/@荣耀法链3j>\
+<COLOR=clLime 温馨提示：升级幸运+3项链会随机出现1-5点暴击属性，强悍无比！>
+[@荣耀法链1j]
+#IF
+CHECKITEMW 荣耀法链 1
+CHECKITEMADDVALUE 3 1 = 0
+checkgold 10000000
+#ACT
+#CALL [\幸运项链1\荣耀法链1.txt] @荣耀法链11j
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀法链\不是幸运加0的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@荣耀法链2j]
+#IF
+CHECKITEMW 荣耀法链 1
+CHECKITEMADDVALUE 3 1 = 1
+checkgold 16000000
+#ACT
+#CALL [\幸运项链1\荣耀法链2.txt] @荣耀法链22j
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀法链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@荣耀法链3j]
+#IF
+CHECKITEMW 荣耀法链 1
+CHECKITEMADDVALUE 3 1 = 2
+checkgold 24000000
+#ACT
+#CALL [\幸运项链1\荣耀法链3.txt] @荣耀法链33j
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀法链\不是幸运加2的\或者您没有足够的金币，无法升级。。　
+CLOSE
+BREAK
+[@荣耀法链1]
+#IF
+CHECKITEMW 荣耀法链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 499
+#ACT
+#CALL [\幸运项链\荣耀法链1.txt] @荣耀法链11
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀法链\不是幸运加0的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@荣耀法链2]
+#IF
+CHECKITEMW 荣耀法链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 799
+#ACT
+#CALL [\幸运项链\荣耀法链2.txt] @荣耀法链22
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀法链\不是幸运加1的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@荣耀法链3]
+#IF
+CHECKITEMW 荣耀法链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 1199
+#ACT
+#CALL [\幸运项链\荣耀法链3.txt] @荣耀法链33
+#ELSEACT
+MESSAGEBOX 您没有佩带荣耀法链\不是幸运加2的\或者您没有足够的元宝，无法升级。。　
+CLOSE
+BREAK
+
+[@星王道链]
+升级幸运+1    <COLOR=clRed 需要300元宝     成功率 100%>          <元宝升级/@星王道链1> 　\
+　　　　　　　<COLOR=clRed 需要600万金币   成功率 100%>          <金币升级/@星王道链1j>　\ \
+升级幸运+2    <COLOR=clRed 需要500元宝     成功率 35%>           <元宝升级/@星王道链2> 　\
+　　　　　　　<COLOR=clRed 需要1000万金币  成功率 35%>           <金币升级/@星王道链2j>\ \
+升级幸运+3    <COLOR=clRed 需要1000元宝    成功率 20%>           <元宝升级/@星王道链3> 　\
+　　　　　　　<COLOR=clRed 需要2000万金币  成功率 20%>           <金币升级/@星王道链3j>\
+<COLOR=clLime 温馨提示：升级幸运+3项链会随机出现1-5点暴击属性，强悍无比！>
+[@星王道链1]
+#IF
+CHECKITEMW 星王道链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 299
+#ACT
+#CALL [\幸运项链\星王道链1.txt] @星王道链11
+#ELSEACT
+MESSAGEBOX 您没有佩带星王道链\不是幸运加1的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@星王道链1j]
+#IF
+CHECKITEMW 星王道链 1
+CHECKITEMADDVALUE 3 1 = 0
+checkgold 6000000
+#ACT
+#CALL [\幸运项链1\星王道链1.txt] @星王道链11j
+#ELSEACT
+MESSAGEBOX 您没有佩带星王道链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@星王道链2]
+#IF
+CHECKITEMW 星王道链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 499
+#ACT
+#CALL [\幸运项链\星王道链2.txt] @星王道链22
+#ELSEACT
+MESSAGEBOX 您没有佩带星王道链\不是幸运加1的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@星王道链2j]
+#IF
+CHECKITEMW 星王道链 1
+CHECKITEMADDVALUE 3 1 = 1
+checkgold 10000000
+#ACT
+#CALL [\幸运项链1\星王道链2.txt] @星王道链22j
+#ELSEACT
+MESSAGEBOX 您没有佩带星王道链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@星王道链3]
+#IF
+CHECKITEMW 星王道链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 999
+#ACT
+#CALL [\幸运项链\星王道链3.txt] @星王道链33
+#ELSEACT
+MESSAGEBOX 您没有佩带星王道链\不是幸运加2的\或者您没有足够的元宝，无法升级。。　
+CLOSE
+BREAK
+[@星王道链3j]
+#IF
+CHECKITEMW 星王道链 1
+CHECKITEMADDVALUE 3 1 = 2
+checkgold 20000000
+#ACT
+#CALL [\幸运项链1\星王道链3.txt] @星王道链33j
+#ELSEACT
+MESSAGEBOX 您没有佩带星王道链\不是幸运加2的\或者您没有足够的金币，无法升级。。　
+CLOSE
+BREAK
+[@星王战链]
+升级幸运+1    <COLOR=clRed 需要300元宝     成功率 100%>          <元宝升级/@星王战链1> 　\
+　　　　　　　<COLOR=clRed 需要600万金币   成功率 100%>          <金币升级/@星王战链1j>　\ \
+升级幸运+2    <COLOR=clRed 需要500元宝     成功率 35%>           <元宝升级/@星王战链2> 　\
+　　　　　　　<COLOR=clRed 需要1000万金币  成功率 35%>           <金币升级/@星王战链2j>\ \
+升级幸运+3    <COLOR=clRed 需要1000元宝    成功率 20%>           <元宝升级/@星王战链3> 　\
+　　　　　　　<COLOR=clRed 需要2000万金币  成功率 20%>           <金币升级/@星王战链3j>\
+<COLOR=clLime 温馨提示：升级幸运+3项链会随机出现1-5点暴击属性，强悍无比！>
+　
+[@星王战链1]
+#IF
+CHECKITEMW 星王战链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 299
+#ACT
+#CALL [\幸运项链\星王战链1.txt] @星王战链11
+#ELSEACT
+MESSAGEBOX 您没有佩带星王战链\不是幸运加0的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@星王战链1j]
+#IF
+CHECKITEMW 星王战链 1
+CHECKITEMADDVALUE 3 1 = 0
+checkgold 6000000
+#ACT
+#CALL [\幸运项链1\星王战链1.txt] @星王战链11j
+#ELSEACT
+MESSAGEBOX 您没有佩带星王战链\不是幸运加0的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@星王战链2]
+#IF
+CHECKITEMW 星王战链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 499
+#ACT
+#CALL [\幸运项链\星王战链2.txt] @星王战链22
+#ELSEACT
+MESSAGEBOX 您没有佩带星王战链\不是幸运加1的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@星王战链2j]
+#IF
+CHECKITEMW 星王战链 1
+CHECKITEMADDVALUE 3 1 = 1
+checkgold 10000000
+#ACT
+#CALL [\幸运项链1\星王战链2.txt] @星王战链22j
+#ELSEACT
+MESSAGEBOX 您没有佩带星王战链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@星王战链3]
+#IF
+CHECKITEMW 星王战链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 999
+#ACT
+#CALL [\幸运项链\星王战链3.txt] @星王战链33
+#ELSEACT
+MESSAGEBOX 您没有佩带星王战链\不是幸运加2的\或者您没有足够的元宝，无法升级。。　
+CLOSE
+BREAK
+[@星王战链3j]
+#IF
+CHECKITEMW 星王战链 1
+CHECKITEMADDVALUE 3 1 = 2
+checkgold 20000000
+#ACT
+#CALL [\幸运项链1\星王战链3.txt] @星王战链33j
+#ELSEACT
+MESSAGEBOX 您没有佩带星王战链\不是幸运加2的\或者您没有足够的金币，无法升级。。　
+CLOSE
+BREAK
+[@星王法链]
+升级幸运+1    <COLOR=clRed 需要300元宝     成功率 100%>          <元宝升级/@星王法链1> 　\
+　　　　　　　<COLOR=clRed 需要600万金币   成功率 100%>          <金币升级/@星王法链1j>　\ \
+升级幸运+2    <COLOR=clRed 需要500元宝     成功率 35%>           <元宝升级/@星王法链2> 　\
+　　　　　　　<COLOR=clRed 需要1000万金币  成功率 35%>           <金币升级/@星王法链2j>\ \
+升级幸运+3    <COLOR=clRed 需要1000元宝    成功率 20%>           <元宝升级/@星王法链3> 　\
+　　　　　　　<COLOR=clRed 需要2000万金币  成功率 20%>           <金币升级/@星王法链3j>\
+<COLOR=clLime 温馨提示：升级幸运+3项链会随机出现1-5点暴击属性，强悍无比！>
+[@星王法链1]
+#IF
+CHECKITEMW 星王法链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 299
+#ACT
+#CALL [\幸运项链\星王法链1.txt] @星王法链11
+#ELSEACT
+MESSAGEBOX 您没有佩带星王法链\不是幸运加0的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@星王法链1j]
+#IF
+CHECKITEMW 星王法链 1
+CHECKITEMADDVALUE 3 1 = 0
+checkgold 6000000
+#ACT
+#CALL [\幸运项链1\星王法链1.txt] @星王法链11j
+#ELSEACT
+MESSAGEBOX 您没有佩带星王法链\不是幸运加0的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@星王法链2]
+#IF
+CHECKITEMW 星王法链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 499
+#ACT
+#CALL [\幸运项链\星王法链2.txt] @星王法链22
+#ELSEACT
+MESSAGEBOX 您没有佩带星王法链\不是幸运加1的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@星王法链2j]
+#IF
+CHECKITEMW 星王法链 1
+CHECKITEMADDVALUE 3 1 = 1
+checkgold 10000000
+#ACT
+#CALL [\幸运项链1\星王法链2.txt] @星王法链22j
+#ELSEACT
+MESSAGEBOX 您没有佩带星王法链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@星王法链3]
+#IF
+CHECKITEMW 星王法链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 999
+#ACT
+#CALL [\幸运项链\星王法链3.txt] @星王法链33
+#ELSEACT
+MESSAGEBOX 您没有佩带星王法链\不是幸运加2的\或者您没有足够的元宝，无法升级。。　
+CLOSE
+BREAK
+[@星王法链3j]
+#IF
+CHECKITEMW 星王法链 1
+CHECKITEMADDVALUE 3 1 = 2
+checkgold 20000000
+#ACT
+#CALL [\幸运项链1\星王法链3.txt] @星王法链33j
+#ELSEACT
+MESSAGEBOX 您没有佩带星王法链\不是幸运加2的\或者您没有足够的金币，无法升级。。　
+CLOSE
+BREAK
+[@灯笼项链]
+升级幸运+1    <COLOR=clRed 需要50元宝     成功率 100%>          <元宝升级/@灯笼1> 　\
+　　　　　　　<COLOR=clRed 需要100万金币  成功率 100%>          <金币升级/@灯笼1j>　\ \
+升级幸运+2    <COLOR=clRed 需要50元宝     成功率 50%>           <元宝升级/@灯笼2> 　\
+　　　　　　　<COLOR=clRed 需要100万金币  成功率 50%>           <金币升级/@灯笼2j>\ \
+升级幸运+3    <COLOR=clRed 需要100元宝    成功率 35%>           <元宝升级/@灯笼3> 　\
+　　　　　　　<COLOR=clRed 需要200万金币  成功率 35%>           <金币升级/@灯笼3j>\
+<COLOR=clLime 温馨提示：升级幸运+3项链会随机出现1-5点暴击属性，强悍无比！>
+[@灯笼1]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 49
+#ACT
+#CALL [\幸运项链\灯笼项链1.txt] @灯笼项链1
+#ELSEACT
+MESSAGEBOX 您没有佩带灯笼项链\不是幸运加0的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@灯笼1j]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 0
+checkgold 1000000
+#ACT
+#CALL [\幸运项链1\灯笼项链1.txt] @灯笼项链1j
+#ELSEACT
+MESSAGEBOX 您没有佩带灯笼项链\不是幸运加0的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@灯笼2]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 49
+#ACT
+#CALL [\幸运项链\灯笼项链2.txt] @灯笼项链2
+#ELSEACT
+MESSAGEBOX 您没有佩带灯笼项链\不是幸运加1的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@灯笼2j]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 1
+checkgold 1000000
+#ACT
+#CALL [\幸运项链1\灯笼项链2.txt] @灯笼项链2j
+#ELSEACT
+MESSAGEBOX 您没有佩带灯笼项链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@灯笼3]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 99
+#ACT
+#CALL [\幸运项链\灯笼项链3.txt] @灯笼项链3
+#ELSEACT
+MESSAGEBOX 您没有佩带灯笼项链\不是幸运加2的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@灯笼3j]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 2
+checkgold 2000000
+#ACT
+#CALL [\幸运项链1\灯笼项链3.txt] @灯笼项链3j
+#ELSEACT
+MESSAGEBOX 您没有佩带灯笼项链\不是幸运加2的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@虎齿项链]
+升级幸运+1    <COLOR=clRed 需要50元宝     成功率 100%>          <元宝升级/@虎齿1> 　\
+　　　　　　　<COLOR=clRed 需要100万金币  成功率 100%>          <金币升级/@虎齿1j>　\ \
+升级幸运+2    <COLOR=clRed 需要50元宝     成功率 50%>           <元宝升级/@虎齿2> 　\
+　　　　　　　<COLOR=clRed 需要100万金币  成功率 50%>           <金币升级/@虎齿2j>\ \
+升级幸运+3    <COLOR=clRed 需要100元宝    成功率 35%>           <元宝升级/@虎齿3> 　\
+　　　　　　　<COLOR=clRed 需要200万金币  成功率 35%>           <金币升级/@虎齿3j>\
+<COLOR=clLime 温馨提示：升级幸运+3项链会随机出现1-5点暴击属性，强悍无比！>
+[@虎齿1]
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 49
+#ACT
+#CALL [\幸运项链\虎齿项链1.txt] @白色虎齿项链1
+#ELSEACT
+MESSAGEBOX 您没有佩带白色虎齿项链\不是幸运加0的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@虎齿1j]
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 0
+checkgold 1000000
+#ACT
+#CALL [\幸运项链1\虎齿项链1.txt] @白色虎齿项链1j
+#ELSEACT
+MESSAGEBOX 您没有佩带白色虎齿项链\不是幸运加0的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@虎齿2]
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 49
+#ACT
+#CALL [\幸运项链\虎齿项链2.txt] @白色虎齿项链2
+#ELSEACT
+MESSAGEBOX 您没有佩带白色虎齿项链\不是幸运加1的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@虎齿2j]
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 1
+checkgold 1000000
+#ACT
+#CALL [\幸运项链1\虎齿项链2.txt] @白色虎齿项链2j
+#ELSEACT
+MESSAGEBOX 您没有佩带白色虎齿项链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@虎齿3]
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 99
+#ACT
+#CALL [\幸运项链\虎齿项链3.txt] @白色虎齿项链3
+#ELSEACT
+MESSAGEBOX 您没有佩带白色虎齿项链\不是幸运加2的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@虎齿3j]
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 2
+checkgold 2000000
+#ACT
+#CALL [\幸运项链1\虎齿项链3.txt] @白色虎齿项链3j
+#ELSEACT
+MESSAGEBOX 您没有佩带白色虎齿项链\不是幸运加2的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@记忆项链]
+升级幸运+1    <COLOR=clRed 需要50元宝     成功率 100%>          <元宝升级/@记忆1> 　\
+　　　　　　　<COLOR=clRed 需要100万金币  成功率 100%>          <金币升级/@记忆1j>　\ \
+升级幸运+2    <COLOR=clRed 需要50元宝     成功率 50%>           <元宝升级/@记忆2> 　\
+　　　　　　　<COLOR=clRed 需要100万金币  成功率 50%>           <金币升级/@记忆2j>\ \
+升级幸运+3    <COLOR=clRed 需要100元宝    成功率 35%>           <元宝升级/@记忆3> 　\
+　　　　　　　<COLOR=clRed 需要200万金币  成功率 35%>           <金币升级/@记忆3j>\
+<COLOR=clLime 温馨提示：升级幸运+3项链会随机出现1-5点暴击属性，强悍无比！>
+[@记忆1]
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 49
+#ACT
+#CALL [\幸运项链\记忆项链1.txt] @记忆项链1
+#ELSEACT
+MESSAGEBOX 您没有佩带记忆项链\不是幸运加0的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@记忆1j]
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 0
+checkgold 1000000
+#ACT
+#CALL [\幸运项链1\记忆项链1.txt] @记忆项链1j
+#ELSEACT
+MESSAGEBOX 您没有佩带记忆项链\不是幸运加0的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@记忆2]
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 49
+#ACT
+#CALL [\幸运项链\记忆项链2.txt] @记忆项链2
+#ELSEACT
+MESSAGEBOX 您没有佩带记忆项链\不是幸运加1的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@记忆2j]
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 1
+checkgold 1000000
+#ACT
+#CALL [\幸运项链1\记忆项链2.txt] @记忆项链2j
+#ELSEACT
+MESSAGEBOX 您没有佩带记忆项链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@记忆3]
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 99
+#ACT
+#CALL [\幸运项链\记忆项链3.txt] @记忆项链3
+#ELSEACT
+MESSAGEBOX 您没有佩带记忆项链\不是幸运加2的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@记忆3j]
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 2
+checkgold 2000000
+#ACT
+#CALL [\幸运项链1\记忆项链3.txt] @记忆项链3j
+#ELSEACT
+MESSAGEBOX 您没有佩带记忆项链\不是幸运加2的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@真魂项链]
+升级幸运+1    <COLOR=clRed 需要200元宝     成功率 100%>          <元宝升级/@真魂1> 　\
+　　　　　　　<COLOR=clRed 需要400万金币   成功率 100%>          <金币升级/@真魂1j>　\ \
+升级幸运+2    <COLOR=clRed 需要300元宝     成功率 35%>           <元宝升级/@真魂2> 　\
+　　　　　　　<COLOR=clRed 需要600万金币   成功率 35%>           <金币升级/@真魂2j>\ \
+升级幸运+3    <COLOR=clRed 需要500元宝     成功率 20%>           <元宝升级/@真魂3> 　\
+　　　　　　　<COLOR=clRed 需要1000万金币  成功率 20%>           <金币升级/@真魂3j>\
+<COLOR=clLime 温馨提示：升级幸运+3项链会随机出现1-5点暴击属性，强悍无比！>
+[@真魂1]
+#IF
+CHECKITEMW 真魂项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 199
+#ACT
+#CALL [\幸运项链\真魂项链1.txt] @真魂项链1
+#ELSEACT
+MESSAGEBOX 您没有佩带真魂项链\不是幸运加0的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@真魂1j]
+#IF
+CHECKITEMW 真魂项链 1
+CHECKITEMADDVALUE 3 1 = 0
+checkgold 4000000
+#ACT
+#CALL [\幸运项链1\真魂项链1.txt] @真魂项链1j
+#ELSEACT
+MESSAGEBOX 您没有佩带真魂项链\不是幸运加0的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@真魂2]
+#IF
+CHECKITEMW 真魂项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 299
+#ACT
+#CALL [\幸运项链\真魂项链2.txt] @真魂项链2
+#ELSEACT
+MESSAGEBOX 您没有佩带真魂项链\不是幸运加1的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@真魂2j]
+#IF
+CHECKITEMW 真魂项链 1
+CHECKITEMADDVALUE 3 1 = 1
+checkgold 6000000
+#ACT
+#CALL [\幸运项链1\真魂项链2.txt] @真魂项链2j
+#ELSEACT
+MESSAGEBOX 您没有佩带真魂项链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@真魂3]
+#IF
+CHECKITEMW 真魂项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 499
+#ACT
+#CALL [\幸运项链\真魂项链3.txt] @真魂项链3
+#ELSEACT
+MESSAGEBOX 您没有佩带真魂项链\不是幸运加2的\或者您没有足够的元宝，无法升级。。　
+CLOSE
+BREAK
+[@真魂3j]
+#IF
+CHECKITEMW 真魂项链 1
+CHECKITEMADDVALUE 3 1 = 2
+checkgold 10000000
+#ACT
+#CALL [\幸运项链1\真魂项链3.txt] @真魂项链3j
+#ELSEACT
+MESSAGEBOX 您没有佩带真魂项链\不是幸运加2的\或者您没有足够的金币，无法升级。。　
+CLOSE
+BREAK
+[@战神项链]
+升级幸运+1    <COLOR=clRed 需要200元宝     成功率 100%>          <元宝升级/@战神1> 　\
+　　　　　　　<COLOR=clRed 需要400万金币   成功率 100%>          <金币升级/@战神1j>　\ \
+升级幸运+2    <COLOR=clRed 需要300元宝     成功率 35%>           <元宝升级/@战神2> 　\
+　　　　　　　<COLOR=clRed 需要600万金币   成功率 35%>           <金币升级/@战神2j>\ \
+升级幸运+3    <COLOR=clRed 需要500元宝     成功率 20%>           <元宝升级/@战神3> 　\
+　　　　　　　<COLOR=clRed 需要1000万金币  成功率 20%>           <金币升级/@战神3j>\
+<COLOR=clLime 温馨提示：升级幸运+3项链会随机出现1-5点暴击属性，强悍无比！>
+　
+[@战神1]
+#IF
+CHECKITEMW 战神项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 199
+#ACT
+#CALL [\幸运项链\战神项链1.txt] @战神项链1
+#ELSEACT
+MESSAGEBOX 您没有佩带战神项链\不是幸运加0的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@战神1j]
+#IF
+CHECKITEMW 战神项链 1
+CHECKITEMADDVALUE 3 1 = 0
+checkgold 4000000
+#ACT
+#CALL [\幸运项链1\战神项链1.txt] @战神项链1j
+#ELSEACT
+MESSAGEBOX 您没有佩带战神项链\不是幸运加0的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@战神2]
+#IF
+CHECKITEMW 战神项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 299
+#ACT
+#CALL [\幸运项链\战神项链2.txt] @战神项链2
+#ELSEACT
+MESSAGEBOX 您没有佩带战神项链\不是幸运加1的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@战神2j]
+#IF
+CHECKITEMW 战神项链 1
+CHECKITEMADDVALUE 3 1 = 1
+checkgold 6000000
+#ACT
+#CALL [\幸运项链1\战神项链2.txt] @战神项链2j
+#ELSEACT
+MESSAGEBOX 您没有佩带战神项链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@战神3]
+#IF
+CHECKITEMW 战神项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 499
+#ACT
+#CALL [\幸运项链\战神项链3.txt] @战神项链3
+#ELSEACT
+MESSAGEBOX 您没有佩带战神项链\不是幸运加2的\或者您没有足够的元宝，无法升级。。　
+CLOSE
+BREAK
+[@战神3j]
+#IF
+CHECKITEMW 战神项链 1
+CHECKITEMADDVALUE 3 1 = 2
+checkgold 10000000
+#ACT
+#CALL [\幸运项链1\战神项链3.txt] @战神项链3j
+#ELSEACT
+MESSAGEBOX 您没有佩带战神项链\不是幸运加2的\或者您没有足够的金币，无法升级。。　
+CLOSE
+BREAK
+[@圣魔项链]
+升级幸运+1    <COLOR=clRed 需要200元宝     成功率 100%>          <元宝升级/@圣魔1> 　\
+　　　　　　　<COLOR=clRed 需要400万金币   成功率 100%>          <金币升级/@圣魔1j>　\ \
+升级幸运+2    <COLOR=clRed 需要300元宝     成功率 35%>           <元宝升级/@圣魔2> 　\
+　　　　　　　<COLOR=clRed 需要600万金币   成功率 35%>           <金币升级/@圣魔2j>\ \
+升级幸运+3    <COLOR=clRed 需要500元宝     成功率 20%>           <元宝升级/@圣魔3> 　\
+　　　　　　　<COLOR=clRed 需要1000万金币  成功率 20%>           <金币升级/@圣魔3j>\
+<COLOR=clLime 温馨提示：升级幸运+3项链会随机出现1-5点暴击属性，强悍无比！>
+[@圣魔1]
+#IF
+CHECKITEMW 圣魔项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 199
+#ACT
+#CALL [\幸运项链\圣魔项链1.txt] @圣魔项链1
+#ELSEACT
+MESSAGEBOX 您没有佩带圣魔项链\不是幸运加0的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@圣魔1j]
+#IF
+CHECKITEMW 圣魔项链 1
+CHECKITEMADDVALUE 3 1 = 0
+checkgold 4000000
+#ACT
+#CALL [\幸运项链1\圣魔项链1.txt] @圣魔项链1j
+#ELSEACT
+MESSAGEBOX 您没有佩带圣魔项链\不是幸运加0的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@圣魔2]
+#IF
+CHECKITEMW 圣魔项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 299
+#ACT
+#CALL [\幸运项链\圣魔项链2.txt] @圣魔项链2
+#ELSEACT
+MESSAGEBOX 您没有佩带圣魔项链\不是幸运加1的\或者您没有足够的元宝，无法升级。。
+CLOSE
+BREAK
+[@圣魔2j]
+#IF
+CHECKITEMW 圣魔项链 1
+CHECKITEMADDVALUE 3 1 = 1
+checkgold 6000000
+#ACT
+#CALL [\幸运项链1\圣魔项链2.txt] @圣魔项链2j
+#ELSEACT
+MESSAGEBOX 您没有佩带圣魔项链\不是幸运加1的\或者您没有足够的金币，无法升级。。
+CLOSE
+BREAK
+[@圣魔3]
+#IF
+CHECKITEMW 圣魔项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 499
+#ACT
+#CALL [\幸运项链\圣魔项链3.txt] @圣魔项链3
+#ELSEACT
+MESSAGEBOX 您没有佩带圣魔项链\不是幸运加2的\或者您没有足够的元宝，无法升级。。　
+CLOSE
+BREAK
+[@圣魔3j]
+#IF
+CHECKITEMW 圣魔项链 1
+CHECKITEMADDVALUE 3 1 = 2
+checkgold 10000000
+#ACT
+#CALL [\幸运项链1\圣魔项链3.txt] @圣魔项链3j
+#ELSEACT
+MESSAGEBOX 您没有佩带圣魔项链\不是幸运加2的\或者您没有足够的金币，无法升级。。　
+CLOSE
+BREAK
+[@清洗暴击]
+#IF
+CHECKITEMADDVALUE 3 8 < 5
+CHECKGAMEGOLD > 199
+#ACT
+GAMEGOLD - 200
+Gmexecute 改属性 3 1 = 1
+Gmexecute 改属性 3 8 = 0
+SENDMSG 0 恭喜%s在%d清除【项链】属性成功！ 249 252 20
+#ELSEACT
+MESSAGEBOX 您没有佩带项链或暴击已经加5。　
+CLOSE
+

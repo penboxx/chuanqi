@@ -1,0 +1,111 @@
+[@main] 
+<COLOR=clLime 同等级可以用元宝竟标,请继续点申请天下第一>\ \
+第一女法：<$STR(A22)>\ 
+他的等级：<$STR(A24)>\ 
+所属行会：<$STR(A23)>\ \
+<COLOR=clSkyBlue 今天的天下第一是 ><$STR(A22)><COLOR=clSkyBlue  明天的天下第一会是谁？>\ \
+<申请天下第一/@申请第一>
+#if
+equal G53 0
+#act
+mov G53 10
+
+[@申请第一] 
+#IF 
+checknamelist ..\QuestDiary\天下第一\女法师.txt  HardDisk
+#ACT 
+sendmsg 7 你已经是天下第一了！
+break
+ 
+#IF 
+CHECKLEVELEX < 30 
+#say 
+看来你很有信心，不过你还没有达到资格，\ 
+你需要30级来证明自己的实力\ 
+现在来申请天下第一恐怕还嫌早.\ \
+<离开/@exit> 
+
+#IF 
+gender woman 
+#elseact
+sendmsg 7 你似乎找错申请对象了吧！ 
+break
+
+#IF 
+checkjob Wizard
+CHECKLEVELEX > 29
+#act 
+mov S0 <$LEVEL> 
+MOV S1 <$STR(A24)>
+goto @女战申请 
+break 
+
+[@女战申请] 
+#IF 
+small S0 <$STR(S1)> 
+#act
+sendmsg 7 对不起！！你目前还不是最高等级！
+break
+ 
+#IF 
+EQUAL S0 <$STR(S1)> 
+#say 
+抱歉！！你目前的等级跟现在的天下第一等级相同 \ \
+需要支付<$STR(G53)>个元宝才能申请 \ \
+<老子钱多，我要做天下第一/@钱申请第一>\ \
+<穷啊/@exit>
+
+#if
+large S0 <$STR(S1)> 
+#act
+mov A22 <$USERNAME>
+mov A24 <$LEVEL>
+CLEARNAMELIST ..\QuestDiary\天下第一\女法师.txt  HardDisk
+addnamelist ..\QuestDiary\天下第一\女法师.txt  HardDisk
+SENDMSG 4 %s成功申请到了<$STR(A24)>级的天下第一女法师！
+SENDMSG 0 %s成功申请到了<$STR(A24)>级的天下第一女法师！
+SENDMSG 0 %s成功申请到了<$STR(A24)>级的天下第一女法师！
+#say 
+申请成功！目前今天的天下第一女法师是<$USERNAME>，\ 
+明天的天下第一会是谁？\ \
+<离开/@exit> 
+
+#IF
+HAVEGUILD 
+#ACT 
+mov A23 <$GUILDNAME> 
+#ELSEACT 
+mov A23 暂无 
+
+[@钱申请第一] 
+#if
+CHECKGAMEGOLD > <$STR(G53)>
+#act
+goto @竞标天下第一
+#elseact
+sendmsg 7 对不起，你没那么多钱！
+break
+
+[@竞标天下第一] 
+#IF 
+#ACT
+GAMEGOLD - <$STR(G53)>
+mov A22 <$USERNAME>
+mov A24 <$LEVEL>
+INC G53 10
+CLEARNAMELIST ..\QuestDiary\天下第一\女法师.txt HardDisk
+addnamelist ..\QuestDiary\天下第一\女法师.txt HardDisk
+SENDMSG 4 %s成功竞价到了<$STR(A24)>级的天下第一女法师！价格涨到了<$STR(G53)>元宝
+SENDMSG 0 %s成功竞价到了<$STR(A24)>级的天下第一女法师！价格涨到了<$STR(G53)>元宝
+SENDMSG 0 %s成功竞价到了<$STR(A24)>级的天下第一女法师！价格涨到了<$STR(G53)>元宝
+#say 
+申请成功！目前今天的天下第一女法师是<$USERNAME>，\ 
+明天的天下第一会是谁？\ \
+<离开/@exit>
+
+#IF
+HAVEGUILD
+#ACT
+mov A23 <$GUILDNAME>
+#ELSEACT
+mov A23 暂无

@@ -1,0 +1,370 @@
+[@红包大雨]
+#IF
+equal G16 1
+#ACT
+GMEXECUTE 开始提问 @红包发放
+
+
+[@开区激情夺宝]
+#IF
+CHECKRANGEMONCOUNTEX JQDBHD 52 51 夺宝教主 > 0
+#ACT
+mov G67 1
+SENDMSG 0 活动使者:激情夺宝已经开放！！关闭时间21:00关闭！
+SENDMSG 0 活动使者:激情夺宝已经开放！！关闭时间21:00关闭！
+#ELSEACT
+Mission JQDBHD 52 51
+Param1 52
+Param2 51
+Param3 1
+Param4 0
+MobPlace 夺宝教主
+mov G67 1
+SENDMSG 0 活动使者:激情夺宝已经开放！！关闭时间21:00关闭！
+SENDMSG 0 活动使者:激情夺宝已经开放！！关闭时间21:00关闭！
+
+
+[@关闭激情夺宝]
+#IF
+#ACT
+mov G67 0
+SENDMSG 0 活动使者:激情夺宝已经关闭！！每天晚上20:00大门开启！
+SENDMSG 0 活动使者:激情夺宝已经关闭！！每天晚上20:00大门开启！
+BREAK
+
+
+
+[@开区屠龙战场]
+#IF
+CHECKRANGEMONCOUNTEX TLZCHD 43 51 烟花恶魔 > 0
+#ACT
+mov G66 1
+SENDMSG 0 活动使者:屠龙战场已经开放！！关闭时间16:00关闭！
+SENDMSG 0 活动使者:屠龙战场已经开放！！关闭时间16:00关闭！
+#ELSEACT
+Mission TLZCHD 43 51
+Param1 43
+Param2 51
+Param3 1
+Param4 0
+MobPlace 烟花恶魔
+mov G66 1
+SENDMSG 0 活动使者:屠龙战场已经开放！！关闭时间16:00关闭！
+SENDMSG 0 活动使者:屠龙战场已经开放！！关闭时间16:00关闭！
+
+
+[@关闭屠龙战场]
+#IF
+#ACT
+mov G66 0
+SENDMSG 0 活动使者:屠龙战场已经关闭！！每天下午15:00大门开启！
+SENDMSG 0 活动使者:屠龙战场已经关闭！！每天下午15:00大门开启！
+BREAK
+
+
+
+
+
+
+[@武林大会开启]
+#IF
+#ACT
+MOV G56 1
+MOV G57 0
+MOV G58 0
+sendmsg 0 武林争霸赛已开始报名，20分钟后停止入场，获胜者可以获得1000元宝奖励！ 31 241
+sendmsg 0 武林争霸赛已开始报名，20分钟后停止入场，获胜者可以获得1000元宝奖励！ 31 241
+sendmsg 0 武林争霸赛已开始报名，20分钟后停止入场，获胜者可以获得1000元宝奖励！ 31 241
+sendmsg 0 武林争霸赛已开始报名，20分钟后停止入场，获胜者可以获得1000元宝奖励！ 31 241
+sendmsg 0 武林争霸赛已开始报名，20分钟后停止入场，获胜者可以获得1000元宝奖励！ 31 241
+break 
+
+[@武林大会停止]
+#IF
+#ACT
+MOV G56 0
+MOV G57 1
+MOV G58 0
+sendmsg 0 武林争霸赛已停止报名，请等待比赛结果！ 31 241
+sendmsg 0 武林争霸赛已停止报名，请等待比赛结果！ 31 241
+sendmsg 0 武林争霸赛已停止报名，请等待比赛结果！ 31 241
+sendmsg 0 武林争霸赛已停止报名，请等待比赛结果！ 31 241
+sendmsg 0 武林争霸赛已停止报名，请等待比赛结果！ 31 241
+CLEARNAMELIST ..\QuestDiary\数据文件\林盟主名单.txt HardDisk
+break 
+
+[@武林大会领奖]
+#IF
+#ACT
+MOV G56 0
+MOV G57 0
+MOV G58 1
+sendmsg 0 武林争霸赛已经结束，请获胜者领取奖励！ 31 241
+sendmsg 0 武林争霸赛已经结束，请获胜者领取奖励！ 31 241
+sendmsg 0 武林争霸赛已经结束，请获胜者领取奖励！ 31 241
+sendmsg 0 武林争霸赛已经结束，请获胜者领取奖励！ 31 241
+sendmsg 0 武林争霸赛已经结束，请获胜者领取奖励！ 31 241
+break
+
+
+
+
+
+
+
+[@游戏说明]
+#IF
+#ACT
+SendScrollMsg 欢迎来天堂复古1.76小极品传奇，游戏无赞助，无鲜花，无泡点。更多功能请点击土城兵咨询查看！ 251 191
+SendScrollMsg 网站打不开，游戏登陆问题请联系客服QQ：68405131.技术QQ：68405131.官网：www.95gm.com  251 191
+SendScrollMsg 本服一切靠打。不卖装备，不卖等级！无赌博，无鲜花，无宝箱，无赞助，适合散人玩。官网：www.95gm.com  251 191
+SendScrollMsg 第一次开挂（含27代理，一键小退等所有辅助）删除数据，第二次使用永久封机器码。官网：www.95gm.com  251 191
+SendScrollMsg 本服禁止私下交易元宝，装备，账号，一经发现。官方将没收处理。举报者奖励获得一半作为奖励！ www.zhen6.top  251 191
+SendScrollMsg 请牢记官方主页：[www.95gm.com]备用主页：[www.95gm.com]官方论坛：[www.95gm.com] 251 191
+BREAK
+
+
+[@大额元宝统计]
+#IF
+#ACT
+GMEXECUTE 开始提问 ~大额元宝统计
+
+[@全服元宝统计]
+#ACT
+mov G86  0
+mov G84  0
+GMEXECUTE 开始提问 @全服元宝刷新
+BREAK
+
+[@自定义全局变量申明]
+#IF
+EQUAL I0 0
+#ACT
+MOV I0 14161860
+VAR String GLOBAL 贵宾房间名字1 "" HardDisk
+VAR String GLOBAL 贵宾房间名字2 "" HardDisk
+VAR String GLOBAL 贵宾房间名字3 "" HardDisk
+VAR String GLOBAL 贵宾房间名字4 "" HardDisk
+VAR String GLOBAL 贵宾房间名字11 "" HardDisk
+VAR String GLOBAL 贵宾房间名字12 "" HardDisk
+VAR String GLOBAL 贵宾房间名字13 "" HardDisk
+VAR String GLOBAL 贵宾房间名字14 "" HardDisk
+VAR Integer GLOBAL 贵宾房间时间1 "" HardDisk
+VAR Integer GLOBAL 贵宾房间时间2 "" HardDisk
+VAR Integer GLOBAL 贵宾房间时间3 "" HardDisk
+VAR Integer GLOBAL 贵宾房间时间4 "" HardDisk
+VAR Integer GLOBAL 鲜花第一男S "" HardDisk
+VAR Integer GLOBAL 鲜花第一女S "" HardDisk
+VAR String GLOBAL 鲜花第一男N "" HardDisk
+VAR String GLOBAL 鲜花第一女N "" HardDisk
+LOADVAR GLOBAL 鲜花第一男S ..\QuestDiary\数据文件\鲜花系统\鲜花排行数据.txt
+LOADVAR GLOBAL 鲜花第一女S ..\QuestDiary\数据文件\鲜花系统\鲜花排行数据.txt
+LOADVAR GLOBAL 鲜花第一男N ..\QuestDiary\数据文件\鲜花系统\鲜花排行数据.txt
+LOADVAR GLOBAL 鲜花第一女N ..\QuestDiary\数据文件\鲜花系统\鲜花排行数据.txt
+
+
+
+
+[@贵宾房间计时]
+#IF
+CHECKVAR GLOBAL 贵宾房间时间1 = 1
+#ACT
+CALCVAR GLOBAL 贵宾房间名字1 = 
+CALCVAR GLOBAL 贵宾房间时间1 = 0
+GMEXECUTE 开始提问 ~到期传送1
+
+#IF
+CHECKVAR GLOBAL 贵宾房间时间1 = 2
+#ACT
+CALCVAR GLOBAL 贵宾房间时间1 - 1
+GMEXECUTE 开始提问 ~到期提示1
+
+#IF
+CHECKVAR GLOBAL 贵宾房间时间1 > 2
+#ACT
+CALCVAR GLOBAL 贵宾房间时间1 - 1
+
+#IF
+CHECKVAR GLOBAL 贵宾房间时间2 = 1
+#ACT
+CALCVAR GLOBAL 贵宾房间名字2 = 
+CALCVAR GLOBAL 贵宾房间时间2 = 0
+GMEXECUTE 开始提问 ~到期传送2
+
+#IF
+CHECKVAR GLOBAL 贵宾房间时间2 = 2
+#ACT
+CALCVAR GLOBAL 贵宾房间时间2 - 1
+GMEXECUTE 开始提问 ~到期提示2
+
+#IF
+CHECKVAR GLOBAL 贵宾房间时间2 > 2
+#ACT
+CALCVAR GLOBAL 贵宾房间时间2 - 1
+
+#IF
+CHECKVAR GLOBAL 贵宾房间时间3 = 1
+#ACT
+CALCVAR GLOBAL 贵宾房间名字3 = 
+CALCVAR GLOBAL 贵宾房间时间3 = 0
+GMEXECUTE 开始提问 ~到期传送3
+
+#IF
+CHECKVAR GLOBAL 贵宾房间时间3 = 2
+#ACT
+CALCVAR GLOBAL 贵宾房间时间3 - 1
+GMEXECUTE 开始提问 ~到期提示3
+
+#IF
+CHECKVAR GLOBAL 贵宾房间时间3 > 2
+#ACT
+CALCVAR GLOBAL 贵宾房间时间3 - 1
+
+#IF
+CHECKVAR GLOBAL 贵宾房间时间4 = 1
+#ACT
+CALCVAR GLOBAL 贵宾房间名字4 = 
+CALCVAR GLOBAL 贵宾房间时间4 = 0
+GMEXECUTE 开始提问 ~到期传送4
+
+#IF
+CHECKVAR GLOBAL 贵宾房间时间4 = 2
+#ACT
+CALCVAR GLOBAL 贵宾房间时间4 - 1
+GMEXECUTE 开始提问 ~到期提示4
+
+#IF
+CHECKVAR GLOBAL 贵宾房间时间4 > 2
+#ACT
+CALCVAR GLOBAL 贵宾房间时间4 - 1
+
+[@每日清理]
+#IF
+#ACT
+CLEARNAMELIST ..\QuestDiary\数据文件\鲜花系统\经验次数.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\数据文件\经验次数Save.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\数据文件\鲜花系统\鲜花次数.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\数据文件\鲜花系统\守护次数.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\数据文件\变量.txt HardDisk
+
+
+
+[@刷摇钱树]
+#IF
+CHECKRANGEMONCOUNTEX 3 358 342 摇钱树 > 0
+#ACT
+SENDMSG 0 〖摇钱树〗出现在土城药店下方!它的身上宝贝多多喔!
+SENDMSG 0 〖摇钱树〗出现在土城药店下方!它的身上宝贝多多喔!
+SENDMSG 0 〖摇钱树〗出现在土城药店下方!它的身上宝贝多多喔!
+SENDMSG 0 〖摇钱树〗出现在土城药店下方!它的身上宝贝多多喔!
+GMEXECUTE 开始提问 @询问是否打树
+#ELSEACT
+Mission 3 358 342
+Param1 358
+Param2 342
+Param3 1
+Param4 0
+MobPlace 摇钱树
+SENDMSG 0 〖摇钱树〗出现在土城药店下方!它的身上宝贝多多喔!
+SENDMSG 0 〖摇钱树〗出现在土城药店下方!它的身上宝贝多多喔!
+SENDMSG 0 〖摇钱树〗出现在土城药店下方!它的身上宝贝多多喔!
+SENDMSG 0 〖摇钱树〗出现在土城药店下方!它的身上宝贝多多喔!
+GMEXECUTE 开始提问 @询问是否打树
+
+[@过一天]
+#ACT
+inc G88 1
+
+[@设首次功沙]
+#IF
+large G88 6
+#ACT
+GMEXECUTE ADDTOCASTLEWARLIST 0 *
+SendMsg 0 [功城提示：]今晚八点首次功城，请玩家提前作好准备!
+SendMsg 0 [功城提示：]今晚八点首次功城，请玩家提前作好准备!
+SendMsg 0 [功城提示：]今晚八点首次功城，请玩家提前作好准备!
+SendMsg 0 [功城提示：]今晚八点首次功城，请玩家提前作好准备!
+break
+
+[@行会争夺战11]
+#IF
+#ACT
+MOV G32 1
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，30分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，30分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，30分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，30分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，30分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+
+
+[@行会争夺战]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，15分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，15分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，15分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，15分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，15分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+
+[@行会争夺战1]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，5分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，5分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，5分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，5分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，5分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+
+[@行会争夺战2]
+#IF
+#ACT
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，1分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，1分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，1分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，1分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+SENDMSG 0 [行会争霸]请参赛行会进入场地准备，1分钟后入口自动关闭！获胜的行会可以获得50000元宝奖励！
+
+
+[@行会争霸入口关闭]
+#IF
+#ACT
+MOV G32 0
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得50000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得50000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得50000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得50000元宝奖励！
+SENDMSG 0 行会争霸正式开始，入口关闭，胜利的行会将获得50000元宝奖励！
+
+[@转移玩家]
+#IF
+#ACT
+GMEXECUTE 集体传送 D507122 D5071B
+
+[@转移玩家1]
+#IF
+#ACT
+GMEXECUTE 集体传送 D5071B 3 334 331
+
+
+[@开放押镖]
+#IF
+#ACT
+MOV G31 1
+GMEXECUTE 开始提问 @清理自定义
+SENDMSG 0 今天押镖活动已经开放，请从土城活动大使NPC进入，大量经验等你拿！ 253 255 100
+SENDMSG 0 今天押镖活动已经开放，请从土城活动大使NPC进入，大量经验等你拿！ 253 255 100
+SENDMSG 0 今天押镖活动已经开放，请从土城活动大使NPC进入，大量经验等你拿！ 253 255 100
+SENDMSG 0 今天押镖活动已经开放，请从土城活动大使NPC进入，大量经验等你拿！ 253 255 100
+SENDMSG 0 今天押镖活动已经开放，请从土城活动大使NPC进入，大量经验等你拿！ 253 255 100
+BREAK
+
+[@关闭押镖]
+#IF
+#ACT
+MOV G31 0
+SENDMSG 0 今天押镖活动已经结束，押镖活动为每天的19:00至20:00开放！ 253 255 100
+SENDMSG 0 今天押镖活动已经结束，押镖活动为每天的19:00至20:00开放！ 253 255 100
+SENDMSG 0 今天押镖活动已经结束，押镖活动为每天的19:00至20:00开放！ 253 255 100
+SENDMSG 0 今天押镖活动已经结束，押镖活动为每天的19:00至20:00开放！ 253 255 100
+SENDMSG 0 今天押镖活动已经结束，押镖活动为每天的19:00至20:00开放！ 253 255 100
+BREAK

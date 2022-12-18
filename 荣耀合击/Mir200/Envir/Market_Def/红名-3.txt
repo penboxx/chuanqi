@@ -1,0 +1,17 @@
+[@main]
+您当前的PK点数为：<$PKPOINT>\ \
+每次清除100点PK值需要10W金币\ \
+<我要清洗红名/@qxhm>\ \
+<关闭/@exit>
+[@qxhm]
+#IF
+checkgold 100000
+#act
+take 金币 100000
+CHANGEPKPOINT - 100
+
+SendMsg 5 [提示]:已经帮你清洗了100点PK值，罪孽深重呀！
+Break
+#ELSESAY
+年轻人，你没有10W金币，我怎么帮你呢？\ \
+<返回/@main>

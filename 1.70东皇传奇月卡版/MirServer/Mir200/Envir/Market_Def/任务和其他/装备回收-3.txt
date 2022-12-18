@@ -1,0 +1,1864 @@
+(@ReclaimItem)
+[@main]
+<COLOR=clLime 实现装备永久保值 避免未来装备泛滥>\ \
+<[声望]回收/@sw>        <COLOR=clMoneyGreen 兑换NPC(比奇竞技之地)  洗红名命令(@洗红名)> \ \
+<[金刚石]回收/@jgs>      <COLOR=clMoneyGreen 武器铸造NPC：武器铸造师(土城武器店)>\ \
+;<[祝福水]回收/@lf>      <COLOR=clMoneyGreen 武器升级NPC：沙巴克铁匠(土城)>\ \
+
+
+[@jp]
+<COLOR=clMoneyGreen +2极品(神秘除外)随机兑换祝福油,攻击、魔法、道术力药水,HP强化水>\ \
+<COLOR=clMoneyGreen +3极品可以直接兑换祝福水一瓶！>\ \
+<我要兑换+2装备/@jp2>    <COLOR=clLime 需要极品装备一件和10元宝>\ \
+<我要兑换+3装备/@jp3>    <COLOR=clLime 需要极品装备一件和30元宝>\ \
+<返回/@main>
+
+[@jp3]
+#if
+#act
+sendmsg 7 提示：神秘装备不回收,【每次】回收请点击以下选项!
+#say
+<攻击+3的项链/@cj1>    <道术+3的项链/@cj2>    <魔法+3的项链/@cj3>\ \
+<攻击+3的手镯/@cj11>    <道术+3的手镯/@cj12>    <魔法+3的手镯/@cj13>\ \
+<攻击+3的戒指/@cj21>    <道术+3的戒指/@cj22>    <魔法+3的戒指/@cj23>\ \
+<攻击+3的头盔/@cj31>    <道术+3的头盔/@cj32>    <魔法+3的头盔/@cj33>\ \
+<攻击+3的衣服/@cj41>    <道术+3的衣服/@cj42>    <魔法+3的衣服/@cj43>\ \
+
+[@cj1]
+#if
+#act
+QUERYITEMDLG 攻+3项链 @极品项链攻3 0
+break
+
+[@极品项链攻3]
+#if
+CHECKDLGITEMTYPE NECKLACE 
+#elseact
+sendmsg 7 请放入项链！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 2 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此项链并非极品！
+break
+
+[@cj2]
+#if
+#act
+QUERYITEMDLG 道+3项链 @极品项链道3 0
+break
+
+[@极品项链道3]
+#if
+CHECKDLGITEMTYPE NECKLACE 
+#elseact
+sendmsg 7 请放入项链！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 4 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此项链并非极品！
+break
+
+[@cj3]
+#if
+#act
+QUERYITEMDLG 魔+3项链 @极品项链魔3 0
+break
+
+[@极品项链魔3]
+#if
+CHECKDLGITEMTYPE NECKLACE 
+#elseact
+sendmsg 7 请放入项链！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 3 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此项链并非极品！
+break
+
+[@cj11]
+#if
+#act
+QUERYITEMDLG 攻+3手镯 @极品手镯攻3 0
+break
+
+[@极品手镯攻3]
+#if
+CHECKDLGITEMTYPE ARMRING
+#elseact
+sendmsg 7 请放入手镯！
+break
+
+#if
+CHECKDLGITEMNAME 神秘腰带
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 2 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此手镯并非极品！
+break
+
+[@cj12]
+#if
+#act
+QUERYITEMDLG 道+3手镯 @极品手镯道3 0
+break
+
+[@极品手镯道3]
+#if
+CHECKDLGITEMTYPE ARMRING
+#elseact
+sendmsg 7 请放入手镯！
+break
+
+#if
+CHECKDLGITEMNAME 神秘腰带
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 4 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此手镯并非极品！
+break
+
+[@cj13]
+#if
+#act
+QUERYITEMDLG 魔+3手镯 @极品手镯魔3 0
+break
+
+[@极品手镯魔3]
+#if
+CHECKDLGITEMTYPE ARMRING
+#elseact
+sendmsg 7 请放入手镯！
+break
+
+#if
+CHECKDLGITEMNAME 神秘腰带
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 3 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此手镯并非极品！
+break
+
+[@cj21]
+#if
+#act
+QUERYITEMDLG 攻+3戒指 @极品戒指攻3 0
+break
+
+[@极品戒指攻3]
+#if
+CHECKDLGITEMTYPE RING
+#elseact
+sendmsg 7 请放入戒指！
+break
+
+#if
+CHECKDLGITEMNAME 神秘戒指
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 2 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此戒指并非极品！
+break
+
+[@cj22]
+#if
+#act
+QUERYITEMDLG 道+3戒指 @极品戒指道3 0
+break
+
+[@极品戒指道3]
+#if
+CHECKDLGITEMTYPE RING
+#elseact
+sendmsg 7 请放入戒指！
+break
+
+#if
+CHECKDLGITEMNAME 神秘戒指
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 4 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此戒指并非极品！
+break
+
+[@cj23]
+#if
+#act
+QUERYITEMDLG 魔+3戒指 @极品戒指魔3 0
+break
+
+[@极品戒指魔3]
+#if
+CHECKDLGITEMTYPE RING
+#elseact
+sendmsg 7 请放入戒指！
+break
+
+#if
+CHECKDLGITEMNAME 神秘戒指
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 3 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此戒指并非极品！
+break
+
+[@cj31]
+#if
+#act
+QUERYITEMDLG 攻+3头盔 @极品头盔攻3 0
+break
+
+[@极品头盔攻3]
+#if
+CHECKDLGITEMTYPE HELMET
+#elseact
+sendmsg 7 请放入头盔！
+break
+
+#if
+CHECKDLGITEMNAME 神秘头盔
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 2 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此头盔并非极品！
+break
+
+[@cj32]
+#if
+#act
+QUERYITEMDLG 道+3头盔 @极品头盔道3 0
+break
+
+[@极品头盔道3]
+#if
+CHECKDLGITEMTYPE HELMET
+#elseact
+sendmsg 7 请放入头盔！
+break
+
+#if
+CHECKDLGITEMNAME 神秘头盔
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 4 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此头盔并非极品！
+break
+
+[@cj33]
+#if
+#act
+QUERYITEMDLG 魔+3头盔 @极品头盔魔3 0
+break
+
+[@极品头盔魔3]
+#if
+CHECKDLGITEMTYPE HELMET
+#elseact
+sendmsg 7 请放入头盔！
+break
+
+#if
+CHECKDLGITEMNAME 神秘头盔
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 3 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此头盔并非极品！
+break
+
+[@cj41]
+#if
+#act
+QUERYITEMDLG 攻+3衣服 @极品衣服攻3 0
+break
+
+[@极品衣服攻3]
+#if
+CHECKDLGITEMTYPE DRESS
+#elseact
+sendmsg 7 请放入衣服！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 2 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此衣服并非极品！
+break
+
+[@cj42]
+#if
+#act
+QUERYITEMDLG 道+3衣服 @极品衣服道3 0
+break
+
+[@极品衣服道3]
+#if
+CHECKDLGITEMTYPE DRESS
+#elseact
+sendmsg 7 请放入衣服！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 4 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此衣服并非极品！
+break
+
+[@cj43]
+#if
+#act
+QUERYITEMDLG 魔+3衣服 @极品衣服魔3 0
+break
+
+[@极品衣服魔3]
+#if
+CHECKDLGITEMTYPE DRESS
+#elseact
+sendmsg 7 请放入衣服！
+break
+
+#if
+checkgamegold < 30
+#act
+sendmsg 7 提示：你没有30元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 3 = 3
+#act
+gamegold - 30
+UPGRADEDLGITEM 0 0 0 1 0
+give 祝福水 1
+sendmsg 7 通知：您成功的兑换了祝福水!
+break
+
+#if
+#act
+sendmsg 7 提示：此衣服并非极品！
+break
+
+
+[@jp2]
+#if
+#act
+sendmsg 7 提示：神秘装备不回收,【每次】回收请点击以下选项!
+#say
+<攻击+2的项链/@hj1>    <道术+2的项链/@hj2>    <魔法+2的项链/@hj3>\ \
+<攻击+2的手镯/@hj11>    <道术+2的手镯/@hj12>    <魔法+2的手镯/@hj13>\ \
+<攻击+2的戒指/@hj21>    <道术+2的戒指/@hj22>    <魔法+2的戒指/@hj23>\ \
+<攻击+2的头盔/@hj31>    <道术+2的头盔/@hj32>    <魔法+2的头盔/@hj33>\ \
+<攻击+2的衣服/@hj41>    <道术+2的衣服/@hj42>    <魔法+2的衣服/@hj43>\ \
+
+[@hj1]
+#if
+#act
+QUERYITEMDLG 攻+2项链 @极品项链攻2 0
+break
+
+[@极品项链攻2]
+#if
+CHECKDLGITEMTYPE NECKLACE 
+#elseact
+sendmsg 7 请放入项链！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 2 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此项链并非极品！
+break
+
+[@hj2]
+#if
+#act
+QUERYITEMDLG 道+2项链 @极品项链道2 0
+break
+
+[@极品项链道2]
+#if
+CHECKDLGITEMTYPE NECKLACE 
+#elseact
+sendmsg 7 请放入项链！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 4 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此项链并非极品！
+break
+
+[@hj3]
+#if
+#act
+QUERYITEMDLG 魔+2项链 @极品项链魔2 0
+break
+
+[@极品项链魔2]
+#if
+CHECKDLGITEMTYPE NECKLACE 
+#elseact
+sendmsg 7 请放入项链！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 3 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此项链并非极品！
+break
+
+[@hj11]
+#if
+#act
+QUERYITEMDLG 攻+2手镯 @极品手镯攻2 0
+break
+
+[@极品手镯攻2]
+#if
+CHECKDLGITEMTYPE ARMRING
+#elseact
+sendmsg 7 请放入手镯！
+break
+
+#if
+CHECKDLGITEMNAME 神秘腰带
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 2 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此手镯并非极品！
+break
+
+[@hj12]
+#if
+#act
+QUERYITEMDLG 道+2手镯 @极品手镯道2 0
+break
+
+[@极品手镯道2]
+#if
+CHECKDLGITEMTYPE ARMRING
+#elseact
+sendmsg 7 请放入手镯！
+break
+
+#if
+CHECKDLGITEMNAME 神秘腰带
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 4 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此手镯并非极品！
+break
+
+[@hj13]
+#if
+#act
+QUERYITEMDLG 魔+2手镯 @极品手镯魔2 0
+break
+
+[@极品手镯魔2]
+#if
+CHECKDLGITEMTYPE ARMRING
+#elseact
+sendmsg 7 请放入手镯！
+break
+
+#if
+CHECKDLGITEMNAME 神秘腰带
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 3 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此手镯并非极品！
+break
+
+[@hj21]
+#if
+#act
+QUERYITEMDLG 攻+2戒指 @极品戒指攻2 0
+break
+
+[@极品戒指攻2]
+#if
+CHECKDLGITEMTYPE RING
+#elseact
+sendmsg 7 请放入戒指！
+break
+
+#if
+CHECKDLGITEMNAME 神秘戒指
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 2 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此戒指并非极品！
+break
+
+[@hj22]
+#if
+#act
+QUERYITEMDLG 道+2戒指 @极品戒指道2 0
+break
+
+[@极品戒指道2]
+#if
+CHECKDLGITEMTYPE RING
+#elseact
+sendmsg 7 请放入戒指！
+break
+
+#if
+CHECKDLGITEMNAME 神秘戒指
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 4 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此戒指并非极品！
+break
+
+[@hj23]
+#if
+#act
+QUERYITEMDLG 魔+2戒指 @极品戒指魔2 0
+break
+
+[@极品戒指魔2]
+#if
+CHECKDLGITEMTYPE RING
+#elseact
+sendmsg 7 请放入戒指！
+break
+
+#if
+CHECKDLGITEMNAME 神秘戒指
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 3 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此戒指并非极品！
+break
+
+[@hj31]
+#if
+#act
+QUERYITEMDLG 攻+2头盔 @极品头盔攻2 0
+break
+
+[@极品头盔攻2]
+#if
+CHECKDLGITEMTYPE HELMET
+#elseact
+sendmsg 7 请放入头盔！
+break
+
+#if
+CHECKDLGITEMNAME 神秘头盔
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 2 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此头盔并非极品！
+break
+
+[@hj32]
+#if
+#act
+QUERYITEMDLG 道+2头盔 @极品头盔道2 0
+break
+
+[@极品头盔道2]
+#if
+CHECKDLGITEMTYPE HELMET
+#elseact
+sendmsg 7 请放入头盔！
+break
+
+#if
+CHECKDLGITEMNAME 神秘头盔
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 4 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此头盔并非极品！
+break
+
+[@hj33]
+#if
+#act
+QUERYITEMDLG 魔+2头盔 @极品头盔魔2 0
+break
+
+[@极品头盔魔2]
+#if
+CHECKDLGITEMTYPE HELMET
+#elseact
+sendmsg 7 请放入头盔！
+break
+
+#if
+CHECKDLGITEMNAME 神秘头盔
+#act
+sendmsg 7 提示：神秘装备不能回收！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 3 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此头盔并非极品！
+break
+
+[@hj41]
+#if
+#act
+QUERYITEMDLG 攻+2衣服 @极品衣服攻2 0
+break
+
+[@极品衣服攻2]
+#if
+CHECKDLGITEMTYPE DRESS
+#elseact
+sendmsg 7 请放入衣服！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 2 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此衣服并非极品！
+break
+
+[@hj42]
+#if
+#act
+QUERYITEMDLG 道+2衣服 @极品衣服道2 0
+break
+
+[@极品衣服道2]
+#if
+CHECKDLGITEMTYPE DRESS
+#elseact
+sendmsg 7 请放入衣服！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 4 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此衣服并非极品！
+break
+
+[@hj43]
+#if
+#act
+QUERYITEMDLG 魔+2衣服 @极品衣服魔2 0
+break
+
+[@极品衣服魔2]
+#if
+CHECKDLGITEMTYPE DRESS
+#elseact
+sendmsg 7 请放入衣服！
+break
+
+#if
+checkgamegold < 10
+#act
+sendmsg 7 提示：你没有10元宝！
+break
+
+#if
+CHECKDLGITEMADDVALUE 3 = 2
+#act
+gamegold - 10
+UPGRADEDLGITEM 0 0 0 1 0
+READRANDOMSTR ..\QuestDiary\游戏功能\极品兑换.txt S4 HardDisk
+give <$STR(S4)> 1
+sendmsg 7 通知：您成功的兑换了<$STR(S4)>!
+break
+
+#if
+#act
+sendmsg 7 提示：此衣服并非极品！
+break
+
+[@sw]
+#IF
+#ACT
+QUERYITEMDLG 声望回收 @声望 0
+break
+#say
+　\
+声望回收范围：\ \
+沃玛首饰,炼狱,魔杖,银蛇,命运之刃,1级勋章,2级勋章\ \
+当前回收价格：首饰=声望x1 武器=声望x3 命运之刃=声望x2\ \
+              1级勋章=4声望，2级勋章=8声望\ \
+<返回/@main>
+
+[@声望]
+#if
+CHECKCREDITPOINT > 250
+#act
+close
+messagebox 最多携带255点声望
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章11号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 4
+sendmsg 6 提示：[荣誉勋章11号]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章12号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 4
+sendmsg 6 提示：[荣誉勋章12号]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章13号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 4
+sendmsg 6 提示：[荣誉勋章13号]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章14号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 4
+sendmsg 6 提示：[荣誉勋章14号]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章15号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 4
+sendmsg 6 提示：[荣誉勋章15号]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章21号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 8
+sendmsg 6 提示：[荣誉勋章21号]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章22号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 8
+sendmsg 6 提示：[荣誉勋章22号]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章23号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 8
+sendmsg 6 提示：[荣誉勋章23号]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章24号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 8
+sendmsg 6 提示：[荣誉勋章24号]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章25号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 8
+sendmsg 6 提示：[荣誉勋章25号]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 命运之刃
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 2
+sendmsg 6 提示：[命运之刃]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 炼狱
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 3
+sendmsg 6 提示：[炼狱]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 银蛇
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 3
+sendmsg 6 提示：[银蛇]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 魔杖
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 3
+sendmsg 6 提示：[魔杖]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 幽灵项链
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 1
+sendmsg 6 提示：[幽灵项链]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 生命项链
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 1
+sendmsg 6 提示：[生命项链]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 天珠项链
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 1
+sendmsg 6 提示：[天珠项链]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 幽灵手套
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 1
+sendmsg 6 提示：[幽灵手套]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 思贝儿手镯
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 1
+sendmsg 6 提示：[思贝儿手镯]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 心灵手镯
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 1
+sendmsg 6 提示：[心灵手镯]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 龙之戒指
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 1
+sendmsg 6 提示：[龙之戒指]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 红宝石戒指
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 1
+sendmsg 6 提示：[红宝石戒指]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 铂金戒指
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+CREDITPOINT + 1
+sendmsg 6 提示：[铂金戒指]回收成功　当前声望：<$CREDITPOINT>
+close
+goto @main
+break
+
+#if
+#act
+close
+sendmsg 6 提示：当前物品不在声望回收范围之内
+break
+
+[@lf]
+#IF
+#ACT
+QUERYITEMDLG 祝福水回收 @祝福水 0
+break
+#say
+　\
+祝福水回收范围：\ \
+圣战套装、法神套装、天尊套装、六大重装、4级勋章\ \
+当前回收价格：衣服1件=祝福水20瓶 其余=祝福水10瓶\ \
+<返回/@main>
+
+[@祝福水]
+#if
+CHECKDLGITEMNAME 圣战头盔
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[圣战头盔]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 圣战项链
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[圣战项链]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 圣战手镯
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[圣战手镯]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 圣战戒指
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[圣战戒指]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 法神头盔
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[法神头盔]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 法神项链
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[法神项链]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 法神手镯
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[法神手镯]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 法神戒指
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[法神戒指]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 天尊头盔
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[天尊头盔]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 天尊项链
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[天尊项链]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 天尊手镯
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[天尊手镯]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 天尊戒指
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[天尊戒指]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 天魔神甲
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 20
+sendmsg 6 提示：[天魔神甲]回收成功　获得祝福水20瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 圣战宝甲
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 20
+sendmsg 6 提示：[圣战宝甲]回收成功　获得祝福水20瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 法神披风
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 20
+sendmsg 6 提示：[法神披风]回收成功　获得祝福水20瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 霓裳羽衣
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 20
+sendmsg 6 提示：[霓裳羽衣]回收成功　获得祝福水20瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 天尊道袍
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 20
+sendmsg 6 提示：[天尊道袍]回收成功　获得祝福水20瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 天师长袍
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 20
+sendmsg 6 提示：[天师长袍]回收成功　获得祝福水20瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章41号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[荣誉勋章41号]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章42号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[荣誉勋章42号]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章43号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[荣誉勋章43号]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章44号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[荣誉勋章44号]回收成功　获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章45号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+giveex 祝福水 10
+sendmsg 6 提示：[荣誉勋章45号]回收成功　您获得祝福水10瓶！
+close
+goto @main
+break
+
+#if
+#act
+close
+sendmsg 6 提示：当前物品不在祝福水回收范围之内
+break
+
+[@jgs]
+#IF
+#ACT
+QUERYITEMDLG 金刚石回收 @金刚石 0
+#say
+　\
+金刚石回收范围：\ \
+祖玛首饰、井中月、血饮、无极棍、3级勋章\ \
+当前回收价格：武器x10  黑头-阎罗x1  其他x3\ \
+<返回/@main>
+
+[@金刚石]
+#if
+CHECKDLGITEMNAME 井中月
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 10
+sendmsg 6 提示：[井中月]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 血饮
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 10
+sendmsg 6 提示：[嗜血]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 无极棍
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 10
+sendmsg 6 提示：[无极棍]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 黑铁头盔
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 1
+sendmsg 6 提示：[黑铁头盔]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 绿色项链
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 3
+sendmsg 6 提示：[绿色项链]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 恶魔铃铛
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 3
+sendmsg 6 提示：[恶魔铃铛]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 灵魂项链
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 3
+sendmsg 6 提示：[灵魂项链]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 阎罗手套
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 1
+sendmsg 6 提示：[阎罗手套]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 骑士手镯
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 3
+sendmsg 6 提示：[骑士手镯]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 龙之手镯
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 3
+sendmsg 6 提示：[龙之手镯]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 三眼手镯
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 3
+sendmsg 6 提示：[三眼手镯]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 力量戒指
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 3
+sendmsg 6 提示：[力量戒指]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 紫碧螺
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 3
+sendmsg 6 提示：[紫碧螺]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 泰坦戒指
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 3
+sendmsg 6 提示：[泰坦戒指]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章31号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 3
+sendmsg 6 提示：[荣誉勋章31号]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章32号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 3
+sendmsg 6 提示：[荣誉勋章32号]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章33号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 3
+sendmsg 6 提示：[荣誉勋章33号]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章34号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 3
+sendmsg 6 提示：[荣誉勋章34号]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+CHECKDLGITEMNAME 荣誉勋章35号
+#act
+UPGRADEDLGITEM 0 0 0 1 0
+GAMEDIAMOND + 3
+sendmsg 6 提示：[荣誉勋章35号]回收成功　当前金刚石：<$GAMEDIAMOND>
+close
+goto @main
+break
+
+#if
+#act
+close
+sendmsg 6 提示：当前物品不在金刚石回收范围之内
+break

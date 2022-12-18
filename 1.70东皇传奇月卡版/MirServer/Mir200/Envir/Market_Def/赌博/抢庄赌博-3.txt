@@ -1,0 +1,47 @@
+[@MAIN]
+<COLOR=clRed 特别声明：>\
+进入俱乐部后掉线或服务器重启等不可抗拒的原因导致元宝损失，\
+本游戏不作任何赔偿或补偿，进入表示您接受此规定！！！\ \
+<COLOR=clAqua ╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗>\
+<COLOR=clAqua ┆>    <我知道了，进入俱乐部/@GOLB>    <COLOR=clAqua ┆>\
+<COLOR=clAqua ╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝>\ \
+<COLOR=clRed 俱乐部每天开放时间为14点-18点和22点-2点,其他时间为关闭状态！>
+
+
+[@GO-DC]
+#IF
+CHECKVAR GLOBAL 大小是否开放 = 已关闭
+#ACT
+MESSAGEBOX 目前俱乐部为关闭状态，开放时间为每天14点-18点！！！
+BREAK
+
+#IF
+CHECKHEROONLINE
+#ACT
+MESSAGEBOX 为了保持场内干净，不能带英雄进入！\
+BREAK
+#ELSEACT
+MAPMOVE TXDGA 5 11
+SendMSG 0 【<$USERNAME>】进入了★竞技娱乐★！！！ 0 215
+BREAK
+
+
+[@GOLB]
+#IF
+#ACT
+MAPMOVE b012 5 11
+#elseACT
+break
+#ELSEACT
+MESSAGEBOX 温馨提示：俱乐部每天开放时间为14点-18点，其他时间为关闭状态！。
+break
+
+[@GOLB~]
+#IF
+CHECKLEVELEX > 2
+#ACT
+MAPMOVE TXDGA 5 11
+break
+#ELSEACT
+MESSAGEBOX 1级以上玩家才可以进入此地图!
+break

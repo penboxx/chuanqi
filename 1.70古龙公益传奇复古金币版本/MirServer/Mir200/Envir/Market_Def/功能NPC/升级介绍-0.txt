@@ -1,0 +1,11 @@
+()
+%100
+[@main]
+这里是升级奖励您看看吧！\
+提醒一下：开区领取测试奖励的时候先看下自己的金币！领取时不提示以免误会\
+以下奖励系统自动发放无需领取\
+<COLOR=clFuchsia ★★★> <COLOR=clLime 每个职业升到26级奖励金币15万.每个职业共30名额> <COLOR=clFuchsia ★★★>\
+<COLOR=clFuchsia ★★★> <COLOR=clLime 每个职业升到31级奖励金币30万.每个职业共20名额>  <COLOR=clFuchsia ★★★>\
+<COLOR=clFuchsia ★★★> <COLOR=clLime 每个职业升到36级奖励金币60万.每个职业共10名额>  <COLOR=clFuchsia ★★★>\ \
+
+<谢谢您的支持/@进入>           <有您的支持我们走的会更远/@EXIT>

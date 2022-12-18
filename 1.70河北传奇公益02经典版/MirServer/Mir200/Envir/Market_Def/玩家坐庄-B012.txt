@@ -1,0 +1,4 @@
+(@MDlgImgName=MerchantDlg.png @@INPUTINTEGER @@INPUTSTRING)
+[@main]
+#act
+#CALL [\赌博系统\赌博系统.txt] @赌博系统

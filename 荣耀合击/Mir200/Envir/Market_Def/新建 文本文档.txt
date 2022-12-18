@@ -1,0 +1,1184 @@
+(@@InPutString @@InPutInteger )
+
+[@管理]
+{
+#IF
+ISADMIN
+#act
+#say
+——————————————————————————————\                   
+【<装备属性调整菜单/@装备调整菜单>】  【<天下第一初始化/@初始化>】 【<空格名字处理/@空格名字处理>】\              
+【<清理包裹/@玩家包裹>】  【<传唤玩家/@传唤人物>】  【<踢除死人/@踢除死人>】  <【攻城详细情况】/@listwar>\                           
+【<所有行会攻城/@行会攻城>】【<泡点管理/@泡点管理>】【<清理冲级奖励/@清理冲级奖励>】  \
+【<禁止登陆人物/@禁止登陆人物>】【<恢复登陆人物/@恢复登陆人物>】【<禁止登陆IP/@禁止登陆IP>】【<恢复登陆IP/@恢复登陆IP>】\
+【<封机器码/@封机器码>】    【<解封机器码/@解封机器码>】  【<清理二级密码/@清理二级密码>】 【<保释犯人/@保释犯人>】 \  
+【<增加积分/@增加积分>】    【<扣除积分/@扣除积分>】\
+——————————————————————————————\
+
+[@保释犯人]
+<———————＜><保释犯人管理菜单/@><＞———————>\ \
+<使用说明∶在输入框内输入需要清理二级密码的名字即可！>\ \
+
+<输入您要保释犯人的人物名字/@@InPutString62> ←输入字符不超过30字节！\ \
+
+<返回/@管理>\ \
+
+
+[@InPutString62]
+#iF
+CheckOnline <$STR(S62)>
+CheckTextList ..\QuestDiary\坐监名单.txt <$STR(S62)>
+#ACT
+DelTextList ..\QuestDiary\坐监名单.txt <$STR(S62)>
+S52.MAPMOVE 3 330 330
+S52.SETRANKLEVELNAME %s\●━━━━●\┃已被保释┃\●━━━━●
+MESSAGEBOX 成功解救了正在坐牢的：（<$STR(S62)>）
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，你输入的人物不在线或者不在坐监名单。
+
+[@刷新沃玛教主]
+#ACT
+MESSAGEBOX 你是否在沃玛教主大殿刷新2只沃玛教主 @刷新沃玛教主确定 @取消
+
+[@刷新沃玛教主确定]
+#IF
+CHECKRANGEMONCOUNTEX D024 沃玛教主 50 50 100 < 1
+#ACT
+Param1 D024
+Param2 50
+Param3 50
+MonGen 沃玛教主 2 0
+SENDMSG 1  怪物：[沃玛教主]出现在沃玛教主大殿~！
+SENDMSG 1  怪物：[沃玛教主]出现在沃玛教主大殿~！
+SENDMSG 1  怪物：[沃玛教主]出现在沃玛教主大殿~！
+SENDMSG 1  怪物：[沃玛教主]出现在沃玛教主大殿~！
+SENDMSG 1  怪物：[沃玛教主]出现在沃玛教主大殿~！
+SENDMSG 1  怪物：[沃玛教主]出现在沃玛教主大殿~！
+SENDMSG 1  怪物：[沃玛教主]出现在沃玛教主大殿~！
+SENDMSG 1  怪物：[沃玛教主]出现在沃玛教主大殿~！
+#ELSEACT
+MESSAGEBOX 操作失败：对不起，沃玛教主大殿已经有两只沃玛教主
+
+[@清理冲级奖励]
+#ACT
+MESSAGEBOX 你是否确定清理冲级奖励 @清理冲级奖励确定 @取消
+
+[@清理冲级奖励确定]
+#if
+#act
+MOV G470 1
+MOV G472 10
+MOV G473 10
+MOV G474 30
+MOV G475 30
+MOV G476 30
+MOV G477 30
+MOV G479 10
+MOV G480 50
+MOV G481 50
+MOV G482 50
+MOV G483 50
+MOV G484 50
+MOV G485 50
+MOV G486 100
+MOV G487 100
+MOV G488 100
+MOV G489 100
+MOV G490 100
+MOV G491 100
+MOV G492 100
+MOV G493 100
+MOV G494 200
+MOV G495 200
+MOV G496 200
+MOV G497 200
+MOV G498 200
+MOV G499 200
+MESSAGEBOX 冲级奖励清理完成！~~~
+BREAK
+
+[@泡点管理]
+#IF
+SMALL G288 2
+#SAY
+当前激情泡点地图为：<激情PK模式>\
+<增加泡点安全时间 60分钟/@增加泡点1>  \
+<增加泡点安全时间120分钟/@增加泡点2>  \
+<增加泡点安全时间180分钟/@增加泡点3>  \
+<减少泡点安全时间 60分钟/@减少泡点1>  \
+<减少泡点安全时间120分钟/@减少泡点2>  \
+<减少泡点安全时间180分钟/@减少泡点3>  \
+<开放激情PK模式/@清除泡点>\
+
+<返回/@管理>
+#ELSESAY
+当前地图为：离激情PK模式还剩余{<$STR(G288)/SCOLOR=223>}分钟\
+<增加泡点安全时间 60分钟/@增加泡点1>  \
+<增加泡点安全时间120分钟/@增加泡点2>  \
+<增加泡点安全时间180分钟/@增加泡点3>  \
+<减少泡点安全时间 60分钟/@减少泡点1>  \
+<减少泡点安全时间120分钟/@减少泡点2>  \
+<减少泡点安全时间180分钟/@减少泡点3>  \
+<开放激情PK模式/@清除泡点>\
+
+<返回/@管理>
+
+
+[@增加泡点1]
+#ACT
+MESSAGEBOX 你是否确定添加激情泡点地图安全时间1小时 @增加泡点1确定 @取消
+
+[@增加泡点1确定]
+#IF
+ISADMIN
+#ACT
+INC G288 60
+MESSAGEBOX 已经为泡点增加60分钟，当前泡点剩余时间为：<$STR(G288)>分钟
+GMEXECUTE 开始提问 @泡点模式
+goto @泡点管理
+#ELSEACT
+MESSAGEBOX 对不起，未知错误！
+
+[@增加泡点2]
+#ACT
+MESSAGEBOX 你是否确定添加激情泡点地图安全时间1小时 @增加泡点2确定 @取消
+
+[@增加泡点2确定]
+#IF
+ISADMIN
+#ACT
+INC G288 120
+MESSAGEBOX 已经为泡点增加120分钟，当前泡点剩余时间为：<$STR(G288)>分钟
+GMEXECUTE 开始提问 @泡点模式
+goto @泡点管理
+#ELSEACT
+MESSAGEBOX 对不起，未知错误！
+
+[@增加泡点3]
+#ACT
+MESSAGEBOX 你是否确定添加激情泡点地图安全时间1小时 @增加泡点3确定 @取消
+
+[@增加泡点3确定]
+#IF
+ISADMIN
+#ACT
+INC G288 180
+MESSAGEBOX 已经为泡点增加180分钟，当前泡点剩余时间为：<$STR(G288)>分钟
+GMEXECUTE 开始提问 @泡点模式
+goto @泡点管理
+#ELSEACT
+MESSAGEBOX 对不起，未知错误！
+
+[@减少泡点1]
+#ACT
+MESSAGEBOX 你是否确定添加激情泡点地图安全时间1小时 @减少泡点1确定 @取消
+
+[@减少泡点1确定]
+#IF
+ISADMIN
+#ACT
+DEC G288 60
+MESSAGEBOX 已经为泡点增加60分钟，当前泡点剩余时间为：<$STR(G288)>分钟
+goto @泡点管理
+#ELSEACT
+MESSAGEBOX 对不起，未知错误！
+
+[@减少泡点2]
+#ACT
+MESSAGEBOX 你是否确定添加激情泡点地图安全时间1小时 @减少泡点2确定 @取消
+
+[@减少泡点2确定]
+#IF
+ISADMIN
+#ACT
+DEC G288 120
+MESSAGEBOX 已经为泡点增加120分钟，当前泡点剩余时间为：<$STR(G288)>分钟
+goto @泡点管理
+#ELSEACT
+MESSAGEBOX 对不起，未知错误！
+
+[@减少泡点3]
+#ACT
+MESSAGEBOX 你是否确定添加激情泡点地图安全时间1小时 @减少泡点3确定 @取消
+
+[@减少泡点3确定]
+#IF
+ISADMIN
+#ACT
+DEC G288 180
+MESSAGEBOX 已经为泡点增加180分钟，当前泡点剩余时间为：<$STR(G288)>分钟
+goto @泡点管理
+#ELSEACT
+MESSAGEBOX 对不起，未知错误！
+
+
+[@清除泡点]
+#ACT
+MESSAGEBOX 你是否确定开放激情泡点地图为激情PK模式 @清除泡点确定 @取消
+
+
+[@清除泡点确定]
+#IF
+ISADMIN
+#ACT
+MOV G288 0
+MESSAGEBOX 激情泡点成功调整为ＰＫ模式
+SendCenterMsg 250 0 激情泡点已经开放激情PK模式，请手动切换攻击模式！ 1 5
+SendCenterMsg 253 0 激情泡点已经开放激情PK模式，请手动切换攻击模式！ 1 5
+SendCenterMsg 254 0 激情泡点已经开放激情PK模式，请手动切换攻击模式！ 1 5
+SendCenterMsg 251 0 激情泡点已经开放激情PK模式，请手动切换攻击模式！ 1 5
+goto @泡点管理
+#ELSEACT
+MESSAGEBOX 对不起，未知错误！
+
+
+[@listwar]
+<$CASTLEWARDATE> , 20:00开始。
+<$LISTOFWAR>\ \
+                                    <返回/@管理>\
+
+
+
+
+
+
+
+[@玩家包裹]
+<————————＜><清理包裹管理菜单/@><＞————————>\ \
+<使用说明∶在输入框内输入需要清理人物的名字即可！>\ \
+
+<输入您要清理包裹的人物名字/@@InPutString54> ←输入字符不超过30字节！\ \
+
+<返回/@管理>
+
+[@InPutString54]
+#if
+#ACT
+GMEXECUTE 清理垃圾 <$STR(S54)>
+MESSAGEBOX [提示]：设置成功！
+goto @管理
+
+[@传唤人物]
+<————————＜><传唤人物管理菜单/@><＞————————>\ \
+<使用说明∶在输入框内输入需要传唤人物的名字即可！>\ \
+
+<输入您要传唤的人物名字/@@InPutString53> ←输入字符不超过30字节！\ \
+
+<返回/@管理>
+
+[@InPutString53]
+#ACT
+GMEXECUTE 召唤 <$STR(S53)> 
+
+[@IsInFilterList]
+#ACT
+MESSAGEBOX 输入数据中包含了非法字符,请重新编辑!
+
+
+
+
+
+[@装备调整菜单]
+<————————＜><装备调整菜单><＞————————>\
+附加∶<手镯/@item5> <戒子/@item7> <属性> 注意调整范围∶<0-255>...\
+附加∶<勋章/@item9> <腰带/@item8> <属性> 注意调整范围∶<0-255>...\
+附加∶<武器/@item1> <靴子/@item6> <属性> 注意调整范围∶<0-255>...\
+附加∶<头盔/@item4> <盔甲/@item0> <属性> 注意调整范围∶<0-255>...\
+附加∶<项链/@item3> 注意：调整的戒指，手镯请戴在右边\ \
+\                                   <返回/@管理>
+
+[@item6]
+#IF
+  CHECKITEMTYPE 11 52
+#ACT
+  BREAK
+#SAY
+<————————＜><靴子调整菜单><＞————————>\
+「调整<$RING_L><防御>」　<＋/@XZDC1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><魔御>」　<＋/@XZMC1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><攻击>」　<＋/@XZDS1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><魔法>」　<＋/@XZXY1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><道术>」　<＋/@XZZQ1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><持久>」　<＋/@XZCJ1>　注意调整范围∶<0-255>...　　<返回/@装备调整菜单>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的靴子戴在身上...\ \
+
+<返回/@装备调整菜单>\
+;-----------------------------------------------------------------------
+[@XZDC1]
+#ACT
+  UPGRADEITEMEX 11 0 1 1 0
+  goto @item6
+
+[@XZMC1]
+#ACT
+  UPGRADEITEMEX 11 1 1 1 0
+  goto @item6
+
+[@XZDS1]
+#ACT
+  UPGRADEITEMEX 11 2 1 1 0
+  goto @item6
+
+[@XZZQ1]
+#ACT
+  UPGRADEITEMEX 11 4 1 1 0
+  goto @item6
+
+[@XZXY1]
+#ACT
+  UPGRADEITEMEX 11 3 1 1 0
+  goto @item6
+
+[@XZCJ1]
+#ACT
+  UPGRADEITEMEX 11 14 1 1 0
+  goto @item6
+;-----------------------------------------------------------------------
+[@item8]
+#IF
+  CHECKITEMTYPE 10 54
+#ACT
+  BREAK
+#SAY
+<————————＜><腰带调整菜单><＞————————>\
+「调整<$RING_L><防御>」　<＋/@YDDC1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><魔御>」　<＋/@YDMC1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><攻击>」　<＋/@YDDS1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><魔法>」　<＋/@YDXY1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><道术>」　<＋/@YDZQ1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><持久>」　<＋/@YDCJ1>　注意调整范围∶<0-255>...　　<返回/@装备调整菜单>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的腰带戴在身上...\ \
+
+<返回/@装备调整菜单>\
+;-----------------------------------------------------------------------
+[@YDDC1]
+#ACT
+  UPGRADEITEMEX 10 0 1 1 0
+  goto @item8
+
+[@YDMC1]
+#ACT
+  UPGRADEITEMEX 10 1 1 1 0
+  goto @item8
+
+[@YDDS1]
+#ACT
+  UPGRADEITEMEX 10 2 1 1 0
+  goto @item8
+
+[@YDZQ1]
+#ACT
+  UPGRADEITEMEX 10 4 1 1 0
+  goto @item8
+
+[@YDXY1]
+#ACT
+  UPGRADEITEMEX 10 3 1 1 0
+  goto @item8
+
+[@YDCJ1]
+#ACT
+  UPGRADEITEMEX 10 14 1 1 0
+  goto @item8
+[@item9]
+#IF
+  CHECKITEMTYPE 2 30
+#ACT
+  BREAK
+#SAY
+<————————＜><勋章调整菜单><＞————————>\
+「调整<$RING_L><防御>」　<＋/@XUDC1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><魔御>」　<＋/@XUMC1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><攻击>」　<＋/@XUDS1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><魔法>」　<＋/@XUXY1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><道术>」　<＋/@XUZQ1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><持久>」　<＋/@XUCJ1>　注意调整范围∶<0-255>...　　<返回/@装备调整菜单>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的勋章戴在身上...\ \
+
+<返回/@装备调整菜单>\
+;-----------------------------------------------------------------------
+[@XUDC1]
+#ACT
+  UPGRADEITEMEX 2 0 1 1 0
+  goto @item9
+
+[@XUMC1]
+#ACT
+  UPGRADEITEMEX 2 1 1 1 0
+  goto @item9
+
+[@XUDS1]
+#ACT
+  UPGRADEITEMEX 2 2 1 1 0
+  goto @item9
+
+[@XUZQ1]
+#ACT
+  UPGRADEITEMEX 2 4 1 1 0
+  goto @item9
+
+[@XUXY1]
+#ACT
+  UPGRADEITEMEX 2 3 1 1 0
+  goto @item9
+
+[@XUCJ1]
+#ACT
+  UPGRADEITEMEX 2 14 1 1 0
+  goto @item9
+[@item7]
+#IF
+  checkitemTYPE 7 22
+#ACT
+  BREAK
+#SAY
+<————————＜><戒指调整菜单><＞————————>\
+「调整<$RING_L><防御>」　<＋/@JZDC1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><魔御>」　<＋/@JZMC1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><攻击>」　<＋/@JZDS1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><魔法>」　<＋/@JZXY1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><道术>」　<＋/@JZZQ1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><持久>」　<＋/@JZCJ1>　注意调整范围∶<0-255>...　　<返回/@装备调整菜单>\
+#IF
+  checkitemTYPE 7 23
+#ACT
+  BREAK
+#SAY
+<————————＜><戒指调整菜单><＞————————>\
+「调整<$RING_L><躲避>」　<＋/@JZDC1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><恢复>」　<＋/@JZMC1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><攻击>」　<＋/@JZDS1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><魔法>」　<＋/@JZXY1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><道术>」　<＋/@JZZQ1>　注意调整范围∶<0-255>...\
+「调整<$RING_L><持久>」　<＋/@JZCJ1>　注意调整范围∶<0-255>...　　<返回/@装备调整菜单>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的戒指戴在右边...\ \
+
+<返回/@装备调整菜单>\
+;-----------------------------------------------------------------------
+[@JZDC1]
+#ACT
+  UPGRADEITEMEX 7 0 1 1 0
+  goto @item7
+
+[@JZMC1]
+#ACT
+  UPGRADEITEMEX 7 1 1 1 0
+  goto @item7
+
+[@JZDS1]
+#ACT
+  UPGRADEITEMEX 7 2 1 1 0
+  goto @item7
+
+[@JZZQ1]
+#ACT
+  UPGRADEITEMEX 7 4 1 1 0
+  goto @item7
+
+[@JZXY1]
+#ACT
+  UPGRADEITEMEX 7 3 1 1 0
+  goto @item7
+
+[@JZCJ1]
+#ACT
+  UPGRADEITEMEX 7 14 1 1 0
+  goto @item7
+[@item5]
+#IF
+  checkitemTYPE 5 24
+#ACT
+  BREAK
+#SAY
+<————————＜><手镯调整菜单><＞————————>\
+「调整<$ARMRING_L><准确>」　<＋/@SZDC1>　注意调整范围∶<0-255>...\
+「调整<$ARMRING_L><敏捷>」　<＋/@SZMC1>　注意调整范围∶<0-255>...\
+「调整<$ARMRING_L><攻击>」　<＋/@SZDS1>　注意调整范围∶<0-255>...\
+「调整<$ARMRING_L><魔法>」　<＋/@SZXY1>　注意调整范围∶<0-255>...\
+「调整<$ARMRING_L><道术>」　<＋/@SZZQ1>　注意调整范围∶<0-255>...\
+「调整<$ARMRING_L><持久>」　<＋/@SZCJ1>　注意调整范围∶<0-255>...　　<返回/@装备调整菜单>\
+#IF
+  checkitemTYPE 5 26
+#ACT
+  BREAK
+#SAY
+<————————＜><手镯调整菜单><＞————————>\
+「调整<$ARMRING_L><防御>」　<＋/@SZDC1>　注意调整范围∶<0-255>...\
+「调整<$ARMRING_L><魔御>」　<＋/@SZMC1>　注意调整范围∶<0-255>...\
+「调整<$ARMRING_L><攻击>」　<＋/@SZDS1>　注意调整范围∶<0-255>...\
+「调整<$ARMRING_L><魔法>」　<＋/@SZXY1>　注意调整范围∶<0-255>...\
+「调整<$ARMRING_L><道术>」　<＋/@SZZQ1>　注意调整范围∶<0-255>...\
+「调整<$ARMRING_L><持久>」　<＋/@SZCJ1>　注意调整范围∶<0-255>...　　<返回/@装备调整菜单>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的手镯戴在右边...\ \
+
+<返回/@装备调整菜单>\
+;-----------------------------------------------------------------------
+[@SZDC1]
+#ACT
+  UPGRADEITEMEX 5 0 1 1 0
+  goto @item5
+
+[@SZMC1]
+#ACT
+  UPGRADEITEMEX 5 1 1 1 0
+  goto @item5
+
+[@SZDS1]
+#ACT
+  UPGRADEITEMEX 5 2 1 1 0
+  goto @item5
+
+[@SZZQ1]
+#ACT
+  UPGRADEITEMEX 5 4 1 1 0
+  goto @item5
+
+[@SZXY1]
+#ACT
+  UPGRADEITEMEX 5 3 1 1 0
+  goto @item5
+
+[@SZCJ1]
+#ACT
+  UPGRADEITEMEX 5 14 1 1 0
+  goto @item5
+
+[@item4]
+#IF
+  checkitemTYPE 4 15
+#ACT
+  BREAK
+#SAY
+<————————＜><头盔调整菜单><＞————————>\
+「调整<$NECKLACE><防御>」　<＋/@TKDC1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><魔御>」　<＋/@TKMC1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><攻击>」　<＋/@TKDS1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><魔法>」　<＋/@TKXY1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><道术>」　<＋/@TKZQ1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><持久>」　<＋/@TKCJ1>　注意调整范围∶<0-255>...　　<返回/@装备调整菜单>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的头盔戴在身上...\ \
+
+<返回/@装备调整菜单>\
+;-----------------------------------------------------------------------
+[@TKDC1]
+#ACT
+  UPGRADEITEMEX 4 0 1 1 0
+  goto @item4
+
+[@TKMC1]
+#ACT
+  UPGRADEITEMEX 4 1 1 1 0
+  goto @item4
+
+[@TKDS1]
+#ACT
+  UPGRADEITEMEX 4 2 1 1 0
+  goto @item4
+
+[@TKZQ1]
+#ACT
+  UPGRADEITEMEX 4 4 1 1 0
+  goto @item4
+
+[@TKXY1]
+#ACT
+  UPGRADEITEMEX 4 3 1 1 0
+  goto @item4
+
+[@TKCJ1]
+#ACT
+  UPGRADEITEMEX 4 14 1 1 0
+  goto @item4
+[@item3]
+#IF
+  checkitemTYPE 3 19
+#ACT
+  BREAK
+#SAY
+<————————＜><项链调整菜单><＞————————>\
+「调整<$NECKLACE><躲避>」　<＋/@XPDC1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><幸运>」　<＋/@XPMC1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><攻击>」　<＋/@XPDS1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><魔法>」　<＋/@XPXY1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><道术>」　<＋/@XPZQ1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><持久>」　<＋/@XPCJ1>　注意调整范围∶<0-255>...　　<返回/@装备调整菜单>\
+#IF
+  checkitemTYPE 3 20
+#ACT
+  BREAK
+#SAY
+<————————＜><项链调整菜单><＞————————>\
+「调整<$NECKLACE><准确>」　<＋/@XPDC1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><敏捷>」　<＋/@XPMC1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><攻击>」　<＋/@XPDS1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><魔法>」　<＋/@XPXY1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><道术>」　<＋/@XPZQ1>　注意调整范围∶<0-255>...\
+「调整<$NECKLACE><持久>」　<＋/@XPCJ1>　注意调整范围∶<0-255>...　　<返回/@装备调整菜单>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的项链戴在身上...\ \
+
+<返回/@装备调整菜单>\
+;-----------------------------------------------------------------------
+[@XPDC1]
+#ACT
+  UPGRADEITEMEX 3 0 1 1 0
+  goto @item3
+
+[@XPMC1]
+#ACT
+  UPGRADEITEMEX 3 1 1 1 0
+  goto @item3
+
+[@XPDS1]
+#ACT
+  UPGRADEITEMEX 3 2 1 1 0
+  goto @item3
+
+[@XPZQ1]
+#ACT
+  UPGRADEITEMEX 3 4 1 1 0
+  goto @item3
+
+[@XPXY1]
+#ACT
+  UPGRADEITEMEX 3 3 1 1 0
+  goto @item3
+
+[@XPCJ1]
+#ACT
+  UPGRADEITEMEX 3 14 1 1 0
+  goto @item3
+[@item0]
+#IF
+  checkitemTYPE 0 10
+#ACT
+  BREAK
+#SAY
+<————————＜><盔甲调整菜单><＞————————>\
+「调整<$DRESS><防御>」　<＋/@KKDC1>　注意调整范围∶<0-255>...\
+「调整<$DRESS><魔御>」　<＋/@KKMC1>　注意调整范围∶<0-255>...\
+「调整<$DRESS><攻击>」　<＋/@KKDS1>　注意调整范围∶<0-255>...\
+「调整<$DRESS><魔法>」　<＋/@KKXY1>　注意调整范围∶<0-255>...\
+「调整<$DRESS><道术>」　<＋/@KKZQ1>　注意调整范围∶<0-255>...\
+「调整<$DRESS><持久>」　<＋/@KKCJ1>　注意调整范围∶<0-255>...　　<返回/@装备调整菜单>\
+#IF
+  checkitemTYPE 0 11
+#ACT
+  BREAK
+#SAY
+<————————＜><盔甲调整菜单><＞————————>\
+「调整<$DRESS><防御>」　<＋/@KKDC1>　注意调整范围∶<0-255>...\
+「调整<$DRESS><魔御>」　<＋/@KKMC1>　注意调整范围∶<0-255>...\
+「调整<$DRESS><攻击>」　<＋/@KKDS1>　注意调整范围∶<0-255>...\
+「调整<$DRESS><魔法>」　<＋/@KKXY1>　注意调整范围∶<0-255>...\
+「调整<$DRESS><道术>」　<＋/@KKZQ1>　注意调整范围∶<0-255>...\
+「调整<$DRESS><持久>」　<＋/@KKCJ1>　注意调整范围∶<0-255>...　　<返回/@装备调整菜单>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的盔甲穿在身上...\ \
+
+<返回/@装备调整菜单>\
+;-----------------------------------------------------------------------
+[@KKDC1]
+#ACT
+  UPGRADEITEMEX 0 0 1 1 0
+  goto @item0
+
+[@KKMC1]
+#ACT
+  UPGRADEITEMEX 0 1 1 1 0
+  goto @item0
+
+[@KKDS1]
+#ACT
+  UPGRADEITEMEX 0 2 1 1 0
+  goto @item0
+
+[@KKZQ1]
+#ACT
+  UPGRADEITEMEX 0 4 1 1 0
+  goto @item0
+
+[@KKXY1]
+#ACT
+  UPGRADEITEMEX 0 3 1 1 0
+  goto @item0
+
+[@KKCJ1]
+#ACT
+  UPGRADEITEMEX 0 14 1 1 0
+  goto @item0
+;-----------------------------------------------------------------------
+[@item1]
+#IF
+  checkitemTYPE 1 5
+#ACT
+  BREAK
+#SAY
+<————————＜><武器调整菜单><＞————————>\
+「调整<$WEAPON><攻击>」　<＋/@WQDC1>　注意调整范围∶<0-255>...\
+「调整<$WEAPON><魔法>」　<＋/@WQMC1>　注意调整范围∶<0-255>...\
+「调整<$WEAPON><道术>」　<＋/@WQDS1>　注意调整范围∶<0-255>...\
+「调整<$WEAPON><幸运>」　<＋/@WQXY1>　注意调整范围∶<0-255>...\
+「调整<$WEAPON><准确>」　<＋/@WQZQ1>　注意调整范围∶<0-255>...\
+「调整<$WEAPON><速度>」　<＋/@WQSD1>　注意调整范围∶<0-255>...\
+「调整<$WEAPON><持久>」　<＋/@WQCJ1>　注意调整范围∶<0-255>...　　<返回/@装备调整菜单>\
+#IF
+  checkitemTYPE 1 6
+#ACT
+  BREAK
+#SAY
+<————————＜><武器调整菜单><＞————————>\
+「调整<$WEAPON><攻击>」　<＋/@WQDC1>　注意调整范围∶<0-255>...\
+「调整<$WEAPON><魔法>」　<＋/@WQMC1>　注意调整范围∶<0-255>...\
+「调整<$WEAPON><道术>」　<＋/@WQDS1>　注意调整范围∶<0-255>...\
+「调整<$WEAPON><幸运>」　<＋/@WQXY1>　注意调整范围∶<0-255>...\
+「调整<$WEAPON><准确>」　<＋/@WQZQ1>　注意调整范围∶<0-255>...\
+「调整<$WEAPON><速度>」 <-＋/@WQSD1>　注意调整范围∶<0-255>...\
+「调整<$WEAPON><持久>」　<＋/@WQCJ1>　注意调整范围∶<0-255>...　　<返回/@装备调整菜单>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的武器拿在手中...\ \
+
+<返回/@装备调整菜单>\
+;-----------------------------------------------------------------------
+[@WQDC1]
+#ACT
+  UPGRADEITEMEX 1 0 1 1 0
+  goto @item1
+
+[@WQMC1]
+#ACT
+  UPGRADEITEMEX 1 1 1 1 0
+  goto @item1
+
+[@WQDS1]
+#ACT
+  UPGRADEITEMEX 1 2 1 1 0
+  goto @item1
+
+[@WQZQ1]
+#ACT
+  UPGRADEITEMEX 1 5 1 1 0
+  goto @item1
+
+[@WQXY1]
+#ACT
+  UPGRADEITEMEX 1 3 1 1 0
+  goto @item1
+
+[@WQSD1]
+#ACT
+  UPGRADEITEMEX 1 6 1 1 0
+  goto @item1
+
+[@WQCJ1]
+#ACT
+  UPGRADEITEMEX 1 14 1 1 0
+  goto @item1
+
+
+
+[@初始化]
+#ACT
+MESSAGEBOX 你是否确定清空天下第一 @初始化确定 @取消
+
+[@初始化确定]
+#IF
+ISADMIN
+#act
+mov G5 0
+mov G6 0
+mov G7 0
+mov G8 0
+mov G9 0
+mov G10 0
+mov A0
+mov A1
+mov A2
+mov A3
+mov A4
+mov A5
+mov A6 暂无
+mov A7 暂无
+mov A8 0
+mov A10 暂无
+mov A11 暂无
+mov A12 0
+mov A14 暂无
+mov A15 暂无
+mov A16 0
+mov A18 暂无
+mov A19 暂无
+mov A20 0
+mov A22 暂无
+mov A23 暂无
+mov A24 0
+mov A26 暂无
+mov A27 暂无
+mov A28 0
+MOV A35 暂无\天下第一男战士
+MOV A36 暂无\天下第一女战士
+MOV A37 暂无\天下第一男法师
+MOV A38 暂无\天下第一女法师
+MOV A39 暂无\天下第一男道士
+MOV A40 暂无\天下第一女道士
+MOV G37 0
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\男道士.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\女道士.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\男战士.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\女战士.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\男法师.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\数据文件\天下第一\女法师.txt HardDisk
+SENDMSG 5 天下第一设置已初始化
+GOTO @管理
+#ELSEACT
+messagebox 闲杂人等闪开！！！！！！！
+
+
+[@行会攻城]
+#ACT
+MESSAGEBOX 你是否确定设置所有行会今天攻城 @行会攻城确定 @取消
+
+[@行会攻城确定]
+#IF
+ISADMIN
+#ACT
+AddAttackSabukAll 0
+messagebox 所有行会今晚攻城，已设置完成！！
+#elseact
+messagebox 对不起!!!你不是管理员!!!快点闪开!!!! 
+
+
+
+
+
+[@HighLevelInfo]
+#IF
+#ACT
+messagebox 以下为当前在线最高等级人物信息:\<$HIGHLEVELINFO>
+
+[@HighDCInfo]
+#IF
+#ACT
+messagebox 以下为当前在线最高攻击人物信息:\<$HIGHDCINFO>
+
+[@HighMCInfo]
+#IF
+#ACT
+messagebox 以下为当前在线最高魔法人物信息:\<$HIGHMCINFO>
+
+[@HighSCInfo]
+#IF
+#ACT
+messagebox 以下为当前在线最高道术人物信息:\<$HIGHSCINFO>
+
+[@HighPKCInfo]
+#IF
+#ACT
+messagebox 以下为当前在线罪大恶极人物信息:\<$HIGHPKINFO>
+
+
+[@空格名字处理]
+<————————＜><空格名字管理菜单/@><＞————————>\ \
+<使用说明∶在输入框内输入需要处理的的名字即可！>\ \
+
+<输入您要传唤的人物名字/@@InPutString51> ←输入字符不超过30字节！\ \
+
+<返回/@管理>
+
+
+
+
+[@InPutString51]
+#IF
+CheckOnline <$STR(S51)>
+#ACT
+GOTO @坐牢A
+break
+#ELSEACT
+MESSAGEBOX 操作失败：玩家不在线，无法发起坐监功能！
+
+[@坐牢A]
+#IF
+CheckTextList ..\QuestDiary\坐监名单.txt <$STR(S51)>
+#ACT
+MESSAGEBOX 操作失败：此人正在监狱中，您无需重复输入！
+break
+
+#IF
+#ACT
+AddTextList ..\QuestDiary\坐监名单.txt <$STR(S51)>
+S51.SETRANKLEVELNAME %s\☆★空格名字罪该万死★☆\☆★正在享受牢狱之苦★☆
+S51.CHANGENAMECOLOR 253
+GuildNoticeMsg 255 5 『系统』犯人：（<$STR(S51)>）坐牢去了，空格名字与家族禁止踏入本服！
+GuildNoticeMsg 255 5 『系统』犯人：（<$STR(S51)>）坐牢去了，空格名字与家族禁止踏入本服！
+SendCenterMsg 255 5 『系统』犯人：（<$STR(S51)>）坐牢去了，空格名字与家族禁止踏入本服！
+SendCenterMsg 255 5 『系统』犯人：（<$STR(S51)>）坐牢去了，空格名字与家族禁止踏入本服！
+MESSAGEBOX 操作成功，（<$STR(S51)>）坐牢去了！
+break
+#ELSEACT
+MESSAGEBOX 操作失败，元宝不足1个，无法使用此功能！
+
+
+[@踢除死人]
+#ACT
+MessageBox 　系统提示：是否确认要踢除离线挂机人物 @踢确定 @踢取消
+
+[@踢确定]
+#ACT
+GMEXECUTE 开始提问 @踢死人
+MESSAGEBOX 已经踢除服务器上所有离线挂机人物！
+
+[@禁止登陆人物]
+<———————＜><禁止登陆人物管理菜单/@><＞———————>\ \
+<使用说明∶在输入框内输入需要禁止登陆人物的名字即可！>\ \
+
+<输入您要禁止登陆的人物名字/@@InPutString55> ←输入字符不超过30字节！\ \
+
+<返回/@管理>\ \
+
+<查看当前被禁止登陆的人物名字/@查看禁止登陆名字>
+
+[@InPutString55]
+#if
+CheckOnline <$STR(S55)>
+#ACT
+GMEXECUTE 禁止登陆人物 <$STR(S55)> 1
+GMEXECUTE T <$STR(S55)>
+MESSAGEBOX [提示]：操作成功！
+#ELSEACT
+MESSAGEBOX 对不起，你输入的：<$STR(S55)>，当前没有在线，操作失败！
+
+
+[@恢复登陆人物]
+<———————＜><恢复登陆人物管理菜单/@><＞———————>\ \
+<使用说明∶在输入框内输入需要恢复登陆人物的名字即可！>\ \
+
+<输入您要恢复登陆的人物名字/@@InPutString56> ←输入字符不超过30字节！\ \
+
+<返回/@管理>\ \
+
+<查看当前被禁止登陆的人物名字/@查看禁止登陆名字>
+
+[@InPutString56]
+#if
+#ACT
+GMEXECUTE 恢复禁止登陆人物 <$STR(S56)>
+MESSAGEBOX [提示]：操作成功！
+
+[@禁止登陆IP]
+<———————＜><禁止登陆IP管理菜单/@><＞———————>\ \
+<使用说明∶在输入框内输入需要禁止登陆IP的名字即可！>\ \
+
+<输入您要禁止登陆的IP/@@InPutString57> ←输入字符不超过30字节！\ \
+
+<返回/@管理>\ \
+
+<查看当前被禁止登陆的IP/@查看禁止登陆IP>
+
+[@InPutString57]
+#if
+#ACT
+GMEXECUTE 禁止登陆IP <$STR(S57)>
+GMEXECUTE T <$STR(S57)>
+MESSAGEBOX [提示]：操作成功！
+
+
+[@恢复登陆IP]
+<———————＜><恢复登陆IP管理菜单/@><＞———————>\ \
+<使用说明∶在输入框内输入需要恢复登陆的IP即可！>\ \
+
+<输入您要恢复登陆的IP/@@InPutString58> ←输入字符不超过30字节！\ \
+
+<返回/@管理>\ \
+
+<查看当前被禁止登陆的IP/@查看禁止登陆IP>
+
+[@InPutString58]
+#if
+#ACT
+GMEXECUTE 恢复禁止登陆IP <$STR(S58)> 1
+MESSAGEBOX [提示]：操作成功！
+
+
+[@查看禁止登陆名字]
+#ACT
+SENDMSG 7 ★★★★★★禁止登陆人物名字名单★★★★★
+GMEXECUTE 查看禁止登陆人物
+SENDMSG 7 ★★★★★★禁止登陆人物名字名单★★★★★
+
+
+[@查看禁止登陆IP]
+#ACT
+SENDMSG 7 ★★★★★★禁止登陆人物ＩＰ名单★★★★★
+GMEXECUTE 查看禁止登陆IP
+SENDMSG 7 ★★★★★★禁止登陆人物ＩＰ名单★★★★★
+
+[@封机器码]
+<————————＜><封机器码管理菜单/@><＞————————>\ \
+<使用说明∶在输入框内输入需要禁止登陆的名字即可封对方的机器码！>\ \
+
+<输入您要禁止登陆的名字/@@InPutString59> ←输入字符不超过30字节！\ \
+
+<返回/@管理>\ \
+
+
+[@InPutString59]
+#IF
+CheckOnline <$STR(S59)>
+#ACT
+S59.AddTextList ..\QuestDiary\机器码脚本\被封机器码列表.txt <$MACHINEID>
+S59.AddNAMEList ..\QuestDiary\机器码脚本\被封机器码名单.txt HardDisk
+GMEXECUTE T <$STR(S59)>
+MESSAGEBOX [提示]：操作成功！
+#ELSEACT
+MESSAGEBOX 对不起，你输入的：<$STR(S59)>，当前没有在线，操作失败！
+
+
+[@解封机器码]
+<————————＜><封机器码管理菜单/@><＞————————>\ \
+<使用说明∶在输入框内输入需要恢复登陆的名字即可解封对方的机器码！>\ \
+
+<输入您要恢复登陆的名字/@@InPutString60> ←输入字符不超过30字节！\ \
+
+<返回/@管理>\ \
+
+
+[@InPutString60]
+#ACT
+AddTextList ..\QuestDiary\机器码脚本\解封机器码名单.txt <$STR(S60)>
+MESSAGEBOX [提示]：已解封<$STR(S60)>的机器码！
+
+[@清理二级密码]
+<———————＜><清理二级密码管理菜单/@><＞———————>\ \
+<使用说明∶在输入框内输入需要清理二级密码的名字即可！>\ \
+
+<输入您要清理二级密码的人物名字/@@InPutString61> ←输入字符不超过30字节！\ \
+
+<返回/@管理>\ \
+
+
+[@InPutString61]
+#iF
+#ACT
+AddTextList ..\QuestDiary\红叶制作\二级密码\解封名单.txt <$STR(S61)>
+MESSAGEBOX [提示]：操作成功！
+
+
+
+
+[@增加积分]
+<———————＜><增加积分管理菜单/@><＞———————>\ \
+<使用说明∶在输入框内输入需要增加积分的名字即可！>\ \
+
+<输入您要增加积分的人物名字/@@InPutString63> \ \
+
+输入之后没反映表示名字错误或者你输入的人物名字不在线\ \
+
+<返回/@管理>\ \
+
+
+[@InPutString63]
+#IF
+#ACT
+S63.MOV A60 <$STR(U11)>
+GOTO @积分数值
+
+
+
+[@积分数值]
+<———————＜><增加积分管理菜单/@><＞———————>\ \
+<使用说明∶在输入框内输入需要增加积分的数额即可！>\ \
+
+<输入为【<$STR(S63)>】增加的积分数值/@@InPutInteger63> \ \
+
+【<$STR(S63)>】当前的积分为：<$STR(A60)> \ \
+
+<返回/@管理>\ \
+
+[@InPutInteger63]
+#IF
+#ACT
+MOV A60 <$STR(N63)>
+S63.INC U11 <$STR(A60)>
+S63.MOV A60 <$STR(U11)>
+MESSAGEBOX [提示]：<$STR(S63)>已增加<$STR(N63)>积分，当前积分为：<$STR(A60)>
+GOTO @积分数值
+BREAK
+
+
+
+[@扣除积分]
+<———————＜><扣除积分管理菜单/@><＞———————>\ \
+<使用说明∶在输入框内输入需要扣除积分的名字即可！>\ \
+
+<输入您要扣除积分的人物名字/@@InPutString64> \ \
+
+输入之后没反映表示名字错误或者你输入的人物名字不在线\ \
+
+<返回/@管理>\ \
+
+
+[@InPutString64]
+#IF
+#ACT
+S64.MOV A60 <$STR(U11)>
+GOTO @扣除积分数值
+
+
+
+[@扣除积分数值]
+<———————＜><扣除积分管理菜单/@><＞———————>\ \
+<使用说明∶在输入框内输入需要扣除积分的数额即可！>\ \
+
+<输入为【<$STR(S64)>】扣除的积分数值/@@InPutInteger64> \ \
+
+【<$STR(S64)>】当前的积分为：<$STR(A60)> \ \
+
+<返回/@管理>\ \
+
+[@InPutInteger64]
+#IF
+#ACT
+MOV A60 <$STR(N64)>
+S64.DEC U11 <$STR(A60)>
+S64.MOV A60 <$STR(U11)>
+MESSAGEBOX [提示]：<$STR(S64)>已扣除<$STR(N64)>积分，当前积分为：<$STR(A60)>
+GOTO @扣除积分数值
+BREAK
+
+
+}

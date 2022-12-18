@@ -1,0 +1,490 @@
+(@@InPutInteger, @@InPutString)
+[@MAIN]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【神秘铸造】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+例：铸造荣耀战戒 需：星王战戒*3 + 5荣誉点 【成功率50%】\
+铸造<荣耀战盔/@荣耀战盔>        铸造<荣耀法盔/@荣耀法盔>        铸造<荣耀道盔/@荣耀道盔>\
+铸造<荣耀战链/@荣耀战链>        铸造<荣耀法链/@荣耀法链>        铸造<荣耀道链/@荣耀道链>\
+铸造<荣耀战镯/@荣耀战镯>        铸造<荣耀法镯/@荣耀法镯>        铸造<荣耀道镯/@荣耀道镯>\
+铸造<荣耀战戒/@荣耀战戒>        铸造<荣耀法戒/@荣耀法戒>        铸造<荣耀道戒/@荣耀道戒>\
+铸造<荣耀战带/@荣耀战带>        铸造<荣耀法带/@荣耀法带>        铸造<荣耀道带/@荣耀道带>\
+铸造<荣耀战靴/@荣耀战靴>        铸造<荣耀法靴/@荣耀法靴>        铸造<荣耀道靴/@荣耀道靴>\
+
+
+[@荣耀道盔]
+#IF
+CHECKITEM 星王道盔 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀道盔
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀道盔]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王道盔 3
+GIVE 荣耀道盔 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀道盔】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀道盔】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王道盔 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+[@荣耀战盔]
+#IF
+CHECKITEM 星王战盔 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀战盔
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀战盔]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王战盔 3
+GIVE 荣耀战盔 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀战盔】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀战盔】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王战盔 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+
+[@荣耀法盔]
+#IF
+CHECKITEM 星王法盔 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀法盔
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀法盔]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王法盔 3
+GIVE 荣耀法盔 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀法盔】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀法盔】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王法盔 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+
+[@荣耀道链]
+#IF
+CHECKITEM 星王道链 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀道链
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀道链]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王道链 3
+GIVE 荣耀道链 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀道链】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀道链】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王道链 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+[@荣耀战链]
+#IF
+CHECKITEM 星王战链 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀战链
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀战链]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王战链 3
+GIVE 荣耀战链 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀战链】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀战链】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王战链 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+
+[@荣耀法链]
+#IF
+CHECKITEM 星王法链 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀法链
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀法链]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王法链 3
+GIVE 荣耀法链 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀法链】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀法链】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王法链 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+
+[@荣耀道镯]
+#IF
+CHECKITEM 星王道镯 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀道镯
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀道镯]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王道镯 3
+GIVE 荣耀道镯 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀道镯】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀道镯】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王道镯 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+[@荣耀战镯]
+#IF
+CHECKITEM 星王战镯 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀战镯
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀战镯]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王战镯 3
+GIVE 荣耀战镯 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀战镯】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀战镯】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王战镯 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+
+[@荣耀法镯]
+#IF
+CHECKITEM 星王法镯 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀法镯
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀法镯]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王法镯 3
+GIVE 荣耀法镯 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀法镯】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀法镯】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王法镯 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+
+[@荣耀道戒]
+#IF
+CHECKITEM 星王道戒 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀道戒
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀道戒]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王道戒 3
+GIVE 荣耀道戒 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀道戒】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀道戒】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王道戒 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+[@荣耀战戒]
+#IF
+CHECKITEM 星王战戒 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀战戒
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀战戒]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王战戒 3
+GIVE 荣耀战戒 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀战戒】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀战戒】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王战戒 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+
+[@荣耀法戒]
+#IF
+CHECKITEM 星王法戒 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀法戒
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀法戒]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王法戒 3
+GIVE 荣耀法戒 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀法戒】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀法戒】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王法戒 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+[@荣耀道带]
+#IF
+CHECKITEM 星王道带 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀道带
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀道带]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王道带 3
+GIVE 荣耀道带 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀道带】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀道带】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王道带 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+[@荣耀战带]
+#IF
+CHECKITEM 星王战带 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀战带
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀战带]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王战带 3
+GIVE 荣耀战带 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀战带】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀战带】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王战带 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+
+[@荣耀法带]
+#IF
+CHECKITEM 星王法带 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀法带
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀法带]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王法带 3
+GIVE 荣耀法带 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀法带】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀法带】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王法带 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+[@荣耀道靴]
+#IF
+CHECKITEM 星王道靴 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀道靴
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀道靴]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王道靴 3
+GIVE 荣耀道靴 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀道靴】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀道靴】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王道靴 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+[@荣耀战靴]
+#IF
+CHECKITEM 星王战靴 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀战靴
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀战靴]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王战靴 3
+GIVE 荣耀战靴 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀战靴】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀战靴】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王战靴 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+
+
+[@荣耀法靴]
+#IF
+CHECKITEM 星王法靴 3
+CHECKNIMBUS > 4
+#ACT
+GOTO @继续荣耀法靴
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足,无法合成
+BREAK
+
+[@继续荣耀法靴]
+#IF
+RANDOM 2
+#ACT
+NIMBUS - 5
+TAKE 星王法靴 3
+GIVE 荣耀法靴 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀法靴】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀法靴】！ 251 249
+#ELSEACT
+NIMBUS - 5
+TAKE 星王法靴 3
+MESSAGEBOX 很遗憾，合成失败了
+BREAK
+

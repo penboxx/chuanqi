@@ -1,0 +1,30 @@
+[@main]
+#if
+equal A37 开放
+#act
+MOV I0 <$STR(G0)>
+INC I0 1
+#say
+进入困惑殿堂需要开区第18天晚上20点\ \
+
+<进入困惑殿堂/@1>
+#elsesay
+进入困惑殿堂需要开区第18天晚上20点\ \
+
+
+[@1]
+#IF
+CHECKUSERDATE ..\QuestDiary\季卡\时间记载.txt < 90 p0 p1
+#ACT
+close
+MAPMOVE T118 14 15
+break
+
+#If
+equal G95 1
+#act
+sendmsg 7 提示：请购买季卡
+break 
+#elseact
+SendMsg 7  提示：开区第20天晚上20点自动开放！
+break

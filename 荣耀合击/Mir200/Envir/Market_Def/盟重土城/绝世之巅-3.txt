@@ -1,0 +1,33 @@
+()
+%100
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【天空之城】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+\<COLOR=clRed ♀.地图介绍：天空之城共1层，超级凶险>\
+\<COLOR=clAqua ♀.怪物刷新：各种BOSS,各种妖魔鬼怪，各种魑魅魍魉.>\
+\<COLOR=clLime ♀.爆率介绍：爆全服所有装备.打到手软，刺激到颠峰>\
+\<COLOR=clFuchsia ♀.进入条件：55级+800元宝>     〖<进图须知/@须知>〗 \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+　　　　　  　        〖<天空之城/@jin1>〗
+[@须知]
+
+天空之城每3小时刷新各大超级BOSS！地图超级凶险切且行且珍惜\ \
+本地图因BOSS超多，为防止拖机，在本地图180分钟后被传回盟重土城！\ \
+本地图可以使用随机传送卷！ \ \
+
+[@jin1]
+#if
+checkgamegold > 799
+CHECKLEVELEX > 54
+#act
+gamegold - 800
+SetScTimer 3 10800
+mapmove jszd  163  163
+give 随机传送卷包 2
+SENDMSG 0 伟大的玛法勇士[%s]进入了[天空之城]挑战各种魑魅魍魉.此去估计九死一生！ 245 18 
+SENDMSG 0 伟大的玛法勇士[%s]进入了[天空之城]挑战各种魑魅魍魉.此去估计九死一生！ 245 18
+SENDMSG 0 伟大的玛法勇士[%s]进入了[天空之城]挑战各种魑魅魍魉.此去估计九死一生！ 245 18 
+#elseact
+MESSAGEBOX 【提示】:你达到进入条件了吗，孩子别冲动不要以卵击石！

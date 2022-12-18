@@ -1,0 +1,174 @@
+[@main]
+#say
+你目前的游戏积分为:<$HUMAN(游戏积分)>.\
+积分的作用十分强大,是我们感谢玩家的一种方式\
+如何获得积分呢?有以下多种途径.\
+总会有玩家觉得积分不好,简单来说一把怒斩最少也需要半年的时间\
+<在线时间兑换积分/AUTOCOLOR=250>   <我要用在线时间兑换/@在线>\
+<徒弟出师声望兑换/AUTOCOLOR=250>   <我要用声望兑换/@声望>\
+<购买元宝附送积分/AUTOCOLOR=250>   <详细说明/@说明>\
+ \
+<积分用途具体查看/@用途>
+
+[@用途]
+#act
+OpenBigDialogBox 1
+#say
+兑换大家梦寐以求的绝世神兵.\
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━┓\
+┃<物品名称/>┃              <物品价格及介绍/>                ┃<确认兑换/>┃\
+┣━━━━╋━━━━━━━━━━━━━━━━━━━━━━╋━━━━┫\
+┃裁决之杖┃攻击0-30                      需要积分200   ┃<我要兑换/@物品1>┃\
+┣━━━━╋━━━━━━━━━━━━━━━━━━━━━━╋━━━━┫\
+┃骨玉权杖┃攻击6-12 魔法2-6              需要积分200   ┃<我要兑换/@物品2>┃\
+┣━━━━╋━━━━━━━━━━━━━━━━━━━━━━╋━━━━┫\
+┃龙 纹 剑┃攻击8-20 道术3-6              需要积分200   ┃<我要兑换/@物品3>┃\
+┣━━━━╋━━━━━━━━━━━━━━━━━━━━━━╋━━━━┫\
+┃怒    斩┃攻击12-26 准确+3              需要积分2000  ┃<我要兑换/@物品4>┃\
+┣━━━━╋━━━━━━━━━━━━━━━━━━━━━━╋━━━━┫\
+┃龙    牙┃攻击10-18 魔法3-6 准确+5      需要积分2000  ┃<我要兑换/@物品5>┃\
+┣━━━━╋━━━━━━━━━━━━━━━━━━━━━━╋━━━━┫\
+┃逍 遥 扇┃攻击5-13 道术4-10             需要积分2000  ┃<我要兑换/@物品6>┃\
+┣━━━━╋━━━━━━━━━━━━━━━━━━━━━━╋━━━━┫\
+┃屠    龙┃攻击5-35                      需要积分5000  ┃<我要兑换/@物品7>┃\
+┗━━━━┻━━━━━━━━━━━━━━━━━━━━━━┻━━━━┛\
+
+[@物品1]
+#IF
+CHECKVAR HUMAN 游戏积分 > 199
+#act
+give 裁决之杖 1
+CALCVAR HUMAN 游戏积分 - 200
+SAVEVAR HUMAN 游戏积分 ..\QuestDiary\数据文件\积分数据.txt
+SENDMSG 7 提示:你的积分-200.目前积分为<$HUMAN(游戏积分)>.
+goto @用途
+#elseact
+MessageBox 积分不足,谢谢你的支持!
+
+[@物品2]
+#IF
+CHECKVAR HUMAN 游戏积分 > 199
+#act
+give 骨玉权杖 1
+CALCVAR HUMAN 游戏积分 - 200
+SAVEVAR HUMAN 游戏积分 ..\QuestDiary\数据文件\积分数据.txt
+SENDMSG 7 提示:你的积分-200.目前积分为<$HUMAN(游戏积分)>.
+goto @用途
+#elseact
+MessageBox 积分不足,谢谢你的支持!
+
+[@物品3]
+#IF
+CHECKVAR HUMAN 游戏积分 > 199
+#act
+give 龙纹剑 1
+CALCVAR HUMAN 游戏积分 - 200
+SAVEVAR HUMAN 游戏积分 ..\QuestDiary\数据文件\积分数据.txt
+SENDMSG 7 提示:你的积分-200.目前积分为<$HUMAN(游戏积分)>.
+goto @用途
+#elseact
+MessageBox 积分不足,谢谢你的支持!
+
+[@物品4]
+#IF
+CHECKVAR HUMAN 游戏积分 > 1999
+#act
+give 怒斩 1
+CALCVAR HUMAN 游戏积分 - 2000
+SAVEVAR HUMAN 游戏积分 ..\QuestDiary\数据文件\积分数据.txt
+SENDMSG 7 提示:你的积分-2000.目前积分为<$HUMAN(游戏积分)>.
+goto @用途
+#elseact
+MessageBox 积分不足,谢谢你的支持!
+
+[@物品5]
+#IF
+CHECKVAR HUMAN 游戏积分 > 1999
+#act
+give 龙牙 1
+CALCVAR HUMAN 游戏积分 - 2000
+SAVEVAR HUMAN 游戏积分 ..\QuestDiary\数据文件\积分数据.txt
+SENDMSG 7 提示:你的积分-2000.目前积分为<$HUMAN(游戏积分)>.
+goto @用途
+#elseact
+MessageBox 积分不足,谢谢你的支持!
+
+[@物品6]
+#IF
+CHECKVAR HUMAN 游戏积分 > 1999
+#act
+give 逍遥扇 1
+CALCVAR HUMAN 游戏积分 - 2000
+SAVEVAR HUMAN 游戏积分 ..\QuestDiary\数据文件\积分数据.txt
+SENDMSG 7 提示:你的积分-2000.目前积分为<$HUMAN(游戏积分)>.
+goto @用途
+#elseact
+MessageBox 积分不足,谢谢你的支持!
+
+[@物品7]
+#IF
+CHECKVAR HUMAN 游戏积分 > 4999
+#act
+give 屠龙 1
+CALCVAR HUMAN 游戏积分 - 5000
+SAVEVAR HUMAN 游戏积分 ..\QuestDiary\数据文件\积分数据.txt
+SENDMSG 7 提示:你的积分-5000.目前积分为<$HUMAN(游戏积分)>.
+goto @用途
+#elseact
+MessageBox 积分不足,谢谢你的支持!
+
+[@说明]
+#say
+为了答谢所有为我们传奇提供经济上支持的玩家,\
+联系管理员购买元宝是可以额外获取<少量/AUTOCOLOR=250><积分奖励>.\
+特别注意:采取npc那里自助购买元宝不会得到积分奖励\
+祝大家天天游戏开心.\ \
+                     <返回/@main>  \   
+
+
+[@在线]
+#say
+你的在线总时长为:<$GAMEPOINT>分钟.\
+兑换要求必须具备35级.\
+兑换规则.60分钟可以兑换1积分.\ \
+<我要兑换/@兑换1> <返回/@main>\
+
+[@兑换1]
+#if
+CHECKGAMEPOINT > 59
+#say 
+你的在线总时长为:<$GAMEPOINT>分钟.\
+兑换要求必须具备35级.\
+兑换规则.60分钟可以兑换1积分.\
+<继续兑换/@兑换1> <返回/@main>
+#act
+GAMEPOINT - 60
+CALCVAR HUMAN 游戏积分 + 1
+SAVEVAR HUMAN 游戏积分 ..\QuestDiary\数据文件\积分数据.txt
+SENDMSG 7 提示:你的积分+1.目前积分为<$HUMAN(游戏积分)>.
+#elsesay
+你的在线时间不够兑换,谢谢你的支持\
+                             <返回/@main>\
+
+[@声望]
+#say 
+你目前的声望为:<$CREDITPOINT>点.\
+兑换规则.1点声望可以兑换1积分.\ \
+<我要兑换/@兑换2> <返回/@main>\
+
+[@兑换2]
+#if
+CHECKCREDITPOINT > 0
+#say 
+你目前的声望为:<$CREDITPOINT>点.\
+兑换规则.1点声望可以兑换1积分.\ \
+<我要兑换/@兑换2> <返回/@main>\
+#act
+CREDITPOINT - 1
+CALCVAR HUMAN 游戏积分 + 1
+SAVEVAR HUMAN 游戏积分 ..\QuestDiary\数据文件\积分数据.txt
+SENDMSG 7 提示:你的积分+1.目前积分为<$HUMAN(游戏积分)>.
+#elsesay
+你的声望不够兑换,谢谢你的支持\
+                             <返回/@main>\
+

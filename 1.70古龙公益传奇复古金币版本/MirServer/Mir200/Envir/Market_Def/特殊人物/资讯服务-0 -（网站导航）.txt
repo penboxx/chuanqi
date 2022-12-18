@@ -1,0 +1,64 @@
+
+()
+%100
+[@main]
+<COLOR=clAqua 游戏最新资讯,交易发布,心情留言,点击以下进入> \ \
+<游戏公告/@公告>           <玩家交流/@交流>           <经验心得/@心得>\ \
+<好人好事/@好事>           <闲暇话题/@话题>           <游戏截图/@截图>\ \
+<玛法儿女/@儿女>           <游戏介绍/@介绍>           <被骗自述/@上榜>\ \
+<交易发布/@发布>\ \
+[@心情]
+#IF
+#ACT
+WebBrowser http://www.sf1995.com
+break
+[@公告]
+#IF
+#ACT
+WebBrowser http://www.sf1995.com
+break
+[@交流]
+#IF
+#ACT
+WebBrowser http://www.sf1995.com
+break
+[@心得]
+#IF
+#ACT
+WebBrowser http://www.sf1995.com
+break
+[@截图]
+#IF
+#ACT
+WebBrowser http://www.sf1995.com
+break
+[@好事]
+#IF
+#ACT
+WebBrowser http://www.sf1995.com
+break
+[@话题]
+#IF
+#ACT
+WebBrowser http://www.sf1995.com
+break
+[@儿女]
+#IF
+#ACT
+WebBrowser http://www.sf1995.com
+break
+[@介绍]
+#IF
+#ACT
+WebBrowser http://www.sf1995.com
+break
+[@上榜]
+#IF
+#ACT
+WebBrowser http://www.sf1995.com
+break
+[@发布]
+#IF
+#ACT
+WebBrowser http://www.sf1995.com
+break

@@ -1,0 +1,393 @@
+[@main]
+升级奖励：\
+<领取50级奖励/@50>：赤月+1套装\
+<领取51级奖励/@51>：三职业武器屠龙、嗜魂法杖、霸者之刃\
+<领取52级奖励/@52>：赤月+2套装\
+<领取53级奖励/@53>：三职业+3衣服\
+
+[@52]
+#IF
+checkjob warrior
+CHECKLEVELEX = 52
+#ACT
+DelayCall 100 @52zhan
+Break
+
+#IF
+checkjob wizard
+CHECKLEVELEX = 52
+#ACT
+DelayCall 100 @52fa
+Break
+
+#IF
+checkjob taoist
+CHECKLEVELEX = 52
+#ACT
+DelayCall 100 @52dao
+Break
+#ELSESAY
+你的等级不符合要求！！！
+
+[@52fa]
+#IF
+checkjob wizard
+CHECKLEVELEX = 52
+Check [414] 0
+#ACT
+SET [414] 1
+GIVE 法神头盔 1 3 2
+GIVE 法神项链 1 3 2
+GIVE 法神手镯 2 3 2
+GIVE 法神戒指 2 3 2
+#ELSESAY
+你已经领取过了，下次再说吧！！！
+
+
+[@52dao]
+#IF
+checkjob taoist
+CHECKLEVELEX = 52
+Check [413] 0
+#ACT
+SET [413] 1
+GIVE 天尊头盔 1 4 2
+GIVE 天尊项链 1 4 2
+GIVE 天尊手镯 2 4 2
+GIVE 天尊戒指 2 4 2
+#ELSESAY
+你已经领取过了，下次再说吧！！！
+
+
+[@52zhan]
+#IF
+checkjob warrior
+CHECKLEVELEX = 52
+Check [413] 0
+#ACT
+SET [413] 1
+GIVE 圣战头盔 1 2 2
+GIVE 圣战项链 1 2 2
+GIVE 圣战手镯 2 2 2
+GIVE 圣战戒指 2 2 2
+#ELSESAY
+你已经领取过了，下次再说吧！！！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[@53]
+#IF
+checkjob warrior
+gender MAN
+CHECKLEVELEX = 53
+#ACT
+DelayCall 100 @53zhannan
+Break
+
+#IF
+checkjob warrior
+gender WOMAN
+CHECKLEVELEX = 53
+#ACT
+DelayCall 100 @53zhannv
+Break
+
+
+
+
+#IF
+checkjob wizard
+gender MAN
+CHECKLEVELEX = 53
+#ACT
+DelayCall 100 @53fanan
+Break
+
+#IF
+checkjob wizard
+gender WOMAN
+CHECKLEVELEX = 53
+#ACT
+DelayCall 100 @53fanv
+Break
+
+
+
+
+#IF
+checkjob taoist
+gender MAN
+CHECKLEVELEX = 53
+#ACT
+DelayCall 100 @53daonan
+Break
+#ELSESAY
+你的等级不符合要求！！！
+
+#IF
+checkjob taoist
+gender WOMAN
+CHECKLEVELEX = 53
+#ACT
+DelayCall 100 @53daonv
+Break
+#ELSESAY
+你的等级不符合要求！！！
+
+
+[@53zhannan]
+#IF
+checkjob warrior
+gender MAN
+CHECKLEVELEX = 53
+Check [412] 0
+#ACT
+SET [412] 1
+GIVE 天魔神甲 1 2 3
+#ELSESAY
+你已经领取过了，下次再说吧！！！
+
+
+
+
+[@53zhannv]
+#IF
+checkjob warrior
+gender WOMAN
+CHECKLEVELEX = 53
+Check [411] 0
+#ACT
+SET [411] 1
+GIVE 圣战宝甲 1 2 3
+#ELSESAY
+你已经领取过了，下次再说吧！！！
+
+
+
+
+
+
+[@53fanan]
+#IF
+checkjob wizard
+gender MAN
+CHECKLEVELEX = 53
+Check [410] 0
+#ACT
+SET [410] 1
+GIVE 法神披风 1 3 3
+#ELSESAY
+你已经领取过了，下次再说吧！！！
+
+
+[@53fanv]
+#IF
+checkjob wizard
+gender WOMAN
+CHECKLEVELEX = 53
+Check [409] 0
+#ACT
+SET [409] 1
+GIVE 霓裳羽衣 1 3 3
+#ELSESAY
+你已经领取过了，下次再说吧！！！
+
+
+
+[@53daonan]
+#IF
+checkjob taoist
+gender MAN
+CHECKLEVELEX = 53
+Check [408] 0
+#ACT
+SET [408] 1
+GIVE 天尊道袍 1 4 3
+#ELSESAY
+你已经领取过了，下次再说吧！！！
+
+
+[@53daonv]
+#IF
+checkjob taoist
+gender WOMAN
+CHECKLEVELEX = 53
+Check [407] 0
+#ACT
+SET [407] 1
+GIVE 天师长袍 1 4 3
+#ELSESAY
+你已经领取过了，下次再说吧！！！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[@51]
+#IF
+checkjob warrior
+CHECKLEVELEX = 51
+#ACT
+DelayCall 100 @51zhan
+Break
+
+#IF
+checkjob wizard
+CHECKLEVELEX = 51
+#ACT
+DelayCall 100 @51fa
+Break
+
+#IF
+checkjob taoist
+CHECKLEVELEX = 51
+#ACT
+DelayCall 100 @51dao
+Break
+#ELSESAY
+你的等级不符合要求！！！
+
+[@51fa]
+#IF
+checkjob wizard
+CHECKLEVELEX = 51
+Check [404] 0
+#ACT
+SET [404] 1
+GIVE 嗜魂法杖
+#ELSESAY
+你已经领取过了，下次再说吧！！！
+
+[@51zhan]
+#IF
+checkjob warrior
+CHECKLEVELEX = 51
+Check [405] 0
+#ACT
+SET [405] 1
+GIVE 屠龙
+#ELSESAY
+你已经领取过了，下次再说吧！！！
+
+
+[@51dao]
+#IF
+checkjob taoist
+CHECKLEVELEX = 51
+Check [406] 0
+#ACT
+SET [406] 1
+GIVE 霸者之刃
+#ELSESAY
+你已经领取过了，下次再说吧！！！
+
+
+
+[@50]
+#IF
+checkjob warrior
+CHECKLEVELEX = 50
+#ACT
+DelayCall 100 @50zhan
+Break
+
+#IF
+checkjob wizard
+CHECKLEVELEX = 50
+#ACT
+DelayCall 100 @50fa
+Break
+
+#IF
+checkjob taoist
+CHECKLEVELEX = 50
+#ACT
+DelayCall 100 @50dao
+Break
+#ELSESAY
+你的等级不符合要求！！！
+
+[@50fa]
+#IF
+checkjob wizard
+CHECKLEVELEX = 50
+Check [403] 0
+#ACT
+SET [403] 1
+GIVE 法神头盔 1 3 1
+GIVE 法神项链 1 3 1
+GIVE 法神手镯 2 3 1
+GIVE 法神戒指 2 3 1
+#ELSESAY
+你已经领取过了，下次再说吧！！！
+
+
+[@50dao]
+#IF
+checkjob taoist
+CHECKLEVELEX = 50
+Check [402] 0
+#ACT
+SET [402] 1
+GIVE 天尊头盔 1 4 1
+GIVE 天尊项链 1 4 1
+GIVE 天尊手镯 2 4 1
+GIVE 天尊戒指 2 4 1
+#ELSESAY
+你已经领取过了，下次再说吧！！！
+
+
+[@50zhan]
+#IF
+checkjob warrior
+CHECKLEVELEX = 50
+Check [401] 0
+#ACT
+SET [401] 1
+GIVE 圣战头盔 1 2 1
+GIVE 圣战项链 1 2 1
+GIVE 圣战手镯 2 2 1
+GIVE 圣战戒指 2 2 1
+#ELSESAY
+你已经领取过了，下次再说吧！！！

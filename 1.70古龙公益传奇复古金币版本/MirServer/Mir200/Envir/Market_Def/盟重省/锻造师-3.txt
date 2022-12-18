@@ -1,0 +1,265 @@
+
+[@main]
+亲爱的<$USERNAME>，欢迎您使用武器锻造功能！\
+以下所有武器需要金刚石来锻造，请确定您有足够的金刚石！\ \
+
+<怒斩/@02>         <龙牙/@03>          <逍遥扇/@08> \
+<屠龙/@04>     <嗜魂法杖/@11>        <赤金逍遥扇/@12>\ \
+
+使用<金刚石兑换服务/@金刚石兑换>     <离开/@exit>
+
+[@金刚石兑换]
+金刚石兑换服务主要是方便大家交易金刚石\
+目前金刚石只提供1颗、10颗和100颗的兑换！\ \
+
+<换取/@hyjgs>1颗金刚石\
+<换取/@hsjgs>10颗金刚石 \
+<换取/@hbjgs>100颗金刚石 \ \
+
+<返回/@main>
+
+[@hbjgs]
+#IF
+CHECKGAMEDIAMOND > 99
+#ACT
+GAMEDIAMOND - 100
+GIVE 金刚石100颗 1
+SENDMSG 6 兑换成功！你可以自由的交易了！！
+#ELSESAY
+您身上金刚石不足！
+
+[@hyjgs]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 1
+GIVE 金刚石 1
+SENDMSG 6 兑换成功！你可以自由的交易了！！
+#ELSESAY
+您身上金刚石不足！
+
+[@hsjgs]
+#IF
+CHECKGAMEDIAMOND > 9
+#ACT
+GAMEDIAMOND - 10
+GIVE 金刚石10颗 1
+SENDMSG 6 兑换成功！你可以自由的交易了！！
+#ELSESAY
+您身上金刚石不足！
+
+[@12]
+你现在选择锻造的是：赤金逍遥扇.\
+该武器需要金刚石：1288颗.\
+您用有金刚石:<$GAMEDIAMOND>颗.\
+
+您可以选择 <锻造/@122> 或者 <查看/@main>其他武器配方\
+
+[@122]
+#IF
+CHECKGAMEDIAMOND > 1287
+#ACT
+GAMEDIAMOND - 1288
+GIVE 赤金逍遥扇 1
+SENDMSG 0 <$USERNAME>成功锻造出赤金逍遥扇！！
+BREAK
+#ELSESAY
+对不起，您金刚石不足！
+
+[@11]
+你现在选择锻造的是：嗜魂法杖.\
+该武器需要金刚石：1288颗.\
+您用有金刚石:<$GAMEDIAMOND>颗.\
+
+您可以选择 <锻造/@111> 或者 <查看/@main>其他武器配方\
+
+[@111]
+#IF
+CHECKGAMEDIAMOND > 1287
+#ACT
+GAMEDIAMOND - 1288
+GIVE 嗜魂法杖 1
+SENDMSG 0 <$USERNAME>成功锻造出嗜魂法杖！！
+BREAK
+#ELSESAY
+对不起，您金刚石不足！
+
+[@10]
+你现在选择锻造的是：裁决之杖.\
+该武器需要金刚石：88颗.\
+您用有金刚石:<$GAMEDIAMOND>颗.\
+
+您可以选择 <锻造/@101> 或者 <查看/@main>其他武器配方\
+
+[@101]
+#IF
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+GIVE 裁决之杖 1
+SENDMSG 0 <$USERNAME>成功锻造出裁决之杖！！
+BREAK
+#ELSESAY
+对不起，您金刚石不足！
+
+[@09]
+你现在选择锻造的是：骨玉权杖.\
+该武器需要金刚石：88颗.\
+您用有金刚石:<$GAMEDIAMOND>颗.\
+
+您可以选择 <锻造/@091> 或者 <查看/@main>其他武器配方\
+
+[@091]
+#IF
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+GIVE 骨玉权杖 1
+SENDMSG 0 <$USERNAME>成功锻造出骨玉权杖！！
+BREAK
+#ELSESAY
+对不起，您金刚石不足！
+
+[@08]
+你现在选择锻造的是：逍遥扇.\
+该武器需要金刚石：588颗.\
+您用有金刚石:<$GAMEDIAMOND>颗.\
+
+您可以选择 <锻造/@081> 或者 <查看/@main>其他武器配方\
+
+[@081]
+#IF
+CHECKGAMEDIAMOND > 587
+#ACT
+GAMEDIAMOND - 588
+GIVE 逍遥扇 1
+SENDMSG 0 <$USERNAME>成功锻造出逍遥扇！！
+BREAK
+#ELSESAY
+对不起，您金刚石不足！
+
+[@07]
+你现在选择锻造的是：龙纹剑.\
+该武器需要金刚石：88颗.\
+您用有金刚石:<$GAMEDIAMOND>颗.\
+
+您可以选择 <锻造/@071> 或者 <查看/@main>其他武器配方\
+
+[@071]
+#IF
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+GIVE 龙纹剑 1
+SENDMSG 0 <$USERNAME>成功锻造出龙纹剑！！
+BREAK
+#ELSESAY
+对不起，您金刚石不足！
+
+[@06]
+你现在选择锻造的是：无极棍.\
+该武器需要金刚石：88颗.\
+您用有金刚石:<$GAMEDIAMOND>颗.\
+
+您可以选择 <锻造/@061> 或者 <查看/@main>其他武器配方\
+
+[@061]
+#IF
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+GIVE 无极棍 1
+SENDMSG 0 <$USERNAME>成功锻造出无极棍！！
+BREAK
+#ELSESAY
+对不起，您金刚石不足！
+
+[@05]
+你现在选择锻造的是：井中月.\
+该武器需要金刚石：88颗.\
+您用有金刚石:<$GAMEDIAMOND>颗.\
+
+您可以选择 <锻造/@051> 或者 <查看/@main>其他武器配方\
+
+[@051]
+#IF
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+GIVE 井中月 1
+SENDMSG 0 <$USERNAME>成功锻造出井中月！！
+BREAK
+#ELSESAY
+对不起，您金刚石不足！
+
+[@04]
+你现在选择锻造的是：屠龙.\
+该武器需要金刚石：1288颗.\
+您用有金刚石:<$GAMEDIAMOND>颗.\
+
+您可以选择 <锻造/@041> 或者 <查看/@main>其他武器配方\
+
+[@041]
+#IF
+CHECKGAMEDIAMOND > 1287
+#ACT
+GAMEDIAMOND - 1288
+GIVE 屠龙 1
+SENDMSG 0 <$USERNAME>成功锻造出屠龙！！
+BREAK
+#ELSESAY
+对不起，您金刚石不足！
+
+[@03]
+你现在选择锻造的是：龙牙.\
+该武器需要金刚石：588颗.\
+您用有金刚石:<$GAMEDIAMOND>颗.\
+
+您可以选择 <锻造/@031> 或者 <查看/@main>其他武器配方\
+
+[@031]
+#IF
+CHECKGAMEDIAMOND > 587
+#ACT
+GAMEDIAMOND - 588
+GIVE 龙牙 1
+SENDMSG 0 <$USERNAME>成功锻造出龙牙！！
+BREAK
+#ELSESAY
+对不起，您金刚石不足！
+
+[@02]
+你现在选择锻造的是：怒斩.\
+该武器需要金刚石：588颗.\
+您用有金刚石:<$GAMEDIAMOND>颗.\
+
+您可以选择 <锻造/@021> 或者 <查看/@main>其他武器配方\
+
+[@021]
+#IF
+CHECKGAMEDIAMOND > 587
+#ACT
+GAMEDIAMOND - 588
+GIVE 怒斩 1
+SENDMSG 0 <$USERNAME>成功锻造出怒斩！！
+BREAK
+#ELSESAY
+对不起，您金刚石不足！
+
+[@01]
+你现在选择锻造的是：血饮.\
+该武器需要金刚石：88颗.\
+您用有金刚石:<$GAMEDIAMOND>颗.\
+
+您可以选择 <锻造/@011> 或者 <查看/@main>其他武器配方\
+
+[@011]
+#IF
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+GIVE 血饮 1
+SENDMSG 0 <$USERNAME>成功锻造出血饮！！
+BREAK
+#ELSESAY
+对不起，您金刚石不足！

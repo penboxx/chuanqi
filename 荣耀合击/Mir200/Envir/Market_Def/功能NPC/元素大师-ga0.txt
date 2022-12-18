@@ -1,0 +1,79 @@
+[@main]
+触发元素属性必须要装备每种属性+2点才可触发\
+
+<触发头盔元素属性/@tk>
+
+<清洗属性/@xi>
+
+[@xi]
+#if
+#act
+Gmexecute 改属性 4 0 = 0
+Gmexecute 改属性 4 1 = 0
+Gmexecute 改属性 4 2 = 0
+Gmexecute 改属性 4 3 = 0
+Gmexecute 改属性 4 4 = 0
+Gmexecute 改属性 4 17 = 0
+Gmexecute 改属性 4 18 = 0
+Gmexecute 改属性 4 19 = 0
+Gmexecute 改属性 4 20 = 0
+Gmexecute 改属性 4 21 = 0
+Gmexecute 改属性 4 22 = 0
+
+[@tk]
+#if
+CHECKITEMADDVALUE 4 22 > 0
+#act
+MESSAGEBOX 此装备已触发元素属性：如不满意可清洗后在重新触发！
+break
+
+#if
+CHECKITEMADDVALUE 4 0 = 2
+CHECKITEMADDVALUE 4 1 = 2
+CHECKITEMADDVALUE 4 2 = 2
+CHECKITEMADDVALUE 4 3 = 2
+CHECKITEMADDVALUE 4 4 = 2
+#act
+UPGRADEITEMEX 4 17 5 3 0 0
+UPGRADEITEMEX 4 18 5 3 0 0
+UPGRADEITEMEX 4 19 5 3 0 0
+UPGRADEITEMEX 4 20 5 3 0 0
+UPGRADEITEMEX 4 21 5 3 0 0
+UPGRADEITEMEX 4 22 5 3 0 0
+UPGRADEITEMEX 4 22 0 1 0
+SENDMSG 5 触发元素属性成功。
+break
+#ELSEACT
+MESSAGEBOX 触发元素属性失败：必须要装备每种属性+2点才可触发！
+
+
+
+
+
+
+
+
+
+UPGRADEITEMEX 1 17 0 5 0
+UPGRADEITEMEX 1 18 0 5 0
+UPGRADEITEMEX 1 19 0 5 0
+UPGRADEITEMEX 1 20 0 5 0
+UPGRADEITEMEX 1 21 0 5 0
+
+
+
+
+物品位置:
+    0  盔甲
+    1  武器
+    2  照明物（蜡烛，此物品属性升级无效）
+    3  项链
+    4  头盔
+    5  右手镯
+    6  左手镯
+    7  右戒指
+    8  右戒指
+    9  无(放护身符位置)
+    10 腰带
+    11 鞋子
+    12 宝石

@@ -1,0 +1,659 @@
+[@管理]
+{
+#IF
+ISADMIN
+#ACT
+;DelayCall 100 @设置签到天数
+goto @管理_行会攻沙设置
+#ELSEACT
+break
+
+[@设置签到天数]
+<设置/@临时设置>
+
+[@临时设置]
+#IF
+#ACT
+mov G70 4
+BREAK
+[@管理_行会攻沙设置]
+<[全服元宝查询]/@管理_全服元宝查询> ┆<将所有行会加入攻城战/@加入攻城战>  \
+<[开区模式设置]/@管理_开区模式设置> ┆<COLOR=CLRED 请你想设置的攻沙当天20:00前操作>\
+<COLOR=clAqua [行会攻沙设置]>-┆<COLOR=CLRED 将所有行会加入攻城战后请点击下面的查看详细>\
+<[赌博及发公告]/@管理_赌博及发公告> ┆情况确认核对,并去沙看看城门是否正常>\
+<[封号系统设置]/@管理_封号系统设置> ┆<查看攻沙详情/@查看攻沙详情>   <前往沙巴克/@前往沙巴克>\
+<[二级密码设置]/@管理_二级密码设置> ┆服务器在线人数：<$USERCOUNT>\
+<[赞助大使办理]/@管理_赞助大使办理> ┆\
+<[属性修改设置]/@sx31> ┆\
+<[新手等待设置]/@xinshou> ┆<[刷元宝]/@shuayuanbao> \
+
+[@shuayuanbao]
+#ACT
+GIVE 100元宝 40
+
+
+
+
+[@xinshou]
+新区开放默认为全部传送等待区域！\ \ \
+<修改为[正式开区]不传送等待地图/@修改等待>
+
+
+
+[@修改等待]
+#IF
+#ACT
+MOV G55 1
+SENDMSG 0 通知：已经正式开放游戏，点击新区开放npc，回比奇开始传奇之旅！！
+SENDMSG 0 通知：已经正式开放游戏，点击新区开放npc，回比奇开始传奇之旅！！
+SENDMSG 0 通知：已经正式开放游戏，点击新区开放npc，回比奇开始传奇之旅！！
+SENDMSG 0 通知：已经正式开放游戏，点击新区开放npc，回比奇开始传奇之旅！！
+SENDMSG 0 通知：已经正式开放游戏，点击新区开放npc，回比奇开始传奇之旅！！
+SENDMSG 0 通知：已经正式开放游戏，点击新区开放npc，回比奇开始传奇之旅！！
+
+
+[@sx0]
+#IF
+#ACT
+GIVE 记忆项链 1 2 2
+
+[@sx1]
+#IF
+#ACT
+GIVE 裁决之杖 1 0 3
+
+
+[@sx3]
+#IF
+#act
+UPGRADEITEMEX 3 1 0 1 0
+goto @暴击属性_记忆项链0
+BREAK
+
+
+[@暴击属性_记忆项链111]
+;#IF
+;random 8
+;#act
+;UPGRADEITEMEX 3 8 0 1 0
+;UPGRADEITEMEX 3 8 0 1 0
+;UPGRADEITEMEX 3 8 0 1 0
+;sendmsg 0 恭喜[%s]在幸运之家将项链升级成功，同时被赋予了暴击属性+2。
+;BREAK
+
+#IF
+#act
+
+UPGRADEITEMEX 3 8 0 1 0
+
+BREAK
+
+
+[@sx2]
+<COLOR=clAqua [属性修改设置]>-┆\
+<[开区模式设置]/@管理_开区模式设置> ┆     <左手攻击/@左手攻击>     <右手攻击/@右手攻击>\
+<[行会攻沙设置]/@管理_行会攻沙设置> ┆     <左手魔法/@左手魔法>     <右手魔法/@右手魔法>\
+<[游戏活动设置]/@管理_游戏活动设置> ┆     <左手道术/@左手道术>     <右手道术/@右手道术>\
+<[封号系统设置]/@管理_封号系统设置> ┆　　 <左手防御/@左手防御>     <右手防御/@右手防御>\
+<[二级密码设置]/@管理_二级密码设置> ┆　　 <左手魔御/@左手魔御>     <右手魔御/@右手魔御>\
+<[赞助大使办理]/@管理_赞助大使办理> ┆　　 <左手持久/@左手持久>     <右手持久/@右手持久>\
+等待添加设置4　┆\
+等待添加设置5　┆\
+
+
+[@左手攻击]
+#ACT
+UPGRADEITEMEX 6 2 0 1 0
+DelayCall 100 @sx2
+BREAK
+
+[@左手魔法]
+#ACT
+UPGRADEITEMEX 6 3 0 1 0
+DelayCall 100 @sx2
+BREAK
+
+[@左手道术]
+#ACT
+UPGRADEITEMEX 6 4 0 1 0
+DelayCall 100 @sx2
+BREAK
+
+[@左手防御]
+#ACT
+UPGRADEITEMEX 6 0 0 1 0
+DelayCall 100 @sx2
+BREAK
+
+[@左手魔御]
+#ACT
+UPGRADEITEMEX 6 1 0 1 0
+DelayCall 100 @sx2
+BREAK
+
+[@左手持久]
+#ACT
+UPGRADEITEMEX 6 15 0 1 0
+DelayCall 100 @sx2
+BREAK
+
+[@右手攻击]
+#ACT
+UPGRADEITEMEX 5 2 0 1 0
+DelayCall 100 @sx2
+BREAK
+
+[@右手魔法]
+#ACT
+UPGRADEITEMEX 5 3 0 1 0
+DelayCall 100 @sx2
+BREAK
+
+[@右手道术]
+#ACT
+UPGRADEITEMEX 5 4 0 1 0
+DelayCall 100 @sx2
+BREAK
+
+[@右手防御]
+#ACT
+UPGRADEITEMEX 5 0 0 1 0
+DelayCall 100 @sx2
+BREAK
+
+[@右手魔御]
+#ACT
+UPGRADEITEMEX 5 1 0 1 0
+DelayCall 100 @sx2
+BREAK
+
+[@右手持久]
+#ACT
+UPGRADEITEMEX 5 15 0 1 0
+DelayCall 100 @sx2
+BREAK
+
+[@加入攻城战]
+#ACT
+Gmexecute AddToCastleWarList 0 *
+MESSAGEBOX 设置成功！所有行会已加入了攻沙列表！
+DelayCall 100 @管理_行会攻沙设置
+BREAK
+
+[@前往沙巴克]
+#ACT
+MAPMOVE 3 632 276
+BREAK
+
+[@查看攻沙详情]
+<◆最近的攻城战役预告:>\
+战役开始时间： <$CASTLEWARDATE> , 8:00开始。\ \
+<◆详细攻城时间表：/@listwar>\
+<返回/@管理_行会攻沙设置>\
+
+[@listwar]
+<$LISTOFWAR>\
+<返回/@管理_行会攻沙设置>\
+
+[@管理_赌博及发公告]
+<[全服元宝查询]/@管理_全服元宝查询> ┆<[开启赌场]/@开启赌场>    <[关闭赌场]/@关闭赌场>\
+<[开区模式设置]/@管理_开区模式设置> ┆\
+<[行会攻沙设置]/@管理_行会攻沙设置> ┆<全服公告/@@InPutString34>\
+<COLOR=clAqua [赌博及发公告]>-┆\
+<[封号系统设置]/@管理_封号系统设置> ┆\
+<[二级密码设置]/@管理_二级密码设置> ┆\
+<[赞助大使办理]/@管理_赞助大使办理> ┆\
+等待添加设置4　┆\
+等待添加设置5　┆\
+
+[@@InPutString34]
+#If
+#Act
+DelayGoto 1 ~InPutString34
+[~InPutString34]
+#If
+ISADMIN
+#ACT
+SENDMSG 0 <$STR(S34)>
+SENDMSG 0 <$STR(S34)>
+SENDMSG 0 <$STR(S34)>
+SENDMSG 0 <$STR(S34)>
+SENDMSG 0 <$STR(S34)>
+SENDMSG 0 <$STR(S34)>
+SENDMSG 0 <$STR(S34)>
+SENDMSG 0 <$STR(S34)>
+BREAK
+
+[@开启赌场]
+#ACT
+MOV H31 1
+SENDMSG 7 设置为开启赌场生效！
+DelayCall 100 @管理_赌博及发公告
+BREAK
+
+[@关闭赌场]
+#ACT
+MOV H31 0
+SENDMSG 7 设置为关闭赌场生效！
+DelayCall 100 @管理_赌博及发公告
+BREAK
+
+
+[@管理_开区模式设置]
+#IF
+equal G0 0
+#SAY
+<[全服元宝查询]/@管理_全服元宝查询> ┆当前服务器处于：[正式]开区模式！\
+<COLOR=clAqua [开区模式设置]>-┆<设置为测试开区模式/@设置为测试>\
+<[行会攻沙设置]/@管理_行会攻沙设置> ┆设置为：<已经开区/@管理_已经开区>  <等待开区/@管理_等待开区>\
+<[赌博及发公告]/@管理_赌博及发公告> ┆\
+<[封号系统设置]/@管理_封号系统设置> ┆\
+<[二级密码设置]/@管理_二级密码设置> ┆\
+<[赞助大使办理]/@管理_赞助大使办理> ┆\
+等待添加设置4　┆\
+等待添加设置5　┆\
+
+#ELSESAY
+<[全服元宝查询]/@管理_全服元宝查询> ┆当前服务器处于：[测试]开区模式！\
+<COLOR=clAqua [开区模式设置]>-┆<设置为正式开区模式/@设置为正式>\
+<[行会攻沙设置]/@管理_行会攻沙设置> ┆设置为：<已经开区/@管理_已经开区>  <等待开区/@管理_等待开区>\
+<[赌博及发公告]/@管理_赌博及发公告> ┆\
+<[封号系统设置]/@管理_封号系统设置> ┆\
+<[二级密码设置]/@管理_二级密码设置> ┆\
+<[赞助大使办理]/@管理_赞助大使办理> ┆\
+等待添加设置4　┆\
+等待添加设置5　┆\
+
+[@管理_已经开区]
+#IF
+isadmin
+#act
+mov G1 1
+SENDMSG 7 设置为[已经开区]生效！
+MessageBox 设置为[已经开区]生效！
+
+[@管理_等待开区]
+#IF
+isadmin
+#act
+mov G1 0
+SENDMSG 7 设置为[等待开区]生效！
+MessageBox 设置为[等待开区]生效！
+
+
+[@设置为测试]
+#ACT
+MOV G0 1
+SENDMSG 7 设置为测试开区模式生效！
+DelayCall 100 @管理_开区模式设置
+BREAK
+
+[@设置为正式]
+#ACT
+MOV G0 0
+SENDMSG 7 设置为正式开区模式生效！
+DelayCall 100 @管理_开区模式设置
+BREAK
+
+
+[@管理_赞助大使办理]
+<[全服元宝查询]/@管理_全服元宝查询> ┆　　铜牌赞助　<增加/@@InPutString16>　　　　<删除/@@InPutString17>\
+<[开区模式设置]/@管理_开区模式设置> ┆　　银牌赞助　<增加/@@InPutString18>　　　　<删除/@@InPutString19>\
+<[行会攻沙设置]/@管理_行会攻沙设置> ┆　　金牌赞助　<增加/@@InPutString20>　　　　<删除/@@InPutString21>\
+<[赌博及发公告]/@管理_赌博及发公告> ┆　　钻石赞助　<增加/@@InPutString22>　　　　<删除/@@InPutString23>\
+<[封号系统设置]/@管理_封号系统设置> ┆　　<COLOR=clAqua 办理高等级赞助时会自动将低等级名单中删>\
+<[二级密码设置]/@管理_二级密码设置> ┆　　<COLOR=clAqua 除，不用担心重复(仅限玩家尚未领取时)>\
+<COLOR=clAqua [赞助大使办理]>-┆　　对已获得封号的玩家进行<删除/@@InPutString24>\
+等待添加设置4　┆　　信誉商人　<增加/@@InPutString25>　　　　<删除/@@InPutString26>\
+等待添加设置5　┆\
+
+[@@InPutString16]
+#If
+#Act
+DelayGoto 1 ~InPutString16
+[~InPutString16]
+#If
+#ACT
+ADDLINELIST ..\Envir\..\QuestDiary\数据文件\赞助大使\铜牌赞助名单.txt <$STR(S16)> HardDisk
+MessageBox 玩家:<$STR(S16)>，已被列入铜牌赞助名单!
+BREAK
+[@@InPutString17]
+#If
+#Act
+DelayGoto 1 ~InPutString17
+[~InPutString17]
+#If
+#ACT
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\铜牌赞助名单.txt <$STR(S17)> HardDisk
+MessageBox 玩家:<$STR(S17)>已清除成功!
+BREAK
+
+[@@InPutString18]
+#If
+#Act
+DelayGoto 1 ~InPutString18
+[~InPutString18]
+#If
+#ACT
+ADDLINELIST ..\Envir\..\QuestDiary\数据文件\赞助大使\银牌赞助名单.txt <$STR(S18)> HardDisk
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\铜牌赞助名单.txt <$STR(S18)> HardDisk
+MessageBox 玩家:<$STR(S18)>，已被列入银牌赞助名单!
+BREAK
+[@@InPutString19]
+#If
+#Act
+DelayGoto 1 ~InPutString19
+[~InPutString19]
+#If
+#ACT
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\银牌赞助名单.txt <$STR(S19)> HardDisk
+MessageBox 玩家:<$STR(S19)>已清除成功!
+BREAK
+
+[@@InPutString20]
+#If
+#Act
+DelayGoto 1 ~InPutString20
+[~InPutString20]
+#If
+#ACT
+ADDLINELIST ..\Envir\..\QuestDiary\数据文件\赞助大使\金牌赞助名单.txt <$STR(S20)> HardDisk
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\铜牌赞助名单.txt <$STR(S20)> HardDisk
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\银牌赞助名单.txt <$STR(S20)> HardDisk
+MessageBox 玩家:<$STR(S20)>，已被列入金牌赞助名单!
+BREAK
+[@@InPutString21]
+#If
+#Act
+DelayGoto 1 ~InPutString21
+[~InPutString21]
+#If
+#ACT
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\金牌赞助名单.txt <$STR(S21)> HardDisk
+MessageBox 玩家:<$STR(S21)>已清除成功!
+BREAK
+
+[@@InPutString22]
+#If
+#Act
+DelayGoto 1 ~InPutString22
+[~InPutString22]
+#If
+#ACT
+ADDLINELIST ..\Envir\..\QuestDiary\数据文件\赞助大使\钻石赞助名单.txt <$STR(S22)> HardDisk
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\铜牌赞助名单.txt <$STR(S22)> HardDisk
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\银牌赞助名单.txt <$STR(S22)> HardDisk
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\金牌赞助名单.txt <$STR(S22)> HardDisk
+MessageBox 玩家:<$STR(S22)>，已被列入钻石赞助名单!
+BREAK
+[@@InPutString23]
+#If
+#Act
+DelayGoto 1 ~InPutString23
+[~InPutString23]
+#If
+#ACT
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\钻石赞助名单.txt <$STR(S23)> HardDisk
+MessageBox 玩家:<$STR(S23)>已清除成功!
+BREAK
+
+[@@InPutString24]
+#IF
+#Act
+DelayGoto 1 ~InPutString24
+[~InPutString24]
+#If
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\赞助大使\已删除赞助名单.txt <$STR(S24)> HardDisk
+MessageBox 玩家:<$STR(S24)>，从已获得封号的名单中删除!
+BREAK
+
+[@@InPutString25]
+#If
+#Act
+DelayGoto 1 ~InPutString25
+[~InPutString25]
+#If
+#ACT
+ADDLINELIST ..\Envir\..\QuestDiary\数据文件\信誉商人名单.txt <$STR(S25)> HardDisk
+MessageBox 玩家:<$STR(S25)>已设置为信誉商人!
+BREAK
+
+[@@InPutString26]
+#IF
+#Act
+DelayGoto 1 ~InPutString26
+[~InPutString26]
+#If
+#ACT
+DELLINELIST ..\QuestDiary\数据文件\信誉商人名单.txt <$STR(S26)> HardDisk
+MessageBox 玩家:<$STR(S26)>，从信誉商人名单中删除!
+BREAK
+
+;-----------二级密码开始------------------
+[@管理_二级密码设置]
+<[全服元宝查询]/@管理_全服元宝查询> ┆登陆二级密码   <清除/@@InPutString4>\
+<[开区模式设置]/@管理_开区模式设置> ┆ \
+<[行会攻沙设置]/@管理_行会攻沙设置> ┆ \
+<[赌博及发公告]/@管理_赌博及发公告> ┆ \
+<[封号系统设置]/@管理_封号系统设置> ┆ \
+<COLOR=clAqua [二级密码设置]>-┆\
+<[赞助大使办理]/@管理_赞助大使办理> ┆\
+等待添加设置4　┆\
+等待添加设置5　┆\
+
+[@@InPutString4]
+#If
+#Act
+DelayGoto 1 ~InPutString4
+
+[~InPutString4]
+#If
+#ACT
+DELLINELIST ..\QuestDiary\二级密码\密码名单.txt <$STR(S4)> HardDisk
+MessageBox 玩家:<$STR(S4)>的二级密码清除成功!
+CLOSE
+
+
+
+[@管理_封号系统设置]
+<[全服元宝查询]/@管理_全服元宝查询> ┆购买脱机金币警告 <加入名单/@@InPutString11>  <删除名单/@@InPutString12>\
+<[开区模式设置]/@管理_开区模式设置> ┆脱机人物+可疑人物 <增加/@@InPutString7> <删除/@@InPutString15>    <封IP/@@InPutString8>\
+<[行会攻沙设置]/@管理_行会攻沙设置> ┆<普通外挂(有红字)/@@InPutString9>      <普通外挂(无红字)/@@InPutString10>\
+<[赌博及发公告]/@管理_赌博及发公告> ┆<封骗子盗号/@@InPutString13>      <封捣乱者/@@InPutString14>\
+<COLOR=clAqua [封号系统设置]>-┆<解除脱机自封/@@InPutString29>      <解除普通封号/@@InPutString30>\
+<[二级密码设置]/@管理_二级密码设置> ┆\
+<[赞助大使办理]/@管理_赞助大使办理> ┆\
+等待添加设置4　┆\
+等待添加设置5　┆\
+
+[@@InPutString7]
+#If
+#Act
+DelayGoto 1 ~InPutString7
+
+[~InPutString7]
+#If
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\封号检测\可疑人物名单.txt <$STR(S7)> HardDisk
+Gmexecute T <$STR(S7)>
+;SENDMSG 0 玩家【<$STR(S7)>】使用外挂，做封号处理！  255  253
+MessageBox 玩家:<$STR(S7)>已被列入可疑人物并封号!
+break
+
+[@@InPutString15]
+#If
+#Act
+DelayGoto 1 ~InPutString15
+
+[~InPutString15]
+#If
+#ACT
+DELLINELIST ..\QuestDiary\数据文件\封号检测\可疑人物名单.txt <$STR(S15)> HardDisk
+MessageBox 玩家:<$STR(S15)>已从可疑名单中清除!
+break
+
+[@@InPutString8]
+#If
+#Act
+DelayGoto 1 ~InPutString8
+
+[~InPutString8]
+#If
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\封号检测\IP数据.txt <$STR(S8)> HardDisk
+MessageBox IP:<$STR(S8)>已被列入可疑IP!
+break
+
+
+[@@InPutString9]
+#If
+#Act
+DelayGoto 1 ~InPutString9
+
+[~InPutString9]
+#If
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\封号检测\普通外挂名单.txt <$STR(S9)> HardDisk
+Gmexecute T <$STR(S9)>
+SENDMSG 0 玩家【<$STR(S9)>】使用外挂，做封号处理！  255  253
+MessageBox 玩家:<$STR(S9)>已被列入普通外挂名单，有提示!
+break
+
+[@@InPutString10]
+#If
+#Act
+DelayGoto 1 ~InPutString10
+
+[~InPutString10]
+#If
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\封号检测\普通外挂名单.txt <$STR(S10)> HardDisk
+Gmexecute T <$STR(S10)>
+;SENDMSG 0 玩家【<$STR(S10)>】使用外挂，做封号处理！  255  253
+MessageBox 玩家:<$STR(S10)>已被列入普通外挂名单，无提示!
+break
+
+
+[@@InPutString11]
+#ACT
+DELAYGOTO 1 @InPutString11
+[@InPutString11]
+#IF
+#ACT
+ADDLINELIST ..\Envir\..\QuestDiary\数据文件\购买脱机元宝警告名单.txt <$STR(S11)> HardDisk
+messagebox 玩家：<$STR(S11)>，已被列入警告名单！
+
+
+[@@InPutString12]
+#If
+#Act
+DelayGoto 1 ~InPutString12
+[~InPutString12]
+#If
+#ACT
+DELLINELIST ..\QuestDiary\数据文件\购买脱机元宝警告名单.txt <$STR(S12)> HardDisk
+MessageBox 玩家:<$STR(S12)>，的警告清除成功!
+
+
+[@@InPutString13]
+#If
+#Act
+DelayGoto 1 ~InPutString13
+[~InPutString13]
+#If
+#ACT
+Gmexecute T <$STR(S13)>
+ADDLINELIST ..\Envir\..\QuestDiary\数据文件\封号检测\骗子盗号名单.txt <$STR(S13)> HardDisk
+MessageBox 玩家:<$STR(S13)>，已被列入骗子盗号名单!
+
+
+[@@InPutString14]
+#If
+#Act
+DelayGoto 1 ~InPutString14
+[~InPutString14]
+#If
+#ACT
+Gmexecute T <$STR(S14)>
+ADDLINELIST ..\Envir\..\QuestDiary\数据文件\封号检测\捣乱名单.txt <$STR(S14)> HardDisk
+MessageBox 玩家:<$STR(S14)>，已被列入捣乱者名单!
+
+
+
+[@@InPutString29]
+#If
+#Act
+DelayGoto 1 ~InPutString29
+
+[~InPutString29]
+#If
+#ACT
+DELLINELIST ..\QuestDiary\数据文件\封号检测\脱机自封名单.txt <$STR(S29)> HardDisk
+MessageBox 玩家:<$STR(S29)>已从脱机自封名单中清除!
+break
+
+
+
+[@@InPutString30]
+#If
+#Act
+DelayGoto 1 ~InPutString30
+
+[~InPutString30]
+#If
+#ACT
+DELLINELIST ..\QuestDiary\数据文件\封号检测\普通外挂名单.txt <$STR(S30)> HardDisk
+DELLINELIST ..\QuestDiary\数据文件\封号检测\骗子盗号名单.txt <$STR(S30)> HardDisk
+DELLINELIST ..\QuestDiary\数据文件\封号检测\捣乱名单.txt <$STR(S30)> HardDisk
+MessageBox 玩家:<$STR(S30)>已从所有普通外挂名单中清除!
+break
+
+
+[@管理_全服元宝查询]
+#IF
+ISADMIN
+#ACT
+mov G86 <$STR(G84)>
+INC G86 <$STR(G85)>
+#SAY
+<COLOR=clAqua [全服元宝查询]>-┆在线人物元宝：<$STR(G84)>\
+<[开区模式设置]/@管理_开区模式设置> ┆离线人物元宝：<$STR(G85)>\
+<[行会攻沙设置]/@管理_行会攻沙设置> ┆全服元宝目前剩余元宝：<$STR(G86)> \
+<[赌博及发公告]/@管理_赌博及发公告> ┆你身上有<$GAMEGOLD>个元宝\
+<[封号系统设置]/@管理_封号系统设置> ┆<手动刷新/@全服元宝_手动刷新>\
+<[二级密码设置]/@管理_二级密码设置> ┆<强制归零/@全服元宝_强制归零>\
+<[赞助大使办理]/@管理_赞助大使办理> ┆\
+等待添加设置4　┆\
+等待添加设置5　┆\
+
+[@全服元宝_强制归零]
+#IF
+ISADMIN
+#ACT
+mov G86  0
+MOV G85  0
+mov G84  0
+DelayCall 100 @管理_全服元宝查询
+MessageBox 已经强制归零！
+BREAK
+
+[@全服元宝_手动刷新]
+#IF
+ISADMIN
+#ACT
+mov G86  0
+mov G84  0
+GMEXECUTE 开始提问 @全服元宝刷新
+DelayCall 100 @管理_全服元宝查询
+MessageBox 已经强制手动刷新，请勿刷新太频繁！
+BREAK
+
+[@IsInFilterList]
+#If
+CheckLevelEx > 0 
+#Act
+MessageBox 输入数据中包含了非法字符.请重新编辑
+
+
+}

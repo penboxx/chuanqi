@@ -1,0 +1,46 @@
+[@登陆脚本]
+{
+#IF
+ISNEWHUMAN
+#act
+give 魔血石(赠品) 2
+give 随机传送石(赠品) 1
+give 比奇传送石(赠品) 1
+SENDMSG 0 <$USERNAME>进入游戏，从此<$SERVERNAME>又多了一份力量! 
+
+
+#IF
+CheckLevelex < 55
+#ACT
+SENDMSG 0 ★玛法勇士〖%s〗来到<$SERVERNAME>.所有地图靠跑.回味2003年的传奇经典 ! 250 249
+BREAK
+
+
+
+#IF
+ISCASTLEMASTER
+#ACT
+SENDMSG 1 伟大的沙巴克城城主〖%s〗进入游戏中！！！ 
+CHANGENAMECOLOR 215
+
+
+#IF
+ISADMIN
+#ACT
+CHANGEMODE 1 1
+CHANGEMODE 2 1
+CHANGEMODE 3 1
+SENDMSG 5 尊敬的%s，欢迎您进入游戏,当前在线人数:<$USERCOUNT>人!。
+
+
+#IF
+CHECKLEVELEX < 21
+#ACT
+KILLMONEXPRATE 4000 7200
+BREAK
+
+
+
+
+
+}

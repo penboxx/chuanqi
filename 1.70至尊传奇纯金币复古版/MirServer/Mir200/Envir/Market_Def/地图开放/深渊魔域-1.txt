@@ -1,0 +1,17 @@
+[@main]
+　\\
+“深渊魔域”也已重现大陆！\
+不过那么险恶的地方，你真的打算去吗？\\
+　\\
+<我要进去/@move>　<COLOR=clLime 开区第5天20点开放深渊魔域>\
+<过几天再去/@exit>
+
+[@move]
+#IF
+EQUAL A85 开启
+#ACT
+mapmove T219 81 14
+break
+#ELSEACT
+messagebox 地图还未开放,请等待开放
+BREAK

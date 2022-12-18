@@ -1,0 +1,166 @@
+[@封号]
+{
+#IF
+ISADMIN
+#say
+-------------------------------------------------------------\
+『<封脱机人物/@@InPutString22>』┆『<封脱机IP/@@InPutString33>』┆『<封加速人物/@@InPutString44>』┆『<封加速IP/@@InPutString55>』┆\
+-------------------------------------------------------------\
+『<封捣乱人物/@@InPutString66>』┆『<封捣乱IP/@@InPutString77>』┆『<封骗子人物/@@InPutString88>』┆『<封骗子IP/@@InPutString99>』┆\
+-------------------------------------------------------------\
+『<封脱机帐号/@@InPutString98>』┆『<留用待定/@@>』┆『<留用待定吧/@@>』┆『<留用待定/@@>』┆\
+-------------------------------------------------------------\
+<自定义中间公告/@@InPutString56>　<自定义顶部公告/@@InPutString57>\
+
+
+[@@InPutString56]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString56
+[~InPutString56]
+#If
+CheckLevelEX > 0
+#Act
+DEC S56 62 999
+SENDMSG 0 <$STR(S56)>  255 249 30
+CLOSE
+goto @封号
+
+
+[@@InPutString57]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString57
+[~InPutString57]
+#If
+CheckLevelEX > 0
+#Act
+DEC S57 62 999
+SendScrollMsg <$STR(S57)> 255 249
+CLOSE
+goto @封号
+
+[@@InPutString98]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString98
+
+[~InPutString98]
+#IF
+#ACT
+ADDLINELIST .\QuestDiary\数据\禁止登陆-脱机帐号.txt <$STR(S98)>
+;SENDMSG 4 你输入脱机帐号的是：<$STR(S98)>
+
+[@@InPutString99]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString99
+
+[~InPutString99]
+#IF
+#ACT
+ADDLINELIST .\QuestDiary\数据\禁止登陆骗子IP.txt <$STR(S99)>
+;SENDMSG 4 你输入的骗子IP是：<$STR(S99)>
+
+[@@InPutString88]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString88
+
+[~InPutString88]
+#IF
+#ACT
+ADDLINELIST .\QuestDiary\数据\禁止登陆-骗子.txt <$STR(S88)>
+;SENDMSG 4 你输入的骗子人物名是：<$STR(S88)>
+
+[@@InPutString77]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString77
+
+[~InPutString77]
+#IF
+#ACT
+ADDLINELIST .\QuestDiary\数据\禁止登陆-捣乱IP.txt <$STR(S77)>
+;SENDMSG 4 你输入的捣乱IP是：<$STR(S77)>
+
+
+[@@InPutString66]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString66
+
+[~InPutString66]
+#IF
+#ACT
+ADDLINELIST .\QuestDiary\数据\禁止登陆-捣乱.txt <$STR(S66)>
+;SENDMSG 4 你输入的捣乱人物名是：<$STR(S66)>
+
+
+[@@InPutString55]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString55
+
+[~InPutString55]
+#IF
+#ACT
+ADDLINELIST .\QuestDiary\数据\禁止登陆加速IP.txt <$STR(S55)>
+;SENDMSG 4 你输入的加速IP是：<$STR(S55)>
+
+[@@InPutString44]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString44
+
+[~InPutString44]
+#IF
+#ACT
+ADDLINELIST .\QuestDiary\数据\禁止登陆-加速.txt <$STR(S44)>
+;SENDMSG 4 你输入的加速人物名是：<$STR(S44)>
+
+
+
+[@@InPutString33]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString33
+
+[~InPutString33]
+#IF
+#ACT
+ADDLINELIST .\QuestDiary\数据\禁止登陆脱机IP.txt <$STR(S33)>
+;SENDMSG 4 你输入的脱机IP是：<$STR(S33)>
+
+
+[@@InPutString22]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString22
+
+[~InPutString22]
+#IF
+#ACT
+ADDLINELIST .\QuestDiary\数据\禁止登陆-脱机.txt <$STR(S22)>
+;SENDMSG 4 你输入的脱机人物名是：<$STR(S22)>
+
+[@IsInFilterList]
+#If
+CheckLevelEx > 0 
+#Act
+MessageBox 输入数据中包含了非法字符.请重新编辑
+Goto @Main
+Break 
+
+}

@@ -1,0 +1,8 @@
+[SuiteItems]
+Count=1
+[0]
+Hint=¸ºÖØÌáÉý
+UseItems=111,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,
+Attribute=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,
+ItemColor=239
+AbilColor=20

@@ -1,0 +1,384 @@
+()
+%100
+[@main]
+英雄合击威力无比，因此我派前辈在记录英雄合击时，\
+使用了一种眼睛看不见的特制药水进行书写，\
+并只在部分白日门技能书中留有记录。\
+我们家族一直以来负责保护合击技的秘密，\
+你既然对白日门有恩，我一定会帮你的。\
+<我是来给书页换取英雄技能的/@书页碎片>    <我要合成合击技能/@合击技能>\ \
+<我只是路过，打扰了/@exit>                <哪里还能获得书页呢？/@获得书页>\
+
+[@yF]
+#if
+checkitem 1号书页
+checkitem 2号书页
+checkitem 3号书页
+checkitem 4号书页
+checkitem 5号书页
+checkitem 6号书页
+checkitem 7号书页
+checkitem 8号书页
+checkitem 9号书页
+checkitem 书页 30
+CHECKGAMEGOLD > 99
+#act
+GAMEGOLD - 100
+take 1号书页
+take 2号书页
+take 3号书页
+take 4号书页
+take 5号书页
+take 6号书页
+take 7号书页
+take 8号书页
+take 9号书页
+take 书页 30
+give 英雄护体神盾
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄护体神盾！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+
+
+
+[@yk]
+#if
+checkitem 1号书页
+checkitem 2号书页
+checkitem 3号书页
+checkitem 4号书页
+checkitem 5号书页
+checkitem 6号书页
+checkitem 7号书页
+checkitem 8号书页
+checkitem 9号书页
+checkitem 书页 30
+CHECKGAMEGOLD > 99
+#act
+GAMEGOLD - 100
+take 1号书页
+take 2号书页
+take 3号书页
+take 4号书页
+take 5号书页
+take 6号书页
+take 7号书页
+take 8号书页
+take 9号书页
+take 书页 30
+give 护体神盾
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了护体神盾！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+
+[@书页碎片]
+如果你有书页的话，你就交给我看看，\
+我可以帮您拼凑一下，看是否可以还原成一本技能秘籍。\
+你可以交给我2片、5片或者8片书页，\
+如果提供的书页越多，越有可能根据里面的提示还原成高级技能书，\
+当然，由于碎片过于残破，不是每次都能够还原成技能秘籍，\
+如果还原出来，不是您需要的技能，您可以把书页给我，\
+好让我把这个技能发扬光大，重现当年白日门的风光。\
+<递交书页/@递交书页>\
+[@获得书页]
+据说很多技能书页已经流散到玛法的各大魔王身上，\
+尸王、白野猪在混乱中抢到了大部分书页，\
+如果你能找到这些书页，我也许能帮你拼出一本完整的技能秘籍。\ \
+<返回/@MAIN>\
+[@递交书页]
+您是想要给我2片、5片还是8片书页呢？\
+如果提供的书页越多，越有可能根据里面的提示还原成高级技能书，\
+<COLOR=CLYELLOW 8片书页可能获得英雄冰咆哮英雄烈火剑法英雄召唤神兽三本技能书>\ \
+<COLOR=CLRED 合成英雄技能书籍需要花费50000金币>\ \
+<交2片书页/@交2片书页>        <交5片书页/@交5片书页>        <交8片书页/@交8片书页>\ \
+<让我再考虑考虑/@exit>\
+[@交2片书页]
+#IF
+CHECKGOLD 50000
+#ELSEACT
+MESSAGEBOX 合成英雄技能书籍需要花费50000金币
+BREAK
+#IF
+checkitem 书页 2
+random 8
+#SAY
+很可惜，这2片书页并没有关系，不能修复成技能书\
+#ACT
+take 书页 2
+break
+#IF
+CHECKGOLD 50000
+checkitem 书页 2
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为<$STR(S18)>！\
+#ACT
+TAKE 金币 50000
+take 书页 2
+ReadRandomStr .\QuestDiary\抽取数据\合成书页\书页2片.txt S18
+give <$STR(S18)> 1
+SENDMSG 0 恭喜：<$USERNAME>，用了2张书页还原<$STR(S18)>成功！ 251 249
+#ELSESAY
+您好象没有带来足够的书页啊\
+[@交5片书页]
+#IF
+CHECKGOLD 50000
+#ELSEACT
+MESSAGEBOX 合成英雄技能书籍需要花费50000金币
+BREAK
+#IF
+checkitem 书页 5
+random 9
+#SAY
+很可惜，这5片书页并没有关系，不能修复成技能书\
+#ACT
+take 书页 5
+break
+#IF
+CHECKGOLD 50000
+checkitem 书页 5
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为<$STR(S18)>！\
+#ACT
+TAKE 金币 50000
+take 书页 5
+ReadRandomStr .\QuestDiary\抽取数据\合成书页\书页5片.txt S18
+give <$STR(S18)> 1
+SENDMSG 0 恭喜：<$USERNAME>，用了5张书页还原<$STR(S18)>成功！ 251 249
+#ELSESAY
+您好象没有带来足够的书页啊\
+[@交8片书页]
+#IF
+CHECKGOLD 50000
+#ELSEACT
+MESSAGEBOX 合成英雄技能书籍需要花费50000金币
+BREAK
+#IF
+checkitem 书页 8
+random 10
+#SAY
+很可惜，这8片书页并没有关系，不能修复成技能书\
+#ACT
+take 书页 8
+break
+#IF
+CHECKGOLD 50000
+checkitem 书页 8
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为<$STR(S18)>！\
+#ACT
+TAKE 金币 50000
+take 书页 8
+ReadRandomStr .\QuestDiary\抽取数据\合成书页\书页8片.txt S18
+give <$STR(S18)> 1
+SENDMSG 0 恭喜：<$USERNAME>，用了8张书页还原<$STR(S18)>成功！ 251 249
+#ELSESAY
+您好象没有带来足够的书页啊\
+[@@buHero]
+#ACT
+DELAYCALL 10 ~$CREATEHERO
+[~$CREATEHERO]
+你现在可以挑选一位英雄了。不过你只有一次挑选机会，\
+当你成功领取英雄后是无法再更换，请您仔细选择！\
+你想带领哪位英雄呢？\ \
+<英雄（男战士）/@CREATEHERO_WARR_MAN>      <英雄（男法师）/@CREATEHERO_WIZA_MAN>      <英雄（男道士）/@CREATEHERO_TAOS_MAN>\ \
+<英雄（女战士）/@CREATEHERO_WARR_WOM>      <英雄（女法师）/@CREATEHERO_WIZA_WOM>      <英雄（女道士）/@CREATEHERO_TAOS_WOM>\
+[@CREATEHERO_WARR_MAN]
+#ACT
+CREATEHERO 0 0
+[@CREATEHERO_WARR_WOM]
+#ACT
+CREATEHERO 0 1
+[@CREATEHERO_WIZA_MAN]
+#ACT
+CREATEHERO 1 0
+[@CREATEHERO_WIZA_WOM]
+#ACT
+CREATEHERO 1 1
+[@CREATEHERO_TAOS_MAN]
+#ACT
+CREATEHERO 2 0
+[@CREATEHERO_TAOS_WOM]
+#ACT
+CREATEHERO 2 1
+[@@buHeroEx]
+#ACT
+DELAYCALL 10 ~$CREATEHEROEX
+[~$CREATEHEROEX]
+选择英雄职业：\ \
+<男战士/@CREATEHERO_WARR_MAN1>   <女战士/@CREATEHERO_WARR_WOM1>\
+<男法师/@CREATEHERO_WIZA_MAN1>   <女法师/@CREATEHERO_WIZA_WOM1>\
+<男道士/@CREATEHERO_TAOS_MAN1>   <女道士/@CREATEHERO_TAOS_WOM1>\ \
+<关闭/@exit>
+[@CREATEHERO_WARR_MAN1]
+#ACT
+CREATEHEROEX 0 0
+[@CREATEHERO_WARR_WOM1]
+#ACT
+CREATEHEROEX 0 1
+[@CREATEHERO_WIZA_MAN1]
+#ACT
+CREATEHEROEX 1 0
+[@CREATEHERO_WIZA_WOM1]
+#ACT
+CREATEHEROEX 1 1
+[@CREATEHERO_TAOS_MAN1]
+#ACT
+CREATEHEROEX 2 0
+[@CREATEHERO_TAOS_WOM1]
+#ACT
+CREATEHEROEX 2 1
+//返回消息
+[@CreateingHero]
+系统正在接受申请，请稍候……\ \
+<关闭/@exit>
+[@HaveHero]
+您已经有英雄了。\ \
+<关闭/@exit>
+[@SetHeroName]
+请先给您的英雄取名字。\ \
+<关闭/@exit>
+[@qding]
+请确定一下是否真要删英雄,注意:删除以后不可以恢复！
+\ \
+<确定删除英雄/@DelMyHero> 
+[@DelMyHero]
+#ACT
+DELETEHERO
+//返回消息
+[@NotHaveHero]
+你没有英雄。\ \
+<关闭/@exit>
+[@LogOutHeroFirst]
+请将英雄设置下线！\ \
+<关闭/@exit>
+[@DeleteHeroOK]
+删除英雄成功。\ \
+<关闭/@exit>
+[@合击技能]
+合击书可以递交5张书页和8张书页合成.几率高\
+如果你闲慢的话可以直接在我这里合成我这里不会失败的\
+如果你有500万金币加20张书页，我马上就给你想要的合击技能！\ 
+<COLOR=CLRED 英雄合击技能30级练习。>\
+<破魂斩 战士和战士/@破魂斩>             <噬魂沼泽 道士和道士/@噬魂沼泽>\ \
+<火龙气焰 法师和法师/@火龙气焰>           <雷霆一击 战士和法师/@雷霆一击>\ \
+<末日审判 道士和法师/@末日审判>           <劈星斩 战士和道士/@劈星斩>\
+[@劈星斩]
+#IF
+CHECKBAGSIZE 2
+#ELSEACT
+MESSAGEBOX 包裹空间不够！请空出至少2个位置！
+BREAK
+#IF
+checkgold 5000000
+checkitem 书页  20
+#ACT
+CLOSE
+take 金币 5000000
+take 书页  20
+give 劈星斩 1
+SENDMSG 0 恭喜：<$USERNAME>，合成了劈星斩成功.从此英雄不在寂寞成功！ 251 249
+BREAK
+#ELSESAY
+对不起！你的金币不够500万或没20张！\ 
+<返 回/@Main>
+[@末日审判]
+#IF
+CHECKBAGSIZE 2
+#ELSEACT
+MESSAGEBOX 包裹空间不够！请空出至少2个位置！
+BREAK
+#IF
+checkgold 5000000
+checkitem 书页  20
+#ACT
+CLOSE
+take 金币 5000000
+take 书页  20
+give 末日审判 1
+SENDMSG 0 恭喜：<$USERNAME>，合成了末日审判成功.从此英雄不在寂寞！ 251 249
+BREAK
+#ELSESAY
+对不起！你的金币不够500万或没20张书页！\ 
+<返 回/@Main>
+[@雷霆一击]
+#IF
+CHECKBAGSIZE 2
+#ELSEACT
+MESSAGEBOX 包裹空间不够！请空出至少2个位置！
+BREAK
+#IF
+checkgold 5000000
+checkitem 书页  20
+#ACT
+CLOSE
+take 金币 5000000
+take 书页  20
+give 雷霆一击 1
+SENDMSG 0 恭喜：<$USERNAME>，合成了雷霆一击成功.从此英雄不在寂寞！ 251 249
+BREAK
+#ELSESAY
+对不起！你的金币不够500万或没20张书页！\ 
+<返 回/@Main>
+[@火龙气焰]
+#IF
+CHECKBAGSIZE 2
+#ELSEACT
+MESSAGEBOX 包裹空间不够！请空出至少2个位置！
+BREAK
+#IF
+checkgold 5000000
+checkitem 书页  20
+#ACT
+CLOSE
+take 金币 5000000
+take 书页  20
+give 火龙气焰 1
+SENDMSG 0 恭喜：<$USERNAME>，合成了火龙气焰成功.从此英雄不在寂寞！ 251 249
+BREAK
+#ELSESAY
+对不起！你的金币不够500万或没20张书页！\ 
+<返 回/@Main>
+[@噬魂沼泽]
+#IF
+CHECKBAGSIZE 2
+#ELSEACT
+MESSAGEBOX 包裹空间不够！请空出至少2个位置！
+BREAK
+#IF
+checkgold 5000000
+checkitem 书页  20
+#ACT
+CLOSE
+take 金币 5000000
+take 书页  20
+give 噬魂沼泽 1
+SENDMSG 0 恭喜：<$USERNAME>，合成了噬魂沼泽成功.从此英雄不在寂寞！ 251 249
+BREAK
+#ELSESAY
+对不起！你的金币不够500万或没20张书页！\ 
+<返 回/@Main>
+[@破魂斩]
+#IF
+CHECKBAGSIZE 2
+#ELSEACT
+MESSAGEBOX 包裹空间不够！请空出至少2个位置！
+BREAK
+#IF
+checkgold 5000000
+checkitem 书页  20
+#ACT
+CLOSE
+take 金币 5000000
+take 书页  20
+give 破魂斩 1
+SENDMSG 0 恭喜：<$USERNAME>，合成了破魂斩成功.从此英雄不在寂寞！ 251 249
+BREAK
+#ELSESAY
+对不起！你的金币不够500万或没20张书页！\ 
+<返 回/@Main>
+
+;--b--b--Q-Q---1-5-6-5-9-8-0-1-8--------

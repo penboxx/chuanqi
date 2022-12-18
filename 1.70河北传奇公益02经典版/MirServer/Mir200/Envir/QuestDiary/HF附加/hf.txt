@@ -1,0 +1,387 @@
+[@领取附加]
+{
+#IF
+CheckAccountList ..\QuestDiary\HF附加\01.txt
+#ACT
+GAMEDIAMOND + 0
+DelAccountList ..\QuestDiary\HF附加\01.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\1.txt
+#ACT
+GAMEDIAMOND + 2
+DelAccountList ..\QuestDiary\HF附加\1.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了2赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\10.txt
+#ACT
+GAMEDIAMOND + 20
+DelAccountList ..\QuestDiary\HF附加\10.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了20赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\100.txt
+#ACT
+GAMEDIAMOND + 200
+DelAccountList ..\QuestDiary\HF附加\100.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了200赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\1000.txt
+#ACT
+GAMEDIAMOND + 2000
+DelAccountList ..\QuestDiary\HF附加\1000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了2000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\10000.txt
+#ACT
+GAMEDIAMOND + 20000
+DelAccountList ..\QuestDiary\HF附加\10000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了20000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\02.txt
+#ACT
+GAMEDIAMOND + 0
+DelAccountList ..\QuestDiary\HF附加\02.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\2.txt
+#ACT
+GAMEDIAMOND + 4
+DelAccountList ..\QuestDiary\HF附加\2.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了4赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\20.txt
+#ACT
+GAMEDIAMOND + 40
+DelAccountList ..\QuestDiary\HF附加\20.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了40赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\200.txt
+#ACT
+GAMEDIAMOND + 400
+DelAccountList ..\QuestDiary\HF附加\200.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了400赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\2000.txt
+#ACT
+GAMEDIAMOND + 4000
+DelAccountList ..\QuestDiary\HF附加\2000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了4000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\20000.txt
+#ACT
+GAMEDIAMOND + 40000
+DelAccountList ..\QuestDiary\HF附加\20000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了40000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\03.txt
+#ACT
+GAMEDIAMOND + 0
+DelAccountList ..\QuestDiary\HF附加\03.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\3.txt
+#ACT
+GAMEDIAMOND + 6
+DelAccountList ..\QuestDiary\HF附加\3.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了6赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\30.txt
+#ACT
+GAMEDIAMOND + 60
+DelAccountList ..\QuestDiary\HF附加\30.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了60赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\300.txt
+#ACT
+GAMEDIAMOND + 600
+DelAccountList ..\QuestDiary\HF附加\300.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了600赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\3000.txt
+#ACT
+GAMEDIAMOND + 6000
+DelAccountList ..\QuestDiary\HF附加\3000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了6000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\30000.txt
+#ACT
+GAMEDIAMOND + 60000
+DelAccountList ..\QuestDiary\HF附加\30000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了60000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\04.txt
+#ACT
+GAMEDIAMOND + 0
+DelAccountList ..\QuestDiary\HF附加\04.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\4.txt
+#ACT
+GAMEDIAMOND + 8
+DelAccountList ..\QuestDiary\HF附加\4.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了8赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\40.txt
+#ACT
+GAMEDIAMOND + 80
+DelAccountList ..\QuestDiary\HF附加\40.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了80赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\400.txt
+#ACT
+GAMEDIAMOND + 800
+DelAccountList ..\QuestDiary\HF附加\400.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了800赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\4000.txt
+#ACT
+GAMEDIAMOND + 8000
+DelAccountList ..\QuestDiary\HF附加\4000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了8000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\40000.txt
+#ACT
+GAMEDIAMOND + 80000
+DelAccountList ..\QuestDiary\HF附加\40000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了80000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\05.txt
+#ACT
+GAMEDIAMOND + 1
+DelAccountList ..\QuestDiary\HF附加\05.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了1赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\5.txt
+#ACT
+GAMEDIAMOND + 10
+DelAccountList ..\QuestDiary\HF附加\5.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了10赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\50.txt
+#ACT
+GAMEDIAMOND + 100
+DelAccountList ..\QuestDiary\HF附加\50.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了100赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\500.txt
+#ACT
+GAMEDIAMOND + 1000
+DelAccountList ..\QuestDiary\HF附加\500.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了1000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\5000.txt
+#ACT
+GAMEDIAMOND + 10000
+DelAccountList ..\QuestDiary\HF附加\5000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了10000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\50000.txt
+#ACT
+GAMEDIAMOND + 100000
+DelAccountList ..\QuestDiary\HF附加\50000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了100000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\06.txt
+#ACT
+GAMEDIAMOND + 1
+DelAccountList ..\QuestDiary\HF附加\06.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了1赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\6.txt
+#ACT
+GAMEDIAMOND + 12
+DelAccountList ..\QuestDiary\HF附加\6.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了12赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\60.txt
+#ACT
+GAMEDIAMOND + 120
+DelAccountList ..\QuestDiary\HF附加\60.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了120赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\600.txt
+#ACT
+GAMEDIAMOND + 1200
+DelAccountList ..\QuestDiary\HF附加\600.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了1200赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\6000.txt
+#ACT
+GAMEDIAMOND + 12000
+DelAccountList ..\QuestDiary\HF附加\6000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了12000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\60000.txt
+#ACT
+GAMEDIAMOND + 120000
+DelAccountList ..\QuestDiary\HF附加\60000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了120000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\07.txt
+#ACT
+GAMEDIAMOND + 1
+DelAccountList ..\QuestDiary\HF附加\07.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了1赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\7.txt
+#ACT
+GAMEDIAMOND + 14
+DelAccountList ..\QuestDiary\HF附加\7.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了14赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\70.txt
+#ACT
+GAMEDIAMOND + 140
+DelAccountList ..\QuestDiary\HF附加\70.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了140赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\700.txt
+#ACT
+GAMEDIAMOND + 1400
+DelAccountList ..\QuestDiary\HF附加\700.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了1400赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\7000.txt
+#ACT
+GAMEDIAMOND + 14000
+DelAccountList ..\QuestDiary\HF附加\7000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了14000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\70000.txt
+#ACT
+GAMEDIAMOND + 140000
+DelAccountList ..\QuestDiary\HF附加\70000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了140000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\08.txt
+#ACT
+GAMEDIAMOND + 1
+DelAccountList ..\QuestDiary\HF附加\08.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了1赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\8.txt
+#ACT
+GAMEDIAMOND + 16
+DelAccountList ..\QuestDiary\HF附加\8.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了16赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\80.txt
+#ACT
+GAMEDIAMOND + 160
+DelAccountList ..\QuestDiary\HF附加\80.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了160赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\800.txt
+#ACT
+GAMEDIAMOND + 1600
+DelAccountList ..\QuestDiary\HF附加\800.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了1600赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\8000.txt
+#ACT
+GAMEDIAMOND + 16000
+DelAccountList ..\QuestDiary\HF附加\8000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了16000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\80000.txt
+#ACT
+GAMEDIAMOND + 160000
+DelAccountList ..\QuestDiary\HF附加\80000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了160000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\09.txt
+#ACT
+GAMEDIAMOND + 1
+DelAccountList ..\QuestDiary\HF附加\09.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了1赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\9.txt
+#ACT
+GAMEDIAMOND + 18
+DelAccountList ..\QuestDiary\HF附加\9.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了18赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\90.txt
+#ACT
+GAMEDIAMOND + 180
+DelAccountList ..\QuestDiary\HF附加\90.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了180赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\900.txt
+#ACT
+GAMEDIAMOND + 1800
+DelAccountList ..\QuestDiary\HF附加\900.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了1800赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\9000.txt
+#ACT
+GAMEDIAMOND + 18000
+DelAccountList ..\QuestDiary\HF附加\9000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了18000赞助点。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\90000.txt
+#ACT
+GAMEDIAMOND + 180000
+DelAccountList ..\QuestDiary\HF附加\90000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了180000赞助点。
+goto @领取附加
+
+#ELSESAY
+请查看自己的<附加币>数量!\
+没有充值请按提示进行充值!\
+注意：请确认手机发送的代码和您的游戏帐号是否正确!\
+<退出/@exit>
+}

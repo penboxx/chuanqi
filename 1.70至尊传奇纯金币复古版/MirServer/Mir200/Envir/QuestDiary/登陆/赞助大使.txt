@@ -1,0 +1,15 @@
+[@赞助]
+{
+#IF
+checknamelist ..\QuestDiary\数据\1000元赞助大使.txt
+#ACT
+SETRANKLEVELNAME %s\〖土豪赞助〗
+
+#IF
+checknamelist ..\QuestDiary\数据\3000元赞助大使.txt
+#ACT
+SENDMSG 1 烈焰土豪赞助大使〖%s〗进入游戏中！！！
+SETRANKLEVELNAME %s\〖土豪赞助〗
+
+
+}

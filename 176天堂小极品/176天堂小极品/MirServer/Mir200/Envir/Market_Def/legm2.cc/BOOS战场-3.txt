@@ -1,0 +1,22 @@
+[@main]
+╔─┬────────────────────────╗\
+┊<COLOR=clRed BO>┊<COLOR=clFuchsia 地图怪物：>终极BOSS每60分钟刷新1次               ┊\
+┊<COLOR=clRed SS>┊------------------------------------------------┊\
+┊<COLOR=clRed 之>┊<COLOR=clRed 进入条件：><COLOR=clSKYBLUE  每天：07:30开放 10点关闭>             ┊\
+┊<COLOR=clRed 地>┊<COLOR=clSKYBLUE 怪物爆率：>爆全服终极装备                        ┊\ 
+├─┴────────────────────────┤\
+┊                                                    ┊\   
+┊                        <立即进入/@jinru>                    ┊\
+╚──────────────────────────╝\
+
+
+[@jinru]
+#IF
+equal G66 1
+#act
+mapmove shenmoboss 9 11
+give 回城卷 1
+SENDMSG 0 【%s】进入了教主之家!
+#ELSEACT
+MESSAGEBOX 对不起，未到开放时间！
+BREAK

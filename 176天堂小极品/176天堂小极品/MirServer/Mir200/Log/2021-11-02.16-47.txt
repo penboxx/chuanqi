@@ -1,0 +1,89 @@
+2021/11/2 16:47:07 已读取 0个行会信息...
+2021/11/2 16:47:07 已读取 1个城堡信息...
+2021/11/2 16:47:07 连接SQL数据成功...
+2021/11/2 16:47:07 脚本错误 第:10 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/毒蛇老兵-2.txt
+2021/11/2 16:47:07 脚本错误 第:10 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/封魔老兵-4.txt
+2021/11/2 16:47:07 脚本错误 第:10 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/苍月老兵-5.txt
+2021/11/2 16:47:07 脚本错误 第:10 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/白日老兵-11.txt
+2021/11/2 16:47:07 脚本错误 第:10 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/比奇老兵-0.txt
+2021/11/2 16:47:07 脚本错误 第:119 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/盟重传送员-3.txt
+2021/11/2 16:47:07 脚本错误 第:2 行: D:\MirServer\Mir200\Envir\Market_Def\【银杏村】/新人接待员-0.txt
+2021/11/2 16:47:07 脚本错误 第:2 行: D:\MirServer\Mir200\Envir\Market_Def\【银杏村】/新人接待员-0.txt
+2021/11/2 16:47:07 脚本错误 第:22 行: D:\MirServer\Mir200\Envir\Market_Def\legm2.cc/摆摊市场-3.txt
+2021/11/2 16:47:07 脚本错误 第:2445 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2473 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2501 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2528 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2555 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2582 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2610 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2640 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2670 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2700 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2730 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2761 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2791 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2821 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2851 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2882 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2912 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:2943 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/金刚石使者-3.txt
+2021/11/2 16:47:07 脚本错误 第:26 行: D:\MirServer\Mir200\Envir\Market_Def\【老　兵】/盟重老兵-3.txt
+2021/11/2 16:47:07 脚本错误 第:662 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:663 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:664 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:665 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:666 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:667 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:691 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:692 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:693 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:694 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:695 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:696 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:721 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:722 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:723 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:724 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:725 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:726 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:754 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:755 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:756 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:757 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:758 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:759 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:775 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:788 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:789 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:790 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:791 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:792 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:793 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:815 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:828 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:829 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:830 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:831 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:832 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:833 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:856 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:870 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:871 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:872 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:873 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:874 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:875 行: D:\MirServer\Mir200\Envir\Market_Def\【盟重省】/综合服务生-3.txt
+2021/11/2 16:47:07 脚本错误 第:22 行: D:\MirServer\Mir200\Envir\Market_Def\九五制作/中国复古商人-3.txt
+2021/11/2 16:47:07 初始化 115个交易NPC...
+2021/11/2 16:47:07 初始化 7个管理NPC...
+2021/11/2 16:47:08 游戏网关端口(127.0.0.1:5000)已打开...
+2021/11/2 16:47:08 登录服务器(127.0.0.1:5600)连接成功...
+2021/11/2 16:47:09 游戏网关[0](127.0.0.1:61801)已打开..
+2021/11/2 16:47:11 数据库服务器(127.0.0.1:6000)连接成功...
+2021/11/2 16:47:43 管理员:九五论坛 lv:10
+2021/11/2 16:49:57 [制造物品] 九五论坛 强化天堂霸者(1073741824)
+2021/11/2 16:50:12 [制造物品] 九五论坛 强化天堂屠龙(1073741825)
+2021/11/2 16:51:20 管理员:九五论坛 lv:10
+2021/11/2 16:55:01 游戏网关[0](127.0.0.1:61801)已关闭..
+2021/11/2 16:55:01 游戏网关端口(127.0.0.1:5000)已关闭...

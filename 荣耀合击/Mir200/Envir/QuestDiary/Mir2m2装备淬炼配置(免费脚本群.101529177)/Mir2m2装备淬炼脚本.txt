@@ -1,0 +1,2304 @@
+[@Mir2m2装备淬炼脚本NPC]
+{
+
+[@Mir2m2淬炼衣服]
+#IF
+CHECKLEVELEX < $(淬炼需要等级X0)
+#ACT
+MESSAGEBOX 对不起，您的等级不够$(淬炼需要等级X0)，无法进行淬炼！
+BREAK
+#IF
+CHECKGAMEGOLD < $(淬炼需要元宝X0)
+#ACT
+MESSAGEBOX 对不起，您元宝不足$(淬炼需要元宝X0)个！
+BREAK
+
+#IF
+CHECKUSEITEM $(淬炼装备位置X0)
+#ELSEACT
+MESSAGEBOX 对不起，请将您的【衣服】佩戴在身上！
+BREAK
+
+#IF
+CheckStringList ..\QuestDiary\Mir2m2装备淬炼配置(免费脚本群.101529177)\Mir2m2装备淬炼列表.ini $(淬炼位置变量X0) HardDisk
+#ELSEACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X0)】不能进行淬炼！
+BREAK
+
+#IF
+CheckItemAddValue $(淬炼装备位置X0) 0 ? $(淬炼最高点数X0)
+CheckItemAddValue $(淬炼装备位置X0) 1 ? $(淬炼最高点数X0)
+CheckItemAddValue $(淬炼装备位置X0) 2 ? $(淬炼最高点数X0)
+CheckItemAddValue $(淬炼装备位置X0) 3 ? $(淬炼最高点数X0)
+CheckItemAddValue $(淬炼装备位置X0) 4 ? $(淬炼最高点数X0)
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X0)】附加属性已全部满$(淬炼最高点数X0)点，无法进行淬炼！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - $(淬炼需要元宝X0)
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P6 $(淬炼成功几率X0)
+#IF
+EQUAL P6 0
+#ACT
+MOV P6 1
+#ELSEACT
+MOVR P6 $(淬炼成功几率X0)
+#IF
+EQUAL P6 0
+#ACT
+MOV P9 5
+MOV P0 0
+MOV P1 1
+MOV P2 2
+MOV P3 3
+MOV P4 4
+#ELSEACT
+MOV P6 0
+SENDMSG 6 对不起，您的【$(淬炼位置变量X0)】淬炼失败！
+BREAK
+
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X0) <$STR(P7)> < $(淬炼最高点数X0)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X0) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X0) <$STR(P7)> < $(淬炼最高点数X0)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X0) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X0) <$STR(P7)> < $(淬炼最高点数X0)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X0) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X0) <$STR(P7)> < $(淬炼最高点数X0)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X0) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X0) <$STR(P7)> < $(淬炼最高点数X0)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X0) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+
+#IF
+EQUAL P6 0
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X0)】附加属性已全部满$(淬炼最高点数X0)点，无法进行淬炼！
+#ELSEACT
+SENDMSG 6 恭喜您，淬炼【$(淬炼位置变量X0)】成功！
+MESSAGEBOX 恭喜您，淬炼【$(淬炼位置变量X0)】成功！
+goto @衣服元素
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P6 0
+MOV P7 0
+MOV P8 0
+MOV P9 0
+MOV S10 
+
+[@Mir2m2淬炼勋章]
+#IF
+CHECKLEVELEX < $(淬炼需要等级X2)
+#ACT
+MESSAGEBOX 对不起，您的等级不够$(淬炼需要等级X2)，无法进行淬炼！
+BREAK
+#IF
+CHECKGAMEGOLD < $(淬炼需要元宝X2)
+#ACT
+MESSAGEBOX 对不起，您元宝不足$(淬炼需要元宝X2)个！
+BREAK
+
+#IF
+CHECKUSEITEM $(淬炼装备位置X2)
+#ELSEACT
+MESSAGEBOX 对不起，请将您的【勋章】佩戴在身上！
+BREAK
+
+#IF
+CheckStringList ..\QuestDiary\Mir2m2装备淬炼配置(免费脚本群.101529177)\Mir2m2装备淬炼列表.ini $(淬炼位置变量X2) HardDisk
+#ELSEACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X2)】不能进行淬炼！
+BREAK
+
+#IF
+CheckItemAddValue $(淬炼装备位置X2) 0 ? $(淬炼最高点数X2)
+CheckItemAddValue $(淬炼装备位置X2) 1 ? $(淬炼最高点数X2)
+CheckItemAddValue $(淬炼装备位置X2) 2 ? $(淬炼最高点数X2)
+CheckItemAddValue $(淬炼装备位置X2) 3 ? $(淬炼最高点数X2)
+CheckItemAddValue $(淬炼装备位置X2) 4 ? $(淬炼最高点数X2)
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X2)】附加属性已全部满$(淬炼最高点数X2)点，无法进行淬炼！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - $(淬炼需要元宝X2)
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P6 $(淬炼成功几率X2)
+#IF
+EQUAL P6 0
+#ACT
+MOV P6 1
+#ELSEACT
+MOVR P6 $(淬炼成功几率X2)
+#IF
+EQUAL P6 0
+#ACT
+MOV P9 5
+MOV P0 0
+MOV P1 1
+MOV P2 2
+MOV P3 3
+MOV P4 4
+#ELSEACT
+MOV P6 0
+SENDMSG 6 对不起，您的【$(淬炼位置变量X2)】淬炼失败！
+BREAK
+
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X2) <$STR(P7)> < $(淬炼最高点数X2)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X2) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X2) <$STR(P7)> < $(淬炼最高点数X2)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X2) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X2) <$STR(P7)> < $(淬炼最高点数X2)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X2) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X2) <$STR(P7)> < $(淬炼最高点数X2)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X2) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X2) <$STR(P7)> < $(淬炼最高点数X2)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X2) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+
+#IF
+EQUAL P6 0
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X2)】附加属性已全部满$(淬炼最高点数X2)点，无法进行淬炼！
+#ELSEACT
+SENDMSG 6 恭喜您，淬炼【$(淬炼位置变量X2)】成功！
+MESSAGEBOX 恭喜您，淬炼【$(淬炼位置变量X2)】成功！
+goto @勋章元素
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P6 0
+MOV P7 0
+MOV P8 0
+MOV P9 0
+MOV S10 
+
+[@Mir2m2淬炼项链]
+#IF
+CHECKLEVELEX < $(淬炼需要等级X3)
+#ACT
+MESSAGEBOX 对不起，您的等级不够$(淬炼需要等级X3)，无法进行淬炼！
+BREAK
+#IF
+CHECKGAMEGOLD < $(淬炼需要元宝X3)
+#ACT
+MESSAGEBOX 对不起，您元宝不足$(淬炼需要元宝X3)个！
+BREAK
+
+#IF
+CHECKUSEITEM $(淬炼装备位置X3)
+#ELSEACT
+MESSAGEBOX 对不起，请将您的【项链】佩戴在身上！
+BREAK
+
+#IF
+CheckStringList ..\QuestDiary\Mir2m2装备淬炼配置(免费脚本群.101529177)\Mir2m2装备淬炼列表.ini $(淬炼位置变量X3) HardDisk
+#ELSEACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X3)】不能进行淬炼！
+BREAK
+
+#IF
+CheckItemAddValue $(淬炼装备位置X3) 0 ? $(淬炼最高点数X3)
+CheckItemAddValue $(淬炼装备位置X3) 2 ? $(淬炼最高点数X3)
+CheckItemAddValue $(淬炼装备位置X3) 3 ? $(淬炼最高点数X3)
+CheckItemAddValue $(淬炼装备位置X3) 4 ? $(淬炼最高点数X3)
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X3)】附加属性已全部满$(淬炼最高点数X3)点，无法进行淬炼
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - $(淬炼需要元宝X3)
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P6 $(淬炼成功几率X3)
+#IF
+EQUAL P6 0
+#ACT
+MOV P6 1
+#ELSEACT
+MOVR P6 $(淬炼成功几率X3)
+#IF
+EQUAL P6 0
+#ACT
+MOV P9 5
+MOV P0 0
+MOV P2 2
+MOV P3 3
+MOV P4 4
+#ELSEACT
+MOV P6 0
+SENDMSG 6 对不起，您的【$(淬炼位置变量X3)】淬炼失败！
+BREAK
+
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X3) <$STR(P7)> < $(淬炼最高点数X3)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X3) <$STR(P7)> 0 1 0
+
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X3) <$STR(P7)> < $(淬炼最高点数X3)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X3) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X3) <$STR(P7)> < $(淬炼最高点数X3)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X3) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X3) <$STR(P7)> < $(淬炼最高点数X3)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X3) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X3) <$STR(P7)> < $(淬炼最高点数X3)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X3) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+
+#IF
+EQUAL P6 0
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X3)】附加属性已全部满$(淬炼最高点数X3)点，无法进行淬炼！
+#ELSEACT
+SENDMSG 6 恭喜您，淬炼【$(淬炼位置变量X3)】成功！
+MESSAGEBOX 恭喜您，淬炼【$(淬炼位置变量X3)】成功！
+goto @项链元素
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P6 0
+MOV P7 0
+MOV P8 0
+MOV P9 0
+MOV S10 
+
+[@Mir2m2淬炼头盔]
+#IF
+CHECKLEVELEX < $(淬炼需要等级X4)
+#ACT
+MESSAGEBOX 对不起，您的等级不够$(淬炼需要等级X4)，无法进行淬炼！
+BREAK
+#IF
+CHECKGAMEGOLD < $(淬炼需要元宝X4)
+#ACT
+MESSAGEBOX 对不起，您元宝不足$(淬炼需要元宝X4)个！
+BREAK
+
+#IF
+CHECKUSEITEM $(淬炼装备位置X4)
+#ELSEACT
+MESSAGEBOX 对不起，请将您的【头盔】佩戴在身上！
+BREAK
+
+#IF
+CheckStringList ..\QuestDiary\Mir2m2装备淬炼配置(免费脚本群.101529177)\Mir2m2装备淬炼列表.ini $(淬炼位置变量X4) HardDisk
+#ELSEACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X4)】不能进行淬炼！
+BREAK
+
+#IF
+CheckItemAddValue $(淬炼装备位置X4) 0 ? $(淬炼最高点数X4)
+CheckItemAddValue $(淬炼装备位置X4) 1 ? $(淬炼最高点数X4)
+CheckItemAddValue $(淬炼装备位置X4) 2 ? $(淬炼最高点数X4)
+CheckItemAddValue $(淬炼装备位置X4) 3 ? $(淬炼最高点数X4)
+CheckItemAddValue $(淬炼装备位置X4) 4 ? $(淬炼最高点数X4)
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X4)】附加属性已全部满$(淬炼最高点数X4)点，无法进行淬炼！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - $(淬炼需要元宝X4)
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P6 $(淬炼成功几率X4)
+#IF
+EQUAL P6 0
+#ACT
+MOV P6 1
+#ELSEACT
+MOVR P6 $(淬炼成功几率X4)
+#IF
+EQUAL P6 0
+#ACT
+MOV P9 5
+MOV P0 0
+MOV P1 1
+MOV P2 2
+MOV P3 3
+MOV P4 4
+#ELSEACT
+MOV P6 0
+SENDMSG 6 对不起，您的【$(淬炼位置变量X4)】淬炼失败！
+BREAK
+
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X4) <$STR(P7)> < $(淬炼最高点数X4)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X4) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X4) <$STR(P7)> < $(淬炼最高点数X4)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X4) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X4) <$STR(P7)> < $(淬炼最高点数X4)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X4) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X4) <$STR(P7)> < $(淬炼最高点数X4)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X4) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X4) <$STR(P7)> < $(淬炼最高点数X4)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X4) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+
+#IF
+EQUAL P6 0
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X4)】附加属性已全部满$(淬炼最高点数X4)点，无法进行淬炼！
+#ELSEACT
+SENDMSG 6 恭喜您，淬炼【$(淬炼位置变量X4)】成功！
+MESSAGEBOX 恭喜您，淬炼【$(淬炼位置变量X4)】成功！
+goto @头盔元素
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P6 0
+MOV P7 0
+MOV P8 0
+MOV P9 0
+MOV S10 
+
+
+
+
+[@Mir2m2淬炼左手镯]
+#IF
+CHECKLEVELEX < $(淬炼需要等级X5)
+#ACT
+MESSAGEBOX 对不起，您的等级不够$(淬炼需要等级X5)，无法进行淬炼！
+BREAK
+#IF
+CHECKGAMEGOLD < $(淬炼需要元宝X5)
+#ACT
+MESSAGEBOX 对不起，您元宝不足$(淬炼需要元宝X5)个！
+BREAK
+
+#IF
+CHECKUSEITEM $(淬炼装备位置X5)
+#ELSEACT
+MESSAGEBOX 对不起，请将您的【左手镯】佩戴在身上！
+BREAK
+
+#IF
+CheckStringList ..\QuestDiary\Mir2m2装备淬炼配置(免费脚本群.101529177)\Mir2m2装备淬炼列表.ini $(淬炼位置变量X5) HardDisk
+#ELSEACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X5)】不能进行淬炼！
+BREAK
+
+#IF
+CheckItemAddValue $(淬炼装备位置X5) 0 ? $(淬炼最高点数X5)
+CheckItemAddValue $(淬炼装备位置X5) 1 ? $(淬炼最高点数X5)
+CheckItemAddValue $(淬炼装备位置X5) 2 ? $(淬炼最高点数X5)
+CheckItemAddValue $(淬炼装备位置X5) 3 ? $(淬炼最高点数X5)
+CheckItemAddValue $(淬炼装备位置X5) 4 ? $(淬炼最高点数X5)
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X5)】附加属性已全部满$(淬炼最高点数X5)点，无法进行淬炼！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - $(淬炼需要元宝X5)
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P6 $(淬炼成功几率X5)
+#IF
+EQUAL P6 0
+#ACT
+MOV P6 1
+#ELSEACT
+MOVR P6 $(淬炼成功几率X5)
+#IF
+EQUAL P6 0
+#ACT
+MOV P9 5
+MOV P0 0
+MOV P1 1
+MOV P2 2
+MOV P3 3
+MOV P4 4
+#ELSEACT
+MOV P6 0
+SENDMSG 6 对不起，您的【$(淬炼位置变量X5)】淬炼失败！
+BREAK
+
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X5) <$STR(P7)> < $(淬炼最高点数X5)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X5) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X5) <$STR(P7)> < $(淬炼最高点数X5)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X5) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X5) <$STR(P7)> < $(淬炼最高点数X5)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X5) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X5) <$STR(P7)> < $(淬炼最高点数X5)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X5) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X5) <$STR(P7)> < $(淬炼最高点数X5)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X5) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+
+#IF
+EQUAL P6 0
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X5)】附加属性已全部满$(淬炼最高点数X5)点，无法进行淬炼！
+#ELSEACT
+SENDMSG 6 恭喜您，淬炼【$(淬炼位置变量X5)】成功！
+MESSAGEBOX 恭喜您，淬炼【$(淬炼位置变量X5)】成功！
+goto @左手镯元素
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P6 0
+MOV P7 0
+MOV P8 0
+MOV P9 0
+MOV S10 
+
+[@Mir2m2淬炼左戒指]
+#IF
+CHECKLEVELEX < $(淬炼需要等级X7)
+#ACT
+MESSAGEBOX 对不起，您的等级不够$(淬炼需要等级X7)，无法进行淬炼！
+BREAK
+#IF
+CHECKGAMEGOLD < $(淬炼需要元宝X7)
+#ACT
+MESSAGEBOX 对不起，您元宝不足$(淬炼需要元宝X7)个！
+BREAK
+
+#IF
+CHECKUSEITEM $(淬炼装备位置X7)
+#ELSEACT
+MESSAGEBOX 对不起，请将您的【左戒指】佩戴在身上！
+BREAK
+
+#IF
+CheckStringList ..\QuestDiary\Mir2m2装备淬炼配置(免费脚本群.101529177)\Mir2m2装备淬炼列表.ini $(淬炼位置变量X7) HardDisk
+#ELSEACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X7)】不能进行淬炼！
+BREAK
+
+#IF
+CheckItemAddValue $(淬炼装备位置X7) 0 ? $(淬炼最高点数X7)
+CheckItemAddValue $(淬炼装备位置X7) 1 ? $(淬炼最高点数X7)
+CheckItemAddValue $(淬炼装备位置X7) 2 ? $(淬炼最高点数X7)
+CheckItemAddValue $(淬炼装备位置X7) 3 ? $(淬炼最高点数X7)
+CheckItemAddValue $(淬炼装备位置X7) 4 ? $(淬炼最高点数X7)
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X7)】附加属性已全部满$(淬炼最高点数X7)点，无法进行淬炼！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - $(淬炼需要元宝X7)
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P6 $(淬炼成功几率X7)
+#IF
+EQUAL P6 0
+#ACT
+MOV P6 1
+#ELSEACT
+MOVR P6 $(淬炼成功几率X7)
+#IF
+EQUAL P6 0
+#ACT
+MOV P9 5
+MOV P0 0
+MOV P1 1
+MOV P2 2
+MOV P3 3
+MOV P4 4
+#ELSEACT
+MOV P6 0
+SENDMSG 6 对不起，您的【$(淬炼位置变量X7)】淬炼失败！
+BREAK
+
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X7) <$STR(P7)> < $(淬炼最高点数X7)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X7) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X7) <$STR(P7)> < $(淬炼最高点数X7)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X7) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X7) <$STR(P7)> < $(淬炼最高点数X7)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X7) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X7) <$STR(P7)> < $(淬炼最高点数X7)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X7) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X7) <$STR(P7)> < $(淬炼最高点数X7)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X7) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+
+#IF
+EQUAL P6 0
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X7)】附加属性已全部满$(淬炼最高点数X7)点，无法进行淬炼！
+#ELSEACT
+SENDMSG 6 恭喜您，淬炼【$(淬炼位置变量X7)】成功！
+MESSAGEBOX 恭喜您，淬炼【$(淬炼位置变量X7)】成功！
+goto @左戒指元素
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P6 0
+MOV P7 0
+MOV P8 0
+MOV P9 0
+MOV S10 
+
+
+[@Mir2m2淬炼腰带]
+#IF
+CHECKLEVELEX < $(淬炼需要等级X10)
+#ACT
+MESSAGEBOX 对不起，您的等级不够$(淬炼需要等级X10)，无法进行淬炼！
+BREAK
+#IF
+CHECKGAMEGOLD < $(淬炼需要元宝X10)
+#ACT
+MESSAGEBOX 对不起，您元宝不足$(淬炼需要元宝X10)个！
+BREAK
+
+#IF
+CHECKUSEITEM $(淬炼装备位置X10)
+#ELSEACT
+MESSAGEBOX 对不起，请将您的【腰带】佩戴在身上！
+BREAK
+
+#IF
+CheckStringList ..\QuestDiary\Mir2m2装备淬炼配置(免费脚本群.101529177)\Mir2m2装备淬炼列表.ini $(淬炼位置变量X10) HardDisk
+#ELSEACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X10)】不能进行淬炼！
+BREAK
+
+#IF
+CheckItemAddValue $(淬炼装备位置X10) 0 ? $(淬炼最高点数X10)
+CheckItemAddValue $(淬炼装备位置X10) 1 ? $(淬炼最高点数X10)
+CheckItemAddValue $(淬炼装备位置X10) 2 ? $(淬炼最高点数X10)
+CheckItemAddValue $(淬炼装备位置X10) 3 ? $(淬炼最高点数X10)
+CheckItemAddValue $(淬炼装备位置X10) 4 ? $(淬炼最高点数X10)
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X10)】附加属性已全部满$(淬炼最高点数X10)点，无法进行淬炼！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - $(淬炼需要元宝X10)
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P6 $(淬炼成功几率X10)
+#IF
+EQUAL P6 0
+#ACT
+MOV P6 1
+#ELSEACT
+MOVR P6 $(淬炼成功几率X10)
+#IF
+EQUAL P6 0
+#ACT
+MOV P9 5
+MOV P0 0
+MOV P1 1
+MOV P2 2
+MOV P3 3
+MOV P4 4
+#ELSEACT
+MOV P6 0
+SENDMSG 6 对不起，您的【$(淬炼位置变量X10)】淬炼失败！
+BREAK
+
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X10) <$STR(P7)> < $(淬炼最高点数X10)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X10) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X10) <$STR(P7)> < $(淬炼最高点数X10)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X10) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X10) <$STR(P7)> < $(淬炼最高点数X10)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X10) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X10) <$STR(P7)> < $(淬炼最高点数X10)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X10) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X10) <$STR(P7)> < $(淬炼最高点数X10)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X10) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+
+#IF
+EQUAL P6 0
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X10)】附加属性已全部满$(淬炼最高点数X10)点，无法进行淬炼！
+#ELSEACT
+SENDMSG 6 恭喜您，淬炼【$(淬炼位置变量X10)】成功！
+MESSAGEBOX 恭喜您，淬炼【$(淬炼位置变量X10)】成功！
+goto @腰带元素
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P6 0
+MOV P7 0
+MOV P8 0
+MOV P9 0
+MOV S10 
+
+[@Mir2m2淬炼靴子]
+#IF
+CHECKLEVELEX < $(淬炼需要等级X11)
+#ACT
+MESSAGEBOX 对不起，您的等级不够$(淬炼需要等级X11)，无法进行淬炼！
+BREAK
+#IF
+CHECKGAMEGOLD < $(淬炼需要元宝X11)
+#ACT
+MESSAGEBOX 对不起，您元宝不足$(淬炼需要元宝X11)个！
+BREAK
+
+#IF
+CHECKUSEITEM $(淬炼装备位置X11)
+#ELSEACT
+MESSAGEBOX 对不起，请将您的【靴子】佩戴在身上！
+BREAK
+
+#IF
+CheckStringList ..\QuestDiary\Mir2m2装备淬炼配置(免费脚本群.101529177)\Mir2m2装备淬炼列表.ini $(淬炼位置变量X11) HardDisk
+#ELSEACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X11)】不能进行淬炼！
+BREAK
+
+#IF
+CheckItemAddValue $(淬炼装备位置X11) 0 ? $(淬炼最高点数X11)
+CheckItemAddValue $(淬炼装备位置X11) 1 ? $(淬炼最高点数X11)
+CheckItemAddValue $(淬炼装备位置X11) 2 ? $(淬炼最高点数X11)
+CheckItemAddValue $(淬炼装备位置X11) 3 ? $(淬炼最高点数X11)
+CheckItemAddValue $(淬炼装备位置X11) 4 ? $(淬炼最高点数X11)
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X11)】附加属性已全部满$(淬炼最高点数X11)点，无法进行淬炼！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - $(淬炼需要元宝X11)
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P6 $(淬炼成功几率X11)
+#IF
+EQUAL P6 0
+#ACT
+MOV P6 1
+#ELSEACT
+MOVR P6 $(淬炼成功几率X11)
+#IF
+EQUAL P6 0
+#ACT
+MOV P9 5
+MOV P0 0
+MOV P1 1
+MOV P2 2
+MOV P3 3
+MOV P4 4
+#ELSEACT
+MOV P6 0
+SENDMSG 6 对不起，您的【$(淬炼位置变量X11)】淬炼失败！
+BREAK
+
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X11) <$STR(P7)> < $(淬炼最高点数X11)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X11) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X11) <$STR(P7)> < $(淬炼最高点数X11)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X11) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X11) <$STR(P7)> < $(淬炼最高点数X11)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X11) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X11) <$STR(P7)> < $(淬炼最高点数X11)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X11) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X11) <$STR(P7)> < $(淬炼最高点数X11)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X11) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+
+#IF
+EQUAL P6 0
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X11)】附加属性已全部满$(淬炼最高点数X11)点，无法进行淬炼！
+#ELSEACT
+SENDMSG 6 恭喜您，淬炼【$(淬炼位置变量X11)】成功！
+MESSAGEBOX 恭喜您，淬炼【$(淬炼位置变量X11)】成功！
+goto @靴子元素
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P6 0
+MOV P7 0
+MOV P8 0
+MOV P9 0
+MOV S10 
+
+
+[@Mir2m2淬炼宝石]
+#IF
+CHECKLEVELEX < $(淬炼需要等级X12)
+#ACT
+MESSAGEBOX 对不起，您的等级不够$(淬炼需要等级X12)，无法进行淬炼！
+BREAK
+#IF
+CHECKGAMEGOLD < $(淬炼需要元宝X12)
+#ACT
+MESSAGEBOX 对不起，您元宝不足$(淬炼需要元宝X12)个！
+BREAK
+
+#IF
+CHECKUSEITEM $(淬炼装备位置X12)
+#ELSEACT
+MESSAGEBOX 对不起，请将您的【宝石】佩戴在身上！
+BREAK
+
+#IF
+CheckStringList ..\QuestDiary\Mir2m2装备淬炼配置(免费脚本群.101529177)\Mir2m2装备淬炼列表.ini $(淬炼位置变量X12) HardDisk
+#ELSEACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X12)】不能进行淬炼！
+BREAK
+
+#IF
+CheckItemAddValue $(淬炼装备位置X12) 0 ? $(淬炼最高点数X12)
+CheckItemAddValue $(淬炼装备位置X12) 1 ? $(淬炼最高点数X12)
+CheckItemAddValue $(淬炼装备位置X12) 2 ? $(淬炼最高点数X12)
+CheckItemAddValue $(淬炼装备位置X12) 3 ? $(淬炼最高点数X12)
+CheckItemAddValue $(淬炼装备位置X12) 4 ? $(淬炼最高点数X12)
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X12)】附加属性已全部满$(淬炼最高点数X12)点，无法进行淬炼！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - $(淬炼需要元宝X12)
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P6 $(淬炼成功几率X12)
+#IF
+EQUAL P6 0
+#ACT
+MOV P6 1
+#ELSEACT
+MOVR P6 $(淬炼成功几率X12)
+#IF
+EQUAL P6 0
+#ACT
+MOV P9 5
+MOV P0 0
+MOV P1 1
+MOV P2 2
+MOV P3 3
+MOV P4 4
+#ELSEACT
+MOV P6 0
+SENDMSG 6 对不起，您的【$(淬炼位置变量X12)】淬炼失败！
+BREAK
+
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X12) <$STR(P7)> < $(淬炼最高点数X12)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X12) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X12) <$STR(P7)> < $(淬炼最高点数X12)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X12) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X12) <$STR(P7)> < $(淬炼最高点数X12)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X12) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X12) <$STR(P7)> < $(淬炼最高点数X12)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X12) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X12) <$STR(P7)> < $(淬炼最高点数X12)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X12) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+
+#IF
+EQUAL P6 0
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X12)】附加属性已全部满$(淬炼最高点数X12)点，无法进行淬炼！
+#ELSEACT
+SENDMSG 6 恭喜您，淬炼【$(淬炼位置变量X12)】成功！
+MESSAGEBOX 恭喜您，淬炼【$(淬炼位置变量X12)】成功！
+goto @宝石元素
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P6 0
+MOV P7 0
+MOV P8 0
+MOV P9 0
+MOV S10 
+
+[@Mir2m2淬炼斗笠]
+#IF
+CHECKLEVELEX < $(淬炼需要等级X13)
+#ACT
+MESSAGEBOX 对不起，您的等级不够$(淬炼需要等级X13)，无法进行淬炼！
+BREAK
+#IF
+CHECKGAMEGOLD < $(淬炼需要元宝X13)
+#ACT
+MESSAGEBOX 对不起，您元宝不足$(淬炼需要元宝X13)个！
+BREAK
+
+#IF
+CHECKUSEITEM $(淬炼装备位置X13)
+#ELSEACT
+MESSAGEBOX 对不起，请将您的【斗笠】佩戴在身上！
+BREAK
+
+#IF
+CheckStringList ..\QuestDiary\Mir2m2装备淬炼配置(免费脚本群.101529177)\Mir2m2装备淬炼列表.ini $(淬炼位置变量X13) HardDisk
+#ELSEACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X13)】不能进行淬炼！
+BREAK
+
+#IF
+CheckItemAddValue $(淬炼装备位置X13) 0 ? $(淬炼最高点数X13)
+CheckItemAddValue $(淬炼装备位置X13) 1 ? $(淬炼最高点数X13)
+CheckItemAddValue $(淬炼装备位置X13) 2 ? $(淬炼最高点数X13)
+CheckItemAddValue $(淬炼装备位置X13) 3 ? $(淬炼最高点数X13)
+CheckItemAddValue $(淬炼装备位置X13) 4 ? $(淬炼最高点数X13)
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X13)】附加属性已全部满$(淬炼最高点数X13)点，无法进行淬炼！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - $(淬炼需要元宝X13)
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P6 $(淬炼成功几率X13)
+#IF
+EQUAL P6 0
+#ACT
+MOV P6 1
+#ELSEACT
+MOVR P6 $(淬炼成功几率X13)
+#IF
+EQUAL P6 0
+#ACT
+MOV P9 5
+MOV P0 0
+MOV P1 1
+MOV P2 2
+MOV P3 3
+MOV P4 4
+#ELSEACT
+MOV P6 0
+SENDMSG 6 对不起，您的【$(淬炼位置变量X13)】淬炼失败！
+BREAK
+
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X13) <$STR(P7)> < $(淬炼最高点数X13)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X13) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X13) <$STR(P7)> < $(淬炼最高点数X13)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X13) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X13) <$STR(P7)> < $(淬炼最高点数X13)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X13) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X13) <$STR(P7)> < $(淬炼最高点数X13)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X13) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+#IF
+EQUAL P6 0
+#ACT
+MOVR P8 <$STR(P9)>
+DEC P9 1
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P8)>
+INC S10 >
+MOV P7 <$STR(S10)>
+#IF
+EQUAL P6 0
+CheckItemAddValue $(淬炼装备位置X13) <$STR(P7)> < $(淬炼最高点数X13)
+#ACT
+MOV P6 1
+UPGRADEITEMEX $(淬炼装备位置X13) <$STR(P7)> 0 1 0
+#IF
+EQUAL P6 0
+#ACT
+MOV S10 <$
+INC S10 STR(P
+INC S10 <$STR(P9)>
+INC S10 >
+MOV P7 <$STR(S10)>
+MOV P<$STR(P8)> <$STR(P7)>
+
+#IF
+EQUAL P6 0
+#ACT
+MESSAGEBOX 对不起，您的【$(淬炼位置变量X13)】附加属性已全部满$(淬炼最高点数X13)点，无法进行淬炼！
+#ELSEACT
+SENDMSG 6 恭喜您，淬炼【$(淬炼位置变量X13)】成功！
+MESSAGEBOX 恭喜您，淬炼【$(淬炼位置变量X13)】成功！
+goto @斗笠元素
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P0 0
+MOV P1 0
+MOV P2 0
+MOV P3 0
+MOV P4 0
+MOV P6 0
+MOV P7 0
+MOV P8 0
+MOV P9 0
+MOV S10 
+
+[@衣服元素]
+#if
+CHECKITEMADDVALUE 0 0 = 2
+CHECKITEMADDVALUE 0 1 = 2
+CHECKITEMADDVALUE 0 2 = 2
+CHECKITEMADDVALUE 0 3 = 2
+CHECKITEMADDVALUE 0 4 = 2
+#act
+UPGRADEITEMEX 0 17 0 1 0 0
+UPGRADEITEMEX 0 17 4 3 0 0
+UPGRADEITEMEX 0 18 4 4 0 0
+UPGRADEITEMEX 0 19 4 4 0 0
+UPGRADEITEMEX 0 20 4 4 0 0
+UPGRADEITEMEX 0 21 4 4 0 0
+SENDMSG 5 触发元素属性成功。
+break
+
+[@勋章元素]
+#if
+CHECKITEMADDVALUE 2 0 = 2
+CHECKITEMADDVALUE 2 1 = 2
+CHECKITEMADDVALUE 2 2 = 2
+CHECKITEMADDVALUE 2 3 = 2
+CHECKITEMADDVALUE 2 4 = 2
+#act
+UPGRADEITEMEX 2 17 0 1 0 0
+UPGRADEITEMEX 2 17 4 3 0 0
+UPGRADEITEMEX 2 18 4 4 0 0
+UPGRADEITEMEX 2 19 4 4 0 0
+UPGRADEITEMEX 2 20 4 4 0 0
+UPGRADEITEMEX 2 21 4 4 0 0
+SENDMSG 5 触发元素属性成功。
+break
+
+[@项链元素]
+#if
+CHECKITEMADDVALUE 3 0 = 2
+CHECKITEMADDVALUE 3 2 = 2
+CHECKITEMADDVALUE 3 3 = 2
+CHECKITEMADDVALUE 3 4 = 2
+#act
+UPGRADEITEMEX 3 17 0 1 0 0
+UPGRADEITEMEX 3 17 4 3 0 0
+UPGRADEITEMEX 3 18 4 4 0 0
+UPGRADEITEMEX 3 19 4 4 0 0
+UPGRADEITEMEX 3 20 4 4 0 0
+UPGRADEITEMEX 3 21 4 4 0 0
+SENDMSG 5 触发元素属性成功。
+break
+
+
+[@头盔元素]
+#if
+CHECKITEMADDVALUE 4 0 = 2
+CHECKITEMADDVALUE 4 1 = 2
+CHECKITEMADDVALUE 4 2 = 2
+CHECKITEMADDVALUE 4 3 = 2
+CHECKITEMADDVALUE 4 4 = 2
+#act
+UPGRADEITEMEX 4 17 0 1 0 0
+UPGRADEITEMEX 4 17 4 3 0 0
+UPGRADEITEMEX 4 18 4 4 0 0
+UPGRADEITEMEX 4 19 4 4 0 0
+UPGRADEITEMEX 4 20 4 4 0 0
+UPGRADEITEMEX 4 21 4 4 0 0
+SENDMSG 5 触发元素属性成功。
+break
+
+
+[@左手镯元素]
+#if
+CHECKITEMADDVALUE 5 0 = 2
+CHECKITEMADDVALUE 5 1 = 2
+CHECKITEMADDVALUE 5 2 = 2
+CHECKITEMADDVALUE 5 3 = 2
+CHECKITEMADDVALUE 5 4 = 2
+#act
+UPGRADEITEMEX 5 17 0 1 0 0
+UPGRADEITEMEX 5 17 4 3 0 0
+UPGRADEITEMEX 5 18 4 4 0 0
+UPGRADEITEMEX 5 19 4 4 0 0
+UPGRADEITEMEX 5 20 4 4 0 0
+UPGRADEITEMEX 5 21 4 4 0 0
+SENDMSG 5 触发元素属性成功。
+break
+
+
+[@左戒指元素]
+#if
+CHECKITEMADDVALUE 7 0 = 2
+CHECKITEMADDVALUE 7 1 = 2
+CHECKITEMADDVALUE 7 2 = 2
+CHECKITEMADDVALUE 7 3 = 2
+CHECKITEMADDVALUE 7 4 = 2
+#act
+UPGRADEITEMEX 7 17 0 1 0 0
+UPGRADEITEMEX 7 17 4 3 0 0
+UPGRADEITEMEX 7 18 4 4 0 0
+UPGRADEITEMEX 7 19 4 4 0 0
+UPGRADEITEMEX 7 20 4 4 0 0
+UPGRADEITEMEX 7 21 4 4 0 0
+SENDMSG 5 触发元素属性成功。
+break
+
+
+[@腰带元素]
+#if
+CHECKITEMADDVALUE 10 0 = 2
+CHECKITEMADDVALUE 10 1 = 2
+CHECKITEMADDVALUE 10 2 = 2
+CHECKITEMADDVALUE 10 3 = 2
+CHECKITEMADDVALUE 10 4 = 2
+#act
+UPGRADEITEMEX 10 17 0 1 0 0
+UPGRADEITEMEX 10 17 4 3 0 0
+UPGRADEITEMEX 10 18 4 4 0 0
+UPGRADEITEMEX 10 19 4 4 0 0
+UPGRADEITEMEX 10 20 4 4 0 0
+UPGRADEITEMEX 10 21 4 4 0 0
+SENDMSG 5 触发元素属性成功。
+break
+
+[@靴子元素]
+#if
+CHECKITEMADDVALUE 11 0 = 2
+CHECKITEMADDVALUE 11 1 = 2
+CHECKITEMADDVALUE 11 2 = 2
+CHECKITEMADDVALUE 11 3 = 2
+CHECKITEMADDVALUE 11 4 = 2
+#act
+UPGRADEITEMEX 11 17 0 1 0 0
+UPGRADEITEMEX 11 17 4 3 0 0
+UPGRADEITEMEX 11 18 4 4 0 0
+UPGRADEITEMEX 11 19 4 4 0 0
+UPGRADEITEMEX 11 20 4 4 0 0
+UPGRADEITEMEX 11 21 4 4 0 0
+SENDMSG 5 触发元素属性成功。
+break
+
+
+[@宝石元素]
+#if
+CHECKITEMADDVALUE 12 0 = 2
+CHECKITEMADDVALUE 12 1 = 2
+CHECKITEMADDVALUE 12 2 = 2
+CHECKITEMADDVALUE 12 3 = 2
+CHECKITEMADDVALUE 12 4 = 2
+#act
+UPGRADEITEMEX 12 17 0 1 0 0
+UPGRADEITEMEX 12 17 4 3 0 0
+UPGRADEITEMEX 12 18 4 4 0 0
+UPGRADEITEMEX 12 19 4 4 0 0
+UPGRADEITEMEX 12 20 4 4 0 0
+UPGRADEITEMEX 12 21 4 4 0 0
+SENDMSG 5 触发元素属性成功。
+break
+
+
+[@斗笠元素]
+#if
+CHECKITEMADDVALUE 13 0 = 2
+CHECKITEMADDVALUE 13 1 = 2
+CHECKITEMADDVALUE 13 2 = 2
+CHECKITEMADDVALUE 13 3 = 2
+CHECKITEMADDVALUE 13 4 = 2
+#act
+UPGRADEITEMEX 13 18 0 1 0 0
+UPGRADEITEMEX 13 18 4 3 0 0
+UPGRADEITEMEX 13 19 4 4 0 0
+UPGRADEITEMEX 13 20 4 4 0 0
+UPGRADEITEMEX 13 21 4 4 0 0
+SENDMSG 5 触发元素属性成功。
+break
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

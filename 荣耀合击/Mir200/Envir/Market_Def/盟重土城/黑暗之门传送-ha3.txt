@@ -1,0 +1,147 @@
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【黑暗之门】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+\<COLOR=clRed ♀.地图介绍：黑暗之门共九层，深层更凶险>\
+\<COLOR=clAqua ♀.怪物刷新：传统BOSS.魔龙教主.暗之魔龙教主.高级BOSS>\
+\<COLOR=clLime ♀.爆率介绍：爆全服所有装备>\
+\<COLOR=clFuchsia ♀.进入条件：46级+80万金币（需组队进入）>  \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+　　　　　  　        〖<黑暗之门四层/@jin1>〗
+
+[@jin1]
+#if
+CHECKRANGEMONCOUNT ha3 50 50 100 > 0
+#act
+MESSAGEBOX 请把本层的怪物清理干净在下层！
+break
+#if
+CHECKLEVELEX > 45
+ISGROUPMASTER
+#act
+goto @jin1a
+break
+#ELSEACT
+MESSAGEBOX 对不起：你不是队长或者你没有队伍
+break
+
+
+[@jin1a]
+#if
+checkhum ha4 11
+#act
+goto @jin1b
+break
+#if
+checkhum ha4 10
+#act
+goto @jin1b
+break
+#if
+checkhum ha4 9
+#act
+goto @jin1b
+break
+#if
+checkhum ha4 8
+#act
+goto @jin1b
+break
+#if
+checkhum ha4 7
+#act
+goto @jin1b
+break
+#if
+checkhum ha4 6
+#act
+goto @jin1b
+break
+#if
+checkhum ha4 5
+#act
+goto @jin1b
+break
+#if
+checkhum ha4 4
+#act
+goto @jin1b
+break
+#if
+checkhum ha4 3
+#act
+goto @jin1b
+break
+#if
+checkhum ha4 2
+#act
+goto @jin1b
+break
+#if
+checkhum ha4 1
+#act
+goto @jin1b
+break
+#ELSEACT
+goto @jin1c
+break
+
+[@jin1c]
+#if
+checkgold 800000
+#act
+take 金币 800000
+ClearMapMon ha4
+ClearMapMon ha4
+MONGENEX ha4 23 20 魔龙教主  10  1 
+MONGENEX ha4 23 20 暗之魔龙教主  10  1 
+MONGENEX ha4 23 20  暗之魔龙力士   10  1 
+MONGENEX ha4 23 20  暗之魔龙战将   10  1
+MONGENEX ha4 23 20  暗之魔龙巨蛾   10  1
+MONGENEX ha4 23 20  魔龙射手   10  2
+MONGENEX ha4 23 20  魔龙刀兵   10  2
+GroupMapMove ha4
+SENDMSG 0 伟大的玛法勇士[%s]带领他的队伍进入了[黑暗之门四层]挑战未知的世界！ 31  249 
+SENDMSG 0 伟大的玛法勇士[%s]带领他的队伍进入了[黑暗之门四层]挑战未知的世界！ 
+#ELSEACT
+MESSAGEBOX 对不起：您的金币不足
+
+[@jin1b]
+#if
+CHECKRANGEMONCOUNT ha4 50 50 100 > 0
+#act
+goto @jin1d
+break
+#ELSEACT
+goto @jin1e
+break
+
+[@jin1d]
+#if
+checkgold 800000
+#act
+take 金币 800000
+GroupMapMove ha4
+SENDMSG 0 伟大的玛法勇士[%s]带领他的队伍进入了[黑暗之门四层]挑战未知的世界！ 31  249 
+SENDMSG 0 伟大的玛法勇士[%s]带领他的队伍进入了[黑暗之门四层]挑战未知的世界！ 
+#ELSEACT
+MESSAGEBOX 对不起：您的金币不足
+
+[@jin1e]
+#if
+checkgold 800000
+#act
+take 金币 800000
+MONGENEX ha4 23 20 魔龙教主  10  1 
+MONGENEX ha4 23 20 暗之魔龙教主  10  1 
+MONGENEX ha4 23 20  暗之魔龙力士   10  1 
+MONGENEX ha4 23 20  暗之魔龙战将   10  1
+MONGENEX ha4 23 20  暗之魔龙巨蛾   10  1
+MONGENEX ha4 23 20  魔龙射手   10  2
+MONGENEX ha4 23 20  魔龙刀兵   10  2
+GroupMapMove ha4
+SENDMSG 0 伟大的玛法勇士[%s]带领他的队伍进入了[黑暗之门四层]挑战未知的世界！ 31  249 
+SENDMSG 0 伟大的玛法勇士[%s]带领他的队伍进入了[黑暗之门四层]挑战未知的世界！ 
+#ELSEACT
+MESSAGEBOX 对不起：您的金币不足

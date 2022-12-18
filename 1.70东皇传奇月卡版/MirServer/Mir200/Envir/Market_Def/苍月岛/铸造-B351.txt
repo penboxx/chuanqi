@@ -1,0 +1,535 @@
+[@main]
+我可以为你铸造以下终级武器            您当前金刚石：<$GAMEDIAMOND>颗\ \
+<※裁决之杖※/@duan1>         <※怒斩※/@duan4>         \ \
+<※逍遥扇※/@duan9>\ \
+<COLOR=clAqua 温馨提示：请确认包裹留有足够空位>                <进行武器拆分/@chai>
+
+[@chai]
+请把武器放在背包里,并准备好一根金条\ \
+<拆裁决/@chai1>                        \ \
+<拆骨玉/@chai2>                        \ \
+<拆龙纹/@chai3>   <拆逍遥扇/@chai9>\ \
+<COLOR=clAqua  可拆30金刚石    可拆399金刚石>    <返回/@main>
+
+
+[@chai9]
+#if
+checkitem 逍遥扇 1
+checkitem 金条 1
+#act
+take 逍遥扇 1
+take 金条 1
+GAMEDIAMOND + 399
+sendmsg 7 提示：您成功的拆分了逍遥扇！
+break
+#elsesay
+你没有足够的材料！
+
+[@chai8]
+#if
+checkitem 嗜魂法杖 1
+checkitem 金条 1
+#act
+take 嗜魂法杖 1
+take 金条 1
+GAMEDIAMOND + 399
+sendmsg 7 提示：您成功的拆分了嗜魂法杖！
+break
+#elsesay
+你没有足够的材料！
+
+[@chai7]
+#if
+checkitem 屠龙 1
+checkitem 金条 1
+#act
+take 屠龙 1
+take 金条 1
+GAMEDIAMOND + 399
+sendmsg 7 提示：您成功的拆分了屠龙！
+break
+#elsesay
+你没有足够的材料！
+
+[@chai6]
+#if
+checkitem 赤血 1
+checkitem 金条 1
+#act
+take 赤血 1
+take 金条 1
+GAMEDIAMOND + 128
+sendmsg 7 提示：您成功的拆分了赤血！
+break
+#elsesay
+你没有足够的材料！
+
+[@chai5]
+#if
+checkitem 龙牙 1
+checkitem 金条 1
+#act
+take 龙牙 1
+take 金条 1
+GAMEDIAMOND + 128
+sendmsg 7 提示：您成功的拆分了龙牙！
+break
+#elsesay
+你没有足够的材料！
+
+[@chai4]
+#if
+checkitem 怒斩 1
+checkitem 金条 1
+#act
+take 怒斩 1
+take 金条 1
+GAMEDIAMOND + 128
+sendmsg 7 提示：您成功的拆分了怒斩！
+break
+#elsesay
+你没有足够的材料！
+
+[@chai3]
+#if
+checkitem 龙纹剑 1
+checkitem 金条 1
+#act
+take 龙纹剑 1
+take 金条 1
+GAMEDIAMOND + 30
+sendmsg 7 提示：您成功的拆分了龙纹剑！
+break
+#elsesay
+你没有足够的材料！
+
+[@chai2]
+#if
+checkitem 骨玉权杖 1
+checkitem 金条 1
+#act
+take 骨玉权杖 1
+take 金条 1
+GAMEDIAMOND + 30
+sendmsg 7 提示：您成功的拆分了骨玉权杖！
+break
+#elsesay
+你没有足够的材料！
+
+[@chai1]
+#if
+checkitem 裁决之杖 1
+checkitem 金条 1
+#act
+take 裁决之杖 1
+take 金条 1
+GAMEDIAMOND + 30
+sendmsg 7 提示：您成功的拆分了裁决之杖！
+break
+#elsesay
+你没有足够的材料！
+
+[@duan1]
+<COLOR=clMoneyGreen 请选择裁决之杖铸造方式：>\ \
+金矿5块 + 银矿5块 + 88颗金刚石 + 金条x1    <运气铸造/@duan11>\ \
+金矿5块 + 银矿5块 + 88颗金刚石 + 3K元宝    <实力铸造/@duan12>\ \
+<COLOR=clMoneyGreen 说明：实力铸造为100%成功,运气铸造50%(需要试刀,失败破碎!)>\ \
+<返回/@main>
+
+[@duan11]
+#IF
+checkitem 金矿 5
+checkitem 银矿 5
+checkitem 金条 1
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+take 金矿 5
+take 银矿 5
+take 金条 1
+movr D4 2
+INC D4 1
+give 裁决之杖 1 10 <$STR(D4)>
+SENDMSG 6 提示：铸造成功！请试刀！
+SENDMSG 0 %s在苍月武器店内成功打造出一把(*裁决之杖),祝他试刀成功！
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan12]
+#IF
+checkitem 金矿 5
+checkitem 银矿 5
+CHECKGAMEDIAMOND > 87
+CHECKGAMEGOLD > 2999
+#ACT
+take 金矿 5
+take 银矿 5
+GAMEDIAMOND - 88
+GAMEGOLD - 3000
+give 裁决之杖 1
+SENDMSG 0 %s在苍月武器店内成功打造出一把【裁决之杖】
+close
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan2]
+<COLOR=clMoneyGreen 请选择骨玉权杖铸造方式：>\ \
+金矿5块 + 银矿5块 + 88颗金刚石 + 金条x1    <运气铸造/@duan21>\ \
+金矿5块 + 银矿5块 + 88颗金刚石 + 3K元宝    <实力铸造/@duan22>\ \
+<COLOR=clMoneyGreen 说明：实力铸造为100%成功,运气铸造50%(需要试刀,失败破碎!)>\ \
+<返回/@main>
+
+[@duan21]
+#IF
+checkitem 金矿 5
+checkitem 银矿 5
+checkitem 金条 1
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+take 金矿 5
+take 银矿 5
+take 金条 1
+movr D4 2
+INC D4 1
+give 骨玉权杖 1 10 <$STR(D4)>
+SENDMSG 6 提示：铸造成功！请试刀！
+SENDMSG 0 %s在苍月武器店内成功打造出一把(*骨玉权杖),祝他试刀成功！
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan22]
+#IF
+checkitem 金矿 5
+checkitem 银矿 5
+CHECKGAMEDIAMOND > 87
+CHECKGAMEGOLD > 2999
+#ACT
+take 金矿 5
+take 银矿 5
+GAMEDIAMOND - 88
+GAMEGOLD - 3000
+give 骨玉权杖 1
+SENDMSG 0 %s在苍月武器店内成功打造出一把【骨玉权杖】
+close
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan3]
+<COLOR=clMoneyGreen 请选择龙纹剑铸造方式：>\ \
+金矿5块 + 银矿5块 + 88颗金刚石 + 金条x1    <运气铸造/@duan31>\ \
+金矿5块 + 银矿5块 + 88颗金刚石 + 3K元宝    <实力铸造/@duan32>\ \
+<COLOR=clMoneyGreen 说明：实力铸造为100%成功,运气铸造50%(需要试刀,失败破碎!)>\ \
+<返回/@main>
+
+[@duan31]
+#IF
+checkitem 金矿 5
+checkitem 银矿 5
+checkitem 金条 1
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+take 金矿 5
+take 银矿 5
+take 金条 1
+movr D4 2
+INC D4 1
+give 龙纹剑 1 10 <$STR(D4)>
+SENDMSG 6 提示：铸造成功！请试刀！
+SENDMSG 0 %s在苍月武器店内成功打造出一把(*龙纹剑),祝他试刀成功！
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan32]
+#IF
+checkitem 金矿 5
+checkitem 银矿 5
+CHECKGAMEDIAMOND > 87
+CHECKGAMEGOLD > 2999
+#ACT
+take 金矿 5
+take 银矿 5
+GAMEDIAMOND - 88
+GAMEGOLD - 3000
+give 龙纹剑 1
+SENDMSG 0 %s在苍月武器店内成功打造出一把【龙纹剑】
+close
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan4]
+<COLOR=clMoneyGreen 请选择怒斩铸造方式：>\ \
+金矿7块 + 银矿7块 + 188颗金刚石 + 金条x1    <运气铸造/@duan41>\ \
+金矿7块 + 银矿7块 + 188颗金刚石 + 1W元宝    <实力铸造/@duan42>\ \
+<COLOR=clMoneyGreen 说明：实力铸造为100%成功,运气铸造50%(需要试刀,失败破碎!)>\ \
+<返回/@main>
+
+[@duan41]
+#IF
+checkitem 金矿 7
+checkitem 银矿 7
+checkitem 金条 1
+CHECKGAMEDIAMOND > 187
+#ACT
+GAMEDIAMOND - 188
+take 金矿 7
+take 银矿 7
+take 金条 1
+movr D4 2
+INC D4 1
+give 怒斩 1 10 <$STR(D4)>
+SENDMSG 6 提示：铸造成功！请试刀！
+SENDMSG 0 %s在苍月武器店内成功打造出一把(*怒斩),祝他试刀成功！
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan42]
+#IF
+checkitem 金矿 7
+checkitem 银矿 7
+CHECKGAMEDIAMOND > 87
+CHECKGAMEGOLD > 9999
+#ACT
+take 金矿 7
+take 银矿 7
+GAMEDIAMOND - 188
+GAMEGOLD - 10000
+give 怒斩 1
+SENDMSG 0 %s在苍月武器店内成功打造出一把【怒斩】
+close
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan5]
+<COLOR=clMoneyGreen 请选择龙牙铸造方式：>\ \
+金矿7块 + 银矿7块 + 188颗金刚石 + 金条x1    <运气铸造/@duan51>\ \
+金矿7块 + 银矿7块 + 188颗金刚石 + 1W元宝    <实力铸造/@duan52>\ \
+<COLOR=clMoneyGreen 说明：实力铸造为100%成功,运气铸造50%(需要试刀,失败破碎!)>\ \
+<返回/@main>
+
+[@duan51]
+#IF
+checkitem 金矿 7
+checkitem 银矿 7
+checkitem 金条 1
+CHECKGAMEDIAMOND > 187
+#ACT
+GAMEDIAMOND - 188
+take 金矿 7
+take 银矿 7
+take 金条 1
+movr D4 2
+INC D4 1
+give 龙牙 1 10 <$STR(D4)>
+SENDMSG 6 提示：铸造成功！请试刀！
+SENDMSG 0 %s在苍月武器店内成功打造出一把(*龙牙),祝他试刀成功！
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan52]
+#IF
+checkitem 金矿 7
+checkitem 银矿 7
+CHECKGAMEDIAMOND > 187
+CHECKGAMEGOLD > 9999
+#ACT
+take 金矿 7
+take 银矿 7
+GAMEDIAMOND - 188
+GAMEGOLD - 10000
+give 龙牙 1
+SENDMSG 0 %s在苍月武器店内成功打造出一把【龙牙】
+close
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan6]
+<COLOR=clMoneyGreen 请选择赤血铸造方式：>\ \
+金矿7块 + 银矿7块 + 188颗金刚石 + 金条x1    <运气铸造/@duan61>\ \
+金矿7块 + 银矿7块 + 188颗金刚石 + 1W元宝    <实力铸造/@duan62>\ \
+<COLOR=clMoneyGreen 说明：实力铸造为100%成功,运气铸造50%(需要试刀,失败破碎!)>\ \
+<返回/@main>
+
+[@duan61]
+#IF
+checkitem 金矿 7
+checkitem 银矿 7
+checkitem 金条 1
+CHECKGAMEDIAMOND > 187
+#ACT
+GAMEDIAMOND - 188
+take 金矿 7
+take 银矿 7
+take 金条 1
+movr D4 2
+INC D4 1
+give 赤血 1 10 <$STR(D4)>
+SENDMSG 6 提示：铸造成功！请试刀！
+SENDMSG 0 %s在苍月武器店内成功打造出一把(*赤血),祝他试刀成功！
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan62]
+#IF
+checkitem 金矿 7
+checkitem 银矿 7
+CHECKGAMEDIAMOND > 187
+CHECKGAMEGOLD > 9999
+#ACT
+take 金矿 7
+take 银矿 7
+GAMEDIAMOND - 188
+GAMEGOLD - 10000
+give 赤血 1
+SENDMSG 0 %s在苍月武器店内成功打造出一把【赤血】
+close
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan7]
+<COLOR=clMoneyGreen 请选择屠龙铸造方式：>\ \
+金矿10块 + 银矿10块 + 588颗金刚石 + 金条x1    <运气铸造/@duan71>\ \
+金矿10块 + 银矿10块 + 588颗金刚石 + 3W元宝    <实力铸造/@duan72>\ \
+<COLOR=clMoneyGreen 说明：实力铸造为100%成功,运气铸造50%(需要试刀,失败破碎!)>\ \
+<返回/@main>
+
+[@duan71]
+#IF
+checkitem 金矿 10
+checkitem 银矿 10
+checkitem 金条 1
+CHECKGAMEDIAMOND > 587
+#ACT
+GAMEDIAMOND - 588
+take 金矿 10
+take 银矿 10
+take 金条 1
+movr D4 2
+INC D4 1
+give 屠龙 1 10 <$STR(D4)>
+SENDMSG 6 提示：铸造成功！请试刀！
+SENDMSG 0 %s在苍月武器店内成功打造出一把(*屠龙),祝他试刀成功！
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan72]
+#IF
+checkitem 金矿 10
+checkitem 银矿 10
+CHECKGAMEDIAMOND > 587
+CHECKGAMEGOLD > 29999
+#ACT
+take 金矿 10
+take 银矿 10
+GAMEDIAMOND - 588
+GAMEGOLD - 30000
+give 屠龙 1
+SENDMSG 0 %s在苍月武器店内成功打造出一把【屠龙】
+close
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan8]
+<COLOR=clMoneyGreen 请选择嗜魂法杖铸造方式：>\ \
+金矿10块 + 银矿10块 + 588颗金刚石 + 金条x1    <运气铸造/@duan81>\ \
+金矿10块 + 银矿10块 + 588颗金刚石 + 3W元宝    <实力铸造/@duan82>\ \
+<COLOR=clMoneyGreen 说明：实力铸造为100%成功,运气铸造50%(需要试刀,失败破碎!)>\ \
+<返回/@main>
+
+[@duan81]
+#IF
+checkitem 金矿 10
+checkitem 银矿 10
+checkitem 金条 1
+CHECKGAMEDIAMOND > 587
+#ACT
+GAMEDIAMOND - 588
+take 金矿 10
+take 银矿 10
+take 金条 1
+movr D4 2
+INC D4 1
+give 嗜魂法杖 1 10 <$STR(D4)>
+SENDMSG 6 提示：铸造成功！请试刀！
+SENDMSG 0 %s在苍月武器店内成功打造出一把(*嗜魂法杖),祝他试刀成功！
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan82]
+#IF
+checkitem 金矿 10
+checkitem 银矿 10
+CHECKGAMEDIAMOND > 587
+CHECKGAMEGOLD > 29999
+#ACT
+take 金矿 10
+take 银矿 10
+GAMEDIAMOND - 588
+GAMEGOLD - 30000
+give 嗜魂法杖 1
+SENDMSG 0 %s在苍月武器店内成功打造出一把【嗜魂法杖】
+close
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan9]
+<COLOR=clMoneyGreen 请选择逍遥扇铸造方式：>\ \
+金矿10块 + 银矿10块 + 588颗金刚石 + 金条x1    <运气铸造/@duan91>\ \
+金矿10块 + 银矿10块 + 588颗金刚石 + 3W元宝    <实力铸造/@duan92>\ \
+<COLOR=clMoneyGreen 说明：实力铸造为100%成功,运气铸造50%(需要试刀,失败破碎!)>\ \
+<返回/@main>
+
+[@duan91]
+#IF
+checkitem 金矿 10
+checkitem 银矿 10
+checkitem 金条 1
+CHECKGAMEDIAMOND > 587
+#ACT
+GAMEDIAMOND - 588
+take 金矿 10
+take 银矿 10
+take 金条 1
+movr D4 2
+INC D4 1
+give 逍遥扇 1 10 <$STR(D4)>
+SENDMSG 6 提示：铸造成功！请试刀！
+SENDMSG 0 %s在苍月武器店内成功打造出一把(*逍遥扇),祝他试刀成功！
+#elseACT
+messagebox 缺少铸造条件
+break
+
+[@duan92]
+#IF
+checkitem 金矿 10
+checkitem 银矿 10
+CHECKGAMEDIAMOND > 587
+CHECKGAMEGOLD > 29999
+#ACT
+take 金矿 10
+take 银矿 10
+GAMEDIAMOND - 588
+GAMEGOLD - 30000
+give 逍遥扇 1
+SENDMSG 0 %s在苍月武器店内成功打造出一把【逍遥扇】
+close
+#elseACT
+messagebox 缺少铸造条件
+break

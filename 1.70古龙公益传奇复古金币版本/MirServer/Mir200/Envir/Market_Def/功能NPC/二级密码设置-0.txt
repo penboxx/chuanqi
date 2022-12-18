@@ -1,0 +1,38 @@
+(@HumGameGoldOrder @@InPutInteger, @@InPutString)
+%100
++10
++11
++15
+[@main]
+为了保障玩家的帐号安全,在帐号被盗或者被骗,\
+只要你设置了2级密码,IP不一致上线必须输入2级密码!\
+如果IP不一致会拉近小黑屋，只有输入您的正确二代密保才可以正常游戏!\
+<警请各位玩家不要泄露自己的帐号密码保护!避免不必要的损失!>\
+<一旦设置二代密保请牢记王者数据，不要与帐号和密码相同>\
+<设置2级密码/@@InPutInteger4>--<2级密码必须为4-7位全数字!否则无效!>\
+<返回/@main>
+
+[@@InPutInteger4]
+#IF
+checknamelist ..\QuestDiary\二级密码\密码名单.txt
+#ACT
+MessageBox 你已经设置了2级密码!请先删除初始密码!
+MOV M4 0
+BREAK
+
+#If
+#Act
+DelayGoto 1 ~InPutInteger4
+
+[~InPutInteger4]
+#If
+LARGE M4 0
+#ACT
+VAR Integer HUMAN 二级密码
+CALCVAR HUMAN  二级密码 = <$STR(M4)>
+SAVEVAR HUMAN 二级密码 ..\QuestDiary\二级密码\密码数据.txt
+addnamelist ..\QuestDiary\二级密码\密码名单.txt
+MessageBox 密码设置成功!\你设置的密码是:◆[<$STR(M4)>]◆\请牢记，否则忘记密码是登陆游戏的!
+mapmove mima
+#ELSEACT
+messagebox 密码设置失败!\确认你输入的数据为4-7位的数字!

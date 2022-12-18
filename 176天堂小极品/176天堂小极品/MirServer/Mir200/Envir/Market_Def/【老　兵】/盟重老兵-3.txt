@@ -1,0 +1,1135 @@
+(@@InPutInteger, @@InPutString )
+[@main]
+#if
+#ACT
+;SENDMSG 4 欢迎来天堂复古1.76小极品传奇，目前游戏测试状态！正式开区8月3号下午14:00准时开放,测试区充值多送10%！
+#SAY
+在这里我将为你提供一些免费商店传送！\
+城市传送:\
+<≮比奇大城≯/@比奇大城>    <≮银杏山谷≯/@银杏山谷>   <≮魔 龙 城≯/@魔龙城>   <≮白日天门≯/@白日天门>\ \
+<≮盟重土城≯/@盟重土城>    <≮封魔神谷≯/@封魔神谷>   <≮毒蛇山谷≯/@毒蛇山谷>   <≮苍月海岛≯/@苍月小岛>\
+商店传送:\
+<≮铁 匠 铺≯/@Gwe>    <≮客    栈≯/@Gwh>   <≮首 饰 店≯/@Gza>   <≮布 料 店≯/@Gpo>\ \
+<≮书    店≯/@Gbo>    <≮婚姻神殿≯/@huenyin>                <≮二级密码≯/@二级密码>\
+;服务功能:\
+;<≮神力护身≯/@神力护身>   <≮神罚之力≯/@神罚之力>   <≮装备回收≯/@装备回收>   <≮金刚石使者≯/@金刚石使者>\
+
+[@二级密码]
+#CALL [\二级密码\密码登陆2.txt] @转密码2
+[@金刚石使者]
+#CALL [\九五制作\金刚石使者.txt] @金刚石使者11
+
+
+[@魔龙城]
+#if
+TRUE
+#ACT
+mapmove 6 123 157
+
+[@装备回收]
+本服开放装备一件回收，分别为元宝和经验回收，注意极品装备\
+<COLOR=#254 提示：携带聚灵珠可以累计经验，40级衣服回收包含武器“血饮”>\
+=========<COLOR=#254 ↓元宝回收↓>=================<COLOR=#254 ↓经验回收↓>=========\
+<COLOR=clFuchsia 祖玛首饰   20元宝一个> <1键回收/@祖玛元宝>   <COLOR=clLime 祖玛首饰   5W经验一个> <1键回收/@祖玛经验>\
+<COLOR=clFuchsia 祖玛武器   40元宝一个> <1键回收/@裁决元宝>   <COLOR=clLime 祖玛武器  10W经验一个> <1键回收/@裁决经验>\
+<COLOR=clFuchsia 赤月首饰  200元宝一个> <1键回收/@赤月元宝>   <COLOR=clLime 赤月首饰  50W经验一个> <1键回收/@赤月经验>\
+<COLOR=clFuchsia 40级衣服  800元宝一个> <1键回收/@衣服元宝>   <COLOR=clLime 40级衣服 200W经验一个> <1键回收/@衣服经验>\
+<COLOR=clFuchsia 怒斩龙牙 1000元宝一个> <1键回收/@新武器元宝>   <COLOR=clLime 怒斩龙牙 250W经验一个> <1键回收/@新武器经验>\
+<COLOR=clFuchsia 50点灵符 1000元宝一个> <1键回收/@50点灵符元宝>   <COLOR=clLime 50点灵符 250W经验一个> <1键回收/@50点灵符经验>\
+
+
+[@50点灵符元宝]
+#if
+checkitem 50点灵符 1
+#ACT
+take 50点灵符 1
+INC D61 1
+INC D62 1
+GAMEGOLD + 1000
+DelayCall 100 @50点灵符元宝
+break
+
+#if
+LARGE D61 0
+#ACT
+MUL D62 1000
+CALCVAR HUMAN 测试回收增加 + <$STR(D62)>
+DELAYGOTO 1 @Mir2m2测试回收脚本加载
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了50点灵符(<$STR(D61)>)张,获得元宝+(<$STR(D62)>)
+MOV D61 0
+MOV D62 0
+break
+#ELSEACT
+sendmsg 6 你背包中无50点灵符。
+break
+
+
+
+[@新武器元宝]
+#if
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+INC D61 1
+INC D62 1
+GAMEGOLD + 1000
+DelayCall 100 @新武器元宝
+break
+
+#if
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+INC D61 1
+INC D62 1
+GAMEGOLD + 1000
+DelayCall 100 @新武器元宝
+break
+
+#if
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+INC D61 1
+INC D62 1
+GAMEGOLD + 1000
+DelayCall 100 @新武器元宝
+break
+
+#if
+LARGE D61 0
+#ACT
+MUL D62 1000
+CALCVAR HUMAN 测试回收增加 + <$STR(D62)>
+DELAYGOTO 1 @Mir2m2测试回收脚本加载
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了新武器(<$STR(D61)>)件,获得元宝+(<$STR(D62)>)
+MOV D61 0
+MOV D62 0
+break
+#ELSEACT
+sendmsg 6 你背包中无新武器。
+break
+
+[@衣服元宝]
+#if
+checkitem 血饮 1
+#ACT
+take 血饮 1
+INC D63 1
+INC D64 1
+GAMEGOLD + 800
+DelayCall 100 @衣服元宝
+break
+
+#if
+checkitem 天师长袍 1
+#ACT
+take 天师长袍 1
+INC D63 1
+INC D64 1
+GAMEGOLD + 800
+DelayCall 100 @衣服元宝
+break
+
+#if
+checkitem 天尊道袍 1
+#ACT
+take 天尊道袍 1
+INC D63 1
+INC D64 1
+GAMEGOLD + 800
+DelayCall 100 @衣服元宝
+break
+
+#if
+checkitem 霓裳羽衣 1
+#ACT
+take 霓裳羽衣 1
+INC D63 1
+INC D64 1
+GAMEGOLD + 800
+DelayCall 100 @衣服元宝
+break
+
+#if
+checkitem 法神披风 1
+#ACT
+take 法神披风 1
+INC D63 1
+INC D64 1
+GAMEGOLD + 800
+DelayCall 100 @衣服元宝
+break
+
+#if
+checkitem 圣战宝甲 1
+#ACT
+take 圣战宝甲 1
+INC D63 1
+INC D64 1
+GAMEGOLD + 800
+DelayCall 100 @衣服元宝
+break
+
+#if
+checkitem 天魔神甲 1
+#ACT
+take 天魔神甲 1
+INC D63 1
+INC D64 1
+GAMEGOLD + 800
+DelayCall 100 @衣服元宝
+break
+
+#if
+LARGE D63 0
+#ACT
+MUL D64 800
+CALCVAR HUMAN 测试回收增加 + <$STR(D64)>
+DELAYGOTO 1 @Mir2m2测试回收脚本加载
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了40级衣服(<$STR(D63)>)件,获得元宝+(<$STR(D64)>)
+MOV D63 0
+MOV D64 0
+break
+#ELSEACT
+sendmsg 6 你背包中无40级衣服。
+break
+
+[@赤月元宝]
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+INC D65 1
+INC D66 1
+GAMEGOLD + 200
+DelayCall 100 @赤月元宝
+break
+
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+INC D65 1
+INC D66 1
+GAMEGOLD + 200
+DelayCall 100 @赤月元宝
+break
+
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+INC D65 1
+INC D66 1
+GAMEGOLD + 200
+DelayCall 100 @赤月元宝
+break
+
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+INC D65 1
+INC D66 1
+GAMEGOLD + 200
+DelayCall 100 @赤月元宝
+break
+
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+INC D65 1
+INC D66 1
+GAMEGOLD + 200
+DelayCall 100 @赤月元宝
+break
+
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+INC D65 1
+INC D66 1
+GAMEGOLD + 200
+DelayCall 100 @赤月元宝
+break
+
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+INC D65 1
+INC D66 1
+GAMEGOLD + 200
+DelayCall 100 @赤月元宝
+break
+
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+INC D65 1
+INC D66 1
+GAMEGOLD + 200
+DelayCall 100 @赤月元宝
+break
+
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+INC D65 1
+INC D66 1
+GAMEGOLD + 200
+DelayCall 100 @赤月元宝
+break
+
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+INC D65 1
+INC D66 1
+GAMEGOLD + 200
+DelayCall 100 @赤月元宝
+break
+
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+INC D65 1
+INC D66 1
+GAMEGOLD + 200
+DelayCall 100 @赤月元宝
+break
+
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+INC D65 1
+INC D66 1
+GAMEGOLD + 200
+DelayCall 100 @赤月元宝
+break
+
+#if
+LARGE D65 0
+#ACT
+MUL D66 200
+CALCVAR HUMAN 测试回收增加 + <$STR(D66)>
+DELAYGOTO 1 @Mir2m2测试回收脚本加载
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了赤月首饰(<$STR(D65)>)件,获得元宝+(<$STR(D66)>)
+MOV D65 0
+MOV D66 0
+break
+#ELSEACT
+sendmsg 6 你背包中无赤月首饰。
+break
+
+[@裁决元宝]
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+INC D67 1
+INC D68 1
+GAMEGOLD + 40
+DelayCall 100 @裁决元宝
+break
+
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+INC D67 1
+INC D68 1
+GAMEGOLD + 40
+DelayCall 100 @裁决元宝
+break
+
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+INC D67 1
+INC D68 1
+GAMEGOLD + 40
+DelayCall 100 @裁决元宝
+break
+
+#if
+LARGE D67 0
+#ACT
+MUL D68 40
+CALCVAR HUMAN 测试回收增加 + <$STR(D68)>
+DELAYGOTO 1 @Mir2m2测试回收脚本加载
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了祖玛武器(<$STR(D67)>)件,获得元宝+(<$STR(D68)>)
+MOV D67 0
+MOV D68 0
+break
+#ELSEACT
+sendmsg 6 你背包中无祖玛武器。
+break
+
+[@祖玛元宝]
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC D69 1
+INC D70 1
+GAMEGOLD + 20
+DelayCall 100 @祖玛元宝
+break
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC D69 1
+INC D70 1
+GAMEGOLD + 20
+DelayCall 100 @祖玛元宝
+break
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC D69 1
+INC D70 1
+GAMEGOLD + 20
+DelayCall 100 @祖玛元宝
+break
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC D69 1
+INC D70 1
+GAMEGOLD + 20
+DelayCall 100 @祖玛元宝
+break
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC D69 1
+INC D70 1
+GAMEGOLD + 20
+DelayCall 100 @祖玛元宝
+break
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC D69 1
+INC D70 1
+GAMEGOLD + 20
+DelayCall 100 @祖玛元宝
+break
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC D69 1
+INC D70 1
+GAMEGOLD + 20
+DelayCall 100 @祖玛元宝
+break
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC D69 1
+INC D70 1
+GAMEGOLD + 20
+DelayCall 100 @祖玛元宝
+break
+
+#if
+checkitem 黑铁头盔 1
+#ACT
+take 黑铁头盔 1
+INC D69 1
+INC D70 1
+GAMEGOLD + 20
+DelayCall 100 @祖玛元宝
+break
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC D69 1
+INC D70 1
+GAMEGOLD + 20
+DelayCall 100 @祖玛元宝
+break
+
+#if
+LARGE D69 0
+#ACT
+MUL D70 20
+CALCVAR HUMAN 测试回收增加 + <$STR(D70)>
+DELAYGOTO 1 @Mir2m2测试回收脚本加载
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了祖玛装备(<$STR(D69)>)件,获得元宝+(<$STR(D70)>)
+MOV D69 0
+MOV D70 0
+break
+#ELSEACT
+sendmsg 6 你背包中无祖玛装备。
+break
+
+;经验开始
+[@50点灵符经验]
+#if
+checkitem 50点灵符 1
+#ACT
+take 50点灵符 1
+INC D71 1
+INC D72 1
+ChangeExp +  2500000
+DelayCall 100 @50点灵符经验
+break
+
+#if
+LARGE D71 0
+#ACT
+MUL D72 2500000
+CALCVAR HUMAN 测试回收增加 + <$STR(D72)>
+DELAYGOTO 1 @Mir2m2测试回收脚本加载
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了50点灵符(<$STR(D71)>)张,获得经验+(<$STR(D72)>)
+MOV D71 0
+MOV D72 0
+break
+#ELSEACT
+sendmsg 6 你背包中无50点灵符。
+break
+
+
+[@新武器经验]
+#if
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+INC D71 1
+INC D72 1
+ChangeExp +  2500000
+DelayCall 100 @新武器经验
+break
+
+#if
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+INC D71 1
+INC D72 1
+ChangeExp +  2500000
+DelayCall 100 @新武器经验
+break
+
+#if
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+INC D71 1
+INC D72 1
+ChangeExp +  2500000
+DelayCall 100 @新武器经验
+break
+
+#if
+LARGE D71 0
+#ACT
+MUL D72 2500000
+CALCVAR HUMAN 测试回收增加 + <$STR(D72)>
+DELAYGOTO 1 @Mir2m2测试回收脚本加载
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了新武器(<$STR(D71)>)件,获得经验+(<$STR(D72)>)
+MOV D71 0
+MOV D72 0
+break
+#ELSEACT
+sendmsg 6 你背包中无新武器。
+break
+
+[@衣服经验]
+#if
+checkitem 血饮 1
+#ACT
+take 血饮 1
+INC D73 1
+INC D74 1
+ChangeExp +  2000000
+DelayCall 100 @衣服经验
+break
+
+#if
+checkitem 天师长袍 1
+#ACT
+take 天师长袍 1
+INC D73 1
+INC D74 1
+ChangeExp +  2000000
+DelayCall 100 @衣服经验
+break
+
+#if
+checkitem 天尊道袍 1
+#ACT
+take 天尊道袍 1
+INC D73 1
+INC D74 1
+ChangeExp +  2000000
+DelayCall 100 @衣服经验
+break
+
+#if
+checkitem 霓裳羽衣 1
+#ACT
+take 霓裳羽衣 1
+INC D73 1
+INC D74 1
+ChangeExp +  2000000
+DelayCall 100 @衣服经验
+break
+
+#if
+checkitem 法神披风 1
+#ACT
+take 法神披风 1
+INC D73 1
+INC D74 1
+ChangeExp +  2000000
+DelayCall 100 @衣服经验
+break
+
+#if
+checkitem 圣战宝甲 1
+#ACT
+take 圣战宝甲 1
+INC D73 1
+INC D74 1
+ChangeExp +  2000000
+DelayCall 100 @衣服经验
+break
+
+#if
+checkitem 天魔神甲 1
+#ACT
+take 天魔神甲 1
+INC D73 1
+INC D74 1
+ChangeExp +  2000000
+DelayCall 100 @衣服经验
+break
+
+#if
+LARGE D73 0
+#ACT
+MUL D74 2000000
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了40级衣服(<$STR(D73)>)件,获得经验+(<$STR(D74)>)
+MOV D73 0
+MOV D74 0
+break
+#ELSEACT
+sendmsg 6 你背包中无40级衣服。
+break
+
+[@赤月经验]
+#if
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+INC D75 1
+INC D76 1
+ChangeExp +  500000
+DelayCall 100 @赤月经验
+break
+
+#if
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+INC D75 1
+INC D76 1
+ChangeExp +  500000
+DelayCall 100 @赤月经验
+break
+
+#if
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+INC D75 1
+INC D76 1
+ChangeExp +  500000
+DelayCall 100 @赤月经验
+break
+
+#if
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+INC D75 1
+INC D76 1
+ChangeExp +  500000
+DelayCall 100 @赤月经验
+break
+
+#if
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+INC D75 1
+INC D76 1
+ChangeExp +  500000
+DelayCall 100 @赤月经验
+break
+
+#if
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+INC D75 1
+INC D76 1
+ChangeExp +  500000
+DelayCall 100 @赤月经验
+break
+
+#if
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+INC D75 1
+INC D76 1
+ChangeExp +  500000
+DelayCall 100 @赤月经验
+break
+
+#if
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+INC D75 1
+INC D76 1
+ChangeExp +  500000
+DelayCall 100 @赤月经验
+break
+
+#if
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+INC D75 1
+INC D76 1
+ChangeExp +  500000
+DelayCall 100 @赤月经验
+break
+
+#if
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+INC D75 1
+INC D76 1
+ChangeExp +  500000
+DelayCall 100 @赤月经验
+break
+
+#if
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+INC D75 1
+INC D76 1
+ChangeExp +  500000
+DelayCall 100 @赤月经验
+break
+
+#if
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+INC D75 1
+INC D76 1
+ChangeExp +  500000
+DelayCall 100 @赤月经验
+break
+
+#if
+LARGE D75 0
+#ACT
+MUL D76 500000
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了赤月首饰(<$STR(D75)>)件,获得经验+(<$STR(D76)>)
+MOV D75 0
+MOV D76 0
+break
+#ELSEACT
+sendmsg 6 你背包中无赤月首饰。
+break
+
+[@裁决经验]
+#if
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+INC D77 1
+INC D78 1
+ChangeExp +  100000
+DelayCall 100 @裁决经验
+break
+
+#if
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+INC D77 1
+INC D78 1
+ChangeExp +  100000
+DelayCall 100 @裁决经验
+break
+
+#if
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+INC D77 1
+INC D78 1
+ChangeExp +  100000
+DelayCall 100 @裁决经验
+break
+
+#if
+LARGE D77 0
+#ACT
+MUL D78 100000
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了祖玛武器(<$STR(D77)>)件,获得经验+(<$STR(D78)>)
+MOV D77 0
+MOV D78 0
+break
+#ELSEACT
+sendmsg 6 你背包中无祖玛武器。
+break
+
+[@祖玛经验]
+#if
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC D79 1
+INC D80 1
+ChangeExp +  50000
+DelayCall 100 @祖玛经验
+break
+
+#if
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC D79 1
+INC D80 1
+ChangeExp +  50000
+DelayCall 100 @祖玛经验
+break
+
+#if
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC D79 1
+INC D80 1
+ChangeExp +  50000
+DelayCall 100 @祖玛经验
+break
+
+#if
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC D79 1
+INC D80 1
+ChangeExp +  50000
+DelayCall 100 @祖玛经验
+break
+
+#if
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC D79 1
+INC D80 1
+ChangeExp +  50000
+DelayCall 100 @祖玛经验
+break
+
+#if
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC D79 1
+INC D80 1
+ChangeExp +  50000
+DelayCall 100 @祖玛经验
+break
+
+#if
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC D79 1
+INC D80 1
+ChangeExp +  50000
+DelayCall 100 @祖玛经验
+break
+
+#if
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC D79 1
+INC D80 1
+ChangeExp +  50000
+DelayCall 100 @祖玛经验
+break
+
+#if
+checkitem 黑铁头盔 1
+#ACT
+take 黑铁头盔 1
+INC D79 1
+INC D80 1
+ChangeExp +  50000
+DelayCall 100 @祖玛经验
+break
+
+#if
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC D79 1
+INC D80 1
+ChangeExp +  50000
+DelayCall 100 @祖玛经验
+break
+
+#if
+LARGE D79 0
+#ACT
+MUL D80 50000
+sendmsg 0 提示：玩家【<$USERNAME>】一键回收了祖玛装备(<$STR(D79)>)件,获得经验+(<$STR(D80)>)
+MOV D79 0
+MOV D80 0
+break
+#ELSEACT
+sendmsg 6 你背包中无祖玛装备。
+break
+
+
+
+[@Mir2m2测试回收脚本加载]
+#CALL [\Mir2m2测试回收配置(免费脚本群.347979)\Mir2m2测试回收脚本.txt] @Mir2m2测试回收保存数据
+
+
+
+
+
+
+
+[@神罚之力]
+#IF
+#SAY
+<COLOR=clPurple ------------------------------------------------------------>\
+<COLOR=clFuchsia 【神罚之力】> <COLOR=#254 Hot~>      <COLOR=clLime 独家正版>\
+<COLOR=clPurple ------------------------------------------------------------>\
+♀．<COLOR=clCream 来自玛珐大陆的通士.不知您可曾听说过><COLOR=clFuchsia 【神罚之力】>~~~\
+♀．<COLOR=clCream 现在魔兽入侵大陆~我需要一批有实力的勇士来征服魔兽！>\
+♀．<COLOR=clAqua 如果你交给我><COLOR=clRed 5000><COLOR=clAqua 元宝。我可以帮你开启神罚之力助你斩尽妖魔!>\
+♀．<COLOR=clRed 被怪物杀死或者下线不消失.被玩家杀死封号消失>\ \
+♀．<COLOR=clLime 杀死神罚之力者可获得><COLOR=clRed 2500><COLOR=clLime 元宝！>     【<成为神罚之力/@传人>】\
+<COLOR=clPurple ------------------------------------------------------------>\
+
+[@传人]
+#IF
+CHECK [18] 0
+CHECKGAMEGOLD > 4999
+#ACT
+GAMEGOLD - 5000
+SET [18] 1
+SENDMSG 0 玩家[%S]已开启“神罚之力”杀死可以得2500元宝
+SENDMSG 0 玩家[%S]已开启“神罚之力”杀死可以得2500元宝
+SENDMSG 0 玩家[%S]已开启“神罚之力”杀死可以得2500元宝
+#CALL [\系统功能\封号设置.txt] @封号设置
+MESSAGEBOX 恭喜您成功开启[神罚之力]\　\请您小退上线以便获得属性奖励!!
+#ELSEACT
+MESSAGEBOX 您没有5000元宝，无法开启“神罚之力”！
+BREAK
+
+
+
+
+[@神力护身]
+<COLOR=clLime 开启神力护身户需要>50点灵符+500万金币\
+<COLOR=clLime 死亡，小退不消失，可以累计开启，时间也累计 时长>60<COLOR=clLime 分钟>\
+<COLOR=clLime 开启神力后人物名字成><COLOR=clFuchsia 紫色><COLOR=clLime ，并隐藏特殊属性：攻魔道增加5点>\  \  
+　                                您当前点灵符:【<$GAMEGIRD>】\
+<COLOR=clRed 您当前神力护身剩余时间为：><$HUMAN(神力护身)><COLOR=clRed 分钟>\  \
+
+　               <开启神力护身/@开启神力护身>  \
+
+
+
+
+[@开启神力护身]
+#IF
+checkgold 5000000
+CHECKGAMEGIRD > 49
+#ACT
+GAMEGIRD - 50
+take 金币 5000000
+CALCVAR HUMAN 神力护身 + 120
+SAVEVAR HUMAN 神力护身 ..\QuestDiary\数据文件\神力护身.txt
+MessageBox 恭喜你神力护身时间增加【120分钟】!
+goto @main
+#elseact
+MessageBox 对不起你没有50点灵符或者没有500W金币，您当前点灵符:【<$GAMEGIRD>】！
+
+
+
+
+
+
+
+
+
+[@元宝验证]
+#ACT
+SendMSG 4 经过验证玩家[%s]拥有【<$GAMEGOLD>】元宝!
+
+[@Gwe]
+#IF
+#ACT
+map 0159
+[@Gpo]
+#IF
+#ACT
+map 0149
+[@Gza]
+#IF
+#ACT
+map 0158
+[@Gwh]
+#IF
+#ACT
+map 0145
+[@Gbo]
+#IF
+#ACT
+map 0161
+[@huenyin]
+#IF
+#ACT
+map M101
+
+
+[@比奇大城]
+#ACT
+mapmove 0 333 268
+break
+[@银杏山谷]
+#ACT
+mapmove 0 650 624
+break
+[@比奇村庄]
+#ACT
+mapmove 0 290 615
+break
+[@盟重土城]
+#ACT
+mapmove 3 333 333
+break
+[@白日天门]
+#ACT
+mapmove 11 177 324
+break
+[@封魔神谷]
+#ACT
+mapmove 4 241 203
+break
+[@苍月小岛]
+#ACT
+mapmove 5 140 338
+break
+[@毒蛇山谷]
+#ACT
+mapmove 2 505 485
+break
+
+[@蜈蚣洞口]
+#IF
+checkitem 回城卷 1
+#ACT
+mapmove 3 142 93
+break
+#ELSEACT
+mapmove 3 142 93
+give 回城卷 1
+break
+
+[@猪洞入口]
+#IF
+checkitem 回城卷 1
+#ACT
+mapmove D710 28 17
+break
+#ELSEACT
+mapmove D710 28 17
+give 回城卷 1
+break
+
+[@祖玛入口]
+#IF
+checkitem 回城卷 1
+#ACT
+map 0157 28 17
+break
+#ELSEACT
+map 0157 28 17
+give 回城卷 1
+break
+[@未知暗殿]
+#IF
+checkitem 回城卷 1
+#ACT
+map M001
+break
+#ELSEACT
+map M001
+give 回城卷 1
+break
+
+[@沙城区域]
+#if
+CHECKLEVELEX < 40
+#ACT
+MESSAGEBOX 你连40级都没有还想去！\
+break
+
+#IF
+checkitem 回城卷 1
+#ACT
+mapmove 3 706 407
+BREAK
+#ELSEACT
+mapmove 3 706 407
+GIVE 回城卷 1
+break

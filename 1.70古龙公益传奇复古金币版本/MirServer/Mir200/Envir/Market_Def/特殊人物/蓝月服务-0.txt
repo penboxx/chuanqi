@@ -1,0 +1,62 @@
+
+()
+%100
+[@main]
+<COLOR=clAqua 游戏讲解可输入@帮助,地理位置可输入@地图,进行查看> \ \
+<设置仓库密码/@设置二次密码>           <比齐洞穴导航/@比奇省>\ \
+为更好的保护您的虚拟财产,建议开启仓库密码<COLOR=clAqua 请不要设置与ID密码相同>\
+支持玩家RMB交易道具,开设中介担保,私下交易不受保护,夕阳传奇\
+对此享有最终解释权\
+游戏命令:<COLOR=clAqua @地图> <COLOR=clAqua @帮助> \
+<点击进入夕阳玩家交流论坛寻找帮助解答/@挖矿> \
+[@挖矿]
+#IF
+#ACT
+WebBrowser http://www.sf1995.com
+break
+[@xiayi]
+首先输入<@LockLogin> \
+然后会提示您输入<@Passwordlock>设置仓库密码,设置仓库密码 \
+然后输入<@保护>即可实现双重帐号保护!! \
+在夕阳传奇装备都是可以卖RMB的,请玩家务必设置安全码 \
+可能大家会感觉麻烦,但是麻烦只一次,安全永久! \
+<返回上一页/@main>\
+[@提取声望]
+[@个人信息]
+[@金币兑换元宝]
+<25000金币兑换1元宝/@lele1>\ \
+<元宝只支持购买商铺辅助用品>\
+<返回上一页/@main>\
+[@lele1]
+#IF
+CHECKGOLD 25000
+#ACT
+TAKE 金币 25000
+GAMEGOLD + 1
+SENDMSG 7 您的元宝增加1个。
+#ELSESAY
+你开玩笑吗？你没钱还想换元宝？\
+我再也不想见到你。\ 
+<返回/@main>
+[@比奇省]
+<移动到：><半兽古墓(比奇省)(146:35)/@_automove 146:35>\
+<移动到：><天然洞穴(比奇省)(43:110)/@_automove 43:110>\
+<移动到：><废矿入口(比奇省)(662:216)/@_automove 662:216>\
+<移动到：><沃玛森林(比奇省)(323:39)/@_automove 323:39>\
+<移动到：><毒蛇山谷(比奇省)(671:85)/@_automove 671:85> \ \
+<COLOR=clAqua 可点击地图,进入自动寻路模式,地图靠跑> \ \
+[@设置登陆保护]
+#IF
+#ACT
+GMEXECUTE  LockLogin
+break
+[@设置二次密码]
+#IF
+#ACT
+GMEXECUTE  加锁
+break
+[@论坛]
+#IF
+#ACT
+WebBrowser http://www.sf1995.com/redirect.php?tid=245&goto=lastpost#lastpost
+break

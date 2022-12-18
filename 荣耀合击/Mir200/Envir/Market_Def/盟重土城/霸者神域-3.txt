@@ -1,0 +1,23 @@
+()
+%100
+[@main]
+\          <COLOR=clLime ∴∵∴※2020经典80金币复古※∵∴∵>\
+\<COLOR=clAqua ╰══════════><COLOR=clAqua 【霸者神域】><COLOR=clAqua ══════════╯>\
+\<COLOR=clRed ♀.地图介绍：左右一宫一殿，各刷终极BOSS>\
+\<COLOR=clAqua ♀.怪物刷新：小怪刷新10分钟，BOSS刷新30分钟.60分钟.120分钟>\
+\<COLOR=clLime ♀.爆率介绍：爆所有装备,地图分2层>\
+\<COLOR=clFuchsia ♀.进入条件：44级+200元宝>  \
+------------------------------------------------------------　\
+<前往霸者神域/@单人>\
+[@单人]
+#if
+checkgamegold > 199
+CHECKLEVELEX > 43
+#act
+gamegold - 200
+mapmove bzsy 11  8
+give 回城卷
+SENDMSG 0 玩家〖%s〗单独进入了霸者神域！   49 223
+SENDMSG 0 玩家〖%s〗单独进入了霸者神域！   49 223
+#elseact
+MESSAGEBOX 【提示】:你达到进入条件了吗，孩子别冲动不要以卵击石！

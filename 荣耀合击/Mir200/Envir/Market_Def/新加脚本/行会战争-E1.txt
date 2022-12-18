@@ -1,0 +1,33 @@
+[@main]
+#IF
+HOUR 20 20
+MIN  01 09
+#ELSEACT
+MESSAGEBOX 领奖时间为20:01-20:09，其他时间无法获取奖励！
+BREAK
+#IF
+IsSameGuildOnMap E1
+#ACT
+goto @行会争霸
+#ELSEACT
+MESSAGEBOX 地图里还有其他行会人员，无法获取奖励！
+BREAK
+[@行会争霸]
+#if
+CHECKGUILDLIST ..\QuestDiary\数据文件\行会争霸奖励名单.txt HardDisk
+#act
+messagebox 行会争霸奖励只能领取一次！貌似有人领取过了！
+break
+close
+#IF
+ISGUILDMASTER
+#act
+GIVE 金币 10000000
+ADDGUILDLIST ..\QuestDiary\数据文件\行会争霸奖励名单.txt HardDisk
+SENDMSG 0 本届行会争霸奖励[金币1000万]被[<$USERNAME>]领走了，不知道跑到那里分脏了！！ 255 249
+SENDMSG 0 本届行会争霸奖励[金币1000万]被[<$USERNAME>]领走了，不知道跑到那里分脏了！！ 255 249 0 20
+break
+close
+#elseact
+messagebox 你不是行会老大！无法获取奖励！
+CLOSE

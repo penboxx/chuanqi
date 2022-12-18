@@ -1,0 +1,17 @@
+()
+%100
+[@main]
+　\
+前面就是通向幽冥回廊.\
+你真的要过去吗?\ \
+　\
+<我要进去/@move>　<COLOR=clLime 开区第2天20:00开放霸者大厅后的地图>\
+<过几天再去/@exit>\\
+[@move]
+#if
+EQUAL A83 开启
+#act
+mapmove D2009 83 86
+#ELSEACT
+messagebox 开区第2天20:00开放霸者大厅后的地图
+BREAK

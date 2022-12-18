@@ -1,0 +1,65 @@
+[@main]
+#IF
+checklevelex > 0
+#act
+MOV S57 
+MOV D85 0
+MOVR D86 100
+MOV D87 0
+#IF
+CheckGAMEPOINT > 9
+#act
+INC D85 5
+#IF
+CheckGAMEPOINT > 99
+#act
+INC D85 15
+#IF
+CheckGAMEPOINT > 199
+#act
+INC D85 20
+
+#IF
+CHECKKillPlayMon 魔龙教主
+#ACT
+MOV S57 魔龙教主
+#IF
+CHECKKillPlayMon 暗之魔龙教主
+#ACT
+MOV S57 暗之魔龙教主
+#IF
+CHECKKillPlayMon 暗之魔龙教主1
+#ACT
+MOV S57 暗之魔龙教主1
+#IF
+CHECKKillPlayMon 魔龙教主1
+#ACT
+MOV S57 魔龙教主1
+#IF
+CHECKKillPlayMon 魔影巨人
+#ACT
+MOV S57 魔影巨人
+#IF
+CHECKKillPlayMon 魔影巨人1
+#ACT
+MOV S57 魔影巨人1
+
+
+#IF
+equal S57 
+#ACT
+BREAK
+#ELSEACT
+MOV D87 1
+#IF
+LARGE D87 0
+SMALL D86 <$STR(D85)>
+H.CheckInMapRange <$CURRENTMAP> <$CURRENTX> <$CURRENTY> 13
+#ACT
+Gmexecute 怪 <$STR(S57)>
+Gmexecute 去死
+Gmexecute showeffect 8
+SENDMSG 0 [%s]成功对怪物[<$STR(S57)>]进行鞭尸（二次自动击杀）！获得2次爆物品！！ 249 251 5
+SENDMSG 0 [%s]成功对怪物[<$STR(S57)>]进行鞭尸（二次自动击杀）！获得2次爆物品！！ 252 251 4
+SENDMSG 0 [%s]成功对怪物[<$STR(S57)>]进行鞭尸（二次自动击杀）！获得2次爆物品！！ 253 251 3
+BREAK

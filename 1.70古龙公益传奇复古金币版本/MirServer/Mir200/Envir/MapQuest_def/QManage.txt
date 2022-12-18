@@ -1,0 +1,347 @@
+[@RESUME]
+#IF
+CheckLevelEx > 0
+#ACT
+SETOFFLINEPLAY OFF
+SENDMSG 5 ╔──────────────────────────────╗ 255 0
+SENDMSG 5 │　　　　　　本服开启玩家安全区离线自动挂机服务　　　　　　　│ 255 0
+SENDMSG 5 │　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　│ 255 0
+SENDMSG 5 │　　　　　　管理员为避免您在游戏中出现数据错误　　　　　　　│ 255 0
+SENDMSG 5 │　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　│ 255 0
+SENDMSG 5 │　　　　　　　所以请你小退一下再重新登陆即可　　　　　　　　│ 255 0
+SENDMSG 5 │　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　│ 255 0
+SENDMSG 5 │　　　　　　　　给您带来的不便我们深表歉意　　　　　　　　　│ 255 0
+SENDMSG 5 ╚──────────────────────────────╝ 255 0
+KICK
+BREAK
+
+[@LOGIN]
+#IF
+CHECKLEVELEX > 0
+#ACT
+SetScTimer 5 1
+VAR Integer HUMAN 金刚石总数
+VAR Integer HUMAN 小时计
+VAR Integer HUMAN 分钟计
+VAR Integer HUMAN 小时算
+VAR Integer HUMAN 分钟算
+VAR Integer HUMAN 完成总数
+VAR Integer HUMAN 已领取数
+VAR Integer HUMAN 尚未完成
+VAR Integer HUMAN 剩余领取
+VAR Integer HUMAN 初始经验
+VAR Integer HUMAN 初始等级
+VAR Integer HUMAN 初始最大经验
+VAR Integer HUMAN 后来等级
+VAR Integer HUMAN 升级后经验
+VAR Integer HUMAN 后来经验
+VAR Integer HUMAN 聚会经验
+VAR Integer HUMAN 日历练点
+VAR Integer HUMAN 周历练点
+VAR Integer HUMAN 幸运值
+VAR Integer HUMAN QDDG
+VAR String HUMAN USERID
+LOADVAR HUMAN QDDG ..\QuestDiary\游戏登陆\QDDGSave.txt
+LOADVAR HUMAN USERID ..\QuestDiary\数据文件\个人变量.txt
+LOADVAR HUMAN 幸运值 ..\QuestDiary\数据文件\幸运值Save.txt
+LOADVAR HUMAN 剩余领取 ..\QuestDiary\数据文件\剩余领取Save.txt
+LOADVAR HUMAN 尚未完成 ..\QuestDiary\数据文件\尚未完成Save.txt
+LOADVAR HUMAN 已领取数 ..\QuestDiary\数据文件\已领取数Save.txt
+LOADVAR HUMAN 完成总数 ..\QuestDiary\数据文件\完成总数Save.txt
+LOADVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+LOADVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+LOADVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+LOADVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+LOADVAR HUMAN 金刚石总数 ..\QuestDiary\数据文件\金刚石总数Save.txt
+LOADVAR HUMAN 周历练点 ..\QuestDiary\数据文件\周历练点Save.txt
+LOADVAR HUMAN 日历练点 ..\QuestDiary\数据文件\日历练点Save.txt
+LOADVAR HUMAN 聚会经验 ..\QuestDiary\数据文件\聚会经验Save.txt
+LOADVAR HUMAN 后来经验 ..\QuestDiary\数据文件\后来经验Save.txt
+LOADVAR HUMAN 升级后经验 ..\QuestDiary\数据文件\升级后经验Save.txt
+LOADVAR HUMAN 后来等级 ..\QuestDiary\数据文件\后来等级Save.txt
+LOADVAR HUMAN 初始最大经验 ..\QuestDiary\数据文件\初始最大经验Save.txt
+LOADVAR HUMAN 初始等级 ..\QuestDiary\数据文件\初始等级Save.txt
+LOADVAR HUMAN 初始经验 ..\QuestDiary\数据文件\初始经验Save.txt
+#CALL [\二级密码\密码登陆.txt] @密码登陆
+SENDMSG 7 看不到NPC或摆摊请在登陆器右侧下载修复补丁【F12内挂设置,开启:物品提示,自动捡物,关闭:显示过滤,捡取过滤】
+SENDMSG 7 欢迎来到本传奇:新手上线可以挖矿赚钱,钱可以换元宝,所有地图靠跑,纯免费绿色网游,有什么地图不会走的查找游戏人物栏右边的任务日志.
+;#Call [\游戏登陆\登陆设置.txt] @登陆脚本
+;#Call [\游戏登陆\登陆.txt] @登陆
+;#CALL [\系统功能\新手送礼.txt] @新手送礼
+#CALL [\系统功能\登陆脚本.txt] @登陆设置
+;----------------------------
+
+
+[@夺宝时间]
+#IF
+ISONMAP TTSD
+CHECKITEM 圣火令 1
+#ACT
+SENDMSG 0 夺宝特使：目前圣火令被%S拥有，已拥有<$STR(M9)>秒。成功拥有圣火令900秒[15分钟]后他将获得圣火令中的宝物。%S目前所在位置：%m的(%x：%y)  250 0
+BREAK
+
+[@ONTIMER1]
+#IF
+ISONMAP TTSD
+CHECKITEM 圣火令 1
+LARGE M9 899
+CHECK [001] 1
+#ACT
+MOV M9 0
+TAKE 圣火令 1
+SET [001] 0
+READRANDOMSTR .\QuestDiary\抽取数据\夺宝战活动.txt S13
+GIVE <$STR(S13)> 1
+SENDMSG 0 <$USERNAME>，获得了本届夺宝战活动的胜利，奖励：<$STR(S13)>:1 251 249
+BREAK
+#IF
+ISONMAP TTSD
+CHECKITEM 圣火令 1
+CHECK [001] 1
+#ACT
+INC M9 1
+BREAK
+#IF
+ISONMAP TTSD
+CHECKITEM 圣火令 1
+#ACT
+SET [001] 1
+MOV M9 1
+SENDMSG 0 <$USERNAME>，拾到了圣火令。成功保护15分钟将可以获得活动奖励。 250 0
+BREAK
+#IF
+ISONMAP TTSD
+#ACT
+SET [001] 0
+BREAK
+#IF
+CHECKITEM 圣火令 1
+#ACT
+MOV M9 0
+MAPMOVE TTSD
+SENDMSG 0 <$USERNAME>，想携带圣火令外逃，已经被系统抓回！保护圣火令时间清零。 250 0
+BREAK
+#IF
+#ACT
+SET [001] 0
+KILLSCTIMER 1
+BREAK
+
+[@ONTIMER2]
+#IF
+large M10 0
+#ACT
+DEC M10 2
+BREAK
+#ELSEACT
+KILLSCTIMER 2
+BREAK
+
+[@ONTIMER3]
+#IF
+large M11 0
+#ACT
+DEC M11 2
+BREAK
+#ELSEACT
+KILLSCTIMER 3
+BREAK
+
+[@ONTIMER4]
+#IF
+large M12 0
+#ACT
+DEC M12 2
+BREAK
+#ELSEACT
+KILLSCTIMER 4
+BREAK
+
+[@ONTIMER5]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S91 <$CURRENTMAP>
+MOV M91 <$CURRENTX>
+MOV M92 <$CURRENTY>
+
+#IF
+EQUAL G7 0
+EQUAL S91 R001
+EQUAL M91 55
+EQUAL M92 94
+#ACT
+SENDMSG 7 对不起，重装地图尚未开放！ 251 249
+BREAK
+#IF
+EQUAL G7 0
+EQUAL S91 0
+EQUAL M91 428
+EQUAL M92 474
+#ACT
+SENDMSG 7 对不起，重装地图尚未开放！ 251 249
+BREAK
+#IF
+EQUAL G7 0
+EQUAL S91 1
+EQUAL M91 320
+EQUAL M92 56
+#ACT
+SENDMSG 7 对不起，重装地图尚未开放！ 251 249
+BREAK
+#IF
+EQUAL G7 0
+EQUAL S91 1
+EQUAL M91 215
+EQUAL M92 312
+#ACT
+SENDMSG 7 对不起，重装地图尚未开放！ 251 249
+BREAK
+#IF
+EQUAL G7 0
+EQUAL S91 11
+EQUAL M91 362
+EQUAL M92 325
+#ACT
+SENDMSG 7 对不起，重装地图尚未开放！ 251 249
+BREAK
+#IF
+EQUAL G7 0
+EQUAL S91 4
+EQUAL M91 205
+EQUAL M92 218
+#ACT
+SENDMSG 7 对不起，重装地图尚未开放！ 251 249
+BREAK
+
+#IF
+EQUAL G7 1
+EQUAL S91 R001
+EQUAL M91 55
+EQUAL M92 94
+#ACT
+ClOSE
+MAPMOVE T140 14 16
+BREAK
+#IF
+EQUAL G7 1
+EQUAL S91 0
+EQUAL M91 428
+EQUAL M92 474
+#ACT
+ClOSE
+MAPMOVE T139 19 24
+BREAK
+#IF
+EQUAL G7 1
+EQUAL S91 1
+EQUAL M91 320
+EQUAL M92 56
+#ACT
+ClOSE
+MAPMOVE T115 106 51
+BREAK
+#IF
+EQUAL G7 1
+EQUAL S91 1
+EQUAL M91 215
+EQUAL M92 312
+#ACT
+ClOSE
+MAPMOVE T119 22 51
+BREAK
+#IF
+EQUAL G7 1
+EQUAL S91 11
+EQUAL M91 362
+EQUAL M92 325
+#ACT
+ClOSE
+MAPMOVE T132 22 26
+BREAK
+#IF
+EQUAL G7 1
+EQUAL S91 4
+EQUAL M91 205
+EQUAL M92 218
+#ACT
+ClOSE
+MAPMOVE T118 14 16
+BREAK
+
+;----------------------------
+
+
+;----------------------------
+
+[@全区开双]
+#ACT
+KILLMONEXPRATE 200 10800
+SENDMSG 7 “双倍经验”活动已开启！活动截止时间：今晚22:00…… 252 253 20
+BREAK
+
+[@全区关双]
+#ACT
+KILLMONEXPRATE 100 80000
+SENDMSG 7 “双倍经验”活动已关闭！打怪经验恢复正常…… 252 253 20
+BREAK
+
+[@群雄登记]
+#IF
+ISONMAP <$STR(A6)>
+#ACT
+AddGuildList ..\QuestDiary\数据文件\会员名单\群雄胜利行会.txt
+SENDMSG 7 群雄争霸：行会:<$GUILDNAME>，在本届群雄争霸活动中胜出！请该行会会长到比奇群雄争霸处领取活动奖励！ 250 0 20
+MAPMOVE 0
+BREAK
+
+
+[@刷复古教主]
+PK场由于远离玛法大陆，所以不受国王管辖！\
+在那里面杀人是不犯法的，你想进去玩玩吗？\
+<COLOR=clFuchsia ★★★><COLOR=clLime PK不犯法,而且每4个小时还会刷新一个复古BOSS> <COLOR=clFuchsia ★★★>\
+<COLOR=clFuchsia ★★★><COLOR=clLime 要想获得“技能神石”必须消灭复古教主!!!!!!> <COLOR=clFuchsia ★★★>\
+<COLOR=clFuchsia ★★★><COLOR=clLime 怪物爆率也是极其高,请玩家不要单独前往除魔!> <COLOR=clFuchsia ★★★>\ \ \
+<进入激情PK场/@jingru>                <我怕，不敢去！/@exit>\
+
+[@jingru]
+#act
+map jqpk
+
+[@Login]
+#IF
+CHECKLEVELEX > 0
+#Act
+VAR Integer HUMAN QDDG
+LOADVAR HUMAN QDDG ..\QuestDiary\游戏登陆\QDDGSave.txt
+SENDMSG 5 提示:服务器没有传送员，所有地图都靠跑，无挂机泡点功能，在线的全部为活人，活人是在打怪打装备升级的，不可能没事站安全区看风景，所以看到安全区没人请不要惊呀，其它F上安全区站满人都是泡点的.
+SENDMSG 7 看不到NPC或摆摊请在登陆器右侧下载修复补丁【F12内挂设置,开启:物品提示,自动捡物,关闭:显示过滤,捡取过滤】
+#Call [\游戏登陆\登陆设置.txt] @登陆脚本
+#Call [\游戏登陆\登陆.txt] @登陆
+#CALL [\二级密码\密码登陆.txt] @密码登陆
+
+
+
+
+
+#IF
+ISNEWHUMAN
+#ACT
+MESSAGEBOX 欢迎进入夕阳1.76复古金币传奇平台\本服无高级传送,地图基本靠跑\长期版本,一切靠打,只为追忆曾经的热血,曾经的传奇所设\本服彻底封死脱机，加速。等一系列问题\如您已经了解以上几条,请点确定!
+
+
+
+
+#IF
+ISNEWHUMAN
+#ACT
+goto @就不让你说话
+
+[@就不让你说话]
+#if 
+ISNEWHUMAN
+#act
+SENDMSG 5 为防止恶意捣乱,新人15级之前不能说话,到达15级，自动解除禁言！快去升级吧！
+Gmexecute Shutup Self 65535 
+break
+

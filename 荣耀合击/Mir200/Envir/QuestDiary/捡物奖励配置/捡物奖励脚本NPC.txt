@@ -1,0 +1,944 @@
+[@捡物奖励脚本NPC]
+{
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P7 0
+MOV P8 <$HUMAN(捡物奖励页号)>
+MOV P9 $(捡物奖励生效)
+DIV P9 7
+MOV S18
+#IF
+LARGE P9 6
+#ACT
+MOV P9 6
+#IF
+SMALL P8 0
+#ACT
+MOV P8 0
+CALCVAR HUMAN 捡物奖励页号 = <$STR(P8)>
+#IF
+LARGE P8 <$STR(P9)>
+#ACT
+MOV P8 <$STR(P9)>
+CALCVAR HUMAN 捡物奖励页号 = <$STR(P8)>
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 <第1页/@捡物奖励页数1>　
+#IF
+EQUAL P8 0
+#ACT
+MOV S10 <第1页>　
+#IF
+CHECKLEVELEX > 0
+#ACT
+INC S18 <$STR(S10)>
+#IF
+LARGE P9 0
+#ACT
+MOV S10 <第2页/@捡物奖励页数2>　
+#IF
+EQUAL P8 1
+LARGE P9 0
+#ACT
+MOV S10 <第2页>　
+#IF
+LARGE P9 0
+#ACT
+INC S18 <$STR(S10)>
+#IF
+LARGE P9 1
+#ACT
+MOV S10 <第3页/@捡物奖励页数3>　
+#IF
+EQUAL P8 2
+LARGE P9 1
+#ACT
+MOV S10 <第3页>　
+#IF
+LARGE P9 1
+#ACT
+INC S18 <$STR(S10)>
+#IF
+LARGE P9 2
+#ACT
+MOV S10 <第4页/@捡物奖励页数4>　
+#IF
+EQUAL P8 3
+LARGE P9 2
+#ACT
+MOV S10 <第4页>　
+#IF
+LARGE P9 2
+#ACT
+INC S18 <$STR(S10)>
+#IF
+LARGE P9 3
+#ACT
+MOV S10 <第5页/@捡物奖励页数5>　
+#IF
+EQUAL P8 4
+LARGE P9 3
+#ACT
+MOV S10 <第5页>　
+#IF
+LARGE P9 3
+#ACT
+INC S18 <$STR(S10)>
+#IF
+LARGE P9 4
+#ACT
+MOV S10 <第6页/@捡物奖励页数6>　
+#IF
+EQUAL P8 5
+LARGE P9 4
+#ACT
+MOV S10 <第6页>　
+#IF
+LARGE P9 4
+#ACT
+INC S18 <$STR(S10)>
+#IF
+LARGE P9 5
+#ACT
+MOV S10 <第7页/@捡物奖励页数7>　
+#IF
+EQUAL P8 6
+LARGE P9 6
+#ACT
+MOV S10 <第7页>　
+#IF
+LARGE P9 5
+#ACT
+INC S18 <$STR(S10)>
+#IF
+LARGE P9 6
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P7 <$STR(P8)>
+MUL P7 7
+MOV P9 $(捡物奖励生效)
+
+#IF
+EQUAL P8 0
+#ACT
+MOV S11 $(捡物奖励物品1)<$GLOBAL(捡物奖励空格)>
+DEC S11 17 500
+MOV S10 $(捡物奖励元宝1)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S11 <$STR(S10)>
+MOV S10 $(捡物奖励经验1)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S11 <$STR(S10)>
+MOV S12 $(捡物奖励物品2)<$GLOBAL(捡物奖励空格)>
+DEC S12 17 500
+MOV S10 $(捡物奖励元宝2)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S12 <$STR(S10)>
+MOV S10 $(捡物奖励经验2)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S12 <$STR(S10)>
+MOV S13 $(捡物奖励物品3)<$GLOBAL(捡物奖励空格)>
+DEC S13 17 500
+MOV S10 $(捡物奖励元宝3)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S13 <$STR(S10)>
+MOV S10 $(捡物奖励经验3)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S13 <$STR(S10)>
+MOV S14 $(捡物奖励物品4)<$GLOBAL(捡物奖励空格)>
+DEC S14 17 500
+MOV S10 $(捡物奖励元宝4)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S14 <$STR(S10)>
+MOV S10 $(捡物奖励经验4)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S14 <$STR(S10)>
+MOV S15 $(捡物奖励物品5)<$GLOBAL(捡物奖励空格)>
+DEC S15 17 500
+MOV S10 $(捡物奖励元宝5)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S15 <$STR(S10)>
+MOV S10 $(捡物奖励经验5)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S15 <$STR(S10)>
+MOV S16 $(捡物奖励物品6)<$GLOBAL(捡物奖励空格)>
+DEC S16 17 500
+MOV S10 $(捡物奖励元宝6)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S16 <$STR(S10)>
+MOV S10 $(捡物奖励经验6)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S16 <$STR(S10)>
+MOV S17 $(捡物奖励物品7)<$GLOBAL(捡物奖励空格)>
+DEC S17 17 500
+MOV S10 $(捡物奖励元宝7)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S17 <$STR(S10)>
+MOV S10 $(捡物奖励经验7)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S17 <$STR(S10)>
+#IF
+EQUAL P8 1
+#ACT
+MOV S11 $(捡物奖励物品8)<$GLOBAL(捡物奖励空格)>
+DEC S11 17 500
+MOV S10 $(捡物奖励元宝8)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S11 <$STR(S10)>
+MOV S10 $(捡物奖励经验8)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S11 <$STR(S10)>
+MOV S12 $(捡物奖励物品9)<$GLOBAL(捡物奖励空格)>
+DEC S12 17 500
+MOV S10 $(捡物奖励元宝9)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S12 <$STR(S10)>
+MOV S10 $(捡物奖励经验9)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S12 <$STR(S10)>
+MOV S13 $(捡物奖励物品10)<$GLOBAL(捡物奖励空格)>
+DEC S13 17 500
+MOV S10 $(捡物奖励元宝10)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S13 <$STR(S10)>
+MOV S10 $(捡物奖励经验10)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S13 <$STR(S10)>
+MOV S14 $(捡物奖励物品11)<$GLOBAL(捡物奖励空格)>
+DEC S14 17 500
+MOV S10 $(捡物奖励元宝11)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S14 <$STR(S10)>
+MOV S10 $(捡物奖励经验11)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S14 <$STR(S10)>
+MOV S15 $(捡物奖励物品12)<$GLOBAL(捡物奖励空格)>
+DEC S15 17 500
+MOV S10 $(捡物奖励元宝12)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S15 <$STR(S10)>
+MOV S10 $(捡物奖励经验12)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S15 <$STR(S10)>
+MOV S16 $(捡物奖励物品13)<$GLOBAL(捡物奖励空格)>
+DEC S16 17 500
+MOV S10 $(捡物奖励元宝13)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S16 <$STR(S10)>
+MOV S10 $(捡物奖励经验13)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S16 <$STR(S10)>
+MOV S17 $(捡物奖励物品14)<$GLOBAL(捡物奖励空格)>
+DEC S17 17 500
+MOV S10 $(捡物奖励元宝14)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S17 <$STR(S10)>
+MOV S10 $(捡物奖励经验14)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S17 <$STR(S10)>
+#IF
+EQUAL P8 2
+#ACT
+MOV S11 $(捡物奖励物品15)<$GLOBAL(捡物奖励空格)>
+DEC S11 17 500
+MOV S10 $(捡物奖励元宝15)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S11 <$STR(S10)>
+MOV S10 $(捡物奖励经验15)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S11 <$STR(S10)>
+MOV S12 $(捡物奖励物品16)<$GLOBAL(捡物奖励空格)>
+DEC S12 17 500
+MOV S10 $(捡物奖励元宝16)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S12 <$STR(S10)>
+MOV S10 $(捡物奖励经验16)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S12 <$STR(S10)>
+MOV S13 $(捡物奖励物品17)<$GLOBAL(捡物奖励空格)>
+DEC S13 17 500
+MOV S10 $(捡物奖励元宝17)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S13 <$STR(S10)>
+MOV S10 $(捡物奖励经验17)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S13 <$STR(S10)>
+MOV S14 $(捡物奖励物品18)<$GLOBAL(捡物奖励空格)>
+DEC S14 17 500
+MOV S10 $(捡物奖励元宝18)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S14 <$STR(S10)>
+MOV S10 $(捡物奖励经验18)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S14 <$STR(S10)>
+MOV S15 $(捡物奖励物品19)<$GLOBAL(捡物奖励空格)>
+DEC S15 17 500
+MOV S10 $(捡物奖励元宝19)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S15 <$STR(S10)>
+MOV S10 $(捡物奖励经验19)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S15 <$STR(S10)>
+MOV S16 $(捡物奖励物品20)<$GLOBAL(捡物奖励空格)>
+DEC S16 17 500
+MOV S10 $(捡物奖励元宝20)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S16 <$STR(S10)>
+MOV S10 $(捡物奖励经验20)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S16 <$STR(S10)>
+MOV S17 $(捡物奖励物品21)<$GLOBAL(捡物奖励空格)>
+DEC S17 17 500
+MOV S10 $(捡物奖励元宝21)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S17 <$STR(S10)>
+MOV S10 $(捡物奖励经验21)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S17 <$STR(S10)>
+#IF
+EQUAL P8 3
+#ACT
+MOV S11 $(捡物奖励物品22)<$GLOBAL(捡物奖励空格)>
+DEC S11 17 500
+MOV S10 $(捡物奖励元宝22)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S11 <$STR(S10)>
+MOV S10 $(捡物奖励经验22)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S11 <$STR(S10)>
+MOV S12 $(捡物奖励物品23)<$GLOBAL(捡物奖励空格)>
+DEC S12 17 500
+MOV S10 $(捡物奖励元宝23)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S12 <$STR(S10)>
+MOV S10 $(捡物奖励经验23)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S12 <$STR(S10)>
+MOV S13 $(捡物奖励物品24)<$GLOBAL(捡物奖励空格)>
+DEC S13 17 500
+MOV S10 $(捡物奖励元宝24)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S13 <$STR(S10)>
+MOV S10 $(捡物奖励经验24)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S13 <$STR(S10)>
+MOV S14 $(捡物奖励物品25)<$GLOBAL(捡物奖励空格)>
+DEC S14 17 500
+MOV S10 $(捡物奖励元宝25)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S14 <$STR(S10)>
+MOV S10 $(捡物奖励经验25)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S14 <$STR(S10)>
+MOV S15 $(捡物奖励物品26)<$GLOBAL(捡物奖励空格)>
+DEC S15 17 500
+MOV S10 $(捡物奖励元宝26)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S15 <$STR(S10)>
+MOV S10 $(捡物奖励经验26)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S15 <$STR(S10)>
+MOV S16 $(捡物奖励物品27)<$GLOBAL(捡物奖励空格)>
+DEC S16 17 500
+MOV S10 $(捡物奖励元宝27)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S16 <$STR(S10)>
+MOV S10 $(捡物奖励经验27)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S16 <$STR(S10)>
+MOV S17 $(捡物奖励物品28)<$GLOBAL(捡物奖励空格)>
+DEC S17 17 500
+MOV S10 $(捡物奖励元宝28)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S17 <$STR(S10)>
+MOV S10 $(捡物奖励经验28)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S17 <$STR(S10)>
+#IF
+EQUAL P8 4
+#ACT
+MOV S11 $(捡物奖励物品29)<$GLOBAL(捡物奖励空格)>
+DEC S11 17 500
+MOV S10 $(捡物奖励元宝29)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S11 <$STR(S10)>
+MOV S10 $(捡物奖励经验29)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S11 <$STR(S10)>
+MOV S12 $(捡物奖励物品30)<$GLOBAL(捡物奖励空格)>
+DEC S12 17 500
+MOV S10 $(捡物奖励元宝30)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S12 <$STR(S10)>
+MOV S10 $(捡物奖励经验30)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S12 <$STR(S10)>
+MOV S13 $(捡物奖励物品31)<$GLOBAL(捡物奖励空格)>
+DEC S13 17 500
+MOV S10 $(捡物奖励元宝31)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S13 <$STR(S10)>
+MOV S10 $(捡物奖励经验31)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S13 <$STR(S10)>
+MOV S14 $(捡物奖励物品32)<$GLOBAL(捡物奖励空格)>
+DEC S14 17 500
+MOV S10 $(捡物奖励元宝32)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S14 <$STR(S10)>
+MOV S10 $(捡物奖励经验32)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S14 <$STR(S10)>
+MOV S15 $(捡物奖励物品33)<$GLOBAL(捡物奖励空格)>
+DEC S15 17 500
+MOV S10 $(捡物奖励元宝33)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S15 <$STR(S10)>
+MOV S10 $(捡物奖励经验33)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S15 <$STR(S10)>
+MOV S16 $(捡物奖励物品34)<$GLOBAL(捡物奖励空格)>
+DEC S16 17 500
+MOV S10 $(捡物奖励元宝34)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S16 <$STR(S10)>
+MOV S10 $(捡物奖励经验34)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S16 <$STR(S10)>
+MOV S17 $(捡物奖励物品35)<$GLOBAL(捡物奖励空格)>
+DEC S17 17 500
+MOV S10 $(捡物奖励元宝35)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S17 <$STR(S10)>
+MOV S10 $(捡物奖励经验35)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S17 <$STR(S10)>
+#IF
+EQUAL P8 5
+#ACT
+MOV S11 $(捡物奖励物品36)<$GLOBAL(捡物奖励空格)>
+DEC S11 17 500
+MOV S10 $(捡物奖励元宝36)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S11 <$STR(S10)>
+MOV S10 $(捡物奖励经验36)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S11 <$STR(S10)>
+MOV S12 $(捡物奖励物品37)<$GLOBAL(捡物奖励空格)>
+DEC S12 17 500
+MOV S10 $(捡物奖励元宝37)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S12 <$STR(S10)>
+MOV S10 $(捡物奖励经验37)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S12 <$STR(S10)>
+MOV S13 $(捡物奖励物品38)<$GLOBAL(捡物奖励空格)>
+DEC S13 17 500
+MOV S10 $(捡物奖励元宝38)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S13 <$STR(S10)>
+MOV S10 $(捡物奖励经验38)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S13 <$STR(S10)>
+MOV S14 $(捡物奖励物品39)<$GLOBAL(捡物奖励空格)>
+DEC S14 17 500
+MOV S10 $(捡物奖励元宝39)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S14 <$STR(S10)>
+MOV S10 $(捡物奖励经验39)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S14 <$STR(S10)>
+MOV S15 $(捡物奖励物品40)<$GLOBAL(捡物奖励空格)>
+DEC S15 17 500
+MOV S10 $(捡物奖励元宝40)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S15 <$STR(S10)>
+MOV S10 $(捡物奖励经验40)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S15 <$STR(S10)>
+MOV S16 $(捡物奖励物品41)<$GLOBAL(捡物奖励空格)>
+DEC S16 17 500
+MOV S10 $(捡物奖励元宝41)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S16 <$STR(S10)>
+MOV S10 $(捡物奖励经验41)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S16 <$STR(S10)>
+MOV S17 $(捡物奖励物品42)<$GLOBAL(捡物奖励空格)>
+DEC S17 17 500
+MOV S10 $(捡物奖励元宝42)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S17 <$STR(S10)>
+MOV S10 $(捡物奖励经验42)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S17 <$STR(S10)>
+#IF
+EQUAL P8 6
+#ACT
+MOV S11 $(捡物奖励物品43)<$GLOBAL(捡物奖励空格)>
+DEC S11 17 500
+MOV S10 $(捡物奖励元宝43)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S11 <$STR(S10)>
+MOV S10 $(捡物奖励经验43)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S11 <$STR(S10)>
+MOV S12 $(捡物奖励物品44)<$GLOBAL(捡物奖励空格)>
+DEC S12 17 500
+MOV S10 $(捡物奖励元宝44)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S12 <$STR(S10)>
+MOV S10 $(捡物奖励经验44)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S12 <$STR(S10)>
+MOV S13 $(捡物奖励物品45)<$GLOBAL(捡物奖励空格)>
+DEC S13 17 500
+MOV S10 $(捡物奖励元宝45)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S13 <$STR(S10)>
+MOV S10 $(捡物奖励经验45)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S13 <$STR(S10)>
+MOV S14 $(捡物奖励物品46)<$GLOBAL(捡物奖励空格)>
+DEC S14 17 500
+MOV S10 $(捡物奖励元宝46)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S14 <$STR(S10)>
+MOV S10 $(捡物奖励经验46)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S14 <$STR(S10)>
+MOV S15 $(捡物奖励物品47)<$GLOBAL(捡物奖励空格)>
+DEC S15 17 500
+MOV S10 $(捡物奖励元宝47)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S15 <$STR(S10)>
+MOV S10 $(捡物奖励经验47)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S15 <$STR(S10)>
+MOV S16 $(捡物奖励物品48)<$GLOBAL(捡物奖励空格)>
+DEC S16 17 500
+MOV S10 $(捡物奖励元宝48)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S16 <$STR(S10)>
+MOV S10 $(捡物奖励经验48)<$GLOBAL(捡物奖励空格)>
+DEC S10 15 500
+INC S16 <$STR(S10)>
+
+
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+#ACT
+MOV S10 <COLOR=clRed
+#ELSEACT
+MOV S11 　
+MOV S21 　
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断<$STR(P7)> = 
+#ACT
+MOV S10 <COLOR=clGreen
+#IF
+LARGE P6 0
+#ACT
+INC S10 
+INC S10 <$STR(S11)>
+INC S10 >
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(捡物奖励判断
+INC S10 <$STR(P7)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S21 <COLOR=$00DE7B00
+INC S21 
+INC S21 <$STR(S10)>
+INC S21 >
+
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+#ACT
+MOV S10 <COLOR=clRed
+#ELSEACT
+MOV S12 　
+MOV S22 　
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断<$STR(P7)> = 
+#ACT
+MOV S10 <COLOR=clGreen
+#IF
+LARGE P6 0
+#ACT
+INC S10 
+INC S10 <$STR(S12)>
+INC S10 >
+MOV S12 <$STR(S10)>
+MOV S10 <$GLOBAL(捡物奖励判断
+INC S10 <$STR(P7)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S22 <COLOR=$00DE7B00
+INC S22 
+INC S22 <$STR(S10)>
+INC S22 >
+
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+#ACT
+MOV S10 <COLOR=clRed
+#ELSEACT
+MOV S13 　
+MOV S23 　
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断<$STR(P7)> = 
+#ACT
+MOV S10 <COLOR=clGreen
+#IF
+LARGE P6 0
+#ACT
+INC S10 
+INC S10 <$STR(S13)>
+INC S10 >
+MOV S13 <$STR(S10)>
+MOV S10 <$GLOBAL(捡物奖励判断
+INC S10 <$STR(P7)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S23 <COLOR=$00DE7B00
+INC S23 
+INC S23 <$STR(S10)>
+INC S23 >
+
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+#ACT
+MOV S10 <COLOR=clRed
+#ELSEACT
+MOV S14 　
+MOV S24 　
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断<$STR(P7)> = 
+#ACT
+MOV S10 <COLOR=clGreen
+#IF
+LARGE P6 0
+#ACT
+INC S10 
+INC S10 <$STR(S14)>
+INC S10 >
+MOV S14 <$STR(S10)>
+MOV S10 <$GLOBAL(捡物奖励判断
+INC S10 <$STR(P7)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S24 <COLOR=$00DE7B00
+INC S24 
+INC S24 <$STR(S10)>
+INC S24 >
+
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+#ACT
+MOV S10 <COLOR=clRed
+#ELSEACT
+MOV S15 　
+MOV S25 　
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断<$STR(P7)> = 
+#ACT
+MOV S10 <COLOR=clGreen
+#IF
+LARGE P6 0
+#ACT
+INC S10 
+INC S10 <$STR(S15)>
+INC S10 >
+MOV S15 <$STR(S10)>
+MOV S10 <$GLOBAL(捡物奖励判断
+INC S10 <$STR(P7)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S25 <COLOR=$00DE7B00
+INC S25 
+INC S25 <$STR(S10)>
+INC S25 >
+
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+#ACT
+MOV S10 <COLOR=clRed
+#ELSEACT
+MOV S16 　
+MOV S26 　
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断<$STR(P7)> = 
+#ACT
+MOV S10 <COLOR=clGreen
+#IF
+LARGE P6 0
+#ACT
+INC S10 
+INC S10 <$STR(S16)>
+INC S10 >
+MOV S16 <$STR(S10)>
+MOV S10 <$GLOBAL(捡物奖励判断
+INC S10 <$STR(P7)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S26 <COLOR=$00DE7B00
+INC S26 
+INC S26 <$STR(S10)>
+INC S26 >
+
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+#ACT
+MOV S10 <COLOR=clRed
+#ELSEACT
+MOV S17 　
+MOV S27 　
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断<$STR(P7)> = 
+#ACT
+MOV S10 <COLOR=clGreen
+#IF
+LARGE P6 0
+#ACT
+INC S10 
+INC S10 <$STR(S17)>
+INC S10 >
+MOV S17 <$STR(S10)>
+MOV S10 <$GLOBAL(捡物奖励判断
+INC S10 <$STR(P7)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S27 <COLOR=$00DE7B00
+INC S27 
+INC S27 <$STR(S10)>
+INC S27 >
+
+#IF
+CHECKLEVELEX > 0
+#SAY
+<COLOR=$00B317E3 奖励的装备名字>　<COLOR=$00B317E3 奖励物品类别>　<COLOR=$00B317E3 奖励经验数量>　<COLOR=$00B317E3 打到的玩家名字>\
+<$STR(S11)>　<$STR(S21)>\
+<$STR(S12)>　<$STR(S22)>\
+<$STR(S13)>　<$STR(S23)>\
+<$STR(S14)>　<$STR(S24)>\
+<$STR(S15)>　<$STR(S25)>\
+<$STR(S16)>　<$STR(S26)>\
+<$STR(S17)>　<$STR(S27)>\
+<说明/@捡物奖励说明>  <$STR(S18)>
+
+#IF
+ISADMIN
+CHECKLEVELEX > 0
+#SAY
+<GM清空/@捡物奖励清空>
+
+[@捡物奖励清空]
+#IF
+ISADMIN
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 捡物奖励判断1 = 
+CALCVAR GLOBAL 捡物奖励判断2 = 
+CALCVAR GLOBAL 捡物奖励判断3 = 
+CALCVAR GLOBAL 捡物奖励判断4 = 
+CALCVAR GLOBAL 捡物奖励判断5 = 
+CALCVAR GLOBAL 捡物奖励判断6 = 
+CALCVAR GLOBAL 捡物奖励判断7 = 
+CALCVAR GLOBAL 捡物奖励判断8 = 
+CALCVAR GLOBAL 捡物奖励判断9 = 
+CALCVAR GLOBAL 捡物奖励判断10 = 
+CALCVAR GLOBAL 捡物奖励判断11 = 
+CALCVAR GLOBAL 捡物奖励判断12 = 
+CALCVAR GLOBAL 捡物奖励判断13 = 
+CALCVAR GLOBAL 捡物奖励判断14 = 
+CALCVAR GLOBAL 捡物奖励判断15 = 
+CALCVAR GLOBAL 捡物奖励判断16 = 
+CALCVAR GLOBAL 捡物奖励判断17 = 
+CALCVAR GLOBAL 捡物奖励判断18 = 
+CALCVAR GLOBAL 捡物奖励判断19 = 
+CALCVAR GLOBAL 捡物奖励判断20 = 
+CALCVAR GLOBAL 捡物奖励判断21 = 
+CALCVAR GLOBAL 捡物奖励判断22 = 
+CALCVAR GLOBAL 捡物奖励判断23 = 
+CALCVAR GLOBAL 捡物奖励判断24 = 
+CALCVAR GLOBAL 捡物奖励判断25 = 
+CALCVAR GLOBAL 捡物奖励判断26 = 
+CALCVAR GLOBAL 捡物奖励判断27 = 
+CALCVAR GLOBAL 捡物奖励判断28 = 
+CALCVAR GLOBAL 捡物奖励判断29 = 
+CALCVAR GLOBAL 捡物奖励判断30 = 
+CALCVAR GLOBAL 捡物奖励判断31 = 
+CALCVAR GLOBAL 捡物奖励判断32 = 
+CALCVAR GLOBAL 捡物奖励判断33 = 
+CALCVAR GLOBAL 捡物奖励判断34 = 
+CALCVAR GLOBAL 捡物奖励判断35 = 
+CALCVAR GLOBAL 捡物奖励判断36 = 
+CALCVAR GLOBAL 捡物奖励判断37 = 
+CALCVAR GLOBAL 捡物奖励判断38 = 
+CALCVAR GLOBAL 捡物奖励判断39 = 
+CALCVAR GLOBAL 捡物奖励判断40 = 
+CALCVAR GLOBAL 捡物奖励判断41 = 
+CALCVAR GLOBAL 捡物奖励判断42 = 
+CALCVAR GLOBAL 捡物奖励判断43 = 
+CALCVAR GLOBAL 捡物奖励判断44 = 
+CALCVAR GLOBAL 捡物奖励判断45 = 
+CALCVAR GLOBAL 捡物奖励判断46 = 
+CALCVAR GLOBAL 捡物奖励判断47 = 
+CALCVAR GLOBAL 捡物奖励判断48 = 
+SAVEVAR GLOBAL 捡物奖励判断1 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断2 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断3 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断4 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断5 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断6 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断7 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断8 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断9 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断10 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断11 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断12 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断13 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断14 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断15 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断16 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断17 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断18 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断19 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断20 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断21 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断22 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断23 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断24 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断25 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断26 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断27 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断28 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断29 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断30 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断31 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断32 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断33 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断34 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断35 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断36 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断37 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断38 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断39 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断40 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断41 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断42 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断43 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断44 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断45 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断46 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断47 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+SAVEVAR GLOBAL 捡物奖励判断48 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+#ACT
+MESSAGEBOX 打到装备的玩家名字已清空！
+GOTO @捡物奖励脚本NPC
+
+[@捡物奖励页数1]
+#ACT
+CALCVAR HUMAN 捡物奖励页号 = 0
+GOTO @捡物奖励脚本NPC
+[@捡物奖励页数2]
+#ACT
+CALCVAR HUMAN 捡物奖励页号 = 1
+GOTO @捡物奖励脚本NPC
+[@捡物奖励页数3]
+#ACT
+CALCVAR HUMAN 捡物奖励页号 = 2
+GOTO @捡物奖励脚本NPC
+[@捡物奖励页数4]
+#ACT
+CALCVAR HUMAN 捡物奖励页号 = 3
+GOTO @捡物奖励脚本NPC
+[@捡物奖励页数5]
+#ACT
+CALCVAR HUMAN 捡物奖励页号 = 4
+GOTO @捡物奖励脚本NPC
+[@捡物奖励页数6]
+#ACT
+CALCVAR HUMAN 捡物奖励页号 = 5
+GOTO @捡物奖励脚本NPC
+[@捡物奖励页数7]
+#ACT
+CALCVAR HUMAN 捡物奖励页号 = 6
+GOTO @捡物奖励脚本NPC
+
+[@捡物奖励说明]
+#ACT
+MESSAGEBOX 新区第一个打到该装备的玩家，系统奖励指定数量元宝和经验！\　\本系统实时检测，拣起该装备即自动触发获得奖励！\　\红色表示已有玩家打到该装备，绿色表示还没有玩家打到，如您打到即可获得奖励！
+
+[@捡物奖励常量加载]
+#CALL [\捡物奖励配置\捡物奖励常量.INI] @捡物奖励常量
+}

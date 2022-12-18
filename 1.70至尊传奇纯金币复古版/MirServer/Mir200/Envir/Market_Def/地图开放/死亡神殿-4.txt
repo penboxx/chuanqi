@@ -1,0 +1,17 @@
+[@main]
+　\\
+“死亡神殿”也已重现大陆！\
+不过那么险恶的地方，你真的打算去吗？\\
+　\\
+<我要进去/@move>　<COLOR=clLime 开区第5天20点开放死亡神殿>\
+<过几天再去/@exit>
+
+[@move]
+#IF
+EQUAL A85 开启
+#ACT
+mapmove T218 14 16
+break
+#ELSEACT
+messagebox 地图还未开放,请等待开放
+BREAK

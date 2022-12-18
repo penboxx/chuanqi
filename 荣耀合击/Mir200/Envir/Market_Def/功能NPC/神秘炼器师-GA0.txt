@@ -1,0 +1,308 @@
+[@MAIN]
+<COLOR=clFuchsia -------------------------------------------> 当前荣誉点[<$NIMBUS>]\
+<COLOR=clAqua 【神秘练器】> <COLOR=clRed Hot~>  <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+<铸炼*星王战刃/@星王战刃>　　　　　<铸炼*星王法刃/@星王法刃>　　　　　<铸炼*星王道刃/@星王道刃>\ \
+
+<铸炼*星王神甲/@星王神甲>　　　　　<铸炼*星王神衣/@星王神衣>　　　　　<铸炼*荣耀圣心/@荣耀圣心>　\ \
+
+
+<铸炼*荣耀之刃/@荣耀之刃>　　　　　<铸炼*荣耀神甲/@荣耀神甲>　　　　　<铸炼*荣耀神衣/@荣耀神衣>\ 
+<注意：铸炼剑甲是百分百成功，荣誉点可暴出也可在土城高级回收处兑换！>
+
+
+
+[@荣耀圣心] 
+<COLOR=clLime 想铸炼荣耀圣心吗？>\
+你需要给我超级火龙之心*1+100荣誉点+12888元宝+12888金刚石作为铸炼材料！\ \
+
+
+<铸炼*荣耀圣心/@荣耀圣心1>           <返回/@main>\ \
+
+<COLOR=clLime 想铸炼荣耀圣鼓吗？>\
+你需要给我超级魔血石*1+100荣誉点+12888元宝+12888金刚石作为铸炼材料！\ \
+
+
+<铸炼*荣耀圣鼓/@荣耀圣鼓1>           <返回/@main>\ \
+
+[@荣耀圣鼓1]
+#if
+checkNIMBUS  > 99
+checkitem  超级魔血石 1
+checkGAMEGOLD > 12887
+CHECKGAMEDIAMOND > 12887
+#ACT
+NIMBUS - 100
+take 超级魔血石 1
+GAMEDIAMOND - 12888
+GAMEGOLD  - 12888
+give 荣耀圣鼓 1
+SENDMSG 7 恭喜您，铸炼【荣耀圣心】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀圣鼓】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀圣鼓】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你铸炼呢？
+break
+
+
+
+[@荣耀圣心1]
+#if
+checkNIMBUS  > 99
+checkitem  超级火龙之心
+checkGAMEGOLD > 12887
+CHECKGAMEDIAMOND > 12887
+#ACT
+NIMBUS - 100
+take 超级火龙之心
+GAMEDIAMOND - 12888
+GAMEGOLD  - 12888
+give 荣耀圣心 1
+SENDMSG 7 恭喜您，铸炼【荣耀圣心】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀圣心】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀圣心】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你铸炼呢？
+break
+
+
+
+
+[@星王战刃] 
+<COLOR=clLime 想铸炼星王战刃吗？>\ \
+你需要给我开天*1+300荣誉点+22888元宝+12888金刚石作为铸炼材料！\ \
+
+
+<铸炼*星王战刃/@星王战刃1>           <返回/@main>\
+
+
+[@星王战刃1]
+#if
+checkNIMBUS  > 299
+checkitem  开天
+checkGAMEGOLD > 22887
+CHECKGAMEDIAMOND > 12887
+#ACT
+NIMBUS - 300
+take 开天
+GAMEDIAMOND - 12888
+GAMEGOLD  - 22888
+give 星王战刃
+SENDMSG 7 恭喜您，铸炼【星王战刃】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【星王战刃】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【星王战刃】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你铸炼呢？
+break
+
+
+[@星王法刃] 
+<COLOR=clLime 想铸炼星王法刃吗？>\ \
+你需要给我镇天*1+200荣誉点+15888元宝+5888金刚石作为铸炼材料！\ \
+
+
+<铸炼*星王法刃/@星王法刃1>           <返回/@main>\
+
+
+
+
+[@星王法刃1]
+#if
+checkNIMBUS  > 199
+checkitem  镇天
+checkGAMEGOLD > 15887
+CHECKGAMEDIAMOND > 5887
+#ACT
+NIMBUS - 200
+take 镇天
+GAMEDIAMOND - 5888
+GAMEGOLD  - 15888
+give 星王法刃
+SENDMSG 7 恭喜您，铸炼【星王法刃】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【星王法刃】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【星王法刃】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你铸炼呢？
+break
+
+
+[@星王道刃] 
+<COLOR=clLime 想铸炼星王道刃吗？>\ \
+你需要给我玄天*1+200荣誉点+18888元宝+8888金刚石作为铸炼材料！\ \
+
+
+<铸炼*星王道刃/@星王道刃1>           <返回/@main>\
+
+
+
+
+[@星王道刃1]
+#if
+checkNIMBUS  > 199
+checkitem  玄天
+checkGAMEGOLD > 18887
+CHECKGAMEDIAMOND > 8887
+#ACT
+NIMBUS - 200
+take 玄天
+GAMEDIAMOND - 8888
+GAMEGOLD  - 18888
+give 星王道刃
+SENDMSG 7 恭喜您，铸炼【星王道刃】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【星王道刃】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【星王道刃】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你铸炼呢？
+break
+
+[@星王神甲] 
+<COLOR=clLime 想铸炼星王神甲吗？>\ \
+你需要给我凤天魔甲*1+150荣誉点+15888元宝+5888金刚石作为铸炼材料！\ \
+
+
+<铸炼*星王神甲/@星王神甲1>           <返回/@main>\
+
+
+
+
+[@星王神甲1]
+#if
+checkNIMBUS  > 149
+checkitem  凤天魔甲
+checkGAMEGOLD > 15887
+CHECKGAMEDIAMOND > 5887
+#ACT
+NIMBUS - 150
+take 凤天魔甲
+GAMEDIAMOND - 5888
+GAMEGOLD  - 15888
+give 星王神甲
+SENDMSG 7 恭喜您，铸炼【星王神甲】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【星王神甲】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【星王神甲】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你铸炼呢？
+break
+
+
+[@星王神衣] 
+<COLOR=clLime 想铸炼星王神衣吗？>\ \
+你需要给我凰天魔衣*1+150荣誉点+15888元宝+5888金刚石作为铸炼材料！\ \
+
+
+<铸炼*星王神衣/@星王神衣1>           <返回/@main>\
+
+
+
+
+[@星王神衣1]
+#if
+checkNIMBUS  > 149
+checkitem  凰天魔衣
+checkGAMEGOLD > 15887
+CHECKGAMEDIAMOND > 5887
+#ACT
+NIMBUS - 150
+take 凰天魔衣
+GAMEDIAMOND - 5888
+GAMEGOLD  - 15888
+give 星王神衣
+SENDMSG 7 恭喜您，铸炼【星王神衣】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【星王神衣】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【星王神衣】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你铸炼呢？
+break
+
+
+[@荣耀神衣] 
+<COLOR=clLime 想铸炼荣耀神衣吗？>\ \
+你需要给我星王神衣*1+600荣誉点+35888元宝+35888金刚石作为铸炼材料！\ \
+
+
+<铸炼*荣耀神衣/@荣耀神衣1>           <返回/@main>\
+
+
+
+
+[@荣耀神衣1]
+#if
+checkNIMBUS  > 599
+checkitem  星王神衣
+checkGAMEGOLD > 35887
+CHECKGAMEDIAMOND > 35887
+#ACT
+NIMBUS - 600
+take 星王神衣
+GAMEDIAMOND - 35888
+GAMEGOLD  - 35888
+give 荣耀神衣
+SENDMSG 7 恭喜您，铸炼【荣耀神衣】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀神衣】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀神衣】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你铸炼呢？
+break
+
+[@荣耀神甲] 
+<COLOR=clLime 想铸炼荣耀神甲吗？>\ \
+你需要给我星王神甲*1+600荣誉点+35888元宝+35888金刚石作为铸炼材料！\ \
+
+
+<铸炼*荣耀神甲/@荣耀神甲1>           <返回/@main>\
+
+
+
+
+[@荣耀神甲1]
+#if
+checkNIMBUS  > 599
+checkitem  星王神甲
+checkGAMEGOLD > 35887
+CHECKGAMEDIAMOND > 35887
+#ACT
+NIMBUS - 600
+take 星王神甲
+GAMEDIAMOND - 35888
+GAMEGOLD  - 35888
+give 荣耀神甲
+SENDMSG 7 恭喜您，铸炼【荣耀神甲】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀神甲】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀神甲】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你铸炼呢？
+break
+
+
+[@荣耀之刃] 
+<COLOR=clLime 想铸炼荣耀之刃吗？>\ \
+你需要给我星王战刃*1+星王法刃*1+星王道刃*1+1000荣誉点+58888元宝+58888金刚石作为铸炼材料！\ \
+
+
+<铸炼*荣耀之刃/@荣耀之刃1>           <返回/@main>\
+
+
+[@荣耀之刃1]
+#if
+checkNIMBUS  > 999
+checkitem  星王战刃
+checkitem  星王法刃
+checkitem  星王道刃
+checkGAMEGOLD > 58887
+CHECKGAMEDIAMOND > 58887
+#ACT
+NIMBUS - 1000
+take 星王道刃
+take 星王法刃
+take 星王战刃
+GAMEDIAMOND - 58888
+GAMEGOLD  - 58888
+give 荣耀之刃
+SENDMSG 7 恭喜您，铸炼【荣耀之刃】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀之刃】！ 251 249
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘练器师】处成功的铸炼了【荣耀之刃】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你铸炼呢？
+break
+

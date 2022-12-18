@@ -1,0 +1,29 @@
+[@main]
+#if
+equal A32 开放
+#act
+MOV I0 <$STR(G0)>
+INC I0 1
+#say
+进入石墓阵需要开区第4天晚上20点\ \
+<进入石墓阵/@1>
+#elsesay
+进入石墓阵需要开区第4天晚上20点\ \
+
+
+[@1]
+#IF
+CHECKUSERDATE ..\QuestDiary\季卡\时间记载.txt < 90 p0 p1
+#ACT
+close
+MAPMOVE D71601 25 12
+break
+
+#If
+equal G91 1
+#act
+sendmsg 7 提示：请购买季卡
+break 
+#elseact
+SendMsg 7  提示：开区第4天晚上20点自动开放！
+break

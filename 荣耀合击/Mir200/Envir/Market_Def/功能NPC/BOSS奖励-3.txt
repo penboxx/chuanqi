@@ -1,0 +1,281 @@
+[@main]
+<COLOR=clFuchsia ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clRed 注意:><COLOR=clAqua BOSS首杀>  <COLOR=clYellow 噩梦般挑战的背后也伴随着无比丰厚的奖励.> \
+<COLOR=clFuchsia ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈> \ \ 
+<COLOR=clLime 首杀:[黑暗魔王[BOSS]>  <COLOR=clLime 状态:>[<$STR(A71)>]  <COLOR=clLime 奖励:５元人民币卷> <领奖/@赤月恶魔BC> \
+<COLOR=clLime 首杀:[幽冥统领[BOSS]>  <COLOR=clLime 状态:>[<$STR(A80)>]  <COLOR=clLime 奖励:５元人民币卷> <领奖/@赤月恶魔EC> \
+<COLOR=clLime 首杀:[魔界天珠[BOSS]>  <COLOR=clLime 状态:>[<$STR(A73)>]  <COLOR=clLime 奖励:５元人民币卷> <领奖/@赤月恶魔RC> \
+<COLOR=clLime 首杀:[上古圣兽[BOSS]>  <COLOR=clLime 状态:>[<$STR(A74)>]  <COLOR=clLime 奖励:５元人民币卷> <领奖/@赤月恶魔AC> \ 
+<下一页/@下一页>                         <下一页/@下一页>  
+
+[@下一页]
+<COLOR=clFuchsia ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clRed 注意:><COLOR=clAqua BOSS首杀>  <COLOR=clYellow 噩梦般挑战的背后也伴随着无比丰厚的奖励.> \
+<COLOR=clFuchsia ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈> \ 
+<COLOR=clLime 首杀:[黑暗魔王[精英]>   <COLOR=clLime 状态:>[<$STR(A75)>]  <COLOR=clLime 奖励:10元人民币卷> <领奖/@赤月恶魔CC> \
+<COLOR=clLime 首杀:[幽冥统领[精英]>   <COLOR=clLime 状态:>[<$STR(A76)>]  <COLOR=clLime 奖励:10元人民币卷> <领奖/@赤月恶魔DC> \ 
+<COLOR=clLime 首杀:[魔界天珠[精英]>   <COLOR=clLime 状态:>[<$STR(A78)>]  <COLOR=clLime 奖励:10元人民币卷> <领奖/@赤月恶魔FC> \
+<COLOR=clLime 首杀:[上古圣兽[精英]>   <COLOR=clLime 状态:>[<$STR(A79)>]  <COLOR=clLime 奖励:10元人民币卷> <领奖/@赤月恶魔HC> \ 
+<COLOR=clLime 首杀:[聚宝天珠皇[BOSS]> <COLOR=clLime 状态:>[<$STR(A81)>]  <COLOR=clLime 奖励:10元人民币卷> <领奖/@赤月恶魔1C> \
+<COLOR=clLime 首杀:[福利大魔王[BOSS]> <COLOR=clLime 状态:>[<$STR(A82)>]  <COLOR=clLime 奖励:10元人民币卷> <领奖/@赤月恶魔2C> \  \
+
+
+[@赤月恶魔2C]
+#IF
+EQUAL A82 已完成
+#Act
+MESSAGEBOX 很抱歉，奖励被其他玩家捷足先登！\　\看看其他进行中的首杀奖励吧！\　\
+BREAK
+
+#IF
+Check [170] 1 
+EQUAL A82  进行中
+#Act
+GIVE  10元人民币卷 
+MOV  A82  已完成
+set [170] 0
+SENDMSG 0     玩家[<$USERNAME>]首杀:福利大魔王[BOSS]…领取１０元人民币卷… 251 249 10
+SENDMSG 0     玩家[<$USERNAME>]首杀:福利大魔王[BOSS]…领取１０元人民币卷… 251 249 20
+SENDMSG 0     玩家[<$USERNAME>]首杀:福利大魔王[BOSS]…领取１０元人民币卷… 251 249 30
+SENDMSG 0     玩家[<$USERNAME>]首杀:福利大魔王[BOSS]…领取１０元人民币卷… 251 249 
+SENDMSG 0     玩家[<$USERNAME>]首杀:福利大魔王[BOSS]…领取１０元人民币卷… 251 249 
+MESSAGEBOX   恭喜你.领取奖励成功！
+#ElseAct
+MESSAGEBOX 很抱歉，你还未杀死福利大魔王[BOSS]！\　\注意：杀死BOSS请不要小退直接来领取！负责无效！\　\
+BREAK
+
+
+[@赤月恶魔1C]
+#IF
+EQUAL A81 已完成
+#Act
+MESSAGEBOX 很抱歉，奖励被其他玩家捷足先登！\　\看看其他进行中的首杀奖励吧！\　\
+BREAK
+
+#IF
+Check [169] 1 
+EQUAL A81  进行中
+#Act
+GIVE  10元人民币卷 
+MOV  A81  已完成
+set [169] 0
+SENDMSG 0     玩家[<$USERNAME>]首杀:聚宝天珠皇[BOSS]…领取１０元人民币卷… 251 249 10
+SENDMSG 0     玩家[<$USERNAME>]首杀:聚宝天珠皇[BOSS]…领取１０元人民币卷… 251 249 20
+SENDMSG 0     玩家[<$USERNAME>]首杀:聚宝天珠皇[BOSS]…领取１０元人民币卷… 251 249 30
+SENDMSG 0     玩家[<$USERNAME>]首杀:聚宝天珠皇[BOSS]…领取１０元人民币卷… 251 249 
+SENDMSG 0     玩家[<$USERNAME>]首杀:聚宝天珠皇[BOSS]…领取１０元人民币卷… 251 249 
+MESSAGEBOX   恭喜你.领取奖励成功！
+#ElseAct
+MESSAGEBOX 很抱歉，你还未杀死聚宝天珠皇[BOSS]！\　\注意：杀死BOSS请不要小退直接来领取！负责无效！\　\
+BREAK
+
+
+
+
+
+
+
+[@赤月恶魔HC]
+#IF
+EQUAL A79 已完成
+#Act
+MESSAGEBOX 很抱歉，奖励被其他玩家捷足先登！\　\看看其他进行中的首杀奖励吧！\　\
+BREAK
+
+#IF
+Check [167] 1 
+EQUAL A79  进行中
+#Act
+GIVE  10元人民币卷 
+MOV  A79  已完成
+set [167] 0
+SENDMSG 0     玩家[<$USERNAME>]首杀:上古圣兽[精英]…领取１０元人民币卷… 251 249 10
+SENDMSG 0     玩家[<$USERNAME>]首杀:上古圣兽[精英]…领取１０元人民币卷… 251 249 20
+SENDMSG 0     玩家[<$USERNAME>]首杀:上古圣兽[精英]…领取１０元人民币卷… 251 249 30
+SENDMSG 0     玩家[<$USERNAME>]首杀:上古圣兽[精英]…领取１０元人民币卷… 251 249 
+SENDMSG 0     玩家[<$USERNAME>]首杀:上古圣兽[精英]…领取１０元人民币卷… 251 249 
+MESSAGEBOX   恭喜你.领取奖励成功！
+#ElseAct
+MESSAGEBOX 很抱歉，你还未杀死上古圣兽[精英]！\　\注意：杀死BOSS请不要小退直接来领取！负责无效！\　\
+BREAK
+
+
+
+[@赤月恶魔FC]
+#IF
+EQUAL A78 已完成
+#Act
+MESSAGEBOX 很抱歉，奖励被其他玩家捷足先登！\　\看看其他进行中的首杀奖励吧！\　\
+BREAK
+
+#IF
+Check [166] 1 
+EQUAL A78  进行中
+#Act
+GIVE  10元人民币卷 
+MOV  A78  已完成
+set [166] 0
+SENDMSG 0     玩家[<$USERNAME>]首杀:魔界天珠[精英]…领取１０元人民币卷… 251 249 10
+SENDMSG 0     玩家[<$USERNAME>]首杀:魔界天珠[精英]…领取１０元人民币卷… 251 249 20
+SENDMSG 0     玩家[<$USERNAME>]首杀:魔界天珠[精英]…领取１０元人民币卷… 251 249 30
+SENDMSG 0     玩家[<$USERNAME>]首杀:魔界天珠[精英]…领取１０元人民币卷… 251 249 
+SENDMSG 0     玩家[<$USERNAME>]首杀:魔界天珠[精英]…领取１０元人民币卷… 251 249 
+MESSAGEBOX   恭喜你.领取奖励成功！
+#ElseAct
+MESSAGEBOX 很抱歉，你还未杀死魔界天珠[精英]！\　\注意：杀死BOSS请不要小退直接来领取！负责无效！\　\
+BREAK
+
+
+
+
+
+[@赤月恶魔DC]
+#IF
+EQUAL A76 已完成
+#Act
+MESSAGEBOX 很抱歉，奖励被其他玩家捷足先登！\　\看看其他进行中的首杀奖励吧！\　\
+BREAK
+
+#IF
+Check [165] 1 
+EQUAL A76  进行中
+#Act
+GIVE  10元人民币卷  
+MOV  A76  已完成
+set [165] 0
+SENDMSG 0     玩家[<$USERNAME>]首杀:幽冥统领[精英]…领取１０元人民币卷… 251 249 10
+SENDMSG 0     玩家[<$USERNAME>]首杀:幽冥统领[精英]…领取１０元人民币卷… 251 249 20
+SENDMSG 0     玩家[<$USERNAME>]首杀:幽冥统领[精英]…领取１０元人民币卷… 251 249 30
+SENDMSG 0     玩家[<$USERNAME>]首杀:幽冥统领[精英]…领取１０元人民币卷… 251 249 
+SENDMSG 0     玩家[<$USERNAME>]首杀:幽冥统领[精英]…领取１０元人民币卷… 251 249 
+
+MESSAGEBOX   恭喜你.领取奖励成功！
+#ElseAct
+MESSAGEBOX 很抱歉，你还未杀死幽冥统领[精英]！\　\注意：杀死BOSS请不要小退直接来领取！负责无效！\　\
+BREAK
+
+
+
+[@赤月恶魔CC]
+#IF
+EQUAL A75 已完成
+#Act
+MESSAGEBOX 很抱歉，奖励被其他玩家捷足先登！\　\看看其他进行中的首杀奖励吧！\　\
+BREAK
+
+#IF
+Check [164] 1 
+EQUAL A75  进行中
+#Act
+GIVE  10元人民币卷  
+MOV  A75  已完成
+set [164] 0
+SENDMSG 0     玩家[<$USERNAME>]首杀:黑暗魔王[精英]…领取１０元人民币卷… 251 249 10
+SENDMSG 0     玩家[<$USERNAME>]首杀:黑暗魔王[精英]…领取１０元人民币卷… 251 249 20
+SENDMSG 0     玩家[<$USERNAME>]首杀:黑暗魔王[精英]…领取１０元人民币卷… 251 249 30
+SENDMSG 0     玩家[<$USERNAME>]首杀:黑暗魔王[精英]…领取１０元人民币卷… 251 249 
+SENDMSG 0     玩家[<$USERNAME>]首杀:黑暗魔王[精英]…领取１０元人民币卷… 251 249 
+MESSAGEBOX   恭喜你.领取奖励成功！
+#ElseAct
+MESSAGEBOX 很抱歉，你还未杀死黑暗魔王[精英]！\　\注意：杀死BOSS请不要小退直接来领取！负责无效！\　\
+BREAK
+
+
+
+[@赤月恶魔AC]
+#IF
+EQUAL A74 已完成
+#Act
+MESSAGEBOX 很抱歉，奖励被其他玩家捷足先登！\　\看看其他进行中的首杀奖励吧！\　\
+BREAK
+
+#IF
+Check [163] 1 
+EQUAL A74  进行中
+#Act
+GIVE  5元人民币卷  
+MOV  A74  已完成
+set [163] 0
+SENDMSG 0     玩家[<$USERNAME>]首杀:上古圣兽[BOSS]…领取５元人民币卷… 251 249 10
+SENDMSG 0     玩家[<$USERNAME>]首杀:上古圣兽[BOSS]…领取５元人民币卷… 251 249 20
+SENDMSG 0     玩家[<$USERNAME>]首杀:上古圣兽[BOSS]…领取５元人民币卷… 251 249 30
+SENDMSG 0     玩家[<$USERNAME>]首杀:上古圣兽[BOSS]…领取５元人民币卷… 251 249 
+SENDMSG 0     玩家[<$USERNAME>]首杀:上古圣兽[BOSS]…领取５元人民币卷… 251 249 
+MESSAGEBOX   恭喜你.领取奖励成功！
+#ElseAct
+MESSAGEBOX 很抱歉，你还未杀死上古圣兽[BOSS]！\　\注意：杀死BOSS请不要小退直接来领取！负责无效！\　\
+BREAK
+
+[@赤月恶魔RC]
+#IF
+EQUAL A73 已完成
+#Act
+MESSAGEBOX 很抱歉，奖励被其他玩家捷足先登！\　\看看其他进行中的首杀奖励吧！\　\
+BREAK
+
+#IF
+Check [162] 1 
+EQUAL A73  进行中
+#Act
+GIVE  5元人民币卷  
+MOV  A73  已完成
+set [162] 0
+SENDMSG 0     玩家[<$USERNAME>]首杀:魔界天珠[BOSS]…领取５元人民币卷… 251 249 10
+SENDMSG 0     玩家[<$USERNAME>]首杀:魔界天珠[BOSS]…领取５元人民币卷… 251 249 20
+SENDMSG 0     玩家[<$USERNAME>]首杀:魔界天珠[BOSS]…领取５元人民币卷… 251 249 30
+SENDMSG 0     玩家[<$USERNAME>]首杀:魔界天珠[BOSS]…领取５元人民币卷… 251 249 
+SENDMSG 0     玩家[<$USERNAME>]首杀:魔界天珠[BOSS]…领取５元人民币卷… 251 249 
+MESSAGEBOX   恭喜你.领取奖励成功！
+#ElseAct
+MESSAGEBOX 很抱歉，你还未杀死魔界天珠[BOSS]！\　\注意：杀死BOSS请不要小退直接来领取！负责无效！\　\
+BREAK
+
+
+[@赤月恶魔EC]
+#IF
+EQUAL A80 已完成
+#Act
+MESSAGEBOX 很抱歉，奖励被其他玩家捷足先登！\　\看看其他进行中的首杀奖励吧！\　\
+BREAK
+
+#IF
+Check [160] 1 
+EQUAL A80  进行中
+#Act
+GIVE  5元人民币卷  
+MOV  A80  已完成
+set [160] 0
+SENDMSG 0     玩家[<$USERNAME>]首杀:幽冥统领[BOSS]…领取５元人民币卷… 251 249 10
+SENDMSG 0     玩家[<$USERNAME>]首杀:幽冥统领[BOSS]…领取５元人民币卷… 251 249 20
+SENDMSG 0     玩家[<$USERNAME>]首杀:幽冥统领[BOSS]…领取５元人民币卷… 251 249 30
+SENDMSG 0     玩家[<$USERNAME>]首杀:幽冥统领[BOSS]…领取５元人民币卷… 251 249 
+SENDMSG 0     玩家[<$USERNAME>]首杀:幽冥统领[BOSS]…领取５元人民币卷… 251 249 
+MESSAGEBOX   恭喜你.领取奖励成功！
+#ElseAct
+MESSAGEBOX 很抱歉，你还未杀死幽冥统领[BOSS]！\　\注意：杀死BOSS请不要小退直接来领取！负责无效！\　\
+BREAK
+
+
+[@赤月恶魔BC]
+#IF
+EQUAL A71 已完成
+#Act
+MESSAGEBOX 很抱歉，奖励被其他玩家捷足先登！\　\看看其他进行中的首杀奖励吧！\　\
+BREAK
+
+#IF
+Check [161] 1 
+EQUAL A71  进行中
+#Act
+GIVE  5元人民币卷  
+MOV  A71  已完成
+set [161] 0
+SENDMSG 0     玩家[<$USERNAME>]首杀:黑暗魔王[BOSS]…领取５元人民币卷… 251 249 10
+SENDMSG 0     玩家[<$USERNAME>]首杀:黑暗魔王[BOSS]…领取５元人民币卷… 251 249 20
+SENDMSG 0     玩家[<$USERNAME>]首杀:黑暗魔王[BOSS]…领取５元人民币卷… 251 249 30
+SENDMSG 0     玩家[<$USERNAME>]首杀:黑暗魔王[BOSS]…领取５元人民币卷… 251 249 
+SENDMSG 0     玩家[<$USERNAME>]首杀:黑暗魔王[BOSS]…领取５元人民币卷… 251 249 
+MESSAGEBOX   恭喜你.领取奖励成功！
+#ElseAct
+MESSAGEBOX 很抱歉，你还未杀死黑暗魔王[BOSS]！\　\注意：杀死BOSS请不要小退直接来领取！负责无效！\　\
+BREAK

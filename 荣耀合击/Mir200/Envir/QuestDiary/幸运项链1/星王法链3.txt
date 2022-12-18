@@ -1,0 +1,77 @@
+[@星王法链33j]
+{
+#IF
+random 300
+#act
+take 金币 20000000
+UPGRADEITEMEX 3 1 0 1 0
+Mov m22 1
+Mov s22 星王法链
+#Call [\\幸运项链1\暴击4-5.txt] @暴击5
+BREAK
+
+#IF
+random 200
+#act
+take 金币 20000000
+UPGRADEITEMEX 3 1 0 1 0
+Mov m22 1
+Mov s22 星王法链
+#Call [\\幸运项链1\暴击4-5.txt] @暴击4
+BREAK
+
+#IF
+random 50
+#act
+take 金币 20000000
+UPGRADEITEMEX 3 1 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将星王法链升级成功，暴击额外+3。
+BREAK
+
+#IF
+random 10
+#act
+take 金币 20000000
+UPGRADEITEMEX 3 1 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将星王法链升级成功，暴击额外+2。
+BREAK
+
+#IF
+random 5
+#act
+take 金币 20000000
+UPGRADEITEMEX 3 1 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将星王法链升级成功，暴击额外+1。
+BREAK
+
+
+#IF
+random 2
+#act
+take 金币 20000000
+MESSAGEBOX 非常抱歉您的星王法链升级失败
+BREAK
+
+#IF
+random 1
+random
+#act
+take 金币 20000000
+MESSAGEBOX 非常抱歉您的星王法链升级失败
+BREAK
+
+#IF
+random
+#act
+take 金币 20000000
+MESSAGEBOX 非常抱歉您的星王法链升级失败
+BREAK
+
+
+}

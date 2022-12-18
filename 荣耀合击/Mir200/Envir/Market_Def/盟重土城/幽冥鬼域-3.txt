@@ -1,0 +1,28 @@
+
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【幽冥鬼域】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+\<COLOR=clRed ♀.地图介绍：幽冥鬼域分2层，深层更凶险>\
+\<COLOR=clAqua ♀.怪物刷新：.魔龙教主.暗之魔龙教主.高级BOSS.>\
+\<COLOR=clLime ♀.爆率介绍：爆全服所有装备>\
+\<COLOR=clFuchsia ♀.进入条件：300万金币>  \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+　　　　　  　        〖<幽冥鬼域/@jin1>〗
+
+
+[@jin1]
+#if
+CHECKLEVELEX > 1
+checkgold 3000000
+#act
+take 金币 3000000
+MapMove ymgy
+SENDMSG 0 伟大的玛法勇士[%s]闯入了[幽冥鬼域]挑战未知的世界！ 251  70 
+SENDMSG 0 伟大的玛法勇士[%s]闯入了[幽冥鬼域]挑战未知的世界！ 251  70
+SENDMSG 7 ★★★特别提示：此地图有防脱机怪物，攻击力超高请玩家不用攻击！（怪物样子为弓箭护卫样子）★★★  255  252  180
+SENDMSG 7 ★★★特别提示：此地图有防脱机怪物，攻击力超高请玩家不用攻击！（怪物样子为弓箭护卫样子）★★★  255  252  180
+SENDMSG 7 ★★★特别提示：此地图有防脱机怪物，攻击力超高请玩家不用攻击！（怪物样子为弓箭护卫样子）★★★  255  252  180
+#ELSEACT
+MESSAGEBOX 对不起：您的金币不足,或等级不够!

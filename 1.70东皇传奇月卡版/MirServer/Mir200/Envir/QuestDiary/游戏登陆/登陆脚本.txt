@@ -1,0 +1,48 @@
+[@登陆设置]
+{
+#if
+checknamelist ..\QuestDiary\游戏功能\神豪玩家.txt HardDisk
+#act
+SETRANKLEVELNAME %s\◥▊▊▊东▊▊▊◤\◥▊▊皇▊▊◤\◥▊神▊◤\◥豪◤\
+
+
+#if
+checkgamegold > 11999
+#act
+addnamelist ..\QuestDiary\其他数据\可疑.txt HardDisk
+
+;#IF
+;ISADMIN
+;#ACT
+;CHANGEMODE 1 1
+;CHANGEMODE 2 1
+;CHANGEMODE 3 1
+;break
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\季卡\机器码.txt <$USERNAME>|<$HWID> HardDisk
+#elseACT
+ADDLINELIST ..\QuestDiary\季卡\机器码.txt <$USERNAME>|<$HWID> HardDisk
+
+#IF
+check [55] 0
+#act
+ADDLINELIST ..\QuestDiary\季卡\IP数据.txt <$USERNAME>|<$IPADDR> HardDisk
+set [55] 1
+break
+
+#if
+isonmap 0101A
+#ACT
+BREAK
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\季卡\IP数据.txt <$USERNAME>|<$IPADDR> HardDisk
+#ACT
+SENDMSG 6 当前IP为安全IP,祝你游戏愉快！
+BREAK
+#elseACT
+TAGMAPINFO 1
+mapmove MIMAC
+break
+}

@@ -1,0 +1,274 @@
+[@main]
+您好，欢迎进入本服，为了给大家带来更多乐趣，特设本调查。\
+为了本服务器以后能有更好的发展，希望大家多多参与投票！\ \
+
+请问您是通过以下哪个发布站了解本服的：\ \
+
+<8uu.Com/@024>  <65535sf.Com/@023> <99j.Com/@022>   <9pk.Com/@021>   <o2gg.Com/@020>  <91530.Com/@019>\
+<ju45.Com/@018> <23c.Com/@017>     <81f.Com/@016>   <sf001.Com/@015> <39k.Com/@014>   <sf58.Com/@013>\
+<29u.Com/@012>  <78pk.Com/@011>    <30ok.Com/@010>  <45ss.Com/@009>  <92gg.Com/@008>  <jjj.Com/@007>\
+<5k5.Com/@006>  <167123.Com/@005>  <28sf.Com/@004>  <sf215.Com/@003> <yaosf.Com/@002> <23ok.Com/@001>\
+
+[@024]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\8uu.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@023]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\65535sf.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@022]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\99j.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@021]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\9pk.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@020]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\o2gg.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@019]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\91530.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@018]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\ju45.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@017]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\23c.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@016]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\81f.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@015]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\sf001.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@014]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\39k.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@013]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\sf58.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@012]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\29u.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@011]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\78pk.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@010]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\30ok.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@009]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\45ss.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@008]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\92gg.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@007]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\jjj.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@006]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\5k5.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@005]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\167123.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@004]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\28sf.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@003]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\sf215.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@002]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\yaosf.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break
+
+[@001]
+#IF 
+checknamelist ..\QuestDiary\投票调查\已经参与.txt
+#act
+MESSAGEBOX  谢谢您的支持！您已参加过本活动！！！\
+#ELSEACT
+addnamelist ..\QuestDiary\投票调查\23ok.txt
+addnamelist ..\QuestDiary\投票调查\已经参与.txt
+SENDMSG 0 谢谢玩家【[%s]】参与了本游戏投票调查系统！请广大玩家也前往土药店参与调查谢谢！\
+break

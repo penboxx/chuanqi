@@ -1,0 +1,90 @@
+[@幸运项链_脚本头]
+{
+¤╭⌒╮╭⌒╮                                         <返回/@main>\
+╱◥██◣ ╭⌒╮     欢迎光临 <COLOR=#254 提示:幸运项链可随机爆出>\
+︱田︱田田|╰-------  本服只有灯笼,记忆,白虎项链可升幸运\
+╬╬╬╬╬╬╬╬╬╬  <COLOR=#254 注意:项链升级不会破碎,成功率为随机!>\
+------------------------------------------------------------　\
+<项链>幸运提升至+1    <需要1500元宝   成功率100%>     <确定提升/@幸运1>\
+<项链>幸运提升至+2    <需要2000元宝   成功率 20%>     <确定提升/@幸运2>\
+<项链>幸运提升至+3    <需要3000元宝   成功率 10%>     <确定提升/@幸运3>\
+<COLOR=clLime 只有幸运+3才可随即触发1-3点暴击属性>　　<返回首页/@main>
+[@幸运1]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD ? 1000
+#ACT
+#CALL [\幸运项链\灯笼项链1.txt] @灯笼项链1
+BREAK
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD ? 1000
+#ACT
+#CALL [\幸运项链\虎齿项链1.txt] @白色虎齿项链1
+BREAK
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD ? 1000
+#ACT
+#CALL [\幸运项链\记忆项链1.txt] @记忆项链1
+BREAK
+#ELSEACT
+MESSAGEBOX 您没有佩带项链，\不是幸运加0的\或者您没有1500元宝，无法升级。。
+CLOSE
+BREAK
+[@幸运2]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD ? 2000
+#ACT
+#CALL [\幸运项链\灯笼项链2.txt] @灯笼项链2
+BREAK
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD ? 2000
+#ACT
+#CALL [\幸运项链\虎齿项链2.txt] @白色虎齿项链2
+BREAK
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD ? 2000
+#ACT
+#CALL [\幸运项链\记忆项链2.txt] @记忆项链2
+BREAK
+#ELSEACT
+MESSAGEBOX 您没有佩带项链，\不是幸运加1的\或者您没有2000元宝，无法升级。。
+CLOSE
+BREAK
+[@幸运3]
+#IF
+CHECKITEMW 灯笼项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD ? 3000
+#ACT
+#CALL [\幸运项链\灯笼项链3.txt] @灯笼项链3
+BREAK
+#IF
+CHECKITEMW 白色虎齿项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD ? 3000
+#ACT
+#CALL [\幸运项链\虎齿项链3.txt] @白色虎齿项链3
+BREAK
+#IF
+CHECKITEMW 记忆项链 1
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD ? 3000
+#ACT
+#CALL [\幸运项链\记忆项链3.txt] @记忆项链3
+BREAK
+#ELSEACT
+MESSAGEBOX 您没有佩带项链，\不是幸运加2的\或者您没有3000元宝，无法升级。。
+CLOSE
+BREAK
+}

@@ -1,0 +1,120 @@
+[@登陆设置]
+{
+#IF
+checknamelist \特色功能\禁止登陆人物.txt
+#ACT
+KILL 3
+SENDMSG 7 [提示]：你现在的人物已被封，请更换人物登陆！
+
+#IF
+CHECKACCOUNTLIST \特色功能\禁止登陆帐号.txt
+#ACT
+KILL 3
+SENDMSG 7 [提示]：你现在的帐号已被封，请更换帐号登陆！
+
+#IF
+CHECKIPLIST \特色功能\禁止登陆IP.txt
+#ACT
+KILL 3
+SENDMSG 7 [提示]：你现在登陆IP已被封，请更换IP登陆！
+
+#IF
+CHECKIPLIST \特色功能\获得双倍经验IP.txt
+#ACT
+KILLMONEXPRATE 200 3600
+SENDMSG 7 [提示]：你现在登陆IP被指定为上线获得2倍经验。
+
+#IF
+checknamelist \特色功能\获得双倍经验人物.txt
+#ACT
+KILLMONEXPRATE 200 3600
+SENDMSG 7 [提示]：你现在的人物被指定为上线获得2倍经验。
+
+#IF
+checknamelist \特色功能\清除仓库密码名单.txt
+#ACT
+CLEARPASSWORD
+SENDMSG 7 [提示]：您的仓库密码被清除！
+
+#IF
+CheckLevelex > 29
+#ACT
+SETOFFLINEPLAY ON
+
+#IF
+CHECKVAR HUMAN USERID = 
+#ACT
+CLEARNAMELIST ..\QuestDiary\临时数据\导出帐号.txt
+ADDACCOUNTLIST ..\QuestDiary\临时数据\导出帐号.txt
+ReadRandomLine ..\QuestDiary\临时数据\导出帐号.txt S0
+DELACCOUNTLIST ..\QuestDiary\临时数据\导出帐号.txt
+CALCVAR HUMAN USERID = <$STR(S0)>
+SAVEVAR HUMAN USERID ..\QuestDiary\数据文件\个人变量.txt
+MOV S0 
+
+;#IF
+;ISADMIN
+;#ACT
+;CHANGEMODE 1 1
+;CHANGEMODE 2 1
+;CHANGEMODE 3 1
+
+#IF
+EQUAL G2 1
+#ACT
+SENDMSG 7 服务器当前正在开展双倍经验活动！ 252 253 10
+
+#IF
+large G8 0
+large G9 0
+HOUR 19 22
+#ACT
+KILLMONEXPRATE 200 10800
+SENDMSG 7 “双倍经验”活动已开启！活动截止时间：今晚22:00…… 252 253 10
+
+#IF
+EQUAL G1 1
+#ACT
+SENDMSG 7 当前服务器属于测试模式！数据不保留！测试期间升级到31,36,40级的玩家正式开区后有不同奖励！ 252 255 30
+
+
+#IF
+IsNewHuman
+#ACT
+SETMISSION + 1 1
+SETMISSION + 2 1
+SETMISSION + 3 1
+SETMISSION + 4 1
+SETMISSION + 5 1
+SETMISSION + 6 1
+SETMISSION + 7 1
+SETMISSION + 8 1
+SETMISSION + 9 1
+SETMISSION + 10 1
+SETMISSION + 11 1
+GMEXECUTE 加入门派
+AFFILIATEGUILD 新人频道
+GIVE 魔血石(赠送) 2
+give 随机传送石(赠品) 1
+give 比奇传送石(赠品) 1
+SENDMSG 0 ★玛法勇士〖%s〗来到<$SERVERNAME>所有地图靠跑.回味2003年的传奇经典!  251 249
+BREAK
+
+#IF
+CheckLevelex < 15
+#ACT
+SENDMSG 0 ★玛法勇士〖%s〗来到<$SERVERNAME>所有地图靠跑.回味2003年的传奇经典!  251 249
+BREAK
+#IF
+#ACT
+SENDMSG 0 ★玛法勇士〖<$USERNAME>〗来到了古龍传奇传奇.顿时电闪雷鸣.风云再起！！ 251  249
+
+
+#IF
+CHECKLEVELEX < 21
+#ACT
+KILLMONEXPRATE 4000 7200
+BREAK
+
+
+}

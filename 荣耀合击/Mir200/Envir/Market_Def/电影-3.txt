@@ -1,0 +1,36 @@
+()
+%100
+[@main]
+\          <COLOR=clLime ∴∵∴※2020经典80金币复古※∵∴∵>\
+\<COLOR=clAqua ╰══════════><COLOR=clAqua 【男人天堂】><COLOR=clAqua ══════════╯>\
+\<COLOR=clRed ♀.小电影在线观看，大家都懂的>\
+\<COLOR=clAqua ♀.小撸怡情，大撸伤身，自备纸巾>\
+\<COLOR=clLime ♀.每次观看需要300W金币>\
+------------------------------------------------------------　\
+<高清在线观看网站①/@1>    <高清在线观看网站②/@2>\
+
+
+[@1]
+#if
+checkgold 3000000
+#ACT
+take 金币 3000000
+WebBrowser http://www.zuidi9.com/
+CALCVAR HUMAN 小电影 + 1
+SAVEVAR HUMAN 小电影 ..\QuestDiary\数据文件\小电影.txt HardDisk
+BREAK
+#ELSESAY
+年轻人，你没有300W金币，我怎么帮你呢？\ \
+
+
+[@2]
+#if
+checkgold 3000000
+#ACT
+take 金币 3000000
+WebBrowser http://sifangpian.fun/
+CALCVAR HUMAN 小电影 + 1
+SAVEVAR HUMAN 小电影 ..\QuestDiary\数据文件\小电影.txt HardDisk
+BREAK
+#ELSESAY
+年轻人，你没有300W金币，我怎么帮你呢？\ \

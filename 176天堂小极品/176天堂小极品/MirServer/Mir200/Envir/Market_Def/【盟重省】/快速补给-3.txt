@@ -1,0 +1,88 @@
+[@main]
+<COLOR=clAqua 一一一一一一一一一一一一一一一一一一一一一一一一一一一一>\
+<COLOR=clFuchsia 大家PK必备良药，女人喝了气度非凡，男人喝了英俊潇洒！>\
+<COLOR=clAqua ⑤一☆→一一一一一一一一一一一一一一一一一一一一←☆一⑤>\
+<强效太阳包（5包）/@太阳包2>： 25元宝　 <强效太阳包（10包）/@太阳包10>： 50元宝    \
+<COLOR=clAqua ⑤一☆→一一一一一一一一一一一一一一一一一一一一←☆一⑤>\
+<万年雪霜包（5包）/@雪霜包2>： 50元宝　 <万年雪霜包（10包）/@雪霜包10>：100元宝    \
+<COLOR=clAqua ⑤一☆→一一一一一一一一一一一一一一一一一一一一←☆一⑤>\
+
+
+[@太阳包2]
+#IF
+CHECKBAGSIZE 5
+#ELSEACT
+messagebox 提示：请保留5个空格再来购买
+BREAK
+
+#IF
+CHECKBAGSIZE 5
+CHECKGAMEGOLD ? 25
+#ACT
+GAMEGOLD - 25
+give 强效太阳包(捆) 5
+BREAK
+#ELSEACT
+messagebox 提示：你的元宝不足以购买！
+BREAK
+
+
+[@太阳包10]
+#IF
+CHECKBAGSIZE 10
+#ELSEACT
+messagebox 提示：请保留10个空格再来购买
+BREAK
+
+#IF
+CHECKBAGSIZE 10
+CHECKGAMEGOLD ? 50
+#ACT
+GAMEGOLD - 50
+give 强效太阳包(捆) 10
+BREAK
+#ELSEACT
+messagebox 提示：你的元宝不足以购买！
+BREAK
+
+
+
+
+
+
+[@雪霜包2]
+#IF
+CHECKBAGSIZE 5
+#ELSEACT
+messagebox 提示：请保留5个空格再来购买
+BREAK
+
+#IF
+CHECKBAGSIZE 5
+CHECKGAMEGOLD ? 50
+#ACT
+GAMEGOLD - 50
+give 万年雪霜捆 5
+BREAK
+#ELSEACT
+messagebox 提示：你的元宝不足以购买！
+BREAK
+
+
+[@雪霜包10]
+#IF
+CHECKBAGSIZE 10
+#ELSEACT
+messagebox 提示：请保留2个空格再来购买
+BREAK
+
+#IF
+CHECKBAGSIZE 10
+CHECKGAMEGOLD ? 100
+#ACT
+GAMEGOLD - 100
+give 万年雪霜捆 10
+BREAK
+#ELSEACT
+messagebox 提示：你的元宝不足以购买！
+BREAK

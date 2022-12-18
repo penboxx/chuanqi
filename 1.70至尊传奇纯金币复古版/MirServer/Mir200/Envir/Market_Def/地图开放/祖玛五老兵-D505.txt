@@ -1,0 +1,17 @@
+()
+%100
+[@main]
+　\
+前面就是通向祖玛教主之家的祖玛阁.\
+你真的要过去吗?\ \
+　\
+<我要进去/@move>　<COLOR=clLime 开区当天00:00开放祖玛五后的地图>\
+<过几天再去/@exit>\\
+[@move]
+#if
+EQUAL A81 开启
+#act
+mapmove d5061 8 16
+#ELSEACT
+messagebox 开区当天00:00开放祖玛五后的地图
+BREAK

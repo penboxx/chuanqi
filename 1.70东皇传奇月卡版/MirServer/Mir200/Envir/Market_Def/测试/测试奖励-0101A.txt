@@ -1,0 +1,87 @@
+()
+%100
+[@main]
+#if
+CHECK [601] 1
+#act
+MOV M51 <$STR(G3)>
+DEC M51 <$HUMAN(标识)>
+#say
+为了保障玩家的帐号安全，在帐号被盗或者被骗，建议您设置仓库密码\ \
+警请各位玩家不要泄露自己的帐号密码保护，避免不必要的损失！\ \
+<设置3级密码/@设置系统密保>     <COLOR=clSkyBlue @设置密码  在下方聊天对话框输入>\ \
+<修改仓库密码/@修改系统密保>     <COLOR=clSkyBlue 42级就不能继续代练了,多余时间不退元宝>\ \
+<领取微信礼包/@2>     <领取35和宣传季卡/@3>
+#elsesay
+为了保障玩家的帐号安全，在帐号被盗或者被骗，建议您设置仓库密码\ \
+警请各位玩家不要泄露自己的帐号密码保护，避免不必要的损失！\ \
+<设置仓库密码/@设置系统密保>     <COLOR=clSkyBlue @设置密码  在下方聊天对话框输入>\ \
+<修改仓库密码/@修改系统密保>     <COLOR=clSkyBlue 42级就不能继续代练了,多余时间不退元宝>\ \
+<领取微信礼包/@2>     <领取35和宣传季卡/@3>
+
+
+[@修改系统密保]
+#IF
+#ACT
+Gmexecute 修改密码
+BREAK
+
+[@设置系统密保]
+#IF
+#ACT
+Gmexecute 设置密码
+break
+
+[@1]
+#if
+check [50] 1
+#act
+sendmsg 7 抱歉，你已经领取过测试季卡了！
+break
+
+#if
+checkACCOUNTLIST \测试\测试35级.txt HardDisk
+#act
+DELACCOUNTLIST \测试\测试35级.txt HardDisk
+set [50] 1
+give 季卡 1
+sendmsg 7 恭喜您获得季卡！
+sendmsg 1 恭喜玩家<$USERNAME>在测试时间升到35级,获得(季卡) 255 22
+break
+
+[@2]
+#if
+check [51] 1
+#act
+sendmsg 7 抱歉，你已经领取过微信礼包了！
+break
+
+#IF
+checkACCOUNTLIST \测试\微信礼包.txt HardDisk
+#act
+DELACCOUNTLIST \测试\微信礼包.txt HardDisk
+set [51] 1
+give 随机石(绑定) 2
+give 比奇石(绑定) 1
+sendmsg 1 恭喜玩家<$USERNAME>关注微信(wymir180),获得微信礼包 255 22
+break
+
+[@3]
+#if
+check [52] 1
+#act
+sendmsg 7 抱歉，你已经领取过测试奖励了！
+break
+#if
+checkACCOUNTLIST \测试\测试35级.txt HardDisk
+#act
+DELACCOUNTLIST \测试\测试35级.txt HardDisk
+set [52] 1
+DelNameList ..\QuestDiary\季卡\季卡名单.txt HardDisk
+DELUSERDATE ..\QuestDiary\季卡\时间记载.txt
+addnamelist ..\QuestDiary\季卡\季卡名单.txt HardDisk
+ADDUSERDATE ..\QuestDiary\季卡\时间记载.txt
+sendmsg 7 季卡充值成功！
+sendmsg 1 恭喜玩家<$USERNAME>参与宣传活动,获得(季卡) 255 22
+ClearDelayGoto
+break

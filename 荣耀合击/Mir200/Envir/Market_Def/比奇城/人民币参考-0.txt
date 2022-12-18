@@ -1,0 +1,12 @@
+()
+%100
+[@main]
+<Color=clRed 回收以下装备请直接联系担保客服>\
+<COLOR=clFuchsia 开天>          <COLOR=clLime 回收300人民币>       <COLOR=clFuchsia 战神首饰>    <COLOR=clLime 回收100人民币>\
+<COLOR=clFuchsia 凤天魔甲>      <COLOR=clLime 回收200人民币>       <COLOR=clFuchsia 真魂首饰>    <COLOR=clLime 回收 70人民币>\
+<COLOR=clFuchsia 玄天>          <COLOR=clLime 回收150人民币>       <COLOR=clFuchsia 圣魔首饰>    <COLOR=clLime 回收 40人民币>\
+<COLOR=clFuchsia 镇天>          <COLOR=clLime 回收 50人民币>       <COLOR=clFuchsia 战强化套>    <COLOR=clLime 回收100人民币>\
+<COLOR=clFuchsia 黄金屠龙>      <COLOR=clLime 回收100人民币>       <COLOR=clFuchsia 道强化套>    <COLOR=clLime 回收 70人民币>\
+<COLOR=clFuchsia 赤金逍遥扇>    <COLOR=clLime 回收 70人民币>       <COLOR=clFuchsia 法强化套>    <COLOR=clLime 回收 40人民币>\
+<COLOR=clFuchsia 紫金嗜魂法杖>  <COLOR=clLime 回收 30人民币>    \   
+回收时请手动点击群管理回收[谨防上当受骗]\

@@ -1,0 +1,23 @@
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【新手大乱斗】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+\<COLOR=clRed ♀.地图介绍：新人上线发展打宝必经之路>\
+\<COLOR=clAqua ♀.怪物刷新：祖玛.牛魔.魔龙.尸王.桃园.>\
+\<COLOR=clLime ♀.爆率介绍：初级装备+技能>\
+\<COLOR=clFuchsia ♀.进入条件：免费进入>　　　<开区两小时后关闭> \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+　　　　　  　        〖<新手大乱斗/@jin1>〗
+
+
+[@jin1]
+#if
+EQUAL G16 1
+CHECKLEVELEX > 1
+#act
+MapMove xsdld
+SENDMSG 0  伟大的玛法勇士[<$USERNAME>]闯入了[新手大乱斗]超多宝藏等待你去挖掘！ 251  249
+SENDMSG 0  伟大的玛法勇士[<$USERNAME>]闯入了[新手大乱斗]超多宝藏等待你去挖掘！ 251  249
+#ELSEACT
+MESSAGEBOX 本地图只限新区，两小时侯后关闭！

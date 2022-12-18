@@ -1,0 +1,96 @@
+[@main]
+这里是复古传奇，我们提供以下服务：\ \
+城市传送:\
+<比奇大城/@比奇大城>    <银杏山谷/@银杏山谷>   <魔 龙 城/@魔龙城>   <白日天门/@白日天门>\
+<盟重土城/@盟重土城>    <封魔神谷/@封魔神谷>   <毒蛇山谷/@毒蛇山谷>   <苍月海岛/@苍月小岛>\ \
+洞口传送:\
+<歧路尽头/@歧路尽头>    <千年树妖/@千年树妖>    <姻缘神殿/@姻缘神殿>    <沙城区域/@沙城区域>\
+
+[@魔龙城]
+#if
+TRUE
+#ACT
+mapmove 6 123 157
+
+[@比奇大城]
+#ACT
+mapmove 0 333 268
+break
+[@银杏山谷]
+#ACT
+mapmove 0 650 624
+break
+[@比奇村庄]
+#ACT
+mapmove 0 290 615
+break
+[@盟重土城]
+#ACT
+mapmove 3 333 333
+break
+[@白日天门]
+#ACT
+mapmove 11 177 324
+break
+[@封魔神谷]
+#ACT
+mapmove 4 241 203
+break
+[@苍月小岛]
+#ACT
+mapmove 5 140 338
+break
+[@毒蛇山谷]
+#ACT
+mapmove 2 505 485
+break
+
+[@千年树妖]
+#IF
+checkitem 回城卷 1
+#ACT
+mapmove 4 123 395
+break
+#ELSEACT
+mapmove 4 123 395
+give 回城卷 1
+break
+
+[@歧路尽头]
+#IF
+checkitem 回城卷 1
+#ACT
+mapmove D2001 24 102
+break
+#ELSEACT
+mapmove D2001 24 102
+give 回城卷 1
+break
+
+[@姻缘神殿]
+#IF
+checkitem 回城卷 1
+#ACT
+mapmove M101 22 33
+break
+#ELSEACT
+mapmove M101 22 33
+give 回城卷 1
+break
+
+[@沙城区域]
+#if
+CHECKLEVELEX < 40
+#ACT
+MESSAGEBOX 你连40级都没有还想去！\
+break
+
+#IF
+checkitem 回城卷 1
+#ACT
+mapmove 3 706 407
+BREAK
+#ELSEACT
+mapmove 3 706 407
+GIVE 回城卷 1
+break

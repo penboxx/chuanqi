@@ -1,0 +1,44 @@
+
+[@main]
+下面是本站提供的金币兑换服务！\
+25W金币可以兑换1个元宝，1元宝可以兑换1RMB\
+<$SERVERNAME>让你玩游戏也赚！每月月底进行一次兑换！\
+
+250000金币<换取1元宝/@1yb> \
+500000金币<换取2元宝/@2yb> \
+1000000金币<换取4元宝/@4yb> \
+
+<离开/@exit>
+
+[@1yb]
+#IF
+CHECKGOLD 250000
+#ACT
+TAKE 金币 250000
+GAMEGOLD + 1
+SENDMSG 6 成功兑换1元宝！
+BREAK
+#elsesay
+对不起 您的金币不足！
+
+[@2yb]
+#IF
+CHECKGOLD 500000
+#ACT
+TAKE 金币 500000
+GAMEGOLD + 2
+SENDMSG 6 成功兑换2元宝！
+BREAK
+#elsesay
+对不起 您的金币不足！
+
+[@4yb]
+#IF
+CHECKGOLD 1000000
+#ACT
+TAKE 金币 1000000
+GAMEGOLD + 4
+SENDMSG 6 成功兑换4元宝！
+BREAK
+#elsesay
+对不起 您的金币不足！

@@ -1,0 +1,144 @@
+[@登陆设置]
+{
+
+#if
+CHECKLEVELEX > 34
+#act
+GMEXECUTE ReleaseShutup <$USERNAME>
+
+#IF
+EQUAL H30 0
+#ACT
+MOV H30 5
+
+#IF
+check [102] 0
+#ELSEact
+SET [102] 0
+DEC G85 <$GAMEGOLD>
+
+#IF
+ISNEWHUMAN
+#ACT
+mapmove xinqu
+GMEXECUTE Shutup SELF 72000
+SendMsg 5 为减少骗子,35级才能说话!
+SendMsg 5 为减少骗子,35级才能说话!
+SendMsg 5 为减少骗子,35级才能说话!
+messagebox 为减少骗子,35级才能说话!
+;SENDMSG 7  现在尚未开测试区，请在此房间稍做休息，12点后点击NPC出去即可！
+;MESSAGEBOX 现在尚未开测试区，请在此房间稍做休息，12点后点击NPC出去即可！
+
+
+#IF
+ISNEWHUMAN
+large G88 5
+#ACT
+SENDMSG 0 欢迎新玩家:[<$USERNAME>]加入了[<$SERVERNAME>]---1.76复古传奇!
+give 金钻会员 1
+give 双倍经验卷 1
+GMEXECUTE Shutup SELF 72000
+break
+
+#IF
+ISNEWHUMAN
+#ACT
+SENDMSG 0 欢迎新玩家:[<$USERNAME>]加入了[<$SERVERNAME>]---1.76复古传奇!
+give 金钻会员 1
+give 双倍经验卷 1
+break
+
+#IF
+CHECKLEVELEX < 35
+#ACT
+mapmove xinqu
+GMEXECUTE Shutup SELF 72000
+SendMsg 5 为减少骗子,35级才能说话!
+SendMsg 5 为减少骗子,35级才能说话!
+SendMsg 5 为减少骗子,35级才能说话!
+messagebox 为减少骗子,35级才能说话!
+
+#IF
+ISADMIN
+#ACT
+GMEXECUTE ReleaseShutup  SELF
+BREAK
+#ELSEACT
+SENDMSG 0 欢迎玩家[<$USERNAME>]登陆[<$SERVERNAME>]---1.76复古传奇!
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\封号检测\普通外挂名单.txt <$USERNAME> HardDisk
+#ACT
+mapmove mima2
+kick
+messagebox 你使用外挂已被封号处理,禁止登陆！
+break
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\封号检测\脱机自封名单.txt <$USERNAME> HardDisk
+#ACT
+kick
+;messagebox 你使用外挂已被封号处理,禁止登陆。\如您因回收而误封请截图后联系技术QQ88888888进行解封
+break
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\封号检测\骗子盗号名单.txt <$USERNAME> HardDisk
+#ACT
+mapmove mima2
+kick
+messagebox 你涉嫌盗号或行骗被封号处理,禁止登陆！
+break
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\封号检测\捣乱名单.txt <$USERNAME> HardDisk
+#ACT
+mapmove mima2
+kick
+messagebox 你被禁止登陆！
+break
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\封号检测\IP数据.txt <$IPADDR> HardDisk
+#ACT
+;ADDLINELIST ..\QuestDiary\数据文件\封号检测\可疑人物登陆记录.txt <$USERNAME>|<$IPADDR>|<$LOGINTIME> HardDisk
+ADDLINELIST ..\QuestDiary\数据文件\封号检测\普通外挂名单.txt <$USERNAME> HardDisk
+kick
+messagebox 你的网络不稳定,请联系客服处理！
+break
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\封号检测\可疑人物名单.txt <$USERNAME> HardDisk
+#ACT
+;ADDLINELIST ..\QuestDiary\数据文件\封号检测\可疑人物登陆记录.txt <$USERNAME>|<$IPADDR>|<$LOGINTIME> HardDisk
+;ADDLINELIST ..\QuestDiary\数据文件\封号检测\IP数据.txt <$IPADDR> HardDisk
+mapmove mima2
+break
+
+#IF
+CHECKGAMEGOLD ? 300000
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\30W元宝名单.txt <$USERNAME>|<$DATETIME>|IP：<$IPADDR>|元宝：<$GAMEGOLD>个 HardDisk
+
+#IF
+CHECKGAMEGOLD ? 200000
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\20W元宝名单.txt <$USERNAME>|<$DATETIME>|IP：<$IPADDR>|元宝：<$GAMEGOLD>个 HardDisk
+
+#IF
+CHECKGAMEGOLD ? 100000
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\10W元宝名单.txt <$USERNAME>|<$DATETIME>|IP：<$IPADDR>|元宝：<$GAMEGOLD>个 HardDisk
+
+#IF
+CHECKGAMEGOLD ? 50000
+#ACT
+ADDLINELIST ..\QuestDiary\数据文件\5W元宝名单.txt <$USERNAME>|<$DATETIME>|IP：<$IPADDR>|元宝：<$GAMEGOLD>个 HardDisk
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\信誉商人名单.txt <$USERNAME> HardDisk
+#ACT
+SETRANKLEVELNAME %s\■■■■信■■■■\■■■誉■■■\■■商■■\■人■\
+CHANGENAMECOLOR 253
+break
+
+}

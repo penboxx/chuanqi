@@ -1,0 +1,1811 @@
+[@捡物奖励脚本QM]
+{
+#IF
+EQUAL I80 101529177
+#ELSEACT
+MOV I80 101529177
+VAR String GLOBAL 捡物奖励判断1
+VAR String GLOBAL 捡物奖励判断2
+VAR String GLOBAL 捡物奖励判断3
+VAR String GLOBAL 捡物奖励判断4
+VAR String GLOBAL 捡物奖励判断5
+VAR String GLOBAL 捡物奖励判断6
+VAR String GLOBAL 捡物奖励判断7
+VAR String GLOBAL 捡物奖励判断8
+VAR String GLOBAL 捡物奖励判断9
+VAR String GLOBAL 捡物奖励判断10
+VAR String GLOBAL 捡物奖励判断11
+VAR String GLOBAL 捡物奖励判断12
+VAR String GLOBAL 捡物奖励判断13
+VAR String GLOBAL 捡物奖励判断14
+VAR String GLOBAL 捡物奖励判断15
+VAR String GLOBAL 捡物奖励判断16
+VAR String GLOBAL 捡物奖励判断17
+VAR String GLOBAL 捡物奖励判断18
+VAR String GLOBAL 捡物奖励判断19
+VAR String GLOBAL 捡物奖励判断20
+VAR String GLOBAL 捡物奖励判断21
+VAR String GLOBAL 捡物奖励判断22
+VAR String GLOBAL 捡物奖励判断23
+VAR String GLOBAL 捡物奖励判断24
+VAR String GLOBAL 捡物奖励判断25
+VAR String GLOBAL 捡物奖励判断26
+VAR String GLOBAL 捡物奖励判断27
+VAR String GLOBAL 捡物奖励判断28
+VAR String GLOBAL 捡物奖励判断29
+VAR String GLOBAL 捡物奖励判断30
+VAR String GLOBAL 捡物奖励判断31
+VAR String GLOBAL 捡物奖励判断32
+VAR String GLOBAL 捡物奖励判断33
+VAR String GLOBAL 捡物奖励判断34
+VAR String GLOBAL 捡物奖励判断35
+VAR String GLOBAL 捡物奖励判断36
+VAR String GLOBAL 捡物奖励判断37
+VAR String GLOBAL 捡物奖励判断38
+VAR String GLOBAL 捡物奖励判断39
+VAR String GLOBAL 捡物奖励判断40
+VAR String GLOBAL 捡物奖励判断41
+VAR String GLOBAL 捡物奖励判断42
+VAR String GLOBAL 捡物奖励判断43
+VAR String GLOBAL 捡物奖励判断44
+VAR String GLOBAL 捡物奖励判断45
+VAR String GLOBAL 捡物奖励判断46
+VAR String GLOBAL 捡物奖励判断47
+VAR String GLOBAL 捡物奖励判断48
+LOADVAR GLOBAL 捡物奖励判断1 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断2 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断3 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断4 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断5 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断6 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断7 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断8 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断9 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断10 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断11 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断12 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断13 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断14 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断15 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断16 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断17 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断18 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断19 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断20 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断21 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断22 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断23 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断24 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断25 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断26 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断27 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断28 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断29 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断30 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断31 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断32 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断33 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断34 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断35 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断36 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断37 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断38 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断39 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断40 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断41 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断42 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断43 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断44 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断45 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断46 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断47 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+LOADVAR GLOBAL 捡物奖励判断48 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+VAR String GLOBAL 捡物奖励空格
+LOADVAR GLOBAL 捡物奖励空格 ..\QuestDiary\捡物奖励配置\捡物奖励常量.ini HardDisk
+MOV S10 <$GLOBAL(捡物奖励空格)>
+DEC S10 1 1
+CALCVAR GLOBAL 捡物奖励空格 = <$STR(S10)>
+MOV S10
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+VAR Integer HUMAN 捡物奖励页号
+MOV P7 0
+MOV P8 0
+MOV P9 $(捡物奖励生效)
+
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断1 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断2 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断3 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断4 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断5 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断6 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断7 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断8 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断9 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断11 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断12 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断13 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断14 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断15 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断16 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断17 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断18 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断19 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断20 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断21 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断22 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断23 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断24 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断25 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断26 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断27 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断28 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断29 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断30 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断31 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断32 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断33 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断34 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断35 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断36 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断37 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断38 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断39 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断40 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断41 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断42 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断43 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断44 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断45 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断46 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断47 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+#IF
+LARGE P6 0
+checkvar GLOBAL 捡物奖励判断48 = 
+#ACT
+MOV P6 2
+#IF
+LARGE P6 1
+#ACT
+INC P8 1
+#IF
+SMALL P7 <$STR(P9)>
+#ACT
+MOV P6 1
+INC P7 1
+#ELSEACT
+MOV P6 0
+INC P7 1
+
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+DELAYGOTO 2000 @捡物奖励实时判断
+
+
+
+
+
+[@捡物奖励实时判断]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 2000 @捡物奖励实时判断
+MOV P9 $(捡物奖励生效)
+#IF
+SMALL P9 1
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品1) 1
+checkvar GLOBAL 捡物奖励判断1 = 
+#ACT
+GAMEGOLD + 1000
+CHANGEEXP + 1000000
+CALCVAR GLOBAL 捡物奖励判断1 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断1 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品1)
+MOV S11 $(捡物奖励元宝1)+$(捡物奖励经验1)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 2
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品2) 1
+checkvar GLOBAL 捡物奖励判断2 = 
+#ACT
+GAMEGOLD + 1000
+CHANGEEXP + 1000000
+CALCVAR GLOBAL 捡物奖励判断2 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断2 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品2)
+MOV S11 $(捡物奖励元宝2)+$(捡物奖励经验2)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 3
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品3) 1
+checkvar GLOBAL 捡物奖励判断3 = 
+#ACT
+GAMEGOLD + 1000
+CHANGEEXP + 1000000
+CALCVAR GLOBAL 捡物奖励判断3 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断3 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品3)
+MOV S11 $(捡物奖励元宝3)+$(捡物奖励经验3)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 4
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品4) 1
+checkvar GLOBAL 捡物奖励判断4 = 
+#ACT
+GAMEGOLD + 500
+CHANGEEXP + 500000
+CALCVAR GLOBAL 捡物奖励判断4 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断4 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品4)
+MOV S11 $(捡物奖励元宝4)+$(捡物奖励经验4)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 5
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品5) 1
+checkvar GLOBAL 捡物奖励判断5 = 
+#ACT
+GAMEGOLD + 500
+CHANGEEXP + 500000
+CALCVAR GLOBAL 捡物奖励判断5 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断5 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品5)
+MOV S11 $(捡物奖励元宝5)+$(捡物奖励经验5)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 6
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品6) 1
+checkvar GLOBAL 捡物奖励判断6 = 
+#ACT
+GAMEGOLD + 500
+CHANGEEXP + 500000
+CALCVAR GLOBAL 捡物奖励判断6 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断6 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品6)
+MOV S11 $(捡物奖励元宝6)+$(捡物奖励经验6)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 7
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品7) 1
+checkvar GLOBAL 捡物奖励判断7 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断7 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断7 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品7)
+MOV S11 $(捡物奖励元宝7)+$(捡物奖励经验7)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+
+
+#IF
+SMALL P9 8
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品8) 1
+checkvar GLOBAL 捡物奖励判断8 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断8 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断8 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品8)
+MOV S11 $(捡物奖励元宝8)+$(捡物奖励经验8)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 9
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品9) 1
+checkvar GLOBAL 捡物奖励判断9 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断9 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断9 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品9)
+MOV S11 $(捡物奖励元宝9)+$(捡物奖励经验9)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 10
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品10) 1
+checkvar GLOBAL 捡物奖励判断10 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断10 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断10 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品10)
+MOV S11 $(捡物奖励元宝10)+$(捡物奖励经验10)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 11
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品11) 1
+checkvar GLOBAL 捡物奖励判断11 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断11 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断11 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品11)
+MOV S11 $(捡物奖励元宝11)+$(捡物奖励经验11)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 12
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品12) 1
+checkvar GLOBAL 捡物奖励判断12 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断12 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断12 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品12)
+MOV S11 $(捡物奖励元宝12)+$(捡物奖励经验12)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 13
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品13) 1
+checkvar GLOBAL 捡物奖励判断13 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断13 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断13 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品13)
+MOV S11 $(捡物奖励元宝13)+$(捡物奖励经验13)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 14
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品14) 1
+checkvar GLOBAL 捡物奖励判断14 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断14 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断14 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品14)
+MOV S11 $(捡物奖励元宝14)+$(捡物奖励经验14)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 15
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品15) 1
+checkvar GLOBAL 捡物奖励判断15 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断15 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断15 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品15)
+MOV S11 $(捡物奖励元宝15)+$(捡物奖励经验15)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 16
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品16) 1
+checkvar GLOBAL 捡物奖励判断16 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断16 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断16 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品16)
+MOV S11 $(捡物奖励元宝16)+$(捡物奖励经验16)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 17
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品17) 1
+checkvar GLOBAL 捡物奖励判断17 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断17 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断17 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品17)
+MOV S11 $(捡物奖励元宝17)+$(捡物奖励经验17)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 18
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品18) 1
+checkvar GLOBAL 捡物奖励判断18 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断18 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断18 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品18)
+MOV S11 $(捡物奖励元宝18)+$(捡物奖励经验18)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 19
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品19) 1
+checkvar GLOBAL 捡物奖励判断19 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断19 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断19 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品19)
+MOV S11 $(捡物奖励元宝19)+$(捡物奖励经验19)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 20
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品20) 1
+checkvar GLOBAL 捡物奖励判断20 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断20 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断20 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品20)
+MOV S11 $(捡物奖励元宝20)+$(捡物奖励经验20)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 21
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品21) 1
+checkvar GLOBAL 捡物奖励判断21 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断21 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断21 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品21)
+MOV S11 $(捡物奖励元宝21)+$(捡物奖励经验21)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 22
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品22) 1
+checkvar GLOBAL 捡物奖励判断22 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断22 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断22 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品22)
+MOV S11 $(捡物奖励元宝22)+$(捡物奖励经验22)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 23
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品23) 1
+checkvar GLOBAL 捡物奖励判断23 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断23 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断23 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品23)
+MOV S11 $(捡物奖励元宝23)+$(捡物奖励经验23)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 24
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品24) 1
+checkvar GLOBAL 捡物奖励判断24 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断24 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断24 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品24)
+MOV S11 $(捡物奖励元宝24)+$(捡物奖励经验24)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 25
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品25) 1
+checkvar GLOBAL 捡物奖励判断25 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断25 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断25 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品25)
+MOV S11 $(捡物奖励元宝25)+$(捡物奖励经验25)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 26
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品26) 1
+checkvar GLOBAL 捡物奖励判断26 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断26 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断26 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品26)
+MOV S11 $(捡物奖励元宝26)+$(捡物奖励经验26)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 27
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品27) 1
+checkvar GLOBAL 捡物奖励判断27 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断27 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断27 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品27)
+MOV S11 $(捡物奖励元宝27)+$(捡物奖励经验27)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 28
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品28) 1
+checkvar GLOBAL 捡物奖励判断28 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断28 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断28 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品28)
+MOV S11 $(捡物奖励元宝28)+$(捡物奖励经验28)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 29
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品29) 1
+checkvar GLOBAL 捡物奖励判断29 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断29 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断29 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品29)
+MOV S11 $(捡物奖励元宝29)+$(捡物奖励经验29)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 30
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品30) 1
+checkvar GLOBAL 捡物奖励判断30 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断30 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断30 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品30)
+MOV S11 $(捡物奖励元宝30)+$(捡物奖励经验30)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 31
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品31) 1
+checkvar GLOBAL 捡物奖励判断31 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断31 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断31 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品31)
+MOV S11 $(捡物奖励元宝31)+$(捡物奖励经验31)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 32
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品32) 1
+checkvar GLOBAL 捡物奖励判断32 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断32 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断32 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品32)
+MOV S11 $(捡物奖励元宝32)+$(捡物奖励经验32)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 33
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品33) 1
+checkvar GLOBAL 捡物奖励判断33 = 
+#ACT
+GAMEGOLD + 300
+CHANGEEXP + 300000
+CALCVAR GLOBAL 捡物奖励判断33 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断33 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品33)
+MOV S11 $(捡物奖励元宝33)+$(捡物奖励经验33)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 34
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品34) 1
+checkvar GLOBAL 捡物奖励判断34 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断34 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断34 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品34)
+MOV S11 $(捡物奖励元宝34)+$(捡物奖励经验34)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 35
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品35) 1
+checkvar GLOBAL 捡物奖励判断35 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断35 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断35 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品35)
+MOV S11 $(捡物奖励元宝35)+$(捡物奖励经验35)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 36
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品36) 1
+checkvar GLOBAL 捡物奖励判断36 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断36 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断36 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品36)
+MOV S11 $(捡物奖励元宝36)+$(捡物奖励经验36)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 37
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品37) 1
+checkvar GLOBAL 捡物奖励判断37 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断37 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断37 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品37)
+MOV S11 $(捡物奖励元宝37)+$(捡物奖励经验37)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 38
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品38) 1
+checkvar GLOBAL 捡物奖励判断38 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断38 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断38 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品38)
+MOV S11 $(捡物奖励元宝38)+$(捡物奖励经验38)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 39
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品39) 1
+checkvar GLOBAL 捡物奖励判断39 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断39 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断39 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品39)
+MOV S11 $(捡物奖励元宝39)+$(捡物奖励经验39)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 40
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品40) 1
+checkvar GLOBAL 捡物奖励判断40 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断40 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断40 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品40)
+MOV S11 $(捡物奖励元宝40)+$(捡物奖励经验40)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 41
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品41) 1
+checkvar GLOBAL 捡物奖励判断41 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断41 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断41 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品41)
+MOV S11 $(捡物奖励元宝41)+$(捡物奖励经验41)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 42
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品42) 1
+checkvar GLOBAL 捡物奖励判断42 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断42 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断42 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品42)
+MOV S11 $(捡物奖励元宝42)+$(捡物奖励经验42)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 43
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品43) 1
+checkvar GLOBAL 捡物奖励判断43 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断43 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断43 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品43)
+MOV S11 $(捡物奖励元宝43)+$(捡物奖励经验43)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 44
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品44) 1
+checkvar GLOBAL 捡物奖励判断44 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断44 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断44 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品44)
+MOV S11 $(捡物奖励元宝44)+$(捡物奖励经验44)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 45
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品45) 1
+checkvar GLOBAL 捡物奖励判断45 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断45 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断45 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品45)
+MOV S11 $(捡物奖励元宝45)+$(捡物奖励经验45)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 46
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品46) 1
+checkvar GLOBAL 捡物奖励判断46 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断46 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断46 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品46)
+MOV S11 $(捡物奖励元宝46)+$(捡物奖励经验46)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 47
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品47) 1
+checkvar GLOBAL 捡物奖励判断47 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断47 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断47 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品47)
+MOV S11 $(捡物奖励元宝47)+$(捡物奖励经验47)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+#IF
+SMALL P9 48
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品48) 1
+checkvar GLOBAL 捡物奖励判断48 = 
+#ACT
+GAMEGOLD + 200
+CHANGEEXP + 200000
+CALCVAR GLOBAL 捡物奖励判断48 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断48 ..\QuestDiary\开区清空文本\捡物奖励变量.txt HardDisk
+MOV S10 $(捡物奖励物品48)
+MOV S11 $(捡物奖励元宝48)+$(捡物奖励经验48)
+SENDMSG 0 $(捡物奖励提示) 255 221
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+SENDMSG 0 $(捡物奖励提示) 255 253  60
+
+
+[@捡物奖励常量加载]
+#CALL [\捡物奖励配置\捡物奖励常量.INI] @捡物奖励常量
+}

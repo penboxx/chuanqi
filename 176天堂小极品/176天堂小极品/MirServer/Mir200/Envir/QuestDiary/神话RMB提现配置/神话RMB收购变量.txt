@@ -1,0 +1,74 @@
+[@神话RMB收购变量声明]
+{
+#IF
+EQUAL I56 123
+#ELSEACT
+MOV I56 123
+VAR String  GLOBAL 提现A70 "" HardDisk
+VAR String  GLOBAL 提现A71 "" HardDisk
+VAR String  GLOBAL 提现A72 "" HardDisk
+VAR String  GLOBAL 提现A73 "" HardDisk
+VAR String  GLOBAL 提现A74 "" HardDisk
+VAR String  GLOBAL 提现A75 "" HardDisk
+VAR String  GLOBAL 提现A76 "" HardDisk
+VAR String  GLOBAL 提现A77 "" HardDisk
+VAR String  GLOBAL 提现A78 "" HardDisk
+VAR String  GLOBAL 提现A79 "" HardDisk
+VAR String  GLOBAL 提现A80 "" HardDisk
+VAR String  GLOBAL 提现A81 "" HardDisk
+VAR String  GLOBAL 提现A82 "" HardDisk
+VAR String  GLOBAL 提现A83 "" HardDisk
+VAR String  GLOBAL 提现A84 "" HardDisk
+VAR String  GLOBAL 提现A85 "" HardDisk
+VAR String  GLOBAL 提现A86 "" HardDisk
+VAR String  GLOBAL 提现A87 "" HardDisk
+VAR String  GLOBAL 提现A88 "" HardDisk
+VAR String  GLOBAL 提现A89 "" HardDisk
+VAR String  GLOBAL 提现A90 "" HardDisk
+VAR String  GLOBAL 提现A91 "" HardDisk
+VAR String  GLOBAL 提现A92 "" HardDisk
+VAR String  GLOBAL 提现A93 "" HardDisk
+VAR String  GLOBAL 提现A94 "" HardDisk
+VAR String  GLOBAL 提现A95 "" HardDisk
+VAR String  GLOBAL 提现A96 "" HardDisk
+VAR String  GLOBAL 提现A97 "" HardDisk
+VAR String  GLOBAL 提现A98 "" HardDisk
+VAR String  GLOBAL 提现A99 "" HardDisk
+LOADVAR GLOBAL 提现A98 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A99 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A94 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A95 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A96 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A97 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A92 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A93 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A91 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A90 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A88 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A89 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A84 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A85 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A86 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A87 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A82 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A83 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A81 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A80 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A78 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A79 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A74 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A75 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A76 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A77 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A72 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A73 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A71 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+LOADVAR GLOBAL 提现A70 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+VAR String  GLOBAL 提现空格 "" HardDisk
+LOADVAR GLOBAL 提现空格 ..\QuestDiary\神话RMB提现配置\提现空格.ini
+MOV S55 <$GLOBAL(提现空格)>
+DEC S55 1 1
+CALCVAR GLOBAL 提现空格 = <$STR(S55)>
+MOV S55
+
+}

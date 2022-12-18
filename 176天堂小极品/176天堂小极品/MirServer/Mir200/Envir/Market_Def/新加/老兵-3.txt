@@ -1,0 +1,62 @@
+()
+%100
++10
++11
++15
+[@main]
+在这里我将为你提供一些免费商店传送！ \ \
+<COLOR=clYellow ≮><铁匠铺/@Gwe><COLOR=clYellow ≯>          <COLOR=clYellow ≮><客  栈/@Gwh><COLOR=clYellow ≯> \  
+<COLOR=clYellow ≮><首饰店/@Gza><COLOR=clYellow ≯>          <COLOR=clYellow ≮><布料店/@Gpo><COLOR=clYellow ≯>\
+<COLOR=clYellow ≮><书  店/@Gbo><COLOR=clYellow ≯>          <COLOR=clYellow ≮><婚姻神殿/@huenyin><COLOR=clYellow ≯>\ \   
+<COLOR=clYellow ≮><设置二级密码/@mima><COLOR=clYellow ≯>           <COLOR=clYellow ≮><关 闭/@exit><COLOR=clYellow ≯>
+   
+[@Gwe]
+#IF
+#ACT
+map 0159
+[@Gpo]
+#IF
+#ACT
+map 0149
+[@Gza]
+#IF
+#ACT
+map 0158
+[@Gwh]
+#IF
+#ACT
+map 0145
+[@Gbo]
+#IF
+#ACT
+map 0161
+[@mima]
+为了保障玩家的帐号安全,在帐号被盗或者被骗,\
+只要你设置了2级密码,IP不一致上线必须输入2级密码!\
+如果IP不一致会拉近小黑屋，只有输入您的正确二代密保才可以正常游戏!\
+<警请各位玩家不要泄露自己的帐号密码保护!避免不必要的损失!>\
+<一旦设置二代密保请牢记王者数据，不要与帐号和密码相同>\
+<设置2级密码/@@InPutInteger4>--<2级密码必须为4-7位全数字!否则无效!>\
+<返回/@main>
+[@@InPutInteger4]
+#IF
+checknamelist ..\QuestDiary\二级密码\密码名单.txt HardDisk
+#ACT
+MessageBox 你已经设置了2级密码!请先删除初始密码!
+MOV M4 0
+BREAK
+#If
+#Act
+DelayGoto 1 ~InPutInteger4
+[~InPutInteger4]
+#If
+LARGE M4 0
+#ACT
+VAR Integer HUMAN 二级密码 "" HardDisk
+CALCVAR HUMAN  二级密码 = <$STR(M4)>
+SAVEVAR HUMAN 二级密码 ..\QuestDiary\二级密码\密码数据.txt
+addnamelist ..\QuestDiary\二级密码\密码名单.txt HardDisk
+MessageBox 密码设置成功!\你设置的密码是:◆[<$STR(M4)>]◆\请牢记，否则忘记密码是登陆游戏的!
+mapmove mima
+#ELSEACT
+messagebox 密码设置失败!\确认你输入的数据为4-7位的数字!

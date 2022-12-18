@@ -1,0 +1,15 @@
+[@领取元宝]
+{
+#IF
+CheckAccountList ..\QuestDiary\测试领取\10元宝.txt
+#ACT
+GAMEGOLD + 10
+DelAccountList ..\QuestDiary\测试领取\10元宝.txt
+SENDMSG 1 ★[%s]:玩家<$USERNAME>领取测试奖励，获得元宝10个
+messagebox  恭喜你领取测试奖励，获得元宝10个，赶快去买月卡吧
+break
+#Elsesay
+你暂时没有领取的资格！\
+如有任何问题,请登陆论坛: http://kuyoux.com　发帖咨询\
+<返回/@main>\
+}

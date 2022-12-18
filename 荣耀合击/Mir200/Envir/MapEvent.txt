@@ -1,0 +1,13 @@
+;地图事件触发列表
+tuanzhanmap1 -1 -1 -1:1 4:*:0 0 1:@Mir2m2团战擂台地图触发
+tuanzhanmap1 -1 -1 -1:1 5:*:0 0 1:@Mir2m2团战擂台地图触发
+tuanzhanmap1 -1 -1 -1:1 4:*:1 0 1:@Mir2m2团战擂台地图触发
+tuanzhanmap1 -1 -1 -1:1 5:*:1 0 1:@Mir2m2团战擂台地图触发
+tuanzhanmap2 -1 -1 -1:1 4:*:0 0 1:@Mir2m2团战擂台地图触发
+tuanzhanmap2 -1 -1 -1:1 5:*:0 0 1:@Mir2m2团战擂台地图触发
+tuanzhanmap2 -1 -1 -1:1 4:*:1 0 1:@Mir2m2团战擂台地图触发
+tuanzhanmap2 -1 -1 -1:1 5:*:1 0 1:@Mir2m2团战擂台地图触发
+tiaozhanmap -1 -1 -1:1 4:*:0 0 1:@Mir2m2挑战擂台地图触发
+tiaozhanmap -1 -1 -1:1 5:*:0 0 1:@Mir2m2挑战擂台地图触发
+tiaozhanmap -1 -1 -1:1 4:*:1 0 1:@Mir2m2挑战擂台地图触发
+tiaozhanmap -1 -1 -1:1 5:*:1 0 1:@Mir2m2挑战擂台地图触发

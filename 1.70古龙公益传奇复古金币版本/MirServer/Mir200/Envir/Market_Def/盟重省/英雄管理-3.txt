@@ -1,0 +1,183 @@
+
+(@@BuHero)
+%100
+[@main]
+#IF
+CHECKLEVELEX > 0
+#SAY
+体验真正的英雄：<[创建英雄]/@@buHero> \
+千万不要乱点哈：<[删除英雄]/@DelMyHero123123>\
+　　\
+初级英雄技能书店有卖\
+其他英雄技能、合击技能，请去找<COLOR=clLime 龙人>合成\
+我只是来逛逛的：<[关闭选单]/@exit>\
+#ELSESAY
+对不起，<COLOR=clLime 20级>以下无法创建英雄，\
+　\
+快去升级吧，到达级别后再来找我。\
+[@@buHero]
+#ACT
+DELAYCALL 10 ~$CREATEHERO
+[~$CREATEHERO]
+//CREATEHERO 职业 性别
+请选择您要创建的英雄职业以及性别：\ \
+<[创建男战士英雄]/@CREATEHERO_WARR_MAN> <[创建女战士英雄]/@CREATEHERO_WARR_WOM>\ \
+<[创建男法师英雄]/@CREATEHERO_WIZA_MAN> <[创建女法师英雄]/@CREATEHERO_WIZA_WOM>\ \
+<[创建男道士英雄]/@CREATEHERO_TAOS_MAN> <[创建女道士英雄]/@CREATEHERO_TAOS_WOM>\ \
+　　　　　　　　　　　　　　 <退出/@exit>
+[@CREATEHERO_WARR_MAN]
+#ACT
+CREATEHERO 0 0
+[@CREATEHERO_WARR_WOM]
+#ACT
+CREATEHERO 0 1
+[@CREATEHERO_WIZA_MAN]
+#ACT
+CREATEHERO 1 0
+[@CREATEHERO_WIZA_WOM]
+#ACT
+CREATEHERO 1 1
+[@CREATEHERO_TAOS_MAN]
+#ACT
+CREATEHERO 2 0
+[@CREATEHERO_TAOS_WOM]
+#ACT
+CREATEHERO 2 1
+//返回消息
+[@CreateingHero]
+系统正在接受申请，请稍候……\
+<关闭/@exit>
+[@HaveHero]
+您已经有英雄了。\
+<关闭/@exit>
+[@SetHeroName]
+请先给您的英雄取名字。\
+<关闭/@exit>
+[@DelMyHero123123]
+你确定删除英雄吗?\
+   \	\	\	\	\	\
+<[删除英雄]/@DelMyHero>
+[@DelMyHero]
+#ACT
+DELETEHERO
+//返回消息
+[@NotHaveHero]
+你没有英雄。\ \
+<关闭/@exit>
+[@LogOutHeroFirst]
+请将英雄设置下线！\ \
+<关闭/@exit>
+[@DeleteHeroOK]
+删除英雄成功。\ \
+<关闭/@exit>
+[@zjn]
+#if
+CHECK [401] 0
+#ACT
+SENDMSG 6 ぐ提示：恭喜您成功领取战士英雄技能包...!
+Give 英雄战书（包）
+SET   [401] 1
+CLOSE
+#ELSEACT
+SENDMSG 6 ぐ提示：您已经领取战士英雄技能包了,不能重复领取...!
+CLOSE
+[@fjn]
+#if
+CHECK [402] 0
+#ACT
+SENDMSG 6 ぐ提示：恭喜您成功领取法师英雄技能包...!
+Give 英雄法书（包）
+SET   [402] 1
+CLOSE
+#ELSEACT
+SENDMSG 6 ぐ提示：您已经领取法师英雄技能包了,不能重复领取...!
+CLOSE
+[@djn]
+#if
+CHECK [403] 0
+#ACT
+SENDMSG 6 ぐ提示：恭喜您成功领取道士英雄技能包...!
+Give 英雄道书（包）
+SET   [403] 1
+CLOSE
+#ELSEACT
+SENDMSG 6 ぐ提示：您已经领取道士英雄技能包了,不能重复领取...!
+CLOSE
+[@HJJN_01]
+#if
+CHECK [404] 0
+#ACT
+SENDMSG 6 ぐ提示：恭喜您领取战士＋战士英雄合击[破.魂.斩]成功...!
+Give 合击破魂斩
+SET   [404] 1
+CLOSE
+#ELSEACT
+SENDMSG 6 ぐ提示：对不起，您已经领过了，一个人只能领一次的噢!!!
+CLOSE
+[@HJJN_02]
+#if
+CHECK [405] 0
+#ACT
+SENDMSG 6 ぐ提示：恭喜您领取道士＋道士英雄合击[噬魂沼泽]成功...!
+Give 合击噬魂沼泽
+SET   [405] 1
+CLOSE
+#ELSEACT
+SENDMSG 6 ぐ提示：对不起，您已经领过了，一个人只能领一次的噢!!!
+CLOSE
+[@HJJN_03]
+#if
+CHECK [406] 0
+#ACT
+SENDMSG 6 ぐ提示：恭喜您领取法师＋法师英雄合击[火龙气焰]成功...!
+Give 合击火龙气焰
+SET   [406] 1
+CLOSE
+#ELSEACT
+SENDMSG 6 ぐ提示：对不起，您已经领过了，一个人只能领一次的噢!!!
+CLOSE
+[@HJJN_04]
+#if
+CHECK [407] 0
+#ACT
+SENDMSG 6 ぐ提示：恭喜您领取战士＋法师英雄合击[雷霆一击]成功...!
+Give 合击雷霆一击
+SET   [407] 1
+CLOSE
+#ELSEACT
+SENDMSG 6 ぐ提示：对不起，您已经领过了，一个人只能领一次的噢!!!
+CLOSE
+[@HJJN_05]
+#if
+CHECK [408] 0
+#ACT
+SENDMSG 6 ぐ提示：恭喜您领取道士＋法师英雄合击[末日审判]成功...!
+Give 合击末日审判
+SET   [408] 1
+CLOSE
+#ELSEACT
+SENDMSG 6 ぐ提示：对不起，您已经领过了，一个人只能领一次的噢!!!
+CLOSE
+[@HJJN_06]
+#if
+CHECK [409] 0
+#ACT
+take 金砖 1
+SENDMSG 6 ぐ提示：恭喜您领取战士＋道士英雄合击[劈.星.斩]成功...!
+Give 合击劈星斩
+SET   [409] 1
+CLOSE
+#ELSEACT
+SENDMSG 6 ぐ提示：对不起，您已经领过了，一个人只能领一次的噢!!!
+CLOSE
+[@hlzx_00]
+#if
+CHECK [410] 0
+#ACT
+SENDMSG 6 ぐ提示：恭喜您领取英雄合击必备物品：[火龙之心]成功...!
+Give 火龙之心 1
+SET   [410] 1
+CLOSE
+#ELSEACT
+SENDMSG 6 ぐ提示：对不起，您已经领过了，一个人只能领一次的噢!!!
+CLOSE

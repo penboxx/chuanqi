@@ -1,0 +1,172 @@
+[@赞助大使转换]
+{
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\已删除赞助名单.txt <$USERNAME> HardDisk
+#ACT
+CALCVAR HUMAN 赞助大使  = 
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\已删除赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\钻石赞助名单.txt <$USERNAME> HardDisk
+#ACT
+CALCVAR HUMAN 赞助大使  = 10000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\钻石赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\钻石赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 0
+#ACT
+CALCVAR HUMAN 赞助大使  = 10000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\钻石赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\钻石赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 1000
+#ACT
+CALCVAR HUMAN 赞助大使  = 10000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\钻石赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\钻石赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 2000
+#ACT
+CALCVAR HUMAN 赞助大使  = 10000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\钻石赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\钻石赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 5000
+#ACT
+CALCVAR HUMAN 赞助大使  = 10000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\钻石赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\金牌赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 0
+#ACT
+CALCVAR HUMAN 赞助大使  = 5000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\金牌赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\金牌赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 1000
+#ACT
+CALCVAR HUMAN 赞助大使  = 5000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\金牌赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\金牌赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 2000
+#ACT
+CALCVAR HUMAN 赞助大使  = 5000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\金牌赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\金牌赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 10000
+#ACT
+CALCVAR HUMAN 赞助大使  = 10000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\金牌赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+
+
+
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\银牌赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 0
+#ACT
+CALCVAR HUMAN 赞助大使  = 2000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\银牌赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\银牌赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 1000
+#ACT
+CALCVAR HUMAN 赞助大使  = 2000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\银牌赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\银牌赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 5000
+#ACT
+CALCVAR HUMAN 赞助大使  = 5000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\银牌赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\银牌赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 10000
+#ACT
+CALCVAR HUMAN 赞助大使  = 10000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\银牌赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\铜牌赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 10000
+#ACT
+CALCVAR HUMAN 赞助大使  = 10000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\铜牌赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\铜牌赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 5000
+#ACT
+CALCVAR HUMAN 赞助大使  = 5000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\铜牌赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\铜牌赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使  = 2000
+#ACT
+CALCVAR HUMAN 赞助大使  = 2000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\铜牌赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\数据文件\赞助大使\铜牌赞助名单.txt <$USERNAME> HardDisk
+CHECKVAR HUMAN 赞助大使 = 0
+#ACT
+CALCVAR HUMAN 赞助大使  = 1000
+SAVEVAR HUMAN 赞助大使 ..\QuestDiary\数据文件\赞助大使\赞助大使Save.txt
+DELLINELIST ..\QuestDiary\数据文件\赞助大使\铜牌赞助名单.txt <$USERNAME> HardDisk
+BREAK
+
+}

@@ -1,0 +1,133 @@
+[@每日签到_脚本头]
+{
+<COLOR=clRED 每日签到>:\
+　　你当前已经连续在线<$LOGINLONG>！当你每天在线时间达到30分\
+钟，便可以在我这里签到一次！连续签到可获得金币(<COLOR=clRED 单位:十万>)\
+连续小于5天可获得:您所摇到的骰子数的金币\
+连续5天可获得:您所摇到的骰子数*<1.2倍>的金币\
+连续15天可获得:您所摇到的骰子数*<1.5倍>的金币\
+连续30天可获得:您所摇到的骰子数*<2倍>的金币+<COLOR=clRED 一签橙名>封号\
+初此之外，还可获得:盟重传送石,随机传送石,祝福油各一个\
+　<开始签到/@开始签到>　　　　<查看连续签到天数/@连续签到>　　　　　　　<返回/@main>
+
+[@连续签到]
+#IF
+CHECKVAR HUMAN 每日签到 = <$STR(G70)>
+#ACT
+MESSAGEBOX 提示：您已经连续签到<$HUMAN(连续签到)>天！
+#ELSEACT
+MESSAGEBOX 提示：请在今天签到后再来查询连续签到天数！
+
+[@开始签到]
+#IF
+Equal G70 0
+#ACT
+mov G70 1
+
+#IF
+CHECKVAR HUMAN 每日签到 = <$STR(G70)>
+#act
+MESSAGEBOX 提示：你今天已经签到过了！无需重复签到！
+BREAK
+
+#IF
+OnLineLongMin < 30
+#act
+MESSAGEBOX 提示：持续在线30分钟以上才能签到哦亲~
+BREAK
+
+#IF
+#act
+MOV M1 <$HUMAN(每日签到)>
+INC M1 1
+
+#IF
+Equal G70 <$STR(M1)>
+#act
+CALCVAR HUMAN 每日签到 = <$STR(G70)>
+SAVEVAR HUMAN 每日签到 ..\QuestDiary\数据文件\签到系统Save.txt
+CALCVAR HUMAN 连续签到 + 1
+SAVEVAR HUMAN 连续签到 ..\QuestDiary\数据文件\签到系统Save.txt
+movr D60 7
+PlayDice 1 @签到奖励
+BREAK
+
+#IF
+#ACT
+CALCVAR HUMAN 每日签到 = <$STR(G70)>
+SAVEVAR HUMAN 每日签到 ..\QuestDiary\数据文件\签到系统Save.txt
+CALCVAR HUMAN 连续签到 = 1
+SAVEVAR HUMAN 连续签到 ..\QuestDiary\数据文件\签到系统Save.txt
+movr D60 7
+PlayDice 1 @签到奖励
+Break
+
+[@签到奖励]
+#IF
+equal D60 0
+#ACT
+MOV D60 1
+goto @签到奖励_给
+#ELSEACT
+goto @签到奖励_给
+
+[@签到奖励_给]
+#IF
+CHECKVAR HUMAN 连续签到 > 29
+#act
+SENDMSG 6 提示:骰子数(<$STR(D60)>)
+Mul D60 200000
+give 金币 <$STR(D60)>
+give 盟重传送石 1
+give 随机传送石 1
+give 祝福油 1
+CHANGENAMECOLOR 70
+SENDMSG 6 提示:连续签到<$HUMAN(连续签到)>天,获得金币<$STR(D60)>,感谢您的支持！
+SENDMSG 3 连续签到<$HUMAN(连续签到)>天,获得一签橙名封号！
+mov D60 0
+Close
+BREAK
+
+#IF
+CHECKVAR HUMAN 连续签到 > 14
+#act
+SENDMSG 6 提示:骰子数(<$STR(D60)>)
+Mul D60 150000
+give 金币 <$STR(D60)>
+give 盟重传送石 1
+give 随机传送石 1
+give 祝福油 1
+SENDMSG 6 提示:连续签到<$HUMAN(连续签到)>天,获得金币<$STR(D60)>,感谢您的支持！
+mov D60 0
+Close
+BREAK
+
+#IF
+CHECKVAR HUMAN 连续签到 > 4
+#act
+SENDMSG 6 提示:骰子数(<$STR(D60)>)
+Mul D60 120000
+give 金币 <$STR(D60)>
+give 盟重传送石 1
+give 随机传送石 1
+give 祝福油 1
+SENDMSG 6 提示:连续签到<$HUMAN(连续签到)>天,获得金币<$STR(D60)>,感谢您的支持！
+mov D60 0
+Close
+BREAK
+
+#IF
+CHECKVAR HUMAN 连续签到 > 0
+#act
+SENDMSG 6 提示:骰子数(<$STR(D60)>)
+Mul D60 100000
+give 金币 <$STR(D60)>
+give 盟重传送石 1
+give 随机传送石 1
+give 祝福油 1
+SENDMSG 6 提示:连续签到<$HUMAN(连续签到)>天,获得金币<$STR(D60)>,感谢您的支持！
+mov D60 0
+Close
+BREAK
+
+}

@@ -1,0 +1,38 @@
+[@白色虎齿项链3j]
+{
+#IF
+random 10
+#act
+take 金币 2000000
+UPGRADEITEMEX 3 1 0 1 0
+Mov m22 1
+Mov s22 白色虎齿项链
+#Call [\\幸运项链1\低级物品暴击.txt] @加暴击
+SENDMSG 1 恭喜[%s]在幸运之家将白色虎齿项链升级成功。
+BREAK
+
+
+
+#IF
+random 3
+#act
+take 金币 2000000
+MESSAGEBOX 非常抱歉您的白色虎齿项链升级失败
+BREAK
+
+#IF
+random 2
+#act
+take 金币 2000000
+MESSAGEBOX 非常抱歉您的白色虎齿项链升级失败
+BREAK
+
+#IF
+random 1
+#act
+take 金币 2000000
+MESSAGEBOX 非常抱歉您的白色虎齿项链升级失败
+BREAK
+
+
+}

@@ -1,0 +1,135 @@
+[@Mir2m2摆摊锁定脚本常量]
+{
+#DEFINE $(摆摊锁定元宝命令) 1
+;                           ↑此命令对应【Envir\UserCmd.txt】第1个参数，下面编号[@UserCmdX]的X对应第2个参数 HardDisk
+}
+
+[@Mir2m2摆摊锁定脚本QF]
+{
+[@UserCmd7]
+;        ↑此编号对应【Envir\UserCmd.txt】第2个参数，上面的命令对应第1个参数 HardDisk
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S11 $PARAM(1)
+#IF
+checkvar human 摆摊个人元宝 > 0
+Equal S11 
+#ACT
+GAMEGOLD + <$human(摆摊个人元宝)>
+SendMsg 6 锁定的〔<$human(摆摊个人元宝)>元宝〕已转回您身上，请购买摆摊物品前务必先锁定 249 255
+CALCVAR HUMAN 摆摊个人元宝 = 0
+SAVEVAR HUMAN 摆摊个人元宝 ..\QuestDiary\Mir2m2开区清空文本(脚本QQ.800125104)\Mir2m2摆摊个人元宝.txt
+DELLINELIST ..\QuestDiary\Mir2m2开区清空文本(脚本QQ.800125104)\Mir2m2摆摊个人元宝.txt [<$USERNAME>] HardDisk
+DELLINELIST ..\QuestDiary\Mir2m2开区清空文本(脚本QQ.800125104)\Mir2m2摆摊个人元宝.txt 摆摊个人元宝=0 HardDisk
+BREAK
+#IF
+Equal S11 
+#ACT
+INC S11
+SendMsg 6 您没有锁定的元宝，需锁定请输入“@$(摆摊锁定元宝命令)+您身上要留下的元宝数量”比如输入“@$(摆摊锁定元宝命令)<$STR(S11)>100”，身上只留下100元宝，剩余的将锁定 249 255
+BREAK
+#ELSEACT
+MOV D16 <$STR(S11)>
+MOV S11 
+#IF
+LARGE D16 0
+#ELSEACT
+MOV S11 
+INC S11
+SendMsg 6 需要解锁请输入“@$(摆摊锁定元宝命令)”<$STR(S11)>需锁定请输入“@$(摆摊锁定元宝命令)+您身上要留下的元宝数量”比如输入“@$(摆摊锁定元宝命令)<$STR(S11)>100”，身上只留下100元宝，剩余的将锁定 249 255
+BREAK
+#IF
+CHECKGAMEGOLD = <$STR(D16)>
+#ACT
+SendMsg 6 你当前身上已经是剩余〔<$STR(D16)>元宝〕，无需锁定 249 255
+BREAK
+#IF
+CHECKGAMEGOLD > <$STR(D16)>
+#ACT
+CALCVAR HUMAN 摆摊个人元宝 + <$GAMEGOLD>
+CALCVAR HUMAN 摆摊个人元宝 - <$STR(D16)>
+SAVEVAR HUMAN 摆摊个人元宝 ..\QuestDiary\Mir2m2开区清空文本(脚本QQ.800125104)\Mir2m2摆摊个人元宝.txt
+GAMEGOLD = <$STR(D16)>
+SendMsg 6 锁定成功，当前身上剩余〔<$STR(D16)>元宝〕（需全部解锁请输入“@$(摆摊锁定元宝命令)”） 249 255
+BREAK
+#IF
+checkvar human 摆摊个人元宝 > 0
+#ACT
+GAMEGOLD + <$human(摆摊个人元宝)>
+CALCVAR HUMAN 摆摊个人元宝 = 0
+SAVEVAR HUMAN 摆摊个人元宝 ..\QuestDiary\Mir2m2开区清空文本(脚本QQ.800125104)\Mir2m2摆摊个人元宝.txt
+DELLINELIST ..\QuestDiary\Mir2m2开区清空文本(脚本QQ.800125104)\Mir2m2摆摊个人元宝.txt [<$USERNAME>] HardDisk
+DELLINELIST ..\QuestDiary\Mir2m2开区清空文本(脚本QQ.800125104)\Mir2m2摆摊个人元宝.txt 摆摊个人元宝=0 HardDisk
+MOV S11 （已将您锁定的元宝解锁，当前身上元宝<$GAMEGOLD>个）
+#IF
+CHECKGAMEGOLD = <$STR(D16)>
+#ACT
+SendMsg 6 你身上当前剩余〔<$STR(D16)>元宝〕（已将您锁定的元宝全部解锁） 249 255
+BREAK
+#IF
+CHECKGAMEGOLD > <$STR(D16)>
+#ACT
+CALCVAR HUMAN 摆摊个人元宝 + <$GAMEGOLD>
+CALCVAR HUMAN 摆摊个人元宝 - <$STR(D16)>
+SAVEVAR HUMAN 摆摊个人元宝 ..\QuestDiary\Mir2m2开区清空文本(脚本QQ.800125104)\Mir2m2摆摊个人元宝.txt
+GAMEGOLD = <$STR(D16)>
+SendMsg 6 锁定成功，当前身上剩余〔<$STR(D16)>元宝〕（已将您锁定的元宝部分解锁） 249 255
+BREAK
+#ELSEACT
+SendMsg 6 你的元宝不足<$STR(D16)>个<$STR(S11)> 249 255
+BREAK
+[@Mir2m2摆摊锁定脚本常量加载(脚本QQ.800125104)]
+#CALL [\Mir2m2摆摊锁定配置(脚本QQ.800125104)\Mir2m2摆摊锁定脚本.txt] @Mir2m2摆摊锁定脚本常量
+}
+
+[@Mir2m2摆摊锁定脚本NPC]
+{
+#INCLUDE 脚本QQ1976645821.ini
+#ACT
+#SAY
+<COLOR=clPurple ------------------------------------------------------------>\ 
+<COLOR=clAqua 【防止黑摊】> <COLOR=#254 Hot~> <COLOR=clLime ≡≡★2022天堂复古1.76★≡≡>\
+<COLOR=clPurple ------------------------------------------------------------>\
+<$橙0 为防止黑摊（玩家摆摊后可以随时更改价格，您是看不到改后价格的）>\
+<$橙0 特推出元宝锁定最高消费功能，请在购买物品前在线先输入以下命令：>\
+<$紫1 锁定元宝命令：@$(摆摊锁定元宝命令)+空格+数量  解锁元宝命令：@$(摆摊锁定元宝命令)>\
+<COLOR=clPurple ------------------------------------------------------------>\
+<输入身上剩余元宝数量，其余锁定/@Mir2m2摆摊锁定元宝>  <解锁全部元宝/@Mir2m2摆摊解锁元宝>  <进入交易市场/@进入交易>\
+<COLOR=clPurple ------------------------------------------------------------>\
+
+
+[@进入交易]
+#IF
+TRUE
+#ACT
+MAPMOVE GA0 66 66
+
+[@Mir2m2摆摊锁定元宝]
+#ACT
+QUERYVALUE 81 1 10 @Mir2m2摆摊锁定元宝2 请输入您身上要留下的元宝数量：\比如输入“100”，身上只留下100元宝，其余的将锁定 249 255
+[@Mir2m2摆摊锁定元宝2]
+#ACT
+GMEXECUTE $(摆摊锁定元宝命令) <$STR(M81)>
+[@Mir2m2摆摊解锁元宝]
+#ACT
+GMEXECUTE $(摆摊锁定元宝命令)
+[@Mir2m2摆摊锁定脚本常量加载(脚本QQ.800125104)]
+#CALL [\Mir2m2摆摊锁定配置(脚本QQ.800125104)\Mir2m2摆摊锁定脚本.txt] @Mir2m2摆摊锁定脚本常量
+}
+
+[@Mir2m2摆摊锁定脚本QM]
+{
+#IF
+CHECKLEVELEX > 0
+#ACT
+VAR Integer HUMAN 摆摊个人元宝 "" HardDisk
+LOADVAR HUMAN 摆摊个人元宝 ..\QuestDiary\Mir2m2开区清空文本(脚本QQ.800125104)\Mir2m2摆摊个人元宝.txt
+#IF
+checkvar human 摆摊个人元宝 > 0
+#ACT
+GMEXECUTE $(摆摊锁定元宝命令)
+[@Mir2m2摆摊锁定脚本常量加载(脚本QQ.800125104)]
+#CALL [\Mir2m2摆摊锁定配置(脚本QQ.800125104)\Mir2m2摆摊锁定脚本.txt] @Mir2m2摆摊锁定脚本常量
+}

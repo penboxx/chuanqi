@@ -1,0 +1,29 @@
+[@main]
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clAqua 【镇妖塔】>  <COLOR=clRed Hot～>  <COLOR=clLime ★〓〓〓★2022最火暴76小极品★〓〓〓★>\ 
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clRed ♀. 本地图分12层。每层都有BOSS，进塔越深BOSS越强，小心>\
+<COLOR=clAqua ♀. 怪物刷新：小BOSS-60分钟刷新，大BOSS-120分钟刷新>\
+<COLOR=clLime ♀. 爆率介绍：炎黄初级装备爆率3倍>\
+<COLOR=clFuchsia ♀. 进入条件：51级以上的玩家进行挑战>\
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　                     <我要进入挑战/@进> \ 
+
+　         <COLOR=clAqua 建议组队进入每一层需要的等级要求不一样.>
+
+
+
+[@进]
+#If
+CHECKLEVELEX < 51
+#Act
+messagebox  很遗憾！挑战失败了，您的等级不够51级！
+break
+
+#if
+#act
+MAPMOVE ZYT8
+SendMSG 0 ★玩家[%S]进入镇妖塔8层寻宝去了 249 201
+SendMSG 0 ★玩家[%S]进入镇妖塔8层寻宝去了 249 201
+SendMSG 0 ★玩家[%S]进入镇妖塔8层寻宝去了 249 201 
+break

@@ -1,0 +1,201 @@
+[@MAIN]
+前方就是充满危险的恶魔之地，我镇守着这个唯一的入口。\
+只要你叫给我一个卷轴，我就能带你和你的队伍去斩妖除魔!\
+前路将会异常凶险，最好不要孤身犯险.....\
+听去过地下宫殿的勇士说，最近地下宫殿又有新的恶魔出现！\ \
+<洞察魔兽信息/@魔兽>\
+<让我再考虑考虑/@EXIT>\
+
+[@魔兽]
+相传在玛法大陆的某些角落，有一批恶魔镇守着六件重装，\
+想要获得这些宝物，就必须首先要杀死这些恶魔，\
+无数的英雄为了获得这些宝物，不惜以自己的生命作为代价，\
+有些人成功了，更多的勇士则倒在了恶魔的脚下，\
+这位英雄，您是否也想去发现这些魔兽的踪迹，\
+给我5万金币，我就能帮您去查看他们的踪影，\
+给我5颗金刚石，我就能传送您去独闯魔穴。\
+<花5万金币，探查魔兽踪影/@探查>\
+<付1颗金刚石，前往除魔/@金刚石>\
+
+[@探查]
+您想查询哪个魔域的恶魔信息呢？\
+<死亡神殿/@神殿>      <堕落坟场/@坟场>\ \
+<深渊魔域/@魔域>      <地狱烈焰/@烈焰>\ \
+<困惑殿堂/@困惑>      <钳虫巢穴/@钳虫>\ \
+<返回/@MAIN>\
+[@钳虫]
+#IF
+CHECKGOLD 50000
+#ACT
+TAKE 金币 50000
+GOTO @检测钳虫
+BREAK
+#ELSESAY
+您好象没有50000金币啊，我也帮不了你了！\
+[@检测钳虫]
+#IF
+CHECKmonmap T232 1
+#SAY
+让我掐指算算，\
+魔兽，已经出现。\
+#ELSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@困惑]
+#IF
+CHECKGOLD 50000
+#ACT
+TAKE 金币 50000
+GOTO @检测困惑
+BREAK
+#ELSESAY
+您好象没有50000金币啊，我也帮不了你了！\
+[@检测困惑]
+#IF
+CHECKmonmap T118 1
+#SAY
+让我掐指算算，\
+魔兽，已经出现。\
+#ELSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@神殿]
+#IF
+CHECKGOLD 50000
+#ACT
+TAKE 金币 50000
+GOTO @检测神殿
+BREAK
+#ELSESAY
+您好象没有50000金币啊，我也帮不了你了！\
+[@检测神殿]
+#IF
+CHECKmonmap T218 1
+#SAY
+让我掐指算算，\
+魔兽，已经出现。\
+#ELSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@坟场]
+#IF
+CHECKGOLD 50000
+#ACT
+TAKE 金币 50000
+GOTO @检测坟场
+BREAK
+#ELSESAY
+您好象没有50000金币啊，我也帮不了你了！\
+[@检测坟场]
+#IF
+CHECKmonmap T315 1
+#SAY
+让我掐指算算，\
+魔兽，已经出现。\
+#ELSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@魔域]
+#IF
+CHECKGOLD 50000
+#ACT
+TAKE 金币 50000
+GOTO @检测魔域
+BREAK
+#ELSESAY
+您好象没有50000金币啊，我也帮不了你了！\
+[@检测魔域]
+#IF
+CHECKmonmap T219 1
+#SAY
+让我掐指算算，\
+魔兽，已经出现。\
+#ELSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@烈焰]
+#IF
+CHECKGOLD 50000
+#ACT
+TAKE 金币 50000
+GOTO @检测烈焰
+BREAK
+#ELSESAY
+您好象没有50000金币啊，我也帮不了你了！\
+[@检测烈焰]
+#IF
+CHECKmonmap T339 1
+#SAY
+让我掐指算算，\
+魔兽，已经出现。\
+#ELSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+
+[@金刚石]
+我这里能送你去一些魔域的大概地点，但是你要给我一颗金刚石，\
+至于具体前往魔域的路径，就要靠你智慧的头脑了。\
+<去死亡神殿/@死亡神殿>                <去堕落坟场/@堕落坟场>\
+<去深渊魔域/@深渊魔域>                <去地狱烈焰/@地狱烈焰>\
+<去困惑殿堂/@困惑殿堂>                <去钳虫巢穴/@钳虫巢穴>\
+[@困惑殿堂]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 1
+MAPMOVE R001 58 99
+SENDMSG 0 恭喜[<$USERNAME>]用金刚石直接进入了困惑殿堂！ 251 249
+BREAK
+#ELSESAY
+你好象还没有金刚石啊？
+[@死亡神殿]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 1
+MAPMOVE 4 206 226
+SENDMSG 0 恭喜[<$USERNAME>]用金刚石直接进入了死亡神殿！ 251 249
+BREAK
+#ELSESAY
+你好象还没有金刚石啊？
+[@堕落坟场]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 1
+MAPMOVE 1 305 65
+SENDMSG 0 恭喜[<$USERNAME>]用金刚石直接进入了坠落坟场！ 251 249
+BREAK
+#ELSESAY
+你好象还没有金刚石啊？
+[@深渊魔域]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 1
+MAPMOVE 1 210 320
+SENDMSG 0 恭喜[<$USERNAME>]用金刚石直接进入了深渊魔域！ 251 249
+BREAK
+#ELSESAY
+你好象还没有金刚石啊？
+[@地狱烈焰]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 1
+MAPMOVE 0 452 452
+SENDMSG 0 恭喜[<$USERNAME>]用金刚石直接进入了地狱烈焰！ 251 249
+BREAK
+#ELSESAY
+你好象还没有金刚石啊？
+[@钳虫巢穴]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 1
+MAPMOVE 11 338 328
+SENDMSG 0 恭喜[<$USERNAME>]用金刚石直接进入了钳虫巢穴！ 251 249
+BREAK
+#ELSESAY
+你好象还没有金刚石啊？
+

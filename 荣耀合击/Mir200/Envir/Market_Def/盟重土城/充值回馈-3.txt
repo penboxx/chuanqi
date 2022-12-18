@@ -1,0 +1,83 @@
+()
+%100
+[@main]
+#IF
+#say
+\  <COLOR=clAqua 【充值回馈】> <COLOR=clRed Hot~>  <COLOR=clLime         当前充值点：>[<$GAMEPOINT>]元 \
+\<COLOR=clFuchsia ╰══════════════════════════╯>\
+
+<【领取】/@100元> <COLOR=clAqua 宣传回馈：>运9小红剑*2+心灵召唤+三倍卷轴*3+永久2.5倍经验+1.2倍暴率 \
+<【领取】/@200元> <COLOR=clAqua 100元回馈：>在线回收[金币]+白银斗笠+永久3.0倍经验+1.5倍暴率\
+<【领取】/@300元> <COLOR=clAqua 200元回馈：>在线回收[金刚石]+技能神石*10+荣誉点：50幸运暴击卷轴+永久4.0倍经验+2.0倍暴率  \
+<COLOR=clFuchsia -------  -------  -------  -------  -------  ------->\
+<注：幸运暴击卷轴可以给项链增加3点幸运和5点暴击！>\
+<注：在线回收(金刚石)箱子新增加在线仓库，在线兑换聚灵珠功能>\
+<注：为了感谢扶持本服的玩家，限定唯一回馈方式，回馈可依次领取！>\
+
+
+
+
+[@100元]
+#IF
+CHECK [61] 1
+#act
+MESSAGEBOX 您已经领取过了无法重复领取
+BREAK
+
+#IF
+CHECK [61] 0
+CHECKGAMEPOINT > 9
+#act
+give 幸运小红剑 2
+give 三倍卷轴 3
+give 心灵召唤 1
+SET [61] 1
+MOV S3 ↘↘≮宣传●大使≯↙↙
+SETRANKLEVELNAME %s\<$STR(S2)>\\<$STR(S3)>\\<$STR(S1)>\斩杀↘↘≮<$HUMAN(SRZS)>≯↙↙人,阵亡↘↘≮<$HUMAN(BSZS)>≯次
+SENDMSG 0 系统：恭喜玩家%s在土城充值回馈处领取10元宣传回馈！ 151 249 
+#ELSEACT
+MESSAGEBOX 只有充值满10元的玩家方可领取
+
+[@200元]
+#IF
+CHECK [67] 1
+#act
+MESSAGEBOX 您已经领取过了无法重复领取
+BREAK
+
+#IF
+CHECK [67] 0
+CHECKGAMEPOINT > 99
+#act
+give 在线回收(金币) 1
+give 白银斗笠 1
+SET [67] 1
+MOV S3 ↘↘≮赞助●大使≯↙↙
+SETRANKLEVELNAME %s\<$STR(S2)>\\<$STR(S3)>\\<$STR(S1)>\斩杀↘↘≮<$HUMAN(SRZS)>≯↙↙人,阵亡↘↘≮<$HUMAN(BSZS)>≯次
+SENDMSG 0 系统：恭喜玩家%s在土城充值回馈处领取100元充值回馈！ 151 249 
+#ELSEACT
+MESSAGEBOX 只有充值满100元的玩家方可领取
+
+
+
+[@300元]
+#IF
+CHECK [62] 1
+#act
+MESSAGEBOX 您已经领取过了无法重复领取
+BREAK
+
+#IF
+CHECK [62] 0
+CHECKGAMEPOINT > 199
+#act
+give 在线回收(金刚石) 1
+GIVE 荣誉点：50 1
+GIVE 幸运暴击卷轴 1
+Gmexecute 11 技能神石 10
+SET [62] 1
+MOV S3 ↘↘≮荣耀●大使≯↙↙
+SETRANKLEVELNAME %s\<$STR(S2)>\\<$STR(S3)>\\<$STR(S1)>\斩杀↘↘≮<$HUMAN(SRZS)>≯↙↙人,阵亡↘↘≮<$HUMAN(BSZS)>≯次
+SENDMSG 0 系统：恭喜玩家%s在土城充值回馈处领取200元充值回馈！ 151 249
+#ELSEACT
+MESSAGEBOX 只有充值满200元的玩家方可领取

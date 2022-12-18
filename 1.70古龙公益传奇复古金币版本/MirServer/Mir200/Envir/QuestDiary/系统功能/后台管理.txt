@@ -1,0 +1,1200 @@
+[@管理]
+{
+#IF
+ISADMIN
+#SAY
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置> ┆\
+<[测试阶段设置]/@测试阶段设置> ┆\
+<[地图开放设置]/@地图开放设置> ┆\
+<[双倍经验设置]/@双倍经验设置> ┆\
+<[行会攻沙设置]/@行会攻沙设置> ┆此版本由Legend专业制作小组成员\
+<[周末双倍设置]/@周末双倍设置> ┆版本定做: QQ：578651088\
+<[游戏活动设置]/@游戏活动设置> ┆授权信息: Legend仿盛大1.76金币合击版\
+<[群雄争霸管理]/@群雄争霸管理> ┆古龙官方: <www.177222.com/@Bluem2>\
+#ELSEACT
+SENDMSG 7 系统提示:非法进入后台管理....
+BREAK
+
+[@Bluem2]
+#ACT
+WebBrowser http://www.177222.com
+
+
+
+
+[@游戏活动设置]
+#IF
+EQUAL G19 0
+EQUAL G50 0
+#SAY
+<[冲值返还设置]/@冲值返还设置> ┆          夺宝战活动状态为：<COLOR=CLRED 关闭>\
+<[属性修改设置]/@属性修改设置> ┆\
+<[测试阶段设置]/@测试阶段设置> ┆            <确定开启夺宝战活动/@开启夺宝战>\
+<[地图开放设置]/@地图开放设置> ┆\
+<[双倍经验设置]/@双倍经验设置> ┆\
+<[行会攻沙设置]/@行会攻沙设置> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆         历练排行榜活动状态为：<COLOR=CLRED 关闭>\
+<COLOR=clAqua [游戏活动设置]>-┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆            <确定开启历练排行榜/@开启历练>\
+#ACT
+BREAK
+
+
+#IF
+EQUAL G19 1
+EQUAL G50 0
+#SAY
+<[冲值返还设置]/@冲值返还设置> ┆          夺宝战活动状态为：<COLOR=CLRED 开启>\
+<[属性修改设置]/@属性修改设置> ┆\
+<[测试阶段设置]/@测试阶段设置> ┆            <确定关闭夺宝战活动/@关闭夺宝战>\
+<[地图开放设置]/@地图开放设置> ┆\
+<[双倍经验设置]/@双倍经验设置> ┆\
+<[行会攻沙设置]/@行会攻沙设置> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆         历练排行榜活动状态为：<COLOR=CLRED 关闭>\
+<COLOR=clAqua [游戏活动设置]>-┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆            <确定开启历练排行榜/@开启历练>\
+#ACT
+BREAK
+
+
+#IF
+EQUAL G19 0
+EQUAL G50 1
+#SAY
+<[冲值返还设置]/@冲值返还设置> ┆          夺宝战活动状态为：<COLOR=CLRED 关闭>\
+<[属性修改设置]/@属性修改设置> ┆\
+<[测试阶段设置]/@测试阶段设置> ┆            <确定开启夺宝战活动/@开启夺宝战>\
+<[地图开放设置]/@地图开放设置> ┆\
+<[双倍经验设置]/@双倍经验设置> ┆\
+<[行会攻沙设置]/@行会攻沙设置> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆         历练排行榜活动状态为：<COLOR=CLRED 开启>\
+<COLOR=clAqua [游戏活动设置]>-┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆            <确定关闭历练排行榜/@关闭历练>\
+#ACT
+BREAK
+
+#IF
+EQUAL G19 1
+EQUAL G50 1
+#SAY
+<[冲值返还设置]/@冲值返还设置> ┆          夺宝战活动状态为：<COLOR=CLRED 开启>\
+<[属性修改设置]/@属性修改设置> ┆\
+<[测试阶段设置]/@测试阶段设置> ┆            <确定关闭夺宝战活动/@关闭夺宝战>\
+<[地图开放设置]/@地图开放设置> ┆\
+<[双倍经验设置]/@双倍经验设置> ┆\
+<[行会攻沙设置]/@行会攻沙设置> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆         历练排行榜活动状态为：<COLOR=CLRED 开启>\
+<COLOR=clAqua [游戏活动设置]>-┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆            <确定关闭历练排行榜/@关闭历练>\
+#ACT
+BREAK
+
+
+[@开启夺宝战]
+#IF
+ISADMIN
+#ACT
+MOV G19 1
+SENDMSG 0 喜讯！！系统夺宝战活动已开启！！ 252 249 10
+SENDMSG 0 喜讯！！系统夺宝战活动已开启！！ 252 249 10
+GOTO @游戏活动设置
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@关闭夺宝战]
+#IF
+ISADMIN
+#ACT
+MOV G19 0
+SENDMSG 0 夺宝战活动已关闭!! 255 249
+SENDMSG 0 夺宝战活动已关闭!! 255 249
+SENDMSG 0 夺宝战活动已关闭!! 255 249
+GOTO @游戏活动设置
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+
+[@开启历练]
+#IF
+ISADMIN
+#ACT
+MOV G50 1
+MOV G51 0
+MOV G52 0
+MOV G53 0
+MOV G54 0
+MOV G55 0
+MOV G56 0
+MOV G57 0
+MOV G58 0
+MOV G59 0
+MOV G60 0
+MOV G61 0
+MOV G62 0
+MOV G63 0
+MOV G64 0
+MOV G65 0
+MOV G66 0
+MOV G67 0
+MOV G68 0
+MOV G69 0
+MOV G70 0
+MOV A51 暂无
+MOV A52 暂无
+MOV A53 暂无
+MOV A54 暂无
+MOV A55 暂无
+MOV A56 暂无
+MOV A57 暂无
+MOV A58 暂无
+MOV A59 暂无
+MOV A60 暂无
+MOV A61 暂无
+MOV A62 暂无
+MOV A63 暂无
+MOV A64 暂无
+MOV A65 暂无
+MOV A66 暂无
+MOV A67 暂无
+MOV A68 暂无
+MOV A69 暂无
+MOV A70 暂无
+CLEARNAMELIST ..\QuestDiary\数据文件\会员名单\历练大奖.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\会员名单\历练一等奖.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\会员名单\历练二等奖.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\会员名单\历练三等奖.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\会员名单\历练报名名单.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\初始经验Save.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\初始等级Save.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\初始最大经验Save.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\后来等级Save.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\升级后经验Save.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\后来经验Save.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\聚会经验Save.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\日历练点Save.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\周历练点Save.txt
+SENDMSG 7 历练排行榜活动已开启
+GOTO @游戏活动设置
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@关闭历练]
+#IF
+ISADMIN
+#ACT
+MOV G50 0
+MOV G51 0
+MOV G52 0
+MOV G53 0
+MOV G54 0
+MOV G55 0
+MOV G56 0
+MOV G57 0
+MOV G58 0
+MOV G59 0
+MOV G60 0
+MOV G61 0
+MOV G62 0
+MOV G63 0
+MOV G64 0
+MOV G65 0
+MOV G66 0
+MOV G67 0
+MOV G68 0
+MOV G69 0
+MOV G70 0
+MOV A51 暂无
+MOV A52 暂无
+MOV A53 暂无
+MOV A54 暂无
+MOV A55 暂无
+MOV A56 暂无
+MOV A57 暂无
+MOV A58 暂无
+MOV A59 暂无
+MOV A60 暂无
+MOV A61 暂无
+MOV A62 暂无
+MOV A63 暂无
+MOV A64 暂无
+MOV A65 暂无
+MOV A66 暂无
+MOV A67 暂无
+MOV A68 暂无
+MOV A69 暂无
+MOV A70 暂无
+GMEXECUTE 开始提问 @GM关闭历练
+SENDMSG 7 历练排行榜活动已关闭
+GOTO @游戏活动设置
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+
+[@冲值返还设置]
+<COLOR=clAqua [冲值返还设置]>-┆ \
+<[属性修改设置]/@属性修改设置> ┆\
+<[测试阶段设置]/@测试阶段设置> ┆       正式开区后点击[开启冲值返还]\
+<[地图开放设置]/@地图开放设置> ┆\
+<[双倍经验设置]/@双倍经验设置> ┆     测试期间冲值玩家即可领取返还金币\
+<[行会攻沙设置]/@行会攻沙设置> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[游戏活动设置]/@游戏活动设置> ┆      <开启冲值返还/@开启冲值返还>     <关闭冲值返还/@关闭冲值返还>\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+
+[@开启冲值返还]
+#ACT
+MOV G16 1
+SENDMSG 7 冲值返还成功开启！
+SENDMSG 0 冲值返还成功开启！请测试期间冲值玩家通过比奇NPC冲值返还领取返还金币…… 252 253 20
+GOTO @冲值返还设置
+BREAK
+
+[@关闭冲值返还]
+#ACT
+MOV G16 0
+SENDMSG 7 冲值返还成功关闭！
+GOTO @冲值返还设置
+BREAK
+
+
+[@群雄争霸管理]
+#IF
+LARGE G10 0
+#SAY
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置> ┆       当前群雄争霸模式为：<COLOR=CLYELLOW 开启状态>\
+<[测试阶段设置]/@测试阶段设置> ┆  在这里你可以选择以下地图为群雄争霸战场\
+<[地图开放设置]/@地图开放设置> ┆    <地图1/@争霸1>  <地图2/@争霸2>  <地图3/@争霸3>  <地图4/@争霸4>  <地图5/@争霸5>\
+<[双倍经验设置]/@双倍经验设置> ┆    <地图6/@争霸6>  <地图7/@争霸7>  <地图8/@争霸8>  <地图9/@争霸9>  <地图0/@争霸10>         <COLOR=clRED 活动地图>：<$STR(A6)>\
+<[行会攻沙设置]/@行会攻沙设置> ┆              <进入争霸地图/@进入争霸地图>\
+<[周末双倍设置]/@周末双倍设置> ┆              <设置争霸奖励/@@InPutInteger4>                    <COLOR=clRED 争霸奖励>：<$STR(G11)>\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<COLOR=clAqua [群雄争霸管理]>-┆              <关闭群雄争霸/@关闭群雄争霸>\
+#ELSESAY
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置> ┆       当前群雄争霸模式为：<COLOR=CLRED 关闭状态>\
+<[测试阶段设置]/@测试阶段设置> ┆  在这里你可以选择以下地图为群雄争霸战场\
+<[地图开放设置]/@地图开放设置> ┆    <地图1/@争霸1>  <地图2/@争霸2>  <地图3/@争霸3>  <地图4/@争霸4>  <地图5/@争霸5>\
+<[双倍经验设置]/@双倍经验设置> ┆    <地图6/@争霸6>  <地图7/@争霸7>  <地图8/@争霸8>  <地图9/@争霸9>  <地图0/@争霸10>         <COLOR=clRED 活动地图>：<$STR(A6)>\
+<[行会攻沙设置]/@行会攻沙设置> ┆              <进入争霸地图/@进入争霸地图>\
+<[周末双倍设置]/@周末双倍设置> ┆              <设置争霸奖励/@@InPutInteger4>                    <COLOR=clRED 争霸奖励>：<$STR(G11)>\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<COLOR=clAqua [群雄争霸管理]>-┆              <开启群雄争霸/@开启群雄争霸>\
+
+[@@InPutInteger4]
+#IF
+ISADMIN
+#ACT
+DelayGoto 1 ~InPutInteger4
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+[~InPutInteger4]
+#IF
+ISADMIN
+#ACT
+MOV G11 <$STR(M4)>
+SENDMSG 7 操作成功：群雄争霸奖励已设置！
+GOTO @群雄争霸管理
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@争霸1]
+#IF
+ISADMIN
+#ACT
+MOV A6 F001
+SENDMSG 7 操作成功：群雄争霸地图已设置！
+GOTO @群雄争霸管理
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@争霸2]
+#IF
+ISADMIN
+#ACT
+MOV A6 F002
+SENDMSG 7 操作成功：群雄争霸地图已设置！
+GOTO @群雄争霸管理
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@争霸3]
+#IF
+ISADMIN
+#ACT
+MOV A6 F003
+SENDMSG 7 操作成功：群雄争霸地图已设置！
+GOTO @群雄争霸管理
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@争霸4]
+#IF
+ISADMIN
+#ACT
+MOV A6 F004
+SENDMSG 7 操作成功：群雄争霸地图已设置！
+GOTO @群雄争霸管理
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@争霸5]
+#IF
+ISADMIN
+#ACT
+MOV A6 F005
+SENDMSG 7 操作成功：群雄争霸地图已设置！
+GOTO @群雄争霸管理
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@争霸6]
+#IF
+ISADMIN
+#ACT
+MOV A6 F006
+SENDMSG 7 操作成功：群雄争霸地图已设置！
+GOTO @群雄争霸管理
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@争霸7]
+#IF
+ISADMIN
+#ACT
+MOV A6 F007
+SENDMSG 7 操作成功：群雄争霸地图已设置！
+GOTO @群雄争霸管理
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@争霸8]
+#IF
+ISADMIN
+#ACT
+MOV A6 F008
+SENDMSG 7 操作成功：群雄争霸地图已设置！
+GOTO @群雄争霸管理
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@争霸9]
+#IF
+ISADMIN
+#ACT
+MOV A6 F009
+SENDMSG 7 操作成功：群雄争霸地图已设置！
+GOTO @群雄争霸管理
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@争霸10]
+#IF
+ISADMIN
+#ACT
+MOV A6 F010
+SENDMSG 7 操作成功：群雄争霸地图已设置！
+GOTO @群雄争霸管理
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@进入争霸地图]
+#IF
+ISADMIN
+#ACT
+CLOSE
+MAPMOVE <$STR(A6)>
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@关闭群雄争霸]
+#IF
+ISADMIN
+#ACT
+MOV G10 0
+SENDMSG 7 操作成功：群雄争霸地图已关闭！
+GOTO @群雄争霸管理
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@开启群雄争霸]
+#IF
+EQUAL G11 0
+#ACT
+MESSAGEBOX 请先设置活动奖励金币数量！
+BREAK
+#IF
+EQUAL A6 
+#ACT
+MESSAGEBOX 请先设置活动地图！
+BREAK
+#IF
+ISADMIN
+#ACT
+MOV G10 1
+SENDMSG 0 “群雄争霸”活动已开启！详情请找比奇NPC群雄争霸了解…… 252 253 20
+GOTO @群雄争霸管理
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+;---------------------------------------
+
+[@周末双倍设置]
+#IF
+large G8 0
+#SAY
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置> ┆\
+<[测试阶段设置]/@测试阶段设置> ┆           本区已经开到第 <$STR(G8)> 周\
+<[地图开放设置]/@地图开放设置> ┆\
+<[双倍经验设置]/@双倍经验设置> ┆              <开区周数清零/@开区周数清零>\
+<[行会攻沙设置]/@行会攻沙设置> ┆\
+<COLOR=clAqua [周末双倍设置]>-┆  提示：<COLOR=CLAQUA 本>周六、周日19:00-22:00打怪双倍经验\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+#ELSESAY
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置> ┆\
+<[测试阶段设置]/@测试阶段设置> ┆           本区已经开到第 <$STR(G8)> 周\
+<[地图开放设置]/@地图开放设置> ┆\
+<[双倍经验设置]/@双倍经验设置> ┆              <开区周数清零/@开区周数清零>\
+<[行会攻沙设置]/@行会攻沙设置> ┆\
+<COLOR=clAqua [周末双倍设置]>-┆  提示：<COLOR=CLAQUA 下>周六、周日19:00-22:00打怪双倍经验\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+
+[@开区周数清零]
+#IF
+ISADMIN
+#ACT
+MOV G8 0
+SENDMSG 7 设置成功！
+GOTO @周末双倍设置
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@行会攻沙设置]
+#IF
+EQUAL G3 1
+#SAY
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置> ┆       当前行会攻沙模式为：<COLOR=CLYELLOW 开启状态>\
+<[测试阶段设置]/@测试阶段设置> ┆    各大行会会长可在比奇皇宫申请行会攻沙\
+<[地图开放设置]/@地图开放设置> ┆             <关闭行会自由攻沙/@关闭行会攻沙>\
+<[双倍经验设置]/@双倍经验设置> ┆\
+<COLOR=clAqua [行会攻沙设置]>-┆    <将所有行会加入攻城战/@加入攻城战> 请在20:00前操作\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+#ELSESAY
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置> ┆       当前行会攻沙模式为：<COLOR=CLRED 关闭状态>\
+<[测试阶段设置]/@测试阶段设置> ┆    所有行会不允许在比奇皇宫申请行会攻沙\
+<[地图开放设置]/@地图开放设置> ┆             <开启行会自由攻沙/@开启行会攻沙>\
+<[双倍经验设置]/@双倍经验设置> ┆\
+<COLOR=clAqua [行会攻沙设置]>-┆    <将所有行会加入攻城战/@加入攻城战> 请在20:00前操作\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+
+[@加入攻城战]
+#IF
+ISADMIN
+#ACT
+Gmexecute AddToCastleWarList 0 *
+SENDMSG 7 设置成功！所有行会已加入了攻沙列表！
+GOTO @行会攻沙设置
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+
+[@关闭行会攻沙]
+#IF
+ISADMIN
+#ACT
+MOV G3 0
+SENDMSG 7 设置成功！所有行会将不允许在比奇皇宫申请行会攻沙！
+GOTO @行会攻沙设置
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@开启行会攻沙]
+#IF
+ISADMIN
+#ACT
+MOV G3 1
+SENDMSG 7 设置成功！各大行会会长都可以在比奇皇宫申请行会攻沙！
+GOTO @行会攻沙设置
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+
+[@双倍经验设置]
+#IF
+EQUAL G2 1
+#SAY
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置> ┆          双倍经验活动状况为：<COLOR=CLYELLOW 开启状况>\
+<[测试阶段设置]/@测试阶段设置> ┆              <关闭双倍经验活动/@关闭双倍>\
+<[地图开放设置]/@地图开放设置> ┆\
+<COLOR=clAqua [双倍经验设置]>-┆     注意：在M2上修改打怪经验倍率为当前的\
+<[行会攻沙设置]/@行会攻沙设置> ┆　         二分之一后再使用此功能！\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+#ELSESAY
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置> ┆          双倍经验活动状况为：<COLOR=CLRED 关闭状况>\
+<[测试阶段设置]/@测试阶段设置> ┆              <开启双倍经验活动/@开启双倍>\
+<[地图开放设置]/@地图开放设置> ┆\
+<COLOR=clAqua [双倍经验设置]>-┆     注意：在M2上修改打怪经验倍率为当前的\
+<[行会攻沙设置]/@行会攻沙设置> ┆　          2倍以后再使用此功能！\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+
+[@关闭双倍]
+#IF
+ISADMIN
+#ACT
+MOV G2 0
+SENDMSG 0 “双倍经验”活动已关闭,请各位玩家等待下次开放时间！…… 252 253 20
+GOTO @双倍经验设置
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@开启双倍]
+#IF
+ISADMIN
+#ACT
+MOV G2 1
+SENDMSG 0 “双倍经验”活动已开启！…… 252 253 20
+GOTO @双倍经验设置
+#ELSEACT
+MESSAGEBOX 只有管理员才能使用此功能！
+
+[@地图开放设置]
+<[冲值返还设置]/@冲值返还设置> ┆ 石祖：<$STR(G17)>   <开放/@开放石祖>                默认为开区第2天12:00开放\
+<[属性修改设置]/@属性修改设置> ┆ 封魔：<$STR(G4)>   <开放/@开放封魔>  <设置开放时间/@FMTIME>  默认为开区第3天20:00自动开放  <$STR(A1)>\
+<[测试阶段设置]/@测试阶段设置> ┆ 苍月：<$STR(G35)>   <开放/@开放苍月>\
+<COLOR=clAqua [地图开放设置]>-┆ 白日：<$STR(G6)>   <开放/@开放白日>  <设置开放时间/@BRTIME>  默认为开区第5天20:00自动开放  <$STR(A3)>\
+<[双倍经验设置]/@双倍经验设置> ┆ 焰火：<$STR(G5)>   <开放/@开放焰火>  <设置开放时间/@YHTIME>  默认为开区第2天18:00自动开放  <$STR(A2)>\
+<[行会攻沙设置]/@行会攻沙设置> ┆ 地下：<$STR(G14)>   <开放/@开放地下>  <设置开放时间/@DXTIME>  默认为开区第2天20:00自动开放  <$STR(A5)>\
+<[周末双倍设置]/@周末双倍设置> ┆ 重装：<$STR(G7)>   <开放/@开放重装>  <关闭/@关闭重装>          默认为区里有10位40级玩家开放\
+<[游戏活动设置]/@游戏活动设置> ┆ <开放4-8/@开放幻境1>     <开放9,10/@开放幻境2>\
+<[群雄争霸管理]/@群雄争霸管理> ┆       本服务器已开区<$STR(G18)>天\ \
+　                说明：<COLOR=CLLIME 0=此地图为关闭状态，1=此地图为开启状态！>\
+　                      <COLOR=CLLIME 点击[开放]，则会马上开放此地图！>\
+　                      <COLOR=CLLIME [设置开放时间]，只是NPC上会显示此地图的开放时间介绍>\
+
+[@开放苍月]
+#ACT
+MOV G35 1
+SENDMSG 0 神秘的苍月岛地图成功开放！…… 252 253 20
+GOTO @地图开放设置
+BREAK
+
+[@开放幻境1]
+#ACT
+MOV H90 1
+SENDMSG 0 神秘的幻境4-8层地图成功开放！…… 252 253 20
+GOTO @地图开放设置
+BREAK
+
+[@开放幻境2]
+#ACT
+MOV H91 1
+SENDMSG 0 神秘的幻境9、10层地图成功开放！…… 252 253 20
+GOTO @地图开放设置
+BREAK
+
+
+[@开放石祖]
+#ACT
+MOV G17 1
+SENDMSG 7 石墓阵、祖玛七层地图成功开放！
+SENDMSG 0 神秘的石墓阵、祖玛七层地图成功开放！…… 252 253 20
+GOTO @地图开放设置
+BREAK
+
+[@开放地下]
+#ACT
+MOV G14 1
+MOV A5 <解救天工神剪/@天工神剪>
+SENDMSG 7 地下宫殿地图成功开放！
+SENDMSG 0 神秘的地下宫殿成功开放！…… 252 253 20
+GOTO @地图开放设置
+BREAK
+
+[@开放封魔]
+#ACT
+MOV G4 1
+MOV A1 <向封魔谷移动/@move3>
+SENDMSG 7 封魔谷地图成功开放！
+SENDMSG 0 神秘的封魔谷地图成功开放！…… 252 253 20
+GOTO @地图开放设置
+BREAK
+
+[@开放焰火]
+#ACT
+MOV G5 1
+MOV A2 <焰火屠魔/@火焰屠魔>
+SENDMSG 7 焰火屠魔地图成功开放！
+SENDMSG 0 神秘的焰火屠魔地图成功开放！…… 252 253 20
+GOTO @地图开放设置
+BREAK
+
+[@开放白日]
+#ACT
+MOV G6 1
+MOV A3 <向白日门移动/@move1>
+SENDMSG 7 白日门地图成功开放！
+SENDMSG 0 神秘的白日门地图成功开放！…… 252 253 20
+GOTO @地图开放设置
+BREAK
+
+[@开放重装]
+#ACT
+MOV G7 1
+SENDMSG 7 六重装地图成功开放！
+SENDMSG 0 神秘的六重装地图成功开放！…… 252 253 20
+GOTO @地图开放设置
+BREAK
+
+[@FMTIME]
+#ACT
+QUERYVALUE 6 0 80 @封魔设置 请在下面输入开区时间:\例：<COLOR=CLYELLOW　向封魔谷移动-8月8日开放> QF
+BREAK
+
+[@YHTIME]
+#ACT
+QUERYVALUE 6 0 80 @焰火设置 请在下面输入开区时间:\例：<COLOR=CLYELLOW　焰火屠魔-8月8日开放> QF
+BREAK
+
+[@BRTIME]
+#ACT
+QUERYVALUE 6 0 80 @白日设置 请在下面输入开区时间:\例：<COLOR=CLYELLOW　向白日门移动-8月8日开放> QF
+BREAK
+
+[@DXTIME]
+#ACT
+QUERYVALUE 6 0 80 @地下设置 请在下面输入开区时间:\例：<COLOR=CLYELLOW　解救天工神剪-8月8日开放> QF
+BREAK
+
+
+[@111]
+#ACT
+QUERYVALUE 6 0 80 @幻境设置 请在下面输入开区时间:\例：<COLOR=CLYELLOW　解救天工神剪-8月8日开放> QF
+BREAK
+
+
+
+
+[@关闭重装]
+#ACT
+MOV G7 0
+SENDMSG 7 六重装地图成功关闭！
+GOTO @地图开放设置
+BREAK
+
+[@测试阶段设置]
+#IF
+equal G1 0
+#SAY
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置> ┆\
+<COLOR=clAqua [测试阶段设置]>-┆   当前服务器处于：[正式]开区模式！\
+<[地图开放设置]/@地图开放设置> ┆       <设置为测试开区模式/@设置为测试>\
+<[双倍经验设置]/@双倍经验设置> ┆\
+<[行会攻沙设置]/@行会攻沙设置> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+#ELSESAY
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置> ┆\
+<COLOR=clAqua [测试阶段设置]>-┆   当前服务器处于：[测试]开区模式！\
+<[地图开放设置]/@地图开放设置> ┆       <设置为正式开区模式/@设置为正式>\
+<[双倍经验设置]/@双倍经验设置> ┆\
+<[行会攻沙设置]/@行会攻沙设置> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+
+[@设置为测试]
+#ACT
+MOV G1 1
+SENDMSG 7 设置为测试开区模式生效！
+GOTO @测试阶段设置
+BREAK
+
+[@设置为正式]
+#ACT
+MOV G1 0
+SENDMSG 7 设置为正式开区模式生效！
+GOTO @测试阶段设置
+BREAK
+
+
+[@属性修改设置]
+<[冲值返还设置]/@冲值返还设置> ┆\
+<COLOR=clAqua [属性修改设置]>-┆       <项链+属性/@sx1>       <武器+属性/@sx4>\
+<[测试阶段设置]/@测试阶段设置> ┆       <手镯+属性/@sx2>       <衣服+属性/@sx5>\
+<[地图开放设置]/@地图开放设置> ┆　　　 <戒指+属性/@sx3>       <头盔+属性/@sx6>\
+<[双倍经验设置]/@双倍经验设置> ┆　　　 <勋章+属性/@sx7>\
+<[行会攻沙设置]/@行会攻沙设置> ┆       <改变性别/@改变性别>\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+
+[@改变性别]
+#IF
+gender man
+#ACT
+GOTO @towoman
+#ELSEACT
+GOTO @toman
+[@toman]
+#IF
+#ACT
+CHANGEGENDER 0
+GOTO @属性修改设置
+BREAK
+[@towoman]
+#IF
+#ACT
+CHANGEGENDER 1
+GOTO @属性修改设置
+BREAK
+
+;衣服加属性
+
+
+[@sx7]
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置>-┆     <勋章+攻击/@勋章1>  <勋章+魔法/@勋章2>  <勋章+道术/@勋章3>\
+<[测试阶段设置]/@测试阶段设置> ┆     <勋章+防御/@勋章4>  <勋章+魔御/@勋章5>  <勋章+持久/@勋章6>\
+<[地图开放设置]/@地图开放设置> ┆\
+<[双倍经验设置]/@双倍经验设置> ┆\
+<[行会攻沙设置]/@行会攻沙设置> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+
+
+;勋章攻击
+[@勋章1]
+#ACT
+UPGRADEITEMEX 2 2 0 1 0
+GOTO @sx7
+BREAK
+;勋章魔法
+[@勋章2]
+#ACT
+UPGRADEITEMEX 2 3 0 1 0
+GOTO @sx7
+BREAK
+;勋章道术
+[@勋章3]
+#ACT
+UPGRADEITEMEX 2 4 0 1 0
+GOTO @sx7
+BREAK
+;勋章防御
+[@勋章4]
+#ACT
+UPGRADEITEMEX 2 0 0 1 0
+GOTO @sx7
+BREAK
+;勋章魔御
+[@勋章5]
+#ACT
+UPGRADEITEMEX 2 1 0 1 0
+GOTO @sx7
+BREAK
+;勋章持久
+[@勋章6]
+#ACT
+UPGRADEITEMEX 2 15 0 1 0
+GOTO @sx7
+BREAK
+
+
+[@sx5]
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置>-┆     <衣服+攻击/@yfsx1>  <衣服+魔法/@yfsx2>  <衣服+道术/@yfsx3>\
+<[测试阶段设置]/@测试阶段设置> ┆     <衣服+防御/@yfsx4>  <衣服+魔御/@yfsx5>  <衣服+持久/@yfsx6>\
+<[地图开放设置]/@地图开放设置> ┆\
+<[双倍经验设置]/@双倍经验设置> ┆\
+<[行会攻沙设置]/@行会攻沙设置> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+
+;衣服攻击
+[@yfsx1]
+#ACT
+UPGRADEITEMEX 0 2 0 1 0
+GOTO @sx5
+BREAK
+;衣服魔法
+[@yfsx2]
+#ACT
+UPGRADEITEMEX 0 3 0 1 0
+GOTO @sx5
+BREAK
+;衣服道术
+[@yfsx3]
+#ACT
+UPGRADEITEMEX 0 4 0 1 0
+GOTO @sx5
+BREAK
+;衣服防御
+[@yfsx4]
+#ACT
+UPGRADEITEMEX 0 0 0 1 0
+GOTO @sx5
+BREAK
+;衣服魔御
+[@yfsx5]
+#ACT
+UPGRADEITEMEX 0 1 0 1 0
+GOTO @sx5
+BREAK
+;衣服持久
+[@yfsx6]
+#ACT
+UPGRADEITEMEX 0 14 0 1 0
+GOTO @sx5
+BREAK
+
+;武器加属性
+
+[@sx4]
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置>-┆     <武器+攻击/@wq1111>  <武器+魔法/@wq1222>  <武器+道术/@wq1333>\
+<[测试阶段设置]/@测试阶段设置> ┆     <武器+幸运/@wq1555>  <武器+准确/@wq1444>  <武器+持久/@wq1777>\
+<[地图开放设置]/@地图开放设置> ┆     <武器+速度/@wq1666>\
+<[双倍经验设置]/@双倍经验设置> ┆　　 注意:攻击速度+1必须要点10次武器\
+<[行会攻沙设置]/@行会攻沙设置> ┆　　 速度后才能正常增加!否则是减速度!\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+
+;武器攻击
+[@wq1111]
+#ACT
+UPGRADEITEMEX 1 0 0 1 0
+GOTO @sx4
+BREAK
+;武器魔法
+[@wq1222]
+#ACT
+UPGRADEITEMEX 1 1 0 1 0
+GOTO @sx4
+BREAK
+;武器道术
+[@wq1333]
+#ACT
+UPGRADEITEMEX 1 2 0 1 0
+GOTO @sx4
+BREAK
+;武器幸运
+[@wq1555]
+#ACT
+UPGRADEITEMEX 1 3 0 1 0
+GOTO @sx4
+BREAK
+;武器持久
+[@wq1777]
+#ACT
+UPGRADEITEMEX 1 14 0 1 0
+GOTO @sx4
+BREAK
+;武器准确
+[@wq1444]
+#ACT
+UPGRADEITEMEX 1 5 0 1 0
+GOTO @sx4
+BREAK
+;武器速度
+[@wq1666]
+#ACT
+UPGRADEITEMEX 1 6 0 1 0
+GOTO @sx4
+BREAK
+
+;加项链属性
+
+[@sx1]
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置>-┆     <项链+攻击/@xl13>  <项链+魔法/@xl14>  <项链+道术/@xl15>\
+<[测试阶段设置]/@测试阶段设置> ┆     <项链+幸运/@xl12>  <项链+准确/@xl11>  <项链+持久/@xl16>\
+<[地图开放设置]/@地图开放设置> ┆     注意:准确或魔法躲避，根据项链不同而不同\
+<[双倍经验设置]/@双倍经验设置> ┆     加幸运或加敏捷，根据项链不同而不同\
+<[行会攻沙设置]/@行会攻沙设置> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+
+;准确或魔法躲避，根据项链不同而不同
+[@xl11]
+#ACT
+UPGRADEITEMEX 3 0 0 1 0
+GOTO @sx1
+BREAK
+;幸运或敏捷，根据项链不同而不同
+[@xl12]
+#ACT
+UPGRADEITEMEX 3 1 0 1 0
+GOTO @sx1
+BREAK
+;项链攻击
+[@xl13]
+#ACT
+UPGRADEITEMEX 3 2 0 1 0
+GOTO @sx1
+BREAK
+;项链魔法
+[@xl14]
+#ACT
+UPGRADEITEMEX 3 3 0 1 0
+GOTO @sx1
+BREAK
+;项链道术
+[@xl15]
+#ACT
+UPGRADEITEMEX 3 4 0 1 0
+GOTO @sx1
+BREAK
+;项链持久
+[@xl16]
+#ACT
+UPGRADEITEMEX 3 14 0 1 0
+GOTO @sx1
+BREAK
+
+;头盔加属性
+
+[@sx6]
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置>-┆     <头盔+攻击/@tk11>  <头盔+魔法/@tk12>  <头盔+道术/@tk13>\
+<[测试阶段设置]/@测试阶段设置> ┆     <头盔+防御/@tk14>  <头盔+魔御/@tk15>  <头盔+持久/@tk16>\
+<[地图开放设置]/@地图开放设置> ┆\
+<[双倍经验设置]/@双倍经验设置> ┆\
+<[行会攻沙设置]/@行会攻沙设置> ┆\
+<[周末双倍设置]/@周末双倍设置> ┆\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+
+;头盔攻击
+[@tk11]
+#ACT
+UPGRADEITEMEX 4 2 0 1 0
+GOTO @sx6
+BREAK
+;头盔魔法
+[@tk12]
+#ACT
+UPGRADEITEMEX 4 3 0 1 0
+GOTO @sx6
+BREAK
+;头盔道术
+[@tk13]
+#ACT
+UPGRADEITEMEX 4 4 0 1 0
+GOTO @sx6
+BREAK
+;头盔防御
+[@tk14]
+#ACT
+UPGRADEITEMEX 4 0 0 1 0
+GOTO @sx6
+BREAK
+;头盔魔御
+[@tk15]
+#ACT
+UPGRADEITEMEX 4 1 0 1 0
+GOTO @sx6
+BREAK
+;头盔持久
+[@tk16]
+#ACT
+UPGRADEITEMEX 4 14 0 1 0
+GOTO @sx6
+BREAK
+
+;戒指加属性
+
+[@sx3]
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置>-┆     <左戒攻击/@jza11>     <右戒攻击/@jzb11>\
+<[测试阶段设置]/@测试阶段设置> ┆     <左戒魔法/@jza12>     <右戒魔法/@jzb12>\
+<[地图开放设置]/@地图开放设置> ┆     <左戒道术/@jza13>     <右戒道术/@jzb13>\
+<[双倍经验设置]/@双倍经验设置> ┆　　 <左戒防御/@jza14>     <右戒防御/@jzb14>\
+<[行会攻沙设置]/@行会攻沙设置> ┆　　 <左戒魔御/@jza15>     <右戒魔御/@jzb15>\
+<[周末双倍设置]/@周末双倍设置> ┆　　 <左戒持久/@jza16>     <右戒持久/@jzb16>\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+
+;左戒攻击
+[@jza11]
+#ACT
+UPGRADEITEMEX 8 2 0 1 0
+GOTO @sx3
+BREAK
+;左戒魔法
+[@jza12]
+#ACT
+UPGRADEITEMEX 8 3 0 1 0
+GOTO @sx3
+BREAK
+;左戒道术
+[@jza13]
+#ACT
+UPGRADEITEMEX 8 4 0 1 0
+GOTO @sx3
+BREAK
+;左戒防御
+[@jza14]
+#ACT
+UPGRADEITEMEX 8 0 0 1 0
+GOTO @sx3
+BREAK
+;左戒魔御
+[@jza15]
+#ACT
+UPGRADEITEMEX 8 1 0 1 0
+GOTO @sx3
+BREAK
+;左戒持久
+[@jza16]
+#ACT
+UPGRADEITEMEX 8 14 0 1 0
+GOTO @sx3
+BREAK
+;右戒攻击
+[@jzb11]
+#ACT
+UPGRADEITEMEX 7 2 0 1 0
+GOTO @sx3
+BREAK
+;右戒魔法
+[@jzb12]
+#ACT
+UPGRADEITEMEX 7 3 0 1 0
+GOTO @sx3
+BREAK
+;右戒道术
+[@jzb13]
+#ACT
+UPGRADEITEMEX 7 3 0 1 0
+GOTO @sx3
+BREAK
+;右戒防御
+[@jzb14]
+#ACT
+UPGRADEITEMEX 7 0 0 1 0
+GOTO @sx3
+BREAK
+;右戒魔御
+[@jzb15]
+#ACT
+UPGRADEITEMEX 7 1 0 1 0
+GOTO @sx3
+BREAK
+;右戒持久
+[@jzb16]
+#ACT
+UPGRADEITEMEX 7 14 0 1 0
+GOTO @sx3
+BREAK
+
+
+;手镯加属性
+
+[@sx2]
+<[冲值返还设置]/@冲值返还设置> ┆\
+<[属性修改设置]/@属性修改设置>-┆     <左手攻击/@sza11>     <右手攻击/@szb11>\
+<[测试阶段设置]/@测试阶段设置> ┆     <左手魔法/@sza12>     <右手魔法/@szb12>\
+<[地图开放设置]/@地图开放设置> ┆     <左手道术/@sza13>     <右手道术/@szb13>\
+<[双倍经验设置]/@双倍经验设置> ┆　　 <左手防御/@sza14>     <右手防御/@szb14>\
+<[行会攻沙设置]/@行会攻沙设置> ┆　　 <左手魔御/@sza15>     <右手魔御/@szb15>\
+<[周末双倍设置]/@周末双倍设置> ┆　　 <左手持久/@sza16>     <右手持久/@szb16>\
+<[游戏活动设置]/@游戏活动设置> ┆\
+<[群雄争霸管理]/@群雄争霸管理> ┆\
+
+;左手攻击
+[@sza11]
+#ACT
+UPGRADEITEMEX 6 2 0 1 0
+GOTO @sx2
+BREAK
+;左手魔法
+[@sza12]
+#ACT
+UPGRADEITEMEX 6 3 0 1 0
+GOTO @sx2
+BREAK
+;左手道术
+[@sza13]
+#ACT
+UPGRADEITEMEX 6 4 0 1 0
+GOTO @sx2
+BREAK
+;左手防御
+[@sza14]
+#ACT
+UPGRADEITEMEX 6 0 0 1 0
+GOTO @sx2
+BREAK
+;左手魔御
+[@sza15]
+#ACT
+UPGRADEITEMEX 6 1 0 1 0
+GOTO @sx2
+BREAK
+;左手持久
+[@sza16]
+#ACT
+UPGRADEITEMEX 6 14 0 1 0
+GOTO @sx2
+BREAK
+;右手攻击
+[@szb11]
+#ACT
+UPGRADEITEMEX 5 2 0 1 0
+GOTO @sx2
+BREAK
+;右手魔法
+[@szb12]
+#ACT
+UPGRADEITEMEX 5 3 0 1 0
+GOTO @sx2
+BREAK
+;右手道术
+[@szb13]
+#ACT
+UPGRADEITEMEX 5 4 0 1 0
+GOTO @sx2
+BREAK
+;右手防御
+[@szb14]
+#ACT
+UPGRADEITEMEX 5 0 0 1 0
+GOTO @sx2
+BREAK
+;右手魔御
+[@szb15]
+#ACT
+UPGRADEITEMEX 5 1 0 1 0
+GOTO @sx2
+BREAK
+;右手持久
+[@szb16]
+#ACT
+UPGRADEITEMEX 5 14 0 1 0
+GOTO @sx2
+BREAK
+}

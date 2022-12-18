@@ -1,0 +1,255 @@
+
+
+
+
+
+[@计时]
+#IF
+#ACT
+INC G3 1
+break
+
+[@地图开放]
+#if
+#act
+MOV A5 正式开区
+
+#if
+Large G0 0
+#act
+INC G4 1
+goto @开地图
+break
+
+[@开地图]
+#IF
+equal G4 2
+#ACT
+MOV A31 开放
+sendmsg 0 未知暗殿,土城已开放!
+
+#IF
+equal G4 4
+#ACT
+MOV A32 开放
+sendmsg 0 石墓阵已开放!
+
+#IF
+equal G4 5
+#ACT
+MOV A33 开放
+sendmsg 0 祖玛阁已开放!
+
+#IF
+equal G4 7
+#ACT
+MOV A34 开放
+sendmsg 0 夺宝奇兵地图已开放!
+
+#IF
+equal G4 9
+#ACT
+MOV A35 开放
+sendmsg 0 封魔谷已开放!
+
+#IF
+equal G4 13
+#ACT
+MOV A36 开放
+sendmsg 0 白日门,赤月地图已开放!
+
+#IF
+equal G4 15
+#ACT
+MOV A37 开放
+sendmsg 0 六大重装地图已开放!
+
+[@地图开放2]
+#if
+Large G1 18
+#act
+MOV G95 1
+break
+
+#if
+Large G1 11
+#act
+MOV G94 1
+break
+
+#if
+Large G1 6
+#act
+MOV G93 1
+break
+
+;#if
+;Large G1 4
+;#act
+;MOV G92 1
+;break
+
+#if
+Large G1 1
+#act
+MOV G91 1
+break
+
+[@清零]
+#IF
+#ACT
+INC G0 1
+INC G1 1
+mov A6 暂无
+mov A7 暂无
+mov A8  
+mov A10 暂无
+mov A11 暂无 
+mov A12 
+mov A14 暂无
+mov A15 暂无
+mov A16  
+mov A18 暂无
+mov A19 暂无
+mov A20  
+mov A22 暂无
+mov A23 暂无
+mov A24
+mov A26 暂无
+mov A27 暂无
+mov A28  
+mov G50 0
+mov G51 0
+mov G52 0
+mov G53 0
+mov G54 0
+mov G55 0
+CLEARNAMELIST ..\QuestDiary\天下第一\男战士.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\天下第一\男法师.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\天下第一\男道士.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\天下第一\女战士.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\天下第一\女法师.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\天下第一\女道士.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\其他数据\命运之刃名单.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\季卡\防脱机.txt HardDisk
+;sendmsg 0 ★天下第一已经清理，请有资格玩家速去申请！
+;sendmsg 0 ★天下第一已经清理，请有资格玩家速去申请！
+;sendmsg 0 ★天下第一已经清理，请有资格玩家速去申请！
+GMEXECUTE 开始提问 @地图清人
+
+[@HONGZI1]
+#if
+#act
+SendScrollMsg 欢迎进入<$SERVERNAME>,42级不能继续代练,多余时间不退元宝 251 0
+break
+
+[@行会争霸A]
+#if
+Large G1 7
+#act
+mov A331 争霸未领
+SENDMSG 1 行会争霸活动已开放地图进入..
+SENDMSG 1 行会争霸活动已开放地图进入..
+SENDMSG 1 行会争霸活动已开放地图进入..
+SENDMSG 1 行会争霸活动已开放地图进入..
+SENDMSG 1 行会争霸活动已开放地图进入..
+break
+
+[@怪物攻城]
+#if
+#act
+PARAM1 4
+PARAM2 240
+PARAM3 200 
+MONGEN 黑色恶蛆 30 30
+MONGEN 红野猪 30 30
+MONGEN 黑野猪 30 30
+MONGEN 白野猪 50 30
+MONGEN 祖玛卫士3 30 30
+MONGEN 祖玛雕像3 30 30
+MONGEN 祖玛弓箭手3 30 30
+MONGEN 石墓尸王 1 30
+MONGEN 触龙神 1 30
+MONGEN 骷髅精灵 1 30
+MONGEN 沃玛教主 1 30
+MONGEN 沃玛卫士 2 30
+MONGEN 祖玛教主 1 30
+MONGEN 虹魔教主 1 30
+MONGEN 赤月恶魔 1 30
+MONGEN 双头金刚 1 30
+MONGEN 双头血魔 1 30
+MONGEN 血僵尸 5 30
+MONGEN 血巨人 5 30
+MONGEN 尸王2 20 30
+MONGEN 黑锷蜘蛛0 10 30
+MONGEN 钢牙蜘蛛 10 30
+MONGEN 虹魔蝎卫 2 30
+MONGEN 幻影蜘蛛 1 30
+MONGEN 千年树妖 2 30
+MONGEN 邪恶毒蛇 4 30
+MONGEN 邪恶钳虫 4 30
+MONGEN 暗之沃玛教主 1 30
+MONGEN 暗之双头金刚 1 30
+MONGEN 暗之双头血魔 1 30
+MONGEN 暗之骷髅精灵 1 30
+MONGEN 暗之虹魔教主 1 30
+MONGEN 暗之黄泉教主 1 30
+SENDMSG 1 通知：怪物攻城活动在封魔谷开启,BOSS多多,抓紧参与吧！
+SENDMSG 1 通知：怪物攻城活动在封魔谷开启,BOSS多多,抓紧参与吧！
+SENDMSG 1 通知：怪物攻城活动在封魔谷开启,BOSS多多,抓紧参与吧！
+SENDMSG 1 通知：怪物攻城活动在封魔谷开启,BOSS多多,抓紧参与吧！
+SENDMSG 1 通知：怪物攻城活动在封魔谷开启,BOSS多多,抓紧参与吧！
+break
+
+[@金鸡送福]
+#if
+#act
+PARAM1 M001
+PARAM2 200
+PARAM3 330
+MONGEN 送福金鸡 2 5
+PARAM1 M001
+PARAM2 325
+PARAM3 160
+MONGEN 送福金鸡 2 5
+PARAM1 M001
+PARAM2 263
+PARAM3 299
+MONGEN 送福金鸡 2 5
+PARAM1 M001
+PARAM2 84
+PARAM3 242
+MONGEN 送福金鸡 2 5
+PARAM1 M001
+PARAM2 141
+PARAM3 130
+MONGEN 送福金鸡 2 5
+PARAM1 M001
+PARAM2 59
+PARAM3 130
+MONGEN 送福金鸡 2 5
+PARAM1 M001
+PARAM2 87
+PARAM3 280
+MONGEN 送福金鸡 2 5
+PARAM1 M001
+PARAM2 134
+PARAM3 65
+MONGEN 送福金鸡 2 5
+PARAM1 M001
+PARAM2 319
+PARAM3 233
+MONGEN 送福金鸡 2 5
+PARAM1 M001
+PARAM2 116
+PARAM3 302
+MONGEN 送福金鸡 2 5
+SENDMSG 1 通知：金鸡送福活动在未知暗殿开启,一共20个金鸡,去击杀它吧！
+SENDMSG 1 通知：金鸡送福活动在未知暗殿开启,一共20个金鸡,去击杀它吧！
+SENDMSG 1 通知：金鸡送福活动在未知暗殿开启,一共20个金鸡,去击杀它吧！
+SENDMSG 1 通知：金鸡送福活动在未知暗殿开启,一共20个金鸡,去击杀它吧！
+SENDMSG 1 通知：金鸡送福活动在未知暗殿开启,一共20个金鸡,去击杀它吧！
+break
+
+[@Mir2m2排号抢庄脚本RM加载]
+#CALL [\Mir2m2排号抢庄配置\Mir2m2排号抢庄脚本.txt] @Mir2m2排号抢庄脚本RM

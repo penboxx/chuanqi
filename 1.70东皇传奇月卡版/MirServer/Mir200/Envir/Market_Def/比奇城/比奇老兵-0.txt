@@ -1,0 +1,136 @@
+(@HumGameGoldOrder)
+%100
++10
++11
++15
+[@main]
+每个省份的坐标都是不同的，可别在比奇找沙巴克哦！\
+所以，要记住每个通往其他省的关口。\
+最后，要记得多跟朋友走走，你就会和我一样熟悉这个大陆。\\
+  关于<PK/@pk>\
+  <前往白日门/@br>\
+  <前往封魔谷/@fm>\
+  <前往毒蛇山谷/@ds>\
+  <去商店/@talkwith1>\
+
+[@talkwith1]
+#IF
+#SAY
+你要去哪个商店？这个是免费服务！ \ \
+<铁匠铺/@Gwe1>    <布料店/@Gpo1> \
+<首饰店/@Gza1>    <竞技之地/@Gwh1>\
+[@Gwe1]
+#IF
+#ACT
+map 0103
+ 
+[@Gpo1]
+#IF
+#ACT
+map 0106
+ 
+[@Gza1]
+#IF
+#ACT
+map 0105
+ 
+[@Gwh1]
+#IF
+#ACT
+map 0137
+ 
+[@Gbo1]
+#IF
+#ACT
+map 0161
+
+[@ds]
+#if
+#act
+mapmove 2 505 485
+break
+
+[@br]
+#IF
+equal A36 开放
+CHECKUSERDATE ..\QuestDiary\季卡\时间记载.txt < 90 p0 p1
+#ACT
+close
+MAPMOVE 11  183	304
+break
+
+#If
+equal G94 1
+#act
+sendmsg 7 提示：请购买季卡
+break 
+#elseact
+SendMsg 7  提示：开区第13天晚上20点自动开放！
+break
+
+[@fm]
+#IF
+equal A35 开放
+CHECKUSERDATE ..\QuestDiary\季卡\时间记载.txt < 90 p0 p1
+#ACT
+close
+MAPMOVE 4 240 200
+break
+
+#If
+equal G93 1
+#act
+sendmsg 7 提示：请购买季卡
+break 
+#elseact
+SendMsg 7  提示：开区第8天晚上20点自动开放！
+break
+
+
+[@pk]
+如果遇到PK的人，可要自己保重哦！虽然说PK的人\
+会受到流放的处罚，可这是在他们死亡以后进行的。\
+奉劝大家不要PK，流放到边疆以后的日子可不好过，\
+相信每一个在流放村里孤苦伶仃，没有装备，没有\
+补给的度过日子的人都会同意我这句话。\
+差点忘了告诉大家，沙巴克离流放地最近，是一个\
+流放犯出没的区域，千万小心财不露白哦！\ \
+ <返回/@Main>
+
+[@封魔]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 4 240 200
+break
+#ELSESAY
+你没有2000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\ \
+
+[@毒蛇]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 0 672 85
+break
+#ELSESAY
+你没有2000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\ \
+
+[@盟重]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 3 332 332
+break
+#ELSESAY
+你没有2000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\ \
+
+
+
+
+

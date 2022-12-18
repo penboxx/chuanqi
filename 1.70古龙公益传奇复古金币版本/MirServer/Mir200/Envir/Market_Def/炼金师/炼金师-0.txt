@@ -1,0 +1,141 @@
+[@MAIN]
+使用金币锻造可以获得更多经验，同时也会获得附赠品:金刚石，\
+不过用金币锻造的话，必须每次到我这里来领取，\
+<COLOR=CLYELLOW 领取时，如果英雄已召出，英雄也可以额外获得锻造带来的经验>，\
+另外，一次性锻造数量在<COLOR=CLRED 50~300>之间，\
+或一次性领取满<COLOR=CLRED 12颗金刚石>，都有可能得到<COLOR=CLRED 神秘礼品>！\
+存在一定几率不能获得这些礼品！\
+<查询金币锻造规则/@锻造规则>               <申请金币锻造/@申请锻造>\
+<领取锻造附赠品:金刚石/@领取锻造>          <查询当前拥有的金刚石数量/@查询数量>\
+<提取金刚石/@提取金刚石>\
+
+[@提取金刚石]
+请选择需要提取的金刚石数量：\ \
+<1:金刚石/@1金刚石>           <5:金刚石/@5金刚石>           <10:金刚石/@10金刚石>\ \
+<50:金刚石/@50金刚石>          <100:金刚石/@100金刚石>         <500:金刚石/@500金刚石>\ \
+<1000:金刚石/@1000金刚石>        <5000:金刚石/@5000金刚石>\ \
+<返回/@MAIN>
+
+[@1金刚石]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 1
+GIVE 金刚石：1 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@5金刚石]
+#IF
+CHECKGAMEDIAMOND > 4
+#ACT
+GAMEDIAMOND - 5
+GIVE 金刚石：5 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@10金刚石]
+#IF
+CHECKGAMEDIAMOND > 9
+#ACT
+GAMEDIAMOND - 10
+GIVE 金刚石：10 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@50金刚石]
+#IF
+CHECKGAMEDIAMOND > 49
+#ACT
+GAMEDIAMOND - 50
+GIVE 金刚石：50 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@100金刚石]
+#IF
+CHECKGAMEDIAMOND > 99
+#ACT
+GAMEDIAMOND - 100
+GIVE 金刚石：100 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@500金刚石]
+#IF
+CHECKGAMEDIAMOND > 499
+#ACT
+GAMEDIAMOND - 500
+GIVE 金刚石：500 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@1000金刚石]
+#IF
+CHECKGAMEDIAMOND > 999
+#ACT
+GAMEDIAMOND - 1000
+GIVE 金刚石：1000 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@5000金刚石]
+#IF
+CHECKGAMEDIAMOND > 4999
+#ACT
+GAMEDIAMOND - 5000
+GIVE 金刚石：5000 1
+SENDMSG 7 提示：剩余金刚石:<$GAMEDIAMOND>
+GOTO @提取金刚石
+BREAK
+#ELSESAY
+对不起，你没有足够的金刚石！\ \
+<返回/@提取金刚石>\
+
+[@锻造规则]
+1、使用金币申请锻造后，必须到NPC处领取经验值及附赠品:金刚石\
+2、用于锻造经验值的数量单次申请范围在<COLOR=CLRED 1~300>之间\
+3、50万金币可以锻造1小时，随之赠3颗金刚石\
+4、使用金币进行锻造，可以获得更多的经验\
+5、一次性锻造在<COLOR=CLRED 50~300>之间，将有机会得到一份礼品\
+6、每次领取满12颗金刚石时，将有机会得到一份神秘礼品\
+7、礼品为系统随机生成，也有不获得的可能性\
+8、普通锻造不能在申请，已经申请的还可以继续获得经验值及金刚石\
+<已了解金币锻造规则，返回/@MAIN>\
+
+[@查询数量]
+你当前的金刚石数量是∶<$GAMEDIAMOND>\
+
+[@领取锻造]
+#CALL [\系统功能\金币锻造\炼金师.txt] @时间设置
+
+[@申请锻造]
+#CALL [\系统功能\金币锻造\炼金师.txt] @初始锻造

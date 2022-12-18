@@ -1,0 +1,77 @@
+[@MAIN]
+恩，是从欧阳镖头送过来的吧？\
+一路辛苦啦，我来点点看东西少了没！ \
+稍等给你丰厚的报酬哦！嘿嘿\   \
+<完成任务/@endtask>
+
+[@endtask]
+#ACT
+FINISHESCORT
+
+[@FinishEscort_Fail_1]
+你没有镖车啊，提交什么任务！？\
+<关闭/@exit>
+
+[@FinishEscort_Fail_2]
+镖车距离我太远了，叫我如何核查货物呢？\
+<关闭/@exit>
+
+[@FinishEscort_无敌镖车]
+#ACT
+SET [099] 0
+GAMEGOLD + 600
+setautogetexp 1 10000000 0  YB02
+DelayCall 1200 @huiqutucheng
+GIVEUPESCORT
+SENDMSG 0 恭喜玩家%s成功将【无敌镖车】押到.完成任务获得【１０００万经验】奖励！ 253 215
+SENDMSG 0 恭喜玩家%s成功将【无敌镖车】押到.完成任务获得【１０００万经验】奖励！ 253 215 30
+CLOSE
+BREAK
+
+[@FinishEscort_超级镖车]
+#ACT
+SET [099] 0
+GAMEGOLD + 600
+setautogetexp 1 5000000 0  YB02
+DelayCall 1200 @huiqutucheng
+GIVEUPESCORT
+SENDMSG 0 恭喜玩家%s成功将【超级镖车】押到.完成任务获得【５００万经验】奖励！ 253 215
+SENDMSG 0 恭喜玩家%s成功将【超级镖车】押到.完成任务获得【５００万经验】奖励！ 253 215 30
+CLOSE
+BREAK
+
+[@FinishEscort_高级镖车]
+#ACT
+SET [099] 0
+GAMEGOLD + 600
+setautogetexp 1 2000000 0  YB02
+DelayCall 1200 @huiqutucheng
+GIVEUPESCORT
+SENDMSG 0 恭喜玩家%s成功将【高级镖车】押到.完成任务获得【２００万经验】奖励！ 253 215
+SENDMSG 0 恭喜玩家%s成功将【高级镖车】押到.完成任务获得【２００万经验】奖励！ 253 215 30
+CLOSE
+BREAK
+
+[@FinishEscort_普通镖车]
+#ACT
+SET [099] 0
+GAMEGOLD + 600
+setautogetexp 1 1000000 0  YB02
+DelayCall 1200 @huiqutucheng
+GIVEUPESCORT
+SENDMSG 0 恭喜玩家%s成功将【普通镖车】押到.完成任务获得【１００万经验】奖励！ 253 215
+SENDMSG 0 恭喜玩家%s成功将【普通镖车】押到.完成任务获得【１００万经验】奖励！ 253 215 30
+CLOSE
+BREAK
+
+[@huiqutucheng]
+#IF
+#ACT
+setautogetexp 1  1  1  YB02
+movr p0 5
+movr p1 5
+inc p0 330
+inc p1 330
+MAPMOVE 3 <$STR(P0)> <$STR(P1)>
+messagebox 恭喜少侠已完成任务！
+BREAK

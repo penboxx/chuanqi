@@ -1,0 +1,183 @@
+; 此 版 本 来 自 润 芒 论 坛 ｗｗｗ.ｒｕｎｍａｎｇ.ｃｏｍ
+
+( @@sendmsg @storage @getback @buy @sell @repair @s_repair @@offlinemsg @getnextpage @getPreviouspage @@InPutString @@useitemname)
+%100
+[@OnLogout_OffLinePlaying]
+#ACT
+SETAUTOGETEXP 1400 1 1
+SENDMSG 0 玩家「<$USERNAME>」来到了游戏。
+[@PlayLevelUp]
+#CALL [\登陆\升级提示.txt] @升级提示
+[@StdModeFunc30]  
+#IF
+#act 
+give 金币 500000
+SENDMSG 6 提示：金币增加500000！
+[@StdModeFunc35]  
+#IF
+#act 
+give 金币 1000000
+SENDMSG 6 提示：金币增加1000000！
+[@StdModeFunc38]  
+#IF
+#act 
+give 金币 2000000
+SENDMSG 6 提示：金币增加2000000！
+[@PlayLevelUp]
+#if
+CHECKLEVELEX = 30
+#act
+addnamelist   ..\QuestDiary\30级名单.txt
+break
+#if
+CHECKLEVELEX = 35
+#act
+addnamelist   ..\QuestDiary\35级名单.txt
+break
+#if
+CHECKLEVELEX = 38
+#act
+addnamelist   ..\QuestDiary\38级名单.txt
+break
+[@StdModeFunc6]
+#IF
+#ACT
+HAIRSTYLE 0
+SENDMSG 6 %s，你的发型已经改变了...
+[@StdModeFunc7]
+#IF
+#ACT
+HAIRSTYLE 1
+SENDMSG 6 %s，你的发型已经恢复了...
+[@StdModeFunc10]
+#act
+GAMEGOLD + 1
+SENDMSG 6 提示:元宝增加1个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc11]
+#act
+GAMEGOLD + 5
+SENDMSG 6 提示:元宝增加5个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc12]
+#act
+GAMEGOLD + 10
+SENDMSG 6 提示:元宝增加10个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc13]
+#act
+GAMEGOLD + 50
+SENDMSG 6 提示:元宝增加50个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc14]
+#act
+GAMEGOLD + 100
+SENDMSG 6 提示:元宝增加100个.您当前的元宝为：<$GAMEGOLD>个
+
+[@StdModeFunc15]
+#act
+GAMEGOLD + 500
+SENDMSG 6 提示:元宝增加500个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc16]
+#act
+GAMEGOLD + 1000
+SENDMSG 6 提示:元宝增加1000个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc17]
+#act
+GAMEGOLD + 5000
+SENDMSG 6 提示:元宝增加5000个.您当前的元宝为：<$GAMEGOLD>个
+[@StdModeFunc19]
+#IF
+random 9
+#act
+#CALL [\服务\烟花.txt] @烟花
+break
+#IF
+random 8
+#act
+#CALL [\服务\烟花.txt] @烟花
+break
+#IF
+random 7
+#act
+#CALL [\服务\烟花.txt] @烟花
+break
+#IF
+random 6
+#act
+#CALL [\服务\烟花.txt] @烟花
+break
+#IF
+random 5
+#act
+#CALL [\服务\烟花.txt] @烟花
+break
+#IF
+random 4
+#act
+#CALL [\服务\烟花.txt] @烟花
+break
+#IF
+random 3
+#act
+#CALL [\服务\烟花.txt] @烟花
+break
+#IF
+random 2
+#act
+#CALL [\服务\烟花.txt] @烟花
+break
+#IF
+random 1
+#act
+#CALL [\服务\烟花.txt] @烟花
+break
+[@StdModeFunc21]
+#IF
+#ACT
+Gmexecute showeffect 78
+[@StdModeFunc22]
+#IF
+#ACT
+Gmexecute showeffect 79
+[@StdModeFunc23]
+#IF
+#ACT
+Gmexecute showeffect 80
+[@StdModeFunc24]
+#IF 
+#ACT
+Gmexecute showeffect 81
+[@StdModeFunc25]
+#IF
+#ACT
+Gmexecute showeffect 82
+[@STDMODEFUNC26]
+<传音筒>可以将你要说出的话置顶，特别醒目！\
+每句话限制为：30个字，可在置顶位置停留30秒！\
+请将要说的话，编写到<传音筒>内！\ \
+<点击输入您要说的话/@@InPutString6>
+[@@InPutString6]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString6
+[~InPutString6]
+#If
+CheckLevelEX > 0
+#Act
+DEC S6 62 999
+SENDMSG 0 「<$USERNAME>」使用传音筒说：<$STR(S6)> 251 0 30
+CLOSE
+
+
+
+[@UserCmd1]
+#CALL [\服务\游戏帮助.txt] @帮助
+[@UserCmd2]
+#CALL [\服务\在线充值.txt] @元宝使者
+[@PlayDie]
+#If
+KillByHum
+#Act 
+SendMsg 1 提示:玩家[<$KILLER>]在:%m(%x:%y)把玩家[<$USERNAME>]干掉了！
+break
+#ElseAct
+;SendMsg 1 提示:凶悍的怪物[<$MONKILLER>]在:%m(%x:%y)把玩家[<$USERNAME>]给分尸了！
+Close

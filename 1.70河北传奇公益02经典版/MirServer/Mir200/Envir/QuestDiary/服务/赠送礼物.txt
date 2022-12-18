@@ -1,0 +1,415 @@
+[@礼物]
+{
+╔┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╗\
+┆『<爱情玫瑰/@爱情玫瑰>』┆『<棒 棒 糖/@棒棒糖>』┆『<一支雪茄/@一支雪茄>』┆『<一根黄瓜/@一根黄瓜>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆『<处 男 证/@处男证>』┆『<处 女 证/@处女证>』┆『<傻 逼 证/@傻逼证>』┆『<脑 残 片/@脑残片>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆『<绿 帽 子/@绿帽子>』┆『<草 泥 马/@草泥马>』┆『<敌 敌 畏/@敌敌畏>』┆『<牛郎织女/@牛郎织女>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆『<　香吻　/@香吻>』┆『<蕾丝内裤/@蕾丝内裤>』┆『<蕾丝内衣/@蕾丝内衣>』┆『<豪华轿车/@豪华轿车>』┆\
+╚┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\ 
+
+[@爱情玫瑰]
+　　　　\
+请输入对方的人物名!\
+　　\ 
+<点击这里输入对方人物名/@@InPutString7>\ 
+　　\ 
+每次赠送收费50万金币\
+
+[@@InPutString7]
+#If
+checkgold 500000
+#Act
+DelayGoto 1 ~InPutString7
+[~InPutString7]
+#If
+checkgold 500000
+#Act
+take 金币 500000
+SENDMSG 0 「<$USERNAME>」　含情默默的为　「<$STR(S7)>」　送上了一束“爱情玫瑰” 255 249 80
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送爱情玫瑰每次需要花费50万金币
+GOTO @礼物
+
+[@一支雪茄]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString8>\ 
+　　\ 
+每次赠送收费20万金币\
+
+[@@InPutString8]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString8
+[~InPutString8]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　送给　「<$STR(S8)>」　一支“古巴雪茄”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+[@脑残片]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString9>\ 
+　　\ 
+每次赠送收费20万金币\
+
+[@@InPutString9]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString9
+[~InPutString9]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　送给　「<$STR(S9)>」　一盒“脑残片”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+[@处男证]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString10>\ 
+　　\ 
+每次赠送收费20万金币\
+
+[@@InPutString10]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString10
+[~InPutString10]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　　为　　「<$STR(S10)>」　颁发一张“处男证”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+
+[@处女证]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString11>\ 
+　　\ 
+每次赠送收费20万金币\
+
+[@@InPutString11]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString11
+[~InPutString11]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　　为　　「<$STR(S11)>」　颁发一张“处女证”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+
+
+[@傻逼证]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString12>\ 
+　　\ 
+每次赠送收费20万金币\
+
+[@@InPutString12]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString12
+[~InPutString12]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　　为　　「<$STR(S12)>」　颁发一张“傻逼证”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+
+
+[@一根黄瓜]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString13>\ 
+　　\ 
+每次赠送收费20万金币\
+
+[@@InPutString13]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString13
+[~InPutString13]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　送给　「<$STR(S13)>」　一根“黄瓜”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+
+
+
+[@绿帽子]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString14>\ 
+　　\ 
+每次赠送收费20万金币\
+
+[@@InPutString14]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString14
+[~InPutString14]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　送给　「<$STR(S14)>」　一顶“绿帽子”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+
+
+[@草泥马]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString15>\ 
+　　\ 
+每次赠送收费20万金币\
+
+[@@InPutString15]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString15
+[~InPutString15]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　送给　「<$STR(S15)>」　一匹“草泥马”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+
+
+[@敌敌畏]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString16>\ 
+　　\ 
+每次赠送收费20万金币\
+
+[@@InPutString16]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString16
+[~InPutString16]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　送给　「<$STR(S16)>」　一瓶“敌敌畏”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+
+[@香吻]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString17>\ 
+　　\ 
+每次赠送收费20万金币\
+
+[@@InPutString17]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString17
+[~InPutString17]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　送给　「<$STR(S17)>」　一个“香吻”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+
+[@棒棒糖]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString18>\ 
+　　\ 
+每次赠送收费20万金币\
+
+[@@InPutString18]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString18
+[~InPutString18]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　送给　「<$STR(S18)>」　一根“棒棒糖”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+
+[@蕾丝内衣]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString19>\ 
+　　\ 
+每次赠送收费20万金币\
+
+[@@InPutString19]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString19
+[~InPutString19]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　送给　「<$STR(S19)>」　一件“蕾丝内衣”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+
+[@蕾丝内裤]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString20>\ 
+　　\ 
+每次赠送收费20万金币\
+
+[@@InPutString20]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString20
+[~InPutString20]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　送给　「<$STR(S20)>」　一条“蕾丝内裤”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+
+[@豪华轿车]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString21>\ 
+　　\
+每次赠送收费20万金币\
+
+[@@InPutString21]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString21
+[~InPutString21]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　送给　「<$STR(S21)>」　一辆“豪华轿车”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+
+[@牛郎织女]
+　　　　\
+请输入对方的人物名!\
+　　　　\
+<点击这里输入对方人物名/@@InPutString23>\ 
+　　\ 
+每次赠送收费20万金币\
+
+[@@InPutString23]
+#If
+checkgold 200000
+#Act
+DelayGoto 1 ~InPutString23
+[~InPutString23]
+#If
+checkgold 200000
+#Act
+take 金币 200000
+SENDMSG 0 「<$USERNAME>」　　为　　「<$STR(S23)>」　送上“牛郎织女”__ 255 252 60
+GOTO @礼物
+#elseact
+messagebox 对不起,赠送礼物每次需要花费20万金币
+GOTO @礼物
+
+}

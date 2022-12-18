@@ -1,0 +1,56 @@
+;安全区/复活点
+CSD  16 19   0   10   0   0   0
+CSD  15 13   0   10   0   0   0
+0    334  266	0	10	0	0	0
+0    330  268	0	10	0	0	0
+0    330  268	0	10	0	0	0
+0    289  618	0	10	0	0	0
+0    650  631	0	10	0	0	0
+2    503  483	0	10	0	0	0
+3    330  330	0	10	0	0	0
+5    139  330	0	10	0	0	0
+4    240  200	0	10	0	0	0
+11   178  326	0	10	0	0	0
+6    123  157   0       10      0       0       0
+tuanzhanmap1	24	42	0	8	0	0	0
+tuanzhanmap1	24	10	0	8	0	0	0
+tuanzhanmap1	40	26	0	8	0	0	0
+tuanzhanmap1	8	26	0	8	0	0	0
+tuanzhanmap1	40	42	0	8	0	0	0
+tuanzhanmap1	40	10	0	8	0	0	0
+tuanzhanmap1	8	42	0	8	0	0	0
+tuanzhanmap1	8	10	0	8	0	0	0
+;数据来源:	X=地图光环坐标X	Y=地图光环坐标Y	C=【地图光环范围+1】
+;第1行计算公式:	X	Y+C*2		C
+;第2行计算公式:	X	Y-C*2		C
+;第3行计算公式:	X+C*2	Y		C
+;第4行计算公式:	X-C*2	Y		C
+;第5行计算公式:	X+C*2	Y+C*2		C
+;第6行计算公式:	X+C*2	Y-C*2		C
+;第7行计算公式:	X-C*2	Y+C*2		C
+;第8行计算公式:	X-C*2	Y-C*2		C
+tuanzhanmap2	24	42	0	8	0	0	0
+tuanzhanmap2	24	10	0	8	0	0	0
+tuanzhanmap2	40	26	0	8	0	0	0
+tuanzhanmap2	8	26	0	8	0	0	0
+tuanzhanmap2	40	42	0	8	0	0	0
+tuanzhanmap2	40	10	0	8	0	0	0
+tuanzhanmap2	8	42	0	8	0	0	0
+tuanzhanmap2	8	10	0	8	0	0	0
+tiaozhanmap	24	36	0	5	0	0	0
+tiaozhanmap	24	16	0	5	0	0	0
+tiaozhanmap	34	26	0	5	0	0	0
+tiaozhanmap	14	26	0	5	0	0	0
+tiaozhanmap	34	36	0	5	0	0	0
+tiaozhanmap	34	16	0	5	0	0	0
+tiaozhanmap	14	36	0	5	0	0	0
+tiaozhanmap	14	16	0	5	0	0	0
+;数据来源:	X=挑战光环坐标X	Y=挑战光环坐标Y	C=【地图光环范围+1】
+;第1行计算公式:	X	Y+C*2		C
+;第2行计算公式:	X	Y-C*2		C
+;第3行计算公式:	X+C*2	Y		C
+;第4行计算公式:	X-C*2	Y		C
+;第5行计算公式:	X+C*2	Y+C*2		C
+;第6行计算公式:	X+C*2	Y-C*2		C
+;第7行计算公式:	X-C*2	Y+C*2		C
+;第8行计算公式:	X-C*2	Y-C*2		C

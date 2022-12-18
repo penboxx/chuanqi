@@ -1,0 +1,265 @@
+[@开区天数]
+{
+#if
+ISADMIN
+#act
+goto @开区天数1
+#elsesay
+　对不起，你不是管理员，无法使用该功能！！
+
+[@开区天数1]
+#if
+#act
+MOV M8 <$STR(G4)>
+INC M8 1
+#say
+调整开区天数,说明：点1次 增加或者减少，即可调整！！开区当天为1天\
+当前的开区天数为【<$STR(M8)>】天   <增加天数/@加>　<减少天数/@减>\
+
+开区状态:<$STR(A5)>  <一键正式开区/@开区了>   <改测试区/@关区了>\ \
+控制地图开关\
+<土城暗殿/@A1> 状态:<$STR(A31)>  <石墓阵/@A2> 状态:<$STR(A32)>  <祖玛阁/@A3> 状态:<$STR(A33)>\
+<夺宝奇兵/@A4> 状态:<$STR(A34)>  <封魔谷/@A5> 状态:<$STR(A35)>  <白日门/@A6> 状态:<$STR(A36)>(包含赤月)\
+<六大重装/@A7> 状态:<$STR(A37)>\
+
+;====================================1
+[@A1]
+#IF
+equal A31
+#ACT
+MOV  A31 开放
+goto @开去天数1
+sendmsg 0 未知暗殿,土城已开放!
+break
+
+#IF
+equal A31 关闭
+#ACT
+MOV  A31 开放
+goto @开去天数1
+sendmsg 0 未知暗殿,土城已开放!
+break
+
+#IF
+equal A31 开放
+#ACT
+MOV  A31 关闭
+goto @开去天数1
+sendmsg 0 未知暗殿,土城已关闭!
+break
+
+;====================================2
+[@A2]
+#IF
+equal A32
+#ACT
+MOV  A32 开放
+goto @开去天数1
+sendmsg 0 石墓阵地图已开放!
+break
+
+#IF
+equal A32 关闭
+#ACT
+MOV  A32 开放
+goto @开去天数1
+sendmsg 0 石墓阵地图已开放!
+break
+
+#IF
+equal A32 开放
+#ACT
+MOV  A32 关闭
+goto @开去天数1
+sendmsg 0 石墓阵地图已关闭!
+break
+
+;====================================3
+[@A3]
+#IF
+equal A33
+#ACT
+MOV  A33 开放
+goto @开去天数1
+sendmsg 0 祖玛阁地图已开放!
+break
+
+#IF
+equal A33 关闭
+#ACT
+MOV  A33 开放
+goto @开去天数1
+sendmsg 0 祖玛阁地图已开放!
+break
+
+
+#IF
+equal A33 开放
+#ACT
+MOV  A33 关闭
+goto @开去天数1
+sendmsg 0 祖玛阁地图已关闭!
+break
+
+;====================================4
+[@A4]
+#IF
+equal A34
+#ACT
+MOV  A34 开放
+goto @开去天数1
+sendmsg 0 夺宝奇兵地图已开放!
+break
+
+#IF
+equal A34 关闭
+#ACT
+MOV  A34 开放
+goto @开去天数1
+sendmsg 0 夺宝奇兵地图已开放!
+break
+
+#IF
+equal A34 开放
+#ACT
+MOV  A34 关闭
+goto @开去天数1
+sendmsg 0 夺宝奇兵地图已关闭!
+break
+
+;====================================5
+[@A5]
+#IF
+equal A35
+#ACT
+MOV  A35 开放
+goto @开去天数1
+sendmsg 0 封魔谷地图已开放!
+break
+
+#IF
+equal A35 关闭
+#ACT
+MOV  A35 开放
+goto @开去天数1
+sendmsg 0 封魔谷地图已开放!
+break
+
+
+#IF
+equal A35 开放
+#ACT
+MOV  A35 关闭
+goto @开去天数1
+sendmsg 0 封魔谷地图已关闭!
+break
+
+;====================================6
+[@A6]
+#IF
+equal A36
+#ACT
+MOV  A36 开放
+goto @开去天数1
+sendmsg 0 白日门,赤月地图已开放!
+break
+
+#IF
+equal A36 关闭
+#ACT
+MOV  A36 开放
+goto @开去天数1
+sendmsg 0 白日门,赤月地图已开放!
+break
+
+#IF
+equal A36 开放
+#ACT
+MOV  A36 关闭
+goto @开去天数1
+sendmsg 0 白日门,赤月地图已关闭!
+break
+
+;====================================7
+[@A7]
+#IF
+equal A37
+#ACT
+MOV  A37 开放
+goto @开去天数1
+sendmsg 0 六大重装地图已开放!
+break
+
+#IF
+equal A37 关闭
+#ACT
+MOV  A37 开放
+goto @开去天数1
+sendmsg 0 六大重装地图已开放!
+break
+
+#IF
+equal A37 开放
+#ACT
+MOV  A37 关闭
+goto @开去天数1
+sendmsg 0 六大重装地图已关闭!
+break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[@开区了]
+#if
+#act
+MOV A5 正式开区
+SENDMSG 0 【公告】服务器已经正式开放，大家可以开始游戏了！！！
+SENDMSG 0 【公告】服务器已经正式开放，大家可以开始游戏了！！！
+SENDMSG 0 【公告】服务器已经正式开放，大家可以开始游戏了！！！
+SENDMSG 0 【公告】服务器已经正式开放，大家可以开始游戏了！！！
+SENDMSG 0 【公告】服务器已经正式开放，大家可以开始游戏了！！！
+SENDMSG 0 【公告】服务器已经正式开放，大家可以开始游戏了！！！
+goto @开区天数1
+break
+
+[@关区了]
+#if
+#act
+MOV A5 
+goto @开区天数1
+break
+
+
+[@加]
+#if
+#act
+INC G4 1
+GOTO @开区天数1
+break
+
+[@减]
+#if
+#act
+DEC G4 1
+GOTO @开区天数1
+break
+
+
+
+}

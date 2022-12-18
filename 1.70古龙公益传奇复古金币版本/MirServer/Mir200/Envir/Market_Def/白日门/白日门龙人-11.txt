@@ -1,0 +1,370 @@
+
+[@MAIN]
+来者何人？为何而来？\
+\
+ <我是来给书页碎片的/@GIVEBOOK>　　　　　　<哪里还能获得书页呢/@LOOKBOOK>\
+ <我只是路过，打扰了/@exit>\
+
+
+[@LOOKBOOK]
+<COLOR=clLime 僵尸、尸王、及各大BOSS均有几率掉落。>
+
+[@GIVEBOOK]
+如果你有书页的话，你就交给我看看，\
+我可以帮您拼凑一下，看是否可以还原成一本技能秘籍。\
+您可以交给我<COLOR=clLime 2片>、<COLOR=clLime 5片>或者<COLOR=clLime 8片>书页，\
+如果提供的书页越多，越有可能根据里面的提示还原成高级技能书，\
+当然，由于碎片过于残破，不是每次都能还原成原先的技能秘籍，\
+如果还原出来，不是您需要的技能，您可以把书页给我，\
+好让我把这个技能发扬光大，重线当年英雄风光。\
+还有每次合技能需要给我<COLOR=clLime 一定数量金币>\
+ <递交书页/@OKDJSY>
+
+[@OKDJSY]
+您是想给我2片、5片还是8片书页呢？\
+如果提供的书页越多，越有可能根据里面的提示还原成高级技能书，\
+合成技能书，除了<COLOR=clLime 书页>，还需要<COLOR=clLime 一定数量金币>。\
+　\
+　\
+ <交2片书页/@DJSY222>　　　　<交5片书页/@DJSY555>　　　　<交8片书页/@DJSY8>\ \
+ <让我再考虑考虑/@exit>
+
+[@DJSY222]
+2片书页+8w金币可以<COLOR=clLime 随机>合成下列英雄技能：\
+英雄精神战法　　英雄大火球　　　英雄施毒术\
+英雄攻杀剑术　　英雄抗拒火环　　英雄地狱火\
+英雄雷电术　　　英雄灵魂火符　　英雄幽灵盾\
+英雄召唤骷髅　　英雄隐身术　　　英雄集体隐身\
+　　　\
+<递交书页/@DJSY2>
+
+[@DJSY2]
+#IF
+  checkitem 书页 2
+  CHECKGOLD 80000
+#ACT
+  GOTO @SJLQJNS_1
+  BREAK
+#IF
+#SAY
+您好象没有带来足够的书页或者8w金币.\
+
+[@SJLQJNS_1]
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄精神战法 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄精神战法.
+  BREAK
+#SAY
+恭喜你合成英雄精神战法成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄大火球 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄大火球.
+  BREAK
+#SAY
+恭喜你合成英雄大火球成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄施毒术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄施毒术.
+  BREAK
+#SAY
+恭喜你合成英雄施毒术成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄攻杀剑术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄攻杀剑术.
+  BREAK
+#SAY
+恭喜你合成英雄攻杀剑术成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄抗拒火环 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄抗拒火环.
+  BREAK
+#SAY
+恭喜你合成英雄抗拒火环成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄地狱火 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄地狱火.
+  BREAK
+#SAY
+恭喜你合成英雄地狱火成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄雷电术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄雷电术.
+  BREAK
+#SAY
+恭喜你合成英雄雷电术成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄灵魂火符 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄灵魂火符.
+  BREAK
+#SAY
+恭喜你合成英雄灵魂火符成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄幽灵盾 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄幽灵盾.
+  BREAK
+#SAY
+恭喜你合成英雄幽灵盾成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄召唤骷髅 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄召唤骷髅.
+  BREAK
+#SAY
+恭喜你合成英雄召唤骷髅成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄隐身术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄隐身术.
+  BREAK
+#SAY
+恭喜你合成英雄隐身术成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄集体隐身 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄集体隐身.
+  BREAK
+#SAY
+恭喜你合成英雄集体隐身成功！\
+
+
+[@DJSY555]
+5片书页+18w金币可以<COLOR=clLime 随机>合成下列英雄技能：\
+英雄疾光电影　　　英雄神圣战术　　　英雄困魔咒\
+英雄爆裂火焰　　　英雄火墙　　　　　英雄刺杀剑术\
+英雄地狱雷光　　　英雄半月弯刀　　　英雄群疗术　\
+英雄魔法盾　　　　英雄圣言术　　　　英雄野蛮冲撞\
+　　　\
+<递交书页/@DJSY5>
+
+[@DJSY5]
+#IF
+  checkitem 书页 5
+  CHECKGOLD 180000
+#ACT
+  GOTO @SJLQJNS_2
+  BREAK
+#IF
+#SAY
+您好象没有带来足够的书页或者18w金币.\
+
+[@SJLQJNS_2]
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄疾光电影 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄疾光电影.
+  BREAK
+#SAY
+恭喜你合成英雄疾光电影成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄神圣战术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄神圣战术.
+  BREAK
+#SAY
+恭喜你合成英雄神圣战术成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄困魔咒 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄困魔咒.
+  BREAK
+#SAY
+恭喜你合成英雄困魔咒成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄爆裂火焰 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄爆裂火焰.
+  BREAK
+#SAY
+恭喜你合成英雄爆裂火焰成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄火墙 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄火墙.
+  BREAK
+#SAY
+恭喜你合成英雄火墙成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄刺杀剑术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄刺杀剑术.
+  BREAK
+#SAY
+恭喜你合成英雄刺杀剑术成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  GAMEDIAMOND - 1
+  GIVE 英雄地狱雷光 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄地狱雷光.
+  BREAK
+#SAY
+恭喜你合成英雄地狱雷光成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄半月弯刀 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄半月弯刀.
+  BREAK
+#SAY
+恭喜你合成英雄半月弯刀成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄群疗术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄群疗术.
+  BREAK
+#SAY
+恭喜你合成英雄群疗术成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄魔法盾 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄魔法盾.
+  BREAK
+#SAY
+恭喜你合成英雄魔法盾成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄圣言术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄圣言术.
+  BREAK
+#SAY
+恭喜你合成英雄圣言术成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄野蛮冲撞 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄野蛮冲撞.
+  BREAK
+#SAY
+恭喜你合成英雄野蛮冲撞成功！\
+
+
+[@DJSY8]
+8页书+对应的人物技能+88万金币=英雄技能\ \
+
+告诉我想合成什么书吧.\ \
+
+<英雄冰咆哮/@8y01>  <英雄召唤神兽/@8y02> <英雄烈火剑法/@8y03>\ \
+
+<关闭/@exit>
+
+[@8y01]
+#IF
+  checkitem 书页 8
+  CHECKGOLD 880000
+  CHECKITEM 冰咆哮 1
+#ACT
+  TAKE 书页 8
+  TAKE 金币 880000
+  TAKE 冰咆哮 1
+  GIVE 英雄冰咆哮 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成了英雄冰咆哮.
+  BREAK
+#elsesay
+您好象没有带来足够的书页或者88w金币+冰咆哮\
+
+[@8y02]
+#IF
+  checkitem 书页 8
+  CHECKGOLD 880000
+  CHECKITEM 召唤神兽 1
+#ACT
+  TAKE 书页 8
+  TAKE 金币 880000
+  TAKE 召唤神兽 1
+  GIVE 英雄召唤神兽 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成了英雄召唤神兽.
+  BREAK
+#elsesay
+您好象没有带来足够的书页或者88w金币+召唤神兽.\
+
+[@8y03]
+#IF
+  checkitem 书页 8
+  CHECKGOLD 880000
+  CHECKITEM 烈火剑法 1
+#ACT
+  TAKE 书页 8
+  TAKE 金币 880000
+  TAKE 烈火剑法 1
+  GIVE 英雄烈火剑法 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成了英雄烈火剑法.
+  BREAK
+#elsesay
+您好象没有带来足够的书页或者88w金币+烈火剑法.\

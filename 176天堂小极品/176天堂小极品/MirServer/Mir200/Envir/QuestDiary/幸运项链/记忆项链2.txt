@@ -1,0 +1,14 @@
+[@记忆项链2]
+{
+#IF
+random 18
+#act
+GAMEGOLD - 2000
+UPGRADEITEMEX 3 1 0 1 0
+sendmsg 0 恭喜[%s]在幸运之家将项链升级成功。
+BREAK
+#ELSEACT
+GAMEGOLD - 2000
+MESSAGEBOX 非常抱歉您的项链升级失败
+BREAK
+}

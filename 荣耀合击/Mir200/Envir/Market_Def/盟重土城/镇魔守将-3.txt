@@ -1,0 +1,354 @@
+()
+%100
+[@MAIN]
+
+相传在玛法大陆的某些角落，有一批恶魔镇守着六件重装，\
+想要获得这些宝物，就必须首先要杀死这些恶魔，\
+无数的英雄为了获得这些宝物，不惜以自己的生命作为代价，\
+有些人成功了，更多的勇士则倒在了恶魔的脚下，\
+这位英雄，您是否也想去发现这些魔兽的踪迹，\
+给我5万金币，我就能帮您去查看他们的踪影，\
+给我5颗金刚石，我就能传送您去独闯魔穴。\
+<花5万金币，探查魔兽踪影/@探查>       <地下宫殿/@天工神剪>\
+<付1颗金刚石，前往除魔/@金刚石>\
+[@探查]
+您想查询哪个魔域的恶魔信息呢？\
+<死亡神殿/@神殿>      <堕落坟场/@坟场>\ \
+<深渊魔域/@魔域>      <地狱烈焰/@烈焰>\ \
+<困惑殿堂/@困惑>      <钳虫巢穴/@钳虫>\ \
+<返回/@MAIN>\
+[@钳虫]
+#IF
+CHECKGOLD 50000
+#ACT
+TAKE 金币 50000
+GOTO @检测钳虫
+BREAK
+#ELSESAY
+您好象没有50000金币啊，我也帮不了你了！\
+[@检测钳虫]
+#IF
+CHECKmonmap T232 1
+#SAY
+让我掐指算算，\
+魔兽，已经出现。\
+#ELSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@困惑]
+#IF
+CHECKGOLD 50000
+#ACT
+TAKE 金币 50000
+GOTO @检测困惑
+BREAK
+#ELSESAY
+您好象没有50000金币啊，我也帮不了你了！\
+[@检测困惑]
+#IF
+CHECKmonmap T118 1
+#SAY
+让我掐指算算，\
+魔兽，已经出现。\
+#ELSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@神殿]
+#IF
+CHECKGOLD 50000
+#ACT
+TAKE 金币 50000
+GOTO @检测神殿
+BREAK
+#ELSESAY
+您好象没有50000金币啊，我也帮不了你了！\
+[@检测神殿]
+#IF
+CHECKmonmap T218 1
+#SAY
+让我掐指算算，\
+魔兽，已经出现。\
+#ELSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@坟场]
+#IF
+CHECKGOLD 50000
+#ACT
+TAKE 金币 50000
+GOTO @检测坟场
+BREAK
+#ELSESAY
+您好象没有50000金币啊，我也帮不了你了！\
+[@检测坟场]
+#IF
+CHECKmonmap T315 1
+#SAY
+让我掐指算算，\
+魔兽，已经出现。\
+#ELSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@魔域]
+#IF
+CHECKGOLD 50000
+#ACT
+TAKE 金币 50000
+GOTO @检测魔域
+BREAK
+#ELSESAY
+您好象没有50000金币啊，我也帮不了你了！\
+[@检测魔域]
+#IF
+CHECKmonmap T219 1
+#SAY
+让我掐指算算，\
+魔兽，已经出现。\
+#ELSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@烈焰]
+#IF
+CHECKGOLD 50000
+#ACT
+TAKE 金币 50000
+GOTO @检测烈焰
+BREAK
+#ELSESAY
+您好象没有50000金币啊，我也帮不了你了！\
+[@检测烈焰]
+#IF
+CHECKmonmap T339 1
+#SAY
+让我掐指算算，\
+魔兽，已经出现。\
+#ELSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@金刚石]
+我这里能送你去一些魔域的大概地点，但是你要给我一颗金刚石，\
+至于具体前往魔域的路径，就要靠你智慧的头脑了。\
+<去死亡神殿/@死亡神殿>                <去堕落坟场/@堕落坟场>\
+<去深渊魔域/@深渊魔域>                <去地狱烈焰/@地狱烈焰>\
+<去困惑殿堂/@困惑殿堂>                <去钳虫巢穴/@钳虫巢穴>\
+[@困惑殿堂]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 5
+MAPMOVE R001 58 99
+SENDMSG 0 恭喜[<$USERNAME>]用金刚石直接进入了困惑殿堂！ 251 249
+BREAK
+#ELSESAY
+你好象还没有金刚石啊？
+[@死亡神殿]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 5
+MAPMOVE 4 206 226
+SENDMSG 0 恭喜[<$USERNAME>]用金刚石直接进入了死亡神殿！ 251 249
+BREAK
+#ELSESAY
+你好象还没有金刚石啊？
+[@堕落坟场]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 5
+MAPMOVE 1 321 61
+SENDMSG 0 恭喜[<$USERNAME>]用金刚石直接进入了坠落坟场！ 251 249
+BREAK
+#ELSESAY
+你好象还没有金刚石啊？
+[@深渊魔域]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 5
+MAPMOVE 1 219 311
+SENDMSG 0 恭喜[<$USERNAME>]用金刚石直接进入了深渊魔域！ 251 249
+BREAK
+#ELSESAY
+你好象还没有金刚石啊？
+[@地狱烈焰]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 5
+MAPMOVE 0 452 452
+SENDMSG 0 恭喜[<$USERNAME>]用金刚石直接进入了地狱烈焰！ 251 249
+BREAK
+#ELSESAY
+你好象还没有金刚石啊？
+[@钳虫巢穴]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 5
+MAPMOVE 11 357 326
+SENDMSG 0 恭喜[<$USERNAME>]用金刚石直接进入了钳虫巢穴！ 251 249
+BREAK
+#ELSESAY
+你好象还没有金刚石啊？
+[@火焰屠魔]
+屠魔战场的入口就在我的身后、只是通常都不开启\
+焰火是有灵气的东西，我懂得如何发挥它的灵气并用它打开入口\
+给我一个焰火包，我就能帮您打开一次屠魔战场的入口\
+不同种类的焰火能让你去到不同的屠魔战场，因为屠魔战场不止一个\
+但凡人在那逗留过久会渐染魔性，故每次进入您只有30分钟时间\
+<听说里面的BOSS爆金刚石还爆地下组队卷轴哦>您带来了哪种焰火呢\
+<浪漫星雨/@浪漫星雨>         <飞火流星/@飞火流星>\
+<绮梦幻想/@绮梦幻想>         <长空火舞/@长空火舞>         <如雾似梦/@如雾似梦>\
+[@如雾似梦]
+#IF
+CHECKITEM 如雾似梦包 1
+#ACT
+TAKE 如雾似梦包 1
+KILLSCTIMER 0
+MOV S2 TM7
+MAPMOVE TM7
+SETSCTIMER 0 1800
+SENDMSG 0 恭喜[<$USERNAME>]使用如雾似包梦进入了焰火地图！  250 0
+BREAK
+#ELSESAY
+您好像没有必须的焰火啊！
+[@长空火舞]
+#IF
+CHECKITEM 长空火舞包 1
+#ACT
+TAKE 长空火舞包 1
+KILLSCTIMER 0
+MOV S2 TM6
+MAPMOVE TM6
+SETSCTIMER 0 1800
+SENDMSG 0 恭喜[<$USERNAME>]使用长空火舞包进入了焰火地图！  250 0
+BREAK
+#ELSESAY
+您好像没有必须的焰火啊！
+[@绮梦幻想]
+#IF
+CHECKITEM 绮梦幻想包 1
+#ACT
+TAKE 绮梦幻想包 1
+KILLSCTIMER 0
+MOV S2 TM5
+MAPMOVE TM5
+SETSCTIMER 0 1800
+SENDMSG 0 恭喜[<$USERNAME>]使用绮梦幻想包进入了焰火地图！  250 0
+BREAK
+#ELSESAY
+您好像没有必须的焰火啊！
+[@浪漫星雨]
+#IF
+CHECKITEM 浪漫星雨包 1
+#ACT
+TAKE 浪漫星雨包 1
+KILLSCTIMER 0
+MOV S2 TM5
+MAPMOVE TM5
+SETSCTIMER 0 1800
+SENDMSG 0 恭喜[<$USERNAME>]使用浪漫星雨包进入了焰火地图！  250 0
+BREAK
+#ELSESAY
+您好像没有必须的焰火啊！
+[@飞火流星]
+#IF
+CHECKITEM 飞火流星包 1
+#ACT
+TAKE 飞火流星包 1
+KILLSCTIMER 0
+MOV S2 TM3
+MAPMOVE TM3
+SETSCTIMER 0 1800
+SENDMSG 0 恭喜[<$USERNAME>]使用飞火流星包进入了焰火地图！  250 0
+BREAK
+#ELSESAY
+您好像没有必须的焰火啊！
+[@秦始皇墓]
+只要你拥有进入宫殿大厅的能力，就有机会探索秦始皇墓。\
+不过探索秦始皇墓是非常危险的。建议组队进行，特别是过\
+道机关重重，一不小心就可能给秦始皇陪葬，所以说没有一\
+定的实力，千万不要冒险。当然秦始皇墓里面的宝藏是非常多的\
+只要能闯过墓道来到秦皇祭坛每2小时会刷一只超级祝福小白\
+爆超级祝福油的几率比各大教主要高2倍。\
+注:进入秦始皇墓的坐标是宫殿大厅39 43。来到秦皇祭坛以后\
+需要1个庆典蛋糕才可进入秦始皇墓。秦皇守卫必爆金条！\
+<返回/@MAIN>
+[@天工神剪]
+只要你拥有矿洞组队卷轴、神殿组队卷轴、邪窟组队卷轴、\
+地穴组队卷轴、石墓组队卷轴这五种卷轴中的任意一件，我\
+就可以送你前往地下迷宫，那里也有一个地下城守卫\
+他可以送你去宫殿长廊，前去解救天工神剪\
+<单独前往地下迷宫/@单独前往地下><COLOR=clLime 单独前往需要20级+金币20W>\
+<返回/@MAIN>
+[@检测队前往地下10]
+由于刷金币严重.测试取消了组队前往！\
+[@检测队前往地下1]
+#IF
+ISGROUPMASTER
+#ACT
+DELAYGOTO 1 @组队前往地下
+#ELSESAY
+你不是所在队伍的队长，不能进入
+[@组队前往地下]
+#IF
+ISGROUPMASTER
+CHECKITEM 石墓组队卷轴 1
+#ACT
+TAKE 石墓组队卷轴 1
+GROUPMAPMOVE T1061A
+SENDMSG 0  玛法勇士[<$USERNAME>]带领他的队友进入了地下迷宫寻找宝藏去了！ 250  0
+SENDMSG 0  玛法勇士[<$USERNAME>]带领他的队友进入了地下迷宫寻找宝藏去了！ 250  0
+BREAK
+#IF
+ISGROUPMASTER
+CHECKITEM 地穴组队卷轴 1
+#ACT
+TAKE 地穴组队卷轴 1
+GROUPMAPMOVE T1061A
+SENDMSG 0  玛法勇士[<$USERNAME>]带领他的队友进入了地下迷宫寻找宝藏去了！ 250  0
+SENDMSG 0  玛法勇士[<$USERNAME>]带领他的队友进入了地下迷宫寻找宝藏去了！ 250  0
+BREAK
+#IF
+ISGROUPMASTER
+CHECKITEM 邪窟组队卷轴 1
+#ACT
+TAKE 邪窟组队卷轴 1
+GROUPMAPMOVE T1061A
+SENDMSG 0  玛法勇士[<$USERNAME>]带领他的队友进入了地下迷宫寻找宝藏去了！ 250  0
+SENDMSG 0  玛法勇士[<$USERNAME>]带领他的队友进入了地下迷宫寻找宝藏去了！ 250  0
+BREAK
+#IF
+ISGROUPMASTER
+CHECKITEM 神殿组队卷轴 1
+#ACT
+TAKE 神殿组队卷轴 1
+GROUPMAPMOVE T1061A
+SENDMSG 0  玛法勇士[<$USERNAME>]带领他的队友进入了地下迷宫寻找宝藏去了！ 250  0
+SENDMSG 0  玛法勇士[<$USERNAME>]带领他的队友进入了地下迷宫寻找宝藏去了！ 250  0
+BREAK
+#IF
+ISGROUPMASTER
+CHECKITEM 矿洞组队卷轴 1
+#ACT
+TAKE 矿洞组队卷轴 1
+GROUPMAPMOVE T1061A
+SENDMSG 0  玛法勇士[<$USERNAME>]带领他的队友进入了地下迷宫寻找宝藏去了！ 250  0
+SENDMSG 0  玛法勇士[<$USERNAME>]带领他的队友进入了地下迷宫寻找宝藏去了！ 250  0
+BREAK
+#ELSESAY
+条件不够：解救天工神剪需要五种卷轴中的任意一件！\ \
+<返回/@MAIN>
+[@单独前往地下]
+#IF
+CHECKLEVELEX > 19
+checkgold 200000
+#ACT
+take 金币 200000
+MAPMOVE   T1061A
+SENDMSG 0  伟大的玛法勇士[<$USERNAME>]闯入了[地下宫殿]超多宝藏等待你去挖掘！ 251  249
+SENDMSG 0  伟大的玛法勇士[<$USERNAME>]闯入了[地下宫殿]超多宝藏等待你去挖掘！ 251  249
+BREAK
+#ELSESAY
+你的条件不够，我不能送你去

@@ -1,0 +1,193 @@
+[@main]
+#IF
+ISADMIN
+#ACT
+#SAY
+<开放地下/@地下> <开放烟火/@焰火> <开放BOSS/@BOSS> <开放白日门/@白日门> <开放魔龙/@魔龙> \ \
+<开放幻境/@幻境> <开放魔龙殿/@魔龙殿> <开放藏宝阁/@藏宝阁> <开放测试区/@测试> <开放正式区/@开区>\ \
+<关闭地下/@关地下> <关闭烟火/@关焰火> <关闭BOSS/@关BOSS> <关闭魔龙/@关魔龙> \ \
+<关闭幻境/@关幻境> <关闭白日门/@关白日门> <关闭魔龙殿/@关魔龙殿> <关闭藏宝阁/@关藏宝阁> \ \
+<关闭沙奖励/@关沙奖励> <开启沙奖励/@开沙奖励>  <回比齐/@回比齐>┆<回土城/@回土城>\ \
+[@回比齐]
+#IF
+#ACT
+mapmove 0 330 268
+[@回土城]
+#IF
+#ACT
+mapmove 3 333 333
+
+[@开沙奖励]
+#IF
+#ACT
+MOV H88 1
+BREAK
+[@关沙奖励]
+#IF
+#ACT
+MOV H88 2
+BREAK
+[@开区]
+#IF
+#ACT
+MOV G10 0
+SENDMSG 0 正式开区成功开放！…… 252 253 20
+SENDMSG 7 设置为正式开区模式生效！
+MessageBox 设置为[正式开区模式]生效
+BREAK
+
+[@测试]
+#IF
+#ACT
+MOV G10 1
+SENDMSG 0 测试成功开放！…… 252 253 20
+SENDMSG 7 设置为测试开区模式生效！
+MessageBox 设置为[测试开区模式]生效！
+BREAK
+
+[@地下]
+#IF
+#ACT
+MOV G90 1
+SENDMSG 0 神秘的地下宫殿地图成功开放！…… 252 253 20
+BREAK
+
+[@焰火]
+#IF
+#ACT
+MOV G91 1
+SENDMSG 0 神秘的焰火屠魔地图成功开放！…… 252 253 20
+BREAK
+
+[@BOSS]
+#IF
+#ACT
+MOV G92 1
+SENDMSG 0 神秘的BOSS之家地图成功开放！…… 252 253 20
+BREAK
+
+[@封魔]
+#IF
+#ACT
+MOV G93 1
+SENDMSG 0 神秘的封魔城地图成功开放！…… 252 253 20
+BREAK
+
+[@苍月]
+#IF
+#ACT
+MOV G94 1
+SENDMSG 0 神秘的苍月岛地图成功开放！…… 252 253 20
+BREAK
+
+[@白日门]
+#IF
+#ACT
+MOV G95 1
+SENDMSG 0 神秘的白日门地图成功开放！…… 252 253 20
+BREAK
+
+[@魔龙]
+#IF
+#ACT
+MOV G96 1
+SENDMSG 0 神秘的魔龙城地图成功开放！…… 252 253 20
+BREAK
+
+[@魔龙殿]
+#IF
+#ACT
+MOV G97 1
+SENDMSG 0 神秘的魔龙殿地图成功开放！…… 252 253 20
+BREAK
+
+
+[@幻境]
+#IF
+#ACT
+MOV G98 1
+SENDMSG 0 双倍幻境地图成功开放！…… 252 253 20
+BREAK
+
+
+[@藏宝阁]
+#ACT
+MOV G99 1
+SENDMSG 0 藏宝阁地图成功开放！…… 252 253 20
+BREAK
+
+
+
+
+
+
+[@关地下]
+#IF
+#ACT
+MOV G90 0
+SENDMSG 0 神秘的地下宫殿地图成功关闭！…… 252 253 20
+BREAK
+
+[@关焰火]
+#IF
+#ACT
+MOV G91 0
+SENDMSG 0 神秘的焰火屠魔地图成功关闭！…… 252 253 20
+BREAK
+
+[@关BOSS]
+#IF
+#ACT
+MOV G92 0
+SENDMSG 0 神秘的BOSS之家地图成功关闭！…… 252 253 20
+BREAK
+
+[@关封魔]
+#IF
+#ACT
+MOV G93 0
+SENDMSG 0 神秘的封魔城地图成功关闭！…… 252 253 20
+BREAK
+
+[@关苍月]
+#IF
+#ACT
+MOV G94 0
+SENDMSG 0 神秘的苍月岛地图成功关闭！…… 252 253 20
+BREAK
+
+[@关白日门]
+#IF
+#ACT
+MOV G95 0
+SENDMSG 0 神秘的白日门地图成功关闭！…… 252 253 20
+BREAK
+
+[@关魔龙]
+#IF
+#ACT
+MOV G96 0
+SENDMSG 0 神秘的魔龙城地图成功关闭！…… 252 253 20
+BREAK
+
+[@关魔龙殿]
+#IF
+#ACT
+MOV G97 0
+SENDMSG 0 神秘的魔龙殿地图成功关闭！…… 252 253 20
+BREAK
+
+
+[@关幻境]
+#IF
+#ACT
+MOV G98 0
+SENDMSG 0 双倍幻境地图成功关闭！…… 252 253 20
+BREAK
+
+
+[@关藏宝阁]
+#ACT
+MOV G99 0
+SENDMSG 0 藏宝阁地图成功关闭！…… 252 253 20
+BREAK

@@ -1,0 +1,27 @@
+BODY {
+	LINE-HEIGHT: normal; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 0px; COLOR: #ff9600; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+TD {
+	FONT: 12px "??", "ËÎÌו"
+}
+.yellowbold {
+	LINE-HEIGHT: 150%; COLOR: #fffb00; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.orange {
+	LINE-HEIGHT: 160%; COLOR: #ff9600; FONT-SIZE: 12px
+}
+.yellow {
+	LINE-HEIGHT: 160%; COLOR: #f1c777; FONT-SIZE: 12px
+}
+A:link {
+	COLOR: #fffb00; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #fffb00; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #fffb00; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #fffb00; TEXT-DECORATION: none
+}

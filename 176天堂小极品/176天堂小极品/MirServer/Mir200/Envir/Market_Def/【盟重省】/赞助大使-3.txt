@@ -1,0 +1,64 @@
+[@main]
+心爱的玩家：<$USERNAME> 感谢您对本传奇的支持！\ \
+我是冲值赞助大使奖励服务员，本服赞助大使可以领取以下奖励！\ \
+<铜牌斗笠/@1> <COLOR=clSkyBlue 需成为铜牌赞助大使>   <银牌斗笠/@2> <COLOR=clSkyBlue 需成为银牌赞助大使>\ \
+<金牌斗笠/@3> <COLOR=clSkyBlue 需成为金牌赞助大使>   <钻石斗笠/@4> <COLOR=clSkyBlue 需成为钻石赞助大使>\ \
+注意：奖励每个人只能领取相对应的斗笠一次      <我知道了，离开/@exit>
+[@1]
+#IF
+CheckAccountList ..\QuestDiary\斗笠系统\铜牌名单.txt HardDisk
+#ACT
+MESSAGEBOX 你已经领取过奖励了！
+#ELSEACT
+goto @1062
+
+
+[@1062]
+#IF
+CHECKVAR HUMAN 赞助大使 = 1000
+#ACT
+GIVE 铜牌斗笠 1
+addnamelist ..\QuestDiary\斗笠系统\铜牌名单.txt HardDisk
+MessageBox 您成功领取铜牌斗笠！
+BREAK
+#ELSEACT
+MessageBox 您不是银铜牌赞助大使,无法领取!
+BREAK
+
+
+
+
+[@2]
+#IF
+CHECKVAR HUMAN 赞助大使 = 2000
+#ACT
+GIVE 银牌斗笠 1
+MessageBox 您成功领取银牌斗笠！
+BREAK
+#ELSEACT
+MessageBox 您不是银铜牌赞助大使,无法领取!
+BREAK
+
+
+[@3]
+#IF
+CHECKVAR HUMAN 赞助大使 = 5000
+#ACT
+GIVE 金牌斗笠 1
+MessageBox 您成功领取金牌斗笠！
+BREAK
+#ELSEACT
+MessageBox 您不是金铜牌赞助大使,无法领取!
+BREAK
+
+
+[@4]
+#IF
+CHECKVAR HUMAN 赞助大使 = 10000
+#ACT
+GIVE 钻石斗笠 1
+MessageBox 您成功领取钻石斗笠！
+BREAK
+#ELSEACT
+MessageBox 您不是钻石赞助大使,无法领取!
+BREAK

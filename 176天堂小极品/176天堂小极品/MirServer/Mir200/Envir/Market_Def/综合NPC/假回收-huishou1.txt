@@ -1,0 +1,27 @@
+[@main]
+#IF
+Check [301] 0
+#ACT
+MessageBox 你选择错误　1　次,请点击变色的NPC.\其他NPC均为防脱机验证NPC\错误三次将自动列入封号名单
+SET [301] 1
+BREAK
+
+#IF
+Check [301] 1
+Check [302] 0
+#ACT
+MessageBox 你选择错误　2　次,请点击变色的NPC.\其他NPC均为防脱机验证NPC\错误三次将自动列入封号名单
+SET [302] 1
+BREAK
+
+#IF
+Check [301] 1
+Check [302] 1
+Check [303] 0
+#ACT
+SET [303] 1
+mapmove 0
+ADDLINELIST ..\QuestDiary\数据文件\封号检测\脱机自封名单.txt <$USERNAME> HardDisk
+MessageBox 你选择错误　3　次,已自动列入封号名单!
+kick
+BREAK

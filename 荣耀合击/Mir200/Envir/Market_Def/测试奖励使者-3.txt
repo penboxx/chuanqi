@@ -1,0 +1,115 @@
+()
+%100
+[@main]
+
+┏━┳<COLOR=clYellow 注意:正式开区后领取测试奖励帐号与测试帐号一致相同> ┓\
+┃测┃<COLOR=clAqua 测试区玩家等级达到><44><COLOR=clAqua 级，正式开区在此领奖><500万>金币 ┃\
+┃试┃<COLOR=clAqua 测试区玩家等级达到><46><COLOR=clAqua 级，正式开区在此领奖><800万>金币 ┃\
+┃奖┃<COLOR=clAqua 测试区玩家等级达到><50><COLOR=clAqua 级，正式开区在此领奖><1500万>金币┃\
+┗━┻━━━━━━━━━<领取测试奖励/@领取测试奖励>━━━━━━━━━━┛\
+
+[@main111]
+<COLOR=clLime    ★当您在测试区达到以下等级,正式开区领取相应的奖励★>\ 
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 测试期间达到43级→正式开区后可领取300 万金币>\ 
+<COLOR=clAqua 测试期间达到44级→正式开区后可领取500 万金币>    <领取测试奖励/@领取测试奖励> \ 
+<COLOR=clAqua 测试期间达到45级→正式开区后可领取800 万金币>\ 
+<COLOR=clAqua 测试期间达到46级→正式开区后可领取1000万金币>\ 
+<COLOR=clAqua 测试期间达到50级→正式开区后可领取1500万金币>    <领取测试奖励/@领取测试奖励> \ 
+<COLOR=clAqua 测试期间达到53级→正式开区后可领取50  元充值>\ 
+<COLOR=clAqua 测试期间达到55级→正式开区后可领取80  元充值>\ 
+<COLOR=clAqua 测试期间达到57级→正式开区后可领取100 元充值>\ 
+[@领取测试奖励]
+#IF
+checkstringlist ..\QuestDiary\测试奖励\本区状态.txt 测试区 HardDisk
+#ACT
+MESSAGEBOX 目前是测试区，请等待正式区再来领取！
+BREAK
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\44级测试奖励.txt HardDisk
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\44级测试奖励.txt HardDisk
+give 金币 5000000
+SENDMSG 5 提示:44级测试奖励领取成功！
+SENDMSG 2 恭喜玩家〖%s〗领取了44级测试奖励【500W金币】如果你也想领取,就期待下个新区... 252 255
+SENDMSG 2 恭喜玩家〖%s〗领取了44级测试奖励【500W金币】如果你也想领取,就期待下个新区... 252 255
+SENDMSG 2 恭喜玩家〖%s〗领取了44级测试奖励【500W金币】如果你也想领取,就期待下个新区... 252 255 10
+BREAK
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\46级测试奖励.txt HardDisk
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\46级测试奖励.txt HardDisk
+give 金币 8000000
+SENDMSG 5 提示:46级测试奖励领取成功！
+SENDMSG 2 恭喜玩家〖%s〗领取了46级测试奖励【800W金币】如果你也想领取,就期待下个新区... 252 255
+SENDMSG 2 恭喜玩家〖%s〗领取了46级测试奖励【800W金币】如果你也想领取,就期待下个新区... 252 255
+SENDMSG 2 恭喜玩家〖%s〗领取了46级测试奖励【800W金币】如果你也想领取,就期待下个新区... 252 255 10
+BREAK
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\50级测试奖励.txt HardDisk
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\50级测试奖励.txt HardDisk
+give 金币 15000000
+SENDMSG 5 提示:50级测试奖励领取成功！
+SENDMSG 2 恭喜玩家〖%s〗领取了50级测试奖励【1500W金币】如果你也想领取,就期待下个新区... 252 255
+SENDMSG 2 恭喜玩家〖%s〗领取了50级测试奖励【1500W金币】如果你也想领取,就期待下个新区... 252 255
+SENDMSG 2 恭喜玩家〖%s〗领取了50级测试奖励【1500W金币】如果你也想领取,就期待下个新区... 252 255 10
+BREAK
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\53级测试奖励.txt HardDisk
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\53级测试奖励.txt HardDisk
+give 金币 30000000
+GAMEGIRD + 50
+GAMEPOINT + 50
+SENDMSG 5 提示:53级测试奖励领取成功！
+SENDMSG 2 恭喜玩家〖%s〗领取了53级测试奖励【50元赞助回馈】如果你也想领取,就期待下个新区... 252 255
+SENDMSG 2 恭喜玩家〖%s〗领取了53级测试奖励【3000W金币】如果你也想领取,就期待下个新区... 252 255
+SENDMSG 2 恭喜玩家〖%s〗领取了53级测试奖励【3000W金币】如果你也想领取,就期待下个新区... 252 255 10
+SENDMSG 2 ★[%s]:玩家<$USERNAME>使用充值系统获得50充值点！
+SENDMSG 2 ★[%s]:玩家<$USERNAME>使用充值系统获得50充值积分！
+BREAK
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\55级测试奖励.txt HardDisk
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\55级测试奖励.txt HardDisk
+give 金币 60000000
+GAMEGIRD + 80
+GAMEPOINT + 80
+SENDMSG 5 提示:55级测试奖励领取成功！
+SENDMSG 2 恭喜玩家〖%s〗领取了55级测试奖励【80元赞助回馈】如果你也想领取,就期待下个新区... 252 255
+SENDMSG 2 恭喜玩家〖%s〗领取了55级测试奖励【6000W金币】如果你也想领取,就期待下个新区... 252 255  
+SENDMSG 2 恭喜玩家〖%s〗领取了55级测试奖励【6000W金币】如果你也想领取,就期待下个新区... 252 255  10
+SENDMSG 2 ★[%s]:玩家<$USERNAME>使用充值系统获得80充值点！
+SENDMSG 2 ★[%s]:玩家<$USERNAME>使用充值系统获得80充值积分！
+BREAK
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\57级测试奖励.txt HardDisk
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\57级测试奖励.txt HardDisk
+give 金币 90000000
+GAMEGIRD + 100
+GAMEPOINT + 100
+SENDMSG 5 提示:57级测试奖励领取成功！
+SENDMSG 2 恭喜玩家〖%s〗领取了57级测试奖励【100元赞助回馈】如果你也想领取,就期待下个新区... 252 255
+SENDMSG 2 恭喜玩家〖%s〗领取了57级测试奖励【9000W金币】如果你也想领取,就期待下个新区... 252 255
+SENDMSG 2 恭喜玩家〖%s〗领取了57级测试奖励【9000W金币】如果你也想领取,就期待下个新区... 252 255 10
+SENDMSG 2 ★[%s]:玩家<$USERNAME>使用充值系统获得100充值点！
+SENDMSG 2 ★[%s]:玩家<$USERNAME>使用充值系统获得100充值积分！
+BREAK
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\58级测试奖励.txt HardDisk
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\58级测试奖励.txt HardDisk
+give 金币 120000000
+GAMEGIRD + 200
+GAMEPOINT + 200
+SENDMSG 5 提示:58级测试奖励领取成功！
+SENDMSG 2 恭喜玩家〖%s〗领取了58级测试奖励【200元赞助回馈】如果你也想领取,就期待下个新区... 252 255
+SENDMSG 2 恭喜玩家〖%s〗领取了58级测试奖励【1.2亿金币】如果你也想领取,就期待下个新区... 252 255
+SENDMSG 2 恭喜玩家〖%s〗领取了58级测试奖励【1.2亿金币】如果你也想领取,就期待下个新区... 252 255 10
+SENDMSG 2 ★[%s]:玩家<$USERNAME>使用充值系统获得200充值点！
+SENDMSG 2 ★[%s]:玩家<$USERNAME>使用充值系统获得200充值积分！
+BREAK
+#ELSESAY
+对不起！领取条件不足\

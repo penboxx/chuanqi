@@ -1,0 +1,336 @@
+(@repair )
+%100
+[@main]
+新技能在魔龙BOSS怪身上爆出！\
+<本体狮子吼/@bs>  <COLOR=clLime 战士本体技能> <COLOR=clFuchsia  需要20书页+>力量戒指+200万金币\
+<本体开天斩/@bk>  <COLOR=clLime 战士本体技能> <COLOR=clFuchsia  需要20书页+>力量戒指+200万金币\
+<本体四级盾/@bd>  <COLOR=clLime 法师本体技能> <COLOR=clFuchsia  需要20书页+>紫碧螺  +200万金币\
+<本体寒冰掌/@bb>  <COLOR=clLime 法师本体技能> <COLOR=clFuchsia  需要20书页+>紫碧螺  +200万金币\
+<本体召唤月灵/@by><COLOR=clLime 道士本体技能> <COLOR=clFuchsia  需要20书页+>泰坦戒指+200万金币\
+<本体无极真气/@bzq><COLOR=clLime 道士主体技能> <COLOR=clFuchsia  需要20书页+>泰坦戒指+200万金币\
+<本体气功波/@qgb0>  <COLOR=clLime 道士主体技能> <COLOR=clFuchsia  需要20书页+>泰坦戒指+200万金币\
+<下一页/@next>                                             <关闭/@Exit> \
+[@next]
+<英雄无极真气/@zq> <COLOR=clLime 道士英雄技能> <COLOR=clFuchsia  需要20书页+>泰坦戒指+200万金币\
+<英雄召唤月灵/@yy> <COLOR=clLime 道士英雄技能> <COLOR=clFuchsia  需要20书页+>泰坦戒指+200万金币\
+<英雄气功波/@qgb>  <COLOR=clLime  道士英雄技能> <COLOR=clFuchsia  需要20书页+>泰坦戒指+200万金币\
+<英雄开天斩/@yk> <COLOR=clLime   战士英雄技能> <COLOR=clFuchsia  需要20书页+>力量戒指+200万金币\
+<英雄灭天火/@yf> <COLOR=clLime   法师英雄技能> <COLOR=clFuchsia  需要20书页+>紫碧螺  +200万金币\
+<英雄分身术/@yo> <COLOR=clLime   法师英雄技能> <COLOR=clFuchsia  需要20书页+>紫碧螺  +200万金币\ 
+<英雄护体神盾/@ht> <COLOR=clLime  通用英雄技能> <COLOR=clFuchsia 需要50书页+>雷霆+光芒+烈焰戒指+5000万金币\ 
+<COLOR=clFuchsia 注:英雄学习英雄护体神盾达到40级主体自动获得护体神盾！>\ \ 
+<上一页/@main>                                             <关闭/@Exit> \
+
+[@ht]
+#if
+checkitem 书页 50
+checkitem 雷霆战戒
+checkitem 烈焰魔戒
+checkitem 光芒道戒
+checkgold 50000000
+#act
+take 金币 50000000
+take 书页 50
+take 雷霆战戒
+take 烈焰魔戒
+take 光芒道戒
+give 英雄护体神盾
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄护体神盾！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+
+[@66]
+#if
+checkitem 书页 20
+checkitem 雷霆战戒
+CHECKGAMEGOLD > 299
+#act
+GAMEGOLD - 300
+take 书页 20
+take 雷霆战戒
+give 逐日剑法
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了逐日剑法！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@33]
+#if
+checkitem 书页 20
+checkitem 雷霆战戒
+CHECKGAMEGOLD > 299
+#act
+GAMEGOLD - 300
+take 书页 20
+take 雷霆战戒
+give 英雄逐日剑法
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄逐日剑法！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@55]
+#if
+checkitem 书页 20
+checkitem 烈焰魔戒
+#act
+GAMEGOLD - 300
+take 书页 20
+take 烈焰魔戒
+give 流星火雨
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了流星火雨！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@22]
+#if
+checkitem 书页 20
+checkitem 烈焰魔戒
+CHECKGAMEGOLD > 299
+#act
+GAMEGOLD - 300
+take 书页 20
+take 烈焰魔戒
+give 英雄流星火雨
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄流星火雨！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@44]
+#if
+checkitem 书页 20
+checkitem 光芒道戒
+CHECKGAMEGOLD > 299
+#act
+GAMEGOLD - 300
+take 书页 20
+take 光芒道戒
+give 噬血术
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了噬血术！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@11]
+#if
+checkitem 书页 20
+checkitem 光芒道戒
+CHECKGAMEGOLD > 299
+#act
+GAMEGOLD - 300
+take 书页 20
+take 光芒道戒
+give 英雄噬血术
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄噬血术！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@yk]
+#if
+checkitem 书页 20
+checkitem 力量戒指
+checkgold 2000000
+#act
+take 金币 2000000
+take 书页 20
+take 力量戒指
+give 英雄开天斩
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄开天斩！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@yf]
+#if
+checkitem 书页 20
+checkitem 紫碧螺
+checkgold 2000000
+#act
+take 金币 2000000
+take 书页 20
+take 紫碧螺
+give 英雄灭天火
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄灭天火！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@yy]
+#if
+checkitem 书页 20
+checkitem 泰坦戒指
+checkgold 2000000
+#act
+take 金币 2000000
+take 书页 20
+take 泰坦戒指
+give 英雄召唤月灵
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄召唤月灵！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@bk]
+#if
+checkitem 书页 20
+checkitem 力量戒指
+checkgold 2000000
+#act
+take 金币 2000000
+take 书页 20
+take 力量戒指
+give 开天斩
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了主体开天斩！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@yo]
+#if
+checkitem 书页 20
+checkitem 紫碧螺
+checkgold 2000000
+#act
+take 金币 2000000
+take 书页 20
+take 紫碧螺
+give 英雄分身术
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄分身术！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@bm]
+#if
+checkitem 书页 20
+checkitem 紫碧螺
+checkgold 2000000
+#act
+take 金币 2000000
+take 书页 20
+take 紫碧螺
+give 灭天火
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了主体灭天火！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@by]
+#if
+checkitem 书页 20
+checkitem 泰坦戒指
+checkgold 2000000
+#act
+take 金币 2000000
+take 书页 20
+take 泰坦戒指
+give 召唤月灵
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了主体召唤月灵！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@bs]
+#if
+checkitem 书页 20
+checkitem 力量戒指
+checkgold 2000000
+#act
+take 金币 2000000
+take 书页 20
+take 力量戒指
+give 狮子吼
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了主体狮子吼！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@bd]
+#if
+checkitem 书页 20
+checkitem 紫碧螺
+checkgold 2000000
+#act
+take 金币 2000000
+take 书页 20
+take 紫碧螺
+give 四级魔法盾
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了四级魔法盾！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@bb]
+#if
+checkitem 书页 20
+checkitem 紫碧螺
+checkgold 2000000
+#act
+take 金币 2000000
+take 书页 20
+take 紫碧螺
+give 寒冰掌
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了主体寒冰掌！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@zq]
+#if
+checkitem 书页 20
+checkitem 泰坦戒指
+checkgold 2000000
+#act
+take 金币 2000000
+take 书页 20
+take 泰坦戒指
+give 英雄无极真气
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄无极真气！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@bzq]
+#if
+checkitem 书页 20
+checkitem 泰坦戒指
+checkgold 2000000
+#act
+take 金币 2000000
+take 书页 20
+take 泰坦戒指
+give 无极真气
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了无极真气！ 250 0
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+[@qgb]
+#if
+checkitem 书页 20
+checkitem 泰坦戒指
+checkgold 2000000
+#act
+take 金币 2000000
+take 书页 20
+take 泰坦戒指
+give 英雄气功波
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了英雄气功波！ 250 0
+BREAK
+[@qgb0]
+#if
+checkitem 书页 20
+checkitem 泰坦戒指
+checkgold 2000000
+#act
+take 金币 2000000
+take 书页 20
+take 泰坦戒指
+give 气功波
+SENDMSG 0 恭喜勇士[<$USERNAME>]在新技能NBC处合成了主体气功波！ 250 0
+BREAK

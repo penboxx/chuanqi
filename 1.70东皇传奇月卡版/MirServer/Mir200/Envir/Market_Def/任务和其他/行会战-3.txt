@@ -1,0 +1,171 @@
+[@main]
+行会战争专用地图，PK不红名，死亡掉装备！\ \
+<COLOR=clMoneyGreen 行会战地图一(随机× 小退√)>   <COLOR=clLime 集结点>：<随机点/@dian1>  <COLOR=clSkyBlue (尸王殿地图)>\ \
+<COLOR=clMoneyGreen 行会战地图二(随机× 小退×)>   <COLOR=clLime 集结点>：<随机点/@dian3>  <COLOR=clSkyBlue (困惑殿堂地图)>\ \
+<COLOR=clSkyBlue 行会争霸地图(随机× 小退×)>   <COLOR=clLime 集结点>：<上点/@dian7>  <下点/@dian8>  <随机点/@dian9>\ \
+<离开/@exit>
+
+[@dian1]
+#if
+HAVEGUILD
+CHECKLEVELEX > 29
+#act
+mapmove HH1
+#elseact
+messagebox 30级以下无行会人员禁止进入！
+break
+
+[@dian3]
+#if
+HAVEGUILD
+CHECKLEVELEX > 29
+#act
+mapmove HH2
+#elseact
+messagebox 30级以下无行会人员禁止进入！
+break
+
+[@dian7]
+;#if
+;dayofweek Mon
+;#act
+;sendmsg 7 提示：抱歉，今天不是活动日期
+;break
+
+;#if
+;dayofweek THU
+;#act
+;sendmsg 7 提示：抱歉，今天不是活动日期
+;break
+
+;#if
+;dayofweek TUE
+;#act
+;sendmsg 7 提示：抱歉，今天不是活动日期
+;break
+
+;#if
+;dayofweek WED
+;#act
+;sendmsg 7 提示：抱歉，今天不是活动日期
+;break
+
+#if
+hour 20 20
+MIN 30 59
+HAVEGUILD
+CHECKLEVELEX > 29
+#act
+mapmove ZM6 10 12
+break
+
+#if
+hour 21 21
+MIN 0 59
+HAVEGUILD
+CHECKLEVELEX > 29
+#act
+mapmove ZM6 10 12
+break
+
+#if
+#act
+messagebox 30级以下无行会人员禁止进入(20:30-22:00进入)！
+break
+
+[@dian8]
+#if
+dayofweek Mon
+#act
+;sendmsg 7 提示：抱歉，今天不是活动日期
+;break
+
+;#if
+;dayofweek THU
+;#act
+;sendmsg 7 提示：抱歉，今天不是活动日期
+;break
+
+;#if
+;dayofweek TUE
+;#act
+;sendmsg 7 提示：抱歉，今天不是活动日期
+;break
+
+;#if
+;dayofweek WED
+;#act
+;sendmsg 7 提示：抱歉，今天不是活动日期
+;break
+
+#if
+hour 20 20
+MIN 30 59
+HAVEGUILD
+CHECKLEVELEX > 29
+#act
+mapmove ZM6 26 38
+break
+
+#if
+hour 21 21
+MIN 0 59
+HAVEGUILD
+CHECKLEVELEX > 29
+#act
+mapmove ZM6 26 38
+break
+
+#if
+#act
+messagebox 30级以下无行会人员禁止进入(20:30-22:00进入)
+break
+
+
+[@dian9]
+;#if
+;dayofweek Mon
+;#act
+;;sendmsg 7 提示：抱歉，今天不是活动日期
+;break
+
+;#if
+;dayofweek THU
+;#act
+;sendmsg 7 提示：抱歉，今天不是活动日期
+;break
+
+;#if
+;dayofweek TUE
+;#act
+;sendmsg 7 提示：抱歉，今天不是活动日期
+break
+
+;#if
+;dayofweek WED
+;#act
+;sendmsg 7 提示：抱歉，今天不是活动日期
+;break
+
+#if
+hour 20 20
+MIN 30 59
+HAVEGUILD
+CHECKLEVELEX > 29
+#act
+mapmove ZM6
+break
+
+#if
+hour 21 21
+MIN 0 59
+HAVEGUILD
+CHECKLEVELEX > 29
+#act
+mapmove ZM6
+break
+
+#if
+#act
+messagebox 30级以下无行会人员禁止进入(20:30-22:00进入)
+break

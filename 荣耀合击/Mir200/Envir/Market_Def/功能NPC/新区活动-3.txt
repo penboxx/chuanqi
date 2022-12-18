@@ -1,0 +1,55 @@
+[@main]
+#IF
+EQUAL G20 0
+#SAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【必爆人民币卷】><COLOR=clRed Hot~>  <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clfuchsia ╔┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╗>\
+<COLOR=clfuchsia ┊> <COLOR=$00ff00 活><COLOR=$00ff00 动><COLOR=$00ff00 介><COLOR=$00ff00 绍>　<COLOR=$00bbff 刷新BOSS必爆人民币,必爆人民币卷最低50元！><COLOR=clfuchsia ┊>\
+<COLOR=clfuchsia ╚┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╝>\
+　　　　　　　　　　<COLOR=$00bbff ╔┈┈┈┈╗>\
+　　　　　　　　　　<COLOR=$00bbff ┊><时间未到/11we><COLOR=$00bbff ┊>　　　 　<COLOR=clRED 活动只限新区>\
+　　　　　　　　　　<COLOR=$00bbff ╚┈┈┈┈╝>　　　　<COLOR=clRED 开区2小时后开启>\
+
+#IF
+EQUAL G20 1
+#SAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【必爆人民币卷】><COLOR=clRed Hot~>  <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clfuchsia ╔┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╗>\
+<COLOR=clfuchsia ┊> <COLOR=$00ff00 活><COLOR=$00ff00 动><COLOR=$00ff00 介><COLOR=$00ff00 绍>　<COLOR=$00bbff 刷新BOSS必爆人民币,必爆人民币卷最低50元！><COLOR=clfuchsia ┊>\
+<COLOR=clfuchsia ╚┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╝>\
+　　　　　　　　　　<COLOR=$00bbff ╔┈┈┈┈╗>\
+　　　　　　　　　　<COLOR=$00bbff ┊><挑战必爆/@乱世><COLOR=$00bbff ┊>　　　 　<COLOR=clRED 活动只限新区>\
+　　　　　　　　　　<COLOR=$00bbff ╚┈┈┈┈╝>　　　　<COLOR=clRED 开区2小时后开启>\
+
+#IF
+EQUAL G20 2
+#SAY
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【必爆人民币卷】><COLOR=clRed Hot~>  <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clfuchsia ╔┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╗>\
+<COLOR=clfuchsia ┊> <COLOR=$00ff00 活><COLOR=$00ff00 动><COLOR=$00ff00 介><COLOR=$00ff00 绍>　<COLOR=$00bbff 刷新BOSS必爆人民币,必爆人民币卷最低50元！><COLOR=clfuchsia ┊>\
+<COLOR=clfuchsia ╚┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╝>\
+　　　　　　　　　　<COLOR=$00bbff ╔┈┈┈┈╗>\
+　　　　　　　　　　<COLOR=$00bbff ┊><已经结束/11we><COLOR=$00bbff ┊>　　　 　<COLOR=clRED 活动只限新区>\
+　　　　　　　　　　<COLOR=$00bbff ╚┈┈┈┈╝>　　　　<COLOR=clRED 开区2小时后开启>\
+
+
+[@乱世]
+#IF
+checkstringlist ..\QuestDiary\测试奖励\本区状态.txt 测试区 HardDisk
+#ACT
+MESSAGEBOX 目前是测试区，必爆活动正式开区以后才可以参加！
+BREAK
+
+#IF
+EQUAL G20 1
+#ACT
+mapmove dituhao
+SENDMSG 0 玩家[%s],前往新区必爆活动地图.此地图必暴人民币！
+#ELSEACT
+MESSAGEBOX 活动还没有开始

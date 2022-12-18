@@ -1,0 +1,66 @@
+[@Plunder_无敌镖车]
+#IF
+#ACT
+GAMEGOLD + 600
+SENDMSG 0 凶狠的[<$USERNAME>]将[<$ROBBER>]的【无敌镖车】破坏了，额外获得600个元宝！ 191 251
+SENDMSG 0 凶狠的[<$USERNAME>]将[<$ROBBER>]的【无敌镖车】破坏了，额外获得600个元宝！ 191 251 10
+break
+
+[@Plunder_超级镖车]
+#IF
+#ACT
+GAMEGOLD + 600
+SENDMSG 0 凶狠的[<$USERNAME>]将[<$ROBBER>]的【超级镖车】破坏了，额外获得600个元宝！ 191 251
+SENDMSG 0 凶狠的[<$USERNAME>]将[<$ROBBER>]的【超级镖车】破坏了，额外获得600个元宝！ 191 251 10
+break
+
+[@Plunder_高级镖车]
+#IF
+#ACT
+GAMEGOLD + 600
+SENDMSG 0 凶狠的[<$USERNAME>]将[<$ROBBER>]的【高级镖车】破坏了，额外获得600个元宝！ 191 251
+SENDMSG 0 凶狠的[<$USERNAME>]将[<$ROBBER>]的【高级镖车】破坏了，额外获得600个元宝！ 191 251 10
+break
+
+[@Plunder_普通镖车]
+#IF
+#ACT
+GAMEGOLD + 600
+SENDMSG 0 凶狠的[<$USERNAME>]将[<$ROBBER>]的【普通镖车】破坏了，额外获得600个元宝！ 191 251
+SENDMSG 0 凶狠的[<$USERNAME>]将[<$ROBBER>]的【普通镖车】破坏了，额外获得600个元宝！ 191 251 10
+break
+
+[@isEscorting]
+#SAY
+你的托运任务正在执行中，不能再接此任务\
+<寻找镖车/@flyto>   <关闭/@exit>
+
+[@EscortFail]
+#SAY
+接镖车任务失败，数据中不存在镖车！\
+<关闭/@exit>
+
+[@MoveToEscort_Fail_1]
+#SAY
+你目前没有正在托运的镖车！\
+<关闭/@exit>
+
+[@MoveToEscort_Fail_2]
+#SAY
+移动到目标失败！\
+<关闭/@exit>
+
+[@EscortUnderFire]
+你押运的镖车正受攻击！！！\
+<前往救急-花费10元宝/@rescue>   <关闭/@exit>
+
+[@rescue]
+#IF
+CHECKGAMEGOLD ? 10
+#ACT
+GAMEGOLD - 10
+MoveToEscort
+break
+#elseact
+messagebox 你没有【10】个元宝，我没办法帮您传送过去?
+break

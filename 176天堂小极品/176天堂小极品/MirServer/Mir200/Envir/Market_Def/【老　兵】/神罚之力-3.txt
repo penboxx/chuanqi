@@ -1,0 +1,28 @@
+[@main]
+#IF
+#SAY
+<COLOR=clPurple ------------------------------------------------------------>\
+<COLOR=clFuchsia 【神罚之力】> <COLOR=#254 Hot~>      <COLOR=clLime 独家正版>\
+<COLOR=clPurple ------------------------------------------------------------>\
+♀．<COLOR=clCream 来自玛珐大陆的通士.不知您可曾听说过><COLOR=clFuchsia 【神罚之力】>~~~\
+♀．<COLOR=clCream 现在魔兽入侵大陆~我需要一批有实力的勇士来征服魔兽！>\
+♀．<COLOR=clAqua 如果你交给我><COLOR=clRed 5000><COLOR=clAqua 元宝。我可以帮你开启神罚之力助你斩尽妖魔!>\
+♀．<COLOR=clRed 被怪物杀死或者下线不消失.被玩家杀死封号消失>\ \
+♀．<COLOR=clLime 杀死神罚之力者可获得><COLOR=clRed 2500><COLOR=clLime 元宝！>     【<成为神罚之力/@传人>】\
+<COLOR=clPurple ------------------------------------------------------------>\
+
+[@传人]
+#IF
+CHECK [18] 0
+CHECKGAMEGOLD > 4999
+#ACT
+GAMEGOLD - 5000
+SET [18] 1
+SENDMSG 0 玩家[%S]已开启“神罚之力”杀死可以得2500元宝
+SENDMSG 0 玩家[%S]已开启“神罚之力”杀死可以得2500元宝
+SENDMSG 0 玩家[%S]已开启“神罚之力”杀死可以得2500元宝
+#CALL [\系统功能\封号设置.txt] @封号设置
+MESSAGEBOX 恭喜您成功开启[神罚之力]\　\请您小退上线以便获得属性奖励!!
+#ELSEACT
+MESSAGEBOX 您没有5000元宝，无法开启“神罚之力”！
+BREAK

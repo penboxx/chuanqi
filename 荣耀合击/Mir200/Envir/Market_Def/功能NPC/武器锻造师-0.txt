@@ -1,0 +1,403 @@
+()
+%100
+[@MAIN]
+请选择锻造的武器装备\ \
+<命运之刃/@命运之刃>\ \
+<逍遥扇/@逍遥扇>         <屠龙/@屠龙>           <嗜魂法杖/@嗜魂法杖>\      
+[@赤金逍遥]
+锻造<COLOR=CLYELLOW 赤金逍遥扇>需要以下物品:\ \
+元宝..........<COLOR=CLRED 3000>  逍遥扇........10    \ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造赤金逍遥扇> 或 <查看/@锻造> 其他配方。\
+[@锻造赤金逍遥扇]
+#IF
+CHECKITEM 逍遥扇 10
+checkgamegold > 2999
+#act
+give 赤金逍遥扇
+take 逍遥扇 10
+gamegold - 3000
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了赤金逍遥扇！ 251 249
+BREAK
+#ElSESAY
+条件不足！！！
+[@紫金嗜魂]
+锻造<COLOR=CLYELLOW 紫金嗜魂法杖>需要以下物品:\ \
+元宝..........<COLOR=CLRED 3000>  嗜魂法杖........10    \ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造紫金嗜魂法杖> 或 <查看/@锻造> 其他配方。\
+[@锻造紫金嗜魂法杖]
+#IF
+CHECKITEM 嗜魂法杖 10
+checkgamegold > 2999
+#act
+give 紫金嗜魂法杖
+take 嗜魂法杖 10
+gamegold - 3000
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了紫金嗜魂法杖！ 251 249
+BREAK
+#ElSESAY
+条件不足！！！
+[@镇天]
+锻造<COLOR=CLYELLOW 镇天>需要以下物品:\ \
+元宝..........<COLOR=CLRED 10000>  紫金嗜魂法杖........5    \ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造镇天> 或 <查看/@锻造> 其他配方。\
+[@锻造镇天]
+#IF
+CHECKITEM 紫金嗜魂法杖 5
+checkgamegold > 9999
+#act
+give 镇天
+take 紫金嗜魂法杖 5
+gamegold - 10000
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了镇天！ 251 249
+BREAK
+#ElSESAY
+条件不足！！！
+[@玄天]
+锻造<COLOR=CLYELLOW 玄天>需要以下物品:\ \
+元宝..........<COLOR=CLRED 10000>  赤金逍遥扇........5    \ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造玄天> 或 <查看/@锻造> 其他配方。\
+[@锻造玄天]
+#IF
+CHECKITEM 赤金逍遥扇 5
+checkgamegold > 9999
+#act
+give 玄天
+take 赤金逍遥扇 5
+gamegold - 10000
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了玄天！ 251 249
+BREAK
+#ElSESAY
+条件不足！！！
+[@开天]
+锻造<COLOR=CLYELLOW 开天>需要以下物品:\ \
+元宝..........<COLOR=CLRED 10000>  黄金屠龙........5    \ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造开天> 或 <查看/@锻造> 其他配方。\
+[@锻造开天]
+#IF
+CHECKITEM 黄金屠龙 5
+checkgamegold > 9999
+#act
+give 开天
+take 黄金屠龙 5
+gamegold - 10000
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了开天！ 251 249
+BREAK
+#ElSESAY
+条件不足！！！
+[@黄金屠龙]
+锻造<COLOR=CLYELLOW 黄金屠龙>需要以下物品:\ \
+元宝..........<COLOR=CLRED 3000>  屠龙........10    \ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造黄金屠龙> 或 <查看/@锻造> 其他配方。\
+[@锻造黄金屠龙]
+#IF
+CHECKITEM 屠龙 10
+checkgamegold > 2999
+#act
+give 黄金屠龙
+take 屠龙 10
+gamegold - 3000
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了黄金屠龙！ 251 249
+BREAK
+#ElSESAY
+条件不足！！！
+[@血饮]
+锻造<COLOR=CLYELLOW 血饮>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 888>  紫水晶矿........1    绿宝石矿........1\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造血饮> 或 <查看/@锻造> 其他配方。\
+[@锻造血饮]
+#IF
+CHECKITEM 绿宝石矿 1
+CHECKITEM 紫水晶矿 1
+CHECKGAMEDIAMOND ? 888
+#SAY
+恭喜锻造血饮成功\ \
+<离开/@EXIT>\
+#ACT
+GAMEDIAMOND - 888
+TAKE 绿宝石矿 1
+TAKE 紫水晶矿 1
+GIVE 血饮 1
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了血饮！ 251 249
+BREAK
+#ElSESAY
+锻造<COLOR=CLYELLOW 血饮>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 888>  紫水晶矿........1    绿宝石矿........1\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+<返回/@MAIN>\
+[@龙纹剑]
+锻造<COLOR=CLYELLOW 龙纹剑>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 388>  紫水晶矿........1    绿宝石矿........1\
+勋章之心........1\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造龙纹剑> 或 <查看/@锻造> 其他配方。\
+[@锻造龙纹剑]
+#IF
+CHECKITEM 绿宝石矿 1
+CHECKITEM 紫水晶矿 1
+CHECKITEM 勋章之心 1
+CHECKGAMEDIAMOND ? 388
+#SAY
+恭喜锻造龙纹剑成功\ \
+<离开/@EXIT>\
+#ACT
+GAMEDIAMOND - 388
+TAKE 绿宝石矿 1
+TAKE 紫水晶矿 1
+TAKE 勋章之心 1
+GIVE 龙纹剑 1
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了龙纹剑！ 251 249
+BREAK
+#ElSESAY
+锻造<COLOR=CLYELLOW 龙纹剑>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 388>  紫水晶矿........1    绿宝石矿........1\
+勋章之心........1\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+<返回/@MAIN>\
+[@裁决之杖]
+锻造<COLOR=CLYELLOW 裁决之杖>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 388>  紫水晶矿........1    绿宝石矿........1\
+勋章之心........1\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造裁决之杖> 或 <查看/@锻造> 其他配方。\
+[@锻造裁决之杖]
+#IF
+CHECKITEM 绿宝石矿 1
+CHECKITEM 紫水晶矿 1
+CHECKITEM 勋章之心 1
+CHECKGAMEDIAMOND ? 388
+#SAY
+恭喜锻造裁决之杖成功\ \
+<离开/@EXIT>\
+#ACT
+GAMEDIAMOND - 388
+TAKE 绿宝石矿 1
+TAKE 紫水晶矿 1
+TAKE 勋章之心 1
+GIVE 裁决之杖 1
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了裁决之杖！ 251 249
+BREAK
+#ElSESAY
+锻造<COLOR=CLYELLOW 裁决之杖>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 388>  紫水晶矿........1    绿宝石矿........1\
+勋章之心........1\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+<返回/@MAIN>\
+[@命运之刃]
+锻造<COLOR=CLYELLOW 命运之刃>需要以下物品:\ \
+金矿..........3  书页........15    \
+请选择 <开始锻造/@锻造命运之刃> 或 <查看/@锻造> 其他配方。\
+[@锻造命运之刃]
+#IF
+CHECKITEM 金矿 3
+CHECKITEM 书页 15
+#SAY
+恭喜锻造命运之刃成功\ \
+<离开/@EXIT>\
+#ACT
+TAKE 金矿 3
+TAKE 书页 15
+GIVE 命运之刃 1
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了命运之刃！ 251 249
+BREAK
+#ElSESAY
+锻造<COLOR=CLYELLOW 命运之刃>需要以下物品:\ \
+金矿..........3   书页........15 \
+请您确认以上配方的物品已经放入包裹内。\ \
+<返回/@MAIN>\
+[@无极棍]
+锻造<COLOR=CLYELLOW 无极棍>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 188>  紫水晶矿........1    绿宝石矿........1\
+勋章之心........1\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造无极棍> 或 <查看/@锻造> 其他配方。\
+[@锻造无极棍]
+#IF
+CHECKITEM 绿宝石矿 1
+CHECKITEM 紫水晶矿 1
+CHECKITEM 勋章之心 1
+CHECKGAMEDIAMOND ? 188
+#SAY
+恭喜锻造无极棍成功\ \
+<离开/@EXIT>\
+#ACT
+GAMEDIAMOND - 188
+TAKE 绿宝石矿 1
+TAKE 紫水晶矿 1
+TAKE 勋章之心 1
+GIVE 无极棍 1
+BREAK
+#ElSESAY
+锻造<COLOR=CLYELLOW 无极棍>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 188>  紫水晶矿........1    绿宝石矿........1\
+勋章之心........1\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+<返回/@MAIN>\
+[@井中月]
+锻造<COLOR=CLYELLOW 井中月>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 188>  紫水晶矿........1    绿宝石矿........1\
+勋章之心........1\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造井中月> 或 <查看/@锻造> 其他配方。\
+[@锻造井中月]
+#IF
+CHECKITEM 绿宝石矿 2
+CHECKITEM 紫水晶矿 2
+CHECKITEM 勋章之心 2
+CHECKGAMEDIAMOND ? 188
+#SAY
+恭喜锻造井中月成功\ \
+<离开/@EXIT>\
+#ACT
+GAMEDIAMOND - 188
+TAKE 绿宝石矿 1
+TAKE 紫水晶矿 1
+TAKE 勋章之心 1
+GIVE 井中月 1
+BREAK
+#ElSESAY
+锻造<COLOR=CLYELLOW 井中月>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 188>  紫水晶矿........1    绿宝石矿........1\
+勋章之心........1\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+<返回/@MAIN>\
+[@嗜魂法杖]
+锻造<COLOR=CLYELLOW 嗜魂法杖>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 2800>  紫水晶矿........3    绿宝石矿........3\
+勋章之心........3\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造嗜魂法杖> 或 <查看/@锻造> 其他配方。\
+[@锻造嗜魂法杖]
+#IF
+CHECKITEM 绿宝石矿 3
+CHECKITEM 紫水晶矿 3
+CHECKITEM 勋章之心 3
+CHECKGAMEDIAMOND > 2799
+#SAY
+恭喜锻造嗜魂法杖成功\ \
+<离开/@EXIT>\
+#ACT
+GAMEDIAMOND - 2800
+TAKE 绿宝石矿 3
+TAKE 紫水晶矿 3
+TAKE 勋章之心 3
+GIVE 嗜魂法杖 1
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了嗜魂法杖！ 251 249
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了嗜魂法杖！ 251 249
+BREAK
+#ElSESAY
+锻造<COLOR=CLYELLOW 嗜魂法杖>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 3800>  紫水晶矿........3    绿宝石矿........3\
+勋章之心........3\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+<返回/@MAIN>\
+[@屠龙]
+锻造<COLOR=CLYELLOW 屠龙>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 2800>  紫水晶矿........3    绿宝石矿........3\
+勋章之心........3\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造屠龙> 或 <查看/@锻造> 其他配方。\
+[@锻造屠龙]
+#IF
+CHECKITEM 绿宝石矿 3
+CHECKITEM 紫水晶矿 3
+CHECKITEM 勋章之心 3
+CHECKGAMEDIAMOND > 2799
+#SAY
+恭喜锻造屠龙成功\ \
+<离开/@EXIT>\
+#ACT
+GAMEDIAMOND - 2800
+TAKE 绿宝石矿 3
+TAKE 紫水晶矿 3
+TAKE 勋章之心 3
+GIVE 屠龙 1
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了屠龙！ 251 249
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了屠龙！ 251 249
+BREAK
+#ElSESAY
+锻造<COLOR=CLYELLOW 屠龙>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 2800>  紫水晶矿........3    绿宝石矿........3\
+勋章之心........3\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+<返回/@MAIN>\
+[@逍遥扇]
+锻造<COLOR=CLYELLOW 逍遥扇>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 2000>  紫水晶矿........3    绿宝石矿........3\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造逍遥扇> 或 <查看/@锻造> 其他配方。\
+[@锻造逍遥扇]
+#IF
+CHECKITEM 绿宝石矿 3
+CHECKITEM 紫水晶矿 3
+CHECKGAMEDIAMOND > 1999
+#SAY
+恭喜锻造逍遥扇成功\ \
+<离开/@EXIT>\
+#ACT
+GAMEDIAMOND - 2000
+TAKE 绿宝石矿 3
+TAKE 紫水晶矿 3
+GIVE 逍遥扇 1
+BREAK
+#ElSESAY
+锻造<COLOR=CLYELLOW 逍遥扇>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 2000>  紫水晶矿........3    绿宝石矿........3\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+<返回/@MAIN>\
+[@龙牙]
+锻造<COLOR=CLYELLOW 龙牙>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 1500>  紫水晶矿........2    绿宝石矿........2\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造龙牙> 或 <查看/@锻造> 其他配方。\
+[@锻造龙牙]
+#IF
+CHECKITEM 绿宝石矿 2
+CHECKITEM 紫水晶矿 2
+CHECKGAMEDIAMOND ? 1500
+#SAY
+恭喜锻造龙牙成功\ \
+<离开/@EXIT>\
+#ACT
+GAMEDIAMOND - 1500
+TAKE 绿宝石矿 2
+TAKE 紫水晶矿 2
+GIVE 龙牙 1
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了龙牙！ 251 249
+BREAK
+#ElSESAY
+锻造<COLOR=CLYELLOW 龙牙>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 1500>  紫水晶矿........2    绿宝石矿........2\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+<返回/@MAIN>\
+[@怒斩]
+锻造<COLOR=CLYELLOW 怒斩>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 1500>  紫水晶矿........2    绿宝石矿........2\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+请选择 <开始锻造/@锻造怒斩> 或 <查看/@锻造> 其他配方。\
+[@锻造怒斩]
+#IF
+CHECKITEM 绿宝石矿 2
+CHECKITEM 紫水晶矿 2
+CHECKGAMEDIAMOND ? 1500
+#SAY
+恭喜锻造怒斩成功\ \
+<离开/@EXIT>\
+#ACT
+GAMEDIAMOND - 1500
+TAKE 绿宝石矿 2
+TAKE 紫水晶矿 2
+GIVE 怒斩 1
+SENDMSG 0 恭喜[<$USERNAME>]在武器锻造师成功锻造了怒斩！ 251 249
+BREAK
+#ElSESAY
+锻造<COLOR=CLYELLOW 怒斩>需要以下物品:\ \
+金刚石..........<COLOR=CLRED 1500>  紫水晶矿........2    绿宝石矿........2\ \
+请您确认以上配方的物品已经放入包裹内。\ \
+<返回/@MAIN>\

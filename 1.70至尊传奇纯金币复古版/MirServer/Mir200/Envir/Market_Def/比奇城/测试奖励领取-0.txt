@@ -1,0 +1,38 @@
+()
+%100
+[@main]
+测试区奖励说明：\ \
+测试区期间等级达到要求的玩家，开区后在我这里领取奖励\
+等级达到38级奖励【50金币】 <领取/@领取53级测试奖励>\
+等级达到40级奖励【100金币】 <领取/@领取54级测试奖励>\\
+等级达到42级奖励【200金币】 <领取/@领取55级测试奖励>\\ \
+正式开区后请使用原帐号在我这里领取奖励。\
+提示：正式开区后2小时将关闭此系统，请及时领取！\
+[@领取53级测试奖励]
+#if
+CHECKACCOUNTLIST ..\QuestDiary\数据文件\30级测试奖励.txt
+#act
+DELACCOUNTLIST ..\QuestDiary\数据文件\30级测试奖励.txt
+GIVE 金币 500000
+SENDMSG 5 提示:38级测试奖励领取成功！
+SENDMSG 1 提示:38级测试奖励领取成功！
+#elsesay
+你没有参与测试你没有领取资格！
+[@领取54级测试奖励]
+#if
+CHECKACCOUNTLIST ..\QuestDiary\数据文件\35级测试奖励.txt
+#act
+DELACCOUNTLIST ..\QuestDiary\数据文件\35级测试奖励.txt
+GIVE 金币 1000000
+SENDMSG 1 提示:40级测试奖励领取成功！
+#elsesay
+你没有参与测试你没有领取资格！
+[@领取55级测试奖励]
+#if
+CHECKACCOUNTLIST ..\QuestDiary\数据文件\38级测试奖励.txt
+#act
+DELACCOUNTLIST ..\QuestDiary\数据文件\38级测试奖励.txt
+GIVE 金币 2000000
+SENDMSG 1 提示:42级测试奖励领取成功！
+#elsesay
+你没有参与测试你没有领取资格！

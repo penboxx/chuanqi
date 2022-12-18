@@ -1,0 +1,9 @@
+[@白色虎齿项链1]
+{
+#IF
+#act
+GAMEGOLD - 1000
+UPGRADEITEMEX 3 1 0 1 0
+sendmsg 0 恭喜[%s]在幸运之家将项链升级成功。
+BREAK
+}

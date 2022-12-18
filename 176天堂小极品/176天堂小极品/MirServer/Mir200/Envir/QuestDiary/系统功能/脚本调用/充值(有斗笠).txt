@@ -1,0 +1,242 @@
+[@充值]
+{
+<$USERNAME>您好，欢迎来到<$SERVERNAME>，谢谢您赞助本游戏\
+每1元可获得100元宝,网银赠送100%,点卡赠送80%，不支持短信\ \  
+<COLOR=clAqua 一次性充值：> \
+<COLOR=clAqua 1000元获得铜牌赞助封号，2000元获得银牌赞助封号>\
+<COLOR=clAqua 5000元获得金牌赞助封号，10000元获得钻石赞助封号>\
+<COLOR=clAqua 可领取赞助大使斗笠+名字变色(需小退1次)>\ \
+ <领取元宝/@元宝>  <在线咨询客服/@客服>  <元宝查询/@查询元宝>  <领取赞助斗笠/@领取赞助斗笠>  <关　闭/@exit>\
+
+[@元宝]
+#CALL [\充值元宝\元宝.txt] @领取元宝
+break
+
+[@客服]
+#ACT
+WebBrowser http://wpa.qq.com/msgrd?V=1&Uin=九五论坛&Site=[Discuz!]&Menu=yes
+
+
+[@查询元宝]
+#SAY 
+您好，您当前持有元宝 <$GAMEGOLD> 个！\
+　\
+ <返回/@main>\
+
+
+[@领取赞助斗笠]
+为感谢玩家赞助本游戏，现对于一些赞助达到一定额度的给予\
+不同赞助斗笠奖励\斗笠死亡不掉落,不可交易,不可丢弃出售\
+注意：持久消失不补，请自行保管好！\
+铜牌赞助斗笠 <领取/@领取铜牌>\
+银牌赞助斗笠 <领取/@领取银牌>    由铜牌升级至银牌<我要升级/@升级银牌>\
+金牌赞助斗笠 <领取/@领取金牌>    由银牌升级至金牌<我要升级/@升级金牌>\
+钻石赞助斗笠 <领取/@领取钻石>    由金牌升级至钻石<我要升级/@升级钻石>\
+<退出/@EXIT>
+
+[@领取铜牌]
+#IF
+CHECKVAR HUMAN 赞助大使 = 1000
+#ELSEACT
+MessageBox 您不是铜牌赞助大使,无法领取!
+BREAK
+
+#IF
+Check [110] 1
+#ACT
+MessageBox 您已经领取过,无法重复领取!
+BREAK
+
+#IF
+CHECKVAR HUMAN 赞助大使 = 1000
+#ACT
+SET [110] 1
+GIVE 铜牌斗笠
+MessageBox 您成功领取铜牌斗笠！
+BREAK
+#ELSEACT
+MessageBox 您不是铜牌赞助大使,无法领取!
+BREAK
+
+[@领取银牌]
+#IF
+CHECKVAR HUMAN 赞助大使 = 2000
+#ELSEACT
+MessageBox 您不是银牌赞助大使,无法领取!
+BREAK
+
+#IF
+Check [111] 1
+#ACT
+MessageBox 您已经领取过,无法重复领取!
+BREAK
+
+#IF
+Check [110] 1
+#ACT
+MessageBox 您经领取过铜牌斗笠,请选择升级你的斗笠即可!
+BREAK
+
+#IF
+CHECKVAR HUMAN 赞助大使 = 2000
+#ACT
+SET [111] 1
+GIVE 银牌斗笠
+MessageBox 您成功领取银牌斗笠！
+BREAK
+#ELSEACT
+MessageBox 您不是银牌赞助大使,无法领取!
+BREAK
+
+[@领取金牌]
+#IF
+CHECKVAR HUMAN 赞助大使 = 5000
+#ELSEACT
+MessageBox 您不是金牌赞助大使,无法领取!
+BREAK
+
+#IF
+Check [112] 1
+#ACT
+MessageBox 您已经领取过,无法重复领取!
+BREAK
+
+#IF
+Check [111] 1
+#ACT
+MessageBox 您经领取过银牌斗笠,请选择升级你的斗笠即可!
+BREAK
+
+#IF
+CHECKVAR HUMAN 赞助大使 = 5000
+#ACT
+SET [112] 1
+GIVE 金牌斗笠
+MessageBox 您成功领取金牌斗笠！
+BREAK
+#ELSEACT
+MessageBox 您不是金牌赞助大使,无法领取!
+BREAK
+
+[@领取钻石]
+#IF
+CHECKVAR HUMAN 赞助大使 = 10000
+#ELSEACT
+MessageBox 您不是钻石赞助大使,无法领取!
+BREAK
+
+#IF
+Check [113] 1
+#ACT
+MessageBox 您已经领取过,无法重复领取!
+BREAK
+
+#IF
+Check [112] 1
+#ACT
+MessageBox 您经领取过金牌斗笠,请选择升级你的斗笠即可!
+BREAK
+
+#IF
+CHECKVAR HUMAN 赞助大使 = 10000
+#ACT
+SET [113] 1
+GIVE 钻石斗笠
+MessageBox 您成功领取钻石斗笠！
+BREAK
+#ELSEACT
+MessageBox 您不是钻石赞助大使,无法领取!
+BREAK
+
+[@升级银牌]
+#IF
+Check [110] 0
+#ACT
+MessageBox 您连铜牌斗笠都未获得,无法升级成银牌斗笠!
+BREAK
+
+#IF
+Check [111] 1
+#ACT
+MessageBox 您已经获得银牌斗笠,无法重复升级!
+BREAK
+
+#IF
+checkitem 铜牌斗笠 1
+#ELSEACT
+MessageBox 请将你的铜牌斗笠放在包里,再找我升级!
+BREAK
+
+#IF
+Check [111] 0
+checkitem 铜牌斗笠 1
+CHECKVAR HUMAN 赞助大使 = 2000
+#ACT
+SET [111] 1
+TAKE 铜牌斗笠 1 
+GIVE 银牌斗笠 1
+MessageBox 你已成功升级至银牌斗笠!
+BREAK
+
+
+[@升级金牌]
+#IF
+Check [111] 0
+#ACT
+MessageBox 您连银牌斗笠都未获得,无法升级成金牌斗笠!
+BREAK
+
+#IF
+Check [112] 1
+#ACT
+MessageBox 您已经获得金牌斗笠,无法重复升级!
+BREAK
+
+#IF
+checkitem 银牌斗笠 1
+#ELSEACT
+MessageBox 请将你的银牌斗笠放在包里,再找我升级!
+BREAK
+
+#IF
+Check [112] 0
+checkitem 银牌斗笠 1
+CHECKVAR HUMAN 赞助大使 = 5000
+#ACT
+SET [112] 1
+TAKE 银牌斗笠 1 
+GIVE 金牌斗笠 1
+MessageBox 你已成功升级至金牌斗笠!
+BREAK
+
+
+[@升级钻石]
+#IF
+Check [112] 0
+#ACT
+MessageBox 您连金牌斗笠都未获得,无法升级成钻石斗笠!
+BREAK
+
+#IF
+Check [113] 1
+#ACT
+MessageBox 您已经获得钻石斗笠,无法重复升级!
+BREAK
+
+#IF
+checkitem 金牌斗笠 1
+#ELSEACT
+MessageBox 请将你的金牌斗笠放在包里,再找我升级!
+BREAK
+
+#IF
+Check [113] 0
+checkitem 金牌斗笠 1
+CHECKVAR HUMAN 赞助大使 = 10000
+#ACT
+SET [113] 1
+TAKE 金牌斗笠 1 
+GIVE 钻石斗笠 1
+MessageBox 你已成功升级至钻石斗笠!
+BREAK
+}

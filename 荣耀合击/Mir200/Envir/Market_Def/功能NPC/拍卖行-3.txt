@@ -1,0 +1,33 @@
+(@getsellgold @selloff @buyoff )
+[@main]
+当前元宝数量为：<$GAMEGOLD>个\
+╔┄┄┄┄┄┄╗  ╔┄┄┄┄┄┄╗  ╔┄┄┄┄┄┄╗\
+┆『<拍卖物品/@selloff>』┆  ┆『<购买物品 /@buyoff>』┆  ┆『<元宝物品>』┆\
+╚┄┄┄┄┄┄╝  ╚┄┄┄┄┄┄╝  ╚┄┄┄┄┄┄╝\
+╔┄┄┄┄┄┄╗  ╔┄┄┄┄┄┄╗  ╔┄┄┄┄┄┄╗\
+┆『<我的款项/@selfgold>』┆  ┆『<我的物品 /@selfitem>』┆  ┆『<返回首页 /@main>』┆\
+╚┄┄┄┄┄┄╝  ╚┄┄┄┄┄┄╝  ╚┄┄┄┄┄┄╝\ \
+<拍卖的物品全部之能用元宝进行购买.>\
+[@selloff]
+请将拍卖物品放上，并输入拍卖价格: \ \
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆<注意：拍卖需要交10%的拍卖税!!!>┆\
+╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝\ \
+不能拍卖物品请到<$WEBSITE>下载登陆器\
+<返回/@hanggun>
+[@selfitem]
+以下为你在此拍卖的物品:\
+<返回/@hanggun>\
+<$SELLOFFITEM>
+[@selfgold]
+以下为你在此拍卖所得款项:  \
+<返回/@hanggun> <取款 /@getsellgold>\
+<$SELLOUTGOLD>
+[@getsellgold]
+#ACT
+goto @selfgold
+[@buyoff2]
+[@buyoff]
+以下为全部拍卖的物品，绿颜色的为你自己拍卖的物品，\
+可以直接取回。\ \
+<返回/@hanggun>

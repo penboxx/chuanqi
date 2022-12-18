@@ -1,0 +1,1 @@
+﻿EvPNG.fix('#logo img,#btn_backtop a,.gonggao strong,.btn_video,.btn_go,.btn_down');

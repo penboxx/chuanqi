@@ -1,0 +1,17 @@
+[@main]
+
+#if
+#ACT
+SENDMSG 4 〖天堂复古系统商人〗24小时在线秒回收，回收比例1:200（10%手续费）安全可靠，公平公正。
+#CALL [\二级密码\密码登陆.txt] @转密码
+
+[@main1]
+#IF
+checknamelist ..\QuestDiary\二级密码\密码名单.txt HardDisk
+#act
+MESSAGEBOX 您已经设置好了二级密码！专心的等待新区开放吧。
+#ELSEACT
+#CALL [\二级密码\密码登陆4.txt] @转密码4
+SENDMSG 6 ★你还没有设置二级密码，请及时去NPC(帐号二代密保)处设置，使你的帐号更安全★ 251 249 20
+SENDMSG 6 ★你还没有设置二级密码，请及时去NPC(帐号二代密保)处设置，使你的帐号更安全★ 251 249 20
+BREAK

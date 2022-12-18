@@ -1,0 +1,685 @@
+[@FH]
+{
+#IF
+CHECKGamePoint > 3999999
+#ACT
+goto @3999999
+NAMECOLOR 1
+AbilityAdd 2 50 720000
+AbilityAdd 3 50 720000
+PowerRate 120 600000
+H.PowerRate 120 600000
+H.AbilityAdd 2 50 720000
+H.AbilityAdd 3 50 720000
+SENDMSG 0 [★★★HK150赞助大使★★★]⊙[%s]进入游戏!! 49 24
+BREAK
+#IF
+CHECKGamePoint > 2499999
+#ACT
+goto @2499999
+NAMECOLOR 1
+AbilityAdd 2 30 720000
+AbilityAdd 3 30 720000
+PowerRate 120 600000
+H.PowerRate 120 600000
+H.AbilityAdd 2 30 720000
+H.AbilityAdd 3 30 720000
+SENDMSG 0 [★★★王者赞助大使★★★]⊙[%s]进入游戏!! 49 70
+BREAK
+#IF
+CHECKGamePoint > 999999
+#ACT
+goto @999999
+NAMECOLOR 1
+AbilityAdd 2 20 720000
+AbilityAdd 3 20 720000
+PowerRate 115 600000
+H.PowerRate 115 600000
+H.AbilityAdd 2 20 720000
+H.AbilityAdd 3 20 720000
+SENDMSG 0 [★★★至尊赞助大使★★★]⊙[%s]进入游戏!! 49 253
+BREAK
+#IF
+CHECKGamePoint > 499999
+#ACT
+goto @499999
+NAMECOLOR 1
+AbilityAdd 2 15 720000
+AbilityAdd 3 15 720000
+PowerRate 110 600000
+H.PowerRate 110 600000
+H.AbilityAdd 2 15 720000
+H.AbilityAdd 3 15 720000
+SENDMSG 0 [★★★高级赞助大使★★★]⊙[%s]进入游戏!! 49 24
+BREAK
+#IF
+CHECKGamePoint > 299999
+#ACT
+goto @299999
+NAMECOLOR 1
+AbilityAdd 2 10 720000
+AbilityAdd 3 10 720000
+PowerRate 105 600000
+H.PowerRate 105 600000
+H.AbilityAdd 2 10 720000
+H.AbilityAdd 3 10 720000
+SENDMSG 0 [★★★我是你大爷★★★]⊙[%s]进入游戏!! 49 70
+BREAK
+#IF
+CHECKGamePoint > 99999
+#ACT
+goto @99999
+ChangeNameColor 250
+AbilityAdd 2 5 720000
+AbilityAdd 3 5 720000
+PowerRate 101 600000
+H.PowerRate 101 600000
+H.AbilityAdd 2 5 720000
+H.AbilityAdd 3 5 720000
+SENDMSG 0 [★★★gm005至尊★★★]⊙[%s]进入游戏!! 49 253
+BREAK
+
+
+
+#IF
+CHECKGamePoint > 39999
+#ACT
+goto @39999
+ChangeNameColor 151
+SENDMSG 0 [★★★全服第一★★★]⊙[%s]进入游戏!! 49 253
+BREAK
+
+
+#IF
+CHECKGamePoint > 7999
+#ACT
+goto @7999
+ChangeNameColor 255
+SENDMSG 0 [★★★一品骨灰★★★]⊙[%s]进入游戏!! 49 253
+BREAK
+
+
+
+#IF
+CHECKGamePoint < 7999
+#ACT
+goto @00000
+BREAK
+
+
+[@00000]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S1 
+#IF
+CHECK [48] 1
+#ACT
+MOV S1 [九品知县]
+#IF
+CHECK [49] 1
+#ACT
+MOV S1 [八品知府]
+#IF
+CHECK [50] 1
+#ACT
+MOV S1 [七品太守]
+#IF
+CHECK [51] 1
+#ACT
+MOV S1 [六品巡抚]
+#IF
+CHECK [52] 1
+#ACT
+MOV S1 [五品提督]
+#IF
+CHECK [53] 1
+#ACT
+MOV S1 [四品总督]
+#IF
+CHECK [54] 1
+#ACT
+MOV S1 [三品尚书]
+#IF
+CHECK [55] 1
+#ACT
+MOV S1 [二品太傅]
+#IF
+CHECK [56] 1
+#ACT
+MOV S1 [一统天下]
+#IF
+CHECK [57] 1
+#ACT
+MOV S1 [孤独求败]
+#IF
+CHECK [58] 1
+#ACT
+MOV S1 [唯我独尊]
+#IF
+CHECK [59] 1
+#ACT
+#ACT
+MOV S1 [天下无敌]
+#IF
+CHECK [60] 1
+#ACT
+MOV S1 [万人之上]
+#IF
+checklevelex > 0
+#ACT
+SETRANKLEVELNAME %s\〖hk150传说〗\<$STR(S1)>
+
+
+[@7999]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S1 
+#IF
+CHECK [48] 1
+#ACT
+MOV S1 [九品知县]
+#IF
+CHECK [49] 1
+#ACT
+MOV S1 [八品知府]
+#IF
+CHECK [50] 1
+#ACT
+MOV S1 [七品太守]
+#IF
+CHECK [51] 1
+#ACT
+MOV S1 [六品巡抚]
+#IF
+CHECK [52] 1
+#ACT
+MOV S1 [五品提督]
+#IF
+CHECK [53] 1
+#ACT
+MOV S1 [四品总督]
+#IF
+CHECK [54] 1
+#ACT
+MOV S1 [三品尚书]
+#IF
+CHECK [55] 1
+#ACT
+MOV S1 [二品太傅]
+#IF
+CHECK [56] 1
+#ACT
+MOV S1 [一统天下]
+#IF
+CHECK [57] 1
+#ACT
+MOV S1 [孤独求败]
+#IF
+CHECK [58] 1
+#ACT
+MOV S1 [唯我独尊]
+#IF
+CHECK [59] 1
+#ACT
+#ACT
+MOV S1 [天下无敌]
+#IF
+CHECK [60] 1
+#ACT
+MOV S1 [万人之上]
+#IF
+checklevelex > 0
+#ACT
+SETRANKLEVELNAME %s\〖HK150骨灰〗\<$STR(S1)>
+
+
+
+
+
+
+
+[@39999]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S1 
+#IF
+CHECK [48] 1
+#ACT
+MOV S1 [九品知县]
+#IF
+CHECK [49] 1
+#ACT
+MOV S1 [八品知府]
+#IF
+CHECK [50] 1
+#ACT
+MOV S1 [七品太守]
+#IF
+CHECK [51] 1
+#ACT
+MOV S1 [六品巡抚]
+#IF
+CHECK [52] 1
+#ACT
+MOV S1 [五品提督]
+#IF
+CHECK [53] 1
+#ACT
+MOV S1 [四品总督]
+#IF
+CHECK [54] 1
+#ACT
+MOV S1 [三品尚书]
+#IF
+CHECK [55] 1
+#ACT
+MOV S1 [二品太傅]
+#IF
+CHECK [56] 1
+#ACT
+MOV S1 [一统天下]
+#IF
+CHECK [57] 1
+#ACT
+MOV S1 [孤独求败]
+#IF
+CHECK [58] 1
+#ACT
+MOV S1 [唯我独尊]
+#IF
+CHECK [59] 1
+#ACT
+#ACT
+MOV S1 [天下无敌]
+#IF
+CHECK [60] 1
+#ACT
+MOV S1 [万人之上]
+#IF
+checklevelex > 0
+#ACT
+SETRANKLEVELNAME %s\\↑↑小小老板↑↑\<$STR(S1)>
+
+[@99999]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S1 
+#IF
+CHECK [48] 1
+#ACT
+MOV S1 [九品知县]
+#IF
+CHECK [49] 1
+#ACT
+MOV S1 [八品知府]
+#IF
+CHECK [50] 1
+#ACT
+MOV S1 [七品太守]
+#IF
+CHECK [51] 1
+#ACT
+MOV S1 [六品巡抚]
+#IF
+CHECK [52] 1
+#ACT
+MOV S1 [五品提督]
+#IF
+CHECK [53] 1
+#ACT
+MOV S1 [四品总督]
+#IF
+CHECK [54] 1
+#ACT
+MOV S1 [三品尚书]
+#IF
+CHECK [55] 1
+#ACT
+MOV S1 [二品太傅]
+#IF
+CHECK [56] 1
+#ACT
+MOV S1 [一统天下]
+#IF
+CHECK [57] 1
+#ACT
+MOV S1 [孤独求败]
+#IF
+CHECK [58] 1
+#ACT
+MOV S1 [唯我独尊]
+#IF
+CHECK [59] 1
+#ACT
+#ACT
+MOV S1 [天下无敌]
+#IF
+CHECK [60] 1
+#ACT
+MOV S1 [万人之上]
+#IF
+checklevelex > 0
+#ACT
+SETRANKLEVELNAME %s\\↑↑HK150小老板↑↑\<$STR(S1)>
+
+[@299999]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S1 
+#IF
+CHECK [48] 1
+#ACT
+MOV S1 [九品知县]
+#IF
+CHECK [49] 1
+#ACT
+MOV S1 [八品知府]
+#IF
+CHECK [50] 1
+#ACT
+MOV S1 [七品太守]
+#IF
+CHECK [51] 1
+#ACT
+MOV S1 [六品巡抚]
+#IF
+CHECK [52] 1
+#ACT
+MOV S1 [五品提督]
+#IF
+CHECK [53] 1
+#ACT
+MOV S1 [四品总督]
+#IF
+CHECK [54] 1
+#ACT
+MOV S1 [三品尚书]
+#IF
+CHECK [55] 1
+#ACT
+MOV S1 [二品太傅]
+#IF
+CHECK [56] 1
+#ACT
+MOV S1 [一统天下]
+#IF
+CHECK [57] 1
+#ACT
+MOV S1 [孤独求败]
+#IF
+CHECK [58] 1
+#ACT
+MOV S1 [唯我独尊]
+#IF
+CHECK [59] 1
+#ACT
+#ACT
+MOV S1 [天下无敌]
+#IF
+CHECK [60] 1
+#ACT
+MOV S1 [万人之上]
+#IF
+checklevelex > 0
+#ACT
+SETRANKLEVELNAME %s\\↑↑赞助大使↑↑\<$STR(S1)>
+
+
+
+[@499999]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S1 
+#IF
+CHECK [48] 1
+#ACT
+MOV S1 [九品知县]
+#IF
+CHECK [49] 1
+#ACT
+MOV S1 [八品知府]
+#IF
+CHECK [50] 1
+#ACT
+MOV S1 [七品太守]
+#IF
+CHECK [51] 1
+#ACT
+MOV S1 [六品巡抚]
+#IF
+CHECK [52] 1
+#ACT
+MOV S1 [五品提督]
+#IF
+CHECK [53] 1
+#ACT
+MOV S1 [四品总督]
+#IF
+CHECK [54] 1
+#ACT
+MOV S1 [三品尚书]
+#IF
+CHECK [55] 1
+#ACT
+MOV S1 [二品太傅]
+#IF
+CHECK [56] 1
+#ACT
+MOV S1 [一统天下]
+#IF
+CHECK [57] 1
+#ACT
+MOV S1 [孤独求败]
+#IF
+CHECK [58] 1
+#ACT
+MOV S1 [唯我独尊]
+#IF
+CHECK [59] 1
+#ACT
+#ACT
+MOV S1 [天下无敌]
+#IF
+CHECK [60] 1
+#ACT
+MOV S1 [万人之上]
+#IF
+checklevelex > 0
+#ACT
+SETRANKLEVELNAME %s\\↑↑元宝商人↑↑\<$STR(S1)>
+
+[@999999]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S1 
+#IF
+CHECK [48] 1
+#ACT
+MOV S1 [九品知县]
+#IF
+CHECK [49] 1
+#ACT
+MOV S1 [八品知府]
+#IF
+CHECK [50] 1
+#ACT
+MOV S1 [七品太守]
+#IF
+CHECK [51] 1
+#ACT
+MOV S1 [六品巡抚]
+#IF
+CHECK [52] 1
+#ACT
+MOV S1 [五品提督]
+#IF
+CHECK [53] 1
+#ACT
+MOV S1 [四品总督]
+#IF
+CHECK [54] 1
+#ACT
+MOV S1 [三品尚书]
+#IF
+CHECK [55] 1
+#ACT
+MOV S1 [二品太傅]
+#IF
+CHECK [56] 1
+#ACT
+MOV S1 [一统天下]
+#IF
+CHECK [57] 1
+#ACT
+MOV S1 [孤独求败]
+#IF
+CHECK [58] 1
+#ACT
+MOV S1 [唯我独尊]
+#IF
+CHECK [59] 1
+#ACT
+#ACT
+MOV S1 [天下无敌]
+#IF
+CHECK [60] 1
+#ACT
+MOV S1 [万人之上]
+#IF
+checklevelex > 0
+#ACT
+SETRANKLEVELNAME %s\↑↑元宝商人↑↑\╱╲╱╲····↘萬人之上↙····\╲GM╱···↘诚信经营↙···\╱指定╲···↘绿色长久↙···\╲╱╲╱···↘服务市场↙···\<$STR(S1)>
+
+[@2499999]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S1 
+#IF
+CHECK [48] 1
+#ACT
+MOV S1 [九品知县]
+#IF
+CHECK [49] 1
+#ACT
+MOV S1 [八品知府]
+#IF
+CHECK [50] 1
+#ACT
+MOV S1 [七品太守]
+#IF
+CHECK [51] 1
+#ACT
+MOV S1 [六品巡抚]
+#IF
+CHECK [52] 1
+#ACT
+MOV S1 [五品提督]
+#IF
+CHECK [53] 1
+#ACT
+MOV S1 [四品总督]
+#IF
+CHECK [54] 1
+#ACT
+MOV S1 [三品尚书]
+#IF
+CHECK [55] 1
+#ACT
+MOV S1 [二品太傅]
+#IF
+CHECK [56] 1
+#ACT
+MOV S1 [一统天下]
+#IF
+CHECK [57] 1
+#ACT
+MOV S1 [孤独求败]
+#IF
+CHECK [58] 1
+#ACT
+MOV S1 [唯我独尊]
+#IF
+CHECK [59] 1
+#ACT
+#ACT
+MOV S1 [天下无敌]
+#IF
+CHECK [60] 1
+#ACT
+MOV S1 [万人之上]
+#IF
+checklevelex > 0
+#ACT
+SETRANKLEVELNAME %s\↑↑元宝商人↑↑\╱╲╱╲····↘萬人之上↙····\╲GM╱···↘诚信经营↙···\╱指定╲···↘绿色长久↙···\╲╱╲╱···↘服务市场↙···\<$STR(S1)>
+
+[@3999999]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S1 
+#IF
+CHECK [48] 1
+#ACT
+MOV S1 [九品知县]
+#IF
+CHECK [49] 1
+#ACT
+MOV S1 [八品知府]
+#IF
+CHECK [50] 1
+#ACT
+MOV S1 [七品太守]
+#IF
+CHECK [51] 1
+#ACT
+MOV S1 [六品巡抚]
+#IF
+CHECK [52] 1
+#ACT
+MOV S1 [五品提督]
+#IF
+CHECK [53] 1
+#ACT
+MOV S1 [四品总督]
+#IF
+CHECK [54] 1
+#ACT
+MOV S1 [三品尚书]
+#IF
+CHECK [55] 1
+#ACT
+MOV S1 [二品太傅]
+#IF
+CHECK [56] 1
+#ACT
+MOV S1 [一统天下]
+#IF
+CHECK [57] 1
+#ACT
+MOV S1 [孤独求败]
+#IF
+CHECK [58] 1
+#ACT
+MOV S1 [唯我独尊]
+#IF
+CHECK [59] 1
+#ACT
+#ACT
+MOV S1 [天下无敌]
+#IF
+CHECK [60] 1
+#ACT
+MOV S1 [万人之上]
+#IF
+checklevelex > 0
+#ACT
+SETRANKLEVELNAME %s\↑↑元宝商人↑↑\╱╲╱╲····↘萬人之上↙····\╲GM╱···↘长久稳定↙···\╱指定╲···↘诚信第一↙···\╲╱╲╱···↘有利就图↙···\<$STR(S1)>
+}

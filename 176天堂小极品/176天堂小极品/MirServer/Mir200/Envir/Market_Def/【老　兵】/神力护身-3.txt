@@ -1,0 +1,27 @@
+[@main]
+<COLOR=clLime 开启神力护身户需要>50点灵符+500万金币\
+<COLOR=clLime 死亡，小退不消失，可以累计开启，时间也累计 时长>120<COLOR=clLime 分钟>\
+<COLOR=clLime 开启神力后人物名字成><COLOR=clFuchsia 紫色><COLOR=clLime ，并隐藏特殊属性：攻魔道增加5点>\  \  
+　                                您当前点灵符:【<$GAMEGIRD>】\
+<COLOR=clRed 您当前神力护身剩余时间为：><$HUMAN(神力护身)><COLOR=clRed 分钟>\  \
+
+　               <开启神力护身/@开启神力护身>  \
+
+
+
+
+[@开启神力护身]
+#IF
+checkgold 5000000
+CHECKGAMEGIRD > 49
+#ACT
+GAMEGIRD - 50
+take 金币 5000000
+CALCVAR HUMAN 神力护身 + 120
+SAVEVAR HUMAN 神力护身 ..\QuestDiary\数据文件\神力护身.txt
+MessageBox 恭喜你神力护身时间增加【120分钟】!
+SetScTimer 4 58
+#CALL [\系统功能\封号设置.txt] @封号设置
+#elseact
+MessageBox 对不起你没有50点灵符或者没有500W金币，您当前点灵符:【<$GAMEGIRD>】！
+

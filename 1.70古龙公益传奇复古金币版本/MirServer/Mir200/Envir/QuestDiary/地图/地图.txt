@@ -1,0 +1,7 @@
+[@π‹¿ÌµÿÕº]
+{
+#IF
+#ACT
+WebBrowser http://www.xin76.com/map/
+break
+}

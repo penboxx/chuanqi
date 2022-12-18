@@ -1,0 +1,385 @@
+[@领取灵符]
+{
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\01.txt 
+#ACT
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\01.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\1.txt 
+#ACT
+GAMEGIRD + 1
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\1.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了1灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\02.txt 
+#ACT
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\02.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\2.txt 
+#ACT
+GAMEGIRD + 2
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\2.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了2灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\03.txt 
+#ACT
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\03.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\3.txt 
+#ACT
+GAMEGIRD + 3
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\3.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了3灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\04.txt 
+#ACT
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\04.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\4.txt 
+#ACT
+GAMEGIRD + 4
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\4.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了4灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\05.txt 
+#ACT
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\05.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\5.txt 
+#ACT
+GAMEGIRD + 5
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\5.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了5灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\06.txt 
+#ACT
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\06.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\6.txt 
+#ACT
+GAMEGIRD + 6
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\6.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了6灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\07.txt 
+#ACT
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\07.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\7.txt 
+#ACT
+GAMEGIRD + 7
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\7.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了7灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\08.txt 
+#ACT
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\08.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\8.txt 
+#ACT
+GAMEGIRD + 8
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\8.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了8灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\09.txt 
+#ACT
+GAMEGIRD + 0
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\09.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了0灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\9.txt 
+#ACT
+GAMEGIRD + 9
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\9.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了9灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\10.txt 
+#ACT
+GAMEGIRD + 10
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\10.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了10灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\20.txt 
+#ACT
+GAMEGIRD + 20
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\20.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了20灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\30.txt 
+#ACT
+GAMEGIRD + 30
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\30.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了30灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\40.txt 
+#ACT
+GAMEGIRD + 40
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\40.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了40灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\50.txt 
+#ACT
+GAMEGIRD + 50
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\50.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了50灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\60.txt 
+#ACT
+GAMEGIRD + 60
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\60.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了60灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\70.txt 
+#ACT
+GAMEGIRD + 70
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\70.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了70灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\80.txt 
+#ACT
+GAMEGIRD + 80
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\80.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了80灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\90.txt 
+#ACT
+GAMEGIRD + 90
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\90.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了90灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\100.txt 
+#ACT
+GAMEGIRD + 100
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\100.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了100灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\200.txt 
+#ACT
+GAMEGIRD + 200
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\200.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了200灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\300.txt 
+#ACT
+GAMEGIRD + 300
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\300.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了300灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\400.txt 
+#ACT
+GAMEGIRD + 400
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\400.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了400灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\500.txt 
+#ACT
+GAMEGIRD + 500
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\500.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了500灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\600.txt 
+#ACT
+GAMEGIRD + 600
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\600.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了600灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\700.txt 
+#ACT
+GAMEGIRD + 700
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\700.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了700灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\800.txt 
+#ACT
+GAMEGIRD + 800
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\800.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了800灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\900.txt 
+#ACT
+GAMEGIRD + 900
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\900.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了900灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\1000.txt 
+#ACT
+GAMEGIRD + 1000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\1000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了1000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\2000.txt 
+#ACT
+GAMEGIRD + 2000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\2000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了2000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\3000.txt 
+#ACT
+GAMEGIRD + 3000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\3000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了3000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\4000.txt 
+#ACT
+GAMEGIRD + 4000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\4000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了4000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\5000.txt 
+#ACT
+GAMEGIRD + 5000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\5000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了5000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\6000.txt 
+#ACT
+GAMEGIRD + 6000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\6000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了6000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\7000.txt 
+#ACT
+GAMEGIRD + 7000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\7000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了7000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\8000.txt 
+#ACT
+GAMEGIRD + 8000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\8000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了8000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\9000.txt 
+#ACT
+GAMEGIRD + 9000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\9000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了9000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\10000.txt 
+#ACT
+GAMEGIRD + 10000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\10000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了10000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\20000.txt 
+#ACT
+GAMEGIRD + 20000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\20000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了20000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\30000.txt 
+#ACT
+GAMEGIRD + 30000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\30000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了30000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\40000.txt 
+#ACT
+GAMEGIRD + 40000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\40000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了40000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\50000.txt 
+#ACT
+GAMEGIRD + 50000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\50000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了50000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\60000.txt 
+#ACT
+GAMEGIRD + 60000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\60000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了60000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\70000.txt 
+#ACT
+GAMEGIRD + 70000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\70000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了70000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\80000.txt 
+#ACT
+GAMEGIRD + 80000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\80000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了80000灵符。
+
+#IF
+CheckAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\90000.txt 
+#ACT
+GAMEGIRD + 90000
+DelAccountList ..\QuestDiary\64pay充值元宝\附加赠送\灵符\90000.txt 
+SENDMSG 1  ★[%s]:恭喜<$USERNAME>通过在线充值额外获得了90000灵符。
+
+#ELSESAY
+请查看自己的充值数量!\
+没有充值请按提示进行充值!\
+<退出/@exit>
+}

@@ -1,0 +1,1024 @@
+[@小时计]
+{
+#IF
+hour 0 0
+#ACT
+CALCVAR HUMAN 小时计 = 0
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 1 1 
+#ACT
+CALCVAR HUMAN 小时计 = 1
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 2 2
+#ACT
+CALCVAR HUMAN 小时计 = 2
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 3 3
+#ACT
+CALCVAR HUMAN 小时计 = 3
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 4 4
+#ACT
+CALCVAR HUMAN 小时计 = 4
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 5 5
+#ACT
+CALCVAR HUMAN 小时计 = 5
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 6 6
+#ACT
+CALCVAR HUMAN 小时计 = 6
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 7 7
+#ACT
+CALCVAR HUMAN 小时计 = 7
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 8 8
+#ACT
+CALCVAR HUMAN 小时计 = 8
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 9 9
+#ACT
+CALCVAR HUMAN 小时计 = 9
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 10 10
+#ACT
+CALCVAR HUMAN 小时计 = 10
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 11 11
+#ACT
+CALCVAR HUMAN 小时计 = 11
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 12 12
+#ACT
+CALCVAR HUMAN 小时计 = 12
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 13 13
+#ACT
+CALCVAR HUMAN 小时计 = 13
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 14 14
+#ACT
+CALCVAR HUMAN 小时计 = 14
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 15 15
+#ACT
+CALCVAR HUMAN 小时计 = 15
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 16 16
+#ACT
+CALCVAR HUMAN 小时计 = 16
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 17 17
+#ACT
+CALCVAR HUMAN 小时计 = 17
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 18 18
+#ACT
+CALCVAR HUMAN 小时计 = 18
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 19 19
+#ACT
+CALCVAR HUMAN 小时计 = 19
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 20 20 
+#ACT
+CALCVAR HUMAN 小时计 = 20
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 21 21
+#ACT
+CALCVAR HUMAN 小时计 = 21
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 22 22
+#ACT
+CALCVAR HUMAN 小时计 = 22
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+#IF
+hour 23 23
+#ACT
+CALCVAR HUMAN 小时计 = 23
+SAVEVAR HUMAN 小时计 ..\QuestDiary\数据文件\小时计Save.txt
+BREAK
+}
+
+[@分钟计]
+{
+#IF
+min 0 0
+#ACT
+CALCVAR HUMAN 分钟计 = 0
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 1 1
+#ACT
+CALCVAR HUMAN 分钟计 = 1
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 2 2
+#ACT
+CALCVAR HUMAN 分钟计 = 2
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 3 3
+#ACT
+CALCVAR HUMAN 分钟计 = 3
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 4 4
+#ACT
+CALCVAR HUMAN 分钟计 = 4
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 5 5
+#ACT
+CALCVAR HUMAN 分钟计 = 5
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 6 6
+#ACT
+CALCVAR HUMAN 分钟计 = 6
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 7 7
+#ACT
+CALCVAR HUMAN 分钟计 = 7
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 8 8
+#ACT
+CALCVAR HUMAN 分钟计 = 8
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 9 9
+#ACT
+CALCVAR HUMAN 分钟计 = 9
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 10 10
+#ACT
+CALCVAR HUMAN 分钟计 = 10
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 11 11
+#ACT
+CALCVAR HUMAN 分钟计 = 11
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 12 12
+#ACT
+CALCVAR HUMAN 分钟计 = 12
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 13 13
+#ACT
+CALCVAR HUMAN 分钟计 = 13
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 14 14
+#ACT
+CALCVAR HUMAN 分钟计 = 14
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 15 15
+#ACT
+CALCVAR HUMAN 分钟计 = 15
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 16 16
+#ACT
+CALCVAR HUMAN 分钟计 = 16
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 17 17
+#ACT
+CALCVAR HUMAN 分钟计 = 17
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 18 18
+#ACT
+CALCVAR HUMAN 分钟计 = 18
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 19 19
+#ACT
+CALCVAR HUMAN 分钟计 = 19
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 20 20
+#ACT
+CALCVAR HUMAN 分钟计 = 20
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 21 21
+#ACT
+CALCVAR HUMAN 分钟计 = 21
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 22 22
+#ACT
+CALCVAR HUMAN 分钟计 = 22
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 23 23
+#ACT
+CALCVAR HUMAN 分钟计 = 23
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 24 24
+#ACT
+CALCVAR HUMAN 分钟计 = 24
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 25 25
+#ACT
+CALCVAR HUMAN 分钟计 = 25
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 26 26
+#ACT
+CALCVAR HUMAN 分钟计 = 26
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 27 27
+#ACT
+CALCVAR HUMAN 分钟计 = 27
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 28 28
+#ACT
+CALCVAR HUMAN 分钟计 = 28
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 29 29
+#ACT
+CALCVAR HUMAN 分钟计 = 29
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 30 30
+#ACT
+CALCVAR HUMAN 分钟计 = 30
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 31 31
+#ACT
+CALCVAR HUMAN 分钟计 = 31
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 32 32
+#ACT
+CALCVAR HUMAN 分钟计 = 32
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 33 33
+#ACT
+CALCVAR HUMAN 分钟计 = 33
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 34 34
+#ACT
+CALCVAR HUMAN 分钟计 = 34
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 35 35
+#ACT
+CALCVAR HUMAN 分钟计 = 35
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 36 36
+#ACT
+CALCVAR HUMAN 分钟计 = 36
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 37 37
+#ACT
+CALCVAR HUMAN 分钟计 = 37
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 38 38
+#ACT
+CALCVAR HUMAN 分钟计 = 38
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 39 39
+#ACT
+CALCVAR HUMAN 分钟计 = 39
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 40 40
+#ACT
+CALCVAR HUMAN 分钟计 = 40
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 41 41
+#ACT
+CALCVAR HUMAN 分钟计 = 41
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 42 42
+#ACT
+CALCVAR HUMAN 分钟计 = 42
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 43 43
+#ACT
+CALCVAR HUMAN 分钟计 = 43
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 44 44
+#ACT
+CALCVAR HUMAN 分钟计 = 44
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 45 45
+#ACT
+CALCVAR HUMAN 分钟计 = 45
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 46 46
+#ACT
+CALCVAR HUMAN 分钟计 = 46
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 47 47 
+#ACT
+CALCVAR HUMAN 分钟计 = 47
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 48 48
+#ACT
+CALCVAR HUMAN 分钟计 = 48
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 49 49
+#ACT
+CALCVAR HUMAN 分钟计 = 49
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 50 50
+#ACT
+CALCVAR HUMAN 分钟计 = 50
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 51 51
+#ACT
+CALCVAR HUMAN 分钟计 = 51
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 52 52
+#ACT
+CALCVAR HUMAN 分钟计 = 52
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 53 53
+#ACT
+CALCVAR HUMAN 分钟计 = 53
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 54 54
+#ACT
+CALCVAR HUMAN 分钟计 = 54
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 55 55
+#ACT
+CALCVAR HUMAN 分钟计 = 55
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 56 56
+#ACT
+CALCVAR HUMAN 分钟计 = 56
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 57 57
+#ACT
+CALCVAR HUMAN 分钟计 = 57
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 58 58
+#ACT
+CALCVAR HUMAN 分钟计 = 58
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+#IF
+min 59 59
+#ACT
+CALCVAR HUMAN 分钟计 = 59
+SAVEVAR HUMAN 分钟计 ..\QuestDiary\数据文件\分钟计Save.txt
+BREAK
+}
+
+
+[@小时算]
+{
+#IF
+hour 0 0
+#ACT
+CALCVAR HUMAN 小时算 = 0
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 1 1 
+#ACT
+CALCVAR HUMAN 小时算 = 1
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 2 2
+#ACT
+CALCVAR HUMAN 小时算 = 2
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 3 3
+#ACT
+CALCVAR HUMAN 小时算 = 3
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 4 4
+#ACT
+CALCVAR HUMAN 小时算 = 4
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 5 5
+#ACT
+CALCVAR HUMAN 小时算 = 5
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 6 6
+#ACT
+CALCVAR HUMAN 小时算 = 6
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 7 7
+#ACT
+CALCVAR HUMAN 小时算 = 7
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 8 8
+#ACT
+CALCVAR HUMAN 小时算 = 8
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 9 9
+#ACT
+CALCVAR HUMAN 小时算 = 9
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 10 10
+#ACT
+CALCVAR HUMAN 小时算 = 10
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 11 11
+#ACT
+CALCVAR HUMAN 小时算 = 11
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 12 12
+#ACT
+CALCVAR HUMAN 小时算 = 12
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 13 13
+#ACT
+CALCVAR HUMAN 小时算 = 13
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 14 14
+#ACT
+CALCVAR HUMAN 小时算 = 14
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 15 15
+#ACT
+CALCVAR HUMAN 小时算 = 15
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 16 16
+#ACT
+CALCVAR HUMAN 小时算 = 16
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 17 17
+#ACT
+CALCVAR HUMAN 小时算 = 17
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 18 18
+#ACT
+CALCVAR HUMAN 小时算 = 18
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 19 19
+#ACT
+CALCVAR HUMAN 小时算 = 19
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 20 20 
+#ACT
+CALCVAR HUMAN 小时算 = 20
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 21 21
+#ACT
+CALCVAR HUMAN 小时算 = 21
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 22 22
+#ACT
+CALCVAR HUMAN 小时算 = 22
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+#IF
+hour 23 23
+#ACT
+CALCVAR HUMAN 小时算 = 23
+SAVEVAR HUMAN 小时算 ..\QuestDiary\数据文件\小时算Save.txt
+BREAK
+}
+
+[@分钟算]
+{
+#IF
+min 0 0
+#ACT
+CALCVAR HUMAN 分钟算 = 0
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 1 1
+#ACT
+CALCVAR HUMAN 分钟算 = 1
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 2 2
+#ACT
+CALCVAR HUMAN 分钟算 = 2
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 3 3
+#ACT
+CALCVAR HUMAN 分钟算 = 3
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 4 4
+#ACT
+CALCVAR HUMAN 分钟算 = 4
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 5 5
+#ACT
+CALCVAR HUMAN 分钟算 = 5
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 6 6
+#ACT
+CALCVAR HUMAN 分钟算 = 6
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 7 7
+#ACT
+CALCVAR HUMAN 分钟算 = 7
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 8 8
+#ACT
+CALCVAR HUMAN 分钟算 = 8
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 9 9
+#ACT
+CALCVAR HUMAN 分钟算 = 9
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 10 10
+#ACT
+CALCVAR HUMAN 分钟算 = 10
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 11 11
+#ACT
+CALCVAR HUMAN 分钟算 = 11
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 12 12
+#ACT
+CALCVAR HUMAN 分钟算 = 12
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 13 13
+#ACT
+CALCVAR HUMAN 分钟算 = 13
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 14 14
+#ACT
+CALCVAR HUMAN 分钟算 = 14
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 15 15
+#ACT
+CALCVAR HUMAN 分钟算 = 15
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 16 16
+#ACT
+CALCVAR HUMAN 分钟算 = 16
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 17 17
+#ACT
+CALCVAR HUMAN 分钟算 = 17
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 18 18
+#ACT
+CALCVAR HUMAN 分钟算 = 18
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 19 19
+#ACT
+CALCVAR HUMAN 分钟算 = 19
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 20 20
+#ACT
+CALCVAR HUMAN 分钟算 = 20
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 21 21
+#ACT
+CALCVAR HUMAN 分钟算 = 21
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 22 22
+#ACT
+CALCVAR HUMAN 分钟算 = 22
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 23 23
+#ACT
+CALCVAR HUMAN 分钟算 = 23
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 24 24
+#ACT
+CALCVAR HUMAN 分钟算 = 24
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 25 25
+#ACT
+CALCVAR HUMAN 分钟算 = 25
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 26 26
+#ACT
+CALCVAR HUMAN 分钟算 = 26
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 27 27
+#ACT
+CALCVAR HUMAN 分钟算 = 27
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 28 28
+#ACT
+CALCVAR HUMAN 分钟算 = 28
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 29 29
+#ACT
+CALCVAR HUMAN 分钟算 = 29
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 30 30
+#ACT
+CALCVAR HUMAN 分钟算 = 30
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 31 31
+#ACT
+CALCVAR HUMAN 分钟算 = 31
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 32 32
+#ACT
+CALCVAR HUMAN 分钟算 = 32
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 33 33
+#ACT
+CALCVAR HUMAN 分钟算 = 33
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 34 34
+#ACT
+CALCVAR HUMAN 分钟算 = 34
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 35 35
+#ACT
+CALCVAR HUMAN 分钟算 = 35
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 36 36
+#ACT
+CALCVAR HUMAN 分钟算 = 36
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 37 37
+#ACT
+CALCVAR HUMAN 分钟算 = 37
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 38 38
+#ACT
+CALCVAR HUMAN 分钟算 = 38
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 39 39
+#ACT
+CALCVAR HUMAN 分钟算 = 39
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 40 40
+#ACT
+CALCVAR HUMAN 分钟算 = 40
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 41 41
+#ACT
+CALCVAR HUMAN 分钟算 = 41
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 42 42
+#ACT
+CALCVAR HUMAN 分钟算 = 42
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 43 43
+#ACT
+CALCVAR HUMAN 分钟算 = 43
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 44 44
+#ACT
+CALCVAR HUMAN 分钟算 = 44
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 45 45
+#ACT
+CALCVAR HUMAN 分钟算 = 45
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 46 46
+#ACT
+CALCVAR HUMAN 分钟算 = 46
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 47 47 
+#ACT
+CALCVAR HUMAN 分钟算 = 47
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 48 48
+#ACT
+CALCVAR HUMAN 分钟算 = 48
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 49 49
+#ACT
+CALCVAR HUMAN 分钟算 = 49
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 50 50
+#ACT
+CALCVAR HUMAN 分钟算 = 50
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 51 51
+#ACT
+CALCVAR HUMAN 分钟算 = 51
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 52 52
+#ACT
+CALCVAR HUMAN 分钟算 = 52
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 53 53
+#ACT
+CALCVAR HUMAN 分钟算 = 53
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 54 54
+#ACT
+CALCVAR HUMAN 分钟算 = 54
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 55 55
+#ACT
+CALCVAR HUMAN 分钟算 = 55
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 56 56
+#ACT
+CALCVAR HUMAN 分钟算 = 56
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 57 57
+#ACT
+CALCVAR HUMAN 分钟算 = 57
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 58 58
+#ACT
+CALCVAR HUMAN 分钟算 = 58
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+#IF
+min 59 59
+#ACT
+CALCVAR HUMAN 分钟算 = 59
+SAVEVAR HUMAN 分钟算 ..\QuestDiary\数据文件\分钟算Save.txt
+BREAK
+}

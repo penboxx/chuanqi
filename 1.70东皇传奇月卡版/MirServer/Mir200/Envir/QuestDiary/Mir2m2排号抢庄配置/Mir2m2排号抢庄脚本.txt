@@ -1,0 +1,3523 @@
+[@Mir2m2排号抢庄脚本QM]
+{
+#IF
+CHECK [0] 0
+#ACT
+VAR Integer HUMAN 抢庄个人押数
+VAR String  HUMAN 抢庄个人押名
+VAR Integer HUMAN 抢庄个人赢钱
+VAR String  HUMAN 抢庄个人提示1
+VAR String  HUMAN 抢庄个人提示2
+VAR String  HUMAN 抢庄个人提示3
+VAR String  HUMAN 抢庄个人退庄
+VAR Integer HUMAN 抢庄个人排号
+VAR Integer HUMAN 抢庄个人号数
+VAR Integer HUMAN 抢庄个人排号2
+VAR Integer HUMAN 抢庄个人号数2
+VAR String  HUMAN 抢庄个人IP号
+VAR Integer HUMAN 抢庄个人输入
+VAR Integer HUMAN 抢庄个人验证
+VAR Integer HUMAN 抢庄个人读秒
+VAR Integer HUMAN 抢庄个人结算
+VAR Integer HUMAN 抢庄个人延迟1
+VAR Integer HUMAN 抢庄个人延迟2
+VAR Integer HUMAN 抢庄个人延迟3
+VAR String  HUMAN 抢庄个人地图
+VAR Integer HUMAN 抢庄个人坐标X
+VAR Integer HUMAN 抢庄个人坐标Y
+VAR Integer HUMAN 抢庄个人挂机
+VAR Integer HUMAN 抢庄个人名次1
+VAR Integer HUMAN 抢庄个人名次2
+VAR Integer HUMAN 抢庄个人奖励1
+VAR Integer HUMAN 抢庄个人奖励2
+CALCVAR HUMAN 抢庄个人IP号 = <$IPADDR>
+;LOADVAR HUMAN 抢庄个人输入 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人输入.txt HardDisk
+LOADVAR HUMAN 抢庄个人押数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押注.txt HardDisk
+LOADVAR HUMAN 抢庄个人号数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号.txt HardDisk
+LOADVAR HUMAN 抢庄个人号数2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号2.txt HardDisk
+MOV D66 1
+
+VAR Integer HUMAN 默认上线
+LOADVAR HUMAN 默认上线 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\默认上线.txt HardDisk
+MOV D66 1
+
+
+#IF
+CHECKVAR HUMAN 默认上线 < 500
+#ACT
+CALCVAR HUMAN 默认上线 = 5000
+SAVEVAR HUMAN 默认上线 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\默认上线.txt HardDisk
+
+
+
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+LOADVAR HUMAN 抢庄个人押名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押名.txt HardDisk
+BREAK
+#ELSEACT
+GOTO @Mir2m2抢庄上线补发检测
+
+[@Mir2m2抢庄上线补发检测]
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 > 10
+#ACT
+DELAYGOTO 500 @Mir2m2抢庄上线补发检测
+BREAK
+#ELSEACT
+LOADVAR HUMAN 抢庄个人赢钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人赢钱.txt HardDisk
+#IF
+CHECKVAR HUMAN 抢庄个人赢钱 < 1
+#ACT
+BREAK
+#ELSEACT
+GAMEGOLD + <$HUMAN(抢庄个人赢钱)>
+
+CALCVAR HUMAN 抢庄个人赢钱 = 0
+SAVEVAR HUMAN 抢庄个人赢钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人赢钱.txt HardDisk
+LOADVAR HUMAN 抢庄个人提示1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人提示1.txt HardDisk
+#IF
+CHECKVAR HUMAN 抢庄个人提示1 =
+#ACT
+BREAK
+#ELSEACT
+SENDMSG 6 <$GLOBAL(抢庄公告前缀)><$HUMAN(抢庄个人提示1)>
+MESSAGEBOX <$GLOBAL(抢庄公告前缀)><$HUMAN(抢庄个人提示1)>
+LOADVAR HUMAN 抢庄个人提示3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人提示3.txt HardDisk
+#IF
+CHECKVAR HUMAN 抢庄个人提示3 =
+#ELSESAY
+<COLOR=$00B317E3 现在是[><COLOR=clRed 掉线补发><COLOR=$00B317E3 ] 您上次排号抢庄游戏中掉线，开庄后结果如下：>\
+<$HUMAN(抢庄个人提示3)>
+
+[@Mir2m2抢庄个人变量申明]
+#IF
+CHECK [0] 0
+#ACT
+MOV S10 <$HUMAN(抢庄个人押数)>
+DEC S10 2 1000
+#IF
+EQUAL S10 ?
+#ACT
+VAR Integer HUMAN 抢庄个人押数
+VAR String  HUMAN 抢庄个人押名
+VAR Integer HUMAN 抢庄个人赢钱
+VAR String  HUMAN 抢庄个人提示1
+VAR String  HUMAN 抢庄个人提示2
+VAR String  HUMAN 抢庄个人提示3
+VAR String  HUMAN 抢庄个人退庄
+VAR Integer HUMAN 抢庄个人排号
+VAR Integer HUMAN 抢庄个人号数
+VAR Integer HUMAN 抢庄个人排号2
+VAR Integer HUMAN 抢庄个人号数2
+VAR String  HUMAN 抢庄个人IP号
+VAR Integer HUMAN 抢庄个人输入
+VAR Integer HUMAN 抢庄个人验证
+VAR Integer HUMAN 抢庄个人读秒
+VAR Integer HUMAN 抢庄个人结算
+VAR Integer HUMAN 抢庄个人延迟1
+VAR Integer HUMAN 抢庄个人延迟2
+VAR Integer HUMAN 抢庄个人延迟3
+VAR String  HUMAN 抢庄个人地图
+VAR Integer HUMAN 抢庄个人坐标X
+VAR Integer HUMAN 抢庄个人坐标Y
+VAR Integer HUMAN 抢庄个人挂机
+VAR Integer HUMAN 抢庄个人名次1
+VAR Integer HUMAN 抢庄个人名次2
+VAR Integer HUMAN 抢庄个人奖励1
+VAR Integer HUMAN 抢庄个人奖励2
+CALCVAR HUMAN 抢庄个人IP号 = <$IPADDR>
+MOV S10 
+#ELSEACT
+MOV S10 
+
+[@Mir2m2排号抢庄验证初始]
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 = 7
+#ELSEACT
+BREAK
+#IF
+EQUAL D66 0
+ONLINELONGMIN < 1
+#ACT
+BREAK
+#ELSEACT
+CALCVAR HUMAN 抢庄个人验证 = 0
+
+[@Mir2m2排号抢庄摇骰显示]
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 = 3
+#ELSEACT
+BREAK
+#IF
+EQUAL D66 0
+ONLINELONGMIN < 1
+#ACT
+BREAK
+#ELSEACT
+MOV S10 
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+MOV S10 免费脚本群:347979
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+MOV S10 免费脚本群:347979
+#IF
+EQUAL S10 
+#ACT
+BREAK
+#ELSEACT
+MOV S10 
+CALCVAR HUMAN 抢庄个人读秒 = 1
+;SENDMSG 6 <$GLOBAL(抢庄公告前缀)>正在为您摇动骰子，请稍候... 253 255 5
+#IF
+InSafeZone
+#ACT
+MOV D0 <$GLOBAL(抢庄骰子点数1)>
+MOV D1 <$GLOBAL(抢庄骰子点数2)>
+MOV D2 <$GLOBAL(抢庄骰子点数3)>
+close
+PLAYDICE 3
+MOV D0 0
+MOV D1 0
+MOV D2 0
+BREAK
+#ELSEACT
+;SENDMSG 6 <$GLOBAL(抢庄公告前缀)>由于您不在安全区内，为保证您的安全，系统取消您的骰子显示，开局结果不受影响 253 255 5
+BREAK
+
+[@Mir2m2排号抢庄结算显示]
+#IF
+CHECKVAR GLOBAL 抢庄开始判断 = 4
+#ELSEACT
+BREAK
+#IF
+EQUAL D66 0
+ONLINELONGMIN < 1
+#ACT
+BREAK
+#ELSEACT
+MOV S10 
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+MOV S10 免费脚本群:347979
+CALCVAR HUMAN 抢庄个人押数 = 0
+CALCVAR HUMAN 抢庄个人押名 =
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+MOV S10 免费脚本群:347979
+#IF
+EQUAL S10 
+#ACT
+BREAK
+#ELSEACT
+LOADVAR HUMAN 抢庄个人提示1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人提示1.txt HardDisk
+#IF
+CHECKVAR HUMAN 抢庄个人提示1 =
+#ACT
+BREAK
+#ELSEACT
+MOV S10 
+LOADVAR HUMAN 抢庄个人赢钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人赢钱.txt HardDisk
+LOADVAR HUMAN 抢庄个人提示3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人提示3.txt HardDisk
+SENDMSG 6 <$GLOBAL(抢庄公告前缀)><$HUMAN(抢庄个人提示1)>
+CALCVAR HUMAN 抢庄个人结算 = 1
+CALCVAR HUMAN 抢庄个人读秒 = 0
+CALCVAR HUMAN 抢庄个人延迟3 = 2
+#ELSESAY
+<COLOR=$00B317E3 现在是[><COLOR=clRed 开局结算><COLOR=$00B317E3 ] 本次排号抢庄骰子已开出，您的输赢情况如下：>\
+<$HUMAN(抢庄个人提示3)>
+#IF
+CHECKVAR HUMAN 抢庄个人赢钱 > 0
+#ACT
+GAMEGOLD + <$HUMAN(抢庄个人赢钱)>
+
+CALCVAR HUMAN 抢庄个人赢钱 = 0
+SAVEVAR HUMAN 抢庄个人赢钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人赢钱.txt HardDisk
+#IF
+CHECKVAR GLOBAL 抢庄公告提示5 < 1
+#ACT
+BREAK
+#ELSEACT
+LOADVAR HUMAN 抢庄个人提示2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人提示2.txt HardDisk
+#IF
+CHECKVAR HUMAN 抢庄个人提示2 =
+#ELSEACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)><$HUMAN(抢庄个人提示2)> 255 244
+
+[@Mir2m2排号抢庄关闭读秒]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 10
+CLOSE
+#IF
+CHECKVAR HUMAN 抢庄个人押数 > 0
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄庄家姓名 = <$USERNAME>
+#ACT
+CALCVAR HUMAN 抢庄个人读秒 = 1
+BREAK
+
+[@Mir2m2排号抢庄脚本NPC]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 抢庄个人结算 = 0
+CLOSE
+}
+
+[@Mir2m2排号抢庄脚本RM]
+{
+#IF
+SMALL I80 1
+#ACT
+MOV I80 1490500901
+MOV S10 ?
+#ELSEACT
+MOV S10 
+#IF
+EQUAL I80 1490500901
+#ELSEACT
+MOV I80 1490500901
+MOV S10 <$GLOBAL(抢庄无庄开点)>
+DEC S10 2 1000
+#IF
+EQUAL S10 ?
+#ACT
+MOV S10 
+VAR Integer GLOBAL 抢庄开始判断2
+VAR Integer GLOBAL 抢庄无庄开点
+VAR Integer GLOBAL 抢庄无庄本钱
+VAR String  GLOBAL 抢庄无庄显示
+LOADVAR GLOBAL 抢庄无庄开点 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄无庄本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄无庄显示 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+VAR Integer GLOBAL 抢庄押中开启
+VAR Integer GLOBAL 抢庄押中赔率
+VAR Integer GLOBAL 抢庄可押中总
+VAR Integer GLOBAL 抢庄已押中总
+LOADVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄已押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄押中开启 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄押中赔率 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+VAR Integer GLOBAL 抢庄抽庄人数
+VAR String  GLOBAL 抢庄抽庄名单
+VAR String  GLOBAL 抢庄抽庄显示
+VAR Integer GLOBAL 抢庄抽庄时间
+VAR Integer GLOBAL 抢庄抽庄等级
+VAR Integer GLOBAL 抢庄抽庄同IP
+LOADVAR GLOBAL 抢庄抽庄人数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄抽庄同IP ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄抽庄等级 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄抽庄时间 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄抽庄显示 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+VAR Integer GLOBAL 抢庄结算延迟
+VAR Integer GLOBAL 抢庄人物排号
+VAR Integer GLOBAL 抢庄英雄排号
+VAR Integer GLOBAL 抢庄开通金额
+VAR Integer GLOBAL 抢庄排号等级1
+VAR Integer GLOBAL 抢庄排号等级2
+VAR Integer GLOBAL 抢庄攻城关闭
+VAR Integer GLOBAL 抢庄读秒范围
+VAR Integer GLOBAL 抢庄安全读秒
+VAR Integer GLOBAL 抢庄允许加注
+VAR Integer GLOBAL 抢庄排号清理
+VAR Integer GLOBAL 抢庄是否启动
+VAR Integer GLOBAL 抢庄排名开启1
+VAR Integer GLOBAL 抢庄排名开启2
+VAR Integer GLOBAL 抢庄读秒开启
+VAR Integer GLOBAL 抢庄记录开启
+VAR Integer GLOBAL 抢庄记录长度
+VAR Integer GLOBAL 抢庄排号开启
+VAR Integer GLOBAL 抢庄排号验证
+VAR Integer GLOBAL 抢庄排号触发
+VAR Integer GLOBAL 抢庄排号等级
+VAR Integer GLOBAL 抢庄排号同IP
+VAR Integer GLOBAL 抢庄押豹开启
+VAR Integer GLOBAL 抢庄押豹赔率
+VAR String  GLOBAL 抢庄公告前缀
+VAR Integer GLOBAL 抢庄庄家税率
+VAR Integer GLOBAL 抢庄闲家税率
+VAR Integer GLOBAL 抢庄抢庄时间
+VAR Integer GLOBAL 抢庄排号时间
+VAR Integer GLOBAL 抢庄押注时间
+VAR Integer GLOBAL 抢庄摇骰时间
+VAR Integer GLOBAL 抢庄押注最小
+VAR Integer GLOBAL 抢庄押注最大
+VAR Integer GLOBAL 抢庄本钱最小
+VAR Integer GLOBAL 抢庄本钱最大
+VAR Integer GLOBAL 抢庄本钱封顶
+VAR Integer GLOBAL 抢庄公告提示0
+VAR Integer GLOBAL 抢庄公告提示1
+VAR Integer GLOBAL 抢庄公告提示2
+VAR Integer GLOBAL 抢庄公告提示3
+VAR Integer GLOBAL 抢庄公告提示4
+VAR Integer GLOBAL 抢庄公告提示5
+VAR String  GLOBAL 抢庄界面标题
+VAR String  GLOBAL 抢庄开放时间
+VAR String  GLOBAL 抢庄名字空格
+VAR Integer GLOBAL 抢庄提前开点
+VAR Integer GLOBAL 抢庄停押延迟
+LOADVAR GLOBAL 抢庄名字空格 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+MOV S10 <$GLOBAL(抢庄名字空格)>
+DEC S10 1 1
+CALCVAR GLOBAL 抢庄名字空格 = <$STR(S10)>
+LOADVAR GLOBAL 抢庄结算延迟 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄人物排号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄英雄排号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄开通金额 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号等级1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号等级2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄攻城关闭 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄读秒范围 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄安全读秒 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄允许加注 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号清理 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄是否启动 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排名开启1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排名开启2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄读秒开启 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄记录开启 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄记录长度 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号开启 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号验证 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号触发 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号等级 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号同IP ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄押豹开启 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄押豹赔率 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄公告前缀 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄庄家税率 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄闲家税率 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄抢庄时间 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号时间 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄押注时间 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄摇骰时间 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄押注最小 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄押注最大 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄本钱最小 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄本钱最大 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄本钱封顶 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄公告提示0 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄公告提示1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄公告提示2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄公告提示3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄公告提示4 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄公告提示5 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄界面标题 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄开放时间 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄提前开点 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄停押延迟 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+VAR String  GLOBAL 抢庄庄家姓名
+VAR Integer GLOBAL 抢庄庄家本钱
+VAR Integer GLOBAL 抢庄可押豹总
+VAR Integer GLOBAL 抢庄可押大总
+VAR Integer GLOBAL 抢庄可押小总
+VAR Integer GLOBAL 抢庄已押豹总
+VAR Integer GLOBAL 抢庄已押大总
+VAR Integer GLOBAL 抢庄已押小总
+VAR String  GLOBAL 抢庄开庄记录0
+VAR String  GLOBAL 抢庄开庄记录
+VAR String  GLOBAL 抢庄开庄记录2
+VAR String  GLOBAL 抢庄开庄记录3
+VAR String  GLOBAL 抢庄开庄记录4
+VAR String  GLOBAL 抢庄开庄记录5
+VAR Integer GLOBAL 抢庄开始判断
+VAR Integer GLOBAL 抢庄运行状态
+VAR Integer GLOBAL 抢庄运行控制
+VAR Integer GLOBAL 抢庄排号总数
+VAR String  GLOBAL 抢庄排号姓名1
+VAR String  GLOBAL 抢庄排号姓名2
+VAR String  GLOBAL 抢庄排号姓名3
+VAR String  GLOBAL 抢庄排号姓名4
+VAR String  GLOBAL 抢庄排号姓名5
+VAR String  GLOBAL 抢庄排号姓名6
+VAR String  GLOBAL 抢庄排号姓名7
+VAR String  GLOBAL 抢庄排号姓名8
+VAR String  GLOBAL 抢庄排号姓名9
+VAR String  GLOBAL 抢庄排号姓名10
+VAR String  GLOBAL 抢庄排号姓名11
+VAR String  GLOBAL 抢庄排号姓名12
+VAR String  GLOBAL 抢庄排号姓名13
+VAR String  GLOBAL 抢庄排号姓名14
+VAR String  GLOBAL 抢庄排号姓名15
+VAR String  GLOBAL 抢庄排号姓名16
+VAR String  GLOBAL 抢庄排号姓名17
+VAR String  GLOBAL 抢庄排号姓名18
+VAR String  GLOBAL 抢庄排号姓名19
+VAR String  GLOBAL 抢庄排号姓名20
+VAR Integer GLOBAL 抢庄排号数量1
+VAR Integer GLOBAL 抢庄排号数量2
+VAR Integer GLOBAL 抢庄排号数量3
+VAR Integer GLOBAL 抢庄排号数量4
+VAR Integer GLOBAL 抢庄排号数量5
+VAR Integer GLOBAL 抢庄排号数量6
+VAR Integer GLOBAL 抢庄排号数量7
+VAR Integer GLOBAL 抢庄排号数量8
+VAR Integer GLOBAL 抢庄排号数量9
+VAR Integer GLOBAL 抢庄排号数量10
+VAR Integer GLOBAL 抢庄排号数量11
+VAR Integer GLOBAL 抢庄排号数量12
+VAR Integer GLOBAL 抢庄排号数量13
+VAR Integer GLOBAL 抢庄排号数量14
+VAR Integer GLOBAL 抢庄排号数量15
+VAR Integer GLOBAL 抢庄排号数量16
+VAR Integer GLOBAL 抢庄排号数量17
+VAR Integer GLOBAL 抢庄排号数量18
+VAR Integer GLOBAL 抢庄排号数量19
+VAR Integer GLOBAL 抢庄排号数量20
+VAR Integer GLOBAL 抢庄排号类型1
+VAR Integer GLOBAL 抢庄排号类型2
+VAR Integer GLOBAL 抢庄排号类型3
+VAR Integer GLOBAL 抢庄排号类型4
+VAR Integer GLOBAL 抢庄排号类型5
+VAR Integer GLOBAL 抢庄排号类型6
+VAR Integer GLOBAL 抢庄排号类型7
+VAR Integer GLOBAL 抢庄排号类型8
+VAR Integer GLOBAL 抢庄排号类型9
+VAR Integer GLOBAL 抢庄排号类型10
+VAR Integer GLOBAL 抢庄排号类型11
+VAR Integer GLOBAL 抢庄排号类型12
+VAR Integer GLOBAL 抢庄排号类型13
+VAR Integer GLOBAL 抢庄排号类型14
+VAR Integer GLOBAL 抢庄排号类型15
+VAR Integer GLOBAL 抢庄排号类型16
+VAR Integer GLOBAL 抢庄排号类型17
+VAR Integer GLOBAL 抢庄排号类型18
+VAR Integer GLOBAL 抢庄排号类型19
+VAR Integer GLOBAL 抢庄排号类型20
+VAR Integer GLOBAL 抢庄骰子点数1
+VAR Integer GLOBAL 抢庄骰子点数2
+VAR Integer GLOBAL 抢庄骰子点数3
+VAR String  GLOBAL 抢庄控制点名
+VAR Integer GLOBAL 抢庄控制点数1
+VAR Integer GLOBAL 抢庄控制点数2
+VAR Integer GLOBAL 抢庄控制点数3
+VAR String  GLOBAL 抢庄开出点名
+VAR Integer GLOBAL 抢庄开出点数1
+VAR Integer GLOBAL 抢庄开出点数2
+VAR Integer GLOBAL 抢庄开出点数3
+VAR Integer GLOBAL 抢庄开始计时
+VAR String  GLOBAL 抢庄开庄提示
+VAR String  GLOBAL 抢庄押注记录
+VAR Integer GLOBAL 抢庄变量数字1
+VAR Integer GLOBAL 抢庄变量数字2
+VAR String  GLOBAL 抢庄排号名单1
+VAR String  GLOBAL 抢庄排号名单2
+VAR String  GLOBAL 抢庄排号名单3
+VAR String  GLOBAL 抢庄排号名单4
+VAR String  GLOBAL 抢庄排号名单5
+VAR String  GLOBAL 抢庄排号名单6
+VAR String  GLOBAL 抢庄排号名单7
+VAR String  GLOBAL 抢庄排号名单8
+VAR String  GLOBAL 抢庄排号名单9
+VAR String  GLOBAL 抢庄今日排名1
+VAR String  GLOBAL 抢庄今日排名2
+VAR String  GLOBAL 抢庄昨日排名1
+VAR String  GLOBAL 抢庄昨日排名2
+VAR Integer GLOBAL 抢庄控制方式
+LOADVAR GLOBAL 抢庄控制方式 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制方式.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单4 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单5 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单6 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单7 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单8 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单9 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄今日排名1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排名数据.txt HardDisk
+LOADVAR GLOBAL 抢庄今日排名2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排名数据.txt HardDisk
+LOADVAR GLOBAL 抢庄昨日排名1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排名数据.txt HardDisk
+LOADVAR GLOBAL 抢庄昨日排名2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排名数据.txt HardDisk
+LOADVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄已押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄已押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄已押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄开庄记录 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄开庄记录0 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄开庄记录5 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄开庄记录2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄开庄记录3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄开庄记录4 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+LOADVAR GLOBAL 抢庄排号总数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名4 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名5 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名6 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名7 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名8 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名9 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名10 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名11 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名12 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名13 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名14 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名15 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名16 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名17 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名18 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名19 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名20 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型4 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型5 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型6 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型7 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型8 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型9 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型10 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型11 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型12 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型13 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型14 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型15 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型16 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型17 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型18 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型19 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型20 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量4 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量5 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量6 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量7 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量8 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量9 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量10 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量11 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量12 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量13 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量14 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量15 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量16 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量17 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量18 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量19 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量20 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄运行状态 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄运行状态.txt HardDisk
+Gmexecute 开始提问 @Mir2m2抢庄个人变量申明
+BREAK
+#IF
+CHECKVAR GLOBAL 抢庄开始判断2 = 1
+CHECKVAR GLOBAL 抢庄开始判断 > 10
+#ACT
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+LOADVAR GLOBAL 抢庄运行状态 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄运行状态.txt HardDisk
+MOV D1 <$GLOBAL(抢庄开始判断)>
+MOV D2 <$GLOBAL(抢庄运行状态)>
+
+#IF
+LARGE D2 63
+#ACT
+DEC D2 64
+LOADVAR GLOBAL 抢庄排号总数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单4 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单5 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单6 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单7 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单8 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单9 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+#IF
+LARGE D2 31
+#ACT
+DEC D2 32
+LOADVAR GLOBAL 抢庄今日排名1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排名数据.txt HardDisk
+LOADVAR GLOBAL 抢庄今日排名2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排名数据.txt HardDisk
+LOADVAR GLOBAL 抢庄昨日排名1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排名数据.txt HardDisk
+LOADVAR GLOBAL 抢庄昨日排名2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排名数据.txt HardDisk
+#IF
+LARGE D2 15
+#ACT
+DEC D2 16
+LOADVAR GLOBAL 抢庄无庄开点 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄无庄本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄无庄显示 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄押中开启 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄押中赔率 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄抽庄同IP ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄抽庄等级 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄抽庄时间 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄抽庄显示 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄结算延迟 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄人物排号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄英雄排号 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄开通金额 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号等级1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号等级2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄攻城关闭 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄读秒范围 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄安全读秒 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄允许加注 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号清理 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄是否启动 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排名开启1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排名开启2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄读秒开启 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄记录开启 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄记录长度 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号开启 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号验证 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号触发 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号等级 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号同IP ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄押豹开启 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄押豹赔率 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄公告前缀 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄庄家税率 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄闲家税率 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄抢庄时间 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄排号时间 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄押注时间 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄摇骰时间 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄押注最小 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄押注最大 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄本钱最小 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄本钱最大 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄本钱封顶 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄公告提示0 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄公告提示1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄公告提示2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄公告提示3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄公告提示4 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄公告提示5 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄界面标题 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄开放时间 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄提前开点 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+LOADVAR GLOBAL 抢庄停押延迟 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄配置.ini HardDisk
+CALCVAR GLOBAL 抢庄运行控制 = <$GLOBAL(抢庄攻城关闭)>
+
+#IF
+LARGE D2 7
+#ACT
+DEC D2 8
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 30
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 30
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 30
+
+#IF
+LARGE D2 3
+CHECKVAR GLOBAL 抢庄排号清理 > 0
+#ACT
+CALCVAR GLOBAL 抢庄排号姓名1 =
+CALCVAR GLOBAL 抢庄排号姓名2 =
+CALCVAR GLOBAL 抢庄排号姓名3 =
+CALCVAR GLOBAL 抢庄排号姓名4 =
+CALCVAR GLOBAL 抢庄排号姓名5 =
+CALCVAR GLOBAL 抢庄排号姓名6 =
+CALCVAR GLOBAL 抢庄排号姓名7 =
+CALCVAR GLOBAL 抢庄排号姓名8 =
+CALCVAR GLOBAL 抢庄排号姓名9 =
+CALCVAR GLOBAL 抢庄排号姓名10 =
+CALCVAR GLOBAL 抢庄排号姓名11 =
+CALCVAR GLOBAL 抢庄排号姓名12 =
+CALCVAR GLOBAL 抢庄排号姓名13 =
+CALCVAR GLOBAL 抢庄排号姓名14 =
+CALCVAR GLOBAL 抢庄排号姓名15 =
+CALCVAR GLOBAL 抢庄排号姓名16 =
+CALCVAR GLOBAL 抢庄排号姓名17 =
+CALCVAR GLOBAL 抢庄排号姓名18 =
+CALCVAR GLOBAL 抢庄排号姓名19 =
+CALCVAR GLOBAL 抢庄排号姓名20 =
+CALCVAR GLOBAL 抢庄排号总数 = 0
+SAVEVAR GLOBAL 抢庄排号总数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名4 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名5 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名6 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名7 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名8 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名9 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名10 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名11 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名12 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名13 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名14 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名15 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名16 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名17 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名18 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名19 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄排号姓名20 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人名单.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人排号2.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人信息1.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人信息2.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号IP号.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号IP号2.txt HardDisk
+#IF
+LARGE D2 3
+#ACT
+DEC D2 4
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>赌场已经关闭，开放时间：<$GLOBAL(抢庄开放时间)> 253 255 30
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>赌场已经关闭，开放时间：<$GLOBAL(抢庄开放时间)> 253 255 30
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>赌场已经关闭，开放时间：<$GLOBAL(抢庄开放时间)> 253 255 30
+
+#IF
+CHECKVAR GLOBAL 抢庄运行状态 = <$STR(D2)>
+#ELSEACT
+CALCVAR GLOBAL 抢庄运行状态 = <$STR(D2)>
+SAVEVAR GLOBAL 抢庄运行状态 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄运行状态.txt HardDisk
+
+#IF
+SMALL D2 2
+SMALL D1 1
+#ACT
+BREAK
+#IF
+SMALL D1 1
+CHECKVAR GLOBAL 抢庄是否启动 < 2
+#ACT
+BREAK
+#IF
+SMALL D1
+CHECKVAR GLOBAL 抢庄是否启动 = 3
+#ACT
+BREAK
+
+#IF
+checkcastlewar
+#ACT
+MOV P9 1
+#ELSEACT
+MOV P9 0
+#IF
+EQUAL P9 1
+CHECKVAR GLOBAL 抢庄运行控制 < 1
+CHECKVAR GLOBAL 抢庄攻城关闭 > 0
+#ACT
+CALCVAR GLOBAL 抢庄运行控制 = 1
+#IF
+EQUAL P9 0
+CHECKVAR GLOBAL 抢庄运行控制 > 0
+#ACT
+CALCVAR GLOBAL 抢庄运行控制 = 0
+#IF
+SMALL D1
+CHECKVAR GLOBAL 抢庄运行控制 > 0
+#ACT
+BREAK
+
+#IF
+EQUAL D1 1
+CHECKVAR GLOBAL 抢庄抽庄人数 > 0
+#ACT
+MOV P7 <$GLOBAL(抢庄抢庄时间)>
+DEC P7 <$GLOBAL(抢庄开始计时)>
+MOV P6 1
+MOV P5 0
+#ELSEACT
+MOV P6 0
+MOV P5 0
+#IF
+EQUAL P6 1
+LARGE P7 <$GLOBAL(抢庄抽庄时间)>
+#ACT
+MOV P5 1
+#IF
+EQUAL P6 1
+EQUAL P5 0
+CHECKVAR GLOBAL 抢庄开始计时 < 1
+#ACT
+MOV P5 1
+#IF
+EQUAL P5 1
+#ACT
+MOV D1 19
+CALCVAR GLOBAL 抢庄开始判断 = 19
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+CHECKVAR GLOBAL 抢庄开始计时 > 0
+#ACT
+CALCVAR GLOBAL 抢庄开始计时 - 1
+BREAK
+#IF
+LARGE D1 10
+#ACT
+LOADVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+MOV D1 <$GLOBAL(抢庄开始判断)>
+#IF
+LARGE D1 10
+#ACT
+BREAK
+
+#IF
+EQUAL D1 9
+#ACT
+MOV P5 1
+#ELSEACT
+MOV P5 0
+
+#IF
+EQUAL P5 1
+#ACT
+LOADVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄庄家1.txt HardDisk
+MOV P8 0
+#ELSEACT
+MOV P8 0
+#IF
+EQUAL P5 1
+CHECKVAR GLOBAL 抢庄庄家本钱 < 1
+#ACT
+MOV P5 2
+#IF
+EQUAL P5 1
+#ACT
+LOADVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄庄家1.txt HardDisk
+MOV S10 <$GLOBAL(抢庄庄家姓名)>
+MOV P8 1
+MOV P7 <$GLOBAL(抢庄庄家本钱)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+#IF
+EQUAL P8 1
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+MOV P5 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>系统抽到您为庄家，但您身上的元宝已不足<$GLOBAL(抢庄变量数字1)>个，自动抽取其他庄家！
+#IF
+EQUAL P5 1
+#ACT
+LOADVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄庄家2.txt HardDisk
+MOV P8 0
+#ELSEACT
+MOV P8 0
+#IF
+EQUAL P5 1
+CHECKVAR GLOBAL 抢庄庄家本钱 < 1
+#ACT
+MOV P5 2
+#IF
+EQUAL P5 1
+#ACT
+LOADVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄庄家2.txt HardDisk
+MOV S10 <$GLOBAL(抢庄庄家姓名)>
+MOV P8 1
+MOV P7 <$GLOBAL(抢庄庄家本钱)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+#IF
+EQUAL P8 1
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+MOV P5 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>系统抽到您为庄家，但您身上的元宝已不足<$GLOBAL(抢庄变量数字1)>个，自动抽取其他庄家！
+#IF
+EQUAL P5 1
+#ACT
+LOADVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄庄家3.txt HardDisk
+MOV P8 0
+#ELSEACT
+MOV P8 0
+#IF
+EQUAL P5 1
+CHECKVAR GLOBAL 抢庄庄家本钱 < 1
+#ACT
+MOV P5 2
+#IF
+EQUAL P5 1
+#ACT
+LOADVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄庄家3.txt HardDisk
+MOV S10 <$GLOBAL(抢庄庄家姓名)>
+MOV P8 1
+MOV P7 <$GLOBAL(抢庄庄家本钱)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+#IF
+EQUAL P8 1
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+MOV P5 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>系统抽到您为庄家，但您身上的元宝已不足<$GLOBAL(抢庄变量数字1)>个，自动抽取其他庄家！
+#IF
+EQUAL P5 1
+#ACT
+LOADVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄庄家4.txt HardDisk
+MOV P8 0
+#ELSEACT
+MOV P8 0
+#IF
+EQUAL P5 1
+CHECKVAR GLOBAL 抢庄庄家本钱 < 1
+#ACT
+MOV P5 2
+#IF
+EQUAL P5 1
+#ACT
+LOADVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄庄家4.txt HardDisk
+MOV S10 <$GLOBAL(抢庄庄家姓名)>
+MOV P8 1
+MOV P7 <$GLOBAL(抢庄庄家本钱)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+#IF
+EQUAL P8 1
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+MOV P5 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>系统抽到您为庄家，但您身上的元宝已不足<$GLOBAL(抢庄变量数字1)>个，自动抽取其他庄家！
+#IF
+EQUAL P5 1
+#ACT
+LOADVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄庄家5.txt HardDisk
+MOV P8 0
+#ELSEACT
+MOV P8 0
+#IF
+EQUAL P5 1
+CHECKVAR GLOBAL 抢庄庄家本钱 < 1
+#ACT
+MOV P5 2
+#IF
+EQUAL P5 1
+#ACT
+LOADVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄庄家5.txt HardDisk
+MOV S10 <$GLOBAL(抢庄庄家姓名)>
+MOV P8 1
+MOV P7 <$GLOBAL(抢庄庄家本钱)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+#IF
+EQUAL P8 1
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+MOV P5 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>系统抽到您为庄家，但您身上的元宝已不足<$GLOBAL(抢庄变量数字1)>个，自动抽取其他庄家！
+
+#IF
+EQUAL P5 1
+#ACT
+MOV D1 19
+CALCVAR GLOBAL 抢庄开始判断 = 19
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#IF
+EQUAL P5 2
+#ACT
+CALCVAR GLOBAL 抢庄开始计时 = 0
+MOV D1 0
+CALCVAR GLOBAL 抢庄开始判断 = 0
+CALCVAR GLOBAL 抢庄庄家姓名 =
+CALCVAR GLOBAL 抢庄庄家本钱 = 0
+CALCVAR GLOBAL 抢庄可押豹总 = 0
+CALCVAR GLOBAL 抢庄可押大总 = 0
+CALCVAR GLOBAL 抢庄可押小总 = 0
+CALCVAR GLOBAL 抢庄可押中总 = 0
+CALCVAR GLOBAL 抢庄已押豹总 = 0
+CALCVAR GLOBAL 抢庄已押大总 = 0
+CALCVAR GLOBAL 抢庄已押小总 = 0
+CALCVAR GLOBAL 抢庄已押中总 = 0
+CALCVAR GLOBAL 抢庄抽庄人数 = 0
+CALCVAR GLOBAL 抢庄抽庄名单 =
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>由于本轮未抽出庄家，系统现在重新开始抢庄！ 219 255
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄抽庄人数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄名单.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄参与.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄IP号.txt HardDisk
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+BREAK
+
+#IF
+EQUAL P5 4
+#ACT
+MOV P4 1
+#IF
+EQUAL P5 4
+CHECKVAR GLOBAL 抢庄押中开启 > 0
+#ACT
+MOV P4 <$GLOBAL(抢庄押中赔率)>
+#IF
+EQUAL P5 4
+SMALL P4 1
+#ACT
+MOV P4 1
+#IF
+EQUAL P5 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+MOV P7 <$GLOBAL(抢庄变量数字1)>
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P4)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄抽庄人数 = 0
+CALCVAR GLOBAL 抢庄抽庄名单 =
+CALCVAR GLOBAL 抢庄开始计时 = 0
+MOV D1 1
+CALCVAR GLOBAL 抢庄开始判断 = 1
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄抽庄人数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄名单.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄参与.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄IP号.txt HardDisk
+
+#IF
+EQUAL D1 8
+#ACT
+MOV D1 12
+CALCVAR GLOBAL 抢庄开始判断 = 12
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#IF
+EQUAL D1 2
+CHECKVAR GLOBAL 抢庄停押延迟 < 1
+#ACT
+MOV D1 12
+CALCVAR GLOBAL 抢庄开始判断 = 12
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#IF
+EQUAL D1 2
+#ACT
+MOV D1 8
+CALCVAR GLOBAL 抢庄开始判断 = 8
+CALCVAR GLOBAL 抢庄开始计时 = <$GLOBAL(抢庄停押延迟)>
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+BREAK
+
+#IF
+EQUAL D1 3
+#ACT
+CALCVAR GLOBAL 抢庄控制方式 = 0
+SAVEVAR GLOBAL 抢庄控制方式 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄控制方式.txt HardDisk
+LOADVAR GLOBAL 抢庄骰子点数1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄骰子点数2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄骰子点数3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+GMEXECUTE 开始提问 @Mir2m2排号抢庄摇骰显示
+CALCVAR GLOBAL 抢庄骰子点数1 = 0
+CALCVAR GLOBAL 抢庄骰子点数2 = 0
+CALCVAR GLOBAL 抢庄骰子点数3 = 0
+MOV D1 4
+CALCVAR GLOBAL 抢庄开始判断 = 4
+CALCVAR GLOBAL 抢庄开始计时 = <$GLOBAL(抢庄摇骰时间)>
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+BREAK
+
+#IF
+EQUAL D1 4
+CHECKVAR GLOBAL 抢庄公告提示4 > 0
+#ACT
+LOADVAR GLOBAL 抢庄开庄提示 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)><$GLOBAL(抢庄开庄提示)> 255 244
+#IF
+EQUAL D1 4
+#ACT
+LOADVAR GLOBAL 抢庄今日排名1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排名数据.txt HardDisk
+LOADVAR GLOBAL 抢庄今日排名2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排名数据.txt HardDisk
+GMEXECUTE 开始提问 @Mir2m2排号抢庄结算显示
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押注.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押名.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄个人押IP.txt HardDisk
+LOADVAR GLOBAL 抢庄开庄记录 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄开庄记录2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄押注记录 =
+CALCVAR GLOBAL 抢庄庄家姓名 =
+CALCVAR GLOBAL 抢庄庄家本钱 = 0
+CALCVAR GLOBAL 抢庄可押豹总 = 0
+CALCVAR GLOBAL 抢庄可押大总 = 0
+CALCVAR GLOBAL 抢庄可押小总 = 0
+CALCVAR GLOBAL 抢庄可押中总 = 0
+CALCVAR GLOBAL 抢庄已押豹总 = 0
+CALCVAR GLOBAL 抢庄已押大总 = 0
+CALCVAR GLOBAL 抢庄已押小总 = 0
+CALCVAR GLOBAL 抢庄已押中总 = 0
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄抽庄人数 = 0
+CALCVAR GLOBAL 抢庄抽庄名单 =
+SAVEVAR GLOBAL 抢庄抽庄人数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+EQUAL D1 4
+CHECKVAR GLOBAL 抢庄是否启动 < 2
+#ACT
+MOV D1 15
+CALCVAR GLOBAL 抢庄开始判断 = 15
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#IF
+EQUAL D1 4
+SMALL D2 2
+#ACT
+MOV D1 15
+CALCVAR GLOBAL 抢庄开始判断 = 15
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+LARGE D1 5
+SMALL D1 8
+#ACT
+LOADVAR GLOBAL 抢庄排号总数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号姓名1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单1 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单2 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单3 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单4 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单5 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单6 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单7 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单8 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+LOADVAR GLOBAL 抢庄排号名单9 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄排号名单.txt HardDisk
+CALCVAR GLOBAL 抢庄排号姓名2 =
+CALCVAR GLOBAL 抢庄排号姓名3 =
+CALCVAR GLOBAL 抢庄排号姓名4 =
+CALCVAR GLOBAL 抢庄排号姓名5 =
+CALCVAR GLOBAL 抢庄排号姓名6 =
+CALCVAR GLOBAL 抢庄排号姓名7 =
+CALCVAR GLOBAL 抢庄排号姓名8 =
+CALCVAR GLOBAL 抢庄排号姓名9 =
+CALCVAR GLOBAL 抢庄排号姓名10 =
+CALCVAR GLOBAL 抢庄排号姓名11 =
+CALCVAR GLOBAL 抢庄排号姓名12 =
+CALCVAR GLOBAL 抢庄排号姓名13 =
+CALCVAR GLOBAL 抢庄排号姓名14 =
+CALCVAR GLOBAL 抢庄排号姓名15 =
+CALCVAR GLOBAL 抢庄排号姓名16 =
+CALCVAR GLOBAL 抢庄排号姓名17 =
+CALCVAR GLOBAL 抢庄排号姓名18 =
+CALCVAR GLOBAL 抢庄排号姓名19 =
+CALCVAR GLOBAL 抢庄排号姓名20 =
+MOV P9 1
+#ELSEACT
+MOV P9 0
+
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+LARGE P9 0
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+MOV P9 0
+#IF
+LARGE P9 0
+#ACT
+INC P9 1
+LOADVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号数量<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+LOADVAR GLOBAL 抢庄排号类型<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+
+#IF
+EQUAL D1 6
+CHECKVAR GLOBAL 抢庄排号开启 < 1
+#ACT
+MOV D1 0
+CALCVAR GLOBAL 抢庄开始判断 = 0
+
+#IF
+EQUAL D1 6
+CHECKVAR GLOBAL 抢庄排号触发 < 1
+#ACT
+MOV D1 0
+CALCVAR GLOBAL 抢庄开始判断 = 0
+
+#IF
+EQUAL D1 6
+CHECKVAR GLOBAL 抢庄排号触发 > <$GLOBAL(抢庄排号总数)>
+#ACT
+MOV D1 7
+CALCVAR GLOBAL 抢庄开始判断 = 7
+CALCVAR GLOBAL 抢庄开始计时 = <$GLOBAL(抢庄排号时间)>
+GMEXECUTE 开始提问 @Mir2m2排号抢庄验证初始
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+BREAK
+
+#IF
+EQUAL D1 6
+CHECKVAR GLOBAL 抢庄庄家姓名 =
+#ACT
+MOV D1 4
+CALCVAR GLOBAL 抢庄开始判断 = 4
+
+#IF
+EQUAL D1 7
+CHECKVAR GLOBAL 抢庄庄家姓名 =
+CHECKVAR GLOBAL 抢庄排号姓名1 =
+#ACT
+MOV D1 0
+CALCVAR GLOBAL 抢庄开始判断 = 0
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+BREAK
+
+#IF
+EQUAL D1 7
+CHECKVAR GLOBAL 抢庄庄家姓名 =
+#ACT
+MOV D1 5
+CALCVAR GLOBAL 抢庄开始判断 = 5
+
+#IF
+EQUAL D1 7
+#ACT
+MOV D1 16
+CALCVAR GLOBAL 抢庄开始判断 = 16
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+LARGE D1 5
+SMALL D1 8
+#ACT
+MOV D1 1
+CALCVAR GLOBAL 抢庄开始判断 = 1
+
+#IF
+EQUAL D1 0
+CHECKVAR GLOBAL 抢庄庄家姓名 =
+#ACT
+MOV D1 1
+CALCVAR GLOBAL 抢庄开始判断 = 1
+CALCVAR GLOBAL 抢庄开始计时 = <$GLOBAL(抢庄抢庄时间)>
+CALCVAR GLOBAL 抢庄庄家姓名 =
+CALCVAR GLOBAL 抢庄庄家本钱 = 0
+CALCVAR GLOBAL 抢庄可押豹总 = 0
+CALCVAR GLOBAL 抢庄可押大总 = 0
+CALCVAR GLOBAL 抢庄可押小总 = 0
+CALCVAR GLOBAL 抢庄可押中总 = 0
+CALCVAR GLOBAL 抢庄已押豹总 = 0
+CALCVAR GLOBAL 抢庄已押大总 = 0
+CALCVAR GLOBAL 抢庄已押小总 = 0
+CALCVAR GLOBAL 抢庄已押中总 = 0
+CALCVAR GLOBAL 抢庄抽庄人数 = 0
+CALCVAR GLOBAL 抢庄抽庄名单 =
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄已押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄抽庄人数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄名单.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄参与.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄IP号.txt HardDisk
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+BREAK
+
+#IF
+EQUAL D1 0
+#ACT
+MOV D1 1
+CALCVAR GLOBAL 抢庄开始判断 = 1
+
+#IF
+EQUAL D1 1
+CHECKVAR GLOBAL 抢庄庄家姓名 =
+#ACT
+MOV P9 1
+#ELSEACT
+MOV P9 0
+#IF
+EQUAL P9 1
+CHECKVAR GLOBAL 抢庄无庄开点 > 0
+#ACT
+MOV P9 2
+MOV P7 <$GLOBAL(抢庄无庄本钱)>
+#IF
+EQUAL P9 2
+LARGE P7 0
+#ACT
+MOV P9 3
+MOV P5 1
+#IF
+EQUAL P9 3
+CHECKVAR GLOBAL 抢庄押中开启 > 0
+#ACT
+MOV P5 <$GLOBAL(抢庄押中赔率)>
+#IF
+EQUAL P9 3
+SMALL P5 1
+#ACT
+MOV P5 1
+#IF
+EQUAL P9 3
+#ACT
+MOV P9 0
+CALCVAR GLOBAL 抢庄庄家姓名 = <$GLOBAL(抢庄无庄显示)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄抽庄人数 = 0
+CALCVAR GLOBAL 抢庄抽庄名单 =
+CALCVAR GLOBAL 抢庄开始计时 = 0
+MOV D1 1
+CALCVAR GLOBAL 抢庄开始判断 = 1
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄抽庄人数 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄名单.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄参与.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄抽庄IP号.txt HardDisk
+
+#IF
+EQUAL P9 2
+#ACT
+MOV P9 0
+CALCVAR GLOBAL 抢庄庄家姓名 = <$GLOBAL(抢庄无庄显示)>
+MOV D1 2
+CALCVAR GLOBAL 抢庄开始判断 = 2
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+BREAK
+#IF
+EQUAL P9 1
+#ACT
+MOV D1 4
+CALCVAR GLOBAL 抢庄开始判断 = 4
+
+#IF
+EQUAL D1 1
+CHECKVAR GLOBAL 抢庄公告提示2 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>庄家姓名:<$GLOBAL(抢庄庄家姓名)>　庄家本钱:<$GLOBAL(抢庄庄家本钱)> 255 244
+
+#IF
+EQUAL D1 1
+#ACT
+MOV D1 2
+CALCVAR GLOBAL 抢庄开始判断 = 2
+CALCVAR GLOBAL 抢庄开始计时 = <$GLOBAL(抢庄押注时间)>
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+BREAK
+
+#IF
+LARGE D1 3
+SMALL D1 6
+#ACT
+MOV P9 0
+#ELSEACT
+BREAK
+
+#IF
+CHECKVAR GLOBAL 抢庄押中开启 > 0
+#ACT
+MOV P5 <$GLOBAL(抢庄押中赔率)>
+#ELSEACT
+MOV P5 1
+#IF
+SMALL P5 1
+#ACT
+MOV P5 1
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#IF
+SMALL P9 20
+#ACT
+INC P9 1
+#IF
+CHECKVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+#ACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+#ELSEACT
+MOV P8 1
+MOV S10 <$GLOBAL(抢庄排号姓名
+INC S10 <$STR(P9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV S11 <$GLOBAL(抢庄排号数量
+INC S11 <$STR(P9)>
+INC S11 )>
+MOV S11 <$STR(S11)>
+MOV P7 <$STR(S11)>
+CALCVAR GLOBAL 抢庄变量数字1 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 = <$STR(P7)>
+CALCVAR GLOBAL 抢庄变量数字2 - 1
+CALCVAR GLOBAL 抢庄排号姓名<$STR(P9)> =
+SAVEVAR GLOBAL 抢庄排号姓名<$STR(P9)> ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+#IF
+<$STR(S10)>.ONLINELONGMIN ? 0
+#ACT
+MOV P8 2
+#IF
+EQUAL P8 2
+<$STR(S10)>.ONLINELONGMIN > 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 2
+<$STR(S10)>.LARGE D66 0
+<$STR(S10)>.CHECKVAR HUMAN 抢庄个人挂机 < 1
+#ACT
+MOV P8 3
+#IF
+EQUAL P8 3
+<$STR(S10)>.CHECKGAMEGOLD > <$GLOBAL(抢庄变量数字2)>
+#ACT
+MOV P8 4
+#IF
+EQUAL P8 3
+#ACT
+<$STR(S10)>.SENDMSG 6 <$GLOBAL(抢庄公告前缀)>您的元宝已不足【<$GLOBAL(抢庄变量数字1)>】，系统取消您的排号！
+#IF
+EQUAL P8 4
+CHECKVAR GLOBAL 抢庄公告提示3 > 0
+#ACT
+SENDMSG 0 <$GLOBAL(抢庄公告前缀)>【<$STR(S10)>】使用【<$STR(P7)>】元宝排号上庄！ 255 244
+#IF
+EQUAL P8 4
+#ACT
+<$STR(S10)>.GAMEGOLD - <$GLOBAL(抢庄变量数字1)>
+
+CALCVAR GLOBAL 抢庄庄家姓名 = <$STR(S10)>
+CALCVAR GLOBAL 抢庄庄家本钱 = <$STR(P7)>
+MOV P6 <$STR(P7)>
+DIV P6 <$STR(P5)>
+CALCVAR GLOBAL 抢庄可押大总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押小总 = <$STR(P6)>
+CALCVAR GLOBAL 抢庄可押中总 = <$STR(P6)>
+MOV P6 <$STR(P7)>
+DIV P6 <$GLOBAL(抢庄押豹赔率)>
+CALCVAR GLOBAL 抢庄可押豹总 = <$STR(P6)>
+SAVEVAR GLOBAL 抢庄庄家姓名 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄庄家本钱 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押豹总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押大总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押小总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+SAVEVAR GLOBAL 抢庄可押中总 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄系统变量.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+
+#ELSEACT
+CALCVAR GLOBAL 抢庄开始判断 + 10
+CALCVAR GLOBAL 抢庄开始判断2 = 1
+SAVEVAR GLOBAL 抢庄开始判断 ..\QuestDiary\Mir2m2排号抢庄配置\Mir2m2排号抢庄数据\Mir2m2抢庄开始判断.txt HardDisk
+CALCVAR GLOBAL 抢庄开始判断2 = 0
+BREAK
+}

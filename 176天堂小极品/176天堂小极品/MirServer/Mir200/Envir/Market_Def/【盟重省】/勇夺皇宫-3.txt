@@ -1,0 +1,162 @@
+[@MAIN]
+<COLOR=clRed 【激情大使】> <COLOR=clLime 天堂复古1.76传奇有你更精彩>\
+<COLOR=clRed 【温馨提示】> <COLOR=clLime 每个激情地方都设置不同的传送落脚点>\
+============================================================\
+╔════╗\
+║<攻城通道/@MAIN1>║ <COLOR=clLime ←> <COLOR=$008CC6EF 〖攻城专用〗 直接飞入> <COLOR=clLime →> <COLOR=$008CC6EF 沙大门、复活点>\
+╚════╝\
+╔════╗\
+║<攻城通道/@MAIN2>║ <COLOR=clLime ←> <COLOR=$008CC6EF 〖激情专用〗 直接飞入> <COLOR=clLime →> <COLOR=$008CC6EF 幻境七、影之道>\
+╚════╝\
+
+
+
+[@MAIN1]
+<COLOR=clRed 【激情大使】> <COLOR=clLime 天堂复古1.76传奇有你更精彩>\
+<COLOR=clRed 【温馨提示】> <COLOR=clLime 每个激情地方都设置不同的传送落脚点>\
+============================================================\
+╔════╗           ╔════╗            ╔════╗\
+║<沙城大门/@沙城大门>║           ║<沙城复活/@沙城复活>║            ║<沙楼梯口/@沙楼梯口>║\
+╚════╝           ╚════╝            ╚════╝\
+╔════╗           ╔════╗\
+║<沙衣服口/@沙衣服口>║           ║<沙垃圾口/@沙垃圾口>║              <返回首页/@MAIN>\
+╚════╝           ╚════╝\
+
+
+
+[@MAIN2]
+<COLOR=clRed 【激情大使】> <COLOR=clLime 天堂复古1.76传奇有你更精彩>\
+<COLOR=clRed 【温馨提示】> <COLOR=clLime 每个激情地方都设置不同的传送落脚点>\
+============================================================\
+╔════╗           ╔════╗            ╔════╗\
+║<幻七①号/@幻七①号>║           ║<幻七②号/@幻七②号>║            ║<幻七③号/@幻七③号>║\
+╚════╝           ╚════╝            ╚════╝\
+╔════╗           ╔════╗            ╔════╗\
+║<沙影①号/@沙影①号>║           ║<沙影②号/@沙影②号>║            ║<沙影③号/@沙影③号>║\
+╚════╝           ╚════╝            ╚════╝\
+　                                               <返回首页/@MAIN> \
+
+[@沙影③号]
+#IF
+#ACT
+movr p0 2
+movr p1 2
+inc p0 58
+inc p1 99
+MAPMOVE H201 <$STR(P0)> <$STR(P1)>
+BREAK
+
+[@沙影②号]
+#IF
+#ACT
+movr p0 2
+movr p1 2
+inc p0 32
+inc p1 72
+MAPMOVE H201 <$STR(P0)> <$STR(P1)>
+BREAK
+
+
+[@沙影①号]
+#IF
+#ACT
+movr p0 2
+movr p1 2
+inc p0 41
+inc p1 85
+MAPMOVE H201 <$STR(P0)> <$STR(P1)>
+BREAK
+
+
+
+[@幻七③号]
+#IF
+#ACT
+movr p0 2
+movr p1 2
+inc p0 85
+inc p1 63
+MAPMOVE H007 <$STR(P0)> <$STR(P1)>
+BREAK
+
+
+
+[@幻七②号]
+#IF
+#ACT
+movr p0 2
+movr p1 2
+inc p0 163
+inc p1 150
+MAPMOVE H007 <$STR(P0)> <$STR(P1)>
+BREAK
+
+
+[@幻七①号]
+#IF
+#ACT
+movr p0 2
+movr p1 2
+inc p0 148
+inc p1 192
+MAPMOVE H007 <$STR(P0)> <$STR(P1)>
+BREAK
+
+
+
+[@沙垃圾口]
+#IF
+#ACT
+movr p0 2
+movr p1 2
+inc p0 577
+inc p1 293
+MAPMOVE 3 <$STR(P0)> <$STR(P1)>
+BREAK
+
+
+[@沙衣服口]
+#IF
+#ACT
+movr p0 2
+movr p1 2
+inc p0 654
+inc p1 278
+MAPMOVE 3 <$STR(P0)> <$STR(P1)>
+BREAK
+
+
+[@沙楼梯口]
+#IF
+#ACT
+movr p0 2
+movr p1 2
+inc p0 635
+inc p1 281
+MAPMOVE 3 <$STR(P0)> <$STR(P1)>
+BREAK
+
+
+
+[@沙城复活]
+#IF
+#ACT
+movr p0 2
+movr p1 2
+inc p0 647
+inc p1 291
+MAPMOVE 3 <$STR(P0)> <$STR(P1)>
+BREAK
+
+
+[@沙城大门]
+#IF
+#ACT
+movr p0 2
+movr p1 2
+inc p0 675
+inc p1 333
+MAPMOVE 3 <$STR(P0)> <$STR(P1)>
+BREAK
+
+

@@ -1,0 +1,158 @@
+[@动态]
+{
+盟重----毒蛇地图链接开启功能:\ \
+
+<开启链接/@kaq> \  \
+
+<关闭链接/@gbl>\ \
+
+<退出/@exit>
+
+
+[@kaq]
+#IF
+ISADMIN
+#ACT
+ADDMAPROUTE         2          296 58          3          273 750       0
+ADDMAPROUTE         2          297 58          3          274 750       0
+ADDMAPROUTE         2          297 59          3          274 751       0
+ADDMAPROUTE         2          298 59          3          275 751       0
+ADDMAPROUTE         2          298 50          3          275 752       0
+ADDMAPROUTE         2          299 50          3          276 752       0
+ADDMAPROUTE         2          299 61          3          276 753       0
+ADDMAPROUTE         2          297 57          3          274 749       0
+ADDMAPROUTE         2          298 57          3          275 749       0
+ADDMAPROUTE         2          298 58          3          275 750       0
+ADDMAPROUTE         2          299 58          3          276 750       0
+ADDMAPROUTE         2          299 59          3          276 751       0
+ADDMAPROUTE         2          300 59          3          277 751       0
+ADDMAPROUTE         2          300 60          3          277 752       0
+ADDMAPROUTE         3          272 751        2          295 59       0
+ADDMAPROUTE         3          272 752        2          295 60       0
+ADDMAPROUTE         3          273 752        2          296 60       0
+ADDMAPROUTE         3          273 753        2          296 61       0
+ADDMAPROUTE         3          274 753        2          297 61       0
+ADDMAPROUTE         3          274 754        2          297 62       0
+ADDMAPROUTE         3          275 754        2          298 62       0
+ADDMAPROUTE         3          271 752        2          294 60       0
+ADDMAPROUTE         3          271 753        2          294 61       0
+ADDMAPROUTE         3          272 753        2          295 61       0
+ADDMAPROUTE         3          272 754        2          295 62       0
+ADDMAPROUTE         3          273 754        2          296 62       0
+ADDMAPROUTE         3          273 755        2          296 63       0
+ADDMAPROUTE         3          274 755        2          297 63       0
+ADDMAPROUTE         2          557 74          3          512 774       0
+ADDMAPROUTE         2          558 74          3          513 774       0
+ADDMAPROUTE         2          558 75          3          513 775       0
+ADDMAPROUTE         2          559 75          3          514 775       0
+ADDMAPROUTE         2          559 76          3          514 776       0
+ADDMAPROUTE         2          560 76          3          515 776       0
+ADDMAPROUTE         2          560 77          3          515 777       0
+ADDMAPROUTE         2          561 77          3          516 777       0
+ADDMAPROUTE         2          561 78          3          516 778       0
+ADDMAPROUTE         2          558 73          3          513 773       0
+ADDMAPROUTE         2          559 73          3          514 773       0
+ADDMAPROUTE         2          559 74          3          514 774       0
+ADDMAPROUTE         2          550 74          3          515 774       0
+ADDMAPROUTE         2          550 75          3          515 775       0
+ADDMAPROUTE         2          561 75          3          516 775       0
+ADDMAPROUTE         2          561 76          3          516 776       0
+ADDMAPROUTE         2          562 76          3          517 776       0
+ADDMAPROUTE         2          562 77          3          517 777       0
+ADDMAPROUTE         3          511 775        2          556 75       0
+ADDMAPROUTE         3          511 776        2          556 76       0
+ADDMAPROUTE         3          512 776        2          557 76       0
+ADDMAPROUTE         3          512 777        2          557 77       0
+ADDMAPROUTE         3          513 777        2          558 77       0
+ADDMAPROUTE         3          513 778        2          558 78       0
+ADDMAPROUTE         3          514 778        2          559 78       0
+ADDMAPROUTE         3          514 779        2          559 79       0
+ADDMAPROUTE         3          515 779        2          560 79       0
+ADDMAPROUTE         3          510 776        2          555 76       0
+ADDMAPROUTE         3          510 777        2          555 77       0
+ADDMAPROUTE         3          511 777        2          556 77       0
+ADDMAPROUTE         3          511 778        2          556 78       0
+ADDMAPROUTE         3          512 778        2          557 78       0
+ADDMAPROUTE         3          512 779        2          557 79       0
+ADDMAPROUTE         3          513 779        2          558 79       0
+ADDMAPROUTE         3          513 780        2          558 80       0
+ADDMAPROUTE         3          514 780        2          559 80       0
+SENDMSG 6 毒蛇盟重互通链接开启....
+BREAK
+#ESLESAY
+无权限....
+
+
+[@gbl]
+#IF
+ISADMIN
+#ACT
+DELMAPROUTE         2          296 58
+DELMAPROUTE         2          297 58 
+DELMAPROUTE         2          297 59
+DELMAPROUTE         2          298 59
+DELMAPROUTE         2          298 50
+DELMAPROUTE         2          299 50
+DELMAPROUTE         2          299 61
+DELMAPROUTE         2          297 57
+DELMAPROUTE         2          298 57
+DELMAPROUTE         2          298 58
+DELMAPROUTE         2          299 58
+DELMAPROUTE         2          299 59 
+DELMAPROUTE         2          300 59
+DELMAPROUTE         2          300 60 
+DELMAPROUTE         3          272 751 
+DELMAPROUTE         3          272 752 
+DELMAPROUTE         3          273 752
+DELMAPROUTE         3          273 753
+DELMAPROUTE         3          274 753
+DELMAPROUTE         3          274 754
+DELMAPROUTE         3          275 754
+DELMAPROUTE         3          271 752
+DELMAPROUTE         3          271 753
+DELMAPROUTE         3          272 753
+DELMAPROUTE         3          272 754
+DELMAPROUTE         3          273 754
+DELMAPROUTE         3          273 755 
+DELMAPROUTE         3          274 755
+DELMAPROUTE         2          557 74 
+DELMAPROUTE         2          558 74
+DELMAPROUTE         2          558 75
+DELMAPROUTE         2          559 75
+DELMAPROUTE         2          559 76   
+DELMAPROUTE         2          560 76   
+DELMAPROUTE         2          560 77   
+DELMAPROUTE         2          561 77   
+DELMAPROUTE         2          561 78  
+DELMAPROUTE         2          558 73  
+DELMAPROUTE         2          559 73  
+DELMAPROUTE         2          559 74 
+DELMAPROUTE         2          550 74 
+DELMAPROUTE         2          550 75 
+DELMAPROUTE         2          561 75 
+DELMAPROUTE         2          561 76 
+DELMAPROUTE         2          562 76 
+DELMAPROUTE         2          562 77 
+DELMAPROUTE         3          511 775
+DELMAPROUTE         3          511 776
+DELMAPROUTE         3          512 776 
+DELMAPROUTE         3          512 777 
+DELMAPROUTE         3          513 777 
+DELMAPROUTE         3          513 778
+DELMAPROUTE         3          514 778
+DELMAPROUTE         3          514 779
+DELMAPROUTE         3          515 779
+DELMAPROUTE         3          510 776
+DELMAPROUTE         3          510 777
+DELMAPROUTE         3          511 777
+DELMAPROUTE         3          511 778
+DELMAPROUTE         3          512 778
+DELMAPROUTE         3          512 779
+DELMAPROUTE         3          513 779
+DELMAPROUTE         3          513 780
+DELMAPROUTE         3          514 780 
+SENDMSG 6 毒蛇盟重互通链接关闭....
+BREAK
+#ESLESAY
+无权限....
+}

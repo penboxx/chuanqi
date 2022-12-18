@@ -1,0 +1,45 @@
+[@main]
+#act
+sendmsg 4 <$USERNAME>，欢迎来到[<$SERVERNAME>]新区
+break
+#say
+<COLOR=clAqua 别使用简单的帐号密码,容易被扫号软件盗取!>   \ \
+<COLOR=clAqua 一定要牢记注册资料,担保交易等都需要使用!>    \ \
+<COLOR=clAqua 担保一定要验证QQ号码:3120449310,谨防冒充>   \ \
+;<COLOR=clSkyBlue ∴°★．☆° ．★·°∴°★．° ．·。∴°☆°>\ \
+充值在官方网站进行：www.kuyoux.com  <COLOR=clLime 充值后输入@元宝,即可领取>\ \
+<【点我出去】/@zhan1>    <【点我出去】/@zhan1>     <游戏命令/@zhan4>     <游戏命令/@zhan4>\
+
+[@zhan]
+#if
+#act
+sendmsg 7 提示：目前为等待时间，正式开区为20点！
+break
+
+[@zhan1]
+#if
+ISLOCKPASSWORD
+#elseact
+messagebox 请先设置好你的仓库密码！
+break
+
+#IF
+;checkNameList ..\QuestDiary\季卡\季卡名单.txt HardDisk
+equal A5 正式开区
+#ACT
+mapmove 0 333 268
+ChangeLevel = 1
+ChangeExp - 1000
+ADDLINELIST ..\QuestDiary\季卡\IP数据.txt <$USERNAME>|<$IPADDR> HardDisk
+messagebox 传奇正式开区\　\祝您游戏愉快。\　\东皇传奇客服QQ:3120449310\　\东皇传奇玩家QQ群:76503640
+ClearDelayGoto
+#elseact
+sendmsg 5 提示：您需要等到20:00正式开放，才能进行游戏旅途
+break
+
+[@zhan4]
+<COLOR=clMoneyGreen @元宝    --   领取充值元宝>\ \
+<COLOR=clMoneyGreen @传      --   千里传音(8元宝/次)>\ \
+<COLOR=clMoneyGreen @拒绝    --   拒绝指定人物私聊>\ \
+<COLOR=clMoneyGreen @时间    --   查看当前服务器时间>\ \
+<COLOR=clMoneyGreen @洗红名  --   使用声望降低PK值>          <返回/@main>

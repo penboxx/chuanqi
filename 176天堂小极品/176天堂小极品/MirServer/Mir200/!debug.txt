@@ -1,0 +1,1 @@
+[2021-10-17 17:32:43] stop server errer: Æì½¢°æ20210520.17, 10, Access violation at address 006CF1F4 in module 'M2Server.exe'. Read of address 00000000

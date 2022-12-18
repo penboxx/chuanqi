@@ -1,0 +1,21 @@
+()
+%100
+[@main]
+\          <COLOR=clLime ∴∵∴※2020经典80金币复古※∵∴∵>\
+\<COLOR=clAqua ╰══════════><COLOR=clAqua 【BOSS皇宫】><COLOR=clAqua ══════════╯>\
+\<COLOR=clRed ♀.高级地图，难度适中，适合散人生存赚钱的好地图>\
+\<COLOR=clAqua ♀.怪物刷新：三大教主，暗之赤月恶魔>\
+\<COLOR=clLime ♀.爆率介绍：爆所有装备，地图共二层>\
+\<COLOR=clFuchsia ♀.进入条件：35级+50万金币>  \
+------------------------------------------------------------　\
+<前往BOSS皇宫/@单人>\
+[@单人]
+#IF
+CHECKLEVELEX > 34
+#ACT
+mapmove BSHG2 52 76
+SENDMSG 0  玛法勇士[<$USERNAME>]进入了BOSS皇宫二层寻找宝藏去了！ 250  0
+SENDMSG 0  玛法勇士[<$USERNAME>]进入了BOSS皇宫二层寻找宝藏去了！ 250  0
+break
+#ELSESAY
+条件不足，无法进入！

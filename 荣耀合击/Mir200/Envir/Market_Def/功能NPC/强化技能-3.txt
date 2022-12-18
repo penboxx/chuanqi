@@ -1,0 +1,763 @@
+(@upgradenow )
+%100
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【强化技能】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+　　〖<强化战士主体技能/@战士>〗           〖<强化战士英雄技能/@战士英雄>〗\ \
+　　〖<强化法师主体技能/@法师>〗           〖<强化法师英雄技能/@法师英雄>〗\ \
+　　〖<强化道士主体技能/@道士>〗           〖<强化道士英雄技能/@道士英雄>〗\ \
+　　<免费提升英雄精神力战法/@免费>           〖<强化合击技能/@合击>〗
+
+[@合击]
+　　　　　<COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<破魂斩/@合击1>      强化四级破魂斩  需要88个<技能神石>+188张书页+8888金刚石\ 
+<劈星斩/@合击2>      强化四级劈星斩  需要88个<技能神石>+188张书页+8888金刚石\
+<雷霆一击/@合击3>    强化四级雷霆一击需要88个<技能神石>+188张书页+8888金刚石\
+<末日审判/@合击4>    强化四级末日审判需要88个<技能神石>+188张书页+8888金刚石\
+<噬魂沼泽/@合击5>    强化四级噬魂沼泽需要88个<技能神石>+388张书页+8888金刚石\
+<火龙气焰/@合击6>    强化四级火龙气焰需要88个<技能神石>+188张书页+8888金刚石\ 
+
+[@合击6]
+#IF
+CHECKGAMEDIAMOND > 8887
+H.CHECKMAGICLEVEL 火龙气焰 = 3
+checkitem 技能神石 88
+checkitem 书页 188
+#ACT
+GAMEDIAMOND - 8888
+take 技能神石 88
+take 书页 188
+H.SKILLLEVEL 火龙气焰 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级火龙气焰！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+8888金刚石+88个技能神石+188个书页！
+BREAK
+
+
+
+[@合击5]
+#IF
+CHECKGAMEDIAMOND > 8887
+H.CHECKMAGICLEVEL 噬魂沼泽 = 3
+checkitem 技能神石 88
+checkitem 书页 388
+#ACT
+GAMEDIAMOND - 8888
+take 技能神石 88
+take 书页 388
+H.SKILLLEVEL 噬魂沼泽 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级噬魂沼泽！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+8888金刚石+88个技能神石+188个书页！
+BREAK
+
+[@合击4]
+#IF
+CHECKGAMEDIAMOND > 8887
+H.CHECKMAGICLEVEL 末日审判 = 3
+checkitem 技能神石 88
+checkitem 书页 188
+#ACT
+GAMEDIAMOND - 8888
+take 技能神石 88
+take 书页 188
+H.SKILLLEVEL 末日审判 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级末日审判！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+8888金刚石+88个技能神石+188个书页！
+BREAK
+
+
+[@合击3]
+#IF
+CHECKGAMEDIAMOND > 8887
+H.CHECKMAGICLEVEL 雷霆一击 = 3
+checkitem 技能神石 88
+checkitem 书页 188
+#ACT
+GAMEDIAMOND - 8888
+take 技能神石 88
+take 书页 188
+H.SKILLLEVEL 雷霆一击 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级雷霆一击！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+8888金刚石+88个技能神石+188个书页！
+BREAK
+
+[@合击1]
+#IF
+CHECKGAMEDIAMOND > 8887
+H.CHECKMAGICLEVEL 破魂斩 = 3
+checkitem 技能神石 88
+checkitem 书页 188
+#ACT
+GAMEDIAMOND - 8888
+take 技能神石 88
+take 书页 188
+H.SKILLLEVEL 破魂斩 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级破魂斩！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+8888金刚石+88个技能神石+188个书页！
+BREAK
+
+
+[@合击2]
+#IF
+CHECKGAMEDIAMOND > 8887
+H.CHECKMAGICLEVEL 劈星斩 = 3
+checkitem 技能神石 88
+checkitem 书页 188
+#ACT
+GAMEDIAMOND - 8888
+take 技能神石 88
+take 书页 188
+H.SKILLLEVEL 劈星斩 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级劈星斩！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+8888金刚石+88个技能神石+188个书页！
+BREAK
+
+
+
+[@道士英雄]
+　　　　　<COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<英雄精神战法/@233>    强化四级英雄精神战法需要3个<技能神石>+200金刚石\ 
+<英雄施毒术/@23>      强化四级英雄施毒术  需要3个<技能神石>+200金刚石\
+<四级无极真气/@21>    强化四级英雄无极真气需要3个<技能神石>+200金刚石\
+<英雄召唤月灵/@92>    强化四级英雄召唤月灵需要3个<技能神石>+200金刚石\
+<四级噬血术/@24>      强化四级英雄噬血术  需要5个<技能神石>+500金刚石\
+<英雄护体神盾/@32>    强化四级英雄护体神盾需要5个<技能神石>+500金刚石\ 
+[@道士]
+　　　　　<COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<精神力战法/@612>  强化四级精神战法需要3个<技能神石>+200金刚石\
+<施毒术/@63>      强化四级施毒术  需要3个<技能神石>+200金刚石\
+<灵魂火符/@62>    强化四级灵魂火符需要3个<技能神石>+200金刚石\ 
+<无极真气/@61>    强化四级无极真气需要3个<技能神石>+200金刚石\ 
+<召唤月灵/@611>    强化四级召唤月灵需要3个<技能神石>+200金刚石\
+<噬血术/@64>      强化四级噬血术  需要5个<技能神石>+500金刚石\
+<护体神盾/@52>    强化四级护体神盾需要5个<技能神石>+500金刚石\
+[@法师英雄]
+　　　　　<COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+<英雄魔法盾/@34>      强化四级英雄魔法盾  需要3个<技能神石>+200金刚石\
+<英雄冰咆哮/@333>      强化四级英雄冰咆哮  需要3个<技能神石>+200金刚石\
+<英雄灭天火/@33>      强化四级英雄灭天火  需要3个<技能神石>+200金刚石\
+<英雄流星火雨/@31>    强化四级英雄流星火雨需要5个<技能神石>+500金刚石\
+<英雄护体神盾/@32>    强化四级英雄护体神盾需要5个<技能神石>+500金刚石\ 
+
+
+[@法师]
+　　　　　<COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+<火墙/@53>        强化四级火墙    需要3个<技能神石>+200金刚石\
+<魔法盾/@533>      强化四级魔法盾  需要3个<技能神石>+200金刚石\
+<冰咆哮/@54>      强化四级冰咆哮  需要3个<技能神石>+200金刚石\
+<灭天火/@544>      强化四级灭天火  需要3个<技能神石>+200金刚石\
+<流星火雨/@51>    强化四级流星火雨需要5个<技能神石>+500金刚石\
+<护体神盾/@52>    强化四级护体神盾需要5个<技能神石>+500金刚石\ 
+
+
+[@战士]
+　　　　　<COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<基本剑术/@基本>    强化四级基本剑术需要3个<技能神石>+200金刚石\
+<攻杀剑术/@41>    强化四级攻杀剑术需要3个<技能神石>+200金刚石\
+<刺杀剑术/@42>    强化四级刺杀剑术需要5个<技能神石>+500金刚石\
+<烈火剑法/@半月>    强化四级烈火剑法需要3个<技能神石>+200金刚石\
+<逐日剑法/@43>    强化四级逐日剑法需要5个<技能神石>+500金刚石\
+<开天斩/@44>      强化四级开天斩  需要5个<技能神石>+500金刚石\
+<护体神盾/@52>    强化四级护体神盾需要5个<技能神石>+500金刚石\
+[@战士英雄]
+　　　　　<COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<英雄基本剑术/@基本1>    强化四级英雄基本剑术需要3个<技能神石>+200金刚石\
+<英雄攻杀剑术/@11>    强化四级英雄攻杀剑术需要3个<技能神石>+200金刚石\
+<英雄刺杀剑术/@12>    强化四级英雄刺杀剑术需要5个<技能神石>+500金刚石\
+<英雄半月弯刀/@半月1>    强化英雄四级半月弯刀需要3个<技能神石>+200金刚石\
+<英雄逐日剑法/@13>    强化四级英雄逐日剑法需要5个<技能神石>+500金刚石\
+<英雄开天斩/@14>      强化四级英雄开天斩  需要5个<技能神石>+500金刚石\
+<英雄护体神盾/@32>    强化四级英雄护体神盾需要5个<技能神石>+500金刚石\
+
+[@战士1111]
+<COLOR=clAqua 普通技能需要3个><技能神石>+200金刚石。\
+<COLOR=clAqua (刺杀.逐日.开天.流星火雨.噬血术.护体)需要5个><技能神石>+500金刚石 。\
+<COLOR=clLime 人物>·<四级攻杀剑术/@41>  <四级刺杀剑术/@42>  <四级逐日剑法/@43>  <四级开天斩/@44>\
+<COLOR=clLime 人物>·<四级无极真气/@61>  <四级灵魂火符/@62>  <四级施毒术/@63>    <四级噬血术/@64>\
+<COLOR=clLime 人物>·<四级护体神盾/@52>  <四级流星火雨/@51>  <四级冰咆哮/@54>    <四级火墙/@53>\
+<COLOR=clLime 英雄>·<四级攻杀剑术/@11>  <四级刺杀剑术/@12>  <四级逐日剑法/@13>  <四级开天斩/@14>\
+<COLOR=clLime 英雄>·<四级无极真气/@21>  <四级灵魂火符/@22>  <四级施毒术/@23>    <四级噬血术/@24>\
+<COLOR=clLime 英雄>·<四级护体神盾/@32>  <四级流星火雨/@31>  <四级魔法盾/@34>    <四级雷电术/@33>\
+
+[@611]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKJOB TAOIST
+CHECKMAGICLEVEL 召唤月灵 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+SKILLLEVEL 召唤月灵 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体召唤月灵！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@612]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKJOB TAOIST
+CHECKMAGICLEVEL 精神力战法 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+SKILLLEVEL 精神力战法 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体精神力战法！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@半月]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKJOB WARRIOR
+CHECKMAGICLEVEL 烈火剑法 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+SKILLLEVEL 烈火剑法 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体烈火剑法！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@基本]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKJOB WARRIOR
+CHECKMAGICLEVEL 基本剑术 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+SKILLLEVEL 基本剑术 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体基本剑术！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@34]
+#IF
+CHECKHEROJOB WIZARD
+H.CHECKMAGICLEVEL 英雄魔法盾 = 3
+checkitem 技能神石 3
+CHECKGAMEDIAMOND > 199
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+H.SKILLLEVEL 英雄魔法盾 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄魔法盾！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@333]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKHEROJOB WIZARD
+H.CHECKMAGICLEVEL 英雄冰咆哮 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+H.SKILLLEVEL 英雄冰咆哮 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄冰咆哮！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@33]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKHEROJOB WIZARD
+H.CHECKMAGICLEVEL 英雄灭天火 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+H.SKILLLEVEL 英雄灭天火 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄灭天火！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@32]
+#IF
+CHECKGAMEDIAMOND > 499
+H.CHECKMAGICLEVEL 英雄护体神盾 = 3
+checkitem 技能神石 5
+#ACT
+GAMEDIAMOND - 500
+take 技能神石 5
+H.SKILLLEVEL 英雄护体神盾 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄护体神盾！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+500金刚石+5个技能神石！
+BREAK
+[@31]
+#IF
+CHECKGAMEDIAMOND > 499
+CHECKHEROJOB WIZARD
+H.CHECKMAGICLEVEL 英雄流星火雨 = 3
+checkitem 技能神石 5
+#ACT
+GAMEDIAMOND - 500
+take 技能神石 5
+H.SKILLLEVEL 英雄流星火雨 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄流星火雨！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+500金刚石+5个技能神石！
+BREAK
+[@21]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKHEROJOB TAOIST
+H.CHECKMAGICLEVEL 英雄无极真气 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+H.SKILLLEVEL 英雄无极真气 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄无极真气！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@92]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKHEROJOB TAOIST
+H.CHECKMAGICLEVEL 英雄召唤月灵 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+H.SKILLLEVEL 英雄召唤月灵 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄召唤月灵！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@免费]
+#IF
+CHECKHEROJOB TAOIST
+H.CHECKMAGICLEVEL 英雄精神战法 = 0
+#ACT
+H.SKILLLEVEL 英雄精神战法 = 3
+MESSAGEBOX 提示：3级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄精神战法！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，您的条件不足。
+BREAK
+[@233]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKHEROJOB TAOIST
+H.CHECKMAGICLEVEL 英雄精神战法 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+H.SKILLLEVEL 英雄精神战法 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄精神战法！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@23]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKHEROJOB TAOIST
+H.CHECKMAGICLEVEL 英雄施毒术 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+H.SKILLLEVEL 英雄施毒术 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄施毒术！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@24]
+#IF
+CHECKGAMEDIAMOND > 499
+CHECKHEROJOB TAOIST
+H.CHECKMAGICLEVEL 英雄噬血术 = 3
+checkitem 技能神石 5
+#ACT
+GAMEDIAMOND - 500
+take 技能神石 5
+H.SKILLLEVEL 英雄噬血术 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄噬血术！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+500金刚石+5个技能神石！
+BREAK
+[@14]
+#IF
+CHECKGAMEDIAMOND > 499
+CHECKHEROJOB  WARRIOR
+H.CHECKMAGICLEVEL 英雄开天斩 = 3
+checkitem 技能神石 5
+#ACT
+GAMEDIAMOND - 500
+take 技能神石 5
+H.SKILLLEVEL 英雄开天斩 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄开天斩！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+500金刚石+5个技能神石！
+BREAK
+[@13]
+#IF
+CHECKGAMEDIAMOND > 499
+CHECKHEROJOB  WARRIOR
+H.CHECKMAGICLEVEL 英雄逐日剑法 = 3
+checkitem 技能神石 5
+#ACT
+GAMEDIAMOND - 500
+take 技能神石 5
+H.SKILLLEVEL 英雄逐日剑法 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄逐日剑法！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+500金刚石+5个技能神石！
+BREAK
+[@12]
+#IF
+CHECKGAMEDIAMOND > 499
+CHECKHEROJOB  WARRIOR
+H.CHECKMAGICLEVEL 英雄刺杀剑术 = 3
+checkitem 技能神石 5
+#ACT
+GAMEDIAMOND - 500
+take 技能神石 5
+H.SKILLLEVEL 英雄刺杀剑术 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄刺杀剑术！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+500金刚石+5个技能神石！
+BREAK
+[@半月1]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKHEROJOB  WARRIOR
+H.CHECKMAGICLEVEL 英雄半月弯刀 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+H.SKILLLEVEL 英雄半月弯刀 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄半月弯刀！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@基本1]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKHEROJOB  WARRIOR
+H.CHECKMAGICLEVEL 英雄基本剑术 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+H.SKILLLEVEL 英雄基本剑术 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄基本剑术！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@11]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKHEROJOB  WARRIOR
+H.CHECKMAGICLEVEL 英雄攻杀剑术 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+H.SKILLLEVEL 英雄攻杀剑术 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了英雄攻杀剑术！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@544]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKJOB WIZARD
+CHECKMAGICLEVEL 灭天火 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+SKILLLEVEL 灭天火 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体灭天火！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@54]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKJOB WIZARD
+CHECKMAGICLEVEL 冰咆哮 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+SKILLLEVEL 冰咆哮 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体冰咆哮！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@53]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKJOB WIZARD
+CHECKMAGICLEVEL 火墙 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+SKILLLEVEL 火墙 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体火墙！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@533]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKJOB WIZARD
+CHECKMAGICLEVEL 魔法盾 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+SKILLLEVEL 魔法盾 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体魔法盾！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@52]
+#IF
+CHECKGAMEDIAMOND > 499
+CHECKMAGICLEVEL 护体神盾 = 3
+checkitem 技能神石 5
+#ACT
+GAMEDIAMOND - 500
+take 技能神石 5
+SKILLLEVEL 护体神盾 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体护体神盾！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+500金刚石+5个技能神石！
+BREAK
+[@51]
+#IF
+CHECKGAMEDIAMOND > 499
+CHECKJOB WIZARD
+CHECKMAGICLEVEL 流星火雨 = 3
+checkitem 技能神石 5
+#ACT
+GAMEDIAMOND - 500
+take 技能神石 5
+SKILLLEVEL 流星火雨 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体流星火雨！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+500金刚石+5个技能神石！
+BREAK
+[@64]
+#IF
+CHECKGAMEDIAMOND > 499
+CHECKJOB TAOIST
+CHECKMAGICLEVEL 噬血术 = 3
+checkitem 技能神石 5
+#ACT
+GAMEDIAMOND - 500
+take 技能神石 5
+SKILLLEVEL 噬血术 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体噬血术！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+500金刚石+5个技能神石！
+BREAK
+[@63]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKJOB TAOIST
+CHECKMAGICLEVEL 施毒术 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+SKILLLEVEL 施毒术 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体施毒术！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@62]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKJOB TAOIST
+CHECKMAGICLEVEL 灵魂火符 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+SKILLLEVEL 灵魂火符 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体灵魂火符！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@61]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKJOB TAOIST
+CHECKMAGICLEVEL 无极真气 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+SKILLLEVEL 无极真气 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体无极真气！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK
+[@44]
+#IF
+CHECKGAMEDIAMOND > 499
+CHECKJOB WARRIOR
+CHECKMAGICLEVEL 开天斩 = 3
+checkitem 技能神石 5
+#ACT
+GAMEDIAMOND - 500
+take 技能神石 5
+SKILLLEVEL 开天斩 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体开天斩！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+500金刚石+5个技能神石！
+BREAK
+[@43]
+#IF
+CHECKGAMEDIAMOND > 499
+CHECKJOB WARRIOR
+CHECKMAGICLEVEL 逐日剑法 = 3
+checkitem 技能神石 5
+#ACT
+GAMEDIAMOND - 500
+take 技能神石 5
+SKILLLEVEL 逐日剑法 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体逐日剑法！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+500金刚石+5个技能神石！
+BREAK
+[@42]
+#IF
+CHECKGAMEDIAMOND > 499
+CHECKJOB WARRIOR
+CHECKMAGICLEVEL 刺杀剑术 = 3
+checkitem 技能神石 5
+#ACT
+GAMEDIAMOND - 500
+take 技能神石 5
+SKILLLEVEL 刺杀剑术 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体刺杀剑术！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+500金刚石+3个技能神石！
+BREAK
+[@41]
+#IF
+CHECKGAMEDIAMOND > 199
+CHECKJOB WARRIOR
+CHECKMAGICLEVEL 攻杀剑术 = 3
+checkitem 技能神石 3
+#ACT
+GAMEDIAMOND - 200
+take 技能神石 3
+SKILLLEVEL 攻杀剑术 = 4
+MESSAGEBOX 提示：4级技能升级成功！
+SENDMSG 2 恭喜勇士[<$USERNAME>]在强化技能处升级了主体攻杀剑术！ 250 0
+BREAK
+#ELSEACT
+MESSAGEBOX 对不起，材料不足，需要技能3级+200金刚石+3个技能神石！
+BREAK

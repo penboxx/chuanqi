@@ -1,0 +1,10 @@
+[GLOBAL]
+抢庄排号名单1=<COLOR=clTeal 〓〓〓〓> <COLOR=clMaroon 本系统仅供玩家休闲娱乐，禁止用于非法赌博> <COLOR=clTeal 〓〓〓〓>\<COLOR=clLime 01:>                <COLOR=clLime 02:>                <COLOR=clLime 03:>                \<COLOR=clLime 04:>                <COLOR=clLime 05:>                <COLOR=clLime 06:>                \<COLOR=clLime 07:>                <COLOR=clLime 08:>                <COLOR=clLime 09:>                \<COLOR=clLime 10:>                <COLOR=clLime 11:>                <COLOR=clLime 12:>                \<COLOR=clLime 13:>                <COLOR=clLime 14:>                <COLOR=clLime 15:>                \<COLOR=clLime 16:>                <COLOR=clLime 17:>                <COLOR=clLime 18:>                \<COLOR=clLime 19:>                <COLOR=clLime 20:>                 [<返回/@Mir2m2排号抢庄脚本NPC>] [<上页>] [<下页>]\　<COLOR=clMaroon １>　　　　　　　　　　　　　　　　
+抢庄排号名单2=<COLOR=clTeal 〓〓〓〓> <COLOR=clMaroon 本系统仅供玩家休闲娱乐，禁止用于非法赌博> <COLOR=clTeal 〓〓〓〓>\
+抢庄排号名单3=<COLOR=clTeal 〓〓〓〓> <COLOR=clMaroon 本系统仅供玩家休闲娱乐，禁止用于非法赌博> <COLOR=clTeal 〓〓〓〓>\
+抢庄排号名单4=<COLOR=clTeal 〓〓〓〓> <COLOR=clMaroon 本系统仅供玩家休闲娱乐，禁止用于非法赌博> <COLOR=clTeal 〓〓〓〓>\
+抢庄排号名单5=<COLOR=clTeal 〓〓〓〓> <COLOR=clMaroon 本系统仅供玩家休闲娱乐，禁止用于非法赌博> <COLOR=clTeal 〓〓〓〓>\
+抢庄排号名单6=<COLOR=clTeal 〓〓〓〓> <COLOR=clMaroon 本系统仅供玩家休闲娱乐，禁止用于非法赌博> <COLOR=clTeal 〓〓〓〓>\
+抢庄排号名单7=<COLOR=clTeal 〓〓〓〓> <COLOR=clMaroon 本系统仅供玩家休闲娱乐，禁止用于非法赌博> <COLOR=clTeal 〓〓〓〓>\
+抢庄排号名单8=<COLOR=clTeal 〓〓〓〓> <COLOR=clMaroon 本系统仅供玩家休闲娱乐，禁止用于非法赌博> <COLOR=clTeal 〓〓〓〓>\
+抢庄排号名单9=<COLOR=clTeal 〓〓〓〓> <COLOR=clMaroon 本系统仅供玩家休闲娱乐，禁止用于非法赌博> <COLOR=clTeal 〓〓〓〓>\

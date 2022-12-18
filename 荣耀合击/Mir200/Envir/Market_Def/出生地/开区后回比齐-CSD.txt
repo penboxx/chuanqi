@@ -1,0 +1,133 @@
+[@MAIN]
+#IF
+EQUAL A79  已完成
+#Act
+MOV  A79   已完成
+#ElseAct
+MOV  A79   进行中
+
+#IF
+EQUAL A71  已完成
+#Act
+MOV  A71   已完成
+#ElseAct
+MOV  A71   进行中
+
+#IF
+EQUAL A73  已完成
+#Act
+MOV  A73   已完成
+#ElseAct
+MOV  A73   进行中
+#IF
+EQUAL A74  已完成
+#Act
+MOV  A74   已完成
+#ElseAct
+MOV  A74   进行中
+
+#IF
+EQUAL A75  已完成
+#Act
+MOV  A75   已完成
+#ElseAct
+MOV  A75   进行中
+
+#IF
+EQUAL A76  已完成
+#Act
+MOV  A76   已完成
+#ElseAct
+MOV  A76   进行中
+
+#IF
+EQUAL A77  已完成
+#Act
+MOV  A77   已完成
+#ElseAct
+MOV  A77   进行中
+#IF
+EQUAL A78  已完成
+#Act
+MOV  A78   已完成
+#ElseAct
+MOV  A78   进行中
+
+
+#IF
+EQUAL A80  已完成
+#Act
+MOV  A80   已完成
+#ElseAct
+MOV  A80   进行中
+
+#IF
+EQUAL A81  已完成
+#Act
+MOV  A81   已完成
+#ElseAct
+MOV  A81   进行中
+
+#IF
+EQUAL A82  已完成
+#Act
+MOV  A82   已完成
+#ElseAct
+MOV  A82   进行中
+
+#IF
+CHECKLEVELEX > 0
+#Act
+goto @123AQ
+break
+[@123AQ]
+#if
+CHECKVAR HUMAN 二级密码密码 = 0#0
+#act
+MESSAGEBOX 你还没有设置二级密码！
+break
+
+#IF
+CHECKHEROONLINE
+#say
+<COLOR=clFuchsia ------------------------------------------------------------>\
+　　　　　<COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clLime 1.80复古金币合击-设置三职业最平衡服！>\
+<COLOR=clLime 本服专门为喜爱热血传奇的骨灰玩家打造高爆率，高回报！>\
+<COLOR=clLime 地图开放设置：所有地图全部开放无限制！>\
+<COLOR=clLime 开区第3天20点统一攻沙！>\ 
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+　　　　　  　         <前往比奇省/@比奇12> \
+
+#ELSEACT
+MESSAGEBOX 您的英雄不在线！请先创建英雄！
+
+
+[@比奇]
+#IF
+CHECKLEVELEX > 35
+#ACT
+mapmove 0 368 224
+give 比奇传送石
+#elseact
+SendMSG 4 [%s]对不起！请正式开区后再传送！正式开区时间为14：00点整！
+
+[@比奇1]
+#IF
+CHECKLEVELEX > 35
+#ACT
+mapmove 0 368 224
+give 比奇传送石
+#elseact
+SendMSG 4 [%s]对不起！请正式开区后再传送！正式开区时间为19：00点整！
+
+[@比奇12]
+#IF
+CHECKLEVELEX > 0
+#ACT
+mapmove 0 368 224
+give 比奇传送石
+#elseact
+MESSAGEBOX 对不起！请正式开区后再传送！正式开区时间为19：30点整！

@@ -1,0 +1,243 @@
+()
+%100
+[@MAIN]
+我可以帮你传送到地图底层但你需要给我3W金币好处费！\
+我可以帮你传送到地图底层但你需要给我3W金币好处费！\
+<尸王附近/@矿区洞口>        <未知暗殿/@蜈蚣洞口>        <沃玛大厅/@沃玛洞口>\
+<石墓五层/@石墓洞口>        <祖玛大厅/@祖玛洞口>        <疾风殿/@封魔洞口>\
+<牛魔六层/@牛魔洞口>        <骨魔五层/@骨魔洞口>        <尸魔三层/@尸魔洞口>\
+<抉择之地/@赤月洞口>        <幻境五层/@幻境11>            
+[@影之道]
+#IF
+checkgold 200000
+#ACT
+take 金币 200000
+mapmove h201 13 103
+give 回城卷 1
+SENDMSG 0 玩家【<$USERNAME>】从高级传送员处直接杀入了沙影之道！
+break
+#ELSESAY
+你没有200000金币用来支付我们的服务费用!\\
+[@矿区洞口]
+#IF
+checkgold 30000
+#ACT
+mapmove D402 144 68
+SENDMSG 0  土豪玩家[<$USERNAME>]直接传送到了=尸王附近=！ 250  0
+take 金币 30000
+break
+#ELSESAY
+需要3万金币用来支付我们的服务费用!\
+[@蜈蚣洞口]
+#IF
+checkgold 30000
+#ACT
+take 金币 30000
+mapmove E603 26 186
+SENDMSG 0  土豪玩家[<$USERNAME>]直接传送到了=未知暗殿=！ 250  0
+break
+#ELSESAY
+需要3万金币用来支付我们的服务费用!\
+[@沃玛洞口]
+#IF
+checkgold 30000
+#ACT
+take 金币 30000
+mapmove D023 48 362
+SENDMSG 0  土豪玩家[<$USERNAME>]直接传送到了=沃玛大厅=！ 250  0
+break
+#ELSESAY
+需要3万金币用来支付我们的服务费用!\
+[@石墓洞口]
+#IF
+checkgold 30000
+#act
+take 金币 30000
+mapmove D715 79 87
+SENDMSG 0  土豪玩家[<$USERNAME>]直接传送到了=石墓五层=！ 250  0
+#ELSESAY
+你没有3万金币用来支付我们的服务费用!\
+[@赤月洞口]
+#IF
+checkgold 30000
+#act
+take 金币 30000
+mapmove  D10031  161 106
+SENDMSG 0  土豪玩家[<$USERNAME>]直接传送到了=抉择之地=！ 250  0
+#ELSESAY
+你没有3万金币用来支付我们的服务费用!\
+[@祖玛洞口]
+#IF
+checkgold 30000
+#act
+take 金币 30000
+mapmove D5071
+SENDMSG 0  土豪玩家[<$USERNAME>]直接传送到了=祖玛大厅=！ 250  0
+#ELSESAY
+你没有3万金币用来支付我们的服务费用!\
+[@牛魔洞口]
+#IF
+checkgold 30000
+#act
+take 金币 30000
+mapmove D2078 159 161
+SENDMSG 0  土豪玩家[<$USERNAME>]直接传送到了=牛魔六层=！ 250  0
+#ELSESAY
+你没有3万金币用来支付我们的服务费用!\
+[@尸魔洞口]
+#IF
+checkgold 30000
+#ACT
+take 金币 30000
+mapmove D2052 83 67
+SENDMSG 0  土豪玩家[<$USERNAME>]直接传送到了=尸魔三层=！ 250  0
+break 
+#ELSESAY 
+你没有3万金币用来支付我们的服务费用!\
+[@骨魔洞口]
+#IF
+checkgold 30000
+#ACT
+take 金币 30000
+mapmove D2067 150 168
+SENDMSG 0  土豪玩家[<$USERNAME>]直接传送到了=骨魔五层=！ 250  0
+break 
+#ELSESAY 
+你没有3万金币用来支付我们的服务费用!\
+[@封魔洞口]
+#IF
+checkgold 30000
+#ACT
+take 金币 30000
+mapmove D2004 72 71
+SENDMSG 0  土豪玩家[<$USERNAME>]直接传送到了=疾风殿=！ 250  0
+break 
+#ELSESAY 
+你没有3万金币用来支付我们的服务费用!\
+[@婚姻殿堂]
+#if
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove m101  21 34
+break
+#ELSESAY
+你没有2000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\
+[@比奇皇宫]
+#if
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 0122  21 34
+break
+#ELSESAY
+你没有1000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\
+[@魔龙城堡]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+mapmove 6 123 157
+break
+#ELSESAY
+你没有3000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\
+[@沙城区域1]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 3 3 706 407
+break
+#ELSESAY
+需要2000金币用来支付我们的服务费用!
+[@幻境11]
+#IF
+checkgold 30000
+CHECKLEVELEX > 34
+#ACT
+take 金币 30000
+mapmove H005
+SetScTimer 1 60
+SENDMSG 0  土豪玩家[<$USERNAME>]直接传送到了幻境五层！ 250  0
+break
+#ELSESAY
+努力升到35级在来挑战幻境吧！\
+[@比奇城堡]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 0 330 270
+break
+#ELSESAY
+你没有2000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\
+[@银杏山谷]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 0 650 624
+break
+#ELSESAY
+需要2000金币用来支付我们的服务费用!
+[@比奇村庄]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 0 290 615
+break
+#ELSESAY
+需要2000金币用来支付我们的服务费用!
+[@盟重土城]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 3 333 333
+break
+#ELSESAY
+需要2000金币用来支付我们的服务费用!
+[@白日天门]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 11 177 324
+break
+#ELSESAY
+需要2000金币用来支付我们的服务费用!
+[@封魔神谷]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 4 242 202
+break
+#ELSESAY
+你没有3000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\
+[@苍月小岛]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 5 140 338
+break
+#ELSESAY
+需要2000金币用来支付我们的服务费用!
+[@魔龙城堡]
+#IF
+EQUAL G96 0
+#ACT
+take 金币 2000
+mapmove 6 123 157
+break
+#ELSESAY
+你没有3000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\
+}

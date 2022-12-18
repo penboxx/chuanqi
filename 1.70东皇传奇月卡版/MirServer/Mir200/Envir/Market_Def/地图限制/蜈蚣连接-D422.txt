@@ -1,0 +1,12 @@
+[@main]
+#if
+CHECKUSERDATE ..\QuestDiary\季卡\时间记载.txt < 90 p0 p1
+#elseact
+sendmsg 7 提示：请购买季卡
+break
+
+
+#act
+MAPMOVE E601 135 19
+#elsesay
+此路不通\ \

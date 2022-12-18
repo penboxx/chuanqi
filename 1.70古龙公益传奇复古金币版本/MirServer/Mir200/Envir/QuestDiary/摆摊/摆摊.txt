@@ -1,0 +1,25 @@
+[@管理摆摊]
+{
+#if 
+#SAY 
+你好，你可以设置你的摆摊风格\ 
+以下有三种摆摊风格供你选择:\ 
+<第一种/@1>\ 
+<第二种/@2>\ 
+<第三种/@3>\ 
+
+[@1] 
+#if 
+#ACT
+GMEXECUTE StallLooks 1 
+
+[@2] 
+#if 
+#ACT
+GMEXECUTE StallLooks 2 
+
+[@3] 
+#if 
+#ACT
+GMEXECUTE StallLooks 3 
+}

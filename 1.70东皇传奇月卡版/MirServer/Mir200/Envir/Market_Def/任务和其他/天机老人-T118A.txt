@@ -1,0 +1,18 @@
+[@main]
+#if
+checklevelex < 38
+#act
+sendmsg 7 你是怎么进来的？？？
+mapmove DB
+break
+
+#If
+CheckMonMap T118A 1
+#act
+sendmsg 7 天机老人：等你把这里的怪物清理完了再找我吧！
+break
+#elseact
+give 命运之书 1
+sendmsg 7 恭喜：你获得命运之书一本!
+mapmove 0114
+break

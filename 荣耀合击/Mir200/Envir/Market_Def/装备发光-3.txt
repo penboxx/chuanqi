@@ -1,0 +1,120 @@
+[@main]
+┏━━━━━━━━━━━━━━━━━━━━━━━━━┓\
+┃       <项链发光/@项链发光>              <左手镯发光/@左手镯发光>           ┃\
+┃       <腰带发光/@腰带发光>              <右手镯发光/@右手镯发光>           ┃\
+┃       <勋章发光/@勋章发光>              <左戒指发光/@左戒指发光>           ┃ \
+┃       <靴子发光/@靴子发光>              <右戒指发光/@右戒指发光>           ┃\
+┃                                                  ┃\
+┃      <每次需要188元宝费用 仅支持内发光功能>        ┃\
+┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[@宝石发光]
+#IF
+CHECKGAMEGOLD > 187
+CHECKUSEITEM 12
+#ACT
+GAMEGOLD - 188
+Gmexecute 改属性 12 23 2
+SendMsg 7 您的装备已发光！
+Goto @main
+#ELSEACT
+SendMsg 5 你尚未佩带该装备或不够支付费用！
+[@毒符发光]
+#IF
+CHECKUSEITEM 9
+CHECKGAMEGOLD > 187
+#ACT
+GAMEGOLD - 188
+Gmexecute 改属性 9 23 2
+SendMsg 7 您的装备已发光！
+Goto @main
+#ELSEACT
+SendMsg 5 你尚未佩带该装备或不够支付费用！
+[@右戒指发光]
+#IF
+CHECKUSEITEM 7
+CHECKGAMEGOLD > 187
+#ACT
+GAMEGOLD - 188
+Gmexecute 改属性 7 23 2
+SendMsg 7 您的装备已发光！
+Goto @main
+#ELSEACT
+SendMsg 5 你尚未佩带该装备或不够支付费用！
+[@左戒指发光]
+#IF
+CHECKUSEITEM 8
+CHECKGAMEGOLD > 187
+#ACT
+GAMEGOLD - 188
+Gmexecute 改属性 8 23 2
+SendMsg 7 您的装备已发光！
+Goto @main
+#ELSEACT
+SendMsg 5 你尚未佩带该装备或不够支付费用！
+[@靴子发光]
+#IF
+CHECKUSEITEM 11
+CHECKGAMEGOLD > 187
+#ACT
+GAMEGOLD - 188
+Gmexecute 改属性 11 23 2
+SendMsg 7 您的装备已发光！
+Goto @main
+#ELSEACT
+SendMsg 5 你尚未佩带该装备或不够支付费用！
+[@腰带发光]
+#IF
+CHECKUSEITEM 10
+CHECKGAMEGOLD > 187
+#ACT
+GAMEGOLD - 188
+Gmexecute 改属性 10 23 2
+SendMsg 7 您的装备已发光！
+Goto @main
+#ELSEACT
+SendMsg 5 你尚未佩带该装备或不够支付费用！
+[@右手镯发光]
+#IF
+CHECKUSEITEM 5
+CHECKGAMEGOLD > 187
+#ACT
+GAMEGOLD - 188
+Gmexecute 改属性 5 23 2
+SendMsg 7 您的装备已发光！
+Goto @main
+#ELSEACT
+SendMsg 5 你尚未佩带该装备或不够支付费用！
+[@左手镯发光]
+#IF
+CHECKUSEITEM 6
+CHECKGAMEGOLD > 187
+#ACT
+GAMEGOLD - 188
+Gmexecute 改属性 6 23 2
+SendMsg 7 您的装备已发光！
+Goto @main
+#ELSEACT
+SendMsg 5 你尚未佩带该装备或不够支付费用！
+[@勋章发光]
+#IF
+CHECKUSEITEM 2
+CHECKGAMEGOLD > 187
+#ACT
+GAMEGOLD - 188
+Gmexecute 改属性 2 23 2
+SendMsg 7 您的装备已发光！
+Goto @main
+#ELSEACT
+SendMsg 5 你尚未佩带该装备或不够支付费用！
+[@项链发光]
+#IF
+CHECKUSEITEM 3
+CHECKGAMEGOLD > 187
+#ACT
+GAMEGOLD - 188
+Gmexecute 改属性 3 23 2
+SendMsg 7 您的装备已发光！
+Goto @main
+#ELSEACT
+SendMsg 5 你尚未佩带该装备或不够支付费用！

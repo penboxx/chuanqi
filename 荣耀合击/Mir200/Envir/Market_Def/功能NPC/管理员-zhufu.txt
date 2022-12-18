@@ -1,0 +1,287 @@
+()
+%100
+<增加人气/@增加人气>\ \
+[@增加人气]
+这里可以控制增加人气，你想要增加哪个城市人气？\ \
+〓〓<盟重省/@盟重省人气>〓〓<比齐城/@比齐城人气>〓〓<魔龙城/@魔龙城人气>〓〓<新手村/@新手村人气>〓〓\ \
+〓〓<封魔谷/@封魔谷人气>〓〓<苍月岛/@苍月岛人气>〓〓<白日门/@白日门人气>〓〓<银杏村/@银杏村人气>〓〓\ \
+<返回/@main>
+[@苍月岛人气]
+这里可以控制增加人气，你想要增加哪个城市人气？\ \
+〓〓<新区/@苍月岛新区>〓〓<老区/@苍月岛老区>〓〓\ \
+<返回/@main>
+[@苍月岛新区]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 141
+PARAM2 337
+PARAM3 1
+PARAM4 5
+MOBPLACE 绝对友情ξ鸡哥
+MOBPLACE 杀戮メ秦王 
+MOBPLACE 杀戮メ浩南
+MOBPLACE 你拽VS我更拽
+MOBPLACE ┈→無敵疯子
+MOBPLACE 决不低头
+MOBPLACE づ杀神
+MOBPLACE 独领こ法お神
+MOBPLACE 夏天的虫
+MOBPLACE ￡冬冬￡
+MOBPLACE ￡紫雨￡ 
+MOBPLACE 独行侠
+MOBPLACE ︶ㄣ菰箪ツ阿桀 
+MOBPLACE ︶ㄣ菰箪ツ大饼
+MOBPLACE 輸↘мìメ°ň
+MOBPLACE 飞跃ン拽拽
+MOBPLACE 我不是神
+MOBPLACE 疯狂女郎
+MOBPLACE ゼ小一熙ラ
+MOBPLACE 阿里山的姑娘
+MOBPLACE 极度の美女
+MOBPLACE 高处钸胜寒
+MOBPLACE 炮王
+MOBPLACE 誓だ血の狂だ杀 
+MOBPLACE 郁闷秒殺…浪子
+MOBPLACE o0oc
+MOBPLACE 绝情門╀杀人王
+MOBPLACE 100∴哈
+MOBPLACE 溡緔儍苽
+MOBPLACE 钱多多の多多钱
+SENDMSG 4  苍月岛人气增加30！
+goto @增加人气
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行增加人气！
+goto @增加人气
+[@苍月岛老区]
+#IF
+ISADMIN
+#ACT
+MISSION 5 141 337
+PARAM1 141
+PARAM2 337
+PARAM3 1
+PARAM4 5
+MOBPLACE 绝对友情ξ鸡哥
+MOBPLACE 郁闷秒殺…尘
+MOBPLACE 郁闷秒殺…鸿
+MOBPLACE 折断翅膀的天使
+MOBPLACE 杭州ァ斌斌
+MOBPLACE 游龙神
+MOBPLACE →追求╰☆╮色
+MOBPLACE 嗨伱√媽的卵泡
+MOBPLACE 缥缈￡尐精孁
+MOBPLACE 杀杀杀杀
+MOBPLACE 龙太子
+MOBPLACE 情義メ春天
+MOBPLACE ぁ杀戮
+MOBPLACE 葬心锋火
+MOBPLACE 随风而飘
+MOBPLACE 天涯寻梦∮蓉
+MOBPLACE 血战狂龙
+MOBPLACE 緣錠紟鉎メ残剑
+MOBPLACE 真游龙神
+MOBPLACE 『鈊在流浪♂
+SENDMSG 4  苍月岛人气增加20！
+goto @增加人气
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行增加人气！
+goto @增加人气
+[@盟重省人气]
+这里可以控制增加人气，你想要增加哪种人气？\ \
+〓〓<新区/@盟重省新区>〓〓<老区/@盟重省老区>〓〓\ \
+<返回/@main>
+[@盟重省新区]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 330
+PARAM2 330
+PARAM3 1
+PARAM4 7
+MOBPLACE 绝对友情ξ鸡哥
+MOBPLACE 杀戮メ秦王 
+MOBPLACE 杀戮メ浩南
+MOBPLACE 你拽VS我更拽
+MOBPLACE ┈→無敵疯子
+MOBPLACE 决不低头
+MOBPLACE づ杀神
+MOBPLACE 独领こ法お神
+MOBPLACE 夏天的虫
+MOBPLACE ￡冬冬￡
+MOBPLACE ￡紫雨￡ 
+MOBPLACE 独行侠
+MOBPLACE ︶ㄣ菰箪ツ阿桀 
+MOBPLACE ︶ㄣ菰箪ツ大饼
+MOBPLACE 輸↘мìメ°ň
+MOBPLACE 飞跃ン拽拽
+MOBPLACE 我不是神
+MOBPLACE 疯狂女郎
+MOBPLACE ゼ小一熙ラ
+MOBPLACE 阿里山的姑娘
+MOBPLACE 极度の美女
+MOBPLACE 高处钸胜寒
+MOBPLACE 炮王
+MOBPLACE 誓だ血の狂だ杀 
+MOBPLACE 郁闷秒殺…浪子
+MOBPLACE o0oc
+MOBPLACE 绝情門╀杀人王
+MOBPLACE 100∴哈
+MOBPLACE 溡緔儍苽
+MOBPLACE 钱多多の多多钱
+SENDMSG 4  盟重省人气增加30！
+goto @增加人气
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行增加人气！
+goto @增加人气
+[@盟重省老区]
+#IF
+ISADMIN
+#ACT
+MISSION 3 330 330
+PARAM1 330
+PARAM2 330
+PARAM3 1
+PARAM4 7
+MOBPLACE 绝对友情ξ鸡哥
+MOBPLACE 郁闷秒殺…尘
+MOBPLACE 郁闷秒殺…鸿
+MOBPLACE 折断翅膀的天使
+MOBPLACE 杭州ァ斌斌
+MOBPLACE 游龙神
+MOBPLACE →追求╰☆╮色
+MOBPLACE 嗨伱√媽的卵泡
+MOBPLACE 缥缈￡尐精孁
+MOBPLACE 杀杀杀杀
+MOBPLACE 龙太子
+MOBPLACE 情義メ春天
+MOBPLACE ぁ杀戮
+MOBPLACE 葬心锋火
+MOBPLACE 随风而飘
+MOBPLACE 天涯寻梦∮蓉
+MOBPLACE 血战狂龙
+MOBPLACE 緣錠紟鉎メ残剑
+MOBPLACE 真游龙神
+MOBPLACE 『鈊在流浪♂
+SENDMSG 4  盟重省人气增加20！
+goto @增加人气
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行增加人气！
+goto @增加人气
+[@封魔谷人气]
+这里可以控制增加人气，你想要增加哪种人气？\ \
+〓〓<新区/@封魔谷新区>〓〓<老区/@封魔谷老区>〓〓\ \
+<返回/@main>
+[@封魔谷新区]
+#IF
+ISADMIN
+#ACT
+MISSION 4  240 200
+PARAM1 240
+PARAM2 200
+PARAM3 1
+PARAM4 5
+MOBPLACE 绝对友情ξ鸡哥
+MOBPLACE 杀戮メ秦王 
+MOBPLACE 杀戮メ浩南
+MOBPLACE 你拽VS我更拽
+MOBPLACE ┈→無敵疯子
+MOBPLACE 决不低头
+MOBPLACE づ杀神
+MOBPLACE 独领こ法お神
+MOBPLACE 夏天的虫
+MOBPLACE ￡冬冬￡
+MOBPLACE ￡紫雨￡ 
+MOBPLACE 独行侠
+MOBPLACE ︶ㄣ菰箪ツ阿桀 
+MOBPLACE ︶ㄣ菰箪ツ大饼
+MOBPLACE 輸↘мìメ°ň
+MOBPLACE 飞跃ン拽拽
+MOBPLACE 神一样的男人
+MOBPLACE 疯狂女郎
+MOBPLACE ゼ小一熙ラ
+MOBPLACE 阿里山的姑娘
+MOBPLACE 极度の美女
+MOBPLACE 高处钸胜寒
+MOBPLACE 炮王
+MOBPLACE 誓だ血の狂だ杀 
+MOBPLACE 郁闷秒殺…流浪
+MOBPLACE o0oc
+MOBPLACE 绝情門╀杀人王
+MOBPLACE 100∴哈
+MOBPLACE 溡緔儍苽
+MOBPLACE 钱多多の多多钱
+SENDMSG 4  封魔谷人气增加30！
+goto @增加人气
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行增加人气！
+goto @增加人气
+[@封魔谷老区]
+#IF
+ISADMIN
+#ACT
+MISSION 4  240 200
+PARAM1 240
+PARAM2 200
+PARAM3 1
+PARAM4 5
+MOBPLACE 绝对友情ξ达哥
+MOBPLACE 郁闷秒殺…尘
+MOBPLACE 郁闷秒殺…鸿
+MOBPLACE 折断翅膀的地狱
+MOBPLACE 杭州ァ斌斌
+MOBPLACE 游龙神
+MOBPLACE →追求╰☆╮色
+MOBPLACE 嗨伱√媽的卵泡
+MOBPLACE 缥缈￡尐精孁
+MOBPLACE 杀杀杀杀
+MOBPLACE 龙太子
+MOBPLACE 情義メ春天
+MOBPLACE ぁ杀戮
+MOBPLACE 葬心锋火
+MOBPLACE 随风而飘
+MOBPLACE 天涯寻梦∮蓉
+MOBPLACE 血战狂龙
+MOBPLACE 緣錠紟鉎メ残剑
+MOBPLACE 真游龙神
+MOBPLACE 『鈊在流浪♂
+SENDMSG 4  封魔谷人气增加20！
+goto @增加人气
+#ELSEACT
+SENDMSG 6 你的权限不够，无法进行增加人气！
+goto @增加人气
+[@比齐城人气]
+这里可以控制增加人气，你想要增加哪种人气？\ \
+〓〓<新区/@比齐城新区>〓〓<老区/@比齐城老区>〓〓\ \
+<返回/@main>
+[@比齐城新区]
+#IF
+ISADMIN
+#ACT
+MISSION 0 334 266
+PARAM1 334
+PARAM2 266
+PARAM3 1
+PARAM4 5
+MOBPLACE 绝对友情ξ鸡哥
+MOBPLACE 杀戮メ财神 
+MOBPLACE 杀戮メ浩南
+MOBPLACE 你拽VS我更拽
+MOBPLACE ┈→無敵疯子
+MOBPLACE 决不低头
+MOBPLACE づ杀神
+MOBPLACE 独领こ法お神
+MOBPLACE 夏天的虫
+MOBPLACE ￡冬冬￡
+MOBPLACE ￡紫雨￡ 
+MOBPLACE 独行侠
+MOBPLACE ︶ㄣ菰箪ツ阿菜
+MOBPLACE ︶ㄣ菰箪ツ大饼
+MOBPLACE 輸↘мìメ°ň
+MOBPLACE 飞跃ン境界
+MOBPLACE 我不是神
+MOBPLACE 疯狂女郎
+MOBPLACE ゼ小一熙ラ
+MOBPLACE 阿

@@ -1,0 +1,93 @@
+[@测试区奖励]
+{
+<COLOR=clRed 以下为天堂复古传奇1.76小极品版测试等级奖励，正式开区直接领取>\ \
+　<COLOR=clLime 测试区升级到44级>   <COLOR=clAqua -------------->   <COLOR=clFuchsia 正式开区直领取>  <COLOR=clRed 500YB>\
+　<COLOR=clLime 测试区升级到45级>   <COLOR=clAqua -------------->   <COLOR=clFuchsia 正式开区直领取> <COLOR=clRed 1000YB>\
+　<COLOR=clLime 测试区升级到46级>   <COLOR=clAqua -------------->   <COLOR=clFuchsia 正式开区直领取> <COLOR=clRed 2000YB>\
+　<COLOR=clLime 测试区升级到47级>   <COLOR=clAqua -------------->   <COLOR=clFuchsia 正式开区直领取><COLOR=clRed 10000YB>\
+　<COLOR=clLime 测试区升级到48级>   <COLOR=clAqua -------------->   <COLOR=clFuchsia 正式开区直领取><COLOR=clRed 20000YB>\
+<COLOR=clAqua  提示：请使用测试时的账号登录游戏领取！！>\ \
+　                     <领取测试奖励/@领取测试奖励>
+
+[@领取测试奖励]
+#if
+CheckStringList ..\QuestDiary\测试区.txt 测试 HardDisk
+#act
+messagebox 目前是测试状态！
+BREAK
+
+#IF
+checkStringList ..\QuestDiary\测试奖励\测试奖励记录.txt  <$HWID> HardDisk
+#ACT
+MESSAGEBOX 领取失败。你的机器已经领取过奖励了。！
+BREAK
+
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\44级测试奖励.txt HardDisk
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\44级测试奖励.txt HardDisk
+ADDLINELIST ..\QuestDiary\测试奖励\测试奖励记录.txt <$HWID> HardDisk
+GAMEGOLD + 500
+SENDMSG 5 提示:44级测试奖励领取成功！
+SENDMSG 0 %s领取了44级测试奖励,如果你也想领取,就期待下个新区... 252 255
+SENDMSG 0 %s领取了44级测试奖励,如果你也想领取,就期待下个新区... 252 255
+BREAK
+
+
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\45级测试奖励.txt HardDisk
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\45级测试奖励.txt HardDisk
+ADDLINELIST ..\QuestDiary\测试奖励\测试奖励记录.txt <$HWID> HardDisk
+GAMEGOLD + 1000
+SENDMSG 5 提示:45级测试奖励领取成功！
+SENDMSG 0 %s领取了45级测试奖励,如果你也想领取,就期待下个新区... 252 255
+SENDMSG 0 %s领取了45级测试奖励,如果你也想领取,就期待下个新区... 252 255
+BREAK
+
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\46级测试奖励.txt HardDisk
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\46级测试奖励.txt HardDisk
+ADDLINELIST ..\QuestDiary\测试奖励\测试奖励记录.txt <$HWID> HardDisk
+GAMEGOLD + 2000
+SENDMSG 5 提示:46级测试奖励领取成功！
+SENDMSG 0 %s领取了46级测试奖励,如果你也想领取,就期待下个新区... 252 255
+SENDMSG 0 %s领取了46级测试奖励,如果你也想领取,就期待下个新区... 252 255
+BREAK
+
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\47级测试奖励.txt HardDisk
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\47级测试奖励.txt HardDisk
+ADDLINELIST ..\QuestDiary\测试奖励\测试奖励记录.txt <$HWID> HardDisk
+GAMEGOLD + 10000
+SENDMSG 5 提示:47级测试奖励领取成功！
+SENDMSG 0 %s领取了47级测试奖励,如果你也想领取,就期待下个新区... 252 255
+SENDMSG 0 %s领取了47级测试奖励,如果你也想领取,就期待下个新区... 252 255
+BREAK
+
+#if
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\48级测试奖励.txt HardDisk
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\48级测试奖励.txt HardDisk
+ADDLINELIST ..\QuestDiary\测试奖励\测试奖励记录.txt <$HWID> HardDisk
+GAMEGOLD + 20000
+SENDMSG 5 提示:48级测试奖励领取成功！
+SENDMSG 0 %s领取了48级测试奖励,如果你也想领取,就期待下个新区... 252 255
+SENDMSG 0 %s领取了48级测试奖励,如果你也想领取,就期待下个新区... 252 255
+BREAK
+#ELSESAY
+对不起！您没有参加测试或已经领取！\
+
+
+
+
+
+
+
+
+
+
+
+}

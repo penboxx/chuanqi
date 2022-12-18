@@ -1,0 +1,116 @@
+()
+%100
+[@main]
+<COLOR=clLIME ▂▂▂▂▂▂▂▂▃▅▆><COLOR=clLime -(神技合成介绍)-><COLOR=clLIME ▆▅▃▂▂▂▂▂▂>\
+<COLOR=clAqua 1-9号书页由《七界秘境》爆出>\
+<[十步一杀]/@bk>  <COLOR=clAqua 战主技能>  <COLOR=clLime 书页①-⑨号  +  ><COLOR=clRed 战神戒指+ ><COLOR=clFuchsia 5000元宝>\
+<[冰霜群雨]/@bd>  <COLOR=clAqua 法主技能>  <COLOR=clLime 书页①-⑨号  +  ><COLOR=clRed 圣魔戒指+ ><COLOR=clFuchsia 5000元宝>\
+<[死亡之眼]/@by>  <COLOR=clAqua 道主技能>  <COLOR=clLime 书页①-⑨号  +  ><COLOR=clRed 真魂戒指+ ><COLOR=clFuchsia 5000元宝>\
+
+[@by]
+#IF
+checkitem 1号书页
+checkitem 2号书页
+checkitem 3号书页
+checkitem 4号书页
+checkitem 5号书页
+checkitem 6号书页
+checkitem 7号书页
+checkitem 8号书页
+checkitem 9号书页
+checkitem 真魂戒指
+CHECKGAMEGOLD > 4999
+#act
+GAMEGOLD - 5000
+take 1号书页
+take 2号书页
+take 3号书页
+take 4号书页
+take 5号书页
+take 6号书页
+take 7号书页
+take 8号书页
+take 9号书页
+take 真魂戒指
+GIVE 死亡之眼
+SENDMSG 0 可喜可贺~~玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“死亡之眼” 255 253 10
+SENDMSG 0 可喜可贺~~玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“死亡之眼” 255 253 10
+SENDMSG 0 可喜可贺~~玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“死亡之眼” 255 253 10
+SENDMSG 0 玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“死亡之眼” 255 253
+SENDMSG 0 玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“死亡之眼” 255 253
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+
+[@bk]
+#IF
+checkitem 1号书页
+checkitem 2号书页
+checkitem 3号书页
+checkitem 4号书页
+checkitem 5号书页
+checkitem 6号书页
+checkitem 7号书页
+checkitem 8号书页
+checkitem 9号书页
+checkitem 战神戒指
+CHECKGAMEGOLD > 4999
+#act
+GAMEGOLD - 5000
+take 1号书页
+take 2号书页
+take 3号书页
+take 4号书页
+take 5号书页
+take 6号书页
+take 7号书页
+take 8号书页
+take 9号书页
+take 战神戒指
+GIVE 十步一杀
+SENDMSG 0 可喜可贺~~玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“十步一杀” 255 253 10
+SENDMSG 0 可喜可贺~~玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“十步一杀” 255 253 10
+SENDMSG 0 可喜可贺~~玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“十步一杀” 255 253 10
+SENDMSG 0 玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“十步一杀” 255 253
+SENDMSG 0 玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“十步一杀” 255 253
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break
+
+[@bd]
+#IF
+checkitem 1号书页
+checkitem 2号书页
+checkitem 3号书页
+checkitem 4号书页
+checkitem 5号书页
+checkitem 6号书页
+checkitem 7号书页
+checkitem 8号书页
+checkitem 9号书页
+checkitem 圣魔戒指
+CHECKGAMEGOLD > 4999
+#act
+GAMEGOLD - 5000
+take 1号书页
+take 2号书页
+take 3号书页
+take 4号书页
+take 5号书页
+take 6号书页
+take 7号书页
+take 8号书页
+take 9号书页
+take 圣魔戒指
+GIVE 冰霜群雨
+SENDMSG 0 可喜可贺~~玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“冰霜群雨” 255 253 10
+SENDMSG 0 可喜可贺~~玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“冰霜群雨” 255 253 10
+SENDMSG 0 可喜可贺~~玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“冰霜群雨” 255 253 10
+SENDMSG 0 玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“冰霜群雨” 255 253
+SENDMSG 0 玩家[<$USERNAME>]在新技能NPC成功兑换了绝世神技“冰霜群雨” 255 253
+BREAK
+#elseact
+MESSAGEBOX 对不起，你材料不足，请检测背包！
+break

@@ -1,0 +1,388 @@
+[@冲级奖励]
+{
+
+　　<COLOR=clLime 为了答谢玩家长期以来对天堂传奇的支持!现特开放冲级奖励，>\
+<COLOR=clLime 只要达到相应的等级,即可领取奖励,每个等级奖励只允许领取一次!>\ \
+<COLOR=clAqua 46级>        <COLOR=$00FFDD44 40级衣服>       <COLOR=clRed 50名>    <COLOR=clFuchsia 已领取> <$STR(G46)> <COLOR=clFuchsia 名>    <领取奖励/@46>\
+<COLOR=clAqua 47级>        <COLOR=$00FFDD44 斗签勋章>       <COLOR=clRed 35名>    <COLOR=clFuchsia 已领取> <$STR(G47)> <COLOR=clFuchsia 名>    <领取奖励/@47>\
+<COLOR=clAqua 48级>      <COLOR=$00FFDD44 屠龙级[残]>       <COLOR=clRed 25名>    <COLOR=clFuchsia 已领取> <$STR(G48)> <COLOR=clFuchsia 名>    <领取奖励/@48>\
+<COLOR=clAqua 49级> <COLOR=$00FFDD44 200书页+1000点灵符>    <COLOR=clRed 20名>    <COLOR=clFuchsia 已领取> <$STR(G49)> <COLOR=clFuchsia 名>    <领取奖励/@49>\
+<COLOR=clAqua 50级>     <COLOR=$00FFDD44 天堂战甲[残]>      <COLOR=clRed 15名>    <COLOR=clFuchsia 已领取> <$STR(G50)> <COLOR=clFuchsia 名>    <领取奖励/@50>\
+<COLOR=clAqua 51级>   <COLOR=$00FFDD44 天堂屠龙级[残]>      <COLOR=clRed 10名>    <COLOR=clFuchsia 已领取> <$STR(G51)> <COLOR=clFuchsia 名>    <领取奖励/@51>\
+<COLOR=clAqua 52级>   <COLOR=$00FFDD44 黄金级斗签勋章>       <COLOR=clRed 5名>    <COLOR=clFuchsia 已领取> <$STR(G52)> <COLOR=clFuchsia 名>    <领取奖励/@52>\
+
+[@52]
+#IF
+CHECKLEVELEX < 52
+#ACT
+messagebox  您等级还不足52级继续努力吧！
+Break
+
+#IF
+Check [52] 1
+#ACT
+messagebox  您已经领取过了！
+Break
+
+#IF
+equal G52 5
+#ACT
+messagebox  名额已经领取完了！请关注下个新区.
+Break
+
+#If
+#Act
+give 黄金勋章 1
+give 黄金斗签 1
+INC G52 1
+Set [52] 1
+SENDMSG 7 恭喜您，领取了52级升级奖励【黄金级斗签勋章】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了52级升级奖励【黄金级斗签勋章】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+
+
+[@51]
+#IF
+CHECKLEVELEX < 51
+#ACT
+messagebox  您等级还不足51级继续努力吧！
+Break
+
+#IF
+Check [51] 1
+#ACT
+messagebox  您已经领取过了！
+Break
+
+#IF
+equal G51 10
+#ACT
+messagebox  名额已经领取完了！请关注下个新区.
+Break
+
+#If
+checkjob Warrior
+#Act
+give 天堂屠龙【残】 1
+INC G51 1
+Set [51] 1
+SENDMSG 7 恭喜您，领取了51级升级奖励【天堂屠龙【残】】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了51级升级奖励【天堂屠龙【残】】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+#If
+checkjob Wizard
+#Act
+give 天堂法杖【残】 1
+INC G51 1
+Set [51] 1
+SENDMSG 7 恭喜您，领取了51级升级奖励【天堂法杖【残】】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了51级升级奖励【天堂法杖【残】】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+
+#If
+checkjob Taoist
+#Act
+give 天堂霸者【残】 1
+INC G51 1
+Set [51] 1
+SENDMSG 7 恭喜您，领取了51级升级奖励【天堂霸者【残】】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了51级升级奖励【天堂霸者【残】】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+
+
+[@50]
+#IF
+CHECKLEVELEX < 50
+#ACT
+messagebox  您等级还不足50级继续努力吧！
+Break
+
+#IF
+Check [50] 1
+#ACT
+messagebox  您已经领取过了！
+Break
+
+#IF
+equal G50 15
+#ACT
+messagebox  名额已经领取完了！请关注下个新区.
+Break
+
+#If
+GENDER MAN
+#Act
+give 天堂战甲【残】 1
+INC G50 1
+Set [50] 1
+SENDMSG 7 恭喜您，领取了50级升级奖励【天堂战甲【残】】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了50级升级奖励【天堂战甲【残】】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+#If
+GENDER WOMAN
+#Act
+give 天堂战袍【残】 1
+INC G50 1
+Set [50] 1
+SENDMSG 7 恭喜您，领取了50级升级奖励【天堂战袍【残】】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了50级升级奖励【天堂战袍【残】】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+[@49]
+#IF
+CHECKLEVELEX < 49
+#ACT
+messagebox  您等级还不足49级继续努力吧！
+Break
+
+#IF
+Check [49] 1
+#ACT
+messagebox  您已经领取过了！
+Break
+
+#IF
+equal G49 20
+#ACT
+messagebox  名额已经领取完了！请关注下个新区.
+Break
+
+#If
+#Act
+give 1000点灵符 1
+GMEXECUTE 11 书页 200
+INC G49 1
+Set [49] 1
+SENDMSG 7 恭喜您，领取了49级升级奖励【200书页+1000点灵符】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了49级升级奖励【200书页+1000点灵符】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+
+[@48]
+#IF
+CHECKLEVELEX < 48
+#ACT
+messagebox  您等级还不足48级继续努力吧！
+Break
+
+#IF
+Check [48] 1
+#ACT
+messagebox  您已经领取过了！
+Break
+
+#IF
+equal G48 25
+#ACT
+messagebox  名额已经领取完了！请关注下个新区.
+Break
+
+#If
+checkjob Taoist
+#Act
+give 【残】霸者之刃 1
+INC G48 1
+Set [48] 1
+SENDMSG 7 恭喜您，领取了48级升级奖励【【残】霸者之刃】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了48级升级奖励【【残】霸者之刃】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+
+#If
+checkjob Wizard
+#Act
+give 【残】嗜魂法杖 1
+INC G48 1
+Set [48] 1
+SENDMSG 7 恭喜您，领取了48级升级奖励【【残】嗜魂法杖】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了48级升级奖励【【残】嗜魂法杖】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+
+#If
+checkjob Warrior
+#Act
+give 【残】屠龙 1
+INC G48 1
+Set [48] 1
+SENDMSG 7 恭喜您，领取了48级升级奖励【【残】屠龙】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了48级升级奖励【【残】屠龙】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+
+
+[@47]
+#IF
+CHECKLEVELEX < 47
+#ACT
+messagebox  您等级还不足47级继续努力吧！
+Break
+
+#IF
+Check [47] 1
+#ACT
+messagebox  您已经领取过了！
+Break
+
+#IF
+equal G47 35
+#ACT
+messagebox  名额已经领取完了！请关注下个新区.
+Break
+
+#If
+#Act
+give 普通斗笠 1
+give 普通勋章 1
+INC G47 1
+Set [47] 1
+SENDMSG 7 恭喜您，领取了47级升级奖励【斗笠勋章】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了47级升级奖励【斗笠勋章】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+
+
+[@46]
+#IF
+CHECKLEVELEX < 46
+#ACT
+messagebox  您等级还不足46级继续努力吧！
+Break
+
+#IF
+Check [46] 1
+#ACT
+messagebox  您已经领取过了！
+Break
+
+#IF
+equal G46 50
+#ACT
+messagebox  名额已经领取完了！请关注下个新区.
+Break
+
+#IF
+#SAY
+\  \  \
+　    <领取战士衣服/@40级战士衣服>       <领取法师衣服/@40级法师衣服>      <领取道士衣服/@40级道士衣服>  \ 
+
+
+[@40级道士衣服]
+#If
+checkjob Taoist
+#Act
+DelayCall 10 @40级道士衣服-1
+#elseact
+messagebox 清看清楚职业，你是道士吗？
+break
+
+[@40级道士衣服-1]
+#If
+Check [46] 0
+GENDER MAN
+#Act
+give 天尊道袍 1
+INC G46 1
+Set [46] 1
+SENDMSG 7 恭喜您，领取了46级升级奖励【天尊道袍】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了46级升级奖励【天尊道袍】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+#If
+Check [46] 0
+GENDER WOMAN
+#Act
+give 天师长袍 1
+INC G46 1
+Set [46] 1
+SENDMSG 7 恭喜您，领取了46级升级奖励【天师长袍】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了46级升级奖励【天师长袍】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+[@40级法师衣服]
+#If
+checkjob Wizard
+#Act
+DelayCall 10 @40级法师衣服-1
+#elseact
+messagebox 清看清楚职业，你是法师吗？
+break
+
+[@40级法师衣服-1]
+#If
+Check [46] 0
+GENDER MAN
+#Act
+give 法神披风 1
+INC G46 1
+Set [46] 1
+SENDMSG 7 恭喜您，领取了46级升级奖励【法神披风】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了46级升级奖励【法神披风】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+#If
+Check [46] 0
+GENDER WOMAN
+#Act
+give 霓裳羽衣 1
+INC G46 1
+Set [46] 1
+SENDMSG 7 恭喜您，领取了46级升级奖励【霓裳羽衣】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了46级升级奖励【霓裳羽衣】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+
+[@40级战士衣服]
+#If
+checkjob Warrior
+#Act
+DelayCall 10 @40级战士衣服-1
+#elseact
+messagebox 清看清楚职业，你是战士吗？
+break
+
+[@40级战士衣服-1]
+#If
+Check [46] 0
+GENDER MAN
+#Act
+give 天魔神甲 1
+INC G46 1
+Set [46] 1
+SENDMSG 7 恭喜您，领取了46级升级奖励【天魔神甲】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了46级升级奖励【天魔神甲】！ 251 249
+DelayCall 10 @冲级奖励
+break
+
+#If
+Check [46] 0
+GENDER WOMAN
+#Act
+give 圣战宝甲 1
+INC G46 1
+Set [46] 1
+SENDMSG 7 恭喜您，领取了46级升级奖励【圣战宝甲】领取成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【冲级奖励】处成功领取了46级升级奖励【圣战宝甲】！ 251 249
+DelayCall 10 @冲级奖励
+break
+}

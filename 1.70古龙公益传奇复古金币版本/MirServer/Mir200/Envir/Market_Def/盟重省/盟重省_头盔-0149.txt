@@ -1,0 +1,6 @@
+
+(@buy @sell @repair @s_repair )
+%100
++15
+[@main]
+#CALL [商人\头盔.txt] @头盔

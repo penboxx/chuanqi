@@ -1,0 +1,34 @@
+()
+%100
+[@main]
+#IF
+#ACT
+GOTO @main1
+BREAK
+#ELSEACT
+[@main1]
+欢迎来到激情争霸              <COLOR=clAqua 举报外挂有奖>\
+　\
+此地图不仅每天6点，12点，16点，24点刷新<激情教主>\
+还可以交纳魔族指令书，我就可以帮你刷出1只<福利大魔王>\
+<魔族指令书>可在80000血以上boss身上爆出\ 
+<COLOR=clFuchsia 天空之城：万圣之主必爆魔族指令书>\ \
+<召唤福利大魔王/@10元宝>    \ \
+[@10元宝]
+#IF
+CheckRangeMonCount AASSD 20 22 5 < 50
+CHECKITEM 魔族指令书
+#ACT
+  set [090] 1
+  TAKE 魔族指令书
+  Param1 AASSD
+  Param2 20
+  Param3 22
+  MonGen 福利大魔王
+SENDMSG 0 大家注意啦！玩家[<$USERNAME>]在激情殿堂召唤了【福利大魔王】快去抢呀...
+SENDMSG 0 大家注意啦！玩家[<$USERNAME>]在激情殿堂召唤了【福利大魔王】快去抢呀...
+SENDMSG 0 大家注意啦！玩家[<$USERNAME>]在激情殿堂召唤了【福利大魔王】快去抢呀...
+SENDMSG 0 大家注意啦！玩家[<$USERNAME>]在激情殿堂召唤了【福利大魔王】快去抢呀...
+#ELSESAY
+你需要交纳魔族指令书!\
+<退出对话/@exit>

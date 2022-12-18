@@ -1,0 +1,66 @@
+[@main]
+#IF
+checknamelist ..\QuestDiary\二级密码\密码名单.txt HardDisk
+#act
+DelayCall 100 @main1
+#ELSEACT
+SENDMSG 6 ★你还没有设置二级密码，请及时去NPC(帐号二代密保)处设置，使你的帐号更安全★ 251 249 20
+SENDMSG 6 ★你还没有设置二级密码，请及时去NPC(帐号二代密保)处设置，使你的帐号更安全★ 251 249 20
+#CALL [\二级密码\密码登陆5.txt] @转密码5
+BREAK
+
+
+
+
+
+
+
+
+[@main1]
+#if
+equal G15 1
+#ACT
+ReadRandomStr ..\QuestDiary\数据文件\固定不变\新人随即地图列表.txt S30 HardDisk
+DelayCall 100 @新人修
+BREAK
+
+#if
+equal G15 0
+#SAY
+你好，【★<$USERNAME>★】\ \
+<COLOR=clLime 开区等候>：<COLOR=clAqua 稍后点我出去谢谢合作！>\ \ \
+等待梦想中国区-开放时间14:00整达到后,再点我出去吧...\
+
+
+[@新人修]
+#IF
+checkmonmap  <$STR(S30)>  40
+#ACT
+give 回城卷 1
+Gmexecute 飞 <$STR(S30)>
+#ELSEACT
+Param1 <$STR(S30)>
+Param2 20
+Param3 22
+MonGen 鹿 30 100
+MonGen 羊 30 100
+MonGen 稻草人 50 100
+MonGen 多钩猫 50 100
+MonGen 半兽人 50 100
+MonGen 钉耙猫 50 100
+MonGen 鹿 30 100
+MonGen 羊 30 100
+MonGen 稻草人 50 100
+MonGen 多钩猫 50 100
+MonGen 半兽人 50 100
+MonGen 钉耙猫 50 100
+MonGen 鹿 30 100
+MonGen 羊 30 100
+MonGen 稻草人 50 100
+MonGen 多钩猫 50 100
+MonGen 半兽人 50 100
+MonGen 钉耙猫 50 100
+give 回城卷 1
+Gmexecute 飞 <$STR(S30)>
+give 回城卷 1
+BREAK

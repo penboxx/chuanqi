@@ -1,0 +1,1403 @@
+[@Mir2m2捡物奖励脚本QM]
+{
+#IF
+EQUAL I80 347979
+#ELSEACT
+MOV I80 347979
+VAR String GLOBAL 捡物奖励判断1 "" HardDisk
+VAR String GLOBAL 捡物奖励判断2 "" HardDisk
+VAR String GLOBAL 捡物奖励判断3 "" HardDisk
+VAR String GLOBAL 捡物奖励判断4 "" HardDisk
+VAR String GLOBAL 捡物奖励判断5 "" HardDisk
+VAR String GLOBAL 捡物奖励判断6 "" HardDisk
+VAR String GLOBAL 捡物奖励判断7 "" HardDisk
+VAR String GLOBAL 捡物奖励判断8 "" HardDisk
+VAR String GLOBAL 捡物奖励判断9 "" HardDisk
+VAR String GLOBAL 捡物奖励判断10 "" HardDisk
+VAR String GLOBAL 捡物奖励判断11 "" HardDisk
+VAR String GLOBAL 捡物奖励判断12 "" HardDisk
+VAR String GLOBAL 捡物奖励判断13 "" HardDisk
+VAR String GLOBAL 捡物奖励判断14 "" HardDisk
+VAR String GLOBAL 捡物奖励判断15 "" HardDisk
+VAR String GLOBAL 捡物奖励判断16 "" HardDisk
+VAR String GLOBAL 捡物奖励判断17 "" HardDisk
+VAR String GLOBAL 捡物奖励判断18 "" HardDisk
+VAR String GLOBAL 捡物奖励判断19 "" HardDisk
+VAR String GLOBAL 捡物奖励判断20 "" HardDisk
+VAR String GLOBAL 捡物奖励判断21 "" HardDisk
+VAR String GLOBAL 捡物奖励判断22 "" HardDisk
+VAR String GLOBAL 捡物奖励判断23 "" HardDisk
+VAR String GLOBAL 捡物奖励判断24 "" HardDisk
+VAR String GLOBAL 捡物奖励判断25 "" HardDisk
+VAR String GLOBAL 捡物奖励判断26 "" HardDisk
+VAR String GLOBAL 捡物奖励判断27 "" HardDisk
+VAR String GLOBAL 捡物奖励判断28 "" HardDisk
+VAR String GLOBAL 捡物奖励判断29 "" HardDisk
+VAR String GLOBAL 捡物奖励判断30 "" HardDisk
+VAR String GLOBAL 捡物奖励判断31 "" HardDisk
+VAR String GLOBAL 捡物奖励判断32 "" HardDisk
+VAR String GLOBAL 捡物奖励判断33 "" HardDisk
+VAR String GLOBAL 捡物奖励判断34 "" HardDisk
+VAR String GLOBAL 捡物奖励判断35 "" HardDisk
+VAR String GLOBAL 捡物奖励判断36 "" HardDisk
+VAR String GLOBAL 捡物奖励判断37 "" HardDisk
+VAR String GLOBAL 捡物奖励判断38 "" HardDisk
+VAR String GLOBAL 捡物奖励判断39 "" HardDisk
+VAR String GLOBAL 捡物奖励判断40 "" HardDisk
+VAR String GLOBAL 捡物奖励判断41 "" HardDisk
+VAR String GLOBAL 捡物奖励判断42 "" HardDisk
+VAR String GLOBAL 捡物奖励判断43 "" HardDisk
+VAR String GLOBAL 捡物奖励判断44 "" HardDisk
+VAR String GLOBAL 捡物奖励判断45 "" HardDisk
+VAR String GLOBAL 捡物奖励判断46 "" HardDisk
+VAR String GLOBAL 捡物奖励判断47 "" HardDisk
+VAR String GLOBAL 捡物奖励判断48 "" HardDisk
+VAR String GLOBAL 捡物奖励判断49 "" HardDisk
+LOADVAR GLOBAL 捡物奖励判断1 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断2 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断3 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断4 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断5 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断6 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断7 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断8 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断9 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断10 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断11 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断12 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断13 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断14 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断15 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断16 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断17 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断18 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断19 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断20 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断21 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断22 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断23 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断24 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断25 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断26 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断27 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断28 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断29 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断30 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断31 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断32 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断33 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断34 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断35 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断36 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断37 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断38 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断39 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断40 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断41 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断42 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断43 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断44 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断45 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断46 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断47 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断48 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+LOADVAR GLOBAL 捡物奖励判断49 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+VAR String GLOBAL 捡物奖励空格 "" HardDisk
+LOADVAR GLOBAL 捡物奖励空格 ..\QuestDiary\Mir2m2捡物奖励配置(免费脚本群.347979)\Mir2m2捡物奖励常量.ini
+MOV S10 <$GLOBAL(捡物奖励空格)>
+DEC S10 1 1
+CALCVAR GLOBAL 捡物奖励空格 = <$STR(S10)>
+MOV S10
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+VAR Integer HUMAN 捡物奖励页号 "" HardDisk
+MOV P8 0
+MOV P9 $(捡物奖励生效)
+
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+#IF
+SMALL P8 <$STR(P9)>
+#ACT
+INC P8 1
+#ELSEACT
+BREAK
+#IF
+checkvar GLOBAL 捡物奖励判断<$STR(P8)> = 
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+BREAK
+
+[@Mir2m2捡物奖励实时判断]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 2000 @Mir2m2捡物奖励实时判断
+MOV P9 $(捡物奖励生效)
+#IF
+SMALL P9 1
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品1) 1
+checkvar GLOBAL 捡物奖励判断1 = 
+#ACT
+GIVE  $(捡物奖励元宝1)
+CHANGEEXP + $(捡物奖励经验1)
+CALCVAR GLOBAL 捡物奖励判断1 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断1 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品1)
+MOV S11 $(捡物奖励元宝1)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 2
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品2) 1
+checkvar GLOBAL 捡物奖励判断2 = 
+#ACT
+GIVE  $(捡物奖励元宝2)
+CHANGEEXP + $(捡物奖励经验2)
+CALCVAR GLOBAL 捡物奖励判断2 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断2 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品2)
+MOV S11 $(捡物奖励元宝2)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 3
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品3) 1
+checkvar GLOBAL 捡物奖励判断3 = 
+#ACT
+GIVE  $(捡物奖励元宝3)
+CHANGEEXP + $(捡物奖励经验3)
+CALCVAR GLOBAL 捡物奖励判断3 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断3 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品3)
+MOV S11 $(捡物奖励元宝3)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 4
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品4) 1
+checkvar GLOBAL 捡物奖励判断4 = 
+#ACT
+GIVE  $(捡物奖励元宝4)
+CHANGEEXP + $(捡物奖励经验4)
+CALCVAR GLOBAL 捡物奖励判断4 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断4 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品4)
+MOV S11 $(捡物奖励元宝4)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 5
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品5) 1
+checkvar GLOBAL 捡物奖励判断5 = 
+#ACT
+GIVE  $(捡物奖励元宝5)
+CHANGEEXP + $(捡物奖励经验5)
+CALCVAR GLOBAL 捡物奖励判断5 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断5 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品5)
+MOV S11 $(捡物奖励元宝5)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 6
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品6) 1
+checkvar GLOBAL 捡物奖励判断6 = 
+#ACT
+GIVE  $(捡物奖励元宝6)
+CHANGEEXP + $(捡物奖励经验6)
+CALCVAR GLOBAL 捡物奖励判断6 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断6 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品6)
+MOV S11 $(捡物奖励元宝6)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 7
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品7) 1
+checkvar GLOBAL 捡物奖励判断7 = 
+#ACT
+GIVE  $(捡物奖励元宝7)
+CHANGEEXP + $(捡物奖励经验7)
+CALCVAR GLOBAL 捡物奖励判断7 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断7 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品7)
+MOV S11 $(捡物奖励元宝7)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 8
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品8) 1
+checkvar GLOBAL 捡物奖励判断8 = 
+#ACT
+GIVE  $(捡物奖励元宝8)
+CHANGEEXP + $(捡物奖励经验8)
+CALCVAR GLOBAL 捡物奖励判断8 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断8 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品8)
+MOV S11 $(捡物奖励元宝8)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 9
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品9) 1
+checkvar GLOBAL 捡物奖励判断9 = 
+#ACT
+GIVE  $(捡物奖励元宝9)
+CHANGEEXP + $(捡物奖励经验9)
+CALCVAR GLOBAL 捡物奖励判断9 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断9 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品9)
+MOV S11 $(捡物奖励元宝9)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 10
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品10) 1
+checkvar GLOBAL 捡物奖励判断10 = 
+#ACT
+GIVE  $(捡物奖励元宝10)
+CHANGEEXP + $(捡物奖励经验10)
+CALCVAR GLOBAL 捡物奖励判断10 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断10 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品10)
+MOV S11 $(捡物奖励元宝10)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 11
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品11) 1
+checkvar GLOBAL 捡物奖励判断11 = 
+#ACT
+GIVE  $(捡物奖励元宝11)
+CHANGEEXP + $(捡物奖励经验11)
+CALCVAR GLOBAL 捡物奖励判断11 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断11 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品11)
+MOV S11 $(捡物奖励元宝11)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 12
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品12) 1
+checkvar GLOBAL 捡物奖励判断12 = 
+#ACT
+GIVE  $(捡物奖励元宝12)
+CHANGEEXP + $(捡物奖励经验12)
+CALCVAR GLOBAL 捡物奖励判断12 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断12 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品12)
+MOV S11 $(捡物奖励元宝12)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 13
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品13) 1
+checkvar GLOBAL 捡物奖励判断13 = 
+#ACT
+GIVE  $(捡物奖励元宝13)
+CHANGEEXP + $(捡物奖励经验13)
+CALCVAR GLOBAL 捡物奖励判断13 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断13 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品13)
+MOV S11 $(捡物奖励元宝13)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 14
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品14) 1
+checkvar GLOBAL 捡物奖励判断14 = 
+#ACT
+GIVE  $(捡物奖励元宝14)
+CHANGEEXP + $(捡物奖励经验14)
+CALCVAR GLOBAL 捡物奖励判断14 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断14 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品14)
+MOV S11 $(捡物奖励元宝14)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 15
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品15) 1
+checkvar GLOBAL 捡物奖励判断15 = 
+#ACT
+GIVE  $(捡物奖励元宝15)
+CHANGEEXP + $(捡物奖励经验15)
+CALCVAR GLOBAL 捡物奖励判断15 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断15 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品15)
+MOV S11 $(捡物奖励元宝15)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 16
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品16) 1
+checkvar GLOBAL 捡物奖励判断16 = 
+#ACT
+GIVE  $(捡物奖励元宝16)
+CHANGEEXP + $(捡物奖励经验16)
+CALCVAR GLOBAL 捡物奖励判断16 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断16 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品16)
+MOV S11 $(捡物奖励元宝16)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 17
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品17) 1
+checkvar GLOBAL 捡物奖励判断17 = 
+#ACT
+GIVE  $(捡物奖励元宝17)
+CHANGEEXP + $(捡物奖励经验17)
+CALCVAR GLOBAL 捡物奖励判断17 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断17 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品17)
+MOV S11 $(捡物奖励元宝17)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 18
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品18) 1
+checkvar GLOBAL 捡物奖励判断18 = 
+#ACT
+GIVE  $(捡物奖励元宝18)
+CHANGEEXP + $(捡物奖励经验18)
+CALCVAR GLOBAL 捡物奖励判断18 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断18 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品18)
+MOV S11 $(捡物奖励元宝18)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 19
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品19) 1
+checkvar GLOBAL 捡物奖励判断19 = 
+#ACT
+GIVE  $(捡物奖励元宝19)
+CHANGEEXP + $(捡物奖励经验19)
+CALCVAR GLOBAL 捡物奖励判断19 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断19 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品19)
+MOV S11 $(捡物奖励元宝19)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 20
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品20) 1
+checkvar GLOBAL 捡物奖励判断20 = 
+#ACT
+GIVE  $(捡物奖励元宝20)
+CHANGEEXP + $(捡物奖励经验20)
+CALCVAR GLOBAL 捡物奖励判断20 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断20 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品20)
+MOV S11 $(捡物奖励元宝20)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 21
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品21) 1
+checkvar GLOBAL 捡物奖励判断21 = 
+#ACT
+GIVE  $(捡物奖励元宝21)
+CHANGEEXP + $(捡物奖励经验21)
+CALCVAR GLOBAL 捡物奖励判断21 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断21 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品21)
+MOV S11 $(捡物奖励元宝21)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 22
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品22) 1
+checkvar GLOBAL 捡物奖励判断22 = 
+#ACT
+GIVE  $(捡物奖励元宝22)
+CHANGEEXP + $(捡物奖励经验22)
+CALCVAR GLOBAL 捡物奖励判断22 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断22 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品22)
+MOV S11 $(捡物奖励元宝22)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 23
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品23) 1
+checkvar GLOBAL 捡物奖励判断23 = 
+#ACT
+GIVE  $(捡物奖励元宝23)
+CHANGEEXP + $(捡物奖励经验23)
+CALCVAR GLOBAL 捡物奖励判断23 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断23 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品23)
+MOV S11 $(捡物奖励元宝23)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 24
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品24) 1
+checkvar GLOBAL 捡物奖励判断24 = 
+#ACT
+GIVE  $(捡物奖励元宝24)
+CHANGEEXP + $(捡物奖励经验24)
+CALCVAR GLOBAL 捡物奖励判断24 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断24 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品24)
+MOV S11 $(捡物奖励元宝24)
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 25
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品25) 1
+checkvar GLOBAL 捡物奖励判断25 = 
+#ACT
+GIVE  $(捡物奖励元宝25)
+CHANGEEXP + $(捡物奖励经验25)
+CALCVAR GLOBAL 捡物奖励判断25 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断25 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品25)
+MOV S11 $(捡物奖励元宝25)元宝+$(捡物奖励经验25)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 26
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品26) 1
+checkvar GLOBAL 捡物奖励判断26 = 
+#ACT
+GIVE  $(捡物奖励元宝26)
+CHANGEEXP + $(捡物奖励经验26)
+CALCVAR GLOBAL 捡物奖励判断26 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断26 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品26)
+MOV S11 $(捡物奖励元宝26)元宝+$(捡物奖励经验26)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 27
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品27) 1
+checkvar GLOBAL 捡物奖励判断27 = 
+#ACT
+GIVE  $(捡物奖励元宝27)
+CHANGEEXP + $(捡物奖励经验27)
+CALCVAR GLOBAL 捡物奖励判断27 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断27 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品27)
+MOV S11 $(捡物奖励元宝27)元宝+$(捡物奖励经验27)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 28
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品28) 1
+checkvar GLOBAL 捡物奖励判断28 = 
+#ACT
+GIVE  $(捡物奖励元宝28)
+CHANGEEXP + $(捡物奖励经验28)
+CALCVAR GLOBAL 捡物奖励判断28 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断28 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品28)
+MOV S11 $(捡物奖励元宝28)元宝+$(捡物奖励经验28)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 29
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品29) 1
+checkvar GLOBAL 捡物奖励判断29 = 
+#ACT
+GIVE  $(捡物奖励元宝29)
+CHANGEEXP + $(捡物奖励经验29)
+CALCVAR GLOBAL 捡物奖励判断29 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断29 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品29)
+MOV S11 $(捡物奖励元宝29)元宝+$(捡物奖励经验29)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 30
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品30) 1
+checkvar GLOBAL 捡物奖励判断30 = 
+#ACT
+GIVE  $(捡物奖励元宝30)
+CHANGEEXP + $(捡物奖励经验30)
+CALCVAR GLOBAL 捡物奖励判断30 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断30 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品30)
+MOV S11 $(捡物奖励元宝30)元宝+$(捡物奖励经验30)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 31
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品31) 1
+checkvar GLOBAL 捡物奖励判断31 = 
+#ACT
+GIVE  $(捡物奖励元宝31)
+CHANGEEXP + $(捡物奖励经验31)
+CALCVAR GLOBAL 捡物奖励判断31 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断31 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品31)
+MOV S11 $(捡物奖励元宝31)元宝+$(捡物奖励经验31)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 32
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品32) 1
+checkvar GLOBAL 捡物奖励判断32 = 
+#ACT
+GIVE  $(捡物奖励元宝32)
+CHANGEEXP + $(捡物奖励经验32)
+CALCVAR GLOBAL 捡物奖励判断32 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断32 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品32)
+MOV S11 $(捡物奖励元宝32)元宝+$(捡物奖励经验32)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 33
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品33) 1
+checkvar GLOBAL 捡物奖励判断33 = 
+#ACT
+GIVE  $(捡物奖励元宝33)
+CHANGEEXP + $(捡物奖励经验33)
+CALCVAR GLOBAL 捡物奖励判断33 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断33 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品33)
+MOV S11 $(捡物奖励元宝33)元宝+$(捡物奖励经验33)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 34
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品34) 1
+checkvar GLOBAL 捡物奖励判断34 = 
+#ACT
+GIVE  $(捡物奖励元宝34)
+CHANGEEXP + $(捡物奖励经验34)
+CALCVAR GLOBAL 捡物奖励判断34 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断34 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品34)
+MOV S11 $(捡物奖励元宝34)元宝+$(捡物奖励经验34)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 35
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品35) 1
+checkvar GLOBAL 捡物奖励判断35 = 
+#ACT
+GIVE  $(捡物奖励元宝35)
+CHANGEEXP + $(捡物奖励经验35)
+CALCVAR GLOBAL 捡物奖励判断35 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断35 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品35)
+MOV S11 $(捡物奖励元宝35)元宝+$(捡物奖励经验35)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 36
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品36) 1
+checkvar GLOBAL 捡物奖励判断36 = 
+#ACT
+GIVE  $(捡物奖励元宝36)
+CHANGEEXP + $(捡物奖励经验36)
+CALCVAR GLOBAL 捡物奖励判断36 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断36 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品36)
+MOV S11 $(捡物奖励元宝36)元宝+$(捡物奖励经验36)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 37
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品37) 1
+checkvar GLOBAL 捡物奖励判断37 = 
+#ACT
+GIVE  $(捡物奖励元宝37)
+CHANGEEXP + $(捡物奖励经验37)
+CALCVAR GLOBAL 捡物奖励判断37 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断37 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品37)
+MOV S11 $(捡物奖励元宝37)元宝+$(捡物奖励经验37)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 38
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品38) 1
+checkvar GLOBAL 捡物奖励判断38 = 
+#ACT
+GIVE  $(捡物奖励元宝38)
+CHANGEEXP + $(捡物奖励经验38)
+CALCVAR GLOBAL 捡物奖励判断38 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断38 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品38)
+MOV S11 $(捡物奖励元宝38)元宝+$(捡物奖励经验38)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 39
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品39) 1
+checkvar GLOBAL 捡物奖励判断39 = 
+#ACT
+GIVE  $(捡物奖励元宝39)
+CHANGEEXP + $(捡物奖励经验39)
+CALCVAR GLOBAL 捡物奖励判断39 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断39 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品39)
+MOV S11 $(捡物奖励元宝39)元宝+$(捡物奖励经验39)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 40
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品40) 1
+checkvar GLOBAL 捡物奖励判断40 = 
+#ACT
+GIVE  $(捡物奖励元宝40)
+CHANGEEXP + $(捡物奖励经验40)
+CALCVAR GLOBAL 捡物奖励判断40 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断40 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品40)
+MOV S11 $(捡物奖励元宝40)元宝+$(捡物奖励经验40)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 41
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品41) 1
+checkvar GLOBAL 捡物奖励判断41 = 
+#ACT
+GIVE  $(捡物奖励元宝41)
+CHANGEEXP + $(捡物奖励经验41)
+CALCVAR GLOBAL 捡物奖励判断41 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断41 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品41)
+MOV S11 $(捡物奖励元宝41)元宝+$(捡物奖励经验41)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 42
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品42) 1
+checkvar GLOBAL 捡物奖励判断42 = 
+#ACT
+GIVE  $(捡物奖励元宝42)
+CHANGEEXP + $(捡物奖励经验42)
+CALCVAR GLOBAL 捡物奖励判断42 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断42 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品42)
+MOV S11 $(捡物奖励元宝42)元宝+$(捡物奖励经验42)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 43
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品43) 1
+checkvar GLOBAL 捡物奖励判断43 = 
+#ACT
+GIVE  $(捡物奖励元宝43)
+CHANGEEXP + $(捡物奖励经验43)
+CALCVAR GLOBAL 捡物奖励判断43 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断43 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品43)
+MOV S11 $(捡物奖励元宝43)元宝+$(捡物奖励经验43)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 44
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品44) 1
+checkvar GLOBAL 捡物奖励判断44 = 
+#ACT
+GIVE  $(捡物奖励元宝44)
+CHANGEEXP + $(捡物奖励经验44)
+CALCVAR GLOBAL 捡物奖励判断44 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断44 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品44)
+MOV S11 $(捡物奖励元宝44)元宝+$(捡物奖励经验44)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 45
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品45) 1
+checkvar GLOBAL 捡物奖励判断45 = 
+#ACT
+GIVE  $(捡物奖励元宝45)
+CHANGEEXP + $(捡物奖励经验45)
+CALCVAR GLOBAL 捡物奖励判断45 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断45 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品45)
+MOV S11 $(捡物奖励元宝45)元宝+$(捡物奖励经验45)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 46
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品46) 1
+checkvar GLOBAL 捡物奖励判断46 = 
+#ACT
+GIVE  $(捡物奖励元宝46)
+CHANGEEXP + $(捡物奖励经验46)
+CALCVAR GLOBAL 捡物奖励判断46 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断46 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品46)
+MOV S11 $(捡物奖励元宝46)元宝+$(捡物奖励经验46)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 47
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品47) 1
+checkvar GLOBAL 捡物奖励判断47 = 
+#ACT
+GIVE  $(捡物奖励元宝47)
+CHANGEEXP + $(捡物奖励经验47)
+CALCVAR GLOBAL 捡物奖励判断47 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断47 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品47)
+MOV S11 $(捡物奖励元宝47)元宝+$(捡物奖励经验47)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 48
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品48) 1
+checkvar GLOBAL 捡物奖励判断48 = 
+#ACT
+GIVE  $(捡物奖励元宝48)
+CHANGEEXP + $(捡物奖励经验48)
+CALCVAR GLOBAL 捡物奖励判断48 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断48 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品48)
+MOV S11 $(捡物奖励元宝48)元宝+$(捡物奖励经验48)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+#IF
+SMALL P9 49
+#ACT
+break
+#IF
+CHECKITEM $(捡物奖励物品49) 1
+checkvar GLOBAL 捡物奖励判断49 = 
+#ACT
+GIVE  $(捡物奖励元宝49)
+CHANGEEXP + $(捡物奖励经验49)
+CALCVAR GLOBAL 捡物奖励判断49 = <$USERNAME>
+SAVEVAR GLOBAL 捡物奖励判断49 ..\QuestDiary\Mir2m2开区清空文本(免费脚本群.347979)\Mir2m2捡物奖励变量.txt
+MOV S10 $(捡物奖励物品49)
+MOV S11 $(捡物奖励元宝49)元宝+$(捡物奖励经验49)经验
+SENDMSG 0 $(捡物奖励提示) 255 221
+
+[@Mir2m2捡物奖励常量加载]
+#CALL [\Mir2m2捡物奖励配置(免费脚本群.347979)\Mir2m2捡物奖励常量.INI] @Mir2m2捡物奖励常量
+}

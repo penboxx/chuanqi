@@ -1,0 +1,14 @@
+[@加官进爵_脚本头]
+{
+<COLOR=clAqua 九品知县> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+1点攻.魔.道属性>  →  <COLOR=clYellow 44级自动赠送>\
+<COLOR=clAqua 八品知府> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+2点攻.魔.道属性>  →  <COLOR=clYellow 45级自动赠送>\
+<COLOR=clAqua 七品太守> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+3点攻.魔.道属性>  →  <COLOR=clYellow 46级自动赠送>\
+<COLOR=clAqua 六品巡抚> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+4点攻.魔.道属性>  →  <COLOR=clYellow 47级自动赠送>\
+<COLOR=clAqua 五品提督> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+5点攻.魔.道属性>  →  <COLOR=clYellow 48级自动赠送>\
+<COLOR=clAqua 四品总督> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+6点攻.魔.道属性>  →  <COLOR=clYellow 49级自动赠送>\
+<COLOR=clAqua 三品尚书> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+7点攻.魔.道属性>  →  <COLOR=clYellow 50级自动赠送>\
+<COLOR=clAqua 二品太傅> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+8点攻.魔.道属性>  →  <COLOR=clYellow 51级自动赠送>\
+<COLOR=clAqua 一统天下> + <COLOR=clLime 特殊封号>  <COLOR=clFuchsia 上线+10点攻.魔 道属性> →  <COLOR=clYellow 52级自动赠送>\
+<COLOR=clRed 注：以上封号及上线属性,玩家达到相应级别后,小退上线即可查看!>\
+
+}

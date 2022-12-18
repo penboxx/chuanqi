@@ -1,0 +1,18 @@
+[@MAIN]
+
+<COLOR=clLime 此处是通往圣域的唯一通道>\
+<COLOR=clLime 刷新时间为36分钟，就一层>\
+<COLOR=clLime 有几率掉落夸父银勋>\
+------------※<花费20万进入/@圣域>※\
+
+
+[@圣域]
+#IF
+checkgold 200000
+#ACT
+mapmove B102
+SENDMSG 0  玛法勇士[<$USERNAME>]进入了=圣域=！ 49 223
+take 金币 200000
+break
+#ELSESAY
+需要200000金币用来支付我们的服务费用!\

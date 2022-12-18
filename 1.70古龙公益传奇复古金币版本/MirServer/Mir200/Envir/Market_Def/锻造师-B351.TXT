@@ -1,0 +1,9 @@
+
+(@makedrug @peifang)
+%100
++0
++42
++5
++6
+[@main]
+#CALL [商人\锻造师.txt] @锻造师

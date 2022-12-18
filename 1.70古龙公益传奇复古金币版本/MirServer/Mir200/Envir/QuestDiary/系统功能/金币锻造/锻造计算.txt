@@ -1,0 +1,158 @@
+[@锻造未成]
+{
+<$USERNAME> 你的金币锻造金刚石信息如下：\
+申请总数: <$HUMAN(金刚石总数)>颗\
+已经锻造完成数: 0颗\
+已领取数: 0颗\
+本次可以领取数: 0颗\
+尚未完成数: <$HUMAN(尚未完成)>颗\
+您要领取吗？  <全部领取/@全部领取>  <只领取12颗/@指定领取>    <返回/@MAIN>\
+}
+
+[@最终检测]
+{
+#IF
+CHECKVAR HUMAN 金刚石总数 = <$HUMAN(已领取数)>
+#ACT
+SET [006] 0
+DELUSERDATE ..\QuestDiary\数据文件\会员名单\日期.txt
+BREAK
+}
+
+[@锻造完成]
+{
+#IF
+CHECKVAR HUMAN 金刚石总数 > <$STR(D3)>
+#SAY
+<$USERNAME> 你的金币锻造金刚石信息如下：\
+申请总数: <$HUMAN(金刚石总数)>颗\
+已经锻造完成数: <$HUMAN(完成总数)>颗\
+已领取数: <$HUMAN(已领取数)>颗\
+本次可以领取数: <$HUMAN(剩余领取)>颗\
+尚未完成数: <$HUMAN(尚未完成)>颗\ \
+您要领取吗？  <全部领取/@全部领取>  <只领取12颗/@指定领取>    <返回/@MAIN>\
+#ACT
+CALCVAR HUMAN 完成总数 = <$STR(D3)>
+SAVEVAR HUMAN 完成总数 ..\QuestDiary\数据文件\完成总数Save.txt
+MOV D4 <$HUMAN(金刚石总数)>
+MOV D5 <$HUMAN(完成总数)>
+DEC D4 <$STR(D5)>
+CALCVAR HUMAN 尚未完成 = <$STR(D4)>
+SAVEVAR HUMAN 尚未完成 ..\QuestDiary\数据文件\尚未完成Save.txt
+MOV D6 <$HUMAN(已领取数)>
+DEC D5 <$STR(D6)>
+CALCVAR HUMAN 剩余领取 = <$STR(D5)>
+SAVEVAR HUMAN 剩余领取 ..\QuestDiary\数据文件\剩余领取Save.txt
+BREAK
+
+#IF
+CHECKVAR HUMAN 金刚石总数 = <$STR(D3)>
+#SAY
+<$USERNAME> 你的金币锻造金刚石信息如下：\
+申请总数：<$HUMAN(金刚石总数)>颗\
+已经锻造完成数:<$HUMAN(完成总数)>颗\
+已领取数:<$HUMAN(已领取数)>颗\
+本次可以领取数:<$HUMAN(剩余领取)>颗\
+尚未完成数:<$HUMAN(尚未完成)>颗\ \
+您要领取吗？  <全部领取/@全部领取>  <只领取12颗/@指定领取>    <返回/@MAIN>\
+#ACT
+CALCVAR HUMAN 完成总数 = <$STR(D3)>
+SAVEVAR HUMAN 完成总数 ..\QuestDiary\数据文件\完成总数Save.txt
+CALCVAR HUMAN 尚未完成 = 0
+SAVEVAR HUMAN 尚未完成 ..\QuestDiary\数据文件\尚未完成Save.txt
+MOV D5 <$HUMAN(完成总数)>
+MOV D6 <$HUMAN(已领取数)>
+DEC D5 <$STR(D6)>
+CALCVAR HUMAN 剩余领取 = <$STR(D5)>
+SAVEVAR HUMAN 剩余领取 ..\QuestDiary\数据文件\剩余领取Save.txt
+BREAK
+
+#IF
+CHECKVAR HUMAN 金刚石总数 < <$STR(D3)>
+#SAY
+<$USERNAME> 你的金币锻造金刚石信息如下：\
+申请总数：<$HUMAN(金刚石总数)>颗\
+已经锻造完成数:<$HUMAN(完成总数)>颗\
+已领取数:<$HUMAN(已领取数)>颗\
+本次可以领取数:<$HUMAN(剩余领取)>颗\
+尚未完成数:<$HUMAN(尚未完成)>颗\ \
+您要领取吗？  <全部领取/@全部领取>  <只领取12颗/@指定领取>    <返回/@MAIN>\
+#ACT
+CALCVAR HUMAN 完成总数 = <$HUMAN(金刚石总数)>
+SAVEVAR HUMAN 完成总数 ..\QuestDiary\数据文件\完成总数Save.txt
+CALCVAR HUMAN 尚未完成 = 0
+SAVEVAR HUMAN 尚未完成 ..\QuestDiary\数据文件\尚未完成Save.txt
+MOV D5 <$HUMAN(金刚石总数)>
+MOV D6 <$HUMAN(已领取数)>
+DEC D5 <$STR(D6)>
+CALCVAR HUMAN 剩余领取 = <$STR(D5)>
+SAVEVAR HUMAN 剩余领取 ..\QuestDiary\数据文件\剩余领取Save.txt
+BREAK
+
+;-----------------------------
+
+
+[@指定领取]
+#IF
+CHECKVAR HUMAN 剩余领取 > 11
+#SAY
+你成功获得金刚石 12 颗！获得经验:<$STR(D7)>\ \ \
+<关闭/@EXIT>\
+#ACT
+READRANDOMSTR .\QuestDiary\抽取数据\锻造奖励\锻造经验.txt S2
+MOV D7 <$STR(S2)>
+MUL D7 12
+MUL D7 <$LEVEL>
+GAMEDIAMOND + 12
+CHANGEEXP + <$STR(D7)>
+CALCVAR HUMAN 已领取数 + 12
+SAVEVAR HUMAN 已领取数 ..\QuestDiary\数据文件\已领取数Save.txt
+READRANDOMSTR .\QuestDiary\抽取数据\锻造奖励\金刚石.txt S2
+GIVE <$STR(S2)> 1
+SENDMSG 0 恭喜玩家:<$USERNAME>领取锻造金刚石获得：<$STR(S2)>:1 255 249
+#CALL [\系统功能\金币锻造\锻造计算.txt] @最终检测
+BREAK
+#ELSESAY
+对不起，你没有完成锻造那么多颗金刚石。\ \
+<返回/@MAIN>\
+
+
+[@全部领取]
+#IF
+CHECKVAR HUMAN 剩余领取 > 11
+#SAY
+你成功获得金刚石 <$HUMAN(剩余领取)> 颗！获得经验:<$STR(D7)>\ \ \
+<关闭/@EXIT>\
+#ACT
+READRANDOMSTR .\QuestDiary\抽取数据\锻造奖励\锻造经验.txt S2
+MOV D7 <$STR(S2)>
+MUL D7 <$HUMAN(剩余领取)>
+MUL D7 <$LEVEL>
+GAMEDIAMOND + <$HUMAN(剩余领取)>
+CHANGEEXP + <$STR(D7)>
+CALCVAR HUMAN 已领取数 + <$HUMAN(剩余领取)>
+SAVEVAR HUMAN 已领取数 ..\QuestDiary\数据文件\已领取数Save.txt
+READRANDOMSTR .\QuestDiary\抽取数据\锻造奖励\金刚石.txt S2
+GIVE <$STR(S2)> 1
+SENDMSG 0 恭喜玩家:<$USERNAME>领取锻造金刚石获得：<$STR(S2)>:1 255 249
+#CALL [\系统功能\金币锻造\锻造计算.txt] @最终检测
+BREAK
+#IF
+CHECKVAR HUMAN 剩余领取 > 0
+#SAY
+你成功获得金刚石 <$HUMAN(剩余领取)> 颗！获得经验:<$STR(D7)>\ \ \
+<关闭/@EXIT>\
+#ACT
+READRANDOMSTR .\QuestDiary\抽取数据\锻造奖励\锻造经验.txt S2
+MOV D7 <$STR(S2)>
+MUL D7 <$HUMAN(剩余领取)>
+MUL D7 <$LEVEL>
+GAMEDIAMOND + <$HUMAN(剩余领取)>
+CHANGEEXP + <$STR(D7)>
+CALCVAR HUMAN 已领取数 + <$HUMAN(剩余领取)>
+SAVEVAR HUMAN 已领取数 ..\QuestDiary\数据文件\已领取数Save.txt
+#CALL [\系统功能\金币锻造\锻造计算.txt] @最终检测
+BREAK
+#ELSESAY
+你的金刚石还未锻造完成。\
+}

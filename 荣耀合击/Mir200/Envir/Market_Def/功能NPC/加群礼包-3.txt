@@ -1,0 +1,57 @@
+(@@InPutString @@InPutInteger)
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【礼包使者】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+\<COLOR=clLime ━━━━━━━━━━━═><COLOR=clAqua 【礼包使者】><COLOR=clLime ═━━━━━━━━━━>\
+\<COLOR=clLime 礼包码：8080  领取兑换码即可兑换新手礼包！>\
+\<COLOR=clFuchsia 礼包:新手斗笠*2+火龙之心+新手小红剑+聚灵珠+双倍卷轴*2+10万金币>\
+\<COLOR=clFuchsia ------------------------------------------------------------>\
+\   　　　　　　　　　〖<兑换新手礼包/@@InPutString21>〗              
+[@@InPutString21]
+#if
+#say
+\            \
+\            \
+\      正在为你兑换新手礼包.请勿关闭对话框......\
+\            \
+\................................................       \
+\            \
+\                请稍后.\
+#act
+DelayCall 2000 @abcdE
+
+[@abcdE]
+#if
+CHECK [111] 1
+#act
+MESSAGEBOX 提示:您已经领取过了无法重复领取
+break
+
+#if
+CHECKBAGSIZE  5
+CHECKSTRINGLIST ..\QuestDiary\礼包\礼包兑换码.txt <$STR(S21)> HardDisk
+#act
+set [111] 1
+;DELLINELIST QuestDiary\礼包\礼包兑换码.txt <$STR(S21)> HardDisk
+goto @奖励aa
+#elseact
+MESSAGEBOX 提示:\　\1.兑换码错误,或者此兑换码已经被他人使用\　\2.你的背包没有5个空位
+goto @main
+break
+
+[@奖励aa]
+#IF
+#ACT
+give 双倍卷轴(赠品) 2
+give 聚灵珠(奖) 1
+GIVE 金币 100000
+GIVE 新手斗笠  2
+GIVE 火龙之心 
+GIVE 新手小红剑 
+SENDMSG 2 恭喜玩家(%s)使用[Q群兑换码]兑换(新手大礼包).添加官方QQ群：101529177即可获得兑换码！  242 4
+SENDMSG 0 恭喜玩家(%s)使用[Q群兑换码]兑换(新手大礼包).添加官方QQ群：101529177即可获得兑换码！  242 4 10
+MESSAGEBOX 提示:兑换礼包成功
+goto @main
+break
+

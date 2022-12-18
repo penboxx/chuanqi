@@ -1,0 +1,2524 @@
+[@gm005装备求购脚本NPC]
+{
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P5 $(装备求购排序每页)
+#IF
+LARGE P5 10
+#ACT
+MOV P5 10
+#IF
+SMALL P5 1
+#ACT
+MOV P5 7
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 装备求购显示0 = 
+CALCVAR HUMAN 装备求购显示1 = 
+CALCVAR HUMAN 装备求购显示2 = 
+CALCVAR HUMAN 装备求购显示3 = 
+CALCVAR HUMAN 装备求购显示4 = 
+CALCVAR HUMAN 装备求购显示5 = 
+CALCVAR HUMAN 装备求购显示6 = 
+CALCVAR HUMAN 装备求购显示7 = 
+CALCVAR HUMAN 装备求购显示8 = 
+CALCVAR HUMAN 装备求购显示9 = 
+MOV P1 <$HUMAN(装备求购输入页)>
+MOV P2 <$GLOBAL(装备求购总数)>
+MOV P4 <$GLOBAL(装备求购总时)>
+MOV P9 <$STR(P2)>
+DEC P2 1
+DIV P2 <$STR(P5)>
+INC P2 1
+MOV S11
+#IF
+LARGE P1 <$STR(P2)>
+#ACT
+MOV P1 <$STR(P2)>
+CALCVAR HUMAN 装备求购输入页 = <$STR(P1)>
+#IF
+SMALL P1 1
+#ACT
+MOV P1 1
+CALCVAR HUMAN 装备求购输入页 = <$STR(P1)>
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 <$STR(P1)>
+DEC P8 1
+MUL P8 <$STR(P5)>
+MOV P7 <$STR(P8)>
+INC P7 1
+INC P9 1
+DEC P9 <$STR(P7)>
+MOV P6 $(装备求购排序模式)
+MOV P3 0
+
+#IF
+EQUAL P6 1
+#ACT
+MOV P7 <$STR(P9)>
+#ELSEACT
+MOV P7 <$STR(P8)>
+INC P7 1
+#IF
+SMALL P9 1
+LARGE P5 0
+#ACT
+DEC P5 1
+INC S11 　\
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购时间 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购时间)>
+DEC P0 <$STR(P4)>
+#IF
+LARGE P9 0
+LARGE P5 0
+SMALL P0 1
+#ACT
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV S10 <$GLOBAL(装备求购名字)>#<$GLOBAL(装备求购名称)>#<$GLOBAL(装备求购单价)>
+CALCVAR HUMAN 装备求购显示<$STR(P3)> = <$STR(S10)>
+MOV S10 <离线>
+#IF
+LARGE P9 0
+LARGE P5 0
+<$GLOBAL(装备求购名字)>.ONLINELONGMIN ? 0
+#ACT
+MOV S10 <
+INC S10 出售/@gm005装备求购出售
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+MOV S10 <
+INC S10 撤消/@gm005装备求购撤消
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+INC S10 　
+INC S11 <$STR(S10)>
+INC S11 $(装备求购序号颜色)
+INC S11 
+MOV S10 <$STR(P7)>
+INC S10 :
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购序号长度) 500
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名字)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名字长度) 500
+INC S11 $(装备求购名字颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名称)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名称长度) 500
+INC S11 $(装备求购名称颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购单价)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购单价长度) 500
+INC S11 $(装备求购单价颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购个数)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购个数长度) 500
+INC S11 $(装备求购个数颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$STR(P0)>分钟
+INC S11 $(装备求购时间颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+INC S11 \
+INC P3 1
+DEC P5 1
+INC P8 1
+DEC P9 1
+#IF
+EQUAL P6 1
+#ACT
+MOV P7 <$STR(P9)>
+#ELSEACT
+MOV P7 <$STR(P8)>
+INC P7 1
+#IF
+SMALL P9 1
+LARGE P5 0
+#ACT
+DEC P5 1
+INC S11 　\
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购时间 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购时间)>
+DEC P0 <$STR(P4)>
+#IF
+LARGE P9 0
+LARGE P5 0
+SMALL P0 1
+#ACT
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV S10 <$GLOBAL(装备求购名字)>#<$GLOBAL(装备求购名称)>#<$GLOBAL(装备求购单价)>
+CALCVAR HUMAN 装备求购显示<$STR(P3)> = <$STR(S10)>
+MOV S10 <离线>
+#IF
+LARGE P9 0
+LARGE P5 0
+<$GLOBAL(装备求购名字)>.ONLINELONGMIN ? 0
+#ACT
+MOV S10 <
+INC S10 出售/@gm005装备求购出售
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+MOV S10 <
+INC S10 撤消/@gm005装备求购撤消
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+INC S10 　
+INC S11 <$STR(S10)>
+INC S11 $(装备求购序号颜色)
+INC S11 
+MOV S10 <$STR(P7)>
+INC S10 :
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购序号长度) 500
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名字)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名字长度) 500
+INC S11 $(装备求购名字颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名称)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名称长度) 500
+INC S11 $(装备求购名称颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购单价)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购单价长度) 500
+INC S11 $(装备求购单价颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购个数)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购个数长度) 500
+INC S11 $(装备求购个数颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$STR(P0)>分钟
+INC S11 $(装备求购时间颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+INC S11 \
+INC P3 1
+DEC P5 1
+INC P8 1
+DEC P9 1
+#IF
+EQUAL P6 1
+#ACT
+MOV P7 <$STR(P9)>
+#ELSEACT
+MOV P7 <$STR(P8)>
+INC P7 1
+#IF
+SMALL P9 1
+LARGE P5 0
+#ACT
+DEC P5 1
+INC S11 　\
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购时间 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购时间)>
+DEC P0 <$STR(P4)>
+#IF
+LARGE P9 0
+LARGE P5 0
+SMALL P0 1
+#ACT
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV S10 <$GLOBAL(装备求购名字)>#<$GLOBAL(装备求购名称)>#<$GLOBAL(装备求购单价)>
+CALCVAR HUMAN 装备求购显示<$STR(P3)> = <$STR(S10)>
+MOV S10 <离线>
+#IF
+LARGE P9 0
+LARGE P5 0
+<$GLOBAL(装备求购名字)>.ONLINELONGMIN ? 0
+#ACT
+MOV S10 <
+INC S10 出售/@gm005装备求购出售
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+MOV S10 <
+INC S10 撤消/@gm005装备求购撤消
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+INC S10 　
+INC S11 <$STR(S10)>
+INC S11 $(装备求购序号颜色)
+INC S11 
+MOV S10 <$STR(P7)>
+INC S10 :
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购序号长度) 500
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名字)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名字长度) 500
+INC S11 $(装备求购名字颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名称)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名称长度) 500
+INC S11 $(装备求购名称颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购单价)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购单价长度) 500
+INC S11 $(装备求购单价颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购个数)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购个数长度) 500
+INC S11 $(装备求购个数颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$STR(P0)>分钟
+INC S11 $(装备求购时间颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+INC S11 \
+INC P3 1
+DEC P5 1
+INC P8 1
+DEC P9 1
+#IF
+EQUAL P6 1
+#ACT
+MOV P7 <$STR(P9)>
+#ELSEACT
+MOV P7 <$STR(P8)>
+INC P7 1
+#IF
+SMALL P9 1
+LARGE P5 0
+#ACT
+DEC P5 1
+INC S11 　\
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购时间 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购时间)>
+DEC P0 <$STR(P4)>
+#IF
+LARGE P9 0
+LARGE P5 0
+SMALL P0 1
+#ACT
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV S10 <$GLOBAL(装备求购名字)>#<$GLOBAL(装备求购名称)>#<$GLOBAL(装备求购单价)>
+CALCVAR HUMAN 装备求购显示<$STR(P3)> = <$STR(S10)>
+MOV S10 <离线>
+#IF
+LARGE P9 0
+LARGE P5 0
+<$GLOBAL(装备求购名字)>.ONLINELONGMIN ? 0
+#ACT
+MOV S10 <
+INC S10 出售/@gm005装备求购出售
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+MOV S10 <
+INC S10 撤消/@gm005装备求购撤消
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+INC S10 　
+INC S11 <$STR(S10)>
+INC S11 $(装备求购序号颜色)
+INC S11 
+MOV S10 <$STR(P7)>
+INC S10 :
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购序号长度) 500
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名字)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名字长度) 500
+INC S11 $(装备求购名字颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名称)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名称长度) 500
+INC S11 $(装备求购名称颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购单价)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购单价长度) 500
+INC S11 $(装备求购单价颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购个数)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购个数长度) 500
+INC S11 $(装备求购个数颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$STR(P0)>分钟
+INC S11 $(装备求购时间颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+INC S11 \
+INC P3 1
+DEC P5 1
+INC P8 1
+DEC P9 1
+#IF
+EQUAL P6 1
+#ACT
+MOV P7 <$STR(P9)>
+#ELSEACT
+MOV P7 <$STR(P8)>
+INC P7 1
+#IF
+SMALL P9 1
+LARGE P5 0
+#ACT
+DEC P5 1
+INC S11 　\
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购时间 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购时间)>
+DEC P0 <$STR(P4)>
+#IF
+LARGE P9 0
+LARGE P5 0
+SMALL P0 1
+#ACT
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV S10 <$GLOBAL(装备求购名字)>#<$GLOBAL(装备求购名称)>#<$GLOBAL(装备求购单价)>
+CALCVAR HUMAN 装备求购显示<$STR(P3)> = <$STR(S10)>
+MOV S10 <离线>
+#IF
+LARGE P9 0
+LARGE P5 0
+<$GLOBAL(装备求购名字)>.ONLINELONGMIN ? 0
+#ACT
+MOV S10 <
+INC S10 出售/@gm005装备求购出售
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+MOV S10 <
+INC S10 撤消/@gm005装备求购撤消
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+INC S10 　
+INC S11 <$STR(S10)>
+INC S11 $(装备求购序号颜色)
+INC S11 
+MOV S10 <$STR(P7)>
+INC S10 :
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购序号长度) 500
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名字)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名字长度) 500
+INC S11 $(装备求购名字颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名称)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名称长度) 500
+INC S11 $(装备求购名称颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购单价)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购单价长度) 500
+INC S11 $(装备求购单价颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购个数)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购个数长度) 500
+INC S11 $(装备求购个数颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$STR(P0)>分钟
+INC S11 $(装备求购时间颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+INC S11 \
+INC P3 1
+DEC P5 1
+INC P8 1
+DEC P9 1
+#IF
+EQUAL P6 1
+#ACT
+MOV P7 <$STR(P9)>
+#ELSEACT
+MOV P7 <$STR(P8)>
+INC P7 1
+#IF
+SMALL P9 1
+LARGE P5 0
+#ACT
+DEC P5 1
+INC S11 　\
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购时间 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购时间)>
+DEC P0 <$STR(P4)>
+#IF
+LARGE P9 0
+LARGE P5 0
+SMALL P0 1
+#ACT
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV S10 <$GLOBAL(装备求购名字)>#<$GLOBAL(装备求购名称)>#<$GLOBAL(装备求购单价)>
+CALCVAR HUMAN 装备求购显示<$STR(P3)> = <$STR(S10)>
+MOV S10 <离线>
+#IF
+LARGE P9 0
+LARGE P5 0
+<$GLOBAL(装备求购名字)>.ONLINELONGMIN ? 0
+#ACT
+MOV S10 <
+INC S10 出售/@gm005装备求购出售
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+MOV S10 <
+INC S10 撤消/@gm005装备求购撤消
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+INC S10 　
+INC S11 <$STR(S10)>
+INC S11 $(装备求购序号颜色)
+INC S11 
+MOV S10 <$STR(P7)>
+INC S10 :
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购序号长度) 500
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名字)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名字长度) 500
+INC S11 $(装备求购名字颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名称)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名称长度) 500
+INC S11 $(装备求购名称颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购单价)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购单价长度) 500
+INC S11 $(装备求购单价颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购个数)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购个数长度) 500
+INC S11 $(装备求购个数颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$STR(P0)>分钟
+INC S11 $(装备求购时间颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+INC S11 \
+INC P3 1
+DEC P5 1
+INC P8 1
+DEC P9 1
+#IF
+EQUAL P6 1
+#ACT
+MOV P7 <$STR(P9)>
+#ELSEACT
+MOV P7 <$STR(P8)>
+INC P7 1
+#IF
+SMALL P9 1
+LARGE P5 0
+#ACT
+DEC P5 1
+INC S11 　\
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购时间 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购时间)>
+DEC P0 <$STR(P4)>
+#IF
+LARGE P9 0
+LARGE P5 0
+SMALL P0 1
+#ACT
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV S10 <$GLOBAL(装备求购名字)>#<$GLOBAL(装备求购名称)>#<$GLOBAL(装备求购单价)>
+CALCVAR HUMAN 装备求购显示<$STR(P3)> = <$STR(S10)>
+MOV S10 <离线>
+#IF
+LARGE P9 0
+LARGE P5 0
+<$GLOBAL(装备求购名字)>.ONLINELONGMIN ? 0
+#ACT
+MOV S10 <
+INC S10 出售/@gm005装备求购出售
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+MOV S10 <
+INC S10 撤消/@gm005装备求购撤消
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+INC S10 　
+INC S11 <$STR(S10)>
+INC S11 $(装备求购序号颜色)
+INC S11 
+MOV S10 <$STR(P7)>
+INC S10 :
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购序号长度) 500
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名字)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名字长度) 500
+INC S11 $(装备求购名字颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名称)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名称长度) 500
+INC S11 $(装备求购名称颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购单价)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购单价长度) 500
+INC S11 $(装备求购单价颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购个数)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购个数长度) 500
+INC S11 $(装备求购个数颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$STR(P0)>分钟
+INC S11 $(装备求购时间颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+INC S11 \
+INC P3 1
+DEC P5 1
+INC P8 1
+DEC P9 1
+#IF
+EQUAL P6 1
+#ACT
+MOV P7 <$STR(P9)>
+#ELSEACT
+MOV P7 <$STR(P8)>
+INC P7 1
+#IF
+SMALL P9 1
+LARGE P5 0
+#ACT
+DEC P5 1
+INC S11 　\
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购时间 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购时间)>
+DEC P0 <$STR(P4)>
+#IF
+LARGE P9 0
+LARGE P5 0
+SMALL P0 1
+#ACT
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV S10 <$GLOBAL(装备求购名字)>#<$GLOBAL(装备求购名称)>#<$GLOBAL(装备求购单价)>
+CALCVAR HUMAN 装备求购显示<$STR(P3)> = <$STR(S10)>
+MOV S10 <离线>
+#IF
+LARGE P9 0
+LARGE P5 0
+<$GLOBAL(装备求购名字)>.ONLINELONGMIN ? 0
+#ACT
+MOV S10 <
+INC S10 出售/@gm005装备求购出售
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+MOV S10 <
+INC S10 撤消/@gm005装备求购撤消
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+INC S10 　
+INC S11 <$STR(S10)>
+INC S11 $(装备求购序号颜色)
+INC S11 
+MOV S10 <$STR(P7)>
+INC S10 :
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购序号长度) 500
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名字)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名字长度) 500
+INC S11 $(装备求购名字颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名称)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名称长度) 500
+INC S11 $(装备求购名称颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购单价)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购单价长度) 500
+INC S11 $(装备求购单价颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购个数)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购个数长度) 500
+INC S11 $(装备求购个数颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$STR(P0)>分钟
+INC S11 $(装备求购时间颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+INC S11 \
+INC P3 1
+DEC P5 1
+INC P8 1
+DEC P9 1
+#IF
+EQUAL P6 1
+#ACT
+MOV P7 <$STR(P9)>
+#ELSEACT
+MOV P7 <$STR(P8)>
+INC P7 1
+#IF
+SMALL P9 1
+LARGE P5 0
+#ACT
+DEC P5 1
+INC S11 　\
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购时间 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购时间)>
+DEC P0 <$STR(P4)>
+#IF
+LARGE P9 0
+LARGE P5 0
+SMALL P0 1
+#ACT
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV S10 <$GLOBAL(装备求购名字)>#<$GLOBAL(装备求购名称)>#<$GLOBAL(装备求购单价)>
+CALCVAR HUMAN 装备求购显示<$STR(P3)> = <$STR(S10)>
+MOV S10 <离线>
+#IF
+LARGE P9 0
+LARGE P5 0
+<$GLOBAL(装备求购名字)>.ONLINELONGMIN ? 0
+#ACT
+MOV S10 <
+INC S10 出售/@gm005装备求购出售
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+MOV S10 <
+INC S10 撤消/@gm005装备求购撤消
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+INC S10 　
+INC S11 <$STR(S10)>
+INC S11 $(装备求购序号颜色)
+INC S11 
+MOV S10 <$STR(P7)>
+INC S10 :
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购序号长度) 500
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名字)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名字长度) 500
+INC S11 $(装备求购名字颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名称)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名称长度) 500
+INC S11 $(装备求购名称颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购单价)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购单价长度) 500
+INC S11 $(装备求购单价颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购个数)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购个数长度) 500
+INC S11 $(装备求购个数颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$STR(P0)>分钟
+INC S11 $(装备求购时间颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+INC S11 \
+INC P3 1
+DEC P5 1
+INC P8 1
+DEC P9 1
+#IF
+EQUAL P6 1
+#ACT
+MOV P7 <$STR(P9)>
+#ELSEACT
+MOV P7 <$STR(P8)>
+INC P7 1
+#IF
+SMALL P9 1
+LARGE P5 0
+#ACT
+DEC P5 1
+INC S11 　\
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购时间 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购时间)>
+DEC P0 <$STR(P4)>
+#IF
+LARGE P9 0
+LARGE P5 0
+SMALL P0 1
+#ACT
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV S10 <$GLOBAL(装备求购名字)>#<$GLOBAL(装备求购名称)>#<$GLOBAL(装备求购单价)>
+CALCVAR HUMAN 装备求购显示<$STR(P3)> = <$STR(S10)>
+MOV S10 <离线>
+#IF
+LARGE P9 0
+LARGE P5 0
+<$GLOBAL(装备求购名字)>.ONLINELONGMIN ? 0
+#ACT
+MOV S10 <
+INC S10 出售/@gm005装备求购出售
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+CHECKVAR GLOBAL 装备求购名字 = <$USERNAME>
+#ACT
+MOV S10 <
+INC S10 撤消/@gm005装备求购撤消
+INC S10 <$STR(P3)>
+INC S10 >
+#IF
+LARGE P9 0
+LARGE P5 0
+#ACT
+INC S10 　
+INC S11 <$STR(S10)>
+INC S11 $(装备求购序号颜色)
+INC S11 
+MOV S10 <$STR(P7)>
+INC S10 :
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购序号长度) 500
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名字)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名字长度) 500
+INC S11 $(装备求购名字颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购名称)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购名称长度) 500
+INC S11 $(装备求购名称颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购单价)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购单价长度) 500
+INC S11 $(装备求购单价颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$GLOBAL(装备求购个数)><$GLOBAL(装备求购空格)>
+DEC S10 $(装备求购个数长度) 500
+INC S11 $(装备求购个数颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+MOV S10 <$STR(P0)>分钟
+INC S11 $(装备求购时间颜色)
+INC S11 
+INC S11 <$STR(S10)>
+INC S11 >
+INC S11 \
+INC P3 1
+DEC P5 1
+INC P8 1
+DEC P9 1
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P5 $(装备求购排序每层)
+#IF
+LARGE P5 9
+#ACT
+MOV P5 9
+#IF
+SMALL P5 1
+#ACT
+MOV P5 5
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$STR(P1)>
+DEC P9 1
+DIV P9 <$STR(P5)>
+MUL P9 <$STR(P5)>
+INC P9 1
+MOV P8 <$STR(P5)>
+INC P8 1
+MOV P7 1
+MOV S12
+
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 /@gm005装备求购页数
+INC S10 <$STR(P7)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 29 500
+#IF
+SMALL P7 <$STR(P8)>
+EQUAL P1 <$STR(P9)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 8 500
+#IF
+SMALL P7 <$STR(P8)>
+SMALL P2 <$STR(P9)>
+#ACT
+MOV S10 
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 6 500
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+INC P7 1
+INC P9 1
+INC S12 <$STR(S10)>
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 /@gm005装备求购页数
+INC S10 <$STR(P7)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 29 500
+#IF
+SMALL P7 <$STR(P8)>
+EQUAL P1 <$STR(P9)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 8 500
+#IF
+SMALL P7 <$STR(P8)>
+SMALL P2 <$STR(P9)>
+#ACT
+MOV S10 
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 6 500
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+INC P7 1
+INC P9 1
+INC S12 <$STR(S10)>
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 /@gm005装备求购页数
+INC S10 <$STR(P7)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 29 500
+#IF
+SMALL P7 <$STR(P8)>
+EQUAL P1 <$STR(P9)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 8 500
+#IF
+SMALL P7 <$STR(P8)>
+SMALL P2 <$STR(P9)>
+#ACT
+MOV S10 
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 6 500
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+INC P7 1
+INC P9 1
+INC S12 <$STR(S10)>
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 /@gm005装备求购页数
+INC S10 <$STR(P7)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 29 500
+#IF
+SMALL P7 <$STR(P8)>
+EQUAL P1 <$STR(P9)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 8 500
+#IF
+SMALL P7 <$STR(P8)>
+SMALL P2 <$STR(P9)>
+#ACT
+MOV S10 
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 6 500
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+INC P7 1
+INC P9 1
+INC S12 <$STR(S10)>
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 /@gm005装备求购页数
+INC S10 <$STR(P7)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 29 500
+#IF
+SMALL P7 <$STR(P8)>
+EQUAL P1 <$STR(P9)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 8 500
+#IF
+SMALL P7 <$STR(P8)>
+SMALL P2 <$STR(P9)>
+#ACT
+MOV S10 
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 6 500
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+INC P7 1
+INC P9 1
+INC S12 <$STR(S10)>
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 /@gm005装备求购页数
+INC S10 <$STR(P7)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 29 500
+#IF
+SMALL P7 <$STR(P8)>
+EQUAL P1 <$STR(P9)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 8 500
+#IF
+SMALL P7 <$STR(P8)>
+SMALL P2 <$STR(P9)>
+#ACT
+MOV S10 
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 6 500
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+INC P7 1
+INC P9 1
+INC S12 <$STR(S10)>
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 /@gm005装备求购页数
+INC S10 <$STR(P7)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 29 500
+#IF
+SMALL P7 <$STR(P8)>
+EQUAL P1 <$STR(P9)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 8 500
+#IF
+SMALL P7 <$STR(P8)>
+SMALL P2 <$STR(P9)>
+#ACT
+MOV S10 
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 6 500
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+INC P7 1
+INC P9 1
+INC S12 <$STR(S10)>
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 /@gm005装备求购页数
+INC S10 <$STR(P7)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 29 500
+#IF
+SMALL P7 <$STR(P8)>
+EQUAL P1 <$STR(P9)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 8 500
+#IF
+SMALL P7 <$STR(P8)>
+SMALL P2 <$STR(P9)>
+#ACT
+MOV S10 
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 6 500
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+INC P7 1
+INC P9 1
+INC S12 <$STR(S10)>
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 /@gm005装备求购页数
+INC S10 <$STR(P7)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 29 500
+#IF
+SMALL P7 <$STR(P8)>
+EQUAL P1 <$STR(P9)>
+#ACT
+MOV S10 <
+INC S10 <$STR(P9)>
+INC S10 >
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 8 500
+#IF
+SMALL P7 <$STR(P8)>
+SMALL P2 <$STR(P9)>
+#ACT
+MOV S10 
+INC S10 <$GLOBAL(装备求购空格)>
+DEC S10 6 500
+#IF
+SMALL P7 <$STR(P8)>
+#ACT
+INC P7 1
+INC P9 1
+INC S12 <$STR(S10)>
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$STR(P1)>
+DEC P9 1
+DIV P9 <$STR(P5)>
+MUL P9 <$STR(P5)>
+INC P9 1
+DEC P9 <$STR(P5)>
+MOV S13 <首层/@gm005装备求购层数0>　<上一层/@gm005装备求购层数1>
+#IF
+SMALL P9 1
+#ACT
+MOV S13 <COLOR=clMaroon
+INC S13
+INC S13 首层　上一层>
+#IF
+EQUAL P1 1
+#ACT
+MOV S13 <COLOR=clMaroon
+INC S13
+INC S13 首层　上一层>
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$STR(P1)>
+DEC P9 1
+DIV P9 <$STR(P5)>
+MUL P9 <$STR(P5)>
+INC P9 1
+INC P9 <$STR(P5)>
+MOV S14 <下一层/@gm005装备求购层数2>　<末层/@gm005装备求购层数3>
+#IF
+LARGE P9 <$STR(P2)>
+#ACT
+MOV S14 <COLOR=clMaroon
+INC S14
+INC S14 下一层　末层>
+#IF
+EQUAL P1 <$STR(P2)>
+#ACT
+MOV S14 <COLOR=clMaroon
+INC S14
+INC S14 下一层　末层>
+
+#IF
+CHECKLEVELEX > 0
+#SAY
+<发布/@gm005装备求购发布申请>　<COLOR=clLime 序号>　<COLOR=clLime 玩家姓名>　　　 <COLOR=clLime 收购的装备名>　 <COLOR=clAqua 装备单价>  <COLOR=clAqua 数量>　　　<COLOR=clLime 倒计时>\
+<$STR(S11)>\
+<$STR(S13)>　<COLOR=clFuchsia 页数：><$STR(S12)><$STR(S14)>\
+
+[@gm005装备求购页数1]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 1
+GOTO @gm005装备求购页数A
+[@gm005装备求购页数2]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 2
+GOTO @gm005装备求购页数A
+[@gm005装备求购页数3]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 3
+GOTO @gm005装备求购页数A
+[@gm005装备求购页数4]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 4
+GOTO @gm005装备求购页数A
+[@gm005装备求购页数5]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 5
+GOTO @gm005装备求购页数A
+[@gm005装备求购页数6]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 6
+GOTO @gm005装备求购页数A
+[@gm005装备求购页数7]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 7
+GOTO @gm005装备求购页数A
+[@gm005装备求购页数8]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 8
+GOTO @gm005装备求购页数A
+[@gm005装备求购页数9]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 9
+GOTO @gm005装备求购页数A
+[@gm005装备求购页数A]
+#IF
+CHECKVAR HUMAN 装备求购输入号 > 0
+CHECKVAR HUMAN 装备求购输入号 < 10
+#ELSEACT
+MESSAGEBOX 非法操作，请勿使用外挂跳转！
+CLOSE
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 $(装备求购排序每层)
+#IF
+LARGE P8 9
+#ACT
+MOV P8 9
+#IF
+SMALL P8 1
+#ACT
+MOV P8 5
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$HUMAN(装备求购输入页)>
+DEC P9 1
+DIV P9 <$STR(P8)>
+MUL P9 <$STR(P8)>
+INC P9 <$HUMAN(装备求购输入号)>
+CALCVAR HUMAN 装备求购输入页 = <$STR(P9)>
+GOTO @gm005装备求购脚本NPC
+
+[@gm005装备求购层数0]
+#ACT
+CALCVAR HUMAN 装备求购输入页 = 0
+GOTO @gm005装备求购脚本NPC
+[@gm005装备求购层数1]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 $(装备求购排序每层)
+#IF
+LARGE P8 9
+#ACT
+MOV P8 9
+#IF
+SMALL P8 1
+#ACT
+MOV P8 5
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$HUMAN(装备求购输入页)>
+DEC P9 1
+DIV P9 <$STR(P8)>
+MUL P9 <$STR(P8)>
+INC P9 1
+DEC P9 <$STR(P8)>
+CALCVAR HUMAN 装备求购输入页 = <$STR(P9)>
+GOTO @gm005装备求购脚本NPC
+[@gm005装备求购层数2]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 $(装备求购排序每层)
+#IF
+LARGE P8 9
+#ACT
+MOV P8 9
+#IF
+SMALL P8 1
+#ACT
+MOV P8 5
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$HUMAN(装备求购输入页)>
+DEC P9 1
+DIV P9 <$STR(P8)>
+MUL P9 <$STR(P8)>
+INC P9 1
+INC P9 <$STR(P8)>
+CALCVAR HUMAN 装备求购输入页 = <$STR(P9)>
+GOTO @gm005装备求购脚本NPC
+[@gm005装备求购层数3]
+#ACT
+CALCVAR HUMAN 装备求购输入页 = 2100000000
+GOTO @gm005装备求购脚本NPC
+
+[@gm005装备求购撤消0]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 1
+GOTO @gm005装备求购撤消A
+[@gm005装备求购撤消1]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 2
+GOTO @gm005装备求购撤消A
+[@gm005装备求购撤消2]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 3
+GOTO @gm005装备求购撤消A
+[@gm005装备求购撤消3]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 4
+GOTO @gm005装备求购撤消A
+[@gm005装备求购撤消4]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 5
+GOTO @gm005装备求购撤消A
+[@gm005装备求购撤消5]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 6
+GOTO @gm005装备求购撤消A
+[@gm005装备求购撤消6]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 7
+GOTO @gm005装备求购撤消A
+[@gm005装备求购撤消7]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 8
+GOTO @gm005装备求购撤消A
+[@gm005装备求购撤消8]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 9
+GOTO @gm005装备求购撤消A
+[@gm005装备求购撤消9]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 10
+GOTO @gm005装备求购撤消A
+[@gm005装备求购撤消A]
+#IF
+CHECKVAR HUMAN 装备求购输入号 > 0
+CHECKVAR HUMAN 装备求购输入号 < 11
+#ELSEACT
+MESSAGEBOX 非法操作，请勿使用外挂跳转！
+CLOSE
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 $(装备求购排序每页)
+#IF
+LARGE P8 10
+#ACT
+MOV P8 10
+#IF
+SMALL P8 1
+#ACT
+MOV P8 7
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$HUMAN(装备求购输入页)>
+DEC P9 1
+MUL P9 <$STR(P8)>
+MOV P3 <$HUMAN(装备求购输入号)>
+INC P9 <$STR(P3)>
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P9)>
+#ACT
+MESSAGEBOX 对不起，该条求购信息已经下架！请重新选择！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#ELSEACT
+MOV P8 <$STR(P9)>
+MOV P9 <$GLOBAL(装备求购总数)>
+INC P9 1
+DEC P9 <$STR(P8)>
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV S11 <$GLOBAL(装备求购名字)>
+MOV S12 <$GLOBAL(装备求购名称)>
+MOV P1 <$GLOBAL(装备求购单价)>
+MOV P2 <$GLOBAL(装备求购个数)>
+DEC P3 1
+MOV S10 <$STR(S11)>#<$STR(S12)>#<$STR(P1)>
+#IF
+CHECKVAR HUMAN 装备求购显示<$STR(P3)> = <$STR(S10)>
+#ELSEACT
+MESSAGEBOX 对不起，该条求购信息所在位置已发生变化！请重新选择！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+#IF
+EQUAL P8 0
+EQUAL S11
+#ACT
+MOV P8 1
+#IF
+EQUAL P8 0
+EQUAL S12
+#ACT
+MOV P8 1
+#IF
+EQUAL P8 0
+SMALL P2 1
+#ACT
+MOV P8 1
+#IF
+EQUAL P8 0
+CheckStringList ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购物品.ini <$STR(S12)> HardDisk
+#ACT
+MOV P8 2
+#IF
+SMALL P8 2
+#ACT
+MESSAGEBOX 对不起，该条求购信息已经下架！请重新选择！
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+EQUAL S11 <$USERNAME>
+#ELSEACT
+MESSAGEBOX 对不起，该条信息不是您发布的！\　\只有【<$STR(S11)>】本人才能撤消！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+QUERYVALUE 0 2 9 @gm005装备求购撤消B 当前收购【<$STR(S12)>】的单价为：<$STR(P1)>　数量：<$STR(P2)>\　\是否确定撤消该条收购信息？
+[@gm005装备求购撤消B]
+#IF
+CHECKVAR HUMAN 装备求购输入号 > 0
+CHECKVAR HUMAN 装备求购输入号 < 11
+#ELSEACT
+MESSAGEBOX 非法操作，请勿使用外挂跳转！
+CLOSE
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 $(装备求购排序每页)
+#IF
+LARGE P8 10
+#ACT
+MOV P8 10
+#IF
+SMALL P8 1
+#ACT
+MOV P8 7
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$HUMAN(装备求购输入页)>
+DEC P9 1
+MUL P9 <$STR(P8)>
+MOV P3 <$HUMAN(装备求购输入号)>
+INC P9 <$STR(P3)>
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P9)>
+#ACT
+MESSAGEBOX 对不起，该条求购信息已经下架！请重新选择！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#ELSEACT
+MOV P8 <$STR(P9)>
+MOV P9 <$GLOBAL(装备求购总数)>
+INC P9 1
+DEC P9 <$STR(P8)>
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV S11 <$GLOBAL(装备求购名字)>
+MOV S12 <$GLOBAL(装备求购名称)>
+MOV P1 <$GLOBAL(装备求购单价)>
+MOV P2 <$GLOBAL(装备求购个数)>
+DEC P3 1
+MOV S10 <$STR(S11)>#<$STR(S12)>#<$STR(P1)>
+#IF
+CHECKVAR HUMAN 装备求购显示<$STR(P3)> = <$STR(S10)>
+#ELSEACT
+MESSAGEBOX 对不起，该条求购信息所在位置已发生变化！请重新选择！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+#IF
+EQUAL P8 0
+EQUAL S11
+#ACT
+MOV P8 1
+#IF
+EQUAL P8 0
+EQUAL S12
+#ACT
+MOV P8 1
+#IF
+EQUAL P8 0
+SMALL P2 1
+#ACT
+MOV P8 1
+#IF
+EQUAL P8 0
+CheckStringList ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购物品.ini <$STR(S12)> HardDisk
+#ACT
+MOV P8 2
+#IF
+SMALL P8 2
+#ACT
+MESSAGEBOX 对不起，该条求购信息已经下架！请重新选择！
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+EQUAL S11 <$USERNAME>
+#ELSEACT
+MESSAGEBOX 对不起，该条信息不是您发布的！\　\只有【<$STR(S11)>】本人才能撤消！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MESSAGEBOX 恭喜您，撤消该条收购信息成功！
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+
+[@gm005装备求购出售0]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 1
+GOTO @gm005装备求购出售A
+[@gm005装备求购出售1]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 2
+GOTO @gm005装备求购出售A
+[@gm005装备求购出售2]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 3
+GOTO @gm005装备求购出售A
+[@gm005装备求购出售3]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 4
+GOTO @gm005装备求购出售A
+[@gm005装备求购出售4]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 5
+GOTO @gm005装备求购出售A
+[@gm005装备求购出售5]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 6
+GOTO @gm005装备求购出售A
+[@gm005装备求购出售6]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 7
+GOTO @gm005装备求购出售A
+[@gm005装备求购出售7]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 8
+GOTO @gm005装备求购出售A
+[@gm005装备求购出售8]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 9
+GOTO @gm005装备求购出售A
+[@gm005装备求购出售9]
+#ACT
+CALCVAR HUMAN 装备求购输入号 = 10
+GOTO @gm005装备求购出售A
+[@gm005装备求购出售A]
+#IF
+CHECKVAR HUMAN 装备求购输入号 > 0
+CHECKVAR HUMAN 装备求购输入号 < 11
+#ELSEACT
+MESSAGEBOX 非法操作，请勿使用外挂跳转！
+CLOSE
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 $(装备求购排序每页)
+#IF
+LARGE P8 10
+#ACT
+MOV P8 10
+#IF
+SMALL P8 1
+#ACT
+MOV P8 7
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$HUMAN(装备求购输入页)>
+DEC P9 1
+MUL P9 <$STR(P8)>
+MOV P3 <$HUMAN(装备求购输入号)>
+INC P9 <$STR(P3)>
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P9)>
+#ACT
+MESSAGEBOX 对不起，该条求购信息已经下架！请重新选择！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#ELSEACT
+MOV P8 <$STR(P9)>
+MOV P9 <$GLOBAL(装备求购总数)>
+INC P9 1
+DEC P9 <$STR(P8)>
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV S11 <$GLOBAL(装备求购名字)>
+MOV S12 <$GLOBAL(装备求购名称)>
+MOV P1 <$GLOBAL(装备求购单价)>
+MOV P2 <$GLOBAL(装备求购个数)>
+DEC P3 1
+MOV S10 <$STR(S11)>#<$STR(S12)>#<$STR(P1)>
+#IF
+CHECKVAR HUMAN 装备求购显示<$STR(P3)> = <$STR(S10)>
+#ELSEACT
+MESSAGEBOX 对不起，该条求购信息所在位置已发生变化！请重新选择！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+#IF
+EQUAL P8 0
+EQUAL S11
+#ACT
+MOV P8 1
+#IF
+EQUAL P8 0
+EQUAL S12
+#ACT
+MOV P8 1
+#IF
+EQUAL P8 0
+SMALL P2 1
+#ACT
+MOV P8 1
+#IF
+EQUAL P8 0
+CheckStringList ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购物品.ini <$STR(S12)> HardDisk
+#ACT
+MOV P8 2
+#IF
+SMALL P8 2
+#ACT
+MESSAGEBOX 对不起，该条求购信息已经下架！请重新选择！
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+EQUAL S11 <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，该条信息是您发布的，不能出售给自己！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#IF
+<$STR(S11)>.ONLINELONGMIN ? 0
+#ELSEACT
+MESSAGEBOX 对不起，【<$STR(S11)>】当前已经下线！\　\无法收购您的装备，请等待他上线再出售！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+QUERYVALUE 0 1 9 @gm005装备求购出售B 【<$STR(S11)>】当前收购【<$STR(S12)>】的单价为：<$STR(P1)>\请输入您要出售【<$STR(S12)>】的数量：（最大<$STR(P2)>）
+
+[@gm005装备求购出售B]
+#IF
+CHECKVAR HUMAN 装备求购输入号 > 0
+CHECKVAR HUMAN 装备求购输入号 < 11
+#ELSEACT
+MESSAGEBOX 非法操作，请勿使用外挂跳转！
+CLOSE
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 $(装备求购排序每页)
+#IF
+LARGE P8 10
+#ACT
+MOV P8 10
+#IF
+SMALL P8 1
+#ACT
+MOV P8 7
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$HUMAN(装备求购输入页)>
+DEC P9 1
+MUL P9 <$STR(P8)>
+MOV P3 <$HUMAN(装备求购输入号)>
+INC P9 <$STR(P3)>
+#IF
+CHECKVAR GLOBAL 装备求购总数 < <$STR(P9)>
+#ACT
+MESSAGEBOX 对不起，该条求购信息已经下架！请重新选择！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#ELSEACT
+MOV P8 <$STR(P9)>
+MOV P9 <$GLOBAL(装备求购总数)>
+INC P9 1
+DEC P9 <$STR(P8)>
+LOADVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV S11 <$GLOBAL(装备求购名字)>
+MOV S12 <$GLOBAL(装备求购名称)>
+MOV P1 <$GLOBAL(装备求购单价)>
+MOV P2 <$GLOBAL(装备求购个数)>
+DEC P3 1
+MOV S10 <$STR(S11)>#<$STR(S12)>#<$STR(P1)>
+#IF
+CHECKVAR HUMAN 装备求购显示<$STR(P3)> = <$STR(S10)>
+#ELSEACT
+MESSAGEBOX 对不起，该条求购信息所在位置已发生变化！请重新选择！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 0
+#IF
+EQUAL P8 0
+EQUAL S11
+#ACT
+MOV P8 1
+#IF
+EQUAL P8 0
+EQUAL S12
+#ACT
+MOV P8 1
+#IF
+EQUAL P8 0
+SMALL P2 1
+#ACT
+MOV P8 1
+#IF
+EQUAL P8 0
+CheckStringList ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购物品.ini <$STR(S12)> HardDisk
+#ACT
+MOV P8 2
+#IF
+SMALL P8 2
+#ACT
+MESSAGEBOX 对不起，该条求购信息已经下架！请重新选择！
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+EQUAL S11 <$USERNAME>
+#ACT
+MESSAGEBOX 对不起，该条信息是您发布的，不能出售给自己！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#IF
+<$STR(S11)>.ONLINELONGMIN ? 0
+#ELSEACT
+MESSAGEBOX 对不起，【<$STR(S11)>】当前已经下线！\　\无法收购您的装备，请等待他上线再出售！
+GOTO @gm005装备求购脚本NPC
+BREAK
+
+#IF
+SMALL M0 1
+#ACT
+MESSAGEBOX 对不起，请输入大于0的数量！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#IF
+LARGE M0 <$STR(P2)>
+#ACT
+MESSAGEBOX 对不起，【<$STR(S11)>】当前收购【<$STR(S12)>】的数量为：<$STR(P2)>个\　\您出售的数量不能超过<$STR(P2)>个，请降低您的出售数量！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#IF
+checkitem <$STR(S12)> <$STR(M0)>
+#ELSEACT
+MESSAGEBOX 对不起，您的背包内没有<$STR(M0)>件【<$STR(S12)>】，请检查确认！
+GOTO @gm005装备求购脚本NPC
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 <$STR(P1)>
+MUL P8 <$STR(M0)>
+#IF
+<$STR(S11)>.CHECKGAMEGOLD < <$STR(P8)>
+#ACT
+MESSAGEBOX 对不起，【<$STR(S11)>】的元宝数量已不足<$STR(P8)>个！\　\该条求购信息自动下架！请重新选择！
+<$STR(S11)>.SENDMSG 6 由于您的元宝数量已不足<$STR(P8)>个，您发布的收购<$STR(P2)>个【<$STR(S12)>】装备信息已自动下架！
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#IF
+<$STR(S11)>.CHECKBAGSIZE <$STR(M0)>
+#ELSEACT
+MESSAGEBOX 对不起，【<$STR(S11)>】的背包空格不足<$STR(M0)>个！\　\请降低出售数量，或通知他清理背包您再出售！
+<$STR(S11)>.SENDMSG 6 您的背包空格不足<$STR(M0)>个，【<$USERNAME>】无法出售<$STR(M0)>个【<$STR(S12)>】给您，请清理背包！
+MOV S10 <$STR(S11)>
+INC S10 
+INC S10 ←点这里M该玩家清理背包！
+SENDMSG 6 <$STR(S10)> 255 6
+GOTO @gm005装备求购脚本NPC
+BREAK
+#IF
+SMALL P8 20000001
+#ACT
+MOV P7 <$STR(P8)>
+MUL P7 $(装备求购纳税比例)
+DIV P7 100
+#IF
+LARGE P8 20000000
+#ACT
+MOV P7 <$STR(P8)>
+DIV P7 100
+MUL P7 $(装备求购纳税比例)
+#IF
+LARGE P7 0
+#ACT
+MOV P6 <$STR(P8)>
+DEC P6 <$STR(P7)>
+MOV S13 纳税比例：$(装备求购纳税比例)%，已扣除<$STR(P7)>元宝个人所得税！
+#ELSEACT
+MOV P6 <$STR(P8)>
+MOV S13 
+#IF
+CHECKLEVELEX > 0
+#ACT
+TAKE <$STR(S12)> <$STR(M0)>
+GAMEGOLD + <$STR(P6)>
+<$STR(S11)>.GAMEGOLD - <$STR(P8)>
+<$STR(S11)>.GIVE <$STR(S12)> <$STR(M0)>
+<$STR(S11)>.SENDMSG 6 【<$USERNAME>】成功出售<$STR(M0)>个【<$STR(S12)>】给您，请检查背包！
+SENDMSG 0 【<$USERNAME>】以每个【<$STR(P1)>】的价格出售<$STR(M0)>个【<$STR(S12)>】给【<$STR(S11)>】！ 255 253
+MESSAGEBOX 恭喜你，成功出售<$STR(M0)>个【<$STR(S12)>】获得【<$STR(P6)>】元宝！\　\<$STR(S13)>
+DEC P2 <$STR(M0)>
+#IF
+SMALL P2 1
+#ACT
+<$STR(S11)>.SENDMSG 6 您发布的每个【<$STR(P1)>】的价格收购【<$STR(S12)>】已完成，收购信息自动下架！
+CALCVAR HUMAN 装备求购输入刷 = <$STR(P9)>
+CALCVAR GLOBAL 装备求购总数 - 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+GOTO @gm005装备求购刷新
+DELAYGOTO 1 @gm005装备求购脚本NPC
+BREAK
+#ELSEACT
+CALCVAR GLOBAL 装备求购个数 = <$STR(P2)>
+SAVEVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+LOADVAR GLOBAL 装备求购时间 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+MOV P0 <$GLOBAL(装备求购时间)>
+DEC P0 <$GLOBAL(装备求购总时)>
+#IF
+SMALL P0 $(装备求购发布延时)
+#ACT
+CALCVAR GLOBAL 装备求购时间 = $(装备求购发布延时)
+CALCVAR GLOBAL 装备求购时间 + <$GLOBAL(装备求购总时)>
+SAVEVAR GLOBAL 装备求购时间 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+GOTO @gm005装备求购脚本NPC
+
+[@gm005装备求购发布申请]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S11 <$HUMAN(装备求购输入1)><$GLOBAL(装备求购空格)>
+MOV S12 <$HUMAN(装备求购输入2)><$GLOBAL(装备求购空格)>
+MOV S13 <$HUMAN(装备求购输入3)><$GLOBAL(装备求购空格)>
+DEC S11 20 500
+DEC S12 20 500
+DEC S13 20 500
+#SAY
+<COLOR=clAqua 本系统提供玩家快速、批量收购其他玩家手中的各种装备或者物品>\
+<COLOR=clLime 说明：可自定输入装备名、自定价格，有人出售装备时才扣除元宝>\
+<COLOR=clFuchsia 每条信息限时>$(装备求购发布时限)<COLOR=clFuchsia 分钟，过时自动撤消！每人最多可同时发布>$(装备求购发布条数)<COLOR=clFuchsia 条！>\
+─────────────────────────────\
+<COLOR=clLime 您要收购的物品名称：><$STR(S11)>← <点击修改物品名称/@gm005装备求购发布输入1>\
+<COLOR=$00006BEF 您要收购的物品单价：><$STR(S12)>← <点击修改收购单价/@gm005装备求购发布输入2>\
+<COLOR=clFuchsia 您要收购的物品数量：><$STR(S13)>← <点击修改收购数量/@gm005装备求购发布输入3>\
+─────────────────────────────\
+<确定发布收购信息/@gm005装备求购发布确定>　　 <撤消已发布的全部求购信息/@gm005装备求购撤消全部>　　 <返回主页/@gm005装备求购脚本NPC>\
+
+[@gm005装备求购发布输入1]
+#ACT
+QUERYVALUE 10 0 50 @gm005装备求购发布输入1B 请输入您要收购的物品名称：
+[@gm005装备求购发布输入1B]
+#IF
+EQUAL S10 
+#ACT
+MESSAGEBOX 对不起，请输入您要求购的物品名字！
+BREAK
+#IF
+CheckStringList ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购物品.ini <$STR(S10)> HardDisk
+#ELSEACT
+MESSAGEBOX 对不起，【<$STR(S10)>】不支持求购，请重新输入物品名字！
+MOV S10
+BREAK
+#ACT
+CALCVAR HUMAN 装备求购输入1 = <$STR(S10)>
+MOV S10
+GOTO @gm005装备求购发布申请
+
+[@gm005装备求购发布输入2]
+#ACT
+QUERYVALUE 0 1 9 @gm005装备求购发布输入2B 请输入您要收购物品的单价：
+[@gm005装备求购发布输入2B]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S11 <$HUMAN(装备求购输入1)>
+#IF
+EQUAL S11
+#ACT
+MOV M0 0
+MESSAGEBOX 对不起，请先输入您要求购的物品名字！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+CheckStringList ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购物品.ini <$STR(S11)> HardDisk
+#ELSEACT
+MOV M0 0
+MESSAGEBOX 对不起，【<$STR(S11)>】不支持求购，请重新输入物品名字！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10
+ReadRandomStr ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购单价\<$STR(S11)>.txt S10 HardDisk
+#IF
+EQUAL S10
+#ACT
+CLEARNAMELIST ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购单价\<$STR(S11)>.txt HardDisk
+ADDLINELIST ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购单价\<$STR(S11)>.txt 0 HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$STR(S10)>
+#IF
+SMALL P9 1
+#ACT
+MOV P9 $(装备求购单价最小)
+#IF
+SMALL P9 1
+#ACT
+MOV P9 1
+#IF
+SMALL M0 <$STR(P9)>
+#ACT
+MOV M0 0
+MESSAGEBOX 对不起，【<$STR(S11)>】的求购单价最小为<$STR(P9)>元宝！\　\请输入<$STR(P9)>-$(装备求购单价最大)之间的整数！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+LARGE M0 $(装备求购单价最大)
+#ACT
+MOV M0 0
+MESSAGEBOX 对不起，【<$STR(S11)>】的求购单价最大为$(装备求购个数最大)元宝！\　\请输入<$STR(P9)>-$(装备求购单价最大)之间的整数！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 装备求购输入2 = <$STR(M0)>
+MOV M0 0
+GOTO @gm005装备求购发布申请
+
+[@gm005装备求购发布输入3]
+#ACT
+QUERYVALUE 0 1 9 @gm005装备求购发布输入3B 请输入您要收购物品的个数：（$(装备求购个数最小)-$(装备求购个数最大)之间）
+[@gm005装备求购发布输入3B]
+#IF
+SMALL M0 $(装备求购个数最小)
+#ACT
+MOV M0 0
+MESSAGEBOX 对不起，求购数量最小为$(装备求购个数最小)个！\　\请输入$(装备求购个数最小)-$(装备求购个数最大)之间的整数！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+LARGE M0 $(装备求购个数最大)
+#ACT
+MOV M0 0
+MESSAGEBOX 对不起，求购数量最大为$(装备求购个数最大)个！\　\请输入$(装备求购个数最小)-$(装备求购个数最大)之间的整数！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 装备求购输入3 = <$STR(M0)>
+MOV M0 0
+GOTO @gm005装备求购发布申请
+
+[@gm005装备求购撤消全部]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 1
+CALCVAR HUMAN 装备求购输入5 = 0
+GOTO @gm005装备求购撤消
+#IF
+CHECKVAR HUMAN 装备求购输入5 > 0
+#ACT
+MESSAGEBOX 已成功撤消发布的<$HUMAN(装备求购输入5)>条求购信息！
+CALCVAR HUMAN 装备求购输入5 = 0
+GOTO @gm005装备求购发布申请
+#ELSEACT
+MESSAGEBOX 对不起，您还没有发布求购信息！
+GOTO @gm005装备求购发布申请
+
+[@gm005装备求购发布确定]
+#IF
+CHECKVAR GLOBAL 装备求购总数 < $(装备求购记录总数)
+#ELSEACT
+MESSAGEBOX 对不起，本服求购信息已达到上限$(装备求购记录总数)条！\　\请等待其他玩家收购完毕或等待信息到时！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S11 <$HUMAN(装备求购输入1)>
+#IF
+EQUAL S11
+#ACT
+MESSAGEBOX 对不起，请输入您要求购的物品名字！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+CheckStringList ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购物品.ini <$STR(S11)> HardDisk
+#ELSEACT
+MESSAGEBOX 对不起，【<$STR(S11)>】不支持求购，请重新输入物品名字！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10
+ReadRandomStr ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购单价\<$STR(S11)>.txt S10 HardDisk
+#IF
+EQUAL S10
+#ACT
+CLEARNAMELIST ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购单价\<$STR(S11)>.txt HardDisk
+ADDLINELIST ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购单价\<$STR(S11)>.txt 0 HardDisk
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P9 <$STR(S10)>
+#IF
+SMALL P9 1
+#ACT
+MOV P9 $(装备求购单价最小)
+#IF
+SMALL P9 1
+#ACT
+MOV P9 1
+#IF
+CHECKVAR HUMAN 装备求购输入2 < <$STR(P9)>
+#ACT
+MESSAGEBOX 对不起，【<$STR(S11)>】的求购单价最小为<$STR(P9)>元宝！\　\请输入<$STR(P9)>-$(装备求购单价最大)之间的整数！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+CHECKVAR HUMAN 装备求购输入2 > $(装备求购单价最大)
+#ACT
+MESSAGEBOX 对不起，【<$STR(S11)>】的求购单价最大为$(装备求购个数最大)元宝！\　\请输入<$STR(P9)>-$(装备求购单价最大)之间的整数！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+CHECKVAR HUMAN 装备求购输入3 < $(装备求购个数最小)
+#ACT
+MESSAGEBOX 对不起，求购数量最小为$(装备求购个数最小)个！\　\请输入$(装备求购个数最小)-$(装备求购个数最大)之间的整数！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+CHECKVAR HUMAN 装备求购输入3 > $(装备求购个数最大)
+#ACT
+MESSAGEBOX 对不起，求购数量最大为$(装备求购个数最大)个！\　\请输入$(装备求购个数最小)-$(装备求购个数最大)之间的整数！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR HUMAN 装备求购输入4 = 1
+CALCVAR HUMAN 装备求购输入5 = 0
+CALCVAR HUMAN 装备求购输入6 = 0
+CALCVAR HUMAN 装备求购输入7 = 0
+GOTO @gm005装备求购检测
+MOV P9 $(装备求购发布条数)
+MOV P8 $(装备求购发布同名)
+#IF
+LARGE P9 0
+CHECKVAR HUMAN 装备求购输入5 ? <$STR(P9)>
+#ACT
+CALCVAR HUMAN 装备求购输入5 = 0
+CALCVAR HUMAN 装备求购输入6 = 0
+CALCVAR HUMAN 装备求购输入7 = 0
+MESSAGEBOX 对不起，每人最多可同时发布【<$STR(P9)>】条求购信息！\　\请先撤消已有信息才能发布！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+LARGE P8 0
+CHECKVAR HUMAN 装备求购输入7 ? <$STR(P8)>
+#ACT
+CALCVAR HUMAN 装备求购输入5 = 0
+CALCVAR HUMAN 装备求购输入6 = 0
+CALCVAR HUMAN 装备求购输入7 = 0
+MESSAGEBOX 对不起，您已发布过【<$STR(P8)>】条求购【<$STR(S11)>】的信息！\　\同一个装备名字只能发布【<$STR(P8)>】条求购信息！\　\请先撤消已有信息，或者输入其他装备名字才能发布！
+GOTO @gm005装备求购发布申请
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV P8 <$HUMAN(装备求购输入6)>
+CALCVAR HUMAN 装备求购输入5 = 0
+CALCVAR HUMAN 装备求购输入6 = 0
+CALCVAR HUMAN 装备求购输入7 = 0
+MOV P9 <$HUMAN(装备求购输入2)>
+MUL P9 <$HUMAN(装备求购输入3)>
+MOV P7 <$STR(P8)>
+INC P7 <$STR(P9)>
+#IF
+CHECKGAMEGOLD < <$STR(P7)>
+SMALL P8 1
+#ACT
+MESSAGEBOX 对不起，求购【<$HUMAN(装备求购输入3)>】个【<$STR(S11)>】需要【<$STR(P9)>】元宝\　\您身上的元宝数量不足，请降低收购数量！
+BREAK
+#IF
+CHECKGAMEGOLD < <$STR(P7)>
+#ACT
+MESSAGEBOX 对不起，求购【<$HUMAN(装备求购输入3)>】个【<$STR(S11)>】需要【<$STR(P9)>】元宝\　\您之前已累计发布<$STR(P8)>元宝的求购信息\　\您身上需要拥有<$STR(P7)>元宝才能继续发布！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+CALCVAR GLOBAL 装备求购总数 + 1
+SAVEVAR GLOBAL 装备求购总数 ..\QuestDiary\gm005开区清空文本(免费脚本群.101529177)\gm005装备求购变量.txt HardDisk
+MOV P9 <$GLOBAL(装备求购总数)>
+CALCVAR GLOBAL 装备求购名字 = <$USERNAME>
+CALCVAR GLOBAL 装备求购名称 = <$STR(S11)>
+CALCVAR GLOBAL 装备求购单价 = <$HUMAN(装备求购输入2)>
+CALCVAR GLOBAL 装备求购个数 = <$HUMAN(装备求购输入3)>
+CALCVAR GLOBAL 装备求购时间 = <$GLOBAL(装备求购总时)>
+CALCVAR GLOBAL 装备求购时间 + $(装备求购发布时限)
+CLEARNAMELIST ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+SAVEVAR GLOBAL 装备求购名字 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+SAVEVAR GLOBAL 装备求购名称 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+SAVEVAR GLOBAL 装备求购单价 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+SAVEVAR GLOBAL 装备求购个数 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+SAVEVAR GLOBAL 装备求购时间 ..\QuestDiary\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购数据\gm005装备求购数据<$STR(P9)>.txt HardDisk
+SENDMSG 0 【<$USERNAME>】以每个【<$HUMAN(装备求购输入2)>】元宝的价格求购<$HUMAN(装备求购输入3)>个【<$STR(S11)>】！ 253 255
+MESSAGEBOX 恭喜你，求购信息成功发布在最后一条记录！\　\系统还没有扣除您的元宝，有人出售时才扣除！\　\请保持身上元宝不低于<$STR(P7)>个，否则您的求购信息将被撤消！
+goto @gm005装备求购脚本NPC
+
+[@gm005装备求购常量加载]
+#CALL [\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购常量.ini] @gm005装备求购常量
+#CALL [\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购检测.txt] @gm005装备求购检测
+#CALL [\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购刷新.txt] @gm005装备求购刷新
+#CALL [\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购撤消.txt] @gm005装备求购撤消
+}

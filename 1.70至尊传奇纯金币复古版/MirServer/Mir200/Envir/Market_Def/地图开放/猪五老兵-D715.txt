@@ -1,0 +1,17 @@
+()
+%100
+[@main]
+　\
+前面就是通向石墓七层的石墓阵.\
+你真的要过去吗?\ \
+　\
+<我要进去/@move>　<COLOR=clLime 开区当 天00:00开放石墓五后的地图>\
+<过几天再去/@exit>\\
+[@move]
+#if
+EQUAL A81 开启
+#act
+mapmove D71601 25 13
+#ELSEACT
+messagebox 开区当天00:00开放石墓五后的地图
+BREAK

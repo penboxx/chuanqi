@@ -1,0 +1,44 @@
+
+()
+%100
+[@main]
+\ \
+<$USERNAME>,欢迎您的到来!\ \
+我是<$SERVERNAME>的训练师!很荣幸见到你!\
+经典复古!最回忆的传奇!现在请抓紧时间成为勇士吧!\   \
+<请选择您想打的怪物:>        <[稻草人]/@zhaohuan>       <[鹿]/@zhaohuan1>\ \
+友情提示:怪物可爆出药品,首饰类,鹿可挖肉,都可在比齐城出售获得金币\ \
+版本为金币版,养成检取垃圾习惯才不会资金紧张!\
+更多游戏解答快捷命令:@帮助.\ \
+[@zhaohuan]
+#IF
+checkmonmap 0139 160
+#SAY
+\ \ \
+清理完怪物后才能再次召唤！\ \
+<返回/@main>
+#ELSEACT
+Param1 0139
+Param2 23
+Param3 27
+MonGen 稻草人 30 50
+#ELSESAY
+\ \ \  
+召唤怪物成功！\ \
+<返回/@main>
+[@zhaohuan1]
+#IF
+checkmonmap 0139 100
+#SAY
+\ \ \
+清理完怪物后才能再次召唤！\ \
+<返回/@main>
+#ELSEACT
+Param1 0139
+Param2 23
+Param3 27
+MonGen 鹿 30 50
+#ELSESAY
+\ \ \
+召唤怪物成功！\ \
+<返回/@main>

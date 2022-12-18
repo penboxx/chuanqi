@@ -1,0 +1,15 @@
+()
+%100
+[@main]
+亲爱的玩家：<$USERNAME>，欢迎来到[<$SERVERNAME>]\
+我将为您提供城市之间的传送服务\ \
+<COLOR=clMoneyGreen 【请不要私下买卖元宝，如有损失,后果自负】>\ \
+<回到土城/@goMZS>\ \
+<离 开/@exit>
+
+[@goMZS]
+#IF
+#ACT
+mapmove 3 330 330
+break
+

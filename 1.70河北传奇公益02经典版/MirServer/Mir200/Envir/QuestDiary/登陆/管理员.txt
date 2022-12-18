@@ -1,0 +1,15 @@
+[@管理员]
+{
+#IF
+ISADMIN
+#ACT
+Gmexecute 隐身模式
+mapmove 0127
+
+#IF
+ISADMIN
+#ACT
+CHANGEPERMISSION 0
+CHANGEPERMISSION 0
+ADDLINELIST .\QuestDiary\数据\GM登陆记录.txt 登陆人物:<$USERNAME>IP为:<$IPLOCAL><$IPADDR>时间为:<$DATETIME>
+}

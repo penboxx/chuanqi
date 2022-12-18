@@ -1,0 +1,783 @@
+(@s_repair )
+%100
++30
++25
+[@main]
+你想做什么？\
+<查询声望点数/@talkwith>\
+<随机领取荣誉勋章/@talkwith2>\
+<指定领取荣誉勋章/@talkwith3>\
+<我想要拜师/@teacher>\
+<强行脱离师徒关系/@unmaster>\
+<修理勋章/@s_repair>\
+[@talkwith]
+#IF
+#ACT
+#SAY
+<$USERNAME>您好！您现在的<声望点数>是：<$CREDITPOINT>\
+<返回/@main>\
+[@talkwith2]
+勋章是随机配的，请考虑清楚\ \
+<领取一级荣誉勋章/@next01> 需要花费10点声望，佩戴需要5点声望\
+<领取二级荣誉勋章/@next02> 需要花费20点声望，佩戴需要10点声望\
+<领取三级荣誉勋章/@next03> 需要花费30点声望，佩戴需要15点声望\
+<领取四级荣誉勋章/@next04> 需要花费40点声望，佩戴需要20点声望\ \
+<返回/@main>
+[@next01]
+#IF
+checkcreditpoint ≥ 10
+#ACT
+goto  @next001
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next001]
+#IF
+random 5
+checkcreditpoint ≥ 10
+#ACT
+CREDITPOINT - 10
+give 荣誉勋章11号
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>\
+#IF
+random 5
+checkcreditpoint ≥ 10
+#ACT
+CREDITPOINT - 10
+give 荣誉勋章12号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>\
+#IF
+random 5
+checkcreditpoint ≥ 10
+#ACT
+CREDITPOINT - 10
+give 荣誉勋章13号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>\
+#IF
+random 5
+checkcreditpoint ≥ 10
+#ACT
+CREDITPOINT - 10
+give 荣誉勋章14号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>\
+#IF
+random 5
+checkcreditpoint ≥ 10
+#ACT
+CREDITPOINT - 10
+give 荣誉勋章15号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>\
+[@next02]
+#IF
+checkcreditpoint ≥ 20
+#ACT
+goto  @next002
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next002]
+#IF
+random 5
+checkcreditpoint ≥ 20
+#ACT
+CREDITPOINT - 20
+give 荣誉勋章21号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#IF
+random 5
+checkcreditpoint ≥ 20
+#ACT
+CREDITPOINT - 20
+give 荣誉勋章22号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#IF
+random 5
+checkcreditpoint ≥ 20
+#ACT
+CREDITPOINT - 20
+give 荣誉勋章23号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#IF
+random 5
+checkcreditpoint ≥ 20
+#ACT
+CREDITPOINT - 20
+give 荣誉勋章24号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#IF
+random 5
+checkcreditpoint ≥ 20
+#ACT
+CREDITPOINT - 20
+give 荣誉勋章25号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+[@next03]
+#IF
+checkcreditpoint ≥ 30
+#ACT
+goto  @next003
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next003]
+#IF
+random 5
+checkcreditpoint ≥ 30
+#ACT
+CREDITPOINT - 30
+give 荣誉勋章31号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#IF
+random 5
+checkcreditpoint  ≥　30
+#ACT
+CREDITPOINT - 30
+give 荣誉勋章32号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#IF
+random 5
+checkcreditpoint ≥ 30
+#ACT
+CREDITPOINT - 30
+give 荣誉勋章33号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#IF
+random 5
+checkcreditpoint ≥ 30
+#ACT
+CREDITPOINT - 30
+give 荣誉勋章34号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#IF
+random 5
+checkcreditpoint ≥ 30
+#ACT
+CREDITPOINT - 30
+give 荣誉勋章35号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+[@next04]
+#IF
+checkcreditpoint ≥ 40
+#ACT
+goto  @next004
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next004]
+#IF
+random 5
+checkcreditpoint ≥ 40
+#ACT
+CREDITPOINT - 40
+give 荣誉勋章41号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#IF
+random 5
+checkcreditpoint ≥ 40
+#ACT
+CREDITPOINT - 40
+give 荣誉勋章42号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#IF
+random 5
+checkcreditpoint ≥ 40
+#ACT
+CREDITPOINT - 40
+give 荣誉勋章43号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#IF
+random 5
+checkcreditpoint ≥ 40
+#ACT
+CREDITPOINT - 40
+give 荣誉勋章44号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#IF
+random 5
+checkcreditpoint ≥ 40
+#ACT
+CREDITPOINT - 40
+give 荣誉勋章45号 1
+break
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+[@talkwith3]
+你可以指定所需要的勋章，但是会花费更多的声望值\ \
+<领取一级荣誉勋章/@next10> 需要花费20点声望，佩戴需要5点声望\
+<领取二级荣誉勋章/@next20> 需要花费40点声望，佩戴需要10点声望\
+<领取三级荣誉勋章/@next30> 需要花费60点声望，佩戴需要15点声望\
+<领取四级荣誉勋章/@next40> 需要花费80点声望，佩戴需要20点声望\ \
+<返回/@main>
+[@next10]
+<领取11号荣誉勋章/@next11>\
+<领取12号荣誉勋章/@next12>\
+<领取13号荣誉勋章/@next13>\
+<领取14号荣誉勋章/@next14>\
+<领取15号荣誉勋章/@next15>\
+<返回/@main>
+[@next20]
+<领取21号荣誉勋章/@next21>\
+<领取22号荣誉勋章/@next22>\
+<领取23号荣誉勋章/@next23>\
+<领取24号荣誉勋章/@next24>\
+<领取25号荣誉勋章/@next25>\
+<返回/@main>
+[@next30]
+<领取31号荣誉勋章/@next31>\
+<领取32号荣誉勋章/@next32>\
+<领取33号荣誉勋章/@next33>\
+<领取34号荣誉勋章/@next34>\
+<领取35号荣誉勋章/@next35>\
+<返回/@main>
+[@next40]
+<领取41号荣誉勋章/@next41>\
+<领取42号荣誉勋章/@next42>\
+<领取43号荣誉勋章/@next43>\
+<领取44号荣誉勋章/@next44>\
+<领取45号荣誉勋章/@next45>\
+<返回/@main>
+[@next11]
+#IF
+checkcreditpoint ≥ 20
+#ACT
+CREDITPOINT - 20
+give 荣誉勋章11号
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next12]
+#IF
+checkcreditpoint ≥ 20
+#ACT
+CREDITPOINT - 20
+give 荣誉勋章12号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next13]
+#IF
+checkcreditpoint ≥ 20
+#ACT
+CREDITPOINT - 20
+give 荣誉勋章13号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next14]
+#IF
+checkcreditpoint ≥ 20
+#ACT
+CREDITPOINT - 20
+give 荣誉勋章14号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next15]
+#IF
+checkcreditpoint ≥ 20
+#ACT
+CREDITPOINT - 20
+give 荣誉勋章15号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next21]
+#IF
+checkcreditpoint ≥ 40
+#ACT
+CREDITPOINT - 40
+give 荣誉勋章21号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next22]
+#IF
+checkcreditpoint ≥ 40
+#ACT
+CREDITPOINT - 40
+give 荣誉勋章22号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next23]
+#IF
+checkcreditpoint ≥ 40
+#ACT
+CREDITPOINT - 40
+give 荣誉勋章23号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next24]
+#IF
+checkcreditpoint ≥ 40
+#ACT
+CREDITPOINT - 40
+give 荣誉勋章24号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next25]
+#IF
+checkcreditpoint ≥ 40
+#ACT
+CREDITPOINT - 40
+give 荣誉勋章25号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next31]
+#IF
+checkcreditpoint ≥ 60
+#ACT
+CREDITPOINT - 60
+give 荣誉勋章31号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next32]
+#IF
+checkcreditpoint ≥ 60
+#ACT
+CREDITPOINT - 60
+give 荣誉勋章32号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next33]
+#IF
+checkcreditpoint ≥ 60
+#ACT
+CREDITPOINT - 60
+give 荣誉勋章33号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next34]
+#IF
+checkcreditpoint ≥ 60
+#ACT
+CREDITPOINT - 60
+give 荣誉勋章34号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next35]
+#IF
+checkcreditpoint ≥ 60
+#ACT
+CREDITPOINT - 60
+give 荣誉勋章35号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next41]
+#IF
+checkcreditpoint ≥ 80
+#ACT
+CREDITPOINT - 80
+give 荣誉勋章41号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next42]
+#IF
+checkcreditpoint ≥ 80
+#ACT
+CREDITPOINT - 80
+give 荣誉勋章42号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next43]
+#IF
+checkcreditpoint ≥ 80
+#ACT
+CREDITPOINT - 80
+give 荣誉勋章43号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next44]
+#IF
+checkcreditpoint ≥ 80
+#ACT
+CREDITPOINT - 80
+give 荣誉勋章44号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@next45]
+#IF
+checkcreditpoint ≥ 80
+#ACT
+CREDITPOINT - 80
+give 荣誉勋章45号 1
+#SAY
+你已获得了荣誉的象征！快走吧！\
+<返回/@main>
+#ELSESAY
+请检查领取荣誉勋章所需要的声望值！\
+<返回/@main>\
+[@talkwith4]
+你没有荣誉勋章或你的荣誉勋章是已坚定过的！\
+ <取消/@exit>
+[@talkwith5]
+此项功能尚在开发中！\
+ <取消/@exit>
+[@s_repair]
+你可以在这里修理勋章！\ \ \
+ <返 回/@Main>
+[@teacher]
+你想做什么？\\
+<了解拜师系统相关知识/@ask>\
+<我要拜师/@needteacher>\
+<离开/@exit>
+
+[@ask]
+18级以下的玩家可以拜35级或以上的玩家为师。\
+徒弟等级升高后师傅会得到相应的声望值，\
+利用声望值可以到比奇领取荣誉勋章。\
+徒弟35级将自动毕业出师。\
+<离开/@exit>
+
+[@cancel]
+你的拜师请求被取消了，\
+你可以再次拜师。\
+<离开/@exit>
+
+[@needteacher]
+『师父』:人物等级到达<35>级,面对面站好！\
+
+『徒弟』:人物等级必须在<18>级或以下，面对面站好！\
+
+『出师』:徒弟等级到达<35>级，徒弟自动出师！\
+
+『好处』:徒弟出师后师父会自动获得<6点>声望\
+
+『脱离师徒关系』:需要1个金条\
+
+<我要拜师/@master> \
+;<我想出师/@unmaster>\ \ 
+<离开/@exit> 
+
+[@master] 
+想拜师呀，你要拜的师父来了没有？\ 
+与你师父面对面站好，开始拜师。\ \ 
+<准备好了/@agree>\ 
+<我知道了/@exit>\ \ 
+<返回/@main> 
+
+[@agree] 
+;检查是不是已经是别人的师父 
+#if 
+checkismaster 
+#act 
+break 
+#say 
+没事别来这玩！！！\ \ 
+<返回/@main> 
+
+;检查是不是已经拜师了 
+#if 
+checkmaster 
+#act 
+break 
+#say 
+你都都已经拜了别人为师，怎么还拜师！！！ \ \ 
+<返回/@main> 
+
+;检查对面的人物是不是别人的徒弟 
+#if 
+checkposemaster 
+#say 
+你找了个什么人做师父，怎么现在还是别人的徒弟？\ \ 
+<返回/@main> 
+#act 
+break 
+
+;检查二个有没站好位置 
+#if 
+checkposedir 
+#elsesay 
+你们二个面对面站好呀，不要乱动。\ \ 
+<返回/@main> 
+#elseact 
+break 
+
+#if 
+checklevel 19 
+#say 
+你都18级了还要找师父？\ \ 
+<返回/@main> 
+#act 
+break 
+
+;检查对方等级 
+#if 
+checkposelevel > 34 
+#elsesay 
+你找个什么师父呀，等级这么低？\ \ 
+<返回/@main> 
+#elseact 
+break 
+#act 
+master 
+
+[@StartGetMaster] 
+拜师仪式正式开始。\ \ 
+你是否确认拜师？\ \ 
+<确认/@RequestMaster> 
+
+[@StartMaster] 
+拜师仪式正式开始。\ \ 
+对方已经向你提出拜师请求。\ \ 
+
+
+[@RequestMaster] 
+
+;检查所需物品 
+#if 
+
+#act 
+master requestmaster 
+
+[@WateMaster] 
+你已向对方请求拜师，请耐心等待对方的答复。 
+
+[@RevMaster] 
+对方想拜你为师，你是否想收此人为徒？ \ \ 
+<同意/@ResposeMaster> \ 
+<不同意/@ResposeMasterFail> 
+
+[@ResposeMaster] 
+#if 
+#act 
+master responsemaster ok 
+
+[@ResposeMasterFail] 
+#if 
+#act 
+master responsemaster fail 
+[@EndMaster] 
+你们二个已经是师徒关系了。\ \ 
+<关闭/@exit> 
+[@EndMasterFail] 
+拜师失败！\ \ 
+<关闭/@exit> 
+[@MasterDirErr] 
+对方没站好位置 
+
+[@MasterCheckDir] 
+请站好位置\\ 
+
+[@HumanTypeErr] 
+此人不可以做你的师父。 
+
+
+
+
+
+
+;========================================== 
+开始 
+[@unmaster] 
+#if 
+havemaster 
+#act 
+unmaster 
+#elsesay 
+你都没师父，跑来做什么？？\ \ 
+<返回/@main> 
+
+
+;======================================================= 
+
+[@UnMasterCheckDir] 
+按正常出师步骤，必须二个人对面对站好位置，\ 
+如果人来不了你只能选择强行出师了。\ \ 
+<我要强行出师/@fUnMaster>\ 
+<返回/@main> 
+;======================================================= 
+;对面位置不是人物时显示的信息 
+[@UnMasterTypeErr] 
+你对面站了个什么东西，怎么不太象人来的。\ \ 
+<返回/@main> 
+[@UnIsMaster] 
+必须由徒弟发出请求！！！\ \ 
+<返回/@main> 
+[@UnMasterError] 
+不要来捣乱！！！\ \ 
+<返回/@main> 
+;======================================================= 
+;开始程序后，双方显示的信息 
+[@StartUnMaster] 
+出师仪式现在开始！！！\ \ 
+是否确定真的要脱离师徒关系？\ \ 
+<确定/@RequestUnMaster> 
+[@WateUnMaster] 
+出师仪式现在开始！！！\ \ 
+
+;======================================================= 
+;发出请求 
+[@RequestUnMaster] 
+#if 
+havemaster 
+#act 
+unmaster requestunmaster 
+;======================================================= 
+;回应请求 
+[@ResposeUnMaster] 
+#if 
+havemaster 
+#act 
+unmaster responseunmaster 
+
+;=============================================== 
+;请求后显示的信息 
+[@WateUnMaster] 
+你已向对方发出请求，请耐心等待对方的答复。 
+
+;=============================================== 
+;请求后对方显示的信息 
+[@RevUnMaster] 
+对方向你请求，你是否答应？ \ \ 
+<我愿意/@RequestUnMaster> 
+<返回/@main> 
+
+;=============================================== 
+
+[@ExeMasterFail] 
+你都没师父，跑来做什么？ \ \ 
+[返回/@main] 
+
+;============================================== 
+;强行 
+[@fUnMaster] 
+#if 
+checkitem 金条 1 
+havemaster 
+#act 
+take 金条 1 
+unmaster requestunmaster force 
+#elsesay 
+要收一根金条的手续费，你没有金条，\ 
+<确定/@exit> 
+;============================================== 
+;完成后的提示信息 
+[@UnMasterEnd] 
+呵呵，你已经脱离师徒关系了！ 

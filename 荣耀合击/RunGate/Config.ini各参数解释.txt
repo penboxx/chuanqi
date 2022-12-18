@@ -1,0 +1,98 @@
+[Integer]
+MaxUser=800			最高人数限制
+ShowLogLevel=3			日志级别
+MaxItemSpeed=6			武器最高速度限制
+MaxItemSpeedRate=60		武器加速因数（60）
+MaxConnectOfIP=50		每ip的最高连接
+MaxClientCount=50		每台电脑最高连接
+ClientTimeOutTime=15000		超时空闲连接
+NomClientPacketSize=400		普通封包大小限制
+MaxClientPacketSize=10240	特殊封包大小限制
+MaxClientPacketCount=15		批量购买个数
+
+ChatInterval=800		说话间隔
+TurnInterval=350		转身间隔
+MoveInterval=570		移动间隔
+SpellInterval=1200		魔法间隔
+AttackInterval=900		攻击间隔
+ButchInterval=450		挖肉间隔
+SitDownInterval=450		下蹲间隔
+PickupInterval=330		拾取物品间隔
+EatInterval=330			使用药品间隔
+
+RushCompTime			野蛮冲撞补偿，默认450，越大越严格
+MoveNextSpellCompensate=100	移动后魔法补偿
+MoveNextAttackCompensate=250	移动后攻击补偿
+AttackNextMoveCompensate=200	攻击后移动补偿
+AttackNextSpellCompensate=200	攻击后魔法补偿
+SpellNextMoveCompensate=200	魔法后移动补偿
+SpellNextAttackCompensate=200	魔法后攻击补偿
+SpaceMoveNextPickupInterval=600	瞬移后拾取物品的间隔
+
+PunishBaseInterval=20		加速惩罚基数
+
+ClientMoveSpeedRate=0		客户端移动速度
+ClientSpellSpeedRate=0		客户端魔法速度
+ClientAttackSpeedRate=0		客户端攻击速度
+
+CheckOvSpdInv=200		超速阈值（超过此值，将累加超速计数）
+MaxOvSpdCnt=3			允许的最大的超速计数，超过后动作封包会被丢掉（卡在原地不能攻击...）
+ReleaseOvSpdCntTime=5000	释放一个超速计数的间隔时间
+MaxUserForLoginWait=8000	实际在线人数超过此数量，登陆游戏会排队，赋值0将关闭登陆排队功能。
+
+
+[Float]
+PunishIntervalRate=1.000000	加速惩罚倍数
+LoginWaitTimeRate=0.800000	登陆等待时间 = (实际在线人数 - MaxUserForLoginWait) * LoginWaitTimeRate
+OnlinePlayerCountRate=13.240000	排队时报告的在线人数倍数，报告数量 = 实际在线人数 * OnlinePlayerCountRate
+
+
+[Method]
+OverSpeedPunishMethod=3		对加速处理方式：0 转换封包，1 丢包，2 空包， 3 延迟处理（建议）
+BlockIPMethod=0			掉线处理：0 掉线，1 临时封ip，重启失效，2 加到永久封ip列表
+ChatFilterMethod=0		脏话处理：0 全部替换为，1 替换过滤字符，2 掉线
+SpeedHackWarnMethod=0		加速警告：0 文字警告，1 弹窗警告
+
+[Switch]			开关设置
+LimitConnectionPerIP=1		每IP连接数限制开关
+OverSpeedSendBack=0		加速警告
+DefenceCCPacket=0		防止cc攻击
+KickOverSpeed=0			加速掉线（不建议开启）
+DoMotaeboSpeedCheck=1		禁止超级野蛮
+DenyPresend=0			禁止商城赠送
+ItemSpeedCompensate=0		组合速度考虑武器加速度
+KickOverPacketSize=1		异常掉线处理
+ChatFilter=1			说话过滤
+ChatInterval=1			说话间隔
+ChatCmdFilter=0			命令过滤	//例如 make
+TurnInterval=1			转身速度
+MoveInterval=1			移动速度
+SpellInterval=1			魔法速度
+AttackInterval=1		攻击速度
+ButchInterval=1			挖肉速度
+SitDownInterval=1		下蹲速度
+SpaceMoveNextPickupInterval=1	瞬移后拾取物品
+PickupInterval=1		拾取物品
+EatInterval=1			使用物品
+ProcClientCount=0		限制每个电脑开启数量开关
+ClientShowHintNewType=1		1.76版本物品显示方式
+SyncClientSpeed=0		
+DebugSpeedMessage=0		超速调试信息（供管理员测试使用）
+NoDirectionMotaebo=1		封定向野蛮
+CheckMagicId=1			非法空魔法封账号处理
+DenyUpdateStoreItem=1		禁止添加、撤销摆摊物品
+OpenClientSpeedRate=0		显示客户端的速度调节（建议关）
+CheckOnlinePlayer=0		实时监测虚假玩家的链接（建议开启）,不开启的话，在线人数显示会有所偏差（开启必须结合最新2015引擎，否则会T掉玩家）
+DealAction=0			是否禁止攻击后交易（如防止野蛮后交易等）
+UseTimePeriod=0			使用高精确度检测加速，会用比较多的CPU
+
+
+[GameGate]
+Count=1				多开端口个数
+ServerAddr1=127.0.0.1		服务器1的ip
+ServerPort1=5000		服务器1的端口
+GatePort1=7200			网关服务器的对外端口
+ServerAddr2=127.0.0.1
+ServerPort2=5000
+GatePort2=7201
+

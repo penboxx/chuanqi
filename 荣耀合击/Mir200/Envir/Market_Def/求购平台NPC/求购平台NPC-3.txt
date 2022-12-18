@@ -1,0 +1,4520 @@
+[@main]
+#ACT
+#SAY
+<COLOR=clAqua 玩家求购平台是为了玩家更快更轻松的收购自己所要的物品、装>\
+<COLOR=clAqua 备！一切以方便玩家为中心，为你提供最好的游戏空间，交流平>\
+<COLOR=clAqua 台、赚钱空间！500PI.COM独家制作脚本>   <COLOR=clFuchsia 此功能离线也能收购装备>\
+<COLOR=clLime 说明：玩家可自定价格收购各种装备，用于回收经验，回收金币>\
+　　　<COLOR=clLime 或自己佩戴使用！收购的物品名字可自定义输入！>\ \
+┌──────┬──────┬───────┬────┐\
+│<我要出售物品/@500PI求购平台发布信息1>│<我要求购物品/@500PI求购平台发布物品>│<领取收购的物品/@500PI求购平台领取物品>│<撤销收购/@500PI求购平台撤销物品>│\
+└──────┴──────┴───────┴────┘\
+
+[@500PI求购平台发布物品]
+#IF
+CHECKVAR HUMAN 求购平台输入1 = 
+#ACT
+CALCVAR HUMAN 求购平台输入1 = 裁决之杖
+#IF
+CHECKVAR HUMAN 求购平台输入2 > 0
+CHECKVAR HUMAN 求购平台输入2 < 10000001
+#ELSEACT
+CALCVAR HUMAN 求购平台输入2 = 10
+#IF
+CHECKVAR HUMAN 求购平台输入3 > 0
+CHECKVAR HUMAN 求购平台输入3 < 201
+#ELSEACT
+CALCVAR HUMAN 求购平台输入3 = 1
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S11 <$HUMAN(求购平台输入1)><$GLOBAL(求购平台空格)>
+MOV S12 <$HUMAN(求购平台输入2)><$GLOBAL(求购平台空格)>
+MOV S13 <$HUMAN(求购平台输入3)><$GLOBAL(求购平台空格)>
+DEC S11 21 500
+DEC S12 21 500
+DEC S13 21 500
+#SAY
+<COLOR=clLime 您要收购的物品名称：><$STR(S11)>← <修改物品名称/@500PI求购平台发布输入1>\
+\ \
+<COLOR=$00006BEF 您要收购的物品单价：><$STR(S12)>← <修改收购单价/@500PI求购平台发布输入2>\
+\ \
+<COLOR=clFuchsia 您要收购的物品数量：><$STR(S13)>← <修改收购数量/@500PI求购平台发布输入3>\
+\ \
+────────────────────────────\
+\ \
+<确定收购/@500PI求购平台发布确定>　<COLOR=clFuchsia 想要快速收到所要的物品，可以将价格设定高一点！>\
+
+[@500PI求购平台发布输入1]
+#ACT
+QUERYVALUE 10 0 50 500PI求购平台发布输入1B 请输入您要收购的物品名称：
+[500PI求购平台发布输入1B]
+#IF
+EQUAL S10 
+#ACT
+MESSAGEBOX 对不起，请输入您要求购的物品名字！
+BREAK
+#IF
+CheckStringList ..\QuestDiary\500PI求购平台配置\500PI求购平台物品.ini <$STR(S10)> HardDisk
+#ELSEACT
+MESSAGEBOX 对不起，【<$STR(S10)>】不支持求购，请输入正确的物品名字！
+BREAK
+#ACT
+CALCVAR HUMAN 求购平台输入1 = <$STR(S10)>
+GOTO @500PI求购平台发布物品
+
+[@500PI求购平台发布输入2]
+#ACT
+QUERYVALUE 90 1 9 500PI求购平台发布输入2B 请输入您要收购的物品单价：
+[500PI求购平台发布输入2B]
+#IF
+LARGE M90 0
+SMALL M90 10000001
+#ELSEACT
+MESSAGEBOX 对不起，收购单价必须为1-1000万之间！
+BREAK
+#ACT
+CALCVAR HUMAN 求购平台输入2 = <$STR(M90)>
+GOTO @500PI求购平台发布物品
+
+[@500PI求购平台发布输入3]
+#ACT
+QUERYVALUE 90 1 9 500PI求购平台发布输入3B 请输入您要收购的物品数量：
+[500PI求购平台发布输入3B]
+#IF
+LARGE M90 0
+SMALL M90 201
+#ELSEACT
+MESSAGEBOX 对不起，收购数量必须为1-200之间！
+BREAK
+#ACT
+CALCVAR HUMAN 求购平台输入3 = <$STR(M90)>
+GOTO @500PI求购平台发布物品
+
+[@500PI求购平台发布信息1]
+#ACT
+CALCVAR HUMAN 求购平台输入5 = @500PI求购平台发布信息1
+MOV S11 <$GLOBAL(求购平台姓名1)><$GLOBAL(求购平台空格)>
+MOV S12 <$GLOBAL(求购平台姓名2)><$GLOBAL(求购平台空格)>
+MOV S13 <$GLOBAL(求购平台姓名3)><$GLOBAL(求购平台空格)>
+MOV S14 <$GLOBAL(求购平台姓名4)><$GLOBAL(求购平台空格)>
+MOV S15 <$GLOBAL(求购平台姓名5)><$GLOBAL(求购平台空格)>
+MOV S16 <$GLOBAL(求购平台姓名6)><$GLOBAL(求购平台空格)>
+MOV S17 <$GLOBAL(求购平台姓名7)><$GLOBAL(求购平台空格)>
+MOV S18 <$GLOBAL(求购平台姓名8)><$GLOBAL(求购平台空格)>
+MOV S21 <$GLOBAL(求购平台价格1)><$GLOBAL(求购平台空格)>
+MOV S22 <$GLOBAL(求购平台价格2)><$GLOBAL(求购平台空格)>
+MOV S23 <$GLOBAL(求购平台价格3)><$GLOBAL(求购平台空格)>
+MOV S24 <$GLOBAL(求购平台价格4)><$GLOBAL(求购平台空格)>
+MOV S25 <$GLOBAL(求购平台价格5)><$GLOBAL(求购平台空格)>
+MOV S26 <$GLOBAL(求购平台价格6)><$GLOBAL(求购平台空格)>
+MOV S27 <$GLOBAL(求购平台价格7)><$GLOBAL(求购平台空格)>
+MOV S28 <$GLOBAL(求购平台价格8)><$GLOBAL(求购平台空格)>
+MOV S31 <$GLOBAL(求购平台件数1)><$GLOBAL(求购平台空格)>
+MOV S32 <$GLOBAL(求购平台件数2)><$GLOBAL(求购平台空格)>
+MOV S33 <$GLOBAL(求购平台件数3)><$GLOBAL(求购平台空格)>
+MOV S34 <$GLOBAL(求购平台件数4)><$GLOBAL(求购平台空格)>
+MOV S35 <$GLOBAL(求购平台件数5)><$GLOBAL(求购平台空格)>
+MOV S36 <$GLOBAL(求购平台件数6)><$GLOBAL(求购平台空格)>
+MOV S37 <$GLOBAL(求购平台件数7)><$GLOBAL(求购平台空格)>
+MOV S38 <$GLOBAL(求购平台件数8)><$GLOBAL(求购平台空格)>
+DEC S11 15 500
+DEC S12 15 500
+DEC S13 15 500
+DEC S14 15 500
+DEC S15 15 500
+DEC S16 15 500
+DEC S17 15 500
+DEC S18 15 500
+DEC S21 9 500
+DEC S22 9 500
+DEC S23 9 500
+DEC S24 9 500
+DEC S25 9 500
+DEC S26 9 500
+DEC S27 9 500
+DEC S28 9 500
+DEC S31 5 500
+DEC S32 5 500
+DEC S33 5 500
+DEC S34 5 500
+DEC S35 5 500
+DEC S36 5 500
+DEC S37 5 500
+DEC S38 5 500
+#SAY
+<出售/@500PI求购平台出售物品1> <COLOR=clTeal 01:><$STR(S11)> <COLOR=clTeal 单价:><$STR(S21)><COLOR=clTeal 数量:><$STR(S31)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品1)>\
+<出售/@500PI求购平台出售物品2> <COLOR=clTeal 02:><$STR(S12)> <COLOR=clTeal 单价:><$STR(S22)><COLOR=clTeal 数量:><$STR(S32)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品2)>\
+<出售/@500PI求购平台出售物品3> <COLOR=clTeal 03:><$STR(S13)> <COLOR=clTeal 单价:><$STR(S23)><COLOR=clTeal 数量:><$STR(S33)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品3)>\
+<出售/@500PI求购平台出售物品4> <COLOR=clTeal 04:><$STR(S14)> <COLOR=clTeal 单价:><$STR(S24)><COLOR=clTeal 数量:><$STR(S34)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品4)>\
+<出售/@500PI求购平台出售物品5> <COLOR=clTeal 05:><$STR(S15)> <COLOR=clTeal 单价:><$STR(S25)><COLOR=clTeal 数量:><$STR(S35)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品5)>\
+<出售/@500PI求购平台出售物品6> <COLOR=clTeal 06:><$STR(S16)> <COLOR=clTeal 单价:><$STR(S26)><COLOR=clTeal 数量:><$STR(S36)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品6)>\
+<出售/@500PI求购平台出售物品7> <COLOR=clTeal 07:><$STR(S17)> <COLOR=clTeal 单价:><$STR(S27)><COLOR=clTeal 数量:><$STR(S37)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品7)>\
+<出售/@500PI求购平台出售物品8> <COLOR=clTeal 08:><$STR(S18)> <COLOR=clTeal 单价:><$STR(S28)><COLOR=clTeal 数量:><$STR(S38)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品8)>\
+<第1页>  <第2页/@500PI求购平台发布信息2>  <第3页/@500PI求购平台发布信息3>  <第4页/@500PI求购平台发布信息4>  <COLOR=clFuchsia 以上为玩家发布求购信息>  <返回/@MAIN>
+
+[@500PI求购平台发布信息2]
+#ACT
+CALCVAR HUMAN 求购平台输入5 = @500PI求购平台发布信息2
+MOV S11 <$GLOBAL(求购平台姓名9)><$GLOBAL(求购平台空格)>
+MOV S12 <$GLOBAL(求购平台姓名10)><$GLOBAL(求购平台空格)>
+MOV S13 <$GLOBAL(求购平台姓名11)><$GLOBAL(求购平台空格)>
+MOV S14 <$GLOBAL(求购平台姓名12)><$GLOBAL(求购平台空格)>
+MOV S15 <$GLOBAL(求购平台姓名13)><$GLOBAL(求购平台空格)>
+MOV S16 <$GLOBAL(求购平台姓名14)><$GLOBAL(求购平台空格)>
+MOV S17 <$GLOBAL(求购平台姓名15)><$GLOBAL(求购平台空格)>
+MOV S18 <$GLOBAL(求购平台姓名16)><$GLOBAL(求购平台空格)>
+MOV S21 <$GLOBAL(求购平台价格9)><$GLOBAL(求购平台空格)>
+MOV S22 <$GLOBAL(求购平台价格10)><$GLOBAL(求购平台空格)>
+MOV S23 <$GLOBAL(求购平台价格11)><$GLOBAL(求购平台空格)>
+MOV S24 <$GLOBAL(求购平台价格12)><$GLOBAL(求购平台空格)>
+MOV S25 <$GLOBAL(求购平台价格13)><$GLOBAL(求购平台空格)>
+MOV S26 <$GLOBAL(求购平台价格14)><$GLOBAL(求购平台空格)>
+MOV S27 <$GLOBAL(求购平台价格15)><$GLOBAL(求购平台空格)>
+MOV S28 <$GLOBAL(求购平台价格16)><$GLOBAL(求购平台空格)>
+MOV S31 <$GLOBAL(求购平台件数9)><$GLOBAL(求购平台空格)>
+MOV S32 <$GLOBAL(求购平台件数10)><$GLOBAL(求购平台空格)>
+MOV S33 <$GLOBAL(求购平台件数11)><$GLOBAL(求购平台空格)>
+MOV S34 <$GLOBAL(求购平台件数12)><$GLOBAL(求购平台空格)>
+MOV S35 <$GLOBAL(求购平台件数13)><$GLOBAL(求购平台空格)>
+MOV S36 <$GLOBAL(求购平台件数14)><$GLOBAL(求购平台空格)>
+MOV S37 <$GLOBAL(求购平台件数15)><$GLOBAL(求购平台空格)>
+MOV S38 <$GLOBAL(求购平台件数16)><$GLOBAL(求购平台空格)>
+DEC S11 15 500
+DEC S12 15 500
+DEC S13 15 500
+DEC S14 15 500
+DEC S15 15 500
+DEC S16 15 500
+DEC S17 15 500
+DEC S18 15 500
+DEC S21 9 500
+DEC S22 9 500
+DEC S23 9 500
+DEC S24 9 500
+DEC S25 9 500
+DEC S26 9 500
+DEC S27 9 500
+DEC S28 9 500
+DEC S31 5 500
+DEC S32 5 500
+DEC S33 5 500
+DEC S34 5 500
+DEC S35 5 500
+DEC S36 5 500
+DEC S37 5 500
+DEC S38 5 500
+#SAY
+<出售/@500PI求购平台出售物品9> <COLOR=clTeal 09:><$STR(S11)> <COLOR=clTeal 单价:><$STR(S21)><COLOR=clTeal 数量:><$STR(S31)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品9)>\
+<出售/@500PI求购平台出售物品10> <COLOR=clTeal 10:><$STR(S12)> <COLOR=clTeal 单价:><$STR(S22)><COLOR=clTeal 数量:><$STR(S32)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品10)>\
+<出售/@500PI求购平台出售物品11> <COLOR=clTeal 11:><$STR(S13)> <COLOR=clTeal 单价:><$STR(S23)><COLOR=clTeal 数量:><$STR(S33)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品11)>\
+<出售/@500PI求购平台出售物品12> <COLOR=clTeal 12:><$STR(S14)> <COLOR=clTeal 单价:><$STR(S24)><COLOR=clTeal 数量:><$STR(S34)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品12)>\
+<出售/@500PI求购平台出售物品13> <COLOR=clTeal 13:><$STR(S15)> <COLOR=clTeal 单价:><$STR(S25)><COLOR=clTeal 数量:><$STR(S35)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品13)>\
+<出售/@500PI求购平台出售物品14> <COLOR=clTeal 14:><$STR(S16)> <COLOR=clTeal 单价:><$STR(S26)><COLOR=clTeal 数量:><$STR(S36)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品14)>\
+<出售/@500PI求购平台出售物品15> <COLOR=clTeal 15:><$STR(S17)> <COLOR=clTeal 单价:><$STR(S27)><COLOR=clTeal 数量:><$STR(S37)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品15)>\
+<出售/@500PI求购平台出售物品16> <COLOR=clTeal 16:><$STR(S18)> <COLOR=clTeal 单价:><$STR(S28)><COLOR=clTeal 数量:><$STR(S38)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品16)>\
+<第1页/@500PI求购平台发布信息1>  <第2页>  <第3页/@500PI求购平台发布信息3>  <第4页/@500PI求购平台发布信息4>  <COLOR=clFuchsia 以上为玩家发布求购信息>  <返回/@MAIN>
+
+[@500PI求购平台发布信息3]
+#ACT
+CALCVAR HUMAN 求购平台输入5 = @500PI求购平台发布信息3
+MOV S11 <$GLOBAL(求购平台姓名17)><$GLOBAL(求购平台空格)>
+MOV S12 <$GLOBAL(求购平台姓名18)><$GLOBAL(求购平台空格)>
+MOV S13 <$GLOBAL(求购平台姓名19)><$GLOBAL(求购平台空格)>
+MOV S14 <$GLOBAL(求购平台姓名20)><$GLOBAL(求购平台空格)>
+MOV S15 <$GLOBAL(求购平台姓名21)><$GLOBAL(求购平台空格)>
+MOV S16 <$GLOBAL(求购平台姓名22)><$GLOBAL(求购平台空格)>
+MOV S17 <$GLOBAL(求购平台姓名23)><$GLOBAL(求购平台空格)>
+MOV S18 <$GLOBAL(求购平台姓名24)><$GLOBAL(求购平台空格)>
+MOV S21 <$GLOBAL(求购平台价格17)><$GLOBAL(求购平台空格)>
+MOV S22 <$GLOBAL(求购平台价格18)><$GLOBAL(求购平台空格)>
+MOV S23 <$GLOBAL(求购平台价格19)><$GLOBAL(求购平台空格)>
+MOV S24 <$GLOBAL(求购平台价格20)><$GLOBAL(求购平台空格)>
+MOV S25 <$GLOBAL(求购平台价格21)><$GLOBAL(求购平台空格)>
+MOV S26 <$GLOBAL(求购平台价格22)><$GLOBAL(求购平台空格)>
+MOV S27 <$GLOBAL(求购平台价格23)><$GLOBAL(求购平台空格)>
+MOV S28 <$GLOBAL(求购平台价格24)><$GLOBAL(求购平台空格)>
+MOV S31 <$GLOBAL(求购平台件数17)><$GLOBAL(求购平台空格)>
+MOV S32 <$GLOBAL(求购平台件数18)><$GLOBAL(求购平台空格)>
+MOV S33 <$GLOBAL(求购平台件数19)><$GLOBAL(求购平台空格)>
+MOV S34 <$GLOBAL(求购平台件数20)><$GLOBAL(求购平台空格)>
+MOV S35 <$GLOBAL(求购平台件数21)><$GLOBAL(求购平台空格)>
+MOV S36 <$GLOBAL(求购平台件数22)><$GLOBAL(求购平台空格)>
+MOV S37 <$GLOBAL(求购平台件数23)><$GLOBAL(求购平台空格)>
+MOV S38 <$GLOBAL(求购平台件数24)><$GLOBAL(求购平台空格)>
+DEC S11 15 500
+DEC S12 15 500
+DEC S13 15 500
+DEC S14 15 500
+DEC S15 15 500
+DEC S16 15 500
+DEC S17 15 500
+DEC S18 15 500
+DEC S21 9 500
+DEC S22 9 500
+DEC S23 9 500
+DEC S24 9 500
+DEC S25 9 500
+DEC S26 9 500
+DEC S27 9 500
+DEC S28 9 500
+DEC S31 5 500
+DEC S32 5 500
+DEC S33 5 500
+DEC S34 5 500
+DEC S35 5 500
+DEC S36 5 500
+DEC S37 5 500
+DEC S38 5 500
+#SAY
+<出售/@500PI求购平台出售物品17> <COLOR=clTeal 17:><$STR(S11)> <COLOR=clTeal 单价:><$STR(S21)><COLOR=clTeal 数量:><$STR(S31)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品17)>\
+<出售/@500PI求购平台出售物品18> <COLOR=clTeal 18:><$STR(S12)> <COLOR=clTeal 单价:><$STR(S22)><COLOR=clTeal 数量:><$STR(S32)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品18)>\
+<出售/@500PI求购平台出售物品19> <COLOR=clTeal 19:><$STR(S13)> <COLOR=clTeal 单价:><$STR(S23)><COLOR=clTeal 数量:><$STR(S33)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品19)>\
+<出售/@500PI求购平台出售物品20> <COLOR=clTeal 20:><$STR(S14)> <COLOR=clTeal 单价:><$STR(S24)><COLOR=clTeal 数量:><$STR(S34)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品20)>\
+<出售/@500PI求购平台出售物品21> <COLOR=clTeal 21:><$STR(S15)> <COLOR=clTeal 单价:><$STR(S25)><COLOR=clTeal 数量:><$STR(S35)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品21)>\
+<出售/@500PI求购平台出售物品22> <COLOR=clTeal 22:><$STR(S16)> <COLOR=clTeal 单价:><$STR(S26)><COLOR=clTeal 数量:><$STR(S36)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品22)>\
+<出售/@500PI求购平台出售物品23> <COLOR=clTeal 23:><$STR(S17)> <COLOR=clTeal 单价:><$STR(S27)><COLOR=clTeal 数量:><$STR(S37)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品23)>\
+<出售/@500PI求购平台出售物品24> <COLOR=clTeal 24:><$STR(S18)> <COLOR=clTeal 单价:><$STR(S28)><COLOR=clTeal 数量:><$STR(S38)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品24)>\
+<第1页/@500PI求购平台发布信息1>  <第2页/@500PI求购平台发布信息2>  <第3页>  <第4页/@500PI求购平台发布信息4>  <COLOR=clFuchsia 以上为玩家发布求购信息>  <返回/@MAIN>
+
+[@500PI求购平台发布信息4]
+#ACT
+CALCVAR HUMAN 求购平台输入5 = @500PI求购平台发布信息4
+MOV S11 <$GLOBAL(求购平台姓名25)><$GLOBAL(求购平台空格)>
+MOV S12 <$GLOBAL(求购平台姓名26)><$GLOBAL(求购平台空格)>
+MOV S13 <$GLOBAL(求购平台姓名27)><$GLOBAL(求购平台空格)>
+MOV S14 <$GLOBAL(求购平台姓名28)><$GLOBAL(求购平台空格)>
+MOV S15 <$GLOBAL(求购平台姓名29)><$GLOBAL(求购平台空格)>
+MOV S16 <$GLOBAL(求购平台姓名30)><$GLOBAL(求购平台空格)>
+MOV S17 <$GLOBAL(求购平台姓名31)><$GLOBAL(求购平台空格)>
+MOV S18 <$GLOBAL(求购平台姓名32)><$GLOBAL(求购平台空格)>
+MOV S21 <$GLOBAL(求购平台价格25)><$GLOBAL(求购平台空格)>
+MOV S22 <$GLOBAL(求购平台价格26)><$GLOBAL(求购平台空格)>
+MOV S23 <$GLOBAL(求购平台价格27)><$GLOBAL(求购平台空格)>
+MOV S24 <$GLOBAL(求购平台价格28)><$GLOBAL(求购平台空格)>
+MOV S25 <$GLOBAL(求购平台价格29)><$GLOBAL(求购平台空格)>
+MOV S26 <$GLOBAL(求购平台价格30)><$GLOBAL(求购平台空格)>
+MOV S27 <$GLOBAL(求购平台价格31)><$GLOBAL(求购平台空格)>
+MOV S28 <$GLOBAL(求购平台价格32)><$GLOBAL(求购平台空格)>
+MOV S31 <$GLOBAL(求购平台件数25)><$GLOBAL(求购平台空格)>
+MOV S32 <$GLOBAL(求购平台件数26)><$GLOBAL(求购平台空格)>
+MOV S33 <$GLOBAL(求购平台件数27)><$GLOBAL(求购平台空格)>
+MOV S34 <$GLOBAL(求购平台件数28)><$GLOBAL(求购平台空格)>
+MOV S35 <$GLOBAL(求购平台件数29)><$GLOBAL(求购平台空格)>
+MOV S36 <$GLOBAL(求购平台件数30)><$GLOBAL(求购平台空格)>
+MOV S37 <$GLOBAL(求购平台件数31)><$GLOBAL(求购平台空格)>
+MOV S38 <$GLOBAL(求购平台件数32)><$GLOBAL(求购平台空格)>
+DEC S11 15 500
+DEC S12 15 500
+DEC S13 15 500
+DEC S14 15 500
+DEC S15 15 500
+DEC S16 15 500
+DEC S17 15 500
+DEC S18 15 500
+DEC S21 9 500
+DEC S22 9 500
+DEC S23 9 500
+DEC S24 9 500
+DEC S25 9 500
+DEC S26 9 500
+DEC S27 9 500
+DEC S28 9 500
+DEC S31 5 500
+DEC S32 5 500
+DEC S33 5 500
+DEC S34 5 500
+DEC S35 5 500
+DEC S36 5 500
+DEC S37 5 500
+DEC S38 5 500
+#SAY
+<出售/@500PI求购平台出售物品25> <COLOR=clTeal 25:><$STR(S11)> <COLOR=clTeal 单价:><$STR(S21)><COLOR=clTeal 数量:><$STR(S31)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品25)>\
+<出售/@500PI求购平台出售物品26> <COLOR=clTeal 26:><$STR(S12)> <COLOR=clTeal 单价:><$STR(S22)><COLOR=clTeal 数量:><$STR(S32)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品26)>\
+<出售/@500PI求购平台出售物品27> <COLOR=clTeal 27:><$STR(S13)> <COLOR=clTeal 单价:><$STR(S23)><COLOR=clTeal 数量:><$STR(S33)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品27)>\
+<出售/@500PI求购平台出售物品28> <COLOR=clTeal 28:><$STR(S14)> <COLOR=clTeal 单价:><$STR(S24)><COLOR=clTeal 数量:><$STR(S34)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品28)>\
+<出售/@500PI求购平台出售物品29> <COLOR=clTeal 29:><$STR(S15)> <COLOR=clTeal 单价:><$STR(S25)><COLOR=clTeal 数量:><$STR(S35)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品29)>\
+<出售/@500PI求购平台出售物品30> <COLOR=clTeal 30:><$STR(S16)> <COLOR=clTeal 单价:><$STR(S26)><COLOR=clTeal 数量:><$STR(S36)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品30)>\
+<出售/@500PI求购平台出售物品31> <COLOR=clTeal 31:><$STR(S17)> <COLOR=clTeal 单价:><$STR(S27)><COLOR=clTeal 数量:><$STR(S37)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品31)>\
+<出售/@500PI求购平台出售物品32> <COLOR=clTeal 32:><$STR(S18)> <COLOR=clTeal 单价:><$STR(S28)><COLOR=clTeal 数量:><$STR(S38)><COLOR=clTeal 物品:><$GLOBAL(求购平台物品32)>\
+<第1页/@500PI求购平台发布信息1>  <第2页/@500PI求购平台发布信息2>  <第3页/@500PI求购平台发布信息3>  <第4页>  <COLOR=clFuchsia 以上为玩家发布求购信息>  <返回/@MAIN>
+
+[@500PI求购平台出售物品1]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 1
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品2]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 2
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品3]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 3
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品4]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 4
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品5]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 5
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品6]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 6
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品7]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 7
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品8]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 8
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品9]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 9
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品10]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 10
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品11]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 11
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品12]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 12
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品13]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 13
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品14]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 14
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品15]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 15
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品16]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 16
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品17]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 17
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品18]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 18
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品19]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 19
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品20]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 20
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品21]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 21
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品22]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 22
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品23]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 23
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品24]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 24
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品25]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 25
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品26]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 26
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品27]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 27
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品28]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 28
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品29]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 29
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品30]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 30
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品31]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 31
+GOTO @500PI求购平台出售物品
+[@500PI求购平台出售物品32]
+#ACT
+CALCVAR HUMAN 求购平台输入4 = 32
+GOTO @500PI求购平台出售物品
+
+[@500PI求购平台出售物品]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$HUMAN(求购平台输入4)>
+#IF
+LARGE D9 0
+SMALL D9 33
+#ELSEACT
+MESSAGEBOX 操作错误，请重新点击NPC！
+close
+BREAK
+#IF
+CHECKVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+#ACT
+MESSAGEBOX 对不起，【<$STR(D9)>号位置】没有玩家求购物品！
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+QUERYVALUE 90 1 9 500PI求购平台出售确定 【<$STR(S11)>】当前收购【<$STR(S10)>】的单价为：<$STR(D8)>\请输入您要出售【<$STR(S10)>】的数量：（最大<$STR(D7)>）
+
+[500PI求购平台出售确定]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 <$HUMAN(求购平台输入4)>
+#IF
+LARGE D9 0
+SMALL D9 33
+#ELSEACT
+MESSAGEBOX 操作错误，请重新点击NPC！
+close
+BREAK
+#IF
+CHECKVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+#ACT
+MESSAGEBOX 对不起，该玩家已撤销收购，下次请快点！
+GOTO <$HUMAN(求购平台输入5)>
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+
+#IF
+LARGE D7 0
+#ELSEACT
+MESSAGEBOX 对不起，该玩家收购的<$STR(D6)>件【<$STR(S10)>】已满，下次请快点！
+GOTO <$HUMAN(求购平台输入5)>
+BREAK
+
+#IF
+SMALL M90 1
+#ACT
+MESSAGEBOX 对不起，请输入大于0的数量！
+GOTO <$HUMAN(求购平台输入5)>
+BREAK
+
+#IF
+LARGE M90 <$STR(D7)>
+#ACT
+MESSAGEBOX 对不起，该玩家目前仅需要收购<$STR(D7)>件【<$STR(S10)>】，请降低您的出售数量！
+GOTO <$HUMAN(求购平台输入5)>
+BREAK
+#IF
+checkitem <$STR(S10)> <$STR(M90)>
+#ELSEACT
+MESSAGEBOX 对不起，您的背包内没有<$STR(M90)>件【<$STR(S10)>】，请检查确认！
+GOTO <$HUMAN(求购平台输入5)>
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+TAKE <$STR(S10)> <$STR(M90)>
+MOV D5 <$STR(D8)>
+MUL D5 <$STR(M90)>
+GAMEGOLD + <$STR(D5)>
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> - <$STR(M90)>
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SENDMSG 0 【<$USERNAME>】以【<$STR(D8)>元宝】每件的价格出售<$STR(M90)>件【<$STR(S10)>】！
+MESSAGEBOX 恭喜你，成功出售<$STR(M90)>件【<$STR(S10)>】获得【<$STR(D5)>元宝】！
+GOTO <$HUMAN(求购平台输入5)>
+
+[@500PI求购平台发布确定]
+#IF
+CHECKVAR HUMAN 求购平台输入1 = 
+#ACT
+MESSAGEBOX 对不起，请输入您要求购的物品名字！
+BREAK
+
+#IF
+CHECKVAR HUMAN 求购平台输入2 > 0
+CHECKVAR HUMAN 求购平台输入2 < 10000001
+#ELSEACT
+MESSAGEBOX 对不起，收购单价必须为1-1000万之间！
+BREAK
+
+#IF
+CHECKVAR HUMAN 求购平台输入3 > 0
+CHECKVAR HUMAN 求购平台输入3 < 201
+#ELSEACT
+MESSAGEBOX 对不起，收购数量必须为1-200之间！
+BREAK
+
+#IF
+CheckStringList ..\QuestDiary\500PI求购平台配置\500PI求购平台物品.ini <$HUMAN(求购平台输入1)> HardDisk
+#ELSEACT
+MESSAGEBOX 对不起，【<$HUMAN(求购平台输入1)>】不支持求购，请输入正确的物品名字！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D8 <$HUMAN(求购平台输入2)>
+MUL D8 <$HUMAN(求购平台输入3)>
+
+#IF
+CHECKGAMEGOLD < <$STR(D8)>
+#ACT
+MESSAGEBOX 对不起，求购【<$HUMAN(求购平台输入3)>件】【<$HUMAN(求购平台输入1)>】需要【<$STR(D8)>元宝】\　\您身上的元宝数量不足，请降低收购数量！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 0
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名1 = <$USERNAME>
+#ACT
+MOV D9 1
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名2 = <$USERNAME>
+#ACT
+MOV D9 2
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名3 = <$USERNAME>
+#ACT
+MOV D9 3
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名4 = <$USERNAME>
+#ACT
+MOV D9 4
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名5 = <$USERNAME>
+#ACT
+MOV D9 5
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名6 = <$USERNAME>
+#ACT
+MOV D9 6
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名7 = <$USERNAME>
+#ACT
+MOV D9 7
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名8 = <$USERNAME>
+#ACT
+MOV D9 8
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名9 = <$USERNAME>
+#ACT
+MOV D9 9
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名10 = <$USERNAME>
+#ACT
+MOV D9 10
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名11 = <$USERNAME>
+#ACT
+MOV D9 11
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名12 = <$USERNAME>
+#ACT
+MOV D9 12
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名13 = <$USERNAME>
+#ACT
+MOV D9 13
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名14 = <$USERNAME>
+#ACT
+MOV D9 14
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名15 = <$USERNAME>
+#ACT
+MOV D9 15
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名16 = <$USERNAME>
+#ACT
+MOV D9 16
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名17 = <$USERNAME>
+#ACT
+MOV D9 17
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名18 = <$USERNAME>
+#ACT
+MOV D9 18
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名19 = <$USERNAME>
+#ACT
+MOV D9 19
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名20 = <$USERNAME>
+#ACT
+MOV D9 20
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名21 = <$USERNAME>
+#ACT
+MOV D9 21
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名22 = <$USERNAME>
+#ACT
+MOV D9 22
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名23 = <$USERNAME>
+#ACT
+MOV D9 23
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名24 = <$USERNAME>
+#ACT
+MOV D9 24
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名25 = <$USERNAME>
+#ACT
+MOV D9 25
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名26 = <$USERNAME>
+#ACT
+MOV D9 26
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名27 = <$USERNAME>
+#ACT
+MOV D9 27
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名28 = <$USERNAME>
+#ACT
+MOV D9 28
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名29 = <$USERNAME>
+#ACT
+MOV D9 29
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名30 = <$USERNAME>
+#ACT
+MOV D9 30
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名31 = <$USERNAME>
+#ACT
+MOV D9 31
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名32 = <$USERNAME>
+#ACT
+MOV D9 32
+
+#IF
+LARGE D9 0
+#ACT
+MESSAGEBOX 对不起，你已在【第<$STR(D9)>号】收购装备，请先撤销才能再进行收购！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 0
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名1 = 
+#ACT
+MOV D9 1
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名2 = 
+#ACT
+MOV D9 2
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名3 = 
+#ACT
+MOV D9 3
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名4 = 
+#ACT
+MOV D9 4
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名5 = 
+#ACT
+MOV D9 5
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名6 = 
+#ACT
+MOV D9 6
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名7 = 
+#ACT
+MOV D9 7
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名8 = 
+#ACT
+MOV D9 8
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名9 = 
+#ACT
+MOV D9 9
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名10 = 
+#ACT
+MOV D9 10
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名11 = 
+#ACT
+MOV D9 11
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名12 = 
+#ACT
+MOV D9 12
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名13 = 
+#ACT
+MOV D9 13
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名14 = 
+#ACT
+MOV D9 14
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名15 = 
+#ACT
+MOV D9 15
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名16 = 
+#ACT
+MOV D9 16
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名17 = 
+#ACT
+MOV D9 17
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名18 = 
+#ACT
+MOV D9 18
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名19 = 
+#ACT
+MOV D9 19
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名20 = 
+#ACT
+MOV D9 20
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名21 = 
+#ACT
+MOV D9 21
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名22 = 
+#ACT
+MOV D9 22
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名23 = 
+#ACT
+MOV D9 23
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名24 = 
+#ACT
+MOV D9 24
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名25 = 
+#ACT
+MOV D9 25
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名26 = 
+#ACT
+MOV D9 26
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名27 = 
+#ACT
+MOV D9 27
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名28 = 
+#ACT
+MOV D9 28
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名29 = 
+#ACT
+MOV D9 29
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名30 = 
+#ACT
+MOV D9 30
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名31 = 
+#ACT
+MOV D9 31
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名32 = 
+#ACT
+MOV D9 32
+
+#IF
+EQUAL D9 0
+#ACT
+MESSAGEBOX 对不起，求购平台信息已满，请等待其他玩家完成收购再发布！
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD - <$STR(D8)>
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = <$USERNAME>
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = <$HUMAN(求购平台输入1)>
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = <$HUMAN(求购平台输入2)>
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = <$HUMAN(求购平台输入3)>
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = <$HUMAN(求购平台输入3)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SENDMSG 0 【<$USERNAME>】以【<$HUMAN(求购平台输入2)>元宝】每件的价格求购<$HUMAN(求购平台输入3)>件【<$HUMAN(求购平台输入1)>】！
+MESSAGEBOX 恭喜你，求购信息成功发布在<$STR(D9)>号位置！
+
+#IF
+LARGE D9 24
+#ACT
+GOTO @500PI求购平台发布信息4
+BREAK
+#IF
+LARGE D9 16
+#ACT
+GOTO @500PI求购平台发布信息3
+BREAK
+#IF
+LARGE D9 8
+#ACT
+GOTO @500PI求购平台发布信息2
+BREAK
+#ELSEACT
+GOTO @500PI求购平台发布信息1
+BREAK
+
+[@500PI求购平台领取物品]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 0
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名1 = <$USERNAME>
+#ACT
+MOV D9 1
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名2 = <$USERNAME>
+#ACT
+MOV D9 2
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名3 = <$USERNAME>
+#ACT
+MOV D9 3
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名4 = <$USERNAME>
+#ACT
+MOV D9 4
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名5 = <$USERNAME>
+#ACT
+MOV D9 5
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名6 = <$USERNAME>
+#ACT
+MOV D9 6
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名7 = <$USERNAME>
+#ACT
+MOV D9 7
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名8 = <$USERNAME>
+#ACT
+MOV D9 8
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名9 = <$USERNAME>
+#ACT
+MOV D9 9
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名10 = <$USERNAME>
+#ACT
+MOV D9 10
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名11 = <$USERNAME>
+#ACT
+MOV D9 11
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名12 = <$USERNAME>
+#ACT
+MOV D9 12
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名13 = <$USERNAME>
+#ACT
+MOV D9 13
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名14 = <$USERNAME>
+#ACT
+MOV D9 14
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名15 = <$USERNAME>
+#ACT
+MOV D9 15
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名16 = <$USERNAME>
+#ACT
+MOV D9 16
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名17 = <$USERNAME>
+#ACT
+MOV D9 17
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名18 = <$USERNAME>
+#ACT
+MOV D9 18
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名19 = <$USERNAME>
+#ACT
+MOV D9 19
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名20 = <$USERNAME>
+#ACT
+MOV D9 20
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名21 = <$USERNAME>
+#ACT
+MOV D9 21
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名22 = <$USERNAME>
+#ACT
+MOV D9 22
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名23 = <$USERNAME>
+#ACT
+MOV D9 23
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名24 = <$USERNAME>
+#ACT
+MOV D9 24
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名25 = <$USERNAME>
+#ACT
+MOV D9 25
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名26 = <$USERNAME>
+#ACT
+MOV D9 26
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名27 = <$USERNAME>
+#ACT
+MOV D9 27
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名28 = <$USERNAME>
+#ACT
+MOV D9 28
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名29 = <$USERNAME>
+#ACT
+MOV D9 29
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名30 = <$USERNAME>
+#ACT
+MOV D9 30
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名31 = <$USERNAME>
+#ACT
+MOV D9 31
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名32 = <$USERNAME>
+#ACT
+MOV D9 32
+
+#IF
+EQUAL D9 0
+#ACT
+MESSAGEBOX 对不起，您还没有发布求购信息！
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+#IF
+LARGE D6 <$STR(D7)>
+#ELSEACT
+MESSAGEBOX 对不起，还没有收购到【<$STR(S10)>】！
+BREAK
+#ACT
+INC D7 1
+INC D6 1
+DEC D6 <$STR(D7)>
+DEC D7 1
+#IF
+LARGE D6 40
+#ACT
+DEC D6 40
+MOV S11 还可领取<$STR(D6)>件，请继续点击领取！
+MOV D6 40
+#ELSEACT
+MOV S11 
+#IF
+LARGE D7 0
+#ACT
+MOV S12 当前还有<$STR(D7)>件【<$STR(S10)>】正在收购中...
+#ELSEACT
+MOV S12 
+#IF
+CHECKBAGSIZE <$STR(D6)>
+#ELSEACT
+MESSAGEBOX 对不起，请保留<$STR(D6)>个背包空格再领取！
+BREAK
+#ACT
+GIVE <$STR(S10)> <$STR(D6)>
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> - <$STR(D6)>
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+MESSAGEBOX 恭喜您，成功领取<$STR(D6)>件【<$STR(S10)>】！\　\<$STR(S11)>\　\<$STR(S12)>
+
+#IF
+CHECKVAR GLOBAL 求购平台数量<$STR(D9)> > 0
+#ACT
+BREAK
+#ELSEACT
+MOV D4 32
+INC D9 1
+
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+
+
+[@500PI求购平台撤销物品]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV D9 0
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名1 = <$USERNAME>
+#ACT
+MOV D9 1
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名2 = <$USERNAME>
+#ACT
+MOV D9 2
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名3 = <$USERNAME>
+#ACT
+MOV D9 3
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名4 = <$USERNAME>
+#ACT
+MOV D9 4
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名5 = <$USERNAME>
+#ACT
+MOV D9 5
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名6 = <$USERNAME>
+#ACT
+MOV D9 6
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名7 = <$USERNAME>
+#ACT
+MOV D9 7
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名8 = <$USERNAME>
+#ACT
+MOV D9 8
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名9 = <$USERNAME>
+#ACT
+MOV D9 9
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名10 = <$USERNAME>
+#ACT
+MOV D9 10
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名11 = <$USERNAME>
+#ACT
+MOV D9 11
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名12 = <$USERNAME>
+#ACT
+MOV D9 12
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名13 = <$USERNAME>
+#ACT
+MOV D9 13
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名14 = <$USERNAME>
+#ACT
+MOV D9 14
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名15 = <$USERNAME>
+#ACT
+MOV D9 15
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名16 = <$USERNAME>
+#ACT
+MOV D9 16
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名17 = <$USERNAME>
+#ACT
+MOV D9 17
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名18 = <$USERNAME>
+#ACT
+MOV D9 18
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名19 = <$USERNAME>
+#ACT
+MOV D9 19
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名20 = <$USERNAME>
+#ACT
+MOV D9 20
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名21 = <$USERNAME>
+#ACT
+MOV D9 21
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名22 = <$USERNAME>
+#ACT
+MOV D9 22
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名23 = <$USERNAME>
+#ACT
+MOV D9 23
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名24 = <$USERNAME>
+#ACT
+MOV D9 24
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名25 = <$USERNAME>
+#ACT
+MOV D9 25
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名26 = <$USERNAME>
+#ACT
+MOV D9 26
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名27 = <$USERNAME>
+#ACT
+MOV D9 27
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名28 = <$USERNAME>
+#ACT
+MOV D9 28
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名29 = <$USERNAME>
+#ACT
+MOV D9 29
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名30 = <$USERNAME>
+#ACT
+MOV D9 30
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名31 = <$USERNAME>
+#ACT
+MOV D9 31
+#IF
+EQUAL D9 0
+CHECKVAR GLOBAL 求购平台姓名32 = <$USERNAME>
+#ACT
+MOV D9 32
+
+#IF
+EQUAL D9 0
+#ACT
+MESSAGEBOX 对不起，您还没有发布求购信息！
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+#IF
+LARGE D6 <$STR(D7)>
+#ACT
+INC D7 1
+INC D6 1
+DEC D6 <$STR(D7)>
+MESSAGEBOX 你已有收购到的<$STR(D6)>件【<$STR(S10)>】未领取，请先领取再撤销！
+BREAK
+#IF
+LARGE D6 0
+LARGE D8 0
+#ACT
+MUL D8 <$STR(D6)>
+GAMEGOLD + <$STR(D8)>
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+MESSAGEBOX 恭喜您，撤销收购<$STR(D6)>件【<$STR(S10)>】成功！\　\系统退回你【<$STR(D8)>元宝】！
+
+
+#IF
+CHECKVAR GLOBAL 求购平台数量<$STR(D9)> > 0
+#ACT
+BREAK
+#ELSEACT
+MOV D4 32
+INC D9 1
+
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+#IF
+LARGE D9 <$STR(D4)>
+#ACT
+DEC D9 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台物品<$STR(D9)> = 
+CALCVAR GLOBAL 求购平台价格<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台件数<$STR(D9)> = 0
+CALCVAR GLOBAL 求购平台数量<$STR(D9)> = 0
+SAVEVAR GLOBAL 求购平台姓名<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D9)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+BREAK
+#ELSEACT
+MOV S10 <$GLOBAL(求购平台价格
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D8 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台件数
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D7 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台数量
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV D6 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台姓名
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S11 <$STR(S10)>
+MOV S10 <$GLOBAL(求购平台物品
+INC S10 <$STR(D9)>
+INC S10 )>
+MOV S10 <$STR(S10)>
+MOV D5 <$STR(D9)>
+DEC D5 1
+CALCVAR GLOBAL 求购平台姓名<$STR(D5)> = <$STR(S11)>
+CALCVAR GLOBAL 求购平台物品<$STR(D5)> = <$STR(S10)>
+CALCVAR GLOBAL 求购平台价格<$STR(D5)> = <$STR(D8)>
+CALCVAR GLOBAL 求购平台件数<$STR(D5)> = <$STR(D7)>
+CALCVAR GLOBAL 求购平台数量<$STR(D5)> = <$STR(D6)>
+SAVEVAR GLOBAL 求购平台姓名<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台物品<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台价格<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台件数<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk
+SAVEVAR GLOBAL 求购平台数量<$STR(D5)> ..\QuestDiary\500PI开区清空文本(技术支持Q1921249589)\500PI求购平台变量.txt HardDisk

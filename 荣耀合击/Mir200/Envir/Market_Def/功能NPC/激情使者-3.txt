@@ -1,0 +1,34 @@
+()
+%100
+[@MAIN]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【激情争霸】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+\          全天开放，任何玩家随时都可以进！\
+\         <提示：行会战最佳场地，激情杀人的同时还可以爆装备。>\
+每天24：00分 06：00分 12：00分 18：00分还会刷新一只激情教主\
+\          <COLOR=clLime ∴∵∴※PK不犯法，不服就进来※∵∴∵>\ \
+\         <进入激情争霸①/@激情战场1>         <进入激情争霸②/@激情战场2>\
+[@激情战场1]
+#IF
+CHECKLEVELEX > 1
+#ACT
+mapmove AASSD   9 11
+SENDMSG 2  玩家[<$USERNAME>]进入激情争霸战场并大吼道：有谁敢来与我决一死战！ 250  0
+SENDMSG 2  玩家[<$USERNAME>]进入激情争霸战场并大吼道：有谁敢来与我决一死战！ 250  0
+break
+#ELSEACT
+MESSAGEBOX 进入要求等级大于30级，您的级别不够，请加油升级！
+CLOSE
+
+[@激情战场2]
+#IF
+CHECKLEVELEX > 1
+#ACT
+mapmove AASSD   39 41
+SENDMSG 2  玩家[<$USERNAME>]进入激情争霸战场并大吼道：有谁敢来与我决一死战！ 250  0
+SENDMSG 2  玩家[<$USERNAME>]进入激情争霸战场并大吼道：有谁敢来与我决一死战！ 250  0
+break
+#ELSEACT
+MESSAGEBOX 进入要求等级大于30级，您的级别不够，请加油升级！
+CLOSE

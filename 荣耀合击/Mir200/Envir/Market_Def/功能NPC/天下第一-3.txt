@@ -1,0 +1,662 @@
+;┏━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━┓
+;┃W w w. Gm0 05. Co m ┃QQ:1565 98018 ┃此 bb 本 来 自 Gm005 网 络┃
+;┗━━━━━━━━━━┻━━━━━━━┻━━━━━━━━━━━━━┛
+[@MAIN]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【天下第一】> <COLOR=clRed Hot~>  <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<点击申请/@S1>　(<COLOR=clFuchsia 攻击增加20点>)   <COLOR=clLime 第一男战士>：<$STR(A51)>(<$STR(G51)>级)　\
+<点击申请/@S2>　(<COLOR=clFuchsia 攻击增加20点>)   <COLOR=clLime 第一女战士>：<$STR(A52)>(<$STR(G52)>级)\
+<点击申请/@S3>　(<COLOR=clFuchsia 魔法增加20点>) 　<COLOR=clLime 第一男法师>：<$STR(A53)>(<$STR(G53)>级)\
+<点击申请/@S4>　(<COLOR=clFuchsia 魔法增加20点>) 　<COLOR=clLime 第一女法师>：<$STR(A54)>(<$STR(G54)>级)　\
+<点击申请/@S5>　(<COLOR=clFuchsia 道术增加20点>)　 <COLOR=clLime 第一男道士>：<$STR(A55)>(<$STR(G55)>级)　\
+<点击申请/@S6>　(<COLOR=clFuchsia 道术增加20点>)　 <COLOR=clLime 第一女道士>：<$STR(A56)>(<$STR(G56)>级)　\
+<COLOR=clFuchsia ———————————————————————————————> <COLOR=clAqua>\
+
+
+
+[@S7]
+#IF
+EQUAL A51 <$USERNAME>
+#ACT
+MOV A51 暂无
+MOV G51 0
+MOV D99 5
+
+#IF
+EQUAL A52 <$USERNAME>
+#ACT
+MOV A52 暂无
+MOV G52 0
+MOV D99 5
+
+#IF
+EQUAL A53 <$USERNAME>
+#ACT
+MOV A53 暂无
+MOV G53 0
+MOV D99 5
+
+#IF
+EQUAL A54 <$USERNAME>
+#ACT
+MOV A54 暂无
+MOV G54 0
+MOV D99 5
+
+#IF
+EQUAL A55 <$USERNAME>
+#ACT
+MOV A55 暂无
+MOV G55 0
+MOV D99 5
+
+#IF
+EQUAL A56 <$USERNAME>
+#ACT
+MOV A56 暂无
+MOV G56 0
+MOV D99 5
+
+#IF
+CheckLevelEx > 0
+#ACT
+MOV D99 <$EXP>
+DELAYCALL 1 ~S7
+BREAK
+
+[~S7]
+#IF
+HaveGuild
+EQUAL A57 <$USERNAME>
+CheckLevelEx ? <$STR(G57)>
+Large D99 <$STR(G58)>
+#ACT
+MOV A58 <$GUILDNAME>
+MOV A57 <$USERNAME>
+MOV G57 <$LEVEL>
+MOV G58 <$EXP>
+CLEARNAMELIST ..\QuestDiary\重要数据\武林霸主名单.txt HardDisk
+addnamelist ..\QuestDiary\重要数据\武林霸主名单.txt HardDisk
+SENDMSG 2 恭喜新一界武林霸主产生了，这人就是：%S(<$STR(G57)>级) 246 54 15
+SENDMSG 2 恭喜玩家[%s]成功申请了武林霸主!天下之大、为我独尊、新的武林霸主已经诞生，下次的武林霸主会是谁?
+MESSAGEBOX 恭喜你，申请成功，你现在武林霸主！请小退上线。。。。
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A57 <$USERNAME>
+CheckLevelEx ? <$STR(G57)>
+Large D99 <$STR(G58)>
+#ACT
+MOV A58
+MOV A57 <$USERNAME>
+MOV G57 <$LEVEL>
+MOV G58 <$EXP>
+CLEARNAMELIST ..\QuestDiary\重要数据\武林霸主名单.txt HardDisk
+addnamelist ..\QuestDiary\重要数据\武林霸主名单.txt HardDisk
+SENDMSG 2 恭喜新一界武林霸主产生了，这人就是：%S(<$STR(G57)>级) 246 54 15
+SENDMSG 2 恭喜玩家[%s]成功申请了武林霸主!天下之大、为我独尊、新的武林霸主已经诞生，下次的武林霸主会是谁?
+MESSAGEBOX 恭喜你，申请成功，你现在武林霸主！请小退上线。。。。
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+HaveGuild
+CheckLevelEx ? <$STR(G57)>
+Large D99 <$STR(G58)>
+#ACT
+GMEXECUTE 开始提问 ~删除封号0
+MOV A58 <$GUILDNAME>
+MOV A57 <$USERNAME>
+MOV G57 <$LEVEL>
+MOV G58 <$EXP>
+CLEARNAMELIST ..\QuestDiary\重要数据\武林霸主名单.txt HardDisk
+addnamelist ..\QuestDiary\重要数据\武林霸主名单.txt HardDisk
+SENDMSG 2 恭喜新一界武林霸主产生了，这人就是：%S(<$STR(G57)>级) 246 54 15
+SENDMSG 2 恭喜玩家[%s]成功申请了武林霸主!天下之大、为我独尊、新的武林霸主已经诞生，下次的武林霸主会是谁?
+MESSAGEBOX 恭喜你，申请成功，你现在武林霸主！请小退上线。。。。
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+HaveGuild
+CheckLevelEx > <$STR(G57)>
+#ACT
+GMEXECUTE 开始提问 ~删除封号0
+MOV A58 <$GUILDNAME>
+MOV A57 <$USERNAME>
+MOV G57 <$LEVEL>
+MOV G58 <$EXP>
+CLEARNAMELIST ..\QuestDiary\重要数据\武林霸主名单.txt HardDisk
+addnamelist ..\QuestDiary\重要数据\武林霸主名单.txt HardDisk
+SENDMSG 2 恭喜新一界武林霸主产生了，这人就是：%S(<$STR(G57)>级) 246 54 15
+SENDMSG 2 恭喜玩家[%s]成功申请了武林霸主!天下之大、为我独尊、新的武林霸主已经诞生，下次的武林霸主会是谁?
+MESSAGEBOX 恭喜你，申请成功，你现在武林霸主！请小退上线。。。。
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+CheckLevelEx ? <$STR(G57)>
+Large D99 <$STR(G58)>
+#ACT
+GMEXECUTE 开始提问 ~删除封号0
+MOV A58
+MOV A57 <$USERNAME>
+MOV G57 <$LEVEL>
+MOV G58 <$EXP>
+CLEARNAMELIST ..\QuestDiary\重要数据\武林霸主名单.txt HardDisk
+addnamelist ..\QuestDiary\重要数据\武林霸主名单.txt HardDisk
+SENDMSG 2 恭喜新一界武林霸主产生了，这人就是：%S(<$STR(G57)>级) 246 54 15
+SENDMSG 2 恭喜玩家[%s]成功申请了武林霸主!天下之大、为我独尊、新的武林霸主已经诞生，下次的武林霸主会是谁?
+MESSAGEBOX 恭喜你，申请成功，你现在武林霸主！请小退上线。。。。
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+CheckLevelEx > <$STR(G57)>
+#ACT
+GMEXECUTE 开始提问 ~删除封号0
+MOV A58
+MOV A57 <$USERNAME>
+MOV G57 <$LEVEL>
+MOV G58 <$EXP>
+CLEARNAMELIST ..\QuestDiary\重要数据\武林霸主名单.txt HardDisk
+addnamelist ..\QuestDiary\重要数据\武林霸主名单.txt HardDisk
+SENDMSG 2 恭喜新一界武林霸主产生了，这人就是：%S(<$STR(G57)>级) 246 54 15
+SENDMSG 2 恭喜玩家[%s]成功申请了武林霸主!天下之大、为我独尊、新的武林霸主已经诞生，下次的武林霸主会是谁?
+MESSAGEBOX 恭喜你，申请成功，你现在武林霸主！请小退上线。。。。
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A57 <$USERNAME>
+#ACT
+MESSAGEBOX 你目前就是武林霸主！努力升级，不要被追赶上！
+DELAYCALL 1 @MAIN
+BREAK
+#ELSEACT
+MESSAGEBOX 你的经验没有“<$STR(A57)>”高，努力升级吧！
+DELAYCALL 1 @MAIN
+BREAK
+
+[@S6]
+#IF
+Checkjob Taoist
+GENDER Woman
+#ACT
+MOV D99 0
+#ELSEACT
+MESSAGEBOX 不要捣乱，你不是女道士，不要乱申请！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A57 <$USERNAME>
+#ACT
+MESSAGEBOX 你目前是武林霸主，不能申请其他天下第一。！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A51 <$USERNAME>
+#ACT
+MOV A51 暂无
+MOV G51 0
+MOV D99 5
+
+#IF
+EQUAL A52 <$USERNAME>
+#ACT
+MOV A52 暂无
+MOV G52 0
+MOV D99 5
+
+#IF
+EQUAL A53 <$USERNAME>
+#ACT
+MOV A53 暂无
+MOV G53 0
+MOV D99 5
+
+#IF
+EQUAL A54 <$USERNAME>
+#ACT
+MOV A54 暂无
+MOV G54 0
+MOV D99 5
+
+#IF
+EQUAL A55 <$USERNAME>
+#ACT
+MOV A55 暂无
+MOV G55 0
+MOV D99 5
+
+#IF
+CheckLevelEx > <$STR(G56)>
+#ACT
+GMEXECUTE 开始提问 ~删除封号1
+MOV A56 <$USERNAME>
+MOV G56 <$LEVEL>
+SENDMSG <$STR(D99)> 恭喜新一界天下第一女道士产生了，她就是：%S(<$STR(G56)>级) 246 54 15
+CLEARNAMELIST ..\QuestDiary\重要数据\女道士名单.txt HardDisk
+addnamelist ..\QuestDiary\重要数据\女道士名单.txt HardDisk
+SENDMSG 4 恭喜玩家[%s]成功申请了天下第一女道士!他在烽烟四起的<$SERVERNAME>中修炼成为天下第一,明天的天下第一会是谁?
+SENDMSG 2 恭喜玩家[%s]成功申请了天下第一女道士!他在烽烟四起的<$SERVERNAME>中修炼成为天下第一,明天的天下第一会是谁?
+MESSAGEBOX 恭喜你，申请成功，你现在是天下第一女道士！请小退上线。。。。
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A56 <$USERNAME>
+#ACT
+MESSAGEBOX 你目前就是第一女道士！努力升级，不要被追赶上！
+DELAYCALL 1 @MAIN
+BREAK
+#ELSEACT
+MESSAGEBOX 你的级别没有“<$STR(A56)>”高，努力升级吧！
+DELAYCALL 1 @MAIN
+BREAK
+
+[@S5]
+#IF
+Checkjob Taoist
+GENDER MAN
+#ACT
+MOV D99 0
+#ELSEACT
+MESSAGEBOX 不要捣乱，你不是男道士，不要乱申请！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A57 <$USERNAME>
+#ACT
+MESSAGEBOX 你目前是武林霸主，不能申请其他天下第一。！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A51 <$USERNAME>
+#ACT
+MOV A51 暂无
+MOV G51 0
+MOV D99 5
+
+#IF
+EQUAL A52 <$USERNAME>
+#ACT
+MOV A52 暂无
+MOV G52 0
+MOV D99 5
+
+#IF
+EQUAL A53 <$USERNAME>
+#ACT
+MOV A53 暂无
+MOV G53 0
+MOV D99 5
+
+#IF
+EQUAL A54 <$USERNAME>
+#ACT
+MOV A54 暂无
+MOV G54 0
+MOV D99 5
+
+#IF
+EQUAL A56 <$USERNAME>
+#ACT
+MOV A56 暂无
+MOV G56 0
+MOV D99 5
+
+#IF
+CheckLevelEx > <$STR(G55)>
+#ACT
+GMEXECUTE 开始提问 ~删除封号2
+MOV A55 <$USERNAME>
+MOV G55 <$LEVEL>
+SENDMSG <$STR(D99)> 恭喜新一界天下第一男道士产生了，他就是：%S(<$STR(G55)>级) 246 54 15
+CLEARNAMELIST ..\QuestDiary\重要数据\男道士名单.txt HardDisk
+addnamelist ..\QuestDiary\重要数据\男道士名单.txt HardDisk
+SENDMSG 4 恭喜玩家[%s]成功申请了天下第一男道士!他在烽烟四起的<$SERVERNAME>中修炼成为天下第一,明天的天下第一会是谁?
+SENDMSG 2 恭喜玩家[%s]成功申请了天下第一男道士!他在烽烟四起的<$SERVERNAME>中修炼成为天下第一,明天的天下第一会是谁?
+MESSAGEBOX 恭喜你，申请成功，你现在是天下第一男道士！请小退上线。。。。
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A55 <$USERNAME>
+#ACT
+MESSAGEBOX 你目前就是第一男道士！努力升级，不要被追赶上！
+DELAYCALL 1 @MAIN
+BREAK
+#ELSEACT
+MESSAGEBOX 你的级别没有“<$STR(A55)>”高，努力升级吧！
+DELAYCALL 1 @MAIN
+BREAK
+
+[@S4]
+#IF
+Checkjob Wizard
+GENDER Woman
+#ACT
+MOV D99 0
+#ELSEACT
+MESSAGEBOX 不要捣乱，你不是女法师，不要乱申请！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A57 <$USERNAME>
+#ACT
+MESSAGEBOX 你目前是武林霸主，不能申请其他天下第一。！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A51 <$USERNAME>
+#ACT
+MOV A51 暂无
+MOV G51 0
+MOV D99 5
+
+#IF
+EQUAL A52 <$USERNAME>
+#ACT
+MOV A52 暂无
+MOV G52 0
+MOV D99 5
+
+#IF
+EQUAL A53 <$USERNAME>
+#ACT
+MOV A53 暂无
+MOV G53 0
+MOV D99 5
+
+#IF
+EQUAL A55 <$USERNAME>
+#ACT
+MOV A55 暂无
+MOV G55 0
+MOV D99 5
+
+#IF
+EQUAL A56 <$USERNAME>
+#ACT
+MOV A56 暂无
+MOV G56 0
+MOV D99 5
+
+#IF
+CheckLevelEx > <$STR(G54)>
+#ACT
+GMEXECUTE 开始提问 ~删除封号3
+MOV A54 <$USERNAME>
+MOV G54 <$LEVEL>
+SENDMSG <$STR(D99)> 恭喜新一界天下第一女法师产生了，她就是：%S(<$STR(G54)>级) 246 54 15
+CLEARNAMELIST ..\QuestDiary\重要数据\女法师名单.txt HardDisk
+addnamelist ..\QuestDiary\重要数据\女法师名单.txt HardDisk
+SENDMSG 4 恭喜玩家[%s]成功申请了天下第一女法师!他在烽烟四起的<$SERVERNAME>中修炼成为天下第一,明天的天下第一会是谁?
+SENDMSG 2 恭喜玩家[%s]成功申请了天下第一女法师!他在烽烟四起的<$SERVERNAME>中修炼成为天下第一,明天的天下第一会是谁?
+MESSAGEBOX 恭喜你，申请成功，你现在是天下第一女法师了！请小退上线。。。。
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A54 <$USERNAME>
+#ACT
+MESSAGEBOX 你目前就是第一女法师！努力升级，不要被追赶上！
+DELAYCALL 1 @MAIN
+BREAK
+#ELSEACT
+MESSAGEBOX 你的级别没有“<$STR(A54)>”高，努力升级吧！
+DELAYCALL 1 @MAIN
+BREAK
+
+
+
+
+
+
+
+
+[@S3]
+#IF
+Checkjob Wizard
+GENDER MAN
+#ACT
+MOV D99 0
+#ELSEACT
+MESSAGEBOX 不要捣乱，你不是男法师，不要乱申请！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A57 <$USERNAME>
+#ACT
+MESSAGEBOX 你目前是武林霸主，不能申请其他天下第一。！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A51 <$USERNAME>
+#ACT
+MOV A51 暂无
+MOV G51 0
+MOV D99 5
+
+#IF
+EQUAL A52 <$USERNAME>
+#ACT
+MOV A52 暂无
+MOV G52 0
+MOV D99 5
+
+#IF
+EQUAL A54 <$USERNAME>
+#ACT
+MOV A54 暂无
+MOV G54 0
+MOV D99 5
+
+#IF
+EQUAL A55 <$USERNAME>
+#ACT
+MOV A55 暂无
+MOV G55 0
+MOV D99 5
+
+#IF
+EQUAL A56 <$USERNAME>
+#ACT
+MOV A56 暂无
+MOV G56 0
+MOV D99 5
+
+#IF
+CheckLevelEx > <$STR(G53)>
+#ACT
+GMEXECUTE 开始提问 ~删除封号4
+MOV A53 <$USERNAME>
+MOV G53 <$LEVEL>
+SENDMSG <$STR(D99)> 恭喜新一界天下第一男法师产生了，他就是：%S(<$STR(G53)>级) 246 54 15
+CLEARNAMELIST ..\QuestDiary\重要数据\男法师名单.txt HardDisk
+addnamelist ..\QuestDiary\重要数据\男法师名单.txt HardDisk
+SENDMSG 4 恭喜玩家[%s]成功申请了天下第一男法师!他在烽烟四起的<$SERVERNAME>中修炼成为天下第一,明天的天下第一会是谁?
+SENDMSG 2 恭喜玩家[%s]成功申请了天下第一男法师!他在烽烟四起的<$SERVERNAME>中修炼成为天下第一,明天的天下第一会是谁?
+MESSAGEBOX 恭喜你，申请成功，你现是天下第一男法师了！请小退上线。。。。
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A53 <$USERNAME>
+#ACT
+MESSAGEBOX 你目前就是第一男法师！努力升级，不要被追赶上！
+DELAYCALL 1 @MAIN
+BREAK
+#ELSEACT
+MESSAGEBOX 你的级别没有“<$STR(A53)>”高，努力升级吧！
+DELAYCALL 1 @MAIN
+BREAK
+
+[@S2]
+#IF
+Checkjob Warrior
+GENDER Woman
+#ACT
+MOV D99 0
+#ELSEACT
+MESSAGEBOX 不要捣乱，你不是女战士，不要乱申请！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A57 <$USERNAME>
+#ACT
+MESSAGEBOX 你目前是武林霸主，不能申请其他天下第一。！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A51 <$USERNAME>
+#ACT
+MOV A51 暂无
+MOV G51 0
+MOV D99 5
+
+#IF
+EQUAL A53 <$USERNAME>
+#ACT
+MOV A53 暂无
+MOV G53 0
+MOV D99 5
+
+#IF
+EQUAL A54 <$USERNAME>
+#ACT
+MOV A54 暂无
+MOV G54 0
+MOV D99 5
+
+#IF
+EQUAL A55 <$USERNAME>
+#ACT
+MOV A55 暂无
+MOV G55 0
+MOV D99 5
+
+#IF
+EQUAL A56 <$USERNAME>
+#ACT
+MOV A56 暂无
+MOV G56 0
+MOV D99 5
+
+#IF
+CheckLevelEx > <$STR(G52)>
+#ACT
+GMEXECUTE 开始提问 ~删除封号5
+MOV A52 <$USERNAME>
+MOV G52 <$LEVEL>
+SENDMSG <$STR(D99)> 恭喜新一界天下第一女战士产生了，她就是：%S(<$STR(G52)>级) 246 54 15
+CLEARNAMELIST ..\QuestDiary\重要数据\女战士名单.txt HardDisk
+addnamelist ..\QuestDiary\重要数据\女战士名单.txt HardDisk
+SENDMSG 4 恭喜玩家[%s]成功申请了天下第一女战士!他在烽烟四起的<$SERVERNAME>中修炼成为天下第一,明天的天下第一会是谁?
+SENDMSG 2 恭喜玩家[%s]成功申请了天下第一女战士!他在烽烟四起的<$SERVERNAME>中修炼成为天下第一,明天的天下第一会是谁?
+MESSAGEBOX 恭喜你，申请成功，你现在是天下第一女战士了！请小退上线。。。。
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A52 <$USERNAME>
+#ACT
+MESSAGEBOX 你目前就是第一女战士！努力升级，不要被追赶上！
+DELAYCALL 1 @MAIN
+BREAK
+#ELSEACT
+MESSAGEBOX 你的级别没有“<$STR(A52)>”高，努力升级吧！
+DELAYCALL 1 @MAIN
+BREAK
+
+[@S1]
+#IF
+Checkjob Warrior
+GENDER MAN
+#ACT
+MOV D99 0
+#ELSEACT
+MESSAGEBOX 不要捣乱，你不是男战士，不要乱申请！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A57 <$USERNAME>
+#ACT
+MESSAGEBOX 你目前是武林霸主，不能申请其他天下第一。！
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A52 <$USERNAME>
+#ACT
+MOV A52 暂无
+MOV G52 0
+MOV D99 5
+
+#IF
+EQUAL A53 <$USERNAME>
+#ACT
+MOV A53 暂无
+MOV G53 0
+MOV D99 5
+
+#IF
+EQUAL A54 <$USERNAME>
+#ACT
+MOV A54 暂无
+MOV G54 0
+MOV D99 5
+
+#IF
+EQUAL A55 <$USERNAME>
+#ACT
+MOV A55 暂无
+MOV G55 0
+MOV D99 5
+
+#IF
+EQUAL A56 <$USERNAME>
+#ACT
+MOV A56 暂无
+MOV G56 0
+MOV D99 5
+
+#IF
+CheckLevelEx > <$STR(G51)>
+#ACT
+GMEXECUTE 开始提问 ~删除封号6
+MOV A51 <$USERNAME>
+MOV G51 <$LEVEL>
+SENDMSG <$STR(D99)> 恭喜新一界天下第一男战士产生了，他就是：%S(<$STR(G51)>级) 246 54 15
+CLEARNAMELIST ..\QuestDiary\重要数据\男战士名单.txt HardDisk
+addnamelist ..\QuestDiary\重要数据\男战士名单.txt HardDisk
+SENDMSG 4 恭喜玩家[%s]成功申请了天下第一男战士!他在烽烟四起的<$SERVERNAME>中修炼成为天下第一,明天的天下第一会是谁?
+SENDMSG 2 恭喜玩家[%s]成功申请了天下第一男战士!他在烽烟四起的<$SERVERNAME>中修炼成为天下第一,明天的天下第一会是谁?
+MESSAGEBOX 恭喜你，申请成功，你现在是天下第一男战士了！请小退上线。。。。
+DELAYCALL 1 @MAIN
+BREAK
+
+#IF
+EQUAL A51 <$USERNAME>
+#ACT
+MESSAGEBOX 你目前就是第一男战士！努力升级，不要被追赶上！
+DELAYCALL 1 @MAIN
+BREAK
+#ELSEACT
+MESSAGEBOX 你的级别没有“<$STR(A51)>”高，努力升级吧！
+DELAYCALL 1 @MAIN
+BREAK

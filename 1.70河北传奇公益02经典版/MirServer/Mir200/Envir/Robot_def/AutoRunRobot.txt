@@ -1,0 +1,2 @@
+#AUTORUN NPC SEC 1 @坐庄游戏
+#AutoRun NPC SEC 1 @开始摇子

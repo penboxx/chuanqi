@@ -1,0 +1,1557 @@
+[@main]
+#if
+#ACT
+;SENDMSG 4 〖中国复古系统商人〗24小时在线秒回收，回收比例1:200（10%手续费）安全可靠，公平公正.坚决抵制私下交易！！！本服推出元宝免费担保！！！一经发现封号处理！
+;SENDMSG 11 〖中国复古系统商人〗24小时在线秒回收，回收比例1:200（10%手续费）安全可靠，公平公正.坚决抵制私下交易！！！本服推出元宝免费担保！！！一经发现封号处理！
+#SAY
+　<COLOR=$000077FF RMB商人回收>  <RMB提现申请/@RMB查询提现支付宝>  <RMB提现记录/@提现记录>   <我要充值元宝/@我要充值元宝>　\
+<COLOR=clAqua ╔─☆→────────→☆←─────────←☆─╗>\
+<COLOR=clAqua ┊><COLOR=$00F7B5CE №1:> <COLOR=clRed 回收红包>    <COLOR=clAqua 永久回收价格:><COLOR=clLime   1:1  >  <确认回收·√/@回收红包> <COLOR=clAqua ┊> \ 
+<COLOR=clAqua ┊─☆→────────→☆←─────────←☆─┊>\
+<COLOR=clAqua ┊><COLOR=$00F7B5CE №2>:<COLOR=clRed  回收元宝>    <COLOR=clAqua 永久回收:><COLOR=clLime 300元宝:1元 > <确认回收·√/@元宝比例> <COLOR=clAqua ┊> \
+<COLOR=clAqua ┊─☆→────────→☆←─────────←☆─┊>\ 
+<COLOR=clAqua ┊><COLOR=$00F7B5CE №3>:<COLOR=clGray  回收装备>   <COLOR=clGray  永久回收价格:><COLOR=clGray 等待开放> <COLOR=clGray 等待开放·√> <COLOR=clAqua ┊> \
+<COLOR=clAqua ╚─☆→────────→☆←─────────←☆─╝>\
+<COLOR=clAqua 本服承诺:><COLOR=clFuchsia 装备全能爆,真实回收>.<Hot~>  <COLOR=$002AB4F0 您当前人民币金额：><$HUMAN(人民币点)>
+　                 
+
+
+
+
+[@元宝比例]
+#IF
+TRUE
+#ACT
+QUERYVALUE 80 1 9 @元宝比例B 请输入您要回收的元宝数量（最小300元宝）：
+
+
+[@元宝比例B]
+#IF
+SMALL M80 300
+#ACT
+MESSAGEBOX 对不起，回收的元宝数最少为【300元宝】！
+BREAK
+#IF
+CHECKGAMEGOLD < <$STR(M80)>
+#ACT
+MESSAGEBOX 对不起，您身上的元宝数量不够【<$STR(M80)>】！
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M70 <$STR(M80)>
+DIV M70 300
+GAMEGOLD - <$STR(M80)>
+CALCVAR HUMAN 人民币点 + <$STR(M70)>
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 0 恭喜『%s』在中国复古在线商人处。成功回收了<$STR(M70)>个人民币! 245 0 
+SENDMSG 0 恭喜『%s』在中国复古在线商人处。成功回收了<$STR(M70)>个人民币! 245 0 
+goto @main
+BREAK
+
+
+
+
+[@我要充值元宝]
+\  \  \
+　  <充值1元/@充值1元>　  <充值10元/@充值10元>    <充值50元/@充值50元>    <充值100元/@充值100元>\
+
+
+
+[@999RMB点]
+#ACT
+QUERYVALUE 5 1 4 @999兑换人民币 [200元宝兑换1人民币]请输入你想兑换人民币金额\4位数\例:1234
+
+[@999兑换人民币]
+#IF
+large M5 0
+#ACT
+MUL M5 200
+#ELSEACT
+messagebox 兑换失败！输入错误！
+BREAK
+#IF
+CHECKGAMEGOLD ? <$STR(M5)>
+#ACT
+GAMEGOLD - <$STR(M5)>
+DIV M5 200
+INC G39 <$STR(M5)>
+INC G68 <$STR(M5)>
+CALCVAR HUMAN 人民币点 + <$STR(M5)>
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+goto @main
+SENDMSG 0 恭喜『%s』在中国复古在线商人处。成功兑换了<$STR(M5)>个人民币! 245 0 
+SENDMSG 0 恭喜『%s』在中国复古在线商人处。成功兑换了<$STR(M5)>个人民币! 245 0 
+#ELSEACT
+messagebox 兑换失败！最少需要200元宝才能兑换！
+goto @main
+BREAK
+
+
+
+
+
+
+[@充值1元]
+#IF
+CHECKVAR HUMAN 人民币点 ? 1
+#ACT
+DEC G39 10
+CALCVAR HUMAN 人民币点 - 1
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+GAMEGOLD + 2000
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过中国复古商人获得2000元宝,如果您也想获得,请赶快充值吧!
+BREAK
+
+
+
+[@充值50元]
+#IF
+CHECKVAR HUMAN 人民币点 > 49
+#ACT
+DEC G39 50
+CALCVAR HUMAN 人民币点 - 50
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+GAMEGOLD + 10000
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过中国复古商人获得10000元宝,如果您也想获得,请赶快充值吧!
+BREAK
+
+[@充值100元]
+#IF
+CHECKVAR HUMAN 人民币点 > 99
+#ACT
+DEC G39 100
+CALCVAR HUMAN 人民币点 - 100
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+GAMEGOLD + 20000
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过中国复古商人获得20000元宝,如果您也想获得,请赶快充值吧!
+BREAK
+
+
+[@回收红包]
+#IF
+checkitem 1元红包 1
+#ACT
+take 1元红包 1
+INC G39 1
+INC G68 1
+CALCVAR HUMAN 人民币点 + 1
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【1元红包】,获得人民币1元。 251 252 60
+BREAK
+
+#IF
+checkitem 2元红包 1
+#ACT
+take 2元红包 1
+INC G39 2
+INC G68 2
+CALCVAR HUMAN 人民币点 + 2
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【2元红包】,获得人民币2元。 251 252 60
+BREAK
+
+
+#IF
+checkitem 3元红包 1
+#ACT
+take 3元红包 1
+INC G39 3
+INC G68 3
+CALCVAR HUMAN 人民币点 + 3
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【3元红包】,获得人民币3元。 251 252 60
+BREAK
+
+
+#IF
+checkitem 4元红包 1
+#ACT
+take 4元红包 1
+INC G39 4
+INC G68 4
+CALCVAR HUMAN 人民币点 + 4
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【4元红包】,获得人民币4元。 251 252 60
+BREAK
+
+
+#IF
+checkitem 5元红包 1
+#ACT
+take 5元红包 1
+INC G39 5
+INC G68 5
+CALCVAR HUMAN 人民币点 + 5
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【5元红包】,获得人民币5元。 251 252 60
+BREAK
+
+#IF
+checkitem 6元红包 1
+#ACT
+take 6元红包 1
+INC G39 6
+INC G68 6
+CALCVAR HUMAN 人民币点 + 6
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【6元红包】,获得人民币6元。 251 252 60
+BREAK
+
+
+#IF
+checkitem 7元红包 1
+#ACT
+take 7元红包 1
+INC G39 7
+INC G68 7
+CALCVAR HUMAN 人民币点 + 7
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【7元红包】,获得人民币7元。 251 252 60
+BREAK
+
+
+#IF
+checkitem 8元红包 1
+#ACT
+take 8元红包 1
+INC G39 8
+INC G68 8
+CALCVAR HUMAN 人民币点 + 8
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【8元红包】,获得人民币8元。 251 252 60
+BREAK
+
+#IF
+checkitem 9元红包 1
+#ACT
+take 9元红包 1
+INC G39 9
+INC G68 9
+CALCVAR HUMAN 人民币点 + 9
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【9元红包】,获得人民币9元。 251 252 60
+BREAK
+
+#IF
+checkitem 10元红包 1
+#ACT
+take 10元红包 1
+INC G39 10
+INC G68 10
+CALCVAR HUMAN 人民币点 + 10
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【10元红包】,获得人民币10元。 251 252 60
+BREAK
+
+#IF
+checkitem 11元红包 1
+#ACT
+take 11元红包 1
+INC G39 11
+INC G68 11
+CALCVAR HUMAN 人民币点 + 11
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【11元红包】,获得人民币11元。 251 252 60
+BREAK
+
+#IF
+checkitem 12元红包 1
+#ACT
+take 12元红包 1
+INC G39 12
+INC G68 12
+CALCVAR HUMAN 人民币点 + 12
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【12元红包】,获得人民币12元。 251 252 60
+BREAK
+
+#IF
+checkitem 13元红包 1
+#ACT
+take 13元红包 1
+INC G39 13
+INC G68 13
+CALCVAR HUMAN 人民币点 + 13
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【13元红包】,获得人民币13元。 251 252 60
+BREAK
+
+#IF
+checkitem 14元红包 1
+#ACT
+take 14元红包 1
+INC G39 14
+INC G68 14
+CALCVAR HUMAN 人民币点 + 14
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【14元红包】,获得人民币14元。 251 252 60
+BREAK
+
+#IF
+checkitem 15元红包 1
+#ACT
+take 15元红包 1
+INC G39 15
+INC G68 15
+CALCVAR HUMAN 人民币点 + 15
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【15元红包】,获得人民币15元。 251 252 60
+BREAK
+
+#IF
+checkitem 20元红包 1
+#ACT
+take 20元红包 1
+INC G39 20
+INC G68 20
+CALCVAR HUMAN 人民币点 + 20
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【20元红包】,获得人民币20元。 251 252 60
+BREAK
+
+#IF
+checkitem 30元红包 1
+#ACT
+take 30元红包 1
+INC G39 30
+INC G68 30
+CALCVAR HUMAN 人民币点 + 30
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【30元红包】,获得人民币30元。 251 252 60
+BREAK
+
+#IF
+checkitem 40元红包 1
+#ACT
+take 40元红包 1
+INC G39 40
+INC G68 40
+CALCVAR HUMAN 人民币点 + 40
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【40元红包】,获得人民币40元。 251 252 60
+BREAK
+
+
+#IF
+checkitem 50元红包 1
+#ACT
+take 50元红包 1
+INC G39 50
+INC G68 50
+CALCVAR HUMAN 人民币点 + 50
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:回收成功.您当前的人民币为：<$HUMAN(人民币点)>元!
+SENDMSG 5 恭喜玩家『%s』在土城在线商人处回收红包功能回收了【50元红包】,获得人民币50元。 251 252 60
+BREAK
+
+
+[@提现记录]
+#IF
+CHECKLEVELEX > 1
+#ACT
+LOADVAR GLOBAL 提现A98 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A99 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A94 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A95 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A96 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A97 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A92 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A93 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A91 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A90 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A88 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A89 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A84 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A85 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A86 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A87 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A82 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A83 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A81 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A80 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A78 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A79 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A74 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A75 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A76 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A77 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A72 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A73 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A71 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+LOADVAR GLOBAL 提现A70 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+MESSAGEBOX \\本服开通自助担保系统,详细说明如下：\　\1.玩家可以通过NPC充值元宝,在散人手中求购，购买玩家手上的物品\　\2.当玩家通过各种渠道获得RMB点满10元后,可以通过NPC自助提现\　\3.本服24小时随时可以提现10分钟以内到帐。
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A99) HardDisk
+#ACT
+MOV S99 <COLOR=$002AB4F0
+inc S99 
+inc S99 <$GLOBAL(提现A99)>　审核中　
+inc S99 >
+DelayCall 100 @A98
+#ELSEACT
+MOV S99 <COLOR=clLime
+inc S99 
+inc S99 <$GLOBAL(提现A99)>　已汇款　
+inc S99 >
+DelayCall 100 @A98
+BREAK
+
+[@A98]
+#IF
+CHECKVAR GLOBAL 提现A99 = 
+#ACT
+MOV S99 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A98) HardDisk
+#ACT
+MOV S98 <COLOR=$002AB4F0
+inc S98 
+inc S98 <$GLOBAL(提现A98)>　审核中　
+inc S98 >
+DelayCall 100 @A97
+#ELSEACT
+MOV S98 <COLOR=clLime
+inc S98 
+inc S98 <$GLOBAL(提现A98)>　已汇款　
+inc S98 >
+DelayCall 100 @A97
+BREAK
+
+[@A97]
+#IF
+CHECKVAR GLOBAL 提现A98 = 
+#ACT
+MOV S98 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A97) HardDisk
+#ACT
+MOV S97 <COLOR=$002AB4F0
+inc S97 
+inc S97 <$GLOBAL(提现A97)>　审核中　
+inc S97 >
+DelayCall 100 @A96
+#ELSEACT
+MOV S97 <COLOR=clLime
+inc S97 
+inc S97 <$GLOBAL(提现A97)>　已汇款　
+inc S97 >
+DelayCall 100 @A96
+BREAK
+
+[@A96]
+#IF
+CHECKVAR GLOBAL 提现A97 = 
+#ACT
+MOV S97 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A96) HardDisk
+#ACT
+MOV S96 <COLOR=$002AB4F0
+inc S96 
+inc S96 <$GLOBAL(提现A96)>　审核中　
+inc S96 >
+DelayCall 100 @A95
+#ELSEACT
+MOV S96 <COLOR=clLime
+inc S96 
+inc S96 <$GLOBAL(提现A96)>　已汇款　
+inc S96 >
+DelayCall 100 @A95
+BREAK
+
+[@A95]
+#IF
+CHECKVAR GLOBAL 提现A96 = 
+#ACT
+MOV S96 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A95) HardDisk
+#ACT
+MOV S95 <COLOR=$002AB4F0
+inc S95 
+inc S95 <$GLOBAL(提现A95)>　审核中　
+inc S95 >
+DelayCall 100 @提现记录第一页
+#ELSEACT
+MOV S95 <COLOR=clLime
+inc S95 
+inc S95 <$GLOBAL(提现A95)>　已汇款　
+inc S95 >
+DelayCall 100 @提现记录第一页
+BREAK
+
+[@提现记录第一页]
+#IF
+CHECKVAR GLOBAL 提现A95 = 
+#ACT
+MOV S95 　
+#SAY
+　<RMB商人回收·√/@main> 　 <RMB提现申请·√/@RMB查询提现支付宝> 　 <COLOR=$000077FF RMB提现记录·√>　\
+　<COLOR=clFuchsia 提现角色>               <COLOR=clFuchsia 提现金额>                <COLOR=clFuchsia 当前状态>\
+<$STR(S99)>\
+<$STR(S98)>\
+<$STR(S97)>\
+<$STR(S96)>\
+<$STR(S95)>\
+<COLOR=$00FF8877 说明:本服实价回收RMB提现收取10%手续费,显示最近的30条>\
+<返回首页/@main>   <COLOR=$000077FF 第1页>   <第2页/@第2页>   <第3页/@第3页>   <第4页/@第4页>   <第5页/@第5页>   <第6页/@第6页>\
+
+#ELSESAY
+　<RMB商人回收·√/@main> 　 <RMB提现申请·√/@RMB查询提现支付宝> 　 <COLOR=$000077FF RMB提现记录·√>　\
+　<COLOR=clFuchsia 提现角色>               <COLOR=clFuchsia 提现金额>                <COLOR=clFuchsia 当前状态>\
+<$STR(S99)>\
+<$STR(S98)>\
+<$STR(S97)>\
+<$STR(S96)>\
+<$STR(S95)>\
+<COLOR=$00FF8877 说明:本服实价回收RMB提现收取10%手续费,显示最近的30条>\
+<返回首页/@main>   <COLOR=$000077FF 第1页>   <第2页/@第2页>   <第3页/@第3页>   <第4页/@第4页>   <第5页/@第5页>   <第6页/@第6页>\
+
+
+[@第2页]
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A94) HardDisk
+#ACT
+MOV S94 <COLOR=$002AB4F0
+inc S94 
+inc S94 <$GLOBAL(提现A94)>　审核中　
+inc S94 >
+DelayCall 100 @A93
+#ELSEACT
+MOV S94 <COLOR=clLime
+inc S94 
+inc S94 <$GLOBAL(提现A94)>　已汇款　
+inc S94 >
+DelayCall 100 @A93
+BREAK
+
+[@A93]
+#IF
+CHECKVAR GLOBAL 提现A94 = 
+#ACT
+MOV S94 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A93) HardDisk
+#ACT
+MOV S93 <COLOR=$002AB4F0
+inc S93 
+inc S93 <$GLOBAL(提现A93)>　审核中　
+inc S93 >
+DelayCall 100 @A92
+#ELSEACT
+MOV S93 <COLOR=clLime
+inc S93 
+inc S93 <$GLOBAL(提现A93)>　已汇款　
+inc S93 >
+DelayCall 100 @A92
+BREAK
+
+[@A92]
+#IF
+CHECKVAR GLOBAL 提现A93 = 
+#ACT
+MOV S93 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A92) HardDisk
+#ACT
+MOV S92 <COLOR=$002AB4F0
+inc S92 
+inc S92 <$GLOBAL(提现A92)>　审核中　
+inc S92 >
+DelayCall 100 @A91
+#ELSEACT
+MOV S92 <COLOR=clLime
+inc S92 
+inc S92 <$GLOBAL(提现A92)>　已汇款　
+inc S92 >
+DelayCall 100 @A91
+BREAK
+
+[@A91]
+#IF
+CHECKVAR GLOBAL 提现A92 = 
+#ACT
+MOV S92 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A91) HardDisk
+#ACT
+MOV S91 <COLOR=$002AB4F0
+inc S91 
+inc S91 <$GLOBAL(提现A91)>　审核中　
+inc S91 >
+DelayCall 100 @A90
+#ELSEACT
+MOV S91 <COLOR=clLime
+inc S91 
+inc S91 <$GLOBAL(提现A91)>　已汇款　
+inc S91 >
+DelayCall 100 @A90
+BREAK
+
+[@A90]
+#IF
+CHECKVAR GLOBAL 提现A91 = 
+#ACT
+MOV S91 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A90) HardDisk
+#ACT
+MOV S90 <COLOR=$002AB4F0
+inc S90 
+inc S90 <$GLOBAL(提现A90)>　审核中　
+inc S90 >
+DelayCall 100 @提现记录第二页
+#ELSEACT
+MOV S90 <COLOR=clLime
+inc S90 
+inc S90 <$GLOBAL(提现A90)>　已汇款　
+inc S90 >
+DelayCall 100 @提现记录第二页
+BREAK
+
+[@提现记录第二页]
+#IF
+CHECKVAR GLOBAL 提现A90 = 
+#ACT
+MOV S90 　
+#SAY
+　<RMB商人回收·√/@main> 　 <RMB提现申请·√/@RMB查询提现支付宝> 　 <COLOR=$000077FF RMB提现记录·√>　\
+　<COLOR=clFuchsia 提现角色>               <COLOR=clFuchsia 提现金额>                <COLOR=clFuchsia 当前状态>\
+<$STR(S94)>\
+<$STR(S93)>\
+<$STR(S92)>\
+<$STR(S91)>\
+<$STR(S90)>\
+<COLOR=$00FF8877 说明:本服实价回收RMB提现收取10%手续费,显示最近的30条>\
+<返回首页/@main>   <第1页/@提现记录>   <COLOR=$000077FF 第2页>   <第3页/@第3页>   <第4页/@第4页>   <第5页/@第5页>   <第6页/@第6页>\
+#ELSESAY
+　<RMB商人回收·√/@main> 　 <RMB提现申请·√/@RMB查询提现支付宝> 　 <COLOR=$000077FF RMB提现记录·√>　\
+　<COLOR=clFuchsia 提现角色>               <COLOR=clFuchsia 提现金额>                <COLOR=clFuchsia 当前状态>\
+<$STR(S94)>\
+<$STR(S93)>\
+<$STR(S92)>\
+<$STR(S91)>\
+<$STR(S90)>\
+<COLOR=$00FF8877 说明:本服实价回收RMB提现收取10%手续费,显示最近的30条>\
+<返回首页/@main>   <第1页/@提现记录>   <COLOR=$000077FF 第2页>   <第3页/@第3页>   <第4页/@第4页>   <第5页/@第5页>   <第6页/@第6页>\
+
+[@第3页]
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A89) HardDisk
+#ACT
+MOV S89 <COLOR=$002AB4F0
+inc S89 
+inc S89 <$GLOBAL(提现A89)>　审核中　
+inc S89 >
+DelayCall 100 @A88
+#ELSEACT
+MOV S89 <COLOR=clLime
+inc S89 
+inc S89 <$GLOBAL(提现A89)>　已汇款　
+inc S89 >
+DelayCall 100 @A88
+BREAK
+
+[@A88]
+#IF
+CHECKVAR GLOBAL 提现A89 = 
+#ACT
+MOV S89 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A88) HardDisk
+#ACT
+MOV S88 <COLOR=$002AB4F0
+inc S88 
+inc S88 <$GLOBAL(提现A88)>　审核中　
+inc S88 >
+DelayCall 100 @A87
+#ELSEACT
+MOV S88 <COLOR=clLime
+inc S88 
+inc S88 <$GLOBAL(提现A88)>　已汇款　
+inc S88 >
+DelayCall 100 @A87
+BREAK
+
+[@A87]
+#IF
+CHECKVAR GLOBAL 提现A88 = 
+#ACT
+MOV S88 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A87) HardDisk
+#ACT
+MOV S87 <COLOR=$002AB4F0
+inc S87 
+inc S87 <$GLOBAL(提现A87)>　审核中　
+inc S87 >
+DelayCall 100 @A86
+#ELSEACT
+MOV S87 <COLOR=clLime
+inc S87 
+inc S87 <$GLOBAL(提现A87)>　已汇款　
+inc S87 >
+DelayCall 100 @A86
+BREAK
+
+[@A86]
+#IF
+CHECKVAR GLOBAL 提现A87 = 
+#ACT
+MOV S87 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A86) HardDisk
+#ACT
+MOV S86 <COLOR=$002AB4F0
+inc S86 
+inc S86 <$GLOBAL(提现A86)>　审核中　
+inc S86 >
+DelayCall 100 @A85
+#ELSEACT
+MOV S86 <COLOR=clLime
+inc S86 
+inc S86 <$GLOBAL(提现A86)>　已汇款　
+inc S86 >
+DelayCall 100 @A85
+BREAK
+
+[@A85]
+#IF
+CHECKVAR GLOBAL 提现A86 = 
+#ACT
+MOV S86 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A85) HardDisk
+#ACT
+MOV S85 <COLOR=$002AB4F0
+inc S85 
+inc S85 <$GLOBAL(提现A85)>　审核中　
+inc S85 >
+DelayCall 100 @提现记录第三页
+#ELSEACT
+MOV S85 <COLOR=clLime
+inc S85 
+inc S85 <$GLOBAL(提现A85)>　已汇款　
+inc S85 >
+DelayCall 100 @提现记录第三页
+BREAK
+
+[@提现记录第三页]
+#IF
+CHECKVAR GLOBAL 提现A85 = 
+#ACT
+MOV S85 　
+#SAY
+　<RMB商人回收·√/@main> 　 <RMB提现申请·√/@RMB查询提现支付宝> 　 <COLOR=$000077FF RMB提现记录·√>　\
+　<COLOR=clFuchsia 提现角色>               <COLOR=clFuchsia 提现金额>                <COLOR=clFuchsia 当前状态>\
+<$STR(S89)>\
+<$STR(S88)>\
+<$STR(S87)>\
+<$STR(S86)>\
+<$STR(S85)>\
+<COLOR=$00FF8877 说明:本服实价回收RMB提现收取10%手续费,显示最近的30条>\
+<返回首页/@main>   <第1页/@提现记录>   <第2页/@第2页>   <COLOR=$000077FF 第3页>   <第4页/@第4页>   <第5页/@第5页>   <第6页/@第6页>\
+#ELSESAY
+　<RMB商人回收·√/@main> 　 <RMB提现申请·√/@RMB查询提现支付宝> 　 <COLOR=$000077FF RMB提现记录·√>　\
+　<COLOR=clFuchsia 提现角色>               <COLOR=clFuchsia 提现金额>                <COLOR=clFuchsia 当前状态>\
+<$STR(S89)>\
+<$STR(S88)>\
+<$STR(S87)>\
+<$STR(S86)>\
+<$STR(S85)>\
+<COLOR=$00FF8877 说明:本服实价回收RMB提现收取10%手续费,显示最近的30条>\
+<返回首页/@main>   <第1页/@提现记录>   <第2页/@第2页>   <COLOR=$000077FF 第3页>   <第4页/@第4页>   <第5页/@第5页>   <第6页/@第6页>\
+
+[@第4页]
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A84) HardDisk
+#ACT
+MOV S84 <COLOR=$002AB4F0
+inc S84 
+inc S84 <$GLOBAL(提现A84)>　审核中　
+inc S84 >
+DelayCall 100 @A83
+#ELSEACT
+MOV S84 <COLOR=clLime
+inc S84 
+inc S84 <$GLOBAL(提现A84)>　已汇款　
+inc S84 >
+DelayCall 100 @A83
+BREAK
+
+[@A83]
+#IF
+CHECKVAR GLOBAL 提现A84 = 
+#ACT
+MOV S84 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A83) HardDisk
+#ACT
+MOV S83 <COLOR=$002AB4F0
+inc S83 
+inc S83 <$GLOBAL(提现A83)>　审核中　
+inc S83 >
+DelayCall 100 @A82
+#ELSEACT
+MOV S83 <COLOR=clLime
+inc S83 
+inc S83 <$GLOBAL(提现A83)>　已汇款　
+inc S83 >
+DelayCall 100 @A82
+BREAK
+
+[@A82]
+#IF
+CHECKVAR GLOBAL 提现A83 = 
+#ACT
+MOV S83 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A82) HardDisk
+#ACT
+MOV S82 <COLOR=$002AB4F0
+inc S82 
+inc S82 <$GLOBAL(提现A82)>　审核中　
+inc S82 >
+DelayCall 100 @A81
+#ELSEACT
+MOV S82 <COLOR=clLime
+inc S82 
+inc S82 <$GLOBAL(提现A82)>　已汇款　
+inc S82 >
+DelayCall 100 @A81
+BREAK
+
+[@A81]
+#IF
+CHECKVAR GLOBAL 提现A82 = 
+#ACT
+MOV S82 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A81) HardDisk
+#ACT
+MOV S81 <COLOR=$002AB4F0
+inc S81 
+inc S81 <$GLOBAL(提现A81)>　审核中　
+inc S81 >
+DelayCall 100 @A80
+#ELSEACT
+MOV S81 <COLOR=clLime
+inc S81 
+inc S81 <$GLOBAL(提现A81)>　已汇款　
+inc S81 >
+DelayCall 100 @A80
+BREAK
+
+[@A80]
+#IF
+CHECKVAR GLOBAL 提现A81 = 
+#ACT
+MOV S81 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A80) HardDisk
+#ACT
+MOV S80 <COLOR=$002AB4F0
+inc S80 
+inc S80 <$GLOBAL(提现A80)>　审核中　
+inc S80 >
+DelayCall 100 @提现记录第四页
+#ELSEACT
+MOV S80 <COLOR=clLime
+inc S80 
+inc S80 <$GLOBAL(提现A80)>　已汇款　
+inc S80 >
+DelayCall 100 @提现记录第四页
+BREAK
+
+[@提现记录第四页]
+#IF
+CHECKVAR GLOBAL 提现A80 = 
+#ACT
+MOV S80 　
+#SAY
+　<RMB商人回收·√/@main> 　 <RMB提现申请·√/@RMB查询提现支付宝> 　 <COLOR=$000077FF RMB提现记录·√>　\
+　<COLOR=clFuchsia 提现角色>               <COLOR=clFuchsia 提现金额>                <COLOR=clFuchsia 当前状态>\
+<$STR(S84)>\
+<$STR(S83)>\
+<$STR(S82)>\
+<$STR(S81)>\
+<$STR(S80)>\
+<COLOR=$00FF8877 说明:本服实价回收RMB提现收取10%手续费,显示最近的30条>\
+<返回首页/@main>   <第1页/@提现记录>   <第2页/@第2页>   <第3页/@第3页>   <COLOR=$000077FF 第4页>   <第5页/@第5页>   <第6页/@第6页>\
+
+#ELSESAY
+　<RMB商人回收·√/@main> 　 <RMB提现申请·√/@RMB查询提现支付宝> 　 <COLOR=$000077FF RMB提现记录·√>　\
+　<COLOR=clFuchsia 提现角色>               <COLOR=clFuchsia 提现金额>                <COLOR=clFuchsia 当前状态>\
+<$STR(S84)>\
+<$STR(S83)>\
+<$STR(S82)>\
+<$STR(S81)>\
+<$STR(S80)>\
+<COLOR=$00FF8877 说明:本服实价回收RMB提现收取10%手续费,显示最近的30条>\
+<返回首页/@main>   <第1页/@提现记录>   <第2页/@第2页>   <第3页/@第3页>   <COLOR=$000077FF 第4页>   <第5页/@第5页>   <第6页/@第6页>\
+
+
+[@第5页]
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A79) HardDisk
+#ACT
+MOV S79 <COLOR=$002AB4F0
+inc S79 
+inc S79 <$GLOBAL(提现A79)>　审核中　
+inc S79 >
+DelayCall 100 @A78
+#ELSEACT
+MOV S79 <COLOR=clLime
+inc S79 
+inc S79 <$GLOBAL(提现A79)>　已汇款　
+inc S79 >
+DelayCall 100 @A78
+BREAK
+
+[@A78]
+#IF
+CHECKVAR GLOBAL 提现A79 = 
+#ACT
+MOV S79 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A78) HardDisk
+#ACT
+MOV S78 <COLOR=$002AB4F0
+inc S78 
+inc S78 <$GLOBAL(提现A78)>　审核中　
+inc S78 >
+DelayCall 100 @A77
+#ELSEACT
+MOV S78 <COLOR=clLime
+inc S78 
+inc S78 <$GLOBAL(提现A78)>　已汇款　
+inc S78 >
+DelayCall 100 @A77
+BREAK
+
+[@A77]
+#IF
+CHECKVAR GLOBAL 提现A78 = 
+#ACT
+MOV S78 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A77) HardDisk
+#ACT
+MOV S77 <COLOR=$002AB4F0
+inc S77 
+inc S77 <$GLOBAL(提现A77)>　审核中　
+inc S77 >
+DelayCall 100 @A76
+#ELSEACT
+MOV S77 <COLOR=clLime
+inc S77 
+inc S77 <$GLOBAL(提现A77)>　已汇款　
+inc S77 >
+DelayCall 100 @A76
+BREAK
+
+[@A76]
+#IF
+CHECKVAR GLOBAL 提现A77 = 
+#ACT
+MOV S77 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A76) HardDisk
+#ACT
+MOV S76 <COLOR=$002AB4F0
+inc S76 
+inc S76 <$GLOBAL(提现A76)>　审核中　
+inc S76 >
+DelayCall 100 @A75
+#ELSEACT
+MOV S76 <COLOR=clLime
+inc S76 
+inc S76 <$GLOBAL(提现A76)>　已汇款　
+inc S76 >
+DelayCall 100 @A75
+BREAK
+
+[@A75]
+#IF
+CHECKVAR GLOBAL 提现A76 = 
+#ACT
+MOV S76 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A75) HardDisk
+#ACT
+MOV S75 <COLOR=$002AB4F0
+inc S75 
+inc S75 <$GLOBAL(提现A75)>　审核中　
+inc S75 >
+DelayCall 100 @提现记录第五页
+#ELSEACT
+MOV S75 <COLOR=clLime
+inc S75 
+inc S75 <$GLOBAL(提现A75)>　已汇款　
+inc S75 >
+DelayCall 100 @提现记录第五页
+BREAK
+
+[@提现记录第五页]
+#IF
+CHECKVAR GLOBAL 提现A75 = 
+#ACT
+MOV S75 　
+#SAY
+　<RMB商人回收·√/@main> 　 <RMB提现申请·√/@RMB查询提现支付宝> 　 <COLOR=$000077FF RMB提现记录·√>　\
+　<COLOR=clFuchsia 提现角色>               <COLOR=clFuchsia 提现金额>                <COLOR=clFuchsia 当前状态>\
+<$STR(S79)>\
+<$STR(S78)>\
+<$STR(S77)>\
+<$STR(S76)>\
+<$STR(S75)>\
+<COLOR=$00FF8877 说明:本服实价回收RMB提现收取10%手续费,显示最近的30条>\
+<返回首页/@main>   <第1页/@提现记录>   <第2页/@第2页>   <第3页/@第3页>   <第4页/@第4页>   <COLOR=$000077FF 第5页>   <第6页/@第6页>\
+#ELSESAY
+　<RMB商人回收·√/@main> 　 <RMB提现申请·√/@RMB查询提现支付宝> 　 <COLOR=$000077FF RMB提现记录·√>　\
+　<COLOR=clFuchsia 提现角色>               <COLOR=clFuchsia 提现金额>                <COLOR=clFuchsia 当前状态>\
+<$STR(S79)>\
+<$STR(S78)>\
+<$STR(S77)>\
+<$STR(S76)>\
+<$STR(S75)>\
+<COLOR=$00FF8877 说明:本服实价回收RMB提现收取10%手续费,显示最近的30条>\
+<返回首页/@main>   <第1页/@提现记录>   <第2页/@第2页>   <第3页/@第3页>   <第4页/@第4页>   <COLOR=$000077FF 第5页>   <第6页/@第6页>\
+
+[@第6页]
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A74) HardDisk
+#ACT
+MOV S74 <COLOR=$002AB4F0
+inc S74 
+inc S74 <$GLOBAL(提现A74)>　审核中　
+inc S74 >
+DelayCall 100 @A73
+#ELSEACT
+MOV S74 <COLOR=clLime
+inc S74 
+inc S74 <$GLOBAL(提现A74)>　已汇款　
+inc S74 >
+DelayCall 100 @A73
+BREAK
+
+[@A73]
+#IF
+CHECKVAR GLOBAL 提现A74 = 
+#ACT
+MOV S74 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A73) HardDisk
+#ACT
+MOV S73 <COLOR=$002AB4F0
+inc S73 
+inc S73 <$GLOBAL(提现A73)>　审核中　
+inc S73 >
+DelayCall 100 @A72
+#ELSEACT
+MOV S73 <COLOR=clLime
+inc S73 
+inc S73 <$GLOBAL(提现A73)>　已汇款　
+inc S73 >
+DelayCall 100 @A72
+BREAK
+
+[@A72]
+#IF
+CHECKVAR GLOBAL 提现A73 = 
+#ACT
+MOV S73 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A72) HardDisk
+#ACT
+MOV S72 <COLOR=$002AB4F0
+inc S72 
+inc S72 <$GLOBAL(提现A72)>　审核中　
+inc S72 >
+DelayCall 100 @A71
+#ELSEACT
+MOV S72 <COLOR=clLime
+inc S72 
+inc S72 <$GLOBAL(提现A72)>　已汇款　
+inc S72 >
+DelayCall 100 @A71
+BREAK
+
+[@A71]
+#IF
+CHECKVAR GLOBAL 提现A72 = 
+#ACT
+MOV S72 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A71) HardDisk
+#ACT
+MOV S71 <COLOR=$002AB4F0
+inc S71 
+inc S71 <$GLOBAL(提现A71)>　审核中　
+inc S71 >
+DelayCall 100 @A70
+#ELSEACT
+MOV S71 <COLOR=clLime
+inc S71 
+inc S71 <$GLOBAL(提现A71)>　已汇款　
+inc S71 >
+DelayCall 100 @A70
+BREAK
+
+[@A70]
+#IF
+CHECKVAR GLOBAL 提现A71 = 
+#ACT
+MOV S71 　
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt $GLOBAL(提现A70) HardDisk
+#ACT
+MOV S70 <COLOR=$002AB4F0
+inc S70 
+inc S70 <$GLOBAL(提现A70)>　审核中　
+inc S70 >
+DelayCall 100 @提现记录第六页
+#ELSEACT
+MOV S70 <COLOR=clLime
+inc S70 
+inc S70 <$GLOBAL(提现A70)>　已汇款　
+inc S70 >
+DelayCall 100 @提现记录第六页
+BREAK
+
+[@提现记录第六页]
+#IF
+CHECKVAR GLOBAL 提现A70 = 
+#ACT
+MOV S70 　
+#SAY
+　<RMB商人回收·√/@main> 　 <RMB提现申请·√/@RMB查询提现支付宝> 　 <COLOR=$000077FF RMB提现记录·√>　\
+　<COLOR=clFuchsia 提现角色>               <COLOR=clFuchsia 提现金额>                <COLOR=clFuchsia 当前状态>\
+<$STR(S74)>\
+<$STR(S73)>\
+<$STR(S72)>\
+<$STR(S71)>\
+<$STR(S70)>\
+<COLOR=$00FF8877 说明:本服实价回收RMB提现收取10%手续费,显示最近的30条>\
+<返回首页/@main>   <第1页/@提现记录>   <第2页/@第2页>   <第3页/@第3页>   <第4页/@第4页>   <第5页/@第5页>   <COLOR=$000077FF 第6页>\
+#ELSESAY
+　<RMB商人回收·√/@main> 　 <RMB提现申请·√/@RMB查询提现支付宝> 　 <COLOR=$000077FF RMB提现记录·√>　\
+　<COLOR=clFuchsia 提现角色>               <COLOR=clFuchsia 提现金额>                <COLOR=clFuchsia 当前状态>\
+<$STR(S74)>\
+<$STR(S73)>\
+<$STR(S72)>\
+<$STR(S71)>\
+<$STR(S70)>\
+<COLOR=$00FF8877 说明:本服实价回收RMB提现收取10%手续费,显示最近的30条>\
+<返回首页/@main>   <第1页/@提现记录>   <第2页/@第2页>   <第3页/@第3页>   <第4页/@第4页>   <第5页/@第5页>   <COLOR=$000077FF 第6页>\
+
+
+[@支付宝记录刷新]
+#IF
+#ACT
+CALCVAR GLOBAL 提现A70 = <$GLOBAL(提现A71)>
+CALCVAR GLOBAL 提现A71 = <$GLOBAL(提现A72)>
+CALCVAR GLOBAL 提现A72 = <$GLOBAL(提现A73)>
+CALCVAR GLOBAL 提现A73 = <$GLOBAL(提现A74)>
+CALCVAR GLOBAL 提现A74 = <$GLOBAL(提现A75)>
+CALCVAR GLOBAL 提现A75 = <$GLOBAL(提现A76)>
+CALCVAR GLOBAL 提现A76 = <$GLOBAL(提现A77)>
+CALCVAR GLOBAL 提现A77 = <$GLOBAL(提现A78)>
+CALCVAR GLOBAL 提现A78 = <$GLOBAL(提现A79)>
+CALCVAR GLOBAL 提现A79 = <$GLOBAL(提现A80)>
+CALCVAR GLOBAL 提现A80 = <$GLOBAL(提现A81)>
+CALCVAR GLOBAL 提现A81 = <$GLOBAL(提现A82)>
+CALCVAR GLOBAL 提现A82 = <$GLOBAL(提现A83)>
+CALCVAR GLOBAL 提现A83 = <$GLOBAL(提现A84)>
+CALCVAR GLOBAL 提现A84 = <$GLOBAL(提现A85)>
+CALCVAR GLOBAL 提现A85 = <$GLOBAL(提现A86)>
+CALCVAR GLOBAL 提现A86 = <$GLOBAL(提现A87)>
+CALCVAR GLOBAL 提现A87 = <$GLOBAL(提现A88)>
+CALCVAR GLOBAL 提现A88 = <$GLOBAL(提现A89)>
+CALCVAR GLOBAL 提现A89 = <$GLOBAL(提现A90)>
+CALCVAR GLOBAL 提现A90 = <$GLOBAL(提现A91)>
+CALCVAR GLOBAL 提现A91 = <$GLOBAL(提现A92)>
+CALCVAR GLOBAL 提现A92 = <$GLOBAL(提现A93)>
+CALCVAR GLOBAL 提现A93 = <$GLOBAL(提现A94)>
+CALCVAR GLOBAL 提现A94 = <$GLOBAL(提现A95)>
+CALCVAR GLOBAL 提现A95 = <$GLOBAL(提现A96)>
+CALCVAR GLOBAL 提现A96 = <$GLOBAL(提现A97)>
+CALCVAR GLOBAL 提现A97 = <$GLOBAL(提现A98)>
+CALCVAR GLOBAL 提现A98 = <$GLOBAL(提现A99)>
+CALCVAR GLOBAL 提现A99 = 玩家:<$STR(S10)>金额:<$STR(M7)>元　　　　　　　
+	DEC	A99	51	90
+SAVEVAR GLOBAL 提现A98 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A99 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A94 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A95 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A96 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A97 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A92 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A93 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A91 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A90 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A88 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A89 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A84 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A85 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A86 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A87 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A82 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A83 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A81 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A80 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A78 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A79 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A74 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A75 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A76 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A77 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A72 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A73 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A71 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A70 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+ADDLINELIST ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt <$USERNAME> HardDisk
+ADDLINELIST ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt <$GLOBAL(提现A99)> HardDisk
+ADDLINELIST ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt 提现IP【<$IPADDR>】　提现时间【<$DATETIME>】 HardDisk
+MOV S8 未输入
+MOV S9 未输入
+MOV M7 0
+DelayCall 100 @提现记录
+BREAK
+
+[@微信记录刷新]
+#IF
+#ACT
+CALCVAR GLOBAL 提现A70 = <$GLOBAL(提现A71)>
+CALCVAR GLOBAL 提现A71 = <$GLOBAL(提现A72)>
+CALCVAR GLOBAL 提现A72 = <$GLOBAL(提现A73)>
+CALCVAR GLOBAL 提现A73 = <$GLOBAL(提现A74)>
+CALCVAR GLOBAL 提现A74 = <$GLOBAL(提现A75)>
+CALCVAR GLOBAL 提现A75 = <$GLOBAL(提现A76)>
+CALCVAR GLOBAL 提现A76 = <$GLOBAL(提现A77)>
+CALCVAR GLOBAL 提现A77 = <$GLOBAL(提现A78)>
+CALCVAR GLOBAL 提现A78 = <$GLOBAL(提现A79)>
+CALCVAR GLOBAL 提现A79 = <$GLOBAL(提现A80)>
+CALCVAR GLOBAL 提现A80 = <$GLOBAL(提现A81)>
+CALCVAR GLOBAL 提现A81 = <$GLOBAL(提现A82)>
+CALCVAR GLOBAL 提现A82 = <$GLOBAL(提现A83)>
+CALCVAR GLOBAL 提现A83 = <$GLOBAL(提现A84)>
+CALCVAR GLOBAL 提现A84 = <$GLOBAL(提现A85)>
+CALCVAR GLOBAL 提现A85 = <$GLOBAL(提现A86)>
+CALCVAR GLOBAL 提现A86 = <$GLOBAL(提现A87)>
+CALCVAR GLOBAL 提现A87 = <$GLOBAL(提现A88)>
+CALCVAR GLOBAL 提现A88 = <$GLOBAL(提现A89)>
+CALCVAR GLOBAL 提现A89 = <$GLOBAL(提现A90)>
+CALCVAR GLOBAL 提现A90 = <$GLOBAL(提现A91)>
+CALCVAR GLOBAL 提现A91 = <$GLOBAL(提现A92)>
+CALCVAR GLOBAL 提现A92 = <$GLOBAL(提现A93)>
+CALCVAR GLOBAL 提现A93 = <$GLOBAL(提现A94)>
+CALCVAR GLOBAL 提现A94 = <$GLOBAL(提现A95)>
+CALCVAR GLOBAL 提现A95 = <$GLOBAL(提现A96)>
+CALCVAR GLOBAL 提现A96 = <$GLOBAL(提现A97)>
+CALCVAR GLOBAL 提现A97 = <$GLOBAL(提现A98)>
+CALCVAR GLOBAL 提现A98 = <$GLOBAL(提现A99)>
+CALCVAR GLOBAL 提现A99 = 玩家:<$STR(S10)>金额:<$STR(M4)>元　　　　　　　
+	DEC	A99	51	90
+SAVEVAR GLOBAL 提现A98 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A99 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A94 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A95 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A96 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A97 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A92 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A93 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A91 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A90 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A88 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A89 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A84 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A85 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A86 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A87 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A82 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A83 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A81 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A80 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A78 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A79 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A74 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A75 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A76 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A77 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A72 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A73 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A71 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+SAVEVAR GLOBAL 提现A70 ..\QuestDiary\神话RMB提现配置\提现数据\提现空格.ini
+ADDLINELIST ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt <$USERNAME> HardDisk
+ADDLINELIST ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt <$GLOBAL(提现A99)> HardDisk
+ADDLINELIST ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt 提现IP【<$IPADDR>】　提现时间【<$DATETIME>】 HardDisk
+MOV S5 未输入
+MOV S40 未输入
+MOV M4 0
+DelayCall 100 @提现记录
+BREAK
+
+[@提现金额支付宝]
+#IF
+CHECKLEVELEX > 0
+#ACT
+QUERYVALUE 7 1 7 @支付宝金额保存 请输入你想提现的金额\本服单次提现金额限制为:10～9999元 NPC
+BREAK
+
+
+[@支付宝金额保存]
+#IF
+large M7 9999
+#ACT
+MOV M7 0
+DelayCall 100 @RMB查询提现支付宝
+MESSAGEBOX 本服提现限制10-9999元，请重新输入!!\本服提现限制10-9999元，请重新输入!!
+
+#IF
+small M7 10
+#ACT
+MOV M7 0
+DelayCall 100 @RMB查询提现支付宝
+MESSAGEBOX 本服提现限制10-9999元，请重新输入!!\本服提现限制10-9999元，请重新输入!!
+
+#IF
+large M7 <$HUMAN(人民币点)>
+#ACT
+MOV M7 0
+DelayCall 100 @RMB查询提现支付宝
+MESSAGEBOX 您的账户没有这么多余额，请重新输入!\您的账户没有这么多余额，请重新输入!!
+
+#IF
+#ACT
+DelayCall 100 @RMB查询提现支付宝
+BREAK
+
+[@支付宝账号]
+#IF
+CHECKLEVELEX > 0
+#ACT
+QUERYVALUE 8 0 20 @RMB查询提现支付宝 请输入你的支付宝账号\符号@无法输入换成#即可 NPC
+BREAK
+
+[@收款人姓名支付宝]
+#IF
+CHECKLEVELEX > 0
+#ACT
+QUERYVALUE 9 0 10 @RMB查询提现支付宝 请输入你的准确姓名 NPC
+BREAK
+
+
+[@确认提现支付宝]
+#IF
+large M7 <$HUMAN(人民币点)>
+#ACT
+MOV M7 0
+DelayCall 100 @RMB查询提现支付宝
+MESSAGEBOX 您的账户没有这么多余额，请重新输入!\您的账户没有这么多余额，请重新输入!!
+
+#IF
+EQUAL M7 0
+#ACT
+MESSAGEBOX 请准确输入您提现的金额!\请准确输入您提现的金额!
+BREAK
+
+#IF
+EQUAL S8
+#ACT
+MESSAGEBOX 请准确输入您提现的账户!\请准确输入您提现的账户!
+BREAK
+
+#IF
+EQUAL S9
+#ACT
+MESSAGEBOX 请准确输入您提现的账户姓名!\请准确输入您提现的账户姓名!
+BREAK
+
+#IF
+#ACT
+MOV S10 <$USERNAME><$GLOBAL(提现空格)>
+	DEC	S10	20	90
+
+CALCVAR HUMAN 人民币点 - <$STR(M7)>
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+LOADVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+DEC G39 <$STR(M7)>
+SENDMSG 6 提示:提现成功.您当前的人民币点为：<$HUMAN(人民币点)>点
+ADDLINELIST ..\QuestDiary\神话RMB提现配置\提现数据\提现数据.txt 提现角色【<$USERNAME>】IP【<$IPADDR>】金额【<$STR(M7)>】微信账户【<$STR(S8)>】姓名【<$STR(S9)>】时间【<$DATETIME>】　　　　　　　　　　　　　　 HardDisk
+DelayCall 100 @支付宝记录刷新
+MESSAGEBOX 提现成功!\请耐心等待系统处理!\请耐心等待系统处理!
+BREAK
+
+
+[@提现金额微信]
+#IF
+CHECKLEVELEX > 0
+#ACT
+QUERYVALUE 4 1 7 @微信金额保存 请输入你想提现的金额\本服单次提现金额限制为:100～9999元 NPC
+BREAK
+
+
+[@微信金额保存]
+#IF
+large M4 9999
+#ACT
+MOV M4 0
+DelayCall 100 @RMB查询提现支付宝
+MESSAGEBOX 本服单次提现限制10-9999元，请重新输入!!\本服单次提现限制10-9999元，请重新输入!!
+
+#IF
+small M4 10
+#ACT
+MOV M4 0
+DelayCall 100 @RMB查询提现支付宝
+MESSAGEBOX 本服单次提现限制10-9999元，请重新输入!!\本服单次提现限制10-9999元，请重新输入!!
+
+#IF
+large M4 <$HUMAN(人民币点)>
+#ACT
+MOV M4 0
+DelayCall 100 @RMB查询提现
+MESSAGEBOX 您的账户没有这么多余额，请重新输入!\您的账户没有这么多余额，请重新输入!!
+
+#IF
+#ACT
+DelayCall 100 @RMB查询提现
+BREAK
+
+[@微信账号]
+#IF
+CHECKLEVELEX > 0
+#ACT
+QUERYVALUE 5 0 20 @RMB查询提现 请输入你的微信账号\符号@无法输入换成#即可 NPC
+BREAK
+
+[@收款人姓名微信]
+#IF
+CHECKLEVELEX > 0
+#ACT
+QUERYVALUE 40 0 10 @RMB查询提现 请输入你的准确姓名 NPC
+BREAK
+
+
+[@确认提现微信]
+#IF
+large M4 <$HUMAN(人民币点)>
+#ACT
+MOV M4 0
+DelayCall 100 @RMB查询提现
+MESSAGEBOX 您的账户没有这么多余额，请重新输入!\您的账户没有这么多余额，请重新输入!!
+
+#IF
+EQUAL M4 0
+#ACT
+MESSAGEBOX 请准确输入您提现的金额!\请准确输入您提现的金额!
+BREAK
+
+#IF
+EQUAL S5
+#ACT
+MESSAGEBOX 请准确输入您提现的账户!\请准确输入您提现的账户!
+BREAK
+
+#IF
+EQUAL S40
+#ACT
+MESSAGEBOX 请准确输入您提现的账户姓名!\请准确输入您提现的账户姓名!
+BREAK
+
+#IF
+#ACT
+MOV S10 <$USERNAME><$GLOBAL(提现空格)>
+	DEC	S10	20	90
+CALCVAR HUMAN 人民币点 - <$STR(M4)>
+SAVEVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+LOADVAR HUMAN 人民币点 ..\QuestDiary\神话RMB提现配置\人民币点Save.txt
+SENDMSG 6 提示:提现成功.您当前的人民币点为：<$HUMAN(人民币点)>点
+ADDLINELIST ..\QuestDiary\神话RMB提现配置\提现数据\提现数据.txt 提现角色【<$USERNAME>】IP【<$IPADDR>】金额【<$STR(M4)>】微信账户【<$STR(S5)>】姓名【<$STR(S40)>】时间【<$DATETIME>】 HardDisk
+DelayCall 100 @微信记录刷新
+MESSAGEBOX 提现成功!\请耐心等待系统处理!\请耐心等待系统处理!
+BREAK
+
+
+
+[@RMB查询提现]
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt <$USERNAME> HardDisk
+#ACT
+MESSAGEBOX 您已有申请提现记录等待　审核中　，需管理员处理汇款后才可再次提现!!\\您已有申请提现记录等待　审核中　，需管理员处理汇款后才可再次提现!!\\您已有申请提现记录等待　审核中　，需管理员处理汇款后才可再次提现!!
+#ELSESAY
+　<RMB商人回收·√/@main> 　 <COLOR=$000077FF RMB提现申请·√> 　 <RMB提现记录·√/@提现记录>　\
+<COLOR=$00DE7B00 ----------------------------------------------------------->\
+<【提现的金额】/@提现金额微信>：<$STR(M4)>                  <COLOR=$002AB4F0 您当前人民币金额：><$HUMAN(人民币点)>\
+<【微  信账号】/@微信账号>：<$STR(S5)>                            <切换为支付宝/@RMB查询提现支付宝>\
+<【收款人姓名】/@收款人姓名微信>：<$STR(S40)>                   <COLOR=$002AB4F0 请正确填写收款人姓名>\
+<COLOR=$00DE7B00 ----------------------------------------------------------->\
+<COLOR=$000000FB 注意：您的账号如果包含>@<COLOR=$000000FB 字符无法输入的，请将>@<COLOR=$000000FB 换成>#<COLOR=$000000FB 号即可.>\　\
+<确认提现·√/@确认提现微信> <COLOR=clLime 支持支付宝提现，微信需现添加><COLOR=$000000FB 18698936063><COLOR=clLime 为好友.>\
+
+;<切换为微信/@RMB查询提现>
+
+[@RMB查询提现支付宝]
+#IF
+equal G17 1
+#ACT
+MESSAGEBOX \　\提现系统每天晚上19:00--21:00开放提现。\　\　　提现系统每天晚上19:00--21:00开放提现。
+BREAK
+
+#IF
+CheckStringList ..\QuestDiary\神话RMB提现配置\提现数据\提现审核.txt <$USERNAME> HardDisk
+#ACT
+MESSAGEBOX 您已有申请提现记录等待　审核中　，需管理员处理汇款后才可再次提现!!\\您已有申请提现记录等待　审核中　，需管理员处理汇款后才可再次提现!!\\您已有申请提现记录等待　审核中　，需管理员处理汇款后才可再次提现!!
+#ELSESAY
+　<RMB商人回收·√/@main> 　 <COLOR=$000077FF RMB提现申请·√> 　 <RMB提现记录·√/@提现记录>　\
+<COLOR=$00DE7B00 ----------------------------------------------------------->\
+<【提现的金额】/@提现金额支付宝>：<$STR(M7)>                  <COLOR=$002AB4F0 您当前人民币金额：><$HUMAN(人民币点)>\
+<【支付宝账号】/@支付宝账号>：<$STR(S8)>                 <COLOR=clFuchsia 目前只支持支付宝>\
+<【收款人姓名】/@收款人姓名支付宝>：<$STR(S9)>                   <COLOR=$002AB4F0 请正确填写收款人姓名>\
+<COLOR=$00DE7B00 ----------------------------------------------------------->\
+<COLOR=$000000FB 注意：您的账号如果包含>@<COLOR=$000000FB 字符无法输入的，请将>@<COLOR=$000000FB 换成>#<COLOR=$000000FB 号即可.>\　\
+<确认提现·√/@确认提现支付宝> <COLOR=clLime 支持支付宝提现>\

@@ -1,0 +1,30 @@
+[@main]
+#if
+equal A33 开放
+#act
+MOV I0 <$STR(G0)>
+INC I0 1
+#say
+进入祖玛寺庙五层在开区第5天晚上20点\ \
+
+<进入祖玛寺庙五层/@1>
+#elsesay
+进入祖玛寺庙五层在开区第5天晚上20点\ \
+
+
+[@1]
+#IF
+CHECKUSERDATE ..\QuestDiary\季卡\时间记载.txt < 90 p0 p1
+#ACT
+close
+MAPMOVE D505 96 101
+break
+
+#If
+equal G91 1
+#act
+sendmsg 7 提示：请购买季卡
+break 
+#elseact
+SendMsg 7  提示：开区第5天晚上20点自动开放！
+break

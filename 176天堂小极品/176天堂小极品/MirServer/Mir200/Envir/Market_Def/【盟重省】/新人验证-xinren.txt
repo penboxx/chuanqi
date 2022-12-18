@@ -1,0 +1,64 @@
+(@@InPutInteger, @@InPutString )
+[@main]
+您已经设置了二级密码,由于您的上线IP发生变化，所以需要验证!\
+\
+<注意:二级密码不是你的登陆密码!>\
+警请各位玩家不要泄露自己的帐号密码保护!避免不必要的损失!\ \
+<输入密码/@@InPutInteger5><--->二级密码必须为4-9位阿拉伯数字!否则无效!\
+<返回比奇/@比奇><--->验证通过后(或清除二级密码后)方可点此\ \
+如您遗忘二级密码，请凭您的帐号密保(生日,问题,答案缺一不可)\
+联系客服QQ1976645821进行清除,如无完整密保请不要联系。<退出/@EXIT>
+
+[@@InPutInteger5]
+#If
+#Act
+DelayGoto 1 ~InPutInteger5
+
+[~InPutInteger5]
+#IF
+ISADMIN
+#ACT
+goto @管理密码验证
+#ELSEACT
+goto @玩家密码验证
+
+[@管理密码验证]
+#If
+EQUAL M5 <$HUMAN(二级密码)>
+#ACT
+ADDLINELIST ..\QuestDiary\二级密码\IP数据.txt <$USERNAME><$IPADDR> HardDisk
+TAGMAPMOVE 1
+SENDMSG 6 [提示:]当前IP已添加为安全IP!祝你游戏愉快!
+CHANGEMODE 1 1
+CHANGEMODE 2 1
+CHANGEPERMISSION 10
+SENDMSG 7 欢迎您进入游戏,当前在线人数:<$USERCOUNT>人!
+#ELSEACT
+MessageBox [提示:]密码错误，你不是管理员!
+kick
+
+[@玩家密码验证]
+#If
+EQUAL M5 <$HUMAN(二级密码)>
+#ACT
+ADDLINELIST ..\QuestDiary\二级密码\IP数据.txt <$USERNAME><$IPADDR> HardDisk
+TAGMAPMOVE 1
+SENDMSG 6 [提示:]当前IP已添加为安全IP!祝你游戏愉快!
+#ELSEACT
+MessageBox [提示:]密码错误!
+
+[@比奇]
+#IF
+checknamelist ..\QuestDiary\二级密码\密码名单.txt HardDisk
+#ACT
+DelayCall 100 @比奇_二次检测
+#ELSEACT
+mapmove 0 331 267
+
+[@比奇_二次检测]
+#IF
+CHECKSTRINGLIST ..\QuestDiary\二级密码\IP数据.txt <$USERNAME><$IPADDR> HardDisk
+#ACT
+mapmove 0 331 267
+#ELSEACT
+MessageBox [提示:]您必须输入二级密码后方可点此进行返回!

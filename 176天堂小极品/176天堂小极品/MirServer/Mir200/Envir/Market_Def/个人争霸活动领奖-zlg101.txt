@@ -1,0 +1,33 @@
+[@main]
+#IF
+equal G58 1
+#ACT
+goto @允许领取奖励
+#ELSESAY
+现在为入场时间，\
+21点30分才能领取奖励。\
+奖励是3000元宝哦！\
+奖励是3000元宝哦！\
+<返回盟重/@返回盟重>\
+<关闭菜单/@EXIT>\ 
+
+[@允许领取奖励]
+#IF
+CHECKMAPHUMANCOUNT zlg101 = 1
+#act
+GIVE 1000元宝 1
+MOV a325 <$USERNAME>
+ADDLINELIST ..\QuestDiary\数据文件\林盟主名单.txt <$USERNAME> HardDisk
+SENDMSG 7 恭喜您获得3000元宝！
+SENDMSG 0 [武林争霸]：恭喜【<$USERNAME>】成为本届武林盟主，奖励3000元宝。
+SENDMSG 0 [武林争霸]：恭喜【<$USERNAME>】成为本届武林盟主，奖励3000元宝。
+SENDMSG 0 [武林争霸]：恭喜【<$USERNAME>】成为本届武林盟主，奖励3000元宝。
+SENDMSG 0 [武林争霸]：恭喜【<$USERNAME>】成为本届武林盟主，奖励3000元宝。
+SENDMSG 0 [武林争霸]：恭喜【<$USERNAME>】成为本届武林盟主，奖励3000元宝。
+mapmove 3 333 333
+break
+close
+#ELSEACT
+messagebox 地图内还有其他人
+break
+close

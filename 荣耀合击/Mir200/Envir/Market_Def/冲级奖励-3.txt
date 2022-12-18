@@ -1,0 +1,149 @@
+[@main]
+#if
+small g99  1
+#act
+mov g8 1
+mov g99 1
+break
+#ELSEACT
+goto @kai
+break
+[@kai]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【冲级奖励】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+
+主号等级达到55级奖励[上线+HP]  <【领取奖励】/@领55HP> <COLOR=clFuchsia 战士+1200 法师+300 道士+1000>\  \ 
+
+主号等级达到55级奖励[星王项链] <【领取奖励】/@领55主> <COLOR=clFuchsia 剩余名额:无限制>\  \ 
+
+
+
+英雄等级达到55级奖励[荣耀项链] <【领取奖励】/@领55英> <COLOR=clFuchsia 剩余名额:><$str(g8)><COLOR=clFuchsia 名>\  \ 
+
+<COLOR=clRed 注：道士无法佩戴魔血石,所以血量增加！> \   \ 
+<COLOR=clRed 注：冲级奖励项链为三职业随机奖励、一切看脸！> \   \ 
+
+
+
+[@领55HP]
+#if
+CHECKLEVELEX < 55
+#act
+MESSAGEBOX 领取失败：等级达到55级才可以领取！
+break
+
+#if
+Check [18] 1
+#act
+MESSAGEBOX 领取失败：你已经领取过奖励了！
+break
+
+
+#IF
+CHECKJOB WARRIOR
+#ACT
+set [18] 1
+MESSAGEBOX 属性已经激活：小退再上激活
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励+HP[战士+1200]！ 
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励+HP[战士+1200]！
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励+HP[战士+1200]！
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励+HP[战士+1200]！！
+
+
+#IF
+CHECKJOB WIZARD
+#ACT
+set [18] 1
+MESSAGEBOX 属性已经激活：小退再上激活
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励+HP[法师+300]！ 
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励+HP[法师+300]！
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励+HP[法师+300]！
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励+HP[法师+300]！！
+
+#IF
+CHECKJOB TAOIST
+#ACT
+set [18] 1
+MESSAGEBOX 属性已经激活：小退再上激活
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励+HP[道士+1000]！ 
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励+HP[道士+1000]！
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励+HP[道士+1000]！
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励+HP[道士+1000]！！
+
+
+
+
+[@领55主]
+#if
+CHECKLEVELEX < 55
+#act
+MESSAGEBOX 领取失败：等级达到55级才可以领取！
+break
+
+#if
+Check [8] 1
+#act
+MESSAGEBOX 领取失败：你已经领取过奖励了！
+break
+
+#if
+#act
+ReadRandomStr ..\QuestDiary\随机星王.txt S10 HardDisk
+
+give <$STR(S10)> 1
+set [8] 1
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励[<$STR(S10)>]！ 
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励[<$STR(S10)>]！ 
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励[<$STR(S10)>]！ 
+SENDMSG 0 恭喜玩家[%s]领取55级冲级奖励[<$STR(S10)>]！ 
+break
+
+
+
+
+
+[@领55英]
+#IF
+CHECKHEROONLINE
+#act
+goto @1234
+break
+#ELSEACT
+MESSAGEBOX 您的英雄不在线！请先召唤出英雄！
+break
+[@1234]
+#if
+H.CHECKLEVELEX < 55
+#act
+MESSAGEBOX 领取失败：英雄等级达到55级才可以领取！
+break
+
+#if
+Check [9] 1
+#act
+MESSAGEBOX 领取失败：你已经领取过奖励了！
+break
+
+
+#if
+small g8 1
+#act
+MESSAGEBOX 领取失败：本等级奖励名额已满！
+break
+
+
+#if
+#act
+DEC g8 1
+ReadRandomStr ..\QuestDiary\随机荣耀.txt S11 HardDisk
+give <$STR(S11)> 1
+SENDMSG 0 恭喜玩家[%s]领取英雄55级冲级奖励[<$STR(S11)>]！ 
+SENDMSG 0 恭喜玩家[%s]领取英雄55级冲级奖励[<$STR(S11)>]！ 
+SENDMSG 0 恭喜玩家[%s]领取英雄55级冲级奖励[<$STR(S11)>]！ 
+SENDMSG 0 恭喜玩家[%s]领取英雄55级冲级奖励[<$STR(S11)>]！ 
+BREAK
+
+
+

@@ -1,0 +1,23 @@
+()
+%100
+[@main]
+ ¤╭⌒╮╭⌒╮          欢迎光临     　　\
+ ╱◥██◣ ╭⌒╮                    <$SERVERNAME> 　　\
+︱田︱田田|╰-------------    　　\
+╬╬╬╬╬╬╬╬╬╬╬╬╬    　 　      ┆<500元宝进入/@JINQBA888>┆ \
+------------------------------------------------------------　\
+◆BOSS刷新时间为30分钟 <COLOR=clFuchsia 共2层>\  \
+◆一层专业小怪升级！二层为本服所有BOSS唯一爆记忆套的地图！\
+------------------------------------------------------------　\
+
+[@JINQBA888]
+#IF
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+MAPMOVE T1061A
+SENDMSG 0 勇敢的玩家:[%s]进入地下宫殿升级+寻宝去了!!! 
+break
+#ELSEACT
+MESSAGEBOX 进入需要500元宝！
+CLOSE

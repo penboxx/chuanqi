@@ -1,0 +1,56 @@
+()
+%100
+[@main]
+行会争霸规则：地图内所有人均为同一行会即可占领\ \
+1.开放时间：每周6 <COLOR=clSkyBlue 20:30>-开始\
+2.开放活动结束后，领取奖励(1400元宝)\
+;2.开放活动结束后，领取奖励(1400元宝)\
+3.当<COLOR=clAqua 22:00之后无其他行会成员>即可在<COLOR=clAqua 地图中央管理员领取奖励>\
+4.奖励需在要求时间内领取    领取时间：<COLOR=clSkyBlue 21:30-21:50>\
+<掌门领取奖励/@掌门检测雕像>                        \ \
+<宣布占领[行会争霸地图]/@zhan>    <[10元宝一次 全区提示]>
+[@zhan]
+#if
+IsSameGuildOnMap ZM6
+#ELSEACT
+MESSAGEBOX 地图内还有其他行会成员！
+break
+#if
+CHECKGAMEGOLD > 9
+#act
+GAMEGOLD - 10
+sendmsg 1 [行会争霸地图]已被【<$GUILDNAME>】占领!!!
+goto @main
+break
+#elseact
+messagebox 你的元宝已不足，请及时充值！
+break
+[@掌门检测雕像]
+#if
+hour 22 22
+IsSameGuildOnMap ZM6
+#ACT
+GOTO @掌门领奖
+#ELSEACT
+messagebox 对不起当前地图里有其他行会(玩家22:00-22:59点领取)！
+[@掌门领奖检测]
+#if
+EQUAL A331 争霸已领
+#ACT
+MESSAGEBOX 对不起，本场行会争霸已有获胜方，请等待下一场！
+#ELSEACT
+GOTO @掌门领奖
+[@掌门领奖]
+#if
+ISGUILDMASTER
+#act
+mov A331 争霸已领
+GAMEDIAMOND + 8
+Gmexecute 集体传送 ZM6 3
+mapmove 3 330 330
+SENDMSG 0 系统：【<$GUILDNAME>】的掌门【<$USERNAME>】获得行会争霸赛[8金刚石]奖励
+SENDMSG 0 系统：【<$GUILDNAME>】的掌门【<$USERNAME>】获得行会争霸赛[8金刚石]奖励
+SENDMSG 0 系统：【<$GUILDNAME>】的掌门【<$USERNAME>】获得行会争霸赛[8金刚石]奖励
+SENDMSG 0 [本场行会争霸赛活动已结束]
+#elseact
+MESSAGEBOX 领取奖励失败\您不是掌门人吧！

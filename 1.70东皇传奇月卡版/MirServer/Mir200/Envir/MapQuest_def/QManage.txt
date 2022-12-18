@@ -1,0 +1,130 @@
+
+[@RESUME]
+#ACT
+KICK
+SETOFFLINEPLAY OFF
+MESSAGEBOX 因为你上次下线的时后使用了离线挂机功能!\管理员为了避免你在游戏中出现数据错误!\请你小退一下再重新登陆!
+
+
+
+;-------------------------------------------------------
+;登陆脚本
+;-------------------------------------------------------
+
+[@Login]
+
+#if
+CHECKLEVELEX > 0
+#act
+#CALL [\Mir2m2排号抢庄配置\Mir2m2排号抢庄脚本.txt] @Mir2m2排号抢庄脚本QM
+SETOFFLINEPLAY ON
+SETSCTIMER 1 1
+VAR INTEGER HUMAN 时长
+VAR INTEGER HUMAN 标识
+VAR INTEGER HUMAN 防脱机
+LOADVAR HUMAN  防脱机 ..\QuestDiary\季卡\防脱机.txt HardDisk
+LOADVAR HUMAN  时长 ..\QuestDiary\代练系统\代练数据.txt HardDisk
+LOADVAR HUMAN  标识 ..\QuestDiary\代练系统\代练数据.txt HardDisk
+#CALL [\游戏登陆\经验倍数.txt] @经验
+#CALL [\游戏登陆\登陆脚本.txt] @登陆设置
+#CALL [\游戏登陆\季卡设置.txt] @季卡
+#CALL [\游戏功能\封号设置.txt] @封号设置2
+;ADDLINELIST ..\QuestDiary\季卡\IP数据.txt <$USERNAME>|<$IPADDR> HardDisk
+SENDMSG 5 ★官方唯一微信订阅号：wymir180.★ 254 0 15
+SENDMSG 5 ★官方唯一微信订阅号：wymir180.★ 254 0 15
+SENDMSG 5 ★官方唯一微信订阅号：wymir180.★ 254 0 15
+
+#IF
+CHECK [0] 0
+#ACT
+#IF
+CHECK [0] 0
+#SAY
+#if
+ISNEWHUMAN
+gender man
+#act
+TAKEON 布衣(男) 0
+TAKEON 木剑 1
+SENDMSG 5 新人上线自动禁言，达到10级后自动恢复 249 0 10
+SENDMSG 6 领取充值命令：@元宝
+SENDMSG 6 全区喊话命令：@传
+ADDLINELIST ..\QuestDiary\季卡\IP数据.txt <$USERNAME>|<$IPADDR> HardDisk
+sendmsg 0 系统：玩家【%s】加入东皇月卡大区,【<$SERVERNAME>】游戏愉快! 255 22
+
+#if
+ISNEWHUMAN
+gender woman
+#act
+TAKEON 布衣(女) 0
+TAKEON 木剑 1
+SENDMSG 5 新人上线自动禁言，达到10级后自动恢复 249 0 10
+SENDMSG 6 领取充值命令：@元宝
+SENDMSG 6 全区喊话命令：@传
+ADDLINELIST ..\QuestDiary\季卡\IP数据.txt <$USERNAME>|<$IPADDR> HardDisk
+sendmsg 0 系统：玩家【%s】加入东皇月卡大区,【<$SERVERNAME>】游戏愉快! 255 22
+
+
+#if
+ISADMIN
+#act
+CHANGEMODE 1 1
+CHANGEMODE 2 1
+CHANGEMODE 3 1
+break
+
+[@OnTimer1]
+#IF
+isonmap MIMAC
+#ACT
+BREAK
+
+#IF
+isonmap 0101A
+#ACT
+BREAK
+
+#if
+equal A5 
+#act
+mapmove 0101A
+SENDMSG 5 对不起,现在还没有正式开区.你必须在这里耐心等待!
+BREAK
+
+
+
+[@地图清人]
+#if
+isonmap DB1 
+#act
+mapmove 3
+sendmsg 7 提示:本地图活动已结束!
+break
+
+#if
+isonmap DB2
+#act
+mapmove 3
+sendmsg 7 提示:本地图活动已结束!
+break
+
+;-------------------------------------------------------
+;庆典蛋糕
+;-------------------------------------------------------
+
+[@OnTimer0]
+#IF
+LARGE M3 18
+#ACT
+MOV M3 0
+SENDMSG 7 庆典蛋糕释放完毕..
+KILLSCTIMER 0
+BREAK
+#ELSEACT
+INC M3 1
+READRANDOMSTR ..\QuestDiary\烟花.txt S3 HardDisk
+GMEXECUTE showeffect <$STR(S3)>
+READRANDOMSTR ..\QuestDiary\烟花.txt S3 HardDisk
+GMEXECUTE showeffect <$STR(S3)>
+;SENDMSG 0 <$USERNAME>在:%m%x:%y处释放庆典蛋糕咯，大家快去欣赏啊！
+BREAK

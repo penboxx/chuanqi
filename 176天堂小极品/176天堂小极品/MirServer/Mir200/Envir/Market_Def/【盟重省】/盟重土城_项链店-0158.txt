@@ -1,0 +1,16 @@
+
+
+(@buy @sell @repair )
+%100
++19
++20
++21
++62
++64
++53
++63
+#INCLUDE 8ne.txt
+[@main]
+#ACT
+#CALL	[\Market\Market1.txt]		@Markets
+#CALL	[\Market\œÓ¡¥.txt]		@2

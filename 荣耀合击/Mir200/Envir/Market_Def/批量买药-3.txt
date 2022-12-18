@@ -1,0 +1,25 @@
+()
+%100
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+　　　　　<COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+　　　　　　　<花50W金币购买100个疗伤药/@1>\ \
+　　　　　　　<花30W金币购买100个万年雪霜/@2>\ \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+[@1]
+#IF
+checkgold 500000
+#ACT
+Gmexecute 刷 疗伤药  100
+take 金币 500000
+#ELSEACT
+messagebox 金币不足50W\
+[@2]
+#IF
+checkgold 300000
+#ACT
+Gmexecute 刷 万年雪霜  100
+take 金币 300000
+#ELSEACT
+messagebox 金币不足30W\

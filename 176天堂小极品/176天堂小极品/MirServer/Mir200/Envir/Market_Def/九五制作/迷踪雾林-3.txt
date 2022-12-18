@@ -1,0 +1,33 @@
+[@main]
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clAqua 【迷踪雾林】>  <COLOR=clRed Hot～> <COLOR=clLime ★〓〓〓★2022最火暴76小极品★〓〓〓★>\ 
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clRed ♀. 本地图分3层。每层都有BOSS.>\
+<COLOR=clAqua ♀. 怪物刷新：小BOSS-30分钟刷新，大BOSS-60分钟刷新>\
+<COLOR=clLime ♀. 爆率介绍：赤月，初级屠龙。天堂装备>\
+<COLOR=clFuchsia ♀. 进入条件：200元宝等级44级开启神罚之力  爆率★★★★>\
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　                     <探索迷踪雾林/@进>                   \ 
+
+
+[@进]
+#if
+CHECK [18] 0
+#act
+MESSAGEBOX 您没有开启神罚之力！
+BREAK
+
+#if
+CHECKGAMEGOLD > 199
+#act
+GAMEGOLD - 200
+MAPMOVE slsl01
+SendMSG 0 ★玩家[%S]进入迷踪雾林一层寻宝去了 249 201
+SendMSG 0 ★玩家[%S]进入迷踪雾林一层寻宝去了 249 201
+SendMSG 0 ★玩家[%S]进入迷踪雾林一层寻宝去了 249 201
+#ELSEACT
+MESSAGEBOX 您的元宝不足！
+
+
+
+

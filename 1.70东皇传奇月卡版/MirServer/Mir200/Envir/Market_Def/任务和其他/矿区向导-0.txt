@@ -1,0 +1,17 @@
+[@main]
+<COLOR=clAqua 为防止脱机挖矿,仅限"废矿入口"可以挖矿>\ \ \
+你确定要进入吗？\ \ \
+<进去/@1>
+
+[@1]
+#If
+CHECKUSERDATE ..\QuestDiary\季卡\时间记载.txt < 90 p0 p1
+#act
+close
+mapmove D401 24 182
+break
+
+#IF
+#ACT
+sendmsg 7 提示：请购买季卡进入
+break

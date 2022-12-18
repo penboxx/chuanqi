@@ -1,0 +1,77 @@
+[@荣耀法链33]
+{
+#IF
+random 300
+#act
+GAMEGOLD - 1200
+UPGRADEITEMEX 3 1 0 1 0
+Mov m22 1
+Mov s22 荣耀法链
+#Call [\\幸运项链\暴击4-5.txt] @暴击5
+BREAK
+
+#IF
+random 200
+#act
+GAMEGOLD - 1200
+UPGRADEITEMEX 3 1 0 1 0
+Mov m22 1
+Mov s22 荣耀法链
+#Call [\\幸运项链\暴击4-5.txt] @暴击4
+BREAK
+
+#IF
+random 50
+#act
+GAMEGOLD - 1200
+UPGRADEITEMEX 3 1 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将荣耀法链升级成功，暴击额外+3。
+BREAK
+
+#IF
+random 10
+#act
+GAMEGOLD - 1200
+UPGRADEITEMEX 3 1 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将荣耀法链升级成功，暴击额外+2。
+BREAK
+
+#IF
+random 5
+#act
+GAMEGOLD - 1200
+UPGRADEITEMEX 3 1 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将荣耀法链升级成功，暴击额外+1。
+BREAK
+
+
+#IF
+random 2
+#act
+GAMEGOLD - 1200
+MESSAGEBOX 非常抱歉您的荣耀法链升级失败
+BREAK
+
+#IF
+random 1
+random
+#act
+GAMEGOLD - 1200
+MESSAGEBOX 非常抱歉您的荣耀法链升级失败
+BREAK
+
+#IF
+random
+#act
+GAMEGOLD - 1200
+MESSAGEBOX 非常抱歉您的荣耀法链升级失败
+BREAK
+
+
+}

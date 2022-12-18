@@ -1,0 +1,14 @@
+()
+%100
+[@main]
+#IF
+#ACT
+#SAY
+<COLOR=clLime 您已经累计充值:><$GAMEGIRD>元          \
+<英雄惊世大使/@英雄惊世大使> <COLOR=clLime 累计充值100元>  <领取封号/@英雄惊世大使> <COLOR=clAqua 永久2倍经验>\\ 
+<英雄出征大使/@英雄出征大使> <COLOR=clLime 累计充值300元>  <领取封号/@英雄出征大使> <COLOR=clAqua 永久2.5倍经验>\\ 
+<战场杀敌大使/@战场杀敌大使> <COLOR=clLime 累计充值500元>  <领取封号/@战场杀敌大使> <COLOR=clAqua 永久2.5倍经验>\\ 
+<威震四海大使/@威震四海大使> <COLOR=clLime 累计充值1000元> <领取封号/@威震四海大使> <COLOR=clAqua 永久3倍经验>\\ 
+
+
+

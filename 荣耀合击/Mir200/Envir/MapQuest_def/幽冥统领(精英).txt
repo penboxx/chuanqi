@@ -1,0 +1,14 @@
+[@MAIN]
+#IF
+EQUAL A76 已完成
+#ACT
+Break
+#ElseAct
+set [165] 1
+SENDMSG 0 恭喜玩家[<$USERNAME>]:击杀死了幽冥统领[精英]..完成首杀奖励！！！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]:击杀死了幽冥统领[精英]..完成首杀奖励！！！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]:击杀死了幽冥统领[精英]..完成首杀奖励！！！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]:击杀死了幽冥统领[精英]..完成首杀奖励！！！！
+Break
+
+

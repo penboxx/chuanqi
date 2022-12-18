@@ -1,0 +1,334 @@
+(@@InPutString @@InPutInteger @ReclaimItem @UserLevelOrder @WarrorLevelOrder @WizardLevelOrder @TaoistLevelOrder @MasterCountOrder @HumGameGoldOrder @buy @sell @storage @getback @repair @s_repair @storage @getback @getnextpage @getPreviouspage))
+[@main]
+#IF
+ISADMIN
+#say
+<酷酷专用/@@InPutString31>　<自定义中间公告/@@InPutString56>　<自定义顶部公告/@@InPutString57>\\\
+
+
+[@酷酷]
+尊敬的GM管理员!欢迎你的到来!\
+╔┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╗\
+┆『<人物信息/@人物信息>』┆『<怪物攻城/@怪物攻城>』┆『<城市传送/@城市传送>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆『<清理怪物/@清理怪物>』┆『<命令加载/@后台管理>』┆『<保留位置/@特殊人物>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╝\
+╚┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\ 
+#ELSEACT
+MessageBox 你不是管理员，不要乱点!
+
+
+[@后台管理]
+╔┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╗\
+┆<加载GM列表/@HT1>  ┆<加载NPC脚本/@HT2> ┆<加载登陆脚本/@HT3>┆<加载机器人/@HT4>  ┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆<加载怪物暴率/@HT5>┆<加载物品数据/@HT6>┆<加载技能数据/@HT7>┆<加载怪物数据/@HT8>┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆<加载小地图/@HT9>  ┆<加载在线公告/@HT10>┆<清除背包物品/HT11>┆<返 回  上 层/@MAIN>┆\
+╚┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\\
+
+[@@InPutString31]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString31
+
+[~InPutString31]
+#IF
+EQUAL S31 
+#ACT
+GOTO @酷酷
+
+
+[@HT1]
+#IF
+#ACT
+Gmexecute 刷新GM
+GOTO @后台管理
+
+[@HT2]
+#IF
+#ACT
+Gmexecute 刷新NPC
+GOTO @后台管理
+
+[@HT3]
+#IF
+#ACT
+Gmexecute 刷新登陆
+GOTO @后台管理
+
+[@HT4]
+#IF
+#ACT
+Gmexecute 刷新机器人脚本
+GOTO @后台管理
+
+[@HT5]
+#IF
+#ACT
+Gmexecute 刷新暴率
+GOTO @后台管理
+
+[@HT6]
+#IF
+#ACT
+Gmexecute ReloadItemDB
+GOTO @后台管理
+
+[@HT7]
+#IF
+#ACT
+Gmexecute ReloadMagicDB
+GOTO @后台管理
+
+[@HT8]
+#IF
+#ACT
+Gmexecute ReloadMonsterDB
+GOTO @后台管理
+
+[@HT9]
+#IF
+#ACT
+Gmexecute ReLoadMinMap
+GOTO @后台管理
+
+[@HT10]
+#IF
+#ACT
+Gmexecute ReloadLineNotice
+GOTO @后台管理
+
+[@HT11]
+#IF
+#ACT
+Gmexecute 清理垃圾 Self
+GOTO @后台管理
+
+
+[@清理怪物]
+请选择需要清理怪物的城市：\
+╔┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╗\
+┆『<比奇大城/@清比奇大城>』┆『<盟重土城/@清盟重土城>』┆『<封魔神谷/@清封魔神谷>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆『<白 日 门/@清白日门>』┆『<苍 月 岛/@清苍月岛>』┆『 <返  回/@main> 』┆\
+╚┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\ 
+
+[@清比奇大城]
+#ACT
+CLEARMAPMON 0
+#say
+比奇城的怪物已经被清理干净了！\
+<返回/@main>
+
+[@清盟重土城]
+#ACT
+CLEARMAPMON 3
+#say
+盟重土城的怪物已经被清理干净了！\
+<返回/@main>
+
+[@清封魔神谷]
+#ACT
+CLEARMAPMON 4
+#say
+封魔神谷的怪物已经被清理干净了！\
+<返回/@main>
+
+[@清白日门]
+#ACT
+CLEARMAPMON 11
+#say
+白日门的怪物已经被清理干净了！\
+<返回/@main>
+
+[@清苍月岛]
+#ACT
+CLEARMAPMON 5
+#say
+苍月岛的怪物已经被清理干净了！\
+<返回/@main>
+
+[@城市传送]
+╔┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╗\
+┆『<比奇大城/@比奇大城>』┆『<盟重土城/@盟重土城>』┆『<封魔神谷/@封魔神谷>』┆\
+╠┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆『<白 日 门/@白日门>』┆『<苍 月 岛/@苍月岛>』┆『 <返  回/@main> 』┆\
+╚┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\ 
+
+[@比奇大城]
+#if
+#ACT
+mapmove 0 334  266
+break
+
+[@盟重土城]
+#if
+#ACT
+mapmove 3 330  330
+break
+
+[@封魔神谷]
+#if
+#ACT
+mapmove 4 240  200
+break
+
+[@白日门]
+#if
+#ACT
+mapmove 11 178  326
+break
+
+[@苍月岛]
+#if
+#ACT
+mapmove 5 141  337
+break
+
+
+[@怪物攻城]
+　\ \
+<攻城刷怪/@攻城刷怪> 　<攻城通告/@攻城通告>　\\
+　\ \
+<自定义中间公告/@@InPutString56>　<自定义顶部公告/@@InPutString57>\\
+　\ \
+<返 回  上 层/@MAIN>\
+
+[@攻城通告]
+#If
+CheckLevelEx > 0
+#Act
+SENDMSG 0  怪物5分钟后将会进攻比奇省,勇士们,冲啊!保卫我们的家园,怪物路线:比奇皇宫-比奇首饰 255 252 30
+
+[@@InPutString56]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString56
+[~InPutString56]
+#If
+CheckLevelEX > 0
+#Act
+DEC S56 62 999
+SENDMSG 0 <$STR(S56)> 251 0 30
+CLOSE
+goto @怪物攻城
+
+
+[@@InPutString57]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString57
+[~InPutString57]
+#If
+CheckLevelEX > 0
+#Act
+DEC S57 62 999
+SendScrollMsg <$STR(S57)> 255 249
+CLOSE
+goto @怪物攻城
+
+[@CallInPutString3]
+#IF
+ISADMIN
+#ACT
+MISSION 0 311 284
+PARAM1 370
+PARAM2 190
+PARAM3 10
+PARAM4 50
+MOBPLACE <$STR(S3)>
+goto @怪物攻城
+
+[@攻城刷怪]
+#IF
+ISADMIN
+#ACT
+MISSION 0 310 280
+PARAM1 325
+PARAM2 214
+PARAM3 1
+PARAM4 5
+MOBPLACE 黄泉教主
+MOBPLACE 虹魔蝎卫
+MOBPLACE 虹魔猪卫
+MOBPLACE 沃玛教主
+MOBPLACE 沃玛教主
+MOBPLACE 沃玛教主
+MOBPLACE 沃玛教主
+MOBPLACE 沃玛教主
+MOBPLACE 虹魔教主
+MOBPLACE 白野猪
+MOBPLACE 邪恶毒蛇
+MOBPLACE 暗之双头血魔
+MOBPLACE 暗之双头金刚
+MOBPLACE 暗之骷髅精灵
+MOBPLACE 暗之黄泉教主
+MOBPLACE 暗之虹魔教主
+MOBPLACE 暗之沃玛教主
+MOBPLACE 半兽统领
+MOBPLACE 祖玛卫士00
+MOBPLACE 祖玛卫士3
+MOBPLACE 祖玛卫士00
+MOBPLACE 祖玛卫士3
+MOBPLACE 祖玛卫士00
+MOBPLACE 祖玛卫士3
+MOBPLACE 祖玛卫士00
+MOBPLACE 祖玛卫士3
+MOBPLACE 祖玛卫士00
+MOBPLACE 祖玛卫士3
+MOBPLACE 骷髅精灵
+MOBPLACE 尸王
+MOBPLACE 祖玛弓箭手3
+MOBPLACE 祖玛雕像3
+MOBPLACE 祖玛弓箭手3
+MOBPLACE 祖玛雕像3
+MOBPLACE 祖玛弓箭手3
+MOBPLACE 祖玛雕像3
+MOBPLACE 祖玛弓箭手3
+MOBPLACE 祖玛雕像3
+MOBPLACE 祖玛弓箭手3
+MOBPLACE 祖玛雕像3
+MOBPLACE 邪恶钳虫
+MOBPLACE 双头金刚
+MOBPLACE 双头血魔
+SENDMSG 0  怪物已经进攻比奇城,路线为从比奇皇宫到比奇首饰店门口! 255 249 50
+goto @怪物攻城
+
+[@人物信息]
+#if
+#say
+　\ \
+<最高等级/@HighLevelInfo>  <最高攻击/@HighDCInfo>  <最高魔法/@HighMCInfo> \ \
+
+<最高道术/@HighSCInfo>  <罪大恶极/@HighPKCInfo>  <个人信息/@HighgrInfo> \ \
+<返 回  上 层/@MAIN>\
+
+[@HighLevelInfo]
+#ACT
+messagebox 以下为当前在线最高等级人物信息:\<$HIGHLEVELINFO>
+[@HighDCInfo]
+#ACT
+messagebox 以下为当前在线最高攻击人物信息:\<$HIGHDCINFO>
+[@HighMCInfo]
+#ACT
+messagebox 以下为当前在线最高魔法人物信息:\<$HIGHMCINFO>
+[@HighSCInfo]
+#ACT
+messagebox 以下为当前在线最高道术人物信息:\<$HIGHSCINFO>
+[@HighPKCInfo]
+#ACT
+messagebox 以下为当前在线罪大恶极人物信息:\<$HIGHPKINFO>
+[@HighgrInfo]
+<你的 I P>:<$IPADDR>\
+<物理防御>:<$AC>/<$MAXAC>\
+<魔法防御>:<$MAC>/<$MAXMAC>\
+<物理攻击>:<$DC>/<$MAXDC>\
+<魔法攻击>:<$MC>/<$MAXMC>\
+<道术攻击>:<$SC>/<$MAXSC>\ 
+<罪恶点数>:<$PKPOINT>    <金币数量>:<$GOLDCOUNT>    <元宝数量>:<$GAMEGOLD>\ 
+<登录时间>:<$LOGINTIME>  <已经在线>:[<$LOGINLONG>]      <返回上页/@人物信息>\
+

@@ -1,0 +1,8 @@
+RightWall
+沙巴克右城墙
+LeftWall
+MainDoor
+沙巴克城门
+CenterWall
+沙巴克中城墙
+沙巴克左城墙

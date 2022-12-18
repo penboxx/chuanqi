@@ -1,0 +1,9 @@
+()
+%100
+[@main]
+#if
+CHECKLEVELEX > 0
+#act
+mapmove 3  333   333
+#ELSEACT
+MESSAGEBOX 你没有35级，不允许进入！

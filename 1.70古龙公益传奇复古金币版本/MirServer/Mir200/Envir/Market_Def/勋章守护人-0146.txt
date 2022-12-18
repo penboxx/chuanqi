@@ -1,0 +1,382 @@
+[@MAIN]
+这里可以领取荣誉勋章，只要有足够的声望！\
+等级越高的勋章需要越多的声望。各级勋章所需条件如下：\
+随机兑换<COLOR=CLYELLOW 11-15号勋章>需要声望:<COLOR=CLRED 20点>,指定兑换需要声望:<COLOR=CLRED 40点>\
+随机兑换<COLOR=CLYELLOW 21-25号勋章>需要声望:<COLOR=CLRED 40点>,指定兑换需要声望:<COLOR=CLRED 80点>\
+随机兑换<COLOR=CLYELLOW 31-35号勋章>需要声望:<COLOR=CLRED 80点>,指定兑换需要声望:<COLOR=CLRED 160点>\
+随机兑换<COLOR=CLYELLOW 41-45号勋章>需要声望:<COLOR=CLRED 160点>,指定兑换需要声望:<COLOR=CLRED 240点>\ \
+<兑换荣誉勋章/@兑换荣誉勋章>                           你目前的声望值:<$CREDITPOINT>\
+<升级荣誉勋章/@升级勋章>\
+
+
+[@升级勋章]
+<COLOR=CLYELLOW 勋章可成功升级的次数与勋章的等级一致>，\
+例如：1级勋章只能成功升级1次，2级勋章只能成功升级2次...\
+你需要在包裹内放好升级荣誉勋章的各种原料，\
+每次升级荣誉勋章都会收走你包裹内的所有原料，请保管好重要物品。\
+勋章升级分为两种，一种是“<COLOR=CLRED 常规>”升级，一种是“<COLOR=CLRED 惊彩>”升级。\
+<查看升级配方/@查看>\
+<选择勋章常规升级/@选择常规>\
+<选择勋章惊彩升级/@选择惊彩>\
+<返回/@MAIN>\
+
+[@选择惊彩]
+想要进行荣誉勋章的“<COLOR=CLRED 惊彩>”升级？\
+这个……\
+你还是等等再来吧！\
+<返回/@升级勋章>\
+
+[@查看]
+<COLOR=CLYELLOW 常规升级中>,1级和2级勋章需要加入和勋章属性相对应的祖玛首饰\
+3级和4级勋章则需要加入和勋章属性相对应的赤月首饰\
+防御和魔御类勋章的升级配方中可以放入对应类型的随意属性首饰\
+每次升级必备5种物品：<COLOR=CLRED 首饰,祈福项链,勋章之心,绿宝石和紫水晶矿>\
+5种物品的数量需要你来配,我帮不了你!总之越接近配方成功率越高\
+勋章常规升级失败了勋章不会破碎!\
+<COLOR=CLYELLOW 精彩升级中>,你可以知道明确的配方,但是只有<COLOR=CLRED 50%>的成功机会\
+失败的话勋章就会破碎,如果未符合配方要求的话也肯定会破碎的!\
+<返回上页/@升级勋章>\
+
+[@选择常规]
+第一次升级需要的首饰为:<COLOR=CLRED 戒指>\
+第二次升级需要的首饰是:<COLOR=CLRED 戒指>、<COLOR=CLRED 手镯>\
+第三次升级需要的首饰是:<COLOR=CLRED 戒指>、<COLOR=CLRED 手镯>、<COLOR=CLRED 项链>\
+第四次升级需要的首饰是:<COLOR=CLRED 戒指>、<COLOR=CLRED 手镯>、<COLOR=CLRED 项链>、<COLOR=CLRED 头盔>\
+勋章常规升级如果失败了勋章不会破碎，\
+但是每次常规升级都需要消耗3颗金刚石！\ \
+<开始常规升级勋章/@常规升级>\
+<返回/@升级勋章>\
+
+[@常规升级]
+首先请将需要升级的荣誉勋章交给我检查，\
+不管你的包裹内是否有足够的配方材料，\
+一旦点击<COLOR=CLRED “ＯＫ”>即开始升级荣誉勋章，\
+即使你的包裹内什么也没有，或者有大量的游戏道具，\
+都会被视为升级原料收走，因此在升级前你要仔细考虑，\
+在包裹内放入你认为最合适的配方原料。\
+能不能升级成功就看你的领悟里了！\
+<COLOR=CLYELLOW 一旦点击“ＯＫ”包裹里的所有物品都将会收走！>\
+<返回/@升级勋章>\
+#ACT
+MOV M7 0
+MOV M8 0
+MOV M9 0
+MOV M10 0
+MOV D9 0
+DELAYCALL 50 @确认常规
+
+[@确认常规]
+#ACT
+QUERYITEMDLG 放入要升级的勋章 @确认常规2 0
+
+[@确认常规2]
+#IF
+CHECKGAMEDIAMOND < 3
+#ACT
+GOTO @常规升级
+MESSAGEBOX 对不起，你的金刚石不足3颗！
+BREAK
+
+#IF
+CHECKPOSDLGITEMNAME 荣誉勋章1
+#ACT
+GETDLGITEMVALUE M8 15
+GETDLGITEMVALUE M7 15
+MOVR D9 100
+INC D9 1
+#CALL [\系统功能\升级勋章\11-15勋章.txt] @勋章升级1
+BREAK
+#IF
+CHECKPOSDLGITEMNAME 荣誉勋章2
+#ACT
+GETDLGITEMVALUE M8 15
+GETDLGITEMVALUE M7 15
+MOVR D9 100
+INC D9 1
+#CALL [\系统功能\升级勋章\21-25勋章.txt] @勋章升级2
+BREAK
+#IF
+CHECKPOSDLGITEMNAME 荣誉勋章3
+#ACT
+GETDLGITEMVALUE M8 15
+GETDLGITEMVALUE M7 15
+MOVR D9 100
+INC D9 1
+#CALL [\系统功能\升级勋章\31-35勋章.txt] @勋章升级3
+BREAK
+#IF
+CHECKPOSDLGITEMNAME 荣誉勋章4
+#ACT
+GETDLGITEMVALUE M8 15
+GETDLGITEMVALUE M7 15
+MOVR D9 100
+INC D9 1
+#CALL [\系统功能\升级勋章\41-45勋章.txt] @勋章升级4
+BREAK
+#ELSEACT
+SENDMSG 7 提示：<$DLGITEMNAME>在此不能升级！
+DELAYCALL 10 @常规升级
+BREAK
+
+[@兑换荣誉勋章]
+随机兑换<COLOR=CLYELLOW 11-15号勋章>需要声望:<COLOR=CLRED 20点>,指定兑换需要声望:<COLOR=CLRED 40点>\
+随机兑换<COLOR=CLYELLOW 21-25号勋章>需要声望:<COLOR=CLRED 40点>,指定兑换需要声望:<COLOR=CLRED 80点>\
+随机兑换<COLOR=CLYELLOW 31-35号勋章>需要声望:<COLOR=CLRED 80点>,指定兑换需要声望:<COLOR=CLRED 160点>\
+随机兑换<COLOR=CLYELLOW 41-45号勋章>需要声望:<COLOR=CLRED 160点>,指定兑换需要声望:<COLOR=CLRED 240点>\ \
+<随机领机勋章/@随机兑换>\
+<指定领取勋章/@指定兑换>\ \
+<返回/@MAIN>\
+
+
+[@随机兑换]
+请选择需要领取的荣誉勋章，这里是随机领取的。\
+你目前的声望值:<$CREDITPOINT>\ \
+<随机领取11-15号荣誉勋章/@随机1级勋章>     需要声望:<COLOR=CLRED 20点>\
+<随机领取21-25号荣誉勋章/@随机2级勋章>     需要声望:<COLOR=CLRED 40点>\
+<随机领取31-35号荣誉勋章/@随机3级勋章>     需要声望:<COLOR=CLRED 80点>\
+<随机领取41-45号荣誉勋章/@随机4级勋章>     需要声望:<COLOR=CLRED 160点>\
+<返回/@MAIN>\
+
+[@随机1级勋章]
+#IF
+CHECKCREDITPOINT > 19
+#ACT
+CREDITPOINT - 20
+READRANDOMSTR .\QuestDiary\抽取数据\勋章系统\1级勋章.txt S11
+GIVE <$STR(S11)> 1
+SENDMSG 5 恭喜：你随机兑换到:<$STR(S11)>！
+BREAK
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+
+[@随机2级勋章]
+#IF
+CHECKCREDITPOINT > 39
+#ACT
+CREDITPOINT - 40
+READRANDOMSTR .\QuestDiary\抽取数据\勋章系统\2级勋章.txt S11
+GIVE <$STR(S11)> 1
+SENDMSG 5 恭喜：你随机兑换到:<$STR(S11)>！
+BREAK
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+
+[@随机3级勋章]
+#IF
+CHECKCREDITPOINT > 79
+#ACT
+CREDITPOINT - 80
+READRANDOMSTR .\QuestDiary\抽取数据\勋章系统\3级勋章.txt S11
+GIVE <$STR(S11)> 1
+SENDMSG 5 恭喜：你随机兑换到:<$STR(S11)>！
+BREAK
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+
+[@随机4级勋章]
+#IF
+CHECKCREDITPOINT > 159
+#ACT
+CREDITPOINT - 160
+READRANDOMSTR .\QuestDiary\抽取数据\勋章系统\4级勋章.txt S11
+GIVE <$STR(S11)> 1
+SENDMSG 5 恭喜：你随机兑换到:<$STR(S11)>！
+BREAK
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+
+[@指定兑换]
+这里你可以领取指定的荣誉勋章，\
+当然，你要付出更多的声望值。\
+<荣誉勋章11号/@11号>   <荣誉勋章21号/@21号>   <荣誉勋章31号/@31号>   <荣誉勋章41号/@41号>\
+<荣誉勋章12号/@12号>   <荣誉勋章22号/@22号>   <荣誉勋章32号/@32号>   <荣誉勋章42号/@42号>\
+<荣誉勋章13号/@13号>   <荣誉勋章23号/@23号>   <荣誉勋章33号/@33号>   <荣誉勋章43号/@43号>\
+<荣誉勋章14号/@14号>   <荣誉勋章24号/@24号>   <荣誉勋章34号/@34号>   <荣誉勋章44号/@44号>\
+<荣誉勋章15号/@15号>   <荣誉勋章25号/@25号>   <荣誉勋章35号/@35号>   <荣誉勋章45号/@45号>\ \
+<返回/@MAIN>
+
+[@45号]
+#IF
+CHECKCREDITPOINT > 239
+#ACT
+CREDITPOINT - 240
+GIVE 荣誉勋章45号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章45号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@44号]
+#IF
+CHECKCREDITPOINT > 239
+#ACT
+CREDITPOINT - 240
+GIVE 荣誉勋章44号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章44号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@43号]
+#IF
+CHECKCREDITPOINT > 239
+#ACT
+CREDITPOINT - 240
+GIVE 荣誉勋章43号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章43号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@42号]
+#IF
+CHECKCREDITPOINT > 239
+#ACT
+CREDITPOINT - 240
+GIVE 荣誉勋章42号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章42号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@41号]
+#IF
+CHECKCREDITPOINT > 239
+#ACT
+CREDITPOINT - 240
+GIVE 荣誉勋章41号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章41号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+
+[@35号]
+#IF
+CHECKCREDITPOINT > 159
+#ACT
+CREDITPOINT - 160
+GIVE 荣誉勋章35号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章35号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@34号]
+#IF
+CHECKCREDITPOINT > 159
+#ACT
+CREDITPOINT - 160
+GIVE 荣誉勋章34号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章34号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@33号]
+#IF
+CHECKCREDITPOINT > 159
+#ACT
+CREDITPOINT - 160
+GIVE 荣誉勋章33号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章33号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@32号]
+#IF
+CHECKCREDITPOINT > 159
+#ACT
+CREDITPOINT - 160
+GIVE 荣誉勋章32号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章32号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@31号]
+#IF
+CHECKCREDITPOINT > 159
+#ACT
+CREDITPOINT - 160
+GIVE 荣誉勋章31号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章31号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+
+
+[@25号]
+#IF
+CHECKCREDITPOINT > 79
+#ACT
+CREDITPOINT - 80
+GIVE 荣誉勋章25号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章25号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@24号]
+#IF
+CHECKCREDITPOINT > 79
+#ACT
+CREDITPOINT - 80
+GIVE 荣誉勋章24号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章24号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@23号]
+#IF
+CHECKCREDITPOINT > 79
+#ACT
+CREDITPOINT - 80
+GIVE 荣誉勋章23号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章23号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@22号]
+#IF
+CHECKCREDITPOINT > 79
+#ACT
+CREDITPOINT - 80
+GIVE 荣誉勋章22号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章22号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@21号]
+#IF
+CHECKCREDITPOINT > 79
+#ACT
+CREDITPOINT - 80
+GIVE 荣誉勋章21号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章21号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+
+
+[@15号]
+#IF
+CHECKCREDITPOINT > 39
+#ACT
+CREDITPOINT - 40
+GIVE 荣誉勋章15号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章15号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@14号]
+#IF
+CHECKCREDITPOINT > 39
+#ACT
+CREDITPOINT - 40
+GIVE 荣誉勋章14号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章14号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@13号]
+#IF
+CHECKCREDITPOINT > 39
+#ACT
+CREDITPOINT - 40
+GIVE 荣誉勋章13号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章13号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@12号]
+#IF
+CHECKCREDITPOINT > 39
+#ACT
+CREDITPOINT - 40
+GIVE 荣誉勋章12号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章12号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！
+[@11号]
+#IF
+CHECKCREDITPOINT > 39
+#ACT
+CREDITPOINT - 40
+GIVE 荣誉勋章11号 1
+SENDMSG 5 恭喜：你成功兑换:荣誉勋章11号！
+#ELSESAY
+对不起，您没有足够的声望值兑换！

@@ -1,0 +1,341 @@
+﻿.gallery-img img{width:121px;height:161px;}
+.right-content img{max-width:630px;}
+.dede_pages{  clear:both;
+    line-height: 18px;
+    padding: 40px 0px;
+}
+.dede_pages ul{
+	float:left;
+	padding:4px 0px 4px 16px;
+
+}
+.dede_pages ul li{
+	float:left;
+	font-family:Tahoma;
+	line-height:17px;
+	margin-right:6px;
+	border:1px solid #9d5006;
+background-color:#af7300;
+}
+.dede_pages ul li a{
+	float:left;
+	padding:2px 4px 2px;
+	color:#333;
+	display:block;
+}
+.dede_pages ul li a:hover{
+	color:#fff600;
+	text-decoration:none;
+	padding:2px 4px 2px;
+}
+.dede_pages ul li.thisclass,
+.dede_pages ul li.thisclass a,.pagebox ul li.thisclass a:hover{
+	background-color:#af7300;
+	padding:2px 4px 2px;
+	font-weight:bold;
+}
+.dede_pages .pageinfo{
+	line-height:21px;
+	padding:12px 10px 12px 16px;
+	color:#333;
+}
+.dede_pages .pageinfo strong{
+	color:#555;
+	font-weight:normal;
+	margin:0px 2px;
+}
+@charset "utf-8";
+/*css reset*/
+body,dd,dl,dt,h1,h2,h3,h4,h5,ul,ol,li,p,form,select,input{margin:0;padding:0}
+ul,li {list-style:none;}
+img {border: none;}
+form,fieldset{margin:0; padding:0; word-wrap:break-word; word-break:normal}
+button::-moz-focus-inner,input[type=reset]::-moz-focus-inner,input[type=button]::-moz-focus-inner,input[type=submit]::-moz-focus-inner,input[type=file]>input[type=button]::-moz-focus-inner{border:0;padding:0}
+h1,h2,h3,h4,h5{font-family:"Arial","Microsoft YaHei";font-weight:400;font-size:12px}
+button,input[type=button],input[type=submit],input[type=reset],input[type=file]{cursor:pointer}
+:focus{outline:0}
+em,i{font-style:normal}
+table{border-collapse:collapse;border-spacing:0}
+th{font-weight:400}
+.radio{margin:0; vertical-align:middle; margin-right:2px; margin-top:-2px}
+/*states*/
+.blok{display:block}
+.inline{display:inline}
+.none{display:none}
+.relative{position:relative}
+.absolute{position:absolute}
+.strong{font-weight:bold}
+.tl{text-align:left}
+.tr{text-align:right}
+.tc{text-align:center}
+.vm{vertical-align:middle}
+.vt{vertical-align:top}
+.vb{vertical-align:bottom}
+.fl{float:left}
+.fr{float:right}
+.cursor{cursor:pointer}
+.clear{clear:both} 
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{zoom:1}
+/*width & spacing*/
+.mt5{margin-top:5px}
+.mt10{margin-top:10px}
+.mr10{margin-right:10px}
+.mb10{margin-bottom:10px}
+.ml10{margin-left:10px}
+.mt20{margin-top:20px}
+.mb15{margin-bottom:15px}
+.mb20{margin-bottom:20px}
+.mt25{margin-top:25px}
+.mb25{margin-bottom:25px}
+.mr30{margin-right:30px}
+.mr3{margin-right:3px}
+.w960,.w1000{margin-left:auto; margin-right:auto}
+.w960{width:960px}
+.w1000{width:1000px}
+/*font*/
+.p12{font-size:12px}
+.p14{font-size:14px}
+.p16{font-size:16px}
+.p18{font-size:18px}
+.p24{font-size:24px}
+.sinSun{font-family:"SimSun"}
+.sinHei{font-family:"SimHei"}
+.microHei{font-family:"Microsoft YaHei"}
+/*color*/ 
+.red{color:#f00}
+.green{color:#093}
+.org{color:#f60}
+.black{color:#000}
+.c3{color:#333}
+.c6{color:#666}
+.c9{color:#999}
+.cc42{color:#c42000;}
+.c90{color:#c90000}
+.cff4{color:#ff4e00}
+.c8a{color:#8a1700}
+.bronze{color:#633900}
+/*body init*/
+body{font-family: "Arial","Microsoft YaHei"; color:#333; font-size:12px; background-color: #000000; min-width:960px}
+a{color:#333; text-decoration:none} 
+a:hover{color:#f40}
+.main-content{width:960px;margin:0 auto}
+.body-bg{background:url(../../www.hh176.com/pkddd/bg-body.jpg) #000000 no-repeat center top}
+.header-con{width:960px; margin:0 auto; height:472px; position:relative}
+.logo{display:block;width:240px;height:125px}
+.logo3{margin-bottom:255px}
+#mainbody{background:url(../../www.hh176.com/pkddd/main_03.jpg) no-repeat center top}
+.header_smoke{position:absolute; width:723px; height:201; right:0; bottom:-3px}
+.h-title{color:#4a2800;line-height:28px;height:28px;padding:13px 15px 0 15px;position: relative;}
+.h-title a{color:#4a2800}
+.lab100,.lab60{width:90px;text-align:right;display:inline-block;padding-right:10px}
+.lab60{width:50px}
+.input265,.input215,.input225,.input100,.input205,.input-text{width:253px;border:1px #975200 solid;height:21px;line-height:21px;padding:6px;color:#8a1700;vertical-align:middle;background:#fff7d0}
+.input215{width:203px}
+.input225{width:213px}
+.input100{width:100px}
+.input205{width:193px}
+.sel265,.sel205{width:267px;border:1px #975200 solid;height:35px;color:#8a1700;vertical-align:middle;background:#fff7d0}
+.sel205{width:207px}
+.btn01{font-family:"Microsoft YaHei";background:url(../../www.hh176.com/pkddd/btn_main.jpg) no-repeat 0 -120px;width:177px;height:50px;display:inline-block;font-size:22px;color:#ffec9e;line-height:50px;text-align:center;border:0;cursor:pointer}
+.btn01:hover{background-position:0 -171px;color:#ffec9e}
+.btn02,.btn03,.btn09{background:#b66825;color:#3a1f04;display:inline-block;padding:7px 0;font-size:14px;min-width:95px;text-align:center;_width:95px;border:0;cursor:pointer}
+.btn10,.btn11,.btn12{background:url(../../www.hh176.com/pkddd/btn-c-1.gif) no-repeat; width:95px; height:39px; line-height:39px; display:inline-block; text-align:center; font-size:14px; color:#3a1f04; margin-right:8px;border:0;cursor:pointer; border:none; padding:0; vertical-align:middle}
+.btn10:hover,.btn11:hover{color:#333}
+.btn10{background-position:0 -78px}
+.btn10:hover{background-position:0 -117px}
+.btn11{background-position:0 0}
+.btn11:hover{background-position:0 -39px}
+.btn12{background-position:0 -156px; color:#888; cursor:default !important}
+.btn13{background:url(../../www.hh176.com/pkddd/btnpassword_03.jpg) repeat-x;height:23px;line-height:23px;border:1px #934a00 solid;color:#fffc00;padding:0 15px;display:inline-block}
+.btn13:hover{background:url(../../www.hh176.com/pkddd/btnpassword_05.jpg) repeat-x;color:#fffc00}
+.btn03{background:#cabb8f}
+.btn09{background:#f0e6c3}
+.btn04{background:url(../../www.hh176.com/pkddd/btn_main.jpg) no-repeat 0 -222px;width:205px;height:50px;display:inline-block;border:0;cursor:pointer}
+.btn04:hover{background-position:0 -273px}
+.btn05,.btn06{background:url(../../www.hh176.com/pkddd/btn_main.jpg) no-repeat 0 -530px;width:128px;height:51px;margin:-10px 55px 0 0;display:inline;position:relative}
+.btn05:hover{background-position:0 -582px}
+.btn06{width:195px;height:68px;background-position:0 -634px;margin:0 10px 0 0}
+.btn06:hover{background-position:0 -703px}
+.btn07{background:url(../../www.hh176.com/pkddd/btn_user.jpg) no-repeat 0 0;width:99px;height:39px;text-align:center;display:inline-block;line-height:39px;color:#3a1f04}
+.btn07:hover{background-position:0 -40px}
+.btn08{color:#fff197;background:#942b0a;border:1px #b13e10 solid;display:inline-block;padding:0 3px;border-radius:2px;height:18px;line-height:18px}
+.btn08:hover{color:#942b0a;background:#fff000}
+.btn-left{background:url(../../www.hh176.com/pkddd/btn_main.jpg) no-repeat 0 -324px;width:184px;height:37px;display:inline-block;line-height:37px;text-align:center;font-size:16px;color:#000}
+.btn-left:hover,.menu-lefta{background-position:0 -362px;color:#8d0f00}
+.btn-ts,.btn-ts2{background:url(../../www.hh176.com/pkddd/pass_ts.png);width:43px;height:43px;display:inline-block;margin-right:12px; vertical-align:middle;_background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://www.hh176.com/pkddd/pass_ts.png" ,sizingMethod="crop")}
+.btn-ts2{background:url(../../www.hh176.com/pkddd/pass_ts2.png);_background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://www.hh176.com/pkddd/pass_ts2.png" ,sizingMethod="crop")}
+.form-nolab{padding-left:100px}
+
+
+/*顶部工具栏*/
+.top-bar{height:34px; line-height:34px; background-color:#f0f0f0; color:#666; font-family:"SimSun"}
+.top-bar .split{margin-left:15px; margin-right:15px}
+.top-bar a{color:#666}
+.top-bar a:hover{color:#f40}
+
+.idx-hm-con .topic .title:hover,.lm-bb li a:hover{color:#d01a14}
+
+/*主导航*/
+#main-nav{position:absolute; top:34px; left:50%; margin-left:-480px; height:38px; z-index:80; width:960px}
+#nav-blank{position:absolute; z-index:20; left:0; top:0; width:720px; height:350px; display:none;background:url(../../www.hh176.com/pkddd/bg-mainnav.png) repeat-x; _background:none; _background:url(../../www.hh176.com/pkddd/bg-mainnav-ie6.jpg);}
+#main-nav .nav-item{width:119px; margin-right:1px; position:relative; float:left; overflow:hidden; z-index:25}
+.nav-item-down .nav-item{height:350px}
+#main-nav .tit{display:block; background-image:url(../../www.hh176.com/pkddd/btn-mian-nav.png); background-repeat:no-repeat; _background-image:url(../../www.hh176.com/pkddd/btn-mian-nav-ie6.png); width:80px; margin-left:20px; margin-top:10px; height:28px; line-height:28px; color:#FFF; font-weight:700; font-size:14px; text-indent:-9999px}
+.nav-item .lv1{height:38px}
+.nav-item .lv2{display:none}
+.main-nav .cur1{background:url(../../www.hh176.com/pkddd/bg-mainnav-lv2.png) no-repeat}
+#main-nav ol{width:120px; display:none; padding:5px 0}
+#main-nav ol li{line-height:30px; height:30px; overflow:hidden; padding:0 5px; text-align:center}
+#main-nav ol li a{color:#fff; display:block; height:30px;}
+#main-nav ol li a:hover{background-color:#800c00}
+.main-nav-ie6 .nav-item{}
+.main-nav-ie6 .lv2{background:#232323; height:auto; _filter:alpha(opacity=80)}
+.main-nav-ie6 .lv2 li{ position:relative}
+
+.nav-tit1{background-position:0 0}
+.nav-tit2{background-position:0 -28px}
+.nav-tit3{background-position:0 -56px}
+.nav-tit4{background-position:0 -84px}
+.nav-tit5{background-position:0 -112px}
+.nav-tit6{background-position:0 -140px}
+.nav-tit7{background-position:0 -168px}
+.nav-tit8{background-position:0 -196px}
+.cur .nav-tit1{background-position:-80px 0}
+.cur .nav-tit2{background-position:-80px -28px}
+.cur .nav-tit3{background-position:-80px -56px}
+.cur .nav-tit4{background-position:-80px -84px}
+.cur .nav-tit5{background-position:-80px -112px}
+.cur .nav-tit6{background-position:-80px -140px}
+.cur .nav-tit7{background-position:-80px -168px}
+.cur .nav-tit8{background-position:-80px -196px}
+
+
+
+/**popup-window**/
+.popup-window-bg{width: 100%;height: 100%;position: absolute;top: 0;z-index: 999;display:none}
+.popup-window{position:fixed; top:50%;left:50%;z-index:9999; _position:absolute; _top:expression(documentElement.scrollTop + 250 + "px"); display:none; width:566px; margin-left:-170px;}
+.popup-con,.popup-head{background-image:url(../../www.hh176.com/pkddd/layer.gif);  padding-left:9px; padding-right:9px; overflow:hidden}
+.popup-head{background-position:left top; height:37px; padding-top:11px}
+.popup-title{height:37px;line-height:37px;color:#f9dc80;padding:0 10px 0 15px; background-color:#803e05}
+.popup-title .popup-close{background:url(../../www.hh176.com/pkddd/btn_user.jpg) no-repeat 0 -99px;width:13px;height:13px;display:inline-block;margin-top:12px;font-size:0}
+.popup-con{background-position: left bottom; padding:10px 9px 40px 9px; background-color:#eedebc}
+/*电子密保卡*/
+.pwd-protec{height:510px; margin-top:-255px}
+.pwd-protec .left-con{width:314px; height:200px; float:left}
+.pwd-protec .popup-con .tit{color:#c80000}
+.pwd-protec .split{width:1px; height:187px; overflow:hidden; float:left; background-color:#8b7c5a; margin-left:25px; margin-right:25px}
+.pwd-protec .QR{width:138px; float:left}
+.pwd-protec .QR p{font-size:14px; margin-bottom:5px}
+.pwd-protec .QR img{display:block; width:138px; height:136px}
+.pwd-protec .popup-con{padding:20px 30px 30px}
+.pwd-protec .txt-con li{line-height:2}
+.pwd-protec .w75{padding-right:3px; width:72px; display:inline-block; text-align:right}
+.pwd-protec .input-text{padding:6px}
+.input-188{width:188px}
+.input-50{width:50px; margin-right:2px}
+.pwd-protec .box-62{width:66px; height:32px; line-height:32px; font-family:Verdana, Tahoma, Geneva;  background-color:#b31400; font-size:14px; color:#fff; text-align:center; display:inline-block; margin-right:2px}
+.w314{width:314px; margin-left:auto; margin-right:auto}
+.pwd-pro-table{border-color:#a1834c; width:100%; background-color:#fff}
+.pwd-pro-table th,.pwd-pro-table td{width:22px; height:15px; color:#a1834c; text-align:center; border-color:#ccc; font-family:Verdana, Tahoma, Geneva}
+.pwd-pro-table .fill{background-color:#fc3; color:#fff; font-size:10px}
+
+.popup-confirm{background:url(../../www.hh176.com/pkddd/layer-430.gif) #deba84 no-repeat; height:180px; margin-top:-90px; text-align:center;width:390px;margin-left:-100px;padding:0 20px}
+.popup-confirm p{font-size:16px; padding:35px 0 15px}
+.pay-layer{background:url(../../www.hh176.com/pkddd/layer-242.gif) #deba84 no-repeat; height:242px; margin-top:-121px;_margin-top:-168px}
+.pay-layer h3{padding-top:32px;}
+.pay-layer p{line-height:20px;padding:30px 0 50px 0}
+.user-layer{height:290px; margin-top:-145px; _top:720px}
+.user-layer form {padding-left:10px}
+.user-layer form .form-nolab{padding-top:25px}
+.user-layer form .form-nolab a{margin-right:17px}
+.user-layer form .form-nolab2{padding-top:5px}
+/**footer**/
+#footer{clear:both; border-top:1px #1b1b1b solid;margin-top:60px;background-color: #000;padding-bottom:50px;color:#999}
+.footer{background-color: #000;}
+.footer-content{padding-bottom:30px;overflow:hidden}
+.footer-logo{padding:20px 0 0 20px}
+.footer-logo span{background:url(../../www.hh176.com/pkddd/hr_06.jpg) no-repeat right top;padding-right:20px;float:left;margin-right:20px}
+.footer-logo .footer-logoimg{padding:20px 20px 14px 0;display:inline-block}
+.footer-info{line-height:24px;padding:20px 0 0 20px}
+.footer-info a,.footer-info div{color:#e5af20}
+.footer-info a:hover{color:#f40}
+.footer-img{padding:40px 20px 0 0}
+.footer-img img{margin:0 12px}
+/**top**/
+#top{padding:1px 0 0 1px; position:fixed;right:16px; top:90px; _position:absolute; _top:expression(documentElement.scrollTop + 90 + "px");z-index:9999}
+#top .relative{display:block}
+#top div{background:url(../../www.hh176.com/pkddd/top_bg.jpg) #1e1e1e no-repeat; width:53px; padding-top:9px; margin-left:16px}
+#top a span,#top .top-btn{background:url(../../www.hh176.com/pkddd/btn_main.jpg) no-repeat;display:block; width:53px}
+#top div .top-zb,#top div .top-qq{color:#fff;cursor:pointer;display:block;height:70px}
+#top div a:hover{color:#ffe157}
+#top .top-link-img img{ border-top:1px solid #333}
+#top .top-zb span{background-position:-111px 0;height:57px}
+#top .top-zb:hover span{background-position:-164px 0}
+#top .top-qq{margin-top:25px}
+#top .top-qq span{background-position:0 -51px;height:41px}
+#top .top-qq:hover span{background-position:-53px -51px}
+#top .top-btn{background-position: 0 -94px;height:25px;  margin-left:16px}
+#top div,#top .top-btn{_margin-left:5px}
+#top .top-im{height:92px}
+.QRCode{display:block; width:86px; height:97px; margin-top:5px; padding-top:30px; text-align:center; background:url(../../www.hh176.com/pkddd/bg-QRCode.giff") no-repeat 0 0}
+#top div .sub-close-btn{position:absolute; display:inline-block; height:16px; width:16px; background:url(../../www.hh176.com/pkddd/isdiv_close.png) left top; left:-10px; top:-10px; z-index:10; overflow:hidden; _background-image:url(../../www.hh176.com/pkddd/isdiv_close.gif)}
+#top div .sub-close-btn:hover{background-position:left bottom}
+
+/**分页**/
+.pages{padding:40px 0;line-height:18px;text-align:center}
+.pages a,.pages strong{display:inline-block;background:#af7300;padding:0 7px;margin:0 4px;border:1px #9d5006 solid;vertical-align:middle}
+.pages strong{color:#fff600;font-weight:bold}
+/**菜单**/
+.sub-menu ul{width:175px; margin-left:11px; margin-top:-16px; position:relative}
+.sub-menu ul li{height:84px; margin-bottom:5px;padding-top:0}
+.sub-menu ul li a{display:block; width:177px; height:87px; overflow:hidden; text-indent:-9999px; background-image:url(../../www.hh176.com/pkddd/btn-submenu.jpg)}
+.btn-sm-1{background-position:0 0}
+.btn-sm-1:hover{background-position:-177px 0px}
+ .btn-sm-2{background-position:0px -87px}
+.btn-sm-2:hover{background-position:-177px -87px}
+.btn-sm-3{background-position:0px -174px}
+.btn-sm-3:hover{background-position:-177px -174px}
+
+/*点赞*/
+.zan{position:fixed; top:260px; _position:absolute; left:0px; _top:expression(documentElement.scrollTop + 260 + "px"); z-index:100;}
+.zan a.close{position:absolute; top:-10px; right:-10px; display:inline-block; height:26px;width:26px;background:url(../../www.hh176.com/pkddd/lead_close.png) left top; overflow:hidden; _background-image:url(../../www.hh176.com/pkddd/lead_close.gif)}
+.zan a.close:hover{background-position:left bottom}
+.zan a.zanbtn{width:202px;height:312px}
+
+/*语音平台*/
+.isdiv{position:fixed; top:470px; _position:absolute; right:0px; _top:expression(documentElement.scrollTop + 470 + "px"); z-index:100;}
+.isdiv .close{position:absolute; top:-7px; left:-7px; display:inline-block; height:16px;width:16px;background:url(../../www.hh176.com/pkddd/isdiv_close.png) left top; overflow:hidden; _background-image:url(../../www.hh176.com/pkddd/isdiv_close.gif)}
+.isdiv .close:hover{background-position:left bottom}
+.isdiv .isbtn{width:100px;height:139px}
+
+#top div .sub-close-btn{position:absolute; display:inline-block; height:16px; width:16px; background:url(../../www.hh176.com/pkddd/isdiv_close.png) left top; left:-10px; top:-10px; z-index:10; overflow:hidden; _background-image:url(../../www.hh176.com/pkddd/isdiv_close.gif)}
+#top div .sub-close-btn:hover{background-position:left bottom}
+
+
+
+/*跑马灯*/
+.xMarqueeOut{position:fixed; bottom:0; width:100%; z-index:10000; _position:absolute; 
+_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight));
+_width:expression(eval(document.body.clientWidth));
+}
+.xMarqueeIn,.xMarqueeOut em{background-image:url(../../www.hh176.com/pkddd/bg-idx-marquee.gif)}
+.xMarqueeIn{position:relative; height:33px; padding-top:5px; background-repeat:repeat-x}
+.xMarqueeIn em{background-repeat:no-repeat; position:absolute; top:0; height:38px; width:40px}
+.xMarqueeIn .ico-l{left:0; background-position:0 -38px}
+.xMarqueeIn .ico-r{right:0; background-position:0 -76px}
+.xMarquee{margin:0 auto; width:950px; padding:3px 0; overflow:hidden;}
+.xMarquee ol{list-style-type:none; margin:0px; padding:0px; font-size:12px; width:100000%}
+.xMarquee ol li{float:left;}
+.xMarquee ol li a,.xMarquee ol li span{color:#ffc600; text-decoration:none; line-height:24px; margin-right:25px; font-size:14px}
+.xMarquee ol li a:hover{color:#d01a14}
+
+.isdiv{position: fixed;right: 0;top: 470px;_position: absolute;_top: expression(documentElement.scrollTop + 470 + "px");z-index: 9998;}
+.isdiv a{display:inline-block}
+
+.validation{display:inline-block; background:url(../../www.hh176.com/pkddd/btn-validation.png) no-repeat left top; text-align:center; width:93px; height:35px; color:#fff; vertical-align:middle; text-align:center; font-size:12px; line-height:35px}
+.validation:hover{color:#fffc00; background-position: left bottom}
+
+
+
+

@@ -1,0 +1,893 @@
+[@自定义命令]
+{
+[@USERCMD4]
+#IF
+CHECKSTRINGLIST ..\QuestDiary\商人名单.txt  <$USERNAME><$HWID> HardDisk
+#ACT
+mov A38 <$USERNAME>
+#SAY
+<COLOR=clFuchsia 欢迎您【><$USERNAME><COLOR=clFuchsia 】进入商人操作后台>  <COLOR=clRed 元宝数量:><$GAMEGOLD>\ 
+<COLOR=$00FFAADD ──────────────────────────────>\ 
+<$USERNAME><COLOR=clLime 您出售了><$str(G80)><COLOR=clLime 元宝>    <$USERNAME><COLOR=clLime 您回收了><$str(G81)><COLOR=clLime 元宝>\
+<COLOR=$00FFAADD ──────────────────────────────>\ 
+<出售元宝> 输入<名字/@@InPutString45>[<$str(A45)>] <数量/@@InPutInteger45>[<$str(G45)>] <确认出售/@出售元宝> <清空/@清除出售数据>\
+<COLOR=$00FFAADD ──────────────────────────────>\ 
+<回收元宝> 输入<名字/@@InPutString46>[<$str(A46)>] <数量/@@InPutInteger46>[<$str(G50)>] <确认回收/@回收元宝> <清空/@清除回收数据>\
+<COLOR=$00FFAADD ──────────────────────────────>\ 
+　  <COLOR=clFuchsia 注:为保证您商行的信誉，请在玩家回收后30分钟内打款，若> \
+<COLOR=clFuchsia 收到玩家举报，您有违规操作可能受到取消商人授权的惩罚！> \
+
+#IF
+CHECKSTRINGLIST ..\QuestDiary\神话哥名单.txt <$HWID> HardDisk
+#SAY
+开区到目前总回收RMB：<$STR(G68)>   今日总回收RMB：<$STR(G39)>   \  \
+<开启新手地图/@开启新手地图>【<$STR(G15)>】    <手动红包发放/@手动红包发放>    <开启送财福地/@开启送财福地>    <刷新/@USERCMD4>   \ 
+　              <关闭提现/@关闭提现>             <开启提现/@开启提现> \  \
+<开启24小时发放红包/@开启24小时发放红包>      <关闭24小时发放红包/@关闭24小时发放红包>【<$STR(G16)>】 <全部回去/@全部回去>\  \
+ 状态开启为1关闭为0    开区天数<$STR(G88)>天   <来一根记忆项链/@来一根记忆项链> <关闭GM限制/@GM关闭限制> \ 
+
+<开启挂珠子/@开珠子>       <关闭挂珠子/@关珠子>      <脱机检测/@脱机检测>\
+
+
+[@清除回收数据]
+#IF
+#ACT
+mov A46 暂无
+mov G50 0
+SENDMSG 6 〖提示〗成功清除回收数据！
+DelayGoto 100 @USERCMD4
+break
+
+[@@InPutString46]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString46
+[~InPutString46]
+#IF
+#ACT
+MOV A46 <$STR(S46)>
+DelayGoto 100 @USERCMD4
+
+
+[@@InPutInteger46]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutInteger46
+
+[~InPutInteger46]
+#IF
+#ACT
+MOV G50 <$STR(M46)>
+DelayGoto 100 @USERCMD4
+
+[@回收元宝]
+#IF
+<$STR(A46)>.ONLINELONGMIN > 0
+#ACT
+DelayGoto 100 @回收元宝-1
+#ELSEACT
+Messagebox 对不起，[<$STR(A46)>]不在线！
+BREAK
+
+[@回收元宝-1]
+#IF
+<$STR(A46)>.CHECKGAMEGOLD ? <$STR(G50)>
+#ACT
+Gmexecute 开始提问 @发送回收元宝
+DelayGoto 800 @USERCMD4
+#ELSEACT
+messagebox 回收元宝失败！<$STR(A46)>身上没有<$STR(G50)>元宝，请确认！
+DelayGoto 100 @USERCMD4
+BREAK
+
+
+
+
+
+
+
+
+
+
+
+[@清除出售数据]
+#IF
+#ACT
+mov A45 暂无
+mov G45 0
+SENDMSG 6 〖提示〗成功清除出售数据！
+DelayGoto 100 @USERCMD4
+break
+
+[@@InPutString45]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutString45
+[~InPutString45]
+#IF
+#ACT
+MOV A45 <$STR(S45)>
+DelayGoto 100 @USERCMD4
+
+
+[@@InPutInteger45]
+#If
+CheckLevelEx > 0
+#Act
+DelayGoto 1 ~InPutInteger45
+
+[~InPutInteger45]
+#IF
+#ACT
+MOV G45 <$STR(M45)>
+DelayGoto 100 @USERCMD4
+
+[@出售元宝]
+#IF
+<$STR(A45)>.ONLINELONGMIN > 0
+#ACT
+DelayGoto 100 @出售元宝-1
+#ELSEACT
+Messagebox 对不起，[<$STR(A45)>]不在线！
+BREAK
+
+[@出售元宝-1]
+#IF
+CHECKGAMEGOLD ? <$STR(G45)>
+#ACT
+GAMEGOLD - <$STR(G45)>
+INC G80 <$STR(G45)>
+SENDMSG 6 〖提示〗已经给【<$STR(A45)>】发送〖<$STR(G45)>〗颗元宝！
+Gmexecute 开始提问 @发送元宝
+DelayGoto 800 @USERCMD4
+#ELSEACT
+messagebox 出售元宝失败！您的元宝不足<$STR(G45)>请进行充值！
+DelayGoto 100 @USERCMD4
+BREAK
+
+
+
+
+
+
+[@脱机检测]
+#IF
+#ACT
+MAPMOVE B312
+
+
+
+[@关珠子]
+#IF
+#ACT
+KillScTimer 3
+
+[@开珠子]
+#IF
+#ACT
+SetScTimer 3 1
+
+
+[@GM关闭限制]
+#IF
+#ACT
+KillScTimer 2
+BREAK
+
+[@来一根记忆项链]
+\  \ \  \
+<记忆项链/@来记忆项链>   <绿色项链/@来绿色项链>   <灵魂项链/@来圣战项链>    <恶魔铃铛/@来恶魔铃铛>  <5万年雪霜/@万年雪霜12>\
+   
+
+[@来恶魔铃铛]
+#IF
+#ACT
+GIVE 恶魔铃铛 1
+BREAK
+
+
+[@来圣战项链]
+#IF
+#ACT
+GIVE 圣战项链 1
+BREAK
+
+
+[@来绿色项链]
+#IF
+#ACT
+GIVE 绿色项链 1
+BREAK
+
+
+[@来记忆项链]
+#IF
+#ACT
+GIVE 记忆项链 1
+BREAK
+
+[@万年雪霜12]
+#IF
+CHECKBAGSIZE 5
+#ELSEACT
+messagebox 提示：请保留5个空格再来购买
+BREAK
+
+#IF
+CHECKBAGSIZE 5
+#ACT
+give 万年雪霜捆 5
+BREAK
+#ELSEACT
+messagebox 提示：请保留5个空格再来购买
+BREAK
+
+
+[@全部回去]
+#IF
+ISADMIN
+#ACT
+GMEXECUTE 集体传送 SCFD001 3
+#ELSEACT
+MESSAGEBOX 提示：您就别捣乱了，你操作不了的！
+BREAK
+
+
+[@开启提现]
+#IF
+ISADMIN
+#ACT
+MOV G17 0
+DelayCall 100 @USERCMD4
+#ELSEACT
+MESSAGEBOX 提示：您就别捣乱了，你操作不了的！
+BREAK
+
+[@关闭提现]
+#IF
+ISADMIN
+#ACT
+MOV G17 1
+DelayCall 100 @USERCMD4
+#ELSEACT
+MESSAGEBOX 提示：您就别捣乱了，你操作不了的！
+BREAK
+
+
+[@手动红包发放]
+#IF
+ISADMIN
+#ACT
+GMEXECUTE 开始提问 @红包发放
+#ELSEACT
+MESSAGEBOX 提示：您就别捣乱了，你操作不了的！
+BREAK
+
+[@开启送财福地]
+#IF
+ISADMIN
+#ACT
+Mission SCFD001 39 39
+Param1 39
+Param2 39
+Param3 150
+Param4 30
+MobPlace 福猪送财
+GMEXECUTE 开始提问 @送财福地开
+#ELSEACT
+MESSAGEBOX 提示：您就别捣乱了，你操作不了的！
+BREAK
+
+
+[@开启24小时发放红包]
+#IF
+ISADMIN
+#ACT
+MOV G16 1
+;SENDMSG 5 24小时红包雨活动已开放，红包枪到您手软。 251 252 60
+;SENDMSG 5 24小时红包雨活动已开放，红包枪到您手软。 251 252 60
+;SENDMSG 5 24小时红包雨活动已开放，红包枪到您手软。 251 252 60
+DelayCall 100 @USERCMD4
+#ELSEACT
+MESSAGEBOX 提示：您就别捣乱了，你操作不了的！
+BREAK
+
+[@关闭24小时发放红包]
+#IF
+ISADMIN
+#ACT
+MOV G16 0
+;SENDMSG 5 24小时红包雨活动已经关闭，请等待下次开放。 251 252 60
+;SENDMSG 5 24小时红包雨活动已经关闭，请等待下次开放。 251 252 60
+;SENDMSG 5 24小时红包雨活动已经关闭，请等待下次开放。 251 252 60
+DelayCall 100 @USERCMD4
+#ELSEACT
+MESSAGEBOX 提示：您就别捣乱了，你操作不了的！
+BREAK
+
+
+[@开启新手地图]
+#IF
+ISADMIN
+#ACT
+MOV G15 1
+SENDMSG 5 中国复古1.76小极品-【梦想中国首战区】正式开放！请点NPC开始游戏。祝大家玩的开心！！ 251 252 60
+SENDMSG 5 中国复古1.76小极品-【梦想中国首战区】正式开放！请点NPC开始游戏。祝大家玩的开心！！ 251 252 60
+SENDMSG 5 中国复古1.76小极品-【梦想中国首战区】正式开放！请点NPC开始游戏。祝大家玩的开心！！ 251 252 60
+GMEXECUTE 开始提问 @关全图检查
+DelayCall 100 @USERCMD4
+#ELSEACT
+MESSAGEBOX 提示：您就别捣乱了，你操作不了的！
+BREAK
+
+
+
+[@USERCMD1]
+#ACT
+#CALL [\系统功能\帮助命令.txt] @帮助命令
+
+[@USERCMD2]
+#IF
+IsOnMap mima
+#ACT
+SENDMSG 6 当前地图不允许使用此命令
+BREAK
+#IF
+IsOnMap mima2
+#ACT
+SENDMSG 6 当前地图不允许使用此命令
+BREAK
+#IF
+IsOnMap mima3
+#ACT
+SENDMSG 6 当前地图不允许使用此命令
+BREAK
+#IF
+IsOnMap xinqu
+#ACT
+SENDMSG 6 当前地图不允许使用此命令
+BREAK
+
+#IF
+#SAY
+
+\      亲爱的玩家，如果你给我金币，我们为您提供最方便的服务：\
+   ╔┄┄┄┄┄┄┄复古传奇1.76纯绿复古┄┄┄┄┄┄┄╗\
+   ┆  <尸 王 殿/@nikan传送11305>    <生死之间/@nikan传送11306>    <沃玛三层/@nikan传送11307>    <石 墓 阵/@nikan传送11308>  ┆\
+   ┆  <祖玛七层/@nikan传送11309>    <牛魔六层/@nikan传送11310>    <霸者大厅/@nikan传送11311>    <未知暗殿/@nikan传送11317>  ┆\
+   ┆  <幻境10层/@nikan传送11314>    <沙藏宝阁/@nikan传送11312>    <王者禁地/@nikan传送11315>    <圣域之门/@nikan传送11321>  ┆\
+   ┆  <恶魔祭坛/@nikan传送11318>    <赤月老巢/@nikan传送11319>    <万恶之源/@nikan传送11320>    <六新衣服/@nikan传送11316>  ┆\
+   ╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╣\
+   ┆                <幻境三练级/@nikan幻境三层1>                      ┆\
+   ╚┄┄┄┄┄┄┄骨灰散人玩家激情到底┄┄┄┄┄┄┄╝   
+                                                      
+
+[@nikan传送11305]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove Q004
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove Q004
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@nikan传送11306]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove  D613 9 51
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove  D613 9 51
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@nikan传送11307]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D023  52 366
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D023  52 366
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@nikan传送11308]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D715 83 81 
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D715 83 81 
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@nikan传送11309]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D5071 8 10 
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D5071 8 10 
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@nikan传送11310]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D2076 94 130
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D2076 94 130
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@nikan传送11311]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D2008 84 85
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D2008 84 85
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@nikan传送11312]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove h201 11 105
+break
+
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove h201 11 105
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+BREAK
+
+[@nikan传送11313]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D1004 171 88
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D1004 171 88
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@nikan传送11314]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove H010 161 172
+break
+
+
+[@nikan传送11315]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove H106 100 99
+break
+
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove H106 100 99
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+BREAK
+
+
+[@nikan传送11316]
+新衣服传送：\
+<死亡神殿/@nikan衣服01>    <地狱烈焰/@nikan衣服02>    <钳虫巢穴/@nikan衣服03>\
+<堕落坟场/@nikan衣服04>    <困惑殿堂/@nikan衣服05>    <深渊魔域/@nikan衣服06>\
+<返回/@nikanmain>
+
+
+[@nikan衣服01]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove 4 205 218
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+
+[@nikan衣服02]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove 0 428 474
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+
+[@nikan衣服03]
+#IF
+checkgold 10000
+#ACT
+give 回城卷 1
+take 金币 10000
+mapmove 11 343 325
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+
+[@nikan衣服04]
+#IF
+checkgold 10000
+#ACT
+give 回城卷 1
+take 金币 10000
+mapmove 1 320 56
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+
+[@nikan衣服05]
+#IF
+checkgold 10000
+#ACT
+give 回城卷 1
+take 金币 10000
+mapmove R001 55 94
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+
+[@nikan衣服06]
+#IF
+checkgold 10000
+#ACT
+give 回城卷 1
+take 金币 10000
+mapmove 1 215 312
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+break
+
+[@nikan幻境三层1]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove H003
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove H003
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+break
+
+[@nikan传送11320]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove D10071 
+break
+
+#IF
+checkgold 100000
+#ACT
+give 回城卷 1
+take 金币 100000
+mapmove D10071 
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+BREAK
+
+[@nikan传送11319]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove D10052 139 25 
+break
+#IF
+checkgold 100000
+#ACT
+give 回城卷 1
+take 金币 100000
+mapmove D10052 139 25 
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+
+[@nikan传送11318]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove D10051 180 55
+break
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove D10051 180 55
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+break
+
+[@nikan传送11317]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove M001 
+break
+
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove M001 
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+break
+
+[@nikan传送11321]
+#IF
+checkgold 300000
+checkitem 回城卷 1
+#ACT
+take 金币 300000
+mapmove B101 
+break
+#IF
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove B101 
+give 回城卷 1
+break
+#ELSEACT
+MESSAGEBOX 你没有30w金币用来支付我们的服务费用!\
+
+[@nikan幻境三层]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove H003
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove H003
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[@UserCmd3]
+#if
+CHECKGAMEGOLD < 199
+#ACT
+SENDMSG 5 [提示]千里传音需要200元宝/次！
+BREAK
+
+#if
+CHECKLEVELEX < 26
+#ACT
+SENDMSG 5 [提示]千里传音需要达到26级！
+BREAK
+#ELSEACT
+DelayCall 100 @千里传音_发送0
+
+[@千里传音_发送0]
+#IF
+CHECKGAMEGOLD ? 200
+CHECKLEVELEX > 25
+#SAY
+  欢迎使用千里传音功能(发送一次收费200元宝)\ \
+<COLOR=clAqua ┏-----------------------内容①:------------><输入/@@InPutString31>--<发送/@千里传音_发送1><COLOR=clAqua --┓>\
+<COLOR=clAqua ｜><$STR(S31)>\
+<COLOR=clAqua ｜-----------------------内容②:------------><输入/@@InPutString32>--<发送/@千里传音_发送2><COLOR=clAqua --｜>\
+<COLOR=clAqua ｜><$STR(S32)>\
+<COLOR=clAqua ｜-----------------------内容③:------------><输入/@@InPutString33>--<发送/@千里传音_发送3><COLOR=clAqua --｜>\
+<COLOR=clAqua ｜><$STR(S33)>\
+<COLOR=clAqua ┗------------------------------------------------------┛>
+
+[@@InPutString31]
+#If
+#Act
+DelayGoto 1 ~InPutString31
+[~InPutString31]
+#If
+#ACT
+goto @千里传音_发送0
+BREAK
+
+[@@InPutString32]
+#If
+#Act
+DelayGoto 1 ~InPutString32
+[~InPutString32]
+#If
+#ACT
+goto @千里传音_发送0
+BREAK
+
+[@@InPutString33]
+#If
+#Act
+DelayGoto 1 ~InPutString33
+[~InPutString33]
+#If
+#ACT
+goto @千里传音_发送0
+BREAK
+
+[@千里传音_发送1]
+#if
+CHECKGAMEGOLD ? 200
+CHECKLEVELEX > 25
+#ACT
+GAMEGOLD - 200
+SENDMSG 0 <$USERNAME>(<$LEVEL>级):<$STR(S31)>  255 253
+#ELSEACT
+SENDMSG 5 [提示]千里传音需要200元宝/次以及达到26级！
+BREAK
+
+[@千里传音_发送2]
+#if
+CHECKGAMEGOLD ? 200
+CHECKLEVELEX > 25
+#ACT
+GAMEGOLD - 200
+SENDMSG 0 <$USERNAME>(<$LEVEL>级):<$STR(S32)>  255 253
+#ELSEACT
+SENDMSG 5 [提示]千里传音需要50元宝/次以及达到26级！
+BREAK
+
+[@千里传音_发送3]
+#if
+CHECKGAMEGOLD ? 200
+CHECKLEVELEX > 25
+#ACT
+GAMEGOLD - 200
+SENDMSG 0 <$USERNAME>(<$LEVEL>级):<$STR(S33)>  255 253
+#ELSEACT
+SENDMSG 5 [提示]千里传音需要200元宝/次以及达到26级！
+BREAK
+
+}

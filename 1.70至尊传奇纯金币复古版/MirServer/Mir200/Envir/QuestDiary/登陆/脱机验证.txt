@@ -1,0 +1,214 @@
+[@脱机验证]
+{
+#ACT
+DelayCALL 60000 @验证失败
+GOTO @开始验证
+
+[@开始验证]
+#IF
+RANDOM 6
+#ACT
+BREAK
+MOV S1 红色
+#SAY
+<COLOR=clRed 请尊重烽火良好绿色游戏环境,请勿使用第三方软件进行游戏>\
+<COLOR=clRed ①凡使用加速、脱机、公开刷屏捣乱者,我们有权封号处理>\
+<COLOR=clRed ②凡游戏内辱骂管理、盗号、诈骗,外挂我们有权封号处理>\
+<COLOR=clRed ③游戏内装备道具被骗、被盗,我们不负责找回，只找回ID>\
+<COLOR=clRed ④担保客服QQ：1482337100>\
+◆◆◆◆◆◆上面文字的颜色是?请作出选择!\
+<红色/@红色>  <绿色/@绿色>  <黄色/@黄色>  <蓝色/@蓝色>  <紫色/@紫色>  <白色/@白色>\
+
+#IF
+RANDOM 6
+#ACT
+BREAK
+MOV S1 绿色
+#SAY
+<COLOR=clLime 请尊重烽火良好绿色游戏环境,请勿使用第三方软件进行游戏>\
+<COLOR=clLime ①凡使用加速、脱机、公开刷屏捣乱者,我们有权封号处理>\
+<COLOR=clLime ②凡游戏内辱骂管理、盗号、诈骗,外挂我们有权封号处理>\
+<COLOR=clLime ③游戏内装备道具被骗、被盗,我们不负责找回，只找回ID>\
+<COLOR=clLime ④担保客服QQ：1482337100>\
+◆◆◆◆◆◆上面文字的颜色是?请作出选择!\
+<红色/@红色>  <绿色/@绿色>  <黄色/@黄色>  <蓝色/@蓝色>  <紫色/@紫色>  <白色/@白色>\
+
+#IF
+RANDOM 6
+#ACT
+BREAK
+MOV S1 黄色
+#SAY
+<COLOR=clYellow 请尊重烽火良好绿色游戏环境,请勿使用第三方软件进行游戏>\
+<COLOR=clYellow ①凡使用加速、脱机、公开刷屏捣乱者,我们有权封号处理>\
+<COLOR=clYellow ②凡游戏内辱骂管理、盗号、诈骗,外挂我们有权封号处理>\
+<COLOR=clYellow ③游戏内装备道具被骗、被盗,我们不负责找回，只找回ID>\
+<COLOR=clYellow ④担保客服QQ：1482337100>\
+◆◆◆◆◆◆上面文字的颜色是?请作出选择!\
+<红色/@红色>  <绿色/@绿色>  <黄色/@黄色>  <蓝色/@蓝色>  <紫色/@紫色>  <白色/@白色>\
+
+#IF
+RANDOM 6
+#ACT
+BREAK
+MOV S1 蓝色
+#SAY
+<COLOR=clBlue 请尊重烽火良好绿色游戏环境,请勿使用第三方软件进行游戏>\
+<COLOR=clBlue ①凡使用加速、脱机、公开刷屏捣乱者,我们有权封号处理>\
+<COLOR=clBlue ②凡游戏内辱骂管理、盗号、诈骗,外挂我们有权封号处理>\
+<COLOR=clBlue ③游戏内装备道具被骗、被盗,我们不负责找回，只找回ID>\
+<COLOR=clBlue ④担保客服QQ：1482337100>\
+◆◆◆◆◆◆上面文字的颜色是?请作出选择!\
+<红色/@红色>  <绿色/@绿色>  <黄色/@黄色>  <蓝色/@蓝色>  <紫色/@紫色>  <白色/@白色>\
+
+#IF
+RANDOM 6
+#ACT
+BREAK
+MOV S1 紫色
+#SAY
+<COLOR=clFuchsia 请尊重烽火良好绿色游戏环境,请勿使用第三方软件进行游戏>\
+<COLOR=clFuchsia ①凡使用加速、脱机、公开刷屏捣乱者,我们有权封号处理>\
+<COLOR=clFuchsia ②凡游戏内辱骂管理、盗号、诈骗,外挂我们有权封号处理>\
+<COLOR=clFuchsia ③游戏内装备道具被骗、被盗,我们不负责找回，只找回ID>\
+<COLOR=clFuchsia ④担保客服QQ：1482337100>\
+◆◆◆◆◆◆上面文字的颜色是?请作出选择!\
+<红色/@红色>  <绿色/@绿色>  <黄色/@黄色>  <蓝色/@蓝色>  <紫色/@紫色>  <白色/@白色>\
+
+#IF
+RANDOM 6
+#ACT
+BREAK
+MOV S1 白色
+#SAY
+<COLOR=clCream 请尊重烽火良好绿色游戏环境,请勿使用第三方软件进行游戏>\
+<COLOR=clCream ①凡使用加速、脱机、公开刷屏捣乱者,我们有权封号处理>\
+<COLOR=clCream ②凡游戏内辱骂管理、盗号、诈骗,外挂我们有权封号处理>\
+<COLOR=clCream ③游戏内装备道具被骗、被盗,我们不负责找回，只找回ID>\
+<COLOR=clCream ④担保客服QQ：1482337100>\
+◆◆◆◆◆◆上面文字的颜色是?请作出选择!\
+<红色/@红色>  <绿色/@绿色>  <黄色/@黄色>  <蓝色/@蓝色>  <紫色/@紫色>  <白色/@白色>\
+
+[@红色]
+#IF
+EQUAL S1 红色
+#ACT
+CLEARDELAYGOTO
+SET [001] 0
+SET [002] 0
+SET [003] 0
+SENDMSG 7 [提示]:验证通过,祝你游戏愉快!
+CLOSE
+#ELSEACT
+GOTO @验证失败
+
+
+[@绿色]
+#IF
+EQUAL S1 绿色
+#ACT
+CLEARDELAYGOTO
+SET [001] 0
+SET [002] 0
+SET [003] 0
+SENDMSG 7 [提示]:验证通过,祝你游戏愉快!
+CLOSE
+#ELSEACT
+GOTO @验证失败
+
+
+[@黄色]
+#IF
+EQUAL S1 黄色
+#ACT
+CLEARDELAYGOTO
+SET [001] 0
+SET [002] 0
+SET [003] 0
+SENDMSG 7 [提示]:验证通过,祝你游戏愉快!
+CLOSE
+#ELSEACT
+GOTO @验证失败
+
+
+[@蓝色]
+#IF
+EQUAL S1 蓝色
+#ACT
+CLEARDELAYGOTO
+SET [001] 0
+SET [002] 0
+SET [003] 0
+SENDMSG 7 [提示]:验证通过,祝你游戏愉快!
+CLOSE
+#ELSEACT
+GOTO @验证失败
+
+
+[@紫色]
+#IF
+EQUAL S1 紫色
+#ACT
+CLEARDELAYGOTO
+SET [001] 0
+SET [002] 0
+SET [003] 0
+SENDMSG 7 [提示]:验证通过,祝你游戏愉快!
+CLOSE
+#ELSEACT
+GOTO @验证失败
+
+
+[@白色]
+#IF
+EQUAL S1 白色
+#ACT
+CLEARDELAYGOTO
+SET [001] 0
+SET [002] 0
+SET [003] 0
+SENDMSG 7 [提示]:验证通过,祝你游戏愉快!
+CLOSE
+#ELSEACT
+GOTO @验证失败
+
+
+[@验证失败]
+#IF
+CHECK [001] 1
+CHECK [002] 1
+CHECK [003] 1
+#act
+addnamelist ..\QuestDiary\数据\脱机名单.txt
+;addnamelist ..\QuestDiary\数据\禁止登陆.txt
+MESSAGEBOX [提示]:验证失败3次!禁止登陆人物!
+KICK
+
+#IF
+CHECK [001] 1
+CHECK [002] 1
+CHECK [003] 0
+#ACT
+SET [003] 1
+SENDMSG 7 [提示]:验证失败请继续验证!
+KICK
+
+#IF
+CHECK [001] 1
+CHECK [002] 0
+CHECK [003] 0
+#ACT
+SET [002] 1
+SENDMSG 7 [提示]:验证失败请继续验证!
+KICK
+
+#IF
+CHECK [001] 0
+CHECK [002] 0
+CHECK [003] 0
+#ACT
+SET [001] 1
+SENDMSG 7 [提示]:验证失败请继续验证!
+KICK
+
+}

@@ -1,0 +1,58 @@
+()
+%100
+[@main]
+#act
+messagebox 由于上区部分玩家反对开放娱乐场，目前暂时关闭，开放时间待定
+
+
+[@100万金币兑换1万元宝]
+#IF
+checkgold 999999
+#ACT
+take 金币 1000000
+GAMEGOLD + 10000
+#elseact
+messagebox 你没有100万金币无法进行兑换
+
+[@1000万金币兑换10万元宝]
+#IF
+checkgold 9999999
+#ACT
+take 金币 10000000
+GAMEGOLD + 100000
+#elseact
+messagebox 你没有1000万金币无法进行兑换
+
+
+[@1万元宝兑换100万金币]
+#IF
+CHECKGAMEGOLD > 9999
+#ACT
+GAMEGOLD -  10000
+give 金币 1000000
+#elseact
+messagebox 你没有1万元宝无法进行兑换
+
+
+[@10万元宝兑换1000万金币]
+#IF
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD -  100000
+give 金币 10000000
+#elseact
+messagebox 你没有10万元宝无法进行兑换
+
+
+
+[@move]
+#if
+CHECKHEROONLINE
+#ACT
+MESSAGEBOX 为了保持场内干净，不能带英雄进入！\
+BREAK
+#ELSEACT
+SETOFFLINEPLAY OFF
+KILLSLAVE SELF 100 100 300 * 10 1
+mapMOVE B012 5 11
+BREAK

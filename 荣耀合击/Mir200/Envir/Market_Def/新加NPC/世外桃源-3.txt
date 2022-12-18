@@ -1,0 +1,23 @@
+()
+%100
+[@main]
+\          <COLOR=clLime ∴∵∴※2020经典80金币复古※∵∴∵>\
+\<COLOR=clAqua ╰══════════><COLOR=clAqua 【世外桃源】><COLOR=clAqua ══════════╯>\
+\<COLOR=clRed ♀.地图介绍：地图下层坐标21.83，地图深层有全服所有精英boss>\
+\<COLOR=clAqua ♀.怪物刷新：小怪刷新10分钟，BOSS刷新30分钟.60分钟.120分钟>\
+\<COLOR=clLime ♀.爆率介绍：爆所有装备,地图分2层>\
+\<COLOR=clFuchsia ♀.进入条件：55级+500元宝>  \
+------------------------------------------------------------　\
+<前往世外桃源/@单人>\
+[@单人]
+#if
+checkgamegold > 499
+CHECKLEVELEX > 54
+#act
+gamegold - 500
+mapmove swty 
+give 回城卷
+SENDMSG 0 玩家〖%s〗单独进入了世外桃源！   49 223
+SENDMSG 0 玩家〖%s〗单独进入了世外桃源！   49 223
+#elseact
+MESSAGEBOX 【提示】:你达到进入条件了吗，孩子别冲动不要以卵击石！

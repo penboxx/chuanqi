@@ -1,0 +1,61 @@
+(@@InPutInteger, @@InPutString)
+[@MAIN]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【强身大使】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆<兑换绝对防御/@兑换绝对防御> <需要55级+500金刚石>获得防御+魔御=40-80-被杀消失┆\
+╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╣\
+┆<购买超级疗伤药/@@InPutInteger5> <需要50级+2金刚石:1瓶> 增加HP200-限主体使用┆\
+╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝\
+ <退出/@exit>  \
+
+
+[@兑换绝对防御]
+#IF
+check [059] 0
+CHECKLEVELEX > 54
+CHECKGAMEDIAMOND > 499
+#act
+GAMEDIAMOND - 500
+SET [059] 1
+SENDMSG 7 你已经开启绝对防御,小退再上后生效！
+SENDMSG 0 大家注意啦！玩家[<$USERNAME>]开启了【绝对防御】...
+SENDMSG 0 大家注意啦！玩家[<$USERNAME>]开启了【绝对防御】..
+#ELSEACT
+MESSAGEBOX 条件不足或你已经开启了【绝对防御】
+BREAK
+
+
+[@@InPutInteger5]
+#IF
+CHECKGAMEDIAMOND > 1
+CHECKLEVELEX > 49
+#ACT
+DelayGoto 1 ~InPutInteger5
+[~InPutInteger5]
+#If
+CheckLevelEX > 0
+CHECKGAMEDIAMOND > 1
+#ACT
+MOV M6 <$STR(M5)>
+MUL M6 2
+
+#IF
+CHECKGAMEDIAMOND > <$STR(M6)>
+#ACT
+GAMEDIAMOND - <$STR(M6)>
+GMEXECUTE zz 超级疗伤药 <$STR(M5)>
+#elseact
+messagebox 金刚石不足
+BREAK
+
+
+
+
+[@111]
+#IF
+#ACT
+set [059] 1
+AbilityAdd 2 80 65535
+AbilityAdd 3 80 65535

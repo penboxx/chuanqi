@@ -1,0 +1,6 @@
+[@Mir2m2摆摊锁定脚本加载(脚本QQ.800125104)]
+#CALL [\Mir2m2摆摊锁定配置(脚本QQ.800125104)\Mir2m2摆摊锁定脚本.txt] @Mir2m2摆摊锁定脚本NPC
+
+[@main]
+#ACT
+DELAYGOTO 1 @Mir2m2摆摊锁定脚本NPC

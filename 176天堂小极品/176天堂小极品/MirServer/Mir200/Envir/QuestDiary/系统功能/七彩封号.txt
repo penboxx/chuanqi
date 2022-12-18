@@ -1,0 +1,32 @@
+[@七彩设置]
+{
+#if
+#act
+CHANGENAMECOLOR 253
+Delaycall 1000 @变1色1
+
+[@变1色1]
+#IF
+#ACT
+CHANGENAMECOLOR 254
+Delaycall 1000 @变1色2
+
+[@变1色2]
+#IF
+#ACT
+CHANGENAMECOLOR 250
+Delaycall 1000 @变1色3
+
+[@变1色3]
+#IF
+#ACT
+CHANGENAMECOLOR 251
+Delaycall 1000 @变1色4
+
+[@变1色4]
+#IF
+#ACT
+CHANGENAMECOLOR 255
+Delaycall 1000 @七彩设置
+
+}

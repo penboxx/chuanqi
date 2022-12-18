@@ -1,0 +1,187 @@
+[@系统代练]
+{
+#if
+CHECK [601] 1
+#act
+MOV M51 <$STR(G3)>
+DEC M51 <$HUMAN(标识)>
+BREAK
+#say
+<COLOR=clMoneyGreen 代练时间最多可叠加一周(每分钟600经验,1小时3.6万),可随时领取>\ \
+<开启代练[3小时]/@k01>   <COLOR=clSkyBlue (180分钟)     收费6元宝>\
+<开启代练[一天]/@k02>    <COLOR=clSkyBlue (1440分钟)    收费40元宝>\
+<开启代练[一周]/@k03>    <COLOR=clSkyBlue (10080分钟)   收费250元宝>\ \
+您的代练剩余：<$HUMAN(时长)> 分钟    时间已经过去：<$STR(M51)> 分钟\ \
+<领取代练经验/@LQ1>    <COLOR=clLime 重要:42级开始不能使用@代练命令>
+#elsesay
+<COLOR=clMoneyGreen 代练时间最多可叠加一周(每分钟600经验,1小时3.6万).可随时领取>\ \
+<开启代练[3小时]/@k01>   <COLOR=clSkyBlue (180分钟)     收费6元宝>\
+<开启代练[一天]/@k02>    <COLOR=clSkyBlue (1440分钟)    收费40元宝>\
+<开启代练[一周]/@k03>    <COLOR=clSkyBlue (10080分钟)   收费250元宝>\ \
+您的代练剩余：<$HUMAN(时长)> 分钟    时间已经过去：0 分钟\ \
+<领取代练经验/@LQ1>    <COLOR=clLime 重要:42级开始不能使用@代练命令>
+
+[@k01]
+#if
+CHECK [601] 1
+CHECKVAR HUMAN 标识 < <$STR(G3)>
+CHECKVAR HUMAN 时长 > 0
+#act
+sendmsg 7 提示：请先领取已完成的经验！
+break
+
+#if
+CHECKLEVELEX > 41
+#act
+sendmsg 7 提示：42级开始不能使用代练了!
+break
+
+#if
+CHECKVAR HUMAN 时长 > 9899
+#act
+sendmsg 7 提示：系统代练最多只能修炼10080分钟,请先领取已完成的经验！
+break
+
+#IF
+CHECKGAMEGOLD > 5
+#act
+set [601] 1
+GAMEGOLD - 3
+CALCVAR HUMAN 时长 + 180
+SAVEVAR HUMAN 时长 ..\QuestDiary\代练系统\代练数据.txt HardDisk
+CALCVAR HUMAN 标识 = <$STR(G3)>
+SAVEVAR HUMAN 标识 ..\QuestDiary\代练系统\代练数据.txt HardDisk
+sendmsg 7 [提示]：您的代练时间增加180分钟(总计:<$HUMAN(时长)>分钟) 
+break
+#elseact
+messagebox 元宝不足，请及时充值！
+break
+
+[@k02]
+#if
+CHECK [601] 1
+CHECKVAR HUMAN 标识 < <$STR(G3)>
+CHECKVAR HUMAN 时长 > 0
+#act
+sendmsg 7 提示：请先领取已完成的经验！
+break
+
+#if
+CHECKLEVELEX > 41
+#act
+sendmsg 7 提示：42级开始不能使用代练了!
+break
+
+#if
+CHECKVAR HUMAN 时长 > 8639
+#act
+sendmsg 7 提示：系统代练最多只能修炼10080分钟,请先领取已完成的经验！
+break
+
+#IF
+CHECKGAMEGOLD > 39
+#act
+set [601] 1
+GAMEGOLD - 24
+CALCVAR HUMAN 时长 + 1440
+SAVEVAR HUMAN 时长 ..\QuestDiary\代练系统\代练数据.txt HardDisk
+CALCVAR HUMAN 标识 = <$STR(G3)>
+SAVEVAR HUMAN 标识 ..\QuestDiary\代练系统\代练数据.txt HardDisk
+sendmsg 7 [提示]：您的代练时间增加1440分钟(总计:<$HUMAN(时长)>分钟)
+break
+#elseact
+messagebox 元宝不足，请及时充值！
+break
+
+[@k03]
+#if
+CHECK [601] 1
+CHECKVAR HUMAN 标识 < <$STR(G3)>
+CHECKVAR HUMAN 时长 > 0
+#act
+sendmsg 7 提示：请先领取已完成的经验！
+break
+
+#if
+CHECKLEVELEX > 41
+#act
+sendmsg 7 提示：42级开始不能使用代练了!
+break
+
+#if
+CHECKVAR HUMAN 时长 > 1
+#act
+sendmsg 7 提示：系统代练最多只能修炼10080分钟,请先领取已完成的经验！
+break
+
+#IF
+CHECKGAMEGOLD > 249
+#act
+set [601] 1
+GAMEGOLD - 168
+CALCVAR HUMAN 时长 + 10080
+SAVEVAR HUMAN 时长 ..\QuestDiary\代练系统\代练数据.txt HardDisk
+CALCVAR HUMAN 标识 = <$STR(G3)>
+SAVEVAR HUMAN 标识 ..\QuestDiary\代练系统\代练数据.txt HardDisk
+sendmsg 7 [提示]：您的代练时间增加10080分钟(总计:<$HUMAN(时长)>分钟)
+break
+#elseact
+messagebox 元宝不足，请及时充值！
+break
+
+[@LQ1]
+#if
+CHECK [601] 0
+#act
+messagebox 您尚未开启代练
+break
+
+#if
+CHECKLEVELEX > 41
+#act
+sendmsg 7 提示：42级开始不能使用代练了!
+break
+
+#if
+CHECKVAR HUMAN 时长 > 0
+#act
+MOV M51 <$STR(G3)>
+DEC M51 <$HUMAN(标识)>
+
+#if
+EQUAL M51 0
+#ACT
+messagebox 系统代练正在进行中，请耐心等待。。。
+break
+
+#if
+CHECKVAR HUMAN 时长 > <$STR(M51)>
+#act
+close
+MOV M61 <$STR(M51)>
+MUL M61 600
+CHANGEEXP + <$STR(M61)>
+CALCVAR HUMAN 时长 - <$STR(M51)>
+SAVEVAR HUMAN 时长 ..\QuestDiary\代练系统\代练数据.txt HardDisk
+CALCVAR HUMAN 标识 = <$STR(G3)>
+SAVEVAR HUMAN 标识 ..\QuestDiary\代练系统\代练数据.txt HardDisk
+sendmsg 7 [提示]：系统代练完成<$STR(M51)>分钟，获得<$STR(M61)>经验！
+messagebox [提示]：系统代练完成<$STR(M51)>分钟，获得<$STR(M61)>经验！
+MOV M51 0
+Gmexecute showeffect 75
+#elseact
+close
+MOV M61 <$HUMAN(时长)>
+MUL M61 600
+CHANGEEXP + <$STR(M61)>
+CALCVAR HUMAN 时长 = 0
+SAVEVAR HUMAN 时长 ..\QuestDiary\代练系统\代练数据.txt HardDisk
+CALCVAR HUMAN 标识 = <$STR(G3)>
+SAVEVAR HUMAN 标识 ..\QuestDiary\代练系统\代练数据.txt HardDisk
+set [601] 0
+sendmsg 7 [提示]：您的代练时间已经用完，最终获得<$STR(M61)>经验！
+messagebox 您的代练时间已经用完，请重新开启！
+MOV M51 0
+Gmexecute showeffect 75
+break
+}

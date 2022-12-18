@@ -1,0 +1,17 @@
+()
+%100
+[@main]
+　\
+前面就是通向封魔殿的不归路.\
+你真的要过去吗?\ \
+　\
+<我要进去/@move>　<COLOR=clLime 开区第2天20点开放封魔谷地图>\
+<过几天再去/@exit>\\
+[@move]
+#IF
+EQUAL A82 开启
+#ACT
+mapmove D2002 32 37
+#ELSEACT
+messagebox 开区第2天20点开放封魔谷地图
+BREAK

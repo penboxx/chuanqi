@@ -1,0 +1,80 @@
+[@新手送礼]
+{
+#IF
+Check [002] 0
+#ACT
+DELAYGOTO 5000 @礼一
+BREAK
+#IF
+Check [003] 0
+#ACT
+DELAYGOTO 5000 @礼二
+BREAK
+#IF
+Check [004] 0
+#ACT
+DELAYGOTO 5000 @礼三
+BREAK
+
+[@礼一]
+#ACT
+SETMISSION ^ 11
+SETMISSION + 11 1
+READRANDOMSTR .\QuestDiary\抽取数据\新手送礼\5分钟.txt S3
+SENDMSG 7 您将获得第一份礼物　<$STR(S3)>　请等待%t秒…… 251 0 300 @收礼一
+BREAK
+
+[@礼二]
+#ACT
+READRANDOMSTR .\QuestDiary\抽取数据\新手送礼\10分钟.txt S4
+SENDMSG 7 您将获得第二份礼物　<$STR(S4)>　请等待%t秒…… 251 0 600 @收礼二
+BREAK
+
+[@礼三]
+#ACT
+READRANDOMSTR .\QuestDiary\抽取数据\新手送礼\15分钟.txt S5
+SENDMSG 7 您将获得第三份礼物　<$STR(S5)>　请等待%t秒…… 251 0 900 @收礼三
+BREAK
+
+[@收礼一]
+#IF
+CheckBagSize 1
+#ACT
+SET [002] 1
+READRANDOMSTR .\QuestDiary\抽取数据\新手送礼\10分钟.txt S4
+GIVE <$STR(S3)> 1
+SENDMSG 7 恭喜你获得第一份礼物　<$STR(S3)>　请确认.
+SENDMSG 7 您将获得第二份礼物　<$STR(S4)>　请等待%t秒…… 251 0 600 @收礼二
+BREAK
+#ELSEACT
+SENDMSG 7 请确定背包有足够空间，小退后可重新领取!
+BREAK
+
+[@收礼二]
+#IF
+CheckBagSize 1
+#ACT
+SET [003] 1
+READRANDOMSTR .\QuestDiary\抽取数据\新手送礼\15分钟.txt S5
+GIVE <$STR(S4)> 1
+SENDMSG 7 恭喜你获得第二份礼物　<$STR(S4)>　请确认.
+SENDMSG 7 您将获得第三份礼物　<$STR(S5)>　请等待%t秒…… 251 0 900 @收礼三
+BREAK
+#ELSEACT
+SENDMSG 7 请确定背包有足够空间，小退后可重新领取!
+BREAK
+
+[@收礼三]
+#IF
+CheckBagSize 1
+#ACT
+SET [004] 1
+SET [005] 1
+GIVE <$STR(S5)> 1
+SENDMSG 7 恭喜你获得第三份礼物　<$STR(S5)>　请确认.
+BREAK
+#ELSEACT
+SENDMSG 7 请确定背包有足够空间，小退后可重新领取!
+BREAK
+
+}

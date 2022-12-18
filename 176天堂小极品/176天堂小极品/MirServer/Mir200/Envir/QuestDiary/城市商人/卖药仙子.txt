@@ -1,0 +1,21 @@
+[@卖药仙子]
+{
+很高兴为您服务,看一下您需要什么服务.\ \
+强效太阳水包需要6元宝一捆\ \
+
+     购买<强效太阳水包/@qxtysb>   \
+\ \ \
+提示：防止外挂商铺自动买药，各大BOSS地图都有卖药NPC
+[@qxtysb]
+#IF 
+	CheckBagSize	1
+checkgamegold > 5
+#ACT
+gamegold - 6			
+give  强效太阳包  1
+#ELSEACT
+MESSAGEBOX 你有足够的元宝吗？你的包满了吧？
+BREAK
+
+
+}

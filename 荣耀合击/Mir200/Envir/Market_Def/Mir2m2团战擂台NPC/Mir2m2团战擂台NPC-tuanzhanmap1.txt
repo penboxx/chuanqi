@@ -1,0 +1,7 @@
+(@@InPutString @@InPutInteger )
+[@main]
+#ACT
+DELAYGOTO 1 @Mir2m2团战擂台脚本NPC
+
+[@Mir2m2团战擂台脚本加载NPC]
+#CALL [\Mir2m2团战擂台配置(免费脚本群.101529177)\Mir2m2团战擂台脚本QM.txt] @Mir2m2团战擂台关闭接收

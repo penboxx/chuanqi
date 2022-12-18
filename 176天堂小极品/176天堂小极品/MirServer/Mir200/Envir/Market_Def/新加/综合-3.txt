@@ -1,0 +1,269 @@
+(@storage @getback @upgradenow @getbackupgnow )
+%100
++10
++11
++19
++20
++21
++22
++23
++24
++25
++26
++31
++30
++5
++6
++15
+[@main]
+                        
+\                                  <COLOR=clFuchsia 天堂复古1.76小极品！>\
+<COLOR=clFuchsia 我为你提供以下服务>          <COLOR=clFuchsia ---------------------->\
+                           
+╔════════════════════════╗\ 
+║<COLOR=#254  欢迎光临本店>  ║ <COLOR=clYellow ≮><武器升级/@wuqi><COLOR=clYellow ≯> ║<COLOR=clYellow ≮><我存东西/@storage><COLOR=clYellow ≯>   ║\
+╠════════════════════════╣ \
+║ <COLOR=clYellow ≮><幸运项链/@xianglian><COLOR=clYellow ≯>  ║ <COLOR=clYellow ≮><返回武器/@fanhui><COLOR=clYellow ≯> ║<COLOR=clYellow ≮><我取东西/@getback><COLOR=clYellow ≯>   ║\                                
+╚════════════════════════╝\
+[@wuqi]
+你像是想要升级你的武器。给我看你的武器，\
+升级价格是<$UPGRADEWEAPONFEE>金币。修炼这个武器需要原料\
+<黑铁矿/@Biron>，<饰品/@Etc>，<武器/@Weapon>和<金币/@Gold>。\
+别的原料你可以使用你包内的物品。\
+你想委托你的武器进入修炼系统吗？\ \
+ <确认修炼/@confirmupgrade>\ \
+ <取消/@main>\
+[@Biron]
+你可以在矿山里采到黑铁矿石。如果你想修炼过程得到\
+一个好得结果你最好拿给我更高纯度的黑铁矿。\
+顺便请记得，在修炼期间如果没有足够数量的黑色铁矿，\
+那怕你的矿石纯度再高修练的结果也可能不好。\ \
+ <返回/@upgrade>
+[@Etc]
+装饰品，项链，手镯当你的特殊技能融入了这种装饰物的时候，\
+能够加强你的武器。如果你给我好原料我能给你好结果。\
+如果你给我糟糕的装饰品那可能会失败，除非你有很好的运气。\ \
+ <返回/@upgrade>
+[@Weapon]
+只能对武器进行炼制。\
+如果你想要升级武器请给我你携带的武器...\ \
+ <返回/@upgrade>
+[@Gold]
+修练武器的金子太少...\
+你真的认为我的技术的价值就这么点数量的程度？\
+这个价格我不能做这个工作。\ \
+ <返回/@upgrade>
+[@confirmupgrade]
+给我看你给我的原料，修炼你的<$USERWEAPON>，我的视力不好，\
+我想从你的包里取得更多的饰品和黑铁矿石。\
+如果你有重要的物品，在你寄存在仓库后请回来。\ \
+ <请求修炼/@upgradenow>\ \
+<返回武器升级/@getbackupgnow>\
+ <在安排好以后再回来/@exit>
+[@heardsing]
+ 如果你给我3万金子我会再考虑一下...\ \
+ <支付3万金币/@paythree>\ \
+ <退出/@main>
+[@paythree]
+不知名的杂草...\ \
+ <退出/@exit>
+[~@upgradenow_ok]
+我会把它弄得像新的一样，\
+所以请十分钟后再回来。\ \
+ <返回/@Main>
+[~@upgradenow_ing]
+我们工作的规则是一个人只能进行一个项目。\
+请下次再来...\ \
+ <返回/@Main>
+[~@upgradenow_fail]
+材料不够。请你下次来的时候，\
+准备好所有的矿石，武器和饰品。\
+当然，我的工作才是最基本的...\ \
+ <返回/@Main>
+[~@getbackupgnow_ok]
+就这样了，我尽我最大努力精炼了你的武器， 
+结果是否<成功/@Success>\
+只有在你使用过一次后才知道，出去试试吧。\ \
+ <退出/@exit>
+[@Success]
+通过使用它，你可以体会到它精炼的好处。\
+无论你的战斗对象是其他玩家还是怪物...\
+你都会发现这个成果...\ \
+ <退出/@exit>
+[~@getbackupgnow_ing]
+这个工作正忙着呢，请稍等片刻...\ \
+ <返回/@Main>
+[~@getbackupgnow_fail]
+以前你是不是寄存了很多东西？\
+如果你找我是为了取回你很久前寄存在这里的物品，\
+那你还是回去吧，我可记不起来了。\
+这也过去太长时间了...\ \
+ <返回/@Main>
+[@fanhui]
+材料不够。请你下次来的时候，\
+准备好所有的矿石，武器和饰品。\
+当然，我的工作才是最基本的...\ \
+ <返回/@Main>
+[@storage]
+需要保管什么东西?\ \ 
+<返回/@main>
+[@getback]
+请看目录决定找什么东西.\ \ \  
+<返回/@main>
+[@getPreviouspage]
+#ACT
+goto @getback
+[@getnextpage]
+#ACT
+goto @getback
+[@xianglian]
+ ¤╭⌒╮╭⌒╮      \     
+ ╱◥██◣ ╭⌒╮     欢迎光临<COLOR=#254 提示：幸运项链可随机爆出>\ 
+︱田︱田田|╰-------  本服只有灯笼，记忆，白虎项链可升幸运\
+╬╬╬╬╬╬╬╬╬╬ <COLOR=#254 注意：项链升级不会破碎，成功率为随机>\
+-------------------------------------------------------\
+升级<COLOR=#254 项链>幸运+1   <COLOR=#254 需要1000元宝   成功率 80%>    <确定升级/@幸运一>\
+升级<COLOR=#254 项链>幸运+2   <COLOR=#254 需要2000元宝   成功率 25%>    <确定升级/@幸运二>\
+升级<COLOR=#254 项链>幸运+3   <COLOR=#254 需要3000元宝   成功率 15%>    <确定升级/@幸运三>\
+\                                               <返回首页/@main>\
+[@幸运一]
+#IF
+CheckItemAddValue 3 1 = 0
+CheckGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000
+goto @幸运一a
+#ELSEACT
+messagebox 升级条件不足！
+[@幸运一a]
+#IF
+random 3
+#ACT
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 0 恭喜玩家【%s】在幸运使者处把自己的项链提升到了幸运1
+break
+close
+#IF
+random 2
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+close
+#IF
+random 1
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+close
+[@幸运二]
+#IF
+CheckItemAddValue 3 1 = 1
+CheckGAMEGOLD > 1999
+#ACT
+GAMEGOLD - 2000
+goto @幸运二a
+#ELSEACT
+messagebox 升级条件不足
+[@幸运二a]
+#IF
+random 5
+#ACT
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 0 恭喜玩家【%s】在幸运使者处把自己的项链提升到了幸运2
+break
+close
+#IF
+random 7
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+close
+#IF
+random 6
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+close
+#IF
+random 5
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+close
+#IF
+random 4
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+close
+#IF
+random 3
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+close
+close
+#IF
+random 2
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+close
+#IF
+random 1
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+close
+[@幸运三]
+#IF
+CheckItemAddValue 3 1 = 2
+CheckGAMEGOLD > 2999
+#ACT
+GAMEGOLD - 3000
+goto @幸运三a
+#ELSEACT
+messagebox 升级条件不足
+[@幸运三a]
+#IF
+random 2
+#ACT
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 0 恭喜玩家【%s】在幸运使者处把自己的项链提升到了幸运3
+break
+close
+#IF
+random 1
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+close
+[@幸运四]
+#IF
+CheckItemAddValue 3 1 = 3
+CheckGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+goto @幸运四a
+#ELSEACT
+messagebox 升级条件不足
+[@幸运四a]
+#IF
+random 3
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+close
+#IF
+random 2
+#ACT
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 0 恭喜玩家【%s】在幸运使者处把自己的项链提升到了幸运4
+break
+close
+#IF
+random 1
+#ACT
+SENDMSG 5 不好意思，升级失败！祝你下次好运！
+break
+close

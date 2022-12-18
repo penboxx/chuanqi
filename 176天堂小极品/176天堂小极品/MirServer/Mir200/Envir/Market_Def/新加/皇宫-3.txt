@@ -1,0 +1,53 @@
+()
+%100
+[@main]
+  <COLOR=clAqua ~~●█〓██▄▄▄▄▄▄●●●●●●>  <COLOR=clFuchsia 兄弟们,往皇宫冲啊>\
+<COLOR=clAqua ▄▄██████▄▄▃▂>  <COLOR=#254 纪律+速度+团结>\
+<COLOR=clAqua ██████████████>   <COLOR=#254 砝码勇士们加油> \
+<COLOR=clAqua ◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲◤> \ 
+<COLOR=clAqua ╔══════════════════════════╗> \
+<COLOR=clAqua ‖><COLOR=clLime 提示：为了体现攻城神速 方便激情。每次收费10W金币路费><COLOR=clAqua ‖> \
+<COLOR=clAqua ┠══════════════════════════┨>\
+<COLOR=clAqua ‖><沙城武器店/@ns1><COLOR=clAqua ‖‖><沙城首饰店/@ns2><COLOR=clAqua ‖‖><沙城正大门/@ns3><COLOR=clAqua ‖‖><沙城复活点/@ns4><COLOR=clAqua ‖>\
+<COLOR=clAqua ╚═════╝╚═════╝╚═════╝╚═════╝>\\
+[@ns1]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+MAPMOVE 3 638 309
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+[@ns2]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+MAPMOVE 3 663 286
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+[@ns3]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+MAPMOVE 3 674 332
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+[@ns4]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+MAPMOVE 3 649 293
+BREAK
+#ELSEACT
+MESSAGEBOX 需要10万金币用来支付我们的服务费用!
+

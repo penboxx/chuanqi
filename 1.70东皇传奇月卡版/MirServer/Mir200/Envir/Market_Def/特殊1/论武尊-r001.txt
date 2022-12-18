@@ -1,0 +1,29 @@
+[@main]
+　\
+我可以帮你合成赤血魔剑哦!\
+<【赤血魔剑】/@ren>\
+<赤血魔剑合成需要金砖、罗刹、攻击力药水、魔法力药水> \
+<道术力药水、疾风药水各一个> \
+
+[@ren]
+#if
+checkitem 金砖 1
+checkitem 罗刹 1
+checkitem 攻击力药水 1
+checkitem 魔法力药水 1
+checkitem 道术力药水 1
+checkitem 疾风药水 1
+#ACT
+take 金砖 1
+take 罗刹 1
+take 攻击力药水 1
+take 魔法力药水 1
+take 道术力药水 1
+take 疾风药水 1
+
+give 赤血魔剑 1
+
+SENDMSG 0 恭喜玩家<$USERNAME>合成赤血魔剑成功！！！
+
+#ELSEACT
+MESSAGEBOX 你把东西准备齐全再来吧！

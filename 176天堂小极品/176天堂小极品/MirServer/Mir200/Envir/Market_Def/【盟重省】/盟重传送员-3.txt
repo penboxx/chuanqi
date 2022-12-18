@@ -1,0 +1,1118 @@
+()
+%100
+[@main]
+#if
+#ACT
+;SENDMSG 4 欢迎来中国复古1.76小极品传奇，目前游戏测试状态！正式开区8月3号下午14:00准时开放,测试区充值多送10%！
+#SAY
+　　　 地图走法,怪物爆率,未知地图查询,请打<COLOR=250 @帮助>命令\
+╔┄╗╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗╔┄╗\
+┆★┆┆<比奇大城/@比奇大城>    <银杏山谷/@银杏山谷>   <魔 龙 城/@魔龙城>   <白日天门/@白日天门>┆┆★┆\
+┆天┆┆<盟重土城/@盟重土城>    <封魔神谷/@封魔神谷>   <毒蛇山谷/@毒蛇山谷>   <苍月海岛/@苍月小岛>┆┆天┆\
+┆堂┆╠┄┄┄┄┄┄┄┄〖<特殊传送/@特殊传送>〗┄┄┄┄┄┄┄╣┆堂┆\
+┆复┆┆<矿区洞口/@矿区洞口>    <蜈蚣洞口/@蜈蚣洞口>   <沃玛洞口/@沃玛洞口>   <石墓洞口/@石墓洞口>┆┆复┆\
+┆古┆┆<祖玛洞口/@祖玛洞口>    <牛魔洞口/@牛魔洞口>   <尸魔洞口/@尸魔洞口>   <骨魔洞口/@骨魔洞口>┆┆古┆\
+┆★┆┆<赤月洞口/@赤月洞口>    <幻境洞口/@神秘幻境>   <封魔洞口/@封魔洞口>   <沙城区域/@沙巴克>┆┆★┆\
+╚┄╝╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝╚┄╝ \ 
+<>     <★金钻服务★/@585858>         <★官方论坛★/@主播互动> <COLOR=clLime (大家积极参加论坛互动)>
+[@特殊传送]
+尊敬的玩家，我们为您提供最方便的服务器，<部分免费>\
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆<尸 王 殿/@传送11205>   <生死之间/@传送11206>   <石 墓 阵/@传送11208>   <祖玛七层/@传送11209>   <霸者大厅/@传送11211>┆\ 
+┆<未知暗殿/@传送11217>   <幻境10层/@传送11214>   <沙藏宝阁/@传送11212>   <王者禁地/@传送11215>   <圣域之门/@传送11221>┆  \
+┆<赤月老巢/@传送11219>   <恶魔祭坛/@传送11218>   <万恶之源/@传送11220>   <沃玛三层/@沃玛三层>   <牛魔六层/@传送11210>┆\
+╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┆\
+┆<去幻境二层练级/@幻境二层>         <六新衣服/@传送11216>               <返回/@main>  ┆\
+╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝\
+
+
+
+[@主播互动]
+#IF
+#ACT
+WebBrowser  http://www.china76.com.cn
+
+
+
+
+[@风格]
+
+[@茉莉]
+#IF
+#ACT
+WebBrowser  https://live.kuaishou.com/u/3x83x6kexamavzw
+[@柠檬]
+#IF
+#ACT
+WebBrowser  https://live.kuaishou.com/u/3xnbp59hxyjy9v2
+[@空空]
+#IF
+#ACT
+WebBrowser  https://live.kuaishou.com/u/3xgn9pd3w5d9j2m
+[@红豆]
+#IF
+#ACT
+WebBrowser  https://live.kuaishou.com/u/ymg2bb058
+[@王哪摸]
+#IF
+#ACT
+WebBrowser  http://www.gifshow.com/s/5jem99Vh
+[@坏坏]
+#IF
+#ACT
+WebBrowser  http://bijie.m.etoote.com/s/7w6mNmWo
+[@帝王]
+#IF
+#ACT
+WebBrowser  http://zhangjiajie.m.kspkg.com/s/Nl8-TGSy
+[@东方]
+#IF
+#ACT
+WebBrowser  https://live.kuaishou.com/u/Dongfang188
+
+
+
+
+
+[@沃玛三层]
+#if
+#ACT
+mapmove D024
+break 
+
+[@圣域之门]
+嗯,消息挺灵的嘛，这么快就找我到这。\
+你想去挑战强大的怪物吗？不过你只有60分钟时间，\
+60分种你还会回来。而且这是要花费金钱的，\
+毕竟抓来他们也不灵符，而且我也不能保障你们的安全。\
+那么还想试试吗？每进去一次收你30万。\
+<打听圣域的消息/@SY>\
+<去/@j>\
+<不去/@exit>\
+[@SY]
+荣誉勋章乃圣域至宝，\
+不过你会首先到达一个叫"圣域之门"的地方。\
+可别在这个空旷的房间里滞留太长时间哦，\
+迈出你的第一步，传说中的圣域异兽就会出现。\
+你可要小心应付啊!\
+<关闭/@exit>\
+[@j]
+#IF 
+checkgold 300000
+#ACT
+take 金币 300000
+TimeRecall 60
+mapmove B101
+break 
+#ELSESAY 
+不够30万\
+<取消/@exit>\
+[@神秘幻境]
+#if
+#ACT
+mapmove H001 13 13
+give 回城卷 1
+#elsesay
+你没有10w金币来支付我们的服务费用!\
+
+[@魔龙城]
+#if
+TRUE
+#ACT
+mapmove 6 123 157
+[@比奇大城]
+#if
+#ACT
+mapmove 0 333 268
+break
+[@银杏山谷]
+#if
+#ACT
+mapmove 0 650 624
+break
+[@比奇村庄]
+#if
+#ACT
+mapmove 0 290 615
+break
+[@毒蛇山谷]
+#if
+#ACT
+mapmove 2 503 483
+break
+[@盟重土城]
+#if
+#ACT
+mapmove 3 333 333
+break
+[@白日天门]
+#if
+#ACT
+mapmove 11 177 324
+break
+[@封魔神谷]
+#if
+#ACT
+mapmove 4 241 203
+break
+[@苍月小岛]
+#if
+#ACT
+mapmove 5 140 338
+break
+[@矿区洞口]
+#IF
+#ACT
+mapmove 0 659 218
+give 回城卷 1
+break
+[@蜈蚣洞口]
+#IF
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 3 142 92
+give 回城卷 1
+break
+#ELSESAY
+需要1000金币用来支付我们的服务费用!\
+[@沃玛洞口]
+#IF
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove D021 71 69
+give 回城卷 1
+break
+#ELSESAY
+需要1000金币用来支付我们的服务费用!\
+[@石墓洞口]
+#IF
+checkgold 1000
+#act
+take 金币 1000
+mapmove D710 27 20
+give 回城卷 1
+#ELSESAY
+你没有1000金币用来支付我们的服务费用!\
+[@赤月洞口]
+#IF
+checkgold 1000
+#act
+take 金币 1000
+mapmove 12 89 13
+give 回城卷 1
+#ELSESAY
+你没有3000金币用来支付我们的服务费用!\
+[@祖玛洞口]
+#IF
+checkgold 1000
+#act
+take 金币 1000
+mapmove 0157 17 17
+give 回城卷 1
+#ELSESAY
+你没有1000金币用来支付我们的服务费用!\
+[@牛魔洞口]
+#IF
+checkgold 1000
+#act
+take 金币 1000
+mapmove 5 658 463
+give 回城卷 1
+#ELSESAY
+你没有1000金币用来支付我们的服务费用!\
+[@尸魔洞口]
+#IF 
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 5 522 615
+give 回城卷 1
+break 
+#ELSESAY 
+你没有1000金币用来支付我们的服务费用!\
+[@骨魔洞口]
+#IF 
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 5 545 131
+give 回城卷 1
+break 
+#ELSESAY 
+你没有1000金币用来支付我们的服务费用!\
+[@封魔洞口]
+#IF 
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 4 60 71
+give 回城卷 1
+break 
+#ELSESAY 
+你没有1000金币用来支付我们的服务费用!\
+[@万恶之源]
+玛法大陆的怪物在勇士的围剿下已无处藏身\
+它们变异成暗之赤月恶魔躲到了这个洞穴里\
+国王号召勇士们前去消灭这最后的魔王\
+进入条件10w金币\
+<前往万恶/@前往万恶>\
+<我不去了/@exit>\
+[@前往万恶]
+#if
+checkgold 100000
+#ACT
+take 金币 100000
+mapmove D10071
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 你连10w金币都没有还想去！\
+[@沙巴克]
+#if
+CHECKLEVELEX > 39
+#act
+mapmove 3 706 407
+#ELSEACT
+MESSAGEBOX 你连40级都没有还想去！\
+
+[@传送11205]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove Q004
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove Q004
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@传送11206]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove  D613 9 51
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove  D613 9 51
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@传送11207]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D023  52 366
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D023  52 366
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@传送11208]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D715 83 81 
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D715 83 81 
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@传送11209]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D5071 8 10 
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D5071 8 10 
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@传送11210]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D2078 253 253
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D2078 253 253
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@传送11211]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D2008 84 85
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D2008 84 85
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@传送11212]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove h203 46 88
+break
+
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove h203 46 88
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+BREAK
+
+[@传送11213]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D1004 171 88
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D1004 171 88
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@传送11214]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove H010 161 172
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@传送11215]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove H106 100 99
+break
+
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove H106 100 99
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+BREAK
+
+
+[@传送11216]
+新衣服传送：\
+<死亡神殿/@110衣服01>    <地狱烈焰/@110衣服02>    <钳虫巢穴/@110衣服03>\
+<堕落坟场/@110衣服04>    <困惑殿堂/@110衣服05>    <深渊魔域/@110衣服06>\
+<返回/@main>
+
+
+[@110衣服01]
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove 4 205 218
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+
+[@110衣服02]
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove 0 428 474
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+
+[@110衣服03]
+#IF
+checkgold 100000
+#ACT
+give 回城卷 1
+take 金币 100000
+mapmove 11 343 325
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+
+[@110衣服04]
+#IF
+checkgold 100000
+#ACT
+give 回城卷 1
+take 金币 100000
+mapmove 1 320 56
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+
+[@110衣服05]
+#IF
+checkgold 100000
+#ACT
+give 回城卷 1
+take 金币 100000
+mapmove R001 55 94
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+
+[@110衣服06]
+#IF
+checkgold 100000
+#ACT
+give 回城卷 1
+take 金币 100000
+mapmove 1 215 312
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+break
+
+[@幻境二层]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove H002 362 231
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove H002 362 231
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+break
+
+[@传送11220]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove D10071 
+break
+
+#IF
+checkgold 100000
+#ACT
+give 回城卷 1
+take 金币 100000
+mapmove D10071 
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+BREAK
+
+[@传送11219]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove D10052 139 25 
+break
+#IF
+checkgold 100000
+#ACT
+give 回城卷 1
+take 金币 100000
+mapmove D10052 139 25 
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+
+[@传送11218]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove D10051 180 55
+break
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove D10051 180 55
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+break
+
+[@传送11217]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove M001 
+break
+
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove M001 
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+break
+
+[@传送11221]
+#IF
+checkgold 300000
+checkitem 回城卷 1
+#ACT
+take 金币 300000
+mapmove B101 
+break
+#IF
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove B101 
+give 回城卷 1
+break
+#ELSEACT
+MESSAGEBOX 你没有30w金币用来支付我们的服务费用!\
+
+
+
+
+
+
+
+
+[@585858]
+
+\      亲爱的玩家，如果你给我金币，我们为您提供最方便的服务：\
+   ╔┄┄┄┄┄┄┄复古传奇1.76纯绿复古┄┄┄┄┄┄┄╗\
+   ┆  <尸 王 殿/@998传送11305>    <生死之间/@998传送11306>    <沃玛三层/@998传送11307>    <石 墓 阵/@998传送11308>  ┆\
+   ┆  <祖玛七层/@998传送11309>    <牛魔六层/@998传送11310>    <霸者大厅/@998传送11311>    <未知暗殿/@998传送11317>  ┆\
+   ┆  <幻境10层/@998传送11314>    <沙藏宝阁/@998传送11312>    <王者禁地/@998传送11315>    <圣域之门/@998传送11321>  ┆\
+   ┆  <恶魔祭坛/@998传送11318>    <赤月老巢/@998传送11319>    <万恶之源/@998传送11320>    <六新衣服/@998传送11316>  ┆\
+   ╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╣\
+   ┆                <幻境三练级/@998幻境三层1>                      ┆\
+   ╚┄┄┄┄┄┄┄骨灰散人玩家激情到底┄┄┄┄┄┄┄╝   
+                                                      
+
+[@998传送11305]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove Q004
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove Q004
+BREAK
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@998传送11306]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove  D613 9 51
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove  D613 9 51
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@998传送11307]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D023  52 366
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D023  52 366
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@998传送11308]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D715 83 81 
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D715 83 81 
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@998传送11309]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D5071 8 10 
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D5071 8 10 
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@998传送11310]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D2076 94 130
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D2076 94 130
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@998传送11311]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D2008 84 85
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D2008 84 85
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@998传送11312]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove h201 11 105
+break
+
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove h201 11 105
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+BREAK
+
+[@998传送11313]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove D1004 171 88
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove D1004 171 88
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+BREAK
+
+[@998传送11314]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove H010 161 172
+break
+
+
+[@998传送11315]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove H106 100 99
+break
+
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove H106 100 99
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+BREAK
+
+
+[@998传送11316]
+新衣服传送：\
+<死亡神殿/@998衣服01>    <地狱烈焰/@998衣服02>    <钳虫巢穴/@998衣服03>\
+<堕落坟场/@998衣服04>    <困惑殿堂/@998衣服05>    <深渊魔域/@998衣服06>\
+<返回/@998main>
+
+
+[@998衣服01]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove 4 205 218
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+
+[@998衣服02]
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove 0 428 474
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+
+[@998衣服03]
+#IF
+checkgold 10000
+#ACT
+give 回城卷 1
+take 金币 10000
+mapmove 11 343 325
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+
+[@998衣服04]
+#IF
+checkgold 10000
+#ACT
+give 回城卷 1
+take 金币 10000
+mapmove 1 320 56
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+
+[@998衣服05]
+#IF
+checkgold 10000
+#ACT
+give 回城卷 1
+take 金币 10000
+mapmove R001 55 94
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+
+[@998衣服06]
+#IF
+checkgold 10000
+#ACT
+give 回城卷 1
+take 金币 10000
+mapmove 1 215 312
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+break
+
+[@998幻境三层1]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove H003
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove H003
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+break
+
+[@998传送11320]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove D10071 
+break
+
+#IF
+checkgold 100000
+#ACT
+give 回城卷 1
+take 金币 100000
+mapmove D10071 
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+BREAK
+
+[@998传送11319]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove D10052 139 25 
+break
+#IF
+checkgold 100000
+#ACT
+give 回城卷 1
+take 金币 100000
+mapmove D10052 139 25 
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+
+[@998传送11318]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove D10051 180 55
+break
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove D10051 180 55
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+break
+
+[@998传送11317]
+#IF
+checkgold 100000
+checkitem 回城卷 1
+#ACT
+take 金币 100000
+mapmove M001 
+break
+
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+give 回城卷 1
+mapmove M001 
+break
+#ELSEACT
+MESSAGEBOX 你没有10w金币用来支付我们的服务费用!\
+break
+
+[@998传送11321]
+#IF
+checkgold 300000
+checkitem 回城卷 1
+#ACT
+take 金币 300000
+mapmove B101 
+break
+#IF
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove B101 
+give 回城卷 1
+break
+#ELSEACT
+MESSAGEBOX 你没有30w金币用来支付我们的服务费用!\
+
+[@998幻境三层]
+#IF
+checkgold 10000
+checkitem 回城卷 1
+#ACT
+take 金币 10000
+mapmove H003
+break
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+give 回城卷 1
+mapmove H003
+break
+#ELSEACT
+MESSAGEBOX 你没有1w金币用来支付我们的服务费用!\
+break

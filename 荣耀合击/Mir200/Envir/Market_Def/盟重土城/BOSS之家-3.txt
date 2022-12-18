@@ -1,0 +1,91 @@
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【BOSS圣地】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+你一定听说了吧，有人已经发现了传说中的BOSS圣地！\
+BOSS失乐园1层升级圣地经验高，2层是BOSS的海洋！
+\<COLOR=clFuchsia ♀.进入条件：BOSS之家20万金币>  \
+\<COLOR=clFuchsia ♀.进入条件：BOSS失乐园50万金币>  \
+<COLOR=clFuchsia ------------------------------------------------------------>\\
+　 　 　 　〖<BOSS之家/@pay>〗　　　　　　〖<BOSS失乐园/@pay11>〗
+
+
+[@pay11]
+
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【BOSS失乐园】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\  \    \ 
+ \ 
+
+
+
+〖<BOSS失乐园1号点/@pay1>〗〖<BOSS失乐园2号点/@pay2>〗〖<BOSS失乐园3号点/@pay3>〗
+
+[@pay3]
+#IF
+CHECKLEVELEX > 0
+checkgold 500000
+#ACT
+take 金币 500000
+mapmove BSsly1 174  170
+
+SENDMSG 0  伟大的玛法勇士[<$USERNAME>]闯入了[BOSS失乐园]超多宝藏等待你去挖掘！ 251  249
+SENDMSG 0  伟大的玛法勇士[<$USERNAME>]闯入了[BOSS失乐园]超多宝藏等待你去挖掘！ 251  249
+break
+#ELSESAY
+条件不足，无法进入！
+
+[@pay2]
+#IF
+CHECKLEVELEX > 0
+checkgold 500000
+#ACT
+take 金币 500000
+mapmove BSsly1 98  25
+
+SENDMSG 0  伟大的玛法勇士[<$USERNAME>]闯入了[BOSS失乐园]超多宝藏等待你去挖掘！ 251  249
+SENDMSG 0  伟大的玛法勇士[<$USERNAME>]闯入了[BOSS失乐园]超多宝藏等待你去挖掘！ 251  249
+break
+#ELSESAY
+条件不足，无法进入！
+
+
+[@pay1]
+#IF
+CHECKLEVELEX > 0
+checkgold 500000
+#ACT
+take 金币 500000
+mapmove BSsly1 20  86
+
+SENDMSG 0  伟大的玛法勇士[<$USERNAME>]闯入了[BOSS失乐园]超多宝藏等待你去挖掘！ 251  249
+SENDMSG 0  伟大的玛法勇士[<$USERNAME>]闯入了[BOSS失乐园]超多宝藏等待你去挖掘！ 251  249
+break
+#ELSESAY
+条件不足，无法进入！
+
+
+[@pay]
+#IF
+CHECKLEVELEX > 2
+checkgold 200000
+#ACT
+take 金币 200000
+mapmove BSZJ 172 167
+SENDMSG 0  伟大的玛法勇士[<$USERNAME>]闯入了[BOSS之家]超多宝藏等待你去挖掘！ 251  249
+SENDMSG 0  伟大的玛法勇士[<$USERNAME>]闯入了[BOSS之家]超多宝藏等待你去挖掘！ 251  249
+break
+#ELSESAY
+条件不足，无法进入！
+
+[@BOSS2]
+#IF
+EQUAL G92 0
+#ACT
+#CALL [\\系统功能\地图开放.txt] @BLUE地图开放
+BREAK
+#ELSESAY
+我不喜欢有句话说很多次,没有钱的话你自己应该知道怎么做,\
+去BOSS之家是吧?20W大洋,一分也不能少。\  \
+<移动/@pay1>\
+<不/@exit>

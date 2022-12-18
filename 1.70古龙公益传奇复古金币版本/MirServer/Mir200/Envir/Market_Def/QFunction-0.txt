@@ -1,0 +1,632 @@
+
+(@@InPutInteger @@InPutString @@sendmsg @storage @getback @buy @sell @repair @s_repair @@offlinemsg @getnextpage @getPreviouspage @@InPutString @@useitemname @OnLogout_OffLinePlaying @KillByHum)
+%100
+
+
+[@PlayDie]
+#IF
+KILLBYHUM
+#ACT
+SENDMSG 1 [新闻快报]:玩家[<$KILLER>]在:%m(%x:%y)把玩家[<$USERNAME>]干掉了！ 250 0
+break
+
+#IF
+KILLBYMON
+#ACT
+SENDMSG 1 [新闻快报]:凶悍的怪物<$MONKILLER>在:%m(%x:%y)把玩家[<$USERNAME>]给强奸了！ 250 0
+break
+
+
+[@STDMODEFUNC172]
+#IF
+random 10
+#ACT
+MAPMOVE 0 349 289
+CLOSE
+BREAK
+#IF
+random 7
+#ACT
+MAPMOVE 0 318 271
+CLOSE
+BREAK
+#IF
+random 6
+#ACT
+MAPMOVE 0 321 251
+CLOSE
+BREAK
+#IF
+random 5
+#ACT
+MAPMOVE 0 307 239
+CLOSE
+BREAK
+#IF
+random 4
+#ACT
+MAPMOVE 0 317 285
+CLOSE
+BREAK
+#IF
+#ACT
+MAPMOVE 0 333 254
+CLOSE
+BREAK
+
+[@StdModeFunc80]  
+#IF
+#act 
+give 金币 1000000
+SENDMSG 6 提示：金币增加1000000！
+
+[@STDMODEFUNC31]
+#IF
+CHECKITEM 强效太阳水 6
+#ACT
+TAKE 强效太阳水 6
+GIVE 打捆太阳水 1
+CLOSE
+BREAK
+#ELSESAY
+你都没有足够的强效太阳水需要打捆，\
+还捆什么? \
+浪费... \ \
+<离 开/@EXIT>\
+
+[@STDMODEFUNC32]
+#IF
+CHECKITEM 万年雪霜 6
+#ACT
+TAKE 万年雪霜 6
+GIVE 雪霜包 1
+CLOSE
+BREAK
+#ELSESAY
+你都没有足够的万年雪霜需要打捆，\
+还捆什么? \
+浪费... \ \
+<离 开/@EXIT>\
+
+[@STDMODEFUNC33]
+#IF
+CHECKITEM 疗伤药 6
+#ACT
+TAKE 疗伤药 6
+GIVE 打捆疗伤药 1
+CLOSE
+BREAK
+#ELSESAY
+你都没有足够的疗伤药需要打捆，\
+还捆什么? \
+浪费... \ \
+<离 开/@EXIT>\
+
+[@PlayLevelUp]
+#IF
+CHECKLEVELEX = 26
+#ACT
+GIVE 金币 150000
+SENDMSG 7 提示：成功获得26级测试奖励〈15万金币〉。
+SENDMSG 0 恭喜[<$USERNAME>]成功获得26级等级奖励〈15万金币〉！ 251 249
+BREAK
+#IF
+CHECKLEVELEX = 31
+#ACT
+GIVE 金币 300000
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\测试31帐号.txt
+SENDMSG 7 提示：成功获得31级测试奖励〈30万金币〉。
+SENDMSG 0 恭喜[<$USERNAME>]成功获得31级等级奖励〈30万金币〉！ 251 249
+BREAK
+#IF
+CHECKLEVELEX = 36
+#ACT
+GIVE 金币 600000
+DELACCOUNTLIST ..\QuestDiary\测试奖励\测试31帐号.txt
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\测试36帐号.txt
+SENDMSG 7 提示：成功获得36级测试奖励〈60万金币〉。
+SENDMSG 0 恭喜[<$USERNAME>]成功获得36级等级奖励〈60万金币〉！ 251 249
+BREAK
+#IF
+CHECKLEVELEX = 40
+#ACT
+DELACCOUNTLIST ..\QuestDiary\测试奖励\测试36帐号.txt
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\测试40帐号.txt
+BREAK
+
+
+
+
+#if
+checklevelex = 15
+#act
+Gmexecute ReleaseShutup Self
+SENDMSG 7 恭喜你升到15级!禁言功能自动解除可以说话了!
+break
+
+
+[@StdModeFunc15]
+#IF
+#ACT
+Gmexecute showeffect 78
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
+
+[@StdModeFunc16]
+#IF
+#ACT
+Gmexecute showeffect 79
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
+
+[@StdModeFunc17]
+#IF
+#ACT
+Gmexecute showeffect 80
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
+
+[@StdModeFunc18]
+#IF
+#ACT
+Gmexecute showeffect 81
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
+
+[@StdModeFunc19]
+#IF
+#ACT
+Gmexecute showeffect 82
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
+
+[@StdModeFunc20]
+#IF
+#ACT
+Gmexecute showeffect 83
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
+
+[@StdModeFunc21]
+#IF
+#ACT
+Gmexecute showeffect 83
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
+
+[@StdModeFunc41]
+#IF
+CHECKVAR HUMAN QDDG = 5
+#ACT
+CALCVAR HUMAN QDDG = 0
+CLEARDELAYGOTO
+SENDMSG 7 庆典蛋糕释放完毕。
+#ACT
+BREAK
+#IF
+#ACT
+Gmexecute showeffect 78
+SENDMSG 0 <$USERNAME>在:%m%x:%y处释放庆典蛋糕咯、大家快去欣赏哦。
+DELAYGOTO 2000 @庆典蛋糕
+
+[@庆典蛋糕]
+#IF
+#ACT
+Gmexecute showeffect 79
+DELAYGOTO 2000 @庆典蛋糕一
+
+[@庆典蛋糕一]
+#IF
+#ACT
+Gmexecute showeffect 80
+DELAYGOTO 2000 @庆典蛋糕二
+
+[@庆典蛋糕二]
+#IF
+#ACT
+Gmexecute showeffect 81
+DELAYGOTO 2000 @庆典蛋糕三
+
+[@庆典蛋糕三]
+#IF
+#ACT
+Gmexecute showeffect 82
+DELAYGOTO 2000 @庆典蛋糕四
+
+[@庆典蛋糕四]
+#IF
+#ACT
+Gmexecute showeffect 83
+DELAYGOTO 2000 @庆典蛋糕五
+
+[@庆典蛋糕五]
+#IF
+#ACT
+CALCVAR HUMAN QDDG + 1
+Gmexecute showeffect 78
+DELAYGOTO 2000 @STDMODEFUNC41
+
+[@STDMODEFUNC25]
+<COLOR=CLRED 传音筒>可以将你要说出的话置顶，特别醒目！\
+每句话限制为：30个字，\
+可在置顶位置停留30秒！\
+请将要说的话，编写到传音筒内！\ \
+<传音筒/@@INPUTSTRING1>\
+[@@INPUTSTRING1]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 ~INPUTSTRING1
+[~INPUTSTRING1]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DEC S1 62 999
+SENDMSG 0 <$USERNAME>：<$STR(S1)> 252 255 30
+CLOSE
+BREAK
+
+
+
+[@UserCmd1]
+#IF
+#Act
+#Call [\帮助\帮助.txt] @管理帮助
+
+
+[@UserCmd2]
+#IF
+ISADMIN
+#Act
+#Call [\帮助\地图.txt] @动态
+
+
+[@UserCmd3]
+#IF
+#Act
+#Call [\论坛\论坛.txt] @管理论坛
+
+[@UserCmd4]
+#IF
+#Act
+#Call [\摆摊\摆摊.txt] @管理摆摊
+
+[@USERCMD5]
+#ACT
+#CALL [\系统功能\后台管理.txt] @管理
+
+[@STDMODEFUNC22]
+#IF
+GENDER WOMAN
+#ACT
+HAIRSTYLE 0
+SENDMSG 6 发型已经变更! 
+BREAK
+#IF
+GENDER MAN
+#ACT
+HAIRSTYLE 0
+SENDMSG 6 发型已经变更! 
+BREAK
+
+[@STDMODEFUNC23]
+#IF
+GENDER WOMAN
+#ACT
+HAIRSTYLE 1
+SENDMSG 6 发型已经变更! 
+BREAK
+#IF
+GENDER MAN
+#ACT
+HAIRSTYLE 1
+SENDMSG 6 发型已经变更! 
+BREAK
+
+[@StdModeFunc29]
+#ACT
+mapmove 3 330 330
+
+[@StdModeFunc30]
+#ACT
+mapmove 0 326 272
+
+[@UserCmd5]
+<千里传音>可以将你要说出的话全区显示，特别醒目！\
+每次喊话收取50000金币！\
+请将要说的话，编写到<千里传音>内！\ \
+<千里传音/@@sendmsg>
+[@@sendmsg]
+#if
+checkgold 50000
+#act
+take 金币 50000
+SETSENDMSGFLAG
+#elseact
+SENDMSG 6 每发送一次喊话需要50000金币！
+close
+
+[@@RecallPlayer]
+#IF
+CHECKHEROONLINE
+#ACT
+CLOSE
+MESSAGEBOX 请先设置您的英雄下线！
+#ELSEACT
+CLOSE
+RecallPlayer
+
+[@MagSelfFunc99]
+#IF
+#ACT
+QUERYBAGITEMS 2
+SENDMSG 5 刷新包裹成功！
+
+
+[@HeroNameFilter]
+英雄名字中包含禁用字符\<关闭/@exit>
+[@CreateHeroOK]
+创建英雄成功\<关闭/@exit>
+[@HeroNameExists]
+英雄名字已经存在\<关闭/@exit>
+[@HeroOverChrCount]
+你的帐号角色过多\<关闭/@exit>
+[@CreateHeroFail]
+创建英雄失败\<关闭/@exit>
+[@CreateHeroFailEx]
+创建英雄失败，请稍候重试\<关闭/@exit>
+
+
+[@StdModeFunc127]
+#IF
+#ACT
+Gmexecute changeluck 2500
+SENDMSG 6 %s使用英雄忠诚度卷，英雄忠诚提升10%!
+BREAK
+
+
+[@STDMODEFUNC128]
+#IF
+CHECKLEVELEX > 0
+#ACT
+KILLMONEXPRATE 200 7200
+Gmexecute showeffect 75
+SENDMSG 7 您获得了2小时双倍经验时间
+BREAK
+
+[@STDMODEFUNC129]
+#IF
+CHECKLEVELEX > 0
+#ACT
+KILLMONEXPRATE 400 7200
+Gmexecute showeffect 75
+SENDMSG 7 您获得了2小时四倍经验时间
+BREAK
+
+[@StdModeFunc42]
+#IF
+CHECKITEMADDVALUE 1 3 < 7
+#ACT
+UPGRADEITEMEX 1 3 0 1 0
+SENDMSG 6 你的武器获得祝福.！！ 
+#ELSEACT
+SendMsg 5 武器幸运已经+7了，无法再次使用！
+GIVE 超级祝福油
+
+[@StdModeFunc43]
+#IF
+CHECKLEVELEX > 0
+#act
+GIVE 祝福油 1
+BREAK
+
+
+[@STDMODEFUNC130]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CREDITPOINT + 10
+SENDMSG 7 恭喜：你获得了：声望10点
+BREAK
+
+
+[@StdModeFunc44]
+#if
+CHECKLEVELEX > 39
+checkjob wizard
+CHECKMAGICLEVEL 魔法盾 = 3
+#act
+SkillLevel 魔法盾 = 4
+break
+#ELSEACT
+MESSAGEBOX 等级没有40级或不能学习此技能。
+GIVE 四级魔法盾 1
+
+;====================================================
+
+
+[@石墓阵]
+#IF
+EQUAL G17 1
+#ACT
+ClOSE
+MAPMOVE D71601 25 13
+#ELSEACT
+SENDMSG 7 对不起，石墓阵地图尚未开放！ 251 249
+
+[@祖玛七]
+#IF
+EQUAL G17 1
+#ACT
+ClOSE
+MAPMOVE D5072 7 51
+#ELSEACT
+SENDMSG 7 对不起，祖玛七层地图尚未开放！ 251 249
+
+[@封魔1]
+#IF
+EQUAL G4 1
+#ACT
+ClOSE
+MAPMOVE 4 445 193
+#ELSEACT
+SENDMSG 7 对不起，封魔谷地图尚未开放！ 251 249
+
+[@封魔2]
+#IF
+EQUAL G4 1
+#ACT
+ClOSE
+MAPMOVE 4 446 192
+#ELSEACT
+SENDMSG 7 对不起，封魔谷地图尚未开放！ 251 249
+
+[@封魔3]
+#IF
+EQUAL G4 1
+#ACT
+ClOSE
+MAPMOVE 4 447 191
+#ELSEACT
+SENDMSG 7 对不起，封魔谷地图尚未开放！ 251 249
+
+[@封魔4]
+#IF
+EQUAL G4 1
+#ACT
+ClOSE
+MAPMOVE 4 448 190
+#ELSEACT
+SENDMSG 7 对不起，封魔谷地图尚未开放！ 251 249
+
+[@封魔5]
+#IF
+EQUAL G4 1
+#ACT
+ClOSE
+MAPMOVE 4 449 189
+#ELSEACT
+SENDMSG 7 对不起，封魔谷地图尚未开放！ 251 249
+
+[@封魔6]
+#IF
+EQUAL G4 1
+#ACT
+ClOSE
+MAPMOVE 4 450 188
+#ELSEACT
+SENDMSG 7 对不起，封魔谷地图尚未开放！ 251 249
+
+[@白日1]
+#IF
+EQUAL G6 1
+#ACT
+ClOSE
+MAPMOVE 11 46 481
+#ELSEACT
+SENDMSG 7 对不起，白日门地图尚未开放！ 251 249
+
+[@白日2]
+#IF
+EQUAL G6 1
+#ACT
+ClOSE
+MAPMOVE 11 47 480
+#ELSEACT
+SENDMSG 7 对不起，白日门地图尚未开放！ 251 249
+
+[@白日3]
+#IF
+EQUAL G6 1
+#ACT
+ClOSE
+MAPMOVE 11 48 479
+#ELSEACT
+SENDMSG 7 对不起，白日门地图尚未开放！ 251 249
+
+[@白日4]
+#IF
+EQUAL G6 1
+#ACT
+ClOSE
+MAPMOVE 11 49 478
+#ELSEACT
+SENDMSG 7 对不起，白日门地图尚未开放！ 251 249
+
+[@白日5]
+#IF
+EQUAL G6 1
+#ACT
+ClOSE
+MAPMOVE 11 50 477
+#ELSEACT
+SENDMSG 7 对不起，白日门地图尚未开放！ 251 249
+
+[@白日6]
+#IF
+EQUAL G6 1
+#ACT
+ClOSE
+MAPMOVE T1341 33 8
+#ELSEACT
+SENDMSG 7 对不起，白日门地图尚未开放！ 251 249
+
+[@幻境9]
+#IF
+EQUAL H91 1
+#ACT
+ClOSE
+MAPMOVE H009 289 150
+#ELSEACT
+SENDMSG 7 对不起，幻境9层地图尚未开放！ 251 249
+
+;=====================================
+
+[@封魔设置]
+#ACT
+MOV G4 0
+MOV A1 <$STR(S6)>
+SENDMSG 7 封魔谷地图成功设置！记得在那天自己开启封魔谷地图！
+GOTO @地图开放设置
+BREAK
+
+[@焰火设置]
+#ACT
+MOV G5 0
+MOV A2 <$STR(S6)>
+SENDMSG 7 焰火屠魔地图成功设置！记得在那天自己开启焰火屠魔地图！
+GOTO @地图开放设置
+BREAK
+
+[@白日设置]
+#ACT
+MOV G6 0
+MOV A3 <$STR(S6)>
+SENDMSG 7 白日门地图成功设置！记得在那天自己开启白日门地图！
+GOTO @地图开放设置
+BREAK
+
+[@地下设置]
+#ACT
+MOV G14 0
+MOV A5 <$STR(S6)>
+SENDMSG 7 地下宫殿地图成功设置！记得在那天自己开启地下宫殿地图！
+GOTO @地图开放设置
+BREAK
+
+#IF
+EQUAL G12 4
+CHECKLEVELEX = 40
+#ACT
+INC G12 1
+MOV G7 1
+SENDMSG 0 神秘的六重装地图成功开放！…… 252 253 20
+BREAK
+#IF
+SMALL G12 5
+CHECKLEVELEX = 40
+#ACT
+INC G12 1
+BREAK
+
+[@HeroLogin]
+#IF
+H.CHECK [001] 0
+#ACT
+H.SET [001] 1
+;H.GIVE 火龙之心 1
+BREAK
+;=====================================

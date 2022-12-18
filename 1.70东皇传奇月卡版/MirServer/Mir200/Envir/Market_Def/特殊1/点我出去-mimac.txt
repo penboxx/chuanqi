@@ -1,0 +1,98 @@
+[@main]
+#if
+ISLOCKPASSWORD
+#say
+为防止玩家帐号被盗，<COLOR=clSkyBlue (@设置密码  @修改密码)>\ 
+只要你设置了2级仓库密码，<COLOR=clRed (IP不一致上线必须输入仓库密码！)>\ \
+<请解锁你的2级,点击后在聊天对话框输入/@输入密码>  点击输入你的仓库密码\ \
+<解锁后出去/@出去>      解锁后点击会返回比奇\ \
+<解锁后返回原点/@yd>  解锁后点击可返回进入该地图前的位置\ \
+<COLOR=clMoneyGreen 密码输入在聊天窗口，请直接在对话框输入↓↓↓↓↓↓↓↓↓>
+#elsesay
+为防止玩家帐号被盗，<COLOR=clSkyBlue (@设置密码  @修改密码)>\ 
+只要你设置了仓库密码，<COLOR=clRed (IP不一致上线必须输入仓库密码！)>\ \
+<修改2级密码,未设置的请先设置/@修改密码>  点击重新设置密码(可使用原密码)\ \
+<验证后出去/@出去2>      修改后点击会返回比奇\ \
+<验证后返回原点/@yd2>  修改后点击可返回进入该地图前的位置\ \
+<COLOR=clMoneyGreen 密码输入在聊天窗口，请直接在对话框输入↓↓↓↓↓↓↓↓↓>
+
+[@yd2]
+#IF
+ISLOCKPASSWORD
+#act
+ADDLINELIST ..\QuestDiary\季卡\IP数据.txt <$USERNAME>|<$IPADDR> HardDisk
+TAGMAPMOVE 1
+SENDMSG 6 [提示:]当前IP已添加为安全IP!祝你游戏愉快!
+#elseACT
+sendmsg 7 请先修改你的密码!
+BREAK
+
+#if
+ISONMAP MIMAC
+#act
+TAGMAPMOVE 1
+break
+
+[@yd]
+#IF
+ISLOCKPASSWORD
+#act
+sendmsg 7 请先解锁你的仓库!
+break
+#elseACT
+ADDLINELIST ..\QuestDiary\季卡\IP数据.txt <$USERNAME>|<$IPADDR> HardDisk
+TAGMAPMOVE 1
+SENDMSG 6 [提示:]当前IP已添加为安全IP!祝你游戏愉快!
+
+#if
+ISONMAP MIMAC
+#act
+TAGMAPMOVE 1
+break
+
+[@修改密码]
+#if
+#act
+Gmexecute 修改密码
+break
+
+[@出去2]
+#IF
+ISLOCKPASSWORD
+#act
+ADDLINELIST ..\QuestDiary\季卡\IP数据.txt <$USERNAME>|<$IPADDR> HardDisk
+TAGMAPMOVE 1
+SENDMSG 6 [提示:]当前IP已添加为安全IP!祝你游戏愉快!
+#elseACT
+sendmsg 7 请先修改你的密码!
+BREAK
+
+#if
+ISONMAP MIMAC
+equal A5 正式开区
+#act
+mapmove 1 328 272
+break
+
+[@输入密码]
+#if
+#act
+Gmexecute 仓库开锁
+break
+
+[@出去]
+#IF
+ISLOCKPASSWORD
+#act
+sendmsg 7 请先解锁你的仓库!
+break
+#elseACT
+ADDLINELIST ..\QuestDiary\季卡\IP数据.txt <$USERNAME>|<$IPADDR> HardDisk
+TAGMAPMOVE 1
+SENDMSG 6 [提示:]当前IP已添加为安全IP!祝你游戏愉快!
+
+#if
+ISONMAP MIMAC
+#act
+mapmove 1 328 272
+break

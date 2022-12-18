@@ -1,0 +1,77 @@
+
+(@buy @sell @repair @s_repair )
+%100
++10
++11
++15
+[@main]
+"虹魔教主"有时懒得杀你们,就让我把你们放走,\
+拿钱来,我把你们扔回去!\\
+<去比奇/@move1> \
+<想去商店/@talkwith> <封魔洞穴导航/@封魔洞穴>\
+<点击查看游戏爆率攻略!/@5201314>\
+<返回/@exit>\
+
+[@封魔洞穴]
+以下是本游戏为您精心打造的快捷服务:\ \
+
+<前往山谷矿区/@SGKQ>\ \
+
+<返回/@talkwith>\ \
+
+[@SGKQ]
+#IF
+#ACT
+MAPMOVE D2000 24 182
+GIVE 回城卷 1
+BREAK
+
+
+[@5201314]
+#IF
+#ACT
+WebBrowser http://www.sf1995.com/viewthread.php?tid=15&page=1&extra=#pid15
+
+[@talkwith]
+你想到哪个商店?这可是免费体验服务阿\\
+<服装店/@fzmove>\
+<武器店/@wqmove>\
+<首饰店/@ssmove>\
+<药书店/@ysmove>\
+<返回/@main>
+
+[@move1]
+移动到比奇需要金币\
+不能让你免费使用\
+你必须支付2000金币
+你想花这笔钱吗?\
+<移动/@pay1>\ 
+<返回/@main>\
+
+[@pay1]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 0 330 268
+#ELSESAY
+你开玩笑吗？你没钱还想移动？\
+我再也不想见到你。\ 
+<返回/@main>
+
+[@fzmove]
+#IF
+#ACT
+map b345
+[@wqmove]
+#IF
+#ACT
+map b342
+[@ssmove]
+#IF
+#ACT
+map b344
+[@ysmove]
+#IF
+#ACT
+map b343

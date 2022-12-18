@@ -1,0 +1,24 @@
+()
+%100
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【玛雅神殿】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+你一定听说了吧，有人已经发现了传说中的玛雅神殿！\
+现在我已经知道了去玛雅神殿的方法，你有勇气去接受挑战吗？\
+\<COLOR=clFuchsia ♀.进入条件：50万金币>  \
+<COLOR=clFuchsia ------------------------------------------------------------>\
+
+　　　　　  　        〖<玛雅神殿/@单人>〗\
+[@单人]
+#IF
+CHECKLEVELEX > 1
+checkgold 500000
+#ACT
+take 金币 500000
+mapmove mysd1 80  81
+SENDMSG 0  伟大的玛法勇士[<$USERNAME>]闯入了[玛雅神殿]超多宝藏等待你去挖掘！ 251  249
+SENDMSG 0  伟大的玛法勇士[<$USERNAME>]闯入了[玛雅神殿]超多宝藏等待你去挖掘！ 251  249
+break
+#ELSESAY
+条件不足，无法进入！

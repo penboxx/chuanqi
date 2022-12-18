@@ -1,0 +1,295 @@
+; 此 版 本 来 自 润 芒 论 坛 ｗｗｗ .ｒｕｎｍａｎｇ.ｃｏｍ
+
+[@Login]
+#IF
+ISADMIN
+#ACT
+goto @GM
+#ELSEACT
+GOTO @登陆执行
+
+
+[@登陆执行]
+#CALL [\登陆\新人登陆.txt] @新人登陆
+#CALL [\登陆\禁止登陆.txt] @禁止登陆
+#CALL [\登陆\沙城主.txt] @沙城主
+#CALL [\登陆\赞助大使.txt] @赞助
+#CALL [\登陆\经验设置.txt] @经验
+#CALL [\登陆\公告设置.txt] @公告
+#CALL [\登陆\投票登陆.txt] @投票
+
+
+;[@公告开始]
+;#IF
+;#SAY
+;*活动说明*:　　　　(注:杀人不加PK值，但会爆装备)\
+;①活动时间定在12月25日　奖金:500RMB\
+;②地图关闭时间为20点50分，最后占领行会争霸地图的行会获胜(注:地图内不能有除自己行会外的任何人)\
+;③活动结束后，客服会发红字公告，让获胜行会掌门联系客服领取奖励\
+;④本活动由玩家自由赞助举行，此次活动由玩家“上市公司”赞助\
+;---------------------------------------------------------------\
+;　　　　　　　　<进入行会争霸地图/@move1>　　　　　　　　　　　\
+
+[@move]
+#if
+;RANDOM 1
+HAVEGUILD
+#act
+map zhengba
+#elseact
+messagebox 你没加入行会,没有进入的资格
+SENDMSG 4 行会争霸活动进行中，地图关闭时间为20点50分
+
+[@下注结束]
+#IF
+LARGE M17 0
+check [365] 1
+#ACT
+SENDMSG 7 [提示]：你下了【<$STR(M17)>】注元宝，押的【<$STR(S23)>】
+BREAK
+#ELSEACT
+break
+
+[@开始摇骰]
+#IF
+check [365] 1
+#ACT
+MOV D0 <$STR(I42)>
+MOV D1 <$STR(I43)>
+MOV D2 <$STR(I44)>
+PLAYDICE 3 @赌博结账
+BREAK
+#SAY
+╔═══════════════╗你所拥有的元宝数：【<$GAMEGOLD>】\
+║┏━━━┓┏━━━┓┏━━━┓║\
+║┃●　●┃┃●　●┃┃●　●┃║庄家姓名：【<$STR(A34)>】\
+║┃●　●┃┃●　●┃┃●　●┃║\
+║┃●　●┃┃●　●┃┃●　●┃║庄家本钱数：【<$STR(I19)>】\
+║┗━━━┛┗━━━┛┗━━━┛║\
+╚═══════════════╝\
+#ELSEACT
+break
+
+[@赌博结账]
+#IF
+check [365] 0
+#ACT
+break
+
+#IF
+EQUAL A35 豹子
+#ACT
+MOV I12 6
+SENDMSG 4 [美女庄家]：押大【<$STR(I13)>】注，押小【<$STR(I14)>】注，骰子掷出了三个【<$STR(I42)>】点：【豹子】 
+#ELSEACT
+MOV I12 6
+SENDMSG 4 [美女庄家]：押大【<$STR(I13)>】注，押小【<$STR(I14)>】注，庄家【<$STR(A34)>】掷出了【<$STR(I42)>】【<$STR(I43)>】【<$STR(I44)>】！！【<$STR(I45)>】点【<$STR(A35)>】。 
+
+#IF
+LARGE M17 25000000
+#ACT
+SET [365] 0
+MESSAGEBOX 你押注数居然大于五千万！
+break
+
+#IF
+LARGE I19 50000000
+EQUAL A34 <$USERNAME>
+#ACT
+SET [365] 0
+MESSAGEBOX 你的本钱数居然大于五千万！
+break
+
+#IF
+SMALL I47 0
+EQUAL A34 <$USERNAME>
+#ACT
+SET [365] 0
+GAMEGOLD + <$STR(I19)>
+BREAK
+#SAY
+庄家本钱：【<$STR(I19)>】，押大<$STR(I13)>注，押小<$STR(I14)>注，本次开【<$STR(A35)>】！\
+下注超过本钱！\
+为防止刷元宝，本局只能作废，退回本钱【<$STR(I19)>】个元宝！\
+
+#IF
+SMALL I47 0
+#ACT
+SET [365] 0
+GAMEGOLD + <$STR(M17)>
+BREAK
+#SAY
+庄家本钱：【<$STR(I19)>】，押大<$STR(I13)>注，押小<$STR(I14)>注，本次开【<$STR(A35)>】！\
+下注超过本钱！\
+为防止刷元宝，本局只能作废，退回本钱【<$STR(M17)>】个元宝！\
+
+#IF
+EQUAL A34 <$USERNAME>
+check [365] 1
+#ACT
+CLOSE
+SET [365] 0
+MAPMOVE B012 8 6
+DEC I46 <$STR(I15)>
+GAMEGOLD + <$STR(I15)>
+SENDMSG 4 [美女庄家]：庄家【<$STR(A34)>】掷出了【<$STR(I42)>】【<$STR(I43)>】【<$STR(I44)>】！！【<$STR(I45)>】点【<$STR(A35)>】。收回元宝【<$STR(I15)>】个！ 
+BREAK
+
+#IF
+EQUAL A35 <$STR(S23)>
+LARGE M17 0
+check [365] 1
+#ACT
+CLOSE
+SET [365] 0
+MUL M17 2
+DEC I46 <$STR(M17)>
+GAMEGOLD + <$STR(M17)>
+SENDMSG 6 庄家【<$STR(A34)>】掷出了【<$STR(I42)>】【<$STR(I43)>】【<$STR(I44)>】！！【<$STR(I45)>】点【<$STR(A35)>】。你赢得了【<$STR(M17)>】个元宝。
+BREAK
+#ELSEACT
+SET [365] 0
+SENDMSG 6 庄家【<$STR(A34)>】掷出了【<$STR(I42)>】【<$STR(I43)>】【<$STR(I44)>】！！【<$STR(I45)>】点【<$STR(A35)>】。你损失了【<$STR(M17)>】个元宝注金。
+CLOSE
+BREAK
+
+
+
+[@开始开点]
+#if
+check [009] 1
+#ACT
+MOV S31
+MOV D0 <$STR(I73)>
+playdice 1 @DDcube_cds
+BREAK
+#SAY
+正在摇点........................
+#ELSEACT
+BREAK
+
+[@DDcube_cds]
+#IF
+LARGE M26 <$STR(H75)>
+#ACT
+MessageBox 错误提示：下注超过上限<$STR(H75)>元宝！
+BREAK
+
+#IF
+LARGE M27 <$STR(H75)>
+#ACT
+MessageBox 错误提示：下注超过上限<$STR(H75)>元宝！
+BREAK
+
+#IF
+LARGE M28 <$STR(H75)>
+#ACT
+MessageBox 错误提示：下注超过上限<$STR(H75)>元宝！
+BREAK
+
+#IF
+CHECKNAMELIST ..\QuestDiary\临时名单\压注单双.txt
+EQUAL A55 <$STR(S28)>
+LARGE M26 0
+#ACT
+MOV M3 <$STR(M26)>
+MUL M26 2
+MOV M1 <$STR(M26)>
+MOV M2 <$STR(M26)>
+MOV M0 100
+DIV M0 <$STR(H71)>
+DIV M1 <$STR(M0)>
+DEC M2 <$STR(M1)>
+DEC H74 <$STR(M2)>
+GameGold + <$STR(M2)>
+INC S31 押中了「<$STR(M3)>」元宝的【<$STR(S28)>】，得到元宝「<$STR(M26)>」颗的奖励！
+SENDMSG 5 恭喜中了「<$STR(M3)>」<$STR(S28)>，奖金共计「<$STR(M26)>」扣除手续费「<$STR(M1)>」得到元宝「<$STR(M2)>」颗！当前元宝数量为：「<$GAMEGOLD>」颗！
+MOV M26 0
+
+#IF
+CHECKNAMELIST ..\QuestDiary\临时名单\压注大小.txt
+EQUAL A56 <$STR(S29)>
+LARGE M27 0
+#ACT
+MOV M3 <$STR(M27)>
+MUL M27 3
+MOV M1 <$STR(M27)>
+MOV M2 <$STR(M27)>
+MOV M0 100
+DIV M0 <$STR(H71)>
+DIV M1 <$STR(M0)>
+DEC M2 <$STR(M1)>
+DEC H74 <$STR(M2)>
+GameGold + <$STR(M2)>
+INC S31 押中了「<$STR(M3)>」元宝的【<$STR(S29)>】，得到元宝「<$STR(M27)>」颗的奖励！
+SENDMSG 5 恭喜中了「<$STR(M3)>」<$STR(S29)>，奖金共计「<$STR(M27)>」扣除手续费「<$STR(M1)>」得到元宝「<$STR(M2)>」颗！当前元宝数量为：「<$GAMEGOLD>」颗！
+MOV M27 0
+
+#IF
+CHECKNAMELIST ..\QuestDiary\临时名单\压注点数.txt
+EQUAL A57 <$STR(S30)>
+LARGE M28 0
+#ACT
+MOV M3 <$STR(M28)>
+MUL M28 6
+MOV M1 <$STR(M28)>
+MOV M2 <$STR(M28)>
+MOV M0 100
+DIV M0 <$STR(H71)>
+DIV M1 <$STR(M0)>
+DEC M2 <$STR(M1)>
+DEC H74 <$STR(M2)>
+GameGold + <$STR(M2)>
+INC S31 押中了「<$STR(M3)>」元宝的【<$STR(S30)>】，得到元宝「<$STR(M28)>」颗的奖励！
+SENDMSG 5 恭喜中了「<$STR(M3)>」<$STR(S30)>，奖金共计「<$STR(M28)>」扣除手续费「<$STR(M1)>」得到元宝「<$STR(M2)>」颗！当前元宝数量为：「<$GAMEGOLD>」颗！
+MOV M28 0
+
+#IF
+EQUAL S31
+#ACT
+DelayCall 100 @清变量咯
+#ELSEACT
+DelayCall 100 @清变量咯
+SENDMSG 0 盟重赌场：恭喜玩家【%s】中得了大奖，<$STR(S31)> 249 151
+
+
+#IF
+LARGE M26 0
+CHECKNAMELIST ..\QuestDiary\临时名单\压注单双.txt
+#ACT
+SENDMSG 7 本局开出：「<$STR(I73)>」点「<$STR(A55)>」，很可惜你押了「<$STR(M26)>」注【<$STR(S28)>】，你可算是押错宝了！
+
+#IF
+LARGE M27 0
+CHECKNAMELIST ..\QuestDiary\临时名单\压注大小.txt
+#ACT
+SENDMSG 7 本局开出：「<$STR(I73)>」点「<$STR(A56)>」，很可惜你押了「<$STR(M27)>」注【<$STR(S29)>】，你可算是押错宝了！
+
+#IF
+LARGE M28 0
+CHECKNAMELIST ..\QuestDiary\临时名单\压注点数.txt
+#ACT
+SENDMSG 7 本局开出：「<$STR(I73)>」点「<$STR(A57)>」，很可惜你押了「<$STR(M28)>」注【<$STR(S30)>】，你可算是押错宝了！
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+SET [008] 0
+SET [009] 0
+DELNAMELIST ..\QuestDiary\临时名单\压注单双.txt
+DELNAMELIST ..\QuestDiary\临时名单\压注大小.txt
+DELNAMELIST ..\QuestDiary\临时名单\压注点数.txt
+BREAK
+
+[@清变量咯]
+#ACT
+MOV M26 0
+MOV M27 0
+MOV M28 0
+MOV S27
+MOV S28
+MOV S29
+MOV S30
+MOV S31
+BREAK
+

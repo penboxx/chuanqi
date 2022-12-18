@@ -1,0 +1,33 @@
+[@荣耀法链22j]
+{
+#IF
+random 8
+#act
+take 金币 16000000
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将荣耀法链升级成功。
+BREAK
+
+
+#IF
+random 2
+#act
+take 金币 16000000
+MESSAGEBOX 非常抱歉您的荣耀法链升级失败
+BREAK
+
+#IF
+random 1
+#act
+take 金币 16000000
+MESSAGEBOX 非常抱歉您的荣耀法链升级失败
+BREAK
+
+#IF
+#act
+take 金币 16000000
+MESSAGEBOX 非常抱歉您的荣耀法链升级失败
+BREAK
+
+
+}

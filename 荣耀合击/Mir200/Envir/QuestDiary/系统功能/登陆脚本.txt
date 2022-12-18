@@ -1,0 +1,118 @@
+[@新人登陆]
+{
+#IF
+checknamelist ..\QuestDiary\数据文件\禁止登陆.txt HardDisk
+#ACT
+MESSAGEBOX 你已经违反游戏规则,请速度联系管理QQ:<$QQ>\1.偷盗他人游戏物品.\2.恶意造谣.\3.广告.\4.侮辱管理员.\5.脱机.\6.加速
+SENDMSG 7 〖公告〗:请到论坛<$BBSSITE>发帖承认错误，如诚心忏悔可以考虑解封
+KICK
+
+#IF
+CHECKIPLIST ..\QuestDiary\数据文件\禁止登陆IP.txt HardDisk
+#ACT
+addnamelist ..\QuestDiary\数据文件\禁止登陆.txt HardDisk
+MESSAGEBOX 你已经违反游戏规则,请速度联系管理QQ:<$QQ>\1.偷盗他人游戏物品.\2.恶意造谣.\3.广告.\4.侮辱管理员.\5.脱机.\6.加速
+SENDMSG 7 〖公告〗:请到论坛<$BBSSITE>发帖承认错误，如诚心忏悔可以考虑解封
+KICK
+
+;-
+#IF
+ISCASTLEMASTER
+#ACT
+CONFERTITLE 沙巴克城主
+SENDMSG 1 沙巴克城城主〖%s〗进入游戏中！！！
+CHANGENAMECOLOR 215
+#ELSEACT
+DEPRIVETITLE 沙巴克城主
+
+
+
+
+
+
+#IF
+CHECKVAR HUMAN USERID = 
+#ACT
+CLEARNAMELIST ..\QuestDiary\临时数据\导出帐号.txt HardDisk
+ADDACCOUNTLIST ..\QuestDiary\临时数据\导出帐号.txt HardDisk
+ReadRandomLine ..\QuestDiary\临时数据\导出帐号.txt S0 HardDisk
+DELACCOUNTLIST ..\QuestDiary\临时数据\导出帐号.txt HardDisk
+CALCVAR HUMAN USERID = <$STR(S0)>
+SAVEVAR HUMAN USERID ..\QuestDiary\数据文件\个人变量.txt HardDisk
+MOV S0 
+
+#IF
+ISADMIN
+#ACT
+CHANGEMODE 1 1
+CHANGEMODE 2 1
+CHANGEMODE 3 1
+SENDMSG 7 %s管理员,当前在线人数<$USERCOUNT>人
+ADDLINELIST ..\QuestDiary\数据文件\GM登陆记录.txt 登陆人物:<$USERNAME>IP为:<$IPLOCAL><$IPADDR>时间为:<$DATETIME> HardDisk
+break
+
+#IF
+ISNEWHUMAN
+#act
+give 随机传送石
+give 魔血石(赠品) 2
+SENDMSG 0 热烈欢迎〖<$USERNAME>〗加入[<$SERVERNAME>].江山代有人才出.我们又多了一份激情!  251  249
+SENDMSG 0 热烈欢迎〖<$USERNAME>〗加入[<$SERVERNAME>].江山代有人才出.我们又多了一份激情!  254  252 20
+SENDMSG 7 ★注册角色和创建英雄名字不可有空格，否则将删号处理。未填写二级密码保护丢失被盗概不负责，交易清走担保★  255  252 20
+;测试区需要开启的正式开区+冒号
+;SENDMSG 7 ★★〖★提示★〗:测试区使用脱机外挂一经发现取消测试资格，删除所有奖励，请广大玩家监督还游戏一个绿色环境!★★  255  252 7200
+;SENDMSG 7 ★〖提示〗:本区处于“测试开放”[<$SERVERNAME>*新区]将于2018年12月11日14点00分准时正式开放。欢迎加入★  253  252 20
+;SENDMSG 7 ★〖提示〗:测试区充值的元宝，正式开区以后返还(赠送20%)测试区开放到开区当天“13：30”清理【测试数据】后【正式开区】★ 250  252 20
+#IF
+CHECKLEVELEX < 12
+#ACT
+GMEXECUTE 禁言 SELF 600
+SENDMSG 5 [提示]：你的等级低于12级，所以被禁言了，快去升级吧。
+
+#if
+ISADMIN
+#act
+SENDMSG 7 ★热烈欢迎※管理员※〖%s〗进入[<$SERVERNAME>].顿时电闪雷鸣.风云再起★  251  249
+break
+#If
+CHECKLEVELEX > 1
+#act
+SENDMSG 0 ★热烈欢迎※玛法勇士※〖%s〗进入[<$SERVERNAME>].顿时电闪雷鸣.风云再起★  251  249
+SENDMSG 7 ★注册角色和创建英雄名字不可有空格，否则将删号处理。未填写二级密码保护丢失被盗概不负责，交易清走担保★  255  252 20
+
+#if
+CHECKGAMEDIAMOND > 0
+#act
+mov m10 <$GAMEDIAMOND>
+mov m11 <$GAMEGOLD>
+mov m12 <$NIMBUS>
+mov m13 <$GAMEGIRD>
+CALCVAR HUMAN 金刚石数量 = <$STR(M10)>
+SAVEVAR HUMAN 金刚石数量 ..\QuestDiary\数据文件\金刚石数量.txt  HardDisk
+CALCVAR HUMAN 元宝数量 = <$STR(M11)>
+SAVEVAR HUMAN 元宝数量 ..\QuestDiary\数据文件\金刚石数量.txt  HardDisk
+CALCVAR HUMAN 灵气数量 = <$STR(M12)>
+SAVEVAR HUMAN 灵气数量 ..\QuestDiary\数据文件\金刚石数量.txt  HardDisk
+CALCVAR HUMAN 灵符数量 = <$STR(M13)>
+SAVEVAR HUMAN 灵符数量 ..\QuestDiary\数据文件\金刚石数量.txt  HardDisk
+ADDLINELIST ..\QuestDiary\数据文件\登陆日志.txt 登陆人物:<$USERNAME>IP为:<$IPLOCAL><$IPADDR>机器码:<$HWID>时间为:<$DATETIME> HardDisk
+
+
+
+
+
+;SENDMSG 7 ★★〖★提示★〗:测试区使用脱机外挂一经发现取消测试资格，删除所有奖励，请广大玩家监督还游戏一个绿色环境!★★  255  252 7200
+;SENDMSG 7 ★〖提示〗:本区处于“测试开放”[<$SERVERNAME>*新区]将于2018年12月11日14点00分准时正式开放。欢迎加入★  253  0 20
+;SENDMSG 7 ★〖提示〗:测试区充值的元宝，正式开区以后返还(赠送20%)测试区开放到开区当天“13：30”清理【测试数据】后【正式开区】★ 250  0 20
+;测试区需要开启的正式开区+冒号
+
+#IF
+CHECK [168] 1
+#ACT
+POWERRATE  110   72000
+H.POWERRATE 110  72000
+
+
+
+}
+

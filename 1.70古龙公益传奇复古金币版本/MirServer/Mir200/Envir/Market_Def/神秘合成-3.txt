@@ -1,0 +1,230 @@
+()
+%100
+[@main]
+<COLOR=clLime 小伙子，我已经很久没来盟重省了，今天心情特别高兴！>\
+既然今天你碰巧遇到老夫，我就破例让你见识一下老夫的手艺吧！\ \
+<合成/@白银勋章>【白银勋章】            <合成/@黄金鲜花>【黄金鲜花】\
+<合成/@白银斗笠>【白银斗笠】            <合成/@黄金斗笠>【黄金斗笠】\ \
+<下一页/@main-2>     <退出/@exit>
+
+
+[@main-2]
+#IF
+CHECKLEVELEX > 49
+#ACT
+#SAY
+<COLOR=clLime 小伙子，我已经很久没来盟重省了，今天心情特别高兴！>\
+既然今天你碰巧遇到老夫，我就破例让你见识一下老夫的手艺吧！\ \
+<合成/@终极勋章>【终极勋章】            <合成/@倚天勋章>【倚天勋章】\
+<合成/@终极斗笠>【终极斗笠】            <合成/@倚天斗笠>【倚天斗笠】\ \
+<退出/@exit>
+#ELSEACT
+MESSAGEBOX 请50级后再来查看。
+
+
+
+[@魔剑]
+想合成赤血魔剑？\
+那你需要2把屠龙.2把霸者之刃.2把嗜魂法杖.2000元宝就能合成\
+赤血魔剑属性，攻击7-40.魔法5-12.道术7-14！隐藏属性十分强大\
+<合成/@赤血剑>  <返回/@main>\
+
+[@赤血剑]
+#if
+CHECKGAMEGOLD > 1999
+checkitem 屠龙 2
+checkitem 霸者之刃 2
+checkitem 嗜魂法杖 2
+#ACT
+TAKE 屠龙 2
+TAKE 霸者之刃 2
+TAKE 嗜魂法杖 2
+GAMEGOLD - 2000
+give 赤血魔剑 1
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\想想办法吧。\
+
+
+[@白银勋章]
+<COLOR=clLime 想合成白银勋章吗？>\ \
+你需要给我勋章43号2个、勋章44号2、勋章45号2个，\
+另外还需要1万元宝才能合成\ \
+<合成白银勋章/@合成白银勋章>\
+<返回/@main>
+
+[@合成白银勋章]
+#IF
+CHECKGAMEGOLD > 9999
+checkitem 荣誉勋章43号 2
+checkitem 荣誉勋章44号 2
+checkitem 荣誉勋章45号 2
+#ACT
+take 荣誉勋章43号 2
+take 荣誉勋章44号 2
+take 荣誉勋章45号 2
+GAMEGOLD - 10000
+give 白银勋章 1
+SENDMSG 7 恭喜您，合成【白银勋章】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【白银勋章】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么给你合成呢？
+break
+
+
+[@黄金鲜花]
+<COLOR=clLime 想合成黄金鲜花吗？>\ \
+你需要给我白银勋章2个+5万元宝才能合成\ \
+<合成黄金鲜花/@合成黄金鲜花>\
+<返回/@main>
+
+[@合成黄金鲜花]
+#IF
+CHECKGAMEGOLD > 49999
+checkitem 白银勋章 2
+#ACT
+take 白银勋章 2
+GAMEGOLD - 50000
+give 黄金鲜花 1
+SENDMSG 7 恭喜您，合成【黄金鲜花】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【黄金鲜花】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你合成呢？
+break
+
+
+
+[@终极勋章]
+<COLOR=clLime 想合成终极勋章吗？>\ \
+你需要给我黄金鲜花2个+8万元宝才能合成\ \
+<合成终极勋章/@合成终极勋章>\
+<返回/@main>
+
+[@合成终极勋章]
+#IF
+CHECKGAMEGOLD > 79999
+checkitem 黄金鲜花 2
+#ACT
+take 黄金鲜花 2
+GAMEGOLD - 80000
+give 终极星王勋章 1
+SENDMSG 7 恭喜您，合成【终极勋章】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【终极勋章】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你合成呢？
+break
+
+
+[@倚天勋章]
+<COLOR=clLime 想合成倚天勋章吗？>\ \
+你需要给我终极勋章2个+10万元宝才能合成\ \
+<合成倚天勋章/@合成倚天勋章>\
+<返回/@main>
+
+[@合成倚天勋章]
+#IF
+CHECKGAMEGOLD > 99999
+checkitem 终极星王勋章 2
+#ACT
+take 终极星王勋章 2
+GAMEGOLD - 100000
+give 倚天勋章 1
+SENDMSG 7 恭喜您，合成【倚天勋章】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【倚天勋章】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你合成呢？
+break
+
+
+
+
+
+
+
+[@白银斗笠]
+<COLOR=clLime 想合成白银斗笠吗？>\ \
+你需要给我斗笠43号2个、斗笠44号2、斗笠45号2个，\
+另外还需要1万元宝才能合成\ \
+<合成白银斗笠/@合成白银斗笠>\
+<返回/@main>
+
+[@合成白银斗笠]
+#IF
+CHECKGAMEGOLD > 9999
+checkitem 斗笠43号 2
+checkitem 斗笠44号 2
+checkitem 斗笠45号 2
+#ACT
+take 斗笠43号 2
+take 斗笠44号 2
+take 斗笠45号 2
+GAMEGOLD - 10000
+give 白银斗笠 1
+SENDMSG 7 恭喜您，合成【白银斗笠】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【白银斗笠】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你合成呢？
+break
+
+[@黄金斗笠]
+<COLOR=clLime 想合成黄金斗笠吗？>\
+你需要给我白银斗笠2个+5万元宝才能合成\ \
+<合成黄金斗笠/@合成黄金斗笠>\
+<返回/@main>
+[@合成黄金斗笠]
+#IF
+checkitem 白银斗笠 2
+CHECKGAMEGOLD > 49999
+#ACT
+GAMEGOLD - 50000
+take 白银斗笠 2
+Give 黄金斗笠 1
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【黄金斗笠】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你合成呢？
+break
+
+
+[@终极斗笠]
+<COLOR=clLime 想合成终极斗笠吗？>\
+你需要给我黄金斗笠2个+8万元宝才能合成\ \
+<合成终极斗笠/@合成终极斗笠>\
+<返回/@main>
+
+
+[@合成终极斗笠]
+#IF
+checkitem 黄金斗笠 2
+CHECKGAMEGOLD > 79999
+#ACT
+GAMEGOLD - 80000
+take 黄金斗笠 2
+Give 终极星王斗笠 1
+SENDMSG 7 恭喜您，合成【终极斗笠】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【终极斗笠】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你合成呢？
+break
+
+
+[@倚天斗笠]
+<COLOR=clLime 想合成倚天斗笠吗？>\
+你需要给我倚天斗笠2个+10万元宝才能合成\ \
+<合成倚天斗笠/@合成倚天斗笠>\
+<返回/@main>
+
+[@合成倚天斗笠]
+#IF
+checkitem 终极星王斗笠 2
+CHECKGAMEGOLD > 99999
+#ACT
+GAMEGOLD - 100000
+take 终极星王斗笠 2
+Give 倚天斗笠 1
+SENDMSG 7 恭喜您，合成【倚天斗笠】成功！!
+SENDMSG 1 〖提示〗恭喜<$USERNAME>在【神秘合成师】处成功的合成了【倚天斗笠】！ 251 249
+#elseact
+messagebox 您的材料都没有准备齐全，让我怎么免费给你合成呢？
+break
+
+

@@ -1,0 +1,84 @@
+[@main]
+不开放！
+<关闭/@exit>\
+┄┄┄┄┄┄┄┄┄┄┄<COLOR=clLime 传送地图底层>┄┄┄┄┄┄┄┄┄┄┄\
+[@沃玛底层]
+#IF
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove D024  16 19
+SENDMSG 0 [<$USERNAME>]使用30万金币英勇的冲进沃玛底层去消灭魔龙教主的分身去了！  250 0
+SENDMSG 0 [<$USERNAME>]使用30万金币英勇的冲进沃玛底层去消灭魔龙教主的分身去了！  250 0
+break
+#ELSESAY
+需要300000金币用来支付我们的服务费用!\
+;-----
+[@石墓底层]
+#IF
+checkgold 300000
+#act
+take 金币 300000
+mapmove D717 28 74
+SENDMSG 0 [<$USERNAME>]使用30万金币英勇的冲进石墓底层去消灭魔龙教主的分身去了！  250 0
+SENDMSG 0 [<$USERNAME>]使用30万金币英勇的冲进石墓底层去消灭魔龙教主的分身去了！  250 0
+#ELSESAY
+你没有300000金币用来支付我们的服务费用!\
+;-----
+[@祖玛底层]
+#IF
+checkgold 300000
+#act
+take 金币 300000
+mapmove D5071 8 10
+SENDMSG 0 [<$USERNAME>]使用30万金币英勇的冲进祖玛七层去消灭魔龙教主的分身去了！  250 0
+SENDMSG 0 [<$USERNAME>]使用30万金币英勇的冲进祖玛七层去消灭魔龙教主的分身去了！  250 0
+#ELSESAY
+你没有300000金币用来支付我们的服务费用!\
+
+[@牛魔底层]
+#IF
+checkgold 300000
+#act
+take 金币 300000
+mapmove D2079 13 13
+SENDMSG 0 [<$USERNAME>]使用30万金币英勇的冲进牛魔底层去消灭魔龙教主的分身去了！  250 0
+SENDMSG 0 [<$USERNAME>]使用30万金币英勇的冲进牛魔底层去消灭魔龙教主的分身去了！  250 0
+#ELSESAY
+你没有300000金币用来支付我们的服务费用!\
+
+[@尸魔底层]
+#IF 
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove D2052 89 70
+SENDMSG 0 [<$USERNAME>]使用30万金币英勇的冲进尸魔底层去消灭魔龙教主的分身去了！  250 0
+SENDMSG 0 [<$USERNAME>]使用30万金币英勇的冲进尸魔底层去消灭魔龙教主的分身去了！  250 0
+break 
+#ELSESAY 
+你没有300000金币用来支付我们的服务费用!\
+
+[@骨魔底层]
+#IF 
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove D2067 154 164
+SENDMSG 0 [<$USERNAME>]使用30万金币英勇的冲进骨魔底层去消灭魔龙教主的分身去了！  250 0
+SENDMSG 0 [<$USERNAME>]使用30万金币英勇的冲进骨魔底层去消灭魔龙教主的分身去了！  250 0
+break 
+#ELSESAY 
+你没有300000金币用来支付我们的服务费用!\
+
+[@封魔底层]
+#IF 
+checkgold 300000
+#ACT
+take 金币 300000
+mapmove D2013 81 78
+SENDMSG 0 [<$USERNAME>]使用30万金币英勇的冲进封魔底层去消灭魔龙教主的分身去了！  250 0
+SENDMSG 0 [<$USERNAME>]使用30万金币英勇的冲进封魔底层去消灭魔龙教主的分身去了！  250 0
+break 
+#ELSESAY 
+你没有300000金币用来支付我们的服务费用!\

@@ -1,0 +1,41 @@
+[@main]
+<COLOR=clAqua 【神力护身】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+♀．<COLOR=clCream 来自玛珐大陆的勇士.不知您可曾听说过><COLOR=clFuchsia 【神力护身】>~~~\
+♀．<COLOR=clCream 现在魔兽入侵盟重大陆~需要一批有实力的勇士来征服魔兽！>\
+♀．<COLOR=clAqua 如果你交给我><COLOR=clRed 300><COLOR=clAqua 元宝。我可以帮你开启神力助你斩尽妖魔!>\
+♀．<COLOR=clFuchsia 神力护身><COLOR=clLime :开启后主体/英雄获得1.1倍攻击+200HP！>\
+♀．<COLOR=clRed 被怪物杀死或者下线不消失.被玩家杀死封号消失> \
+♀．<COLOR=clLime 杀死具有神力者可获得><COLOR=clRed 100><COLOR=clLime 元宝！>     【<获得神力/@传人>】\
+<COLOR=clGray ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+
+[@传人]
+#IF
+CHECK [168] 0
+checkgamegold > 299
+#act
+gamegold - 300
+SET [168] 1
+CONFERTITLE 神力护身
+MESSAGEBOX 恭喜您成功开启[神力护身]+[上线获得1.1倍攻击]\　\请您小退上线以便获得属性奖励!!
+	SENDMSG 2 〖%s〗成功开启[神力护身]+[主体英雄获得1.1倍攻击力+200HP],杀死他可获得100元宝！ 255 252
+	SENDMSG 2 〖%s〗成功开启[神力护身]+[主体英雄获得1.1倍攻击力+200HP],杀死他可获得100元宝！ 255 252
+	SENDMSG 2 〖%s〗成功开启[神力护身]+[主体英雄获得1.1倍攻击力+200HP],杀死他可获得100元宝！ 255 252
+	SENDMSG 2 〖%s〗成功开启[神力护身]+[主体英雄获得1.1倍攻击力+200HP],杀死他可获得100元宝！ 255 252
+	SENDMSG 2 〖%s〗成功开启[神力护身]+[主体英雄获得1.1倍攻击力+200HP],杀死他可获得100元宝！ 255 252
+	SENDMSG 2 〖%s〗成功开启[神力护身]+[主体英雄获得1.1倍攻击力+200HP],杀死他可获得100元宝！ 255 252 10
+	SENDMSG 2 〖%s〗成功开启[神力护身]+[主体英雄获得1.1倍攻击力+200HP],杀死他可获得100元宝！ 255 252 10
+	SENDMSG 2 〖%s〗成功开启[神力护身]+[主体英雄获得1.1倍攻击力+200HP],杀死他可获得100元宝！ 255 252 10
+	SENDMSG 2 〖%s〗成功开启[神力护身]+[主体英雄获得1.1倍攻击力+200HP],杀死他可获得100元宝！ 255 252 10
+	SENDMSG 2 〖%s〗成功开启[神力护身]+[主体英雄获得1.1倍攻击力+200HP],杀死他可获得100元宝！ 255 252 10
+#ELSEACT
+MESSAGEBOX 您没有300个元宝，无法开启“神力护身”！
+BREAK
+
+[@qwe]
+#if
+#act
+SET [168] 0
+DEPRIVETITLE ALL
+MESSAGEBOX quxiaochenggong！

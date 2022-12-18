@@ -1,0 +1,24 @@
+[@封号]
+{
+#IF
+checknamelist ..\QuestDiary\会员\商人.txt
+#ACT
+SETRANKLEVELNAME %s\〖商人〗
+NAMECOLOR 1
+BREAK
+#IF
+checknamelist ..\QuestDiary\会员\地主.txt
+#ACT
+SETRANKLEVELNAME %s\〖地主〗
+NAMECOLOR 1
+SENDMSG 0 地主<$USERNAME>上线了，斗地主你们懂滴！
+BREAK
+#IF
+checknamelist ..\QuestDiary\会员\贵族.txt
+#ACT
+SETRANKLEVELNAME %s\〖贵族〗
+NAMECOLOR 1
+SENDMSG 0 尊贵的贵族<$USERNAME>闪亮登场！
+BREAK
+
+}

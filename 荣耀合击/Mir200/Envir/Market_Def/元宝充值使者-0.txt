@@ -1,0 +1,56 @@
+[@main]
+#IF
+#SAY
+;GM请注意,所列各种脚本内有网关识别项,请勿修改,其他内容可按自己NPC样式修改
+<$USERNAME>你好，欢迎来到<$SERVERNAME>，很高兴为您服务\
+-----------------------注意充值事项------------------------\
+①本系统支持网上银行、微信扫码、支付宝。\
+②本服充值比例为:1元=30元宝\
+③申明：请认准本服【官网】或本NPC充值渠道！！\ \
+<领取/@领取>　　　　<充值/@充值>　　　　<关闭/@exit>\
+
+[@领取]
+#CALL [\64pay充值元宝\元宝\元宝.txt] @领取元宝
+#CALL [\64pay充值元宝\附加赠送\灵符\灵符.txt] @领取灵符
+#CALL [\64pay充值元宝\附加赠送\游戏点\游戏点.txt] @领取游戏点
+[@充值]
+#IF
+#SAY
+<充值通道①/@通道一>　┆　<充值通道②/@通道二>　┆　<充值通道③/@通道三>\ \
+<充值通道④/@通道四>　┆　<充值通道⑤/@通道五>　┆　<充值通道⑥/@通道六>\ \
+<退出/@exit>
+[@通道一]
+#IF
+#ACT
+WebBrowser http://newcz1.61card.com/Recharge/choose/59983B053D5360B050639EF04D2EC1DF
+break
+
+[@通道二]
+#IF
+#ACT
+WebBrowser http://czz9.7api.cn:98/Recharge/choose/59983B053D5360B050639EF04D2EC1DF
+break
+
+[@通道三]
+#IF
+#ACT
+WebBrowser http://fuwo4.7api.cn/Recharge/choose/59983B053D5360B050639EF04D2EC1DF
+break
+
+[@通道四]
+#IF
+#ACT
+WebBrowser http://tencent.yaofaka.com/Recharge/choose/59983B053D5360B050639EF04D2EC1DF
+break
+
+[@通道五]
+#IF
+#ACT
+WebBrowser http://xx6.alibaba.61card.com/Recharge/choose/59983B053D5360B050639EF04D2EC1DF
+break
+
+[@通道六]
+#IF
+#ACT
+WebBrowser http://cz446.7api.cn/Recharge/choose/59983B053D5360B050639EF04D2EC1DF
+break

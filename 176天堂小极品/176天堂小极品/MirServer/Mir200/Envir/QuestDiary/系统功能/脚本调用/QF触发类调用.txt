@@ -1,0 +1,776 @@
+[@触发]
+{
+[@StdModeFunc10]
+#If
+CHECKLEVELEX > 0
+#Act
+give 金币 1000000
+break
+
+[@StdModeFunc5]
+#If
+CHECKLEVELEX > 0
+#Act
+give 金币 5000000
+break
+
+[@StdModeFunc11]
+#If
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE 3 330 333
+break
+
+[@StdModeFunc12]
+#IF
+checkitem 强效太阳水 6
+#ACT
+take 强效太阳水 6
+give 强效太阳包 1
+close
+#ELSESAY
+你都没有足够的强效太阳水需要打捆，\
+还捆什么? \
+浪费... \ \
+<离 开/@exit>\
+
+[@StdModeFunc13]
+#IF
+checkitem 万年雪霜 6
+#ACT
+take 万年雪霜 6
+give 雪霜包 1
+close
+#ELSESAY
+你都没有足够的万年雪霜需要打捆，\
+还捆什么? \
+浪费... \ \
+<离 开/@exit>\
+
+[@StdModeFunc14]
+#IF
+checkitem 疗伤药 6
+#ACT
+take 疗伤药 6
+give 疗伤药包 1
+close
+#ELSESAY
+你都没有足够的疗伤药需要打捆，\
+还捆什么? \
+浪费... \ \
+<离 开/@exit>\
+
+[@StdModeFunc15]
+#If
+CHECKLEVELEX > 0
+#ACT
+GMEXECUTE SHOWEFFECT 78
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<一心一意>烟花!
+break
+
+[@StdModeFunc16]
+#If
+CHECKLEVELEX > 0
+#ACT
+GMEXECUTE SHOWEFFECT 79
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<心心相印>烟花!
+break
+
+[@StdModeFunc17]
+#If
+CHECKLEVELEX > 0
+#ACT
+GMEXECUTE SHOWEFFECT 80
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<飞火流量>烟花!
+break
+
+[@StdModeFunc18]
+#If
+CHECKLEVELEX > 0
+#ACT
+GMEXECUTE SHOWEFFECT 81
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<浪漫星雨>烟花!
+break
+
+[@StdModeFunc19]
+#If
+CHECKLEVELEX > 0
+#ACT
+GMEXECUTE SHOWEFFECT 82
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<绮梦幻想>烟花!
+break
+
+[@StdModeFunc20]
+#If
+CHECKLEVELEX > 0
+#ACT
+GMEXECUTE SHOWEFFECT 83
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<长空火舞>烟花!
+break
+
+[@StdModeFunc21]
+#If
+CHECKLEVELEX > 0
+#ACT
+GMEXECUTE SHOWEFFECT 82
+SENDMSG 0 <$USERNAME>在[%M:%x:%y]燃放了<如梦似雾>烟花!
+break
+
+[@StdModeFunc22]
+#If
+CHECKLEVELEX > 0
+#ACT
+#CALL [\系统功能\庆典蛋糕.txt] @庆典蛋糕
+break
+
+[@StdModeFunc23]
+#IF
+gender woman
+#ACT
+HAIRSTYLE 0
+SENDMSG 6 发型已经变更! 
+break
+#IF
+gender man
+#ACT
+HAIRSTYLE 0
+SENDMSG 6 发型已经变更! 
+break
+
+[@StdModeFunc24]
+#IF
+gender woman
+#ACT
+HAIRSTYLE 1
+SENDMSG 6 发型已经变更! 
+break
+#IF
+gender man
+#ACT
+HAIRSTYLE 1
+SENDMSG 6 发型已经变更! 
+break
+
+[@StdModeFunc25]
+移动仓库为您提供以下服务功能:\ \
+<存放物品/@storage>\ \
+<取回物品/@getback>\
+[@storage]
+需要保管什么东西?\ \
+<取回物品/@getback>\ \
+<返回上页/@StdModeFunc25>
+[@getback]
+请看目录决定找什么东西.\ \
+<存放物品/@storage>\ \
+<返回上页/@StdModeFunc25>
+
+[@StdModeFunc26]
+#If
+CHECKLEVELEX > 0
+#ACT
+CHANGEPKPOINT = 0
+SENDMSG 6 你的PK值已清洗!
+BREAK
+
+[@StdModeFunc27]
+#If
+CHECKLEVELEX > 0
+#ACT
+KILLMONEXPRATE 200 3600
+BREAK
+
+[@StdModeFunc28]
+#If
+CHECKLEVELEX > 0
+#ACT
+KILLMONEXPRATE 400 3600
+BREAK
+
+[@StdModeFunc29]
+#If
+CHECKLEVELEX > 0
+#Act
+give 祝福油 1
+BREAK
+
+[@StdModeFunc30]
+#IF
+IsOnMap mima
+#ACT
+SENDMSG 6 当前地图不允许使用此物品
+BREAK
+#IF
+IsOnMap mima2
+#ACT
+SENDMSG 6 当前地图不允许使用此物品
+BREAK
+#IF
+IsOnMap mima3
+#ACT
+SENDMSG 6 当前地图不允许使用此物品
+BREAK
+
+#If
+CHECKLEVELEX > 0
+#ACT
+mapmove Fama1 84 70
+SENDMSG 5 本地图总共三层.暴率为2倍.
+BREAK
+
+[@StdModeFunc31]
+#IF
+CHECK [300] 0
+#ACT
+SET [300] 1
+SendMsg 6 您已经享受金钻服务!相关命令@服务
+SendMsg 6 您已经享受金钻服务!相关命令@服务
+SendMsg 6 您已经享受金钻服务!相关命令@服务
+SendMsg 6 您已经享受金钻服务!相关命令@服务
+;CHANGENAMECOLOR 254
+BREAK
+#ELSEACT
+SendMsg 6 您已经享受金钻服务!相关命令@服务
+SendMsg 6 您已经享受金钻服务!相关命令@服务
+SendMsg 6 您已经享受金钻服务!相关命令@服务
+SendMsg 6 您已经享受金钻服务!相关命令@服务
+GIVE 金钻会员 1
+BREAK
+
+[@StdModeFunc32]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 1
+SENDMSG 6 提示:增加1个元宝!
+BREAK
+
+[@StdModeFunc33]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 5
+SENDMSG 6 提示:增加5个元宝!
+BREAK
+
+[@StdModeFunc34]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 10
+SENDMSG 6 提示:增加10个元宝!
+BREAK
+
+[@StdModeFunc35]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 20
+SENDMSG 6 提示:增加20个元宝!
+BREAK
+
+[@StdModeFunc36]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 50
+SENDMSG 6 提示:增加50个元宝!
+BREAK
+
+[@StdModeFunc37]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 100
+SENDMSG 6 提示:增加100个元宝!
+BREAK
+
+[@StdModeFunc38]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 500
+SENDMSG 6 提示:增加500个元宝!
+BREAK
+
+[@StdModeFunc39]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 1000
+SENDMSG 6 提示:增加1000个元宝!
+BREAK
+
+[@StdModeFunc40]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 5000
+SENDMSG 6 提示:增加5000个元宝!
+BREAK
+
+[@StdModeFunc41]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGOLD + 10000
+SENDMSG 6 提示:增加10000个元宝!
+BREAK
+
+[@StdModeFunc42]
+#If
+CheckItemAddValue 1 3 < 7
+#Act
+UPGRADEITEMEX 1 3 0 1 0
+BREAK
+#ELSESAY
+你的武器附加了7点幸运值.不可以在加了!你浪费了一瓶超油!\
+
+[@StdModeFunc43]
+#IF
+IsOnMap mima
+#ACT
+SENDMSG 6 当前地图不允许使用此物品
+BREAK
+#IF
+IsOnMap mima2
+#ACT
+SENDMSG 6 当前地图不允许使用此物品
+BREAK
+#IF
+IsOnMap mima3
+#ACT
+SENDMSG 6 当前地图不允许使用此物品
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE ZD8
+SENDMSG 7 本地图总共二层.
+SENDMSG 0 玩家「<$USERNAME>」从土城服务员处到达了猪洞八层!
+BREAK
+
+[@StdModeFunc45]
+#If
+CHECKLEVELEX > 0
+#ACT
+give 万年雪霜 6
+BREAK
+
+[@StdModeFunc46]
+#IF
+CHECKLEVELEX > 0
+#ACT
+SendMsg 6 千里传音请直接打命令@传+空格+内容，进行喊话50YB/次
+SendMsg 6 千里传音请直接打命令@传+空格+内容，进行喊话50YB/次
+SendMsg 6 千里传音请直接打命令@传+空格+内容，进行喊话50YB/次
+
+[@StdModeFunc47]
+#IF
+CHECKLEVELEX > 44
+#ACT
+mapmove lsd 41 87
+SENDMSG 0  【%s】使用龙神令牌进入了龙神殿
+Give 回城卷 1
+#ELSEact
+give 龙神令牌 1
+SENDMSG 7 需要45级以后才能进入
+close
+
+[@StdModeFunc48]
+#IF
+IsOnMap mima
+#ACT
+give 龙神令牌(赠)
+SENDMSG 5 本地图不允许使用此物品。
+break
+#IF
+IsOnMap mima2
+#ACT
+give 龙神令牌(赠)
+SENDMSG 5 本地图不允许使用此物品。
+break
+#IF
+IsOnMap mima3
+#ACT
+give 龙神令牌(赠)
+SENDMSG 5 本地图不允许使用此物品。
+break
+
+#IF
+CHECKLEVELEX > 44
+#ACT
+mapmove lsd 41 87
+SENDMSG 0  【%s】使用龙神令牌进入了龙神殿
+Give 回城卷 1
+#ELSEact
+give 龙神令牌(赠) 1
+SENDMSG 7 需要45级以后才能进入
+close
+
+
+[@StdModeFunc49]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 1
+SENDMSG 6 提示:增加1颗金刚石
+BREAK
+
+[@StdModeFunc50]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 5
+SENDMSG 6 提示:增加5颗金刚石
+BREAK
+
+
+[@StdModeFunc51]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 10
+SENDMSG 6 提示:增加10颗金刚石
+BREAK
+
+
+[@StdModeFunc52]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 50
+SENDMSG 6 提示:增加50颗金刚石
+BREAK
+
+
+[@StdModeFunc53]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 100
+SENDMSG 6 提示:增加100颗金刚石
+BREAK
+
+
+[@StdModeFunc54]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 500
+SENDMSG 6 提示:增加500颗金刚石
+BREAK
+
+[@StdModeFunc55]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 1000
+SENDMSG 6 提示:增加1000颗金刚石
+BREAK
+
+
+[@StdModeFunc56]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 10000
+SENDMSG 6 提示:增加10000颗金刚石
+BREAK
+
+
+[@StdModeFunc57]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGIRD + 50
+SENDMSG 6 提示:增加50点灵符，您当前点灵符:【<$GAMEGIRD>】。
+BREAK
+
+[@StdModeFunc58]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGIRD + 100
+SENDMSG 6 提示:增加100点灵符，您当前点灵符:【<$GAMEGIRD>】。
+BREAK
+
+[@StdModeFunc59]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGIRD + 500
+SENDMSG 6 提示:增加500点灵符，您当前点灵符:【<$GAMEGIRD>】。
+BREAK
+
+[@StdModeFunc60]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGIRD + 1000
+SENDMSG 6 提示:增加1000点灵符，您当前点灵符:【<$GAMEGIRD>】。
+BREAK
+
+[@StdModeFunc44]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGIRD + 10000
+SENDMSG 6 提示:增加10000点灵符，您当前点灵符:【<$GAMEGIRD>】。
+BREAK
+
+[@StdModeFunc6]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGIRD + 1
+SENDMSG 6 提示:增加1点灵符，您当前点灵符:【<$GAMEGIRD>】。
+BREAK
+
+[@StdModeFunc7]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGIRD + 2
+SENDMSG 6 提示:增加2点灵符，您当前点灵符:【<$GAMEGIRD>】。
+BREAK
+
+[@StdModeFunc8]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGIRD + 5
+SENDMSG 6 提示:增加5点灵符，您当前点灵符:【<$GAMEGIRD>】。
+BREAK
+
+
+[@StdModeFunc9]
+#If
+CHECKLEVELEX > 0
+#ACT
+GAMEGIRD + 10
+SENDMSG 6 提示:增加10点灵符，您当前点灵符:【<$GAMEGIRD>】。
+BREAK
+
+
+[@StdModeFunc61]
+#IF
+IsOnMap mima
+#ACT
+SENDMSG 6 当前地图不允许使用此物品
+BREAK
+#IF
+IsOnMap mima2
+#ACT
+SENDMSG 6 当前地图不允许使用此物品
+BREAK
+#IF
+IsOnMap mima3
+#ACT
+SENDMSG 6 当前地图不允许使用此物品
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE E701A
+SENDMSG 1 【%s】花费200元宝进入【东郊皇陵】。 
+BREAK
+
+
+
+[@StdModeFunc62]
+#IF
+IsOnMap mima
+#ACT
+SENDMSG 6 当前地图不允许使用此物品
+BREAK
+#IF
+IsOnMap mima2
+#ACT
+SENDMSG 6 当前地图不允许使用此物品
+BREAK
+#IF
+IsOnMap mima3
+#ACT
+SENDMSG 6 当前地图不允许使用此物品
+BREAK
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE sqzd01
+SENDMSG 0 珐玛勇士『<$USERNAME>』进入了【神泣废墟】！想获得极品装备的赶快跟上啦……
+BREAK
+
+[@StdModeFunc63]
+
+
+#IF
+random 2
+#ACT
+give 1元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出1元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 2
+#ACT
+give 2元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出2元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 2
+#ACT
+give 3元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出3元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+
+#IF
+random 2
+#ACT
+give 4元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出4元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 90
+#ACT
+give 10元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出10元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 10
+#ACT
+give 6元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出6元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 20
+#ACT
+give 7元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出7元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 80
+#ACT
+give 9元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出9元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 50
+#ACT
+give 8元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出8元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 100
+#ACT
+give 11元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出11元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 120
+#ACT
+give 12元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出12元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 150
+#ACT
+give 13元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出13元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 180
+#ACT
+give 14元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出14元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 200
+#ACT
+give 15元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出15元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 220
+#ACT
+give 20元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出20元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 240
+#ACT
+give 40元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出40元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 550
+#ACT
+give 50元红包
+sendmsg 0 恭喜【<$USERNAME>】从大红包中掏出50元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+
+
+
+
+
+[@StdModeFunc64]
+#IF
+random 5
+#ACT
+give 2元红包
+INC G18 2
+sendmsg 0 恭喜【<$USERNAME>】从等待区小红包中掏出2元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 10
+#ACT
+give 3元红包
+INC G18 3
+sendmsg 0 恭喜【<$USERNAME>】从等待区小红包中掏出3元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 1
+#ACT
+give 1元红包
+INC G18 1
+sendmsg 0 恭喜【<$USERNAME>】从等待区小红包中掏出1元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 20
+#ACT
+give 4元红包
+INC G18 4
+sendmsg 0 恭喜【<$USERNAME>】从等待区小红包中掏出4元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+#IF
+random 50
+#ACT
+give 5元红包
+INC G18 5
+sendmsg 0 恭喜【<$USERNAME>】从等待区小红包中掏出5元红包，速度加群联系客服兑换现金吧！ 249 251
+BREAK
+
+}
+

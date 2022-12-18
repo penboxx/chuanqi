@@ -1,0 +1,236 @@
+[@main]
+已经很多年没有人来过这里了，\
+今天就破例让你见识见识我的手艺吧！\
+<合成/@hc2>物品\
+<如何/@js>合成物品\
+<进行对话/@dh>.\
+<命运之刃/@hc>合成物品\
+<COLOR=CLRED 命运之书复古教主爆出>物品\
+<退出/@exit>
+
+[@hc2]
+请选择想合成的物品。\ 
+所需材料应该带来了吧？\ 
+<赤血魔剑/@22>\
+<魔血戒指/@33>\
+<魔血手镯/@44>\
+<魔血项链/@55>\
+<虹魔戒指/@66>\
+<虹魔手镯/@77>\
+<虹魔项链/@88>\ 
+<返 回/@Main>
+
+
+
+
+[@66]
+#IF
+Checkgold 100
+CHECKITEM 金条 1
+CHECKITEM 魔血戒指 1
+#ACT
+TAKE 金条 1
+TAKE 魔血戒指 1
+take 金币 100
+GIVE 虹魔戒指 1
+SENDMSG 0 恭喜勇士[<$USERNAME>]在合成NBC处合成了虹魔戒指！ 250 0
+BREAK
+#elseact
+messagebox 打造此物品需要：①：1个魔血戒指.②100金币手续费，1根金条!
+
+
+
+[@77]
+#IF
+Checkgold 100
+CHECKITEM 金条 1
+CHECKITEM 魔血手镯 1
+#ACT
+TAKE 金条 1
+TAKE 魔血手镯 1
+take 金币 100
+GIVE 虹魔手镯 1
+SENDMSG 0 恭喜勇士[<$USERNAME>]在合成NBC处合成了虹魔手镯！ 250 0
+BREAK
+#elseact
+messagebox 打造此物品需要：①：1个魔血手镯.②100金币手续费，1根金条!
+
+
+
+[@88]
+#IF
+Checkgold 100
+CHECKITEM 金条 1
+CHECKITEM 魔血项链 1
+#ACT
+TAKE 金条 1
+TAKE 魔血项链 1
+take 金币 100
+GIVE 虹魔项链 1
+SENDMSG 0 恭喜勇士[<$USERNAME>]在合成NBC处合成了虹魔项链！ 250 0
+BREAK
+#elseact
+messagebox 打造此物品需要：①：1个魔血项链.②100金币手续费，1根金条!
+
+
+[@55]
+#IF
+Checkgold 100
+CHECKITEM 金条 1
+CHECKITEM 虹魔项链 1
+#ACT
+TAKE 金条 1
+TAKE 虹魔项链 1
+take 金币 100
+GIVE 魔血项链 1
+SENDMSG 0 恭喜勇士[<$USERNAME>]在合成NBC处合成了魔血项链！ 250 0
+BREAK
+#elseact
+messagebox 打造此物品需要：①：1个虹魔项链.②100金币手续费，1根金条!
+
+
+
+[@44]
+#IF
+Checkgold 100
+CHECKITEM 金条 1
+CHECKITEM 虹魔手镯 1
+#ACT
+TAKE 金条 1
+TAKE 虹魔手镯 1
+take 金币 100
+GIVE 魔血手镯 1
+SENDMSG 0 恭喜勇士[<$USERNAME>]在合成NBC处合成了魔血手镯！ 250 0
+BREAK
+#elseact
+messagebox 打造此物品需要：①：1个虹魔手镯.②100金币手续费，1根金条!
+
+
+[@33]
+#IF
+Checkgold 100
+CHECKITEM 金条 1
+CHECKITEM 虹魔戒指 1
+#ACT
+TAKE 金条 1
+TAKE 虹魔戒指 1
+take 金币 100
+GIVE 魔血戒指 1
+SENDMSG 0 恭喜勇士[<$USERNAME>]在合成NBC处合成了魔血戒指！ 250 0
+BREAK
+#elseact
+messagebox 打造此物品需要：①：1个虹魔戒指.②100金币手续费，1根金条!
+
+
+
+
+
+
+
+[@22]
+#IF
+Checkgold 100
+CHECKITEM 攻击神水 1
+CHECKITEM 魔力神水 1
+CHECKITEM 精神神水 1
+CHECKITEM 疾风神水 1
+CHECKITEM 体力强效神水 1
+CHECKITEM 魔力强效神水 1
+CHECKITEM 罗刹 1
+#ACT
+TAKE 攻击神水 1
+TAKE 魔力神水 1
+TAKE 精神神水 1
+TAKE 疾风神水 1
+TAKE 体力强效神水 1
+TAKE 魔力强效神水 1
+TAKE 罗刹 1
+take 金币 100
+GIVE 赤血魔剑 1
+SENDMSG 0 恭喜勇士[<$USERNAME>]在合成NBC处合成了赤血魔剑！ 250 0
+BREAK
+#elseact
+messagebox 打造此物品需要：①：1把罗刹.②100金币手续费，6种魔力药水!
+
+
+
+
+
+
+
+
+[@js]
+我可以帮你合成下面的东西：\ \
+<赤血魔剑/@1>\
+<魔血套装/@2>\
+<虹膜套装/@3>\
+<返回/@main>
+
+
+[@3]
+想要虹魔套装？太简单了！\
+只要你有相应的魔血套装就行了。\
+不过，除了原有的100金币手工费，\
+我要另收一根金条做为报酬。\
+<返回/@main>
+
+
+
+
+[@2]
+想要魔血套装？太简单了！\
+只要你有相应的虹魔套装就行了。\
+不过，除了原有的100金币手工费，\
+我要另收一根金条做为报酬。\
+<返回/@main>
+
+
+
+[@1]
+想合成赤血魔剑？\
+那你需要一把罗刹和六种特殊的药水\
+再叫100金币手工费就行了。\
+能不能弄到这些东西就要看你自己的本事了\
+不过，得到赤血魔剑可不一定是好事啊....\
+<返回/@main>
+
+
+
+
+
+
+
+
+
+[@dh]
+冒险者，这里有着一道通往另一个神秘世界的大门，\
+但是如何穿过这道大门，我现在任然没有参破，\
+希望你能够代替我完成这个心愿。\
+<返回/@main>
+
+
+
+
+
+[@hc]
+#IF
+Checkgold 10000000
+CHECKITEM 攻击神水 1
+CHECKITEM 魔力神水 1
+CHECKITEM 精神神水 1
+CHECKITEM 疾风神水 1
+CHECKITEM 体力强效神水 1
+CHECKITEM 魔力强效神水 1
+#ACT
+TAKE 攻击神水 1
+TAKE 魔力神水 1
+TAKE 精神神水 1
+TAKE 疾风神水 1
+TAKE 体力强效神水 1
+TAKE 魔力强效神水 1
+take 金币 10000000
+GIVE 命运之刃 1
+SENDMSG 0 恭喜勇士[<$USERNAME>]在合成NBC处合成了命运之刃！ 250 0
+BREAK
+#elseact
+messagebox 打造此物品需要：①：1本命运之书.②1000万金币手续费，6种魔力药水!

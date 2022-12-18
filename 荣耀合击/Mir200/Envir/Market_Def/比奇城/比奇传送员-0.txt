@@ -1,0 +1,422 @@
+()
+%100
+[@MAIN]
+※<比奇城堡/@比奇城堡>※<银杏山谷/@银杏山谷>※<婚姻殿堂/@婚姻殿堂>※<比奇皇宫/@比奇皇宫>※<魔龙城堡/@魔龙城堡>※\
+※<盟重土城/@盟重土城>※<白日天门/@白日天门>※<封魔神谷/@封魔神谷>※<苍月小岛/@苍月小岛>※<沙城区域/@沙城区域1>※\
+┄┄┄┄┄┄┄┄┄┄┄<COLOR=clLime 入口传送地图>┄┄┄┄┄┄┄┄┄┄┄\
+※<矿区洞口/@矿区洞口>※<蜈蚣洞口/@蜈蚣洞口>※<沃玛洞口/@沃玛洞口>※<牛魔洞口/@牛魔洞口>※<骨魔洞口/@骨魔洞口>※  \
+※<石墓洞口/@石墓洞口>※<祖玛洞口/@祖玛洞口>※<封魔洞口/@封魔洞口>※<尸魔洞口/@尸魔洞口>※<双倍幻境/@环境洞口>※ \
+┄┄┄┄┄┄┄┄┄┄┄<COLOR=clLime 深层传送地图>┄┄┄┄┄┄┄┄┄┄┄\
+※<尸王神殿/@矿区洞口1>※<沃玛大厅/@沃玛洞口1>※<石墓五层/@石墓洞口1>※<祖玛大厅/@祖玛洞口1>※<霸者大厅/@封魔洞口1>※\
+※<牛魔六层/@牛魔洞口1>※<骨魔五层/@骨魔洞口1>※<尸魔三层/@尸魔洞口1>※<恶魔祭坛/@赤月洞口1>※<赤月魔穴/@赤月魔穴>※ \
+※<幻境六层/@幻境11>※<桃园之门/@桃园之门1>※<宝宝圣地/@宝宝圣地>※<COLOR=clRed 注意：深层传送需要30000金币！> \ 
+         
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄\
+[@宝宝圣地]
+※<宝宝圣地①/@宝宝圣地1>※ 26级前往召唤巨型多角虫！\ \
+※<宝宝圣地②/@宝宝圣地2>※ 40级前往召唤900血半兽勇士！ \ \
+※<宝宝圣地③/@宝宝圣地3>※ 46级前往召唤1200血半兽勇士！ \ \
+
+
+[@宝宝圣地1]
+#IF
+CHECKLEVELEX > 25
+checkgold 30000
+#ACT
+take 金币 30000
+mapmove bbsd1
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖宝宝圣地〗召唤属下！ 243  0
+break
+#ELSESAY
+进入宝宝圣地需要3W金币或等级不够！
+
+[@宝宝圣地2]
+#IF
+CHECKLEVELEX > 39
+checkgold 30000
+#ACT
+take 金币 30000
+mapmove bbsd2
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖宝宝圣地〗召唤属下！ 243  0
+break
+#ELSESAY
+进入宝宝圣地需要3W金币或等级不够！
+
+[@宝宝圣地3]
+#IF
+CHECKLEVELEX > 45
+checkgold 30000
+#ACT
+take 金币 30000
+mapmove bbsd3
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖宝宝圣地〗召唤属下！ 243  0
+break
+#ELSESAY
+进入宝宝圣地需要3W金币或等级不够！
+
+[@桃园之门1]
+进入桃源之门需要20W金币。\  \
+
+※<确定进入/@桃园之门>※
+
+
+
+
+[@桃园之门]
+#IF
+checkgold 200000
+#ACT
+take 金币 200000
+mapmove r001
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖桃园之门〗寻找高级技能！ 243  0
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖桃园之门〗寻找高级技能！ 243  0
+break
+#ELSESAY
+进入桃园之门需要20W金币！
+
+[@矿区洞口]
+#IF
+checkgold 3000
+#ACT
+mapmove 0 659 218
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过入口传送进入了〖矿区洞口〗 250  0
+take 金币 3000
+break
+#ELSESAY
+需要3000金币用来支付我们的服务费用!\
+[@蜈蚣洞口]
+#IF
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove 3 142 92
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过入口传送进入了〖蜈蚣洞口〗 250  0
+break
+#ELSESAY
+需要5000金币用来支付我们的服务费用!\
+[@沃玛洞口]
+#IF
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove D021 71 69
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过入口传送进入了〖沃玛洞口〗 250  0
+break
+#ELSESAY
+需要5000金币用来支付我们的服务费用!\
+[@石墓洞口]
+#IF
+checkgold 1000
+#act
+take 金币 1000
+mapmove D710 27 20
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过入口传送进入了〖石墓洞口〗 250  0
+#ELSESAY
+你没有1000金币用来支付我们的服务费用!\
+[@赤月洞口]
+#IF
+checkgold 5000
+#act
+take 金币 5000
+mapmove 12 89 13
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过入口传送进入了〖赤月洞口〗 250  0
+#ELSESAY
+你没有5000金币用来支付我们的服务费用!\
+[@祖玛洞口]
+#IF
+checkgold 5000
+#act
+take 金币 5000
+mapmove 0157 17 17
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过入口传送进入了〖祖玛洞口〗 250  0
+#ELSESAY
+你没有5000金币用来支付我们的服务费用!\
+[@牛魔洞口]
+#IF
+checkgold 5000
+#act
+take 金币 5000
+mapmove 5 658 463
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过入口传送进入了〖牛魔洞口〗 250  0
+#ELSESAY
+你没有5000金币用来支付我们的服务费用!\
+[@尸魔洞口]
+#IF
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove 5 522 615
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过入口传送进入了〖尸魔洞口〗 250  0
+break 
+#ELSESAY 
+你没有5000金币用来支付我们的服务费用!\
+[@骨魔洞口]
+#IF
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove 5 545 131
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过入口传送进入了〖骨魔洞口〗 250  0
+break 
+#ELSESAY 
+你没有5000金币用来支付我们的服务费用!\
+[@封魔洞口]
+#IF
+checkgold 5000
+#ACT
+take 金币 5000
+mapmove 4 60 71
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过入口传送进入了〖封魔洞口〗 250  0
+break 
+#ELSESAY 
+你没有5000金币用来支付我们的服务费用!\
+[@婚姻殿堂]
+#if
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove m101  21 34
+break
+#ELSESAY
+你没有2000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\
+[@比奇皇宫]
+#if
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 0122  21 34
+break
+#ELSESAY
+你没有1000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\
+[@魔龙城堡]
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+mapmove 6 123 157
+break
+#ELSESAY
+你没有3000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\
+[@沙城区域1]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 3 706 407
+break
+#ELSESAY
+需要2000金币用来支付我们的服务费用!
+[@环境洞口]
+#IF
+checkgold 5000
+CHECKLEVELEX > 34
+#ACT
+take 金币 5000
+mapmove H001  74  77
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过入口传送进入了〖双倍幻境〗 250  0
+break
+#ELSESAY
+努力升到35级在来挑战幻境吧！\
+<挑战/@幻境>幻境\
+[@幻境11]
+#IF
+checkgold 30000
+CHECKLEVELEX > 34
+#ACT
+take 金币 30000
+mapmove H005  40  230 
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖幻境六层〗 243  0
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖幻境六层〗 243  0
+SENDMSG 7 ★★★特别提示：屠龙殿地图有防脱机怪物，攻击力超高请玩家不用攻击！（怪物样子为弓箭护卫样子）★★★  255  252  60
+SENDMSG 7 ★★★特别提示：屠龙殿地图有防脱机怪物，攻击力超高请玩家不用攻击！（怪物样子为弓箭护卫样子）★★★  255  252  60
+SENDMSG 7 ★★★特别提示：屠龙殿地图有防脱机怪物，攻击力超高请玩家不用攻击！（怪物样子为弓箭护卫样子）★★★  255  252  60
+break
+#ELSESAY
+努力升到35级在来挑战幻境吧！\
+[@比奇城堡]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 0 330 270
+break
+#ELSESAY
+你没有2000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\
+[@银杏山谷]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 0 650 624
+break
+#ELSESAY
+需要2000金币用来支付我们的服务费用!
+[@比奇村庄]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 0 290 615
+break
+#ELSESAY
+需要2000金币用来支付我们的服务费用!
+[@盟重土城]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 3 333 333
+break
+#ELSESAY
+需要2000金币用来支付我们的服务费用!
+[@白日天门]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 11 177 324
+break
+#ELSESAY
+需要2000金币用来支付我们的服务费用!
+[@封魔神谷]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 4 242 202
+break
+#ELSESAY
+你没有3000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\
+[@苍月小岛]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 5 140 338
+break
+#ELSESAY
+需要2000金币用来支付我们的服务费用!
+
+[@魔龙城堡]
+
+#IF
+checkgold 3000
+#ACT
+take 金币 3000
+mapmove 6 123 157
+break
+#ELSESAY
+你没有3000金币用来支付我们的服务费用!\
+请努力赚钱哦:)\
+[@矿区洞口1]
+#IF
+checkgold 30000
+#ACT
+mapmove D402 137 107
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖尸王附近〗 243  0
+take 金币 30000
+break
+#ELSESAY
+需要3万金币用来支付我们的服务费用!\
+[@蜈蚣洞口1]
+#IF
+checkgold 30000
+#ACT
+take 金币 30000
+mapmove m001
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖未知暗殿〗 243  0
+break
+#ELSESAY
+需要3万金币用来支付我们的服务费用!\
+[@沃玛洞口1]
+#IF
+checkgold 30000
+#ACT
+take 金币 30000
+mapmove D023 48 362
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖沃玛大厅〗 243  0
+break
+#ELSESAY
+需要3万金币用来支付我们的服务费用!\
+[@石墓洞口1]
+#IF
+checkgold 30000
+#act
+take 金币 30000
+mapmove D715 79 87
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖石墓五层〗 243  0
+#ELSESAY
+你没有3万金币用来支付我们的服务费用!\
+[@赤月洞口1]
+#IF
+checkgold 30000
+#act
+take 金币 30000
+mapmove  D10061  
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖恶魔祭坛〗 243  0
+#ELSESAY
+你没有3万金币用来支付我们的服务费用!\
+[@赤月魔穴]
+#IF
+checkgold 30000
+#act
+take 金币 30000
+mapmove  D10062  
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖赤月魔穴〗 243  0
+#ELSESAY
+你没有3万金币用来支付我们的服务费用!\
+[@祖玛洞口1]
+#IF
+checkgold 30000
+#act
+take 金币 30000
+mapmove D5071
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖祖玛大厅〗 243  0
+#ELSESAY
+你没有3万金币用来支付我们的服务费用!\
+[@牛魔洞口1]
+#IF
+checkgold 30000
+#act
+take 金币 30000
+mapmove D2078 244 244
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖牛魔六层〗 243  0
+#ELSESAY
+你没有3万金币用来支付我们的服务费用!\
+[@尸魔洞口1]
+#IF
+checkgold 30000
+#ACT
+take 金币 30000
+mapmove D2052 83 67
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖尸魔三层〗 243  0
+break 
+#ELSESAY 
+你没有3万金币用来支付我们的服务费用!\
+[@骨魔洞口1]
+#IF
+checkgold 30000
+#ACT
+take 金币 30000
+mapmove D2067 150 168
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖骨魔五层〗 243  0
+break 
+#ELSESAY 
+你没有3万金币用来支付我们的服务费用!\
+[@封魔洞口1]
+#IF
+checkgold 30000
+#ACT
+take 金币 30000
+mapmove D2008 50 20
+SENDMSG 0  盟重传送员:玛法勇士[<$USERNAME>]通过深层传送直接进入了〖霸者大厅〗 243  0
+break 
+#ELSESAY 
+你没有3万金币用来支付我们的服务费用!\
+
+}

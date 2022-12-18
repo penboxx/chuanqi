@@ -1,0 +1,50 @@
+[@main]
+已经很多年没有人来过这里了，\
+今天就破例让你见识见识我的手艺吧！\
+只要你带齐了6种神水和罗刹和金条就能合成！\
+<合成/@mai>物品\
+<如何/@helpmakedrug>合成物品\
+<退出/@exit>
+
+[@makedrug]
+请选择想合成的物品。\
+所需材料应该带来了吧？\ \
+<返回/@main>
+
+[@helpmakedrug]
+我可以帮你合成下面的东西：\
+<赤血魔剑/@make1>\
+
+[@make1]
+想合成赤血魔剑？\
+那你需要一把罗刹和六种特殊的药水\
+再交一根金条手工费就行了。\
+能不能弄到这些东西就看你自己的本事了\
+不过，得到赤血魔剑可不一定是好事啊...\
+<合成/@mai>  <返回/@main>
+[@mai]
+#if
+checkitem 罗刹	1
+checkitem 攻击神水	1
+checkitem 魔力神水	1
+checkitem 道力神水	1
+checkitem 极速神水	1
+checkitem 体力强效神水	1
+checkitem 魔力强效神水	1
+checkitem 金条 1
+#ACT
+TAKE 罗刹	1
+TAKE 攻击神水	1
+TAKE 魔力神水	1
+TAKE 道力神水	1
+TAKE 极速神水	1
+TAKE 体力强效神水 1
+TAKE 魔力强效神水	1
+TAKE 金条 1
+give 赤血魔剑 1
+break
+#ELSEact
+messagebox 你的材料没有齐全我怎么帮你呢？\想想办法吧。\
+
+
+

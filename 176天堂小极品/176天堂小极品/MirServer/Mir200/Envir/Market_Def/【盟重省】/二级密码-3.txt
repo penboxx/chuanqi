@@ -1,0 +1,5 @@
+(@@InPutInteger, @@InPutString @storage @getback @upgradenow @getbackupgnow)
+%100
+[@main]
+
+#CALL [\二级密码\二级密码NPC.txt] @二级密码设置

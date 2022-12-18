@@ -1,0 +1,34 @@
+[@main]
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clAqua 【沉船墓场】>  <COLOR=clRed Hot～> <COLOR=clLime ★〓〓〓★2022最火暴76小极品★〓〓〓★>\ 
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clRed ♀. 本地图分8层。每层都有BOSS，进墓越深BOSS越强，小心>\
+<COLOR=clAqua ♀. 怪物刷新：小BOSS-30分钟刷新，大BOSS-60分钟刷新>\
+<COLOR=clLime ♀. 爆率介绍：赤月，初级屠龙。天堂装备 爆率★★★>\
+<COLOR=clFuchsia ♀. 进入条件：300元宝.>\
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+　                     <探索迷踪雾林/@进>                   \ 
+
+[@进]
+#if
+CHECKGAMEGOLD > 199
+#SAY
+\ \
+<COLOR=clFuchsia 沉船墓场一共为8层，每层都有BOSS。每层收取的费用一样。>\ \
+<COLOR=clLime 第1层：10秒扣2元宝  第2层：10秒扣3元宝  第3层：10秒扣4元宝> \ 
+<COLOR=clAqua 第4层：10秒扣5元宝  第5层：10秒扣6元宝  第6层：10秒扣7元宝> \ 
+<COLOR=clRed 第7层：10秒扣8元宝  第8层：10秒扣10元宝>  \  \
+　       <您是否确定进入/@进2>         <算了吧！我没元宝。/@exit>
+
+[@进2]
+#if
+CHECKGAMEGOLD > 199
+#act
+GAMEGOLD - 200
+MAPMOVE QXLHG
+SendMSG 0 ★玩家[%S]进入沉船墓场寻宝去了 249 201
+SendMSG 0 ★玩家[%S]进入沉船墓场寻宝去了 249 201
+SendMSG 0 ★玩家[%S]进入沉船墓场寻宝去了 249 201 
+#ELSEACT
+MESSAGEBOX 您的元宝不足!
+

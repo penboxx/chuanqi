@@ -1,0 +1,12 @@
+[@MAIN]
+前面就是通往幻境四层的秘密宝藏之地，\
+您前往。降妖除魔。。。。。。。\
+<进入幻境四/@huilu>   <让我想想办法/@exit>\
+
+[@huilu]
+#IF
+#ACT
+give 回城卷 1
+mapmove H004 9 25
+SetScTimer 4 60
+break

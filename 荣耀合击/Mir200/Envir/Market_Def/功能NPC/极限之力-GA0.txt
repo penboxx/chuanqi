@@ -1,0 +1,160 @@
+[@MAIN]
+#if
+CHECKLEVELEX < 49
+#act
+messagebox 【提示】:为防止复制、盗用、仿造....\　\50级以后再来查看！\　\后期功能，你现在也用不上！
+break
+#elseact
+goto @kai
+break
+[@kai]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【极限之力】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆        <极限之力①转/@1>         <极限之力②转/@2>       ┆\
+╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╣\
+┆        <极限之力③转/@3>         <极限之力④转/@4>       ┆\
+╠┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╣\
+┆                 <获得极限之力介绍/@介绍1>               ┆\
+╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝ <退出/@exit>\
+
+[@介绍1]
+极限之力①转：需要极限之力证明①*1+20000000金币\
+获得100HP+10点防御+10点魔御\
+极限之力②转：需要极限之力证明②*2+50000000金币\
+获得300HP+20点防御+20点魔御\
+极限之力③转：需要极限之力证明③*3+3000元宝\
+获得500HP+30点防御+30点魔御\
+极限之力④转：需要极限之力证明④*4+5000元宝\
+获得800HP+50点防御+50点魔御\
+<注意：极限之力属性不叠加，④转属性为最终属性>
+[@1]
+#if
+CHECKLEVELEX > 54
+CHECK [70] 1
+#ACT
+MESSAGEBOX 您已经转生过了!!!
+BREAK
+#if
+Checkgold 20000000
+checkitem 极限之力证明① 1
+#act
+take 金币 20000000
+take 极限之力证明①
+SET [70] 1
+MOV S5 ↘↘≤极限「①」之力≥↙↙ 
+SENDMSG 0 恭喜[<$USERNAME>]获得一转极限之力！
+#CALL [\\登陆\封号.txt] @FH
+
+break
+#ELSEACT
+MESSAGEBOX 转生失败!!您没有2千万金币或者缺少《极限之力证明①》!!
+break
+
+[@2]
+#if
+CHECKLEVELEX > 54
+CHECK [70] 1
+#ACT
+goto @21
+break
+#ELSEACT
+MESSAGEBOX 转生失败!!转生等级不足!!
+break
+[@21]
+#if
+CHECK [71] 1
+#ACT
+MESSAGEBOX 您已经转生过了!!!
+BREAK
+#if
+Checkgold 50000000 
+checkitem 极限之力证明② 2
+#act
+take 金币 50000000
+take 极限之力证明② 2
+SET [71] 1
+MOV S5 ↘↘≤极限「②」之力≥↙↙ 
+SENDMSG 0 恭喜[<$USERNAME>]获得二转极限之力！
+#CALL [\\登陆\封号.txt] @FH
+
+break
+#ELSEACT
+MESSAGEBOX 转生失败!!您没有5000万金币或者缺少《极限之力证明②*2》!!
+break
+
+
+[@3]
+#if
+CHECKLEVELEX > 54
+CHECK [70] 1
+CHECK [71] 1
+#ACT
+goto @31
+break
+#ELSEACT
+MESSAGEBOX 转生失败!!转生等级不足!!
+break
+[@31]
+#if
+CHECK [72] 1
+#ACT
+MESSAGEBOX 您已经转生过了!!!
+BREAK
+#if
+Checkgamegold > 2999
+checkitem 极限之力证明③ 3
+#act
+gamegold - 3000
+take 极限之力证明③ 3
+SET [72] 1
+MOV S5 ↘↘≤极限「③」之力≥↙↙ 
+SENDMSG 0 恭喜[<$USERNAME>]获得三转极限之力！
+#CALL [\\登陆\封号.txt] @FH
+
+break
+#ELSEACT
+MESSAGEBOX 转生失败!!您没有3000元宝或者缺少《极限之力证明③*3》!!
+break
+
+[@4]
+#if
+CHECKLEVELEX > 54
+CHECK [70] 1
+CHECK [71] 1
+CHECK [72] 1
+#ACT
+goto @41
+break
+#ELSEACT
+MESSAGEBOX 转生失败!!转生等级不足!!
+break
+[@41]
+#if
+CHECK [73] 1
+#ACT
+MESSAGEBOX 您已经转生过了!!!
+BREAK
+#if
+Checkgamegold > 4999
+checkitem 极限之力证明④ 4
+#act
+gamegold - 5000
+take 极限之力证明④ 4
+SET [73] 1
+MOV S5 ↘↘≤极限「终」之力≥↙↙ 
+SENDMSG 0 恭喜[<$USERNAME>]获得四转极限之力！
+#CALL [\\登陆\封号.txt] @FH
+
+break
+#ELSEACT
+MESSAGEBOX 转生失败!!您没有5000元宝或者缺少《极限之力证明④*4》!!
+break
+
+
+
+
+
+
+

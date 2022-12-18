@@ -1,0 +1,423 @@
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【七界秘境】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+相传七界秘境共分为七界，每界秘境都有守护BOSS！ \
+七界秘境为单刷副本，每深下一层都会获得大量经验！ \
+传说中的守护BOSS更有机会或的荣誉值！  \
+\<COLOR=clFuchsia ♀.进入条件：48级+50元宝>    〖<进图须知/@须知>〗  \
+<COLOR=clFuchsia ------------------------------------------------------------>\\
+
+
+　　　　　　　　　　　〖<七界秘境/@jin>〗
+
+
+
+[@jin1]
+#if
+CHECKLEVELEX > 47
+checkgamegold > 49
+#act
+goto @jin1a
+break
+#ELSEACT
+MESSAGEBOX 进入失败原因：等级需要48级，元宝需要50！
+break
+
+[@jin1a]
+#if
+checkhum yjmj 1
+#act
+goto @jin1b
+break
+#ELSEACT
+gamegold - 50
+ClearMapMon yjmj
+map yjmj
+SetScTimer 2 1800
+MONGENEX yjmj 25 25 妖界·牛魔  1  1
+MONGENEX yjmj 25 25 秘境月魔  10  5
+break
+
+
+[@jin1b]
+#if
+CHECKRANGEMONCOUNT yjmj 25 25 20 > 0
+#act
+gamegold - 50
+map yjmj
+break
+#ELSEACT
+gamegold - 50
+ClearMapMon yjmj
+map yjmj
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 31  249 
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 
+MONGENEX yjmj 25 25 妖界·牛魔  1  1
+MONGENEX yjmj 25 25 秘境月魔  10  5
+break
+
+
+[@jin]
+#IF
+checkstringlist ..\QuestDiary\测试奖励\本区状态.txt 测试区 HardDisk
+#ACT
+MESSAGEBOX 目前是测试区，七界秘境正式开区以后才可以参加！
+BREAK
+#if
+CHECKLEVELEX > 47
+checkgamegold > 49
+#act
+goto @jina
+break
+#ELSEACT
+MESSAGEBOX 进入失败原因：等级需要48级，元宝需要50！
+break
+
+[@jina]
+#if
+checkhum yjmj1 1
+#act
+goto @jinb
+break
+#if
+checkhum gjmj1 1
+#act
+goto @jinb
+break
+#if
+checkhum mjmj1 1
+#act
+goto @jinb
+break
+#if
+checkhum sjmj1 1
+#act
+goto @jinb
+break
+#if
+checkhum tjmj1 1
+#act
+goto @jinb
+break
+#if
+checkhum xjmj1 1
+#act
+goto @jinb
+break
+#if
+checkhum rjmj1 1
+#act
+goto @jinb
+break
+#ELSEACT
+gamegold - 50
+ClearMapMon yjmj1
+map yjmj1
+SetScTimer 2 1800
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 31  249 
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 
+MONGENEX yjmj1 25 25 妖界·牛魔  1  1
+MONGENEX yjmj1 25 25 秘境月魔  10  5
+
+break
+
+[@jinb]
+#if
+checkhum yjmj2 1
+#act
+goto @jinc
+break
+#if
+checkhum gjmj2 1
+#act
+goto @jinc
+break
+#if
+checkhum mjmj2 1
+#act
+goto @jinc
+break
+#if
+checkhum sjmj2 1
+#act
+goto @jinc
+break
+#if
+checkhum tjmj2 1
+#act
+goto @jinc
+break
+#if
+checkhum xjmj2 1
+#act
+goto @jinc
+break
+#if
+checkhum rjmj2 1
+#act
+goto @jinc
+break
+#ELSEACT
+gamegold - 50
+ClearMapMon yjmj2
+map yjmj2
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 31  249 
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 
+MONGENEX yjmj2 25 25 妖界·牛魔  1  1
+MONGENEX yjmj2 25 25 秘境月魔  10  5
+SetScTimer 2 1800
+break
+
+
+[@jinc]
+#if
+checkhum yjmj3 1
+#act
+goto @jind
+break
+#if
+checkhum gjmj3 1
+#act
+goto @jind
+break
+#if
+checkhum mjmj3 1
+#act
+goto @jind
+break
+#if
+checkhum sjmj3 1
+#act
+goto @jind
+break
+#if
+checkhum tjmj3 1
+#act
+goto @jind
+break
+#if
+checkhum xjmj3 1
+#act
+goto @jind
+break
+#if
+checkhum rjmj3 1
+#act
+goto @jind
+break
+#ELSEACT
+gamegold - 50
+ClearMapMon yjmj3
+map yjmj3
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 31  249 
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 
+MONGENEX yjmj3 25 25 妖界·牛魔  1  1
+MONGENEX yjmj3 25 25 秘境月魔  10  5
+SetScTimer 2 1800
+break
+
+[@jind]
+#if
+checkhum yjmj4 1
+#act
+goto @jine
+break
+#if
+checkhum gjmj4 1
+#act
+goto @jine
+break
+#if
+checkhum mjmj4 1
+#act
+goto @jine
+break
+#if
+checkhum sjmj4 1
+#act
+goto @jine
+break
+#if
+checkhum tjmj4 1
+#act
+goto @jine
+break
+#if
+checkhum xjmj4 1
+#act
+goto @jine
+break
+#if
+checkhum rjmj4 1
+#act
+goto @jine
+break
+#ELSEACT
+gamegold - 50
+ClearMapMon yjmj4
+map yjmj4
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 31  249 
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 
+MONGENEX yjmj4 25 25 妖界·牛魔  1  1
+MONGENEX yjmj4 25 25 秘境月魔  10  5
+SetScTimer 2 1800
+break
+
+
+[@jine]
+#if
+checkhum yjmj5 1
+#act
+goto @jinf
+break
+#if
+checkhum gjmj5 1
+#act
+goto @jinf
+break
+#if
+checkhum mjmj5 1
+#act
+goto @jinf
+break
+#if
+checkhum sjmj5 1
+#act
+goto @jinf
+break
+#if
+checkhum tjmj5 1
+#act
+goto @jinf
+break
+#if
+checkhum xjmj5 1
+#act
+goto @jinf
+break
+#if
+checkhum rjmj5 1
+#act
+goto @jinf
+break
+#ELSEACT
+gamegold - 50
+ClearMapMon yjmj5
+map yjmj5
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 31  249 
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 
+MONGENEX yjmj5 25 25 妖界·牛魔  1  1
+MONGENEX yjmj5 25 25 秘境月魔  10  5
+SetScTimer 2 1800
+break
+[@jinf]
+#if
+checkhum yjmj6 1
+#act
+goto @jing
+break
+#if
+checkhum gjmj6 1
+#act
+goto @jing
+break
+#if
+checkhum mjmj6 1
+#act
+goto @jing
+break
+#if
+checkhum sjmj6 1
+#act
+goto @jing
+break
+#if
+checkhum tjmj6 1
+#act
+goto @jing
+break
+#if
+checkhum xjmj6 1
+#act
+goto @jing
+break
+#if
+checkhum rjmj6 1
+#act
+goto @jing
+break
+#ELSEACT
+gamegold - 50
+ClearMapMon yjmj6
+map yjmj6
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 31  249 
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 
+MONGENEX yjmj6 25 25 妖界·牛魔  1  1
+MONGENEX yjmj6 25 25 秘境月魔  10  5
+SetScTimer 2 1800
+break
+
+
+[@jing]
+#if
+checkhum yjmj 1
+#act
+goto @jinh
+break
+#if
+checkhum gjmj 1
+#act
+goto @jinh
+break
+#if
+checkhum mjmj 1
+#act
+goto @jinh
+break
+#if
+checkhum sjmj 1
+#act
+goto @jinh
+break
+#if
+checkhum tjmj 1
+#act
+goto @jinh
+break
+#if
+checkhum xjmj 1
+#act
+goto @jinh
+break
+#if
+checkhum rjmj 1
+#act
+goto @jinh
+break
+#ELSEACT
+gamegold - 50
+ClearMapMon yjmj
+map yjmj
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 31  249 
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[妖界秘境]挑战未知的世界！ 
+MONGENEX yjmj 25 25 妖界·牛魔  1  1
+MONGENEX yjmj 25 25 秘境月魔  10  5
+SetScTimer 2 1800
+break
+
+
+
+[@jinh]
+#if
+#act
+MESSAGEBOX 进入失败原因：所有秘境(副本)已被占满，请稍后在试！
+break
+
+[@须知]
+进入副本以后每层限定时间为30分钟，30分钟未清理完副本怪物被传回土城！\
+进入鬼界秘境后每层会增加定量经验！\
+最深层地图可以使用随机！\
+
+
+

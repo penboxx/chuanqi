@@ -1,0 +1,7 @@
+[@№ЬАнВЫМі]
+{
+#IF
+#ACT
+WebBrowser http://www.sf1995.com
+break
+}

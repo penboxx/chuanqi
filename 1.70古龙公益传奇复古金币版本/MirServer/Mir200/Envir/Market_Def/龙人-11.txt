@@ -1,0 +1,1663 @@
+
+(@@BUHERO)
+[@MAIN]
+#IF
+CHECK [203] 1
+#SAY
+我们的门主有方法将两块白日门令牌合一\
+拿到合一后的白日门令牌，你可以到比奇\
+我们有门徒在那，你可以找到他寻求帮助\
+不过他隐藏的很隐蔽，你要仔细找一下\ \ \ \ \
+　　　　　　　　                           <版权所有/@1>:夕阳传奇\
+#ACT
+BREAK
+#IF
+CHECKITEM 白日门门主信物 1
+CHECK [202] 1
+#SAY
+朋友！真是抱歉！\
+为了安全起见，没有门主的白日门令牌，我可不敢胡说啊！\
+现在我知道你是为了解救我白日门兄弟前来\
+我四处打听，得知他们现在可能囚禁在比齐，你去那探探吧\
+我再给你半快令牌，\
+将两快令牌合一，便是我白日门信物，凡是我白日门弟子定当鼎立相助\
+门主可以将两块令牌合一，朋友你去找门主吧\
+<好的，我这就去/@BIRD_2_3>\
+　　　　　　　　                           <版权所有/@1>:夕阳传奇\
+#ACT
+BREAK
+#IF
+CHECK [201] 1
+#SAY
+你怎么又来了，真想我出手教训你不成?\
+#ACT
+BREAK
+#IF
+CHECK [200] 1
+#SAY
+这位朋友在此处晃悠了很久，是否有什么事情？\
+这里是白日门的势力范围，若没有事情请离开！\
+<我在找“龙人”，不知道兄弟可认识？/@BIRD_1_1>\
+<我想问下合击的事情/@BIRD_5_1>\
+<我是来给书页碎片的/@BIRD_6_1>     <那里能找到书页呢？/@BIRD_7_1>\ \ \ \
+　　　　　　　　                           <版权所有/@1>:夕阳传奇\
+#ACT
+BREAK
+#ELSESAY
+来者何人？为何而来？\
+<我是来给书页碎片的/@BIRD_6_1> \
+<我想问下合击的事情/@BIRD_5_1>    <那里能找到书页呢？/@BIRD_7_1>\
+<我只是路过，打扰了/@EXIT>\ \ \ \
+　　　　　　　　                           <版权所有/@1>:夕阳传奇\
+[@BIRD_5_1]
+具有特定的英雄技能书才有记录，\
+用一种特殊的金色粉末撒在技能书上,才能显现出合击技能的记录字迹\
+不过这种特殊的粉末需要消耗大量的金刚石才能提炼出来，\
+提炼这特殊的粉末需要金刚石88颗。\   \ 
+<需要那些技能书呢/@BIRD_5_2>\ \ \ \
+　　　　　　　　                           <版权所有/@1>:夕阳传奇\
+
+[@BIRD_5_2]
+你先看看需要那种的合击技能，\
+如果你有其中特定的英雄技能书和足够的金刚石，\
+我马上就给你找出其中隐藏的合击技秘籍，\
+<破魂斩 战士和战士/@BIRD_5_2_1>                 <噬魂沼泽 道士和道士/@BIRD_5_2_2>\ \
+<火龙气焰 法师和法师/@BIRD_5_2_3>               <雷霆一击 战士和法师/@BIRD_5_2_4>\ \
+<末日审判 道士和法师/@BIRD_5_2_5>               <劈星斩 战士和道士/@BIRD_5_2_6>\ \ \
+　　　　　　　　                           <版权所有/@1>:夕阳传奇\
+
+[@BIRD_5_2_1]
+破魂斩只有在<英雄烈火剑法>和<英雄半月弯刀>这2本技能书中存在线索，\
+想要找到合击技能秘笈，就必须<同时拥有这2本英雄技能书>，\
+如果你还有88颗金刚石，我就能帮你找到其中的线索。\
+成功学习了合击技能之后就可以获得一个火龙之心，\
+放在英雄的毒符栏就可以累积怒气值。\
+<我有这2本技能书/@破魂斩>帮我找一下合击技的线索吧。\  \
+<返回/@BIRD_5_2>              <关闭/@EXIT>\ \
+　　　　　　　　                           <版权所有/@1>:夕阳传奇\
+
+[@BIRD_5_2_2]
+噬魂沼泽只有在<英雄困魔咒>和<英雄召唤神兽>这2本技能书中存在线索，\
+想要找到合击技能秘笈，就必须<同时拥有这两本英雄技能书>，\
+如果你还有88颗金刚石，我就能帮你找到其中的线索。\
+成功学习就合击技能之后就可以获得一个火龙之心，\
+放在英雄的毒符栏就可以累积怒气值。\
+<我有这2本技能书/@噬魂沼泽>帮我找一下合击技的线索吧。\  \
+<返回/@BIRD_5_2>              <关闭/@EXIT>\ \
+　　　　　　　　                           <版权所有/@1>:夕阳传奇\
+
+[@BIRD_5_2_3]
+火龙气焰只有在<英雄爆裂火焰>和<英雄冰咆哮>这两本技能书中存在线索，\
+想要找到合击技能秘笈，就必须<同时拥有这两本英雄技能书>，\
+如果你还有88颗金刚石，我就能帮你找到其中的线索。\
+成功学习了合击技能之后就可以获得一个火龙之心，\
+放在英雄的毒符栏就可以累积怒气值。\
+<我有这2本技能书/@火龙气焰>帮我找一下合击技的线索吧。\  \
+<返回/@BIRD_5_2>              <关闭/@EXIT>\ \
+　　　　　　　　                           <版权所有/@1>:夕阳传奇\
+
+[@BIRD_5_2_4]
+雷霆一击只有在<英雄冰咆哮>和<英雄半月弯刀>这两本技能书中存在线索，\
+想要找到合击技能秘笈，就必须<同时拥有这两本英雄技能书>，\
+如果你还有88颗金刚石，我就能帮你找到其中的线索。\
+成功学习了合击技能之后就可以获得一个火龙之心，\
+放在英雄的毒符栏就可以累积怒气值。\
+<我有这2本技能书/@雷霆一击>帮我找一下合击技的线索吧。\  \
+<返回/@BIRD_5_2>              <关闭/@EXIT>\ \
+　　　　　　　　                           <版权所有/@1>:夕阳传奇\
+
+[@BIRD_5_2_5]
+末日审判只有在<英雄心灵启示>和<英雄圣言术>这两本技能书中存在线索，\
+想要找到合击技能秘笈，就必须<同时拥有这两本英雄技能书>，\
+如果你还有88颗金刚石，我就能帮你找到其中的线索。\
+成功学习了合击技能之后就可以获得一个火龙之心，\
+放在英雄的毒符栏就可以累积怒气值。\
+<我有这2本技能书/@末日审判>帮我找一下合击技的线索吧。\  \
+<返回/@BIRD_5_2>              <关闭/@EXIT>\ \
+　　　　　　　　                           <版权所有/@1>:夕阳传奇\
+
+[@BIRD_5_2_6]
+劈星斩只有在<英雄困魔咒>和<英雄烈火剑法>这两本技能书中存在线索，\
+想要找到合击技能秘笈，就必须<同时拥有这两本英雄技能书>，\
+如果你还有88颗金刚石，我就能帮你找到其中的线索。\
+成功学习了合击技能之后就可以获得一个火龙之心，\
+放在英雄的毒符栏就可以累积怒气值。\
+<我有这2本技能书/@劈星斩>帮我找一下合击技的线索吧。\  \
+<返回/@BIRD_5_2>              <关闭/@EXIT>\ \
+　　　　　　　　                           <版权所有/@1>:夕阳传奇\
+
+[@劈星斩]
+#IF
+CHECKITEM 英雄困魔咒 1
+CHECKITEM 英雄烈火剑法 1
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+TAKE 英雄困魔咒 1
+TAKE 英雄烈火剑法 1
+GIVE 劈星斩 1
+GIVE 火龙之心 1
+SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成了劈星斩.
+#ELSESAY
+哎呀，你没有这些英雄技能书和金刚石啊！\
+
+[@末日审判]
+#IF
+CHECKITEM 英雄心灵启示 1
+CHECKITEM 英雄圣言术 1
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+TAKE 英雄心灵启示 1
+TAKE 英雄圣言术 1
+GIVE 末日审判 1
+GIVE 火龙之心 1
+SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成了末日审判.
+#ELSESAY
+哎呀，你没有这些英雄技能书和金刚石啊！\
+
+[@雷霆一击]
+#IF
+CHECKITEM 英雄半月弯刀 1
+CHECKITEM 英雄冰咆哮 1
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+TAKE 英雄半月弯刀 1
+TAKE 英雄冰咆哮 1
+GIVE 雷霆一击 1
+GIVE 火龙之心 1
+SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成了雷霆一击.
+#ELSESAY
+哎呀，你没有这些英雄技能书和金刚石啊！\
+
+[@火龙气焰]
+#IF
+CHECKITEM 英雄爆裂火焰 1
+CHECKITEM 英雄冰咆哮 1
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+TAKE 英雄爆裂火焰 1
+TAKE 英雄冰咆哮 1
+GIVE 火龙气焰 1
+GIVE 火龙之心 1
+SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成了火龙气焰.
+#ELSESAY
+哎呀，你没有这些英雄技能书和金刚石啊！\
+
+[@噬魂沼泽]
+#IF
+CHECKITEM 英雄困魔咒 1
+CHECKITEM 英雄召唤神兽 1
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+TAKE 英雄困魔咒 1
+TAKE 英雄召唤神兽 1
+GIVE 噬魂沼泽 1
+GIVE 火龙之心 1
+SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成了噬魂沼泽.
+#ELSESAY
+哎呀，你没有这些英雄技能书和金刚石啊！\
+
+[@破魂斩]
+#IF
+CHECKITEM 英雄烈火剑法 1
+CHECKITEM 英雄半月弯刀 1
+CHECKGAMEDIAMOND > 87
+#ACT
+GAMEDIAMOND - 88
+TAKE 英雄烈火剑法 1
+TAKE 英雄半月弯刀 1
+GIVE 破魂斩 1
+GIVE 火龙之心 1
+SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成了破魂斩.
+#ELSESAY
+哎呀，你没有这些英雄技能书和金刚石啊！\
+
+
+[@BIRD_6_1]
+如果你有书页的话，你就交给我看看，\
+我可以帮你拼凑一下，看是否可以还原成一本技能秘籍。\
+你可以交给我2片、5片或者8片书页，\
+如果提供的书页越多，越有可能根据里面的提示还原成高级技能书，\
+当然，由于碎片过于残破，不是每次都能还原成原先的技能秘籍，\
+如果还原出来，不是你需要的技能，你可以把书页给我，\
+好让我把这个技能发扬光大，重现当年白日门的风光。\
+<递交书页/@递交书页>
+
+[@递交书页]
+你是想要给我2片、5片、还是8片书页呢？\
+如果提供的书页越多，越有可能根据里面的提示还原成高级技能书，\
+合成技能书，除了书页，还需要一颗金刚石，\
+只有通过金刚石的神奇作用，书页才能拼合在一起，\
+如果鉴定出来，和你需要的不一样，你可以放弃鉴定，\
+如果你放弃，书页不能再还给你了，技能书我会让它发扬光大。\
+<交2片书页/@DJSY222>　　　　<交5片书页/@DJSY555>　　　　<交8片书页/@DJSY8>\ \
+
+<让我再考虑考虑/@EXIT>
+
+
+[@BIRD_7_1]
+据说很多技能书页已经流散到玛法的各大魔王身上，\
+屠魔战场中的魔兽也在混乱中抢到一部分，\
+如果你找到这些书页，我也许能帮你拼出一本完整的技能书\  \
+<返回/@MAIN> 
+
+
+
+[@BIRD_1_1]
+#IF
+  CHECK [200] 1
+#SAY
+......\
+正是在下！不知道朋友找在下有何贵干？\
+<向他打听被囚禁门徒的事/@BIRD_1_2>
+#ELSESAY
+正是在下！不知道朋友找在下有何贵干？\
+
+[@BIRD_1_2]
+......\
+荒谬，你胡说什么东西！\
+我白日门光明正大，干了什么见不得光的事。门徒会被囚禁？\
+不要胡说八道！否则休怪我龙人对你不客气！\
+<赶快离开/@BIRD_1_3>
+
+
+[@BIRD_1_3]
+#IF
+#ACT
+SET [201] 1
+#SAY
+(寻思.嗯？这是怎么回事？\
+难道是那个老头跟我开玩笑吗？\
+看来得去找那老头问个明白！)\
+
+
+[@BIRD_2_3]
+#IF
+#ACT
+SET [203] 1
+SET [201] 0
+GIVE 龙人信物 1
+CLOSE
+
+[@2片书页]
+#IF
+CHECKITEM 书页 2
+#ACT
+TAKE 书页 2
+SET [100] 1
+MOV D9 0
+MOVR D0 5
+INC D0 1
+MOVR D1 5
+INC D1 1
+MOVR D2 5
+INC D2 1
+SUM D0 D1
+SUM D2
+DELAYGOTO 1 @TY-LR-1
+#ELSESAY
+你好象没有带来足够的书页。
+
+[@5片书页]
+#IF
+CHECKITEM 书页 5
+#ACT
+TAKE 书页 5
+SET [100] 1
+MOV D9 0
+MOVR D0 12
+INC D0 1
+MOVR D1 12
+INC D1 1
+MOVR D2 12
+INC D2 1
+SUM D0 D1
+SUM D2
+DELAYGOTO 1 @TY-LR-1
+#ELSESAY
+你好象没有带来足够的书页。
+
+[@8片书页]
+#IF
+CHECKITEM 书页 8
+#ACT
+TAKE 书页 8
+SET [100] 1
+MOV D9 0
+MOVR D0 15
+INC D0 1
+MOVR D1 15
+INC D1 1
+MOVR D2 15
+INC D2 1
+SUM D0 D1
+SUM D2
+DELAYGOTO 1 @TY-LR-1
+#ELSESAY
+你好象没有带来足够的书页。
+
+[@TY-LR-1]
+#IF
+CHECK [100] 0
+#ACT
+MAPMOVE 0147
+#SAY
+由于你使用外挂\
+严重违反游戏规则\ \
+<离开/@EXIT>
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 3
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄攻杀剑术」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 4
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄大火球」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 5
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄召唤骷髅」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 6
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄灵魂火符」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 7
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄雷电术」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 8
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄地狱火」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 9
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄施毒术」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 10
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄诱惑之光」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 11
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄抗拒火环」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 12
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄精神战法」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 13
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄基本剑术」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 14
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄治愈术」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 15
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄火球术」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 16
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄野蛮冲撞」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 17
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄地狱雷光」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 18
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄困魔咒」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 19
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄半月弯刀」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 20
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄疾光电影」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 21
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄心灵启示」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 22
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄神圣战术」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 23
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄刺杀剑术」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 24
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄火墙」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 25
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄幽灵盾」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 26
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄爆裂火焰」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 27
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄集体隐身」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 28
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄隐身术」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 29
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄气功波」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 30
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄灭天火」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 31
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄狮子吼」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 32
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄无极真气」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 33
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄寒冰掌」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 34
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄冰咆哮」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 35
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄召唤神兽」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#IF
+CHECK [100] 1
+EQUAL D9 36
+#ACT
+SET [100] 0
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为:「英雄烈火剑法」\
+您是要收下这本技能书呢还是打算放弃？ \
+如果放弃，那么书页也不能再还给您了。 \
+如果您收取这本书，还需要再给我一颗金刚石哦，\
+否则，我也没有办法将这些书页进行还原。\
+<给金刚石，收取这本技能书/@领取>\ \
+<放弃，我不要了/@EXIT>\
+#ACT
+BREAK
+#ELSESAY
+哎呀!书页在还原过程中失败了!\
+书页已经不能再还给你了!\
+如果你还有书页、我可以帮你再试试。\ \
+<递交书页/@递交书页>     <离开/@EXIT>\
+
+
+[@领取]
+#IF
+CHECKGAMEDIAMOND = 0
+#SAY
+你给我的金刚石在那里呢？\
+#ACT
+BREAK
+#IF
+EQUAL D9 3
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄攻杀剑术 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 4
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄大火球 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 5
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄召唤骷髅 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 6
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄灵魂火符 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 7
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄雷电术 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 8
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄地狱火 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 9
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄施毒术 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 10
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄诱惑之光 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 11
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄抗拒火环 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 12
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄精神战法 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 13
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄基本剑术 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 14
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄治愈术 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 15
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄火球术 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 16
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄野蛮冲撞 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 17
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄地狱雷光 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 18
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄困魔咒 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 19
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 1
+GIVE 英雄半月弯刀 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 20
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄疾光电影 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 21
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄心灵启示 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 22
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄神圣战术 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 23
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 1
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GIVE 英雄刺杀剑术 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 24
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄火墙 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 25
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄幽灵盾 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 26
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄爆裂火焰 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 27
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄集体隐身 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 28
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄隐身术 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 29
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄气功波 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 30
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄灭天火 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 31
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄狮子吼 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 32
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄无极真气 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 33
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄寒冰掌 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 34
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄冰咆哮 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 35
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄召唤神兽 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#IF
+EQUAL D9 36
+CHECKGAMEDIAMOND > 0
+#ACT
+MOV D0 0
+MOV D1 0
+MOV D2 0
+GAMEDIAMOND - 1
+GIVE 英雄烈火剑法 1
+SENDMSG 5 可喜可贺、快给你的英雄学习技能吧！
+GOTO @MAIN
+#ACT
+BREAK
+#ELSESAY
+你给我的金刚石呢？\
+要收取已经还原的书籍需要花费一颗金刚石！\ \
+<离开/@EXIT>\
+
+[@1]
+此版本由夕阳传奇专业游戏技术作小组完成。\ \
+
+[@DJSY222]
+2片书页+8w金币可以<COLOR=clLime 随机>合成下列英雄技能：\
+英雄精神战法　　英雄大火球　　　英雄施毒术\
+英雄攻杀剑术　　英雄抗拒火环　　英雄地狱火\
+英雄雷电术　　　英雄灵魂火符　　英雄幽灵盾\
+英雄召唤骷髅　　英雄隐身术　　　英雄集体隐身\
+　　　\
+<递交书页/@DJSY2>
+
+[@DJSY2]
+#IF
+  checkitem 书页 2
+  CHECKGOLD 80000
+#ACT
+  GOTO @SJLQJNS_1
+  BREAK
+#IF
+#SAY
+您好象没有带来足够的书页或者8w金币.\
+
+[@SJLQJNS_1]
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄精神战法 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄精神战法.
+  BREAK
+#SAY
+恭喜你合成英雄精神战法成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄大火球 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄大火球.
+  BREAK
+#SAY
+恭喜你合成英雄大火球成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄施毒术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄施毒术.
+  BREAK
+#SAY
+恭喜你合成英雄施毒术成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄攻杀剑术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄攻杀剑术.
+  BREAK
+#SAY
+恭喜你合成英雄攻杀剑术成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄抗拒火环 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄抗拒火环.
+  BREAK
+#SAY
+恭喜你合成英雄抗拒火环成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄地狱火 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄地狱火.
+  BREAK
+#SAY
+恭喜你合成英雄地狱火成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄雷电术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄雷电术.
+  BREAK
+#SAY
+恭喜你合成英雄雷电术成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄灵魂火符 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄灵魂火符.
+  BREAK
+#SAY
+恭喜你合成英雄灵魂火符成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄幽灵盾 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄幽灵盾.
+  BREAK
+#SAY
+恭喜你合成英雄幽灵盾成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄召唤骷髅 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄召唤骷髅.
+  BREAK
+#SAY
+恭喜你合成英雄召唤骷髅成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄隐身术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄隐身术.
+  BREAK
+#SAY
+恭喜你合成英雄隐身术成功！\
+#IF
+  RANDOM 17
+#ACT
+  TAKE 书页 2
+  TAKE 金币 80000
+  GIVE 英雄集体隐身 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄集体隐身.
+  BREAK
+#SAY
+恭喜你合成英雄集体隐身成功！\
+
+
+[@DJSY555]
+5片书页+18w金币可以<COLOR=clLime 随机>合成下列英雄技能：\
+英雄疾光电影　　　英雄神圣战术　　　英雄困魔咒\
+英雄爆裂火焰　　　英雄火墙　　　　　英雄刺杀剑术\
+英雄地狱雷光　　　英雄半月弯刀　　　英雄群疗术　\
+英雄魔法盾　　　　英雄圣言术　　　　英雄野蛮冲撞\
+　　　\
+<递交书页/@DJSY5>
+
+[@DJSY5]
+#IF
+  checkitem 书页 5
+  CHECKGOLD 180000
+#ACT
+  GOTO @SJLQJNS_2
+  BREAK
+#IF
+#SAY
+您好象没有带来足够的书页或者18w金币.\
+
+[@SJLQJNS_2]
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄疾光电影 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄疾光电影.
+  BREAK
+#SAY
+恭喜你合成英雄疾光电影成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄神圣战术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄神圣战术.
+  BREAK
+#SAY
+恭喜你合成英雄神圣战术成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄困魔咒 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄困魔咒.
+  BREAK
+#SAY
+恭喜你合成英雄困魔咒成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄爆裂火焰 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄爆裂火焰.
+  BREAK
+#SAY
+恭喜你合成英雄爆裂火焰成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄火墙 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄火墙.
+  BREAK
+#SAY
+恭喜你合成英雄火墙成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄刺杀剑术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄刺杀剑术.
+  BREAK
+#SAY
+恭喜你合成英雄刺杀剑术成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  GAMEDIAMOND - 1
+  GIVE 英雄地狱雷光 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄地狱雷光.
+  BREAK
+#SAY
+恭喜你合成英雄地狱雷光成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄半月弯刀 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄半月弯刀.
+  BREAK
+#SAY
+恭喜你合成英雄半月弯刀成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄群疗术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄群疗术.
+  BREAK
+#SAY
+恭喜你合成英雄群疗术成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄魔法盾 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄魔法盾.
+  BREAK
+#SAY
+恭喜你合成英雄魔法盾成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄圣言术 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄圣言术.
+  BREAK
+#SAY
+恭喜你合成英雄圣言术成功！\
+#IF
+  RANDOM 18
+#ACT
+  TAKE 书页 5
+  TAKE 金币 180000
+  GIVE 英雄野蛮冲撞 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成英雄野蛮冲撞.
+  BREAK
+#SAY
+恭喜你合成英雄野蛮冲撞成功！\
+
+
+[@DJSY8]
+8页书+对应的人物技能+8颗金刚石=英雄技能\ \
+
+告诉我想合成什么书吧.\ \
+
+<英雄冰咆哮/@8y01>  <英雄召唤神兽/@8y02> <英雄烈火剑法/@8y03>\ \
+
+<关闭/@exit>
+
+[@8y01]
+#IF
+  checkitem 书页 8
+  CHECKGAMEDIAMOND > 7
+  CHECKITEM 冰咆哮 1
+#ACT
+  TAKE 书页 8
+  GAMEDIAMOND - 8
+  TAKE 冰咆哮 1
+  GIVE 英雄冰咆哮 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成了英雄冰咆哮.
+  BREAK
+#elsesay
+您好象没有带来足够的书页或者8颗金刚石+冰咆哮\
+
+[@8y02]
+#IF
+  checkitem 书页 8
+  CHECKGAMEDIAMOND > 7
+  CHECKITEM 召唤神兽 1
+#ACT
+  TAKE 书页 8
+  GAMEDIAMOND - 8
+  TAKE 召唤神兽 1
+  GIVE 英雄召唤神兽 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成了英雄召唤神兽.
+  BREAK
+#elsesay
+您好象没有带来足够的书页或者8颗金刚石+召唤神兽.\
+
+[@8y03]
+#IF
+  checkitem 书页 8
+  CHECKGAMEDIAMOND > 7
+  CHECKITEM 烈火剑法 1
+#ACT
+  TAKE 书页 8
+  GAMEDIAMOND - 8
+  TAKE 烈火剑法 1
+  GIVE 英雄烈火剑法 1
+  SENDMSG 0 恭喜：<$USERNAME>，在龙人处合成了英雄烈火剑法.
+  BREAK
+#elsesay
+您好象没有带来足够的书页或者8颗金刚石+烈火剑法.\

@@ -1,0 +1,37 @@
+()
+%100
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+　　　　　<COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+在一个荒无人烟的岛上，我发现了传说中的技能圣地！\
+只需给我一张书页我就可以送你过去。\
+怪物刷新时间10分钟！\ 
+<COLOR=clFuchsia ------------------------------------------------------------>\
+　　　　前往<技能圣地/@pay>      <拿出20W贿赂试试/@技能圣地>\ \
+[@pay]
+#IF
+checkitem 书页 1
+#ACT
+take 书页 1
+mapmove T400
+SENDMSG 0  玛法勇士[<$USERNAME>]进入了技能圣地寻找技能书去了！ 250  0
+SENDMSG 0  玛法勇士[<$USERNAME>]进入了技能圣地寻找技能书去了！ 250  0
+break
+#ELSESAY
+对不起！你没有足够的书页！
+[@技能圣地]
+行行你有钱你牛逼，赶紧进去吧。\ \ \ \
+<移动/@金币传送>\
+<不/@exit>
+[@金币传送]
+#IF
+checkgold 200000
+#ACT
+take 金币 200000
+mapmove T400
+SENDMSG 0  玛法勇士[<$USERNAME>]进入了技能圣地寻找技能书去了！ 250  0
+SENDMSG 0  玛法勇士[<$USERNAME>]进入了技能圣地寻找技能书去了！ 250  0
+break
+#ELSESAY
+没钱。。你特么逗我玩呢？

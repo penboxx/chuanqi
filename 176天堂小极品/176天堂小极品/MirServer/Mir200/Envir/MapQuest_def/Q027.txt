@@ -1,0 +1,8 @@
+[@MAIN]
+#IF
+#ACT
+mov M0 0
+mov M1 0
+set [121] 0
+set [122] 0
+CLOSE

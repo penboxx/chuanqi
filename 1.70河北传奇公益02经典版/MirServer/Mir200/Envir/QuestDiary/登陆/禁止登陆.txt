@@ -1,0 +1,108 @@
+[@禁止登陆]
+{
+#IF
+checknamelist ..\QuestDiary\数据\禁止登陆-脱机.txt
+#ACT
+messagebox \　\你因使用了非法脱机软件，已被禁止登陆\　\注意：同一IP上有一个号作弊，整个IP上的所有号全部封号处理....
+SENDMSG 7 〖公告〗:你因使用了非法脱机软件，已被系统禁止登陆
+SENDMSG 7 〖公告〗:现在清空你人物上的金币和元宝做为惩罚
+SENDMSG 7 〖公告〗:注意：同一IP上有一个号作弊，整个IP上的所有号全部封号处理....
+;addiplist ..\QuestDiary\数据\禁止登陆脱机IP.txt
+KICK
+
+#IF
+CHECKACCOUNTLIST ..\QuestDiary\数据\禁止登陆-脱机帐号.txt
+#ACT
+messagebox \　\你因使用了非法脱机软件，已被禁止登陆\　\注意：同一IP上有一个号作弊，整个IP上的所有号全部封号处理....
+SENDMSG 7 〖公告〗:你因使用了非法脱机软件，已被系统禁止登陆
+SENDMSG 7 〖公告〗:现在清空你人物上的金币和元宝做为惩罚
+SENDMSG 7 〖公告〗:注意：同一IP上有一个号作弊，整个IP上的所有号全部封号处理....
+KICK
+
+
+#IF
+checknamelist ..\QuestDiary\数据\禁止登陆-骗子.txt
+#ACT
+messagebox 你的号被举报为骗子，联系QQ：271186388或379698800咨询
+SENDMSG 5 你的号被举报为骗子，联系QQ：271186388或379698800咨询，给您带来不便请谅
+;addiplist ..\QuestDiary\数据\禁止登陆骗子IP.txt
+KICK
+break
+
+#IF
+checknamelist ..\QuestDiary\数据\禁止登陆-其他.txt
+#ACT
+messagebox 你的号因违反游戏规则，被暂时禁止登陆
+SENDMSG 5 你的号因违反游戏规则，被暂时禁止登陆
+;addiplist ..\QuestDiary\数据\禁止登陆IP.txt
+KICK
+break
+
+
+
+#IF
+checknamelist ..\QuestDiary\数据\禁止登陆-加速.txt
+#ACT
+messagebox \　\你因使用了非法加速软件，已被系统禁止登陆\　\注意：同一IP上有一个号作弊，整个IP上的所有号全部封号处理....
+SENDMSG 7 〖公告〗:你因使用了非法加速软件，已被系统禁止登陆
+SENDMSG 7 〖公告〗:注意：同一IP上有一个号作弊，整个IP上的所有号全部封号处理....
+;addiplist ..\QuestDiary\数据\禁止登陆加速IP.txt
+Kick
+break
+
+
+
+#IF
+checknamelist ..\QuestDiary\数据\禁止登陆-捣乱.txt
+#ACT
+messagebox 你因恶意捣乱，已被系统禁止登陆
+SENDMSG 7 你因恶意捣乱，已被系统禁止登陆
+KICK
+break
+
+#IF
+CHECKIPLIST ..\QuestDiary\数据\禁止登陆-捣乱IP.txt
+#ACT
+messagebox \　\你因恶意捣乱，已被系统禁止登陆
+SENDMSG 5 你因恶意捣乱，已被系统禁止登陆
+KICK
+break
+
+
+#IF
+CHECKIPLIST ..\QuestDiary\数据\禁止登陆IP.txt
+#ACT
+messagebox \　\你的号因违反游戏规则，被暂时禁止登陆游戏\　
+SENDMSG 5 你的号因违反游戏规则，被暂时禁止登陆游戏
+addnamelist ..\QuestDiary\数据\禁止登陆-其他.txt
+KICK
+
+
+#IF
+CHECKIPLIST ..\QuestDiary\数据\禁止登陆加速IP.txt
+#ACT
+messagebox \　\你因使用了非法加速软件，已被系统禁止登陆\　\注意：同一IP上有一个号作弊，整个IP上的所有号全部封号处理....
+SENDMSG 7 〖公告〗:你因使用了非法加速软件，已被系统禁止登陆
+SENDMSG 7 〖公告〗:注意：同一IP上有一个号作弊，整个IP上的所有号全部封号处理....
+addnamelist ..\QuestDiary\数据\禁止登陆-加速.txt
+KICK
+
+#IF
+CHECKIPLIST ..\QuestDiary\数据\禁止登陆骗子IP.txt
+#ACT
+messagebox 你的号被举报为骗子，联系QQ：271186388或379698800咨询
+SENDMSG 5 你的号被举报为骗子，联系QQ：271186388或379698800咨询，给您带来不便请谅
+addnamelist ..\QuestDiary\数据\禁止登陆-骗子.txt
+KICK
+
+
+#IF
+CHECKIPLIST ..\QuestDiary\数据\禁止登陆脱机IP.txt
+#ACT
+messagebox \　\你因使用了非法脱机软件，已被禁止登陆\　\注意：同一IP上有一个号作弊，整个IP上的所有号全部封号处理....
+SENDMSG 7 〖公告〗:你因使用了非法脱机软件，已被系统禁止登陆
+SENDMSG 7 〖公告〗:现在清空你人物上的金币和元宝做为惩罚
+SENDMSG 7 〖公告〗:注意：同一IP上有一个号作弊，整个IP上的所有号全部封号处理....
+addnamelist ..\QuestDiary\数据\禁止登陆-脱机.txt
+KICK
+}

@@ -1,0 +1,14 @@
+[@MAIN]
+#IF
+EQUAL A78 已完成
+#ACT
+Break
+#ElseAct
+set [166] 1
+SENDMSG 0 恭喜玩家[<$USERNAME>]:击杀死了魔界天珠[精英]..完成首杀奖励！！！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]:击杀死了魔界天珠[精英]..完成首杀奖励！！！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]:击杀死了魔界天珠[精英]..完成首杀奖励！！！！
+SENDMSG 0 恭喜玩家[<$USERNAME>]:击杀死了魔界天珠[精英]..完成首杀奖励！！！！
+Break
+
+

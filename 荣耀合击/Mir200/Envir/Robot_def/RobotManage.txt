@@ -1,0 +1,351 @@
+
+[@gm005装备求购脚本RM加载]
+#CALL [\gm005装备求购配置(免费脚本群.101529177)\gm005装备求购脚本.txt] @gm005装备求购脚本RM
+
+
+[@Mir2m2组队擂台脚本RM加载]
+#CALL [\Mir2m2组队擂台配置(免费脚本群.101529177)\Mir2m2组队擂台脚本RM.txt] @Mir2m2组队擂台脚本RM
+[@Mir2m2单挑擂台脚本RM加载]
+#CALL [\Mir2m2单挑擂台配置(免费脚本群.101529177)\Mir2m2单挑擂台脚本RM.txt] @Mir2m2单挑擂台脚本RM
+
+[@自动修装备]
+#IF
+#act
+Gmexecute 开始提问 @xiuzb
+
+
+
+[@监狱脚本]
+#IF
+#ACT
+Gmexecute 开始提问 @传送监狱
+
+
+
+
+
+;此脚为机器人专用脚本，用于机器人处理功能用的脚本。
+
+[@每日清理]
+#IF
+#ACT
+INC G90 1
+CLEARNAMELIST ..\QuestDiary\数据文件\沙老大名单.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\数据文件\行会领取奖励1.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\数据文件\行会领取奖励2.txt HardDisk
+CLEARNAMELIST ..\QuestDiary\数据文件\行会领取奖励3.txt HardDisk
+BREAK
+
+[@拿沙申请]
+#IF
+LARGE G90 1
+#ACT
+Gmexecute AddToCastleWarList 0 *
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 253 255 300
+BREAK
+[@新手大乱斗]
+#IF
+EQUAL g16 0
+#ACT
+MOV G16 1
+BREAK
+[@新手活动计时]
+#IF
+EQUAL g16 1
+#ACT
+SENDMSG 0  ★新区【新手大乱斗】关闭了★请等待下个新区开放.谢谢大家的支持 251 249 60
+SENDMSG 0 ┌────┐┌─────────────────────┐ 242 4 
+SENDMSG 0 │关闭提示││新手大乱斗地图已关闭－再次开启期待下个新区│ 242 4 
+SENDMSG 0 └────┘└─────────────────────┘ 242 4 
+MOV G16 2
+Gmexecute 集体传送 xsdld 0159
+BREAK
+
+
+
+
+[@新区活动]
+#IF
+EQUAL G20 0
+#ACT
+Gmexecute 开始提问 @新区活动传送
+MONGENEX dituhao 20 23 必爆人民币  1  1  1
+SENDMSG 0  ★新区【必爆活动】正式开始！！！必爆人民币卷、机会难得！ 251 249 60
+SENDMSG 0  ★新区【必爆活动】正式开始！！！必爆人民币卷、机会难得！ 251 249 60
+SENDMSG 0 ┌────┐┌────────────────────┐ 242 4 
+SENDMSG 0 │必爆活动││(BOSS·必爆教主)已登陆战场!兄弟们,战斗吧│ 242 4 
+SENDMSG 0 └────┘└────────────────────┘ 242 4 
+MOV G20 1
+MOV G21 30
+BREAK
+
+[@新区活动计时]
+#IF
+EQUAL G20 1
+#ACT
+DEC G21 1
+
+#IF
+EQUAL G21 1
+#ACT
+SENDMSG 0  ★新区【必爆活动】结束了★请等待下个新区开放.谢谢大家的支持 251 249 60
+SENDMSG 0 ┌────┐┌────────────────────┐ 242 4 
+SENDMSG 0 │关闭提示││必爆活动地图已关闭－再次开启期待下个新区│ 242 4 
+SENDMSG 0 └────┘└────────────────────┘ 242 4 
+MOV G20 2
+MOV G21 0
+Gmexecute 集体传送 dituhao 0159
+ClearMapMon dituhao
+BREAK
+
+
+
+
+[@安全区刷怪]
+#IF
+CHECKRANGEMONCOUNT 0 329 267 12 < 0
+#ACT
+PARAM1 0
+PARAM2 329
+PARAM3 267
+MONGEN 鹿  1 12
+MONGEN 稻草人  3 12
+
+
+
+[@游戏说明]
+#IF
+#ACT
+SendScrollMsg 独家金币合击传奇温馨提示：如果不能正常游戏。请重新打开或下载登陆器。 251 191
+SendScrollMsg 为所有玩家提供一个公平、公正的游戏环境，希望大家玩的开心！玩的愉快！ 251 191
+SendScrollMsg 正式开区游戏内私聊你要一起玩，然后索要你QQ或微信联系方式说什么以后一起玩的都是骗子，请所有玩家勿上当受骗，加了你会以各种方式要求你去别的服然后盗取你的帐号信息。  251 191
+SendScrollMsg 温馨提示：如果不能正常游戏。请更新盛大最新客户端。天黑路滑，社会复杂，请玩家谨慎交易。游戏里通过私聊和你锁要帐号密码联系方式的都是骗子！ 251 191
+SendScrollMsg 本服魔龙教主以上BOSS均可以爆出终极装备.所有地图全部开放！  251 191
+SendScrollMsg 装备层次设置：沃玛-祖玛-赤月-魔龙-强化-战神-星王-荣耀（人民币回收）！本服所有装备全可爆出！真实人民币回收！  251 191
+SendScrollMsg 本服元宝比例1:30，网银赠送100%！新区测试区充值多送20%！ 251 191
+SendScrollMsg 正式开区游戏内私聊你要一起玩，然后索要你QQ或微信联系方式说什么以后一起玩的都是骗子，请所有玩家勿上当受骗，加了你会以各种方式要求你去别的服然后盗取你的帐号信息。  251 191
+SendScrollMsg 时间设置：攻城开始时间20点、攻城时长120分钟、清理死尸时间60秒、清理物品时间120秒；喝药间隔300毫秒以上(过快导致卡药)！ 251 191
+SendScrollMsg 攻沙奖励：根据双方攻城人数领取相应的人民币奖励，详情查看沙城奖励大使！ 251 191
+SendScrollMsg 正式开区游戏内私聊你要一起玩，然后索要你QQ或微信联系方式说什么以后一起玩的都是骗子，请所有玩家勿上当受骗，加了你会以各种方式要求你去别的服然后盗取你的帐号信息。  251 191
+BREAK
+
+
+
+[@坐庄游戏A]
+#IF
+EQUAL I12 0
+#ACT
+GMEXECUTE 开始提问 @抢庄开始
+INC I12 1
+BREAK
+#IF
+EQUAL I12 60
+#ACT
+GMEXECUTE 开始提问 @抢庄结束
+INC I12 1
+BREAK
+#IF
+EQUAL I12 61
+#ACT
+GMEXECUTE 开始提问 @下注开始
+INC I12 1
+BREAK
+#IF
+EQUAL I12 117
+#ACT
+GMEXECUTE 开始提问 @下注结束
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 118
+LARGE I64 0
+LARGE I65 0
+LARGE I66 0
+#ACT
+MOV I42 <$STR(I64)>
+MOV I43 <$STR(I65)>
+MOV I44 <$STR(I66)>
+MOV I45 <$STR(I42)>
+INC I45 <$STR(I43)>
+INC I45 <$STR(I44)>
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 118
+#ACT
+MOVR I42 6
+inc I42 1
+MOVR I43 6
+inc I43 1
+MOVR I44 6
+inc I44 1
+MOV I45 <$STR(I42)>
+INC I45 <$STR(I43)>
+INC I45 <$STR(I44)>
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 120
+#ACT
+GMEXECUTE 开始提问 @猜点开始
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 126
+#ACT
+GMEXECUTE 开始提问 @赌博结帐
+INC I12 1
+BREAK
+#IF
+EQUAL I12 128
+#ACT
+GMEXECUTE 开始提问 @赌博清零
+MOV I64 0
+MOV I65 0
+MOV I66 0
+MOV A34 无
+MOV I16 0
+MOV I17 0
+MOV I11 0
+MOV I13 0
+MOV I14 0
+MOV I31 0
+MOV I42 0
+MOV I43 0
+MOV I44 0
+MOV I45 0
+INC I12 1
+BREAK
+#IF
+EQUAL I12 130
+#ACT
+MOV A35 无
+MOV I12 0
+BREAK
+#IF
+#ACT
+INC I12 1
+BREAK
+
+[@坐庄游戏B]
+#IF
+#ACT
+MOV I18 0
+MOV I19 0
+MOV I15 130
+DEC I15 <$STR(I12)>
+MOV I11 <$STR(I13)>
+INC I11 <$STR(I14)>
+MOV I16 <$STR(I31)>
+INC I16 <$STR(I14)>
+DEC I16 <$STR(I13)>
+MOV I17 <$STR(I31)>
+INC I17 <$STR(I13)>
+DEC I17 <$STR(I14)>
+BREAK
+
+[@坐庄游戏C]
+#IF
+EQUAL I12 122
+EQUAL I42 <$STR(I43)>
+EQUAL I42 <$STR(I44)>
+#ACT
+MOV A34 豹子
+BREAK
+#IF
+EQUAL I12 122
+SMALL I45 11
+#ACT
+MOV A34 小
+BREAK
+#IF
+EQUAL I12 122
+LARGE I45 10
+#ACT
+MOV A34 大
+BREAK
+
+
+[@激情战场]
+#IF
+#ACT
+CLEARMAPMON AASSD
+MONGENEX AASSD 19  22 激情教主  1  1  1
+GMEXECUTE 开始提问 @激情战场A
+SENDMSG 0 激情教主出现在激情战场.这将会是哪位勇士的猎物，顶级装备就在眼前 251 249 20
+SENDMSG 0 激情教主出现在激情战场.这将会是哪位勇士的猎物，顶级装备就在眼前 251 249 20
+SENDMSG 0 激情教主出现在激情战场.这将会是哪位勇士的猎物，顶级装备就在眼前 251 249 20
+SENDMSG 0 激情教主出现在激情战场.这将会是哪位勇士的猎物，顶级装备就在眼前 251 249 20
+BREAK
+
+[@散人部落]
+#IF
+#ACT
+Gmexecute 清除怪物 srbl 惊喜哥哥  0
+Gmexecute 清除怪物 srbl 惊喜哥哥8  0
+Gmexecute 清除怪物 srbl 惊喜哥哥1  0
+Gmexecute 清除怪物 srbl 惊喜哥哥0  0
+
+
+
+
+MONGENEX srbl 186  252 惊喜哥哥  100  2  0
+MONGENEX srbl 185  253 惊喜哥哥8  100  4  0
+MONGENEX srbl 181  256 惊喜哥哥1  100  6  0
+MONGENEX srbl 177  252 惊喜哥哥0  100  8  0
+SENDMSG 0 散人部落出现大量‘惊喜哥哥’这将会是哪位勇士的猎物，超多惊喜等你来争夺！ 251 249 20
+SENDMSG 0 散人部落出现大量‘惊喜哥哥’这将会是哪位勇士的猎物，超多惊喜等你来争夺！ 251 249 20
+SENDMSG 0 散人部落出现大量‘惊喜哥哥’这将会是哪位勇士的猎物，超多惊喜等你来争夺！ 251 249 
+SENDMSG 0 散人部落出现大量‘惊喜哥哥’这将会是哪位勇士的猎物，超多惊喜等你来争夺！ 251 249 
+BREAK
+
+
+
+[@行会战场]
+#IF
+#ACT
+MOV G15 1
+Gmexecute 开始提问 @行会窗口
+SENDMSG 0 ┌──────────────────────────┐ 1 242 
+SENDMSG 0 │　　　公告【行会BOSS地图】活动现在正式开始进入　　　│ 1 242 
+SENDMSG 0 │　　　　　　　　　　　　　　　　　　　　　　　　　　│ 1 242 
+SENDMSG 0 │　　　　　　　　各位勇士带好补给进入　　　　　　　　│ 1 242
+SENDMSG 0 │　　　　　　　　　　　　　　　　　　　　　　　　　　│ 1 242  
+SENDMSG 0 │　　　　→→→十分钟后[BOSS]登陆战场←←←　　　　　│ 1 242 
+SENDMSG 0 └──────────────────────────┘ 1 242 
+BREAK
+
+[@战场刷怪]
+#IF
+#ACT
+ClearMapMon E1
+PARAM1 E1
+PARAM2 20
+PARAM3 23
+MONGEN 行会·终极魔王 1 0
+SENDMSG 0 ┌────┐┌────────────────────┐ 242 4 
+SENDMSG 0 │行会战场││(行会·终极魔王)已登陆战场!成员们,虐杀吧│ 242 4 
+SENDMSG 0 └────┘└────────────────────┘ 242 4 
+BREAK
+
+[@行会结束]
+#IF
+#ACT
+MOV G15 0
+Gmexecute 集体传送 E1 0159
+ClearMapMon E1
+SENDMSG 0 ┌────┐┌────────────────────┐ 242 4 
+SENDMSG 0 │关闭提示││行会BOSS地图已关闭－明晚22:20分.再次开启│ 242 4 
+SENDMSG 0 └────┘└────────────────────┘ 242 4 
+BREAK
+
+

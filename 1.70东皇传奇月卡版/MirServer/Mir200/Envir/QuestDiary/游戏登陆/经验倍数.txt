@@ -1,0 +1,41 @@
+[@经验]
+{
+#if
+checklevelex < 10
+#act
+Gmexecute 禁言 self 10000
+sendmsg 7 提示：等级达到10级自动解除禁言!
+
+#IF
+CHECKLEVELEX < 22
+#ACT
+KILLMONEXPRATE 1000 600000
+break
+
+#IF
+CHECKLEVELEX < 30
+#ACT
+KILLMONEXPRATE 800 600000
+break
+
+#IF
+CHECKLEVELEX < 35
+#ACT
+KILLMONEXPRATE 500 600000
+break
+
+#IF
+CHECKLEVELEX < 40
+#ACT
+KILLMONEXPRATE 300 600000
+break
+
+#IF
+CHECKLEVELEX = 48
+#ACT
+ChangeExp = 0
+sendmsg 6 提示：46级后限制经验,上线会清理经验值!
+sendmsg 6 提示：46级后限制经验,上线会清理经验值!
+sendmsg 6 提示：46级后限制经验,上线会清理经验值!
+break
+}

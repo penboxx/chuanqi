@@ -1,0 +1,39 @@
+[@main]
+<COLOR=clFuchsia ------------------------------------------------------------>\
+<COLOR=clAqua 【七界秘境】><COLOR=clRed Hot~>   <COLOR=$00FF92 ≡≡><COLOR=$00FFF8 ２０２０><COLOR=$00F5FF 年><COLOR=$00E4FF 最><COLOR=$00D3FF 新><COLOR=$00C2FF 独><COLOR=$00B1FF 家><COLOR=$00FFA3 金><COLOR=$00FFB4 币><COLOR=$00FFD6 合><COLOR=$00FFE7 擊><COLOR=$00A0FF 版><COLOR=$0079FF 本≡≡>\
+<COLOR=clFuchsia ------------------------------------------------------------>\
+相传七界秘境共分为七界，每界秘境都有守护BOSS！ \
+七界秘境为单刷副本，每深下一层都会获得大量经验！ \
+传说中的守护BOSS更有机会或的荣誉值！  \
+\<COLOR=clFuchsia ♀.进入条件：48级+50元宝>    \
+<COLOR=clFuchsia ------------------------------------------------------------>\\
+
+
+　　　　　　　　　　　〖<鬼界秘境/@jin>〗
+
+
+
+
+[@jin]
+#if
+CHECKRANGEMONCOUNT yjmj 25 25 50 > 0
+#act
+MESSAGEBOX 进入失败原因：地图内还有怪物需要清理！
+break
+#if
+checkgamegold > 49
+#act
+gamegold - 50
+ClearMapMon gjmj
+map gjmj
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[鬼界秘境]挑战未知的世界！ 31  249 
+SENDMSG 0 伟大的玛法勇士[%s]闯入七界秘境副本进入了[鬼界秘境]挑战未知的世界！ 
+ChangeExp + 200000
+MONGENEX gjmj 15 14 鬼界·尸魔  1  1
+MONGENEX gjmj 15 14 秘境月魔  5  5
+KillScTimer 2
+SetScTimer 2 1800
+break
+#ELSEACT
+MESSAGEBOX 进入失败原因：元宝需要50！
+break

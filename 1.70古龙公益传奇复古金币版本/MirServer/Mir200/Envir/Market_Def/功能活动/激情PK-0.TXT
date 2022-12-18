@@ -1,0 +1,11 @@
+[@main]
+PK场由于远离玛法大陆，所以不受国王管辖！\
+在那里面杀人是不犯法的，你想进去玩玩吗？\
+<COLOR=clFuchsia ★★★><COLOR=clLime PK不犯法,而且每4个小时还会刷新一个复古BOSS> <COLOR=clFuchsia ★★★>\
+<COLOR=clFuchsia ★★★><COLOR=clLime 要想获得“技能神石”必须消灭复古教主!!!!!!> <COLOR=clFuchsia ★★★>\
+<COLOR=clFuchsia ★★★><COLOR=clLime 怪物爆率也是极其高,请玩家不要单独前往除魔!> <COLOR=clFuchsia ★★★>\ \ \
+<进入激情PK场/@jingru>                <我怕，不敢去！/@exit>\
+
+[@jingru]
+#act
+map jqpk
