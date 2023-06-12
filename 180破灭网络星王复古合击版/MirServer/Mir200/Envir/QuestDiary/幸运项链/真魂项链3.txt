@@ -1,0 +1,80 @@
+[@真魂项链3]
+{
+#IF
+random 100
+#act
+GAMEGOLD - 3000
+UPGRADEITEMEX 3 1 0 1 0
+Mov m22 1
+Mov s22 真魂项链
+#Call [\\幸运项链\暴击4-5.txt] @暴击5
+BREAK
+
+#IF
+random 30
+#act
+GAMEGOLD - 3000
+UPGRADEITEMEX 3 1 0 1 0
+Mov m22 1
+Mov s22 真魂项链
+#Call [\\幸运项链\暴击4-5.txt] @暴击4
+BREAK
+
+#IF
+random 15
+#act
+GAMEGOLD - 3000
+UPGRADEITEMEX 3 1 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将真魂项链升级成功，暴击额外+3。
+BREAK
+
+#IF
+random 8
+#act
+GAMEGOLD - 3000
+UPGRADEITEMEX 3 1 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将真魂项链升级成功，暴击额外+2。
+BREAK
+
+#IF
+random 4
+#act
+GAMEGOLD - 3000
+UPGRADEITEMEX 3 1 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将真魂项链升级成功，暴击额外+1。
+BREAK
+
+#IF
+random 3
+#act
+GAMEGOLD - 3000
+MESSAGEBOX 非常抱歉您的真魂项链升级失败
+BREAK
+
+#IF
+random 2
+#act
+GAMEGOLD - 3000
+MESSAGEBOX 非常抱歉您的真魂项链升级失败
+BREAK
+
+#IF
+random 1
+#act
+GAMEGOLD - 3000
+MESSAGEBOX 非常抱歉您的真魂项链升级失败
+BREAK
+
+#IF
+random
+#act
+GAMEGOLD - 3000
+MESSAGEBOX 非常抱歉您的真魂项链升级失败
+BREAK
+}

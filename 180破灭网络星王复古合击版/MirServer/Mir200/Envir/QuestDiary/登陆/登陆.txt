@@ -1,0 +1,80 @@
+[@DL]
+{
+#If
+CheckNameList ..\QuestDiary\封IP文件\过滤处理.txt
+#Act
+MESSAGEBOX 你已经违反游戏规则,请速度联系管理QQ:412280488\1.偷盗他人游戏物品.\2.恶意造谣.\3.广告.\4.侮辱管理员.\5.脱机.\6.加速
+;KICK
+Mov p1 1
+
+#IF
+CHECKIPLIST ..\QuestDiary\封IP文件\禁止登陆IP.txt
+#ACT
+addnamelist ..\QuestDiary\封IP文件\禁止登陆.txt
+MESSAGEBOX 你已经违反游戏规则,请速度联系管理QQ:412280488\1.偷盗他人游戏物品.\2.恶意造谣.\3.广告.\4.侮辱管理员.\5.脱机.\6.加速
+;KICK
+
+#IF
+checknamelist ..\QuestDiary\封IP文件\脱机封号名单.txt
+#ACT
+MESSAGEBOX 你已经违反游戏规则,请速度联系管理QQ:412280488\1.偷盗他人游戏物品.\2.恶意造谣.\3.空白名字.\4.侮辱管理员.\5.脱机.\6.加速
+;KICK
+
+
+#iF
+CHECKBONUSPOINT > 0
+Small p1 1
+#Act
+;KICK
+#If
+Large $MAXDC 200
+Small p1 1
+#Act
+;KICK
+#If
+Large $MAXMC 300
+Small p1 1
+#Act
+;KICK
+#If
+Large $MAXSC 200
+Small p1 1
+#Act
+;KICK
+#If
+CheckGameGold > 199999999
+Small p1 1
+#Act
+;KICK
+
+#IF
+ISCASTLEMASTER
+#ACT
+SENDMSG 1 沙巴克城城主〖%s〗进入游戏中！！！
+CHANGENAMECOLOR 249
+
+
+
+
+#IF
+ISNEWHUMAN
+#ACT
+GIVE 魔血石(大) 2
+GIVE 随机传送石 1
+TAKEON 木剑 1
+TAKEON 布衣(男) 0
+TAKEON 布衣(女) 0
+GIVE 在线回收(10次) 1
+GIVE 首充礼包 1
+MESSAGEBOX 凡是空白名字,带空白符号,带特殊符号,无论是否充值,一律删号处理,不解释\凡是空白名字,带空白符号,带特殊符号,无论是否充值,一律删号处理,不解释\凡是空白名字,带空白符号,带特殊符号,无论是否充值,一律删号处理,不解释
+SENDMSG 0  ★★★★欢迎新人[<$USERNAME>]加入游戏,[<$SERVERNAME>]又多了一份激情★★★★ 251 249
+SENDMSG 0  ★★★★欢迎新人[<$USERNAME>]加入游戏,[<$SERVERNAME>]又多了一份激情★★★★ 251 249
+Break
+
+
+#IF
+CheckLevelex > 35
+#ACT
+SENDMSG 0 ★★★★欢迎〖%s〗登陆[<$SERVERNAME>]，打造2015年破灭网络品牌星王合击!  151 219
+SENDMSG 0 ★★★★欢迎〖%s〗登陆[<$SERVERNAME>]，打造2015年破灭网络品牌星王合击!  151 219
+}

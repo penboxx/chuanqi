@@ -1,0 +1,158 @@
+[@FH]
+{
+
+
+
+
+
+
+#IF
+equal A22 <$USERNAME>
+#ACT
+MOV S19 ━━━━━━【男爵】━━━━━━\
+AbilityAdd 4 5 65535
+AbilityAdd 5 5 65535
+AbilityAdd 6 5 65535
+SENDMSG 0 热烈欢迎【%s】进入游戏，当前爵位[━━━━━━【男爵】━━━━━━] 251 249 15
+
+#IF
+gender man 
+equal A41 <$USERNAME>
+#ACT
+AbilityAdd 4 20 65535
+AbilityAdd 5 20 65535
+AbilityAdd 6 20 65535
+MOV S38 ━━━━━━【国王】━━━━━━\
+SENDMSG 0 热烈欢迎【%s】进入游戏，当前爵位[━━━━━━【国王】━━━━━━] 251 249 15
+
+#IF
+gender woman
+equal A41 <$USERNAME>
+#ACT
+MOV S38 ━━━━━━【国王】━━━━━━\
+AbilityAdd 4 6 65535
+AbilityAdd 5 6 65535
+AbilityAdd 6 6 65535
+SENDMSG 0 热烈欢迎【%s】进入游戏，当前爵位[━━━━━━【国王】━━━━━━] 251 249 15
+
+#IF
+equal A42 <$USERNAME>
+#ACT
+MOV S38 ━━━━━━【公爵】━━━━━━\
+AbilityAdd 4 10 65535
+AbilityAdd 5 10 65535
+AbilityAdd 6 10 65535
+SENDMSG 0 %s上线了,大家热烈欢呼吧..[━━━━━━【公爵】━━━━━━] 251 249 15
+
+#IF
+equal A43 <$USERNAME>
+#ACT
+MOV S38 ━━━━━━【侯爵】━━━━━━\
+AbilityAdd 4 8 65535
+AbilityAdd 5 8 65535
+AbilityAdd 6 8 65535
+SENDMSG 0 %s上线了,大家热烈欢呼吧..[━━━━━━【侯爵】━━━━━━] 251 249 15
+
+#IF
+equal A44 <$USERNAME>
+#ACT
+MOV S38 ━━━━━━【伯爵】━━━━━━\
+AbilityAdd 4 7 65535
+AbilityAdd 5 7 65535
+AbilityAdd 6 7 65535
+SENDMSG 0 %s上线了,大家热烈欢呼吧..[━━━━━━【伯爵】━━━━━━] 251 249 15
+
+#IF
+equal A45 <$USERNAME>
+#ACT
+MOV S38 ━━━━━━【子爵】━━━━━━\
+AbilityAdd 4 6 65535
+AbilityAdd 5 6 65535
+AbilityAdd 6 6 65535
+SENDMSG 0 %s上线了,大家热烈欢呼吧..[━━━━━━【子爵】━━━━━━] 251 249 15
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#IF
+ISCASTLEMASTER
+#ACT
+SendScrollMsg 号令天下的沙城主『<$USERNAME>』进入了<$SERVERNAME>! 255 245
+SENDMSG 0 号令天下沙城主：『<$USERNAME>』进入了：<$SERVERNAME>! 255 245 60
+SENDMSG 0 号令天下沙城主：『<$USERNAME>』进入了：<$SERVERNAME>! 255 245 60
+SENDMSG 0 号令天下沙城主：『<$USERNAME>』进入了：<$SERVERNAME>! 
+SENDMSG 0 号令天下沙城主：『<$USERNAME>』进入了：<$SERVERNAME>! 
+SENDMSG 0 号令天下沙城主：『<$USERNAME>』进入了：<$SERVERNAME>! 
+MOV S2 沙城主
+CHANGENAMECOLOR 249
+POWERRATE 120 18000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#IF
+CHECKNAMELIST ..\QuestDiary\数据文件\群英名单.txt
+#ACT
+MOV S4 ◥■■■武■■■◤\◥■■林■■◤\◥■霸■◤\◥主◤\武林霸主
+SENDMSG 0 [武林霸主]⊙[%s]进入游戏!! 
+
+#IF
+checklevelex > 0
+#ACT
+SETRANKLEVELNAME %s\<$STR(S2)>\<$STR(S1)>\<$STR(S3)>\<$STR(S4)>
+
+
+
+
+
+
+
+
+
+
+
+}

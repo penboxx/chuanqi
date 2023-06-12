@@ -1,0 +1,129 @@
+(@@InPutInteger @@InPutString )
+[@main]
+拥有无与伦比的力量之外，更暗含着某种<COLOR=clLime 神秘特权属性> \
+<注意:捐助完了后，需要小退再上才可以享受爵位超级属性> \
+<注意:每天清理一次都在晚上24点清理> \
+<COLOR=clRed 第一名><COLOR=clAqua (属性增加20-20)→> <COLOR=clLime [国王]>:<$STR(A41)>        <COLOR=clFuchsia 捐助数量><$STR(G31)> \
+<COLOR=clRed 第二名><COLOR=clAqua (属性增加10-10)→> <COLOR=clLime [公爵]>:<$STR(A42)>        <COLOR=clFuchsia 捐助数量><$STR(G32)> \
+<COLOR=clRed 第三名><COLOR=clAqua (属性增加8-8)→> <COLOR=clLime   [侯爵]>:<$STR(A43)>        <COLOR=clFuchsia 捐助数量><$STR(G33)> \
+<COLOR=clRed 第四名><COLOR=clAqua (属性增加7-7)→> <COLOR=clLime   [伯爵]>:<$STR(A44)>        <COLOR=clFuchsia 捐助数量><$STR(G34)> \
+<COLOR=clRed 第五名><COLOR=clAqua (属性增加6-6)→> <COLOR=clLime   [子爵]>:<$STR(A45)>        <COLOR=clFuchsia 捐助数量><$STR(G35)> \
+<COLOR=clRed 第六名><COLOR=clAqua (属性增加5-5)→> <COLOR=clLime   [男爵]>:<$STR(A22)>        <COLOR=clFuchsia 捐助数量><$STR(G40)> \
+　　　　<我要捐助/@我要捐助>       <COLOR=clAqua 您当前捐助元宝>[<$HUMAN(YBJZ)>]\
+
+
+;VAR INTEGER HUMAN YBJZ
+;LOADVAR HUMAN YBJZ ..\QuestDiary\重要数据\YBJZSave.txt
+;变量 A41 A42 A43 A44 A45 A46
+;变量 G31 G32 G33 G34 G35 G40
+;变量 M36
+;最少捐献 5000元宝   替换5000 跟4999  为你想要的
+;变量 直接用字符替换器 替换
+
+[@我要捐助]
+使用说明:在输入框内输入<捐助数量>\
+每次捐助最少为100元宝！\   \
+<输入要捐助的数量/@@InPutInteger36>
+[@@InPutInteger36]
+#IF
+CHECKGAMEGOLD > 0
+#Act
+DelayGoto 1 @InPutInteger36
+#ELSEAct
+MessageBox 你的元宝数量不足！请冲值。
+[@InPutInteger36]
+#If
+CHECKGAMEGOLD > <$STR(M36)>
+LARGE M36 99
+#ACT
+GameGold - <$STR(M36)>
+mov G40 <$STR(M36)>
+INC G40 <$HUMAN(YBJZ)>
+mov A46 <$USERNAME>
+goto @mingdan
+#ELSEsay
+捐助的元宝数量必须大于100,或者你元宝数量不足.
+
+
+[@mingdan]
+#IF
+checknamelist ..\QuestDiary\重要数据\捐助名单.txt
+#ACT
+CALCVAR HUMAN YBJZ + <$STR(M36)>
+SAVEVAR HUMAN YBJZ ..\QuestDiary\重要数据\YBJZSave.txt
+#CALL [\\后台管理\捐助系统.txt] @捐助检测
+#elseact
+goto @canshu2
+
+[@canshu2]
+#ACT
+CALCVAR HUMAN YBJZ = <$STR(M36)>
+SAVEVAR HUMAN YBJZ ..\QuestDiary\重要数据\YBJZSave.txt
+addnamelist ..\QuestDiary\重要数据\捐助名单.txt
+#CALL [\\后台管理\捐助系统.txt] @捐助检测
+break
+
+[@paiming]
+　   <COLOR=clLime 爵位排名>                 <COLOR=clLime  累计捐助元宝> \
+<COLOR=clRed 第一名>(属性增加20-20)→ <COLOR=clLime [皇帝]>:<$STR(A41)>        所捐助数量<$STR(G31)> \
+<COLOR=clRed 第二名>(属性增加10-10)→ <COLOR=clLime [丞相]>:<$STR(A42)>        所捐助数量<$STR(G32)> \
+<COLOR=clRed 第三名>(属性增加8-8)→ <COLOR=clLime [将军]>:<$STR(A43)>        所捐助数量<$STR(G33)> \
+<COLOR=clRed 第四名>(属性增加7-7)→ <COLOR=clLime [七品]>:<$STR(A44)>        所捐助数量<$STR(G34)> \
+<COLOR=clRed 第五名>(属性增加6-6)→ <COLOR=clLime [九品]>:<$STR(A45)>        所捐助数量<$STR(G35)> \
+<COLOR=clRed 第六名>(属性增加5-5)→ <COLOR=clLime [地主]>:<$STR(A22)>        所捐助数量<$STR(G37)> \
+<查看是否在排名内/@检测地主>        您当前捐助元宝[<$HUMAN(YBJZ)>]\
+
+[@检测地主]
+#IF
+equal A41 <$USERNAME>
+#say
+您好,【国王】阁下,您现在享受的是多加6-6的攻击伤害的神秘特权属性`!
+#ACT
+break
+#IF
+equal A42 <$USERNAME>
+#say
+您好,【公爵】阁下,您现在享受的是多加5-5的攻击伤害的神秘特权属性`!，
+#ACT
+break
+#IF
+equal A43 <$USERNAME>
+#say
+您好,【侯爵】阁下,您现在享受的是多加4-4的攻击伤害的神秘特权属性`!，
+#ACT
+break
+#IF
+equal A44 <$USERNAME>
+#say
+您好,【伯爵】阁下,您现在享受的是多加3-3的攻击伤害的神秘特权属性`!
+#ACT
+break
+#IF
+equal A45 <$USERNAME>
+#say
+您好,【子爵】阁下,您现在享受的是多加2-2的攻击伤害的神秘特权属性`!
+#ACT
+break
+#IF
+equal A47 <$USERNAME>
+#say
+您好,【男爵】阁下,您现在享受的是多加1-1的攻击伤害的神秘特权属性`!
+#ACT
+break
+#IF
+#say
+你好，，你未进入排名，
+#ACT
+break
+
+[@shuomin]
+<COLOR=cllime 第一名:上线攻魔道+(6-6)>\
+<COLOR=cllime 第二名:上线攻魔道+(5-5)>\
+<COLOR=cllime 第三名:上线攻魔道+(4-4)>\
+<COLOR=clYellow 第四名:上线攻魔道+(3-3)>\
+<COLOR=clYellow 第五名:上线攻魔道+(2-2)>\
+<COLOR=clYellow 第六名:上线攻魔道+(1-1)>\
+<COLOR=clSkyBlue 每次捐献必须大于100元宝以上，封号自动排名！>\
+<返回/@main>
+
+;-b--b--Q- Q---156 598018---

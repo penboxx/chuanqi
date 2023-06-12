@@ -1,0 +1,87 @@
+()
+%100
+[@main]
+<COLOR=clAqua    ◆≯>                         <COLOR=clFuchsia 兄弟们，><纪律+速度+团结，冲啊！！！>\
+<COLOR=clAqua o︻§■〓〓〓〓■〓〓〓〓〓〓█◣>\
+<COLOR=clAqua o︻§■〓〓〓〓■〓〓〓〓〓〓█◤>   <原生态战歌/@战歌>\\
+<COLOR=clAqua    ◆≯>　\
+ <COLOR=clAqua ╔══════════════════════════╗> \
+ <COLOR=clAqua ‖><COLOR=clLime 提示：为了体现攻城神速，特设此快捷功能方便收费10元宝><COLOR=clAqua ‖> \
+ <COLOR=clAqua ┠══════════════════════════┨>\
+ <COLOR=clAqua ‖><沙城武器店/@ns1><COLOR=clAqua ‖‖><沙城首饰店/@ns2><COLOR=clAqua ‖‖><沙城正大门/@ns3><COLOR=clAqua ‖‖><沙城复活点/@ns4><COLOR=clAqua ‖>\
+ <COLOR=clAqua ╚═════╝╚═════╝╚═════╝╚═════╝>\\
+ 
+[@ns1]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE 3 638 309
+BREAK
+[@ns2]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE 3 663 286
+BREAK
+[@ns3]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE 3 674 332
+BREAK
+[@ns4]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE 3 649 293
+BREAK
+[@ns5]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE H201 24 94
+BREAK
+[@冲进沙皇宫]
+#IF
+CHECKGAMEGOLD > 9
+#ACT
+GAMEGOLD - 10
+MAPMOVE 0150
+BREAK
+[@战歌21]
+<COLOR=clLime   ,--^^^-----------,--------,-----,----------------┸─┐>\
+<COLOR=clLime   |    |||||||||   `--------'     |                     O>\
+<COLOR=clLime   `+---------------------------^-----------------------┦>\
+<COLOR=clLime     `╮_,-----------,─────────────────╯>\
+<COLOR=clLime       / XXXXXXXXXX / ` |       |>\
+<COLOR=clLime      / XXXXXXXXXX /    `╲     |>\
+<COLOR=clLime     / XXXXXXXXXX /╰─────╯  >\
+<COLOR=clLime    / XXXXXXXXXX />\
+<COLOR=clLime   / XXXXXXXXXX />\
+<COLOR=clLime  (____________(>\
+<COLOR=clLime   ╰----------'>\  
+[@战歌]
+                    傳奇...燃烧的沙巴克城\
+遥忆昔日传奇梦.剑影刀光杀气浓.兄弟情深悲欢共.夫妻恩爱生死同\
+杀猫永恒出新村.斩妖除魔入盟重.近观绿涛汇碧海.远眺青山有苍松\
+也曾毒谷遭蛇吻.也曾矿区做苦工.也曾惊喜暴神兵.也曾郁闷砍蛆虫\
+熬到三五学神技.从此天下我英雄.初次攻城显身手.沙城遍地是蛟龙\ 
+道法施威电符猛.战士逞强火腾空.龙纹骨玉加裁决.众志成城铲皇宫\ 
+三更战罢有余悸.旷野处处闻哀鸿.为报友仇下祖玛.为雪妻恨清蜈蚣\ 
+哪有英雄怕诅咒.何来好汉惧红名.沙巴克里论成败.不做城主非英雄\
+　
+　　　　　　　　　是男人．就搞沙城   <上一页/@main>   <下一页/@战歌2>\
+[@战歌2]
+　　　<COLOR=clLime ╔┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╗>\
+　　　<COLOR=clLime ┊><COLOR=clAqua 为麻痹生.为护身死.为了屠龙奔波一辈子.> <COLOR=clLime ┊>\
+　　　<COLOR=clLime ┊><COLOR=clAqua 为记忆痴.为传送颠.为了龙牙血印被强歼.> <COLOR=clLime ┊>\
+　　　<COLOR=clLime ┊><COLOR=clAqua 为裁决疯.为谷玉狂.为了龙纹跟人去上床.> <COLOR=clLime ┊>\
+　　　<COLOR=clLime ┊><COLOR=clAqua 为天尊存.为法神亡.为了极品圣战去卖房.> <COLOR=clLime ┊>\
+　　　<COLOR=clLime ┊><COLOR=clAqua 为金砖苦.为新衣累.为了等级去跟 GM 睡.> <COLOR=clLime ┊>\
+　　　<COLOR=clLime ┊><COLOR=clAqua 吃传奇亏.上私服当.为了复活死在电脑上.> <COLOR=clLime ┊>\
+　　　<COLOR=clLime ╚┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╝>   <上一页/@战歌21> \

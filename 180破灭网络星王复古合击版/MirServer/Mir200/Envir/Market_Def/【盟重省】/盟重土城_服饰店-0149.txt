@@ -1,0 +1,17 @@
+
+
+
+
+(@buy @sell @repair @s_repair )
+%100
++10
++11
++15
++27
++28
+#INCLUDE 3dr.txt
+[@main]
+#ACT
+#CALL	[\Market\Market1.txt]		@Markets
+#CALL	[\Market\ายทþ.txt]		@0
+

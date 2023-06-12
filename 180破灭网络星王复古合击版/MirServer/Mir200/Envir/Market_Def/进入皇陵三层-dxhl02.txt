@@ -1,0 +1,7 @@
+()
+%100
+[@main]
+#act
+mapmove dxhl03
+SENDMSG 0 玩家[%s],进入地下皇陵三层,本地图BOSS为双倍爆率!
+break

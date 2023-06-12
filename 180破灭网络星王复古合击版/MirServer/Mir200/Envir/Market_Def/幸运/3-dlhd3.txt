@@ -1,0 +1,20 @@
+[@main]
+#if
+CheckRangeMonCount dlhd3 15 15 100 < 1
+#ACT
+goto @jin
+#ELSEACT
+messagebox 【提示】:【等你歼灭所有怪物你在来找我】
+
+[@jin]
+#if
+CHECKGAMEGOLD > 999
+#ACT
+GAMEGOLD - 1000 
+Param1 dlhd4
+Param2 25
+Param3 26
+MonGen 活动·黄龙 1 2
+mapmove dlhd4 16 14
+#ELSEACT
+messagebox 【提示】:【进入此地图需要1000元宝】

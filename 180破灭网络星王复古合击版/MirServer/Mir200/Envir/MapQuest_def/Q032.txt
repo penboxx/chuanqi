@@ -1,0 +1,5 @@
+[@MAIN]
+#IF
+#ACT
+Kill 2
+SendMsg 0 <$USERNAME>一不小心从天坑地缝掉下来摔得粉身碎骨!去地府见阎王去了!

@@ -1,0 +1,59 @@
+;ＷＷＷ.ＧＭ００５.ＣＯＭ  Ｑ Ｑ １５６５９８０１８
+;ＷＷＷ.ＧＭ００５.ＣＯＭ  Ｑ Ｑ １５６５９８０１８
+
+
+
+[@main]
+欢迎光临本店，被管理员所逼，在此卖太阳水包，请多多光顾！\ \
+<强效太阳包(1包)/@一包>:4元宝  <强效太阳包(6包)/@六包>:24元宝\ \ 
+<强效太阳捆(1捆)/@一捆>:25元宝 <强效太阳捆(6捆)/@六捆>:150元宝\ \
+<说明>:强效太阳捆包含6个强效太阳包，点开获取6个强效太阳包\ \
+　　　　　　　　　　　　　　　　　　　　　　　　<离开/@exit>
+
+[@一包]
+#IF
+CheckBagSize 1
+CHECKGAMEGOLD > 3
+#act
+GAMEGOLD - 4
+give 强效太阳包 1
+SENDMSG 6 购买成功
+#ELSESAY
+对不起元宝不够，包袱空格不够\ \ \ \ \
+　　　　　　　　　　　　　　　　　　　　　<返回/@main>
+
+[@六包]
+#IF
+CheckBagSize 6
+CHECKGAMEGOLD > 23
+#act
+GAMEGOLD - 24
+give 强效太阳包 6
+SENDMSG 6 购买成功
+#ELSESAY
+对不起元宝不够，包袱空格不够\ \ \ \ \
+　　　　　　　　　　　　　　　　　　　　　<返回/@main>
+
+[@一捆]
+#IF
+CheckBagSize 1
+CHECKGAMEGOLD > 24
+#act
+GAMEGOLD - 25
+give 强效太阳捆 1
+SENDMSG 6 购买成功
+#ELSESAY
+对不起元宝不够，包袱空格不够\ \ \ \ \
+　　　　　　　　　　　　　　　　　　　　　<返回/@main>
+
+[@六捆]
+#IF
+CheckBagSize 6
+CHECKGAMEGOLD > 149
+#act
+GAMEGOLD - 150
+give 强效太阳捆 6
+SENDMSG 6 购买成功
+#ELSESAY
+对不起元宝不够，包袱空格不够\ \ \ \ \
+　　　　　　　　　　　　　　　　　　　　　<返回/@main>

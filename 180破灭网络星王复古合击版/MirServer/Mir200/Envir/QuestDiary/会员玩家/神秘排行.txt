@@ -1,0 +1,236 @@
+[@神秘排行]
+{
+#IF
+EQUAL A21 <$USERNAME>
+SMALL G21 <$HUMAN(神秘屠杀)>
+#ACT
+MOV G21 <$HUMAN(神秘屠杀)>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第一名！ 56 255
+BREAK
+#IF
+SMALL G21 <$HUMAN(神秘屠杀)>
+EQUAL A22 <$USERNAME>
+#ACT
+MOV G22 <$STR(G21)>
+MOV A22 <$STR(A21)>
+MOV G21 <$HUMAN(神秘屠杀)>
+MOV A21 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第一名！ 56 255
+BREAK
+#IF
+SMALL G21 <$HUMAN(神秘屠杀)>
+EQUAL A23 <$USERNAME>
+#ACT
+MOV G23 <$STR(G22)>
+MOV A23 <$STR(A22)>
+MOV G22 <$STR(G21)>
+MOV A22 <$STR(A21)>
+MOV G21 <$HUMAN(神秘屠杀)>
+MOV A21 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第一名！ 56 255
+BREAK
+#IF
+SMALL G21 <$HUMAN(神秘屠杀)>
+EQUAL A24 <$USERNAME>
+#ACT
+MOV G24 <$STR(G23)>
+MOV A24 <$STR(A23)>
+MOV G23 <$STR(G22)>
+MOV A23 <$STR(A22)>
+MOV G22 <$STR(G21)>
+MOV A22 <$STR(A21)>
+MOV G21 <$HUMAN(神秘屠杀)>
+MOV A21 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第一名！ 56 255
+BREAK
+#IF
+SMALL G21 <$HUMAN(神秘屠杀)>
+EQUAL A25 <$USERNAME>
+#ACT
+MOV G25 <$STR(G24)>
+MOV A25 <$STR(A24)>
+MOV G24 <$STR(G23)>
+MOV A24 <$STR(A23)>
+MOV G23 <$STR(G22)>
+MOV A23 <$STR(A22)>
+MOV G22 <$STR(G21)>
+MOV A22 <$STR(A21)>
+MOV G21 <$HUMAN(神秘屠杀)>
+MOV A21 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第一名！ 56 255
+BREAK
+#IF
+SMALL G21 <$HUMAN(神秘屠杀)>
+#ACT
+MOV G25 <$STR(G24)>
+MOV A25 <$STR(A24)>
+MOV G24 <$STR(G23)>
+MOV A24 <$STR(A23)>
+MOV G23 <$STR(G22)>
+MOV A23 <$STR(A22)>
+MOV G22 <$STR(G21)>
+MOV A22 <$STR(A21)>
+MOV G21 <$HUMAN(神秘屠杀)>
+MOV A21 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第一名！ 56 255
+BREAK
+;---------------7
+#IF
+EQUAL A22 <$USERNAME>
+SMALL G22 <$HUMAN(神秘屠杀)>
+#ACT
+MOV G22 <$HUMAN(神秘屠杀)>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第二名！ 56 255
+BREAK
+#IF
+SMALL G22 <$HUMAN(神秘屠杀)>
+EQUAL A23 <$USERNAME>
+#ACT
+MOV G23 <$STR(G22)>
+MOV A23 <$STR(A22)>
+MOV G22 <$HUMAN(神秘屠杀)>
+MOV A22 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第二名！ 56 255
+BREAK
+#IF
+SMALL G22 <$HUMAN(神秘屠杀)>
+EQUAL A24 <$USERNAME>
+#ACT
+MOV G24 <$STR(G23)>
+MOV A24 <$STR(A23)>
+MOV G23 <$STR(G22)>
+MOV A23 <$STR(A22)>
+MOV G22 <$HUMAN(神秘屠杀)>
+MOV A22 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第二名！ 56 255
+BREAK
+#IF
+SMALL G22 <$HUMAN(神秘屠杀)>
+EQUAL A25 <$USERNAME>
+#ACT
+MOV G25 <$STR(G24)>
+MOV A25 <$STR(A24)>
+MOV G24 <$STR(G23)>
+MOV A24 <$STR(A23)>
+MOV G23 <$STR(G22)>
+MOV A23 <$STR(A22)>
+MOV G22 <$HUMAN(神秘屠杀)>
+MOV A22 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第二名！ 56 255
+BREAK
+#IF
+SMALL G22 <$HUMAN(神秘屠杀)>
+#ACT
+MOV G25 <$STR(G24)>
+MOV A25 <$STR(A24)>
+MOV G24 <$STR(G23)>
+MOV A24 <$STR(A23)>
+MOV G23 <$STR(G22)>
+MOV A23 <$STR(A22)>
+MOV G22 <$HUMAN(神秘屠杀)>
+MOV A22 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第二名！ 56 255
+BREAK
+;---------------8
+#IF
+EQUAL A23 <$USERNAME>
+SMALL G23 <$HUMAN(神秘屠杀)>
+#ACT
+MOV G23 <$HUMAN(神秘屠杀)>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第三名！ 56 255
+BREAK
+#IF
+SMALL G23 <$HUMAN(神秘屠杀)>
+EQUAL A24 <$USERNAME>
+#ACT
+MOV G24 <$STR(G23)>
+MOV A24 <$STR(A23)>
+MOV G23 <$HUMAN(神秘屠杀)>
+MOV A23 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第三名！ 56 255
+BREAK
+#IF
+SMALL G23 <$HUMAN(神秘屠杀)>
+EQUAL A25 <$USERNAME>
+#ACT
+MOV G25 <$STR(G24)>
+MOV A25 <$STR(A24)>
+MOV G24 <$STR(G23)>
+MOV A24 <$STR(A23)>
+MOV G23 <$HUMAN(神秘屠杀)>
+MOV A23 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第三名！ 56 255
+BREAK
+#IF
+SMALL G23 <$HUMAN(神秘屠杀)>
+#ACT
+MOV G25 <$STR(G24)>
+MOV A25 <$STR(A24)>
+MOV G24 <$STR(G23)>
+MOV A24 <$STR(A23)>
+MOV G23 <$HUMAN(神秘屠杀)>
+MOV A23 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第三名！ 56 255
+BREAK
+;---------------9
+#IF
+EQUAL A24 <$USERNAME>
+SMALL G24 <$HUMAN(神秘屠杀)>
+#ACT
+MOV G24 <$HUMAN(神秘屠杀)>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第四名！ 56 255
+BREAK
+#IF
+SMALL G24 <$HUMAN(神秘屠杀)>
+EQUAL A25 <$USERNAME>
+#ACT
+MOV G25 <$STR(G24)>
+MOV A25 <$STR(A24)>
+MOV G24 <$HUMAN(神秘屠杀)>
+MOV A24 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第四名！ 56 255
+BREAK
+#IF
+SMALL G24 <$HUMAN(神秘屠杀)>
+#ACT
+MOV G25 <$STR(G24)>
+MOV A25 <$STR(A24)>
+MOV G24 <$HUMAN(神秘屠杀)>
+MOV A24 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第四名！ 56 255
+BREAK
+;---------------10
+#IF
+EQUAL A25 <$USERNAME>
+SMALL G25 <$HUMAN(神秘屠杀)>
+#ACT
+MOV G25 <$HUMAN(神秘屠杀)>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第五名！ 56 255
+BREAK
+
+#IF
+SMALL G25 <$HUMAN(神秘屠杀)>
+EQUAL A26 <$USERNAME>
+#ACT
+MOV G26 <$STR(G25)>
+MOV A26 <$STR(A25)>
+MOV G25 <$HUMAN(神秘屠杀)>
+MOV A25 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第五名！ 56 255
+BREAK
+#IF
+SMALL G25 <$HUMAN(神秘屠杀)>
+#ACT
+MOV G26 <$STR(G25)>
+MOV A26 <$STR(A25)>
+MOV G25 <$HUMAN(神秘屠杀)>
+MOV A25 <$USERNAME>
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂时获得排行耪第五名！ 56 255
+BREAK
+;---------------11
+#IF
+#ACT
+SENDMSG 0 尊敬的玩家『<$USERNAME>』在神秘屠杀活动中共斩杀【<$HUMAN(神秘屠杀)>】人，暂未上耪！ 56 255
+break
+close
+}

@@ -1,0 +1,102 @@
+[@main]
+#if
+CheckRangeMonCount TT1 15 15 100 < 1
+#ACT
+goto @jin
+#ELSEACT
+messagebox 【提示】:【等你歼灭所有怪物你在来找我】
+
+
+[@jin]
+　\
+╔═══════════════════════════╗\
+║ <COLOR=clSKYBLUE   年清人!    我为你提供奖励为> <COLOR=clFuchsia  100W经验 + 随机装备一件>║\
+╚═══════════════════════════╝\
+╔═══════════════════════════╗\
+║<COLOR=clLime 领取奖励方式>  <①领取奖励进入下层/@001>   <②领取奖励返回土城/@002> ║\
+╚═══════════════════════════╝\
+
+
+[@001]
+#if
+CHECKGAMEGOLD > 599
+#ACT
+GAMEGOLD - 600 
+mapmove TT2 34 32
+CHANGEEXP + 1000000
+H.CHANGEEXP + 1000000
+Param1 tt2
+Param2 34
+Param3 32
+goto @奖励
+MonGen 玲珑宝塔守卫 1 1
+#ELSEACT
+messagebox 【提示】:【进入玲珑宝塔下层需要:600元宝~可获得200W经验+任意装备一件】
+
+
+[@002]
+#if
+#ACT 
+mapmove 3 333 333
+CHANGEEXP + 1000000
+H.CHANGEEXP + 1000000
+goto @奖励
+BREAK
+
+
+[@奖励]
+#if
+Random 10
+#ACT 
+ReadRandomStr .\QuestDiary\通天\雷霆.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 9
+#ACT 
+ReadRandomStr .\QuestDiary\通天\烈焰.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 8
+#ACT 
+ReadRandomStr .\QuestDiary\通天\光芒.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 7
+#ACT 
+ReadRandomStr .\QuestDiary\通天\怒斩.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 6
+#ACT 
+ReadRandomStr .\QuestDiary\通天\衣服.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 5
+#ACT 
+ReadRandomStr .\QuestDiary\通天\圣战.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 4
+#ACT 
+ReadRandomStr .\QuestDiary\通天\法神.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 3
+#ACT 
+ReadRandomStr .\QuestDiary\通天\天尊.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 1
+#ACT 
+ReadRandomStr .\QuestDiary\通天\武器.txt S1
+give <$STR(S1)> 1
+BREAK
+

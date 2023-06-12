@@ -1,0 +1,80 @@
+[@main]
+#IF
+ISADMIN
+#SAY
+<开启纪录帐号/@开启>
+#ELSESAY
+╔═╦═══════<COLOR=clFuchsia ★★测试奖励★★>═════════╗\
+║<COLOR=clLime 测>║<如果你参与过测试区180星王合击测试区.在测试期间>║\
+║<COLOR=clLime 试>║<等级若达到以下要求，那么正式开区即可在此领取奖励>║\
+║<COLOR=clLime 奖>║<COLOR=clAqua 测试区玩家等级达到><48><COLOR=clAqua 级，正式开区在此领奖><1000><COLOR=clAqua 元宝>║\
+║<COLOR=clLime 励>║<COLOR=clAqua 测试区玩家等级达到><50><COLOR=clAqua 级，正式开区在此领奖><2000><COLOR=clAqua 元宝>║\
+║<COLOR=clLime 员>║<COLOR=clAqua 测试区玩家等级达到><52><COLOR=clAqua 级，正式开区在此领奖><3000><COLOR=clAqua 元宝>║\
+╠═╝<COLOR=clAqua 测试区玩家等级达到><55><COLOR=clAqua 级，正式开区在此领奖><5000><COLOR=clAqua 元宝>║\
+║<注意:正式开区后.领取测试奖励账号要与测试阶段账号一致>║\
+╚═════════<[领取测试区奖励]/@领取测试奖励>═════════╝\
+
+[@开启]
+#ACT
+MOV G0 1
+SENDMSG 5 已经开启记录帐号了!
+
+
+
+[@领取测试奖励]
+#if
+equal G0 1
+#SAY
+测试区等级达到后，请正式开区后再来找我吧！\    \测试区等级达到后，请正式开区后再来找我吧！\    \测试区等级达到后，请正式开区后再来找我吧！\    \测试区等级达到后，请正式开区后再来找我吧！
+#act
+BREAK
+
+#if
+equal G0 0
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\48级测试奖励.txt
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\48级测试奖励.txt
+GAMEGOLD + 1000
+SENDMSG 0 恭喜[<$USERNAME>]领取了48级测试奖励[1000元宝] 253 11
+SENDMSG 0 恭喜[<$USERNAME>]领取了48级测试奖励[1000元宝] 252 255 5
+BREAK
+#ELSESAY
+对不起！您没有参加测试资格或已经领取！\
+
+#if
+equal G0 0
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\50级测试奖励.txt
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\50级测试奖励.txt
+GAMEGOLD + 2000
+SENDMSG 0 恭喜[<$USERNAME>]领取了50级测试奖励[2000元宝] 253 11
+SENDMSG 0 恭喜[<$USERNAME>]领取了50级测试奖励[2000元宝] 252 255 5
+BREAK
+#ELSESAY
+对不起！您没有参加测试资格或已经领取！\
+
+
+#if
+equal G0 0
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\52级测试奖励.txt
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\52级测试奖励.txt
+GAMEGOLD + 3000
+SENDMSG 0 恭喜[<$USERNAME>]领取了52级测试奖励[3000元宝] 253 11
+SENDMSG 0 恭喜[<$USERNAME>]领取了52级测试奖励[3000元宝] 252 255 5
+BREAK
+#ELSESAY
+对不起！您没有参加测试资格或已经领取！\
+
+
+#if
+equal G0 0
+CHECKACCOUNTLIST ..\QuestDiary\测试奖励\55级测试奖励.txt
+#act
+DELACCOUNTLIST ..\QuestDiary\测试奖励\55级测试奖励.txt
+GAMEGOLD + 5000
+SENDMSG 0 恭喜[<$USERNAME>]领取了55级测试奖励[5000元宝] 253 11
+SENDMSG 0 恭喜[<$USERNAME>]领取了55级测试奖励[5000元宝] 252 255 5
+BREAK
+#ELSESAY
+对不起！您没有参加测试资格或已经领取！\ 

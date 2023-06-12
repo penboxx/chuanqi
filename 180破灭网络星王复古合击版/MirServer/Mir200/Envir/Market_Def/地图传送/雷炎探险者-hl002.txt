@@ -1,0 +1,29 @@
+[@main]
+【星王合击‖做的就是信誉--做的就是实力>】\
+<COLOR=clAqua → → → → →本服新开地图--雷炎殿 ← ← ← ← ←>\
+<COLOR=clFuchsia 因大众玩家太多,导致BOSS太少,本地图专刷新BOSS>\
+<COLOR=clFuchsia 本地图全为BOSS怪,新手玩家,请不要挑战!!>\ 
+<COLOR=clLime 进入本地图每10秒需要3元宝.没元宝自动回城哦>\
+<COLOR=clAqua 圣殿黄龙-雷炎蛛王-60分钟/只-暴率:开天 镇天 玄天 凤天>\
+我是牛人！我怕谁？<我要前往雷炎殿/@san>\\
+
+
+我不敢去！我怕死！免费传送<前往雷炎洞穴一层/@er>\\
+
+[@er]
+#if
+CHECKlevelex > 0
+#act
+mapmove hl001 23 225
+break
+
+
+[@san]
+#if
+CHECKlevelex > 0
+#act
+mapmove H301 28 32
+SENDMSG 2 %s进入雷炎殿！开天.战神系列唾手可得！  49 223
+SENDMSG 2 %s进入雷炎殿！开天.战神系列唾手可得！  49 223
+break
+

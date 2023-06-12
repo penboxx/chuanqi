@@ -1,0 +1,2025 @@
+; 此 版 本 来 自 润 芒 论 坛 ｗｗｗ.ｒｕｎｍａｎｇ.ｃｏｍ
+
+(@@InPutInteger @@InPutString @@sendmsg @storage @getback @buy @sell @repair @s_repair @@offlinemsg @getnextpage @getPreviouspage @@InPutString @@useitemname @OnLogout_OffLinePlaying @KillByHum)
+%100
+
+[@OnLogout_OffLinePlaying]
+#ACT
+SETAUTOGETEXP 1400 1 1
+
+[@PlayDie]
+#IF
+ISONMAP 0150
+#ACT
+SENDMSG 0 【<$USERNAME>】在抢夺沙巴克战役中被乱刀砍倒在地，请他所在的行会成员集体默哀三分钟。 254 253
+BREAK
+
+#IF
+KillByHum
+#ACT
+SENDMSG 0 【<$KILLER>】在%m(%x：%y)将【<$USERNAME>】斩于刀下，所向披靡… 254 249
+BREAK
+#ELSEACT
+SENDMSG 0 【<$USERNAME>】在%m(%x：%y)被怪物【<$MONKILLER>】给灭了… 254 249
+BREAK
+
+[@HEROLOGIN]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M0 0
+#IF
+CHECK [46] 1
+#ACT
+MOV M0 1
+#IF
+CHECK [47] 1
+#ACT
+MOV M0 2
+#IF
+CHECK [48] 1
+#ACT
+MOV M0 3
+#IF
+CHECK [49] 1
+#ACT
+MOV M0 4
+#IF
+CHECK [50] 1
+#ACT
+MOV M0 5
+#IF
+CHECK [51] 1
+#ACT
+MOV M0 6
+#IF
+CHECK [52] 1
+#ACT
+MOV M0 7
+#IF
+CHECK [53] 1
+#ACT
+MOV M0 8
+#IF
+CHECK [54] 1
+#ACT
+MOV M0 9
+#IF
+CHECK [55] 1
+#ACT
+MOV M0 10
+#IF
+CHECK [56] 1
+#ACT
+MOV M0 11
+#IF
+CHECK [57] 1
+#ACT
+MOV M0 12
+#IF
+CHECK [60] 1
+#ACT
+MOV M0 5
+#IF
+CHECK [61] 1
+#ACT
+MOV M0 7
+#IF
+CHECK [62] 1
+#ACT
+MOV M0 9
+#IF
+CHECK [64] 1
+#ACT
+MOV M0 12
+#IF
+CHECK [65] 1
+#ACT
+MOV M0 15
+#IF
+CHECK [66] 1
+#ACT
+MOV M0 18
+
+#IF
+LARGE M0 0
+#ACT
+H.AbilityAdd 4 <$STR(M0)> 720000
+H.AbilityAdd 5 <$STR(M0)> 720000
+H.AbilityAdd 6 <$STR(M0)> 720000
+SENDMSG 7 官位赞助大使已经激活.你的英雄获得攻魔道属性+<$STR(M0)>
+[@PlayLevelUp]
+;-----------------------战士-------------------------
+#IF
+checkjob warrior
+CHECKLEVELEX = 7
+#ACT
+ADDSKILL 基本剑术 3
+;break
+
+#IF
+checkjob warrior
+checklevelex = 19
+#ACT
+ADDSKILL 攻杀剑术 3
+;break
+
+#IF
+checkjob warrior
+checklevelex = 25
+#ACT
+ADDSKILL 刺杀剑术 3
+;break
+
+#IF
+checkjob warrior
+checklevelex = 28
+#ACT
+ADDSKILL 半月弯刀 3
+;break
+
+#IF
+checkjob warrior
+checklevelex = 30
+#ACT
+ADDSKILL 野蛮冲撞 3
+;break
+
+#if
+checkjob warrior
+checklevelex = 35
+#act
+ADDSKILL 烈火剑法 3
+;break
+;-----------------------方士-------------------------
+#IF
+checkjob taoist
+checklevelex = 7
+#ACT
+ADDSKILL 治愈术 3
+;break
+
+#IF
+checkjob taoist
+checklevelex = 9
+#ACT
+ADDSKILL 精神力战法 3
+;break
+
+#IF
+checkjob taoist
+checklevelex = 14
+#ACT
+ADDSKILL 施毒术 3
+;break
+
+#IF
+checkjob taoist
+checklevelex = 18
+#ACT
+ADDSKILL 灵魂火符 3
+;break
+
+#IF
+checkjob taoist
+checklevelex = 19
+#ACT
+ADDSKILL 召唤骷髅 3
+;break
+
+#IF
+checkjob taoist
+checklevelex = 20
+#ACT
+ADDSKILL 隐身术 3
+;break
+
+#IF
+checkjob taoist
+checklevelex = 21
+#ACT
+ADDSKILL 集体隐身术 3
+;break
+
+#IF
+checkjob taoist
+checklevelex = 22
+#ACT
+ADDSKILL 幽灵盾 3
+;break
+
+#IF
+checkjob taoist
+checklevelex = 25
+#ACT
+ADDSKILL 神圣战甲术 3
+;break
+
+#IF
+checkjob taoist
+checklevelex = 26
+#ACT
+ADDSKILL 心灵启示 3
+;break
+
+#IF
+checkjob taoist
+checklevelex = 28
+#ACT
+ADDSKILL 困魔咒 3
+;break
+
+#if
+checkjob taoist
+checklevelex = 33
+#act
+ADDSKILL 群体治愈术 3
+;break
+
+#if
+checkjob taoist
+checklevelex = 35
+#act
+ADDSKILL 召唤神兽 3
+;break
+;-----------------------法师-------------------------
+#IF
+checkjob wizard
+checklevelex = 7
+#ACT
+ADDSKILL 火球术 3
+;break
+
+#IF
+checkjob wizard
+checklevelex = 12
+#ACT
+ADDSKILL 抗拒火环 3
+;break
+
+#IF
+checkjob wizard
+checklevelex = 13
+#ACT
+ADDSKILL 诱惑之光 3
+;break
+
+#IF
+checkjob wizard
+checklevelex = 16
+#ACT
+ADDSKILL 地狱火 3
+;break
+
+#IF
+checkjob wizard
+checklevelex = 17
+#ACT
+ADDSKILL 雷电术 3
+;break
+
+#IF
+checkjob wizard
+checklevelex = 19
+#ACT
+ADDSKILL 瞬息移动 3
+;break
+
+#IF
+checkjob wizard
+checklevelex = 19
+#ACT
+ADDSKILL 大火球 3
+;break
+
+#IF
+checkjob wizard
+checklevelex = 22
+#ACT
+ADDSKILL 爆裂火焰 3
+;break
+
+#IF
+checkjob wizard
+checklevelex = 24
+#ACT
+ADDSKILL 火墙 3
+;break
+
+#IF
+checkjob wizard
+checklevelex = 26
+#ACT
+ADDSKILL 疾光电影 3
+;break
+
+#IF
+checkjob wizard
+checklevelex = 30
+#ACT
+ADDSKILL 地狱雷光 3
+;break
+
+#IF
+checkjob wizard
+checklevelex = 31
+#ACT
+ADDSKILL 魔法盾 3
+;break
+
+#IF
+checkjob wizard
+checklevelex = 32
+#ACT
+ADDSKILL 圣言术 3
+;break
+
+#if
+checkjob wizard
+checklevelex = 35
+#act
+ADDSKILL 冰咆哮 3
+;break
+;===================45级奖励======================
+;-------------------战士----------------------
+
+#IF
+gender man
+checkjob warrior
+check [122] 0
+checklevelex = 35
+#ACT
+SET [122] 1
+GIVE 金币 200000
+GIVE 盟重传送石 1
+GIVE 重盔甲(男) 1
+GIVE 死神手套 2
+GIVE 珊瑚戒指 2
+GIVE 炼狱 1
+GIVE 蓝翡翠项链 1
+GIVE 道士头盔 1
+TAKEON 重盔甲(男) 0
+TAKEON 炼狱 1
+TAKEON 蓝翡翠项链 3
+TAKEON 道士头盔 4
+TAKEON 死神手套 5
+TAKEON 死神手套 6
+TAKEON 珊瑚戒指 7
+TAKEON 珊瑚戒指 8
+TAKE 八荒 1
+TAKE 轻型盔甲(男) 1
+goto @wahaha
+QUERYBAGITEMS
+;break
+
+#IF
+gender woman
+checkjob warrior
+check [123] 0
+checklevelex = 35
+#ACT
+SET [123] 1
+GIVE 金币 200000
+GIVE 盟重传送石 1
+GIVE 重盔甲(女) 1
+GIVE 死神手套 2
+GIVE 珊瑚戒指 2
+GIVE 炼狱 1
+GIVE 蓝翡翠项链 1
+GIVE 道士头盔 1
+TAKEON 重盔甲(男) 0
+TAKEON 炼狱 1
+TAKEON 蓝翡翠项链 3
+TAKEON 道士头盔 4
+TAKEON 死神手套 5
+TAKEON 死神手套 6
+TAKEON 珊瑚戒指 7
+TAKEON 珊瑚戒指 8
+goto @wahaha
+TAKE 八荒 1
+TAKE 轻型盔甲(女) 1
+QUERYBAGITEMS
+;break
+
+;-------------------法师----------------------
+
+#IF
+gender man
+checkjob wizard
+check [124] 0
+checklevelex = 35
+#ACT
+SET [124] 1
+GIVE 金币 200000
+GIVE 盟重传送石 1
+GIVE 魔法长袍(男) 1
+GIVE 魔杖 1
+GIVE 道士头盔 1
+GIVE 放大镜 1
+GIVE 黑檀手镯 2
+GIVE 降妖除魔戒指 2
+TakeOn 魔法长袍(男) 0
+TakeOn 魔杖 1
+TakeOn 放大镜 3
+TakeOn 道士头盔 4
+TakeOn 黑檀手镯 5
+TakeOn 黑檀手镯 6
+TakeOn 降妖除魔戒指 7
+TakeOn 降妖除魔戒指 8
+TAKE 海魂 1
+TAKE 轻型盔甲(男) 1
+goto @wahaha
+QUERYBAGITEMS
+;break
+
+#IF
+gender woman
+checkjob wizard
+check [125] 0
+checklevelex = 35
+#ACT
+SET [125] 1
+GIVE 金币 200000
+GIVE 盟重传送石 1
+GIVE 魔法长袍(女) 1
+GIVE 魔杖 1
+GIVE 道士头盔 1
+GIVE 放大镜 1
+GIVE 黑檀手镯 2
+GIVE 降妖除魔戒指 2
+TakeOn 魔法长袍(女) 0
+TakeOn 魔杖 1
+TakeOn 放大镜 3
+TakeOn 道士头盔 4
+TakeOn 黑檀手镯 5
+TakeOn 黑檀手镯 6
+TakeOn 降妖除魔戒指 7
+TakeOn 降妖除魔戒指 8
+TAKE 海魂 1
+TAKE 轻型盔甲(女) 1
+goto @wahaha
+QUERYBAGITEMS
+;break
+
+;-------------------道士----------------------
+
+#IF
+gender man
+checkjob taoist
+check [126] 0
+checklevelex = 35
+#ACT
+SET [126] 1
+GIVE 金币 200000
+GIVE 盟重传送石 1
+GIVE 护身符(大) 1
+GIVE 灰色药粉(大量) 1
+GIVE 黄色药粉(大量) 1
+GIVE 灵魂战衣(男) 1
+GIVE 银蛇 1
+GIVE 道士头盔 1
+GIVE 竹笛 1
+GIVE 道士手镯 2
+GIVE 降妖除魔戒指 2
+TakeOn 灵魂战衣(男) 0
+TakeOn 银蛇 1
+TakeOn 竹笛 3
+TakeOn 道士头盔 4
+TakeOn 道士手镯 5
+TakeOn 道士手镯 6
+TakeOn 降妖除魔戒指 7
+TakeOn 降妖除魔戒指 8
+TAKE 半月 1
+TAKE 轻型盔甲(男) 1
+goto @wahaha
+QUERYBAGITEMS
+;break
+
+#IF
+gender woman
+checkjob taoist
+check [127] 0
+checklevelex = 35
+#ACT
+SET [127] 1
+GIVE 金币 200000
+GIVE 盟重传送石 1
+GIVE 护身符(大) 1
+GIVE 灰色药粉(大量) 1
+GIVE 黄色药粉(大量) 1
+GIVE 灵魂战衣(女) 1
+GIVE 银蛇 1
+GIVE 道士头盔 1
+GIVE 竹笛 1
+GIVE 道士手镯 2
+GIVE 降妖除魔戒指 2
+TakeOn 灵魂战衣(女) 0
+TakeOn 银蛇 1
+TakeOn 竹笛 3
+TakeOn 道士头盔 4
+TakeOn 道士手镯 5
+TakeOn 道士手镯 6
+TakeOn 降妖除魔戒指 7
+TakeOn 降妖除魔戒指 8
+TAKE 半月 1
+TAKE 轻型盔甲(女) 1
+goto @wahaha
+QUERYBAGITEMS
+;break
+
+;===================15级奖励=================================
+
+#IF
+gender man
+checkjob warrior
+CHECKLEVELEX = 15
+#ACT
+GIVE 八荒 1
+GIVE 轻型盔甲(男) 1
+TAKEON 八荒 1
+TAKEON 轻型盔甲(男) 0
+TAKE 乌木剑 1
+TAKE 布衣(男) 1
+;break
+
+#IF
+checkjob warrior
+gender Woman
+CHECKLEVELEX = 15
+#ACT
+GIVE 八荒 1
+GIVE 轻型盔甲(女) 1
+TAKEON 八荒 1
+TAKEON 轻型盔甲(女) 0
+TAKE 乌木剑 1
+TAKE 布衣(女) 1
+;break
+
+#IF
+checkjob wizard
+gender man
+CHECKLEVELEX = 15
+#ACT
+GIVE 海魂 1
+GIVE 轻型盔甲(男) 1
+TAKEON 海魂 1
+TAKEON 轻型盔甲(男) 0
+TAKE 乌木剑 1
+TAKE 布衣(男) 1
+;break
+
+#IF
+checkjob wizard
+gender Woman
+CHECKLEVELEX = 15
+#ACT
+GIVE 海魂 1
+GIVE 轻型盔甲(女) 1
+TAKEON 海魂 1
+TAKEON 轻型盔甲(女) 0
+TAKE 乌木剑 1
+TAKE 布衣(女) 1
+;break
+
+#IF
+checkjob taoist
+gender man
+CHECKLEVELEX = 15
+#ACT
+GIVE 半月 1
+GIVE 轻型盔甲(男) 1
+TAKEON 半月 1
+TAKEON 轻型盔甲(男) 0
+TAKE 乌木剑 1
+TAKE 布衣(男) 1
+;break
+
+#IF
+checkjob taoist
+gender Woman
+CHECKLEVELEX = 15
+#ACT
+GIVE 半月 1
+GIVE 轻型盔甲(女) 1
+TAKEON 半月 1
+TAKEON 轻型盔甲(女) 0
+TAKE 乌木剑 1
+TAKE 布衣(女) 1
+;break
+
+#IF
+EQUAL G0 1
+CHECKLEVELEX = 48
+#ACT
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\48级测试奖励.txt
+break
+
+
+#IF
+EQUAL G0 1
+CHECKLEVELEX = 50
+#ACT
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\50级测试奖励.txt
+break
+
+
+#IF
+EQUAL G0 1
+CHECKLEVELEX = 52
+#ACT
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\52级测试奖励.txt
+break
+
+#IF
+EQUAL G0 1
+CHECKLEVELEX = 55
+#ACT
+ADDACCOUNTLIST ..\QuestDiary\测试奖励\55级测试奖励.txt
+break
+
+[@wahaha]
+#IF
+#ACT
+;mapmove h007a 118 12
+mapmove 3 332 332
+break
+
+
+
+
+[@HeroLevelUp]
+;-----------------------战士-------------------------
+#IF
+H.checkjob warrior
+H.CHECKLEVELEX = 7
+#ACT
+H.ADDSKILL 英雄基本剑术 3
+;break
+
+#IF
+H.checkjob warrior
+H.CHECKLEVELEX = 19
+#ACT
+H.ADDSKILL 英雄攻杀剑术 3
+;break
+
+#IF
+H.checkjob warrior
+H.CHECKLEVELEX = 25
+#ACT
+H.ADDSKILL 英雄刺杀剑术 3
+;break
+
+#IF
+H.checkjob warrior
+H.CHECKLEVELEX = 28
+#ACT
+H.ADDSKILL 英雄半月弯刀 3
+;break
+
+#IF
+H.checkjob warrior
+H.CHECKLEVELEX = 30
+#ACT
+H.ADDSKILL 英雄野蛮冲撞 3
+;break
+
+#if
+H.checkjob warrior
+H.CHECKLEVELEX = 35
+#act
+H.ADDSKILL 英雄烈火剑法 3
+;break
+;-----------------------方士-------------------------
+#IF
+H.checkjob taoist
+H.CHECKLEVELEX = 7
+#ACT
+H.ADDSKILL 英雄治愈术 3
+;break
+
+#IF
+H.checkjob taoist
+H.CHECKLEVELEX = 9
+#ACT
+H.ADDSKILL 英雄精神战法 3
+;break
+
+#IF
+H.checkjob taoist
+H.CHECKLEVELEX = 14
+#ACT
+H.ADDSKILL 英雄施毒术 3
+;break
+
+#IF
+H.checkjob taoist
+H.CHECKLEVELEX = 18
+#ACT
+H.GIVE 护身符 1
+H.ADDSKILL 英雄灵魂火符 3
+;break
+
+
+#IF
+H.checkjob taoist
+H.CHECKLEVELEX = 20
+#ACT
+H.ADDSKILL 英雄隐身术 3
+;break
+
+#IF
+H.checkjob taoist
+H.CHECKLEVELEX = 21
+#ACT
+H.ADDSKILL 英雄集体隐身 3
+;break
+
+#IF
+H.checkjob taoist
+H.CHECKLEVELEX = 22
+#ACT
+H.ADDSKILL 英雄幽灵盾 3
+;break
+
+#IF
+H.checkjob taoist
+H.CHECKLEVELEX = 25
+#ACT
+H.ADDSKILL 英雄神圣战术 3
+;break
+
+#IF
+H.checkjob taoist
+H.CHECKLEVELEX = 26
+#ACT
+H.ADDSKILL 英雄心灵启示 3
+
+
+#IF
+H.checkjob taoist
+H.CHECKLEVELEX = 28
+#ACT
+H.ADDSKILL 英雄困魔咒 3
+;break
+
+#if
+H.checkjob taoist
+H.CHECKLEVELEX = 33
+#act
+H.ADDSKILL 英雄群疗术 3
+;break
+
+#if
+H.checkjob taoist
+H.CHECKLEVELEX = 35
+#act
+H.ADDSKILL 英雄召唤神兽 3
+;break
+;-----------------------法师-------------------------
+#IF
+H.checkjob wizard
+H.CHECKLEVELEX = 7
+#ACT
+H.ADDSKILL 英雄火球术 3
+;break
+
+#IF
+H.checkjob wizard
+H.CHECKLEVELEX = 12
+#ACT
+H.ADDSKILL 英雄抗拒火环 3
+;break
+
+#IF
+H.checkjob wizard
+H.CHECKLEVELEX = 13
+#ACT
+H.ADDSKILL 英雄诱惑之光 3
+;break
+
+#IF
+H.checkjob wizard
+H.CHECKLEVELEX = 16
+#ACT
+H.ADDSKILL 英雄地狱火 3
+;break
+
+#IF
+H.checkjob wizard
+H.CHECKLEVELEX = 17
+#ACT
+H.ADDSKILL 英雄雷电术 3
+;break
+
+#IF
+H.checkjob wizard
+H.CHECKLEVELEX = 19
+#ACT
+H.ADDSKILL 英雄瞬息移动 3
+;break
+
+#IF
+H.checkjob wizard
+H.CHECKLEVELEX = 19
+#ACT
+H.ADDSKILL 英雄大火球 3
+;break
+
+#IF
+H.checkjob wizard
+H.CHECKLEVELEX = 22
+#ACT
+H.ADDSKILL 英雄爆裂火焰 3
+;break
+
+#IF
+H.checkjob wizard
+H.CHECKLEVELEX = 24
+#ACT
+H.ADDSKILL 英雄火墙 3
+;break
+
+#IF
+H.checkjob wizard
+H.CHECKLEVELEX = 26
+#ACT
+H.ADDSKILL 英雄疾光电影 3
+;;break
+
+#IF
+H.checkjob wizard
+H.CHECKLEVELEX = 30
+#ACT
+H.ADDSKILL 英雄地狱雷光 3
+;break
+
+#IF
+H.checkjob wizard
+H.CHECKLEVELEX = 31
+#ACT
+H.ADDSKILL 英雄魔法盾 3
+;break
+
+#IF
+H.checkjob wizard
+H.CHECKLEVELEX = 32
+#ACT
+H.ADDSKILL 英雄圣言术 3
+;break
+
+#if
+H.checkjob wizard
+H.CHECKLEVELEX = 35
+#act
+H.ADDSKILL 英雄冰咆哮 3
+;break
+
+#IF
+H.GENDER MAN
+H.Checkjob Warrior
+H.CheckLevelEx = 26
+#ACT
+H.GIVE 重盔甲(男) 1
+H.GIVE 炼狱 1
+H.GIVE 道士头盔 1
+H.GIVE 蓝翡翠项链 1
+H.GIVE 死神手套 2
+H.GIVE 珊瑚戒指 2
+H.TakeOn 重盔甲(男) 0
+H.TakeOn 炼狱 1
+H.TakeOn 蓝翡翠项链 3
+H.TakeOn 道士头盔 4
+H.TakeOn 死神手套 5
+H.TakeOn 死神手套 6
+H.TakeOn 珊瑚戒指 7
+H.TakeOn 珊瑚戒指 8
+H.TAKE 乌木剑 1
+H.TAKE 布衣(男) 1
+;break
+
+#IF
+H.GENDER WOMAN
+H.Checkjob Warrior
+H.CheckLevelEx = 26
+#ACT
+H.GIVE 重盔甲(女) 1
+H.GIVE 炼狱 1
+H.GIVE 道士头盔 1
+H.GIVE 蓝翡翠项链 1
+H.GIVE 死神手套 2
+H.GIVE 珊瑚戒指 2
+H.TakeOn 重盔甲(女) 0
+H.TakeOn 炼狱 1
+H.TakeOn 蓝翡翠项链 3
+H.TakeOn 道士头盔 4
+H.TakeOn 死神手套 5
+H.TakeOn 死神手套 6
+H.TakeOn 珊瑚戒指 7
+H.TakeOn 珊瑚戒指 8
+H.TAKE 乌木剑 1
+H.TAKE 布衣(女) 1
+;break
+
+#IF
+H.GENDER MAN
+H.Checkjob Wizard
+H.CheckLevelEx = 26
+#ACT
+H.GIVE 魔法长袍(男) 1
+H.GIVE 魔杖 1
+H.GIVE 道士头盔 1
+H.GIVE 放大镜 1
+H.GIVE 黑檀手镯 2
+H.GIVE 降妖除魔戒指 2
+H.TakeOn 魔法长袍(男) 0
+H.TakeOn 魔杖 1
+H.TakeOn 放大镜 3
+H.TakeOn 道士头盔 4
+H.TakeOn 黑檀手镯 5
+H.TakeOn 黑檀手镯 6
+H.TakeOn 降妖除魔戒指 7
+H.TakeOn 降妖除魔戒指 8
+H.TAKE 乌木剑 1
+H.TAKE 布衣(男) 1
+;break
+
+#IF
+H.GENDER WOMAN
+H.Checkjob Wizard
+H.CheckLevelEx = 26
+#ACT
+H.GIVE 魔法长袍(女) 1
+H.GIVE 魔杖 1
+H.GIVE 道士头盔 1
+H.GIVE 放大镜 1
+H.GIVE 黑檀手镯 2
+H.GIVE 降妖除魔戒指 2
+H.TakeOn 魔法长袍(女) 0
+H.TakeOn 魔杖 1
+H.TakeOn 放大镜 3
+H.TakeOn 道士头盔 4
+H.TakeOn 黑檀手镯 5
+H.TakeOn 黑檀手镯 6
+H.TakeOn 降妖除魔戒指 7
+H.TakeOn 降妖除魔戒指 8
+H.TAKE 乌木剑 1
+H.TAKE 布衣(女) 1
+;break
+
+#IF
+H.GENDER MAN
+H.Checkjob Taoist
+H.CheckLevelEx = 26
+#ACT
+H.GIVE 护身符(大) 1
+H.GIVE 灰色药粉(大量) 1
+H.GIVE 黄色药粉(大量) 1
+H.GIVE 灵魂战衣(男) 1
+H.GIVE 银蛇 1
+H.GIVE 道士头盔 1
+H.GIVE 竹笛 1
+H.GIVE 道士手镯 2
+H.GIVE 降妖除魔戒指 2
+H.TakeOn 灵魂战衣(男) 0
+H.TakeOn 银蛇 1
+H.TakeOn 竹笛 3
+H.TakeOn 道士头盔 4
+H.TakeOn 道士手镯 5
+H.TakeOn 道士手镯 6
+H.TakeOn 降妖除魔戒指 7
+H.TakeOn 降妖除魔戒指 8
+H.TAKE 乌木剑 1
+H.TAKE 布衣(男) 1
+;break
+
+#IF
+H.GENDER WOMAN
+H.Checkjob Taoist
+H.CheckLevelEx = 26
+#ACT
+H.GIVE 护身符(大) 1
+H.GIVE 灰色药粉(大量) 1
+H.GIVE 黄色药粉(大量) 1
+H.GIVE 灵魂战衣(女) 1
+H.GIVE 银蛇 1
+H.GIVE 道士头盔 1
+H.GIVE 竹笛 1
+H.GIVE 道士手镯 2
+H.GIVE 降妖除魔戒指 2
+H.TakeOn 灵魂战衣(女) 0
+H.TakeOn 银蛇 1
+H.TakeOn 竹笛 3
+H.TakeOn 道士头盔 4
+H.TakeOn 道士手镯 5
+H.TakeOn 道士手镯 6
+H.TakeOn 降妖除魔戒指 7
+H.TakeOn 降妖除魔戒指 8
+H.TAKE 乌木剑 1
+H.TAKE 布衣(女) 1
+;break
+
+;====================================================
+
+[@STDMODEFUNC10]
+#IF
+CHECKLEVELEX > 0
+#ACT
+KILLMONEXPRATE 200 3600
+Gmexecute showeffect 75
+SENDMSG 7 您获得了1小时双倍经验时间
+BREAK
+
+[@STDMODEFUNC29]
+#IF
+CHECKLEVELEX > 0
+#ACT
+KILLMONEXPRATE 300 3600
+Gmexecute showeffect 75
+SENDMSG 7 您获得了1小时三倍经验时间
+BREAK
+
+
+
+[@STDMODEFUNC11]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 78
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯，大家快去欣赏哦！ 251 249
+
+[@STDMODEFUNC12]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 79
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯，大家快去欣赏哦！ 251 249
+
+[@STDMODEFUNC13]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 80
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯，大家快去欣赏哦！ 251 249
+
+[@STDMODEFUNC14]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 81
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯，大家快去欣赏哦！ 251 249
+
+[@STDMODEFUNC15]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 82
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯，大家快去欣赏哦！ 251 249
+
+[@STDMODEFUNC16]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 83
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯，大家快去欣赏哦！ 251 249
+
+[@STDMODEFUNC17]
+#IF
+CHECKLEVELEX > 0
+#ACT
+Gmexecute showeffect 82
+SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯，大家快去欣赏哦！ 251 249
+
+[@STDMODEFUNC18]
+#IF
+CHECKLEVELEX > 0
+#ACT
+mov D57 0
+SENDMSG 0 <$USERNAME>在:%m%x:%y处释放庆典蛋糕咯！大家快去欣赏哦。 149 154
+ReadRandomStr .\QuestDiary\抽取数据\烟花.txt S90
+Gmexecute showeffect <$STR(S90)>
+DELAYGOTO 2000 @蛋糕开始
+BREAK
+
+[@蛋糕开始]
+#IF
+LARGE D57 4
+#ACT
+MOV D57 0
+SENDMSG 7 庆典蛋糕释放完毕。
+BREAK
+#ELSEACT
+INC D57 1
+ReadRandomStr .\QuestDiary\抽取数据\烟花.txt S90
+Gmexecute showeffect <$STR(S90)>
+DELAYGOTO 3000 @蛋糕开始
+BREAK
+
+
+[@MagSelfFunc121]
+#IF
+#ACT
+QUERYBAGITEMS 1
+CLOSE
+
+[@MagTagFunc121]
+#IF
+#ACT
+QUERYBAGITEMS 1
+CLOSE
+
+
+[@STDMODEFUNC19]
+#IF
+GENDER woman
+#ACT
+HAIRSTYLE 0
+SENDMSG 6 发型已经变更! 
+BREAK
+#IF
+GENDER man
+#ACT
+HAIRSTYLE 0
+SENDMSG 6 发型已经变更! 
+BREAK
+
+[@STDMODEFUNC20]
+#IF
+GENDER woman
+#ACT
+HAIRSTYLE 1
+SENDMSG 6 发型已经变更! 
+BREAK
+#IF
+GENDER man
+#ACT
+HAIRSTYLE 1
+SENDMSG 6 发型已经变更! 
+BREAK
+
+[@STDMODEFUNC21]
+#IF
+random 10
+#ACT
+MAPMOVE 0 349 289
+CLOSE
+BREAK
+#IF
+random 7
+#ACT
+MAPMOVE 0 318 271
+CLOSE
+BREAK
+#IF
+random 6
+#ACT
+MAPMOVE 0 321 251
+CLOSE
+BREAK
+#IF
+random 5
+#ACT
+MAPMOVE 0 307 239
+CLOSE
+BREAK
+#IF
+random 4
+#ACT
+MAPMOVE 0 317 285
+CLOSE
+BREAK
+#IF
+#ACT
+MAPMOVE 0 333 254
+CLOSE
+BREAK
+
+[@STDMODEFUNC27]
+#ACT
+ChangeExp + 100000
+[@STDMODEFUNC28]
+#ACT
+ChangeExp + 500000
+
+
+[@STDMODEFUNC22]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOVR P7 16
+INC P7 323
+MOVR P8 16
+INC P8 323
+mapmove 3 <$STR(P7)> <$STR(P8)>
+CLOSE
+BREAK
+
+[@STDMODEFUNC23]
+#IF
+CHECKLEVELEX > 0
+#ACT
+CREDITPOINT + 1
+SENDMSG 7 恭喜：你获得了：声望:1
+BREAK
+
+[@STDMODEFUNC24]
+#IF
+CheckItemAddValue 1 3 < 7
+#ACT
+UPGRADEITEMEX 1 3 0 1 0
+#ELSESAY
+你的武器附加了7点幸运值. 不可以在加了!!\
+
+
+[@StdModeFunc21]
+#IF
+#ACT
+Gmexecute showeffect 78
+
+[@StdModeFunc22]
+#IF
+#ACT
+Gmexecute showeffect 79
+
+[@StdModeFunc23]
+#IF
+#ACT
+Gmexecute showeffect 80
+
+[@StdModeFunc24]
+#IF 
+#ACT
+Gmexecute showeffect 81
+
+[@StdModeFunc25]
+#IF
+#ACT
+Gmexecute showeffect 82
+
+[@StdModeFunc31]
+#If
+CheckItem 强效太阳水 6
+#Act
+Take 强效太阳水 6
+Give 打捆太阳水 1
+Break
+#ElseAct
+MessAgeBox 没有6个强效太阳水
+Break
+
+[@StdModeFunc32]
+#If
+CheckItem 万年雪霜 6
+#Act
+Take 万年雪霜 6
+Give 雪霜包 1
+Break
+#ElseAct
+MessAgeBox 没有6个万年雪霜
+Break
+
+[@StdModeFunc248]
+#If
+CheckItem 打捆疗伤药包 6
+#Act
+Take 打捆疗伤药包 6
+Give 超级疗伤药包 1
+Break
+#ElseAct
+MessAgeBox 没有6个打捆疗伤药包
+Break
+
+
+[@StdModeFunc34]
+#If
+#Act
+
+Give 雪霜包 6
+Break
+
+[@StdModeFunc3]
+#If
+CheckItem 疗伤药 6
+#Act
+Take 疗伤药 6
+Give 疗伤药包 1
+Break
+#ElseAct
+MessAgeBox 没有6个疗伤药
+Break
+
+[@StdModeFunc35]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 1
+SENDMSG 6 恭喜：你获得了：金刚石:1，您当前金刚石(<$GAMEDIAMOND>颗)]
+BREAK
+
+[@StdModeFunc36]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 5
+SENDMSG 6 恭喜：你获得了：金刚石:5，您当前金刚石(<$GAMEDIAMOND>颗)]
+BREAK
+
+[@StdModeFunc37]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 10
+SENDMSG 6 恭喜：你获得了：金刚石:10，您当前金刚石(<$GAMEDIAMOND>颗)]
+BREAK
+
+[@StdModeFunc38]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 50
+SENDMSG 6 恭喜：你获得了：金刚石:50，您当前金刚石(<$GAMEDIAMOND>颗)]
+BREAK
+
+[@StdModeFunc39]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 100
+SENDMSG 6 恭喜：你获得了：金刚石:100，您当前金刚石(<$GAMEDIAMOND>颗)]
+BREAK
+
+[@StdModeFunc40]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 500
+SENDMSG 6 恭喜：你获得了：金刚石:500，您当前金刚石(<$GAMEDIAMOND>颗)]
+BREAK
+
+[@StdModeFunc41]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 1000
+SENDMSG 6 恭喜：你获得了：金刚石:1000，您当前金刚石(<$GAMEDIAMOND>颗)]
+BREAK
+
+[@StdModeFunc42]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GAMEDIAMOND + 200
+SENDMSG 6 恭喜：你获得了：金刚石:200，您当前金刚石(<$GAMEDIAMOND>颗)]
+BREAK
+
+[@StdModeFunc43]
+#IF
+CHECKLEVELEX > 0
+#ACT
+GIVE 祝福油 1
+BREAK
+
+[@StdModeFunc57]
+#IF 
+CHECKITEMADDVALUE 1 3 = 7
+#Act 
+GIVE 超级祝福油
+SENDMSG 6 %s您武器幸运值已经达到7点.不能继续增加!
+#ElseAct 
+UPGRADEITEMEX 1 3 1 1 0
+SENDMSG 6 %s恭喜您武器增加了一点幸运!
+break
+
+[@StdModeFunc44]
+#IF
+CHECKLEVELEX > 39
+checkjob wizard
+CHECKMAGICLEVEL 魔法盾 = 3
+#ACT
+SkillLevel 魔法盾 = 4
+break
+#ELSEACT
+MESSAGEBOX 等级没有40级或不能学习此技能。
+GIVE 四级魔法盾 1
+Break
+
+[@StdModeFunc30]
+#IF
+#ACT
+AddSkill 刷新包裹
+SkillLevel 刷新包裹 = 3
+SENDMSG 7 恭喜您学习了刷新包裹技能,请设置快捷键！  
+close
+
+[@StdModeFunc60]
+#If
+CHECKHEROONLINE
+#Act
+Gmexecute 变忠诚度 250
+SENDmSG 6 [提示：英雄忠诚度增加1点]
+Break
+#ElseAct
+MessAgeBox 您的英雄没在线！
+Break
+
+[@StdModeFunc61]
+#If
+CheckLevelEx > 0
+#Act
+GameGold + 1
+SENDmSG 6 [提示：账户增加1元宝，当前余额：<$GAMEGOLD>元宝]
+Break
+
+[@StdModeFunc62]
+#If
+CheckLevelEx > 0
+#Act
+GameGold + 5
+SENDmSG 6 [提示：账户增加5元宝，当前余额：<$GAMEGOLD>元宝]
+Break
+
+[@StdModeFunc63]
+#If
+CheckLevelEx > 0
+#Act
+GameGold + 10
+SENDmSG 6 [提示：账户增加10元宝，当前余额：<$GAMEGOLD>元宝]
+Break
+
+[@StdModeFunc64]
+#If
+CheckLevelEx > 0
+#Act
+GameGold + 50
+SENDmSG 6 [提示：账户增加50元宝，当前余额：<$GAMEGOLD>元宝]
+Break
+
+[@StdModeFunc65]
+#If
+CheckLevelEx > 0
+#Act
+GameGold + 100
+SENDmSG 6 [提示：账户增加100元宝，当前余额：<$GAMEGOLD>元宝]
+Break
+
+[@StdModeFunc66]
+#If
+CheckLevelEx > 0
+#Act
+GameGold + 500
+SENDmSG 6 [提示：账户增加500元宝，当前余额：<$GAMEGOLD>元宝]
+Break
+
+[@StdModeFunc67]
+#If
+CheckLevelEx > 0
+#Act
+GameGold + 1000
+SENDmSG 6 [提示：账户增加1000元宝，当前余额：<$GAMEGOLD>元宝]
+Break
+
+[@StdModeFunc68]
+#If
+CheckLevelEx > 0
+#Act
+GameGold + 5000
+SENDmSG 6 [提示：账户增加5000元宝，当前余额：<$GAMEGOLD>元宝]
+Break
+
+[@StdModeFunc69]
+#If
+CheckLevelEx > 0
+#Act
+Give 金币 1000000
+Break
+
+[@StdModeFunc228]
+#If
+CheckLevelEx > 0
+#ACT
+CHANGEPKPOINT = 0
+SENDMSG 6 你的PK值已清洗! 
+
+[@@RECALLPLAYER]
+#IF
+CHECKHEROONLINE
+#ACT
+CLOSE
+MESSAGEBOX 请先设置您的英雄下线！
+#ELSEACT
+CLOSE
+RECALLPLAYER
+
+[@HERONAMEFILTER]
+英雄名字中包含禁用字符\<关闭/@EXIT>
+[@CREATEHEROOK]
+您的英雄已创建成功\ \
+<关闭/@EXIT>\
+#ACT
+SENDMSG 0 恭喜：<$USERNAME>，在比奇成功领取了英雄，从此游走玛法无人可挡！ 251 249
+BREAK
+[@HERONAMEEXISTS]
+英雄名字已经存在\<关闭/@EXIT>
+[@HEROOVERCHRCOUNT]
+你的帐号角色过多\<关闭/@EXIT>
+[@CREATEHEROFAIL]
+创建英雄失败\<关闭/@EXIT>
+[@CREATEHEROFAILEX]
+创建英雄失败，请稍候重试\<关闭/@EXIT>
+
+[@UserCmd1]
+#CALL [\系统功能\帮助命令.txt] @帮助
+
+
+[@StdModeFunc168]
+#if
+checkitem 1点灵气卷 0
+#act
+GAMEGIRD + 1
+SENDMSG 6 恭喜：灵气值+1，当前灵气值为：<$GAMEGIRD>
+[@StdModeFunc169]
+#if
+checkitem 5点灵气卷 0
+#act
+take 5点灵气卷
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+[@StdModeFunc170]
+#if
+checkitem 10点灵气卷 0
+#act
+GAMEGIRD + 10
+SENDMSG 6 恭喜：灵气值+10，当前灵气值为：<$GAMEGIRD>
+[@StdModeFunc171]
+#if
+checkitem 50点灵气卷 0
+#act
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+[@StdModeFunc172]
+#if
+checkitem 100点灵气卷 0
+#act
+GAMEGIRD + 100
+SENDMSG 6 恭喜：灵气值+100，当前灵气值为：<$GAMEGIRD>
+
+[@StdModeFunc173]
+#if
+checkitem 500点灵气卷 0
+#act
+GAMEGIRD + 500
+SENDMSG 6 恭喜：灵气值+500，当前灵气值为：<$GAMEGIRD>
+
+[@StdModeFunc174]
+#if
+checkitem 1000点灵气卷 0
+#act
+GAMEGIRD + 1000
+SENDMSG 6 恭喜：灵气值+1000，当前灵气值为：<$GAMEGIRD>
+
+
+[@StdModeFunc243]
+#if
+checkitem 壹元人民币 0
+#act
+NIMBUS + 1
+SENDmSG 6 [提示：账户增加1元人民币，当前银行帐户余额：<$NIMBUS>人民币]
+[@StdModeFunc244]
+#if
+checkitem 贰元人民币 0
+#act
+NIMBUS + 2
+SENDmSG 6 [提示：账户增加2元人民币，当前银行帐户余额：<$NIMBUS>人民币]
+
+
+[@StdModeFunc245]
+#if
+checkitem 伍元人民币 0
+#act
+NIMBUS + 5
+SENDmSG 6 [提示：账户增加5元人民币，当前银行帐户余额：<$NIMBUS>人民币]
+
+
+[@StdModeFunc246]
+#if
+checkitem 拾元人民币 0
+#act
+NIMBUS + 10
+SENDmSG 6 [提示：账户增加10元人民币，当前银行帐户余额：<$NIMBUS>人民币]
+
+
+[@StdModeFunc247]
+#if
+checkitem 伍拾元人民币 0
+#act
+NIMBUS + 50
+SENDmSG 6 [提示：账户增加50元人民币，当前银行帐户余额：<$NIMBUS>人民币]
+
+
+[@StdModeFunc248]
+#if
+checkitem 壹佰元人民币 0
+#act
+NIMBUS + 100
+SENDmSG 6 [提示：账户增加100元人民币，当前银行帐户余额：<$NIMBUS>人民币]
+
+
+[@StdModeFunc249]
+#if
+checkitem 伍佰元人民币 0
+#act
+NIMBUS + 500
+SENDmSG 6 [提示：账户增加500元人民币，当前银行帐户余额：<$NIMBUS>人民币]
+
+
+
+[@STDMODEFUNC215]
+
+#IF
+CHECKLEVELEX > 0
+#ACT
+QUERYVALUE 14 0 60 ~老板传音 请输入你要进行全服广播的文字：(最多30个字，持续60秒) QF
+BREAK
+[~老板传音]
+#IF
+ISONMAP MIMA
+#ACT
+Messagebox 对不起，您在密码验证区无法使用此功能！
+BREAK
+
+#IF
+ISONMAP SZMM
+#ACT
+Messagebox 对不起，您在密码验证区无法使用此功能！
+BREAK
+
+#IF
+EQUAL S14
+#ACT
+MESSAGEBOX 请输入您要发送的内容，否则无法发送！
+BREAK
+#ELSEACT
+SENDMSG 0 老板传音【%s】：<$STR(S14)> 255 245 60
+SENDMSG 0 老板传音【%s】：<$STR(S14)> 255 245
+SENDMSG 0 【注：以上信息为老板〖%s〗所发，请注意核实内容真实性，防止上当受骗，任何通过喊话系统留下QQ号的都是骗子】 170 255
+MOV S14
+BREAK
+
+;[@UserCmd2]
+;#IF
+;CHECKVAR HUMAN 元宝消费 > 7999
+;#ACT
+;#CALL [\赞助\免费地图.txt] @免费地图
+
+
+
+;[@UserCmd2]
+;#IF
+;CHECKGAMEGOLD > 9
+;#ACT
+;QUERYVALUE 48 0 60 ~全服广播 请输入你要进行全服广播的文字：(最多30个字，收费10元宝) QF
+;BREAK
+;#ELSEACT
+;MESSAGEBOX 提示：每发送一次需要10元宝！千里传音命令【@传】
+;BREAK
+
+[~全服广播]
+#IF
+ISONMAP MIMA
+#ACT
+Messagebox 对不起，您在密码验证区无法使用此功能！
+BREAK
+
+#IF
+ISONMAP SZMM
+#ACT
+Messagebox 对不起，您在密码验证区无法使用此功能！
+BREAK
+
+#IF
+EQUAL S48
+#ACT
+MESSAGEBOX 请输入您要发送的内容，否则无法发送！
+BREAK
+
+#IF
+CHECKVAR HUMAN 元宝消费 > 30999
+#ACT
+SENDMSG 0 【%s】：<$STR(S48)> 255 245
+SENDMSG 0 【注：以上信息为玩家〖%s〗所发，请注意核实内容真实性，防止上当受骗，任何通过喊话系统留下QQ号的都是骗子】 170 255
+MOV S48
+BREAK
+#ELSEACT
+MESSAGEBOX 提示：必须财神降临才可拥有此功能
+BREAK
+
+[@UserCmd4]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S0 
+MOV M0 0
+MOV S0 <$PARAM(1)>
+MOV M0 <$PARAM(2)>
+
+#if
+equal s0 
+#act
+close
+SENDMSG 6 指令错误，格式：@赠送鲜花　玩家名字　赠送数量
+break
+
+#if
+small m0 1
+#act
+close
+SENDMSG 6 指令错误，格式：@赠送鲜花　玩家名字　赠送数量
+break
+
+#if
+small m0 9
+#act
+close
+SENDMSG 6 赠送失败，最低9朵起送！
+break
+
+#IF
+CHECKONLINE <$STR(S0)>
+#ACT
+MOV M1 <$PARAM(2)>
+MUL M1 2000
+#ELSEACT
+close
+SENDMSG 6 赠送失败，赠送对象[<$STR(S0)>]不在线！
+break
+
+#IF
+CHECKGAMEGOLD ? <$STR(M1)>
+#ELSEACT
+close
+SENDMSG 6 赠送失败,赠送玩家[<$STR(S0)>]<$STR(M0)>朵鲜花需要<$STR(M1)>元宝,您元宝不足!
+break
+
+#IF
+<$STR(S0)>.CHECKVAR HUMAN 鲜花状态 = 0
+#ACT
+SENDMSG 5 您向【<$STR(S0)>】赠送了<$STR(M0)>朵玫瑰！
+GAMEGOLD - <$STR(M1)>
+MOV M3 <$STR(M1)>
+DIV M3 2
+<$STR(S0)>.GAMEGOLD + <$STR(M3)>
+<$STR(S0)>.SENDMSG 6 玩家[<$USERNAME>]花费<$STR(M1)>元宝赠送你<$STR(M0)>朵玫瑰,你得到50%回扣,共<$STR(M3)>元宝!
+<$STR(S0)>.Gmexecute showeffect 78
+<$STR(S0)>.Gmexecute showeffect 79
+<$STR(S0)>.Gmexecute showeffect 80
+<$STR(S0)>.MOV S1 <$USERNAME>
+<$STR(S0)>.MOV M2 0
+<$STR(S0)>.CALCVAR HUMAN 鲜花赠送数量 = <$STR(M0)>
+<$STR(S0)>.CALCVAR HUMAN 鲜花状态 = 0
+<$STR(S0)>.SAVEVAR HUMAN 鲜花赠送数量 ..\QuestDiary\数据文件\鲜花系统\鲜花数量.txt
+<$STR(S0)>.DelayCall 500 @鲜花提示
+#ELSEACT
+CLOSE
+SENDMSG 6 赠送失败,赠送玩家[<$STR(S0)>]目前正在接受鲜花中,请稍后再赠送...
+break
+
+[@Mrrp_鲜花下线]
+#IF
+CHECKVAR HUMAN 鲜花赠送数量 > 0
+#ACT
+ClearDelayGoto
+CALCVAR HUMAN 鲜花数量 + <$HUMAN(鲜花赠送数量)>
+SAVEVAR HUMAN 鲜花数量 ..\QuestDiary\数据文件\鲜花系统\鲜花数量.txt
+SENDMSG 0 玩家【<$STR(S1)>】赠送了【<$USERNAME>】[<$HUMAN(鲜花赠送数量)>]朵玫瑰，【<$USERNAME>】获得[<$HUMAN(鲜花数量)>]朵玫瑰! 253 255
+SENDMSG 5 您收到了<$HUMAN(鲜花赠送数量)>朵玫瑰！
+CALCVAR HUMAN 鲜花状态 = 0
+CALCVAR HUMAN 鲜花赠送数量 = 0
+SAVEVAR HUMAN 鲜花赠送数量 ..\QuestDiary\数据文件\鲜花系统\鲜花数量.txt
+BREAK
+
+[@鲜花提示]
+#IF
+CHECKVAR HUMAN 鲜花赠送数量 > 0
+#ACT
+INC M2 1
+CALCVAR HUMAN 鲜花赠送数量 - 1
+SAVEVAR HUMAN 鲜花赠送数量 ..\QuestDiary\数据文件\鲜花系统\鲜花数量.txt
+CALCVAR HUMAN 鲜花数量 + 1
+SAVEVAR HUMAN 鲜花数量 ..\QuestDiary\数据文件\鲜花系统\鲜花数量.txt
+SENDMSG 0 玩家【<$STR(S1)>】赠送了【<$USERNAME>】[<$STR(M2)>]朵玫瑰，【<$USERNAME>】获得[<$HUMAN(鲜花数量)>]朵玫瑰! 253 255
+SENDMSG 5 您收到了1朵玫瑰！
+DelayCall 200 @鲜花提示
+BREAK
+#ELSEACT
+ClearDelayGoto
+CALCVAR HUMAN 鲜花状态 = 0
+BREAK
+
+
+
+
+
+[@TitleChanged_1]
+#IF
+
+#ACT
+
+SENDMSG 0 伟大的【沙巴克城主】%S上线了
+
+
+[@StdModeFunc155]
+#IF
+#aCT
+#CALL [\系统功能\在线回收.txt] @回收
+BREAK
+
+[@StdModeFunc156]
+#IF
+#act
+give 在线回收(永久) 1
+#CALL [\系统功能\在线回收1.txt] @回收1
+BREAK
+
+[@StdModeFunc148]
+#act
+QUERYVALUE 2 2 10 @首充礼包 首充大礼包,需充值金额50元,一个人物只可领一次\领取物品如下：您当前充值金额为[<$GAMEPOINT>]元\　\1.首充神剑\2.在线回收(永久)一个\3.白银勋章+白银斗笠\ QF
+BREAK
+
+[@首充礼包]
+#CALL [\\首充礼包\30元包.txt] @30元包1
+
+[@StdModeFunc138]
+#if
+CHECKBAGSIZE  1
+CheckGamePoint > 1999
+#act
+goto @bingzi2
+#ELSEACT
+MESSAGEBOX   　　　抱歉您没有充值到2000元，所以无法打开！
+give 神秘礼包 1
+
+
+
+[@bingzi2]
+神秘礼包奖励：\   \
+
+
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  
+
+
+┆   <星王圣甲(战)/@星王圣甲(战)>   ┆  <星王圣衣(战)/@星王圣衣(战)>  ┆  \ 
+┆   <星王圣甲(法)/@星王圣甲(法)>   ┆  <星王圣衣(法)/@星王圣衣(法)>  ┆  \ 
+┆   <星王圣甲(道)/@星王圣甲(道)>   ┆  <星王圣衣(道)/@星王圣衣(道)>  ┆  \ 
+
+
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <请考虑好选什么，别点错哦！亲>
+
+[@星王圣甲(法)]
+#if
+#act
+give 星王圣甲(法) 1
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王圣甲(法)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王圣甲(法)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+close
+[@星王圣衣(法)]
+#if
+#act
+give 星王圣衣(法) 1
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王圣衣(法)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王圣衣(法)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+close
+[@星王圣甲(道)]
+#if
+#act
+give 星王圣甲(道) 1
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王圣甲(道)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王圣甲(道)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+close
+[@星王圣衣(道)]
+#if
+#act
+give 星王圣衣(道) 1
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王圣衣(道)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王圣衣(道)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+close
+[@星王圣甲(战)]
+#if
+#act
+give 星王圣甲(战) 1
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王圣甲(战)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王圣甲(战)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+close
+[@星王圣衣(战)]
+#if
+#act
+give 星王圣衣(战) 1
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王圣衣(战)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王圣衣(战)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+close
+
+
+[@StdModeFunc139]
+#if
+CHECKBAGSIZE  1
+CheckGamePoint > 2999
+#act
+goto @bingzi3
+#ELSEACT
+MESSAGEBOX   　　　抱歉您没有充值到3000元，所以无法打开！
+give 超级礼包 1
+
+
+
+[@bingzi3]
+超级礼包奖励：\   \
+
+
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  \
+
+
+┆   <星王之刃(战)/@星王之刃(战)>   ┆  <星王之刃(法)/@星王之刃(法)>  ┆  <星王之刃(道)/@星王之刃(道)>  ┆  \ \
+
+
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <请考虑好选什么，别点错哦！亲>
+
+
+
+[@星王之刃(战)]
+#if
+#act
+give 星王之刃(战) 1
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王之刃(战)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王之刃(战)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+close
+[@星王之刃(法)]
+#if
+#act
+give 星王之刃(法) 1
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王之刃(法)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王之刃(法)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+close
+[@星王之刃(道)]
+#if
+#act
+give 星王之刃(道) 1
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王之刃(道)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+sendmsg 0 [恭喜玩家]:【%s】领取了【星王之刃(道)】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+close
+
+
+[@StdModeFunc157]
+#if
+CHECKBAGSIZE  1
+CheckGamePoint > 499
+#act
+goto @123
+#ELSEACT
+MESSAGEBOX   　　　抱歉您没有充值到500元，所以无法打开！
+give 开天礼包 1
+
+
+
+[@123]
+开天礼包：\   \
+
+
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  \
+
+
+┆   <开天/@开天>   ┆  <镇天/@镇天>  ┆  <玄天/@玄天>  ┆  \ \
+
+
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <请考虑好选什么，别点错哦！亲>
+
+[@开天]
+#if
+#act
+give 开天 1
+sendmsg 0 [恭喜玩家]:【%s】领取了【开天】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+sendmsg 0 [恭喜玩家]:【%s】领取了【开天】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+close
+[@镇天]
+#if
+#act
+give 镇天 1
+sendmsg 0 [恭喜玩家]:【%s】领取了【镇天】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+sendmsg 0 [恭喜玩家]:【%s】领取了【镇天】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+close
+[@玄天]
+#if
+#act
+give 玄天 1
+sendmsg 0 [恭喜玩家]:【%s】领取了【玄天】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+sendmsg 0 [恭喜玩家]:【%s】领取了【玄天】赞助物品成功.星王合击祝您游戏愉快. 252 253 20
+close
+
+
+
+
+
+
+
+

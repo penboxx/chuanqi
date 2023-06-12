@@ -1,0 +1,2931 @@
+()
+%100
+[@main]
+<COLOR=clFuchsia ▂▂▃▃▅▅▆▆██当前结界〖>　<$STR(G128)>　<COLOR=clFuchsia 〗层██▆▆▅▅▃▃▂▂>\
+<COLOR=clLime ①级回收进入：><祖玛首饰系列> → <COLOR=clAqua 2万经验>  +  <COLOR=clRed  2元宝>   <一键全收/@祖玛>\
+<COLOR=clLime ①级回收进入：><赤月首饰系列> → <COLOR=clAqua 5万经验>  +  <COLOR=clRed  5元宝>  <一键全收/@赤月>\
+<COLOR=clLime ②级回收进入：><雷霆首饰系列> → <COLOR=clAqua 10万经验> +  <COLOR=clRed  10元宝>  <一键全收/@雷霆>\
+<COLOR=clLime ③级回收进入：><天魔怒斩系列> → <COLOR=clAqua 10万经验> +  <COLOR=clRed  20元宝>  <一键全收/@天魔>\
+<COLOR=clLime ②级回收进入：><强化首饰系列> → <COLOR=clAqua 15万经验> +  <COLOR=clRed 50元宝>  <一键全收/@强化>\
+<COLOR=clLime ④级回收进入：><42级衣服系列> → <COLOR=clAqua 15万经验> + <COLOR=clRed 500元宝>  <一键全收/@42级>\
+<COLOR=clLime ⑤级回收进入：><战神首饰系列> → <COLOR=clAqua 15万经验> + <COLOR=clRed 1000元宝> <一键全收/@战神>\
+<综回收进入/@综合>:　  <COLOR=clAqua 誓言系列点综回收进入回收> 　     <回收结界说明/@1111>\
+[@综合]
+<COLOR=clFuchsia ▂▂▃▃▅▅▆▆██当前结界〖>　<$STR(G128)>　<COLOR=clFuchsia 〗层██▆▆▅▅▃▃▂▂>\
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆选择你需要回收的系列武器： 『<誓言系列回收/@誓言>』 1000元宝 ┆\
+╠┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆ <COLOR=clFuchsia  500元宝> ┆『<屠    龙/@回屠龙>』┆『<嗜魂法杖/@回嗜魂法杖>』┆『<霸者之刃/@回霸者之刃>』┆\
+╠┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆ <COLOR=clFuchsia 50000元宝>┆『<开    天/@回开天>』┆『<镇    天/@回镇天>』┆『<玄    天/@回玄天>』┆\
+╠┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆ <COLOR=clFuchsia 50000元宝>┆『<凤天魔甲/@风甲>』┆『<凤天魔衣/@凰甲>』┆『<返回上页/@main>』┆\
+[@回霸者之刃]
+#IF
+checkitem 霸者之刃 1
+#ACT
+take 霸者之刃 1 
+INC G128 1
+goto @JIE_ZHEN
+CHANGEEXP + 500000
+GAMEGOLD + 500
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有霸者之刃，无法回收！ 
+GOTO @综合
+BREAK
+[@回嗜魂法杖]
+#IF
+checkitem 嗜魂法杖 1
+#ACT
+take 嗜魂法杖 1 
+INC G128 1
+goto @JIE_ZHEN
+CHANGEEXP + 500000
+GAMEGOLD + 500
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有嗜魂法杖，无法回收！ 
+GOTO @综合
+BREAK
+[@回屠龙]
+#IF
+checkitem 屠龙 1
+#ACT
+take 屠龙 1 
+INC G128 1
+goto @JIE_ZHEN
+CHANGEEXP + 500000
+GAMEGOLD + 500
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有屠龙，无法回收！ 
+GOTO @综合
+BREAK
+[@凰甲]
+#IF
+checkitem 凤天魔衣 1
+#ACT
+take 凤天魔衣 1 
+INC G128 1
+goto @JIE_ZHEN
+CHANGEEXP + 1000000
+GAMEGOLD + 50000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有凤天魔衣，无法回收！ 
+GOTO @综合
+BREAK
+[@风甲]
+#IF
+checkitem 凤天魔甲 1
+#ACT
+take 凤天魔甲 1 
+INC G128 1
+goto @JIE_ZHEN
+CHANGEEXP + 1000000
+give 金币 1000000
+GAMEGOLD + 50000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有凤天魔甲，无法回收！ 
+GOTO @综合
+BREAK
+[@回开天]
+#IF
+checkitem 开天 1
+#ACT
+take 开天 1 
+INC G128 1
+goto @JIE_ZHEN
+CHANGEEXP + 1000000
+GAMEGOLD + 50000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有开天，无法回收！ 
+GOTO @综合
+BREAK
+[@回玄天]
+#IF
+checkitem 玄天 1
+#ACT
+INC G128 1
+take 玄天  1 
+goto @JIE_ZHEN
+CHANGEEXP + 1000000
+give 金币 1000000
+GAMEGOLD + 50000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有玄天，无法回收！ 
+GOTO @综合
+BREAK
+[@回镇天]
+#IF
+checkitem 镇天 1
+#ACT
+take 镇天  1 
+INC G128 1
+goto @JIE_ZHEN
+CHANGEEXP + 1000000
+give 金币 1000000
+GAMEGOLD + 50000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有镇天，无法回收！ 
+GOTO @综合
+BREAK
+[@战神]
+#IF
+checkitem 战神项链 5
+#ACT
+take 战神项链 5
+INC M20 5
+#IF
+checkitem 战神项链 4
+#ACT
+take 战神项链 4
+INC M20 4
+#IF
+checkitem 战神项链 3
+#ACT
+take 战神项链 3
+INC M20 3
+#IF
+checkitem 战神项链 2
+#ACT
+take 战神项链 2
+INC M20 2
+#IF
+checkitem 战神项链 1
+#ACT
+take 战神项链 1
+INC M20 1
+#IF
+checkitem 战神手镯 5
+#ACT
+take 战神手镯 5
+INC M20 5
+#IF
+checkitem 战神手镯 4
+#ACT
+take 战神手镯 4
+INC M20 4
+#IF
+checkitem 战神手镯 3
+#ACT
+take 战神手镯 3
+INC M20 3
+#IF
+checkitem 战神手镯 2
+#ACT
+take 战神手镯 2
+INC M20 2
+#IF
+checkitem 战神手镯 1
+#ACT
+take 战神手镯 1
+INC M20 1
+#IF
+checkitem 战神戒指 5
+#ACT
+take 战神戒指 5
+INC M20 5
+#IF
+checkitem 战神戒指 4
+#ACT
+take 战神戒指 4
+INC M20 4
+#IF
+checkitem 战神戒指 3
+#ACT
+take 战神戒指 3
+INC M20 3
+#IF
+checkitem 战神戒指 2
+#ACT
+take 战神戒指 2
+INC M20 2
+#IF
+checkitem 战神戒指 1
+#ACT
+take 战神戒指 1
+INC M20 1
+#IF
+checkitem 战神头盔 5
+#ACT
+take 战神头盔 5
+INC M20 5
+#IF
+checkitem 战神头盔 4
+#ACT
+take 战神头盔 4
+INC M20 4
+#IF
+checkitem 战神头盔 3
+#ACT
+take 战神头盔 3
+INC M20 3
+#IF
+checkitem 战神头盔 2
+#ACT
+take 战神头盔 2
+INC M20 2
+#IF
+checkitem 战神头盔 1
+#ACT
+take 战神头盔 1
+INC M20 1
+#IF
+checkitem 真魂项链 5
+#ACT
+take 真魂项链 5
+INC M20 5
+#IF
+checkitem 真魂项链 4
+#ACT
+take 真魂项链 4
+INC M20 4
+#IF
+checkitem 真魂项链 3
+#ACT
+take 真魂项链 3
+INC M20 3
+#IF
+checkitem 真魂项链 2
+#ACT
+take 真魂项链 2
+INC M20 2
+#IF
+checkitem 真魂项链 1
+#ACT
+take 真魂项链 1
+INC M20 1
+#IF
+checkitem 真魂手镯 5
+#ACT
+take 真魂手镯 5
+INC M20 5
+#IF
+checkitem 真魂手镯 4
+#ACT
+take 真魂手镯 4
+INC M20 4
+#IF
+checkitem 真魂手镯 3
+#ACT
+take 真魂手镯 3
+INC M20 3
+#IF
+checkitem 真魂手镯 2
+#ACT
+take 真魂手镯 2
+INC M20 2
+#IF
+checkitem 真魂手镯 1
+#ACT
+take 真魂手镯 1
+INC M20 1
+#IF
+checkitem 真魂戒指 5
+#ACT
+take 真魂戒指 5
+INC M20 5
+#IF
+checkitem 真魂戒指 4
+#ACT
+take 真魂戒指 4
+INC M20 4
+#IF
+checkitem 真魂戒指 3
+#ACT
+take 真魂戒指 3
+INC M20 3
+#IF
+checkitem 真魂戒指 2
+#ACT
+take 真魂戒指 2
+INC M20 2
+#IF
+checkitem 真魂戒指 1
+#ACT
+take 真魂戒指 1
+INC M20 1
+#IF
+checkitem 真魂头盔 5
+#ACT
+take 真魂头盔 5
+INC M20 5
+#IF
+checkitem 真魂头盔 4
+#ACT
+take 真魂头盔 4
+INC M20 4
+#IF
+checkitem 真魂头盔 3
+#ACT
+take 真魂头盔 3
+INC M20 3
+#IF
+checkitem 真魂头盔 2
+#ACT
+take 真魂头盔 2
+INC M20 2
+#IF
+checkitem 真魂头盔 1
+#ACT
+take 真魂头盔 1
+INC M20 1
+#IF
+checkitem 圣魔项链 5
+#ACT
+take 圣魔项链 5
+INC M20 5
+#IF
+checkitem 圣魔项链 4
+#ACT
+take 圣魔项链 4
+INC M20 4
+#IF
+checkitem 圣魔项链 3
+#ACT
+take 圣魔项链 3
+INC M20 3
+#IF
+checkitem 圣魔项链 2
+#ACT
+take 圣魔项链 2
+INC M20 2
+#IF
+checkitem 圣魔项链 1
+#ACT
+take 圣魔项链 1
+INC M20 1
+#IF
+checkitem 圣魔手镯 5
+#ACT
+take 圣魔手镯 5
+INC M20 5
+#IF
+checkitem 圣魔手镯 4
+#ACT
+take 圣魔手镯 4
+INC M20 4
+#IF
+checkitem 圣魔手镯 3
+#ACT
+take 圣魔手镯 3
+INC M20 3
+#IF
+checkitem 圣魔手镯 2
+#ACT
+take 圣魔手镯 2
+INC M20 2
+#IF
+checkitem 圣魔手镯 1
+#ACT
+take 圣魔手镯 1
+INC M20 1
+#IF
+checkitem 圣魔戒指 5
+#ACT
+take 圣魔戒指 5
+INC M20 5
+#IF
+checkitem 圣魔戒指 4
+#ACT
+take 圣魔戒指 4
+INC M20 4
+#IF
+checkitem 圣魔戒指 3
+#ACT
+take 圣魔戒指 3
+INC M20 3
+#IF
+checkitem 圣魔戒指 2
+#ACT
+take 圣魔戒指 2
+INC M20 2
+#IF
+checkitem 圣魔戒指 1
+#ACT
+take 圣魔戒指 1
+INC M20 1
+#IF
+checkitem 圣魔头盔 5
+#ACT
+take 圣魔头盔 5
+INC M20 5
+#IF
+checkitem 圣魔头盔 4
+#ACT
+take 圣魔头盔 4
+INC M20 4
+#IF
+checkitem 圣魔头盔 3
+#ACT
+take 圣魔头盔 3
+INC M20 3
+#IF
+checkitem 圣魔头盔 2
+#ACT
+take 圣魔头盔 2
+INC M20 2
+#IF
+checkitem 圣魔头盔 1
+#ACT
+take 圣魔头盔 1
+INC M20 1
+#IF
+checkitem 圣魔法靴 5
+#ACT
+take 圣魔法靴 5
+INC M20 5
+#IF
+checkitem 圣魔法靴 4
+#ACT
+take 圣魔法靴 4
+INC M20 4
+#IF
+checkitem 圣魔法靴 3
+#ACT
+take 圣魔法靴 3
+INC M20 3
+#IF
+checkitem 圣魔法靴 2
+#ACT
+take 圣魔法靴 2
+INC M20 2
+#IF
+checkitem 圣魔法靴 1
+#ACT
+take 圣魔法靴 1
+INC M20 1
+#IF
+checkitem 圣魔腰带 5
+#ACT
+take 圣魔腰带 5
+INC M20 5
+#IF
+checkitem 圣魔腰带 4
+#ACT
+take 圣魔腰带 4
+INC M20 4
+#IF
+checkitem 圣魔腰带 3
+#ACT
+take 圣魔腰带 3
+INC M20 3
+#IF
+checkitem 圣魔腰带 2
+#ACT
+take 圣魔腰带 2
+INC M20 2
+#IF
+checkitem 圣魔腰带 1
+#ACT
+take 圣魔腰带 1
+INC M20 1
+#IF
+checkitem 真魂道靴 5
+#ACT
+take 真魂道靴 5
+INC M20 5
+#IF
+checkitem 真魂道靴 4
+#ACT
+take 真魂道靴 4
+INC M20 4
+#IF
+checkitem 真魂道靴 3
+#ACT
+take 真魂道靴 3
+INC M20 3
+#IF
+checkitem 真魂道靴 2
+#ACT
+take 真魂道靴 2
+INC M20 2
+#IF
+checkitem 真魂道靴 1
+#ACT
+take 真魂道靴 1
+INC M20 1
+#IF
+checkitem 真魂腰带 5
+#ACT
+take 真魂腰带 5
+INC M20 5
+#IF
+checkitem 真魂腰带 4
+#ACT
+take 真魂腰带 4
+INC M20 4
+#IF
+checkitem 真魂腰带 3
+#ACT
+take 真魂腰带 3
+INC M20 3
+#IF
+checkitem 真魂腰带 2
+#ACT
+take 真魂腰带 2
+INC M20 2
+#IF
+checkitem 真魂腰带 1
+#ACT
+take 真魂腰带 1
+INC M20 1
+#IF
+checkitem 战神圣靴 5
+#ACT
+take 战神圣靴 5
+INC M20 5
+#IF
+checkitem 战神圣靴 4
+#ACT
+take 战神圣靴 4
+INC M20 4
+#IF
+checkitem 战神圣靴 3
+#ACT
+take 战神圣靴 3
+INC M20 3
+#IF
+checkitem 战神圣靴 2
+#ACT
+take 战神圣靴 2
+INC M20 2
+#IF
+checkitem 战神圣靴 1
+#ACT
+take 战神圣靴 1
+INC M20 1
+#IF
+checkitem 战神腰带 5
+#ACT
+take 战神腰带 5
+INC M20 5
+#IF
+checkitem 战神腰带 4
+#ACT
+take 战神腰带 4
+INC M20 4
+#IF
+checkitem 战神腰带 3
+#ACT
+take 战神腰带 3
+INC M20 3
+#IF
+checkitem 战神腰带 2
+#ACT
+take 战神腰带 2
+INC M20 2
+#IF
+checkitem 战神腰带 1
+#ACT
+take 战神腰带 1
+INC M20 1
+#IF
+LARGE M20 0
+#ACT
+MOV M21 150000
+MOV M22 150000
+MOV M23 1000
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件战神系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 6 〖提示〗你身上没有战神系列装备，无法回收！ 
+GOTO @main
+BREAK
+[@42级]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M20 0
+#IF
+checkitem 雷霆战甲(男) 5
+#ACT
+take 雷霆战甲(男) 5
+INC M20 5
+#IF
+checkitem 雷霆战甲(男) 4
+#ACT
+take 雷霆战甲(男) 4
+INC M20 4
+#IF
+checkitem 雷霆战甲(男) 3
+#ACT
+take 雷霆战甲(男) 3
+INC M20 3
+#IF
+checkitem 雷霆战甲(男) 2
+#ACT
+take 雷霆战甲(男) 2
+INC M20 2
+#IF
+checkitem 雷霆战甲(男) 1
+#ACT
+take 雷霆战甲(男) 1
+INC M20 1
+#IF
+checkitem 雷霆战甲(女) 5
+#ACT
+take 雷霆战甲(女) 5
+INC M20 5
+#IF
+checkitem 雷霆战甲(女) 4
+#ACT
+take 雷霆战甲(女) 4
+INC M20 4
+#IF
+checkitem 雷霆战甲(女) 3
+#ACT
+take 雷霆战甲(女) 3
+INC M20 3
+#IF
+checkitem 雷霆战甲(女) 2
+#ACT
+take 雷霆战甲(女) 2
+INC M20 2
+#IF
+checkitem 雷霆战甲(女) 1
+#ACT
+take 雷霆战甲(女) 1
+INC M20 1
+#IF
+checkitem 烈焰魔衣(男) 5
+#ACT
+take 烈焰魔衣(男) 5
+INC M20 5
+#IF
+checkitem 烈焰魔衣(男) 4
+#ACT
+take 烈焰魔衣(男) 4
+INC M20 4
+#IF
+checkitem 烈焰魔衣(男) 3
+#ACT
+take 烈焰魔衣(男) 3
+INC M20 3
+#IF
+checkitem 烈焰魔衣(男) 2
+#ACT
+take 烈焰魔衣(男) 2
+INC M20 2
+#IF
+checkitem 烈焰魔衣(男) 1
+#ACT
+take 烈焰魔衣(男) 1
+INC M20 1
+#IF
+checkitem 烈焰魔衣(女) 5
+#ACT
+take 烈焰魔衣(女) 5
+INC M20 5
+#IF
+checkitem 烈焰魔衣(女) 4
+#ACT
+take 烈焰魔衣(女) 4
+INC M20 4
+#IF
+checkitem 烈焰魔衣(女) 3
+#ACT
+take 烈焰魔衣(女) 3
+INC M20 3
+#IF
+checkitem 烈焰魔衣(女) 2
+#ACT
+take 烈焰魔衣(女) 2
+INC M20 2
+#IF
+checkitem 烈焰魔衣(女) 1
+#ACT
+take 烈焰魔衣(女) 1
+INC M20 1
+#IF
+checkitem 光芒道袍(男) 5
+#ACT
+take 光芒道袍(男) 5
+INC M20 5
+#IF
+checkitem 光芒道袍(男) 4
+#ACT
+take 光芒道袍(男) 4
+INC M20 4
+#IF
+checkitem 光芒道袍(男) 3
+#ACT
+take 光芒道袍(男) 3
+INC M20 3
+#IF
+checkitem 光芒道袍(男) 2
+#ACT
+take 光芒道袍(男) 2
+INC M20 2
+#IF
+checkitem 光芒道袍(男) 1
+#ACT
+take 光芒道袍(男) 1
+INC M20 1
+#IF
+checkitem 光芒道袍(女) 5
+#ACT
+take 光芒道袍(女) 5
+INC M20 5
+#IF
+checkitem 光芒道袍(女) 4
+#ACT
+take 光芒道袍(女) 4
+INC M20 4
+#IF
+checkitem 光芒道袍(女) 3
+#ACT
+take 光芒道袍(女) 3
+INC M20 3
+#IF
+checkitem 光芒道袍(女) 2
+#ACT
+take 光芒道袍(女) 2
+INC M20 2
+#IF
+checkitem 光芒道袍(女) 1
+#ACT
+take 光芒道袍(女) 1
+INC M20 1
+#IF
+LARGE M20 0
+#ACT
+MOV M21 150000
+MOV M22 150000
+MOV M23 500
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件42级衣服,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有42级系列装备，无法回收！ 
+GOTO @main
+BREAK
+[@天魔]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M20 0
+#IF
+checkitem 天魔神甲 5
+#ACT
+take 天魔神甲 5
+INC M20 5
+#IF
+checkitem 天魔神甲 4
+#ACT
+take 天魔神甲 4
+INC M20 4
+#IF
+checkitem 天魔神甲 3
+#ACT
+take 天魔神甲 3
+INC M20 3
+#IF
+checkitem 天魔神甲 2
+#ACT
+take 天魔神甲 2
+INC M20 2
+#IF
+checkitem 天魔神甲 1
+#ACT
+take 天魔神甲 1
+INC M20 1
+#IF
+checkitem 圣战宝甲 5
+#ACT
+take 圣战宝甲 5
+INC M20 5
+#IF
+checkitem 圣战宝甲 4
+#ACT
+take 圣战宝甲 4
+INC M20 4
+#IF
+checkitem 圣战宝甲 3
+#ACT
+take 圣战宝甲 3
+INC M20 3
+#IF
+checkitem 圣战宝甲 2
+#ACT
+take 圣战宝甲 2
+INC M20 2
+#IF
+checkitem 圣战宝甲 1
+#ACT
+take 圣战宝甲 1
+INC M20 1
+#IF
+checkitem 法神披风 5
+#ACT
+take 法神披风 5
+INC M20 5
+#IF
+checkitem 法神披风 4
+#ACT
+take 法神披风 4
+INC M20 4
+#IF
+checkitem 法神披风 3
+#ACT
+take 法神披风 3
+INC M20 3
+#IF
+checkitem 法神披风 2
+#ACT
+take 法神披风 2
+INC M20 2
+#IF
+checkitem 法神披风 1
+#ACT
+take 法神披风 1
+INC M20 1
+#IF
+checkitem 霓裳羽衣 5
+#ACT
+take 霓裳羽衣 5
+INC M20 5
+#IF
+checkitem 霓裳羽衣 4
+#ACT
+take 霓裳羽衣 4
+INC M20 4
+#IF
+checkitem 霓裳羽衣 3
+#ACT
+take 霓裳羽衣 3
+INC M20 3
+#IF
+checkitem 霓裳羽衣 2
+#ACT
+take 霓裳羽衣 2
+INC M20 2
+#IF
+checkitem 霓裳羽衣 1
+#ACT
+take 霓裳羽衣 1
+INC M20 1
+#IF
+checkitem 天尊道袍 5
+#ACT
+take 天尊道袍 5
+INC M20 5
+#IF
+checkitem 天尊道袍 4
+#ACT
+take 天尊道袍 4
+INC M20 4
+#IF
+checkitem 天尊道袍 3
+#ACT
+take 天尊道袍 3
+INC M20 3
+#IF
+checkitem 天尊道袍 2
+#ACT
+take 天尊道袍 2
+INC M20 2
+#IF
+checkitem 天尊道袍 1
+#ACT
+take 天尊道袍 1
+INC M20 1
+#IF
+checkitem 天师长袍 5
+#ACT
+take 天师长袍 5
+INC M20 5
+#IF
+checkitem 天师长袍 4
+#ACT
+take 天师长袍 4
+INC M20 4
+#IF
+checkitem 天师长袍 3
+#ACT
+take 天师长袍 3
+INC M20 3
+#IF
+checkitem 天师长袍 2
+#ACT
+take 天师长袍 2
+INC M20 2
+#IF
+checkitem 天师长袍 1
+#ACT
+take 天师长袍 1
+INC M20 1
+#IF
+checkitem 怒斩 5
+#ACT
+take 怒斩 5
+INC M20 5
+#IF
+checkitem 怒斩 4
+#ACT
+take 怒斩 4
+INC M20 4
+#IF
+checkitem 怒斩 3
+#ACT
+take 怒斩 3
+INC M20 3
+#IF
+checkitem 怒斩 2
+#ACT
+take 怒斩 2
+INC M20 2
+#IF
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+INC M20 1
+#IF
+checkitem 龙牙 5
+#ACT
+take 龙牙 5
+INC M20 5
+#IF
+checkitem 龙牙 4
+#ACT
+take 龙牙 4
+INC M20 4
+#IF
+checkitem 龙牙 3
+#ACT
+take 龙牙 3
+INC M20 3
+#IF
+checkitem 龙牙 2
+#ACT
+take 龙牙 2
+INC M20 2
+#IF
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+INC M20 1
+#IF
+checkitem 逍遥扇 5
+#ACT
+take 逍遥扇 5
+INC M20 5
+#IF
+checkitem 逍遥扇 4
+#ACT
+take 逍遥扇 4
+INC M20 4
+#IF
+checkitem 逍遥扇 3
+#ACT
+take 逍遥扇 3
+INC M20 3
+#IF
+checkitem 逍遥扇 2
+#ACT
+take 逍遥扇 2
+INC M20 2
+#IF
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+INC M20 1
+#IF
+LARGE M20 0
+#ACT
+MOV M21 100000
+MOV M22 100000
+MOV M23 20
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件天魔系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有天魔系列装备，无法回收！ 
+GOTO @main
+BREAK
+[@雷霆]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M20 0
+#IF
+checkitem 雷霆项链 5
+#ACT
+take 雷霆项链 5
+INC M20 5
+#IF
+checkitem 雷霆项链 4
+#ACT
+take 雷霆项链 4
+INC M20 4
+#IF
+checkitem 雷霆项链 3
+#ACT
+take 雷霆项链 3
+INC M20 3
+#IF
+checkitem 雷霆项链 2
+#ACT
+take 雷霆项链 2
+INC M20 2
+#IF
+checkitem 雷霆项链 1
+#ACT
+take 雷霆项链 1
+INC M20 1
+#IF
+checkitem 雷霆护腕 5
+#ACT
+take 雷霆护腕 5
+INC M20 5
+#IF
+checkitem 雷霆护腕 4
+#ACT
+take 雷霆护腕 4
+INC M20 4
+#IF
+checkitem 雷霆护腕 3
+#ACT
+take 雷霆护腕 3
+INC M20 3
+#IF
+checkitem 雷霆护腕 2
+#ACT
+take 雷霆护腕 2
+INC M20 2
+#IF
+checkitem 雷霆护腕 1
+#ACT
+take 雷霆护腕 1
+INC M20 1
+#IF
+checkitem 雷霆战戒 5
+#ACT
+take 雷霆战戒 5
+INC M20 5
+#IF
+checkitem 雷霆战戒 4
+#ACT
+take 雷霆战戒 4
+INC M20 4
+#IF
+checkitem 雷霆战戒 3
+#ACT
+take 雷霆战戒 3
+INC M20 3
+#IF
+checkitem 雷霆战戒 2
+#ACT
+take 雷霆战戒 2
+INC M20 2
+#IF
+checkitem 雷霆战戒 1
+#ACT
+take 雷霆战戒 1
+INC M20 1
+#IF
+checkitem 圣龙盔 5
+#ACT
+take 圣龙盔 5
+INC M20 5
+#IF
+checkitem 圣龙盔 4
+#ACT
+take 圣龙盔 4
+INC M20 4
+#IF
+checkitem 圣龙盔 3
+#ACT
+take 圣龙盔 3
+INC M20 3
+#IF
+checkitem 圣龙盔 2
+#ACT
+take 圣龙盔 2
+INC M20 2
+#IF
+checkitem 圣龙盔 1
+#ACT
+take 圣龙盔 1
+INC M20 1
+#IF
+checkitem 光芒项链 5
+#ACT
+take 光芒项链 5
+INC M20 5
+#IF
+checkitem 光芒项链 4
+#ACT
+take 光芒项链 4
+INC M20 4
+#IF
+checkitem 光芒项链 3
+#ACT
+take 光芒项链 3
+INC M20 3
+#IF
+checkitem 光芒项链 2
+#ACT
+take 光芒项链 2
+INC M20 2
+#IF
+checkitem 光芒项链 1
+#ACT
+take 光芒项链 1
+INC M20 1
+#IF
+checkitem 光芒护腕 5
+#ACT
+take 光芒护腕 5
+INC M20 5
+#IF
+checkitem 光芒护腕 4
+#ACT
+take 光芒护腕 4
+INC M20 4
+#IF
+checkitem 光芒护腕 3
+#ACT
+take 光芒护腕 3
+INC M20 3
+#IF
+checkitem 光芒护腕 2
+#ACT
+take 光芒护腕 2
+INC M20 2
+#IF
+checkitem 光芒护腕 1
+#ACT
+take 光芒护腕 1
+INC M20 1
+#IF
+checkitem 光芒道戒 5
+#ACT
+take 光芒道戒 5
+INC M20 5
+#IF
+checkitem 光芒道戒 4
+#ACT
+take 光芒道戒 4
+INC M20 4
+#IF
+checkitem 光芒道戒 3
+#ACT
+take 光芒道戒 3
+INC M20 3
+#IF
+checkitem 光芒道戒 2
+#ACT
+take 光芒道戒 2
+INC M20 2
+#IF
+checkitem 光芒道戒 1
+#ACT
+take 光芒道戒 1
+INC M20 1
+#IF
+checkitem 天龙盔 5
+#ACT
+take 天龙盔 5
+INC M20 5
+#IF
+checkitem 天龙盔 4
+#ACT
+take 天龙盔 4
+INC M20 4
+#IF
+checkitem 天龙盔 3
+#ACT
+take 天龙盔 3
+INC M20 3
+#IF
+checkitem 天龙盔 2
+#ACT
+take 天龙盔 2
+INC M20 2
+#IF
+checkitem 天龙盔 1
+#ACT
+take 天龙盔 1
+INC M20 1
+#IF
+checkitem 烈焰项链 5
+#ACT
+take 烈焰项链 5
+INC M20 5
+#IF
+checkitem 烈焰项链 4
+#ACT
+take 烈焰项链 4
+INC M20 4
+#IF
+checkitem 烈焰项链 3
+#ACT
+take 烈焰项链 3
+INC M20 3
+#IF
+checkitem 烈焰项链 2
+#ACT
+take 烈焰项链 2
+INC M20 2
+#IF
+checkitem 烈焰项链 1
+#ACT
+take 烈焰项链 1
+INC M20 1
+#IF
+checkitem 烈焰护腕 5
+#ACT
+take 烈焰护腕 5
+INC M20 5
+#IF
+checkitem 烈焰护腕 4
+#ACT
+take 烈焰护腕 4
+INC M20 4
+#IF
+checkitem 烈焰护腕 3
+#ACT
+take 烈焰护腕 3
+INC M20 3
+#IF
+checkitem 烈焰护腕 2
+#ACT
+take 烈焰护腕 2
+INC M20 2
+#IF
+checkitem 烈焰护腕 1
+#ACT
+take 烈焰护腕 1
+INC M20 1
+#IF
+checkitem 烈焰魔戒 5
+#ACT
+take 烈焰魔戒 5
+INC M20 5
+#IF
+checkitem 烈焰魔戒 4
+#ACT
+take 烈焰魔戒 4
+INC M20 4
+#IF
+checkitem 烈焰魔戒 3
+#ACT
+take 烈焰魔戒 3
+INC M20 3
+#IF
+checkitem 烈焰魔戒 2
+#ACT
+take 烈焰魔戒 2
+INC M20 2
+#IF
+checkitem 烈焰魔戒 1
+#ACT
+take 烈焰魔戒 1
+INC M20 1
+#IF
+checkitem 魔龙盔 5
+#ACT
+take 魔龙盔 5
+INC M20 5
+#IF
+checkitem 魔龙盔 4
+#ACT
+take 魔龙盔 4
+INC M20 4
+#IF
+checkitem 魔龙盔 3
+#ACT
+take 魔龙盔 3
+INC M20 3
+#IF
+checkitem 魔龙盔 2
+#ACT
+take 魔龙盔 2
+INC M20 2
+#IF
+checkitem 魔龙盔 1
+#ACT
+take 魔龙盔 1
+INC M20 1
+#IF
+checkitem 烈焰魔靴 5
+#ACT
+take 烈焰魔靴 5
+INC M20 5
+#IF
+checkitem 烈焰魔靴 4
+#ACT
+take 烈焰魔靴 4
+INC M20 4
+#IF
+checkitem 烈焰魔靴 3
+#ACT
+take 烈焰魔靴 3
+INC M20 3
+#IF
+checkitem 烈焰魔靴 2
+#ACT
+take 烈焰魔靴 2
+INC M20 2
+#IF
+checkitem 烈焰魔靴 1
+#ACT
+take 烈焰魔靴 1
+INC M20 1
+#IF
+checkitem 烈焰腰带 5
+#ACT
+take 烈焰腰带 5
+INC M20 5
+#IF
+checkitem 烈焰腰带 4
+#ACT
+take 烈焰腰带 4
+INC M20 4
+#IF
+checkitem 烈焰腰带 3
+#ACT
+take 烈焰腰带 3
+INC M20 3
+#IF
+checkitem 烈焰腰带 2
+#ACT
+take 烈焰腰带 2
+INC M20 2
+#IF
+checkitem 烈焰腰带 1
+#ACT
+take 烈焰腰带 1
+INC M20 1
+#IF
+checkitem 光芒道靴 5
+#ACT
+take 光芒道靴 5
+INC M20 5
+#IF
+checkitem 光芒道靴 4
+#ACT
+take 光芒道靴 4
+INC M20 4
+#IF
+checkitem 光芒道靴 3
+#ACT
+take 光芒道靴 3
+INC M20 3
+#IF
+checkitem 光芒道靴 2
+#ACT
+take 光芒道靴 2
+INC M20 2
+#IF
+checkitem 光芒道靴 1
+#ACT
+take 光芒道靴 1
+INC M20 1
+#IF
+checkitem 光芒腰带 5
+#ACT
+take 光芒腰带 5
+INC M20 5
+#IF
+checkitem 光芒腰带 4
+#ACT
+take 光芒腰带 4
+INC M20 4
+#IF
+checkitem 光芒腰带 3
+#ACT
+take 光芒腰带 3
+INC M20 3
+#IF
+checkitem 光芒腰带 2
+#ACT
+take 光芒腰带 2
+INC M20 2
+#IF
+checkitem 光芒腰带 1
+#ACT
+take 光芒腰带 1
+INC M20 1
+#IF
+checkitem 雷霆战靴 5
+#ACT
+take 雷霆战靴 5
+INC M20 5
+#IF
+checkitem 雷霆战靴 4
+#ACT
+take 雷霆战靴 4
+INC M20 4
+#IF
+checkitem 雷霆战靴 3
+#ACT
+take 雷霆战靴 3
+INC M20 3
+#IF
+checkitem 雷霆战靴 2
+#ACT
+take 雷霆战靴 2
+INC M20 2
+#IF
+checkitem 雷霆战靴 1
+#ACT
+take 雷霆战靴 1
+INC M20 1
+#IF
+checkitem 雷霆腰带 5
+#ACT
+take 雷霆腰带 5
+INC M20 5
+#IF
+checkitem 雷霆腰带 4
+#ACT
+take 雷霆腰带 4
+INC M20 4
+#IF
+checkitem 雷霆腰带 3
+#ACT
+take 雷霆腰带 3
+INC M20 3
+#IF
+checkitem 雷霆腰带 2
+#ACT
+take 雷霆腰带 2
+INC M20 2
+#IF
+checkitem 雷霆腰带 1
+#ACT
+take 雷霆腰带 1
+INC M20 1
+#IF
+LARGE M20 0
+#ACT
+MOV M21 100000
+MOV M22 100000
+MOV M23 10
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件魔龙系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有魔龙系列装备，无法回收！ 
+GOTO @main
+BREAK
+[@赤月]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M20 0
+#IF
+checkitem 圣战项链 5
+#ACT
+take 圣战项链 5
+INC M20 5
+#IF
+checkitem 圣战项链 4
+#ACT
+take 圣战项链 4
+INC M20 4
+#IF
+checkitem 圣战项链 3
+#ACT
+take 圣战项链 3
+INC M20 3
+#IF
+checkitem 圣战项链 2
+#ACT
+take 圣战项链 2
+INC M20 2
+#IF
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+INC M20 1
+#IF
+checkitem 圣战手镯 5
+#ACT
+take 圣战手镯 5
+INC M20 5
+#IF
+checkitem 圣战手镯 4
+#ACT
+take 圣战手镯 4
+INC M20 4
+#IF
+checkitem 圣战手镯 3
+#ACT
+take 圣战手镯 3
+INC M20 3
+#IF
+checkitem 圣战手镯 2
+#ACT
+take 圣战手镯 2
+INC M20 2
+#IF
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+INC M20 1
+#IF
+checkitem 圣战戒指 5
+#ACT
+take 圣战戒指 5
+INC M20 5
+#IF
+checkitem 圣战戒指 4
+#ACT
+take 圣战戒指 4
+INC M20 4
+#IF
+checkitem 圣战戒指 3
+#ACT
+take 圣战戒指 3
+INC M20 3
+#IF
+checkitem 圣战戒指 2
+#ACT
+take 圣战戒指 2
+INC M20 2
+#IF
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+INC M20 1
+#IF
+checkitem 圣战头盔 5
+#ACT
+take 圣战头盔 5
+INC M20 5
+#IF
+checkitem 圣战头盔 4
+#ACT
+take 圣战头盔 4
+INC M20 4
+#IF
+checkitem 圣战头盔 3
+#ACT
+take 圣战头盔 3
+INC M20 3
+#IF
+checkitem 圣战头盔 2
+#ACT
+take 圣战头盔 2
+INC M20 2
+#IF
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+INC M20 1
+#IF
+checkitem 天尊项链 5
+#ACT
+take 天尊项链 5
+INC M20 5
+#IF
+checkitem 天尊项链 4
+#ACT
+take 天尊项链 4
+INC M20 4
+#IF
+checkitem 天尊项链 3
+#ACT
+take 天尊项链 3
+INC M20 3
+#IF
+checkitem 天尊项链 2
+#ACT
+take 天尊项链 2
+INC M20 2
+#IF
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+INC M20 1
+#IF
+checkitem 天尊手镯 5
+#ACT
+take 天尊手镯 5
+INC M20 5
+#IF
+checkitem 天尊手镯 4
+#ACT
+take 天尊手镯 4
+INC M20 4
+#IF
+checkitem 天尊手镯 3
+#ACT
+take 天尊手镯 3
+INC M20 3
+#IF
+checkitem 天尊手镯 2
+#ACT
+take 天尊手镯 2
+INC M20 2
+#IF
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+INC M20 1
+#IF
+checkitem 天尊戒指 5
+#ACT
+take 天尊戒指 5
+INC M20 5
+#IF
+checkitem 天尊戒指 4
+#ACT
+take 天尊戒指 4
+INC M20 4
+#IF
+checkitem 天尊戒指 3
+#ACT
+take 天尊戒指 3
+INC M20 3
+#IF
+checkitem 天尊戒指 2
+#ACT
+take 天尊戒指 2
+INC M20 2
+#IF
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+INC M20 1
+#IF
+checkitem 天尊头盔 5
+#ACT
+take 天尊头盔 5
+INC M20 5
+#IF
+checkitem 天尊头盔 4
+#ACT
+take 天尊头盔 4
+INC M20 4
+#IF
+checkitem 天尊头盔 3
+#ACT
+take 天尊头盔 3
+INC M20 3
+#IF
+checkitem 天尊头盔 2
+#ACT
+take 天尊头盔 2
+INC M20 2
+#IF
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+INC M20 1
+#IF
+checkitem 法神项链 5
+#ACT
+take 法神项链 5
+INC M20 5
+#IF
+checkitem 法神项链 4
+#ACT
+take 法神项链 4
+INC M20 4
+#IF
+checkitem 法神项链 3
+#ACT
+take 法神项链 3
+INC M20 3
+#IF
+checkitem 法神项链 2
+#ACT
+take 法神项链 2
+INC M20 2
+#IF
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+INC M20 1
+#IF
+checkitem 法神手镯 5
+#ACT
+take 法神手镯 5
+INC M20 5
+#IF
+checkitem 法神手镯 4
+#ACT
+take 法神手镯 4
+INC M20 4
+#IF
+checkitem 法神手镯 3
+#ACT
+take 法神手镯 3
+INC M20 3
+#IF
+checkitem 法神手镯 2
+#ACT
+take 法神手镯 2
+INC M20 2
+#IF
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+INC M20 1
+#IF
+checkitem 法神戒指 5
+#ACT
+take 法神戒指 5
+INC M20 5
+#IF
+checkitem 法神戒指 4
+#ACT
+take 法神戒指 4
+INC M20 4
+#IF
+checkitem 法神戒指 3
+#ACT
+take 法神戒指 3
+INC M20 3
+#IF
+checkitem 法神戒指 2
+#ACT
+take 法神戒指 2
+INC M20 2
+#IF
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+INC M20 1
+#IF
+checkitem 法神头盔 5
+#ACT
+take 法神头盔 5
+INC M20 5
+#IF
+checkitem 法神头盔 4
+#ACT
+take 法神头盔 4
+INC M20 4
+#IF
+checkitem 法神头盔 3
+#ACT
+take 法神头盔 3
+INC M20 3
+#IF
+checkitem 法神头盔 2
+#ACT
+take 法神头盔 2
+INC M20 2
+#IF
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+INC M20 1
+#IF
+LARGE M20 0
+#ACT
+MOV M21 50000
+MOV M22 50000
+MOV M23 5
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件赤月系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有赤月系列装备，无法回收！ 
+GOTO @main
+BREAK
+[@祖玛]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M20 0
+#IF
+checkitem 绿色项链 5
+#ACT
+take 绿色项链 5
+INC M20 5
+#IF
+checkitem 绿色项链 4
+#ACT
+take 绿色项链 4
+INC M20 4
+#IF
+checkitem 绿色项链 3
+#ACT
+take 绿色项链 3
+INC M20 3
+#IF
+checkitem 绿色项链 2
+#ACT
+take 绿色项链 2
+INC M20 2
+#IF
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+INC M20 1
+#IF
+checkitem 骑士手镯 5
+#ACT
+take 骑士手镯 5
+INC M20 5
+#IF
+checkitem 骑士手镯 4
+#ACT
+take 骑士手镯 4
+INC M20 4
+#IF
+checkitem 骑士手镯 3
+#ACT
+take 骑士手镯 3
+INC M20 3
+#IF
+checkitem 骑士手镯 2
+#ACT
+take 骑士手镯 2
+INC M20 2
+#IF
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+INC M20 1
+#IF
+checkitem 力量戒指 5
+#ACT
+take 力量戒指 5
+INC M20 5
+#IF
+checkitem 力量戒指 4
+#ACT
+take 力量戒指 4
+INC M20 4
+#IF
+checkitem 力量戒指 3
+#ACT
+take 力量戒指 3
+INC M20 3
+#IF
+checkitem 力量戒指 2
+#ACT
+take 力量戒指 2
+INC M20 2
+#IF
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+INC M20 1
+#IF
+checkitem 裁决之杖 5
+#ACT
+take 裁决之杖 5
+INC M20 5
+#IF
+checkitem 裁决之杖 4
+#ACT
+take 裁决之杖 4
+INC M20 4
+#IF
+checkitem 裁决之杖 3
+#ACT
+take 裁决之杖 3
+INC M20 3
+#IF
+checkitem 裁决之杖 2
+#ACT
+take 裁决之杖 2
+INC M20 2
+#IF
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+INC M20 1
+#IF
+checkitem 灵魂项链 5
+#ACT
+take 灵魂项链 5
+INC M20 5
+#IF
+checkitem 灵魂项链 4
+#ACT
+take 灵魂项链 4
+INC M20 4
+#IF
+checkitem 灵魂项链 3
+#ACT
+take 灵魂项链 3
+INC M20 3
+#IF
+checkitem 灵魂项链 2
+#ACT
+take 灵魂项链 2
+INC M20 2
+#IF
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+INC M20 1
+#IF
+checkitem 三眼手镯 5
+#ACT
+take 三眼手镯 5
+INC M20 5
+#IF
+checkitem 三眼手镯 4
+#ACT
+take 三眼手镯 4
+INC M20 4
+#IF
+checkitem 三眼手镯 3
+#ACT
+take 三眼手镯 3
+INC M20 3
+#IF
+checkitem 三眼手镯 2
+#ACT
+take 三眼手镯 2
+INC M20 2
+#IF
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+INC M20 1
+#IF
+checkitem 泰坦戒指 5
+#ACT
+take 泰坦戒指 5
+INC M20 5
+#IF
+checkitem 泰坦戒指 4
+#ACT
+take 泰坦戒指 4
+INC M20 4
+#IF
+checkitem 泰坦戒指 3
+#ACT
+take 泰坦戒指 3
+INC M20 3
+#IF
+checkitem 泰坦戒指 2
+#ACT
+take 泰坦戒指 2
+INC M20 2
+#IF
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+INC M20 1
+#IF
+checkitem 龙纹剑 5
+#ACT
+take 龙纹剑 5
+INC M20 5
+#IF
+checkitem 龙纹剑 4
+#ACT
+take 龙纹剑 4
+INC M20 4
+#IF
+checkitem 龙纹剑 3
+#ACT
+take 龙纹剑 3
+INC M20 3
+#IF
+checkitem 龙纹剑 2
+#ACT
+take 龙纹剑 2
+INC M20 2
+#IF
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+INC M20 1
+#IF
+checkitem 恶魔铃铛 5
+#ACT
+take 恶魔铃铛 5
+INC M20 5
+#IF
+checkitem 恶魔铃铛 4
+#ACT
+take 恶魔铃铛 4
+INC M20 4
+#IF
+checkitem 恶魔铃铛 3
+#ACT
+take 恶魔铃铛 3
+INC M20 3
+#IF
+checkitem 恶魔铃铛 2
+#ACT
+take 恶魔铃铛 2
+INC M20 2
+#IF
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+INC M20 1
+#IF
+checkitem 龙之手镯 5
+#ACT
+take 龙之手镯 5
+INC M20 5
+#IF
+checkitem 龙之手镯 4
+#ACT
+take 龙之手镯 4
+INC M20 4
+#IF
+checkitem 龙之手镯 3
+#ACT
+take 龙之手镯 3
+INC M20 3
+#IF
+checkitem 龙之手镯 2
+#ACT
+take 龙之手镯 2
+INC M20 2
+#IF
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+INC M20 1
+#IF
+checkitem 紫碧螺 5
+#ACT
+take 紫碧螺 5
+INC M20 5
+#IF
+checkitem 紫碧螺 4
+#ACT
+take 紫碧螺 4
+INC M20 4
+#IF
+checkitem 紫碧螺 3
+#ACT
+take 紫碧螺 3
+INC M20 3
+#IF
+checkitem 紫碧螺 2
+#ACT
+take 紫碧螺 2
+INC M20 2
+#IF
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+INC M20 1
+#IF
+checkitem 骨玉权杖 5
+#ACT
+take 骨玉权杖 5
+INC M20 5
+#IF
+checkitem 骨玉权杖 4
+#ACT
+take 骨玉权杖 4
+INC M20 4
+#IF
+checkitem 骨玉权杖 3
+#ACT
+take 骨玉权杖 3
+INC M20 3
+#IF
+checkitem 骨玉权杖 2
+#ACT
+take 骨玉权杖 2
+INC M20 2
+#IF
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+INC M20 1
+#IF
+LARGE M20 0
+#ACT
+MOV M21 20000
+MOV M22 10000
+MOV M23 2
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件祖玛系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有祖玛系列装备，无法回收！ 
+GOTO @main
+BREAK
+[@强化]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M20 0
+#IF
+checkitem 强化雷霆项链 5
+#ACT
+take 强化雷霆项链 5
+INC M20 5
+#IF
+checkitem 强化雷霆项链 4
+#ACT
+take 强化雷霆项链 4
+INC M20 4
+#IF
+checkitem 强化雷霆项链 3
+#ACT
+take 强化雷霆项链 3
+INC M20 3
+#IF
+checkitem 强化雷霆项链 2
+#ACT
+take 强化雷霆项链 2
+INC M20 2
+#IF
+checkitem 强化雷霆项链 1
+#ACT
+take 强化雷霆项链 1
+INC M20 1
+#IF
+checkitem 强化雷霆护腕 5
+#ACT
+take 强化雷霆护腕 5
+INC M20 5
+#IF
+checkitem 强化雷霆护腕 4
+#ACT
+take 强化雷霆护腕 4
+INC M20 4
+#IF
+checkitem 强化雷霆护腕 3
+#ACT
+take 强化雷霆护腕 3
+INC M20 3
+#IF
+checkitem 强化雷霆护腕 2
+#ACT
+take 强化雷霆护腕 2
+INC M20 2
+#IF
+checkitem 强化雷霆护腕 1
+#ACT
+take 强化雷霆护腕 1
+INC M20 1
+#IF
+checkitem 强化雷霆战戒 5
+#ACT
+take 强化雷霆战戒 5
+INC M20 5
+#IF
+checkitem 强化雷霆战戒 4
+#ACT
+take 强化雷霆战戒 4
+INC M20 4
+#IF
+checkitem 强化雷霆战戒 3
+#ACT
+take 强化雷霆战戒 3
+INC M20 3
+#IF
+checkitem 强化雷霆战戒 2
+#ACT
+take 强化雷霆战戒 2
+INC M20 2
+#IF
+checkitem 强化雷霆战戒 1
+#ACT
+take 强化雷霆战戒 1
+INC M20 1
+#IF
+checkitem 强化光芒项链 5
+#ACT
+take 强化光芒项链 5
+INC M20 5
+#IF
+checkitem 强化光芒项链 4
+#ACT
+take 强化光芒项链 4
+INC M20 4
+#IF
+checkitem 强化光芒项链 3
+#ACT
+take 强化光芒项链 3
+INC M20 3
+#IF
+checkitem 强化光芒项链 2
+#ACT
+take 强化光芒项链 2
+INC M20 2
+#IF
+checkitem 强化光芒项链 1
+#ACT
+take 强化光芒项链 1
+INC M20 1
+#IF
+checkitem 强化光芒护腕 5
+#ACT
+take 强化光芒护腕 5
+INC M20 5
+#IF
+checkitem 强化光芒护腕 4
+#ACT
+take 强化光芒护腕 4
+INC M20 4
+#IF
+checkitem 强化光芒护腕 3
+#ACT
+take 强化光芒护腕 3
+INC M20 3
+#IF
+checkitem 强化光芒护腕 2
+#ACT
+take 强化光芒护腕 2
+INC M20 2
+#IF
+checkitem 强化光芒护腕 1
+#ACT
+take 强化光芒护腕 1
+INC M20 1
+#IF
+checkitem 强化光芒道戒 5
+#ACT
+take 强化光芒道戒 5
+INC M20 5
+#IF
+checkitem 强化光芒道戒 4
+#ACT
+take 强化光芒道戒 4
+INC M20 4
+#IF
+checkitem 强化光芒道戒 3
+#ACT
+take 强化光芒道戒 3
+INC M20 3
+#IF
+checkitem 强化光芒道戒 2
+#ACT
+take 强化光芒道戒 2
+INC M20 2
+#IF
+checkitem 强化光芒道戒 1
+#ACT
+take 强化光芒道戒 1
+INC M20 1
+#IF
+checkitem 强化烈焰项链 5
+#ACT
+take 强化烈焰项链 5
+INC M20 5
+#IF
+checkitem 强化烈焰项链 4
+#ACT
+take 强化烈焰项链 4
+INC M20 4
+#IF
+checkitem 强化烈焰项链 3
+#ACT
+take 强化烈焰项链 3
+INC M20 3
+#IF
+checkitem 强化烈焰项链 2
+#ACT
+take 强化烈焰项链 2
+INC M20 2
+#IF
+checkitem 强化烈焰项链 1
+#ACT
+take 强化烈焰项链 1
+INC M20 1
+#IF
+checkitem 强化烈焰护腕 5
+#ACT
+take 强化烈焰护腕 5
+INC M20 5
+#IF
+checkitem 强化烈焰护腕 4
+#ACT
+take 强化烈焰护腕 4
+INC M20 4
+#IF
+checkitem 强化烈焰护腕 3
+#ACT
+take 强化烈焰护腕 3
+INC M20 3
+#IF
+checkitem 强化烈焰护腕 2
+#ACT
+take 强化烈焰护腕 2
+INC M20 2
+#IF
+checkitem 强化烈焰护腕 1
+#ACT
+take 强化烈焰护腕 1
+INC M20 1
+#IF
+checkitem 强化烈焰魔戒 5
+#ACT
+take 强化烈焰魔戒 5
+INC M20 5
+#IF
+checkitem 强化烈焰魔戒 4
+#ACT
+take 强化烈焰魔戒 4
+INC M20 4
+#IF
+checkitem 强化烈焰魔戒 3
+#ACT
+take 强化烈焰魔戒 3
+INC M20 3
+#IF
+checkitem 强化烈焰魔戒 2
+#ACT
+take 强化烈焰魔戒 2
+INC M20 2
+#IF
+checkitem 强化烈焰魔戒 1
+#ACT
+take 强化烈焰魔戒 1
+INC M20 1
+#IF
+checkitem 强化烈焰魔靴 5
+#ACT
+take 强化烈焰魔靴 5
+INC M20 5
+#IF
+checkitem 强化烈焰魔靴 4
+#ACT
+take 强化烈焰魔靴 4
+INC M20 4
+#IF
+checkitem 强化烈焰魔靴 3
+#ACT
+take 强化烈焰魔靴 3
+INC M20 3
+#IF
+checkitem 强化烈焰魔靴 2
+#ACT
+take 强化烈焰魔靴 2
+INC M20 2
+#IF
+checkitem 强化烈焰魔靴 1
+#ACT
+take 强化烈焰魔靴 1
+INC M20 1
+#IF
+checkitem 强化烈焰腰带 5
+#ACT
+take 强化烈焰腰带 5
+INC M20 5
+#IF
+checkitem 强化烈焰腰带 4
+#ACT
+take 强化烈焰腰带 4
+INC M20 4
+#IF
+checkitem 强化烈焰腰带 3
+#ACT
+take 强化烈焰腰带 3
+INC M20 3
+#IF
+checkitem 强化烈焰腰带 2
+#ACT
+take 强化烈焰腰带 2
+INC M20 2
+#IF
+checkitem 强化烈焰腰带 1
+#ACT
+take 强化烈焰腰带 1
+INC M20 1
+#IF
+checkitem 强化光芒道靴 5
+#ACT
+take 强化光芒道靴 5
+INC M20 5
+#IF
+checkitem 强化光芒道靴 4
+#ACT
+take 强化光芒道靴 4
+INC M20 4
+#IF
+checkitem 强化光芒道靴 3
+#ACT
+take 强化光芒道靴 3
+INC M20 3
+#IF
+checkitem 强化光芒道靴 2
+#ACT
+take 强化光芒道靴 2
+INC M20 2
+#IF
+checkitem 强化光芒道靴 1
+#ACT
+take 强化光芒道靴 1
+INC M20 1
+#IF
+checkitem 强化光芒腰带 5
+#ACT
+take 强化光芒腰带 5
+INC M20 5
+#IF
+checkitem 强化光芒腰带 4
+#ACT
+take 强化光芒腰带 4
+INC M20 4
+#IF
+checkitem 强化光芒腰带 3
+#ACT
+take 强化光芒腰带 3
+INC M20 3
+#IF
+checkitem 强化光芒腰带 2
+#ACT
+take 强化光芒腰带 2
+INC M20 2
+#IF
+checkitem 强化光芒腰带 1
+#ACT
+take 强化光芒腰带 1
+INC M20 1
+#IF
+checkitem 强化雷霆战靴 5
+#ACT
+take 强化雷霆战靴 5
+INC M20 5
+#IF
+checkitem 强化雷霆战靴 4
+#ACT
+take 强化雷霆战靴 4
+INC M20 4
+#IF
+checkitem 强化雷霆战靴 3
+#ACT
+take 强化雷霆战靴 3
+INC M20 3
+#IF
+checkitem 强化雷霆战靴 2
+#ACT
+take 强化雷霆战靴 2
+INC M20 2
+#IF
+checkitem 强化雷霆战靴 1
+#ACT
+take 强化雷霆战靴 1
+INC M20 1
+#IF
+checkitem 强化雷霆腰带 5
+#ACT
+take 强化雷霆腰带 5
+INC M20 5
+#IF
+checkitem 强化雷霆腰带 4
+#ACT
+take 强化雷霆腰带 4
+INC M20 4
+#IF
+checkitem 强化雷霆腰带 3
+#ACT
+take 强化雷霆腰带 3
+INC M20 3
+#IF
+checkitem 强化雷霆腰带 2
+#ACT
+take 强化雷霆腰带 2
+INC M20 2
+#IF
+checkitem 强化雷霆腰带 1
+#ACT
+take 强化雷霆腰带 1
+INC M20 1
+#IF
+LARGE M20 0
+#ACT
+MOV M21 150000
+MOV M22 150000
+MOV M23 50
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件强化雷霆系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有强化雷霆系列装备，无法回收！ 
+GOTO @main
+BREAK
+[@誓言]
+#IF
+checkitem 传说魔靴(法) 5
+#ACT
+take 传说魔靴(法) 5
+INC M20 5
+#IF
+checkitem 传说魔靴(法) 4
+#ACT
+take 传说魔靴(法) 4
+INC M20 4
+#IF
+checkitem 传说魔靴(法) 3
+#ACT
+take 传说魔靴(法) 3
+INC M20 3
+#IF
+checkitem 传说魔靴(法) 2
+#ACT
+take 传说魔靴(法) 2
+INC M20 2
+#IF
+checkitem 传说魔靴(法) 1
+#ACT
+take 传说魔靴(法) 1
+INC M20 1
+#IF
+checkitem 誓言腰带(法) 5
+#ACT
+take 誓言腰带(法) 5
+INC M20 5
+#IF
+checkitem 誓言腰带(法) 4
+#ACT
+take 誓言腰带(法) 4
+INC M20 4
+#IF
+checkitem 誓言腰带(法) 3
+#ACT
+take 誓言腰带(法) 3
+INC M20 3
+#IF
+checkitem 誓言腰带(法) 2
+#ACT
+take 誓言腰带(法) 2
+INC M20 2
+#IF
+checkitem 誓言腰带(法) 1
+#ACT
+take 誓言腰带(法) 1
+INC M20 1
+#IF
+checkitem 预言头盔(战) 5
+#ACT
+take 预言头盔(战) 5
+INC M20 5
+#IF
+checkitem 预言头盔(战) 4
+#ACT
+take 预言头盔(战) 4
+INC M20 4
+#IF
+checkitem 预言头盔(战) 3
+#ACT
+take 预言头盔(战) 3
+INC M20 3
+#IF
+checkitem 预言头盔(战) 2
+#ACT
+take 预言头盔(战) 2
+INC M20 2
+#IF
+checkitem 预言头盔(战) 1
+#ACT
+take 预言头盔(战) 1
+INC M20 1
+#IF
+checkitem 预言头盔(法) 5
+#ACT
+take 预言头盔(法) 5
+INC M20 5
+#IF
+checkitem 预言头盔(法) 4
+#ACT
+take 预言头盔(法) 4
+INC M20 4
+#IF
+checkitem 预言头盔(法) 3
+#ACT
+take 预言头盔(法) 3
+INC M20 3
+#IF
+checkitem 预言头盔(法) 2
+#ACT
+take 预言头盔(法) 2
+INC M20 2
+#IF
+checkitem 预言头盔(法) 1
+#ACT
+take 预言头盔(法) 1
+INC M20 1
+#IF
+checkitem 预言头盔(道) 5
+#ACT
+take 预言头盔(道) 5
+INC M20 5
+#IF
+checkitem 预言头盔(道) 4
+#ACT
+take 预言头盔(道) 4
+INC M20 4
+#IF
+checkitem 预言头盔(道) 3
+#ACT
+take 预言头盔(道) 3
+INC M20 3
+#IF
+checkitem 预言头盔(道) 2
+#ACT
+take 预言头盔(道) 2
+INC M20 2
+#IF
+checkitem 预言头盔(道) 1
+#ACT
+take 预言头盔(道) 1
+INC M20 1
+#IF
+checkitem 传说魔靴(战) 5
+#ACT
+take 传说魔靴(战) 5
+INC M20 5
+#IF
+checkitem 传说魔靴(战) 4
+#ACT
+take 传说魔靴(战) 4
+INC M20 4
+#IF
+checkitem 传说魔靴(战) 3
+#ACT
+take 传说魔靴(战) 3
+INC M20 3
+#IF
+checkitem 传说魔靴(战) 2
+#ACT
+take 传说魔靴(战) 2
+INC M20 2
+#IF
+checkitem 传说魔靴(战) 1
+#ACT
+take 传说魔靴(战) 1
+INC M20 1
+#IF
+checkitem 誓言腰带(战) 5
+#ACT
+take 誓言腰带(战) 5
+INC M20 5
+#IF
+checkitem 誓言腰带(战) 4
+#ACT
+take 誓言腰带(战) 4
+INC M20 4
+#IF
+checkitem 誓言腰带(战) 3
+#ACT
+take 誓言腰带(战) 3
+INC M20 3
+#IF
+checkitem 誓言腰带(战) 2
+#ACT
+take 誓言腰带(战) 2
+INC M20 2
+#IF
+checkitem 誓言腰带(战) 1
+#ACT
+take 誓言腰带(战) 1
+INC M20 1
+#IF
+checkitem 传说魔靴(道) 5
+#ACT
+take 传说魔靴(道) 5
+INC M20 5
+#IF
+checkitem 传说魔靴(道) 4
+#ACT
+take 传说魔靴(道) 4
+INC M20 4
+#IF
+checkitem 传说魔靴(道) 3
+#ACT
+take 传说魔靴(道) 3
+INC M20 3
+#IF
+checkitem 传说魔靴(道) 2
+#ACT
+take 传说魔靴(道) 2
+INC M20 2
+#IF
+checkitem 传说魔靴(道) 1
+#ACT
+take 传说魔靴(道) 1
+INC M20 1
+#IF
+checkitem 誓言腰带(道) 5
+#ACT
+take 誓言腰带(道) 5
+INC M20 5
+#IF
+checkitem 誓言腰带(道) 4
+#ACT
+take 誓言腰带(道) 4
+INC M20 4
+#IF
+checkitem 誓言腰带(道) 3
+#ACT
+take 誓言腰带(道) 3
+INC M20 3
+#IF
+checkitem 誓言腰带(道) 2
+#ACT
+take 誓言腰带(道) 2
+INC M20 2
+#IF
+checkitem 誓言腰带(道) 1
+#ACT
+take 誓言腰带(道) 1
+INC M20 1
+#IF
+LARGE M20 0
+#ACT
+MOV M21 300000
+MOV M22 300000
+MOV M23 1000
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件誓言系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有誓言系列装备，无法回收！ 
+GOTO @main
+BREAK
+[@JIE_ZHEN]
+#IF
+large G128 2499
+#ACT
+MOV G128 0
+CLEARMAPMON  dlhd1
+CLEARMAPMON  dlhd2
+CLEARMAPMON  dlhd3
+CLEARMAPMON  dlhd4
+SENDMSG 0 回收结界达到『2500』层.《独家经典活动》获得护体神盾唯一途径！ 253 150 60
+SENDMSG 0 回收结界达到『2500』层.《独家经典活动》获得护体神盾唯一途径！ 253 150 60
+SENDMSG 0 回收结界达到『2500』层.《独家经典活动》获得护体神盾唯一途径！ 253 150 60
+SENDMSG 0 回收结界达到『2500』层.《独家经典活动》获得护体神盾唯一途径！ 253 150 60
+SENDMSG 0 回收结界达到『2500』层.《独家经典活动》获得护体神盾唯一途径！ 253 150 60
+SENDMSG 0 回收结界达到『2500』层.《独家经典活动》获得护体神盾唯一途径！ 253 150 60
+SENDMSG 0 回收结界达到『2500』层.《独家经典活动》获得护体神盾唯一途径！ 253 150 60
+SENDMSG 0 回收结界达到『2500』层.《独家经典活动》获得护体神盾唯一途径！ 253 150 60
+SENDMSG 0 回收结界达到『2500』层.《独家经典活动》获得护体神盾唯一途径！ 253 150 60
+SENDMSG 0 回收结界达到『2500』层.《独家经典活动》获得护体神盾唯一途径！ 253 150 60
+SENDMSG 0 回收结界达到『2500』层.《独家经典活动》获得护体神盾唯一途径！ 253 150 60
+DELAYGOTO 5000 @继续开启
+Break
+[@继续开启]
+#IF
+#ACT
+Param1 dlhd1
+Param2 50
+Param3 50
+MonGen 活动·魔龙 10 20
+goto @001
+goto @002
+goto @003
+Gmexecute 开始提问 @开启咯
+DELAYGOTO 50000 @继续开启A
+Break
+[@003]
+#IF
+#ACT
+Param1 dlhd4
+Param2 25
+Param3 26
+MonGen 活动·黄龙 1 2
+[@002]
+#IF
+#ACT
+Param1 dlhd3
+Param2 15
+Param3 14
+MonGen 活动·天珠 2 5
+[@001]
+#IF
+#ACT
+Param1 dlhd2
+Param2 51
+Param3 44
+MonGen 活动·蛛王 5 15
+[@继续开启A]
+#IF
+#ACT
+Gmexecute 开始提问 @开启咯
+Break
+[@1111]
+<COLOR=clFuchsia ▂▂▃▃▅▅▆▆██当前结界〖>　<$STR(G128)>　<COLOR=clFuchsia 〗层██▆▆▅▅▃▃▂▂>\
+　\
+<每回收一件装备结界层数即+1　当结界层数达到2500层触发活动>\
+<COLOR=clLime 本活动地图分为四层>\
+　<①层>:10只活动Boss 　1/ 5 几率 掉落  <COLOR=clAqua [护体神盾碎片①]>\
+　<②层>: 5只活动Boss 　1/10 几率 掉落  <COLOR=clAqua [护体神盾碎片②]>\
+　<③层>: 2只活动Boss 　1/15 几率 掉落  <COLOR=clAqua [护体神盾碎片③]>\
+　<④层>: 1只活动Boss 　1/20 几率 掉落  <COLOR=clAqua [护体神盾碎片④]>\
+<COLOR=clFuchsia 〖当收集[护体神盾碎片①-④]号即可在活动地图④层获得护体神盾〗>

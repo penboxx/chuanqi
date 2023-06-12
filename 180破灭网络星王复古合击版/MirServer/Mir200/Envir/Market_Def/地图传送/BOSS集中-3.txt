@@ -1,0 +1,28 @@
+
+[@main]
+
+ ¤╭⌒╮╭⌒╮          欢迎光临     　　\
+ ╱◥██◣ ╭⌒╮                    <$SERVERNAME> 　　\
+︱田︱田田|╰-------------    　　\
+╬╬╬╬╬╬╬╬╬╬╬╬╬    　 　        ┆<点击进入/@进入>┆\
+------------------------------------------------------------　\
+◆BOSS刷新时间为4小时刷新一次 <COLOR=clFuchsia 共一层>\
+◆无任何小怪专署地图BOSS爆所有装备绝不保留>\
+◆因为爆率超高所以收费高1万元宝+200金刚石>\
+------------------------------------------------------------　\
+
+
+[@进入]
+#IF
+CHECKGAMEGOLD > 9999
+CHECKGAMEDIAMOND > 199
+#act
+TimeRecall 60
+mapmove jzy
+GAMEGOLD - 10000
+GAMEDIAMOND - 200
+SENDMSG 6 你只有60分钟的时间，时间到后你将被自动传回！
+SENDMSG 2 恭喜『<$USERNAME>』进入了【BOSS集中营】爆所有装备绝不保留!!!   249 0
+SENDMSG 2 恭喜『<$USERNAME>』进入了【BOSS集中营】爆所有装备绝不保留!!!   249 0
+#elseact
+MessageBox 您没有1万元宝或没有200金刚石,不能进入！

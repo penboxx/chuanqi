@@ -1,0 +1,47 @@
+[@税率设置庄]
+{
+#If
+Large M93 19
+Small M93 101
+#Act
+Mul M93 2
+DIV M93 100
+DEC I31 <$STR(M93)>
+#If
+Large M93 100
+#Act
+Mul M93 5
+DIV M93 100
+DEC I31 <$STR(M93)>
+#If
+Small M93 20
+#Act
+DEC I31 <$STR(M93)>
+}
+
+[@税率设置闲]
+{
+#If
+Large M93 19
+Small M93 50
+#Act
+DEC M93 1
+Inc M43 <$STR(M93)>
+#If
+Large M93 49
+Small M93 101
+#Act
+Mul M93 98
+DIV M93 100
+Inc M43 <$STR(M93)>
+#If
+Large M93 100
+#Act
+Mul M93 95
+DIV M93 100
+Inc M43 <$STR(M93)>
+#iF
+sMALL M93 20
+#Act
+Inc M43 <$STR(M93)>
+}

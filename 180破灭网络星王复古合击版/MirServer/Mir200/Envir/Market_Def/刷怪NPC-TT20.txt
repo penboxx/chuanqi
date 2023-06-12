@@ -1,0 +1,23 @@
+()
+%100
+[@main]
+积分是1块钱1点积分.\
+可以用100积分刷取一个终极怪冰宫魔王.\
+专爆开天。镇天，玄天。皇天衣服男女爆率低!!!\
+\
+　目前有<$HUMAN(消费积分)>个\
+<刷刷刷/@cdmm2>     <关闭对话./@exit>\ 
+[@cdmm2]
+#IF
+CHECKVAR HUMAN 消费积分 > 99
+#ACT
+CALCVAR HUMAN 消费积分 - 100
+SAVEVAR HUMAN 消费积分 ..\QuestDiary\充值积分\消费积分Save.txt
+PARAM1 TT20
+PARAM2 34
+PARAM3 32
+MONGEN 冰宫魔王 1 1
+SENDMSG 0 [%s].用100积分刷取一个终极怪冰宫魔王..
+#ELSEACT
+messagebox 你积分不够5.目前有<$HUMAN(消费积分)>个请充值后再继续此操作.
+break

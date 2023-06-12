@@ -1,0 +1,499 @@
+()
+%100
+[@main]
+#if
+CHECKLEVELEX < 50
+#ACT
+Messagebox 小伙子，你太年轻了。。。50级再来吧!!
+BREAK
+
+#IF
+#say
+已经很多年没有人来过这里了，今天就破例让你见识见识我的手艺吧！\ \
+合成<≮白银勋章≯/@HC-2>            合成<≮黄金勋章≯/@HC-5>\  \ 
+合成<≮白银斗笠≯/@HC-3>            合成<≮黄金斗笠≯/@HC-6>\  \ 
+合成<≮终极斗笠≯/@终极斗笠合成>            合成<≮终极勋章≯/@终极勋章合成>\  \ 
+合成<≮开天凤天≯/@开天凤天>            合成<≮星王合成≯/@星王合成>\                                                                                            
+
+[@开天凤天]
+<合成【开天】/@开天>      <合成【镇天】/@镇天>      <合成【玄天】/@玄天>  \ \ 
+<合成凤天魔甲/@合成凤天魔甲>      <合成凤天魔衣/@合成凤天魔衣>       \ \  
+<COLOR=clRed 温馨提示：打造装备只是为上班族设计,本服装备均可爆出！> \
+<COLOR=clRed 温馨提示：打造装备只是为上班族设计,本服装备均可爆出！> \
+<COLOR=clRed 温馨提示：打造装备只是为上班族设计,本服装备均可爆出！> \
+<COLOR=clRed 温馨提示：打造装备只是为上班族设计,本服装备均可爆出！> \
+[@终极勋章合成]
+#IF
+CHECKITEM 黄金勋章 2
+CHECKGAMEGOLD > 99999
+CHECKGAMEDIAMOND > 999
+#act
+GAMEGOLD - 100000
+GAMEDIAMOND - 1000
+TAKE 黄金勋章 2
+GIVE 终极勋章 1
+SENDMSG 0 恭喜(%s)成功合成出：终极勋章！
+#ELSEACT
+messagebox 合成需要10W元宝1000金刚石加2个黄金勋章
+BREAK
+   
+[@终极面巾合成]
+#IF
+CHECKITEM 黄金蒙面 2
+CHECKGAMEGOLD > 99999
+CHECKGAMEDIAMOND > 999
+#act
+GAMEGOLD - 100000
+GAMEDIAMOND - 1000
+TAKE 黄金蒙面 2
+GIVE 终极蒙面 1
+SENDMSG 0 恭喜(%s)成功合成出：终极蒙面！
+#ELSEACT
+messagebox 合成需要10W元宝1000金刚石加2个黄金蒙面
+BREAK
+[@终极斗笠合成]
+#IF
+CHECKITEM 黄金斗笠 2
+CHECKGAMEGOLD > 99999
+CHECKGAMEDIAMOND > 999
+#act
+GAMEGOLD - 100000
+GAMEDIAMOND - 1000
+TAKE 黄金斗笠 2
+GIVE 终极斗笠 1
+SENDMSG 0 恭喜(%s)成功合成出：终极斗笠！
+#ELSEACT
+messagebox 合成需要10W元宝1000金刚石加2个黄金斗笠
+BREAK
+[@HC-7]
+想升级黄金蒙面？\ \
+那你需要2个白银蒙面才能升级，\
+还要50000个元宝888金刚石才能成功哦。\ \
+黄金蒙面:超高防御，神秘属性！\ \
+<升级/@HC-7-7>≮黄金蒙面≯\
+<返回/@MAIN>
+[@HC-7-7]
+#IF
+CHECKITEM 白银蒙面 2
+CHECKGAMEGOLD > 49999
+CHECKGAMEDIAMOND > 887
+#act
+GAMEGOLD - 50000
+GAMEDIAMOND - 888
+TAKE 白银蒙面 2
+GIVE 黄金蒙面 1
+SENDMSG 0 恭喜(%s)成功合成出：黄金蒙面！
+BREAK
+#ELSEACT
+MessageBox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。
+BREAK
+[@HC-6]
+想升级黄金斗笠？\ \
+那你需要2个白银斗笠才能升级，\
+还要50000个元宝888金刚石才能成功哦。\ \
+黄金斗笠:超高防御，神秘属性！\ \
+<升级/@HC-6-6>≮黄金斗笠≯\
+<返回/@MAIN>
+[@HC-6-6]
+#IF
+CHECKITEM 白银斗笠 2
+CHECKGAMEGOLD > 49999
+CHECKGAMEDIAMOND > 887
+#act
+GAMEGOLD - 50000
+GAMEDIAMOND - 888
+TAKE 白银斗笠 2
+GIVE 黄金斗笠 1 
+SENDMSG 0 恭喜(%s)成功合成出：黄金斗笠
+BREAK
+#ELSEACT
+MessageBox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。
+BREAK
+[@HC-8]
+想合成白银蒙面？\ \
+那你需要2个蒙面方巾(战)(法)(道)才能合成，\
+还要20000个元宝666金刚石才能成功。\ \
+蒙面方巾在各大小BOSS身上爆出，爆率适中！\ \
+<合成/@HC-4-4>≮白银蒙面≯\
+<返回/@MAIN>
+[@HC-4-4]
+#IF
+CHECKITEM 蒙面方巾(战) 2
+CHECKITEM 蒙面方巾(法) 2
+CHECKITEM 蒙面方巾(道) 2
+CHECKGAMEGOLD > 19999
+CHECKGAMEDIAMOND > 665
+#act
+GAMEGOLD - 20000
+GAMEDIAMOND - 666
+TAKE 蒙面方巾(战) 2
+TAKE 蒙面方巾(法) 2
+TAKE 蒙面方巾(道) 2
+GIVE 白银蒙面 1 
+SENDMSG 0 恭喜(%s)成功合成出：白银蒙面
+BREAK
+#ELSEACT
+MessageBox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。
+BREAK
+[@HC-3]
+想合成白银斗笠？\ \
+那你需要2个斗笠43号、2个斗笠44号、2个斗笠45号才能合成，\
+还要20000个元宝666金刚石才能成功哦。\ 
+43号、44号、斗笠45号在各大小BOSS身上爆出，爆率适中！\ 
+白银斗笠:超高防御，神秘属性！\ \
+<合成/@HC-3-3>≮白银斗笠≯\
+<返回/@MAIN>
+[@HC-3-3]
+#IF
+CHECKITEM 斗笠43号 2
+CHECKITEM 斗笠44号 2
+CHECKITEM 斗笠45号 2
+CHECKGAMEGOLD > 19999
+CHECKGAMEDIAMOND > 665
+#act
+GAMEGOLD - 20000
+GAMEDIAMOND - 666
+TAKE 斗笠43号 2
+TAKE 斗笠44号 2
+TAKE 斗笠45号 2
+GIVE 白银斗笠 1 
+SENDMSG 0 恭喜(%s)成功合成出：白银斗笠
+BREAK
+#ELSEACT
+MessageBox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。
+BREAK
+[@HC-5]
+想升级黄金勋章？\ \
+那你需要2个白银勋章才能升级，\
+还要50000个元宝888金刚石才能成功哦。\ \
+黄金勋章:超高防御，神秘属性！(额外属性:HP+300)\ \
+<升级/@HC-5-5>≮黄金勋章≯\
+<返回/@MAIN>
+[@HC-5-5]
+#IF
+CHECKITEM 白银勋章 2
+CHECKGAMEGOLD > 49999
+CHECKGAMEDIAMOND > 887
+#act
+GAMEGOLD - 50000
+GAMEDIAMOND - 888
+TAKE 白银勋章 2
+GIVE 黄金勋章 1
+SENDMSG 0 恭喜(%s)成功合成出：黄金勋章，额外属性：HP+300！
+BREAK
+#ELSEACT
+MessageBox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。
+BREAK
+[@HC-2]
+想合成白银勋章？\ \
+那你需要2个43号勋章、2个44号勋章、2个45号勋章才能合成，\
+还要20000个元宝666金刚石才能成功哦。\ 
+43号、44号、45号勋章在圣域BOSS和地藏王身上爆出，爆率适中！\
+白银勋章:超高防御，神秘属性！(额外属性:HP+200) \ \
+<合成/@HC-2-2>≮白银勋章≯\
+<返回/@MAIN>
+[@HC-2-2]
+#IF
+CHECKITEM 荣誉勋章43号 2
+CHECKITEM 荣誉勋章44号 2
+CHECKITEM 荣誉勋章45号 2
+CHECKGAMEGOLD > 19999
+CHECKGAMEDIAMOND > 665
+#act
+GAMEGOLD - 20000
+GAMEDIAMOND - 666
+TAKE 荣誉勋章43号 2
+TAKE 荣誉勋章44号 2
+TAKE 荣誉勋章45号 2
+GIVE 白银勋章 1
+SENDMSG 0 恭喜(%s)成功合成出：白银勋章，额外属性：HP+200！
+BREAK
+#ELSEACT
+MessageBox 你的材料没有齐全我怎么帮你呢？\　\想想办法吧。
+BREAK
+
+[@开天]
+想合成开天？\ \
+那你需要金刚石2000颗，10W元宝，黄金屠龙2把\
+能不能弄到这些东西就看你自己的本事了\
+手拿开天，天下无边...\  \
+<合成/@mai>≮开天≯      \
+<返回/@main>
+[@mai]
+#IF
+CHECKGAMEDIAMOND > 1999
+CHECKGAMEGOLD > 99999
+checkitem 黄金屠龙 2
+#ACT
+GAMEDIAMOND - 2000
+GAMEGOLD - 100000
+TAKE 黄金屠龙 2
+GIVE 开天 1
+SendMsg 2 恭喜:%s合成了战士神器【开天】
+SendMsg 2 恭喜:%s合成了战士神器【开天】
+BREAK
+#ELSEACT
+messagebox 你的材料没有齐全我怎么帮你呢？\想想办法吧。\
+BREAK
+[@玄天]
+想合成玄天？\ \
+那你需要金刚石2000颗，10W元宝，赤金逍遥扇2把\
+能不能弄到这些东西就看你自己的本事了\
+手拿玄天，天下无边...\  \
+<合成/@mai2>≮玄天≯  \     <返回/@main>
+[@mai2]
+#IF
+CHECKGAMEDIAMOND > 1999
+CHECKGAMEGOLD > 99999
+checkitem 赤金逍遥扇 2
+#ACT
+GAMEDIAMOND - 2000
+GAMEGOLD - 100000
+TAKE 赤金逍遥扇	2
+GIVE 玄天 1
+SendMsg 2 恭喜:%s合成了道士神器【玄天】
+SendMsg 2 恭喜:%s合成了道士神器【玄天】
+BREAK
+#ELSEACT
+messagebox 你的材料没有齐全我怎么帮你呢？\想想办法吧。\
+BREAK
+[@镇天]
+想合成镇天？\ \
+那你需要金刚石2000颗，10W元宝紫金嗜魂法杖2把\
+能不能弄到这些东西就看你自己的本事了\
+手握镇天，天下无边...\  \
+<合成/@mai3>≮镇天≯     \ <返回/@main>
+[@mai3]
+#IF
+CHECKGAMEDIAMOND > 1999
+CHECKGAMEGOLD > 99999
+checkitem 紫金嗜魂法杖 2
+#ACT
+GAMEDIAMOND - 2000
+GAMEGOLD - 100000
+TAKE 紫金嗜魂法杖 2
+GIVE 镇天 1
+SendMsg 2 恭喜:%s合成了法师神器【镇天】
+SendMsg 2 恭喜:%s合成了法师神器【镇天】
+BREAK
+#ELSEACT
+messagebox 你的材料没有齐全我怎么帮你呢？\想想办法吧。\
+BREAK
+[@合成凤天魔甲]
+想合成凤天魔甲？\ \
+需要金刚石2000颗，10W元宝雷霆烈焰光芒(男)各俩件\
+能不能弄到这些东西就看你自己的本事了\
+身穿凤天，天下无边...\  \
+<合成/@凤天魔甲>≮凤天魔甲≯     \ <返回/@main>
+[@凤天魔甲]
+#IF
+CHECKGAMEDIAMOND > 1999
+CHECKGAMEGOLD > 99999
+checkitem 雷霆战甲(男) 2
+checkitem 光芒道袍(男) 2
+checkitem 烈焰魔衣(男) 2
+#ACT
+GAMEDIAMOND - 2000
+GAMEGOLD - 100000
+TAKE 雷霆战甲(男) 2
+TAKE 光芒道袍(男) 2
+TAKE 烈焰魔衣(男) 2
+GIVE 凤天魔甲 1
+SendMsg 2 恭喜:%s合成了衣服【凤天魔甲】
+SendMsg 2 恭喜:%s合成了衣服【凤天魔甲】
+BREAK
+#ELSEACT
+messagebox 你的材料没有齐全我怎么帮你呢？\想想办法吧。\
+BREAK
+[@合成凤天魔衣]
+想合成凤天魔衣？\ \
+需要金刚石2000颗，10W元宝雷霆烈焰光芒(女)各俩件\
+能不能弄到这些东西就看你自己的本事了\
+身穿凤天，天下无边...\  \
+<合成/@凤天魔衣>≮凤天魔衣≯     \ <返回/@main>
+[@凤天魔衣]
+#IF
+CHECKGAMEDIAMOND > 1999
+CHECKGAMEGOLD > 99999
+checkitem 雷霆战甲(女) 2
+checkitem 光芒道袍(女) 2
+checkitem 烈焰魔衣(女) 2
+#ACT
+GAMEDIAMOND - 2000
+GAMEGOLD - 100000
+TAKE 雷霆战甲(女) 2
+TAKE 光芒道袍(女) 2
+TAKE 烈焰魔衣(女) 2
+GIVE 凤天魔衣 1
+SendMsg 2 恭喜:%s合成了衣服【凤天魔衣】
+SendMsg 2 恭喜:%s合成了衣服【凤天魔衣】
+BREAK
+#ELSEACT
+messagebox 你的材料没有齐全我怎么帮你呢？\想想办法吧。\
+BREAK
+
+
+[@星王合成]
+╱◥██◣ ╭⌒╮   \ 
+︱田︱田田|欢迎光临:  <COLOR=clRed 打造装备只是为上班族设计,本服装备均可爆出！>\
+╬╬╬╬╬╬╬╬╬╬: <COLOR=clRed 打造装备只是为上班族设计,本服装备均可爆出！>\ \
+『<星王之刃(战)/@星王之刃(战)>』    『<星王之刃(法)/@星王之刃(法)>』    『<星王之刃(道)/@星王之刃(道)>』  \ \
+『<星王圣甲(战)/@星王圣甲(战)>』    『<星王圣甲(法)/@星王圣甲(法)>』    『<星王圣甲(道)/@星王圣甲(道)>』  \ \
+『<星王圣衣(战)/@星王圣衣(战)>』    『<星王圣衣(法)/@星王圣衣(法)>』    『<星王圣衣(道)/@星王圣衣(道)>』  \ \
+
+
+[@星王之刃(战)]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 开天 1
+checkitem 开天 1
+#act
+take  开天 1
+take  开天 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 星王之刃(战) 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造星王之刃(战)需要:开天2把+40万元宝+8888金刚石合成！
+
+[@星王之刃(法)]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 镇天 1
+checkitem 镇天 1
+#act
+take  镇天 1
+take  镇天 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 星王之刃(法) 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造星王之刃(法)需要:镇天2把+40万元宝+8888金刚石合成！
+
+[@星王之刃(道)]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 玄天 1
+checkitem 玄天 1
+#act
+take  玄天 1
+take  玄天 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 星王之刃(道) 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造星王之刃(道)需要:玄天2把+40万元宝+8888金刚石合成！
+
+[@星王圣甲(战)]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 凤天魔甲 1
+checkitem 凤天魔甲 1
+#act
+take  凤天魔甲 1
+take  凤天魔甲 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 星王圣甲(战) 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造星王圣甲(战)需要:凤天魔甲2件+40万元宝+8888金刚石合成！
+
+[@星王圣甲(法)]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 凤天魔甲 1
+checkitem 凤天魔甲 1
+#act
+take  凤天魔甲 1
+take  凤天魔甲 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 星王圣甲(法) 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造星王圣甲(法)需要:凤天魔甲2件+40万元宝+8888金刚石合成！
+
+[@星王圣甲(道)]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 凤天魔甲 1
+checkitem 凤天魔甲 1
+#act
+take  凤天魔甲 1
+take  凤天魔甲 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 星王圣甲(道) 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造星王圣甲(道)需要:凤天魔甲2件+40万元宝+8888金刚石合成！
+
+[@星王圣衣(战)]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 凤天魔衣 1
+checkitem 凤天魔衣 1
+#act
+take  凤天魔衣 1
+take  凤天魔衣 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 星王圣衣(战) 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造星王圣衣(战)需要:凤天魔衣2件+40万元宝+8888金刚石合成！
+
+[@星王圣衣(法)]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 凤天魔衣 1
+checkitem 凤天魔衣 1
+#act
+take  凤天魔衣 1
+take  凤天魔衣 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 星王圣衣(法) 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造星王圣衣(法)需要:凤天魔衣2件+40万元宝+8888金刚石合成！
+
+[@星王圣衣(道)]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 凤天魔衣 1
+checkitem 凤天魔衣 1
+#act
+take  凤天魔衣 1
+take  凤天魔衣 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 星王圣衣(道) 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造星王圣衣(道)需要:凤天魔衣2件+40万元宝+8888金刚石合成！
+
+
+

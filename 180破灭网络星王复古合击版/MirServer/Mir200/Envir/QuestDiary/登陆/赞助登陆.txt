@@ -1,0 +1,70 @@
+[@赞助登陆1]
+{
+
+
+#IF
+CheckGamePoint > 2999
+#act
+MOV S1  ※至尊赞助大使※
+RENEWLEVEL 1 0 0
+KILLMONEXPRATE 600 60000
+POWERRATE 115 60000
+SENDMSG 0 欢迎本服尊贵的至尊赞助大使〖%s〗进入游戏中！！！ 250 0
+SENDMSG 0 欢迎本服尊贵的至尊赞助大使〖%s〗进入游戏中！！！ 250 0
+Break
+
+#IF
+CheckGamePoint > 1999
+#act
+MOV S1  ※钻石赞助大使※
+CHANGENAMECOLOR 253
+KILLMONEXPRATE 520 60000
+POWERRATE 110 60000
+SENDMSG 0 欢迎本服尊贵的钻石赞助大使〖%s〗进入游戏中！！！ 250 0
+SENDMSG 0 欢迎本服尊贵的钻石赞助大使〖%s〗进入游戏中！！！ 250 0
+Break
+
+#IF
+CheckGamePoint > 999
+#act
+MOV S1  ※黄金赞助大使※
+CHANGENAMECOLOR 253
+KILLMONEXPRATE 500 60000
+POWERRATE 108 60000
+SENDMSG 0 欢迎本服尊贵的黄金赞助大使〖%s〗进入游戏中！！！ 250 0
+SENDMSG 0 欢迎本服尊贵的黄金赞助大使〖%s〗进入游戏中！！！ 250 0
+Break
+
+#IF
+CheckGamePoint > 499
+#act
+MOV S1  ※超级赞助大使※
+CHANGENAMECOLOR 250
+KILLMONEXPRATE 480 60000
+POWERRATE 106 60000
+SENDMSG 0 欢迎本服尊贵的超级赞助大使〖%s〗进入游戏中！！！ 250 0
+SENDMSG 0 欢迎本服尊贵的超级赞助大使〖%s〗进入游戏中！！！ 250 0
+Break
+
+#IF
+CheckGamePoint > 299
+#act
+MOV S1  ※高级赞助大使※
+CHANGENAMECOLOR 250
+KILLMONEXPRATE 450 60000
+POWERRATE 104 60000
+SENDMSG 0 欢迎本服尊贵的高级赞助大使〖%s〗进入游戏中！！！ 250 0
+SENDMSG 0 欢迎本服尊贵的高级赞助大使〖%s〗进入游戏中！！！ 250 0
+Break
+
+#IF
+CheckGamePoint > 99
+#act
+MOV S1  ※普通赞助大使※
+CHANGENAMECOLOR 250
+KILLMONEXPRATE 420 60000
+POWERRATE 102 60000
+SENDMSG 0 欢迎本服尊贵的普通赞助大使〖%s〗进入游戏中！！！ 250 0
+SENDMSG 0 欢迎本服尊贵的普通赞助大使〖%s〗进入游戏中！！！ 250 0
+Break
+}

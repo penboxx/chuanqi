@@ -1,0 +1,58 @@
+
+
+
+[@MAIN]
+~~●█〓██▄▄▄▄▄▄●●●●●●  兄弟们,往皇宫冲啊\
+▄▄██████▄▄▃▂   <纪律+速度+团结>\
+██████████████   <砝码勇士们加油>\
+◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲◤\
+╔══════════════════════════╗\
+‖所有点位均需要10万金币的过路费                      ‖\
+┠══════════════════════════┨\
+‖<拿沙一号点/@ns1>‖‖<拿沙二号点/@ns2>‖‖<拿沙三号点/@ns3>‖‖<拿沙复活点/@ns4>‖\
+╚═════╝╚═════╝╚═════╝╚═════╝\
+
+[@ns1]
+#IF
+CHECKGOLD 100000
+#ACT
+TAKE 金币 100000
+MAPMOVE 3 631 286
+CLOSE
+BREAK
+#ELSESAY
+你没有10万金币，看清楚介绍在进，别想忽悠俺们！\
+
+[@ns2]
+#IF
+CHECKGOLD 100000
+#ACT
+TAKE 金币 100000
+MAPMOVE 3 613  284
+CLOSE
+BREAK
+#ELSESAY
+你没有10万金币，看清楚介绍在进，别想忽悠俺们！\
+
+[@ns3]
+#IF
+CHECKGOLD 100000
+#ACT
+TAKE 金币 100000
+MAPMOVE 3 643   256
+CLOSE
+BREAK
+#ELSESAY
+你没有10万金币，看清楚介绍在进，别想忽悠俺们！\
+
+[@ns4]
+#IF
+CHECKGOLD 100000
+#ACT
+TAKE 金币 100000
+MAPMOVE 3 647 290
+CLOSE
+BREAK
+#ELSESAY
+你没有10万金币，看清楚介绍在进，别想忽悠俺们！\
+

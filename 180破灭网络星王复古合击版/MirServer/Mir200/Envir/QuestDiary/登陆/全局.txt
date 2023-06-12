@@ -1,0 +1,22 @@
+[@QJBL]
+{
+#IF
+EQUAL I499 0
+#Act
+Mov I499 1
+VAR String GLOBAL 游戏名称
+VAR String GLOBAL 地址
+VAR String GLOBAL 跳转
+VAR String GLOBAL 充值地址
+VAR Integer GLOBAL 关闭提交
+VAR String GLOBAL 领取称号密码
+LoadVar GLOBAL 游戏名称 ..\DefConstAnt.txt
+LoadVar GLOBAL 地址 ..\DefConstAnt.txt
+LoadVar GLOBAL 跳转 ..\DefConstAnt.txt
+LoadVar GLOBAL 充值地址 ..\DefConstAnt.txt
+LoadVar GLOBAL 关闭提交 ..\QuestDiary\关闭提交心意币.txt
+LoadVar GLOBAL 领取称号密码 ..\DefConstAnt.txt
+
+;--------------任务----------------
+
+}

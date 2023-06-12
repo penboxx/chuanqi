@@ -1,0 +1,113 @@
+()
+%100
+[@MAIN]
+　 <COLOR=clFuchsia ▂▂▂▃▅▆████><COLOR=clLime 独家特色><COLOR=clFuchsia ████▆▅▃▂▂▂>　　　　\
+　　　 <↘↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↙>　\ \
+<COLOR=clFuchsia =========★特色传送(各地图均有3个BOSS,需要元宝进入)★=======>\
+<COLOR=clLime ╔┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╗>\
+<COLOR=clLime ┆>  <散人天堂/@got1>  <COLOR=clLime ┆>  <猪洞九层/@got2>  <COLOR=clLime ┆>  <BOOS皇陵/@got3>  <COLOR=clLime ┆>  <地下皇陵/@got4>  <COLOR=clLime ┆>\
+<COLOR=clLime ╚┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝>\
+　\
+　　　　 <^-^ 1.80星王战神复古合击独家版本^-^> 
+[@got7]
+本地图是专爆超油地图\        
+里面的BOSS为6小时刷新一次,1/3爆超级祝福油.\
+当然也有机率暴出超级祝福油哦,就看你运气了.\
+为了玩家赚元宝的利益，我们将此地图设置为免费地图.\ 
+<进去打酱油/@323>             <返回/@MAIN>
+[@323]
+#IF
+#ACT
+give 回城卷 1
+MAPMOVE cjzfy
+SENDMSG 2 %s免费进入祝福圣地！此地图专爆祝福油和超级祝福油 49 223
+SENDMSG 2 %s免费进入祝福圣地！此地图专爆祝福油和超级祝福油 49 223
+#ELSEACT
+break
+[@got5]
+<COLOR=clLime 欢迎来到永恒星王1.80合击版，这里是【逍遥神殿】。>\ \
+<COLOR=clred 地图怪物：>魔龙教主.魔龙战将.力士.巨蛾。\
+<COLOR=clred 主要装备：>圣战.雷霆系列.战神.终极系列.书页。\
+<COLOR=clred 地图层数：>一层\
+<COLOR=clred 地图收费：>进入需要支付<500>元宝。\ \
+<进入地图/@jrdt5>             <返回/@MAIN>
+[@jrdt5]
+#if
+CHECKGAMEGOLD > 499
+#act
+GAMEGOLD - 500
+GIVE 回城卷 1
+mapmove xysd99
+SENDMSG 0 玩家[%s],进入逍遥神殿,本地图BOSS为双倍爆率!
+#ELSEACT
+MESSAGEBOX 需要500元宝用来支付我们的服务费用!
+[@got4]
+<COLOR=clLime 欢迎来到永恒星王1.80合击版，这里是【地下皇陵】。>\ \
+<COLOR=clred 地图怪物：>魔龙教主.魔龙战将.力士.巨蛾。\
+<COLOR=clred 主要装备：>圣战.雷霆系列.战神.终极系列.书页。\
+<COLOR=clred 地图层数：>三层\
+<COLOR=clred 地图收费：>进入需要支付<500>元宝。\ \
+<进入地图/@jrdt4>             <返回/@MAIN>
+[@jrdt4]
+#if
+CHECKGAMEGOLD > 499
+#act
+GAMEGOLD - 500
+GIVE 回城卷 1
+mapmove dxhl01
+SENDMSG 0 玩家[%s],进入地下皇陵,本地图BOSS为双倍爆率!
+#ELSEACT
+MESSAGEBOX 需要500元宝用来支付我们的服务费用!
+[@got3]
+<COLOR=clLime 欢迎来到永恒星王1.80合击版，这里是【BOOS皇陵】。>\ \
+<COLOR=clred 地图怪物：>聚集了全服所有BOSS与小BOSS,要终极的进。\
+<COLOR=clred 主要装备：>祖玛.圣战.雷霆系列.战神.终极系列.。\
+<COLOR=clred 地图层数：>一层\
+<COLOR=clred 地图收费：>进入需要支付<500>元宝。\ \
+<进入地图/@jrdt3>             <返回/@MAIN>
+[@jrdt3]
+#if
+CHECKGAMEGOLD > 499
+#act
+GAMEGOLD - 500
+GIVE 回城卷 1
+mapmove bosshl
+SENDMSG 0 玩家[%s],进入地下BOOS皇陵,本地图BOSS为双倍爆率!
+SENDMSG 0 玩家[%s],进入地下BOOS皇陵,本地图BOSS为双倍爆率!
+#ELSEACT
+MESSAGEBOX 需要500元宝用来支付我们的服务费用!
+[@got2]
+<COLOR=clLime 欢迎来到永恒星王1.80合击版，这里是【猪洞九层】。>\ \
+<COLOR=clred 地图怪物：>魔影巨人.千年尸王.魔龙教主.战将.力士.巨蛾。\
+<COLOR=clred 主要装备：>各职业英雄技能书.圣战.雷霆.战神.终极系列.书页。\
+<COLOR=clred 地图层数：>二层\
+<COLOR=clred 地图收费：>进入需要支付<500>元宝。\ \
+<进入地图/@jrdt2>             <返回/@MAIN>
+[@jrdt2]
+#if
+CHECKGAMEGOLD > 499
+#act
+GAMEGOLD - 500
+GIVE 回城卷 1
+mapmove zd09
+SENDMSG 0 玩家[%s],进入猪洞九层,本地图BOSS为双倍爆率!
+#ELSEACT
+MESSAGEBOX 需要500元宝用来支付我们的服务费用!
+[@got1]
+<COLOR=clLime 欢迎来到永恒星王1.80合击版，这里是【散人天堂】。>\ \
+<COLOR=clred 地图怪物：>聚集了全服所有BOSS与小BOSS,要终极的进。\
+<COLOR=clred 主要装备：>圣战.雷霆系列.战神.终极系列.。\
+<COLOR=clred 地图层数：>二层\
+<COLOR=clred 地图收费：>进入需要支付<500>元宝。\ \
+<进入地图/@jrdt1>             <返回/@MAIN>
+[@jrdt1]
+#if
+CHECKGAMEGOLD > 499
+#act
+GAMEGOLD - 500
+GIVE 回城卷 1
+mapmove sanren1
+SENDMSG 0 玩家[%s],进入散人天堂,本地图BOSS为双倍爆率!
+SENDMSG 0 玩家[%s],进入散人天堂,本地图BOSS为双倍爆率!
+#ELSEACT
+MESSAGEBOX 需要500元宝用来支付我们的服务费用!

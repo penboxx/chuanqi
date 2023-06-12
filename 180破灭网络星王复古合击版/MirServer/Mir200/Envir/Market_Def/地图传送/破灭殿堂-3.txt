@@ -1,0 +1,38 @@
+()
+%100
+[@main]
+\ 
+╔━━━━━━╗ ╔━━━━━━━━━━━━━━━━━━━╗　\
+┃<★><COLOR=clFuchsia 神龙大殿><★>┃ ┃<COLOR=clLime 主要怪物：神龙、魔影巨人>　　　　　　　┃　\
+┃------------┃ ┃<COLOR=clFuchsia 怪物刷新：大怪120分钟、小怪30分钟>　　 ┃　\
+┃↘<COLOR=clLime ━━━━>↙┃ ┃<COLOR=clLime 怪物爆率：赤月、魔龙、战神等装备>　　　┃　\
+┃<COLOR=clLime ┃><点击进入/@魔龙大殿1><COLOR=clLime ┃>┃ ┃<COLOR=clFuchsia 挑战难度：><★★★★★>　<COLOR=clLime 爆率指数：><★★★>┃　\
+┃↗<COLOR=clLime ━━━━>↖┃ ╚━━━━━━━━━━━━━━━━━━━╝　\
+┃------------┃ ╔━━━━━━━━━━━━━━━━━━━╗　\
+┃<★><COLOR=clFuchsia 传送条件><★>┃ ┃静寂皇宫： <「点击进入」/@皇宫12>    500元宝　  ┃　\
+╚━━━━━━╝ ╚━━━━━━━━━━━━━━━━━━━╝ 
+
+
+[@魔龙大殿1]
+#if
+CHECKGAMEGOLD > 499
+#act
+GAMEGOLD - 500
+GIVE 回城卷 1
+mapmove EM100
+SENDMSG 2 %s进入神龙大殿寻宝！ 49 223
+SENDMSG 2 %s进入神龙大殿寻宝！ 49 223
+#ELSESAY
+需要500元宝用来支付我们的服务费用!
+
+[@皇宫12]
+#if
+CHECKGAMEGOLD > 499
+#act
+GAMEGOLD - 500
+GIVE 回城卷 1
+MAPMOVE bwca
+SENDMSG 2 %s付费500元宝进入静寂皇宫！ 49 223
+SENDMSG 2 %s付费500元宝进入静寂皇宫！ 49 223
+#ELSEACT
+MESSAGEBOX 需要500元宝用来支付我们的服务费用!

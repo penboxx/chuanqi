@@ -1,0 +1,204 @@
+()
+%100
+[@main]
+俗话说 杀人者 人杀之！但我们神秘人杀手争霸就是追求这一境界！\
+<COLOR=clAqua 地图要求>:必须在英雄出征的状态 进入地图后禁止换模式和召英雄！\
+<COLOR=clAqua 地图说明>:更具杀人数量进行排名，并且奖励大量的元宝！\
+      <COLOR=clRed 今日杀人王>「<$STR(A21)>」                 （每次活动时间为30分钟）\
+<COLOR=clLime 提示:进入地图后统一名字血量及装备外观.禁止说话，禁止看装备！>\ 
+\                   <COLOR=clSkyBlue ╔┈┈┈┈┈┈┈┈┈┈┈╦┈┈┈┈┈┈╗>\
+\<查询杀人数量/@排行>       <COLOR=clSkyBlue ┆><COLOR=clRed 20：00开启个人厮杀活动><COLOR=clSkyBlue ┆><进入活动现场/@进入活动现场><COLOR=clSkyBlue ┆>\
+\<领取安慰奖励/@安慰>       <COLOR=clSkyBlue ┆><COLOR=clRed 20：30结束个人厮杀活动><COLOR=clSkyBlue ┆><进入活动现场/@进入活动现场><COLOR=clSkyBlue ┆>\
+\                   <COLOR=clSkyBlue ╚┈┈┈┈┈┈┈┈┈┈┈╩┈┈┈┈┈┈╝>\
+[@排行]
+<COLOR=clSkyBlue ╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗>\
+<COLOR=clSkyBlue ┆><COLOR=clYELLOW ◆><COLOR=clAqua 神秘屠杀><COLOR=clYELLOW ◆>      「<领取安慰奖励/@安慰>」      <COLOR=clYELLOW ◆><COLOR=clAqua 神秘屠杀><COLOR=clYELLOW ◆><COLOR=clSkyBlue ┆>\
+<COLOR=clSkyBlue ╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝>\
+\  <COLOR=clYELLOW ◆><第一名领奖/@第一名领奖>「<COLOR=clSkyBlue 5000元宝>」<COLOR=clFuchsia 斩杀人数:> <$STR(G21)> <COLOR=clRed 玩家名称：>「<$STR(A21)>」\
+\  <COLOR=clYELLOW ◆><第二名领奖/@第二名领奖>「<COLOR=clSkyBlue 4000元宝>」<COLOR=clFuchsia 斩杀人数:> <$STR(G22)> <COLOR=clRed 玩家名称：>「<$STR(A22)>」\
+\  <COLOR=clYELLOW ◆><第三名领奖/@第三名领奖>「<COLOR=clSkyBlue 3000元宝>」<COLOR=clFuchsia 斩杀人数:> <$STR(G23)> <COLOR=clRed 玩家名称：>「<$STR(A23)>」\
+\  <COLOR=clYELLOW ◆><第四名领奖/@第四名领奖>「<COLOR=clSkyBlue 2000元宝>」<COLOR=clFuchsia 斩杀人数:> <$STR(G24)> <COLOR=clRed 玩家名称：>「<$STR(A24)>」\
+\  <COLOR=clYELLOW ◆><第五名领奖/@第五名领奖>「<COLOR=clSkyBlue 1000元宝>」<COLOR=clFuchsia 斩杀人数:> <$STR(G25)> <COLOR=clRed 玩家名称：>「<$STR(A25)>」\
+\  <COLOR=clYELLOW ◆><COLOR=clLime 温馨提示： 斩杀人数相同按照先后顺序排名.不存在并列！>
+[@进入活动现场]
+#IF
+EQUAL A79 开放
+#ACT
+MAPMOVE SMTS
+BREAK
+#elseACT
+MessageBox  ぐ「失败」：现在不是活动时间！\
+BREAK
+[@第一名领奖]
+#IF
+EQUAL A79 关闭
+#ACT
+GOTO @第一名领奖1
+BREAK
+#elseACT
+MessageBox  ぐ「失败」：现在不是领奖励时间！\
+BREAK
+[@第一名领奖1]
+#IF
+Checknamelist ..\QuestDiary\数据文件\屠杀第一名.txt
+#ACT
+MessageBox  ぐ「失败」：你领取过奖励了！
+GOTO @main
+BREAK
+#IF
+EQUAL A21 <$USERNAME>
+#ACT
+GAMEGOLD + 5000
+MOV A21 暂无
+MOV G21 0
+Addnamelist ..\QuestDiary\数据文件\屠杀第一名.txt
+SENDMSG 0 恭喜玩家「%s」成功领取“神秘屠杀”第①名奖励「5000元宝」成功！ 252 70
+GOTO @main
+BREAK
+#elseACT
+MessageBox  ぐ「失败」：你不是第①名！\
+BREAK
+[@第二名领奖]
+#IF
+EQUAL A79 关闭
+#ACT
+GOTO @第二名领奖1
+BREAK
+#elseACT
+MessageBox  ぐ「失败」：现在不是领奖励时间！\
+BREAK
+[@第二名领奖1]
+#IF
+Checknamelist ..\QuestDiary\数据文件\屠杀第二名.txt
+#ACT
+MessageBox  ぐ「失败」：你领取过奖励了！
+GOTO @main
+BREAK
+#IF
+EQUAL A22 <$USERNAME>
+#ACT
+GAMEGOLD + 4000
+MOV A22 暂无
+MOV G22 0
+Addnamelist ..\QuestDiary\数据文件\屠杀第二名.txt
+SENDMSG 0 恭喜玩家「%s」成功领取“神秘屠杀”第②名奖励「4000元宝」成功！ 252 70
+GOTO @main
+BREAK
+#elseACT
+MessageBox  ぐ「失败」：你不是第②名！\
+BREAK
+[@第三名领奖]
+#IF
+EQUAL A79 关闭
+#ACT
+GOTO @第三名领奖1
+BREAK
+#elseACT
+MessageBox  ぐ「失败」：现在不是领奖励时间！\
+BREAK
+[@第三名领奖1]
+#IF
+Checknamelist ..\QuestDiary\数据文件\屠杀第三名.txt
+#ACT
+MessageBox  ぐ「失败」：你领取过奖励了！
+GOTO @main
+BREAK
+#IF
+EQUAL A23 <$USERNAME>
+#ACT
+GAMEGOLD + 3000
+MOV A23 暂无
+MOV G23 0
+Addnamelist ..\QuestDiary\数据文件\屠杀第三名.txt
+SENDMSG 0 恭喜玩家「%s」成功领取“神秘屠杀”第③名奖励「3000元宝」成功！ 252 70
+GOTO @main
+BREAK
+#elseACT
+MessageBox  ぐ「失败」：你不是第③名！\
+BREAK
+[@第四名领奖]
+#IF
+EQUAL A79 关闭
+#ACT
+GOTO @第四名领奖1
+BREAK
+#elseACT
+MessageBox  ぐ「失败」：现在不是领奖励时间！\
+BREAK
+[@第四名领奖1]
+#IF
+Checknamelist ..\QuestDiary\数据文件\屠杀第四名.txt
+#ACT
+MessageBox  ぐ「失败」：你领取过奖励了！
+GOTO @main
+BREAK
+#IF
+EQUAL A24 <$USERNAME>
+#ACT
+GAMEGOLD + 2000
+MOV A24 暂无
+MOV G24 0
+Addnamelist ..\QuestDiary\数据文件\屠杀第四名.txt
+SENDMSG 0 恭喜玩家「%s」成功领取“神秘屠杀”第④名奖励「2000元宝」成功！ 252 70
+GOTO @main
+BREAK
+#elseACT
+MessageBox  ぐ「失败」：你不是第④名！\
+BREAK
+[@第五名领奖]
+#IF
+EQUAL A79 关闭
+#ACT
+GOTO @第五名领奖1
+BREAK
+#elseACT
+MessageBox  ぐ「失败」：现在不是领奖励时间！\
+BREAK
+[@第五名领奖1]
+#IF
+Checknamelist ..\QuestDiary\数据文件\屠杀第五名.txt
+#ACT
+MessageBox  ぐ「失败」：你领取过奖励了！
+GOTO @main
+BREAK
+#IF
+EQUAL A25 <$USERNAME>
+#ACT
+GAMEGOLD + 1000
+MOV A25 暂无
+MOV G25 0
+Addnamelist ..\QuestDiary\数据文件\屠杀第五名.txt
+SENDMSG 0 恭喜玩家「%s」成功领取“神秘屠杀”第⑤名奖励「1000元宝」成功！ 252 70
+GOTO @main
+BREAK
+#elseACT
+MessageBox  ぐ「失败」：你不是第⑤名！\
+BREAK
+[@安慰]
+#IF
+EQUAL A79 关闭
+#ACT
+GOTO @领取安慰奖励1
+BREAK
+#elseACT
+MessageBox  ぐ「失败」：现在不是领奖励时间！\
+BREAK
+[@领取安慰奖励1]
+#IF
+Checknamelist ..\QuestDiary\数据文件\屠杀安慰名单.txt
+#ACT
+MessageBox  ぐ「失败」：你领取过奖励了！
+GOTO @main
+BREAK
+#IF
+CheckLevelEx < 65
+CHECKVAR HUMAN 神秘屠杀 > 0
+#ACT
+CHANGEEXP + 10000000
+Addnamelist ..\QuestDiary\数据文件\屠杀安慰名单.txt
+SENDMSG 0 恭喜玩家「%s」成功领取“神秘屠杀”安慰奖励「1000W经验」成功！ 252 70
+GOTO @main
+BREAK
+#elseACT
+MessageBox  ぐ「失败」：你没有参加过活动或者您已经65级了！\
+BREAK

@@ -1,0 +1,108 @@
+[@main]
+#if
+hour 18 18
+min 30 59
+#ACT
+SENDMSG 4 【群雄争霸】群体激情PK正在进行中!!!!!,请在19点00分再来领取奖励！
+break
+
+#elseact
+goto @bisai1
+
+[@bisai1]
+#IF
+CHECKNAMELIST ..\QuestDiary\数据文件\群英名单.txt
+#ACT
+goto @jingao
+break
+
+#IF
+checkhum qunying 200
+#ACT
+SENDMSG 4 当前人数：200人以上，最后获胜者请到我这里领取奖励！
+break
+
+#IF
+checkhum qunying 150
+#ACT
+SENDMSG 4 当前人数：150人以上，最后获胜者请到我这里领取奖励！
+break
+
+#IF
+checkhum qunying 100
+#ACT
+SENDMSG 4 当前人数：100人以上，最后获胜者请到我这里领取奖励！
+break
+
+#IF
+checkhum qunying 80
+#ACT
+SENDMSG 4 当前人数：80人以上，最后获胜者请到我这里领取奖励！
+break
+
+
+#IF
+checkhum qunying 50
+#ACT
+SENDMSG 4 当前人数：50人以上，最后获胜者请到我这里领取奖励！
+break
+
+#IF
+checkhum qunying 20
+#ACT
+SENDMSG 4 当前人数：20人以上，最后获胜者请到我这里领取奖励！
+break
+#IF
+checkhum qunying 15
+#ACT
+SENDMSG 4 当前人数：15人以上，最后获胜者请到我这里领取奖励！
+break
+#IF
+checkhum qunying 10
+#ACT
+SENDMSG 4 当前人数：10人以上，最后获胜者请到我这里领取奖励！
+break
+#IF
+checkhum qunying 5
+#ACT
+SENDMSG 4 当前人数：5人以上，最后获胜者请到我这里领取奖励！
+break
+#IF
+checkhum qunying 4
+#ACT
+SENDMSG 4 当前人数：4人以上，最后获胜者请到我这里领取奖励！
+break
+#IF
+checkhum qunying 3
+#ACT
+SENDMSG 4 当前人数：3人以上，最后获胜者请到我这里领取奖励！
+break
+#IF
+checkhum qunying 2
+#ACT
+SENDMSG 4 当前人数：2人以上，最后获胜者请到我这里领取奖励！
+break
+#IF
+checkhum qunying 1
+#act
+mov A40 <$USERNAME>
+mov A39 <$GUILDNAME>
+mov G39 <$LEVEL>
+mov A38 <$DATETIME>
+MOV G89 0
+CLEARNAMELIST ..\QuestDiary\数据文件\群英名单.txt
+ADDNAMELIST ..\QuestDiary\数据文件\群英名单.txt
+SENDMSG 0 恭喜霸主：%s，获得本场[群雄争霸]最后胜利,奖励元宝5000颗+授予“武林霸主”封号！！ 251 1 30
+SENDMSG 0 恭喜霸主：%s，获得本场[群雄争霸]最后胜利,奖励元宝5000颗+授予“武林霸主”封号！！ 251 1 30
+SENDMSG 0 恭喜霸主：%s，获得本场[群雄争霸]最后胜利,奖励元宝5000颗+授予“武林霸主”封号！！ 251 1 
+SENDMSG 0 恭喜霸主：%s，获得本场[群雄争霸]最后胜利,奖励元宝5000颗+授予“武林霸主”封号！！ 251 1 
+SETRANKLEVELNAME %s\◥■■■武■■■◤\◥■■林■■◤\◥■霸■◤\◥主◤\武林霸主
+GAMEGOLD + 5000
+CHANGEEXP + 1000000
+mapmove 3 330 330
+GMEXECUTE 集体传送 qunying 3
+break
+[@jingao]
+#ACT
+mapmove 3 333 333
+SENDMSG 6 提示：不要想通过非正常手段进入比武赛区!

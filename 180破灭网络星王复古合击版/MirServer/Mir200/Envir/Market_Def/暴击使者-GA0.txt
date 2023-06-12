@@ -1,0 +1,247 @@
+[@main]
+#if
+CHECKLEVELEX < 50
+#ACT
+Messagebox 小伙子，你太年轻了。。。50级再来吧!!
+BREAK
+
+#IF
+#say
+<COLOR=clLime 知道什么叫暴击不,就是打人身上飘紫色的血,很痛很痛ＰＫ必备>\ 
+<COLOR=clAqua  ----------指定位置没佩带装备别去乱点------------------>\
+<武器暴击/@暴击武>----<COLOR=clRed 最高+2> <COLOR=clYellow 每次10000元宝> <COLOR=clFuchsia 成功率55%> <COLOR=clLime 当前装备>[<$WEAPON>]\
+<衣服暴击/@暴击衣>----<COLOR=clRed 最高+2> <COLOR=clYellow 每次10000元宝> <COLOR=clFuchsia 成功率55%> <COLOR=clLime 当前装备>[<$DRESS>]\
+<头盔暴击/@暴击头>----<COLOR=clRed 最高+2> <COLOR=clYellow 每次10000元宝> <COLOR=clFuchsia 成功率55%> <COLOR=clLime 当前装备>[<$HELMET>]\
+<手镯暴击/@暴击手>----<COLOR=clRed 最高+2> <COLOR=clYellow 每次10000元宝> <COLOR=clFuchsia 成功率55%> <COLOR=clLime 当前装备>[<$ARMRING_R>]\
+<戒指暴击/@暴击戒>----<COLOR=clRed 最高+2> <COLOR=clYellow 每次10000元宝> <COLOR=clFuchsia 成功率55%> <COLOR=clLime 当前装备>[<$RING_R>]\
+<腰带暴击/@暴击腰>----<COLOR=clRed 最高+2> <COLOR=clYellow 每次10000元宝> <COLOR=clFuchsia 成功率55%> <COLOR=clLime 当前装备>[<$BELT>]\
+<靴子暴击/@暴击靴>----<COLOR=clRed 最高+2> <COLOR=clYellow 每次10000元宝> <COLOR=clFuchsia 成功率55%> <COLOR=clLime 当前装备>[<$BOOTS>]\
+
+
+[@暴击靴]
+#IF
+CHECKGAMEGOLD < 10000
+#act
+Messagebox [无效]：你没有10000元宝！！！！
+BREAK
+
+#IF
+CheckItemAddvalue 11 8 > 1
+#act
+Messagebox [无效]：你的装备暴击已经有2点了!!!
+BREAK
+
+#IF
+random 8
+CHECKGAMEGOLD > 9999
+CheckItemAddvalue 11 8 < 2
+#act
+GAMEGOLD - 10000
+UPGRADEITEMEX 11 8 0 1 0
+Messagebox 恭喜你,升级成功了！！！
+BREAK
+
+#IF
+#act
+GAMEGOLD - 10000
+Messagebox 很遗憾，升级失败了，下次可能会成功的！！
+BREAK
+
+
+
+[@暴击腰]
+#IF
+CHECKGAMEGOLD < 10000
+#act
+Messagebox [无效]：你没有10000元宝！！！！
+BREAK
+
+#IF
+CheckItemAddvalue 10 8 > 1
+#act
+Messagebox [无效]：你的装备暴击已经有2点了!!!
+BREAK
+
+#IF
+random 8
+CHECKGAMEGOLD > 9999
+CheckItemAddvalue 10 8 < 2
+#act
+GAMEGOLD - 10000
+UPGRADEITEMEX 10 8 0 1 0
+Messagebox 恭喜你,升级成功了！！！
+BREAK
+
+#IF
+#act
+GAMEGOLD - 10000
+Messagebox 很遗憾，升级失败了，下次可能会成功的！！
+BREAK
+
+
+[@暴击戒]
+#IF
+CHECKGAMEGOLD < 10000
+#act
+Messagebox [无效]：你没有10000元宝！！！！
+BREAK
+
+#IF
+CheckItemAddvalue 8 8 > 1
+#act
+Messagebox [无效]：你的装备暴击已经有2点了!!!
+BREAK
+
+#IF
+random 8
+CHECKGAMEGOLD > 9999
+CheckItemAddvalue 8 8 < 2
+#act
+GAMEGOLD - 10000
+UPGRADEITEMEX 8 8 0 1 0
+Messagebox 恭喜你,升级成功了！！！
+BREAK
+
+#IF
+#act
+GAMEGOLD - 10000
+Messagebox 很遗憾，升级失败了，下次可能会成功的！！
+BREAK
+
+
+[@暴击手]
+#IF
+CHECKGAMEGOLD < 10000
+#act
+Messagebox [无效]：你没有10000元宝！！！！
+BREAK
+
+#IF
+CheckItemAddvalue 6 8 > 1
+#act
+Messagebox [无效]：你的装备暴击已经有2点了!!!
+BREAK
+
+#IF
+random 8
+CHECKGAMEGOLD > 9999
+CheckItemAddvalue 6 8 < 2
+#act
+GAMEGOLD - 10000
+UPGRADEITEMEX 6 8 0 1 0
+Messagebox 恭喜你,升级成功了！！！
+BREAK
+
+#IF
+#act
+GAMEGOLD - 10000
+Messagebox 很遗憾，升级失败了，下次可能会成功的！！
+BREAK
+
+
+
+
+[@暴击头]
+#IF
+CHECKGAMEGOLD < 10000
+#act
+Messagebox [无效]：你没有10000元宝！！！！
+BREAK
+
+#IF
+CheckItemAddvalue 4 8 > 1
+#act
+Messagebox [无效]：你的装备暴击已经有2点了!!!
+BREAK
+
+#IF
+random 8
+CHECKGAMEGOLD > 9999
+CheckItemAddvalue 4 8 < 2
+#act
+GAMEGOLD - 10000
+UPGRADEITEMEX 4 8 0 1 0
+Messagebox 恭喜你,升级成功了！！！
+BREAK
+
+#IF
+#act
+GAMEGOLD - 10000
+Messagebox 很遗憾，升级失败了，下次可能会成功的！！
+BREAK
+
+
+[@暴击衣]
+#IF
+CHECKGAMEGOLD < 10000
+#act
+Messagebox [无效]：你没有10000元宝！！！！
+BREAK
+
+#IF
+CheckItemAddvalue 0 8 > 1
+#act
+Messagebox [无效]：你的装备暴击已经有2点了!!!
+BREAK
+
+#IF
+random 8
+CHECKGAMEGOLD > 9999
+CheckItemAddvalue 0 8 < 2
+#act
+GAMEGOLD - 10000
+UPGRADEITEMEX 0 8 0 1 0
+Messagebox 恭喜你,升级成功了！！！
+BREAK
+
+#IF
+#act
+GAMEGOLD - 10000
+Messagebox 很遗憾，升级失败了，下次可能会成功的！！
+BREAK
+
+
+
+[@暴击武]
+#IF
+CHECKGAMEGOLD < 10000
+#act
+Messagebox [无效]：你没有10000元宝！！！！
+BREAK
+
+#IF
+CheckItemAddvalue 1 8 > 1
+#act
+Messagebox [无效]：你的装备暴击已经有2点了!!!
+BREAK
+
+#IF
+random 8
+CHECKGAMEGOLD > 9999
+CheckItemAddvalue 1 8 < 2
+#act
+GAMEGOLD - 10000
+UPGRADEITEMEX 1 8 0 1 0
+Messagebox 恭喜你,升级成功了！！！
+BREAK
+
+#IF
+#act
+GAMEGOLD - 10000
+Messagebox 很遗憾，升级失败了，下次可能会成功的！！
+BREAK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

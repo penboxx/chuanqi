@@ -1,0 +1,15 @@
+[@Main]
+#If
+CHECKVAR HUMAN 接受除妖任务 = 1
+CHECKVAR HUMAN 除妖任务数量 = 1
+#Act
+SendMsg 7 [已杀死魔龙教主：<$HUMAN(除妖任务数量)>/1]
+SENDMSG 7 赶快回去找任务使者吧！
+#If
+CHECKVAR HUMAN 接受除妖任务 = 1
+CHECKVAR HUMAN 除妖任务数量 = 0
+#Act
+CALCVAR HUMAN 除妖任务数量 + 1
+SAVEVAR HUMAN 除妖任务数量 ..\QuestDiary\数据文件\除妖任务数据.txt
+SendMsg 7 [已杀死魔龙教主：<$HUMAN(除妖任务数量)>/1]
+SENDMSG 7 赶快回去找任务使者吧！

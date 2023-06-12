@@ -1,0 +1,374 @@
+()
+%100
+[@main]
+<COLOR=clLime 回收说明：> →  <COLOR=clRed  星王衣服回收１００元ＲＭＢ> 【<点击回收/@RmbHs>】\
+<COLOR=clLime 回收说明：> →  <COLOR=clRed  星王武器回收２００元ＲＭＢ> 【<点击回收/@RmbHs>】\
+<COLOR=clLime 回收说明：> →  <COLOR=clRed  破灭首饰回收２００元ＲＭＢ> 【<点击回收/@RmbHs>】\
+<COLOR=clLime 回收说明：> →  <COLOR=clRed  破灭衣服回收３００元ＲＭＢ> 【<点击回收/@RmbHs>】\ 
+<COLOR=clLime 回收说明：> →  <COLOR=clRed  破灭武器回收５００元ＲＭＢ> 【<点击回收/@RmbHs>】\  \
+<COLOR=clFuchsia 装备回收ＲＭＢ后在旁边(兑换人民币)兑换,可免费成为赞助大使>\ 
+<COLOR=clFuchsia 装备回收ＲＭＢ后在旁边(兑换人民币)兑换,可免费成为赞助大使>\
+<COLOR=clRed 提示：您当前银行帐户RMB余额为：【><$NIMBUS><COLOR=clRed 】元>\
+
+
+
+[@RmbHs]
+#ACT
+QUERYITEMDLG 放入要回收的物品 ~RmbHs 0
+[~RmbHs]
+
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王之刃(战)
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王之刃(法)
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王之刃(道)
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王圣甲(战)
+#ACT
+NIMBUS + 100
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加100元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王圣甲(法)
+#ACT
+NIMBUS + 100
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加100元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王圣甲(道)
+#ACT
+NIMBUS + 100
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加100元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王圣衣(战)
+#ACT
+NIMBUS + 100
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加100元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王圣衣(法)
+#ACT
+NIMBUS + 100
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加100元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王圣衣(道)
+#ACT
+NIMBUS + 100
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加100元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王神剑
+#ACT
+NIMBUS + 500
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加500元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王法杖
+#ACT
+NIMBUS + 500
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加500元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王宝扇
+#ACT
+NIMBUS + 500
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加500元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王战链
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王法链
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王道链
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王战盔
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王魔盔
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王道盔
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王勋章
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王斗笠
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王战镯
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王道镯
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王法镯
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王战戒
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王法戒
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王道戒
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王战带
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王法带
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王道带
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王战靴
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王道靴
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王法靴
+#ACT
+NIMBUS + 200
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加200元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王战甲
+#ACT
+NIMBUS + 300
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加300元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王战衣
+#ACT
+NIMBUS + 300
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加300元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王魔甲
+#ACT
+NIMBUS + 300
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加300元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王魔衣
+#ACT
+NIMBUS + 300
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加300元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王道袍
+#ACT
+NIMBUS + 300
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加300元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 破灭メ星王道衣
+#ACT
+NIMBUS + 300
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您的银行账户增加300元RMB，当前余额为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+
+#IF
+EQUAL P0 1
+#ACT
+MOV P0 0
+DELAYCALL 10 @RmbHs
+BREAK
+#ELSEACT
+SENDMSG 5 提示：<$DLGITEMNAME>在此不能回收！
+DELAYCALL 10 @RmbHs
+BREAK

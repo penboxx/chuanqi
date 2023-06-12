@@ -1,0 +1,280 @@
+[@main]
+<COLOR=clLime 战神幸运项链：>  →   <COLOR=clAqua 战神项链幸运+3系列>   →   <COLOR=clRed ２０元ＲＭＢ>\
+<COLOR=clLime 真魂幸运项链：>  →   <COLOR=clAqua 真魂项链幸运+3系列>   →   <COLOR=clRed ２０元ＲＭＢ>\
+<COLOR=clLime 圣魔幸运项链：>  →   <COLOR=clAqua 圣魔项链幸运+3系列>   →   <COLOR=clRed ２０元ＲＭＢ>\
+<COLOR=clLime 战神普通项链：>  →   <COLOR=clAqua 战神普通项链系列>     →   <COLOR=clRed ５元ＲＭＢ>\
+<COLOR=clLime 真魂普通项链：>  →   <COLOR=clAqua 真魂普通项链系列>     →   <COLOR=clRed ５元ＲＭＢ>\
+<COLOR=clLime 圣魔普通项链：>  →   <COLOR=clAqua 圣魔普通项链系列>     →   <COLOR=clRed ５元ＲＭＢ>\
+(<点击进入下一页回收/@MAIN-11>) → <COLOR=clFuchsia 星王(战)、星王(道)。星王(法)首饰系列>\
+───【<必看说明/@RmbSm>】────────────【<点击回收/@RmbHs>】───\ 
+<COLOR=clRed 提示：您当前帐号RMB为：【><$NIMBUS><COLOR=clRed 】元>\
+
+#ACT
+break
+
+
+[@MAIN-11]
+<COLOR=clLime 星王(战)首饰：> → <COLOR=clAqua 星王护腕(战)、星王战戒系列> → <COLOR=clRed ８０元ＲＭＢ>\
+<COLOR=clLime 星王(道)首饰：> → <COLOR=clAqua 星王护腕(道)、星王道戒系列> → <COLOR=clRed ８０元ＲＭＢ>\
+<COLOR=clLime 星王(法)首饰：> → <COLOR=clAqua 星王护腕(法)、星王魔戒系列> → <COLOR=clRed ８０元ＲＭＢ>\
+<COLOR=clLime 星王(战)首饰：> → <COLOR=clAqua 星王战盔,战带,战靴首饰系列> → <COLOR=clRed ５０元ＲＭＢ>\
+<COLOR=clLime 星王(道)首饰：> → <COLOR=clAqua 星王道盔,道带,道靴首饰系列> → <COLOR=clRed ５０元ＲＭＢ>\
+<COLOR=clLime 星王(法)首饰：> → <COLOR=clAqua 星王法冠,法带,魔靴首饰系列> → <COLOR=clRed ５０元ＲＭＢ>\
+(<点击进入下一页/@MAIN-2> <上一页/@MAIN>) → <COLOR=clFuchsia 开天、镇天、玄天、凤天、凰天、等系列>\
+───【<必看说明/@RmbSm>】────────────【<点击回收/@RmbHs>】───\ 
+<COLOR=clRed 提示：您当前帐号RMB为：【><$NIMBUS><COLOR=clRed 】元>
+#ACT
+break
+
+[@MAIN-2]
+
+<COLOR=clLime 开天武器回收：> →  <COLOR=clAqua 战士开天武器[开天]系列>  → <COLOR=clRed ５０元ＲＭＢ>\
+<COLOR=clLime 玄天武器回收：> →  <COLOR=clAqua 道士玄天武器[玄天]系列>  → <COLOR=clRed ５０元ＲＭＢ>\
+<COLOR=clLime 镇天武器回收：> →  <COLOR=clAqua 法师镇天武器[镇天]系列>  → <COLOR=clRed ５０元ＲＭＢ>\
+<COLOR=clLime 凤天魔甲回收：> →   <COLOR=clAqua 全职业[凤天衣服]系列>   → <COLOR=clRed ５０元ＲＭＢ>\
+<COLOR=clLime 凰天魔衣回收：> →   <COLOR=clAqua 全职业[凰天衣服]系列>   → <COLOR=clRed ５０元ＲＭＢ>\ \
+(<点击进入上一页/@MAIN-11> <首页/@MAIN>) → <COLOR=clFuchsia 星王(战)、星王(道)。星王(法)首饰系列>\
+───【<必看说明/@RmbSm>】────────────【<点击回收/@RmbHs>】───\ 
+<COLOR=clRed 提示：您当前帐号RMB为：【><$NIMBUS><COLOR=clRed 】元>
+
+[@RmbSm]
+ＲＭＢ回收说明：\ \
+1:本服所有装备均由怪物爆出！\
+2:管理员RMB直接回收装备是为了保值游戏装备价格！\
+3:累积满1000RMB可找担保员直接兑换现金，请自备银行卡号！\ \
+4:<COLOR=clRed 注意：带有幸运+3的项链请勿在此回收！否则后果自负！>\ 
+5:<COLOR=clRed 注意：兑换现金时间为每周星期一下午13:00-18:00，逾期不候！>\ 
+<返回主页/@MAIN>
+
+
+
+
+
+
+[@RmbHs]
+#ACT
+QUERYITEMDLG 放入要回收的物品 ~RmbHs 0
+
+[~RmbHs]
+
+
+#IF
+CHECKDLGITEMNAME 战神项链
+#ACT
+NIMBUS + 5
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 真魂项链
+#ACT
+NIMBUS + 5
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 圣魔项链
+#ACT
+NIMBUS + 5
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王护腕(战)
+#ACT
+NIMBUS + 80
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王战戒
+#ACT
+NIMBUS + 80
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王护腕(道)
+#ACT
+NIMBUS + 80
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王道戒
+#ACT
+NIMBUS + 80
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王护腕(法)
+#ACT
+NIMBUS + 80
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王魔戒
+#ACT
+NIMBUS + 80
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王战盔
+#ACT
+NIMBUS + 50
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王腰带(战)
+#ACT
+NIMBUS + 50
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王战靴
+#ACT
+NIMBUS + 50
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王道盔
+#ACT
+NIMBUS + 50
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王腰带(道)
+#ACT
+NIMBUS + 50
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王道靴
+#ACT
+NIMBUS + 50
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王法冠
+#ACT
+NIMBUS + 50
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王魔靴
+#ACT
+NIMBUS + 50
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 星王腰带(法)
+#ACT
+NIMBUS + 50
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-11
+TAKEDLGITEM
+MOV P0 1
+
+
+#IF
+CHECKDLGITEMNAME 凤天魔甲
+#ACT
+NIMBUS + 50
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-2
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 凰天魔衣
+#ACT
+NIMBUS + 50
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-2
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 开天
+#ACT
+NIMBUS + 50
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-2
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 玄天
+#ACT
+NIMBUS + 50
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-2
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+CHECKDLGITEMNAME 镇天
+#ACT
+NIMBUS + 50
+SENDMSG 7 提示：<$DLGITEMNAME>回收成功，您当前帐户RMB为：<$NIMBUS>元
+goto @main-2
+TAKEDLGITEM
+MOV P0 1
+
+#IF
+EQUAL P0 1
+#ACT
+MOV P0 0
+DELAYCALL 10 @RmbHs
+BREAK
+#ELSEACT
+SENDMSG 5 提示：<$DLGITEMNAME>在此不能回收！
+DELAYCALL 10 @RmbHs
+BREAK
+

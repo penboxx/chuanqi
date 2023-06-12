@@ -1,0 +1,27 @@
+[@暴击4]
+{
+#If
+;Random 100
+equal m22 1
+#Act
+Mov m22 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将<$Str(s22)>升级成功，暴击额外+4。
+}
+[@暴击5]
+{
+#If
+;Random 200
+equal m22 1
+#Act
+Mov m22 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将<$Str(s22)>升级成功，暴击额外+5。
+}

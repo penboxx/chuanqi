@@ -1,0 +1,4 @@
+#IF
+CheckGamePoint > 199
+#ACT
+MOV S1 ★★高级赞助大使★★

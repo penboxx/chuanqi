@@ -1,0 +1,96 @@
+[@main]
+#if
+CheckRangeMonCount TT20 15 15 100 < 1
+#ACT
+goto @jin
+#ELSEACT
+messagebox 【提示】:【等你歼灭所有怪物你在来找我】
+
+
+[@jin]
+　\
+╔═══════════════════════════╗\
+║ <COLOR=clSKYBLUE   年清人!    我为你提供奖励为> <COLOR=clFuchsia 2000W经验 + 随机装备一件>║\
+╚═══════════════════════════╝\
+╔═══════════════════════════╗\
+║<COLOR=clLime 领取奖励方式>                        <领取奖励返回土城/@002>  ║\
+╚═══════════════════════════╝\
+
+
+[@002]
+#if
+#ACT
+mapmove 3 333 333
+CHANGEEXP + 20000000
+H.CHANGEEXP + 20000000
+goto @奖励
+BREAK
+
+
+[@奖励]
+#if
+Random 70
+#ACT 
+ReadRandomStr .\QuestDiary\通天\星王战.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 60
+#ACT 
+ReadRandomStr .\QuestDiary\通天\星王道.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 55
+#ACT 
+ReadRandomStr .\QuestDiary\通天\星王法.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 50
+#ACT 
+ReadRandomStr .\QuestDiary\通天\战神.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 49
+#ACT 
+ReadRandomStr .\QuestDiary\通天\真魂.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 48
+#ACT 
+ReadRandomStr .\QuestDiary\通天\圣魔.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 20
+#ACT 
+ReadRandomStr .\QuestDiary\通天\大衣.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 10
+#ACT 
+ReadRandomStr .\QuestDiary\通天\屠龙.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 3
+#ACT 
+ReadRandomStr .\QuestDiary\通天\雷霆.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 2
+#ACT 
+ReadRandomStr .\QuestDiary\通天\烈焰.txt S1
+give <$STR(S1)> 1
+BREAK
+#if
+Random 1
+#ACT 
+ReadRandomStr .\QuestDiary\通天\光芒.txt S1
+give <$STR(S1)> 1
+BREAK

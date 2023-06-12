@@ -1,0 +1,142 @@
+()
+%100
+[@main]
+<COLOR=clAqua 感谢大家对本服务器的支持与厚爱.本服特别开放赞助大使封号.>   \  
+<COLOR=clFuchsia ★★元宝统一官网上充值,无汇款比例>：<COLOR=clYellow 您当前充值了：>[<$GAMEPOINT>]元<COLOR=clFuchsia >\
+<COLOR=clFuchsia 普通赞助大使> → <COLOR=clLime 累计充值达到100元.> <[领取奖励]/@54> <COLOR=clAqua 赠送2万元宝>  \
+<COLOR=clFuchsia 高级赞助大使> → <COLOR=clLime 累计充值达到300元.> <[领取奖励]/@55> <COLOR=clAqua 赠送赞助血石>  \
+<COLOR=clFuchsia 超级赞助大使> → <COLOR=clLime 累计充值达到500元.> <[领取奖励]/@56> <COLOR=clAqua 赠送开天礼包>  \
+<COLOR=clFuchsia 黄金赞助大使> → <COLOR=clLime 累计充值达到1000元> <[领取奖励]/@57> <COLOR=clAqua 赠送至尊血石>  \
+<COLOR=clFuchsia 钻石赞助大使> → <COLOR=clLime 累计充值达到2000元> <[领取奖励]/@58> <COLOR=clAqua 赠送神秘礼包>  \
+<COLOR=clFuchsia 至尊赞助大使> → <COLOR=clLime 累计充值达到3000元> <[领取奖励]/@59> <COLOR=clAqua 赠送超级礼包>  \ 
+<查看赞助大使属性/@查看2> <领取了赞助血石注意在此修理> <修理赞助魔血石/@修啊>\
+
+
+[@查看2]
+<COLOR=clFuchsia ★★元宝统一官网上充值,无汇款比例>：<COLOR=clYellow 您当前充值了：>[<$GAMEPOINT>]元<COLOR=clFuchsia >\
+<COLOR=clFuchsia ══════════════════════════════> \
+<COLOR=clFuchsia 普通赞助大使> → <COLOR=clAqua 上线5.0倍打怪经验.隐藏防御.魔御.功魔道属性.> \
+<COLOR=clFuchsia 高级赞助大使> → <COLOR=clAqua 上线5.5倍打怪经验.隐藏防御.魔御.功魔道属性.> \
+<COLOR=clFuchsia 超级赞助大使> → <COLOR=clAqua 上线6.0倍打怪经验.隐藏防御.魔御.功魔道属性.> \
+<COLOR=clFuchsia 黄金赞助大使> → <COLOR=clAqua 上线7.0倍打怪经验.隐藏防御.魔御.功魔道属性.> \
+<COLOR=clFuchsia 钻石赞助大使> → <COLOR=clAqua 上线8.0倍打怪经验.隐藏防御.魔御.功魔道属性.> \
+<COLOR=clFuchsia 至尊赞助大使> → <COLOR=clAqua 上线1 0倍打怪经验.隐藏防御.魔御.功魔道属性.> \
+<返回上页/@main>        <COLOR=clAqua 不同的赞助封号,享受不同的隐藏属性! >\
+<COLOR=clFuchsia ══════════════════════════════> \
+
+[@修啊]
+#IF
+#act
+QUERYITEMDLG 放入要修理的血石 @修理血石啊 0
+[@修啊]
+#IF
+#act
+QUERYITEMDLG 放入要修理的血石 @修理血石啊 0
+[@修理血石啊]
+#IF
+CHECKDLGITEMNAME 赞助メ魔血石 1
+#act
+TAKEDLGITEM
+give 赞助メ魔血石 1
+#IF
+CHECKDLGITEMNAME 至尊メ赞助魔血石 1
+#act
+TAKEDLGITEM
+give 至尊メ赞助魔血石 1
+BREAK
+
+[@54]
+#IF
+Check [054] 0
+CheckGamePoint > 99
+#act
+set [054] 1
+GAMEGOLD + 20000
+SENDMSG 0 恭喜[<$USERNAME>]领取了普通赞助大使奖励[20000元宝]破灭网络感谢你的支持！ 252 253 20
+SENDMSG 0 恭喜[<$USERNAME>]领取了普通赞助大使奖励[20000元宝]破灭网络感谢你的支持！ 252 253 20
+BREAK
+
+#IF
+#act
+MESSAGEBOX 你已经领过了，或你的充值没有达到要求！ \    \玩家担保交流QQ群:129929925
+BREAK
+
+[@55]
+#IF
+Check [055] 0
+CheckGamePoint > 299
+#act
+set [055] 1
+give 赞助メ魔血石 2
+SENDMSG 0 恭喜[<$USERNAME>]领取了高级赞助大使奖励[赞助メ魔血石]破灭网络感谢你的支持！ 252 253 20
+SENDMSG 0 恭喜[<$USERNAME>]领取了高级赞助大使奖励[赞助メ魔血石]破灭网络感谢你的支持！ 252 253 20
+BREAK
+
+#IF
+#act
+MESSAGEBOX 你已经领过了，或你的充值没有达到要求！ \    \玩家担保交流QQ群:129929925
+BREAK
+
+[@56]
+#IF
+Check [056] 0
+CheckGamePoint > 499
+#act
+set [056] 1
+give 开天礼包 1
+SENDMSG 0 恭喜[<$USERNAME>]领取了超级赞助大使奖励[开天礼包]破灭网络感谢你的支持！ 252 253 20
+SENDMSG 0 恭喜[<$USERNAME>]领取了超级赞助大使奖励[开天礼包]破灭网络感谢你的支持！ 252 253 20
+BREAK
+
+#IF
+#act
+MESSAGEBOX 你已经领过了，或你的充值没有达到要求！ \    \玩家担保交流QQ群:129929925
+BREAK
+
+[@57]
+#IF
+Check [057] 0
+CheckGamePoint > 999
+#act
+set [057] 1
+give 至尊メ赞助魔血石 2
+SENDMSG 0 恭喜[<$USERNAME>]领取了黄金赞助大使奖励[至尊メ赞助魔血石]破灭网络感谢你的支持！ 252 253 20
+SENDMSG 0 恭喜[<$USERNAME>]领取了黄金赞助大使奖励[至尊メ赞助魔血石]破灭网络感谢你的支持！ 252 253 20
+BREAK
+
+#IF
+#act
+MESSAGEBOX 你已经领过了，或你的充值没有达到要求！ \    \玩家担保交流QQ群:129929925
+BREAK
+
+[@58]
+#IF
+Check [058] 0
+CheckGamePoint > 1999
+#act
+set [058] 1
+give 神秘礼包 1
+SENDMSG 0 恭喜[<$USERNAME>]领取了砖石赞助大使奖励[神秘礼包]破灭网络感谢你的支持！ 252 253 20
+SENDMSG 0 恭喜[<$USERNAME>]领取了砖石赞助大使奖励[神秘礼包]破灭网络感谢你的支持！ 252 253 20
+BREAK
+
+#IF
+#act
+MESSAGEBOX 你已经领过了，或你的充值没有达到要求！ \    \玩家担保交流QQ群:129929925
+BREAK
+
+[@59]
+#IF
+Check [059] 0
+CheckGamePoint > 2999
+#act
+set [059] 1
+give 超级礼包 1
+SENDMSG 0 恭喜[<$USERNAME>]领取了至尊赞助大使奖励[超级礼包]破灭网络感谢你的支持！ 252 253 20
+SENDMSG 0 恭喜[<$USERNAME>]领取了至尊赞助大使奖励[超级礼包]破灭网络感谢你的支持！ 252 253 20
+BREAK
+
+#IF
+#act
+MESSAGEBOX 你已经领过了，或你的充值没有达到要求！ \    \玩家担保交流QQ群:129929925
+BREAK

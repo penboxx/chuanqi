@@ -1,0 +1,66 @@
+
+()
+%100
+[@main]
+★━━━━★　　━ <COLOR=clLime 自助招人系统> ━行会【<$STR(A30)>】竞价成功\ 
+┃<COLOR=clAqua 天> ■ <COLOR=clAqua 第>┃　　\ 
+┃ ■<COLOR=clAqua 会>■ ┃　  <加入天下第一会/@jrxh>   <参加行会竞价/@cyjj>\ 
+┃<COLOR=clAqua 下> ■ <COLOR=clAqua 一>┃　　\ 
+★━━━━★　　━━━━━━━━━━━━━━━━━━\ 
+【最新竞得行会】：【<$STR(A30)>】\
+【竞价元宝数量】：【<$STR(G30)>】<COLOR=clYellow 此处服务器重起后刷新，可重新竞价>\
+<COLOR=clAqua 友情提示：行会竞价数量底线为500元宝，支付比竞价>\
+<COLOR=clAqua 数量元宝高出500元宝即可让行会竞价板上加入您的行会。>\
+[@cyjj] 
+#IF 
+HAVEGUILD 
+CHECKGAMEGOLD > <$STR(G30)>
+#ACT 
+INC G30 500
+GAMEGOLD - <$STR(G30)> 
+mov A30 <$GUILDNAME> 
+mov G38 1
+SENDMSG 0 【<$USERNAME>】在行会竞价板为行会【<$STR(A30)>】竞得【天下第一会】，大家赶快来加入吧  249 251 50
+SENDMSG 0 【<$USERNAME>】在行会竞价板为行会【<$STR(A30)>】竞得【天下第一会】，大家赶快来加入吧  249 251 50
+SENDMSG 0 【<$USERNAME>】在行会竞价板为行会【<$STR(A30)>】竞得【天下第一会】，大家赶快来加入吧  249 251 50
+GOTO @main 
+BREAK 
+#ELSEACT 
+Messagebox [失败]：你的元宝不足或者你没有行会
+[@jrxh] 
+#IF 
+equal G38 1
+#ACT
+goto @jrxh2
+#ELSEACT
+Messagebox [失败]：目前没有行会竞得行会竞价板
+[@jrxh2]
+#IF
+ISGUILDMASTER
+#ACT
+Messagebox [失败]：您现在是行会掌门不能在加入其他行会！！ 
+break
+#IF
+equal A30 <$GUILDNAME>
+#ACT
+Messagebox [失败]：您现在已经是【<$STR(A30)>】的行会成员了！！ 
+break
+#ELSEACT
+goto @jrxh3
+[@jrxh3]
+#IF
+HAVEGUILD
+#ACT
+Gmexecute 退出门派
+DELAYGOTO 1 @jrxh4
+#ELSEACT
+goto @jrxh4
+[@jrxh4]
+#IF 
+#ACT 
+GMEXECUTE 加入门派
+AFFILIATEGUILD <$STR(A30)> <$USERNAME> 
+SENDMSG 0 恭喜『%s』通过自助行会竞价收人！加入了天下第一行会【<$STR(A30)>】 249 251 50
+SENDMSG 0 恭喜『%s』通过自助行会竞价收人！加入了天下第一行会【<$STR(A30)>】 249 251 50
+SENDMSG 0 恭喜『%s』通过自助行会竞价收人！加入了天下第一行会【<$STR(A30)>】 249 251 50
+break

@@ -1,0 +1,20 @@
+()
+%100
+[@main]
+\ 
+<COLOR=clLime 欢迎来到星王1.80合击版，这里是【地下皇陵】。>\ \
+<COLOR=clred 地图怪物：>魔龙教主.魔龙战将.力士.巨蛾。\
+<COLOR=clred 主要装备：>圣战.雷霆系列.战神.终极系列.书页。\
+<COLOR=clred 地图层数：>三层\
+<COLOR=clred 地图收费：>进入需要支付<1000>元宝。\ \
+<进入地图/@jrdt4>             <返回/@MAIN>
+[@jrdt4]
+#if
+CHECKGAMEGOLD > 999
+#act
+GAMEGOLD - 1000
+mapmove dxhl01
+SENDMSG 2 玩家[%s],进入地下皇陵,本地图BOSS为双倍爆率!
+SENDMSG 2 玩家[%s],进入地下皇陵,本地图BOSS为双倍爆率!
+#ELSEACT
+MESSAGEBOX 需要1000元宝用来支付我们的服务费用!

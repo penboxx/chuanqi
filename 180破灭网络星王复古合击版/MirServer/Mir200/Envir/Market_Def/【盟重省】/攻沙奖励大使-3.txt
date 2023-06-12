@@ -1,0 +1,141 @@
+()
+%100
+[@main]
+#IF
+ISADMIN
+equal G89 1
+#SAY
+<修改开区天数/@tInteger12>  <修改攻沙模式/@修改攻沙模式>(今晚20:00攻沙)\
+======（以上玩家看不到。只有GM才能看到）==========\
+#IF
+ISADMIN
+equal G89 0
+#SAY
+<修改开区天数/@tInteger12>  <修改攻沙模式/@修改攻沙模式>(今晚不攻沙)\
+======（以上玩家看不到。只有GM才能看到）==========\
+#IF
+equal G88 4
+equal G89 1
+#SAY
+最近一次攻沙在今天晚上20:00-22:00\
+攻沙奖励为50000元宝\
+　\
+<领取攻沙元宝/@领取攻沙元宝>    \
+#ACT
+break
+#IF
+LARGE G88 3
+equal G89 0
+#SAY
+最近一次攻沙在明天晚上20:00-22:00\
+攻沙奖励为50000元宝\
+　\
+<领取攻沙元宝/@领取攻沙元宝>      \
+#ACT
+break
+#IF
+LARGE G88 3
+equal G89 1 
+#SAY
+最近一次攻沙在今天晚上20:00-22:00\
+攻沙奖励为50000元宝\
+　\
+<领取攻沙元宝/@领取攻沙元宝>      \
+#ACT
+break
+#IF
+equal G88 3
+#SAY
+最近一次攻沙在明天晚上20:00-22:00\
+攻沙奖励为50000元宝\
+　\
+<领取攻沙元宝/@领取攻沙元宝>      \
+#ACT
+break
+#IF
+SMALL G88 3
+#SAY
+最近一次攻沙在开区第三天晚上20:00-22:00\
+攻沙奖励为50000元宝\
+　\
+<领取攻沙元宝/@领取攻沙元宝>      \
+#ACT
+break
+[@tInteger12]
+#IF
+ISADMIN
+#ACT
+QUERYVALUE 99 1 3 ~B25 请输开区天数（1-255）
+BREAK
+[~B25]
+#IF
+SMALL M99 1
+#ACT
+MESSAGEBOX 请输入1-250，否者打你屁股！
+DELAYCALL 1 @MAIN
+MOV M99 0
+BREAK
+#IF
+LARGE M99 250
+#ACT
+MESSAGEBOX 请输入1-255，否者打你屁股！
+DELAYCALL 1 @MAIN
+MOV M99 0
+BREAK
+#IF
+ISADMIN
+#ACT
+MOV G88 <$STR(M99)>
+DELAYCALL 1 @MAIN
+MESSAGEBOX 修改成功!!
+BREAK
+[@修改攻沙模式]
+#IF
+equal G89 0
+#ACT
+MOV G89 1
+DELAYCALL 1 @MAIN
+BREAK
+#IF
+equal G89 1
+#ACT
+MOV G89 0
+DELAYCALL 1 @MAIN
+BREAK
+[@领取攻沙元宝]
+#IF
+ISCASTLEMASTER
+HOUR 22 22
+MIN 2 50
+equal G88 4
+equal G89 1
+equal G90 0
+#ACT
+MOV G90 1
+gamegold + 50000
+sendmsg 0 提示：城主【<$USERNAME>】领取今天的攻沙奖励：50000元宝。请再接再励！
+sendmsg 0 提示：城主【<$USERNAME>】领取今天的攻沙奖励：50000元宝。请再接再励！
+sendmsg 0 提示：城主【<$USERNAME>】领取今天的攻沙奖励：50000元宝。请再接再励！
+sendmsg 0 提示：城主【<$USERNAME>】领取今天的攻沙奖励：50000元宝。请再接再励！
+sendmsg 0 提示：城主【<$USERNAME>】领取今天的攻沙奖励：50000元宝。请再接再励！
+#IF
+ISCASTLEMASTER
+HOUR 22 22
+MIN 2 50
+LARGE G88 4
+equal G89 1
+equal G90 0
+#ACT
+MOV G90 1
+gamegold + 50000
+sendmsg 0 提示：城主【<$USERNAME>】领取今天的攻沙奖励：50000元宝。请再接再励！
+sendmsg 0 提示：城主【<$USERNAME>】领取今天的攻沙奖励：50000元宝。请再接再励！
+sendmsg 0 提示：城主【<$USERNAME>】领取今天的攻沙奖励：50000元宝。请再接再励！
+sendmsg 0 提示：城主【<$USERNAME>】领取今天的攻沙奖励：50000元宝。请再接再励！
+sendmsg 0 提示：城主【<$USERNAME>】领取今天的攻沙奖励：50000元宝。请再接再励！
+#ELSESAY
+领取条件：\
+1.城主。\
+2.攻沙日\
+3.时间为：22:02-22:50\
+4.一天只能领一次。或者您同伙领了也可能！\

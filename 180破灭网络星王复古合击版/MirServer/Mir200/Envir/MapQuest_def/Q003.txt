@@ -1,0 +1,18 @@
+[@MAIN]
+#IF
+CHECKVAR HUMAN 领取除魔任务 = 1
+CHECKVAR HUMAN 执行内容 = 去沙巴克藏宝阁杀祖玛卫士
+CHECKVAR HUMAN 已杀数量 = <$HUMAN(除魔杀怪数量)>
+#ACT
+SENDMSG 7 你现的除魔任务完成度：(<$HUMAN(已杀数量)>/<$HUMAN(除魔杀怪数量)>)
+SENDMSG 7 赶快回去找任务使者吧！
+Break
+#IF
+CHECKVAR HUMAN 领取除魔任务 = 1
+CHECKVAR HUMAN 执行内容 = 去沙巴克藏宝阁杀祖玛卫士
+CHECKVAR HUMAN 已杀数量 < <$HUMAN(除魔杀怪数量)>
+#ACT
+CALCVAR HUMAN 已杀数量 + 1
+SAVEVAR HUMAN 已杀数量 ..\QuestDiary\数据文件\除魔任务数据.txt
+SENDMSG 7 你现的除魔任务完成度：(<$HUMAN(已杀数量)>/<$HUMAN(除魔杀怪数量)>)
+break

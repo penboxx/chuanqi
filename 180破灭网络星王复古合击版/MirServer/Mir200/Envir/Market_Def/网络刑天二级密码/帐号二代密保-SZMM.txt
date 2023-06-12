@@ -1,0 +1,769 @@
+(@@InPutString @@InPutInteger )
+[@main]
+#if
+CHECK [390] 0
+#ACT
+BREAK
+#say
+为了防止木马盗号事件为玩家造成损失，现在特采用双密码验证登\
+陆，当玩家登陆IP与之前登陆IP不同时会锁定玩家角色，需输入二\
+次密码解锁。现在检测你没有输入密码，请点击下面的设置密码设\
+置。密码可以为数字、字母、汉字、特殊字符，<COLOR=clRed 字母区分大小写>！！\
+<COLOR=clFuchsia 请玩家不要将二次密码设置成与登陆密码一致！>\
+设置好之后请不要泄漏给任何人。<COLOR=clFuchsia 注：密码中如包含字母区分大小写>\ \
+<设置密码/@初始设置二级密码0>　　<修改密码/@修改二级密码>　　<设置下次上线同IP也需要输入二级密码/@设置下次上线同IP也需要输入二级密码>\
+<清除密码/@清除二级密码0>　　<找回密码/@找回二级密码0>　　↑<COLOR=clRed 网吧用户可设此功能防止同网吧盗号>
+#elsesay
+为了防止木马盗号事件为玩家造成损失，现在特采用双密码验证登\
+陆，当玩家登陆IP与之前登陆IP不同时会锁定玩家角色，需输入二\
+次密码解锁。现在检测你没有输入密码，请点击下面的设置密码设\
+置。密码可以为数字、字母、汉字、特殊字符，<COLOR=clRed 字母区分大小写>！！\
+<COLOR=clFuchsia 请玩家不要将二次密码设置成与登陆密码一致！>\
+设置好之后请不要泄漏给任何人。<COLOR=clFuchsia 注：密码中如包含字母区分大小写>\ \
+<设置密码/@初始设置二级密码0>　　<修改密码/@修改二级密码>　　<取消下次上线同IP也需要输入二级密码/@设置下次上线同IP也需要输入二级密码>\
+<清除密码/@清除二级密码0>　　<找回密码/@找回二级密码0>　　↑<COLOR=clRed 网吧用户可设此功能防止同网吧盗号>
+
+[@清除二级密码0]
+#if
+checkvar HUMAN 二级登陆密码 = 
+#act
+goto @main
+messagebox 您都还没有设置二级密码，清除什么？请先设置二级密码！
+break
+#elseACT
+MOV M97 0
+MOV S83 
+MOV S84 
+GOTO @清除二级密码
+[@清除二级密码]
+#if
+checkvar HUMAN 二级登陆密码 = 
+#act
+goto @main
+messagebox 您都还没有设置二级密码，清除什么？请先设置二级密码！
+break
+#elsesay
+<COLOR=clFuchsia 请正确填写以下密码保护资料为您清除二级帐号密码：>\ \
+<COLOR=clLime 点此输入→><您的二级密码保护生日/@@InPutInteger97>：<$STR(M97)> \
+<COLOR=clLime 点此输入→><您的二级密码保护问题/@@InPutString83>：<$STR(S83)>\
+<COLOR=clLime 点此输入→><您的二级密码保护答案/@@InPutString84>：<$STR(S84)>\ \
+
+<确定清除二级帐号密码/@确定清除二级帐号密码>
+
+[@@InPutInteger97]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutInteger97
+[@InPutInteger97]
+#IF
+LARGE M97 10000000
+small M97 29999999
+#ACT
+goto @清除二级密码
+break
+#IF
+LARGE M97 0
+#ACT
+MOV M97 0
+goto @清除二级密码
+messagebox 出错！生日必须为8位纯数字格式(格式：19700902)！\　\请重新输入你的生日！
+#elseact
+goto @清除二级密码
+messagebox 出错！生日必须为纯数字格式，不能带符号！\　\请重新输入你的生日！
+break
+[@@InPutString83]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString83
+[@InPutString83]
+#if
+Equal S83 
+#act
+goto @清除二级密码
+messagebox 请输入你的二级密码保护问题！
+break
+#elseact
+goto @清除二级密码
+break
+[@@InPutString84]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString84
+[@InPutString84]
+#if
+Equal S84 
+#act
+goto @清除二级密码
+messagebox 请输入你要的二级密码保护答案！
+break
+#elseact
+goto @清除二级密码
+break
+
+[@确定清除二级帐号密码]
+#if
+checkvar HUMAN 二级登陆密码 = 
+#act
+goto @main
+messagebox 您都还没有设置二级密码，清除什么？请先设置二级密码！
+break
+#IF
+LARGE M97 10000000
+small M97 29999999
+#elseact
+MOV M97 0
+goto @清除二级密码
+messagebox 您还没有输入二级密码保护生日！\　\请先点击【您的二级密码保护生日】输入你的生日！
+break
+#IF
+Equal S83 
+#act
+goto @清除二级密码
+messagebox 您还没有输入二级密码保护问题！\　\请先点击【您的二级密码保护问题】输入你的问题！
+break
+#IF
+Equal S84 
+#act
+goto @清除二级密码
+messagebox 您还没有输入二级密码保护答案！\　\请先点击【您的二级密码保护答案】输入你的答案！
+break
+#IF
+CHECKLEVELEX > 0
+#act
+QUERYVALUE 0 2 0 @确定清除二级帐号密码1 \清除二级密码后将无法保障你帐号安全，请谨慎操作！\　\是否确定将二级密码清除？\　\　\　　　　　　　　　　　　确定提交请点↓[确定]　重新输入请点↓[取消]
+
+[@确定清除二级帐号密码1]
+#if
+checkvar HUMAN 二级登陆密码 = 
+#act
+goto @main
+messagebox 您都还没有设置过二级密码，清除什么？请先设置二级密码！
+break
+#IF
+LARGE M97 10000000
+small M97 29999999
+#elseact
+MOV M97 0
+goto @清除二级密码
+messagebox 您还没有输入二级密码保护生日！\　\请先点击【您的二级密码保护生日】输入你的生日！
+break
+#IF
+Equal S83 
+#act
+goto @清除二级密码
+messagebox 您还没有输入二级密码保护问题！\　\请先点击【您的二级密码保护问题】输入你的问题！
+break
+#IF
+Equal S84 
+#act
+goto @清除二级密码
+messagebox 您还没有输入二级密码保护答案！\　\请先点击【您的二级密码保护答案】输入你的答案！
+break
+#if
+checkvar HUMAN 二级密码生日 = <$STR(M97)>
+#elseact
+messagebox 对不起您的密码保护生日不是【<$STR(M97)>】，请重新输入！
+MOV M97 0
+goto @清除二级密码
+break
+#if
+checkvar HUMAN 二级密码问题 = <$STR(S83)>
+#elseact
+messagebox 对不起您的密码保护问题不是【<$STR(S83)>】，请重新输入！
+MOV S83 
+goto @清除二级密码
+break
+#if
+checkvar HUMAN 二级密码答案 = <$STR(S84)>
+#act
+SET [390] 0
+CALCVAR HUMAN 二级登陆密码 = 
+CALCVAR HUMAN 二级登陆IP = <$IPADDR>
+CALCVAR HUMAN 二级登陆次数 = 0
+SAVEVAR HUMAN 二级登陆密码 ..\QuestDiary\二级密码\二级登陆密码.txt
+SAVEVAR HUMAN 二级登陆IP ..\QuestDiary\二级密码\二级登陆密码.txt
+SAVEVAR HUMAN 二级登陆次数 ..\QuestDiary\二级密码\二级登陆密码.txt
+SENDMSG 6 恭喜您！您成功清除了二级密码！
+messagebox 恭喜您！您成功清除了二级密码！
+MOV S83 
+MOV S84 
+MOV M97 0
+goto @main
+break
+#elseact
+messagebox 对不起您的密码保护答案不是【<$STR(S84)>】，请重新输入！
+MOV S84 
+goto @清除二级密码
+break
+
+[@找回二级密码0]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M98 0
+MOV S85 
+MOV S86 
+MOV S87 
+GOTO @找回二级密码
+[@找回二级密码]
+#if
+checkvar HUMAN 二级登陆密码 = 
+#act
+goto @main
+messagebox 您都还没有设置过二级密码，找回什么？请先设置二级密码！
+break
+#elsesay
+<COLOR=clFuchsia 请正确填写以下密码保护资料为您重新设置二级帐号密码：>\ \
+<COLOR=clLime 点此输入→><您的二级密码保护生日/@@InPutInteger98>：<$STR(M98)> \
+<COLOR=clLime 点此输入→><您的二级密码保护问题/@@InPutString85>：<$STR(S85)>\
+<COLOR=clLime 点此输入→><您的二级密码保护答案/@@InPutString86>：<$STR(S86)>\ \
+<COLOR=clLime 点此输入→><新的二级帐号密码/@@InPutString87>：<$STR(S87)>\ \
+<确定重新设置二级帐号密码/@确定找回二级帐号密码>
+
+[@@InPutInteger98]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutInteger98
+[@InPutInteger98]
+#IF
+LARGE M98 10000000
+small M98 29999999
+#ACT
+goto @找回二级密码
+break
+#IF
+LARGE M98 0
+#ACT
+MOV M98 0
+goto @找回二级密码
+messagebox 出错！生日必须为8位纯数字格式(格式：19800902)！\　\请重新输入你的生日！
+#elseact
+goto @找回二级密码
+messagebox 出错！生日必须为纯数字格式，不能带符号！\　\请重新输入你的生日！
+break
+[@@InPutString85]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString85
+[@InPutString85]
+#if
+Equal S85 
+#act
+goto @找回二级密码
+messagebox 请输入你的二级密码保护问题！
+break
+#elseact
+goto @找回二级密码
+break
+[@@InPutString86]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString86
+[@InPutString86]
+#if
+Equal S86 
+#act
+goto @找回二级密码
+messagebox 请输入你要的二级密码保护答案！
+break
+#elseact
+goto @找回二级密码
+break
+[@@InPutString87]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString87
+[@InPutString87]
+#if
+Equal S87 
+#act
+goto @找回二级密码
+messagebox 请输入你要设置的新的二级帐号密码！
+break
+#elseact
+goto @找回二级密码
+SENDMSG 6 您设置新的二级密码为：【<$STR(S87)>】，请牢记此密码。
+break
+
+[@确定找回二级帐号密码]
+#if
+checkvar HUMAN 二级登陆密码 = 
+#act
+goto @main
+messagebox 您都还没有设置二级密码，找回什么？请先设置二级密码！
+break
+#IF
+Equal S87 
+#act
+goto @找回二级密码
+messagebox 您还没有输入密码！\　\请先点击【新的二级帐号密码】输入你要设置的新密码！
+break
+#IF
+LARGE M98 10000000
+small M98 29999999
+#elseact
+MOV M98 0
+goto @找回二级密码
+messagebox 您还没有输入二级密码保护生日！\　\请先点击【您的二级密码保护生日】输入你的生日！
+break
+#IF
+Equal S85 
+#act
+goto @找回二级密码
+messagebox 您还没有输入二级密码保护问题！\　\请先点击【您的二级密码保护问题】输入你的问题！
+break
+#IF
+Equal S86 
+#act
+goto @找回二级密码
+messagebox 您还没有输入二级密码保护答案！\　\请先点击【您的二级密码保护答案】输入你的答案！
+break
+#IF
+CHECKLEVELEX > 0
+#act
+QUERYVALUE 0 2 0 @确定找回二级帐号密码1 您设置的新二级帐号密码为：<$STR(S87)>\　\是否确定将二级密码找回为此密码？\　\　\　　　　　　　　　　　　确定提交请点↓[确定]　重新输入请点↓[取消]
+
+[@确定找回二级帐号密码1]
+#if
+checkvar HUMAN 二级登陆密码 = 
+#act
+goto @main
+messagebox 您都还没有设置过二级密码，找回什么？请先设置二级密码！
+break
+#IF
+Equal S87 
+#act
+goto @找回二级密码
+messagebox 您还没有输入密码！\　\请先点击【新的二级帐号密码】输入你要设置的新密码！
+break
+#IF
+LARGE M98 10000000
+small M98 29999999
+#elseact
+MOV M98 0
+goto @找回二级密码
+messagebox 您还没有输入二级密码保护生日！\　\请先点击【您的二级密码保护生日】输入你的生日！
+break
+#IF
+Equal S85 
+#act
+goto @找回二级密码
+messagebox 您还没有输入二级密码保护问题！\　\请先点击【您的二级密码保护问题】输入你的问题！
+break
+#IF
+Equal S86 
+#act
+goto @找回二级密码
+messagebox 您还没有输入二级密码保护答案！\　\请先点击【您的二级密码保护答案】输入你的答案！
+break
+#if
+checkvar HUMAN 二级密码生日 = <$STR(M98)>
+#elseact
+messagebox 对不起您的密码保护生日不是【<$STR(M98)>】，请重新输入！
+MOV M98 0
+goto @找回二级密码
+break
+#if
+checkvar HUMAN 二级密码问题 = <$STR(S85)>
+#elseact
+messagebox 对不起您的密码保护问题不是【<$STR(S85)>】，请重新输入！
+MOV S85 
+goto @找回二级密码
+break
+#if
+checkvar HUMAN 二级密码答案 = <$STR(S86)>
+#act
+CALCVAR HUMAN 二级登陆密码 = <$STR(S87)>
+CALCVAR HUMAN 二级登陆IP = <$IPADDR>
+CALCVAR HUMAN 二级登陆次数 = 0
+SAVEVAR HUMAN 二级登陆密码 ..\QuestDiary\二级密码\二级登陆密码.txt
+SAVEVAR HUMAN 二级登陆IP ..\QuestDiary\二级密码\二级登陆密码.txt
+SAVEVAR HUMAN 二级登陆次数 ..\QuestDiary\二级密码\二级登陆密码.txt
+SENDMSG 6 恭喜您！您成功设置新的二级密码为：【<$STR(S87)>】
+MOV S85 
+MOV S86 
+MOV S87 
+MOV M98 0
+break
+#say
+<COLOR=clFuchsia 恭喜您成功设置新的二级密码。请务必牢记，不要再忘记了！>\ \ \
+<COLOR=clLime 您新的二级帐号密码为>：<$HUMAN(二级登陆密码)>\ \ \
+<返回./@main>\
+<退出./@exit>
+#elseact
+messagebox 对不起您的密码保护答案不是【<$STR(S86)>】，请重新输入！
+MOV S86 
+goto @找回二级密码
+break
+
+[@初始设置二级密码0]
+#if
+checkvar HUMAN 二级登陆密码 = 
+checkvar HUMAN 二级密码问题 = 
+checkvar HUMAN 二级密码答案 = 
+#act
+MOV M99 0
+MOV S88 
+MOV S89 
+MOV S90 
+GOTO @初始设置二级密码
+break
+#if
+checkvar HUMAN 二级登陆密码 = 
+#say
+\　\
+\　\
+<COLOR=clLime 点此输入→><设置您的二级帐号密码/@@InPutString93>\
+#elseact
+goto @main
+messagebox 对不起，您已经设置过二级密码！
+break
+[@初始设置二级密码]
+#if
+checkvar HUMAN 二级登陆密码 = 
+checkvar HUMAN 二级密码问题 = 
+checkvar HUMAN 二级密码答案 = 
+#act
+break
+#say
+<COLOR=clLime 点此输入→><设置二级帐号密码/@@InPutString90>：<$STR(S90)>\ \
+<COLOR=clFuchsia 以下为二级密码保护资料，忘记二级密码可以通过密码保护找回>\ \
+<COLOR=clLime 点此输入→><二级密码保护生日/@@InPutInteger99>：<$STR(M99)> <COLOR=clred (格式：19800902)>\
+<COLOR=clLime 点此输入→><二级密码保护问题/@@InPutString88>：<$STR(S88)>\
+<COLOR=clLime 点此输入→><二级密码保护答案/@@InPutString89>：<$STR(S89)>\ \
+<确定设置二级密码及密码保护资料/@确定设置二级密码及密码保护资料>
+#if
+checkvar HUMAN 二级登陆密码 = 
+#say
+\　\
+\　\
+<COLOR=clLime 点此输入→><设置您的二级帐号密码/@@InPutString93>\
+#elseact
+goto @main
+messagebox 对不起，您已经设置过二级密码！
+break
+
+[@@InPutInteger99]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutInteger99
+[@InPutInteger99]
+#IF
+LARGE M99 10000000
+small M99 29999999
+#ACT
+goto @初始设置二级密码
+SENDMSG 6 您设置二级密码保护生日为：【<$STR(M99)>】，请牢记此生日。
+break
+#IF
+LARGE M99 0
+#ACT
+MOV M99 0
+goto @初始设置二级密码
+messagebox 出错！生日必须为8位纯数字格式(格式：19800902)！\　\请重新输入你要设置的生日！
+#elseact
+goto @初始设置二级密码
+messagebox 出错！生日必须为纯数字格式，不能带符号！\　\请重新输入你要设置的生日！
+break
+[@@InPutString88]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString88
+[@InPutString88]
+#if
+Equal S88 
+#act
+goto @初始设置二级密码
+messagebox 请输入你要设置的二级密码保护问题！
+break
+#elseact
+goto @初始设置二级密码
+SENDMSG 6 您设置二级密码保护问题为：【<$STR(S88)>】，请牢记此问题。
+break
+[@@InPutString89]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString89
+[@InPutString89]
+#if
+Equal S89 
+#act
+goto @初始设置二级密码
+messagebox 请输入你要设置的二级密码保护答案！
+break
+#elseact
+goto @初始设置二级密码
+SENDMSG 6 您设置二级密码保护答案为：【<$STR(S89)>】，请牢记此答案。
+break
+[@@InPutString90]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString90
+[@InPutString90]
+#if
+Equal S90 
+#act
+goto @初始设置二级密码
+messagebox 请输入你要设置的二级密码！
+break
+#elseact
+goto @初始设置二级密码
+SENDMSG 6 您设置二级密码为：【<$STR(S90)>】，请牢记此密码。
+break
+
+[@确定设置二级密码及密码保护资料]
+#IF
+Equal S90 
+#act
+goto @初始设置二级密码
+messagebox 您还没有输入密码！\　\请先点击【设置二级帐号密码】输入你要设置的密码！
+break
+#IF
+LARGE M99 10000000
+small M99 29999999
+#elseact
+MOV M99 0
+goto @初始设置二级密码
+messagebox 您还没有输入二级密码保护生日！\　\请先点击【二级密码保护生日】输入你要设置的生日！
+break
+#IF
+Equal S88 
+#act
+goto @初始设置二级密码
+messagebox 您还没有输入二级密码保护问题！\　\请先点击【二级密码保护问题】输入你要设置的问题！
+break
+#IF
+Equal S89 
+#act
+goto @初始设置二级密码
+messagebox 您还没有输入二级密码保护答案！\　\请先点击【二级密码保护答案】输入你要设置的答案！
+break
+#IF
+CHECKLEVELEX > 0
+#act
+QUERYVALUE 0 2 0 @确定设置二级密码及密码保护资料1 您的二级帐号密码：<$STR(S90)>\二级密码保护生日：<$STR(M99)>\二级密码保护问题：<$STR(S88)>\二级密码保护答案：<$STR(S89)>\提交后将不能修改，是否确定提交以下密码及密码保护资料设置？\　　　　　　　　　　　　确定提交请点↓[确定]　重新输入请点↓[取消]
+[@确定设置二级密码及密码保护资料1]
+#IF
+Equal S90 
+#act
+goto @初始设置二级密码
+messagebox 您还没有输入密码！\　\请先点击【设置二级帐号密码】输入你要设置的密码！
+break
+#IF
+LARGE M99 10000000
+small M99 29999999
+#elseact
+MOV M99 0
+goto @初始设置二级密码
+messagebox 您还没有输入二级密码保护生日！\　\请先点击【二级密码保护生日】输入你要设置的生日！
+break
+#IF
+Equal S88 
+#act
+goto @初始设置二级密码
+messagebox 您还没有输入二级密码保护问题！\　\请先点击【二级密码保护问题】输入你要设置的问题！
+break
+#IF
+Equal S89 
+#act
+goto @初始设置二级密码
+messagebox 您还没有输入二级密码保护答案！\　\请先点击【二级密码保护答案】输入你要设置的答案！
+break
+#if
+checkvar HUMAN 二级登陆密码 = 
+checkvar HUMAN 二级密码生日 = 
+checkvar HUMAN 二级密码答案 = 
+#act
+CALCVAR HUMAN 二级登陆密码 = <$STR(S90)>
+CALCVAR HUMAN 二级登陆IP = <$IPADDR>
+CALCVAR HUMAN 二级登陆次数 = 0
+CALCVAR HUMAN 二级密码生日 = <$STR(M99)>
+CALCVAR HUMAN 二级密码问题 = <$STR(S88)>
+CALCVAR HUMAN 二级密码答案 = <$STR(S89)>
+SAVEVAR HUMAN 二级登陆密码 ..\QuestDiary\二级密码\二级登陆密码.txt
+SAVEVAR HUMAN 二级登陆IP ..\QuestDiary\二级密码\二级登陆密码.txt
+SAVEVAR HUMAN 二级登陆次数 ..\QuestDiary\二级密码\二级登陆密码.txt
+SAVEVAR HUMAN 二级密码生日 ..\QuestDiary\二级密码\二级登陆密码.txt
+SAVEVAR HUMAN 二级密码问题 ..\QuestDiary\二级密码\二级登陆密码.txt
+SAVEVAR HUMAN 二级密码答案 ..\QuestDiary\二级密码\二级登陆密码.txt
+SENDMSG 6 恭喜您！您成功设置二级密码为：【<$STR(S90)>】
+SENDMSG 6 您成功设置二级密码保护生日为：【<$STR(M99)>】
+SENDMSG 6 您成功设置二级密码保护问题为：【<$STR(S88)>】
+SENDMSG 6 您成功设置二级密码保护答案为：【<$STR(S89)>】
+MOV S90 
+MOV S88 
+MOV S89 
+MOV M99 0
+break
+#say
+<COLOR=clFuchsia 恭喜您成功设置二级密码及密码保护。请牢记以下资料：>\ \
+<COLOR=clLime 您的二级帐号密码为>：<$HUMAN(二级登陆密码)>\
+<COLOR=clLime 二级密码保护生日为>：<$HUMAN(二级密码生日)>\
+<COLOR=clLime 二级密码保护问题为>：<$HUMAN(二级密码问题)>\
+<COLOR=clLime 二级密码保护答案为>：<$HUMAN(二级密码答案)>\ \
+<返回./@main>\
+<退出./@exit>
+#if
+checkvar HUMAN 二级登陆密码 = 
+#act
+MOV S90 
+MOV S88 
+MOV S89 
+MOV M99 0
+break
+#say
+\　\
+\　\
+<COLOR=clLime 点此输入→><设置您的二级帐号密码/@@InPutString93>\
+#elseact
+MOV S90 
+MOV S88 
+MOV S89 
+MOV M99 0
+goto @main
+messagebox 对不起，您已经设置过二级密码，您可以点击修改密码进行修改。
+break
+
+[@设置下次上线同IP也需要输入二级密码]
+#if
+checkvar human 二级登陆密码 = 
+#ACT
+messagebox 对不起，你还没有设置二级密码，请先设置二级密码才能进行此操作！
+break
+#if
+CHECK [390] 0
+#ACT
+SET [390] 1
+messagebox 恭喜你设置成功，下次上线同IP也需要输入二级密码！
+goto @main
+BREAK
+#elseact
+SET [390] 0
+messagebox 恭喜你取消成功，已取消下次上线同IP也需要输入二级密码！
+goto @main
+BREAK
+
+[@修改二级密码]
+#if
+checkvar human 二级登陆密码 = 
+#ACT
+messagebox 对不起，你还没有设置二级密码，请先设置二级密码才能进行此操作！
+break
+#elsesay
+为了防止木马盗号事件为玩家造成损失，现在特采用双密码验证登\
+陆，当玩家登陆IP与之前登陆IP不同时会锁定玩家角色，需输入二\
+次密码解锁。现在检测你没有输入密码，请点击下面的设置密码设\
+置。密码可以为数字、字母、汉字、特殊字符，<COLOR=clRed 字母区分大小写>！！\
+<COLOR=clFuchsia 请玩家不要将二次密码设置成与登陆密码一致！>\
+设置好之后请不要泄漏给任何人。<COLOR=clFuchsia 注：密码中如包含字母区分大小写>\
+点击下方的验证密码输入原始密码进行原密码验证.\
+<验证原密码/@@InPutString92>　　　　　　　　　　　　　<返回/@main>
+[@@InPutString92]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString92
+[@InPutString92]
+#if
+checkvar HUMAN 二级登陆密码 = <$STR(S92)>
+#act
+break
+#say
+为了防止木马盗号事件为玩家造成损失，现在特采用双密码验证登\
+陆，当玩家登陆IP与之前登陆IP不同时会锁定玩家角色，需输入二\
+次密码解锁。现在正在进行<验证密码>操作，请点击下面的验证密码\
+验证。密码可以为数字、字母、汉字、特殊字符，<COLOR=clRed 字母区分大小写>！！\
+请玩家不要将二次密码设置成与登陆密码一致！\
+设置好之后请不要泄漏给任何人。\
+原密码验证通过，请输入新密码..<COLOR=clFuchsia 注：密码中如包含字母区分大小写>\
+<输入新密码/@@InPutString91>　　　　　　　　　　　　　<返回/@main>
+#elseact
+CALCVAR HUMAN 二级登陆次数 + 1
+SAVEVAR HUMAN 二级登陆次数 ..\QuestDiary\二级密码\二级登陆密码.txt
+#elsesay
+对不起，密码验证失败。<COLOR=clFuchsia 注：密码中如包含字母区分大小写>\
+您已经累积输入密码错误<$HUMAN(二级登陆次数)>次。\
+累积输入错误5次后，每输错一次密码就将踢您下线。\
+更改密码可以清空此数值。\
+<返回./@main>\
+<退出./@exit>
+#if
+checkvar human 二级登陆次数 > 4
+#act
+kick
+messagebox 对不起，您已经累积输入密码错误<$HUMAN(二级登陆次数)>次。\系统自动踢您下线，以后每次登陆均只有一次输入密码的机会。\更改密码可以清空此数值。
+break
+
+[@@InPutString91]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString91
+[@InPutString91]
+#if
+checkvar HUMAN 二级登陆密码 = <$STR(S92)>
+#act
+CALCVAR HUMAN 二级登陆密码 = <$STR(S91)>
+CALCVAR HUMAN 二级登陆IP = <$IPADDR>
+CALCVAR HUMAN 二级登陆次数 = 0
+SAVEVAR HUMAN 二级登陆密码 ..\QuestDiary\二级密码\二级登陆密码.txt
+SAVEVAR HUMAN 二级登陆IP ..\QuestDiary\二级密码\二级登陆密码.txt
+SAVEVAR HUMAN 二级登陆次数 ..\QuestDiary\二级密码\二级登陆密码.txt
+SENDMSG 6 您成功修改二级密码为：【<$STR(S91)>】，请牢记此密码。
+break
+#say
+恭喜您成功修改了二级登陆密码。\
+当前密码为：<$STR(S91)>\
+密码输入错误次数清零。\
+<返回./@main>\
+<退出./@exit>
+#elsesay
+对不起，请先验证原密码，才能进行新密码设置。\
+<COLOR=clFuchsia 注：密码中如包含字母区分大小写>\
+<返回./@main>\
+<退出./@exit>
+
+[@@InPutString93]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString93
+[@InPutString93]
+#if
+checkvar HUMAN 二级登陆密码 = 
+#act
+CALCVAR HUMAN 二级登陆密码 = <$STR(S93)>
+CALCVAR HUMAN 二级登陆IP = <$IPADDR>
+CALCVAR HUMAN 二级登陆次数 = 0
+SAVEVAR HUMAN 二级登陆密码 ..\QuestDiary\二级密码\二级登陆密码.txt
+SAVEVAR HUMAN 二级登陆IP ..\QuestDiary\二级密码\二级登陆密码.txt
+SAVEVAR HUMAN 二级登陆次数 ..\QuestDiary\二级密码\二级登陆密码.txt
+SENDMSG 6 您成功设置二级密码为：【<$STR(S93)>】，请牢记此密码。
+MOV S93 
+break
+#say
+恭喜您成功设置二级密码。\ \
+当前密码为：<$HUMAN(二级登陆密码)>\ \
+<返回./@main>\
+<退出./@exit>
+#elsesay
+对不起，您已经设置过二级密码，请点击修改密码进行修改。\
+<返回./@main>\
+<退出./@exit>
+
+[@IsInFilterList]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MESSAGEBOX [错误]：输入数据中包含了非法字符，请重新编辑！

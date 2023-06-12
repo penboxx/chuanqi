@@ -1,0 +1,45 @@
+[@main]
+#IF
+CHECKHEROONLINE
+#ELSEsay
+对不起您的英雄没有招出来我无法为您服务......
+BREAK
+#say
+欢迎来到这个世界。在你面前的将是一个陌生的。\
+新奇的<全新世界>。在这个世界中历险需要的是你的<智慧>与<胆量>。\
+不过在经历这些乐趣之前，你必须要拥有<强健>的体魄！\
+让我来看看你是什么职业，我好告诉你如何生存下去。\　\
+<前往新手训练地/@next1> \　\
+<前往盟重土城/@gotu>
+
+[@next1]
+#IF
+CHECKLEVELEX > 34
+#act
+mapmove 3 333 333
+SENDMSG 7 你已经通过了新手训练！！！
+BREAK
+
+#IF
+#act
+mapmove xinrend
+BREAK
+
+[@gotu]
+#IF
+CHECKLEVELEX > 34
+#act
+mapmove 3 333 333
+BREAK
+
+#IF
+#act
+mapmove xinrend
+SENDMSG 7 你等级不足40,先送你到新手地升级吧!!!
+BREAK
+
+
+
+
+
+

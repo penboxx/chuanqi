@@ -1,0 +1,415 @@
+[@main]
+┌───┐───────────────────────┐※\
+│<COLOR=clYellow ※※※>└ <COLOR=clAqua 单笔充值> <100 元RMB> <COLOR=clLime 多送> <2千><COLOR=clLime 元宝> <[价值  10RMB]>│网\
+│<COLOR=clYellow 【充】>· <COLOR=clAqua 单笔充值> <300 元RMB> <COLOR=clLime 多送> <1万><COLOR=clLime 元宝> <[价值  50RMB]>│站\
+│<COLOR=clYellow 【值】>· <COLOR=clAqua 单笔充值> <500 元RMB> <COLOR=clLime 多送> <2万><COLOR=clLime 元宝> <[价值 100RMB]>│充\
+│<COLOR=clYellow 【◆】>· <COLOR=clAqua 单笔充值> <1000元RMB> <COLOR=clLime 多送> <6万><COLOR=clLime 元宝> <[价值 300RMB]>│值\
+│<COLOR=clYellow 【反】>· <COLOR=clAqua 单笔充值> <2000元RMB> <COLOR=clLime 多送><16万><COLOR=clLime 元宝> <[价值 800RMB]>│自\
+│<COLOR=clYellow 【馈】>· <COLOR=clAqua 单笔充值> <3000元RMB> <COLOR=clLime 多送><30万><COLOR=clLime 元宝> <[价值1500RMB]>│动\
+│<COLOR=clYellow ※※※>┌ <COLOR=clAqua 单笔充值> <5000元RMB> <COLOR=clLime 多送><60万><COLOR=clLime 元宝> <[价值3000RMB]>│送\
+└───┘───────────────────────┘※\
+当前你累计充值[<$GAMEPOINT>]元人民币 <累计充值领封号---详情请点我/@main-1>\
+
+
+
+[@main-1]
+┌───┐───────────────────────┐※\
+│<COLOR=clYellow ※※※>└ <COLOR=clAqua 累计充值300 元RMB，赠送><[普通赞助大使]/@普通><COLOR=clLime 荣誉称号>│累\
+│<COLOR=clYellow 【充】>· <COLOR=clAqua 累计充值500 元RMB，赠送><[高级赞助大使]/@高级><COLOR=clLime 荣誉称号>│计\
+│<COLOR=clYellow 【值】>· <COLOR=clAqua 累计充值1000元RMB，赠送><[白银赞助大使]/@白银><COLOR=clLime 荣誉称号>│充\
+│<COLOR=clYellow 【◆】>· <COLOR=clAqua 累计充值2000元RMB，赠送><[黄金赞助大使]/@黄金><COLOR=clLime 荣誉称号>│值\
+│<COLOR=clYellow 【反】>· <COLOR=clAqua 累计充值3000元RMB，赠送><[皇冠赞助大使]/@皇冠><COLOR=clLime 荣誉称号>│领\
+│<COLOR=clYellow 【馈】>· <COLOR=clAqua 累计充值5000元RMB，赠送><[金钻赞助大使]/@金钻><COLOR=clLime 荣誉称号>│封\
+│<COLOR=clYellow ※※※>┌ <COLOR=clAqua 累计充值一万元RMB，赠送><[贵族赞助大使]/@贵族><COLOR=clLime 荣誉称号>│号\
+└───┘───────────────────────┘※\
+当前你累计充值[<$GAMEPOINT>]元人民币 <单笔充值多充多送---详情请点我/@main>\
+
+
+
+
+[@普通]
+#IF 
+CHECKTITLE 沙巴克城主 < 1 //检测称号
+#ACT
+CONFERTITLE 沙巴克城主 //授予称号
+MessageBox 　\　　　　抱歉领取封号失败！累计充值300元即可联系客服办理赞助封号\　\　\　\　　　　　　　　　　　　　　　　　客服担保QQ:68405131 
+Break
+
+
+
+
+
+
+
+
+
+
+
+[@007]
+#if
+CheckGamePoint > 4999999
+#act
+goto @007a
+#elsesay
+抱歉您当前充值金额不够领取该奖项\
+
+
+[@007a]
+#if
+check [488] 0
+#act
+goto @007b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@007b]
+#if
+CheckGamePoint > 4999999
+check [488] 0
+LARGE G488 0
+#act
+goto @007c
+#elsesay
+对不起，此奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+[@007c]
+#if
+CheckGamePoint > 4999999
+check [488] 0
+LARGE G488 0
+#act
+GAMEGOLD + 1800000
+goto @008
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值奖励系统,获得元宝1800000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+DEC G488 1
+SET [488] 1
+close
+
+
+[@006]
+#if
+CheckGamePoint > 2999999
+#act
+goto @006a
+#elsesay
+抱歉您当前充值金额不够领取该奖项\
+
+
+[@006a]
+#if
+check [487] 0
+#act
+goto @006b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@006b]
+#if
+CheckGamePoint > 2999999
+check [487] 0
+LARGE G487 0
+#act
+goto @006c
+#elsesay
+对不起，此奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+[@006c]
+#if
+CheckGamePoint > 2999999
+check [487] 0
+LARGE G487 0
+#act
+GAMEGOLD + 800000
+goto @008
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值奖励系统,获得元宝800000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+DEC G487 1
+SET [487] 1
+close
+
+[@005]
+#if
+CheckGamePoint > 999999
+#act
+goto @005a
+#elsesay
+抱歉您当前充值金额不够领取该奖项\
+
+
+[@005a]
+#if
+check [486] 0
+#act
+goto @005b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@005b]
+#if
+CheckGamePoint > 999999
+check [486] 0
+LARGE G486 0
+#act
+goto @005c
+#elsesay
+对不起，此奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+[@005c]
+#if
+CheckGamePoint > 999999
+check [486] 0
+LARGE G486 0
+#act
+GAMEGOLD + 300000
+goto @008
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值奖励系统,获得元宝300000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+DEC G486 1
+SET [486] 1
+close
+
+[@004]
+#if
+CheckGamePoint > 499999
+#act
+goto @004a
+#elsesay
+抱歉您当前充值金额不够领取该奖项\
+
+
+[@004a]
+#if
+check [485] 0
+#act
+goto @004b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@004b]
+#if
+CheckGamePoint > 499999
+check [485] 0
+LARGE G485 0
+#act
+goto @004c
+#elsesay
+对不起，此奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+[@004c]
+#if
+CheckGamePoint > 499999
+check [485] 0
+LARGE G485 0
+#act
+GAMEGOLD + 150000
+goto @008
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值奖励系统,获得元宝150000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+DEC G485 1
+SET [485] 1
+close
+
+[@003]
+#if
+CheckGamePoint > 299999
+#act
+goto @003a
+#elsesay
+抱歉您当前充值金额不够领取该奖项\
+
+
+[@003a]
+#if
+check [484] 0
+#act
+goto @003b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@003b]
+#if
+CheckGamePoint > 299999
+check [484] 0
+LARGE G484 0
+#act
+goto @003c
+#elsesay
+对不起，此奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+[@003c]
+#if
+CheckGamePoint > 299999
+check [484] 0
+LARGE G484 0
+#act
+GAMEGOLD + 80000
+goto @008
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值奖励系统,获得元宝80000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+DEC G484 1
+SET [484] 1
+close
+
+
+
+[@002]
+#if
+CheckGamePoint > 99999
+#act
+goto @002a
+#elsesay
+抱歉您当前充值金额不够领取该奖项\
+
+
+[@002a]
+#if
+check [483] 0
+#act
+goto @002b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@002b]
+#if
+CheckGamePoint > 99999
+check [483] 0
+LARGE G483 0
+#act
+goto @002c
+#elsesay
+对不起，此奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+[@002c]
+#if
+CheckGamePoint > 99999
+check [483] 0
+LARGE G483 0
+#act
+GAMEGOLD + 25000
+goto @008
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值奖励系统,获得元宝25000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+DEC G483 1
+SET [483] 1
+close
+
+[@001]
+#if
+CheckGamePoint > 19999
+#act
+goto @001a
+#elsesay
+抱歉您当前充值金额不够领取该奖项\
+
+
+[@001a]
+#if
+check [482] 0
+#act
+goto @001b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@001b]
+#if
+CheckGamePoint > 19999
+check [482] 0
+LARGE G482 0
+#act
+goto @001c
+#elsesay
+对不起，此奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+[@001c]
+#if
+CheckGamePoint > 19999
+check [482] 0
+LARGE G482 0
+#act
+GAMEGOLD + 5000
+goto @008
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值奖励系统,获得元宝5000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+DEC G482 1
+SET [482] 1
+close
+
+
+
+
+
+[@008]
+#IF
+#ACT
+MOV G480 1
+MOV G482 99999
+MOV G483 99999
+MOV G484 99999
+MOV G485 99999
+MOV G486 99999
+MOV G487 99999
+MOV G488 99999
+
+
+
+[@清除冲级]
+#IF
+ISADMIN
+#ACT
+MOV G480 1
+MOV G482 99999
+MOV G483 99999
+MOV G484 99999
+MOV G485 99999
+MOV G486 99999
+MOV G487 99999
+MOV G488 99999
+
+
+[@fh]
+#IF
+CheckGamePoint > 99999
+#ACT
+goto @fha
+BREAK
+#ELSEACT
+MessageBox 　\　　　　抱歉您当前充值未达到[100000元宝]无法打开封号\　\　\　\　　　　　　　　　　　　　　　　　已充值<$GAMEPOINT>元宝
+Break
+
+
+
+
+
+
+
+
+

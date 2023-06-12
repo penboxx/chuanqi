@@ -1,0 +1,36 @@
+[@main]
+╔══════════════════════════╗\
+‖                                                    ‖\
+‖分享QQ空间后可马上免费获得 <10万经验>┈┈→<点击领取/@免费领取>   ‖\   
+‖                                                    ‖\
+‖                                                    ‖\
+‖系统赠送你1个小时的1.2经验暴涨.让你升级更快.        ‖\
+╚══════════════════════════╝\   \
+<注意>：必须成功分享到QQ空间才能获取 否则无法领取 ！.. \
+
+
+
+
+[@免费领取]
+#IF
+CheckAccountList ..\QuestDiary\数据文件\分享.txt
+#ACT
+messagebox   [错误信息]：你今天已经分享过了。。等明天在来找我吧。
+#ELSEACT
+messagebox   [提示信息]：分享不成功会造成多次卡屏现象.请您成功分享。
+GOTO @今天分享
+BREAK
+
+
+
+[@今天分享]
+#IF
+#ACT
+WebBrowser http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http%3A%2F%2Fwww.h1995.com%2F&showcount=1&desc=%E4%BB%8A%E5%A4%A9%E5%92%8C%E5%A4%A7%E5%AE%B6%E7%8E%A9%E4%BA%86%E4%B8%80%E4%B8%AA%E5%A4%8D%E5%8F%A4%E5%90%88%E5%87%BB%20%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99%20www.sf1995.com(%E5%A5%BD%E8%AE%B0%3A%E4%BC%A0%E5%A5%871.80)%20%E6%97%A0%E4%BC%9A%E5%91%98.%E6%97%A0%E6%B3%A1%E7%82%B9.%E8%A3%85%E5%A4%87%E5%AE%8C%E5%85%A8%E9%9D%A0%E6%89%93.%E4%BA%BA%E6%B0%94%E7%AE%80%E7%9B%B4%E5%A4%AA%E5%A5%BD%E4%BA%86.%E5%9C%A8%E9%87%8C%E9%9D%A2%E8%BF%98%E6%9C%89%E5%BE%88%E5%A4%9A%E7%BE%8E%E5%A5%B3%E5%93%9F.%E4%BB%8A%E5%A4%A9%E8%BF%98%E6%9C%89%E6%96%B0%E5%8C%BA.%E5%BF%AB%E6%9D%A5%E5%8A%A0%E5%85%A5%E5%90%A7&summary=%E6%AF%8F%E5%A4%A9%E7%81%AB%E6%9A%B4%E6%96%B0%E5%8C%BA%20%E6%BF%80%E6%83%85%E6%97%A0%E9%99%90%20%E5%9B%9E%E5%91%B32005%E7%9A%84%E6%84%9F%E8%A7%89.%E8%AE%A9%E4%BD%A0%E4%BD%93%E9%AA%8C%E9%AB%98%E6%BD%AE%E8%88%AC%E7%9A%84%E6%84%9F%E8%A7%89%5B%E6%96%B0%E5%8C%BA%E5%BC%80%E6%94%BE%5D%20%5B%E6%AF%8F%E6%97%A5%E5%A4%9A%E5%8C%BA%5D&title=%E3%80%8A1.80%E9%BC%8E%E7%AB%8B%E5%90%88%E5%87%BB%E3%80%8B%E7%8B%AC%E5%AE%B6%E5%A5%89%E7%8C%AE%EF%BC%8C%E9%AA%A8%E7%81%B0%E7%8E%A9%E5%AE%B6%E7%9A%84%E5%A4%A9%E5%A0%82%EF%BC%8C%E7%BB%8F%E4%B9%85%E8%80%90%E7%8E%A9%E9%80%82%E5%90%88%E9%95%BF%E6%9C%9F%E7%8E%A9%E5%AE%B6%EF%BC%81&site=&pics=&style=203&width=98&height=22&otype=share
+ADDACCOUNTLIST ..\QuestDiary\数据文件\分享.txt
+CHANGEEXP + 100000
+KILLMONEXPRATE 120 3600 1
+SENDMSG 0 《%s》成功分享QQ空间获得免费经验10万...
+SENDMSG 0 《%s》成功分享QQ空间获得免费经验10万...
+SENDMSG 0 《%s》成功分享QQ空间获得经验暴涨1个小时...
+SENDMSG 0 《%s》成功分享QQ空间获得经验暴涨1个小时...

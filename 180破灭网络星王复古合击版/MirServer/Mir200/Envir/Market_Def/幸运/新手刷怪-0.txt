@@ -1,0 +1,38 @@
+[@main]
+#if
+CheckRangeMonCount 0 215 631 20 < 50
+#ACT
+goto @jin
+#ELSEACT
+SENDMSG 4 附近怪物还很多你找我干吗？
+
+
+[@jin]
+#if
+#ACT
+Param1 0
+Param2 215
+Param3 631
+MonGen 鸡 20 20
+MonGen 稻草人 50 20
+goto @jin1
+BREAK
+
+[@jin1]
+#if
+#ACT
+Param1 0
+Param2 215
+Param3 631
+MonGen 鹿 20 20
+goto @jin2
+BREAK
+
+[@jin2]
+#if
+#ACT
+Param1 0
+Param2 215
+Param3 631
+MonGen 蛤蟆 10 10
+BREAK

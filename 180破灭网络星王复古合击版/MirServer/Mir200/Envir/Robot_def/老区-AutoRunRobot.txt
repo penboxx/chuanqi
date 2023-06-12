@@ -1,0 +1,32 @@
+;--------------拿沙申请-----------------
+#AutoRun NPC RUNONDAY 19:00 @拿沙申请
+
+#AutoRun NPC RUNONDAY 19:10 @攻沙喊话1
+#AutoRun NPC RUNONDAY 19:50 @攻沙喊话2
+#AutoRun NPC RUNONDAY 19:55 @拿沙申请
+;--------------通天塔-----------------
+
+#AutoRun NPC RUNONDAY 00:01 @通天开
+#AutoRun NPC RUNONDAY 00:30 @通天关
+#AutoRun NPC RUNONDAY 02:01 @通天开
+#AutoRun NPC RUNONDAY 02:30 @通天关
+#AutoRun NPC RUNONDAY 04:01 @通天开
+#AutoRun NPC RUNONDAY 04:30 @通天关
+#AutoRun NPC RUNONDAY 06:01 @通天开
+#AutoRun NPC RUNONDAY 06:30 @通天关
+#AutoRun NPC RUNONDAY 08:01 @通天开
+#AutoRun NPC RUNONDAY 08:30 @通天关
+#AutoRun NPC RUNONDAY 10:01 @通天开
+#AutoRun NPC RUNONDAY 10:30 @通天关
+#AutoRun NPC RUNONDAY 12:01 @通天开
+#AutoRun NPC RUNONDAY 12:30 @通天关
+#AutoRun NPC RUNONDAY 14:01 @通天开
+#AutoRun NPC RUNONDAY 14:30 @通天关
+#AutoRun NPC RUNONDAY 16:01 @通天开
+#AutoRun NPC RUNONDAY 16:30 @通天关
+#AutoRun NPC RUNONDAY 18:01 @通天开
+#AutoRun NPC RUNONDAY 18:30 @通天关
+#AutoRun NPC RUNONDAY 20:01 @通天开
+#AutoRun NPC RUNONDAY 20:30 @通天关
+#AutoRun NPC RUNONDAY 22:01 @通天开
+#AutoRun NPC RUNONDAY 22:30 @通天关

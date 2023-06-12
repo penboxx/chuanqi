@@ -1,0 +1,20 @@
+()
+%100
+[@main]
+<COLOR=clAqua  　　    |激|>  ∴  ㊣ ∴  ●╭○╮∴ ㊣  ∴  <COLOR=clAqua |激| >\
+<COLOR=clAqua     　 　|情|>  愛戀╰☆  /█∨▓↘ ☆╯愛戀  <COLOR=clAqua |情| >\
+<COLOR=clAqua    　　  |大|>  戒恨↘≈≈ ∏  ∏ ≈≈↙瞄瞄  <COLOR=clAqua |大| >\
+<COLOR=clAqua     　　 |殿|>  ≈戒 恨≈I LOVE YOU≈瞄 瞄≈  <COLOR=clAqua |殿| >\
+………………<COLOR=clLime 每天10:30,18:30,22:30展开！！！>………………\
+<COLOR=clLime 介绍：><固定时间刷出武器专暴神龙暴出高级武器>\
+　　　\
+<COLOR=clFuchsia 活动怪物刷新后系统会进行全服提示免费进入!> \
+　<进入活动一号点/@1>　　<进入活动二号点/@2>　<我现在还比较忙先不去/@EXIT>\
+[@1]
+#IF
+#ACT
+MAPMOVE jqdd 7 9
+[@2]
+#IF
+#ACT
+MAPMOVE jqdd 39 42

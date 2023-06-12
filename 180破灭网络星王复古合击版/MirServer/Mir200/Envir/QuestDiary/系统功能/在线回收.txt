@@ -1,0 +1,452 @@
+[@回收]
+{
+#If
+CheckLevelEx > 0 
+#Act
+SetRandomNo
+#Say
+<为了防止脱机挂在线回收验证，请谅解！> \　\
+<COLOR=CLAQUA 本次回收验证码为:> \ 　\
+　\
+<输入验证码/@@CheckNo>：<$RANDOMNO>
+
+[@@CheckNo]
+#If
+CheckRandomNo
+#say
+<COLOR=clLime ①级回收进入：><祖玛首饰系列> → <COLOR=clAqua 2万经验>  +   <COLOR=clRed  2元宝>  <一键全收/@祖玛>\
+<COLOR=clLime ②级回收进入：><赤月首饰系列> → <COLOR=clAqua 5万经验>  +  <COLOR=clRed   5元宝>  <一键全收/@赤月>\
+<COLOR=clLime ③级回收进入：><雷霆首饰系列> → <COLOR=clAqua 10万经验> +  <COLOR=clRed  10元宝>  <一键全收/@雷霆>\
+<COLOR=clLime ④级回收进入：><天魔怒斩系列> → <COLOR=clAqua 10万经验> +  <COLOR=clRed  20元宝>  <一键全收/@天魔>\
+<COLOR=clLime ⑤级回收进入：><屠龙武器系列> → <COLOR=clAqua 20万经验> +  <COLOR=clRed  50元宝>  <一键全收/@屠龙>\
+<COLOR=clLime ⑥级回收进入：><42级衣服系列> → <COLOR=clAqua 25万经验> +  <COLOR=clRed 100元宝>  <一键全收/@42级>\
+<COLOR=clLime ⑦级回收进入：><强化首饰系列> → <COLOR=clAqua 25万经验> +  <COLOR=clRed 200元宝>  <一键全收/@强化>\
+<COLOR=clLime ⑧级回收进入：><战神首饰系列> → <COLOR=clAqua 30万经验> +  <COLOR=clRed 300元宝>  <一键全收/@战神>\
+<进入综回收/@综合>:　  <COLOR=clAqua 星王首饰回收1万元宝,点综回收进入回收> \
+[@综合]
+╔┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╗\
+┆选择你需要回收的系列武器： 『<星王首饰回收/@星王>』 1万元宝 ┆\
+╠┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆ <COLOR=clFuchsia 1000元宝> ┆『<黄金屠龙/@回屠龙>』┆『<紫金法杖/@回嗜魂法杖>』┆『<赤金逍扇/@回霸者之刃>』┆\
+╠┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆ <COLOR=clFuchsia 5000元宝> ┆『<开    天/@回开天>』┆『<镇    天/@回镇天>』┆『<玄    天/@回玄天>』┆\
+╠┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╬┄┄┄┄┄┄╣\
+┆ <COLOR=clFuchsia 5000元宝> ┆『<凤天魔甲/@风甲>』┆『<凤天魔衣/@凰甲>』┆『<返回上页/@回收>』┆\
+╚┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╝
+[@回霸者之刃]
+#IF
+checkitem 赤金逍遥扇 1
+#ACT
+take 赤金逍遥扇 1 
+INC G128 1
+goto @JIE_ZHEN
+CHANGEEXP + 500000
+GAMEGOLD + 1000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有赤金逍遥扇，无法回收！ 
+GOTO @综合
+BREAK
+[@回嗜魂法杖]
+#IF
+checkitem 紫金嗜魂法杖 1
+#ACT
+take 紫金嗜魂法杖 1 
+INC G128 1
+goto @JIE_ZHEN
+CHANGEEXP + 500000
+GAMEGOLD + 1000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有紫金嗜魂法杖，无法回收！ 
+GOTO @综合
+BREAK
+[@回屠龙]
+#IF
+checkitem 屠龙 1
+#ACT
+take 屠龙 1 
+INC G128 1
+goto @JIE_ZHEN
+CHANGEEXP + 500000
+GAMEGOLD + 1000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有屠龙，无法回收！ 
+GOTO @综合
+BREAK
+[@凰甲]
+#IF
+checkitem 凤天魔衣 1
+#ACT
+take 凤天魔衣 1 
+INC G128 1
+goto @JIE_ZHEN
+CHANGEEXP + 1000000
+GAMEGOLD + 5000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有凤天魔衣，无法回收！ 
+GOTO @综合
+BREAK
+[@风甲]
+#IF
+checkitem 凤天魔甲 1
+#ACT
+take 凤天魔甲 1 
+INC G128 1
+goto @JIE_ZHEN
+CHANGEEXP + 1000000
+give 金币 1000000
+GAMEGOLD + 5000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有凤天魔甲，无法回收！ 
+GOTO @综合
+BREAK
+[@回开天]
+#IF
+checkitem 开天 1
+#ACT
+take 开天 1 
+INC G128 1
+goto @JIE_ZHEN
+CHANGEEXP + 1000000
+GAMEGOLD + 5000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有开天，无法回收！ 
+GOTO @综合
+BREAK
+[@回玄天]
+#IF
+checkitem 玄天 1
+#ACT
+INC G128 1
+take 玄天  1 
+goto @JIE_ZHEN
+CHANGEEXP + 1000000
+give 金币 1000000
+GAMEGOLD + 5000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有玄天，无法回收！ 
+GOTO @综合
+BREAK
+[@回镇天]
+#IF
+checkitem 镇天 1
+#ACT
+take 镇天  1 
+INC G128 1
+goto @JIE_ZHEN
+CHANGEEXP + 1000000
+give 金币 1000000
+GAMEGOLD + 5000
+SENDMSG 6 〖提示〗回收成功：您的当前金币:<$GOLDCOUNT>.经验值:<$EXP>.元宝:<$GAMEGOLD>!
+GOTO @综合
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有镇天，无法回收！ 
+GOTO @综合
+BREAK
+[@战神]
+#IF
+checklevel > 0
+#ACT
+INC M20 0
+take 战神项链|战神手镯|战神戒指|战神头盔|真魂项链|真魂手镯|真魂戒指|真魂头盔|圣魔项链|圣魔手镯|圣魔戒指|圣魔头盔|圣魔法靴|圣魔腰带|真魂道靴|真魂腰带|战神圣靴|战神腰带 50 M20 0
+#IF
+LARGE M20 0
+#ACT
+MOV M21 300000
+MOV M22 150000
+MOV M23 300
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件战神系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 6 〖提示〗你身上没有战神系列装备，无法回收！ 
+GOTO @main
+BREAK
+
+[@42级]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M20 0
+take 雷霆战甲(男)|雷霆战甲(女)|烈焰魔衣(男)|烈焰魔衣(女)|光芒道袍(男)|光芒道袍(女) 50 M20 0
+#IF
+LARGE M20 0
+#ACT
+MOV M21 250000
+MOV M22 150000
+MOV M23 100
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件42级衣服,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有42级系列装备，无法回收！ 
+GOTO @main
+BREAK
+[@天魔]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M20 0
+take 天魔神甲|圣战宝甲|法神披风|霓裳羽衣|天尊道袍|天师长袍|怒斩|龙牙|逍遥扇 50 M20 0 1
+#IF
+LARGE M20 0
+#ACT
+MOV M21 100000
+MOV M22 100000
+MOV M23 20
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件天魔系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有天魔系列装备，无法回收！ 
+GOTO @main
+BREAK
+[@雷霆]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M20 0
+take 雷霆项链|雷霆护腕|雷霆战戒|圣龙盔|光芒项链|光芒护腕|光芒道戒|天龙盔|烈焰项链|烈焰护腕|烈焰魔戒|魔龙盔|烈焰魔靴|烈焰腰带|光芒道靴|光芒腰带|雷霆战靴|雷霆腰带 50 M20 0
+
+#IF
+LARGE M20 0
+#ACT
+MOV M21 100000
+MOV M22 100000
+MOV M23 10
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件魔龙系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有魔龙系列装备，无法回收！ 
+GOTO @main
+BREAK
+[@赤月]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M20 0
+take  圣战项链|圣战手镯|圣战戒指|圣战头盔|天尊项链|天尊手镯|天尊戒指|天尊头盔|法神项链|法神手镯|法神戒指|法神头盔|黑铁头盔 50 M20 0
+#IF
+LARGE M20 0
+#ACT
+MOV M21 50000
+MOV M22 50000
+MOV M23 5
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件赤月系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有赤月系列装备，无法回收！ 
+GOTO @main
+BREAK
+[@祖玛]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M20 0
+take  绿色项链|骑士手镯|力量戒指|裁决之杖|灵魂项链|三眼手镯|泰坦戒指|龙纹剑|恶魔铃铛|龙之手镯|紫碧螺|骨玉权杖|黑铁头盔 5 M20 0
+#IF
+LARGE M20 0
+#ACT
+MOV M21 20000
+MOV M22 10000
+MOV M23 2
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件祖玛系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有祖玛系列装备，无法回收！ 
+GOTO @main
+BREAK
+[@强化]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M20 0
+take 强化雷霆战盔|强化烈焰魔盔|强化光芒道盔|强化雷霆项链|强化雷霆护腕|强化雷霆战戒|强化光芒项链|强化光芒护腕|强化光芒道戒|强化烈焰项链|强化烈焰护腕|强化烈焰魔戒|强化烈焰魔靴|强化烈焰腰带|强化光芒道靴|强化光芒腰带|强化雷霆战靴|强化雷霆腰带 50 M20 0
+
+#IF
+LARGE M20 0
+#ACT
+MOV M21 250000
+MOV M22 250000
+MOV M23 200
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件强化雷霆系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 7 〖提示〗你身上没有强化雷霆系列装备，无法回收！ 
+GOTO @main
+BREAK
+
+[@星王]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M20 0
+take 星王项链(战)|星王护腕(战)|星王战戒|星王战盔|星王项链(道)|星王护腕(道)|星王道戒|星王项链(法)|星王护腕(法)|星王魔戒|星王法冠|星王魔靴|星王腰带(法)|星王道靴|星王腰带(道)|星王战靴|星王腰带(战) 50 M20 0
+#IF
+LARGE M20 0
+#ACT
+MOV M21 800000
+MOV M22 800000
+MOV M23 10000
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件星王首饰系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 6 〖提示〗你身上没有星王首饰装备，无法回收！ 
+GOTO @main
+BREAK
+
+[@屠龙]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV M20 0
+take 屠龙|嗜魂法杖|霸者之刃 50 M20 0
+
+#IF
+LARGE M20 0
+#ACT
+MOV M21 200000
+MOV M22 150000
+MOV M23 50
+MUL M21 <$STR(M20)>
+MUL M22 <$STR(M20)>
+MUL M23 <$STR(M20)>
+INC G128 <$STR(M20)>
+CHANGEEXP + <$STR(M21)>
+give 金币 <$STR(M22)>
+GAMEGOLD + <$STR(M23)>
+goto @JIE_ZHEN
+SENDMSG 0 玩家【<$USERNAME>】一键回收了(<$STR(M20)>)件战神系列,获得经验+(<$STR(M21)>),元宝+(<$STR(M23)>),结界[<$STR(G128)>]层!
+MOV M20 0
+MOV M21 0
+MOV M22 0
+MOV M23 0
+GOTO @main
+BREAK
+#elseact
+SENDMSG 6 〖提示〗你身上没有屠龙系列装备，无法回收！ 
+GOTO @main
+BREAK
+}

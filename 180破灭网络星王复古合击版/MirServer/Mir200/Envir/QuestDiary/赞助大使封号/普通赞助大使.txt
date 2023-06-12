@@ -1,0 +1,4 @@
+#IF
+CheckGamePoint > 99
+#ACT
+MOV S1 бябя╞╒═и╘▐╓·┤є╩╣бябя

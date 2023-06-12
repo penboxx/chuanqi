@@ -1,0 +1,19 @@
+()
+%100
+[@main]
+<COLOR=clLime 欢迎来到悠悠合击1.80星王版，这里是【地下皇陵】。>\ \
+<COLOR=clred 地图怪物：>魔龙教主.魔龙战将.力士.巨蛾。\
+<COLOR=clred 主要装备：>圣战.雷霆系列.战神.终极系列.书页。\
+<COLOR=clred 地图层数：>三层\
+<COLOR=clred 地图收费：>进入需要支付<100>元宝。\ \
+<进入地图/@jrdt>
+[@jrdt]
+#if
+CHECKGAMEGOLD > 99
+#act
+GAMEGOLD - 100
+GIVE 回城卷 1
+mapmove dxhl01
+SENDMSG 0 玩家[%s],进入地下皇陵,本地图BOSS为双倍爆率!
+#ELSEACT
+MESSAGEBOX 需要100元宝用来支付我们的服务费用!

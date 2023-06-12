@@ -1,0 +1,1879 @@
+[@main] 
+#IF 
+#SAY 
+<$USERNAME>你好，欢迎来到<$SERVERNAME>，很高兴为您服务\
+①支持手机短信充值和神州行、Q币/骏网等充值卡充值；\
+②短信可直接按照充值说明操作 1元=400元宝；\
+③非短信支付请去本游戏的网站点击漂浮图进行充值；\
+④<充值后请等5分钟在本NPC处领取元宝/@领取1>\
+<短信充值/@短信充值>┆<元宝领取/@领取1>┆<元宝查询/@元宝查询>┆<点卡充值/@点卡9>┆\
+<退出/@exit>\ 
+
+[@点卡9] 
+#IF 
+#SAY
+请登陆本服官方网站，点击漂浮连接，按照提示操作即可充值元宝啦\
+操作成功后请等待3~5分钟再到本npc处领取\
+神州行、联通、电信全国通用充值卡付款→1元=720元宝；\
+盛大、骏网、征途、Q币等主流游戏卡→1元=720元宝；\
+网银、支付宝、财付通付款→1元=800元宝；\
+\
+<返回/@main>  <关闭/@EXIT>
+
+[@元宝查询] 
+#SAY 
+您当前的元宝为：<$GAMEGOLD>个 
+\ 
+<返回/@main>\ 
+
+[@短信充值] 
+#IF 
+#SAY
+\
+
+[@领取1]
+#IF
+#ACT
+goto @领取20-5
+
+[@领取20-5]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/20-5.txt 
+#ACT 
+GAMEGOLD + 3600 
+DELACCOUNTLIST ..\Npc_def\yb/20-5.txt 
+GAMEDIAMOND + 45
+GamePoint + 3600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个 
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得3600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+goto @领取20-10
+goto @领取20-15
+goto @领取20-25
+goto @领取20-30
+goto @领取20-35
+goto @领取20-45
+goto @领取20-50
+goto @领取20-100
+goto @领取20-300
+goto @领取20-350
+goto @领取21-5
+goto @领取21-10
+goto @领取21-15
+goto @领取21-20
+goto @领取21-30
+goto @领取21-50
+goto @领取21-100
+goto @领取21-200
+goto @领取21-500
+goto @领取22-10
+goto @领取22-15
+goto @领取22-20
+goto @领取22-25
+goto @领取22-30
+goto @领取22-50
+goto @领取22-60
+goto @领取22-100
+goto @领取22-150
+goto @领取22-300
+goto @领取22-500
+goto @领取23-5
+goto @领取23-10
+goto @领取23-15
+goto @领取23-30
+goto @领取23-40
+goto @领取23-100
+goto @领取24-5
+goto @领取24-10
+goto @领取24-15
+goto @领取24-20
+goto @领取24-25
+goto @领取24-30
+goto @领取24-50
+goto @领取27-5
+goto @领取27-10
+goto @领取27-15
+goto @领取27-30
+goto @领取27-50
+goto @领取27-60
+goto @领取27-100
+goto @领取27-200
+goto @领取35-15
+goto @领取35-30
+goto @领取35-50
+goto @领取35-100
+goto @领取37-10
+goto @领取37-15
+goto @领取37-20
+goto @领取37-30
+goto @领取37-50
+goto @领取80-5
+goto @领取80-10
+goto @领取80-15
+goto @领取80-30
+goto @领取80-50
+goto @领取80-100
+goto @领取81-10
+goto @领取81-15
+goto @领取81-30
+goto @领取81-50
+goto @领取81-100
+goto @领取82-5
+goto @领取82-10
+goto @领取82-15
+goto @领取82-20
+goto @领取82-30
+goto @领取82-50
+goto @领取82-100
+goto @领取7-10
+goto @领取7-20
+goto @领取7-30
+goto @领取7-50
+goto @领取7-100
+goto @领取7-200
+goto @领取7-300
+goto @领取7-500
+goto @领取9-10
+goto @领取9-20
+goto @领取9-30
+goto @领取9-50
+goto @领取9-100
+goto @领取9-500
+goto @领取18-1
+goto @领取18-2
+goto @领取18-3
+goto @领取18-4
+goto @领取18-5
+goto @领取18-6
+goto @领取18-7
+goto @领取18-8
+goto @领取18-9
+goto @领取18-10
+goto @领取18-20
+goto @领取18-30
+goto @领取18-40
+goto @领取18-50
+goto @领取18-60
+goto @领取18-70
+goto @领取18-80
+goto @领取18-90
+goto @领取18-100
+goto @领取18-200
+goto @领取18-300
+goto @领取18-400
+goto @领取18-500
+goto @领取18-600
+goto @领取18-700
+goto @领取18-800
+goto @领取18-900
+goto @领取18-1000
+goto @领取18-2000
+goto @领取18-3000
+goto @领取18-4000
+goto @领取18-5000
+goto @领取18-6000
+goto @领取18-7000
+goto @领取18-8000
+goto @领取18-9000
+goto @领取18-10000
+goto @领取cx
+
+#ElseACT 
+goto @领取20-10
+goto @领取20-15
+goto @领取20-25
+goto @领取20-30
+goto @领取20-35
+goto @领取20-45
+goto @领取20-50
+goto @领取20-100
+goto @领取20-300
+goto @领取20-350
+goto @领取21-5
+goto @领取21-10
+goto @领取21-15
+goto @领取21-20
+goto @领取21-30
+goto @领取21-50
+goto @领取21-100
+goto @领取21-200
+goto @领取21-500
+goto @领取22-10
+goto @领取22-15
+goto @领取22-20
+goto @领取22-25
+goto @领取22-30
+goto @领取22-50
+goto @领取22-60
+goto @领取22-100
+goto @领取22-150
+goto @领取22-300
+goto @领取22-500
+goto @领取23-5
+goto @领取23-10
+goto @领取23-15
+goto @领取23-30
+goto @领取23-40
+goto @领取23-100
+goto @领取24-5
+goto @领取24-10
+goto @领取24-15
+goto @领取24-20
+goto @领取24-25
+goto @领取24-30
+goto @领取24-50
+goto @领取27-5
+goto @领取27-10
+goto @领取27-15
+goto @领取27-30
+goto @领取27-50
+goto @领取27-60
+goto @领取27-100
+goto @领取27-200
+goto @领取35-15
+goto @领取35-30
+goto @领取35-50
+goto @领取35-100
+goto @领取37-10
+goto @领取37-15
+goto @领取37-20
+goto @领取37-30
+goto @领取37-50
+goto @领取80-5
+goto @领取80-10
+goto @领取80-15
+goto @领取80-30
+goto @领取80-50
+goto @领取80-100
+goto @领取81-10
+goto @领取81-15
+goto @领取81-30
+goto @领取81-50
+goto @领取81-100
+goto @领取82-5
+goto @领取82-10
+goto @领取82-15
+goto @领取82-20
+goto @领取82-30
+goto @领取82-50
+goto @领取82-100
+goto @领取7-10
+goto @领取7-20
+goto @领取7-30
+goto @领取7-50
+goto @领取7-100
+goto @领取7-200
+goto @领取7-300
+goto @领取7-500
+goto @领取9-10
+goto @领取9-20
+goto @领取9-30
+goto @领取9-50
+goto @领取9-100
+goto @领取9-500
+goto @领取18-1
+goto @领取18-2
+goto @领取18-3
+goto @领取18-4
+goto @领取18-5
+goto @领取18-6
+goto @领取18-7
+goto @领取18-8
+goto @领取18-9
+goto @领取18-10
+goto @领取18-20
+goto @领取18-30
+goto @领取18-40
+goto @领取18-50
+goto @领取18-60
+goto @领取18-70
+goto @领取18-80
+goto @领取18-90
+goto @领取18-100
+goto @领取18-200
+goto @领取18-300
+goto @领取18-400
+goto @领取18-500
+goto @领取18-600
+goto @领取18-700
+goto @领取18-800
+goto @领取18-900
+goto @领取18-1000
+goto @领取18-2000
+goto @领取18-3000
+goto @领取18-4000
+goto @领取18-5000
+goto @领取18-6000
+goto @领取18-7000
+goto @领取18-8000
+goto @领取18-9000
+goto @领取18-10000
+goto @领取cx
+
+#Elsesay
+请查看自己的元宝数量!\
+没有充值请按提示进行充值!\
+如有任何充值问题,请登陆充值服务网站： \
+提示：收不到下行扣费通知不会扣话费，请放心使用（换个通道试试！）\
+<返回/@main>\
+
+[@领取20-10]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/20-10.txt 
+#ACT
+GAMEGOLD + 7200
+DELACCOUNTLIST ..\Npc_def\yb/20-10.txt
+GAMEDIAMOND + 90
+GamePoint + 7200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得7200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取20-15]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/20-15.txt 
+#ACT
+GAMEGOLD + 10800
+DELACCOUNTLIST ..\Npc_def\yb/20-15.txt
+GAMEDIAMOND + 135
+GamePoint + 10800
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得10800元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取20-25]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/20-25.txt 
+#ACT
+GAMEGOLD + 18000
+DELACCOUNTLIST ..\Npc_def\yb/20-25.txt
+GAMEDIAMOND + 225
+GamePoint + 18000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得18000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取20-30]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/20-30.txt 
+#ACT
+GAMEGOLD + 21600
+DELACCOUNTLIST ..\Npc_def\yb/20-30.txt
+GAMEDIAMOND + 270
+GamePoint + 21600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得21600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取20-35]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/20-35.txt 
+#ACT
+GAMEGOLD + 25200
+DELACCOUNTLIST ..\Npc_def\yb/20-35.txt
+GAMEDIAMOND + 315
+GamePoint + 25200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得25200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取20-45]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/20-45.txt 
+#ACT
+GAMEGOLD + 32400
+DELACCOUNTLIST ..\Npc_def\yb/20-45.txt
+GAMEDIAMOND + 405
+GamePoint + 32400
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得32400元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取20-50]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/20-50.txt 
+#ACT
+GAMEGOLD + 36000
+DELACCOUNTLIST ..\Npc_def\yb/20-50.txt
+GAMEDIAMOND + 450
+GamePoint + 36000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得36000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取20-100]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/20-100.txt 
+#ACT
+GAMEGOLD + 72000
+DELACCOUNTLIST ..\Npc_def\yb/20-100.txt
+GAMEDIAMOND + 900
+GamePoint + 72000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得72000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取20-300]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/20-300.txt 
+#ACT
+GAMEGOLD + 216000
+DELACCOUNTLIST ..\Npc_def\yb/20-300.txt
+GAMEDIAMOND + 2700
+GamePoint + 216000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得216000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取20-350]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/20-350.txt 
+#ACT
+GAMEGOLD + 252000
+DELACCOUNTLIST ..\Npc_def\yb/20-350.txt
+GAMEDIAMOND + 3150
+GamePoint + 252000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得252000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取21-5]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/21-5.txt 
+#ACT
+GAMEGOLD + 3600
+DELACCOUNTLIST ..\Npc_def\yb/21-5.txt
+GAMEDIAMOND + 45
+GamePoint + 3600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得3600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取21-10]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/21-10.txt 
+#ACT
+GAMEGOLD + 7200
+DELACCOUNTLIST ..\Npc_def\yb/21-10.txt
+GAMEDIAMOND + 90
+GamePoint + 7200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得7200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取21-15]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/21-15.txt 
+#ACT
+GAMEGOLD + 10800
+DELACCOUNTLIST ..\Npc_def\yb/21-15.txt
+GAMEDIAMOND + 135
+GamePoint + 10800
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得10800元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取21-20]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/21-20.txt 
+#ACT
+GAMEGOLD + 14400
+DELACCOUNTLIST ..\Npc_def\yb/21-20.txt
+GAMEDIAMOND + 180
+GamePoint + 14400
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得14400元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取21-30]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/21-30.txt 
+#ACT
+GAMEGOLD + 21600
+DELACCOUNTLIST ..\Npc_def\yb/21-30.txt
+GAMEDIAMOND + 270
+GamePoint + 21600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得21600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取21-50]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/21-50.txt 
+#ACT
+GAMEGOLD + 36000
+DELACCOUNTLIST ..\Npc_def\yb/21-50.txt
+GAMEDIAMOND + 450
+GamePoint + 36000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得36000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取21-100]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/21-100.txt 
+#ACT
+GAMEGOLD + 72000
+DELACCOUNTLIST ..\Npc_def\yb/21-100.txt
+GAMEDIAMOND + 900
+GamePoint + 72000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得72000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取21-200]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/21-200.txt 
+#ACT
+GAMEGOLD + 144000
+DELACCOUNTLIST ..\Npc_def\yb/21-200.txt
+GAMEDIAMOND + 1800
+GamePoint + 144000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得144000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取21-500]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/21-500.txt 
+#ACT
+GAMEGOLD + 360000
+DELACCOUNTLIST ..\Npc_def\yb/21-500.txt
+GAMEDIAMOND + 4500
+GamePoint + 360000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得360000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取22-10]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/22-10.txt 
+#ACT
+GAMEGOLD + 7200
+DELACCOUNTLIST ..\Npc_def\yb/22-10.txt
+GAMEDIAMOND + 90
+GamePoint + 7200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得7200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取22-15]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/22-15.txt 
+#ACT
+GAMEGOLD + 10800
+DELACCOUNTLIST ..\Npc_def\yb/22-15.txt
+GAMEDIAMOND + 135
+GamePoint + 10800
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得10800元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取22-20]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/22-20.txt 
+#ACT
+GAMEGOLD + 14400
+DELACCOUNTLIST ..\Npc_def\yb/22-20.txt
+GAMEDIAMOND + 180
+GamePoint + 14400
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得14400元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取22-25]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/22-25.txt 
+#ACT
+GAMEGOLD + 18000
+DELACCOUNTLIST ..\Npc_def\yb/22-25.txt
+GAMEDIAMOND + 225
+GamePoint + 18000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得18000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取22-30]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/22-30.txt 
+#ACT
+GAMEGOLD + 21600
+DELACCOUNTLIST ..\Npc_def\yb/22-30.txt
+GAMEDIAMOND + 270
+GamePoint + 21600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得21600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取22-50]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/22-50.txt 
+#ACT
+GAMEGOLD + 36000
+DELACCOUNTLIST ..\Npc_def\yb/22-50.txt
+GAMEDIAMOND + 450
+GamePoint + 36000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得36000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取22-60]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/22-60.txt 
+#ACT
+GAMEGOLD + 43200
+DELACCOUNTLIST ..\Npc_def\yb/22-60.txt
+GAMEDIAMOND + 540
+GamePoint + 43200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得43200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取22-100]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/22-100.txt 
+#ACT
+GAMEGOLD + 72000
+DELACCOUNTLIST ..\Npc_def\yb/22-100.txt
+GAMEDIAMOND + 900
+GamePoint + 72000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得72000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取22-150]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/22-150.txt 
+#ACT
+GAMEGOLD + 108000
+DELACCOUNTLIST ..\Npc_def\yb/22-150.txt
+GAMEDIAMOND + 1350
+GamePoint + 108000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得108000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取22-300]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/22-300.txt 
+#ACT
+GAMEGOLD + 216000
+DELACCOUNTLIST ..\Npc_def\yb/22-300.txt
+GAMEDIAMOND + 2700
+GamePoint + 216000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得216000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取22-500]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/22-500.txt 
+#ACT
+GAMEGOLD + 360000
+DELACCOUNTLIST ..\Npc_def\yb/22-500.txt
+GAMEDIAMOND + 4500
+GamePoint + 360000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得360000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取23-5]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/23-5.txt 
+#ACT
+GAMEGOLD + 3600
+DELACCOUNTLIST ..\Npc_def\yb/23-5.txt
+GAMEDIAMOND + 45
+GamePoint + 3600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得3600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取23-10]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/23-10.txt 
+#ACT
+GAMEGOLD + 7200
+DELACCOUNTLIST ..\Npc_def\yb/23-10.txt
+GAMEDIAMOND + 90
+GamePoint + 7200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得7200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取23-15]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/23-15.txt 
+#ACT
+GAMEGOLD + 10800
+DELACCOUNTLIST ..\Npc_def\yb/23-15.txt
+GAMEDIAMOND + 135
+GamePoint + 10800
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得10800元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取23-30]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/23-30.txt 
+#ACT
+GAMEGOLD + 21600
+DELACCOUNTLIST ..\Npc_def\yb/23-30.txt
+GAMEDIAMOND + 270
+GamePoint + 21600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得21600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取23-40]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/23-40.txt 
+#ACT
+GAMEGOLD + 28800
+DELACCOUNTLIST ..\Npc_def\yb/23-40.txt
+GAMEDIAMOND + 360
+GamePoint + 28800
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得28800元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取23-100]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/23-100.txt 
+#ACT
+GAMEGOLD + 72000
+DELACCOUNTLIST ..\Npc_def\yb/23-100.txt
+GAMEDIAMOND + 900
+GamePoint + 72000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得72000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取24-5]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/24-5.txt 
+#ACT
+GAMEGOLD + 3600
+DELACCOUNTLIST ..\Npc_def\yb/24-5.txt
+GAMEDIAMOND + 45
+GamePoint + 3600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得3600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取24-10]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/24-10.txt 
+#ACT
+GAMEGOLD + 7200
+DELACCOUNTLIST ..\Npc_def\yb/24-10.txt
+GAMEDIAMOND + 90
+GamePoint + 7200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得7200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取24-15]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/24-15.txt 
+#ACT
+GAMEGOLD + 10800
+DELACCOUNTLIST ..\Npc_def\yb/24-15.txt
+GAMEDIAMOND + 135
+GamePoint + 10800
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得10800元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取24-20]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/24-20.txt 
+#ACT
+GAMEGOLD + 14400
+DELACCOUNTLIST ..\Npc_def\yb/24-20.txt
+GAMEDIAMOND + 180
+GamePoint + 14400
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得14400元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取24-25]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/24-25.txt 
+#ACT
+GAMEGOLD + 18000
+DELACCOUNTLIST ..\Npc_def\yb/24-25.txt
+GAMEDIAMOND + 225
+GamePoint + 18000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得18000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取24-30]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/24-30.txt 
+#ACT
+GAMEGOLD + 21600
+DELACCOUNTLIST ..\Npc_def\yb/24-30.txt
+GAMEDIAMOND + 270
+GamePoint + 21600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得21600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取24-50]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/24-50.txt 
+#ACT
+GAMEGOLD + 36000
+DELACCOUNTLIST ..\Npc_def\yb/24-50.txt
+GAMEDIAMOND + 450
+GamePoint + 36000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得36000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取27-5]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/27-5.txt 
+#ACT
+GAMEGOLD + 3600
+DELACCOUNTLIST ..\Npc_def\yb/27-5.txt
+GAMEDIAMOND + 45
+GamePoint + 3600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得3600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取27-10]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/27-10.txt 
+#ACT
+GAMEGOLD + 7200
+DELACCOUNTLIST ..\Npc_def\yb/27-10.txt
+GAMEDIAMOND + 90
+GamePoint + 7200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得7200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取27-15]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/27-15.txt 
+#ACT
+GAMEGOLD + 10800
+DELACCOUNTLIST ..\Npc_def\yb/27-15.txt
+GAMEDIAMOND + 135
+GamePoint + 10800
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得10800元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取27-30]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/27-30.txt 
+#ACT
+GAMEGOLD + 21600
+DELACCOUNTLIST ..\Npc_def\yb/27-30.txt
+GAMEDIAMOND + 270
+GamePoint + 21600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得21600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取27-50]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/27-50.txt 
+#ACT
+GAMEGOLD + 36000
+DELACCOUNTLIST ..\Npc_def\yb/27-50.txt
+GAMEDIAMOND + 450
+GamePoint + 36000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得36000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取27-60]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/27-60.txt 
+#ACT
+GAMEGOLD + 43200
+DELACCOUNTLIST ..\Npc_def\yb/27-60.txt
+GAMEDIAMOND + 540
+GamePoint + 43200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得43200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取27-100]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/27-100.txt 
+#ACT
+GAMEGOLD + 72000
+DELACCOUNTLIST ..\Npc_def\yb/27-100.txt
+GAMEDIAMOND + 900
+GamePoint + 72000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得72000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取27-200]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/27-200.txt 
+#ACT
+GAMEGOLD + 144000
+DELACCOUNTLIST ..\Npc_def\yb/27-200.txt
+GAMEDIAMOND + 1800
+GamePoint + 144000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得144000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取35-15]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/35-15.txt 
+#ACT
+GAMEGOLD + 10800
+DELACCOUNTLIST ..\Npc_def\yb/35-15.txt
+GAMEDIAMOND + 135
+GamePoint + 10800
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得10800元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取35-30]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/35-30.txt 
+#ACT
+GAMEGOLD + 21600
+DELACCOUNTLIST ..\Npc_def\yb/35-30.txt
+GAMEDIAMOND + 270
+GamePoint + 21600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得21600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取35-50]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/35-50.txt 
+#ACT
+GAMEGOLD + 36000
+DELACCOUNTLIST ..\Npc_def\yb/35-50.txt
+GAMEDIAMOND + 450
+GamePoint + 36000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得36000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取35-100]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/35-100.txt 
+#ACT
+GAMEGOLD + 72000
+DELACCOUNTLIST ..\Npc_def\yb/35-100.txt
+GAMEDIAMOND + 900
+GamePoint + 72000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得72000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取37-10]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/37-10.txt 
+#ACT
+GAMEGOLD + 7200
+DELACCOUNTLIST ..\Npc_def\yb/37-10.txt
+GAMEDIAMOND + 90
+GamePoint + 7200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得7200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取37-15]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/37-15.txt 
+#ACT
+GAMEGOLD + 10800
+DELACCOUNTLIST ..\Npc_def\yb/37-15.txt
+GAMEDIAMOND + 135
+GamePoint + 10800
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得10800元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取37-20]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/37-20.txt 
+#ACT
+GAMEGOLD + 14400
+DELACCOUNTLIST ..\Npc_def\yb/37-20.txt
+GAMEDIAMOND + 180
+GamePoint + 14400
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得14400元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取37-30]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/37-30.txt 
+#ACT
+GAMEGOLD + 21600
+DELACCOUNTLIST ..\Npc_def\yb/37-30.txt
+GAMEDIAMOND + 270
+GamePoint + 21600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得21600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取37-50]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/37-50.txt 
+#ACT
+GAMEGOLD + 36000
+DELACCOUNTLIST ..\Npc_def\yb/37-50.txt
+GAMEDIAMOND + 450
+GamePoint + 36000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得36000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取80-5]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/80-5.txt 
+#ACT
+GAMEGOLD + 3600
+DELACCOUNTLIST ..\Npc_def\yb/80-5.txt
+GAMEDIAMOND + 45
+GamePoint + 3600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得3600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取80-10]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/80-10.txt 
+#ACT
+GAMEGOLD + 7200
+DELACCOUNTLIST ..\Npc_def\yb/80-10.txt
+GAMEDIAMOND + 90
+GamePoint + 7200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得7200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取80-15]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/80-15.txt 
+#ACT
+GAMEGOLD + 10800
+DELACCOUNTLIST ..\Npc_def\yb/80-15.txt
+GAMEDIAMOND + 135
+GamePoint + 10800
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得10800元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取80-30]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/80-30.txt 
+#ACT
+GAMEGOLD + 21600
+DELACCOUNTLIST ..\Npc_def\yb/80-30.txt
+GAMEDIAMOND + 270
+GamePoint + 21600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得21600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取80-50]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/80-50.txt 
+#ACT
+GAMEGOLD + 36000
+DELACCOUNTLIST ..\Npc_def\yb/80-50.txt
+GAMEDIAMOND + 450
+GamePoint + 36000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得36000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取80-100]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/80-100.txt 
+#ACT
+GAMEGOLD + 72000
+DELACCOUNTLIST ..\Npc_def\yb/80-100.txt
+GAMEDIAMOND + 900
+GamePoint + 72000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得72000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取81-10]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/81-10.txt 
+#ACT
+GAMEGOLD + 7200
+DELACCOUNTLIST ..\Npc_def\yb/81-10.txt
+GAMEDIAMOND + 90
+GamePoint + 7200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得7200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取81-15]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/81-15.txt 
+#ACT
+GAMEGOLD + 10800
+DELACCOUNTLIST ..\Npc_def\yb/81-15.txt
+GAMEDIAMOND + 135
+GamePoint + 10800
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得10800元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取81-30]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/81-30.txt 
+#ACT
+GAMEGOLD + 21600
+DELACCOUNTLIST ..\Npc_def\yb/81-30.txt
+GAMEDIAMOND + 270
+GamePoint + 21600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得21600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取81-50]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/81-50.txt 
+#ACT
+GAMEGOLD + 36000
+DELACCOUNTLIST ..\Npc_def\yb/81-50.txt
+GAMEDIAMOND + 450
+GamePoint + 36000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得36000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取81-100]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/81-100.txt 
+#ACT
+GAMEGOLD + 72000
+DELACCOUNTLIST ..\Npc_def\yb/81-100.txt
+GAMEDIAMOND + 900
+GamePoint + 72000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得72000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取82-5]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/82-5.txt 
+#ACT
+GAMEGOLD + 3600
+DELACCOUNTLIST ..\Npc_def\yb/82-5.txt
+GAMEDIAMOND + 45
+GamePoint + 3600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得3600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取82-10]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/82-10.txt 
+#ACT
+GAMEGOLD + 7200
+DELACCOUNTLIST ..\Npc_def\yb/82-10.txt
+GAMEDIAMOND + 90
+GamePoint + 7200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得7200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取82-15]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/82-15.txt 
+#ACT
+GAMEGOLD + 10800
+DELACCOUNTLIST ..\Npc_def\yb/82-15.txt
+GAMEDIAMOND + 135
+GamePoint + 10800
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得10800元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取82-20]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/82-20.txt 
+#ACT
+GAMEGOLD + 14400
+DELACCOUNTLIST ..\Npc_def\yb/82-20.txt
+GAMEDIAMOND + 180
+GamePoint + 14400
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得14400元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取82-30]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/82-30.txt 
+#ACT
+GAMEGOLD + 21600
+DELACCOUNTLIST ..\Npc_def\yb/82-30.txt
+GAMEDIAMOND + 270
+GamePoint + 21600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得21600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取82-50]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/82-50.txt 
+#ACT
+GAMEGOLD + 36000
+DELACCOUNTLIST ..\Npc_def\yb/82-50.txt
+GAMEDIAMOND + 450
+GamePoint + 36000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得36000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取82-100]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/82-100.txt 
+#ACT
+GAMEGOLD + 72000
+DELACCOUNTLIST ..\Npc_def\yb/82-100.txt
+GAMEDIAMOND + 900
+GamePoint + 72000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得72000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取7-10]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/7-10.txt 
+#ACT
+GAMEGOLD + 7200
+DELACCOUNTLIST ..\Npc_def\yb/7-10.txt
+GAMEDIAMOND + 90
+GamePoint + 7200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得7200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取7-20]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/7-20.txt 
+#ACT
+GAMEGOLD + 14400
+DELACCOUNTLIST ..\Npc_def\yb/7-20.txt
+GAMEDIAMOND + 180
+GamePoint + 14400
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得14400元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取7-30]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/7-30.txt 
+#ACT
+GAMEGOLD + 21600
+DELACCOUNTLIST ..\Npc_def\yb/7-30.txt
+GAMEDIAMOND + 270
+GamePoint + 21600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得21600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取7-50]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/7-50.txt 
+#ACT
+GAMEGOLD + 36000
+DELACCOUNTLIST ..\Npc_def\yb/7-50.txt
+GAMEDIAMOND + 450
+GamePoint + 36000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得36000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取7-100]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/7-100.txt 
+#ACT
+GAMEGOLD + 72000
+DELACCOUNTLIST ..\Npc_def\yb/7-100.txt
+GAMEDIAMOND + 900
+GamePoint + 72000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得72000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取7-200]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/7-200.txt 
+#ACT
+GAMEGOLD + 144000
+DELACCOUNTLIST ..\Npc_def\yb/7-200.txt
+GAMEDIAMOND + 1800
+GamePoint + 144000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得144000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取7-300]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/7-300.txt 
+#ACT
+GAMEGOLD + 216000
+DELACCOUNTLIST ..\Npc_def\yb/7-300.txt
+GAMEDIAMOND + 2700
+GamePoint + 216000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得216000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取7-500]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/7-500.txt 
+#ACT
+GAMEGOLD + 360000
+DELACCOUNTLIST ..\Npc_def\yb/7-500.txt
+GAMEDIAMOND + 4500
+GamePoint + 360000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得360000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取9-10]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/9-10.txt 
+#ACT
+GAMEGOLD + 7200
+DELACCOUNTLIST ..\Npc_def\yb/9-10.txt
+GAMEDIAMOND + 90
+GamePoint + 7200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得7200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取9-20]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/9-20.txt 
+#ACT
+GAMEGOLD + 14400
+DELACCOUNTLIST ..\Npc_def\yb/9-20.txt
+GAMEDIAMOND + 180
+GamePoint + 14400
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得14400元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取9-30]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/9-30.txt 
+#ACT
+GAMEGOLD + 21600
+DELACCOUNTLIST ..\Npc_def\yb/9-30.txt
+GAMEDIAMOND + 270
+GamePoint + 21600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得21600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取9-50]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/9-50.txt 
+#ACT
+GAMEGOLD + 36000
+DELACCOUNTLIST ..\Npc_def\yb/9-50.txt
+GAMEDIAMOND + 450
+GamePoint + 36000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得36000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取9-100]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/9-100.txt 
+#ACT
+GAMEGOLD + 72000
+DELACCOUNTLIST ..\Npc_def\yb/9-100.txt
+GAMEDIAMOND + 900
+GamePoint + 72000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得72000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取9-500]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/9-500.txt 
+#ACT
+GAMEGOLD + 360000
+DELACCOUNTLIST ..\Npc_def\yb/9-500.txt
+GAMEDIAMOND + 4500
+GamePoint + 360000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得360000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-1]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-1.txt 
+#ACT
+GAMEGOLD + 800
+DELACCOUNTLIST ..\Npc_def\yb/18-1.txt
+GAMEDIAMOND + 10
+GamePoint + 800
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得800元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-2]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-2.txt 
+#ACT
+GAMEGOLD + 1600
+DELACCOUNTLIST ..\Npc_def\yb/18-2.txt
+GAMEDIAMOND + 20
+GamePoint + 1600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得1600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-3]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-3.txt 
+#ACT
+GAMEGOLD + 2400
+DELACCOUNTLIST ..\Npc_def\yb/18-3.txt
+GAMEDIAMOND + 30
+GamePoint + 2400
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得2400元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-4]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-4.txt 
+#ACT
+GAMEGOLD + 3200
+DELACCOUNTLIST ..\Npc_def\yb/18-4.txt
+GAMEDIAMOND + 40
+GamePoint + 3200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得3200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-5]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-5.txt 
+#ACT
+GAMEGOLD + 4000
+DELACCOUNTLIST ..\Npc_def\yb/18-5.txt
+GAMEDIAMOND + 50
+GamePoint + 4000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得4000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-6]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-6.txt 
+#ACT
+GAMEGOLD + 4800
+DELACCOUNTLIST ..\Npc_def\yb/18-6.txt
+GAMEDIAMOND + 60
+GamePoint + 4800
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得4800元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-7]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-7.txt 
+#ACT
+GAMEGOLD + 5600
+DELACCOUNTLIST ..\Npc_def\yb/18-7.txt
+GAMEDIAMOND + 70
+GamePoint + 5600
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得5600元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-8]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-8.txt 
+#ACT
+GAMEGOLD + 6400
+DELACCOUNTLIST ..\Npc_def\yb/18-8.txt
+GAMEDIAMOND + 80
+GamePoint + 6400
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得6400元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-9]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-9.txt 
+#ACT
+GAMEGOLD + 7200
+DELACCOUNTLIST ..\Npc_def\yb/18-9.txt
+GAMEDIAMOND + 90
+GamePoint + 7200
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得7200元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-10]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-10.txt 
+#ACT
+GAMEGOLD + 8000
+DELACCOUNTLIST ..\Npc_def\yb/18-10.txt
+GAMEDIAMOND + 100
+GamePoint + 8000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得8000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-20]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-20.txt 
+#ACT
+GAMEGOLD + 16000
+DELACCOUNTLIST ..\Npc_def\yb/18-20.txt
+GAMEDIAMOND + 200
+GamePoint + 16000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得16000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-30]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-30.txt 
+#ACT
+GAMEGOLD + 24000
+DELACCOUNTLIST ..\Npc_def\yb/18-30.txt
+GAMEDIAMOND + 300
+GamePoint + 24000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得24000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-40]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-40.txt 
+#ACT
+GAMEGOLD + 32000
+DELACCOUNTLIST ..\Npc_def\yb/18-40.txt
+GAMEDIAMOND + 400
+GamePoint + 32000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得32000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-50]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-50.txt 
+#ACT
+GAMEGOLD + 40000
+DELACCOUNTLIST ..\Npc_def\yb/18-50.txt
+GAMEDIAMOND + 500
+GamePoint + 40000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得40000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-60]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-60.txt 
+#ACT
+GAMEGOLD + 48000
+DELACCOUNTLIST ..\Npc_def\yb/18-60.txt
+GAMEDIAMOND + 600
+GamePoint + 48000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得48000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-70]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-70.txt 
+#ACT
+GAMEGOLD + 56000
+DELACCOUNTLIST ..\Npc_def\yb/18-70.txt
+GAMEDIAMOND + 700
+GamePoint + 56000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得56000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-80]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-80.txt 
+#ACT
+GAMEGOLD + 64000
+DELACCOUNTLIST ..\Npc_def\yb/18-80.txt
+GAMEDIAMOND + 800
+GamePoint + 64000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得64000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-90]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-90.txt 
+#ACT
+GAMEGOLD + 72000
+DELACCOUNTLIST ..\Npc_def\yb/18-90.txt
+GAMEDIAMOND + 900
+GamePoint + 72000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得72000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-100]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-100.txt 
+#ACT
+GAMEGOLD + 80000
+DELACCOUNTLIST ..\Npc_def\yb/18-100.txt
+GAMEDIAMOND + 1000
+GamePoint + 80000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得80000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-200]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-200.txt 
+#ACT
+GAMEGOLD + 160000
+DELACCOUNTLIST ..\Npc_def\yb/18-200.txt
+GAMEDIAMOND + 2000
+GamePoint + 160000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得160000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-300]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-300.txt 
+#ACT
+GAMEGOLD + 240000
+DELACCOUNTLIST ..\Npc_def\yb/18-300.txt
+GAMEDIAMOND + 3000
+GamePoint + 240000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得240000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-400]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-400.txt 
+#ACT
+GAMEGOLD + 320000
+DELACCOUNTLIST ..\Npc_def\yb/18-400.txt
+GAMEDIAMOND + 4000
+GamePoint + 320000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得320000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-500]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-500.txt 
+#ACT
+GAMEGOLD + 400000
+DELACCOUNTLIST ..\Npc_def\yb/18-500.txt
+GAMEDIAMOND + 5000
+GamePoint + 400000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得400000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-600]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-600.txt 
+#ACT
+GAMEGOLD + 480000
+DELACCOUNTLIST ..\Npc_def\yb/18-600.txt
+GAMEDIAMOND + 6000
+GamePoint + 480000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得480000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-700]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-700.txt 
+#ACT
+GAMEGOLD + 560000
+DELACCOUNTLIST ..\Npc_def\yb/18-700.txt
+GAMEDIAMOND + 7000
+GamePoint + 560000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得560000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-800]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-800.txt 
+#ACT
+GAMEGOLD + 640000
+DELACCOUNTLIST ..\Npc_def\yb/18-800.txt
+GAMEDIAMOND + 8000
+GamePoint + 640000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得640000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-900]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-900.txt 
+#ACT
+GAMEGOLD + 720000
+DELACCOUNTLIST ..\Npc_def\yb/18-900.txt
+GAMEDIAMOND + 9000
+GamePoint + 720000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得720000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-1000]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-1000.txt 
+#ACT
+GAMEGOLD + 800000
+DELACCOUNTLIST ..\Npc_def\yb/18-1000.txt
+GAMEDIAMOND + 10000
+GamePoint + 800000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得800000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-2000]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-2000.txt 
+#ACT
+GAMEGOLD + 1600000
+DELACCOUNTLIST ..\Npc_def\yb/18-2000.txt
+GAMEDIAMOND + 20000
+GamePoint + 1600000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得1600000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-3000]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-3000.txt 
+#ACT
+GAMEGOLD + 2400000
+DELACCOUNTLIST ..\Npc_def\yb/18-3000.txt
+GAMEDIAMOND + 30000
+GamePoint + 2400000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得2400000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-4000]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-4000.txt 
+#ACT
+GAMEGOLD + 3200000
+DELACCOUNTLIST ..\Npc_def\yb/18-4000.txt
+GAMEDIAMOND + 40000
+GamePoint + 3200000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得3200000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-5000]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-5000.txt 
+#ACT
+GAMEGOLD + 4000000
+DELACCOUNTLIST ..\Npc_def\yb/18-5000.txt
+GAMEDIAMOND + 50000
+GamePoint + 4000000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得4000000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-6000]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-6000.txt 
+#ACT
+GAMEGOLD + 4800000
+DELACCOUNTLIST ..\Npc_def\yb/18-6000.txt
+GAMEDIAMOND + 60000
+GamePoint + 4800000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得4800000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-7000]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-7000.txt 
+#ACT
+GAMEGOLD + 5600000
+DELACCOUNTLIST ..\Npc_def\yb/18-7000.txt
+GAMEDIAMOND + 70000
+GamePoint + 5600000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得5600000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-8000]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-8000.txt 
+#ACT
+GAMEGOLD + 6400000
+DELACCOUNTLIST ..\Npc_def\yb/18-8000.txt
+GAMEDIAMOND + 80000
+GamePoint + 6400000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得6400000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-9000]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-9000.txt 
+#ACT
+GAMEGOLD + 7200000
+DELACCOUNTLIST ..\Npc_def\yb/18-9000.txt
+GAMEDIAMOND + 90000
+GamePoint + 7200000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得7200000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取18-10000]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/18-10000.txt 
+#ACT
+GAMEGOLD + 8000000
+DELACCOUNTLIST ..\Npc_def\yb/18-10000.txt
+GAMEDIAMOND + 100000
+GamePoint + 8000000
+sendmsg 7 领取成功.您当前的元宝为:<$GAMEGOLD>个
+SENDMSG 1 ★恭喜玩家★★<$USERNAME>★★充值获得8000000元宝。如果你也想要，请赶紧找元宝使者充值吧★★
+
+
+[@领取cx]
+#IF 
+CHECKACCOUNTLIST ..\Npc_def\yb/cx.txt 
+#ACT
+DELACCOUNTLIST ..\Npc_def\yb/cx.txt 
+sendmsg 7 对不起，您已超过充值限制！该手机号每日只能为3个不同的id充值，每日只能为一个id充值20次
+sendmsg 7 对不起，您已超过充值限制！该手机号每日只能为3个不同的id充值，每日只能为一个id充值20次
+sendmsg 7 对不起，您已超过充值限制！该手机号每日只能为3个不同的id充值，每日只能为一个id充值20次
+sendmsg 7 对不起，您已超过充值限制！该手机号每日只能为3个不同的id充值，每日只能为一个id充值20次
+sendmsg 7 对不起，您已超过充值限制！该手机号每日只能为3个不同的id充值，每日只能为一个id充值20次
+

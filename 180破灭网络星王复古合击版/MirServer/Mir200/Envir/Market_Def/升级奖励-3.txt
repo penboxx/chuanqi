@@ -1,0 +1,1201 @@
+()
+%100
+[@main]
+#if
+EQUAL H30 1
+#Act
+#say
+  <COLOR=clAqua 冲级奖励> <COLOR=clRed Hot~>　　　　　    <COLOR=clLime 名额有限,领完即止,请把握机会!>\
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clFuchsia ★48级奖励★>   <COLOR=clAqua ≮ 500个元宝≯>    <领取奖励/@50级>    <COLOR=clRED 剩余名额>:<$STR(H42)>名\
+<COLOR=clFuchsia ★49级奖励★>   <COLOR=clAqua ≮1000个元宝≯>    <领取奖励/@51级>    <COLOR=clRED 剩余名额>:<$STR(H41)>名\
+<COLOR=clFuchsia ★50级奖励★>   <COLOR=clAqua ≮2000个元宝≯>    <领取奖励/@52级>    <COLOR=clRED 剩余名额>:<$STR(H40)>名\
+<COLOR=clFuchsia ★51级奖励★>   <COLOR=clAqua ≮屠龙系武器≯>    <领取奖励/@53级>    <COLOR=clRED 剩余名额>:<$STR(H39)>名\
+<COLOR=clFuchsia ★52级奖励★>   <COLOR=clAqua ≮雷霆系衣服≯>    <领取奖励/@54级>    <COLOR=clRED 剩余名额>:<$STR(H38)>名\
+<COLOR=clLime 注意:不需要相应登记领取，只需要有名额过级也可以领取!>\
+\                                                     <下一页/@123>  \
+#ELSEACT
+MOV H30 1
+MOV H31 20
+MOV H32 20
+MOV H33 20 
+MOV H34 30
+MOV H35 30
+MOV H36 30
+MOV H37 30
+MOV H38 50
+MOV H39 60
+MOV H40 70
+MOV H41 80
+MOV H42 100
+goto @123
+[@123]
+  <COLOR=clAqua 冲级奖励> <COLOR=clRed Hot~>　　　　　    <COLOR=clLime 名额有限,领完即止,请把握机会!>\
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clFuchsia ★53级奖励★>   <COLOR=clAqua ≮战神系头盔≯>    <领取奖励/@55级>    <COLOR=clRED 剩余名额>:<$STR(H37)>名\
+<COLOR=clFuchsia ★54级奖励★>   <COLOR=clAqua ≮战神系项链≯>    <领取奖励/@56级>    <COLOR=clRED 剩余名额>:<$STR(H36)>名\
+<COLOR=clFuchsia ★55级奖励★>   <COLOR=clAqua ≮战神系手镯≯>    <领取奖励/@57级>    <COLOR=clRED 剩余名额>:<$STR(H35)>名\
+<COLOR=clFuchsia ★56级奖励★>   <COLOR=clAqua ≮战神系戒指≯>    <领取奖励/@58级>    <COLOR=clRED 剩余名额>:<$STR(H34)>名\
+<COLOR=clFuchsia ★57级奖励★>   <COLOR=clAqua ≮凤天系衣服≯>    <领取奖励/@62级>    <COLOR=clRED 剩余名额>:<$STR(H32)>名\
+<COLOR=clFuchsia ★58级奖励★>   <COLOR=clAqua ≮开天系武器≯>    <领取奖励/@60级>    <COLOR=clRED 剩余名额>:<$STR(H33)>名\
+\                                                  <更多奖励/@高级奖励>\
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+
+
+
+[@50级]
+#if
+CHECKLEVELEX > 47
+#act
+goto @50a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(H42)>个剩余名额！<离开/@exit>\
+[@50a]
+#if
+check [409] 0
+#act
+goto @50b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@50b]
+#if
+CHECKLEVELEX > 47
+check [409] 0
+LARGE H42 0
+#act
+goto @50c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@50c]
+#if
+CHECKLEVELEX > 47
+check [409] 0
+LARGE H42 0
+#act
+GAMEGOLD + 500
+DEC H42 1
+SET [409] 1
+SendMSG 0 《%s》顺利冲到48级并领取[500元宝]，现在48级冲级奖励名额还剩<$STR(H42)>个 0 151 30
+SendMSG 0 《%s》顺利冲到48级并领取[500元宝]，现在48级冲级奖励名额还剩<$STR(H42)>个 0 151 30
+#ElseAct
+[@51级]
+#if
+CHECKLEVELEX > 48
+#act
+goto @51a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(H41)>个剩余名额！<离开/@exit>\
+[@51a]
+#if
+check [408] 0
+#act
+goto @51b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@51b]
+#if
+CHECKLEVELEX > 48
+check [408] 0
+LARGE H41 0
+#act
+goto @51c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@51c]
+#if
+CHECKLEVELEX > 48
+check [408] 0
+LARGE H41 0
+#act
+GAMEGOLD + 1000
+DEC H41 1
+SET [408] 1
+SendMSG 0 《%s》顺利冲到49级并领取[1000元宝]，现在49级冲级奖励名额还剩<$STR(H41)>个 0 151 30
+SendMSG 0 《%s》顺利冲到49级并领取[1000元宝]，现在49级冲级奖励名额还剩<$STR(H41)>个 0 151 30
+#ElseAct
+[@52级]
+#if
+CHECKLEVELEX > 49
+#act
+goto @52a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(H40)>个剩余名额！<离开/@exit>\
+[@52a]
+#if
+check [497] 0
+#act
+goto @52b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@52b]
+#if
+CHECKLEVELEX > 49
+check [497] 0
+LARGE H40 0
+#act
+goto @52c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@52c]
+#if
+CHECKLEVELEX > 49
+check [497] 0
+LARGE H40 0
+#act
+GAMEGOLD + 2000
+DEC H40 1
+SET [497] 1
+SendMSG 0 《%s》顺利冲到50级并领取[2000元宝]，现在50级冲级奖励名额还剩<$STR(H40)>个 0 151 30
+SendMSG 0 《%s》顺利冲到50级并领取[2000元宝]，现在50级冲级奖励名额还剩<$STR(H40)>个 0 151 30
+#ElseAct
+[@53级]
+#if
+CHECKLEVELEX > 50
+#act
+goto @53a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(H39)>个剩余名额！<离开/@exit>\
+[@53a]
+#if
+check [496] 0
+#act
+goto @53b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@53b]
+#if
+CHECKLEVELEX > 50
+check [496] 0
+LARGE H39 0
+#act
+goto @53c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@53c]
+请选择51级奖励：\   \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\ \
+┆   <屠龙/@屠龙>   ┆  <嗜魂法杖/@嗜魂法杖>  ┆  <霸者之刃/@霸者之刃>  ┆ \ \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <返 回/@main>  <离 开/@exit>
+[@屠龙]
+#if
+CHECKLEVELEX > 50
+check [496] 0
+LARGE H39 0
+#act
+give 屠龙 1
+DEC H39 1
+SET [496] 1
+SendMSG 0 《%s》顺利冲到51级并领取[屠龙]，现在51级冲级奖励名额还剩<$STR(H39)>个 0 151 30
+SendMSG 0 《%s》顺利冲到51级并领取[屠龙]，现在51级冲级奖励名额还剩<$STR(H39)>个 0 151 30
+#ElseAct
+close
+[@嗜魂法杖]
+#if
+CHECKLEVELEX > 50
+check [496] 0
+LARGE H39 0
+#act
+give 嗜魂法杖 1
+DEC H39 1
+SET [496] 1
+SendMSG 0 《%s》顺利冲到51级并领取[嗜魂法杖]，现在51级冲级奖励名额还剩<$STR(H39)>个 0 151 30
+SendMSG 0 《%s》顺利冲到51级并领取[嗜魂法杖]，现在51级冲级奖励名额还剩<$STR(H39)>个 0 151 30
+#ElseAct
+close
+[@霸者之刃]
+#if
+CHECKLEVELEX > 50
+check [496] 0
+LARGE H39 0
+#act
+give 霸者之刃 1
+DEC H39 1
+SET [496] 1
+SendMSG 0 《%s》顺利冲到51级并领取[霸者之刃]，现在51级冲级奖励名额还剩<$STR(H39)>个 0 151 30
+SendMSG 0 《%s》顺利冲到51级并领取[霸者之刃]，现在51级冲级奖励名额还剩<$STR(H39)>个 0 151 30
+#ElseAct
+close
+[@54级]
+#if
+CHECKLEVELEX > 51
+#act
+goto @54a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(H38)>个剩余名额！<离开/@exit>\
+[@54a]
+#if
+check [495] 0
+#act
+goto @54b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@54b]
+#if
+CHECKLEVELEX > 51
+check [495] 0
+LARGE H38 0
+#act
+goto @54c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@54c]
+请选择52级奖励：\   \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+┆   <雷霆战甲(男)/@雷霆战甲>   ┆  <烈焰魔衣(男)/@烈焰魔衣>  ┆  <光芒道袍(男)/@光芒道袍>  ┆ \  \
+┆   <雷霆战甲(女)/@雷霆战甲1>   ┆  <烈焰魔衣(女)/@烈焰魔衣1>  ┆  <光芒道袍(女)/@光芒道袍1>  ┆  \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <返 回/@main>  <离 开/@exit>
+[@光芒道袍]
+#if
+CHECKLEVELEX > 51
+check [495] 0
+LARGE H38 0
+#act
+give 光芒道袍(男) 1
+DEC H38 1
+SET [495] 1
+SendMSG 0 《%s》顺利冲到52级并领取[光芒道袍(男)]，现在52级冲级奖励名额还剩<$STR(H38)>个 0 151 30
+SendMSG 0 《%s》顺利冲到52级并领取[光芒道袍(男)]，现在52级冲级奖励名额还剩<$STR(H38)>个 0 151 30
+close
+[@光芒道袍1]
+#if
+CHECKLEVELEX > 51
+check [495] 0
+LARGE H38 0
+#act
+give 光芒道袍(女) 1
+DEC H38 1
+SET [495] 1
+SendMSG 0 《%s》顺利冲到52级并领取[光芒道袍(女)]，现在52级冲级奖励名额还剩<$STR(H38)>个 0 151 30
+SendMSG 0 《%s》顺利冲到52级并领取[光芒道袍(女)]，现在52级冲级奖励名额还剩<$STR(H38)>个 0 151 30
+close
+[@烈焰魔衣1]
+#if
+CHECKLEVELEX > 51
+check [495] 0
+LARGE H38 0
+#act
+give 烈焰魔衣(女) 1
+DEC H38 1
+SET [495] 1
+SendMSG 0 《%s》顺利冲到52级并领取[烈焰魔衣(女)]，现在52级冲级奖励名额还剩<$STR(H38)>个 0 151 30
+SendMSG 0 《%s》顺利冲到52级并领取[烈焰魔衣(女)]，现在52级冲级奖励名额还剩<$STR(H38)>个 0 151 30
+close
+[@烈焰魔衣]
+#if
+CHECKLEVELEX > 51
+check [495] 0
+LARGE H38 0
+#act
+give 烈焰魔衣(男) 1
+DEC H38 1
+SET [495] 1
+SendMSG 0 《%s》顺利冲到52级并领取[烈焰魔衣(男)]，现在52级冲级奖励名额还剩<$STR(H38)>个 0 151 30
+SendMSG 0 《%s》顺利冲到52级并领取[烈焰魔衣(男)]，现在52级冲级奖励名额还剩<$STR(H38)>个 0 151 30
+close
+[@雷霆战甲1]
+#if
+CHECKLEVELEX > 51
+check [495] 0
+LARGE H38 0
+#act
+give 雷霆战甲(女) 1
+DEC H38 1
+SET [495] 1
+SendMSG 0 《%s》顺利冲到52级并领取[雷霆战甲(女)]，现在52级冲级奖励名额还剩<$STR(H38)>个 0 151 30
+SendMSG 0 《%s》顺利冲到52级并领取[雷霆战甲(女)]，现在52级冲级奖励名额还剩<$STR(H38)>个 0 151 30
+close
+[@雷霆战甲]
+#if
+CHECKLEVELEX > 51
+check [495] 0
+LARGE H38 0
+#act
+give 雷霆战甲(男) 1
+DEC H38 1
+SET [495] 1
+SendMSG 0 《%s》顺利冲到52级并领取[雷霆战甲(男)]，现在52级冲级奖励名额还剩<$STR(H38)>个 0 151 30
+SendMSG 0 《%s》顺利冲到52级并领取[雷霆战甲(男)]，现在52级冲级奖励名额还剩<$STR(H38)>个 0 151 30
+close
+[@55级]
+#if
+CHECKLEVELEX > 52
+#act
+goto @55a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(H37)>个剩余名额！<离开/@exit>\
+[@55a]
+#if
+check [494] 0
+#act
+goto @55b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@55b]
+请选择53级奖励：\   \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  \
+┆   <战神头盔/@战神头盔>   ┆  <圣魔头盔/@圣魔头盔>  ┆  <真魂头盔/@真魂头盔>  ┆  \ \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <返 回/@main>  <离 开/@exit>
+[@战神头盔]
+#if
+CHECKLEVELEX > 52
+check [494] 0
+LARGE H37 0
+#act
+goto @55c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@55c]
+#if
+CHECKLEVELEX > 52
+check [494] 0
+LARGE H37 0
+#act
+give 战神头盔 1
+DEC H37 1
+SET [494] 1
+goto @main
+SendMSG 0 《%s》顺利冲到53级并领取[战神头盔]，现在53级冲级奖励名额还剩<$STR(H37)>个 0 151 30
+SendMSG 0 《%s》顺利冲到53级并领取[战神头盔]，现在53级冲级奖励名额还剩<$STR(H37)>个 0 151 30
+close
+[@圣魔头盔]
+#if
+CHECKLEVELEX > 52
+check [494] 0
+LARGE H37 0
+#act
+goto @55cc
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@55cc]
+#if
+CHECKLEVELEX > 52
+check [494] 0
+LARGE H37 0
+#act
+give 圣魔头盔 1
+DEC H37 1
+SET [494] 1
+goto @main
+SendMSG 0 《%s》顺利冲到53级并领取[圣魔头盔]，现在53级冲级奖励名额还剩<$STR(H37)>个 0 151 30
+SendMSG 0 《%s》顺利冲到53级并领取[圣魔头盔]，现在53级冲级奖励名额还剩<$STR(H37)>个 0 151 30
+close
+[@真魂头盔]
+#if
+CHECKLEVELEX > 52
+check [494] 0
+LARGE H37 0
+#act
+goto @55ccc
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@55ccc]
+#if
+CHECKLEVELEX > 52
+check [494] 0
+LARGE H37 0
+#act
+give 真魂头盔 1
+DEC H37 1
+SET [494] 1
+goto @main
+SendMSG 0 《%s》顺利冲到53级并领取[真魂头盔]，现在53级冲级奖励名额还剩<$STR(H37)>个 0 151 30
+SendMSG 0 《%s》顺利冲到53级并领取[真魂头盔]，现在53级冲级奖励名额还剩<$STR(H37)>个 0 151 30
+close
+[@56级]
+#if
+CHECKLEVELEX > 53
+#act
+goto @56a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(H36)>个剩余名额！<离开/@exit>\
+[@56a]
+#if
+check [493] 0
+#act
+goto @56b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@56b]
+请选择54级奖励：\   \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  \
+┆   <战神项链/@战神项链>   ┆  <圣魔项链/@圣魔项链>  ┆  <真魂项链/@真魂项链>  ┆  \ \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <返 回/@main>  <离 开/@exit>
+[@战神项链]
+#if
+CHECKLEVELEX > 53
+check [493] 0
+LARGE H36 0
+#act
+goto @56c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@56c]
+#if
+CHECKLEVELEX > 53
+check [493] 0
+LARGE H36 0
+#act
+give 战神项链 1
+DEC H36 1
+SET [493] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到54级并领取[战神项链]，现在54级冲级奖励名额还剩<$STR(H36)>个！ 0 151 30
+SENDMSG 0 《%s》顺利冲到54级并领取[战神项链]，现在54级冲级奖励名额还剩<$STR(H36)>个！ 0 151 30
+close
+[@圣魔项链]
+#if
+CHECKLEVELEX > 53
+check [493] 0
+LARGE H36 0
+#act
+goto @56cc
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@56cc]
+#if
+CHECKLEVELEX > 53
+check [493] 0
+LARGE H36 0
+#act
+give 圣魔项链 1
+DEC H36 1
+SET [493] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到54级并领取[圣魔项链]，现在54级冲级奖励名额还剩<$STR(H36)>个！ 0 151 30
+SENDMSG 0 《%s》顺利冲到54级并领取[圣魔项链]，现在54级冲级奖励名额还剩<$STR(H36)>个！ 0 151 30
+close
+[@真魂项链]
+#if
+CHECKLEVELEX > 53
+check [493] 0
+LARGE H36 0
+#act
+goto @56dd
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@56dd]
+#if
+CHECKLEVELEX > 53
+check [493] 0
+LARGE H36 0
+#act
+give 真魂项链 1
+DEC H36 1
+SET [493] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到54级并领取[真魂项链]，现在54级冲级奖励名额还剩<$STR(H36)>个！ 0 151 30
+SENDMSG 0 《%s》顺利冲到54级并领取[真魂项链]，现在54级冲级奖励名额还剩<$STR(H36)>个！ 0 151 30
+close
+[@57级]
+#if
+CHECKLEVELEX > 54
+#act
+goto @57a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(H35)>个剩余名额！<离开/@exit>\
+[@57a]
+#if
+check [492] 0
+#act
+goto @57b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@57b]
+#if
+CHECKLEVELEX > 54
+check [492] 0
+LARGE H35 0
+#act
+goto @57c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@57c]
+请选择55级奖励：\   \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  \
+┆   <战神手镯/@战神手镯>   ┆  <圣魔手镯/@圣魔手镯>  ┆  <真魂手镯/@真魂手镯>  ┆  \ \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <返 回/@main>  <离 开/@exit>
+[@真魂手镯]
+#if
+CHECKLEVELEX > 54
+check [492] 0
+LARGE H35 0
+#act
+give 真魂手镯 1
+DEC H35 1
+SET [492] 1
+SENDMSG 0 《%s》顺利冲到55级并领取[真魂手镯]，现在55级冲级奖励名额还剩<$STR(H35)>个！ 0 151 30
+SENDMSG 0 《%s》顺利冲到55级并领取[真魂手镯]，现在55级冲级奖励名额还剩<$STR(H35)>个！ 0 151 30
+close
+[@战神手镯]
+#if
+CHECKLEVELEX > 54
+check [492] 0
+LARGE H35 0
+#act
+give 战神手镯 1
+DEC H35 1
+SET [492] 1
+SENDMSG 0 《%s》顺利冲到55级并领取[战神手镯]，现在55级冲级奖励名额还剩<$STR(H35)>个！ 0 151 30
+SENDMSG 0 《%s》顺利冲到55级并领取[战神手镯]，现在55级冲级奖励名额还剩<$STR(H35)>个！ 0 151 30
+close
+[@圣魔手镯]
+#if
+CHECKLEVELEX > 54
+check [492] 0
+LARGE H35 0
+#act
+give 圣魔手镯 1
+DEC H35 1
+SET [492] 1
+SENDMSG 0 《%s》顺利冲到55级并领取[圣魔手镯]，现在55级冲级奖励名额还剩<$STR(H35)>个！ 0 151 30
+SENDMSG 0 《%s》顺利冲到55级并领取[圣魔手镯]，现在55级冲级奖励名额还剩<$STR(H35)>个！ 0 151 30
+close
+[@58级]
+#if
+CHECKLEVELEX > 55
+#act
+goto @58a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(H34)>个剩余名额！<离开/@exit>\
+[@58a]
+#if
+check [491] 0
+#act
+goto @58b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@58b]
+请选择56级奖励：\   \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  \
+┆   <战神戒指/@战神戒指>   ┆  <圣魔戒指/@圣魔戒指>  ┆  <真魂戒指/@真魂戒指>  ┆  \ \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <返 回/@main>  <离 开/@exit>
+[@战神戒指]
+#if
+CHECKLEVELEX > 55
+check [491] 0
+LARGE H34 0
+#act
+goto @58c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@58c]
+#if
+CHECKLEVELEX > 55
+check [491] 0
+LARGE H34 0
+#act
+give 战神戒指 1
+DEC H34 1
+SET [491] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到56级并领取[战神戒指]，现在56级冲级奖励名额还剩<$STR(H34)>个！ 0 151 30
+SENDMSG 0 《%s》顺利冲到56级并领取[战神戒指]，现在56级冲级奖励名额还剩<$STR(H34)>个！ 0 151 30
+close
+[@圣魔戒指]
+#if
+CHECKLEVELEX > 55
+check [491] 0
+LARGE H34 0
+#act
+goto @58cc
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@58cc]
+#if
+CHECKLEVELEX > 55
+check [491] 0
+LARGE H34 0
+#act
+give 圣魔戒指 1
+DEC H34 1
+SET [491] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到56级并领取[圣魔戒指]，现在56级冲级奖励名额还剩<$STR(H34)>个！ 0 151 30
+SENDMSG 0 《%s》顺利冲到56级并领取[圣魔戒指]，现在56级冲级奖励名额还剩<$STR(H34)>个！ 0 151 30
+close
+[@真魂戒指]
+#if
+CHECKLEVELEX > 55
+check [491] 0
+LARGE H34 0
+#act
+goto @58dd
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@58dd]
+#if
+CHECKLEVELEX > 55
+check [491] 0
+LARGE H34 0
+#act
+give 真魂戒指 1
+DEC H34 1
+SET [491] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到56级并领取[真魂戒指]，现在56级冲级奖励名额还剩<$STR(H34)>个！ 0 151 30
+SENDMSG 0 《%s》顺利冲到56级并领取[真魂戒指]，现在56级冲级奖励名额还剩<$STR(H34)>个！ 0 151 30
+close
+[@60级]
+#if
+CHECKLEVELEX > 57
+#act
+goto @60a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(H33)>个剩余名额！<离开/@exit>\
+[@60a]
+#if
+check [490] 0
+#act
+goto @60b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@60b]
+#if
+CHECKLEVELEX > 57
+check [490] 0
+LARGE H33 0
+#act
+goto @60c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@60c]
+请选择58级奖励：\   \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  \
+┆   <开天/@开天>   ┆  <镇天/@镇天>  ┆  <玄天/@玄天>  ┆  \ \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <返 回/@main>  <离 开/@exit>
+[@开天]
+#if
+CHECKLEVELEX > 57
+check [490] 0
+LARGE H33 0
+#act
+give 开天 1
+DEC H33 1
+SET [490] 1
+SENDMSG 0 《%s》顺利冲到58级并领取[开天]，现在58级冲级奖励名额还剩<$STR(H33)>个！ 0 151 30
+SENDMSG 0 《%s》顺利冲到58级并领取[开天]，现在58级冲级奖励名额还剩<$STR(H33)>个！ 0 151 30
+close
+[@镇天]
+#if
+CHECKLEVELEX > 57
+check [490] 0
+LARGE H33 0
+#act
+give 镇天 1
+DEC H33 1
+SET [490] 1
+SENDMSG 0 《%s》顺利冲到58级并领取[镇天]，现在58级冲级奖励名额还剩<$STR(H33)>个！ 0 151 30
+SENDMSG 0 《%s》顺利冲到58级并领取[镇天]，现在58级冲级奖励名额还剩<$STR(H33)>个！ 0 151 30
+close
+[@玄天]
+#if
+CHECKLEVELEX > 57
+check [490] 0
+LARGE H33 0
+#act
+give 玄天 1
+DEC H33 1
+SET [490] 1
+SENDMSG 0 《%s》顺利冲到58级并领取[玄天]，现在58级冲级奖励名额还剩<$STR(H33)>个！ 0 151 30
+SENDMSG 0 《%s》顺利冲到58级并领取[玄天]，现在58级冲级奖励名额还剩<$STR(H33)>个！ 0 151 30
+close
+[@62级]
+#if
+CHECKLEVELEX > 56
+#act
+goto @62a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+本级别奖励还有<$STR(H32)>个剩余名额！<离开/@exit>\
+[@62a]
+#if
+check [489] 0
+#act
+goto @62b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@62b]
+请选择57级奖励：\   \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  \
+┆   <凤天魔甲/@凤天魔甲>   ┆  <凤天魔衣/@凤天魔衣>  ┆ \ \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <返 回/@main>  <离 开/@exit>
+[@凤天魔甲]
+#if
+CHECKLEVELEX > 56
+check [489] 0
+LARGE H32 0
+#act
+goto @62c
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@62c]
+#if
+CHECKLEVELEX > 56
+check [489] 0
+LARGE H32 0
+#act
+give 凤天魔甲 1
+DEC H32 1
+SET [489] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到57级并领取[凤天魔甲]，现在57级冲级奖励名额还剩<$STR(H32)>个！ 0 151 30
+SENDMSG 0 《%s》顺利冲到57级并领取[凤天魔甲]，现在57级冲级奖励名额还剩<$STR(H32)>个！ 0 151 30
+close
+[@凤天魔衣]
+#if
+CHECKLEVELEX > 56
+check [489] 0
+LARGE H32 0
+#act
+goto @62cc
+#elsesay
+对不起，此等级冲级奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+[@62cc]
+#if
+CHECKLEVELEX > 56
+check [489] 0
+LARGE H32 0
+#act
+give 凤天魔衣 1
+DEC H32 1
+SET [489] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到57级并领取[凤天魔衣]，现在57级冲级奖励名额还剩<$STR(H32)>个！ 0 151 30
+SENDMSG 0 《%s》顺利冲到57级并领取[凤天魔衣]，现在57级冲级奖励名额还剩<$STR(H32)>个！ 0 151 30
+close
+
+
+
+[@高级奖励]
+<COLOR=clAqua 冲级奖励> <COLOR=clRed Hot~>　　　　　    <COLOR=clLime 名额无限制!>\
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>\
+<COLOR=clFuchsia ★62级奖励★>   <COLOR=clAqua ≮星王腰带≯>    <领取奖励/@星王腰带>     <COLOR=clRED 剩余名额>:无限制\
+<COLOR=clFuchsia ★63级奖励★>   <COLOR=clAqua ≮星王靴子≯>    <领取奖励/@星王靴子>     <COLOR=clRED 剩余名额>:无限制\
+<COLOR=clFuchsia ★64级奖励★>   <COLOR=clAqua ≮星王头盔≯>    <领取奖励/@星王头盔>     <COLOR=clRED 剩余名额>:无限制\
+<COLOR=clFuchsia ★65级奖励★>   <COLOR=clAqua ≮星王手镯≯>    <领取奖励/@星王手镯>     <COLOR=clRED 剩余名额>:无限制\
+<COLOR=clFuchsia ★66级奖励★>   <COLOR=clAqua ≮星王戒指≯>    <领取奖励/@星王戒指>     <COLOR=clRED 剩余名额>:无限制\
+<COLOR=clFuchsia ★68级奖励★>   <COLOR=clAqua ≮星王项链≯>    <领取奖励/@星王项链>     <COLOR=clRED 剩余名额>:无限制\  
+\                                                     <离  开/@EXIT>\
+
+
+
+
+[@星王腰带]
+#if
+CHECKLEVELEX > 61
+#act
+goto @661a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，62奖励名额是无限制的哦！\
+[@661a]
+#if
+check [484] 0
+#act
+goto @661b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@661b]
+请选择62级奖励：\   \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  \
+┆   <星王腰带(战)/@星王腰带(战)>   ┆  <星王腰带(法)/@星王腰带(法)>  ┆  <星王腰带(道)/@星王腰带(道)>  ┆ \ \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <返 回/@main>  <离 开/@exit>
+[@星王腰带(战)]
+#if
+CHECKLEVELEX > 61
+check [484] 0
+#act
+give 星王腰带(战) 1
+SET [484] 1
+SENDMSG 0 《%s》顺利冲到62级并领取[星王腰带(战)]，现在62级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到62级并领取[星王腰带(战)]，现在62级冲级奖励名额无限制！ 0 151 30
+close
+[@星王腰带(法)]
+#if
+CHECKLEVELEX > 61
+check [484] 0
+#act
+give 星王腰带(法) 1
+SET [484] 1
+SENDMSG 0 《%s》顺利冲到62级并领取[星王腰带(法)]，现在62级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到62级并领取[星王腰带(法)]，现在62级冲级奖励名额无限制！ 0 151 30
+close
+[@星王腰带(道)]
+#if
+CHECKLEVELEX > 61
+check [484] 0
+#act
+give 星王腰带(道) 1
+SET [484] 1
+SENDMSG 0 《%s》顺利冲到62级并领取[星王腰带(道)]，现在62级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到62级并领取[星王腰带(道)]，现在62级冲级奖励名额无限制！ 0 151 30
+close
+
+[@星王靴子]
+#if
+CHECKLEVELEX > 62 
+#act
+goto @661a1
+#elsesay
+你的级别不够，快抓紧时间冲级吧，63奖励名额是无限制的哦！\
+[@661a1]
+#if
+check [483] 0
+#act
+goto @661b1
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@661b1]
+请选择63级奖励：\   \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  \
+┆   <星王战靴/@星王战靴>   ┆  <星王魔靴/@星王魔靴>  ┆  <星王道靴/@星王道靴>  ┆ \ \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <返 回/@main>  <离 开/@exit>
+[@星王战靴]
+#if
+CHECKLEVELEX > 62
+check [483] 0
+#act
+give 星王战靴 1
+SET [483] 1
+SENDMSG 0 《%s》顺利冲到63级并领取[星王战靴]，现在63级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到63级并领取[星王战靴]，现在63级冲级奖励名额无限制！ 0 151 30
+close
+[@星王魔靴]
+#if
+CHECKLEVELEX > 62
+check [483] 0
+#act
+give 星王魔靴 1
+SET [483] 1
+SENDMSG 0 《%s》顺利冲到63级并领取[星王魔靴]，现在63级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到63级并领取[星王魔靴]，现在63级冲级奖励名额无限制！ 0 151 30
+close
+[@星王道靴]
+#if
+CHECKLEVELEX > 62
+check [483] 0
+#act
+give 星王道靴 1
+SET [483] 1
+SENDMSG 0 《%s》顺利冲到63级并领取[星王道靴]，现在63级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到63级并领取[星王道靴]，现在63级冲级奖励名额无限制！ 0 151 30
+close
+
+[@星王头盔]
+#if
+CHECKLEVELEX > 63
+#act
+goto @64a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，奖励名额可是有限的哦！\
+<离开/@exit>\
+[@64a]
+#if
+check [488] 0
+#act
+goto @64b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@64b]
+请选择64级奖励：\   \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  \
+┆   <星王战盔/@星王战盔>   ┆  <星王法冠/@星王法冠>  ┆  <星王道盔/@星王道盔>  ┆ \ \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <返 回/@main>  <离 开/@exit>
+[@星王战盔]
+#if
+CHECKLEVELEX > 63
+check [488] 0
+#act
+give 星王战盔 1
+SET [488] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到64级并领取[星王战盔]，现在64级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到64级并领取[星王战盔]，现在64级冲级奖励名额无限制！ 0 151 30
+close
+[@星王法冠]
+#if
+CHECKLEVELEX > 62
+check [488] 0
+#act
+give 星王法冠 1
+SET [488] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到64级并领取[星王法冠]，现在64级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到64级并领取[星王法冠]，现在64级冲级奖励名额无限制！ 0 151 30
+close
+[@星王道盔]
+#if
+CHECKLEVELEX > 62
+check [488] 0
+#act
+give 星王道盔 1
+SET [488] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到64级并领取[星王道盔]，现在64级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到64级并领取[星王道盔]，现在64级冲级奖励名额无限制！ 0 151 30
+close
+
+[@星王手镯]
+#if
+CHECKLEVELEX > 64
+#act
+goto @68a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，65奖励名额是无限制的哦！\
+[@68a]
+#if
+check [486] 0
+#act
+goto @68b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@68b]
+请选择65级奖励：\   \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  \
+┆   <星王护腕(战)/@星王护腕(战)>   ┆  <星王护腕(法)/@星王护腕(法)>  ┆  <星王护腕(道)/@星王护腕(道)>  ┆ \ \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <返 回/@main>  <离 开/@exit>
+[@星王护腕(战)]
+#if
+CHECKLEVELEX > 64
+check [486] 0
+#act
+give 星王护腕(战) 1
+SET [486] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到65级并领取[星王护腕(战)]，现在65级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到65级并领取[星王护腕(战)]，现在65级冲级奖励名额无限制！ 0 151 30
+close
+[@星王护腕(法)]
+#if
+CHECKLEVELEX > 64
+check [486] 0
+#act
+give 星王护腕(法) 1
+SET [486] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到65级并领取[星王护腕(法)]，现在65级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到65级并领取[星王护腕(法)]，现在65级冲级奖励名额无限制！ 0 151 30
+close
+[@星王护腕(道)]
+#if
+CHECKLEVELEX > 64
+check [486] 0
+#act
+give 星王护腕(道) 1
+SET [486] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到65级并领取[星王护腕(道)]，现在65级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到65级并领取[星王护腕(道)]，现在65级冲级奖励名额无限制！ 0 151 30
+close
+
+[@星王戒指]
+#if
+CHECKLEVELEX > 65
+#act
+goto @70a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，66奖励名额是无限制的哦！\
+[@70a]
+#if
+check [485] 0
+#act
+goto @70b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@70b]
+请选择66级奖励：\   \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  \
+┆   <星王战戒/@星王战戒>   ┆  <星王魔戒/@星王魔戒>  ┆  <星王道戒/@星王道戒>  ┆ \ \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <返 回/@main>  <离 开/@exit>
+[@星王战戒]
+#if
+CHECKLEVELEX > 65
+check [485] 0
+#act
+give 星王战戒 1
+SET [485] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到66级并领取[星王战戒]，现在66级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到66级并领取[星王战戒]，现在66级冲级奖励名额无限制！ 0 151 30
+close
+[@星王魔戒]
+#if
+CHECKLEVELEX > 65
+check [485] 0
+#act
+give 星王魔戒 1
+SET [485] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到66级并领取[星王魔戒]，现在66级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到66级并领取[星王魔戒]，现在66级冲级奖励名额无限制！ 0 151 30
+close
+[@星王道戒]
+#if
+CHECKLEVELEX > 65
+check [485] 0
+#act
+give 星王道戒 1
+SET [485] 1
+goto @main
+SENDMSG 0 《%s》顺利冲到66级并领取[星王道戒]，现在66级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到66级并领取[星王道戒]，现在66级冲级奖励名额无限制！ 0 151 30
+close
+
+[@星王项链]
+#if
+CHECKLEVELEX > 67
+#act
+goto @66a
+#elsesay
+你的级别不够，快抓紧时间冲级吧，68奖励名额是无限制的哦！\
+[@66a]
+#if
+check [487] 0
+#act
+goto @66b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+[@66b]
+请选择68级奖励：\   \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\  \
+┆   <星王项链(战)/@星王项链(战)>   ┆  <星王项链(法)/@星王项链(法)>  ┆  <星王项链(道)/@星王项链(道)>  ┆ \ \
+<≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈>\
+ <返 回/@main>  <离 开/@exit>
+[@星王项链(战)]
+#if
+CHECKLEVELEX > 67
+check [487] 0
+#act
+give 星王项链(战) 1
+SET [487] 1
+SENDMSG 0 《%s》顺利冲到68级并领取[星王项链(战)]，现在68级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到68级并领取[星王项链(战)]，现在68级冲级奖励名额无限制！ 0 151 30
+close
+[@星王项链(法)]
+#if
+CHECKLEVELEX > 67
+check [487] 0
+#act
+give 星王项链(法) 1
+SET [487] 1
+SENDMSG 0 《%s》顺利冲到68级并领取[星王项链(法)]，现在68级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到68级并领取[星王项链(法)]，现在68级冲级奖励名额无限制！ 0 151 30
+close
+[@星王项链(道)]
+#if
+CHECKLEVELEX > 67
+check [487] 0
+#act
+give 星王项链(道) 1
+SET [487] 1
+SENDMSG 0 《%s》顺利冲到68级并领取[星王项链(道)]，现在68级冲级奖励名额无限制！ 0 151 30
+SENDMSG 0 《%s》顺利冲到68级并领取[星王项链(道)]，现在68级冲级奖励名额无限制！ 0 151 30
+close

@@ -1,0 +1,81 @@
+(@@InPutString @@InPutInteger )
+[@main]
+你上次登陆的IP地址为：<$HUMAN(二级登陆IP)>\
+你本次登陆的IP地址为：<$IPADDR>\
+由于检测到您目前的登陆IP段与以前不同。\
+请输入您的二级密码以正常游戏。<COLOR=clFuchsia 注：密码中如包含字母区分大小写>\ \ \
+【<输入二级密码/@@InPutString90>】  <COLOR=clLime 如还未设置密码，请点击左边的帐号二代密保设置密码！>
+
+[@@InPutString90]
+#IF
+CHECKLEVELEX > 0
+#ACT
+DELAYGOTO 1 @InPutString90
+[@InPutString90]
+#if
+checkvar human 二级地图号 = 
+checkvar human 二级登陆密码 = <$STR(S90)>
+#ACT
+CALCVAR HUMAN 二级登陆IP = <$IPADDR>
+SAVEVAR HUMAN 二级登陆IP ..\QuestDiary\二级密码\二级登陆密码.txt
+SENDMSG 6 二级登陆密码验证通过，当前IP地址已经加入到常用IP列表中。
+sendmsg 6 如果您是网吧用户，为了防止同网吧盗号现象，您可以到(帐号二代密保)处设置下次登陆时需要输入二级密码方能正常游戏。
+SETOFFLINEPLAY ON
+KILLSCTIMER 0
+MAPMOVE 3 330 330
+break
+#if
+checkvar human 二级地图号 = MIMA
+checkvar human 二级登陆密码 = <$STR(S90)>
+#ACT
+CALCVAR HUMAN 二级登陆IP = <$IPADDR>
+SAVEVAR HUMAN 二级登陆IP ..\QuestDiary\二级密码\二级登陆密码.txt
+SENDMSG 6 二级登陆密码验证通过，当前IP地址已经加入到常用IP列表中。
+sendmsg 6 如果您是网吧用户，为了防止同网吧盗号现象，您可以到(帐号二代密保)处设置下次登陆时需要输入二级密码方能正常游戏。
+SETOFFLINEPLAY ON
+KILLSCTIMER 0
+MAPMOVE 3 330 330
+break
+
+#if
+checkvar human 二级登陆密码 = <$STR(S90)>
+#ACT
+CALCVAR HUMAN 二级登陆IP = <$IPADDR>
+SAVEVAR HUMAN 二级登陆IP ..\QuestDiary\二级密码\二级登陆密码.txt
+SENDMSG 6 二级登陆密码验证通过，当前IP地址已经加入到常用IP列表中。
+sendmsg 6 如果您是网吧用户，为了防止同网吧盗号现象，您可以到(帐号二代密保)处设置下次登陆时需要输入二级密码方能正常游戏。
+SETOFFLINEPLAY ON
+KILLSCTIMER 0
+MAPMOVE <$HUMAN(二级地图号)> <$HUMAN(二级坐标X)> <$HUMAN(二级坐标Y)>
+goto @检测是否离开地图
+break
+#elseact
+CALCVAR HUMAN 二级登陆次数 + 1
+SAVEVAR HUMAN 二级登陆次数 ..\QuestDiary\二级密码\二级登陆密码.txt
+#if
+checkvar human 二级登陆次数 > 4
+#say
+密码输入错误次数过多，请小退后重新登陆。\ \
+<COLOR=clFuchsia 注：密码中如包含字母区分大小写>\ \
+您已经输入密码错误（<$HUMAN(二级登陆次数)>）次，系统自动踢您下线。\
+#act
+kick
+messagebox 对不起，您已经累积输入密码错误（<$HUMAN(二级登陆次数)>）次。\系统将自动踢您下线，以后每次登陆均只有一次输入密码的机会。\更改密码可以清空此数值，请到(帐号二代密保)处更改密码。
+break
+#elsesay
+对不起，您的密码输入有误，请重新输入！\
+<COLOR=clFuchsia 注：密码中如包含字母区分大小写>\
+您已经输入密码错误（<$HUMAN(二级登陆次数)>）次，达到5次系统自动踢您下线。\
+请输入您的二级密码以正常游戏。<COLOR=clFuchsia 注：密码中如包含字母区分大小写>\ \ \
+【<重新输入二级密码/@@InPutString90>】  <COLOR=clLime 如还未设置密码，请点击左边的帐号二代密保设置密码！>
+[@检测是否离开地图]
+#IF
+ISONMAP MIMA
+#ACT
+MAPMOVE 3 330 330
+
+[@IsInFilterList]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MESSAGEBOX [错误]：输入数据中包含了非法字符，请重新编辑！

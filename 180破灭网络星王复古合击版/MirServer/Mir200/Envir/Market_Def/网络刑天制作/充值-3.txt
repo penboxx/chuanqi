@@ -1,0 +1,535 @@
+[@main]
+┌───┐───────────────────────┐※\
+│<COLOR=clYellow ※※※>└ <COLOR=clLime 累计充值   60000元宝> <COLOR=clRED 奖励封号：><[普通赞助大使]/@普通>│累\
+│<COLOR=clYellow 【充】>· <COLOR=clLime 累计充值  100000元宝> <COLOR=clRED 奖励封号：><[高级赞助大使]/@高级>│计\
+│<COLOR=clYellow 【值】>· <COLOR=clLime 累计充值  200000元宝> <COLOR=clRED 奖励封号：><[白金赞助大使]/@白银>│充\
+│<COLOR=clYellow 【◆】>· <COLOR=clLime 累计充值  450000元宝> <COLOR=clRED 奖励封号：><[黄金赞助大使]/@黄金>│值\
+│<COLOR=clYellow 【反】>· <COLOR=clLime 累计充值  800000元宝> <COLOR=clRED 奖励封号：><[金钻赞助大使]/@金钻>│领\
+│<COLOR=clYellow 【馈】>· <COLOR=clLime 累计充值 1200000元宝> <COLOR=clRED 奖励封号：><[贵族赞助大使]/@贵族>│封\
+│<COLOR=clYellow ※※※>┌ <COLOR=clLime 累计充值 2200000元宝> <COLOR=clRED 奖励封号：><[皇冠赞助大使]/@皇冠>│号\
+└───┘───────────────────────┘※\
+<COLOR=clRED 当前你累计充值>[<$GAMEPOINT>]<COLOR=clRED 元宝> <单笔充值多充多送---详情请点我/@main-1>\
+
+[@main-1]
+┌───┐───────────────────────┐※\
+│<COLOR=clYellow ※※※>└ <COLOR=clAqua 单笔充值> <100 元RMB> <COLOR=clLime  系统自动多送：> <[   10RMB]>│网\
+│<COLOR=clYellow 【充】>· <COLOR=clAqua 单笔充值> <200 元RMB> <COLOR=clLime  系统自动多送：> <[   30RMB]>│站\
+│<COLOR=clYellow 【值】>· <COLOR=clAqua 单笔充值> <300 元RMB> <COLOR=clLime  系统自动多送：> <[   80RMB]>│充\
+│<COLOR=clYellow 【◆】>· <COLOR=clAqua 单笔充值> <500 元RMB> <COLOR=clLime  系统自动多送：> <[  200RMB]>│值\
+│<COLOR=clYellow 【反】>· <COLOR=clAqua 单笔充值> <1000元RMB> <COLOR=clLime  系统自动多送：> <[  500RMB]>│自\
+│<COLOR=clYellow 【馈】>· <COLOR=clAqua 单笔充值> <2000元RMB> <COLOR=clLime  系统自动多送：> <[ 1200RMB]>│动\
+│<COLOR=clYellow ※※※>┌ <COLOR=clAqua 单笔充值> <3000元RMB> <COLOR=clLime  系统自动多送：> <[ 2000RMB]>│送\
+└───┘───────────────────────┘※\
+<COLOR=clRED 当前你累计充值>[<$GAMEPOINT>]<COLOR=clRED 元宝> <累计充值领封号---详情请点我/@main>\
+
+
+
+[@皇冠]
+#IF
+CHECK [66] 1
+#ACT
+MESSAGEBOX 你已经领取过[皇冠赞助大使]赞助封号.不要重复领取!!!
+BREAK
+#IF 
+CheckGAMEPOINT > 2199999
+#ACT
+SET [66] 1
+HAIRSTYLE 0
+addnamelist ..\QuestDiary\赞助大使封号备\皇冠赞助大使.txt
+SENDMSG 0  恭喜：%s，成功打开[皇冠赞助大使]赞助封号，彰显尊贵身份象征！ 249 251
+MESSAGEBOX 领取成功.恭喜你领取[皇冠赞助大使]封号的奖励，彰显尊贵身份象征！\　\请您提供区名+人物名联系担保客服确认，以便您的赞助封号上线尊贵提示！\　\担保客服QQ:68405131，180幸运传奇合击(www.kuyoux.com)！
+#ELSEACT
+MessageBox 　　抱歉,打开封号失败！累计充值2200000元宝即可联系客服办理此赞助封号，\　\　\　　　　办理担保客服QQ:68405131，180幸运传奇合击(www.kuyoux.com)\　\　　　　　　　　　　　　　　　　　当前你累计充值:[<$GAMEPOINT>]元宝
+Break
+
+[@贵族]
+#IF
+CHECK [65] 1
+#ACT
+MESSAGEBOX 你已经领取过[贵族赞助大使]赞助封号.不要重复领取!!!
+BREAK
+#IF 
+CheckGAMEPOINT > 1199999
+#ACT
+SET [65] 1
+HAIRSTYLE 0
+addnamelist ..\QuestDiary\赞助大使封号备\贵族赞助大使.txt
+SENDMSG 0  恭喜：%s，成功打开[贵族赞助大使]赞助封号，彰显尊贵身份象征！ 249 251
+MESSAGEBOX 领取成功.恭喜你领取[贵族赞助大使]封号的奖励，彰显尊贵身份象征！\　\请您提供区名+人物名联系担保客服确认，以便您的赞助封号上线尊贵提示！\　\担保客服QQ:68405131，180幸运传奇合击(www.kuyoux.com)！
+#ELSEACT
+MessageBox 　　抱歉,打开封号失败！累计充值1200000元宝即可联系客服办理此赞助封号，\　\　\　　　　办理担保客服QQ:68405131，180幸运传奇合击(www.kuyoux.com)\　\　　　　　　　　　　　　　　　　　当前你累计充值:[<$GAMEPOINT>]元宝
+Break
+
+
+[@金钻]
+#IF
+CHECK [64] 1
+#ACT
+MESSAGEBOX 你已经领取过[金钻赞助大使]赞助封号.不要重复领取!!!
+BREAK
+#IF 
+CheckGAMEPOINT > 799999
+#ACT
+SET [64] 1
+HAIRSTYLE 0
+addnamelist ..\QuestDiary\赞助大使封号备\金钻赞助大使.txt
+SENDMSG 0  恭喜：%s，成功打开[金钻赞助大使]赞助封号，彰显尊贵身份象征！ 249 251
+MESSAGEBOX 领取成功.恭喜你领取[金钻赞助大使]封号的奖励，彰显尊贵身份象征！\　\请您提供区名+人物名联系担保客服确认，以便您的赞助封号上线尊贵提示！\　\担保客服QQ:68405131，180幸运传奇合击(www.kuyoux.com)！
+#ELSEACT
+MessageBox 　　抱歉,打开封号失败！累计充值800000元宝即可联系客服办理此赞助封号，\　\　\　　　　办理担保客服QQ:68405131，180幸运传奇合击(www.kuyoux.com)\　\　　　　　　　　　　　　　　　　　当前你累计充值:[<$GAMEPOINT>]元宝
+Break
+
+
+[@黄金]
+#IF
+CHECK [63] 1
+#ACT
+MESSAGEBOX 你已经领取过[黄金赞助大使]赞助封号.不要重复领取!!!
+BREAK
+#IF 
+CheckGAMEPOINT > 449999
+#ACT
+SET [63] 1
+HAIRSTYLE 0
+addnamelist ..\QuestDiary\赞助大使封号备\黄金赞助大使.txt
+SENDMSG 0  恭喜：%s，成功打开[黄金赞助大使]赞助封号，彰显尊贵身份象征！ 249 251
+MESSAGEBOX 领取成功.恭喜你领取[黄金赞助大使]封号的奖励，彰显尊贵身份象征！\　\请您提供区名+人物名联系担保客服确认，以便您的赞助封号上线尊贵提示！\　\担保客服QQ:68405131，180幸运传奇合击(www.kuyoux.com)！
+#ELSEACT
+MessageBox 　　抱歉,打开封号失败！累计充值450000元宝即可联系客服办理此赞助封号，\　\　\　　　　办理担保客服QQ:68405131，180幸运传奇合击(www.kuyoux.com)\　\　　　　　　　　　　　　　　　　　当前你累计充值:[<$GAMEPOINT>]元宝
+Break
+
+[@白银]
+#IF
+CHECK [62] 1
+#ACT
+MESSAGEBOX 你已经领取过[白金赞助大使]赞助封号.不要重复领取!!!
+BREAK
+#IF 
+CheckGAMEPOINT > 199999
+#ACT
+SET [62] 1
+HAIRSTYLE 0
+addnamelist ..\QuestDiary\赞助大使封号备\白金赞助大使.txt
+SENDMSG 0  恭喜：%s，成功打开[白金赞助大使]赞助封号，彰显尊贵身份象征！ 249 251
+MESSAGEBOX 领取成功.恭喜你领取[白金赞助大使]封号的奖励，彰显尊贵身份象征！\　\请您提供区名+人物名联系担保客服确认，以便您的赞助封号上线尊贵提示！\　\担保客服QQ:68405131，180幸运传奇合击(www.kuyoux.com)！
+#ELSEACT
+MessageBox 　　抱歉,打开封号失败！累计充值200000元宝即可联系客服办理此赞助封号，\　\　\　　　　办理担保客服QQ:68405131，180幸运传奇合击(www.kuyoux.com)\　\　　　　　　　　　　　　　　　　　当前你累计充值:[<$GAMEPOINT>]元宝
+Break
+
+
+[@高级]
+#IF
+CHECK [61] 1
+#ACT
+MESSAGEBOX 你已经领取过[高级赞助大使]赞助封号.不要重复领取!!!
+BREAK
+#IF 
+CheckGAMEPOINT > 99999
+#ACT
+SET [61] 1
+HAIRSTYLE 0
+addnamelist ..\QuestDiary\赞助大使封号备\高级赞助大使.txt
+SENDMSG 0  恭喜：%s，成功打开[高级赞助大使]赞助封号，彰显尊贵身份象征！ 249 251
+MESSAGEBOX 领取成功.恭喜你领取[高级赞助大使]封号的奖励，彰显尊贵身份象征！\　\请您提供区名+人物名联系担保客服确认，以便您的赞助封号上线尊贵提示！\　\担保客服QQ:68405131，180幸运传奇合击(www.kuyoux.com)！
+#ELSEACT
+MessageBox 　　抱歉,打开封号失败！累计充值100000元宝即可联系客服办理此赞助封号，\　\　\　　　　办理担保客服QQ:68405131，180幸运传奇合击(www.kuyoux.com)\　\　　　　　　　　　　　　　　　　　当前你累计充值:[<$GAMEPOINT>]元宝
+Break
+
+
+
+[@普通]
+#IF
+CHECK [60] 1
+#ACT
+MESSAGEBOX 你已经领取过[普通赞助大使]赞助封号.不要重复领取!!!
+BREAK
+#IF 
+CheckGAMEPOINT > 59999
+#ACT
+SET [60] 1
+addnamelist ..\QuestDiary\赞助大使封号备\普通赞助大使.txt
+SENDMSG 0  恭喜：%s，成功打开[普通赞助大使]赞助封号，彰显尊贵身份象征！ 249 251
+MESSAGEBOX 领取成功.恭喜你领取[普通赞助大使]封号的奖励，彰显尊贵身份象征！\　\请您提供区名+人物名联系担保客服确认，以便您的赞助封号上线尊贵提示！\　\担保客服QQ:68405131，180幸运传奇合击(www.kuyoux.com)！
+#ELSEACT
+MessageBox 　　抱歉,打开封号失败！累计充值60000元宝即可联系客服办理此赞助封号，\　\　\　　　　办理担保客服QQ:68405131，180幸运传奇合击(www.kuyoux.com)\　\　　　　　　　　　　　　　　　　　当前你累计充值:[<$GAMEPOINT>]元宝
+Break
+
+
+
+
+
+
+
+
+
+
+
+
+[@007]
+#if
+CheckGAMEPOINT > 4999999
+#act
+goto @007a
+#elsesay
+抱歉您当前充值金额不够领取该奖项\
+
+
+[@007a]
+#if
+check [488] 0
+#act
+goto @007b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@007b]
+#if
+CheckGAMEPOINT > 4999999
+check [488] 0
+LARGE G488 0
+#act
+goto @007c
+#elsesay
+对不起，此奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+[@007c]
+#if
+CheckGAMEPOINT > 4999999
+check [488] 0
+LARGE G488 0
+#act
+GAMEGOLD + 1800000
+goto @008
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值奖励系统,获得元宝1800000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+DEC G488 1
+SET [488] 1
+close
+
+
+[@006]
+#if
+CheckGAMEPOINT > 2999999
+#act
+goto @006a
+#elsesay
+抱歉您当前充值金额不够领取该奖项\
+
+
+[@006a]
+#if
+check [487] 0
+#act
+goto @006b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@006b]
+#if
+CheckGAMEPOINT > 2999999
+check [487] 0
+LARGE G487 0
+#act
+goto @006c
+#elsesay
+对不起，此奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+[@006c]
+#if
+CheckGAMEPOINT > 2999999
+check [487] 0
+LARGE G487 0
+#act
+GAMEGOLD + 800000
+goto @008
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值奖励系统,获得元宝800000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+DEC G487 1
+SET [487] 1
+close
+
+[@005]
+#if
+CheckGAMEPOINT > 999999
+#act
+goto @005a
+#elsesay
+抱歉您当前充值金额不够领取该奖项\
+
+
+[@005a]
+#if
+check [486] 0
+#act
+goto @005b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@005b]
+#if
+CheckGAMEPOINT > 999999
+check [486] 0
+LARGE G486 0
+#act
+goto @005c
+#elsesay
+对不起，此奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+[@005c]
+#if
+CheckGAMEPOINT > 999999
+check [486] 0
+LARGE G486 0
+#act
+GAMEGOLD + 300000
+goto @008
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值奖励系统,获得元宝300000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+DEC G486 1
+SET [486] 1
+close
+
+[@004]
+#if
+CheckGAMEPOINT > 499999
+#act
+goto @004a
+#elsesay
+抱歉您当前充值金额不够领取该奖项\
+
+
+[@004a]
+#if
+check [485] 0
+#act
+goto @004b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@004b]
+#if
+CheckGAMEPOINT > 499999
+check [485] 0
+LARGE G485 0
+#act
+goto @004c
+#elsesay
+对不起，此奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+[@004c]
+#if
+CheckGAMEPOINT > 499999
+check [485] 0
+LARGE G485 0
+#act
+GAMEGOLD + 150000
+goto @008
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值奖励系统,获得元宝150000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+DEC G485 1
+SET [485] 1
+close
+
+[@003]
+#if
+CheckGAMEPOINT > 299999
+#act
+goto @003a
+#elsesay
+抱歉您当前充值金额不够领取该奖项\
+
+
+[@003a]
+#if
+check [484] 0
+#act
+goto @003b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@003b]
+#if
+CheckGAMEPOINT > 299999
+check [484] 0
+LARGE G484 0
+#act
+goto @003c
+#elsesay
+对不起，此奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+[@003c]
+#if
+CheckGAMEPOINT > 299999
+check [484] 0
+LARGE G484 0
+#act
+GAMEGOLD + 80000
+goto @008
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值奖励系统,获得元宝80000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+DEC G484 1
+SET [484] 1
+close
+
+
+
+[@002]
+#if
+CheckGAMEPOINT > 99999
+#act
+goto @002a
+#elsesay
+抱歉您当前充值金额不够领取该奖项\
+
+
+[@002a]
+#if
+check [483] 0
+#act
+goto @002b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@002b]
+#if
+CheckGAMEPOINT > 99999
+check [483] 0
+LARGE G483 0
+#act
+goto @002c
+#elsesay
+对不起，此奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+[@002c]
+#if
+CheckGAMEPOINT > 99999
+check [483] 0
+LARGE G483 0
+#act
+GAMEGOLD + 25000
+goto @008
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值奖励系统,获得元宝25000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+DEC G483 1
+SET [483] 1
+close
+
+[@001]
+#if
+CheckGAMEPOINT > 19999
+#act
+goto @001a
+#elsesay
+抱歉您当前充值金额不够领取该奖项\
+
+
+[@001a]
+#if
+check [482] 0
+#act
+goto @001b
+#elsesay
+等等，我看看。。。\
+这位朋友，你好象领取过了吧？\
+虽然我眼神不太好使但是你的长相太突出了，\
+我一看就看出来是你了。。。\
+<离开/@exit>\
+
+[@001b]
+#if
+CheckGAMEPOINT > 19999
+check [482] 0
+LARGE G482 0
+#act
+goto @001c
+#elsesay
+对不起，此奖励已经没有名额了，请关注我们下一个新区吧。\
+<离开/@exit>\
+
+[@001c]
+#if
+CheckGAMEPOINT > 19999
+check [482] 0
+LARGE G482 0
+#act
+GAMEGOLD + 5000
+goto @008
+SENDMSG 1 ★[%s]:玩家<$USERNAME>使用充值奖励系统,获得元宝5000。如果您也需要充值元宝,请赶紧打开充值页面进行元宝充值吧！！！
+DEC G482 1
+SET [482] 1
+close
+
+
+
+
+
+[@008]
+#IF
+#ACT
+MOV G480 1
+MOV G482 99999
+MOV G483 99999
+MOV G484 99999
+MOV G485 99999
+MOV G486 99999
+MOV G487 99999
+MOV G488 99999
+
+
+
+[@清除冲级]
+#IF
+ISADMIN
+#ACT
+MOV G480 1
+MOV G482 99999
+MOV G483 99999
+MOV G484 99999
+MOV G485 99999
+MOV G486 99999
+MOV G487 99999
+MOV G488 99999
+
+
+[@fh]
+#IF
+CheckGAMEPOINT > 99999
+#ACT
+goto @fha
+BREAK
+#ELSEACT
+MessageBox 　\　　　　抱歉您当前充值未达到[100000元宝]无法打开封号\　\　\　\　　　　　　　　　　　　　　　　　已充值<$GAMEPOINT>元宝
+Break
+
+
+
+
+
+
+
+
+

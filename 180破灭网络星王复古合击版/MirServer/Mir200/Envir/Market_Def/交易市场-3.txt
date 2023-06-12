@@ -1,0 +1,7 @@
+()
+%100
+[@main]
+#IF
+#ACT
+MAPMOVE GA0 70 72
+BREAK

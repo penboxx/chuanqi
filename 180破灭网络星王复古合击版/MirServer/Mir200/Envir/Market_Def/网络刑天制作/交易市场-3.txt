@@ -1,0 +1,20 @@
+[@main]
+
+#IF
+RANDOM 2
+#ACT
+SENDMSG 4 做买卖，想发财可要去庄园逛一逛！
+GOTO @MAIN-2
+BREAK
+
+#IF
+#ACT
+GOTO @MAIN-2
+BREAK
+
+[@MAIN-2]
+#if
+#act
+mapmove GA0 71 73
+
+break

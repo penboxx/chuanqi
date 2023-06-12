@@ -1,0 +1,34 @@
+[@main]
+<COLOR=clLime 欢迎来到包厢练级> \ \
+你只要交纳500个元宝.我就可以帮你刷出10只<经验小白> \
+1只10万经验哦.升级飞快~~ \ \
+
+<500元宝刷怪练级/@shua02>    ★您当前的元宝为：[<$GAMEGOLD>]个 \ \
+
+<返回土城/@回城>  \
+
+[@shua02]
+#IF
+CheckRangeMonCount baoxiang02 15 16 20 < 50
+#ACT
+goto @jin02
+#ELSEACT
+SENDMSG 4 请把当前怪物消灭部分在刷怪物？
+
+[@jin02]
+#if
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+Param1 baoxiang02
+Param2 15
+Param3 16
+MonGen 经验小白 10 1
+BREAK
+
+[@回城]
+#IF
+#ACT
+MAPMOVE 3 333 333
+BREAK
+

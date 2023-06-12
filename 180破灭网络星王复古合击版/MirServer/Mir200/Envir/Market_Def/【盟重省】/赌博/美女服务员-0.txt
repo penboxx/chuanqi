@@ -1,0 +1,32 @@
+
+
+
+
+[@main]
+#IF
+EQUAL H31 0
+#ACT
+messagebox 赌城开放时间为新区开区起\全天24小时开放！\
+BREAK
+#ELSESAY
+玩家进入庄闲赌博场地之后只有一个玩家可以当庄，抢庄时间有限！\ \
+<COLOR=CLYELLOW 1.> 押大赢大，押小赢小，豹子庄家通吃！\
+<COLOR=CLYELLOW 2.> 正在坐庄或已下注的玩家如下线将被视做弃权，不损失下注元宝！\
+<COLOR=CLYELLOW 3.> 玩家下注数不能超过庄上剩余的元宝!\
+<COLOR=CLYELLOW 4.> 庄家做庄元宝必须在<COLOR=CLRED 100-80000>之间!\
+<COLOR=CLYELLOW 5.> 无论庄闲若赢得元宝必须交纳 <COLOR=CLRED 5%> 小费给马仔!\ \
+<了解并进入赌博场地/@进入赌场>\
+
+
+[@进入赌场]
+#IF
+EQUAL H31 0
+#ACT
+messagebox 赌城开放时间为新区开区起\全天24小时开放！\
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE TXDGA 5 11
+CLOSE
+BREAK

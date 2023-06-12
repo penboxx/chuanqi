@@ -1,0 +1,441 @@
+[@领取附加]
+{
+#IF
+CheckAccountList ..\QuestDiary\HF附加\01.txt
+#ACT
+GAMEPOINT + 0
+GAMEDIAMOND + 2
+DelAccountList ..\QuestDiary\HF附加\01.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0积分2金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\1.txt
+#ACT
+GAMEPOINT + 1
+GAMEDIAMOND + 20
+DelAccountList ..\QuestDiary\HF附加\1.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了1积分20金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\10.txt
+#ACT
+GAMEPOINT + 10
+GAMEDIAMOND + 200
+DelAccountList ..\QuestDiary\HF附加\10.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了10积分200金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\100.txt
+#ACT
+GAMEPOINT + 100
+GAMEDIAMOND + 2000
+DelAccountList ..\QuestDiary\HF附加\100.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了100积分2000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\1000.txt
+#ACT
+GAMEPOINT + 1000
+GAMEDIAMOND + 20000
+DelAccountList ..\QuestDiary\HF附加\1000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了1000积分20000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\10000.txt
+#ACT
+GAMEPOINT + 10000
+GAMEDIAMOND + 200000
+DelAccountList ..\QuestDiary\HF附加\10000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了10000积分200000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\02.txt
+#ACT
+GAMEPOINT + 0
+GAMEDIAMOND + 4
+DelAccountList ..\QuestDiary\HF附加\02.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0积分4金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\2.txt
+#ACT
+GAMEPOINT + 2
+GAMEDIAMOND + 40
+DelAccountList ..\QuestDiary\HF附加\2.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了2积分40金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\20.txt
+#ACT
+GAMEPOINT + 20
+GAMEDIAMOND + 400
+DelAccountList ..\QuestDiary\HF附加\20.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了20积分400金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\200.txt
+#ACT
+GAMEPOINT + 200
+GAMEDIAMOND + 4000
+DelAccountList ..\QuestDiary\HF附加\200.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了200积分4000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\2000.txt
+#ACT
+GAMEPOINT + 2000
+GAMEDIAMOND + 40000
+DelAccountList ..\QuestDiary\HF附加\2000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了2000积分40000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\20000.txt
+#ACT
+GAMEPOINT + 20000
+GAMEDIAMOND + 400000
+DelAccountList ..\QuestDiary\HF附加\20000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了20000积分400000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\03.txt
+#ACT
+GAMEPOINT + 0
+GAMEDIAMOND + 6
+DelAccountList ..\QuestDiary\HF附加\03.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0积分6金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\3.txt
+#ACT
+GAMEPOINT + 3
+GAMEDIAMOND + 60
+DelAccountList ..\QuestDiary\HF附加\3.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了3积分60金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\30.txt
+#ACT
+GAMEPOINT + 30
+GAMEDIAMOND + 600
+DelAccountList ..\QuestDiary\HF附加\30.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了30积分600金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\300.txt
+#ACT
+GAMEPOINT + 300
+GAMEDIAMOND + 6000
+DelAccountList ..\QuestDiary\HF附加\300.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了300积分6000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\3000.txt
+#ACT
+GAMEPOINT + 3000
+GAMEDIAMOND + 60000
+DelAccountList ..\QuestDiary\HF附加\3000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了3000积分60000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\30000.txt
+#ACT
+GAMEPOINT + 30000
+GAMEDIAMOND + 600000
+DelAccountList ..\QuestDiary\HF附加\30000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了30000积分600000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\04.txt
+#ACT
+GAMEPOINT + 0
+GAMEDIAMOND + 8
+DelAccountList ..\QuestDiary\HF附加\04.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0积分8金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\4.txt
+#ACT
+GAMEPOINT + 4
+GAMEDIAMOND + 80
+DelAccountList ..\QuestDiary\HF附加\4.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了4积分80金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\40.txt
+#ACT
+GAMEPOINT + 40
+GAMEDIAMOND + 800
+DelAccountList ..\QuestDiary\HF附加\40.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了40积分800金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\400.txt
+#ACT
+GAMEPOINT + 400
+GAMEDIAMOND + 8000
+DelAccountList ..\QuestDiary\HF附加\400.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了400积分8000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\4000.txt
+#ACT
+GAMEPOINT + 4000
+GAMEDIAMOND + 80000
+DelAccountList ..\QuestDiary\HF附加\4000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了4000积分80000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\40000.txt
+#ACT
+GAMEPOINT + 40000
+GAMEDIAMOND + 800000
+DelAccountList ..\QuestDiary\HF附加\40000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了40000积分800000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\05.txt
+#ACT
+GAMEPOINT + 0
+GAMEDIAMOND + 10
+DelAccountList ..\QuestDiary\HF附加\05.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0积分10金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\5.txt
+#ACT
+GAMEPOINT + 5
+GAMEDIAMOND + 100
+DelAccountList ..\QuestDiary\HF附加\5.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了5积分100金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\50.txt
+#ACT
+GAMEPOINT + 50
+GAMEDIAMOND + 1000
+DelAccountList ..\QuestDiary\HF附加\50.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了50积分1000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\500.txt
+#ACT
+GAMEPOINT + 500
+GAMEDIAMOND + 10000
+DelAccountList ..\QuestDiary\HF附加\500.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了500积分10000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\5000.txt
+#ACT
+GAMEPOINT + 5000
+GAMEDIAMOND + 100000
+DelAccountList ..\QuestDiary\HF附加\5000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了5000积分100000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\50000.txt
+#ACT
+GAMEPOINT + 50000
+GAMEDIAMOND + 1000000
+DelAccountList ..\QuestDiary\HF附加\50000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了50000积分1000000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\06.txt
+#ACT
+GAMEPOINT + 0
+GAMEDIAMOND + 12
+DelAccountList ..\QuestDiary\HF附加\06.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0积分12金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\6.txt
+#ACT
+GAMEPOINT + 6
+GAMEDIAMOND + 120
+DelAccountList ..\QuestDiary\HF附加\6.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了6积分120金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\60.txt
+#ACT
+GAMEPOINT + 60
+GAMEDIAMOND + 1200
+DelAccountList ..\QuestDiary\HF附加\60.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了60积分1200金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\600.txt
+#ACT
+GAMEPOINT + 600
+GAMEDIAMOND + 12000
+DelAccountList ..\QuestDiary\HF附加\600.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了600积分12000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\6000.txt
+#ACT
+GAMEPOINT + 6000
+GAMEDIAMOND + 120000
+DelAccountList ..\QuestDiary\HF附加\6000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了6000积分120000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\60000.txt
+#ACT
+GAMEPOINT + 60000
+GAMEDIAMOND + 1200000
+DelAccountList ..\QuestDiary\HF附加\60000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了60000积分1200000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\07.txt
+#ACT
+GAMEPOINT + 0
+GAMEDIAMOND + 14
+DelAccountList ..\QuestDiary\HF附加\07.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0积分14金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\7.txt
+#ACT
+GAMEPOINT + 7
+GAMEDIAMOND + 140
+DelAccountList ..\QuestDiary\HF附加\7.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了7积分140金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\70.txt
+#ACT
+GAMEPOINT + 70
+GAMEDIAMOND + 1400
+DelAccountList ..\QuestDiary\HF附加\70.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了70积分1400金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\700.txt
+#ACT
+GAMEPOINT + 700
+GAMEDIAMOND + 14000
+DelAccountList ..\QuestDiary\HF附加\700.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了700积分14000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\7000.txt
+#ACT
+GAMEPOINT + 7000
+GAMEDIAMOND + 140000
+DelAccountList ..\QuestDiary\HF附加\7000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了7000积分140000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\70000.txt
+#ACT
+GAMEPOINT + 70000
+GAMEDIAMOND + 1400000
+DelAccountList ..\QuestDiary\HF附加\70000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了70000积分1400000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\08.txt
+#ACT
+GAMEPOINT + 0
+GAMEDIAMOND + 16
+DelAccountList ..\QuestDiary\HF附加\08.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0积分16金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\8.txt
+#ACT
+GAMEPOINT + 8
+GAMEDIAMOND + 160
+DelAccountList ..\QuestDiary\HF附加\8.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了8积分160金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\80.txt
+#ACT
+GAMEPOINT + 80
+GAMEDIAMOND + 1600
+DelAccountList ..\QuestDiary\HF附加\80.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了80积分1600金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\800.txt
+#ACT
+GAMEPOINT + 800
+GAMEDIAMOND + 16000
+DelAccountList ..\QuestDiary\HF附加\800.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了800积分16000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\8000.txt
+#ACT
+GAMEPOINT + 8000
+GAMEDIAMOND + 160000
+DelAccountList ..\QuestDiary\HF附加\8000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了8000积分160000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\80000.txt
+#ACT
+GAMEPOINT + 80000
+GAMEDIAMOND + 1600000
+DelAccountList ..\QuestDiary\HF附加\80000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了80000积分1600000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\09.txt
+#ACT
+GAMEPOINT + 0
+GAMEDIAMOND + 18
+DelAccountList ..\QuestDiary\HF附加\09.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了0积分18金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\9.txt
+#ACT
+GAMEPOINT + 9
+GAMEDIAMOND + 180
+DelAccountList ..\QuestDiary\HF附加\9.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了9积分180金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\90.txt
+#ACT
+GAMEPOINT + 90
+GAMEDIAMOND + 1800
+DelAccountList ..\QuestDiary\HF附加\90.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了90积分1800金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\900.txt
+#ACT
+GAMEPOINT + 900
+GAMEDIAMOND + 18000
+DelAccountList ..\QuestDiary\HF附加\900.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了900积分18000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\9000.txt
+#ACT
+GAMEPOINT + 9000
+GAMEDIAMOND + 180000
+DelAccountList ..\QuestDiary\HF附加\9000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了9000积分180000金刚石。
+goto @领取附加
+#IF
+CheckAccountList ..\QuestDiary\HF附加\90000.txt
+#ACT
+GAMEPOINT + 90000
+GAMEDIAMOND + 1800000
+DelAccountList ..\QuestDiary\HF附加\90000.txt
+SENDMSG 1  ★[%s]:恭喜玩家<$USERNAME>通过在线充值额外获得了90000积分1800000金刚石。
+goto @领取附加
+
+#ELSESAY
+请查看自己的<附加币>数量!\
+没有充值请按提示进行充值!\
+注意：请确认手机发送的代码和您的游戏帐号是否正确!\
+<退出/@exit>
+}

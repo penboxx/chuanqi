@@ -1,0 +1,224 @@
+()
+%100
+[@MAIN]
+<$USERNAME>,您好，欢迎来到[<$SERVERNAME>]，你可以享受以下服务！\ 
+<COLOR=clAqua ------------------------------------------------------------>\
+<COLOR=clLime １.> <[免费取人民币]/@人民币>  <COLOR=clLime 您当前银行帐户RMB余额为：><$NIMBUS><COLOR=clLime 元!>\ \
+<COLOR=clLime ２.> <[免费取金刚石]/@提取金刚石2>  <COLOR=clLime 您当前账号总金刚石余额为：><$GAMEDIAMOND><COLOR=clLime 颗!>\ \
+<COLOR=clLime ３.> <[免费取灵气值]/@兑换灵气卷>  <COLOR=clLime 您当前账号总灵气值余额为：><$GAMEGIRD><COLOR=clLime 点!>\ 
+<COLOR=clAqua ------------------------------------------------------------>\
+<COLOR=clFuchsia ★★人民币兑换累计赞助积分，不花钱一样成为赞助大使★★>
+[@人民币]
+<COLOR=clLime 本服所有的BOSS可爆RMB卷.装备也可回收成相应的人民币.>\ 
+<COLOR=clAqua 或者我可帮您把人民币兑换成元宝网银充值.兑换元宝比例为1:2000!>\
+<COLOR=clAqua 或者我可帮您把人民币兑换成元宝网银充值.兑换金刚石比例为1:20!>\
+<COLOR=clAqua 如100RMB可兑换10万元宝.2000颗金刚石.抵100元赞助充值！>\ \
+　　　<100元RMB兑20万元宝/@100元>         <200元RMB兑40万元宝/@200元>\ \
+　　　<50元RMB兑50人民币卷/@50元>         <500元RMB兑500人民币卷/@500元>\ 
+<COLOR=clRed ★★★★兑换人民币卷，玩家可利用人民币卷买卖装备交易★★★★>\ \
+
+
+[@100元]
+#IF
+CHECKNIMBUS > 99
+#ACT
+GAMEGOLD + 100000
+GameDiamond + 2000
+GamePoint + 100
+NIMBUS - 100
+SendMsg 6 [提示：100元人民币兑换10万元宝2000颗金刚石.累计充值+100元，您当前银行帐户余额(<$NIMBUS>元)]
+#ELSEACT
+MESSAGEBOX 对不起，你的银行帐户余额不足100元！
+[@200元]
+#IF
+CHECKNIMBUS > 199
+#ACT
+GAMEGOLD + 200000
+GameDiamond + 4000
+GamePoint + 200
+NIMBUS - 200
+SendMsg 6 [提示：200元人民币兑换20万元宝4000颗金刚石.累计充值+200元您当前银行帐户余额(<$NIMBUS>元)]
+#ELSEACT
+MESSAGEBOX 对不起，你的银行帐户余额不足200元！
+[@50元]
+#IF
+CHECKNIMBUS > 49
+#act
+NIMBUS - 50
+GIVE 伍拾元人民币 1
+SENDMSG 6  [提示：人民币-50元，您当前银行帐户余额(<$NIMBUS>元)]
+#ELSEACT
+MESSAGEBOX 对不起，你的银行帐户余额不足50元！
+[@500元]
+#IF
+CHECKNIMBUS > 499
+#act
+NIMBUS - 500
+GIVE 伍佰元人民币 1
+SENDMSG 6  [提示：人民币-500元，您当前银行帐户余额(<$NIMBUS>元)]
+#ELSEACT
+MESSAGEBOX 对不起，你的银行帐户余额不足500元！
+
+
+
+
+[@提取金刚石2]
+请选择需要提取的数量：\  \ \
+　　  <1颗金刚石/@1颗金刚石>	   	 <5颗金刚石/@5颗金刚石>	   	   <10颗金刚石/@10颗金刚石> \
+<COLOR=clLime -------------------------------------------------------->\
+　　 <50颗金刚石/@50颗金刚石>	   	 <100颗金刚石/@100颗金刚石>	   	 <200颗金刚石/@200颗金刚石>\
+<COLOR=clLime -------------------------------------------------------->\
+　　<500颗金刚石/@500颗金刚石>	   	 <1000颗金刚石/@1000颗金刚石>	   	 <返    回/@Main>\
+[@1颗金刚石]
+#IF
+CHECKGAMEDIAMOND > 0
+#ACT
+GAMEDIAMOND - 1
+GIVE	金刚石(1颗)
+SendMsg 6 [提示：成功提取金刚石(1颗)，您当前金刚石(<$GAMEDIAMOND>颗)]
+#ElSESAY
+对不起，你没有足够的金刚石！	 <返    回/@Main>\
+[@5颗金刚石]
+#IF
+  CHECKGAMEDIAMOND > 4
+#ACT
+  GAMEDIAMOND - 5
+GIVE	金刚石(5颗)
+SendMsg 6 [提示：成功提取金刚石(5颗)，您当前金刚石(<$GAMEDIAMOND>颗)]
+#ElSESAY
+对不起，你没有足够的金刚石！	 <返    回/@Main>\
+[@10颗金刚石]
+#IF
+  CHECKGAMEDIAMOND > 9
+#ACT
+  GAMEDIAMOND - 10
+GIVE	金刚石(10颗)
+SendMsg 6 [提示：成功提取金刚石(10颗)，您当前金刚石(<$GAMEDIAMOND>颗)]
+#ElSESAY
+对不起，你没有足够的金刚石！	 <返    回/@Main>\
+[@50颗金刚石]
+#IF
+  CHECKGAMEDIAMOND > 49
+#ACT
+  GAMEDIAMOND - 50
+GIVE	金刚石(50颗)
+SendMsg 6 [提示：成功提取金刚石(50颗)，您当前金刚石(<$GAMEDIAMOND>颗)]
+#ElSESAY
+对不起，你没有足够的金刚石！	 <返    回/@Main>\
+[@100颗金刚石]
+#IF
+  CHECKGAMEDIAMOND > 99
+#ACT
+  GAMEDIAMOND - 100
+GIVE	金刚石(100颗)
+SendMsg 6 [提示：成功提取金刚石(100颗)，您当前金刚石(<$GAMEDIAMOND>颗)]
+#ElSESAY
+对不起，你没有足够的金刚石！	 <返    回/@Main>\
+[@200颗金刚石]
+#IF
+  CHECKGAMEDIAMOND > 199
+#ACT
+  GAMEDIAMOND - 200
+GIVE	金刚石(200颗)
+SendMsg 6 [提示：成功提取金刚石(200颗)，您当前金刚石(<$GAMEDIAMOND>颗)]
+#ElSESAY
+对不起，你没有足够的金刚石！	 <返    回/@Main>\
+[@500颗金刚石]
+#IF
+  CHECKGAMEDIAMOND > 499
+#ACT
+  GAMEDIAMOND - 500
+GIVE	金刚石(500颗)
+SendMsg 6 [提示：成功提取金刚石(500颗)，您当前金刚石(<$GAMEDIAMOND>颗)]
+#ElSESAY
+对不起，你没有足够的金刚石！	 <返    回/@Main>\
+[@1000颗金刚石]
+#IF
+  CHECKGAMEDIAMOND > 999
+#ACT
+  GAMEDIAMOND - 1000
+GIVE	金刚石(1000颗)
+SendMsg 6 [提示：成功提取金刚石(1000颗)，您当前金刚石(<$GAMEDIAMOND>颗)]
+#ElSESAY
+对不起，你没有足够的金刚石！	 <返    回/@Main>\
+[@兑换灵气卷]
+欢迎您的到来\ 
+<COLOR=clLime 在我这里可以用灵气值兑换灵气值卷>\ 
+<COLOR=clLime 也可以用灵气值卷兑换灵气值！>\ \
+　　<COLOR=clFuchsia 卐—★☆→------灵气值[兑换]灵气卷------←☆★—卐>\
+<   1点灵气值[兑换]   1点灵气卷/@juan1> <  5点灵气值[兑换]  5点灵气卷/@juan5>\
+<  10点灵气值[兑换]  10点灵气卷/@juan10> < 50点灵气值[兑换] 50点灵气卷/@juan50>\
+< 100点灵气值[兑换] 100点灵气卷/@juan100> <500点灵气值[兑换]500点灵气卷/@juan500>\
+<1000点灵气值[兑换]1000点灵气卷/@juan1000>         <返    回/@Main>\
+[@juan1]
+#IF
+CHECKGAMEGIRD > 0
+#act
+GAMEGIRD - 1
+GIVE 1点灵气卷 1
+SENDMSG 6 灵气值-1，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足！
+[@juan5]
+#IF
+CHECKGAMEGIRD > 4
+#act
+GAMEGIRD - 5
+GIVE 5点灵气卷 1
+SENDMSG 6 灵气值-5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足！
+[@juan10]
+#IF
+CHECKGAMEGIRD > 9
+#act
+GAMEGIRD - 10
+GIVE 10点灵气卷 1
+SENDMSG 6 灵气值-10，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足！
+[@juan50]
+#IF
+CHECKGAMEGIRD > 49
+#act
+GAMEGIRD - 50
+GIVE 50点灵气卷 1
+SENDMSG 6 灵气值-50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足！
+[@juan100]
+#IF
+CHECKGAMEGIRD > 99
+#act
+GAMEGIRD - 100
+GIVE 100点灵气卷 1
+SENDMSG 6 灵气值-100，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足100！
+[@juan200]
+#IF
+CHECKGAMEGIRD > 199
+#act
+GAMEGIRD - 200
+GIVE 200点灵气卷 1
+SENDMSG 6 灵气值-200，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足200！
+[@juan500]
+#IF
+CHECKGAMEGIRD > 499
+#act
+GAMEGIRD - 500
+GIVE 500点灵气卷 1
+SENDMSG 6 灵气值-500，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足500！
+[@juan1000]
+#IF
+CHECKGAMEGIRD > 999
+#act
+GAMEGIRD - 1000
+GIVE 1000点灵气卷 1
+SENDMSG 6 灵气值-1000，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足1000！

@@ -1,0 +1,106 @@
+[@main]
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>  \
+<COLOR=clAqua 【签　到】>  <COLOR=clRed Hot~>             <COLOR=clFuchsia 1.80破灭网络独家星王合击！>              \
+<COLOR=clYellow ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈>  \
+♀． 你好,勇士,欢迎来到<$SERVERNAME>！ \
+♀． 全新的征程！全新的开始！看看我能帮你些什么吧！\ \
+<冲级领经验/@xxx1>           <COLOR=clRed 玩家担保交流QQ群:129929925>  \ \
+<签到赢好礼/@人物性别1>      \ 
+[@智力]
+#ACT
+#CALL [\\二级密码\密码登陆.txt] @转密码
+BREAK
+[@xxx1]
+<COLOR=clYellow -------------------------冲级领经验------------------------>\  
+<COLOR=clLime 冲级领经验可获得>\
+<COLOR=clRed 1.><COLOR=clFuchsia 45级 领取 1000万经验>          <领45级奖励/@cao1>\
+<COLOR=clRed 2.><COLOR=clFuchsia 55级 领取 8000万经验>             <领55级奖励/@cao2>\
+<COLOR=clRed 3.><COLOR=clFuchsia 60级 领取 2亿经验>             <领60级奖励/@cao3>\  \
+<COLOR=clLime  注：领奖前请准备好 聚灵珠. 那样升级更快>   \
+<COLOR=clYellow ----------------------------------------------------------->\ 
+<返回/@main>\
+[@cao1]
+#if
+CHECKLEVELEX > 44
+#act
+goto @nima
+#elsesay
+对不起您的等级未达到45级不可以领奖！\
+[@nima]
+#IF
+CHECKNAMELIST ..\QuestDiary\数据文件\45.txt
+#ACT
+MESSAGEBOX 您的等级未达到或者已经领取过!!
+BREAK
+#ELSEACT
+CHANGEEXP + 10000000
+SENDMSG 0 %d--%s，领取了45级的经验奖励.经验爆涨啊..... 49 249 
+SENDMSG 0 %d--%s，领取了45级的经验奖励.经验爆涨啊..... 49 249
+ADDNAMELIST ..\QuestDiary\数据文件\45.txt
+BREAK
+[@cao2]
+#if
+CHECKLEVELEX > 54
+#act
+goto @nima5
+#elsesay
+对不起您的等级未达到55级不可以领奖！\
+[@nima5]
+#IF
+CHECKNAMELIST ..\QuestDiary\数据文件\55.txt
+#ACT
+MESSAGEBOX 您的等级未达到或者已经领取过？？
+BREAK
+#ELSEACT
+CHANGEEXP + 80000000
+SENDMSG 0 %d--%s，领取了55级的经验奖励.经验爆涨啊..... 49 249
+SENDMSG 0 %d--%s，领取了55级的经验奖励.经验爆涨啊..... 49 249
+ADDNAMELIST ..\QuestDiary\数据文件\55.txt
+BREAK
+[@cao3]
+#if
+CHECKLEVELEX > 59
+#act
+goto @nima6
+#elsesay
+对不起您的等级未达到60级不可以领奖！\
+[@nima6]
+#IF
+CHECKNAMELIST ..\QuestDiary\数据文件\60.txt
+#ACT
+MESSAGEBOX 您的等级未达到或者已经领取过？？
+BREAK
+#ELSEACT
+CHANGEEXP + 200000000
+SENDMSG 0 %d--%s，领取了60级的经验奖励.经验爆涨啊..... 49 249
+SENDMSG 0 %d--%s，领取了60级的经验奖励.经验爆涨啊..... 49 249
+ADDNAMELIST ..\QuestDiary\数据文件\60.txt
+BREAK
+[@人物性别1]
+#if
+CHECKLEVELEX > 47
+#act
+goto @qian5
+#elsesay
+对不起您的等级未达到48级不可以签到！\
+[@qian5]
+\
+<COLOR=clYellow --------------------------每日签到-------------------------->\
+<COLOR=clLime 每天签到可获得>\
+<COLOR=clRed 1.><COLOR=clFuchsia 每天可以签到1次 天天送海量经验哦！！！>\
+<COLOR=clRed 2.><COLOR=clFuchsia 签到等级必须达到48极才可以签到>\
+<COLOR=clRed 3.><COLOR=clLime 切记签到的时候背包里放满聚灵珠[那样方便升级]>\
+<COLOR=clYellow ----------------------------------------------------------->\
+<每日签到/@xixix>       <返回/@main>\
+[@xixix]
+#IF
+CHECKNAMELIST ..\QuestDiary\数据文件\签到.txt
+#ACT
+MESSAGEBOX 你今天好像已经签到了吧？？
+BREAK
+#ELSEACT
+CHANGEEXP + 5000000
+SENDMSG 0 %d--%s，领取了今日的签到奖励!! 49 249 
+SENDMSG 0 %d--%s，领取了今日的签到奖励!! 49 249 
+ADDNAMELIST ..\QuestDiary\数据文件\签到.txt
+BREAK

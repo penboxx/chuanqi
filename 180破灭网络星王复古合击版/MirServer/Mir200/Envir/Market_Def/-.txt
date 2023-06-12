@@ -1,0 +1,1072 @@
+[@main] 
+<$USERNAME>你好,欢迎来到<$SERVERNAME>,很高兴为您服务.\
+本系统支持网上银行,财付通,支付宝,微信扫码,手机卡,各类游戏点卡.\
+充值注意:\
+<游戏登陆帐号最多可以输入10位,请不要充值10位以上的帐号./@onlinepay元宝>\
+<请在充值1分钟后在本NPC处领取/@onlinepay元宝>\
+　\
+当前充值比例为1:400元宝\
+　\
+如果你已经充值了请点击→<领取/@onlinepay元宝>┆<退出/@exit>\
+
+
+
+
+[@onlinepay元宝]
+#IF
+#ACT
+mov P0 0
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\01.txt
+#ACT
+GAMEDIAMOND + 1
+delaccountlist ..\QuestDiary\bwbest\diamond\01.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\01.txt
+#ACT
+GAMEPOINT + 0
+delaccountlist ..\QuestDiary\bwbest\gamep\01.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\01.txt
+#ACT
+GAMEGOLD + 40
+INC P0 40
+delaccountlist ..\QuestDiary\bwbest\01.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝40个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\02.txt
+#ACT
+GAMEDIAMOND + 2
+delaccountlist ..\QuestDiary\bwbest\diamond\02.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\02.txt
+#ACT
+GAMEPOINT + 0
+delaccountlist ..\QuestDiary\bwbest\gamep\02.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\02.txt
+#ACT
+GAMEGOLD + 80
+INC P0 80
+delaccountlist ..\QuestDiary\bwbest\02.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝80个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\03.txt
+#ACT
+GAMEDIAMOND + 3
+delaccountlist ..\QuestDiary\bwbest\diamond\03.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\03.txt
+#ACT
+GAMEPOINT + 0
+delaccountlist ..\QuestDiary\bwbest\gamep\03.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\03.txt
+#ACT
+GAMEGOLD + 120
+INC P0 120
+delaccountlist ..\QuestDiary\bwbest\03.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝120个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\04.txt
+#ACT
+GAMEDIAMOND + 4
+delaccountlist ..\QuestDiary\bwbest\diamond\04.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\04.txt
+#ACT
+GAMEPOINT + 0
+delaccountlist ..\QuestDiary\bwbest\gamep\04.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\04.txt
+#ACT
+GAMEGOLD + 160
+INC P0 160
+delaccountlist ..\QuestDiary\bwbest\04.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝160个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\05.txt
+#ACT
+GAMEDIAMOND + 5
+delaccountlist ..\QuestDiary\bwbest\diamond\05.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\05.txt
+#ACT
+GAMEPOINT + 1
+delaccountlist ..\QuestDiary\bwbest\gamep\05.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\05.txt
+#ACT
+GAMEGOLD + 200
+INC P0 200
+delaccountlist ..\QuestDiary\bwbest\05.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝200个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\06.txt
+#ACT
+GAMEDIAMOND + 6
+delaccountlist ..\QuestDiary\bwbest\diamond\06.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\06.txt
+#ACT
+GAMEPOINT + 1
+delaccountlist ..\QuestDiary\bwbest\gamep\06.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\06.txt
+#ACT
+GAMEGOLD + 240
+INC P0 240
+delaccountlist ..\QuestDiary\bwbest\06.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝240个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\07.txt
+#ACT
+GAMEDIAMOND + 7
+delaccountlist ..\QuestDiary\bwbest\diamond\07.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\07.txt
+#ACT
+GAMEPOINT + 1
+delaccountlist ..\QuestDiary\bwbest\gamep\07.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\07.txt
+#ACT
+GAMEGOLD + 280
+INC P0 280
+delaccountlist ..\QuestDiary\bwbest\07.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝280个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\08.txt
+#ACT
+GAMEDIAMOND + 8
+delaccountlist ..\QuestDiary\bwbest\diamond\08.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\08.txt
+#ACT
+GAMEPOINT + 1
+delaccountlist ..\QuestDiary\bwbest\gamep\08.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\08.txt
+#ACT
+GAMEGOLD + 320
+INC P0 320
+delaccountlist ..\QuestDiary\bwbest\08.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝320个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\09.txt
+#ACT
+GAMEDIAMOND + 9
+delaccountlist ..\QuestDiary\bwbest\diamond\09.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\09.txt
+#ACT
+GAMEPOINT + 1
+delaccountlist ..\QuestDiary\bwbest\gamep\09.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\09.txt
+#ACT
+GAMEGOLD + 360
+INC P0 360
+delaccountlist ..\QuestDiary\bwbest\09.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝360个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\1.txt
+#ACT
+GAMEDIAMOND + 10
+delaccountlist ..\QuestDiary\bwbest\diamond\1.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\1.txt
+#ACT
+GAMEPOINT + 1
+delaccountlist ..\QuestDiary\bwbest\gamep\1.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\1.txt
+#ACT
+GAMEGOLD + 400
+INC P0 400
+delaccountlist ..\QuestDiary\bwbest\1.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝400个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\2.txt
+#ACT
+GAMEDIAMOND + 20
+delaccountlist ..\QuestDiary\bwbest\diamond\2.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\2.txt
+#ACT
+GAMEPOINT + 2
+delaccountlist ..\QuestDiary\bwbest\gamep\2.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\2.txt
+#ACT
+GAMEGOLD + 800
+INC P0 800
+delaccountlist ..\QuestDiary\bwbest\2.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝800个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\3.txt
+#ACT
+GAMEDIAMOND + 30
+delaccountlist ..\QuestDiary\bwbest\diamond\3.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\3.txt
+#ACT
+GAMEPOINT + 3
+delaccountlist ..\QuestDiary\bwbest\gamep\3.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\3.txt
+#ACT
+GAMEGOLD + 1200
+INC P0 1200
+delaccountlist ..\QuestDiary\bwbest\3.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝1200个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\4.txt
+#ACT
+GAMEDIAMOND + 40
+delaccountlist ..\QuestDiary\bwbest\diamond\4.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\4.txt
+#ACT
+GAMEPOINT + 4
+delaccountlist ..\QuestDiary\bwbest\gamep\4.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\4.txt
+#ACT
+GAMEGOLD + 1600
+INC P0 1600
+delaccountlist ..\QuestDiary\bwbest\4.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝1600个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\5.txt
+#ACT
+GAMEDIAMOND + 50
+delaccountlist ..\QuestDiary\bwbest\diamond\5.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\5.txt
+#ACT
+GAMEPOINT + 5
+delaccountlist ..\QuestDiary\bwbest\gamep\5.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\5.txt
+#ACT
+GAMEGOLD + 2000
+INC P0 2000
+delaccountlist ..\QuestDiary\bwbest\5.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝2000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\6.txt
+#ACT
+GAMEDIAMOND + 60
+delaccountlist ..\QuestDiary\bwbest\diamond\6.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\6.txt
+#ACT
+GAMEPOINT + 6
+delaccountlist ..\QuestDiary\bwbest\gamep\6.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\6.txt
+#ACT
+GAMEGOLD + 2400
+INC P0 2400
+delaccountlist ..\QuestDiary\bwbest\6.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝2400个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\7.txt
+#ACT
+GAMEDIAMOND + 70
+delaccountlist ..\QuestDiary\bwbest\diamond\7.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\7.txt
+#ACT
+GAMEPOINT + 7
+delaccountlist ..\QuestDiary\bwbest\gamep\7.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\7.txt
+#ACT
+GAMEGOLD + 2800
+INC P0 2800
+delaccountlist ..\QuestDiary\bwbest\7.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝2800个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\8.txt
+#ACT
+GAMEDIAMOND + 80
+delaccountlist ..\QuestDiary\bwbest\diamond\8.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\8.txt
+#ACT
+GAMEPOINT + 8
+delaccountlist ..\QuestDiary\bwbest\gamep\8.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\8.txt
+#ACT
+GAMEGOLD + 3200
+INC P0 3200
+delaccountlist ..\QuestDiary\bwbest\8.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝3200个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\9.txt
+#ACT
+GAMEDIAMOND + 90
+delaccountlist ..\QuestDiary\bwbest\diamond\9.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\9.txt
+#ACT
+GAMEPOINT + 9
+delaccountlist ..\QuestDiary\bwbest\gamep\9.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\9.txt
+#ACT
+GAMEGOLD + 3600
+INC P0 3600
+delaccountlist ..\QuestDiary\bwbest\9.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝3600个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\10.txt
+#ACT
+GAMEDIAMOND + 100
+delaccountlist ..\QuestDiary\bwbest\diamond\10.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\10.txt
+#ACT
+GAMEPOINT + 10
+delaccountlist ..\QuestDiary\bwbest\gamep\10.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\10.txt
+#ACT
+GAMEGOLD + 4000
+INC P0 4000
+delaccountlist ..\QuestDiary\bwbest\10.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝4000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\20.txt
+#ACT
+GAMEDIAMOND + 200
+delaccountlist ..\QuestDiary\bwbest\diamond\20.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\20.txt
+#ACT
+GAMEPOINT + 20
+delaccountlist ..\QuestDiary\bwbest\gamep\20.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\20.txt
+#ACT
+GAMEGOLD + 8000
+INC P0 8000
+delaccountlist ..\QuestDiary\bwbest\20.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝8000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\30.txt
+#ACT
+GAMEDIAMOND + 300
+delaccountlist ..\QuestDiary\bwbest\diamond\30.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\30.txt
+#ACT
+GAMEPOINT + 30
+delaccountlist ..\QuestDiary\bwbest\gamep\30.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\30.txt
+#ACT
+GAMEGOLD + 12000
+INC P0 12000
+delaccountlist ..\QuestDiary\bwbest\30.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝12000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\40.txt
+#ACT
+GAMEDIAMOND + 400
+delaccountlist ..\QuestDiary\bwbest\diamond\40.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\40.txt
+#ACT
+GAMEPOINT + 40
+delaccountlist ..\QuestDiary\bwbest\gamep\40.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\40.txt
+#ACT
+GAMEGOLD + 16000
+INC P0 16000
+delaccountlist ..\QuestDiary\bwbest\40.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝16000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\50.txt
+#ACT
+GAMEDIAMOND + 500
+delaccountlist ..\QuestDiary\bwbest\diamond\50.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\50.txt
+#ACT
+GAMEPOINT + 50
+delaccountlist ..\QuestDiary\bwbest\gamep\50.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\50.txt
+#ACT
+GAMEGOLD + 20000
+INC P0 20000
+delaccountlist ..\QuestDiary\bwbest\50.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝20000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\60.txt
+#ACT
+GAMEDIAMOND + 600
+delaccountlist ..\QuestDiary\bwbest\diamond\60.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\60.txt
+#ACT
+GAMEPOINT + 60
+delaccountlist ..\QuestDiary\bwbest\gamep\60.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\60.txt
+#ACT
+GAMEGOLD + 24000
+INC P0 24000
+delaccountlist ..\QuestDiary\bwbest\60.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝24000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\70.txt
+#ACT
+GAMEDIAMOND + 700
+delaccountlist ..\QuestDiary\bwbest\diamond\70.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\70.txt
+#ACT
+GAMEPOINT + 70
+delaccountlist ..\QuestDiary\bwbest\gamep\70.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\70.txt
+#ACT
+GAMEGOLD + 28000
+INC P0 28000
+delaccountlist ..\QuestDiary\bwbest\70.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝28000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\80.txt
+#ACT
+GAMEDIAMOND + 800
+delaccountlist ..\QuestDiary\bwbest\diamond\80.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\80.txt
+#ACT
+GAMEPOINT + 80
+delaccountlist ..\QuestDiary\bwbest\gamep\80.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\80.txt
+#ACT
+GAMEGOLD + 32000
+INC P0 32000
+delaccountlist ..\QuestDiary\bwbest\80.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝32000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\90.txt
+#ACT
+GAMEDIAMOND + 900
+delaccountlist ..\QuestDiary\bwbest\diamond\90.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\90.txt
+#ACT
+GAMEPOINT + 90
+delaccountlist ..\QuestDiary\bwbest\gamep\90.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\90.txt
+#ACT
+GAMEGOLD + 36000
+INC P0 36000
+delaccountlist ..\QuestDiary\bwbest\90.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝36000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\100.txt
+#ACT
+GAMEDIAMOND + 1000
+delaccountlist ..\QuestDiary\bwbest\diamond\100.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\100.txt
+#ACT
+GAMEPOINT + 100
+delaccountlist ..\QuestDiary\bwbest\gamep\100.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\100.txt
+#ACT
+GAMEGOLD + 40000
+INC P0 40000
+delaccountlist ..\QuestDiary\bwbest\100.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝40000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\200.txt
+#ACT
+GAMEDIAMOND + 2000
+delaccountlist ..\QuestDiary\bwbest\diamond\200.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\200.txt
+#ACT
+GAMEPOINT + 200
+delaccountlist ..\QuestDiary\bwbest\gamep\200.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\200.txt
+#ACT
+GAMEGOLD + 80000
+INC P0 80000
+delaccountlist ..\QuestDiary\bwbest\200.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝80000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\300.txt
+#ACT
+GAMEDIAMOND + 3000
+delaccountlist ..\QuestDiary\bwbest\diamond\300.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\300.txt
+#ACT
+GAMEPOINT + 300
+delaccountlist ..\QuestDiary\bwbest\gamep\300.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\300.txt
+#ACT
+GAMEGOLD + 120000
+INC P0 120000
+delaccountlist ..\QuestDiary\bwbest\300.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝120000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\400.txt
+#ACT
+GAMEDIAMOND + 4000
+delaccountlist ..\QuestDiary\bwbest\diamond\400.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\400.txt
+#ACT
+GAMEPOINT + 400
+delaccountlist ..\QuestDiary\bwbest\gamep\400.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\400.txt
+#ACT
+GAMEGOLD + 160000
+INC P0 160000
+delaccountlist ..\QuestDiary\bwbest\400.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝160000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\500.txt
+#ACT
+GAMEDIAMOND + 5000
+delaccountlist ..\QuestDiary\bwbest\diamond\500.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\500.txt
+#ACT
+GAMEPOINT + 500
+delaccountlist ..\QuestDiary\bwbest\gamep\500.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\500.txt
+#ACT
+GAMEGOLD + 200000
+INC P0 200000
+delaccountlist ..\QuestDiary\bwbest\500.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝200000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\600.txt
+#ACT
+GAMEDIAMOND + 6000
+delaccountlist ..\QuestDiary\bwbest\diamond\600.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\600.txt
+#ACT
+GAMEPOINT + 600
+delaccountlist ..\QuestDiary\bwbest\gamep\600.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\600.txt
+#ACT
+GAMEGOLD + 240000
+INC P0 240000
+delaccountlist ..\QuestDiary\bwbest\600.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝240000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\700.txt
+#ACT
+GAMEDIAMOND + 7000
+delaccountlist ..\QuestDiary\bwbest\diamond\700.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\700.txt
+#ACT
+GAMEPOINT + 700
+delaccountlist ..\QuestDiary\bwbest\gamep\700.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\700.txt
+#ACT
+GAMEGOLD + 280000
+INC P0 280000
+delaccountlist ..\QuestDiary\bwbest\700.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝280000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\800.txt
+#ACT
+GAMEDIAMOND + 8000
+delaccountlist ..\QuestDiary\bwbest\diamond\800.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\800.txt
+#ACT
+GAMEPOINT + 800
+delaccountlist ..\QuestDiary\bwbest\gamep\800.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\800.txt
+#ACT
+GAMEGOLD + 320000
+INC P0 320000
+delaccountlist ..\QuestDiary\bwbest\800.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝320000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\900.txt
+#ACT
+GAMEDIAMOND + 9000
+delaccountlist ..\QuestDiary\bwbest\diamond\900.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\900.txt
+#ACT
+GAMEPOINT + 900
+delaccountlist ..\QuestDiary\bwbest\gamep\900.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\900.txt
+#ACT
+GAMEGOLD + 360000
+INC P0 360000
+delaccountlist ..\QuestDiary\bwbest\900.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝360000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\1000.txt
+#ACT
+GAMEDIAMOND + 10000
+delaccountlist ..\QuestDiary\bwbest\diamond\1000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\1000.txt
+#ACT
+GAMEPOINT + 1000
+delaccountlist ..\QuestDiary\bwbest\gamep\1000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\1000.txt
+#ACT
+GAMEGOLD + 400000
+INC P0 400000
+delaccountlist ..\QuestDiary\bwbest\1000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝400000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\2000.txt
+#ACT
+GAMEDIAMOND + 20000
+delaccountlist ..\QuestDiary\bwbest\diamond\2000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\2000.txt
+#ACT
+GAMEPOINT + 2000
+delaccountlist ..\QuestDiary\bwbest\gamep\2000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\2000.txt
+#ACT
+GAMEGOLD + 800000
+INC P0 800000
+delaccountlist ..\QuestDiary\bwbest\2000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝800000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\3000.txt
+#ACT
+GAMEDIAMOND + 30000
+delaccountlist ..\QuestDiary\bwbest\diamond\3000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\3000.txt
+#ACT
+GAMEPOINT + 3000
+delaccountlist ..\QuestDiary\bwbest\gamep\3000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\3000.txt
+#ACT
+GAMEGOLD + 1200000
+INC P0 1200000
+delaccountlist ..\QuestDiary\bwbest\3000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝1200000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\4000.txt
+#ACT
+GAMEDIAMOND + 40000
+delaccountlist ..\QuestDiary\bwbest\diamond\4000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\4000.txt
+#ACT
+GAMEPOINT + 4000
+delaccountlist ..\QuestDiary\bwbest\gamep\4000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\4000.txt
+#ACT
+GAMEGOLD + 1600000
+INC P0 1600000
+delaccountlist ..\QuestDiary\bwbest\4000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝1600000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\5000.txt
+#ACT
+GAMEDIAMOND + 50000
+delaccountlist ..\QuestDiary\bwbest\diamond\5000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\5000.txt
+#ACT
+GAMEPOINT + 5000
+delaccountlist ..\QuestDiary\bwbest\gamep\5000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\5000.txt
+#ACT
+GAMEGOLD + 2000000
+INC P0 2000000
+delaccountlist ..\QuestDiary\bwbest\5000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝2000000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\6000.txt
+#ACT
+GAMEDIAMOND + 60000
+delaccountlist ..\QuestDiary\bwbest\diamond\6000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\6000.txt
+#ACT
+GAMEPOINT + 6000
+delaccountlist ..\QuestDiary\bwbest\gamep\6000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\6000.txt
+#ACT
+GAMEGOLD + 2400000
+INC P0 2400000
+delaccountlist ..\QuestDiary\bwbest\6000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝2400000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\7000.txt
+#ACT
+GAMEDIAMOND + 70000
+delaccountlist ..\QuestDiary\bwbest\diamond\7000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\7000.txt
+#ACT
+GAMEPOINT + 7000
+delaccountlist ..\QuestDiary\bwbest\gamep\7000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\7000.txt
+#ACT
+GAMEGOLD + 2800000
+INC P0 2800000
+delaccountlist ..\QuestDiary\bwbest\7000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝2800000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\8000.txt
+#ACT
+GAMEDIAMOND + 80000
+delaccountlist ..\QuestDiary\bwbest\diamond\8000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\8000.txt
+#ACT
+GAMEPOINT + 8000
+delaccountlist ..\QuestDiary\bwbest\gamep\8000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\8000.txt
+#ACT
+GAMEGOLD + 3200000
+INC P0 3200000
+delaccountlist ..\QuestDiary\bwbest\8000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝3200000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\9000.txt
+#ACT
+GAMEDIAMOND + 90000
+delaccountlist ..\QuestDiary\bwbest\diamond\9000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\9000.txt
+#ACT
+GAMEPOINT + 9000
+delaccountlist ..\QuestDiary\bwbest\gamep\9000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\9000.txt
+#ACT
+GAMEGOLD + 3600000
+INC P0 3600000
+delaccountlist ..\QuestDiary\bwbest\9000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝3600000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\10000.txt
+#ACT
+GAMEDIAMOND + 100000
+delaccountlist ..\QuestDiary\bwbest\diamond\10000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\10000.txt
+#ACT
+GAMEPOINT + 10000
+delaccountlist ..\QuestDiary\bwbest\gamep\10000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\10000.txt
+#ACT
+GAMEGOLD + 4000000
+INC P0 4000000
+delaccountlist ..\QuestDiary\bwbest\10000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝4000000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\20000.txt
+#ACT
+GAMEDIAMOND + 200000
+delaccountlist ..\QuestDiary\bwbest\diamond\20000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\20000.txt
+#ACT
+GAMEPOINT + 20000
+delaccountlist ..\QuestDiary\bwbest\gamep\20000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\20000.txt
+#ACT
+GAMEGOLD + 8000000
+INC P0 8000000
+delaccountlist ..\QuestDiary\bwbest\20000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝8000000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\30000.txt
+#ACT
+GAMEDIAMOND + 300000
+delaccountlist ..\QuestDiary\bwbest\diamond\30000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\30000.txt
+#ACT
+GAMEPOINT + 30000
+delaccountlist ..\QuestDiary\bwbest\gamep\30000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\30000.txt
+#ACT
+GAMEGOLD + 12000000
+INC P0 12000000
+delaccountlist ..\QuestDiary\bwbest\30000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝12000000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\40000.txt
+#ACT
+GAMEDIAMOND + 400000
+delaccountlist ..\QuestDiary\bwbest\diamond\40000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\40000.txt
+#ACT
+GAMEPOINT + 40000
+delaccountlist ..\QuestDiary\bwbest\gamep\40000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\40000.txt
+#ACT
+GAMEGOLD + 16000000
+INC P0 16000000
+delaccountlist ..\QuestDiary\bwbest\40000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝16000000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\50000.txt
+#ACT
+GAMEDIAMOND + 500000
+delaccountlist ..\QuestDiary\bwbest\diamond\50000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\50000.txt
+#ACT
+GAMEPOINT + 50000
+delaccountlist ..\QuestDiary\bwbest\gamep\50000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\50000.txt
+#ACT
+GAMEGOLD + 20000000
+INC P0 20000000
+delaccountlist ..\QuestDiary\bwbest\50000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝20000000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\60000.txt
+#ACT
+GAMEDIAMOND + 600000
+delaccountlist ..\QuestDiary\bwbest\diamond\60000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\60000.txt
+#ACT
+GAMEPOINT + 60000
+delaccountlist ..\QuestDiary\bwbest\gamep\60000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\60000.txt
+#ACT
+GAMEGOLD + 24000000
+INC P0 24000000
+delaccountlist ..\QuestDiary\bwbest\60000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝24000000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\70000.txt
+#ACT
+GAMEDIAMOND + 700000
+delaccountlist ..\QuestDiary\bwbest\diamond\70000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\70000.txt
+#ACT
+GAMEPOINT + 70000
+delaccountlist ..\QuestDiary\bwbest\gamep\70000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\70000.txt
+#ACT
+GAMEGOLD + 28000000
+INC P0 28000000
+delaccountlist ..\QuestDiary\bwbest\70000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝28000000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\80000.txt
+#ACT
+GAMEDIAMOND + 800000
+delaccountlist ..\QuestDiary\bwbest\diamond\80000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\80000.txt
+#ACT
+GAMEPOINT + 80000
+delaccountlist ..\QuestDiary\bwbest\gamep\80000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\80000.txt
+#ACT
+GAMEGOLD + 32000000
+INC P0 32000000
+delaccountlist ..\QuestDiary\bwbest\80000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝32000000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\90000.txt
+#ACT
+GAMEDIAMOND + 900000
+delaccountlist ..\QuestDiary\bwbest\diamond\90000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\90000.txt
+#ACT
+GAMEPOINT + 90000
+delaccountlist ..\QuestDiary\bwbest\gamep\90000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\90000.txt
+#ACT
+GAMEGOLD + 36000000
+INC P0 36000000
+delaccountlist ..\QuestDiary\bwbest\90000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝36000000个，如果您也想获得，请赶快充值吧！
+
+#IF
+checkaccountlist ..\QuestDiary\bwbest\diamond\100000.txt
+#ACT
+GAMEDIAMOND + 1000000
+delaccountlist ..\QuestDiary\bwbest\diamond\100000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\gamep\100000.txt
+#ACT
+GAMEPOINT + 100000
+delaccountlist ..\QuestDiary\bwbest\gamep\100000.txt
+#IF
+checkaccountlist ..\QuestDiary\bwbest\100000.txt
+#ACT
+GAMEGOLD + 40000000
+INC P0 40000000
+delaccountlist ..\QuestDiary\bwbest\100000.txt
+
+SENDMSG 1 ★[%s]:恭喜玩家<$USERNAME>通过多渠道兑换平台，充值获得元宝40000000个，如果您也想获得，请赶快充值吧！
+
+#IF
+large P0 0
+#ACT
+messagebox 恭喜您成功领取<$str(P0)>个元宝。
+mov P0 0
+#ELSESAY
+您当前还没有充值或已领取成功,请查看自己的游戏货币数量!\
+<返回/@main>

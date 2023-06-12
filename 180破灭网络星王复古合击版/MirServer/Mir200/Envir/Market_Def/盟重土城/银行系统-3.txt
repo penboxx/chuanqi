@@ -1,0 +1,4 @@
+(@@InPutString @@InPutInteger)
+[@Main]
+#Act
+#CALL [\\系统功能\银行系统.txt] @银行系统

@@ -1,0 +1,2470 @@
+[@main]
+
+这里可以回收，升级荣誉勋章,只要有相对应的荣誉勋章,\
+等级越高的勋章需要越多的声望值。各级勋章所需条件如下：\ \
+
+<我要回收勋章!/@回收勋章>                             <升级黄金勋章!/@升级勋章>\
+<我要回收斗笠!/@回收斗笠>                             <升级黄金斗笠!/@升级斗笠>\
+<我要回收蒙面!/@回收蒙面1>                             <升级黄金蒙面!/@升级蒙面>\ \
+<查询声望点数/@查询声望>                             <前去庄园购买材料/@庄园购买>\
+<打扰了！!/@EXIT>
+
+[@查询声望]
+#IF
+#ACT
+MESSAGEBOX  您当前的声望值:<$CREDITPOINT>
+BREAK
+[@庄园购买]
+#IF
+#ACT
+MAPMOVE GA0 120 123
+BREAK
+
+
+[@升级勋章]
+每次升级勋章都会收走你包裹内的所有原料,请保管好重要物品。\
+每次升级必备5种材料<COLOR=clLime :祈福项链,勋章之心,绿宝石矿,紫水晶矿>\
+黄金勋章升级失败不破碎！升级几率为：+1=60%、+2=50%、+3=40%、+4=30%\
+属性类型     勋章编号    可成功升级次数  成功升级后的最高属性\ 
+
+<升级攻击/@勋章攻击>     黄金勋章       4次             2 - 10\
+<升级魔法/@勋章魔法>     黄金勋章       4次             2 - 10\
+<升级道术/@勋章道术>     黄金勋章       4次             2 - 10\ \
+<返回上页/@MAIN>
+
+
+[@勋章攻击]
+#IF
+CHECKITEMW 黄金勋章
+#ACT
+goto @升黄金勋章攻击
+break
+#ELSESAY
+你没有佩戴好啊     <返回/@MAIN>\
+
+
+
+[@升黄金勋章攻击]
+#IF
+CHECKITEMADDVALUE 2 2 > 3
+#ACT
+break
+#SAY
+此黄金勋章攻击已经升为最高级，无法再进行升级了。   <返回/@MAIN>\
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金勋章攻击升级失败了。   <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 2
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金勋章攻击升级失败了。   <返回/@MAIN>\
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 2 2 0 1 0
+#SAY
+祝贺你，你的黄金勋章攻击升级成功了！     <返回/@MAIN>\
+#ACT
+SENDMSG 6 恭喜：你的[黄金勋章]成功升级：+1点攻击！！
+MESSAGEBOX 恭喜：你的[黄金勋章]成功升级：+1点攻击！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[黄金勋章]+1点攻击
+#ELSESAY
+升级所需的材料不足！     <返回/@MAIN>\
+
+[@勋章魔法]
+#IF
+CHECKITEMW 黄金勋章
+#ACT
+goto @升黄金勋章魔法
+break
+#ELSESAY
+你没有佩戴好啊     <返回/@MAIN>\
+
+
+[@升黄金勋章魔法]
+#IF
+CHECKITEMADDVALUE 2 3 > 3
+#ACT
+break
+#SAY
+此黄金勋章魔法已经升为最高级，无法再进行升级了。   <返回/@MAIN>\
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金勋章魔法升级失败了。   <返回/@MAIN>\
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 2
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金勋章魔法升级失败了。   <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 2 3 0 1 0
+#SAY
+祝贺你，你的黄金勋章魔法升级成功了！     <返回/@MAIN>\
+#ACT
+SENDMSG 6 恭喜：你的[黄金勋章]成功升级：+1点魔法！！
+MESSAGEBOX 恭喜：你的[黄金勋章]成功升级：+1点魔法！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[黄金勋章]+1点魔法
+
+#ELSESAY
+升级所需的材料不足！     <返回/@MAIN>\
+
+
+
+[@勋章道术]
+#IF
+CHECKITEMW 黄金勋章
+#ACT
+goto @升黄金勋章道术
+break
+#ELSESAY
+你没有佩戴好啊     <返回/@MAIN>\
+
+
+
+[@升黄金勋章道术]
+#IF
+CHECKITEMADDVALUE 2 4 > 3
+#ACT
+break
+#SAY
+此黄金勋章道术已经升为最高级，无法再进行升级了。   <返回/@MAIN>\
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金勋章道术升级失败了。   <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 2
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金勋章道术升级失败了。   <返回/@MAIN>\
+
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 2 4 0 1 0
+#SAY
+祝贺你，你的黄金勋章道术升级成功了！     <返回/@MAIN>\
+#ACT
+SENDMSG 6 恭喜：你的[黄金勋章]成功升级：+1点道术！！
+MESSAGEBOX 恭喜：你的[黄金勋章]成功升级：+1点道术！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[黄金勋章]+1点道术
+#ELSESAY
+升级所需的材料不足！     <返回/@MAIN>\
+
+
+[@升级蒙面]
+每次升级蒙面都会收走你包裹内的所有原料,请保管好重要物品。\
+每次升级必备5种材料<COLOR=clLime :祈福项链,勋章之心,绿宝石矿,紫水晶矿>\
+黄金蒙面升级失败不破碎！升级几率为：+1=60%、+2=50%、+3=40%、+4=30%\
+属性类型     蒙面编号    可成功升级次数  成功升级后的最高属性\
+<升级防御/@蒙面防御>     黄金蒙面       3次             0 - 5\
+<升级魔御/@蒙面魔御>     黄金蒙面       3次             0 - 5\
+<升级攻击/@蒙面攻击>     黄金蒙面       4次             2 - 8\
+<升级魔法/@蒙面魔法>     黄金蒙面       4次             2 - 8\
+<升级道术/@蒙面道术>     黄金蒙面       4次             2 - 8\
+<返回上页/@MAIN>
+
+
+[@蒙面防御]
+#IF
+CHECKITEMW 黄金蒙面
+#ACT
+goto @升黄金蒙面
+break
+#ELSESAY
+你没有佩戴好啊     <返回/@MAIN>\
+
+[@升黄金蒙面]
+#IF
+CHECKITEMADDVALUE 13 0 > 2
+#ACT
+break
+#SAY
+此黄金蒙面防御已经升为最高级，无法再进行升级了。     <返回/@MAIN>\
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金蒙面防御升级失败了。     <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 2
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金蒙面防御升级失败了。     <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 0 0 1 0
+#SAY
+祝贺你，你的黄金蒙面防御升级成功了！     <返回/@MAIN>\
+#ACT
+SENDMSG 6 恭喜：你的[黄金蒙面]成功升级：+1点防御！！
+MESSAGEBOX 恭喜：你的[黄金蒙面]成功升级：+1点防御！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[黄金蒙面]+1点防御
+#ELSESAY
+升级所需的材料不足！
+
+
+[@蒙面魔御]
+#IF
+CHECKITEMW 黄金蒙面
+#ACT
+goto @升黄金蒙面魔御
+break
+#ELSESAY
+你没有佩戴好啊     <返回/@MAIN>\
+
+[@升黄金蒙面魔御]
+#IF
+CHECKITEMADDVALUE 13 1 > 2
+#ACT
+break
+#SAY
+此黄金蒙面魔御已经升为最高级，无法再进行升级了。     <返回/@MAIN>\
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金蒙面魔御升级失败了。     <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 2
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金蒙面魔御升级失败了。     <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 1 0 1 0
+#SAY
+祝贺你，你的黄金蒙面魔御升级成功了！     <返回/@MAIN>\
+#ACT
+SENDMSG 6 恭喜：你的[黄金蒙面]成功升级：+1点魔御！！
+MESSAGEBOX 恭喜：你的[黄金蒙面]成功升级：+1点魔御！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[黄金蒙面]+1点魔御
+#ELSESAY
+升级所需的材料不足！
+
+
+[@蒙面攻击]
+#IF
+CHECKITEMW 黄金蒙面
+#ACT
+goto @升黄金蒙面攻击
+break
+#ELSESAY
+你没有佩戴好啊     <返回/@MAIN>\
+
+[@升黄金蒙面攻击]
+#IF
+CHECKITEMADDVALUE 13 2 > 3
+#ACT
+break
+#SAY
+此黄金蒙面攻击已经升为最高级，无法再进行升级了。     <返回/@MAIN>\
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金蒙面攻击升级失败了。     <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 2
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金蒙面攻击升级失败了。     <返回/@MAIN>\
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 2 0 1 0
+#SAY
+祝贺你，你的黄金蒙面攻击升级成功了！     <返回/@MAIN>\
+#ACT
+SENDMSG 6 恭喜：你的[黄金蒙面]成功升级：+1点攻击！！
+MESSAGEBOX 恭喜：你的[黄金蒙面]成功升级：+1点攻击！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[黄金蒙面]+1点攻击
+#ELSESAY
+升级所需的材料不足！
+
+[@蒙面魔法]
+#IF
+CHECKITEMW 黄金蒙面
+#ACT
+goto @升黄金蒙面魔法
+break
+#ELSESAY
+你没有佩戴好啊     <返回/@MAIN>\
+
+[@升黄金蒙面魔法]
+#IF
+CHECKITEMADDVALUE 13 3 > 3
+#ACT
+break
+#SAY
+此黄金蒙面魔法已经升为最高级，无法再进行升级了。     <返回/@MAIN>\
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金蒙面魔法升级失败了。     <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 2
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金蒙面魔法升级失败了。     <返回/@MAIN>\
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 3 0 1 0
+#SAY
+祝贺你，你的黄金蒙面魔法升级成功了！     <返回/@MAIN>\
+#ACT
+SENDMSG 6 恭喜：你的[黄金蒙面]成功升级：+1点魔法！！
+MESSAGEBOX 恭喜：你的[黄金蒙面]成功升级：+1点魔法！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[黄金蒙面]+1点魔法
+#ELSESAY
+升级所需的材料不足！
+
+
+
+[@蒙面道术]
+#IF
+CHECKITEMW 黄金蒙面
+#ACT
+goto @升黄金蒙面道术
+break
+#ELSESAY
+你没有佩戴好啊     <返回/@MAIN>\
+
+[@升黄金蒙面道术]
+#IF
+CHECKITEMADDVALUE 13 4 > 3
+#ACT
+break
+#SAY
+此黄金蒙面道术已经升为最高级，无法再进行升级了。     <返回/@MAIN>\
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金蒙面道术升级失败了。     <返回/@MAIN>\
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 2
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金蒙面道术升级失败了。     <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 4 0 1 0
+#SAY
+祝贺你，你的黄金蒙面道术升级成功了！     <返回/@MAIN>\
+#ACT
+SENDMSG 6 恭喜：你的[黄金蒙面]成功升级：+1点道术！！
+MESSAGEBOX 恭喜：你的[黄金蒙面]成功升级：+1点道术！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[黄金蒙面]+1点道术
+#ELSESAY
+升级所需的材料不足！
+
+
+
+[@升级斗笠]
+每次升级斗笠都会收走你包裹内的所有原料,请保管好重要物品。\
+每次升级必备5种材料<COLOR=clLime :祈福项链,勋章之心,绿宝石矿,紫水晶矿>\
+黄金斗笠升级失败不破碎！升级几率为：+1=60%、+2=50%、+3=40%、+4=30%\
+属性类型     斗笠编号    可成功升级次数  成功升级后的最高属性\
+<升级防御/@斗笠防御>     黄金斗笠       3次             0 - 5\
+<升级魔御/@斗笠魔御>     黄金斗笠       3次             0 - 5\
+<升级攻击/@斗笠攻击>     黄金斗笠       4次             2 - 8\
+<升级魔法/@斗笠魔法>     黄金斗笠       4次             2 - 8\
+<升级道术/@斗笠道术>     黄金斗笠       4次             2 - 8\
+<返回上页/@MAIN>
+
+
+[@斗笠防御]
+#IF
+CHECKITEMW 黄金斗笠
+#ACT
+goto @升黄金斗笠
+break
+#ELSESAY
+你没有佩戴好啊     <返回/@MAIN>\
+
+[@升黄金斗笠]
+#IF
+CHECKITEMADDVALUE 13 0 > 2
+#ACT
+break
+#SAY
+此黄金斗笠防御已经升为最高级，无法再进行升级了。     <返回/@MAIN>\
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金斗笠防御升级失败了。     <返回/@MAIN>\
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 2
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金斗笠防御升级失败了。     <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 0 0 1 0
+#SAY
+祝贺你，你的黄金斗笠防御升级成功了！     <返回/@MAIN>\
+#ACT
+SENDMSG 6 恭喜：你的[黄金斗笠]成功升级：+1点防御！！
+MESSAGEBOX 恭喜：你的[黄金斗笠]成功升级：+1点防御！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[黄金斗笠]+1点防御
+#ELSESAY
+升级所需的材料不足！
+
+
+[@斗笠魔御]
+#IF
+CHECKITEMW 黄金斗笠
+#ACT
+goto @升黄金斗笠魔御
+break
+#ELSESAY
+你没有佩戴好啊     <返回/@MAIN>\
+
+[@升黄金斗笠魔御]
+#IF
+CHECKITEMADDVALUE 13 1 > 2
+#ACT
+break
+#SAY
+此黄金斗笠魔御已经升为最高级，无法再进行升级了。     <返回/@MAIN>\
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金斗笠魔御升级失败了。     <返回/@MAIN>\
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 2
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金斗笠魔御升级失败了。     <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 1 0 1 0
+#SAY
+祝贺你，你的黄金斗笠魔御升级成功了！     <返回/@MAIN>\
+#ACT
+SENDMSG 6 恭喜：你的[黄金斗笠]成功升级：+1点魔御！！
+MESSAGEBOX 恭喜：你的[黄金斗笠]成功升级：+1点魔御！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[黄金斗笠]+1点魔御
+#ELSESAY
+升级所需的材料不足！
+
+
+[@斗笠攻击]
+#IF
+CHECKITEMW 黄金斗笠
+#ACT
+goto @升黄金斗笠攻击
+break
+#ELSESAY
+你没有佩戴好啊     <返回/@MAIN>\
+
+[@升黄金斗笠攻击]
+#IF
+CHECKITEMADDVALUE 13 2 > 3
+#ACT
+break
+#SAY
+此黄金斗笠攻击已经升为最高级，无法再进行升级了。     <返回/@MAIN>\
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金斗笠攻击升级失败了。     <返回/@MAIN>\
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 2
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金斗笠攻击升级失败了。     <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 2 0 1 0
+#SAY
+祝贺你，你的黄金斗笠攻击升级成功了！     <返回/@MAIN>\
+#ACT
+SENDMSG 6 恭喜：你的[黄金斗笠]成功升级：+1点攻击！！
+MESSAGEBOX 恭喜：你的[黄金斗笠]成功升级：+1点攻击！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[黄金斗笠]+1点攻击
+#ELSESAY
+升级所需的材料不足！
+
+[@斗笠魔法]
+#IF
+CHECKITEMW 黄金斗笠
+#ACT
+goto @升黄金斗笠魔法
+break
+#ELSESAY
+你没有佩戴好啊     <返回/@MAIN>\
+
+[@升黄金斗笠魔法]
+#IF
+CHECKITEMADDVALUE 13 3 > 3
+#ACT
+break
+#SAY
+此黄金斗笠魔法已经升为最高级，无法再进行升级了。     <返回/@MAIN>\
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金斗笠魔法升级失败了。     <返回/@MAIN>\
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 2
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金斗笠魔法升级失败了。     <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 3 0 1 0
+#SAY
+祝贺你，你的黄金斗笠魔法升级成功了！     <返回/@MAIN>\
+#ACT
+SENDMSG 6 恭喜：你的[黄金斗笠]成功升级：+1点魔法！！
+MESSAGEBOX 恭喜：你的[黄金斗笠]成功升级：+1点魔法！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[黄金斗笠]+1点魔法
+#ELSESAY
+升级所需的材料不足！
+
+
+
+[@斗笠道术]
+#IF
+CHECKITEMW 黄金斗笠
+#ACT
+goto @升黄金斗笠道术
+break
+#ELSESAY
+你没有佩戴好啊     <返回/@MAIN>\
+
+[@升黄金斗笠道术]
+#IF
+CHECKITEMADDVALUE 13 4 > 3
+#ACT
+break
+#SAY
+此黄金斗笠道术已经升为最高级，无法再进行升级了。     <返回/@MAIN>\
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金斗笠道术升级失败了。     <返回/@MAIN>\
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 2
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的黄金斗笠道术升级失败了。     <返回/@MAIN>\
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 4 0 1 0
+#SAY
+祝贺你，你的黄金斗笠道术升级成功了！     <返回/@MAIN>\
+#ACT
+SENDMSG 6 恭喜：你的[黄金斗笠]成功升级：+1点道术！！
+MESSAGEBOX 恭喜：你的[黄金斗笠]成功升级：+1点道术！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[黄金斗笠]+1点道术
+#ELSESAY
+升级所需的材料不足！
+
+
+
+
+
+
+[@133331]
+#IF
+#ACT
+mapmove GA01 120 123
+BREAK
+
+[@回收勋章]
+这里你可以回收多余的荣誉勋章，<查询声望/@查询声望>\
+当然，回收价格得看我的心情了。  \
+<荣誉勋章11号/@荣誉勋章11号A>    <荣誉勋章21号/@荣誉勋章21号A>    <荣誉勋章31号/@荣誉勋章31号A>    <荣誉勋
+章41号/@荣誉勋章41号A>\
+<荣誉勋章12号/@荣誉勋章12号A>    <荣誉勋章22号/@荣誉勋章22号A>    <荣誉勋章32号/@荣誉勋章32号A>    <荣誉勋
+章42号/@荣誉勋章42号A>\
+<荣誉勋章13号/@荣誉勋章13号A>    <荣誉勋章23号/@荣誉勋章23号A>    <荣誉勋章33号/@荣誉勋章33号A>    <荣誉勋
+章43号/@荣誉勋章43号A>\
+<荣誉勋章14号/@荣誉勋章14号A>    <荣誉勋章24号/@荣誉勋章24号A>    <荣誉勋章34号/@荣誉勋章34号A>    <荣誉勋
+章44号/@荣誉勋章44号A>\
+<荣誉勋章15号/@荣誉勋章15号A>    <荣誉勋章25号/@荣誉勋章25号A>    <荣誉勋章35号/@荣誉勋章35号A>    <荣誉勋
+章45号/@荣誉勋章45号A>\ \
+
+<返回上页/@main>\
+
+;━━━━━━━━━━[荣誉勋章11号——至15号]━━━━━━━━━
+[@荣誉勋章11号A]
+#IF
+checkitem 荣誉勋章11号 1
+#act
+CREDITPOINT + 1
+take 荣誉勋章11号 1
+SENDMSG 6 回收荣誉勋章11号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章11号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章11号，无法回收！
+
+[@荣誉勋章12号A]
+#IF
+checkitem 荣誉勋章12号 1
+#act
+CREDITPOINT + 1
+take 荣誉勋章12号 1
+SENDMSG 6 回收荣誉勋章12号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章12号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章12号，无法回收！
+
+[@荣誉勋章13号A]
+#IF
+checkitem 荣誉勋章13号 1
+#act
+CREDITPOINT + 1
+take 荣誉勋章13号 1
+SENDMSG 6 回收荣誉勋章13号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章13号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章13号，无法回收！
+
+[@荣誉勋章14号A]
+#IF
+checkitem 荣誉勋章14号 1
+#act
+CREDITPOINT + 1
+take 荣誉勋章14号 1
+SENDMSG 6 回收荣誉勋章14号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章14号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章14号，无法回收！
+
+[@荣誉勋章15号A]
+#IF
+checkitem 荣誉勋章15号 1
+#act
+CREDITPOINT + 1
+take 荣誉勋章15号 1
+SENDMSG 6 回收荣誉勋章15号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章15号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章15号，无法回收！
+
+;━━━━━━━━━━[荣誉勋章21号——至25号]━━━━━━━━━
+[@荣誉勋章21号A]
+#IF
+checkitem 荣誉勋章21号 1
+#act
+CREDITPOINT + 2
+take 荣誉勋章21号 1
+SENDMSG 6 回收荣誉勋章21号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章21号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章21号，无法回收！
+
+[@荣誉勋章22号A]
+#IF
+checkitem 荣誉勋章22号 1
+#act
+CREDITPOINT + 2
+take 荣誉勋章22号 1
+SENDMSG 6 回收荣誉勋章22号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章22号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章22号，无法回收！
+
+[@荣誉勋章23号A]
+#IF
+checkitem 荣誉勋章23号 1
+#act
+CREDITPOINT + 2
+take 荣誉勋章23号 1
+SENDMSG 6 回收荣誉勋章23号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章23号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章23号，无法回收！
+
+[@荣誉勋章24号A]
+#IF
+checkitem 荣誉勋章24号 1
+#act
+CREDITPOINT + 2
+take 荣誉勋章24号 1
+SENDMSG 6 回收荣誉勋章24号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章24号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章24号，无法回收！
+
+[@荣誉勋章25号A]
+#IF
+checkitem 荣誉勋章25号 1
+#act
+CREDITPOINT + 2
+take 荣誉勋章25号 1
+SENDMSG 6 回收荣誉勋章25号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章25号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章25号，无法回收！
+
+;━━━━━━━━━━[荣誉勋章31号——至35号]━━━━━━━━━
+[@荣誉勋章31号A]
+#IF
+checkitem 荣誉勋章31号 1
+#act
+CREDITPOINT + 3
+take 荣誉勋章31号 1
+SENDMSG 6 回收荣誉勋章31号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章31号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章31号，无法回收！
+
+[@荣誉勋章32号A]
+#IF
+checkitem 荣誉勋章32号 1
+#act
+CREDITPOINT + 3
+take 荣誉勋章32号 1
+SENDMSG 6 回收荣誉勋章32号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章32号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章32号，无法回收！
+[@荣誉勋章33号A]
+#IF
+checkitem 荣誉勋章33号 1
+#act
+CREDITPOINT + 3
+take 荣誉勋章33号 1
+SENDMSG 6 回收荣誉勋章33号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章33号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章33号，无法回收！
+[@荣誉勋章34号A]
+#IF
+checkitem 荣誉勋章34号 1
+#act
+CREDITPOINT + 3
+take 荣誉勋章34号 1
+SENDMSG 6 回收荣誉勋章34号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章34号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章34号，无法回收！
+
+[@荣誉勋章35号A]
+#IF
+checkitem 荣誉勋章35号 1
+#act
+CREDITPOINT + 3
+take 荣誉勋章35号 1
+SENDMSG 6 回收荣誉勋章35号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章35号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章35号，无法回收！
+;━━━━━━━━━━[荣誉勋章41号——至45号]━━━━━━━━━
+[@荣誉勋章41号A]
+#IF
+checkitem 荣誉勋章41号 1
+#act
+CREDITPOINT + 5
+take 荣誉勋章41号 1
+SENDMSG 6 回收荣誉勋章41号成功,声望值+5,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章41号，获得:5点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章41号，无法回收！
+
+[@荣誉勋章42号A]
+#IF
+checkitem 荣誉勋章42号 1
+#act
+CREDITPOINT + 5
+take 荣誉勋章42号 1
+SENDMSG 6 回收荣誉勋章42号成功,声望值+5,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章42号，获得:5点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章42号，无法回收！
+
+
+[@荣誉勋章43号A]
+#IF
+checkitem 荣誉勋章43号 1
+#act
+CREDITPOINT + 10
+take 荣誉勋章43号 1
+SENDMSG 6 回收荣誉勋章43号成功,声望值+10,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章43号，获得:10点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章43号，无法回收！
+[@荣誉勋章44号A]
+#IF
+checkitem 荣誉勋章44号 1
+#act
+CREDITPOINT + 10
+take 荣誉勋章44号 1
+SENDMSG 6 回收荣誉勋章44号成功,声望值+10,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章44号，获得:10点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章44号，无法回收！
+
+[@荣誉勋章45号A]
+#IF
+checkitem 荣誉勋章45号 1
+#act
+CREDITPOINT + 10
+take 荣誉勋章45号 1
+SENDMSG 6 回收荣誉勋章45号成功,声望值+10,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：荣誉勋章45号，获得:10点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：荣誉勋章45号，无法回收！
+
+
+[@回收斗笠]
+这里你可以回收多余的斗笠，<查询声望/@查询声望>\
+当然，回收价格得看我的心情了。  \
+<斗笠11号/@斗笠11号A>  <斗笠21号/@斗笠21号A>  <斗笠31号/@斗笠31号A>  <斗笠41号/@斗笠41号A>\
+<斗笠12号/@斗笠12号A>  <斗笠22号/@斗笠22号A>  <斗笠32号/@斗笠32号A>  <斗笠42号/@斗笠42号A>\
+<斗笠13号/@斗笠13号A>  <斗笠23号/@斗笠23号A>  <斗笠33号/@斗笠33号A>  <斗笠43号/@斗笠43号A>\
+<斗笠14号/@斗笠14号A>  <斗笠24号/@斗笠24号A>  <斗笠34号/@斗笠34号A>  <斗笠44号/@斗笠44号A>\
+<斗笠15号/@斗笠15号A>  <斗笠25号/@斗笠25号A>  <斗笠35号/@斗笠35号A>  <斗笠45号/@斗笠45号A>\ \
+
+<返回上页/@main>\
+
+;━━━━━━━━━━[斗笠11号——至15号]━━━━━━━━━
+[@斗笠11号A]
+#IF
+checkitem 斗笠11号 1
+#act
+CREDITPOINT + 1
+take 斗笠11号 1
+SENDMSG 6 回收斗笠11号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠11号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠11号，无法回收！
+
+[@斗笠12号A]
+#IF
+checkitem 斗笠12号 1
+#act
+CREDITPOINT + 1
+take 斗笠12号 1
+SENDMSG 6 回收斗笠12号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠12号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠12号，无法回收！
+
+[@斗笠13号A]
+#IF
+checkitem 斗笠13号 1
+#act
+CREDITPOINT + 1
+take 斗笠13号 1
+SENDMSG 6 回收斗笠13号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠13号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠13号，无法回收！
+
+[@斗笠14号A]
+#IF
+checkitem 斗笠14号 1
+#act
+CREDITPOINT + 1
+take 斗笠14号 1
+SENDMSG 6 回收斗笠14号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠14号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠14号，无法回收！
+
+[@斗笠15号A]
+#IF
+checkitem 斗笠15号 1
+#act
+CREDITPOINT + 1
+take 斗笠15号 1
+SENDMSG 6 回收斗笠15号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠15号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠15号，无法回收！
+
+;━━━━━━━━━━[斗笠21号——至25号]━━━━━━━━━
+[@斗笠21号A]
+#IF
+checkitem 斗笠21号 1
+#act
+CREDITPOINT + 2
+take 斗笠21号 1
+SENDMSG 6 回收斗笠21号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠21号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠21号，无法回收！
+
+[@斗笠22号A]
+#IF
+checkitem 斗笠22号 1
+#act
+CREDITPOINT + 2
+take 斗笠22号 1
+SENDMSG 6 回收斗笠22号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠22号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠22号，无法回收！
+
+[@斗笠23号A]
+#IF
+checkitem 斗笠23号 1
+#act
+CREDITPOINT + 2
+take 斗笠23号 1
+SENDMSG 6 回收斗笠23号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠23号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠23号，无法回收！
+
+[@斗笠24号A]
+#IF
+checkitem 斗笠24号 1
+#act
+CREDITPOINT + 2
+take 斗笠24号 1
+SENDMSG 6 回收斗笠24号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠24号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠24号，无法回收！
+
+[@斗笠25号A]
+#IF
+checkitem 斗笠25号 1
+#act
+CREDITPOINT + 2
+take 斗笠25号 1
+SENDMSG 6 回收斗笠25号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠25号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠25号，无法回收！
+
+;━━━━━━━━━━[斗笠31号——至35号]━━━━━━━━━
+[@斗笠31号A]
+#IF
+checkitem 斗笠31号 1
+#act
+CREDITPOINT + 3
+take 斗笠31号 1
+SENDMSG 6 回收斗笠31号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠31号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠31号，无法回收！
+
+[@斗笠32号A]
+#IF
+checkitem 斗笠32号 1
+#act
+CREDITPOINT + 3
+take 斗笠32号 1
+SENDMSG 6 回收斗笠32号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠32号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠32号，无法回收！
+[@斗笠33号A]
+#IF
+checkitem 斗笠33号 1
+#act
+CREDITPOINT + 3
+take 斗笠33号 1
+SENDMSG 6 回收斗笠33号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠33号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠33号，无法回收！
+[@斗笠34号A]
+#IF
+checkitem 斗笠34号 1
+#act
+CREDITPOINT + 3
+take 斗笠34号 1
+SENDMSG 6 回收斗笠34号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠34号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠34号，无法回收！
+
+[@斗笠35号A]
+#IF
+checkitem 斗笠35号 1
+#act
+CREDITPOINT + 3
+take 斗笠35号 1
+SENDMSG 6 回收斗笠35号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠35号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠35号，无法回收！
+;━━━━━━━━━━[斗笠41号——至45号]━━━━━━━━━
+[@斗笠41号A]
+#IF
+checkitem 斗笠41号 1
+#act
+CREDITPOINT + 5
+take 斗笠41号 1
+SENDMSG 6 回收斗笠41号成功,声望值+5,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠41号，获得:5点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠41号，无法回收！
+
+[@斗笠42号A]
+#IF
+checkitem 斗笠42号 1
+#act
+CREDITPOINT + 5
+take 斗笠42号 1
+SENDMSG 6 回收斗笠42号成功,声望值+5,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠42号，获得:5点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠42号，无法回收！
+
+
+[@斗笠43号A]
+#IF
+checkitem 斗笠43号 1
+#act
+CREDITPOINT + 10
+take 斗笠43号 1
+SENDMSG 6 回收斗笠43号成功,声望值+10,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠43号，获得:10点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠43号，无法回收！
+[@斗笠44号A]
+#IF
+checkitem 斗笠44号 1
+#act
+CREDITPOINT + 10
+take 斗笠44号 1
+SENDMSG 6 回收斗笠44号成功,声望值+10,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠44号，获得:10点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠44号，无法回收！
+
+[@斗笠45号A]
+#IF
+checkitem 斗笠45号 1
+#act
+CREDITPOINT + 10
+take 斗笠45号 1
+SENDMSG 6 回收斗笠45号成功,声望值+10,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：斗笠45号，获得:10点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：斗笠45号，无法回收！
+
+
+[@回收蒙面1]
+这里你可以回收多余的蒙面，<查询声望/@查询声望>\
+当然，回收价格得看我的心情了。  \ \
+<蒙面方巾(战)/@蒙面方巾(战)>  <蒙面方巾(法)/@蒙面方巾(法)>  <蒙面方巾(道)/@蒙面方巾(道)>\ \
+<蒙面黑巾(战)/@蒙面黑巾(战)>  <蒙面黑巾(法)/@蒙面黑巾(法)>  <蒙面黑巾(道)/@蒙面黑巾(道)>\  \
+
+
+<返回上页/@main>\
+
+;━━━━━━━━━━[蒙面方巾——蒙面黑巾]━━━━━━━━━
+[@蒙面方巾(战)]
+#IF
+checkitem 蒙面方巾(战) 1
+#act
+CREDITPOINT + 5
+take 蒙面方巾(战) 1
+SENDMSG 6 回收蒙面方巾(战)成功,声望值+5,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面方巾(战)，获得:5点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面方巾(战)，无法回收！
+
+[@蒙面方巾(法)]
+#IF
+checkitem 蒙面方巾(法) 1
+#act
+CREDITPOINT + 5
+take 蒙面方巾(法) 1
+SENDMSG 6 回收蒙面方巾(法)成功,声望值+5,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面方巾(法)，获得:5点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面方巾(法)，无法回收！
+
+[@蒙面方巾(道)]
+#IF
+checkitem 蒙面方巾(道) 1
+#act
+CREDITPOINT + 5
+take 蒙面方巾(道) 1
+SENDMSG 6 回收蒙面方巾(道)成功,声望值+5,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面方巾(道)，获得:5点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面方巾(道)，无道回收！
+
+[@蒙面黑巾(道)]
+#IF
+checkitem 蒙面黑巾(道) 1
+#act
+CREDITPOINT + 10
+take 蒙面黑巾(道) 1
+SENDMSG 6 回收蒙面黑巾(道)成功,声望值+10,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面黑巾(道)，获得:10点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面黑巾(道)，无道回收！
+
+[@蒙面黑巾(法)]
+#IF
+checkitem 蒙面黑巾(法) 1
+#act
+CREDITPOINT + 10
+take 蒙面黑巾(法) 1
+SENDMSG 6 回收蒙面黑巾(法)成功,声望值+10,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面黑巾(法)，获得:10点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面黑巾(法)，无法回收！
+
+[@蒙面黑巾(战)]
+#IF
+checkitem 蒙面黑巾(战) 1
+#act
+CREDITPOINT + 10
+take 蒙面黑巾(战) 1
+SENDMSG 6 回收蒙面黑巾(战)成功,声望值+10,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面黑巾(战)，获得:10点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面黑巾(战)，无战回收！
+
+[@回收蒙面]
+这里你可以回收多余的蒙面，<查询声望/@查询声望>\
+当然，回收价格得看我的心情了。  \
+<蒙面11号/@蒙面11号A>  <蒙面21号/@蒙面21号A>  <蒙面31号/@蒙面31号A>  <蒙面41号/@蒙面41号A>\
+<蒙面12号/@蒙面12号A>  <蒙面22号/@蒙面22号A>  <蒙面32号/@蒙面32号A>  <蒙面42号/@蒙面42号A>\
+<蒙面13号/@蒙面13号A>  <蒙面23号/@蒙面23号A>  <蒙面33号/@蒙面33号A>  <蒙面43号/@蒙面43号A>\
+<蒙面14号/@蒙面14号A>  <蒙面24号/@蒙面24号A>  <蒙面34号/@蒙面34号A>  <蒙面44号/@蒙面44号A>\
+<蒙面15号/@蒙面15号A>  <蒙面25号/@蒙面25号A>  <蒙面35号/@蒙面35号A>  <蒙面45号/@蒙面45号A>\ \
+
+<返回上页/@main>\
+
+;━━━━━━━━━━[蒙面11号——至15号]━━━━━━━━━
+[@蒙面11号A]
+#IF
+checkitem 蒙面11号 1
+#act
+CREDITPOINT + 1
+take 蒙面11号 1
+SENDMSG 6 回收蒙面11号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面11号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面11号，无法回收！
+
+[@蒙面12号A]
+#IF
+checkitem 蒙面12号 1
+#act
+CREDITPOINT + 1
+take 蒙面12号 1
+SENDMSG 6 回收蒙面12号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面12号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面12号，无法回收！
+
+[@蒙面13号A]
+#IF
+checkitem 蒙面13号 1
+#act
+CREDITPOINT + 1
+take 蒙面13号 1
+SENDMSG 6 回收蒙面13号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面13号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面13号，无法回收！
+
+[@蒙面14号A]
+#IF
+checkitem 蒙面14号 1
+#act
+CREDITPOINT + 1
+take 蒙面14号 1
+SENDMSG 6 回收蒙面14号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面14号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面14号，无法回收！
+
+[@蒙面15号A]
+#IF
+checkitem 蒙面15号 1
+#act
+CREDITPOINT + 1
+take 蒙面15号 1
+SENDMSG 6 回收蒙面15号成功,声望值+1,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面15号，获得:1点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面15号，无法回收！
+
+;━━━━━━━━━━[蒙面21号——至25号]━━━━━━━━━
+[@蒙面21号A]
+#IF
+checkitem 蒙面21号 1
+#act
+CREDITPOINT + 2
+take 蒙面21号 1
+SENDMSG 6 回收蒙面21号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面21号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面21号，无法回收！
+
+[@蒙面22号A]
+#IF
+checkitem 蒙面22号 1
+#act
+CREDITPOINT + 2
+take 蒙面22号 1
+SENDMSG 6 回收蒙面22号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面22号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面22号，无法回收！
+
+[@蒙面23号A]
+#IF
+checkitem 蒙面23号 1
+#act
+CREDITPOINT + 2
+take 蒙面23号 1
+SENDMSG 6 回收蒙面23号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面23号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面23号，无法回收！
+
+[@蒙面24号A]
+#IF
+checkitem 蒙面24号 1
+#act
+CREDITPOINT + 2
+take 蒙面24号 1
+SENDMSG 6 回收蒙面24号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面24号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面24号，无法回收！
+
+[@蒙面25号A]
+#IF
+checkitem 蒙面25号 1
+#act
+CREDITPOINT + 2
+take 蒙面25号 1
+SENDMSG 6 回收蒙面25号成功,声望值+2,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面25号，获得:2点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面25号，无法回收！
+
+;━━━━━━━━━━[蒙面31号——至35号]━━━━━━━━━
+[@蒙面31号A]
+#IF
+checkitem 蒙面31号 1
+#act
+CREDITPOINT + 3
+take 蒙面31号 1
+SENDMSG 6 回收蒙面31号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面31号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面31号，无法回收！
+
+[@蒙面32号A]
+#IF
+checkitem 蒙面32号 1
+#act
+CREDITPOINT + 3
+take 蒙面32号 1
+SENDMSG 6 回收蒙面32号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面32号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面32号，无法回收！
+[@蒙面33号A]
+#IF
+checkitem 蒙面33号 1
+#act
+CREDITPOINT + 3
+take 蒙面33号 1
+SENDMSG 6 回收蒙面33号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面33号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面33号，无法回收！
+[@蒙面34号A]
+#IF
+checkitem 蒙面34号 1
+#act
+CREDITPOINT + 3
+take 蒙面34号 1
+SENDMSG 6 回收蒙面34号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面34号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面34号，无法回收！
+
+[@蒙面35号A]
+#IF
+checkitem 蒙面35号 1
+#act
+CREDITPOINT + 3
+take 蒙面35号 1
+SENDMSG 6 回收蒙面35号成功,声望值+3,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面35号，获得:3点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面35号，无法回收！
+;━━━━━━━━━━[蒙面41号——至45号]━━━━━━━━━
+[@蒙面41号A]
+#IF
+checkitem 蒙面41号 1
+#act
+CREDITPOINT + 5
+take 蒙面41号 1
+SENDMSG 6 回收蒙面41号成功,声望值+5,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面41号，获得:5点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面41号，无法回收！
+
+[@蒙面42号A]
+#IF
+checkitem 蒙面42号 1
+#act
+CREDITPOINT + 5
+take 蒙面42号 1
+SENDMSG 6 回收蒙面42号成功,声望值+5,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面42号，获得:5点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面42号，无法回收！
+
+
+[@蒙面43号A]
+#IF
+checkitem 蒙面43号 1
+#act
+CREDITPOINT + 5
+take 蒙面43号 1
+SENDMSG 6 回收蒙面43号成功,声望值+5,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面43号，获得:5点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面43号，无法回收！
+[@蒙面44号A]
+#IF
+checkitem 蒙面44号 1
+#act
+CREDITPOINT + 5
+take 蒙面44号 1
+SENDMSG 6 回收蒙面44号成功,声望值+5,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面44号，获得:5点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面44号，无法回收！
+
+[@蒙面45号A]
+#IF
+checkitem 蒙面45号 1
+#act
+CREDITPOINT + 5
+take 蒙面45号 1
+SENDMSG 6 回收蒙面45号成功,声望值+5,您当前的声望值:<$CREDITPOINT>
+SENDMSG 0 恭喜：%s，在客栈二楼成功回收：蒙面45号，获得:5点声望值!
+break
+#ELSEACT
+MESSAGEBOX 对不起，你没有：蒙面45号，无法回收！
+
+
+
+
+
+[@查询声望]
+#IF
+#ACT
+MESSAGEBOX  您当前的声望值:<$CREDITPOINT>
+BREAK
+
+
+
+
+
+
+[@升级高级蒙面]
+每次升级蒙面都会收走你包裹内的所有原料,请保管好重要物品。\
+每次升级必备5种材料<COLOR=clLime :祈福项链,勋章之心,绿宝石矿,紫水晶矿>\
+高级蒙面升级失败不破碎！升级几率为：+1=60%、+2=50%、+3=40%、+4=30%\
+属性类型     蒙面编号    可成功升级次数  成功升级后的最高属性\
+<升级防御/@高级蒙面防御>     高级蒙面       3次             3 - 11\
+<升级魔御/@高级蒙面魔御>     高级蒙面       3次             2 - 8\
+<升级攻击/@高级蒙面攻击>     高级蒙面       4次             5 - 14\
+<升级魔法/@高级蒙面魔法>     高级蒙面       4次             5 - 14\
+<升级道术/@高级蒙面道术>     高级蒙面       4次             5 - 14\
+<返回上页/@MAIN>
+
+
+[@高级蒙面防御]
+#IF
+CHECKITEMW 高级蒙面
+#ACT
+goto @升高级蒙面
+break
+#ELSESAY
+你没有佩戴好啊
+
+[@升高级蒙面]
+#IF
+CHECKITEMADDVALUE 13 0 > 2
+#ACT
+break
+#SAY
+此高级蒙面已经升为最高级，无法再进行升级了。
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的高级蒙面升级失败了。
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 0 0 1 0
+#SAY
+祝贺你，你的高级蒙面升级成功了！
+#ACT
+SENDMSG 6 恭喜：你的[高级蒙面]成功升级：+1点防御！！
+MESSAGEBOX 恭喜：你的[高级蒙面]成功升级：+1点防御！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[高级蒙面]+1点防御
+#ELSESAY
+升级所需的材料不足！
+
+
+[@高级蒙面魔御]
+#IF
+CHECKITEMW 高级蒙面
+#ACT
+goto @升高级蒙面魔御
+break
+#ELSESAY
+你没有佩戴好啊
+
+[@升高级蒙面魔御]
+#IF
+CHECKITEMADDVALUE 13 1 > 2
+#ACT
+break
+#SAY
+此高级蒙面已经升为最高级，无法再进行升级了。
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的高级蒙面升级失败了。
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 1 0 1 0
+#SAY
+祝贺你，你的高级蒙面升级成功了！
+#ACT
+SENDMSG 6 恭喜：你的[高级蒙面]成功升级：+1点魔御！！
+MESSAGEBOX 恭喜：你的[高级蒙面]成功升级：+1点魔御！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[高级蒙面]+1点魔御
+#ELSESAY
+升级所需的材料不足！
+
+
+[@高级蒙面攻击]
+#IF
+CHECKITEMW 高级蒙面
+#ACT
+goto @升高级蒙面攻击
+break
+#ELSESAY
+你没有佩戴好啊
+
+[@升高级蒙面攻击]
+#IF
+CHECKITEMADDVALUE 13 2 > 3
+#ACT
+break
+#SAY
+此高级蒙面已经升为最高级，无法再进行升级了。
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的高级蒙面升级失败了。
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 2 0 1 0
+#SAY
+祝贺你，你的高级蒙面升级成功了！
+#ACT
+SENDMSG 6 恭喜：你的[高级蒙面]成功升级：+1点攻击！！
+MESSAGEBOX 恭喜：你的[高级蒙面]成功升级：+1点攻击！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[高级蒙面]+1点攻击
+#ELSESAY
+升级所需的材料不足！
+
+[@高级蒙面魔法]
+#IF
+CHECKITEMW 高级蒙面
+#ACT
+goto @升高级蒙面魔法
+break
+#ELSESAY
+你没有佩戴好啊
+
+[@升高级蒙面魔法]
+#IF
+CHECKITEMADDVALUE 13 3 > 3
+#ACT
+break
+#SAY
+此高级蒙面已经升为最高级，无法再进行升级了。
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的高级蒙面升级失败了。
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 3 0 1 0
+#SAY
+祝贺你，你的高级蒙面升级成功了！
+#ACT
+SENDMSG 6 恭喜：你的[高级蒙面]成功升级：+1点魔法！！
+MESSAGEBOX 恭喜：你的[高级蒙面]成功升级：+1点魔法！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[高级蒙面]+1点魔法
+#ELSESAY
+升级所需的材料不足！
+
+
+
+[@高级蒙面道术]
+#IF
+CHECKITEMW 高级蒙面
+#ACT
+goto @升高级蒙面道术
+break
+#ELSESAY
+你没有佩戴好啊
+
+[@升高级蒙面道术]
+#IF
+CHECKITEMADDVALUE 13 4 > 3
+#ACT
+break
+#SAY
+此高级蒙面已经升为最高级，无法再进行升级了。
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的高级蒙面升级失败了。
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 4 0 1 0
+#SAY
+祝贺你，你的高级蒙面升级成功了！
+#ACT
+SENDMSG 6 恭喜：你的[高级蒙面]成功升级：+1点道术！！
+MESSAGEBOX 恭喜：你的[高级蒙面]成功升级：+1点道术！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[高级蒙面]+1点道术
+#ELSESAY
+升级所需的材料不足！
+
+
+
+
+[@升级高级斗笠]
+每次升级斗笠都会收走你包裹内的所有原料,请保管好重要物品。\
+每次升级必备5种材料<COLOR=clLime :祈福项链,勋章之心,绿宝石矿,紫水晶矿>\
+高级斗笠升级失败不破碎！升级几率为：+1=60%、+2=50%、+3=40%、+4=30%\
+属性类型     斗笠编号    可成功升级次数  成功升级后的最高属性\
+<升级防御/@高级斗笠防御>     高级斗笠       3次             3 - 11\
+<升级魔御/@高级斗笠魔御>     高级斗笠       3次             2 - 8\
+<升级攻击/@高级斗笠攻击>     高级斗笠       4次             5 - 14\
+<升级魔法/@高级斗笠魔法>     高级斗笠       4次             5 - 14\
+<升级道术/@高级斗笠道术>     高级斗笠       4次             5 - 14\
+<返回上页/@MAIN>
+
+
+[@高级斗笠防御]
+#IF
+CHECKITEMW 高级斗笠
+#ACT
+goto @升高级斗笠
+break
+#ELSESAY
+你没有佩戴好啊
+
+[@升高级斗笠]
+#IF
+CHECKITEMADDVALUE 13 0 > 2
+#ACT
+break
+#SAY
+此高级斗笠已经升为最高级，无法再进行升级了。
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的高级斗笠升级失败了。
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 0 0 1 0
+#SAY
+祝贺你，你的高级斗笠升级成功了！
+#ACT
+SENDMSG 6 恭喜：你的[高级斗笠]成功升级：+1点防御！！
+MESSAGEBOX 恭喜：你的[高级斗笠]成功升级：+1点防御！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[高级斗笠]+1点防御
+#ELSESAY
+升级所需的材料不足！
+
+
+[@高级斗笠魔御]
+#IF
+CHECKITEMW 高级斗笠
+#ACT
+goto @升高级斗笠魔御
+break
+#ELSESAY
+你没有佩戴好啊
+
+[@升高级斗笠魔御]
+#IF
+CHECKITEMADDVALUE 13 1 > 2
+#ACT
+break
+#SAY
+此高级斗笠已经升为最高级，无法再进行升级了。
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的高级斗笠升级失败了。
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 1 0 1 0
+#SAY
+祝贺你，你的高级斗笠升级成功了！
+#ACT
+SENDMSG 6 恭喜：你的[高级斗笠]成功升级：+1点魔御！！
+MESSAGEBOX 恭喜：你的[高级斗笠]成功升级：+1点魔御！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[高级斗笠]+1点魔御
+#ELSESAY
+升级所需的材料不足！
+
+
+[@高级斗笠攻击]
+#IF
+CHECKITEMW 高级斗笠
+#ACT
+goto @升高级斗笠攻击
+break
+#ELSESAY
+你没有佩戴好啊
+
+[@升高级斗笠攻击]
+#IF
+CHECKITEMADDVALUE 13 2 > 3
+#ACT
+break
+#SAY
+此高级斗笠已经升为最高级，无法再进行升级了。
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的高级斗笠升级失败了。
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 2 0 1 0
+#SAY
+祝贺你，你的高级斗笠升级成功了！
+#ACT
+SENDMSG 6 恭喜：你的[高级斗笠]成功升级：+1点攻击！！
+MESSAGEBOX 恭喜：你的[高级斗笠]成功升级：+1点攻击！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[高级斗笠]+1点攻击
+#ELSESAY
+升级所需的材料不足！
+
+[@高级斗笠魔法]
+#IF
+CHECKITEMW 高级斗笠
+#ACT
+goto @升高级斗笠魔法
+break
+#ELSESAY
+你没有佩戴好啊
+
+[@升高级斗笠魔法]
+#IF
+CHECKITEMADDVALUE 13 3 > 3
+#ACT
+break
+#SAY
+此高级斗笠已经升为最高级，无法再进行升级了。
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的高级斗笠升级失败了。
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 3 0 1 0
+#SAY
+祝贺你，你的高级斗笠升级成功了！
+#ACT
+SENDMSG 6 恭喜：你的[高级斗笠]成功升级：+1点魔法！！
+MESSAGEBOX 恭喜：你的[高级斗笠]成功升级：+1点魔法！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[高级斗笠]+1点魔法
+#ELSESAY
+升级所需的材料不足！
+
+
+
+[@高级斗笠道术]
+#IF
+CHECKITEMW 高级斗笠
+#ACT
+goto @升高级斗笠道术
+break
+#ELSESAY
+你没有佩戴好啊
+
+[@升高级斗笠道术]
+#IF
+CHECKITEMADDVALUE 13 4 > 3
+#ACT
+break
+#SAY
+此高级斗笠已经升为最高级，无法再进行升级了。
+
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+random 3
+#ACT
+
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+break
+#SAY
+很可惜，你的高级斗笠升级失败了。
+
+
+#IF
+checkitem 祈福项链 1
+checkitem 勋章之心 1
+checkitem 绿宝石矿 1
+checkitem 紫水晶矿 1
+#ACT
+take 祈福项链 1
+take 勋章之心 1
+take 绿宝石矿 1
+take 紫水晶矿 1
+UPGRADEITEMEX 13 4 0 1 0
+#SAY
+祝贺你，你的高级斗笠升级成功了！
+#ACT
+SENDMSG 6 恭喜：你的[高级斗笠]成功升级：+1点道术！！
+MESSAGEBOX 恭喜：你的[高级斗笠]成功升级：+1点道术！！
+SENDMSG 1 恭喜:[%s]在客栈二楼成功升级[高级斗笠]+1点道术
+#ELSESAY
+升级所需的材料不足！
+
+

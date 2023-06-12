@@ -1,0 +1,765 @@
+
+
+
+
+[@清空文本]
+#IF
+#ACT
+GMEXECUTE 开始提问 ~每日清零
+ClearNameList ..\UserData\临时.txt
+BREAK
+
+[@激情顶事小时]
+#IF
+EQUAL G63 60
+#ACT
+BREAK
+
+#IF
+#ACT
+INC G63 1
+BREAK
+
+[@激情派对A]
+#IF
+EQUAL I48 0
+EQUAL I49 0
+EQUAL G63 60
+#ACT
+MOV I48 1
+MOV I49 9
+Gmexecute 开始提问 @激情派对开始
+Gmexecute 开始提问 @激情派对定时开始
+SENDMSG 0 激情升级派对现在开始，活动持续10分钟！到激情泡点参加啊！ 255 0
+SENDMSG 0 激情升级派对现在开始，活动持续10分钟！到激情泡点参加啊！ 255 0
+SENDMSG 0 激情升级派对现在开始，活动持续10分钟！到激情泡点参加啊！ 255 0
+SENDMSG 0 激情升级派对现在开始，活动持续10分钟！到激情泡点参加啊！ 255 0
+SENDMSG 0 激情升级派对现在开始，活动持续10分钟！到激情泡点参加啊！ 255 0
+BREAK
+
+
+#IF
+EQUAL I48 0
+Large I49 0
+#ACT
+DEC I49 1
+BREAK
+
+#IF
+EQUAL I48 1
+EQUAL I49 0
+#ACT
+MOV I48 0
+MOV I49 240
+Gmexecute 开始提问 @激情派对定时结束
+SENDMSG 0 激情升级派对暂时停止，4小时后继续开始！欢迎大家来参加！ 255 0
+SENDMSG 0 激情升级派对暂时停止，4小时后继续开始！欢迎大家来参加！ 255 0
+SENDMSG 0 激情升级派对暂时停止，4小时后继续开始！欢迎大家来参加！ 255 0
+SENDMSG 0 激情升级派对暂时停止，4小时后继续开始！欢迎大家来参加！ 255 0
+SENDMSG 0 激情升级派对暂时停止，4小时后继续开始！欢迎大家来参加！ 255 0
+BREAK
+
+#IF
+EQUAL I48 1
+Large I49 0
+#ACT
+DEC I49 1
+BREAK
+
+
+
+[@树树树]
+#if
+#act
+Gmexecute 清除怪物 3 打我暴终极 0
+GMEXECUTE 开始提问 @开启树树树
+Param1 3
+Param2 404
+Param3 329
+MONGEN 打我暴终极 1 1
+sendmsg 0 [系统]:每个小时的打我暴终极已经在土城书店刷出来了.赶快动起来 252 7 60
+sendmsg 0 [系统]:每个小时的打我暴终极已经在土城书店刷出来了.赶快动起来 252 7 60
+sendmsg 0 [系统]:每个小时的打我暴终极已经在土城书店刷出来了.赶快动起来 252 7 60
+break
+
+
+[@每日清理]
+#IF
+#ACT
+INC G90 1
+CLEARNAMELIST ..\QuestDiary\数据文件\签到.txt
+CLEARNAMELIST ..\QuestDiary\重要数据\YBJZSave.txt
+CLEARNAMELIST ..\QuestDiary\重要数据\捐助名单.txt
+Gmexecute 开始提问 @每日零点清理自定义变量
+CLEARNAMELIST ..\QuestDiary\数据文件\变量.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\沙老大名单.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\行会领取奖励1.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\行会领取奖励2.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\行会领取奖励3.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\除魔任务数据.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\除妖任务数据.txt
+CLEARNAMELIST ..\QuestDiary\赞助大使任务\赞助数据.txt
+CLEARNAMELIST ..\QuestDiary\赞助\赞助奖励名单.txt
+CLEARNAMELIST ..\UserData\临时.txt
+BREAK
+[@攻沙喊话1]
+#IF
+#ACT
+SENDMSG 0  每天抢夺沙巴克攻城50分钟后开启，所有行会做好准备，各玩家请互相转告...  253 255 100
+SENDMSG 0  每天抢夺沙巴克攻城50分钟后开启，所有行会做好准备，各玩家请互相转告...  253 255 100
+SENDMSG 0  每天抢夺沙巴克攻城50分钟后开启，所有行会做好准备！
+SENDMSG 0  每天抢夺沙巴克攻城50分钟后开启，所有行会做好准备！
+SENDMSG 0  每天抢夺沙巴克攻城50分钟后开启，所有行会做好准备！
+SENDMSG 0  每天抢夺沙巴克攻城50分钟后开启，所有行会做好准备！
+break
+
+[@攻沙喊话2]
+#IF
+#ACT
+SENDMSG 0  每天抢夺沙巴克攻城10分钟后开启，所有行会做好准备，各玩家请互相转告...  253 255 100
+SENDMSG 0  每天抢夺沙巴克攻城10分钟后开启，所有行会做好准备，各玩家请互相转告...  253 255 100
+SENDMSG 0  每天抢夺沙巴克攻城10分钟后开启，所有行会做好准备！
+SENDMSG 0  每天抢夺沙巴克攻城10分钟后开启，所有行会做好准备！
+SENDMSG 0  每天抢夺沙巴克攻城10分钟后开启，所有行会做好准备！
+SENDMSG 0  每天抢夺沙巴克攻城10分钟后开启，所有行会做好准备！
+break
+
+
+[@拿沙申请]
+#IF
+#ACT
+Gmexecute AddToCastleWarList 0 *
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，所有行会做好准备，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，所有行会做好准备，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，所有行会做好准备，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，所有行会做好准备，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，所有行会做好准备，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，所有行会做好准备，各玩家请互相转告... 253 255 300
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 
+SENDMSG 0 沙巴克公告：本区攻城系统已提交，各玩家请互相转告... 
+BREAK
+
+[@开放赌博]
+#IF
+EQUAL G10 0
+#ACT
+MOV G10 1
+SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100
+SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100
+SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100
+SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100
+SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100
+SENDMSG 0 赌场已经开放，小赌养家糊口，大赌发家致富... 253 255 100
+BREAK
+
+[@关闭赌博]
+#IF
+EQUAL G10 1
+#ACT
+MOV G10 0
+SENDMSG 0 赌场已经关闭，赌场开放时间为每天的14点-18点... 253 255 100
+SENDMSG 0 赌场已经关闭，赌场开放时间为每天的14点-18点... 253 255 100
+SENDMSG 0 赌场已经关闭，赌场开放时间为每天的14点-18点... 253 255 100
+SENDMSG 0 赌场已经关闭，赌场开放时间为每天的14点-18点... 253 255 100
+SENDMSG 0 赌场已经关闭，赌场开放时间为每天的14点-18点... 253 255 100
+SENDMSG 0 赌场已经关闭，赌场开放时间为每天的14点-18点... 253 255 100
+BREAK
+
+
+
+[@游戏说明]
+#IF
+#ACT
+SendScrollMsg 友情提示：充值的玩家朋友们，领取的赞助魔血石，请在赞助大使及时修理，上线消失本服概不负责！！！  251 191
+SendScrollMsg 温馨提示：亲爱的玩家朋友们，多多宣传本服，叫亲朋好友前来支持本服，有你生活更精彩。谢谢！！！ 251 191
+SendScrollMsg 友情提示：充值的玩家朋友们，领取的赞助魔血石，请在赞助大使及时修理，上线消失本服概不负责！！！  251 191
+SendScrollMsg 温馨提示：如果不能正常游戏。请更新盛大最新客户端再安装本服补丁。天黑路滑，社会复杂，请玩家谨慎交易。 251 191
+SendScrollMsg 友情提示：充值的玩家朋友们，领取的赞助魔血石，请在赞助大使及时修理，上线消失本服概不负责！！！  251 191
+SendScrollMsg GM绝不参与游戏。竭诚为所有玩家提供一个公平、公正的游戏环境，希望大家玩的开心！玩的愉快！  251 191
+SendScrollMsg 友情提示：充值的玩家朋友们，领取的赞助魔血石，请在赞助大使及时修理，上线消失本服概不负责！！！  251 191
+SendScrollMsg 本服元宝比例1:500为通过精心配置，网银赠送100%，点卡赠送80%！一秒到帐，百分之百不掉单！ 251 191
+SendScrollMsg 友情提示：充值的玩家朋友们，领取的赞助魔血石，请在赞助大使及时修理，上线消失本服概不负责！！！  251 191
+SendScrollMsg 谨慎防骗：游戏中玩家说有比例或有GM的QQ等，一律是骗子。 251 191
+SendScrollMsg 友情提示：充值的玩家朋友们，领取的赞助魔血石，请在赞助大使及时修理，上线消失本服概不负责！！！  251 191
+SendScrollMsg 帐号安全：如果还在使用数字密码的玩家请马上将密码修改为英文+数字的复杂密码，避免被盗！ 251 191
+SendScrollMsg 友情提示：充值的玩家朋友们，领取的赞助魔血石，请在赞助大使及时修理，上线消失本服概不负责！！！  251 191
+SendScrollMsg 温馨提示：亲爱的玩家朋友们，感谢您的支持，多多宣传本服，叫点亲朋好友前来支持本服，有你生活更精彩。谢谢！！！ 251 191
+SendScrollMsg 友情提示：充值的玩家朋友们，领取的赞助魔血石，请在赞助大使及时修理，上线消失本服概不负责！！！  251 191
+
+BREAK
+
+[@坐庄游戏A]
+#IF
+EQUAL A36 
+#ACT
+MOV A36 空空空空空空空空空空空空空空空空空空空空
+
+#IF
+EQUAL A35 无
+#ACT
+BREAK
+#IF
+EQUAL A35 
+#ACT
+BREAK
+#IF
+EQUAL I12 0
+#ACT
+MOV I10 59
+GMEXECUTE 开始提问 @抢庄开始
+INC I12 1
+BREAK
+#IF
+EQUAL I12 60
+#ACT
+MOV I10 57
+GMEXECUTE 开始提问 @抢庄结束
+INC I12 1
+BREAK
+#IF
+EQUAL I12 61
+#ACT
+MOV I10 56
+GMEXECUTE 开始提问 @下注开始
+INC I12 1
+BREAK
+#IF
+EQUAL I12 117
+#ACT
+MOV I10 12
+GMEXECUTE 开始提问 @下注结束
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 118
+LARGE I64 0
+LARGE I65 0
+LARGE I66 0
+#ACT
+MOV I10 11
+MOV I42 <$STR(I64)>
+MOV I43 <$STR(I65)>
+MOV I44 <$STR(I66)>
+MOV I45 <$STR(I42)>
+INC I45 <$STR(I43)>
+INC I45 <$STR(I44)>
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 118
+#ACT
+MOV I10 11
+MOVR I42 6
+inc I42 1
+MOVR I43 6
+inc I43 1
+MOVR I44 6
+inc I44 1
+MOV I45 <$STR(I42)>
+INC I45 <$STR(I43)>
+INC I45 <$STR(I44)>
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 120
+#ACT
+MOV I10 10
+GMEXECUTE 开始提问 @猜点开始
+INC I12 1
+BREAK
+
+#IF
+EQUAL I12 126
+#ACT
+MOV I10 4
+GMEXECUTE 开始提问 @赌博结帐
+INC I12 1
+BREAK
+#IF
+EQUAL I12 128
+#ACT
+MOV I10 2
+GMEXECUTE 开始提问 @赌博清零
+MOV I64 0
+MOV I65 0
+MOV I66 0
+MOV A34 无
+MOV I16 0
+MOV I17 0
+MOV I11 0
+MOV I13 0
+MOV I14 0
+MOV I31 0
+MOV I42 0
+MOV I43 0
+MOV I44 0
+MOV I45 0
+INC I12 1
+BREAK
+#IF
+EQUAL I12 130
+#ACT
+MOV I10 0
+MOV A35 无
+MOV I12 0
+BREAK
+#IF
+#ACT
+DEC I10 1
+INC I12 1
+BREAK
+
+[@坐庄游戏B]
+#IF
+EQUAL A35 无
+#ACT
+BREAK
+#IF
+EQUAL A35 
+#ACT
+BREAK
+
+#IF
+#ACT
+MOV I18 0
+MOV I19 0
+MOV I15 130
+DEC I15 <$STR(I12)>
+MOV I11 <$STR(I13)>
+INC I11 <$STR(I14)>
+MOV I16 <$STR(I31)>
+INC I16 <$STR(I14)>
+DEC I16 <$STR(I13)>
+MOV I17 <$STR(I31)>
+INC I17 <$STR(I13)>
+DEC I17 <$STR(I14)>
+BREAK
+
+[@坐庄游戏C]
+#IF
+EQUAL A35 无
+#ACT
+BREAK
+#IF
+EQUAL A35 
+#ACT
+BREAK
+#IF
+EQUAL I12 122
+EQUAL I42 <$STR(I43)>
+EQUAL I42 <$STR(I44)>
+#ACT
+MOV A34 豹子
+BREAK
+#IF
+EQUAL I12 122
+SMALL I45 11
+#ACT
+MOV A34 小
+BREAK
+#IF
+EQUAL I12 122
+LARGE I45 10
+#ACT
+MOV A34 大
+BREAK
+
+
+
+
+
+[@行会争霸提示]
+#IF
+#ACT
+SENDMSG 0 【行会争霸】还有5分钟开始，请参赛行会做好进入场地的准备.通过“土城-行会争霸”进入行会战场！ 251 1 30
+SENDMSG 0 【行会争霸】还有5分钟开始，请参赛行会做好进入场地的准备.通过“土城-行会争霸”进入行会战场！ 251 1 30
+SENDMSG 0 【行会争霸】还有5分钟开始，请参赛行会做好进入场地的准备.通过“土城-行会争霸”进入行会战场！ 251 1 
+SENDMSG 0 【行会争霸】还有5分钟开始，请参赛行会做好进入场地的准备.通过“土城-行会争霸”进入行会战场！ 251 1 
+break
+
+[@行会争霸提示1]
+#IF
+#ACT
+SENDMSG 0 【行会争霸】还有2分钟开始，请参赛行会做好进入场地的准备.通过“土城-行会争霸”进入行会战场！ 251 1 30
+SENDMSG 0 【行会争霸】还有2分钟开始，请参赛行会做好进入场地的准备.通过“土城-行会争霸”进入行会战场！ 251 1 30
+SENDMSG 0 【行会争霸】还有2分钟开始，请参赛行会做好进入场地的准备.通过“土城-行会争霸”进入行会战场！ 251 1 
+SENDMSG 0 【行会争霸】还有2分钟开始，请参赛行会做好进入场地的准备.通过“土城-行会争霸”进入行会战场！ 251 1 
+break
+
+[@行会争霸开始]
+#IF
+#ACT
+MOV G80 1
+MOV G55 0
+mov A55 暂无
+mov A56 暂无
+mov A57 元年元月元日
+GMEXECUTE 开始提问 @行会争霸系统
+SENDMSG 0 【行会争霸】已经开启，请参赛行会进入场地参加竞赛！比赛入口将会在20.50分关闭！ 251 1 30
+SENDMSG 0 【行会争霸】已经开启，请参赛行会进入场地参加竞赛！比赛入口将会在20.50分关闭！ 251 1 30
+SENDMSG 0 【行会争霸】已经开启，请参赛行会进入场地参加竞赛！比赛入口将会在20.50分关闭！ 251 1 
+SENDMSG 0 【行会争霸】已经开启，请参赛行会进入场地参加竞赛！比赛入口将会在20.50分关闭！ 251 1 
+CLEARNAMELIST ..\QuestDiary\网络刑天制作\行会争霸名单.txt
+break
+[@行会争霸开始1]
+#IF
+#ACT
+SENDMSG 0 【行会争霸】正在进行，请参赛行会抓紧时间进入场地！比赛入口将会在20.50分关闭！ 251 1 30
+SENDMSG 0 【行会争霸】正在进行，请参赛行会抓紧时间进入场地！比赛入口将会在20.50分关闭！ 251 1 30
+SENDMSG 0 【行会争霸】正在进行，请参赛行会抓紧时间进入场地！比赛入口将会在20.50分关闭！ 251 1 
+SENDMSG 0 【行会争霸】正在进行，请参赛行会抓紧时间进入场地！比赛入口将会在20.50分关闭！ 251 1 
+break
+
+
+[@行会争霸关门1]
+#IF
+#ACT
+SENDMSG 0 【行会争霸】比赛入口将会在2分钟后关门，请抓紧时间进入地图，坚持住不要牺牲了！ 251 1 30
+SENDMSG 0 【行会争霸】比赛入口将会在2分钟后关门，请抓紧时间进入地图，坚持住不要牺牲了！ 251 1 30
+SENDMSG 0 【行会争霸】比赛入口将会在2分钟后关门，请抓紧时间进入地图，坚持住不要牺牲了！ 251 1 
+SENDMSG 0 【行会争霸】比赛入口将会在2分钟后关门，请抓紧时间进入地图，坚持住不要牺牲了！ 251 1 
+break
+[@行会争霸关门]
+#IF
+#ACT
+MOV G80 0
+SENDMSG 0 【行会争霸】比赛入口已经关闭！牺牲了的成员将不能进入场地，好戏在后头呢！ 251 1 30
+SENDMSG 0 【行会争霸】比赛入口已经关闭！牺牲了的成员将不能进入场地，好戏在后头呢！ 251 1 30
+SENDMSG 0 【行会争霸】比赛入口已经关闭！牺牲了的成员将不能进入场地，好戏在后头呢！ 251 1 
+SENDMSG 0 【行会争霸】比赛入口已经关闭！牺牲了的成员将不能进入场地，好戏在后头呢！ 251 1 
+break
+
+[@行会争霸转移2]
+#IF
+#ACT
+SENDMSG 0 【行会争霸】将在2分钟后转移战场，各大行会加油准备进行最后的决战！！ 251 1 30
+SENDMSG 0 【行会争霸】将在2分钟后转移战场，各大行会加油准备进行最后的决战！！ 251 1 30
+SENDMSG 0 【行会争霸】将在2分钟后转移战场，各大行会加油准备进行最后的决战！！ 251 1 
+SENDMSG 0 【行会争霸】将在2分钟后转移战场，各大行会加油准备进行最后的决战！！ 251 1 
+
+[@行会争霸转移3]
+#IF
+#ACT
+GMEXECUTE 集体传送 xinghuizb xinghuizb2
+SENDMSG 0 【行会争霸】已经成功转移战场，行会争霸地图内一派惨不忍睹之象！各大行会开始进行最后的决战！！ 251 1 30
+SENDMSG 0 【行会争霸】已经成功转移战场，行会争霸地图内一派惨不忍睹之象！各大行会开始进行最后的决战！！ 251 1 30
+SENDMSG 0 【行会争霸】已经成功转移战场，各大行会开始进行最后的决战！！ 251 1 
+SENDMSG 0 【行会争霸】已经成功转移战场，各大行会开始进行最后的决战！！ 251 1 
+
+[@行会争霸结束提示]
+#IF
+#ACT
+SENDMSG 0 【行会争霸】将在2分钟后结束，不知今日的荣耀将会属于哪家行会！！ 251 1 30
+SENDMSG 0 【行会争霸】将在2分钟后结束，不知今日的荣耀将会属于哪家行会！！ 251 1 30
+SENDMSG 0 【行会争霸】将在2分钟后结束，不知今日的荣耀将会属于哪家行会！！ 251 1 
+SENDMSG 0 【行会争霸】将在2分钟后结束，不知今日的荣耀将会属于哪家行会！！ 251 1 
+
+[@行会争霸领奖]
+#IF
+#ACT
+SENDMSG 0 本届【行会争霸】已经结束，请新的行会盟主领取获胜奖励，期待下一场的比赛！ 251 1 30
+SENDMSG 0 本届【行会争霸】已经结束，请新的行会盟主领取获胜奖励，期待下一场的比赛！ 251 1 30
+SENDMSG 0 本届【行会争霸】已经结束，请新的行会盟主领取获胜奖励，期待下一场的比赛！ 251 1 
+SENDMSG 0 本届【行会争霸】已经结束，请新的行会盟主领取获胜奖励，期待下一场的比赛！ 251 1 
+
+
+#IF
+EQUAL G55 0
+#ACT
+mov A55 暂无
+mov A56 暂无
+mov A57 元年元月元日
+break
+
+
+
+[@群英争霸结束]
+#IF
+#ACT
+MOV G89 0
+SENDMSG 0  【群雄争霸】大门已经关闭，本场群体PK结束，期待下一场群英争霸的开启! 251 1 30
+SENDMSG 0  【群雄争霸】大门已经关闭，本场群体PK结束，期待下一场群英争霸的开启! 251 1 30
+SENDMSG 0  【群雄争霸】大门已经关闭，本场群体PK结束，期待下一场群英争霸的开启! 251 1 
+SENDMSG 0  【群雄争霸】大门已经关闭，本场群体PK结束，期待下一场群英争霸的开启! 251 1 
+
+[@群英争霸开始1]
+#IF
+#ACT
+SENDMSG 0  【群雄争霸】已经正式开启，请大家抓紧时间进入战场进行群体PK比赛! 251 1 30
+SENDMSG 0  【群雄争霸】已经正式开启，请大家抓紧时间进入战场进行群体PK比赛! 251 1 30
+SENDMSG 0  【群雄争霸】已经正式开启，请大家抓紧时间进入战场进行群体PK比赛!  251 1 
+SENDMSG 0  【群雄争霸】已经正式开启，请大家抓紧时间进入战场进行群体PK比赛!  251 1 
+
+[@群英争霸开始2]
+#IF
+#ACT
+SENDMSG 0  【群雄争霸】已经正式开启，请大家抓紧时间进入战场进行群体PK比赛! 251 1 30
+SENDMSG 0  【群雄争霸】已经正式开启，请大家抓紧时间进入战场进行群体PK比赛! 251 1 30
+SENDMSG 0  【群雄争霸】已经正式开启，请大家抓紧时间进入战场进行群体PK比赛!  251 1 
+SENDMSG 0  【群雄争霸】已经正式开启，请大家抓紧时间进入战场进行群体PK比赛!  251 1 
+
+[@群英争霸开始]
+#IF
+#ACT
+MOV G89 1
+GMEXECUTE 开始提问 @群雄争霸系统
+CLEARNAMELIST ..\QuestDiary\数据文件\群英名单.txt
+SENDMSG 0  【群雄争霸】已经正式开启，请大家抓紧时间进入战场进行群体PK比赛! 251 1 30
+SENDMSG 0  【群雄争霸】已经正式开启，请大家抓紧时间进入战场进行群体PK比赛! 251 1 30
+SENDMSG 0  【群雄争霸】已经正式开启，请大家抓紧时间进入战场进行群体PK比赛!  251 1 
+SENDMSG 0  【群雄争霸】已经正式开启，请大家抓紧时间进入战场进行群体PK比赛!  251 1 
+
+
+[@群英争霸提示]
+#IF
+#ACT
+SENDMSG 0  【群雄争霸】将在5分钟后开始，请所有玩家做好群体PK的准备! 251 1 30
+SENDMSG 0  【群雄争霸】将在5分钟后开始，请所有玩家做好群体PK的准备! 251 1 30
+SENDMSG 0  【群雄争霸】将在5分钟后开始，请所有玩家做好群体PK的准备!  251 1 
+SENDMSG 0  【群雄争霸】将在5分钟后开始，请所有玩家做好群体PK的准备!  251 1 
+[@群英争霸提示1]
+#IF
+#ACT
+SENDMSG 0  【群雄争霸】将在2分钟后开始，请所有玩家做好群体PK的准备! 251 1 30
+SENDMSG 0  【群雄争霸】将在2分钟后开始，请所有玩家做好群体PK的准备! 251 1 30
+SENDMSG 0  【群雄争霸】将在2分钟后开始，请所有玩家做好群体PK的准备!  251 1 
+SENDMSG 0  【群雄争霸】将在2分钟后开始，请所有玩家做好群体PK的准备!  251 1 
+
+
+
+[@中午提示]
+#IF
+#act
+SENDMSG 0  亲爱的玩家，现在已经是中午了!
+SENDMSG 0  游戏虽然好玩，可别忘了多陪陪你的朋友和家人!
+
+[@晚上提示]
+#IF
+#act
+SENDMSG 0  亲爱的玩家，现在已经是晚上了! 
+SENDMSG 0  游戏虽然好玩，也别忘了陪朋友和家人吃顿晚饭! 
+
+[@凌晨提示]
+#IF
+#act
+SENDMSG 0  亲爱的玩家，现在已经是凌晨了!
+SENDMSG 0  游戏虽然好玩，也别忘了早点休息，身体健康更重要! 
+
+[@早上提示]
+#IF
+#act
+SENDMSG 0 亲爱的玩家，现在已经是早上了。
+SENDMSG 0 游戏虽然好玩，可别忘了工作和学习的时间。
+
+
+[@每日清理1]
+#IF
+#ACT
+MOV A41 暂无
+MOV A42 暂无
+MOV A43 暂无
+MOV A44 暂无
+MOV A45 暂无
+MOV A22 暂无
+MOV G31 暂无
+MOV G32 暂无
+MOV G33 暂无
+MOV G34 暂无
+MOV G35 暂无
+MOV G37 0
+MOV G40 0
+MOV A46 0
+CLEARNAMELIST ..\QuestDiary\重要数据\YBJZSave.txt
+CLEARNAMELIST ..\QuestDiary\重要数据\捐助名单.txt
+
+[@新手刷怪_深度]
+#IF
+CHECKRANGEMONCOUNT xinrend 20 23 10 < 60
+#ACT
+PARAM1 xinrend
+PARAM2 20
+PARAM3 23
+MONGEN 稻草人 200 10
+BREAK
+
+[@天降元宝]
+#IF
+#ACT
+Gmexecute 清除怪物 0122 散财金猪 0
+PARAM1 0122
+PARAM2 27
+PARAM3 41
+MONGEN 散财金猪 1 1
+PARAM1 0122
+PARAM2 14
+PARAM3 28
+MONGEN 散财金猪 1 1
+PARAM1 0122
+PARAM2 25
+PARAM3 11
+MONGEN 散财金猪 1 1
+PARAM1 0122
+PARAM2 44
+PARAM3 30
+MONGEN 散财金猪 1 1
+PARAM1 0122
+PARAM2 28
+PARAM3 46
+MONGEN 散财金猪 1 1
+PARAM1 0122
+PARAM2 18
+PARAM3 36
+MONGEN 散财金猪 1 1
+PARAM1 0122
+PARAM2 26
+PARAM3 26
+MONGEN 散财金猪 1 1
+PARAM1 0122
+PARAM2 39
+PARAM3 25
+MONGEN 散财金猪 1 1
+PARAM1 0122
+PARAM2 7
+PARAM3 29
+MONGEN 散财金猪 1 1
+GMEXECUTE 开始提问  @天降元宝1
+SENDMSG 0 《天降元宝》活动正式开始，金猪必爆1W元宝,大家还不快去抢,！ 249 0
+SENDMSG 0 《天降元宝》活动正式开始，金猪必爆1W元宝,大家还不快去抢,！ 249 0
+SENDMSG 0 《天降元宝》活动正式开始，金猪必爆1W元宝,大家还不快去抢,！ 249 0
+BREAK
+
+[@行会泡点]
+#IF
+#ACT
+MOV G96 1
+GMEXECUTE 开始提问 @行会泡点开始
+SENDMSG 0 行会泡点活动开始!有行会的玩家可以开始激情了! 254 0
+SENDMSG 0 行会泡点活动开始!有行会的玩家可以开始激情了! 254 0
+SENDMSG 0 行会泡点活动开始!有行会的玩家可以开始激情了! 254 0
+SENDMSG 0 行会泡点活动开始!有行会的玩家可以开始激情了! 254 0
+[@行会泡点1]
+#IF
+#ACT
+MOV G96 0
+SENDMSG 0 本次行会泡点活动结束!请广大玩家等待下次活动时间! 253 254
+SENDMSG 0 本次行会泡点活动结束!请广大玩家等待下次活动时间! 253 254
+SENDMSG 0 本次行会泡点活动结束!请广大玩家等待下次活动时间! 253 254
+SENDMSG 0 本次行会泡点活动结束!请广大玩家等待下次活动时间! 253 254
+
+[@激情大厅]
+#IF
+#ACT
+GMEXECUTE 开始提问 @传送激情
+Mission jqdd 20 22
+param1 20
+param2 22
+param3 1
+Param4 0
+MobPlace 武器专暴神龙 
+sendmsg 0 激情大殿活动已经开始，武器专暴神龙 已经刷出，必爆高级武器！ 253 255 100
+sendmsg 0 激情大殿活动已经开始，武器专暴神龙 已经刷出，必爆高级武器！ 253 255 100
+sendmsg 0 激情大殿活动已经开始，武器专暴神龙 已经刷出，必爆高级武器！ 253 255 100
+
+[@激情大厅1]
+#IF
+#ACT
+GMEXECUTE 开始提问 @传送激情
+Mission jqdd 20 22
+param1 20
+param2 22
+param3 1
+Param4 0
+MobPlace 武器专暴神龙 
+sendmsg 0 激情大殿活动已经开始，武器专暴神龙 已经刷出，必爆高级武器！ 253 255 100
+sendmsg 0 激情大殿活动已经开始，武器专暴神龙 已经刷出，必爆高级武器！ 253 255 100
+sendmsg 0 激情大殿活动已经开始，武器专暴神龙 已经刷出，必爆高级武器！ 253 255 100
+
+
+[@激情大厅2]
+#IF
+#ACT
+GMEXECUTE 开始提问 @传送激情
+Mission jqdd 20 22
+param1 20
+param2 22
+param3 1
+Param4 0
+MobPlace 武器专暴神龙 
+sendmsg 0 激情大殿活动已经开始，武器专暴神龙 已经刷出，必爆高级武器！ 253 255 100
+sendmsg 0 激情大殿活动已经开始，武器专暴神龙 已经刷出，必爆高级武器！ 253 255 100
+sendmsg 0 激情大殿活动已经开始，武器专暴神龙 已经刷出，必爆高级武器！ 253 255 100
+
+
+
+[@屠杀走时]
+#IF
+EQUAL A79 开放
+large H79 1
+#ACT
+DEC H79 1
+SENDMSG 0 ……“神秘屠杀”活动剩余时间“<$STR(H79)>”秒结束，请火速前往活动地图…… 255  252  1
+BREAK
+#ELSEACT
+Gmexecute  开始提问 @屠杀结束
+BREAK
+
+
+[@屠杀比赛]
+#IF
+#ACT
+MOV A79 开放
+MOV H79 1800
+GMEXECUTE 开始提问 @神秘屠杀
+BREAK
+
+[@屠杀清理]
+#IF
+#ACT
+MOV A21
+MOV A22
+MOV A23
+MOV A24
+MOV A25
+MOV G21 0
+MOV G22 0
+MOV G23 0
+MOV G24 0
+MOV G25 0
+CLEARNAMELIST ..\QuestDiary\数据文件\屠杀第一名.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\屠杀第二名.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\屠杀第三名.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\屠杀第四名.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\屠杀第五名.txt
+CLEARNAMELIST ..\QuestDiary\数据文件\屠杀安慰名单.txt
+
+
+[@开放押镖]
+#IF
+#ACT
+SENDMSG 0 今天押镖活动已经开放，请从土城镇远镖局NPC进入，大量经验等你拿！ 253 255 100
+SENDMSG 0 今天押镖活动已经开放，请从土城镇远镖局NPC进入，大量经验等你拿！ 253 255 100
+SENDMSG 0 今天押镖活动已经开放，请从土城镇远镖局NPC进入，大量经验等你拿！ 253 255 100
+SENDMSG 0 今天押镖活动已经开放，请从土城镇远镖局NPC进入，大量经验等你拿！ 253 255 100
+SENDMSG 0 今天押镖活动已经开放，请从土城镇远镖局NPC进入，大量经验等你拿！ 253 255 100
+SENDMSG 0 今天押镖活动已经开放，请从土城镇远镖局NPC进入，大量经验等你拿！ 253 255 100
+BREAK
+
+[@关闭押镖]
+#IF
+#ACT
+SENDMSG 0 今天押镖活动已经结束，押镖活动为每天的20点-21点开放！ 253 255 100
+SENDMSG 0 今天押镖活动已经结束，押镖活动为每天的20点-21点开放！ 253 255 100
+SENDMSG 0 今天押镖活动已经结束，押镖活动为每天的20点-21点开放！ 253 255 100
+SENDMSG 0 今天押镖活动已经结束，押镖活动为每天的20点-21点开放！ 253 255 100
+SENDMSG 0 今天押镖活动已经结束，押镖活动为每天的20点-21点开放！ 253 255 100
+SENDMSG 0 今天押镖活动已经结束，押镖活动为每天的20点-21点开放！ 253 255 100
+BREAK

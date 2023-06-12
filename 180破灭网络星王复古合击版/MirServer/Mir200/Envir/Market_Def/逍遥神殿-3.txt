@@ -1,0 +1,20 @@
+()
+%100
+[@main]
+<COLOR=clLime 欢迎来到永恒星王180经典合击，这里是【逍遥神殿】。>\ \
+<COLOR=clred 地图怪物：>魔龙教主.魔龙战将.力士.巨蛾。\
+<COLOR=clred 主要装备：>圣战.雷霆系列.战神.终极系列.书页。\
+<COLOR=clred 地图层数：>一层\
+<COLOR=clred 地图收费：>进入需要支付<500>元宝。\ \
+<进入地图/@jrdt>
+[@jrdt]
+#if
+CHECKGAMEGOLD > 499
+#act
+GAMEGOLD - 500
+GIVE 回城卷 1
+mapmove xysd99
+SENDMSG 0 玩家[%s],进入逍遥神殿,本地图BOSS为双倍爆率!
+#ELSEACT
+
+MESSAGEBOX 需要100元宝用来支付我们的服务费用!

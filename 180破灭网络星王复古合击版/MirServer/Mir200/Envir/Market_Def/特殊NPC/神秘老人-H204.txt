@@ -1,0 +1,9 @@
+[@main]
+你想去沙巴克皇宫的截近吗？\
+嘿嘿嘿....\\
+ <去沙巴克影之道/@choulao>\
+ <离开/@exit>
+[@choulao]
+#IF
+#ACT
+mapmove H201

@@ -1,0 +1,105 @@
+[@BL]
+{
+#IF
+CheckLevelEx > 0
+#ACT
+VAR Integer HUMAN 骰子验证次数
+VAR Integer HUMAN 骰子刷新次数
+VAR String HUMAN 猜点押注名称
+VAR Integer HUMAN 猜点押注数量大
+VAR Integer HUMAN 猜点押注数量小
+VAR Integer HUMAN 猜点押注数量豹
+VAR Integer HUMAN 庄家补发数量
+VAR Integer HUMAN 猜点押注数量
+VAR String HUMAN 二级登陆密码
+VAR String HUMAN 二级登陆IP
+VAR String  HUMAN 二级地图号
+VAR String  HUMAN 二级密码问题
+VAR String  HUMAN 二级密码答案
+VAR String  HUMAN 二级密码生日
+VAR Integer HUMAN 二级登陆次数
+VAR Integer HUMAN 二级坐标X
+VAR Integer HUMAN 二级坐标Y
+VAR Integer HUMAN 押镖次数
+VAR Integer HUMAN 元宝消费
+VAR Integer HUMAN 消费积分
+VAR INTEGER HUMAN YBJZ
+LOADVAR HUMAN YBJZ ..\QuestDiary\重要数据\YBJZSave.txt
+LOADVAR HUMAN 元宝消费 ..\QuestDiary\充值积分\元宝消费Save.txt
+LOADVAR HUMAN 消费积分 ..\QuestDiary\充值积分\消费积分Save.txt
+LOADVAR HUMAN 猜点押注名称 ..\QuestDiary\173hh变量文件\猜点押注数量.txt
+LOADVAR HUMAN 猜点押注数量 ..\QuestDiary\173hh变量文件\猜点押注数量.txt
+LOADVAR HUMAN 庄家补发数量 ..\QuestDiary\173hh变量文件\庄家补发.txt
+LOADVAR HUMAN 猜点押注数量大 ..\QuestDiary\173hh变量文件\猜点补发.txt
+LOADVAR HUMAN 猜点押注数量小 ..\QuestDiary\173hh变量文件\猜点补发.txt
+LOADVAR HUMAN 猜点押注数量豹 ..\QuestDiary\173hh变量文件\猜点补发.txt
+LOADVAR HUMAN 骰子刷新次数 ..\QuestDiary\173hh变量文件\骰子验证次数.txt
+LOADVAR HUMAN 骰子验证次数 ..\QuestDiary\173hh变量文件\骰子验证次数.txt
+LOADVAR HUMAN 押镖次数 ..\QuestDiary\数据文件\变量.txt
+LOADVAR HUMAN 二级密码生日 ..\QuestDiary\二级密码\二级登陆密码.txt
+LOADVAR HUMAN 二级密码答案 ..\QuestDiary\二级密码\二级登陆密码.txt
+LOADVAR HUMAN 二级密码问题 ..\QuestDiary\二级密码\二级登陆密码.txt
+LOADVAR HUMAN 二级登陆密码 ..\QuestDiary\二级密码\二级登陆密码.txt
+LOADVAR HUMAN 二级登陆IP ..\QuestDiary\二级密码\二级登陆密码.txt
+LOADVAR HUMAN 二级登陆次数 ..\QuestDiary\二级密码\二级登陆密码.txt
+LOADVAR HUMAN 二级坐标X ..\QuestDiary\二级密码\二级登陆密码.txt
+LOADVAR HUMAN 二级坐标Y ..\QuestDiary\二级密码\二级登陆密码.txt
+LOADVAR HUMAN 二级地图号 ..\QuestDiary\二级密码\二级登陆密码.txt
+VAR String HUMAN 银行类型
+VAR String HUMAN 银行账号
+VAR String HUMAN 账户名称
+VAR String HUMAN 提交时间
+Var Integer HUMAN 兑换数量
+VAR String HUMAN 游戏区名
+LoadVar HUMAN 游戏区名 ..\QuestDiary\数据文件\元宝换RMB.txt
+LoadVar HUMAN 提交时间 ..\QuestDiary\数据文件\元宝换RMB.txt
+LoadVar HUMAN 银行类型 ..\QuestDiary\数据文件\元宝换RMB.txt
+LoadVar HUMAN 银行账号 ..\QuestDiary\数据文件\元宝换RMB.txt
+LoadVar HUMAN 账户名称 ..\QuestDiary\数据文件\元宝换RMB.txt
+LoadVar HUMAN 兑换数量 ..\QuestDiary\数据文件\元宝换RMB.txt
+Var Integer HUMAN 本次下注
+Var Integer HUMAN 灵气值
+LOADVAR HUMAN 灵气值 ..\QuestDiary\数据文件\灵气值.txt
+VAR Integer HUMAN L2
+LOADVAR HUMAN L2 ..\UserData\临时.txt
+;----------------------任务-----------------------
+VAR Integer HUMAN 除妖任务数量
+VAR Integer HUMAN 接受除妖任务
+VAR Integer HUMAN 除妖任务次数
+LOADVAR HUMAN 除妖任务数量 ..\QuestDiary\数据文件\除妖任务数据.txt
+LOADVAR HUMAN 接受除妖任务 ..\QuestDiary\数据文件\除妖任务数据.txt
+LOADVAR HUMAN 除妖任务次数 ..\QuestDiary\数据文件\除妖任务数据.txt
+
+VAR String HUMAN 执行内容
+LOADVAR HUMAN 执行内容 ..\QuestDiary\数据文件\除魔任务数据.txt
+VAR Integer HUMAN 已杀数量
+LOADVAR HUMAN 已杀数量 ..\QuestDiary\数据文件\除魔任务数据.txt
+VAR Integer HUMAN 任务轮次
+LOADVAR HUMAN 任务轮次 ..\QuestDiary\数据文件\除魔任务数据.txt
+VAR Integer HUMAN 任务小轮
+LOADVAR HUMAN 任务小轮 ..\QuestDiary\数据文件\除魔任务数据.txt
+VAR Integer HUMAN 领取除魔任务
+LOADVAR HUMAN 领取除魔任务 ..\QuestDiary\数据文件\除魔任务数据.txt
+VAR Integer HUMAN 除魔杀怪数量
+LOADVAR HUMAN 除魔杀怪数量 ..\QuestDiary\数据文件\除魔任务数据.txt
+VAR Integer HUMAN 除魔完成
+LOADVAR HUMAN 除魔完成 ..\QuestDiary\数据文件\除魔任务数据.txt
+
+;-------------------赞助大使任务-----------------------
+VAR Integer HUMAN 普通赞助次数
+VAR Integer HUMAN 高级赞助次数
+VAR Integer HUMAN 白金赞助次数
+VAR Integer HUMAN 黄金赞助次数
+VAR Integer HUMAN 金钻赞助次数
+VAR Integer HUMAN 贵族赞助次数
+VAR Integer HUMAN 皇冠赞助次数
+LOADVAR HUMAN 普通赞助次数 ..\QuestDiary\赞助大使任务\赞助数据.txt
+LOADVAR HUMAN 高级赞助次数 ..\QuestDiary\赞助大使任务\赞助数据.txt
+LOADVAR HUMAN 白金赞助次数 ..\QuestDiary\赞助大使任务\赞助数据.txt
+LOADVAR HUMAN 黄金赞助次数 ..\QuestDiary\赞助大使任务\赞助数据.txt
+LOADVAR HUMAN 金钻赞助次数 ..\QuestDiary\赞助大使任务\赞助数据.txt
+LOADVAR HUMAN 贵族赞助次数 ..\QuestDiary\赞助大使任务\赞助数据.txt
+LOADVAR HUMAN 皇冠赞助次数 ..\QuestDiary\赞助大使任务\赞助数据.txt
+
+
+}

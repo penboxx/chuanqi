@@ -1,0 +1,4 @@
+#IF
+CheckGamePoint > 999
+#ACT
+MOV S1 ก๏ก๏ปฦฝ๐ิÞึ๚ด๓สนก๏ก๏

@@ -1,0 +1,27 @@
+[@MAIN]
+<COLOR=clRed                     《高级赌场特别声明：》>\
+<COLOR=clLime 进入抢庄赌场后掉线或服务器重启等不可抗拒的原因导致元宝损失，>\
+<COLOR=clLime 本游戏不作任何赔偿或补偿，进入表示您接受此规定！！！>\
+<COLOR=clYellow 这里是：皇家高级赌场,严禁赌博作弊，遵守赌场规则，公平赌博！>\ 
+<COLOR=clAqua 为满足部分赌友朋友们的赌博爱好，开发全新的独家赌博坐庄系统！>\
+<COLOR=clFuchsia ◆><COLOR=clLime Ａ><COLOR=clFuchsia ◆>   <COLOR=clFuchsia ◆><COLOR=clLime Ａ><COLOR=clFuchsia ◆>   <COLOR=clFuchsia ◆><COLOR=clLime Ａ><COLOR=clFuchsia ◆><COLOR=clYellow ╔┄┄┄┄┄┄┄┄┄┄┄┄┄╗>\
+<COLOR=clYellow ■><COLOR=clRED Ｋ><COLOR=clYellow ■>   <COLOR=clYellow ■><COLOR=clRED Ｋ><COLOR=clYellow ■>   <COLOR=clYellow ■><COLOR=clRED Ｋ><COLOR=clYellow ■><COLOR=clYellow ┆> <我喜欢赌博，进去体验感觉/@GO-DC> <COLOR=clYellow ┆>\
+<COLOR=clAqua ★><COLOR=clYellow Ｑ><COLOR=clAqua ★>   <COLOR=clAqua ★><COLOR=clYellow Ｑ><COLOR=clAqua ★>   <COLOR=clAqua ★><COLOR=clYellow Ｑ><COLOR=clAqua ★><COLOR=clYellow ╚┄┄┄┄┄┄┄┄┄┄┄┄┄╝>\ 
+<COLOR=clRed 温馨提示：赌场每天开放时间为14点-18点开放！>
+
+[@GO-DC]
+#IF
+CHECKVAR GLOBAL 大小是否开放 = 已开启
+#ACT
+MESSAGEBOX 目前赌场为开启状态！！！
+BREAK
+
+#IF
+CHECKHEROONLINE
+#ACT
+MESSAGEBOX 为了保持场内干净，不能带英雄进入！\
+BREAK
+#ELSEACT
+MAPMOVE TXDGA 5 11
+SendMSG 0 【<$USERNAME>】带着他的家当进入了全新的★押庄赌场★！！！ 151 219 10
+BREAK

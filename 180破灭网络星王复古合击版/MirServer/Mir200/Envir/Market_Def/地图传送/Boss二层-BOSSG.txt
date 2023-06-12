@@ -1,0 +1,20 @@
+
+[@main]
+【星王合击‖做的就是信誉--做的就是实力>】\
+<COLOR=clAqua → → → → →本服新开地图--BOSS之家二层 ← ← ← ← ←>\
+<COLOR=clFuchsia 因大众玩家太多,导致BOSS太少,本地图专刷新BOSS>\
+<COLOR=clFuchsia 本地图全为BOSS怪,新手玩家,请不要挑战!!>\ 
+<COLOR=clLime 进入本地图每10秒需要5元宝.没元宝自动回城哦>\
+<COLOR=clAqua 黄金神龙-60分钟/只-暴率:开天 镇天 玄天 凤天>\
+你确定要进入此地图寻宝吗???\ \
+<我确定进入/@go>      <我考虑下再进/@EXIT>\ 
+
+[@go]
+#IF
+CHECKGAMEGOLD > 2
+#act
+mapmove BOSS8
+SENDMSG 2 %s进入了BOSS之家二层！开天.战神系列唾手可得！  49 223
+SENDMSG 2 %s进入了BOSS之家二层！开天.战神系列唾手可得！  49 223
+#ELSEACT
+MessageBox 你连元宝都没还进个屁啊,快去网站充值!!

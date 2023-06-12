@@ -1,0 +1,4 @@
+#IF
+CheckGamePoint > 1999
+#ACT
+MOV S1 ЁяЁязЉЪЏдожњДѓЪЙЁяЁя

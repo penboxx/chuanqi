@@ -1,0 +1,235 @@
+[@main]
+在这里你可以领取你的封号\
+<领取46级奖励/@46>    <COLOR=clGray →>    <COLOR=clSkyBlue 少尉><COLOR=clYellow [封号]>    <COLOR=#254 上线攻、魔、道+1点>\
+<领取47级奖励/@47>    <COLOR=clGray →>    <COLOR=clSkyBlue 中尉><COLOR=clYellow [封号]>    <COLOR=#254 上线攻、魔、道+2点>\
+<领取48级奖励/@48>    <COLOR=clGray →>    <COLOR=clSkyBlue 上尉><COLOR=clYellow [封号]>    <COLOR=#254 上线攻、魔、道+3点>\
+<领取49级奖励/@49>    <COLOR=clGray →>    <COLOR=clSkyBlue 少校><COLOR=clYellow [封号]>    <COLOR=#254 上线攻、魔、道+4点>\
+<领取50级奖励/@50>    <COLOR=clGray →>    <COLOR=clSkyBlue 中校><COLOR=clYellow [封号]>    <COLOR=#254 上线攻、魔、道+5点>\
+<领取51级奖励/@51>    <COLOR=clGray →>    <COLOR=clSkyBlue 上校><COLOR=clYellow [封号]>    <COLOR=#254 上线攻、魔、道+6点>\
+温馨提示:领取后下线属性生效,领取奖励时候主号,英雄同时奖励\
+<下一页/@next>                                             <关闭/@Exit> \
+[@next]
+在这里你可以领取你的封号\
+<领取52级奖励/@52>    <COLOR=clGray →>    <COLOR=clSkyBlue 大校><COLOR=clYellow [封号]>    <COLOR=#254 上线攻、魔、道+7点>\
+<领取53级奖励/@53>    <COLOR=clGray →>    <COLOR=clSkyBlue 少将><COLOR=clYellow [封号]>    <COLOR=#254 上线攻、魔、道+8点>\
+<领取54级奖励/@54>    <COLOR=clGray →>    <COLOR=clSkyBlue 中将><COLOR=clYellow [封号]>    <COLOR=#254 上线攻、魔、道+9点>\
+<领取55级奖励/@55>    <COLOR=clGray →>    <COLOR=clSkyBlue 上将><COLOR=clYellow [封号]>    <COLOR=#254 上线攻、魔、道+10点>\
+<领取56级奖励/@56>    <COLOR=clGray →>    <COLOR=clSkyBlue 大将><COLOR=clYellow [封号]>    <COLOR=#254 上线攻、魔、道+11点>\
+<领取57级奖励/@57>    <COLOR=clGray →>    <COLOR=clSkyBlue 元帅><COLOR=clYellow [封号]>    <COLOR=#254 上线攻、魔、道+12点>\
+温馨提示:领取后下线属性生效,领取奖励时候主号,英雄同时奖励 \
+<上一页/@main>                                              <关闭/@Exit> \
+
+[@57]
+#IF
+CHECK [57] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKLEVELEX < 57
+#ACT
+MESSAGEBOX 领取失败!!你的人物级别不够领取此奖励!!
+BREAK
+#ELSEACT
+SET [57] 1
+MESSAGEBOX 领取成功.恭喜你领取的(57级)[军衔：元帅]+[上线攻魔道属性+12]的奖励\　\请您下线上线后就可以获得属性和成功奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#CALL [\\登陆\属性.txt] @SX
+break
+
+[@56]
+#IF
+CHECK [56] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKLEVELEX < 56
+#ACT
+MESSAGEBOX 领取失败!!你的人物级别不够领取此奖励!!
+BREAK
+#ELSEACT
+SET [56] 1
+MESSAGEBOX 领取成功.恭喜你领取的(56级)[军衔：大将]+[上线攻魔道属性+11]的奖励\　\请您下线上线后就可以获得属性和成功奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#CALL [\\登陆\属性.txt] @SX
+break
+
+[@55]
+#IF
+CHECK [55] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKLEVELEX < 55
+#ACT
+MESSAGEBOX 领取失败!!你的人物级别不够领取此奖励!!
+BREAK
+#ELSEACT
+SET [55] 1
+MESSAGEBOX 领取成功.恭喜你领取的(55级)[军衔：上将]+[上线攻魔道属性+10]的奖励\　\请您下线上线后就可以获得属性和成功奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#CALL [\\登陆\属性.txt] @SX
+break
+
+[@54]
+#IF
+CHECK [54] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKLEVELEX < 54
+#ACT
+MESSAGEBOX 领取失败!!你的人物级别不够领取此奖励!!
+BREAK
+#ELSEACT
+SET [54] 1
+MESSAGEBOX 领取成功.恭喜你领取的(54级)[军衔：中将]+[上线攻魔道属性+9]的奖励\　\请您下线上线后就可以获得属性和成功奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#CALL [\\登陆\属性.txt] @SX
+break
+
+[@53]
+#IF
+CHECK [53] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKLEVELEX < 53
+#ACT
+MESSAGEBOX 领取失败!!你的人物级别不够领取此奖励!!
+BREAK
+#ELSEACT
+SET [53] 1
+MESSAGEBOX 领取成功.恭喜你领取的(53级)[军衔：少将]+[上线攻魔道属性+8]的奖励\　\请您下线上线后就可以获得属性和成功奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#CALL [\\登陆\属性.txt] @SX
+
+[@52]
+#IF
+CHECK [52] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKLEVELEX < 52
+#ACT
+MESSAGEBOX 领取失败!!你的人物级别不够领取此奖励!!
+BREAK
+#ELSEACT
+SET [52] 1
+MESSAGEBOX 领取成功.恭喜你领取的(52级)[军衔：大校]+[上线攻魔道属性+7]的奖励\　\请您下线上线后就可以获得属性和成功奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#CALL [\\登陆\属性.txt] @SX
+break
+
+[@51]
+#IF
+CHECK [51] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKLEVELEX < 51
+#ACT
+MESSAGEBOX 领取失败!!你的人物级别不够领取此奖励!!
+BREAK
+#ELSEACT
+SET [51] 1
+MESSAGEBOX 领取成功.恭喜你领取的(51级)[军衔：上校]+[上线攻魔道属性+6]的奖励\　\请您下线上线后就可以获得属性和成功奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#CALL [\\登陆\属性.txt] @SX
+break
+
+[@50]
+#IF
+CHECK [50] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKLEVELEX < 50
+#ACT
+MESSAGEBOX 领取失败!!你的人物级别不够领取此奖励!!
+BREAK
+#ELSEACT
+SET [50] 1
+MESSAGEBOX 领取成功.恭喜你领取的(50级)[军衔：中校]+[上线攻魔道属性+5]的奖励\　\请您下线上线后就可以获得属性和成功奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#CALL [\\登陆\属性.txt] @SX
+break
+
+[@49]
+#IF
+CHECK [49] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKLEVELEX < 49
+#ACT
+MESSAGEBOX 领取失败!!你的人物级别不够领取此奖励!!
+BREAK
+#ELSEACT
+SET [49] 1
+MESSAGEBOX 领取成功.恭喜你领取的(49级)[军衔：少校]+[上线攻魔道属性+4]的奖励\　\请您下线上线后就可以获得属性和成功奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#CALL [\\登陆\属性.txt] @SX
+break
+
+[@48]
+#IF
+CHECK [48] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKLEVELEX < 48
+#ACT
+MESSAGEBOX 领取失败!!你的人物级别不够领取此奖励!!
+BREAK
+#ELSEACT
+SET [48] 1
+MESSAGEBOX 领取成功.恭喜你领取的(48级)[军衔：上尉]+[上线攻魔道属性+3]的奖励\　\请您下线上线后就可以获得属性和成功奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#CALL [\\登陆\属性.txt] @SX
+break
+
+[@47]
+#IF
+CHECK [47] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKLEVELEX < 47
+#ACT
+MESSAGEBOX 领取失败!!你的人物级别不够领取此奖励!!
+BREAK
+#ELSEACT
+SET [47] 1
+MESSAGEBOX 领取成功.恭喜你领取的(47级)[军衔：中尉]+[上线攻魔道属性+2]的奖励\　\请您下线上线后就可以获得属性和成功奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#CALL [\\登陆\属性.txt] @SX
+break
+
+[@46]
+#IF
+CHECK [46] 1
+#ACT
+MESSAGEBOX 你已经领取过此级别的奖励.禁止重复领取!!!
+BREAK
+#IF
+CHECKLEVELEX < 46
+#ACT
+MESSAGEBOX 领取失败!!你的人物级别不够领取此奖励!!
+BREAK
+#ELSEACT
+SET [46] 1
+MESSAGEBOX 领取成功.恭喜你领取的(46级)[军衔：少尉)]+[上线攻魔道属性+1]的奖励\　\请您下线上线后就可以获得属性和成功奖励了!!
+#CALL [\\登陆\封号.txt] @FH
+#CALL [\\登陆\属性.txt] @SX
+break

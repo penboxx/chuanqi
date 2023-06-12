@@ -1,0 +1,136 @@
+
+[@main]
+
+ ¤╭⌒╮╭⌒╮          欢迎光临     　　\
+ ╱◥██◣ ╭⌒╮                    <$SERVERNAME> 　　\
+︱田︱田田|╰-------------    　　\
+╬╬╬╬╬╬╬╬╬╬╬╬╬   <COLOR=clFuchsia 幸运加三随机加暴击>\
+-------------------------------------------------　\
+<幸运加一/@1>   <COLOR=CLLIME 元宝2000提升一次> <COLOR=CLFUCHSIA 提升成功率为100%!>\
+<幸运加二/@2>   <COLOR=CLLIME 元宝3000提升一次> <COLOR=CLFUCHSIA 提升成功率为50%!>\
+<幸运加三/@3>   <COLOR=CLLIME 元宝5000提升一次> <COLOR=CLFUCHSIA 提升成功率为30%!>\
+------------10000元宝--<清除暴击/@清暴> -------------------　\
+[@清暴]
+#IF
+CHECKGAMEGOLD > 9999
+#act
+GAMEGOLD - 10000
+GMEXECUTE 改属性 3 8 0
+GMEXECUTE 改属性 3 1 0
+MESSAGEBOX 已清理！！！
+[@3]
+#IF
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 2
+CHECKGAMEGOLD > 4999
+#ACT
+GOTO @提升3
+#ELSEACT
+MESSAGEBOX 提示:\　\1.你没有佩带项链!\　\2.你项链是幸运0的!\　\3.元宝不够5000哦!
+[@提升3]
+#IF
+RANDOM 5
+#ACT
+GAMEGOLD - 5000
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级处成功提升到幸运加三! 249 254
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级处成功提升到幸运加三! 151 249 10
+GOTO @暴击
+BREAK
+#IF
+#ACT
+GAMEGOLD - 5000
+MESSAGEBOX 失败了元宝已经扣除!
+[@暴击]
+#IF
+RANDOM 20
+#ACT
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级提升幸运三时触发暴击+5! 249 254
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级提升幸运三时触发暴击+5! 151 249 10
+BREAK
+#IF
+RANDOM 10
+#ACT
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级提升幸运三时触发暴击+4! 249 254
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级提升幸运三时触发暴击+4! 151 249 10
+BREAK
+#IF
+RANDOM 5
+#ACT
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级提升幸运三时触发暴击+3! 249 254
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级提升幸运三时触发暴击+3! 151 249 10
+BREAK
+#IF
+RANDOM 2
+#ACT
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级提升幸运三时触发暴击+2! 249 254
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级提升幸运三时触发暴击+2! 151 249 10
+BREAK
+#IF
+#ACT
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级提升幸运三时触发暴击+1! 249 254
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级提升幸运三时触发暴击+1! 151 249 10
+
+
+[@2]
+#IF
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 1
+CHECKGAMEGOLD > 2999
+#ACT
+GOTO @提升2
+#ELSEACT
+MESSAGEBOX 提示:\　\1.你没有佩带项链!\　\2.你项链是幸运0的!\　\3.元宝不够3000哦!
+[@提升2]
+#IF
+RANDOM 4
+#ACT
+GAMEGOLD - 3000
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级处成功提升到幸运加二! 249 254
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级处成功提升到幸运加二! 151 249 10
+BREAK
+#IF
+#ACT
+GAMEGOLD - 3000
+MESSAGEBOX 失败了元宝已经扣除!
+
+
+
+
+[@1]
+#IF
+CHECKUSEITEM 3
+CHECKITEMADDVALUE 3 1 = 0
+CHECKGAMEGOLD > 1999
+#ACT
+GOTO @提升1
+#ELSEACT
+MESSAGEBOX 提示:\　\1.你没有佩带项链!\　\2.你项链是幸运0的!\　\3.你元宝不够2000个!
+[@提升1]
+#IF
+#ACT
+GAMEGOLD - 2000
+UPGRADEITEMEX 3 1 0 1 0
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级处成功提升到幸运加一! 249 254
+SENDMSG 0 勇士[%s]成功在土城下方幸运升级处成功提升到幸运加一! 151 249 10
+
+
+
+
+

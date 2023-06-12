@@ -1,0 +1,45 @@
+[@main]
+╔━┯━━━━━━━━━━━━━━━━━━━━━━━━┯━╗　\
+├─┤        <COLOR=clLime ◎    ２０１５年    心想事成    ◎>      ├─┤　\
+│<COLOR=clFuchsia 心>├────────────────────────┤<COLOR=clFuchsia 心>│　\
+│<COLOR=clFuchsia 想>│<COLOR=clAqua 您只要收集了 心.想.事.成.4个材料  就可以兑换装备>│<COLOR=clFuchsia 想>│　\
+│<COLOR=clFuchsia 事>│<COLOR=clYellow 您只要收集了 心.想.事.成.4个材料  就可以兑换装备>│<COLOR=clFuchsia 事>│　\
+│<COLOR=clFuchsia 成>│<COLOR=clRed 具体可以兑换到的 物品有： 战神.开天.凤天系列物品>│<COLOR=clFuchsia 成>│　\
+├─┤       <COLOR=clFuchsia 活动地图活动·怪物可爆出材料踊跃参加！>   ├─┤　\
+│  ╰────────────────────────╯  │　\
+│          <我已凑齐材料/@金刚>                <算了我只看看/@exit>      │　\
+╚━━━━━━━━━━━━━━━━━━━━━━━━━━━━╝
+
+
+
+
+[@金刚]
+#if
+CHECKBAGSIZE  6
+#ACT
+#elseact
+messagebox 人物背包的空格不够6格！
+close
+break
+
+#if
+CHECKITEM 心 1
+CHECKITEM 想 1
+CHECKITEM 事 1
+CHECKITEM 成 1
+#ACT 
+take 心 1
+take 想 1
+take 事 1
+take 成 1
+OPENBOX 心想事成
+sendmsg 0 [心想事成]:神明启动了心想事成宝箱,“%s”能否获得高级装备，就要看他的造化了。 254 0 30
+sendmsg 0 [心想事成]:神明启动了心想事成宝箱,“%s”能否获得高级装备，就要看他的造化了。 254 0 30
+sendmsg 0 [心想事成]:神明启动了心想事成宝箱,“%s”能否获得高级装备，就要看他的造化了。 254 0 30
+sendmsg 0 [心想事成]:神明启动了心想事成宝箱,“%s”能否获得高级装备，就要看他的造化了。 254 0 30
+close
+break
+#elseact
+messagebox 你准备的物品还不足够..准备好在来吧！
+CLOSE
+break

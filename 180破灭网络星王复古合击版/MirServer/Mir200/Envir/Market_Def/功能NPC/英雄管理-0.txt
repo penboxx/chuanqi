@@ -1,0 +1,445 @@
+(@@BuHero)
+[@main]
+#IF
+#say
+  　　╔┈┈┈┈╗  　　　　  　　　　　╔┈┈┈┈╗  \
+  　　┊<建立英雄/@@buHero>┊  　　　　  　　　　　┊<删除英雄/@qding>┊  \
+  　　╚┈┈┈┈╝  　　　　　  　　　　╚┈┈┈┈╝  \ \
+<COLOR=clFuchsia 英雄合击技能主号40级即可免费领取！> \
+<领取/@l1><COLOR=CLSKYBLUE 战士+战士  破魂斩>             <领取/@l2><COLOR=CLSKYBLUE 道士+道士  噬魂沼泽>\
+<领取/@l3><COLOR=CLSKYBLUE 法师+法师  火龙气焰>           <领取/@l4><COLOR=CLSKYBLUE 战士+法师  雷霆一击>\
+<领取/@l5><COLOR=CLSKYBLUE 道士+法师  末日审判>           <领取/@l6><COLOR=CLSKYBLUE 战士+道士  劈星斩>\
+<COLOR=CLSKYBLUE 一级合击30级可学.二级合击43级可学.三级合击46级可学>\
+
+[@l1]
+#if
+CHECKHEROONLINE
+#ElseAct
+MessageBox 你的英雄不在线或还没创建过英雄！！
+Break
+#if
+CHECKlevelex < 1
+#Act
+MessageBox 您的等级不够40级！！
+Break
+#If
+Check [499] 0
+#Act
+Set [499] 1
+H.Give 破魂斩 1
+H.Give 火龙之心 1
+SENDMSG 6 恭喜：(英雄)领取破魂斩成功！ 250 0
+BREAK
+#ELSEACT
+MessageBox 您已经领取过了！！
+Break
+
+[@l2]
+#if
+CHECKHEROONLINE
+#ElseAct
+MessageBox 你的英雄不在线或还没创建过英雄！！
+Break
+#if
+CHECKlevelex < 1
+#Act
+MessageBox 您的等级不够40级！！
+Break
+#If
+Check [499] 0
+#Act
+Set [499] 1
+H.Give 噬魂沼泽 1
+H.Give 火龙之心 1
+SENDMSG 6 恭喜：(英雄)领取噬魂沼泽成功！ 250 0
+BREAK
+#ELSEACT
+MessageBox 您已经领取过了！！
+Break
+
+[@l3]
+#if
+CHECKHEROONLINE
+#ElseAct
+MessageBox 你的英雄不在线或还没创建过英雄！！
+Break
+#if
+CHECKlevelex < 1
+#Act
+MessageBox 您的等级不够40级！！
+Break
+#If
+Check [499] 0
+#Act
+Set [499] 1
+H.Give 火龙气焰 1
+H.Give 火龙之心 1
+SENDMSG 6 恭喜：(英雄)领取火龙气焰成功！ 250 0
+BREAK
+#ELSEACT
+MessageBox 您已经领取过了！！
+Break
+
+[@l4]
+#if
+CHECKHEROONLINE
+#ElseAct
+MessageBox 你的英雄不在线或还没创建过英雄！！
+Break
+#if
+CHECKlevelex < 1
+#Act
+MessageBox 您的等级不够40级！！
+Break
+#If
+Check [499] 0
+#Act
+Set [499] 1
+H.Give 雷霆一击 1
+H.Give 火龙之心 1
+SENDMSG 6 恭喜：(英雄)领取雷霆一击成功！ 250 0
+BREAK
+#ELSEACT
+MessageBox 您已经领取过了！！
+Break
+
+[@l5]
+#if
+CHECKHEROONLINE
+#ElseAct
+MessageBox 你的英雄不在线或还没创建过英雄！！
+Break
+#if
+CHECKlevelex < 1
+#Act
+MessageBox 您的等级不够40级！！
+Break
+#If
+Check [499] 0
+#Act
+Set [499] 1
+H.Give 末日审判 1
+H.Give 火龙之心 1
+SENDMSG 6 恭喜：(英雄)领取末日审判成功！ 250 0
+BREAK
+#ELSEACT
+MessageBox 您已经领取过了！！
+Break
+
+[@l6]
+#if
+CHECKHEROONLINE
+#ElseAct
+MessageBox 你的英雄不在线或还没创建过英雄！！
+Break
+#if
+CHECKlevelex < 1
+#Act
+MessageBox 您的等级不够40级！！
+Break
+#If
+Check [499] 0
+#Act
+Set [499] 1
+H.Give 劈星斩 1
+H.Give 火龙之心 1
+SENDMSG 6 恭喜：(英雄)领取劈星斩成功！ 250 0
+BREAK
+#ELSEACT
+MessageBox 您已经领取过了！！
+Break
+
+[@huanqujn]
+英雄合击威力无比，因此我派前辈在记录英雄合击时，\
+使用了一种眼睛看不见的特制药水进行书写，\
+并只在部分白日门技能书中留有记录。\
+我们家族一直以来负责保护合击技的秘密，\
+你既然对白日门有恩，我一定会帮你的。\ \
+<我是来给书页换取英雄技能的/@书页碎片>\ \
+<我只是路过，打扰了/@exit>                <哪里还能获得书页呢？/@获得书页>\
+[@书页碎片]
+如果你有书页的话，你就交给我看看，\
+我可以帮您拼凑一下，看是否可以还原成一本技能秘籍。\
+你可以交给我2片、5片或者8片书页，\
+如果提供的书页越多，越有可能根据里面的提示还原成高级技能书，\
+当然，由于碎片过于残破，不是每次都能够还原成技能秘籍，\
+如果还原出来，不是您需要的技能，您可以把书页给我，\
+好让我把这个技能发扬光大，重现当年白日门的风光。\
+<递交书页/@递交书页>\
+[@获得书页]
+据说很多技能书页已经流散到玛法的各大魔王身上，\
+尸王、白野猪在混乱中抢到了大部分书页，\
+如果你能找到这些书页，我也许能帮你拼出一本完整的技能秘籍。\ \
+<返回/@MAIN>\
+[@递交书页]
+您是想要给我2片、5片还是8片书页呢？\
+如果提供的书页越多，越有可能根据里面的提示还原成高级技能书，\
+<COLOR=CLYELLOW 交8片书页更可能获得英雄冰咆哮、英雄烈火剑法、英雄召唤神兽三本技能书。>\ \
+<COLOR=CLRED 合成英雄技能书籍需要花费30000金币>\
+<交2片书页/@交2片书页>        <交5片书页/@交5片书页>        <交8片书页/@交8片书页>\
+<让我再考虑考虑/@exit>\
+[@交2片书页]
+#IF
+CHECKGOLD 30000
+#ELSEACT
+MESSAGEBOX 合成英雄技能书籍需要花费30000金币
+BREAK
+#IF
+checkitem 书页 2
+random 8
+#SAY
+很可惜，这2片书页并没有关系，不能修复成技能书\
+#ACT
+take 书页 2
+break
+#IF
+CHECKGOLD 30000
+checkitem 书页 2
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为<$STR(S18)>！\
+#ACT
+TAKE 金币 30000
+take 书页 2
+ReadRandomStr .\QuestDiary\抽取数据\合成书页\书页2片.txt S18
+give <$STR(S18)> 1
+SENDMSG 0 恭喜：<$USERNAME>，还原<$STR(S18)>成功！
+#ELSESAY
+您好象没有带来足够的书页啊\
+[@交5片书页]
+#IF
+CHECKGOLD 30000
+#ELSEACT
+MESSAGEBOX 合成英雄技能书籍需要花费30000金币
+BREAK
+#IF
+checkitem 书页 5
+random 9
+#SAY
+很可惜，这5片书页并没有关系，不能修复成技能书\
+#ACT
+take 书页 5
+break
+#IF
+CHECKGOLD 30000
+checkitem 书页 5
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为<$STR(S18)>！\
+#ACT
+TAKE 金币 30000
+take 书页 5
+ReadRandomStr .\QuestDiary\抽取数据\合成书页\书页5片.txt S18
+give <$STR(S18)> 1
+SENDMSG 0 恭喜：<$USERNAME>，还原<$STR(S18)>成功！
+#ELSESAY
+您好象没有带来足够的书页啊\
+[@交8片书页]
+#IF
+CHECKGOLD 30000
+#ELSEACT
+MESSAGEBOX 合成英雄技能书籍需要花费30000金币
+BREAK
+#IF
+checkitem 书页 8
+random 10
+#SAY
+很可惜，这8片书页并没有关系，不能修复成技能书\
+#ACT
+take 书页 8
+break
+#IF
+CHECKGOLD 30000
+checkitem 书页 8
+#SAY
+恭喜您，您给我的书页很重要，可以还原成为<$STR(S18)>！\
+#ACT
+TAKE 金币 30000
+take 书页 8
+ReadRandomStr .\QuestDiary\抽取数据\合成书页\书页8片.txt S18
+give <$STR(S18)> 1
+SENDMSG 0 恭喜：<$USERNAME>，还原<$STR(S18)>成功！
+#ELSESAY
+您好象没有带来足够的书页啊\
+[@@buHero]
+#ACT
+DELAYCALL 10 ~$CREATEHERO
+[~$CREATEHERO]
+你现在可以挑选一位英雄了。不过你只有一次挑选机会，\
+当你成功领取英雄后是无法再更换，请您仔细选择！\
+你想带领哪位英雄呢？\ \
+<英雄（男战士）/@CREATEHERO_WARR_MAN>      <英雄（男法师）/@CREATEHERO_WIZA_MAN>      <英雄（男道士）/@CREATEHERO_TAOS_MAN>\ \
+<英雄（女战士）/@CREATEHERO_WARR_WOM>      <英雄（女法师）/@CREATEHERO_WIZA_WOM>      <英雄（女道士）/@CREATEHERO_TAOS_WOM>\
+[@CREATEHERO_WARR_MAN]
+#ACT
+CREATEHERO 0 0
+[@CREATEHERO_WARR_WOM]
+#ACT
+CREATEHERO 0 1
+[@CREATEHERO_WIZA_MAN]
+#ACT
+CREATEHERO 1 0
+[@CREATEHERO_WIZA_WOM]
+#ACT
+CREATEHERO 1 1
+[@CREATEHERO_TAOS_MAN]
+#ACT
+CREATEHERO 2 0
+[@CREATEHERO_TAOS_WOM]
+#ACT
+CREATEHERO 2 1
+[@@buHeroEx]
+#ACT
+DELAYCALL 10 ~$CREATEHEROEX
+[~$CREATEHEROEX]
+选择英雄职业：\ \
+<男战士/@CREATEHERO_WARR_MAN1>   <女战士/@CREATEHERO_WARR_WOM1>\
+<男法师/@CREATEHERO_WIZA_MAN1>   <女法师/@CREATEHERO_WIZA_WOM1>\
+<男道士/@CREATEHERO_TAOS_MAN1>   <女道士/@CREATEHERO_TAOS_WOM1>\ \
+<关闭/@exit>
+[@CREATEHERO_WARR_MAN1]
+#ACT
+CREATEHEROEX 0 0
+[@CREATEHERO_WARR_WOM1]
+#ACT
+CREATEHEROEX 0 1
+[@CREATEHERO_WIZA_MAN1]
+#ACT
+CREATEHEROEX 1 0
+[@CREATEHERO_WIZA_WOM1]
+#ACT
+CREATEHEROEX 1 1
+[@CREATEHERO_TAOS_MAN1]
+#ACT
+CREATEHEROEX 2 0
+[@CREATEHERO_TAOS_WOM1]
+#ACT
+CREATEHEROEX 2 1
+//返回消息
+[@CreateingHero]
+系统正在接受申请，请稍候……\ \
+<关闭/@exit>
+[@HaveHero]
+您已经有英雄了。\ \
+<关闭/@exit>
+[@SetHeroName]
+请先给您的英雄取名字。\ \
+<关闭/@exit>
+[@qding]
+请确定一下是否真要删英雄,注意:删除以后不可以恢复！
+\ \
+<确定删除英雄/@DelMyHero> 
+[@DelMyHero]
+#ACT
+DELETEHERO
+//返回消息
+[@NotHaveHero]
+你没有英雄。\ \
+<关闭/@exit>
+[@LogOutHeroFirst]
+请将英雄设置下线！\ \
+<关闭/@exit>
+[@DeleteHeroOK]
+删除英雄成功。\ \
+<关闭/@exit>
+[@合击技能]
+你先看看需要哪种的合击技能，\
+如果你有50000万金币，我马上就给你想要的合击技能！\ \
+　　　　　<COLOR=CLRED 英雄合击技能20级学。>\
+<破魂斩 战士和战士/@破魂斩>             <噬魂沼泽 道士和道士/@噬魂沼泽>\ \
+<火龙气焰 法师和法师/@火龙气焰>           <雷霆一击 战士和法师/@雷霆一击>\ \
+<末日审判 道士和法师/@末日审判>           <劈星斩 战士和道士/@劈星斩>\
+[@劈星斩]
+#IF
+CHECKBAGSIZE 2
+#ELSEACT
+MESSAGEBOX 包裹空间不够！请空出至少2个位置！
+BREAK
+#IF
+checkgold 50000
+#ACT
+CLOSE
+take 金币 50000
+give 劈星斩 1
+BREAK
+#ELSESAY
+对不起！你的金币不够50000！\ 
+<返 回/@Main>
+[@末日审判]
+#IF
+CHECKBAGSIZE 2
+#ELSEACT
+MESSAGEBOX 包裹空间不够！请空出至少2个位置！
+BREAK
+#IF
+checkgold 50000
+#ACT
+CLOSE
+take 金币 50000
+give 末日审判 1
+BREAK
+#ELSESAY
+对不起！你的金币不够50000！\ 
+<返 回/@Main>
+[@雷霆一击]
+#IF
+CHECKBAGSIZE 2
+#ELSEACT
+MESSAGEBOX 包裹空间不够！请空出至少2个位置！
+BREAK
+#IF
+checkgold 50000
+#ACT
+CLOSE
+take 金币 50000
+give 雷霆一击 1
+BREAK
+#ELSESAY
+对不起！你的金币不够50000！\ 
+<返 回/@Main>
+[@火龙气焰]
+#IF
+CHECKBAGSIZE 2
+#ELSEACT
+MESSAGEBOX 包裹空间不够！请空出至少2个位置！
+BREAK
+#IF
+checkgold 50000
+#ACT
+CLOSE
+take 金币 50000
+give 火龙气焰 1
+BREAK
+#ELSESAY
+对不起！你的金币不够50000！\ 
+<返 回/@Main>
+[@噬魂沼泽]
+#IF
+CHECKBAGSIZE 2
+#ELSEACT
+MESSAGEBOX 包裹空间不够！请空出至少2个位置！
+BREAK
+#IF
+checkgold 50000
+#ACT
+CLOSE
+take 金币 50000
+give 噬魂沼泽 1
+BREAK
+#ELSESAY
+对不起！你的金币不够50000！\ 
+<返 回/@Main>
+[@破魂斩]
+#IF
+CHECKBAGSIZE 2
+#ELSEACT
+MESSAGEBOX 包裹空间不够！请空出至少2个位置！
+BREAK
+#IF
+checkgold 50000
+#ACT
+CLOSE
+take 金币 50000
+give 破魂斩 1
+BREAK
+#ELSESAY
+对不起！你的金币不够50000！\ 
+<返 回/@Main>

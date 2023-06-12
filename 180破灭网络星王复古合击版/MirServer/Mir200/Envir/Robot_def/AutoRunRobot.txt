@@ -1,0 +1,128 @@
+#AutoRun NPC SEC 1 @坐庄游戏A
+#AutoRun NPC SEC 1 @坐庄游戏B
+#AutoRun NPC SEC 1 @坐庄游戏C
+
+#AutoRun NPC MIN 1 @激情顶事小时
+
+#AutoRun NPC RUNONDAY 20:00 @开放押镖
+#AutoRun NPC RUNONDAY 21:00 @关闭押镖
+
+
+#AutoRun NPC SEC 1 @屠杀走时
+#AutoRun NPC RUNONDAY 13:00 @屠杀比赛
+#AutoRun NPC RUNONDAY 20:00 @屠杀比赛
+
+#AutoRun NPC RUNONDAY 12:59 @屠杀清理
+#AutoRun NPC RUNONDAY 19:59 @屠杀清理
+
+
+#AutoRun NPC RUNONDAY 14:00 @开放赌博
+#AutoRun NPC RUNONDAY 18:00 @关闭赌博
+
+#AutoRun NPC RUNONDAY 11:00 @天降元宝
+#AutoRun NPC RUNONDAY 14:00 @天降元宝
+#AutoRun NPC RUNONDAY 18:00 @天降元宝
+#AutoRun NPC RUNONDAY 21:00 @天降元宝
+
+#AUTORUN NPC RUNONDAY 10:00 @行会泡点
+#AUTORUN NPC RUNONDAY 15:00 @行会泡点
+#AUTORUN NPC RUNONDAY 19:00 @行会泡点
+#AUTORUN NPC RUNONDAY 23:00 @行会泡点
+
+#AUTORUN NPC RUNONDAY 10:05 @行会泡点1
+#AUTORUN NPC RUNONDAY 15:05 @行会泡点1
+#AUTORUN NPC RUNONDAY 19:05 @行会泡点1
+#AUTORUN NPC RUNONDAY 23:05 @行会泡点1
+
+#AUTORUN NPC RUNONDAY 10:30 @激情大厅
+#AUTORUN NPC RUNONDAY 18:30 @激情大厅1
+#AUTORUN NPC RUNONDAY 22:30 @激情大厅2
+
+;------------------以下老区-------------------------------
+#AutoRun NPC min 60 @树树树
+
+#AutoRun NPC RUNONDAY 09:39 @每日清理1
+;------------------以上老区-------------------------------
+#AutoRun NPC SEC 1 @密码验证
+#AUTORUN NPC MIN 5 @游戏说明
+#AutoRun NPC RUNONDAY 00:01 @每日清理
+#AutoRun NPC RUNONDAY 23:59 @每日清理1
+;---------------------------------------------------------
+#AutoRun NPC MIN 1 @激情派对A
+;---------------------------------------------------------
+#AutoRun NPC RunOnWeek 6:20:15 @行会争霸提示
+#AutoRun NPC RunOnWeek 6:20:18 @行会争霸提示1
+#AutoRun NPC RunOnWeek 6:20:20 @行会争霸开始
+#AutoRun NPC RunOnWeek 6:20:23 @行会争霸开始1
+#AutoRun NPC RunOnWeek 6:20:25 @行会争霸开始1
+#AutoRun NPC RunOnWeek 6:20:29 @物资战提示
+#AutoRun NPC RunOnWeek 6:20:30 @物资战
+#AutoRun NPC RunOnWeek 6:20:48 @行会争霸关门1
+#AutoRun NPC RunOnWeek 6:20:50 @行会争霸关门
+#AutoRun NPC RunOnWeek 6:21:08 @行会争霸转移2
+#AutoRun NPC RunOnWeek 6:21:10 @行会争霸转移3
+#AutoRun NPC RunOnWeek 6:21:18 @行会争霸结束提示
+#AutoRun NPC RunOnWeek 6:21:20 @行会争霸领奖
+;---------------------------------------------------------
+#AutoRun NPC RunOnWeek 7:20:15 @行会争霸提示
+#AutoRun NPC RunOnWeek 7:20:18 @行会争霸提示1
+#AutoRun NPC RunOnWeek 7:20:20 @行会争霸开始
+#AutoRun NPC RunOnWeek 7:20:23 @行会争霸开始1
+#AutoRun NPC RunOnWeek 7:20:25 @行会争霸开始1
+#AutoRun NPC RunOnWeek 7:20:29 @物资战提示
+#AutoRun NPC RunOnWeek 7:20:30 @物资战
+#AutoRun NPC RunOnWeek 7:20:48 @行会争霸关门1
+#AutoRun NPC RunOnWeek 7:20:50 @行会争霸关门
+#AutoRun NPC RunOnWeek 7:21:08 @行会争霸转移2
+#AutoRun NPC RunOnWeek 7:21:10 @行会争霸转移3
+#AutoRun NPC RunOnWeek 7:21:18 @行会争霸结束提示
+#AutoRun NPC RunOnWeek 7:21:20 @行会争霸领奖
+;---------------------------------------------------------
+#AutoRun NPC RunOnWeek 1:18:25 @群英争霸提示
+#AutoRun NPC RunOnWeek 1:18:28 @群英争霸提示1
+#AutoRun NPC RunOnWeek 1:18:30 @群英争霸开始
+#AutoRun NPC RunOnWeek 1:18:35 @群英争霸开始1
+#AutoRun NPC RunOnWeek 1:18:40 @群英争霸开始2
+#AutoRun NPC RunOnWeek 1:19:00 @群英争霸结束
+;---------------------------------------------------------
+#AutoRun NPC RunOnWeek 2:18:25 @群英争霸提示
+#AutoRun NPC RunOnWeek 2:18:28 @群英争霸提示1
+#AutoRun NPC RunOnWeek 2:18:30 @群英争霸开始
+#AutoRun NPC RunOnWeek 2:18:35 @群英争霸开始1
+#AutoRun NPC RunOnWeek 2:18:40 @群英争霸开始2
+#AutoRun NPC RunOnWeek 2:19:00 @群英争霸结束
+;---------------------------------------------------------
+#AutoRun NPC RunOnWeek 3:18:25 @群英争霸提示
+#AutoRun NPC RunOnWeek 3:18:28 @群英争霸提示1
+#AutoRun NPC RunOnWeek 3:18:30 @群英争霸开始
+#AutoRun NPC RunOnWeek 3:18:35 @群英争霸开始1
+#AutoRun NPC RunOnWeek 3:18:40 @群英争霸开始2
+#AutoRun NPC RunOnWeek 3:19:00 @群英争霸结束
+;---------------------------------------------------------
+#AutoRun NPC RunOnWeek 4:18:25 @群英争霸提示
+#AutoRun NPC RunOnWeek 4:18:28 @群英争霸提示1
+#AutoRun NPC RunOnWeek 4:18:30 @群英争霸开始
+#AutoRun NPC RunOnWeek 4:18:35 @群英争霸开始1
+#AutoRun NPC RunOnWeek 4:18:40 @群英争霸开始2
+#AutoRun NPC RunOnWeek 4:19:00 @群英争霸结束
+;---------------------------------------------------------
+#AutoRun NPC RunOnWeek 5:18:25 @群英争霸提示
+#AutoRun NPC RunOnWeek 5:18:28 @群英争霸提示1
+#AutoRun NPC RunOnWeek 5:18:30 @群英争霸开始
+#AutoRun NPC RunOnWeek 5:18:35 @群英争霸开始1
+#AutoRun NPC RunOnWeek 5:18:40 @群英争霸开始2
+#AutoRun NPC RunOnWeek 5:19:00 @群英争霸结束
+;---------------------------------------------------------
+#AutoRun NPC RUNONDAY 0:00 @凌晨提示
+#AutoRun NPC RUNONDAY 7:00 @早上提示
+#AutoRun NPC RUNONDAY 12:00 @中午提示
+#AutoRun NPC RUNONDAY 18:00 @晚上提示
+;---------------------------------------------------------
+#AutoRun NPC MIN 30 @报时
+
+#AutoRun NPC SEC 10 @公告
+#AutoRun NPC SEC 12 @公告1
+#AutoRun NPC SEC 14 @公告2
+#AutoRun NPC SEC 11 @公告3
+#AutoRun NPC SEC 15 @公告4
+#AutoRun NPC SEC 13 @公告5

@@ -1,0 +1,60 @@
+[@main]
+#if
+checkitem 护体神盾碎片① 1
+checkitem 护体神盾碎片② 1
+checkitem 护体神盾碎片③ 1
+checkitem 护体神盾碎片④ 1
+#ACT
+goto @合成
+#ELSEACT
+messagebox 　【提示】:　\　\　　　　【合成护体神盾需要:护体神盾碎片①-④+20W元宝】才可合成
+
+
+[@合成]
+　\
+<COLOR=clYELLOW ╔═══════════════════════════╗>\
+<COLOR=clYELLOW ║> <COLOR=clLime > <护体神盾/@002> <需碎片〖><COLOR=clFuchsia ①><〗〖><COLOR=clFuchsia ②><〗〖><COLOR=clFuchsia ③><〗〖><COLOR=clFuchsia ④><〗><COLOR=clFuchsia > <COLOR=clYELLOW ║>\
+<COLOR=clYELLOW ╚═══════════════════════════╝>\
+<COLOR=clYELLOW ╔═══════════════════════════╗>\
+<COLOR=clYELLOW ║> <COLOR=clLime > <护体神盾/@002> <需碎片〖><COLOR=clFuchsia ①><〗〖><COLOR=clFuchsia ②><〗〖><COLOR=clFuchsia ③><〗〖><COLOR=clFuchsia ④><〗><COLOR=clFuchsia > <COLOR=clYELLOW ║>\
+<COLOR=clYELLOW ╚═══════════════════════════╝>\
+<COLOR=clFuchsia 【神盾提示:学习[英雄护体神盾]系统自动学习本体[护体神盾]】>\
+<COLOR=clFuchsia 【神盾提示:学习[英雄护体神盾]系统自动学习本体[护体神盾]】>\
+
+
+
+[@002]
+#if
+checkitem 护体神盾碎片① 1
+checkitem 护体神盾碎片② 1
+checkitem 护体神盾碎片③ 1
+checkitem 护体神盾碎片④ 1
+CHECKGAMEGOLD > 199999
+#ACT
+take 护体神盾碎片① 1
+take 护体神盾碎片② 1
+take 护体神盾碎片③ 1
+take 护体神盾碎片④ 1
+GAMEGOLD - 200000 
+give 英雄护体神盾
+#ELSEACT
+messagebox 　【提示】:　\　\　　　　【合成[英雄]护体神盾需要:护体神盾碎片①-④号+20W元宝】
+
+
+
+[@001]
+#if
+checkitem 护体神盾碎片① 1
+checkitem 护体神盾碎片② 1
+checkitem 护体神盾碎片③ 1
+checkitem 护体神盾碎片④ 1
+CHECKGAMEGOLD > 199999
+#ACT
+take 护体神盾碎片① 1
+take 护体神盾碎片② 1
+take 护体神盾碎片③ 1
+take 护体神盾碎片④ 1
+GAMEGOLD - 200000 
+give 护体神盾
+#ELSEACT
+messagebox 　【提示】:　\　\　　　　【合成[主体]护体神盾需要:护体神盾碎片①-④号+20W元宝】

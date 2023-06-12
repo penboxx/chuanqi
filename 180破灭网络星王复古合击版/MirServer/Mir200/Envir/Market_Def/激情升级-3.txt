@@ -1,0 +1,45 @@
+[@MAIN]
+#IF
+small g63 60
+#SAY
+<COLOR=CLLIME ■■■■■■■>╰───────────╮\
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆◆◆◆◆><COLOR=CLLIME ■>　→ <COLOR=CLRED ●:代表我目前所在位置（NPC所在位置）> \
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆><COLOR=CLFUCHSIA ☆☆☆><COLOR=CLAQUA ◆><COLOR=CLLIME ■>　→ <COLOR=CLFUCHSIA ☆:站在位置上每秒可以增加10万经验>\
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆><COLOR=CLFUCHSIA ☆><COLOR=CLRED ●><COLOR=CLFUCHSIA ☆><COLOR=CLAQUA ◆><COLOR=CLLIME ■>　→ <COLOR=CLAQUA ◆:站在位置上每秒可以增加 8万经验+1元宝!>\
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆><COLOR=CLFUCHSIA ☆☆☆><COLOR=CLAQUA ◆><COLOR=CLLIME ■>　→ <COLOR=CLLIME ■:站在位置上每秒可以增加 5万经验+2元宝!>\
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆◆◆◆◆><COLOR=CLLIME ■>　→ <COLOR=CLYELLOW 四小时开放一次 ━ 开放10分钟 ━ 重叠无效>\
+<COLOR=CLLIME ■■■■■■■>╭───────────╯ \ \
+　　　　　　<COLOR=clAqua 开放时间:><color=clred 派对将在【><开区1小时侯开放><color=clred 】>\ 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+#act
+BREAK
+
+#IF
+EQUAL I48 0
+#SAY
+<COLOR=CLLIME ■■■■■■■>╰───────────╮\
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆◆◆◆◆><COLOR=CLLIME ■>　→ <COLOR=CLRED ●:代表我目前所在位置（NPC所在位置）> \
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆><COLOR=CLFUCHSIA ☆☆☆><COLOR=CLAQUA ◆><COLOR=CLLIME ■>　→ <COLOR=CLFUCHSIA ☆:站在位置上每秒可以增加10万经验>\
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆><COLOR=CLFUCHSIA ☆><COLOR=CLRED ●><COLOR=CLFUCHSIA ☆><COLOR=CLAQUA ◆><COLOR=CLLIME ■>　→ <COLOR=CLAQUA ◆:站在位置上每秒可以增加 8万经验+1元宝!>\
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆><COLOR=CLFUCHSIA ☆☆☆><COLOR=CLAQUA ◆><COLOR=CLLIME ■>　→ <COLOR=CLLIME ■:站在位置上每秒可以增加 5万经验+2元宝!>\
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆◆◆◆◆><COLOR=CLLIME ■>　→ <COLOR=CLYELLOW 四小时开放一次 ━ 开放10分钟 ━ 重叠无效>\
+<COLOR=CLLIME ■■■■■■■>╭───────────╯ \ \
+　　　　　　<COLOR=clAqua 开放时间:><color=clred 派对将在【><$STR(I49)><color=clred 分】后开始> \ 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+#IF
+EQUAL I48 1
+#SAY
+<COLOR=CLLIME ■■■■■■■>╰───────────╮\
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆◆◆◆◆><COLOR=CLLIME ■>　→ <COLOR=CLRED ●:代表我目前所在位置（NPC所在位置）> \
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆><COLOR=CLFUCHSIA ☆☆☆><COLOR=CLAQUA ◆><COLOR=CLLIME ■>　→ <COLOR=CLFUCHSIA ☆:站在位置上每秒可以增加10万经验>\
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆><COLOR=CLFUCHSIA ☆><COLOR=CLRED ●><COLOR=CLFUCHSIA ☆><COLOR=CLAQUA ◆><COLOR=CLLIME ■>　→ <COLOR=CLAQUA ◆:站在位置上每秒可以增加 8万经验+1元宝!>\
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆><COLOR=CLFUCHSIA ☆☆☆><COLOR=CLAQUA ◆><COLOR=CLLIME ■>　→ <COLOR=CLLIME ■:站在位置上每秒可以增加 5万经验+2元宝!>\
+<COLOR=CLLIME ■><COLOR=CLAQUA ◆◆◆◆◆><COLOR=CLLIME ■>　→ <COLOR=CLYELLOW 四小时开放一次 ━ 开放10分钟 ━ 重叠无效>\
+<COLOR=CLLIME ■■■■■■■>╭───────────╯ \ \
+　<COLOR=clAqua 开放状态:><color=clred 目前派对正在进行中.派对将在【><$STR(I49)><color=clred 分】后结束>\
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\
+
+
+[@开区]
+#act
+mov g63 58

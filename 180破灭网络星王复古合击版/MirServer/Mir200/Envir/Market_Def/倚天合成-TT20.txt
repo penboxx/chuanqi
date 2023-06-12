@@ -1,0 +1,55 @@
+()
+%100
+[@main]
+╱◥██◣ ╭⌒╮   \ 
+︱田︱田田|欢迎光临:  <COLOR=clRed 打造倚天需要:星王(战)(法)(道)各一件免费合成>\
+╬╬╬╬╬╬╬╬╬╬: <COLOR=clRed 打造倚天需要:星王(战)(法)(道)各一件免费合成>\ \
+『<倚天神剑(吊)/@倚天剑>』<COLOR=clFuchsia  (← 点击进行合成 →)>  『<倚天神剑(吊)/@倚天剑>』 <COLOR=clFuchsia>    \ \
+『<倚天神甲(男)/@倚天神甲(男)>』<COLOR=clFuchsia  (← 点击进行合成 →)>  『<倚天神甲(男)/@倚天神甲(男)>』 <COLOR=clFuchsia>    \ \
+『<倚天神甲(女)/@倚天神甲(女)>』<COLOR=clFuchsia  (← 点击进行合成 →)>  『<倚天神甲(女)/@倚天神甲(女)>』 <COLOR=clFuchsia>    \ \
+
+
+[@倚天剑]
+#if
+checkitem 星王之刃(战) 1
+checkitem 星王之刃(法) 1
+checkitem 星王之刃(道) 1
+#act
+take  星王之刃(战) 1
+take  星王之刃(法) 1
+take  星王之刃(道) 1
+GIVE 倚天神剑 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造倚天神剑需要:星王之刃(战)(法)(道)各一把合成！
+
+[@倚天神甲(男)]
+#if
+checkitem 星王圣甲(战) 1
+checkitem 星王圣甲(法) 1
+checkitem 星王圣甲(道) 1
+#act
+take  星王圣甲(战) 1
+take  星王圣甲(法) 1
+take  星王圣甲(道) 1
+GIVE 倚天神甲(男) 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造倚天神甲(男)需要:星王圣甲(战)(法)(道)各一件合成！
+
+[@倚天神甲(女)]
+#if
+checkitem 星王圣衣(战) 1
+checkitem 星王圣衣(法) 1
+checkitem 星王圣衣(道) 1
+#act
+take  星王圣衣(战) 1
+take  星王圣衣(法) 1
+take  星王圣衣(道) 1
+GIVE 倚天神甲(女) 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造倚天神甲(女)需要:星王圣衣(战)(法)(道)各一件合成！

@@ -1,0 +1,105 @@
+[@main]
+#IF
+EQUAL G89 1
+#SAY
+活动名称：群雄争霸\
+详细规则：每周周一到每周周五晚上18：30系统定期举行，所有35级\
+　　　　　以上任何职业都可报名参加。比赛开始后，玩家会被传送\
+　　　　　到指定比赛地图群体PK，<最后存活者为获胜者。>\  \
+
+获胜奖励：5000元宝+授予“武林霸主”的封号！<COLOR=clFuchsia NPC自动记录>\ \
+\
+<进入场地/@FM>  开启状态：<COLOR=clLime 开启中！~>  当前霸主：<$STR(A40)>   <查看/@霸主>\
+<不去/@exit>\ 
+#ELSESAY
+活动名称：群雄争霸\
+详细规则：每周周一到每周周五晚上18：30系统定期举行，所有35级\
+　　　　　以上任何职业都可报名参加。比赛开始后，玩家会被传送\
+　　　　　到指定比赛地图群体PK，<最后存活者为获胜者。>\  \
+
+获胜奖励：10000元宝+授予“武林霸主”的封号！<COLOR=clFuchsia NPC自动记录显示人名>\ \
+\
+<进入场地/@F>  开启状态：<COLOR=clLime 已经关闭！~>  当前霸主：<$STR(A40)>   <查看/@霸主>\
+<不去/@exit>\ 
+
+
+
+[@F]
+#IF
+#act
+MESSAGEBOX 地图目前已经关闭：每周周一到每周周五下午18：30系统定期举行
+
+
+
+
+[@FM]
+#IF
+CHECKLEVELEX < 35
+#act
+MESSAGEBOX 对不起，你还弱小，不能参与群体斗殴！
+BREAK
+#IF
+hour 18 18
+min 30  59
+#act
+goto @OKJINR
+#ELSEACT
+MESSAGEBOX 地图目前已经关闭：每周周一到每周周五下午18：30系统定期举行
+
+
+[@OKJINR]
+#IF
+gender man
+checkjob warrior
+#ACT
+map qunying
+SENDMSG 0 勇士：%s，披上战甲，提着砍刀，冲进了群雄争霸活动地图!
+BREAK
+
+#IF
+gender woman
+checkjob warrior
+#ACT
+map qunying
+SENDMSG 0 勇士：%s，洗干净玉手，冲进了群雄争霸活动地图! 
+BREAK
+
+#IF
+gender woman
+checkjob taoist
+#ACT
+map qunying
+SENDMSG 0 勇士：%s，洗干净玉手，冲进了群雄争霸活动地图! 
+BREAK
+
+#IF
+gender man
+checkjob taoist
+#ACT
+map qunying
+SENDMSG 0 勇士：%s，背了一大包毒药，冲进了群雄争霸活动地图!
+BREAK
+
+#IF
+gender man
+checkjob wizard
+#ACT
+map qunying
+SENDMSG 0 勇士：%s，拿着打火机，冲进了群雄争霸活动地图! 
+BREAK
+
+#IF
+gender woman
+checkjob wizard
+#ACT
+map qunying
+SENDMSG 0 勇士：%s，洗干净玉手，冲进了群雄争霸活动地图!
+BREAK
+
+
+[@霸主]
+ \ \
+当前霸主：<$STR(A40)> \ \
+所属行会：<$STR(A39)> \ \
+当前等级：<$STR(G39)> \ \
+成就霸王的时间：<$STR(A38)>  <返回/@MAIN>\

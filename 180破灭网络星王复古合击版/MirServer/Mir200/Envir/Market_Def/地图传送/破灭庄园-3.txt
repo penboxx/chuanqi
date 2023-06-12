@@ -1,0 +1,25 @@
+()
+%100
+[@main]
+\ 
+<COLOR=clFuchsia ▁▂▃▄▅▆▇██↓↓↓【破灭庄园】↓↓↓█▇▆▅▄▃▂▁>\
+<主要怪物><COLOR=clRed :所有终极BOSS无任何小怪>\
+<地图介绍> <COLOR=clLime 怪物凶狠,地图不可飞随机,请组队前往>\
+<刷怪介绍> <COLOR=clFuchsia 小boss20分钟,大boss30分钟>\
+<爆率介绍> <COLOR=clYellow 爆所有装备,绝不保留>\
+<进入条件> <COLOR=clAqua 54级+2000元宝（超高爆率）60分钟自动回城>\  \
+【<破灭庄园/@帝王1>】               【<破灭庄园/@帝王1>】 \
+
+[@帝王1]
+#IF
+CHECKLEVELEX > 53
+CHECKGAMEGOLD > 1999
+#act
+TimeRecall 60
+mapmove dwzy  106 110
+GAMEGOLD - 2000
+SENDMSG 6 你只有60分钟的时间，时间到后你将被自动传回！
+SENDMSG 2 恭喜『<$USERNAME>』进入了【破灭庄园】看来是凶多吉少了啊!!!   249 0
+SENDMSG 2 恭喜『<$USERNAME>』进入了【破灭庄园】看来是凶多吉少了啊!!!   249 0
+#elseact
+MessageBox 您没有54级或身上没有2000元宝,不能进入！

@@ -1,0 +1,536 @@
+()
+%100
+[@main]
+#if
+CHECKLEVELEX < 60
+#ACT
+Messagebox 小伙子，你太年轻了。。。60级再来吧!!
+BREAK
+
+#IF
+#say
+╱◥██◣ ╭⌒╮   \ 
+︱田︱田田|欢迎光临:  <COLOR=clRed 打造装备只是为上班族设计,本服装备均可爆出！>\
+╬╬╬╬╬╬╬╬╬╬: <COLOR=clRed 打造装备只是为上班族设计,本服装备均可爆出！>\ \
+『<破灭メ星王神剑/@破灭メ星王神剑>』  『<破灭メ星王法杖/@破灭メ星王法杖>』  『<破灭メ星王宝扇/@破灭メ星王宝扇>』  \ 
+『<破灭メ星王神甲/@破灭メ星王神甲>』  『<破灭メ星王魔甲/@破灭メ星王魔甲>』  『<破灭メ星王道袍/@破灭メ星王道袍>』  \ 
+『<破灭メ星王神衣/@破灭メ星王神衣>』  『<破灭メ星王魔衣/@破灭メ星王魔衣>』  『<破灭メ星王道衣/@破灭メ星王道衣>』  \ \
+『<破灭メ首饰战士/@破灭メ首饰战士>』  『<破灭メ首饰法师/@破灭メ首饰法师>』  『<破灭メ首饰道士/@破灭メ首饰道士>』  \ 
+
+
+[@破灭メ星王神剑]
+#if
+CHECKGAMEGOLD > 599999
+CHECKGAMEDIAMOND > 9998
+checkitem 星王之刃(战) 1
+checkitem 星王之刃(战) 1
+#act
+take  星王之刃(战) 1
+take  星王之刃(战) 1
+GAMEGOLD - 600000
+GAMEDIAMOND - 9999
+GIVE 破灭メ星王神剑 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王神剑需要:星王之刃(战)2把+60万元宝+9999金刚石合成！
+
+[@破灭メ星王法杖]
+#if
+CHECKGAMEGOLD > 599999
+CHECKGAMEDIAMOND > 9998
+checkitem 星王之刃(法) 1
+checkitem 星王之刃(法) 1
+#act
+take  星王之刃(法) 1
+take  星王之刃(法) 1
+GAMEGOLD - 600000
+GAMEDIAMOND - 9999
+GIVE 破灭メ星王法杖 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王法杖需要:星王之刃(法)2把+60万元宝+9999金刚石合成！
+
+[@破灭メ星王宝扇]
+#if
+CHECKGAMEGOLD > 599999
+CHECKGAMEDIAMOND > 9998
+checkitem 星王之刃(道) 1
+checkitem 星王之刃(道) 1
+#act
+take  星王之刃(道) 1
+take  星王之刃(道) 1
+GAMEGOLD - 600000
+GAMEDIAMOND - 9999
+GIVE 破灭メ星王宝扇 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王宝扇需要:星王之刃(道)2把+60万元宝+9999金刚石合成！
+
+[@破灭メ星王神甲]
+#if
+CHECKGAMEGOLD > 599999
+CHECKGAMEDIAMOND > 9998
+checkitem 星王圣甲(战) 1
+checkitem 星王圣甲(战) 1
+#act
+take  星王圣甲(战) 1
+take  星王圣甲(战) 1
+GAMEGOLD - 600000
+GAMEDIAMOND - 9999
+GIVE 破灭メ星王神甲 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王神甲需要:星王圣甲(战)2件+60万元宝+9999金刚石合成！
+
+[@破灭メ星王魔甲]
+#if
+CHECKGAMEGOLD > 599999
+CHECKGAMEDIAMOND > 9998
+checkitem 星王圣甲(法) 1
+checkitem 星王圣甲(法) 1
+#act
+take  星王圣甲(法) 1
+take  星王圣甲(法) 1
+GAMEGOLD - 600000
+GAMEDIAMOND - 9999
+GIVE 破灭メ星王魔甲 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王魔甲需要:星王圣甲(法)2件+60万元宝+9999金刚石合成！
+
+[@破灭メ星王道袍]
+#if
+CHECKGAMEGOLD > 599999
+CHECKGAMEDIAMOND > 9998
+checkitem 星王圣甲(道) 1
+checkitem 星王圣甲(道) 1
+#act
+take  星王圣甲(道) 1
+take  星王圣甲(道) 1
+GAMEGOLD - 600000
+GAMEDIAMOND - 9999
+GIVE 破灭メ星王道袍 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王道袍需要:星王圣甲(道)2件+60万元宝+9999金刚石合成！
+
+[@破灭メ星王神衣]
+#if
+CHECKGAMEGOLD > 599999
+CHECKGAMEDIAMOND > 9998
+checkitem 星王圣衣(战) 1
+checkitem 星王圣衣(战) 1
+#act
+take  星王圣衣(战) 1
+take  星王圣衣(战) 1
+GAMEGOLD - 600000
+GAMEDIAMOND - 9999
+GIVE 破灭メ星王神衣 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王神衣需要:星王圣衣(战)2件+60万元宝+9999金刚石合成！
+
+[@破灭メ星王魔衣]
+#if
+CHECKGAMEGOLD > 599999
+CHECKGAMEDIAMOND > 9998
+checkitem 星王圣衣(法) 1
+checkitem 星王圣衣(法) 1
+#act
+take  星王圣衣(法) 1
+take  星王圣衣(法) 1
+GAMEGOLD - 600000
+GAMEDIAMOND - 9999
+GIVE 破灭メ星王魔衣 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王魔衣需要:星王圣衣(法)2件+60万元宝+9999金刚石合成！
+
+[@破灭メ星王道衣]
+#if
+CHECKGAMEGOLD > 599999
+CHECKGAMEDIAMOND > 9998
+checkitem 星王圣衣(道) 1
+checkitem 星王圣衣(道) 1
+#act
+take  星王圣衣(道) 1
+take  星王圣衣(道) 1
+GAMEGOLD - 600000
+GAMEDIAMOND - 9999
+GIVE 破灭メ星王道衣 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王道衣需要:星王圣衣(道)2件+60万元宝+9999金刚石合成！
+
+[@破灭メ首饰战士]
+╱◥██◣ ╭⌒╮   \ 
+︱田︱田田|欢迎光临:  <COLOR=clRed 打造装备只是为上班族设计,本服装备均可爆出！>\
+╬╬╬╬╬╬╬╬╬╬: <COLOR=clRed 打造装备只是为上班族设计,本服装备均可爆出！>\ \
+『<破灭メ星王战盔/@破灭メ星王战盔>』  『<破灭メ星王战链/@破灭メ星王战链>』  『<破灭メ星王战镯/@破灭メ星王战镯>』  \    \
+『<破灭メ星王战戒/@破灭メ星王战戒>』  『<破灭メ星王战带/@破灭メ星王战带>』  『<破灭メ星王战靴/@破灭メ星王战靴>』  \   \ 
+　　　　『<破灭メ星王勋章/@破灭メ星王勋章>』 　　　 『<破灭メ星王斗笠/@破灭メ星王斗笠>』   \ 
+
+[@破灭メ首饰法师]
+╱◥██◣ ╭⌒╮   \ 
+︱田︱田田|欢迎光临:  <COLOR=clRed 打造装备只是为上班族设计,本服装备均可爆出！>\
+╬╬╬╬╬╬╬╬╬╬: <COLOR=clRed 打造装备只是为上班族设计,本服装备均可爆出！>\ \
+『<破灭メ星王魔盔/@破灭メ星王魔盔>』  『<破灭メ星王法链/@破灭メ星王法链>』  『<破灭メ星王法镯/@破灭メ星王法镯>』  \    \
+『<破灭メ星王法戒/@破灭メ星王法戒>』  『<破灭メ星王法带/@破灭メ星王法带>』  『<破灭メ星王法靴/@破灭メ星王法靴>』  \   \ 
+　　　　『<破灭メ星王勋章/@破灭メ星王勋章>』 　　　 『<破灭メ星王斗笠/@破灭メ星王斗笠>』   \ 
+
+[@破灭メ首饰道士]
+╱◥██◣ ╭⌒╮   \ 
+︱田︱田田|欢迎光临:  <COLOR=clRed 打造装备只是为上班族设计,本服装备均可爆出！>\
+╬╬╬╬╬╬╬╬╬╬: <COLOR=clRed 打造装备只是为上班族设计,本服装备均可爆出！>\ \
+『<破灭メ星王道盔/@破灭メ星王道盔>』  『<破灭メ星王道链/@破灭メ星王道链>』  『<破灭メ星王道镯/@破灭メ星王道镯>』  \    \
+『<破灭メ星王道戒/@破灭メ星王道戒>』  『<破灭メ星王道带/@破灭メ星王道带>』  『<破灭メ星王道靴/@破灭メ星王道靴>』  \   \ 
+　　　　『<破灭メ星王勋章/@破灭メ星王勋章>』 　　　 『<破灭メ星王斗笠/@破灭メ星王斗笠>』   \ 
+
+[@破灭メ星王勋章]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 终极勋章 1
+checkitem 终极勋章 1
+#act
+take  终极勋章 1
+take  终极勋章 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王勋章 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王勋章需要:终极勋章2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王斗笠]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 终极斗笠 1
+checkitem 终极斗笠 1
+#act
+take  终极斗笠 1
+take  终极斗笠 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王斗笠 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王斗笠需要:终极斗笠2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王战盔]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王战盔 1
+checkitem 星王战盔 1
+#act
+take  星王战盔 1
+take  星王战盔 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王战盔 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王战盔需要:星王战盔2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王魔盔]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王法冠 1
+checkitem 星王法冠 1
+#act
+take  星王法冠 1
+take  星王法冠 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王魔盔 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王魔盔需要:星王法冠2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王道盔]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王道盔 1
+checkitem 星王道盔 1
+#act
+take  星王道盔 1
+take  星王道盔 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王道盔 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王道盔需要:星王道盔2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王战链]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王项链(战) 1
+checkitem 星王项链(战) 1
+#act
+take  星王项链(战) 1
+take  星王项链(战) 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王战链 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王战链需要:星王项链(战)2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王法链]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王项链(法) 1
+checkitem 星王项链(法) 1
+#act
+take  星王项链(法) 1
+take  星王项链(法) 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王法链 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王法链需要:星王项链(法)2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王道链]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王项链(道) 1
+checkitem 星王项链(道) 1
+#act
+take  星王项链(道) 1
+take  星王项链(道) 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王道链 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王道链需要:星王项链(道)2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王战镯]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王护腕(战) 1
+checkitem 星王护腕(战) 1
+#act
+take  星王护腕(战) 1
+take  星王护腕(战) 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王战镯 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王战镯需要:星王护腕(战)2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王法镯]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王护腕(法) 1
+checkitem 星王护腕(法) 1
+#act
+take  星王护腕(法) 1
+take  星王护腕(法) 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王法镯 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王法镯需要:星王护腕(法)2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王道镯]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王护腕(道) 1
+checkitem 星王护腕(道) 1
+#act
+take  星王护腕(道) 1
+take  星王护腕(道) 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王道镯 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王道镯需要:星王护腕(道)2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王战戒]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王战戒 1
+checkitem 星王战戒 1
+#act
+take  星王战戒 1
+take  星王战戒 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王战戒 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王战戒需要:星王战戒2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王法戒]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王魔戒 1
+checkitem 星王魔戒 1
+#act
+take  星王魔戒 1
+take  星王魔戒 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王法戒 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王法戒需要:星王魔戒2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王道戒]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王道戒 1
+checkitem 星王道戒 1
+#act
+take  星王道戒 1
+take  星王道戒 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王道戒 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王道戒需要:星王道戒2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王战带]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王腰带(战) 1
+checkitem 星王腰带(战) 1
+#act
+take  星王腰带(战) 1
+take  星王腰带(战) 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王战带 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王战带需要:星王腰带(战)2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王法带]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王腰带(法) 1
+checkitem 星王腰带(法) 1
+#act
+take  星王腰带(法) 1
+take  星王腰带(法) 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王法带 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王法带需要:星王腰带(法)2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王道带]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王腰带(道) 1
+checkitem 星王腰带(道) 1
+#act
+take  星王腰带(道) 1
+take  星王腰带(道) 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王道带 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王道带需要:星王腰带(道)2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王战靴]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王战靴 1
+checkitem 星王战靴 1
+#act
+take  星王战靴 1
+take  星王战靴 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王战靴 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王战靴需要:星王战靴2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王法靴]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王魔靴 1
+checkitem 星王魔靴 1
+#act
+take  星王魔靴 1
+take  星王魔靴 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王法靴 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王法靴需要:星王魔靴2件+40万元宝+8888金刚石合成！
+
+[@破灭メ星王道靴]
+#if
+CHECKGAMEGOLD > 399999
+CHECKGAMEDIAMOND > 8887
+checkitem 星王道靴 1
+checkitem 星王道靴 1
+#act
+take  星王道靴 1
+take  星王道靴 1
+GAMEGOLD - 400000
+GAMEDIAMOND - 8888
+GIVE 破灭メ星王道靴 1
+SENDMSG 5 恭喜你，打造成功！！！
+CLOSE
+#ELSEACT
+MESSAGEBOX [提示]：打造破灭メ星王道靴需要:星王道靴2件+40万元宝+8888金刚石合成！

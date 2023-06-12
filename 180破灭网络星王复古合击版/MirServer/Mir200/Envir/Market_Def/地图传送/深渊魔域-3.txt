@@ -1,0 +1,25 @@
+()
+%100
+[@main]
+\ 
+╔━━━━━━╗ ╔━━━━━━━━━━━━━━━━━━━╗　\
+┃<★><COLOR=clFuchsia 深渊魔域><★>┃ ┃<COLOR=clLime 主要怪物: 黄金神龙 暗之魔龙教主>　　   ┃　\
+┃------------┃ ┃<COLOR=clFuchsia 怪物刷新：大怪60分钟、小怪15分钟>　　　┃　\
+┃↘<COLOR=clLime ━━━━>↙┃ ┃<COLOR=clLime 怪物爆率:赤月 魔龙 战神 系列等装备>　　┃　\
+┃<COLOR=clLime ┃><点击进入/@皇宫1><COLOR=clLime ┃>┃ ┃<COLOR=clFuchsia 挑战难度：><★★★★★>　<COLOR=clLime 爆率指数：><★★★>┃　\
+┃↗<COLOR=clLime ━━━━>↖┃ ╚━━━━━━━━━━━━━━━━━━━╝　\
+┃------------┃ ╔━━━━━━━━━━━━━━━━━━━╗　\
+┃<★><COLOR=clFuchsia 传送条件><★>┃ ┃　　　　进入需要： <元宝三百颗>　 　　　┃　\
+╚━━━━━━╝ ╚━━━━━━━━━━━━━━━━━━━╝ 
+
+
+[@皇宫1]
+#if
+CHECKGAMEGOLD > 299
+#act
+GAMEGOLD - 300
+MAPMOVE w4
+SENDMSG 2 %s付费300元宝进入深渊魔域！ 49 223
+SENDMSG 2 %s付费300元宝进入深渊魔域！ 49 223
+#ELSEACT
+MESSAGEBOX 需要300元宝用来支付我们的服务费用!

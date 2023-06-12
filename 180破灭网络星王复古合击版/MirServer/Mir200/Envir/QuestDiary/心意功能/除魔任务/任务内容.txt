@@ -1,0 +1,43 @@
+[@读取怪物地图说明]
+{
+#If
+equal m10 0
+#Act
+Mov s1 苍月骨魔洞一层杀死骷髅长枪兵
+#If
+equal m10 1
+#Act
+Mov s1 去沃玛大殿杀火焰沃玛
+#If
+equal m10 2
+#Act
+Mov s1 去沙巴克藏宝阁杀祖玛卫士
+#If
+equal m10 3
+#Act
+Mov s1 去魔龙城西郊杀魔龙刀兵
+#If
+equal m10 4
+#Act
+Mov s1 去牛魔七层杀牛魔将军
+#If
+equal m10 5
+#Act
+Mov s1 去王者禁地杀多钩猫王
+#If
+equal m10 6
+#Act
+Mov s1 去牛魔四层杀牛魔法师
+#If
+equal m10 7
+#Act
+Mov s1 去幻境四层杀蜈蚣
+#If
+equal m10 8
+#Act
+Mov s1 幻境八层杀死祖玛弓箭手
+#If
+equal m10 9
+#Act
+Mov s1 去封魔的霸者大厅去杀白野猪
+}

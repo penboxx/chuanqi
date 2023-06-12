@@ -1,0 +1,15 @@
+[@main]
+新手们,在也不用担心初级装备哪打了.\
+此地图限制等级,43级后无法进入,本地图免费!!!\
+　\
+<进入新手地带/@cdmm2>     <关闭对话./@exit>\ 
+[@cdmm2]
+#IF
+checklevelex < 43
+#ACT
+give 回城卷 1
+mapmove xsddlj
+SENDMSG 0 [%s].进入了新手地带..
+#ELSEACT
+messagebox 你已经满43级了,已经不是新手了喔!
+break

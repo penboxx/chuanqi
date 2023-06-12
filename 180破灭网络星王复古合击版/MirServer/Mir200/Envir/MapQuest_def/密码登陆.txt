@@ -1,0 +1,50 @@
+[@main]
+#IF
+checknamelist ..\QuestDiary\数据文件\密码名单.txt
+#ACT
+goto @001
+BREAK
+#IF
+#ACT
+goto @加密码
+BREAK
+
+[@001]
+为了保障玩家的帐号安全，在帐号被盗或者被骗，\
+只要你设置了二级密码，<COLOR=$FB0640 IP不一致上线必须输入二级密码！>\
+警请各位玩家不要泄露自己的帐号密码保护，避免不必要的损失！\ \
+<前往盟重土诚/@map1>　　　　　　<前往地下宫殿/@map2>\
+
+[@map1]
+#IF
+#ACT
+mapmove 3 333 333
+BREAK
+
+[@map2]
+#IF
+#ACT
+mapmove h007a 118 12
+BREAK
+
+[@加密码]
+为了保障玩家的帐号安全，在帐号被盗或者被骗，\
+只要你设置了2级密码，<COLOR=$F79600 IP不一致上线必须输入二级密码！>\
+警请各位玩家不要泄露自己的帐号密码保护，避免不必要的损失！\ \
+<设置二级密码/@设置二级密码>\
+<修改二级密码>\
+<清除二级密码>\ \
+<离开/@EXIT>        <如:未设置二代密码装备被盗本服不给予处理>
+
+[@设置二级密码]
+#IF
+checknamelist ..\QuestDiary\数据文件\密码名单.txt
+#ACT
+MESSAGEBOX 你已经设置了二级密码！
+MOV M4 0
+BREAK
+#IF
+CHECKLEVELEX > 0
+#ACT
+QUERYVALUE 4 1 7 @密保格式 请输入你想设置的二级密码\(4-7)个数字\例:1234567 QM //触发：QManage.txt [@密保格式] #ACT SENDMSG 5 QueryValue：<$STR(M4)>
+BREAK

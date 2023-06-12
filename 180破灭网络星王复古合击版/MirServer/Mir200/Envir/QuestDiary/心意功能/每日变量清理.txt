@@ -1,0 +1,26 @@
+[@每日零点清理]
+{
+#If
+CheckLevelEx > 0
+#Act
+CALCVAR HUMAN 执行内容 = 无数据
+CALCVAR HUMAN 除魔杀怪数量 = 0
+CALCVAR HUMAN 已杀数量 = 0
+CALCVAR HUMAN 领取除魔任务 = 0
+CALCVAR HUMAN 任务轮次 = 0
+CALCVAR HUMAN 任务小轮 = 0
+CALCVAR HUMAN 除魔完成 = 0
+
+CALCVAR HUMAN 除妖任务数量 = 0
+CALCVAR HUMAN 接受除妖任务 = 0
+CALCVAR HUMAN 除妖任务次数 = 0
+
+CALCVAR HUMAN 皇冠赞助次数 = 0
+CALCVAR HUMAN 贵族赞助次数 = 0
+CALCVAR HUMAN 金钻赞助次数 = 0
+CALCVAR HUMAN 黄金赞助次数 = 0
+CALCVAR HUMAN 白金赞助次数 = 0
+CALCVAR HUMAN 高级赞助次数 = 0
+CALCVAR HUMAN 普通赞助次数 = 0
+
+}

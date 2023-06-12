@@ -1,0 +1,49 @@
+[@main]
+#if
+HOUR 21 21
+MIN  0 20
+#SAY
+现在行会争霸地图已经关闭了.\
+只要你的行会打败了其他行会.\
+行会掌门人就可以获得<COLOR=clRed 10000元宝>奖励！\ \
+现在这个地图里面是否只剩下你们行会的成员了呢？\
+如果是的话请行会掌门人点击领取奖励即可！\ \
+<[领取奖励]/@领取奖励>\
+<[继续战斗]/@EXIT>
+#ACT
+BREAK
+#ELSEACT
+MESSAGEBOX 21:00-21:20分之间和我说话！其余时间我不想搭理任何人
+BREAK
+
+
+
+
+[@领取奖励]
+#IF
+ISGUILDMASTER
+#ELSEACT
+MESSAGEBOX 你不是行会老大！
+BREAK
+
+#IF
+IsSameGuildOnMap xinghuizb2
+#ACT
+GAMEGOLD + 10000
+mov A55 <$USERNAME>
+mov A56 <$GUILDNAME>
+mov G58 <$LEVEL>
+mov A57 <$DATETIME>
+CLEARNAMELIST ..\QuestDiary\数据文件\行会争霸名单.txt
+ADDNAMELIST ..\QuestDiary\数据文件\行会争霸名单.txt
+sendmsg 0  行会老大【%s】获得行会争霸比赛的胜利,奖励元宝10000颗！ 251 1 30
+sendmsg 0  行会老大【%s】获得行会争霸比赛的胜利,奖励元宝10000颗！ 251 1 30
+sendmsg 0  行会老大【%s】获得行会争霸比赛的胜利,奖励元宝10000颗！ 251 1
+sendmsg 0  行会老大【%s】获得行会争霸比赛的胜利,奖励元宝10000颗！ 251 1
+sendmsg 0  行会老大【%s】获得行会争霸比赛的胜利,奖励元宝10000颗！ 251 1
+sendmsg 0  行会老大【%s】获得行会争霸比赛的胜利,奖励元宝10000颗！ 251 1
+mapmove 3 333 333
+GMEXECUTE 集体传送 xinghuizb2 3
+#ELSEACT
+MESSAGEBOX 请将地图内其他行会的成员全部清理出去..
+BREAK

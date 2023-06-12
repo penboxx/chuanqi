@@ -1,0 +1,26 @@
+
+[@main]
+
+ ¤╭⌒╮╭⌒╮          欢迎光临     　　\
+ ╱◥██◣ ╭⌒╮                    <$SERVERNAME> 　　\
+︱田︱田田|╰-------------    　　\
+╬╬╬╬╬╬╬╬╬╬╬╬╬    　 　      ┆<100元宝进入/@JINQBA888>┆ \
+------------------------------------------------------------　\
+◆BOSS刷新时间为15分钟 <COLOR=clFuchsia 共3层>\
+◆本地图双倍爆率\
+------------------------------------------------------------　\
+
+
+
+[@JINQBA888]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+MAPMOVE di1
+give 回城卷 1
+SENDMSG 0 勇敢的玩家:[%s]进入地下皇陵寻宝去了!!! 
+break
+#ELSEACT
+MESSAGEBOX 进入需要100元宝！
+CLOSE

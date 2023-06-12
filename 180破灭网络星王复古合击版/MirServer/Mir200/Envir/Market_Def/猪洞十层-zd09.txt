@@ -1,0 +1,9 @@
+()
+%100
+[@main]
+#act
+mapmove zd10
+
+
+SENDMSG 0 玩家[%s],进入猪洞十层,本地图BOSS为双倍爆率!
+break

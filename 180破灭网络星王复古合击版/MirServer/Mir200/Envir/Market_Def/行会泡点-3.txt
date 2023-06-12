@@ -1,0 +1,57 @@
+()
+%100
+[@main]
+<COLOR=clAqua  　　    |行|>  ∴  ㊣ ∴  ●╭○╮∴ ㊣  ∴  <COLOR=clAqua |行| >\
+<COLOR=clAqua     　 　|会|>  愛戀╰☆  /█∨▓↘ ☆╯愛戀  <COLOR=clAqua |会| >\
+<COLOR=clAqua    　　  |泡|>  戒恨↘≈≈ ∏  ∏ ≈≈↙瞄瞄  <COLOR=clAqua |泡| >\
+<COLOR=clAqua     　　 |点|>  ≈戒 恨≈I LOVE YOU≈瞄 瞄≈  <COLOR=clAqua |点| >\
+………………<COLOR=clLime 每天10:00,15:00,19:00,23:00展开！！！>………………\
+<COLOR=clLime 介绍：><进入活动泡点每秒基础经验10W此地图死亡不掉装备>\
+　　　\
+<COLOR=clFuchsia 活动持续五分钟!活动结束后在本地图的行会可领取2000元宝!> \
+　　　　　　<进入活动地图/@1>　　　<我现在还比较忙先不去/@EXIT>\
+[@1]
+#IF
+EQUAL G96 1
+#ACT
+GOTO @2
+#ELSEACT
+MESSAGEBOX 提示:\　\目前活动尚未开放!!!\　\开放时间为10:00,15:00,19:00,23:00!!!
+[@2]
+#IF
+HaveGuild
+#ACT
+GOTO @移动
+SETSCTIMER 0 2
+SENDMSG 0 [<$GUILDNAME>]行会的[<$USERNAME>]杀进了活动泡点地图! 0 254
+#ELSEACT
+GOTO @移动
+SETSCTIMER 0 2
+SENDMSG 0 没有加入行会的[<$USERNAME>]杀进了活动泡点地图! 0 254
+
+[@移动]
+#IF
+RANDOM 5
+#ACT
+MAPMOVE hhpd 12 10
+BREAK
+#IF
+RANDOM 4
+#ACT
+MAPMOVE hhpd 18 13
+BREAK
+#IF
+RANDOM 3
+#ACT
+MAPMOVE hhpd 18 13
+BREAK
+#IF
+RANDOM 2
+#ACT
+MAPMOVE hhpd 6 18
+BREAK
+#IF
+RANDOM 1
+#ACT
+MAPMOVE hhpd 10 22
+BREAK

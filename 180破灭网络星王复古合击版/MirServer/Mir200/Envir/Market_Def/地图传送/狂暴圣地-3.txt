@@ -1,0 +1,26 @@
+()
+%100
+[@main]
+\ 
+╔━━━━━━╗ ╔━━━━━━━━━━━━━━━━━━━╗　\
+┃<★><COLOR=clFuchsia 星王圣地><★>┃ ┃<COLOR=clLime 主要怪物：神龙、魔影巨人>　　　　　　　┃　\
+┃------------┃ ┃<COLOR=clFuchsia 怪物刷新：大怪120分钟、小怪30分钟>　　 ┃　\
+┃↘<COLOR=clLime ━━━━>↙┃ ┃<COLOR=clLime 怪物爆率：赤月、魔龙、战神等装备>　　　┃　\
+┃<COLOR=clLime ┃><点击进入/@星王圣地1><COLOR=clLime ┃>┃ ┃<COLOR=clFuchsia 挑战难度：><★★★★★>　<COLOR=clLime 爆率指数：><★★★>┃　\
+┃↗<COLOR=clLime ━━━━>↖┃ ╚━━━━━━━━━━━━━━━━━━━╝　\
+┃------------┃ ╔━━━━━━━━━━━━━━━━━━━╗　\
+┃<★><COLOR=clFuchsia 传送条件><★>┃ ┃　　进入需要： <50级+1000元宝>　  　　　┃　\
+╚━━━━━━╝ ╚━━━━━━━━━━━━━━━━━━━╝ 
+
+
+[@星王圣地1]
+#if
+CHECKLEVELEX > 49
+CHECKGAMEGOLD > 999
+#act
+GAMEGOLD - 1000
+mapmove zhongji 221 208
+SENDMSG 2 %s进入了【星王圣地】看来是凶多吉少了啊!!! 49 223
+SENDMSG 2 %s进入了【星王圣地】看来是凶多吉少了啊!!! 49 223
+#ELSESAY
+需要50级+1000元宝用来支付我们的服务费用!

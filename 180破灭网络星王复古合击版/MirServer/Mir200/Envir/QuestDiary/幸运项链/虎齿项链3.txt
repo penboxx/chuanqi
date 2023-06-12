@@ -1,0 +1,61 @@
+[@白色虎齿项链3]
+{
+#IF
+random 7
+#act
+GAMEGOLD - 3000
+UPGRADEITEMEX 3 1 0 1 0
+Mov m22 1
+Mov s22 白色虎齿项链
+#Call [\\幸运项链\低级物品暴击.txt] @加暴击
+SENDMSG 1 恭喜[%s]在幸运之家将白色虎齿项链升级成功。
+BREAK
+
+#IF
+random 6
+#act
+GAMEGOLD - 3000
+MESSAGEBOX 非常抱歉您的白色虎齿项链升级失败
+BREAK
+
+#IF
+random 5
+#act
+GAMEGOLD - 3000
+MESSAGEBOX 非常抱歉您的白色虎齿项链升级失败
+BREAK
+
+#IF
+random 4
+#act
+GAMEGOLD - 3000
+MESSAGEBOX 非常抱歉您的白色虎齿项链升级失败
+BREAK
+
+#IF
+random 3
+#act
+GAMEGOLD - 3000
+MESSAGEBOX 非常抱歉您的白色虎齿项链升级失败
+BREAK
+
+#IF
+random 2
+#act
+GAMEGOLD - 3000
+MESSAGEBOX 非常抱歉您的白色虎齿项链升级失败
+BREAK
+
+#IF
+random 1
+#act
+GAMEGOLD - 3000
+MESSAGEBOX 非常抱歉您的白色虎齿项链升级失败
+BREAK
+
+#IF
+#act
+GAMEGOLD - 3000
+MESSAGEBOX 非常抱歉您的白色虎齿项链升级失败
+BREAK
+}

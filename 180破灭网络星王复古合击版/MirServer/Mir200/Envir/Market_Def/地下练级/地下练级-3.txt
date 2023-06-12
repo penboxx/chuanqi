@@ -1,0 +1,318 @@
+()
+%100
+[@main]
+前方就是恶魔之地,我镇守着唯一的出口。我可以带你去斩妖除魔! \
+前方异常的凶险,最好还是不要孤身冒险。听去过的宫殿勇士都说, \
+最近宫殿的最深处又出现了新的恶魔 \
+\ \
+<COLOR=clAqua 地下宫殿宫殿大厅BOSS刷新时间:[1]小时,可返回宫殿长廊。>\
+\ \
+<进入地下长廊/@地下宫殿>  <进入宫殿大厅/@地下宫殿1><COLOR=clLime 免费进入练级>\
+\ \
+<进入宫殿包厢/@地下包厢>  <进入宫殿包厢/@地下包厢><COLOR=clFuchsia 免费进入练级>  <无包厢刷怪，5分钟刷新一次>\
+
+[@地下包厢]
+<私人练级包厢1/@01>  <私人练级包厢2/@02>  <私人练级包厢3/@03>   \ \
+<私人练级包厢4/@04>  <私人练级包厢5/@05>  <私人练级包厢6/@06>   \ \
+<私人练级包厢7/@07>  <私人练级包厢8/@08>  <私人练级包厢9/@09>   \ \
+<私人练级包厢10/@10>  <私人练级包厢11/@11>  <私人练级包厢12/@12>   \ \
+
+
+[@12]
+#IF
+checkhum baoxiang12 1
+#say
+很抱歉.单人练级包厢12已经有人了.请选者其他包厢.\ \
+<关闭/@exit>
+#ACT
+break
+#IF
+CHECKLEVELEX > 47
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+mapmove baoxiang12
+SENDMSG 0 系统提示：[%s],进入<宫殿包厢12>闭关练级去了，１只１０万经验好玩吧！！！
+BREAK
+#ELSESAY
+进入需要48级以上。\ \
+
+
+
+[@11]
+#IF
+checkhum baoxiang11 1
+#say
+很抱歉.单人练级包厢11已经有人了.请选者其他包厢.\ \
+<关闭/@exit>
+#ACT
+break
+#IF
+CHECKLEVELEX > 47
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+mapmove baoxiang11
+SENDMSG 0 系统提示：[%s],进入<宫殿包厢11>闭关练级去了，１只１０万经验好玩吧！！！
+BREAK
+#ELSESAY
+进入需要48级以上。\ \
+
+
+
+[@10]
+#IF
+checkhum baoxiang10 1
+#say
+很抱歉.单人练级包厢10已经有人了.请选者其他包厢.\ \
+<关闭/@exit>
+#ACT
+break
+#IF
+CHECKLEVELEX > 47
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+mapmove baoxiang10
+SENDMSG 0 系统提示：[%s],进入<宫殿包厢10>闭关练级去了，１只１０万经验好玩吧！！！
+BREAK
+#ELSESAY
+进入需要48级以上。\ \
+
+
+[@09]
+#IF
+checkhum baoxiang09 1
+#say
+很抱歉.单人练级包厢9已经有人了.请选者其他包厢.\ \
+<关闭/@exit>
+#ACT
+break
+#IF
+CHECKLEVELEX > 47
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+mapmove baoxiang09
+SENDMSG 0 系统提示：[%s],进入<宫殿包厢9>闭关练级去了，１只１０万经验好玩吧！！！
+BREAK
+#ELSESAY
+进入需要48级以上。\ \
+
+
+[@08]
+#IF
+checkhum baoxiang08 1
+#say
+很抱歉.单人练级包厢8已经有人了.请选者其他包厢.\ \
+<关闭/@exit>
+#ACT
+break
+#IF
+CHECKLEVELEX > 47
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+mapmove baoxiang08
+SENDMSG 0 系统提示：[%s],进入<宫殿包厢8>闭关练级去了，１只１０万经验好玩吧！！！
+BREAK
+#ELSESAY
+进入需要48级以上。\ \
+
+
+[@07]
+#IF
+checkhum baoxiang07 1
+#say
+很抱歉.单人练级包厢7已经有人了.请选者其他包厢.\ \
+<关闭/@exit>
+#ACT
+break
+#IF
+CHECKLEVELEX > 47
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+mapmove baoxiang07
+SENDMSG 0 系统提示：[%s],进入<宫殿包厢7>闭关练级去了，１只１０万经验好玩吧！！！
+BREAK
+#ELSESAY
+进入需要48级以上。\ \
+
+[@06]
+#IF
+checkhum baoxiang06 1
+#say
+很抱歉.单人练级包厢6已经有人了.请选者其他包厢.\ \
+<关闭/@exit>
+#ACT
+break
+#IF
+CHECKLEVELEX > 47
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+mapmove baoxiang06
+SENDMSG 0 系统提示：[%s],进入<宫殿包厢6>闭关练级去了，１只１０万经验好玩吧！！！
+BREAK
+#ELSESAY
+进入需要48级以上。\ \
+
+
+[@05]
+#IF
+checkhum baoxiang05 1
+#say
+很抱歉.单人练级包厢5已经有人了.请选者其他包厢.\ \
+<关闭/@exit>
+#ACT
+break
+#IF
+CHECKLEVELEX > 47
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+mapmove baoxiang05
+SENDMSG 0 系统提示：[%s],进入<宫殿包厢5>闭关练级去了，１只１０万经验好玩吧！！！
+BREAK
+#ELSESAY
+进入需要48级以上。\ \
+
+[@04]
+#IF
+checkhum baoxiang04 1
+#say
+很抱歉.单人练级包厢4已经有人了.请选者其他包厢.\ \
+<关闭/@exit>
+#ACT
+break
+#IF
+CHECKLEVELEX > 47
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+mapmove baoxiang04
+SENDMSG 0 系统提示：[%s],进入<宫殿包厢4>闭关练级去了，１只１０万经验好玩吧！！！
+BREAK
+#ELSESAY
+进入需要48级以上。\ \
+
+[@03]
+#IF
+checkhum baoxiang03 1
+#say
+很抱歉.单人练级包厢3已经有人了.请选者其他包厢.\ \
+<关闭/@exit>
+#ACT
+break
+#IF
+CHECKLEVELEX > 47
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+mapmove baoxiang03
+SENDMSG 0 系统提示：[%s],进入<宫殿包厢3>闭关练级去了，１只１０万经验好玩吧！！！
+BREAK
+#ELSESAY
+进入需要48级以上。\ \
+
+[@01]
+#IF
+checkhum baoxiang01 1
+#say
+很抱歉.单人练级包厢1已经有人了.请选者其他包厢.\ \
+<关闭/@exit>
+#ACT
+break
+#IF
+CHECKLEVELEX > 47
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+mapmove baoxiang01
+SENDMSG 0 系统提示：[%s],进入<宫殿包厢1>闭关练级去了，１只１０万经验好玩吧！！！
+BREAK
+#ELSESAY
+进入需要48级以上。\ \
+
+[@02]
+#IF
+checkhum baoxiang02 1
+#say
+很抱歉.单人练级包厢2已经有人了.请选者其他包厢.\ \
+<关闭/@exit>
+#ACT
+break
+#IF
+CHECKLEVELEX > 47
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+mapmove baoxiang02
+SENDMSG 0 系统提示：[%s],进入<宫殿包厢2>闭关练级去了，１只１０万经验好玩吧！！！
+BREAK
+#ELSESAY
+进入需要48级以上。\ \
+
+
+
+[@地下宫殿]
+#if
+#act
+GIVE 回城卷 1
+mapmove T1061A 
+SENDMSG 0 玩家:【%s】从镇妖守将免费进入了≮[地下宫殿]≯练级去了,宫殿大厅BOSS一个小时刷新一次！ 251 245 20
+#ELSEACT
+[@地下宫殿1]
+前方就是恶魔之地,我镇守着唯一的出口。我可以带你去斩妖除魔! \
+前方异常的凶险,最好还是不要孤身冒险。听去过的宫殿勇士都说, \
+最近宫殿的最深处又出现了新的恶魔 \
+\ \
+<COLOR=clAqua 地下宫殿宫殿大厅BOSS刷新时间:[1]小时,可返回宫殿长廊。>\
+\ \
+<宫殿大厅①/@宫殿大厅1>         <宫殿大厅②/@宫殿大厅2>          <宫殿大厅③/@宫殿大厅3> \
+\ \
+<宫殿大厅④/@宫殿大厅4>         <宫殿大厅⑤/@宫殿大厅5>          <宫殿大厅⑥/@宫殿大厅6> \
+[@宫殿大厅1]
+#if
+#act
+GIVE 回城卷 1
+mapmove H008A1 
+SENDMSG 0 玩家:【%s】免费进入了≮[宫殿大厅①]≯练级去了,宫殿大厅BOSS一个小时刷新一次！ 251 245 20
+#ELSEACT
+[@宫殿大厅2]
+#if
+#act
+GIVE 回城卷 1
+mapmove H008A2 
+SENDMSG 0 玩家:【%s】免费进入了≮[宫殿大厅②]≯练级去了,宫殿大厅BOSS一个小时刷新一次！ 251 245 20
+#ELSEACT
+[@宫殿大厅3]
+#if
+#act
+GIVE 回城卷 1
+mapmove H008A3 
+SENDMSG 0 玩家:【%s】免费进入了≮[宫殿大厅③]≯练级去了,宫殿大厅BOSS一个小时刷新一次！ 251 245 20
+#ELSEACT
+[@宫殿大厅4]
+#if
+#act
+GIVE 回城卷 1
+mapmove H008A4 
+SENDMSG 0 玩家:【%s】免费进入了≮[宫殿大厅④]≯练级去了,宫殿大厅BOSS一个小时刷新一次！ 251 245 20
+#ELSEACT
+[@宫殿大厅5]
+#if
+#act
+GIVE 回城卷 1
+mapmove H008A5 
+SENDMSG 0 玩家:【%s】免费进入了≮[宫殿大厅⑤]≯练级去了,宫殿大厅BOSS一个小时刷新一次！ 251 245 20
+#ELSEACT
+[@宫殿大厅6]
+#if
+#act
+GIVE 回城卷 1
+mapmove H008A6 
+SENDMSG 0 玩家:【%s】免费进入了≮[宫殿大厅⑥]≯练级去了,宫殿大厅BOSS一个小时刷新一次！ 251 245 20
+#ELSEACT
+

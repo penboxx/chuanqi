@@ -1,0 +1,590 @@
+()
+%100
+[@MAIN]
+#IF
+RANDOM 3
+#ACT
+SENDMSG 4 告诉各位一个小技巧：点中某人时按Alt+S就能将其加入黑名单，这样就能屏蔽此人的喊话啦！
+GOTO @MAIN-2
+BREAK
+
+#IF
+RANDOM 8
+#ACT
+SENDMSG 4 道士不再是垃圾，杀BOSS打架，无机真气可是增加120%的道.我靠怎么那么牛？？！
+GOTO @MAIN-2
+BREAK
+#IF
+#ACT
+GOTO @MAIN-2
+BREAK
+[@MAIN-2]
+前方就是充满危险的恶魔之地，我镇守着这个唯一的入口。\
+只要你交给我一个烟花，我就能带你和你的队伍去斩妖除魔！\
+前路将会异常凶险，最好不要孤身犯险┅┅\
+听去过地下宫殿的勇士说，最近地下宫殿又有新的恶魔出现！\ \
+ <洞察魔兽信息/@DCMSXX>　　　　\
+ <让我再考虑考虑/@EXIT>\ \
+ <免费进入地下宫殿/@IMJJTGSJ>            \
+[@IMZDCG]
+不同的卷轴通向不同的地牢，你们也将会遇到不同的恶魔。\
+首先你会进入一间试炼室只能停留最多5分钟\
+在试炼室中，只需要点击试炼员即可进入下一层\
+对了，有个小秘密告诉你,\
+在地牢最底所出没的恶魔身上藏有藏宝图和稀世珍宝，\
+现在让我看看你有什么卷轴吧，我带你们去那里挑战群魔！\
+ <去矿洞组队除魔/@MOVEKDCM>　　　　　<去神殿组队除魔/@MOVESDCM>\
+ <去邪窟组队除魔/@MOVEXKCM>　　　　　<去地穴组队除魔/@MOVEDXCM>\
+ <去石墓组队除魔/@MOVESMCM>　　　　　<退出/@EXIT>\
+[@MOVEKDCM]
+#IF
+  CHECKITEM 矿洞组队卷轴 1
+#ACT
+  GOTO @GOTOKDCM
+#ELSESAY
+你没有相应地图的卷轴，不能进入\
+[@GOTOKDCM]
+#IF
+  ISGROUPMASTER
+#ACT
+  GOTO @GOTOKDCM1
+#ELSESAY
+你不是所在队伍的组长，不能进入\
+[@GOTOKDCM1]
+#IF
+  CHECKHUM D411A 1
+#ELSEACT
+  ClearMapMon D411A
+  TAKE 矿洞组队卷轴 1
+  GROUPMAPMOVE D411A
+  BREAK
+#ACT
+#SAY
+你想去的地图现在满员，请稍后再组队前往\
+[@MOVEXKCM]
+#IF
+  CHECKITEM 邪窟组队卷轴 1
+#ACT
+  GOTO @GOTOXKCM
+#ELSESAY
+你没有相应地图的卷轴，不能进入\
+[@GOTOXKCM]
+#IF
+  ISGROUPMASTER
+#ACT
+  GOTO @GOTOXKCM1
+#ELSESAY
+你不是所在队伍的组长，不能进入\
+[@GOTOXKCM1]
+#IF
+  CHECKHUM D413A 1
+#ELSEACT
+  ClearMapMon D413A
+  TAKE 邪窟组队卷轴 1
+  GROUPMAPMOVE D413A
+  BREAK
+#ACT
+#SAY
+你想去的地图现在满员，请稍后再组队前往\
+[@MOVESMCM]
+#IF
+  CHECKITEM 石墓组队卷轴 1
+#ACT
+  GOTO @GOTOSMCM
+#ELSESAY
+你没有相应地图的卷轴，不能进入\
+[@GOTOSMCM]
+#IF
+  ISGROUPMASTER
+#ACT
+  GOTO @GOTOSMCM1
+#ELSESAY
+你不是所在队伍的组长，不能进入\
+[@GOTOSMCM1]
+#IF
+  CHECKHUM E702A 1
+#ELSEACT
+  ClearMapMon E702A
+  TAKE 石墓组队卷轴 1
+  GROUPMAPMOVE E702A
+  BREAK
+#ACT
+#SAY
+你想去的地图现在满员，请稍后再组队前往\
+[@MOVESDCM]
+#IF
+  CHECKITEM 神殿组队卷轴 1
+#ACT
+  GOTO @GOTOSDCM
+#ELSESAY
+你没有相应地图的卷轴，不能进入\
+[@GOTOSDCM]
+#IF
+  ISGROUPMASTER
+#ACT
+  GOTO @GOTOSDCM1
+#ELSESAY
+你不是所在队伍的组长，不能进入\
+[@GOTOSDCM1]
+#IF
+  CHECKHUM D5072A 1
+#ELSEACT
+  ClearMapMon D5072A
+  TAKE 神殿组队卷轴 1
+  GROUPMAPMOVE D5072A
+  BREAK
+#ACT
+#SAY
+你想去的地图现在满员，请稍后再组队前往\
+[@MOVEDXCM]
+#IF
+  CHECKITEM 地穴组队卷轴 1
+#ACT
+  GOTO @GOTODXCM
+#ELSESAY
+你没有相应地图的卷轴，不能进入\
+[@GOTODXCM]
+#IF
+  ISGROUPMASTER
+#ACT
+  GOTO @GOTODXCM1
+#ELSESAY
+你不是所在队伍的组长，不能进入\
+[@GOTODXCM1]
+#IF
+  CHECKHUM D613A 1
+#ELSEACT
+  ClearMapMon D613A
+  TAKE 地穴组队卷轴 1
+  GROUPMAPMOVE D613A
+  BREAK
+#ACT
+#SAY
+你想去的地图现在满员，请稍后再组队前往\
+
+
+[@IMJJTGSJ]
+#IF
+checklevelex > 0
+#ACT
+MAPMOVE   T1061A
+SENDMSG 0  玛法勇士[<$USERNAME>]免费进入地下迷宫练级去了！   49 223
+SENDMSG 0  玛法勇士[<$USERNAME>]免费进入地下迷宫练级去了！   49 223
+BREAK
+#ELSESAY
+你没有金币啊，我不能送你去
+
+
+
+[@ZDMOVEDXMG]
+#IF
+  ISGROUPMASTER
+#ACT
+  GOTO @ZDMOVEDXMG1
+#ELSESAY
+你不是所在队伍的组长，不能进入
+[@ZDMOVEDXMG1]
+#IF
+  CHECKITEM 地穴组队卷轴 1
+#ACT
+  TAKE 地穴组队卷轴 1
+  GROUPMAPMOVE GDMG
+SENDMSG 2  %s带领他的队员前往地下宫殿寻宝去了！ 49 223
+SENDMSG 2  %s带领他的队员前往地下宫殿寻宝去了！ 49 223
+  BREAK
+#IF
+  CHECKITEM 神殿组队卷轴 1
+#ACT
+  TAKE 神殿组队卷轴 1
+  GROUPMAPMOVE GDMG
+SENDMSG 2  %s带领他的队员前往地下宫殿寻宝去了！ 49 223
+SENDMSG 2  %s带领他的队员前往地下宫殿寻宝去了！ 49 223
+  BREAK
+#IF
+  CHECKITEM 矿洞组队卷轴 1
+#ACT
+  TAKE 矿洞组队卷轴 1
+  GROUPMAPMOVE GDMG
+SENDMSG 2  %s带领他的队员前往地下宫殿寻宝去了！ 49 223
+SENDMSG 2  %s带领他的队员前往地下宫殿寻宝去了！ 49 223
+  BREAK
+#IF
+  CHECKITEM 邪窟组队卷轴 1
+#ACT
+  TAKE 邪窟组队卷轴 1
+  GROUPMAPMOVE GDMG
+SENDMSG 2  %s带领他的队员前往地下宫殿寻宝去了！ 49 223
+SENDMSG 2  %s带领他的队员前往地下宫殿寻宝去了！ 49 223
+  BREAK
+#IF
+  CHECKITEM 石墓组队卷轴 1
+#ACT
+  TAKE 石墓组队卷轴 1
+  GROUPMAPMOVE GDMG
+SENDMSG 2  %s带领他的队员前往地下宫殿寻宝去了！ 49 223
+SENDMSG 2  %s带领他的队员前往地下宫殿寻宝去了！ 49 223
+  BREAK
+#IF
+#ACT
+  BREAK
+#SAY
+你没有相应地图的卷轴，我不能送你去\
+[@DDMOVEDXMG]
+#IF
+  CHECKITEM 地穴组队卷轴 1
+#ACT
+  TAKE 地穴组队卷轴 1
+  MAPMOVE T1061 23 25
+  BREAK
+#IF
+  CHECKITEM 神殿组队卷轴 1
+#ACT
+  TAKE 神殿组队卷轴 1
+  MAPMOVE T1061 23 25
+  BREAK
+#IF
+  CHECKITEM 矿洞组队卷轴 1
+#ACT
+  TAKE 矿洞组队卷轴 1
+  MAPMOVE T1061 23 25
+  BREAK
+#IF
+  CHECKITEM 邪窟组队卷轴 1
+#ACT
+  TAKE 邪窟组队卷轴 1
+  MAPMOVE T1061 23 25
+  BREAK
+#IF
+  CHECKITEM 石墓组队卷轴 1
+#ACT
+  TAKE 石墓组队卷轴 1
+  MAPMOVE T1061 23 25
+  BREAK
+#IF
+#ACT
+  BREAK
+#SAY
+你没有相应地图的卷轴，我不能送你去\
+
+
+
+
+[@DCMSXX]
+想传在玛法大陆的某些角落，有一批恶魔镇守着六件重装，\
+想要获得这些宝物，就必须首先要杀死这些恶魔，\
+无数的英雄为了获得这些宝物，不惜以自己的生命作为代价，\
+有些人成功了，更多的勇士则倒在了恶魔的脚下，\
+这位英雄，您是否也想去发现这些魔兽的踪迹，\
+给我5万金币，我就能帮您去查看它们的踪迹，\
+给我5颗金刚石，我就能送您独闯魔穴。\
+ <花5万金币，探查魔兽踪迹/@LOOKMSZJ>\
+ <付1颗金刚石，前往除魔/@LOOKQWCM>
+[@LOOKMSZJ]
+你想查询哪个魔域的恶魔信息呢？\
+ <困惑殿堂/@LOOKKHDT>	<钳虫巢穴/@LOOKQCCX>\ \
+ <死亡神殿/@LOOKSWSD>	<地狱烈焰/@LOOKDYLY>\ \
+ <堕落坟场/@LOOKDLFC>	<深渊魔域/@LOOKSYMY>\ \
+ <返回/@main>
+
+[@LOOKKHDT]
+#IF
+  CheckMonMap T118 1
+#ACT
+  TAKE 金币 50000
+#SAY
+让我掐指算算，\
+不好，<暗之双头血魔>已经出现在困惑殿堂\
+#ElSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+
+[@LOOKSYMY]
+#IF
+  CheckMonMap T219 1
+#ACT
+  TAKE 金币 50000
+#SAY
+让我掐指算算，\
+不好，<暗之双头金刚>已经出现在深渊魔域\
+#ElSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@LOOKDLFC]
+#IF
+  CheckMonMap T315 1
+#ACT
+  TAKE 金币 50000
+#SAY
+让我掐指算算，\
+不好，<暗之黄泉教主>已经出现在堕落坟场\
+#ElSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@LOOKDYLY]
+#IF
+  CheckMonMap T339 1
+#ACT
+  TAKE 金币 50000
+#SAY
+让我掐指算算，\
+不好，<暗之骷髅精灵>已经出现在地狱烈焰\
+#ElSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@LOOKSWSD]
+#IF
+  CheckMonMap T218 1
+#ACT
+  TAKE 金币 50000
+#SAY
+让我掐指算算，\
+不好，<暗之虹魔教主>已经出现在死亡神殿\
+#ElSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@LOOKQCCX]
+#IF
+  CheckMonMap T232 1
+#ACT
+  TAKE 金币 50000
+#SAY
+让我掐指算算，\
+不好，<暗之沃玛教主>已经出现在钳虫巢穴\
+#ElSESAY
+让我掐指算算，\
+可惜，魔兽还没有出现。\
+[@LOOKQWCM]
+我只能送您去困惑殿堂大概的方位，不过要给我1颗金刚石。\
+能不能找到前往魔穴的路径，要靠您自己的能力了。\ \
+
+ <困惑殿堂/@困惑殿堂>	<钳虫巢穴/@钳虫巢穴>\ \
+ <死亡神殿/@死亡神殿>	<地狱烈焰/@地狱烈焰>\ \
+ <堕落坟场/@堕落坟场>	<深渊魔域/@深渊魔域>\ \
+
+
+[@困惑殿堂]
+#IF
+  CHECKGAMEDIAMOND > 0
+#ACT
+  GAMEDIAMOND - 1
+MAPMOVE R001 57 98
+SENDMSG 2  %s使用1颗金刚石进入了困惑殿堂！ 49 223
+SENDMSG 2  %s使用1颗金刚石进入了困惑殿堂！ 49 223
+#ElSESAY
+你给我的金刚石在哪呢？
+
+[@钳虫巢穴]
+#IF
+  CHECKGAMEDIAMOND > 0
+#ACT
+  GAMEDIAMOND - 1
+MAPMOVE 11 352 333
+SENDMSG 2  %s使用1颗金刚石进入了钳虫巢穴！ 49 223
+SENDMSG 2  %s使用1颗金刚石进入了钳虫巢穴！ 49 223
+#ElSESAY
+你给我的金刚石在哪呢？
+
+[@死亡神殿]
+#IF
+  CHECKGAMEDIAMOND > 0
+#ACT
+  GAMEDIAMOND - 1
+MAPMOVE 4 207 222
+SENDMSG 2  %s使用1颗金刚石进入了死亡神殿！ 49 223
+SENDMSG 2  %s使用1颗金刚石进入了死亡神殿！ 49 223
+#ElSESAY
+你给我的金刚石在哪呢？
+
+[@地狱烈焰]
+#IF
+  CHECKGAMEDIAMOND > 0
+#ACT
+  GAMEDIAMOND - 1
+MAPMOVE 0 444 461
+SENDMSG 2  %s使用1颗金刚石进入了地狱烈焰！ 49 223
+SENDMSG 2  %s使用1颗金刚石进入了地狱烈焰！ 49 223
+#ElSESAY
+你给我的金刚石在哪呢？
+
+
+[@堕落坟场]
+#IF
+  CHECKGAMEDIAMOND > 0
+#ACT
+  GAMEDIAMOND - 1
+MAPMOVE 1 307 67
+SENDMSG 2  %s使用1颗金刚石进入了堕落坟场！ 49 223
+SENDMSG 2  %s使用1颗金刚石进入了堕落坟场！ 49 223
+#ElSESAY
+你给我的金刚石在哪呢？
+
+
+[@深渊魔域]
+#IF
+  CHECKGAMEDIAMOND > 0
+#ACT
+  GAMEDIAMOND - 1
+MAPMOVE 1 218 313
+SENDMSG 2  %s使用1颗金刚石进入了深渊魔域！ 49 223
+SENDMSG 2  %s使用1颗金刚石进入了深渊魔域！ 49 223
+#ElSESAY
+你给我的金刚石在哪呢？
+
+[@YHCM]
+屠魔战场的入口就在我身后，只是通常都不开启　\
+焰火是有灵气的东西，我懂得如何发挥它的灵气并用它打开入口　\
+给我三个相同的焰火，我就能帮您打开一次屠魔战场的入口　\
+不同种类焰火能让您去到不同的屠魔战场、因为屠魔战场不止一个　\
+但凡人在那逗留过久会渐染魔性，故每次进入您只有30分钟时间　\
+<如果您有一个长空火舞或者如雾似梦包，也可以进入屠魔战场/@焰火屠魔>　\
+您带来了哪种焰火呢　\
+<如雾似梦/@如雾战场一>         <心心相印/@相印战场一>        <飞火流星/@流星战场一>　\
+<浪漫星雨/@星雨战场一>         <绮梦幻想/@幻想战场一>        <长空火舞/@火舞战场一>\
+
+
+[@如雾战场一]
+#IF
+checkitem 如雾似梦包 1
+#ACT
+take 如雾似梦包 1
+map D6071A
+SENDMSG 2  %s使用烟花进入如雾似梦！ 49 223
+SENDMSG 2  %s使用烟花进入如雾似梦！ 49 223
+CLEARDELAYGOTO
+DELAYGOTO 1800000 @返回盟重1
+#ELSESAY
+你好象没有必须的焰火啊！
+[@返回盟重1]
+#IF
+ISONMAP D6071A
+#ACT
+CLEARDELAYGOTO
+mapmove 3 333 333
+#ELSEACT
+CLEARDELAYGOTO
+
+[@一心战场一]
+#IF
+checkitem 一心一意包 1
+#ACT
+take 一心一意包 1
+map R001A
+SENDMSG 2  %s使用烟花进入一心一意！ 49 223
+SENDMSG 2  %s使用烟花进入一心一意！ 49 223
+CLEARDELAYGOTO
+DELAYGOTO 1800000 @返回盟重2
+#ELSESAY
+你好象没有必须的焰火啊！
+[@返回盟重2]
+#IF
+ISONMAP R001A
+#ACT
+CLEARDELAYGOTO
+mapmove 3 333 333
+#ELSEACT
+CLEARDELAYGOTO
+
+[@相印战场一]
+#IF
+checkitem 心心相印包 1
+#ACT
+take 心心相印包 1
+map D2013A
+SENDMSG 2  %s使用烟花进入心心相印！ 49 223
+SENDMSG 2  %s使用烟花进入心心相印！ 49 223
+CLEARDELAYGOTO
+DELAYGOTO 1800000 @返回盟重3
+#ELSESAY
+你好象没有必须的焰火啊！
+[@返回盟重3]
+#IF
+ISONMAP D2013A
+#ACT
+CLEARDELAYGOTO
+mapmove 3 333 333
+#ELSEACT
+CLEARDELAYGOTO
+
+[@流星战场一]
+#IF
+checkitem 飞火流星包 1
+#ACT
+take 飞火流星包 1
+map D717A
+SENDMSG 2  %s使用烟花进入飞火流星！ 49 223
+SENDMSG 2  %s使用烟花进入飞火流星！ 49 223
+CLEARDELAYGOTO
+DELAYGOTO 1800000 @返回盟重4
+#ELSESAY
+你好象没有必须的焰火啊！
+[@返回盟重4]
+#IF
+ISONMAP D717A
+#ACT
+CLEARDELAYGOTO
+mapmove 3 333 333
+#ELSEACT
+CLEARDELAYGOTO
+
+[@星雨战场一]
+#IF
+checkitem 浪漫星雨包 1
+#ACT
+take 浪漫星雨包 1
+map D024A
+SENDMSG 2  %s使用烟花进入浪漫星雨！ 49 223
+SENDMSG 2  %s使用烟花进入浪漫星雨！ 49 223
+CLEARDELAYGOTO
+DELAYGOTO 1800000 @返回盟重5
+#ELSESAY
+你好象没有必须的焰火啊！
+[@返回盟重5]
+#IF
+ISONMAP D024A
+#ACT
+CLEARDELAYGOTO
+mapmove 3 333 333
+#ELSEACT
+CLEARDELAYGOTO
+
+[@幻想战场一]
+#IF
+checkitem 绮梦幻想包 1
+#ACT
+take 绮梦幻想包 1
+map D2079A
+SENDMSG 2  %s使用烟花进入绮梦幻想！ 49 223
+SENDMSG 2  %s使用烟花进入绮梦幻想！ 49 223
+CLEARDELAYGOTO
+DELAYGOTO 1800000 @返回盟重6
+#ELSESAY
+你好象没有必须的焰火啊！
+[@返回盟重6]
+#IF
+ISONMAP D2079A
+#ACT
+CLEARDELAYGOTO
+mapmove 3 333 333
+#ELSEACT
+CLEARDELAYGOTO
+
+[@火舞战场一]
+#IF
+checkitem 长空火舞包 1
+#ACT
+take 长空火舞包 1
+map D5071B1
+SENDMSG 2  %s使用烟花进入长空火舞！ 49 223
+SENDMSG 2  %s使用烟花进入长空火舞！ 49 223
+CLEARDELAYGOTO
+DELAYGOTO 1800000 @返回盟重7
+#ELSESAY
+你好象没有必须的焰火啊！
+[@返回盟重7]
+#IF
+ISONMAP D5071B1
+#ACT
+CLEARDELAYGOTO
+mapmove 3 333 333
+#ELSEACT
+CLEARDELAYGOTO

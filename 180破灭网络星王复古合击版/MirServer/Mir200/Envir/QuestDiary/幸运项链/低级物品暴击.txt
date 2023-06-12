@@ -1,0 +1,50 @@
+[@加暴击]
+{
+#If
+Random 100
+equal m22 1
+#Act
+Mov m22 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将<$Str(s22)>升级成功，暴击额外+5。
+#If
+Random 30
+equal m22 1
+#Act
+Mov m22 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将<$Str(s22)>升级成功，暴击额外+4。
+#If
+Random 15
+equal m22 1
+#Act
+Mov m22 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将<$Str(s22)>升级成功，暴击额外+3。
+#If
+Random 8
+equal m22 1
+#Act
+Mov m22 0
+UPGRADEITEMEX 3 8 0 1 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将<$Str(s22)>升级成功，暴击额外+2。
+#ElseAct
+Goto @暴击额外加1
+[@暴击额外加1]
+#If
+equal m22 1
+#Act
+Mov m22 0
+UPGRADEITEMEX 3 8 0 1 0
+SENDMSG 1 恭喜[%s]在幸运之家将<$Str(s22)>升级成功，暴击额外+1。
+}

@@ -1,0 +1,23 @@
+[@main]
+╔═╦═════════════════════════╗\
+║<COLOR=clRed 赞>║<COLOR=clLime 　　　　　　　　赞助大使·专属圣地>　　　　　　　　║\
+║<COLOR=clRed 助>║<COLOR=clFuchsia 本地图为赞助大使专属地，神秘传送地图，有钱就是任性>║\
+║<COLOR=clRed 大>╠═════════════════════════╣\
+║<COLOR=clRed 使>║<COLOR=clSKYBLUE 非人民币玩家可打装备回收人民币办理赞助大使      >  ║\
+╠═╩═════════════════════════╣\
+║<COLOR=clYELLOW 进入条件:><COLOR=clRed   赞助大使方可入内（闲人.免进）>  【<赞助进入/@现在就去>】║\
+╚═══════════════════════════╝\
+
+
+[@现在就去]
+#if
+CheckGamePoint > 99
+#ACT 
+mapmove zzdszj 34 32
+Param1 zzdszj
+Param2 34
+Param3 32
+SENDMSG 0 赞助大使=>　〖<$USERNAME>〗进入赞助大使之家更多乐趣尽在其中!!! 252 255
+SENDMSG 0 赞助大使=>　〖<$USERNAME>〗进入赞助大使之家更多乐趣尽在其中!!! 252 255
+#ELSEACT
+messagebox 【提示】:【你不是赞助大使，一边玩去！！！】

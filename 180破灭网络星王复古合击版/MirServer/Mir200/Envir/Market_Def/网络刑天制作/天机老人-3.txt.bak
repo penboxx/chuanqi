@@ -1,0 +1,1246 @@
+()
+%100
+[@main]
+#IF
+RANDOM 6
+#ACT
+SENDMSG 4 不要说我是个小角色,开天斩,月灵,火雨。他们的威力就看我的手艺了！
+GOTO @MAIN-2
+BREAK
+#IF
+#ACT
+GOTO @MAIN-2
+BREAK
+[@MAIN-2]
+<COLOR=clRed 为打造长期版本而特别添加技能强化,技能强化威力大，但不变态!>  \
+<强化战士技能/@强化战士技能>  比如：<COLOR=clLime 强化开 天 斩,需要：10000点灵气值>\ \
+<强化法师技能/@强化法师技能>  比如：<COLOR=clLime 强化流星火雨,需要：10000点灵气值>\ \
+<强化道士技能/@强化道士技能>  比如：<COLOR=clLime 强化灵魂火符,需要：10000点灵气值>\ \
+　　　　<COLOR=clRed 注>：<COLOR=clFuchsia (技能只能提升至4重，不然后果自负)>	 \
+<兑换灵气卷/@兑换灵气卷>   <我要使用装备兑换灵气值/@兑换灵气值> 可用灵气值为:<$GAMEGIRD>.\
+[@强化战士技能]
+这里可以使用灵气值来强化技能，使用一次就为你升级4重技能！\
+(如看不到强化技能效果，请更新盛大客户端)\
+<COLOR=clRed>人物：<使用10000点强化基本剑术/@人物基本>	<使用10000点强化攻杀剑术/@人物攻杀>\
+　　　<使用10000点强化刺杀剑术/@人物刺杀>	<使用10000点强化烈火剑法/@人物烈火>\
+　　　<使用50000点强化开天斩/@人物开天斩>	  <使用50000点强化逐日剑法/@人物逐日>\
+<COLOR=clRed>英雄：<10000点强化英雄基本剑术/@英雄基本>	<10000点强化英雄攻杀剑术/@英雄攻杀>\
+　　　<10000点强化英雄刺杀剑术/@英雄刺杀>	<10000点强化英雄烈火剑法/@英雄烈火>\
+　　　<50000点强化英雄开天斩/@英雄开天斩>	  <50000点强化英雄逐日剑法/@英雄逐日>\
+<COLOR=clRed 注>：<COLOR=clFuchsia (技能只能提升至4重，不然后果自负)>             <返回首页/@Main>\
+[@强化法师技能]
+这里可以使用灵气值来强化技能，使用一次就为你升级4重技能！\
+(如看不到强化技能效果，请更新盛大客户端)\
+<COLOR=clRed>人物：<使用10000点强化雷电术/@人物雷电>	   <使用10000点强化火墙/@人物火墙>\
+　　　<使用10000点强化疾光电影/@人物疾光>	<使用10000点强化魔法盾/@人物魔法盾>\
+　　　<使用10000点强化灭天火/@人物灭天>	  <使用10000点强化流星火雨/@人物流星>\
+<COLOR=clRed>英雄：<10000点强化英雄雷电术/@英雄雷电>	   <10000点强化英雄火墙/@英雄火墙>\
+　　　<10000点强化英雄疾光电影/@英雄疾光>	<10000点强化英雄魔法盾/@英雄魔法盾>\
+　　　<10000点强化英雄灭天火/@英雄灭天>	  <10000点强化英雄流星火雨/@英雄流星>\
+<COLOR=clRed 注>：<COLOR=clFuchsia (技能只能提升至4重，不然后果自负)>             <返回首页/@Main>\
+[@强化道士技能]
+这里可以使用灵气值来强化技能，使用一次就为你升级4重技能！\
+(如看不到强化技能效果，请更新盛大客户端)\
+<COLOR=clRed>人物：<使用10000点强化精神战法/@人物战法>	  <使用10000点强化灵魂火符/@人物火符>\
+　　　<使用10000点强化神圣战甲术/@人物战甲>	<使用10000点强化幽灵盾/@人物幽灵盾>\
+　　　<10000点强化施毒术/@人物施毒>　　　　<使用50000点强化噬血术/@人物噬血>\
+<COLOR=clRed>英雄：<10000点强化英雄精神战法/@英雄战法>	  <10000点强化英雄灵魂火符/@英雄火符>\
+　　　<10000点强化英雄神圣战甲术/@英雄战甲>	<10000点强化英雄幽灵盾/@英雄幽灵盾>\
+　　　<10000点强化英雄施毒术/@英雄施毒>　　<50000点强化英雄噬血术/@英雄噬血>\
+<COLOR=clRed 注>：<COLOR=clFuchsia (技能只能提升至4重，不然后果自负)>             <返回首页/@Main>\
+[@英雄战法]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄精神战法
+MOV M1 10000
+MOV S3 TAOS
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄火符]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄灵魂火符
+MOV M1 10000
+MOV S3 TAOS
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄战甲]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄神圣战术
+MOV M1 10000
+MOV S3 TAOS
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄幽灵盾]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄幽灵盾
+MOV M1 10000
+MOV S3 TAOS
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄噬血]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄噬血术
+MOV M1 50000
+MOV S3 TAOS
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄施毒]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄施毒术
+MOV M1 10000
+MOV S3 TAOS
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄雷电]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄雷电术
+MOV M1 10000
+MOV S3 WIZARD
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄火墙]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄火墙
+MOV M1 10000
+MOV S3 WIZARD
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄疾光]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄疾光电影
+MOV M1 10000
+MOV S3 WIZARD
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄魔法盾]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄魔法盾
+MOV M1 10000
+MOV S3 WIZARD
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄灭天]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄灭天火
+MOV M1 10000
+MOV S3 WIZARD
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄流星]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄流星火雨
+MOV M1 10000
+MOV S3 WIZARD
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄攻杀]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄攻杀剑术
+MOV M1 10000
+MOV S3 Warrior
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄烈火]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄烈火剑法
+MOV M1 10000
+MOV S3 Warrior
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄逐日]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄逐日剑法
+MOV M1 50000
+MOV S3 Warrior
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄基本]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄基本剑术
+MOV M1 10000
+MOV S3 Warrior
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄刺杀]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄刺杀剑术
+MOV M1 10000
+MOV S3 Warrior
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[@英雄开天斩]
+#IF
+CHECKHEROONLINE
+#ACT
+MOV S1 英雄开天斩
+MOV M1 50000
+MOV S3 Warrior
+MOV M2 44
+MOV M3 4
+DelayGoto 5 ~HQIANGHUA
+Break
+#ElseAct
+MessAgeBox 您的英雄不在线！！
+Break
+[~HQIANGHUA]
+#If
+H.CHECKMAGICLEVEL <$STR(S1)> < 3
+#ACT
+MESSAGEBOX 只有3级的<$STR(S1)>才可以强化! 
+BREAK
+#If
+H.CHECKJOB <$Str(s3)>
+#ACT 
+QUERYVALUE 2 2 10 @HHERONowQIANGHUA 你确定提升【<$STR(S1)>】到【<$STR(M3)>】级？ www.sf1995.com
+Break 
+#ELSEACT 
+MESSAGEBOX 错误！你正在试图提升其它职业的英雄技能! 
+Break
+[@HHERONowQIANGHUA]
+#IF 
+H.CHECKLEVELEX < <$STR(M2)> 
+#ACT 
+MESSAGEBOX 你英雄必须<$STR(M2)>级以上才可以提升<$STR(M3)>级<$STR(S1)>! 
+BREAK
+#If
+H.CHECKMAGICLEVEL <$STR(S1)> > 3
+#ACT
+MESSAGEBOX 你英雄的<$STR(S1)>技能已经强化过了! 
+BREAK
+#IF
+H.CHECKMAGICNAME <$STR(S1)>
+CHECKGAMEGIRD ? <$STR(M1)>
+#ACT 
+GAMEGIRD - <$STR(M1)>
+H.SkillLevel <$STR(S1)> = <$STR(M3)>
+SENDMSG 7 恭喜您的英雄<$STR(S1)>技能提升到了<$STR(M3)>级! 
+SENDMSG 2 恭喜%s的英雄技能提升<$STR(S1)>到了<$STR(M3)>级,技能再次飞跃！ 
+break 
+#ELSEACT 
+MESSAGEBOX 你的灵气不足<$STR(M1)>点，或者你没有学习<$STR(S1)>！
+[@人物战法]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 精神力战法
+MOV M1 10000
+MOV S3 Taos
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物火符]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 灵魂火符
+MOV M1 10000
+MOV S3 Taos
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物战甲]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 神圣战甲术
+MOV M1 10000
+MOV S3 Taos
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物幽灵盾]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 幽灵盾
+MOV M1 10000
+MOV S3 Taos
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物施毒]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 施毒术
+MOV M1 10000
+MOV S3 Taos
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物噬血]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 噬血术
+MOV M1 50000
+MOV S3 Taos
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物雷电]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 雷电术
+MOV M1 10000
+MOV S3 WIZARD
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物火墙]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 火墙
+MOV M1 10000
+MOV S3 WIZARD
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物疾光]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 疾光电影
+MOV M1 10000
+MOV S3 WIZARD
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物魔法盾]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 魔法盾
+MOV M1 10000
+MOV S3 WIZARD
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物灭天]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 灭天火
+MOV M1 10000
+MOV S3 WIZARD
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物流星]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 流星火雨
+MOV M1 10000
+MOV S3 WIZARD
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物攻杀]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 攻杀剑术
+MOV M1 10000
+MOV S3 Warrior
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物烈火]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 烈火剑法
+MOV M1 10000
+MOV S3 Warrior
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物逐日]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 逐日剑法
+MOV M1 50000
+MOV S3 Warrior
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物基本]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 基本剑术
+MOV M1 10000
+MOV S3 Warrior
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+[@人物刺杀]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 刺杀剑术
+MOV M1 10000
+MOV S3 Warrior
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+[@人物开天斩]
+#IF
+CheckLevelEx > 0
+#ACT
+MOV S1 开天斩
+MOV M1 50000
+MOV S3 Warrior
+MOV M2 46
+MOV M3 4
+DelayGoto 5 ~QIANGHUA
+Break
+#ELSEACT
+MESSAGEBOX 对不起，您的灵气值不够；当前灵气值为：<$GAMEGIRD>
+Break
+[~QIANGHUA]
+#If
+CHECKMAGICLEVEL <$STR(S1)> < 3
+#ACT
+MESSAGEBOX 只有3级的<$STR(S1)>才可以强化! 
+BREAK
+#If
+CHECKJOB <$Str(s3)>
+#ACT 
+QUERYVALUE 2 2 10 @HERONowQIANGHUA 你确定提升【<$STR(S1)>】到【<$STR(M3)>】级？ www.sf1995.com
+Break 
+#ELSEACT 
+MESSAGEBOX 错误！你正在试图提升其它职业技能! 
+Break
+[@HERONowQIANGHUA]
+#IF 
+CHECKLEVELEX < <$STR(M2)> 
+#ACT 
+MESSAGEBOX 你等级必须<$STR(M2)>级以上才可以提升<$STR(M3)>级<$STR(S1)>! 
+BREAK
+#If
+CHECKMAGICLEVEL <$STR(S1)> > 3
+#ACT
+MESSAGEBOX 你的<$STR(S1)>技能已经强化过了! 
+BREAK
+#IF
+CHECKMAGICNAME <$STR(S1)> 
+CHECKGAMEGIRD ? <$STR(M1)>
+#ACT 
+GAMEGIRD - <$STR(M1)>
+SkillLevel <$STR(S1)> = <$STR(M3)>
+SENDMSG 7 恭喜您的<$STR(S1)>技能提升到了<$STR(M3)>级! 
+SENDMSG 2 恭喜%s的<$STR(S1)>提升到了<$STR(M3)>级,技能再次飞跃！ 
+break 
+#ELSEACT 
+MESSAGEBOX 你的灵气不足<$STR(M1)>点，或者你没有学习<$STR(S1)>！
+[@兑换灵气卷]
+欢迎您的到来\ 
+<COLOR=clLime 在我这里可以用灵气值兑换灵气值卷>\ 
+<COLOR=clLime 也可以用灵气值卷兑换灵气值！>\ \
+　　<COLOR=clFuchsia 卐—★☆→------灵气值[兑换]灵气卷------←☆★—卐>\
+<   1点灵气值[兑换]   1点灵气卷/@juan1> <  5点灵气值[兑换]  5点灵气卷/@juan5>\
+<  10点灵气值[兑换]  10点灵气卷/@juan10> < 50点灵气值[兑换] 50点灵气卷/@juan50>\
+< 100点灵气值[兑换] 100点灵气卷/@juan100> < 500点灵气值[兑换] 500点灵气卷/@juan500>\
+<1000点灵气值[兑换]1000点灵气卷/@juan1000>
+[@juan1]
+#IF
+CHECKGAMEGIRD > 0
+#act
+GAMEGIRD - 1
+GIVE 1点灵气卷 1
+SENDMSG 6 灵气值-1，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足！
+[@juan5]
+#IF
+CHECKGAMEGIRD > 4
+#act
+GAMEGIRD - 5
+GIVE 5点灵气卷 1
+SENDMSG 6 灵气值-5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足！
+[@juan10]
+#IF
+CHECKGAMEGIRD > 9
+#act
+GAMEGIRD - 10
+GIVE 10点灵气卷 1
+SENDMSG 6 灵气值-10，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足！
+[@juan50]
+#IF
+CHECKGAMEGIRD > 49
+#act
+GAMEGIRD - 50
+GIVE 50点灵气卷 1
+SENDMSG 6 灵气值-50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足！
+[@juan100]
+#IF
+CHECKGAMEGIRD > 99
+#act
+GAMEGIRD - 100
+GIVE 100点灵气卷 1
+SENDMSG 6 灵气值-100，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足100！
+[@juan500]
+#IF
+CHECKGAMEGIRD > 499
+#act
+GAMEGIRD - 500
+GIVE 500点灵气卷 1
+SENDMSG 6 灵气值-500，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足500！
+[@juan1000]
+#IF
+CHECKGAMEGIRD > 999
+#act
+GAMEGIRD - 1000
+GIVE 1000点灵气卷 1
+SENDMSG 6 灵气值-1000，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 对不起，你的灵气值不足1000！
+[@兑换灵气值]
+◆<沃玛回收>◆    ◆<祖玛回收/@祖玛>◆    ◆<赤月回收/@赤月>◆ \
+由于本服装备非常难打,此回收比例不作为游戏内装备的实际价值！\
+<COLOR=clLime 沃玛装备：可兑换为2点灵气值>\
+　　　<幽灵项链/@幽灵项链>	<幽灵手套/@幽灵手套>	<思贝儿手镯/@思贝儿手镯>\
+　　　<生命项链/@生命项链>	<龙之戒指/@龙之戒指>	<红宝石戒指/@红宝石戒指>\
+　　　<天珠项链/@天珠项链>	<心灵手镯/@心灵手镯>	<铂金戒指/@铂金戒指>\
+<COLOR=253 武器每把可兑换为5点灵气值>        <一键全收/@沃玛>  <一键全收/@沃玛>\
+<魔杖/@魔杖>	<银蛇/@银蛇>	<炼狱/@炼狱>	<井中月/@井中月>	<无极棍/@无极棍>  
+[@祖玛]
+.\◆<沃玛回收/@兑换灵气值>◆    ◆<祖玛回收>◆    ◆<赤月回收/@赤月>◆ \
+由于本服装备非常难打,此回收比例不作为游戏内装备的实际价值！\
+<COLOR=253 首饰每个可拆为5点灵气值>\
+<绿色项链/@绿色项链> <骑士手镯/@骑士手镯> <力量戒指/@力量戒指>     <一键全收/@祖玛吧>  <一键全收/@祖玛吧>\
+<恶魔铃铛/@恶魔铃铛> <龙之手镯/@龙之手镯> <紫 碧 螺/@紫碧螺>     <一键全收/@祖玛吧>  <一键全收/@祖玛吧>\
+<灵魂项链/@灵魂项链> <三眼手镯/@三眼手镯> <泰坦戒指/@泰坦戒指>     <一键全收/@祖玛吧>  <一键全收/@祖玛吧>\
+<COLOR=253 武器每个可拆为10点灵气值>\
+<裁决之杖/@裁决之杖>   <骨玉权杖/@骨玉权杖>   <龙纹剑/@龙纹剑>\
+[@赤月]
+.\◆<沃玛回收/@兑换灵气值>◆    ◆<祖玛回收/@祖玛>◆    ◆<赤月回收>◆ \
+由于本服装备非常难打,此回收比例不作为游戏内装备的实际价值！\
+<COLOR=clLime 首饰可兑换为20点灵气值>\
+<圣战头盔/@圣战头盔> <圣战项链/@圣战项链> <圣战手镯/@圣战手镯> <圣战戒指/@圣战戒指>\
+<法神头盔/@法神头盔> <法神项链/@法神项链> <法神手镯/@法神手镯> <法神戒指/@法神戒指>\
+<天尊头盔/@天尊头盔> <天尊项链/@天尊项链> <天尊手镯/@天尊手镯> <天尊戒指/@天尊戒指>\
+<一键全收/@赤月吧>   <一键全收/@赤月吧>   <一键全收/@赤月吧>\
+<一键全收/@赤月吧>   <一键全收/@赤月吧>   <一键全收/@赤月吧>\
+[@祖玛吧]
+#if
+checkitem 绿色项链 1
+#act
+take 绿色项链 1
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 恶魔铃铛 1
+#act
+take 恶魔铃铛 1
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 灵魂项链 1
+#act
+take 灵魂项链 1
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 骑士手镯 1
+#act
+take 骑士手镯 1
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 龙之手镯 1
+#act
+take 龙之手镯 1
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 三眼手镯 1
+#act
+take 三眼手镯 1
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 力量戒指 1
+#act
+take 力量戒指 1
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 紫碧螺 1
+#act
+take 紫碧螺 1
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 泰坦戒指 1
+#act
+take 泰坦戒指 1
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 裁决之杖 1
+#act
+take 裁决之杖 1
+GAMEGIRD + 10
+SENDMSG 6 恭喜：灵气值+10，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 龙纹剑 1
+#act
+take 龙纹剑 1
+GAMEGIRD + 10
+SENDMSG 6 恭喜：灵气值+10，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 骨玉权杖 1
+#act
+take 骨玉权杖 1
+GAMEGIRD + 10
+SENDMSG 6 恭喜：灵气值+10，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+[@赤月吧]
+#if
+checkitem 圣战头盔 1
+#act
+take 圣战头盔 1
+GAMEGIRD + 20
+SENDMSG 6 恭喜：灵气值+20，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 圣战项链 1
+#act
+take 圣战项链 1
+GAMEGIRD + 20
+SENDMSG 6 恭喜：灵气值+20，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 圣战手镯 1
+#act
+take 圣战手镯 1
+GAMEGIRD + 20
+SENDMSG 6 恭喜：灵气值+20，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 圣战戒指 1
+#act
+take 圣战戒指 1
+GAMEGIRD + 20
+SENDMSG 6 恭喜：灵气值+20，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 法神头盔 1
+#act
+take 法神头盔 1
+GAMEGIRD + 20
+SENDMSG 6 恭喜：灵气值+20，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 法神项链 1
+#act
+take 法神项链 1
+GAMEGIRD + 20
+SENDMSG 6 恭喜：灵气值+20，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 法神手镯 1
+#act
+take 法神手镯 1
+GAMEGIRD + 20
+SENDMSG 6 恭喜：灵气值+20，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 法神戒指 1
+#act
+take 法神戒指 1
+GAMEGIRD + 20
+SENDMSG 6 恭喜：灵气值+20，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 天尊头盔 1
+#act
+take 天尊头盔 1
+GAMEGIRD + 20
+SENDMSG 6 恭喜：灵气值+20，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 天尊项链 1
+#act
+take 天尊项链 1
+GAMEGIRD + 20
+SENDMSG 6 恭喜：灵气值+20，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 天尊手镯 1
+#act
+take 天尊手镯 1
+GAMEGIRD + 20
+SENDMSG 6 恭喜：灵气值+20，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 天尊戒指 1
+#act
+take 天尊戒指 1
+GAMEGIRD + 20
+SENDMSG 6 恭喜：灵气值+20，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+[@沃玛]
+#if
+checkitem 幽灵项链 1
+#act
+take 幽灵项链 1
+GAMEGIRD + 2
+SENDMSG 6 恭喜：灵气值+2，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 幽灵手套 1
+#act
+take 幽灵手套 1
+GAMEGIRD + 2
+SENDMSG 6 恭喜：灵气值+2，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 龙之戒指 1
+#act
+take 龙之戒指 1
+GAMEGIRD + 2
+SENDMSG 6 恭喜：灵气值+2，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 生命项链 1
+#act
+take 生命项链 1
+GAMEGIRD + 2
+SENDMSG 6 恭喜：灵气值+2，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 思贝儿手镯 1
+#act
+take 思贝儿手镯 1
+GAMEGIRD + 2
+SENDMSG 6 恭喜：灵气值+2，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 红宝石戒指 1
+#act
+take 红宝石戒指 1
+GAMEGIRD + 2
+SENDMSG 6 恭喜：灵气值+2，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 天珠项链 1
+#act
+take 天珠项链 1
+GAMEGIRD + 2
+SENDMSG 6 恭喜：灵气值+2，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 心灵手镯 1
+#act
+take 心灵手镯 1
+GAMEGIRD + 2
+SENDMSG 6 恭喜：灵气值+2，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 铂金戒指 1
+#act
+take 铂金戒指 1
+GAMEGIRD + 2
+SENDMSG 6 恭喜：灵气值+2，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 幽灵手套 1
+#act
+take 铂金戒指 1
+GAMEGIRD + 2
+SENDMSG 6 恭喜：灵气值+2，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 井中月 1
+#act
+take 井中月 1
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 魔杖 1
+#act
+take 魔杖 1
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 无极棍 1
+#act
+take 无极棍 1
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 炼狱 1
+#act
+take 炼狱 1
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+#if
+checkitem 银蛇 1
+#act
+take 银蛇 1
+GAMEGIRD + 5
+SENDMSG 6 恭喜：灵气值+5，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+[@圣龙盔]
+#if
+checkitem 圣龙盔 1
+#act
+take 圣龙盔 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有圣龙盔！
+[@雷霆项链]
+#if
+checkitem 雷霆项链 1
+#act
+take 雷霆项链 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有雷霆项链！
+[@雷霆护腕]
+#if
+checkitem 雷霆护腕 1
+#act
+take 雷霆护腕 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有雷霆护腕！
+[@雷霆战戒]
+#if
+checkitem 雷霆战戒 1
+#act
+take 雷霆战戒 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有雷霆战戒！
+[@天龙盔]
+#if
+checkitem 天龙盔 1
+#act
+take 天龙盔 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有天龙盔！
+[@光芒项链]
+#if
+checkitem 光芒项链 1
+#act
+take 光芒项链 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有光芒项链！
+[@光芒护腕]
+#if
+checkitem 光芒护腕 1
+#act
+take 光芒护腕 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有光芒护腕！
+[@光芒道戒]
+#if
+checkitem 光芒道戒 1
+#act
+take 光芒道戒 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有光芒道戒！
+[@魔龙盔]
+#if
+checkitem 魔龙盔 1
+#act
+take 魔龙盔 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有魔龙盔！
+[@烈焰项链]
+#if
+checkitem 烈焰项链 1
+#act
+take 烈焰项链 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有烈焰项链！
+[@烈焰护腕]
+#if
+checkitem 烈焰护腕 1
+#act
+take 烈焰护腕 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有烈焰护腕！
+[@烈焰魔戒]
+#if
+checkitem 烈焰魔戒 1
+#act
+take 烈焰魔戒 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有烈焰魔戒！
+[@烈焰魔靴]
+#if
+checkitem 烈焰魔靴 1
+#act
+take 烈焰魔靴 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有烈焰魔靴！
+[@烈焰腰带]
+#if
+checkitem 烈焰腰带 1
+#act
+take 烈焰腰带 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有烈焰腰带！
+[@光芒腰带]
+#if
+checkitem 光芒腰带 1
+#act
+take 光芒腰带 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有光芒腰带！
+[@光芒道靴]
+#if
+checkitem 光芒道靴 1
+#act
+take 光芒道靴 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+50，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有光芒道靴！
+[@雷霆战靴]
+#if
+checkitem 雷霆战靴 1
+#act
+take 雷霆战靴 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+30，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有雷霆战靴！
+[@雷霆腰带]
+#if
+checkitem 雷霆腰带 1
+#act
+take 雷霆腰带 1
+GAMEGIRD + 50
+SENDMSG 6 恭喜：灵气值+30，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有雷霆腰带！
+[@强化雷霆腰带]
+#if
+checkitem 强化雷霆腰带 1
+#act
+take 强化雷霆腰带 1
+GAMEGIRD + 60
+SENDMSG 6 恭喜：灵气值+60，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化雷霆腰带！
+[@强化雷霆战靴]
+#if
+checkitem 强化雷霆战靴 1
+#act
+take 强化雷霆战靴 1
+GAMEGIRD + 60
+SENDMSG 6 恭喜：灵气值+60，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化雷霆战靴！
+[@强化雷霆项链]
+#if
+checkitem 强化雷霆项链 1
+#act
+take 强化雷霆项链 1
+GAMEGIRD + 80
+SENDMSG 6 恭喜：灵气值+80，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化雷霆项链！
+[@强化雷霆护腕]
+#if
+checkitem 强化雷霆护腕 1
+#act
+take 强化雷霆护腕 1
+GAMEGIRD + 80
+SENDMSG 6 恭喜：灵气值+80，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化雷霆护腕！
+[@强化雷霆战戒]
+#if
+checkitem 强化雷霆战戒 1
+#act
+take 强化雷霆战戒 1
+GAMEGIRD + 80
+SENDMSG 6 恭喜：灵气值+80，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化雷霆战戒！
+[@强化光芒腰带]
+#if
+checkitem 强化光芒腰带 1
+#act
+take 强化光芒腰带 1
+GAMEGIRD + 60
+SENDMSG 6 恭喜：灵气值+60，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化光芒腰带！
+[@强化光芒道靴]
+#if
+checkitem 强化光芒道靴 1
+#act
+take 强化光芒道靴 1
+GAMEGIRD + 60
+SENDMSG 6 恭喜：灵气值+60，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化光芒道靴！
+[@强化光芒项链]
+#if
+checkitem 强化光芒项链 1
+#act
+take 强化光芒项链 1
+GAMEGIRD + 80
+SENDMSG 6 恭喜：灵气值+80，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化光芒项链！
+[@强化光芒护腕]
+#if
+checkitem 强化光芒护腕 1
+#act
+take 强化光芒护腕 1
+GAMEGIRD + 80
+SENDMSG 6 恭喜：灵气值+80，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化光芒护腕！
+[@强化光芒道戒]
+#if
+checkitem 强化光芒道戒 1
+#act
+take 强化光芒道戒 1
+GAMEGIRD + 80
+SENDMSG 6 恭喜：灵气值+80，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化光芒道戒！
+[@强化烈焰魔靴]
+#if
+checkitem 强化烈焰魔靴 1
+#act
+take 强化烈焰魔靴 1
+GAMEGIRD + 60
+SENDMSG 6 恭喜：灵气值+60，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化烈焰魔靴！
+[@强化烈焰腰带]
+#if
+checkitem 强化烈焰腰带 1
+#act
+take 强化烈焰腰带 1
+GAMEGIRD + 60
+SENDMSG 6 恭喜：灵气值+60，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化烈焰腰带！
+[@强化烈焰项链]
+#if
+checkitem 强化烈焰项链 1
+#act
+take 强化烈焰项链 1
+GAMEGIRD + 80
+SENDMSG 6 恭喜：灵气值+80，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化烈焰项链！
+[@强化烈焰护腕]
+#if
+checkitem 强化烈焰护腕 1
+#act
+take 强化烈焰护腕 1
+GAMEGIRD + 80
+SENDMSG 6 恭喜：灵气值+80，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化烈焰护腕！
+[@强化烈焰魔戒]
+#if
+checkitem 强化烈焰魔戒 1
+#act
+take 强化烈焰魔戒 1
+GAMEGIRD + 80
+SENDMSG 6 恭喜：灵气值+80，当前灵气值为：<$GAMEGIRD>
+#ELSEACT
+MESSAGEBOX 你没有强化烈焰魔戒！

@@ -1,0 +1,24 @@
+()
+%100
+[@main]
+<COLOR=clAqua  　　    |Ｐ|>  ∴  ㊣ ∴  ●╭○╮∴ ㊣  ∴  <COLOR=clAqua |Ｐ| >\
+<COLOR=clAqua     　 　|Ｋ|>  愛戀╰☆  /█∨▓↘ ☆╯愛戀  <COLOR=clAqua |Ｋ| >\
+<COLOR=clAqua    　　  |泡|>  戒恨↘≈≈ ∏  ∏ ≈≈↙瞄瞄  <COLOR=clAqua |泡| >\
+<COLOR=clAqua     　　 |点|>  ≈戒 恨≈I LOVE YOU≈瞄 瞄≈  <COLOR=clAqua |点| >\
+…………………<COLOR=clLime 每天10:00,15:00,23:00展开！！！>………………\
+<COLOR=clLime 介绍：><进入活动泡点每秒基础经验10W建议开启行会模式>\
+　　　\
+<COLOR=clFuchsia 本地图只剩下一个人的时候即可领取2000元宝!> \
+　　　　　　<领取元宝/@1>\
+[@1]
+#IF
+equal g96 0
+checkhum hhpd 1
+IsSameGuildOnMap hhpd
+#act
+Gmexecute 集体传送 hhpd 0159
+mapmove 3 330 330
+gamegold + 2000
+SENDMSG 0 本次行会活动奖励由[<$GUILDNAME>]的[<$USERNAME>]领取了! 151 0
+#ELSEACT
+MESSAGEBOX 目前地图剩下多个行会!!!\或者活动还在进性行中!!!\或者你没有加入行会!!!
