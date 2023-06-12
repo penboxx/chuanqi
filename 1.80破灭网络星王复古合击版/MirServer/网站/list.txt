@@ -1,0 +1,2 @@
+.\bluem2_client.dat 	C5511E0306BD4E049AF870F8071888A6	http://8.212.154.105:12000/bluem2_client.txt
+.\data\lui.pkg          977A341F7B8FC0BA777F3F2D601C387D	http://8.212.154.105:12000/lui.txt
